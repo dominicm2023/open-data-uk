@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — UK Open Data Index</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #ffffff; --ink: #1a1a1a; --muted: #6b6b68;
+    --line: #e4e4e0; --accent: #1d70b8; --warn: #b10e1e; --ok: #00703c;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #131313; --card: #1e1e1e; --ink: #ececec; --muted: #9a9a97;
+            --line: #2e2e2c; --accent: #5aa4dd; --warn: #f47b86; --ok: #6bc79a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  h1 { font-size: 1.6rem; letter-spacing: -0.02em; margin: 0 0 .25rem; }
+  h1 span, a { color: var(--accent); }
+  h2 { font-size: 1.15rem; margin-top: 2.2rem; }
+  a { text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .stat-row { display: flex; gap: .8rem; flex-wrap: wrap; margin: 1.4rem 0; }
+  .stat { background: var(--card); border: 1px solid var(--line);
+          border-radius: .7rem; padding: .8rem 1.1rem; flex: 1; min-width: 130px; }
+  .stat b { display: block; font-size: 1.35rem; }
+  .stat.bad b { color: var(--warn); }
+  .stat span { color: var(--muted); font-size: .8rem; }
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .back { font-size: .9rem; }
+  code { background: var(--card); border: 1px solid var(--line);
+         border-radius: .3rem; padding: .1rem .35rem; font-size: .85em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="back"><a href="/">&larr; Back to search</a></p>
+  <h1>About the <span>UK Open Data Index</span></h1>
+  <p>The UK's open government data is scattered across dozens of portals with
+  inconsistent, often broken metadata — effectively invisible to both people
+  and AI tools. This project harvests the <strong>metadata</strong> of every
+  dataset from national, devolved, regional and NHS portals into one
+  normalised, searchable index. We never copy the data itself: every result
+  links to the publisher's own page.</p>
+
+  <div class="stat-row" id="livestats">
+    <div class="stat"><b id="s-datasets">…</b><span>datasets indexed</span></div>
+    <div class="stat"><b id="s-portals">…</b><span>portals harvested</span></div>
+    <div class="stat"><b id="s-publishers">…</b><span>distinct publishers</span></div>
+    <div class="stat"><b id="s-dups">…</b><span>duplicate copies collapsed</span></div>
+  </div>
+
+  <h2>Why this needs to exist</h2>
+  <p>When we harvested the full catalogue, the metadata quality problem was
+  worse than expected:</p>
+  <div class="stat-row">
+    <div class="stat bad"><b>32%</b><span>state no licence — you can't legally know if you may reuse them</span></div>
+    <div class="stat bad"><b>41%</b><span>haven't been updated in over two years — though most were never meant to be</span></div>
+    <div class="stat bad"><b>24%</b><span>are duplicate copies of another catalogue's entry</span></div>
+  </div>
+  <p>Only <strong>16%</strong> of the links we've checked so far lead to an
+  actual data file. Most lead to another webpage, and 14% of datasets list
+  no files at all.</p>
+  <p>We normalise what can be normalised — hundreds of spellings of file
+  formats and dozens of licence variants collapse to a consistent
+  vocabulary — then collapse duplicates, flag retired records, and stay
+  honest when a search has no good answer, including when we simply hold no
+  data for the place you asked about.</p>
+  <p>We try hard not to make publishers look worse than they are. Of the
+  "stale" datasets that declare an update schedule, <strong>70% say they
+  were never going to be updated again</strong> — a finished one-off
+  publication isn't neglected, so we record the declared cadence rather than
+  treating every quiet dataset as rot. The same care applies to licences
+  (many are recorded in a non-standard field that naive harvesting misses,
+  which is why coverage is far better than it first appears) and to links
+  (a publisher blocking our checker is reported as "not verified", never as
+  "dead").</p>
+  <p class="note">All figures are measured from the index and shift as we add
+  sources.</p>
+
+  <h2>What the availability badges mean</h2>
+  <p>Most catalogue entries don't lead to a data file — they lead to another
+  webpage. So we follow every link and report what's actually behind it:</p>
+  <ul>
+    <li><strong>✓ data verified</strong> — we fetched it and it really is a
+    data file (CSV, spreadsheet, JSON, archive…).</li>
+    <li><strong>⚙ API</strong> — a service endpoint (WMS/WFS, REST) rather
+    than a download.</li>
+    <li><strong>↪ webpage only</strong> — the link works, but it's an HTML
+    page; you'll have more clicking to do.</li>
+    <li><strong>✗ links dead</strong> — genuinely broken (404, server error,
+    or won't connect).</li>
+    <li><strong>? not verified</strong> — the publisher's server refused
+    <em>our</em> checker (bot protection, or it needs a login). This says
+    nothing about the data: it may well be perfectly fine. We show this
+    rather than guessing.</li>
+  </ul>
+  <p>That last category matters. Checks run from a server, and a fair number
+  of sites block automated requests on sight — so we deliberately never
+  report "dead" unless we actually got a broken response. We also space out
+  requests to any single publisher so we're never the reason a site
+  struggles.</p>
+
+  <h2>Sources</h2>
+  <table id="sources">
+    <thead><tr><th>Portal</th><th>Type</th><th class="num">Datasets</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>Suggest a data source</h2>
+  <p>Know a portal or dataset we're missing? The source registry is a single
+  YAML file — suggesting a new portal is a small pull request, and portals
+  with a CKAN API or DCAT feed are usually a five-line addition. GitHub link
+  coming with the public repo; for now, contact the maintainer.</p>
+
+  <h2>API</h2>
+  <p>Everything the search box does is available as an open JSON API —
+  see the <a href="/docs">interactive API documentation</a>. Please keep to
+  the rate limit (30 searches/minute) and retain the attribution field.
+  <code>GET /api/search?q=…</code> · <code>GET /api/stats</code> ·
+  <code>GET /api/sources</code></p>
+
+  <h2>Privacy</h2>
+  <p>We log the <em>search text</em> you type, so we can see which searches
+  come back poor and fix them. We deliberately do <strong>not</strong> record
+  your IP address, your browser, or any cookie or session identifier — there
+  is nothing stored that links one search to another, or to you. There are no
+  analytics or advertising trackers on this site.</p>
+
+  <h2>Licensing</h2>
+  <p>The indexed metadata describes datasets published under the Open
+  Government Licence and other licences as stated per dataset — check each
+  dataset's licence before reuse. This index and its code will be released
+  as open source.</p>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+(async () => {
+  try {
+    const s = await (await fetch('/api/stats')).json();
+    $("s-datasets").textContent = s.datasets.toLocaleString();
+    $("s-portals").textContent = Object.keys(s.sources).length;
+    $("s-publishers").textContent = s.publishers.toLocaleString();
+    $("s-dups").textContent = s.duplicates_collapsed.toLocaleString();
+  } catch {}
+  try {
+    const data = await (await fetch('/api/sources')).json();
+    const esc = t => (t || "").replace(/[&<>"]/g,
+      c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+    document.querySelector('#sources tbody').innerHTML = data.sources
+      .sort((a, b) => b.datasets - a.datasets)
+      .map(s => `<tr><td><a href="${esc(s.web)}" rel="noopener">${esc(s.name)}</a></td>` +
+                `<td>${esc(s.type.toUpperCase())}</td>` +
+                `<td class="num">${s.datasets.toLocaleString()}</td></tr>`)
+      .join('');
+  } catch {}
+})();
+</script>
+</body>
+</html>

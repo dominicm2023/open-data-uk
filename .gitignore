@@ -1,0 +1,33 @@
+# Built index — regenerate with: harvester.py -> embed_index.py -> dedupe.py
+index.db
+index.db-wal
+index.db-shm
+index-snapshot.db
+embeddings.npy
+emb_keys.json
+
+# Search query logs: contain what real people typed. Never commit.
+queries.db
+queries.db-wal
+queries.db-shm
+
+# Baked model weights (~88 MB, re-downloaded on demand)
+model-cache/
+
+# Generated reports and scratch output from analysis runs
+quality_report.md
+discovery_results.txt
+swarm_candidates.txt
+swarm_findings.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/

@@ -1,0 +1,320 @@
+# UK Open Data Index — source registry
+#
+# This file is the "registry as code": every harvested portal is one entry here.
+# To suggest a new source, open a PR adding an entry. CI validates the endpoint
+# speaks CKAN and isn't a duplicate before a human merges.
+#
+# Fields:
+#   id           stable slug used as the source key in the database
+#   name         human-readable portal name
+#   type         harvester protocol (currently only "ckan")
+#   api          CKAN action API base (must expose {api}/package_search)
+#   web          portal homepage
+#   dataset_url  template for a dataset's landing page ({name} = CKAN slug)
+
+sources:
+  - id: data_gov_uk
+    name: data.gov.uk (National Data Library)
+    type: ckan
+    api: https://data.gov.uk/api/action
+    web: https://www.data.gov.uk
+    dataset_url: https://www.data.gov.uk/dataset/{name}
+
+  - id: london_datastore
+    name: London Datastore (GLA)
+    type: ckan
+    api: https://data.london.gov.uk/api/action
+    web: https://data.london.gov.uk
+    dataset_url: https://data.london.gov.uk/dataset/{name}
+
+  - id: nhsbsa
+    name: NHS Business Services Authority Open Data Portal
+    type: ckan
+    api: https://opendata.nhsbsa.net/api/3/action
+    web: https://opendata.nhsbsa.net
+    dataset_url: https://opendata.nhsbsa.net/dataset/{name}
+
+  - id: opendatani
+    name: Open Data Northern Ireland
+    type: ckan
+    api: https://admin.opendatani.gov.uk/api/3/action
+    web: https://www.opendatani.gov.uk
+    dataset_url: https://admin.opendatani.gov.uk/dataset/{name}
+
+  - id: historic_england
+    name: Historic England Open Data Hub
+    type: dcat
+    api: https://opendata-historicengland.hub.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://opendata-historicengland.hub.arcgis.com
+    dataset_url: "unused-for-dcat"  # DCAT entries carry their own landingPage
+
+  - id: ons_geography
+    name: ONS Open Geography Portal
+    type: dcat
+    api: https://open-geography-portalx-ons.hub.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://open-geography-portalx-ons.hub.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: daera_ni
+    name: DAERA Northern Ireland Open Data
+    type: dcat
+    api: https://opendata-daerani.hub.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://opendata-daerani.hub.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: tunbridge_wells
+    name: Tunbridge Wells Borough Council Open Data
+    type: dcat
+    api: https://opendatanew-tunbridgewells.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://opendatanew-tunbridgewells.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: lambeth
+    name: Lambeth Open Mapping Data
+    type: dcat
+    api: https://lambethopenmappingdata-lambethcouncil.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://lambethopenmappingdata-lambethcouncil.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: calderdale
+    name: Calderdale DataWorks
+    type: ckan
+    api: https://dataworks.calderdale.gov.uk/api/3/action
+    web: https://dataworks.calderdale.gov.uk
+    dataset_url: https://dataworks.calderdale.gov.uk/dataset/{name}
+
+  - id: bristol
+    name: Open Data Bristol
+    type: dcat
+    api: https://opendata.bristol.gov.uk/api/feed/dcat-us/1.1.json
+    web: https://opendata.bristol.gov.uk
+    dataset_url: "unused-for-dcat"
+
+  - id: glasgow
+    name: Glasgow Open Data
+    type: dcat
+    api: https://data.glasgow.gov.uk/api/feed/dcat-us/1.1.json
+    web: https://data.glasgow.gov.uk
+    dataset_url: "unused-for-dcat"
+
+  - id: datamillnorth
+    name: Data Mill North (Leeds / North of England)
+    type: ckan
+    api: https://datamillnorth.org/api/3/action
+    web: https://datamillnorth.org
+    dataset_url: https://datamillnorth.org/dataset/{name}
+
+  # Found by scripts/discover_sources.py (deterministic sweep), 2026-08-13
+
+  - id: north_sea_transition
+    name: North Sea Transition Authority
+    type: dcat
+    api: https://open-data-ukcs-transition.hub.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://open-data-ukcs-transition.hub.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: spatialhub_scotland
+    name: Scotland's Spatial Hub
+    type: ckan
+    api: https://data.spatialhub.scot/api/3/action
+    web: https://data.spatialhub.scot
+    dataset_url: https://data.spatialhub.scot/dataset/{name}
+
+  - id: north_yorkshire
+    name: Data North Yorkshire
+    type: ckan
+    api: https://hub.datanorthyorkshire.org/api/3/action
+    web: https://hub.datanorthyorkshire.org
+    dataset_url: https://hub.datanorthyorkshire.org/dataset/{name}
+
+  - id: natural_england
+    name: Natural England (Defra group)
+    type: dcat
+    api: https://naturalengland-defra.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://naturalengland-defra.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: sheffield
+    name: Sheffield City Council Open Data
+    type: dcat
+    api: https://sheffield-city-council-open-data-sheffieldcc.hub.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://sheffield-city-council-open-data-sheffieldcc.hub.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: forestry_commission
+    name: Forestry Commission
+    type: dcat
+    api: https://data-forestry.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://data-forestry.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: naturescot
+    name: NatureScot
+    type: dcat
+    api: https://opendata.nature.scot/api/feed/dcat-us/1.1.json
+    web: https://opendata.nature.scot
+    dataset_url: "unused-for-dcat"
+
+  - id: plymouth
+    name: Plymouth City Council
+    type: ckan
+    api: https://plymouth.thedata.place/api/3/action
+    web: https://plymouth.thedata.place
+    dataset_url: https://plymouth.thedata.place/dataset/{name}
+
+  - id: south_ayrshire
+    name: South Ayrshire Council
+    type: dcat
+    api: https://maps-southayrshire.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://maps-southayrshire.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: wigan
+    name: Wigan Council
+    type: dcat
+    api: https://opendata.wigan.gov.uk/api/feed/dcat-us/1.1.json
+    web: https://opendata.wigan.gov.uk
+    dataset_url: "unused-for-dcat"
+
+  - id: scottish_forestry
+    name: Scottish Forestry
+    type: dcat
+    api: https://open-data-scottishforestry.hub.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://open-data-scottishforestry.hub.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: moray
+    name: Moray Council
+    type: dcat
+    api: https://data-moray.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://data-moray.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: perth_kinross
+    name: Perth and Kinross Council
+    type: dcat
+    api: https://open-data-perth-kinross.hub.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://open-data-perth-kinross.hub.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: bradford
+    name: City of Bradford Metropolitan District Council
+    type: dcat
+    api: https://spatialdata-cbmdc.hub.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://spatialdata-cbmdc.hub.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: edinburgh
+    name: City of Edinburgh Council Mapping
+    type: dcat
+    api: https://data.edinburghcouncilmaps.info/api/feed/dcat-us/1.1.json
+    web: https://data.edinburghcouncilmaps.info
+    dataset_url: "unused-for-dcat"
+
+  - id: aberdeen
+    name: Aberdeen City Council
+    type: dcat
+    api: https://spatialdata-accabdn.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://spatialdata-accabdn.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: gedling
+    name: Gedling Borough Council
+    type: dcat
+    api: https://open-data-portal-gedling.hub.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://open-data-portal-gedling.hub.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: craven
+    name: Craven District Council
+    type: dcat
+    api: https://data-cravendc.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://data-cravendc.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: argyll_bute
+    name: Argyll and Bute Council
+    type: dcat
+    api: https://data-argyll-bute.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://data-argyll-bute.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: wiltshire
+    name: Wiltshire Council
+    type: dcat
+    api: https://wiltshire-council-open-data-hub-wiltscouncil.hub.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://wiltshire-council-open-data-hub-wiltscouncil.hub.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: causeway_coast
+    name: Causeway Coast and Glens Borough Council
+    type: dcat
+    api: https://ccgbcodni-cbcni.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://ccgbcodni-cbcni.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: canterbury
+    name: Canterbury City Council
+    type: dcat
+    api: https://opendata.canterbury.gov.uk/api/feed/dcat-us/1.1.json
+    web: https://opendata.canterbury.gov.uk
+    dataset_url: "unused-for-dcat"
+
+  - id: mid_ulster
+    name: Mid Ulster District Council
+    type: dcat
+    api: https://data-midulster.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://data-midulster.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: sevenoaks
+    name: Sevenoaks District Council
+    type: dcat
+    api: https://gis-sevenoaks.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://gis-sevenoaks.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: norfolk
+    name: MAP Norfolk (Norfolk County Council)
+    type: dcat
+    api: https://data-norfolk.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://data-norfolk.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: broxtowe
+    name: Broxtowe Borough Council
+    type: dcat
+    api: https://data-broxtowebc.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://data-broxtowebc.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  # Found by the research swarm, verified by scripts/verify_proposals.py
+  - id: york
+    name: York Open Data
+    type: ckan
+    api: https://data.yorkopendata.org/api/3/action
+    web: https://data.yorkopendata.org
+    dataset_url: https://data.yorkopendata.org/dataset/{name}
+
+  - id: nottingham
+    name: Nottingham City Council Open Data
+    type: dcat
+    api: https://geoportal-nottmcitycouncil.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://www.opendatanottingham.org.uk
+    dataset_url: "unused-for-dcat"
+
+  # Socrata portals expose DCAT-US at /data.json, so no Socrata-specific
+  # harvester is needed — the existing DCAT one reads it directly.
+  - id: camden
+    name: London Borough of Camden Open Data
+    type: dcat
+    api: https://opendata.camden.gov.uk/data.json
+    web: https://opendata.camden.gov.uk
+    dataset_url: "unused-for-dcat"
+
+  - id: leicester
+    name: Leicester City Council Open Data
+    type: ods
+    api: https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets
+    web: https://data.leicester.gov.uk
+    dataset_url: https://data.leicester.gov.uk/explore/dataset/{name}/

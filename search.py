@@ -1,0 +1,432 @@
+"""Hybrid search over the index: semantic (embeddings) + keyword (FTS5 BM25),
+fused with reciprocal rank fusion, plus:
+
+- title-weighted BM25 (a match in the title outranks one buried in text)
+- rare-term bonus: for multi-concept queries ("allotment waiting lists"),
+  results containing the rarest — most informative — query term get a boost
+- duplicate collapapse and retired-record filtering (see dedupe.py)
+- a confidence signal so the UI can say "no strong matches" instead of
+  presenting nearest-neighbour noise as an answer
+
+CLI:
+    python search.py "ev charging points in manchester"
+    python search.py "hospital waiting times" -k 5 --json
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import re
+import sqlite3
+from pathlib import Path
+
+import numpy as np
+
+from embed_index import MODEL_NAME, QUERY_PREFIX
+from geo import (build_place_vocab, detect_place, mentions_place,
+                 place_coverage, place_point)
+
+from paths import DB_PATH, EMB_PATH, KEYS_PATH, connect as db_connect  # noqa: E402
+
+RRF_K = 60          # standard reciprocal-rank-fusion constant
+CANDIDATES = 100    # depth taken from each retriever before fusion
+
+# Boosts are MULTIPLICATIVE, deliberately.
+#
+# They used to be additive constants (0.02-0.03). But RRF scores rank 1 at
+# 1/(60+1)=0.0164 and rank 50 at 0.0090 — the entire relevance spread is
+# ~0.007, so a 0.025 bonus was worth more than the difference between the
+# best and the 50th-best match. Any single signal silently decided the
+# ordering: "brighton recycling rates" returned Brighton *brownfield land*
+# because the publisher boost outweighed the topic entirely.
+# Multiplying preserves the relevance ordering and lets signals modulate it.
+RARE_TERM_BOOST = 1.30
+PUBLISHER_BOOST = 1.35
+GEO_BOOST = 1.45
+RARE_TERM_MAX_DF = 5000   # if even the rarest term is commoner, skip the bonus
+PUBLISHER_MAX_DF = 1500   # ignore terms matching many publishers ("council", "city")
+# Verified availability nudges; "blocked" is absent on purpose (we know
+# nothing about it, so it must not move the result either way).
+AVAILABILITY_MULT = {"data": 1.15, "api": 1.05, "webpage": 0.97, "dead": 0.85}
+NO_FILES_MULT = 0.95
+# "brighton recycling rates" shouldn't surface Brighton's supplier payments:
+# matching the place but nothing of the topic is weak evidence. Kept gentle
+# (not a filter) because the semantic arm legitimately finds datasets that
+# never use the query's words — "kerbside collection tonnages" is recycling.
+PLACE_ONLY_MULT = 0.80
+# bm25 column weights: key(unindexed), title, description, publisher, tags
+BM25_WEIGHTS = "0.0, 5.0, 1.0, 2.0, 3.0"
+# cosine similarity of the best semantic hit, used for the confidence signal
+SIM_STRONG = 0.55
+SIM_WEAK = 0.40
+
+
+class SearchEngine:
+    def __init__(self) -> None:
+        self._model = None
+        self._matrix: np.ndarray | None = None
+        self._keys: list[str] = []
+        self._emb_mtime = 0.0
+        self._place_vocab: set[str] | None = None
+
+    @property
+    def model(self):
+        if self._model is None:
+            from sentence_transformers import SentenceTransformer
+            self._model = SentenceTransformer(MODEL_NAME)
+        return self._model
+
+    def _vectors(self) -> tuple[np.ndarray | None, list[str]]:
+        """Load embeddings, hot-reloading if a newer checkpoint exists."""
+        if not EMB_PATH.exists():
+            return None, []
+        mtime = EMB_PATH.stat().st_mtime
+        if self._matrix is None or mtime > self._emb_mtime:
+            try:
+                matrix = np.load(EMB_PATH)
+                keys = json.loads(KEYS_PATH.read_text(encoding="utf-8"))
+            except Exception:
+                # embed_index.py may be mid-checkpoint; keep serving old vectors
+                return self._matrix, self._keys
+            if matrix.shape[0] == len(keys):
+                self._matrix, self._keys, self._emb_mtime = matrix, keys, mtime
+        return self._matrix, self._keys
+
+    def _conn(self) -> sqlite3.Connection:
+        conn = db_connect()
+        conn.row_factory = sqlite3.Row
+        return conn
+
+    def vector_ranks(self, query: str) -> tuple[list[str], float]:
+        """Ranked keys plus the best cosine similarity (confidence signal)."""
+        matrix, keys = self._vectors()
+        if matrix is None:
+            return [], 0.0
+        qvec = self.model.encode([QUERY_PREFIX + query], normalize_embeddings=True)[0]
+        sims = matrix @ qvec
+        top = np.argsort(-sims)[:CANDIDATES]
+        return [keys[i] for i in top], float(sims[top[0]]) if len(top) else 0.0
+
+    def keyword_ranks(self, query: str, conn: sqlite3.Connection) -> list[str]:
+        terms = self._terms(query)
+        if not terms:
+            return []
+        match = " OR ".join(terms)
+        rows = conn.execute(
+            f"SELECT key FROM fts WHERE fts MATCH ? "
+            f"ORDER BY bm25(fts, {BM25_WEIGHTS}) LIMIT ?",
+            (match, CANDIDATES),
+        ).fetchall()
+        return [r[0] for r in rows]
+
+    @staticmethod
+    def _terms(query: str) -> list[str]:
+        # Sanitise into bare terms so user text can't break FTS5 syntax
+        return re.findall(r"[A-Za-z0-9]+", query.lower())
+
+    def _rare_term_keys(self, query: str, conn: sqlite3.Connection) -> set[str]:
+        """Keys of datasets containing the rarest (most informative) query term.
+
+        For "allotment waiting lists", 'allotment' (132 datasets) decides
+        relevance far more than 'waiting' or 'lists' — without this, common
+        phrases drown the term the user actually cares about.
+        """
+        terms = [t for t in self._terms(query) if len(t) > 2]
+        if len(terms) < 2:
+            return set()  # single-concept query; nothing to arbitrate
+        dfs = []
+        for t in terms:
+            df = conn.execute(
+                "SELECT COUNT(*) FROM fts WHERE fts MATCH ?", (t,)
+            ).fetchone()[0]
+            if df:
+                dfs.append((df, t))
+        if not dfs:
+            return set()
+        dfs.sort()
+        df, rare = dfs[0]
+        if df > RARE_TERM_MAX_DF:  # even the rarest term is common — no decisive term
+            return set()
+        rows = conn.execute(
+            "SELECT key FROM fts WHERE fts MATCH ? LIMIT ?", (rare, RARE_TERM_MAX_DF)
+        ).fetchall()
+        return {r[0] for r in rows}
+
+    def geo_ranks(self, query: str, conn: sqlite3.Connection,
+                  point: tuple[float, float], place: str) -> list[str]:
+        """Datasets whose published bounding box actually contains the place.
+
+        This is the arm that finds national datasets covering somewhere —
+        the Environment Agency's England-wide flood map genuinely covers
+        Brighton even though it never says the word. Ranked by keyword
+        relevance on the *non-place* terms, so "flood risk in brighton"
+        matches on 'flood risk'.
+        """
+        terms = [t for t in self._terms(query) if t not in place.split() and len(t) > 2]
+        if not terms:
+            return []
+        # AND, not OR. This arm *injects* results the other retrievers never
+        # saw, so it has to be precise: OR-ing "car parks" matched every park
+        # boundary that happened to cover Brighton.
+        match = " ".join(terms)
+        lon, lat = point
+        try:
+            rows = conn.execute(
+                f"SELECT f.key FROM fts f "
+                f"JOIN dataset_geo g ON g.dataset_key = f.key "
+                f"WHERE fts MATCH ? "
+                f"  AND g.bbox_west <= ? AND g.bbox_east >= ? "
+                f"  AND g.bbox_south <= ? AND g.bbox_north >= ? "
+                f"ORDER BY bm25(fts, {BM25_WEIGHTS}) LIMIT ?",
+                (match, lon, lon, lat, lat, CANDIDATES),
+            ).fetchall()
+        except sqlite3.OperationalError:   # dataset_geo not built yet
+            return []
+        return [r[0] for r in rows]
+
+    def _topic_match_keys(self, query: str, conn: sqlite3.Connection,
+                          place: str | None) -> set[str] | None:
+        """Keys matching the query's non-place terms.
+
+        Returns None when the query is *only* a place (nothing to gate on).
+        """
+        place_toks = set((place or "").split())
+        topic = [t for t in self._terms(query) if t not in place_toks and len(t) > 2]
+        if not topic:
+            return None
+        rows = conn.execute(
+            "SELECT key FROM fts WHERE fts MATCH ? LIMIT ?",
+            (" OR ".join(topic), 20000),
+        ).fetchall()
+        return {r[0] for r in rows}
+
+    def _publisher_match_keys(self, query: str, conn: sqlite3.Connection,
+                              topic_keys: set[str] | None) -> set[str]:
+        """Keys whose publisher contains a discriminating query term AND which
+        are topically relevant.
+
+        The topical gate is the important half. Matching on publisher alone
+        boosted *every* dataset a place publishes, so "brighton recycling
+        rates" surfaced Brighton's brownfield register and supplier payments
+        — the borough is right, the subject is irrelevant. Brighton publishes
+        no recycling data at all, and the honest answer is DEFRA's
+        borough-level recycling table, which the boost was burying.
+        """
+        keys: set[str] = set()
+        for t in self._terms(query):
+            if len(t) <= 3:
+                continue
+            rows = conn.execute(
+                "SELECT key FROM fts WHERE fts MATCH ? LIMIT ?",
+                (f"publisher:{t}", PUBLISHER_MAX_DF + 1),
+            ).fetchall()
+            if 0 < len(rows) <= PUBLISHER_MAX_DF:
+                keys |= {r[0] for r in rows}
+        return keys & topic_keys if topic_keys is not None else keys
+
+    @staticmethod
+    def _availability(conn: sqlite3.Connection,
+                      keys: list[str]) -> dict[str, tuple[str | None, int]]:
+        """key -> (availability verdict or None, resource_count)."""
+        if not keys:
+            return {}
+        try:
+            marks = ",".join("?" * len(keys))
+            rows = conn.execute(
+                f"SELECT key, availability, resource_count FROM datasets "
+                f"WHERE key IN ({marks})", keys).fetchall()
+        except sqlite3.OperationalError:  # checker.py has not run yet
+            return {}
+        return {r[0]: (r[1], r[2] or 0) for r in rows}
+
+    def _columns_for(self, conn: sqlite3.Connection, key: str) -> list[str] | None:
+        """CSV column names peeked by checker.py, if any resource has them."""
+        try:
+            row = conn.execute(
+                "SELECT c.columns FROM resources r "
+                "JOIN resource_checks c ON c.url = r.url "
+                "WHERE r.dataset_key = ? AND c.columns IS NOT NULL LIMIT 1",
+                (key,)).fetchone()
+        except sqlite3.OperationalError:
+            return None
+        return json.loads(row[0]) if row else None
+
+    def _dup_and_retired(self, conn: sqlite3.Connection) -> tuple[dict, set]:
+        try:
+            dups = dict(conn.execute(
+                "SELECT key, canonical_key FROM duplicates").fetchall())
+            retired = {r[0] for r in conn.execute("SELECT key FROM retired")}
+        except sqlite3.OperationalError:  # dedupe.py not run yet
+            return {}, set()
+        return dups, retired
+
+    def search(self, query: str, k: int = 10) -> dict:
+        conn = self._conn()
+        try:
+            if self._place_vocab is None:
+                self._place_vocab = build_place_vocab(conn)
+            place = detect_place(query, self._place_vocab)
+            point = place_point(place)
+
+            vec_keys, top_sim = self.vector_ranks(query)
+            kw_keys = self.keyword_ranks(query, conn)
+            geo_keys = (self.geo_ranks(query, conn, point, place)
+                        if point and place else [])
+            rare_keys = self._rare_term_keys(query, conn)
+            topic_keys = self._topic_match_keys(query, conn, place)
+            pub_keys = self._publisher_match_keys(query, conn, topic_keys)
+            dups, retired = self._dup_and_retired(conn)
+
+            fused: dict[str, float] = {}
+            for ranked in (vec_keys, kw_keys, geo_keys):
+                for rank, key in enumerate(ranked):
+                    fused[key] = fused.get(key, 0.0) + 1.0 / (RRF_K + rank + 1)
+            # A dataset whose own bbox covers the place is a real geographic
+            # match, so lift it — but nothing is ever pushed *down* for
+            # lacking a bbox: only ~35% of datasets publish one at all.
+            geo_set = set(geo_keys)
+            availability = self._availability(conn, list(fused))
+            for key in list(fused):
+                mult = 1.0
+                if key in rare_keys:
+                    mult *= RARE_TERM_BOOST
+                if key in pub_keys:
+                    mult *= PUBLISHER_BOOST
+                if key in geo_set:
+                    mult *= GEO_BOOST
+                # matched the place but nothing of what was actually asked
+                if place and topic_keys is not None and key not in topic_keys:
+                    mult *= PLACE_ONLY_MULT
+                verdict, n_res = availability.get(key, (None, 0))
+                if verdict:
+                    mult *= AVAILABILITY_MULT.get(verdict, 1.0)
+                elif n_res == 0:
+                    mult *= NO_FILES_MULT
+                fused[key] *= mult
+
+            # collapse duplicates onto their canonical copy, drop retired
+            collapsed: dict[str, float] = {}
+            for key, score in fused.items():
+                canon = dups.get(key, key)
+                if canon in retired:
+                    continue
+                collapsed[canon] = max(collapsed.get(canon, 0.0), score)
+
+            top = sorted(collapsed, key=collapsed.get, reverse=True)[:k]
+            results = []
+            for key in top:
+                row = conn.execute(
+                    "SELECT * FROM datasets WHERE key = ?", (key,)
+                ).fetchone()
+                if not row:
+                    continue
+                verdict, _ = availability.get(key, (None, 0))
+                results.append({
+                    "key": key,
+                    "score": round(collapsed[key], 4),
+                    "title": row["title"],
+                    "publisher": row["publisher"],
+                    "source": row["source_id"],
+                    "license": row["license_norm"],
+                    "formats": json.loads(row["formats_norm"]),
+                    "modified": (row["modified"] or "")[:10],
+                    "url": row["landing_url"],
+                    "description": (row["description"] or "")[:280],
+                    "availability": verdict,
+                    "columns": self._columns_for(conn, key),
+                    "covers_place": key in geo_set or None,
+                })
+
+            # Keyword OR-queries match almost anything, so confidence rests on
+            # semantic similarity alone
+            if top_sim >= SIM_STRONG:
+                confidence = "strong"
+            elif top_sim >= SIM_WEAK:
+                confidence = "weak"
+            else:
+                confidence = "none"
+
+            # geography honesty: did the user name a place, do we hold data
+            # for it, and do the results actually come from there?
+            geo = None
+            if place:
+                geo = {
+                    "place": place,
+                    "point": list(point) if point else None,
+                    "coverage": place_coverage(place, conn),
+                    # Results whose published boundary contains the place —
+                    # usually national datasets that genuinely cover it.
+                    "bbox_matches": sum(1 for r in results if r.get("covers_place")),
+                    # Deliberately NOT counting bbox matches: a UK-wide LIDAR
+                    # survey covering Brighton doesn't mean we hold Brighton
+                    # data, and letting it suppress the warning would make us
+                    # look more useful than we are.
+                    "in_results": any(mentions_place(r, place) for r in results),
+                }
+
+            return {
+                "query": query,
+                "confidence": confidence,
+                "top_similarity": round(top_sim, 3),
+                "geo": geo,
+                "results": results,
+            }
+        finally:
+            conn.close()
+
+    def stats(self) -> dict:
+        conn = self._conn()
+        try:
+            total = conn.execute("SELECT COUNT(*) FROM datasets").fetchone()[0]
+            by_source = dict(conn.execute(
+                "SELECT source_id, COUNT(*) FROM datasets GROUP BY source_id"
+            ).fetchall())
+            publishers = conn.execute(
+                "SELECT COUNT(DISTINCT publisher) FROM datasets"
+            ).fetchone()[0]
+            try:
+                dup_count = conn.execute("SELECT COUNT(*) FROM duplicates").fetchone()[0]
+            except sqlite3.OperationalError:
+                dup_count = 0
+        finally:
+            conn.close()
+        matrix, _ = self._vectors()
+        return {
+            "datasets": total,
+            "sources": by_source,
+            "publishers": publishers,
+            "duplicates_collapsed": dup_count,
+            "embedded": 0 if matrix is None else int(matrix.shape[0]),
+        }
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("query")
+    ap.add_argument("-k", type=int, default=10, help="number of results")
+    ap.add_argument("--json", action="store_true", help="emit JSON")
+    args = ap.parse_args()
+
+    payload = SearchEngine().search(args.query, args.k)
+    if args.json:
+        print(json.dumps(payload, indent=2))
+        return
+    if payload["confidence"] != "strong":
+        print(f"[{payload['confidence']} match — best similarity "
+              f"{payload['top_similarity']}; results may be tangential]\n")
+    for i, r in enumerate(payload["results"], 1):
+        fmts = "/".join(r["formats"][:4]) or "no files"
+        lic = r["license"] or "no licence"
+        print(f"{i:2}. {r['title']}")
+        print(f"    {r['publisher'] or '(unknown publisher)'} · {r['source']}"
+              f" · {lic} · {fmts} · updated {r['modified'] or '?'}")
+        print(f"    {r['url']}")
+        if r["description"]:
+            print(f"    {r['description'][:160]}")
+        print()
+
+
+if __name__ == "__main__":
+    main()
