@@ -1,0 +1,11 @@
+# Normalise line endings in the repo so contributors on Windows, macOS and
+# Linux don't produce whole-file diffs just by opening something.
+* text=auto eol=lf
+
+# refresh.sh runs on the VPS; CRLF would break the shebang.
+*.sh text eol=lf
+
+# Binary-ish artefacts, should they ever be committed deliberately.
+*.png binary
+*.db binary
+*.npy binary
