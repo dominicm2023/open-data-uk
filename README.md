@@ -68,6 +68,17 @@ results.
 The most valuable contribution is a new data source — one YAML entry.
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Licence
+
+The **code** in this repository is MIT licensed — see [LICENSE](LICENSE).
+
+The **data it indexes is not ours to license.** Each dataset stays under
+whatever licence its publisher set, most commonly the Open Government
+Licence v3.0, and around a third state no licence at all. We only ever hold
+metadata and link out to the publisher, so check the licence shown on a
+dataset (and on the publisher's own page) before reusing it. API responses
+carry an `attribution` field for this reason; please keep it.
+
 ## Roadmap (post-MVP)
 
 - AI discovery assistant (RAG over the metadata) and MCP endpoint
