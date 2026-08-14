@@ -20,9 +20,22 @@ REQUIRED = {"id", "name", "type", "api", "web", "dataset_url"}
 UA = {"User-Agent": "uk-open-data-index/0.1 (source validation)"}
 
 
+class Blocked(Exception):
+    """The publisher refused us — says nothing about whether the source is good."""
+
+
+# A refusal aimed at the client tells us nothing about the source. CI runs
+# from datacenter IPs that portals routinely bot-block (north_yorkshire 403s
+# from GitHub runners but is perfectly healthy from the server), so treating
+# these as failures would reject valid community PRs at random.
+BLOCKED_STATUSES = {401, 403, 429, 503}
+
+
 def check_ckan(src: dict) -> str | None:
     r = requests.get(f"{src['api']}/package_search", params={"rows": 1},
                      headers=UA, timeout=30)
+    if r.status_code in BLOCKED_STATUSES:
+        raise Blocked(f"HTTP {r.status_code}")
     if r.status_code != 200:
         return f"HTTP {r.status_code} from package_search"
     body = r.json()
@@ -36,6 +49,8 @@ def check_ckan(src: dict) -> str | None:
 
 def check_dcat(src: dict) -> str | None:
     r = requests.get(src["api"], headers=UA, timeout=60)
+    if r.status_code in BLOCKED_STATUSES:
+        raise Blocked(f"HTTP {r.status_code}")
     if r.status_code != 200:
         return f"HTTP {r.status_code} from DCAT feed"
     datasets = r.json().get("dataset")
@@ -49,6 +64,8 @@ def check_dcat(src: dict) -> str | None:
 
 def check_ods(src: dict) -> str | None:
     r = requests.get(src["api"], params={"limit": 1}, headers=UA, timeout=30)
+    if r.status_code in BLOCKED_STATUSES:
+        raise Blocked(f"HTTP {r.status_code}")
     if r.status_code != 200:
         return f"HTTP {r.status_code} from OpenDataSoft catalogue"
     body = r.json()
@@ -69,6 +86,7 @@ def main() -> int:
         sources = yaml.safe_load(fh)["sources"]
 
     failures: list[str] = []
+    blocked: list[str] = []
     seen_ids: set[str] = set()
     for src in sources:
         sid = src.get("id", "<missing id>")
@@ -87,6 +105,10 @@ def main() -> int:
             continue
         try:
             problem = check(src)
+        except Blocked as exc:
+            blocked.append(f"{sid}: refused us ({exc})")
+            print(f"skip    {sid}  (publisher blocked this checker)")
+            continue
         except Exception as exc:  # noqa: BLE001
             problem = f"endpoint check failed: {exc}"
         if problem:
@@ -94,12 +116,21 @@ def main() -> int:
         else:
             print(f"ok      {sid}")
 
+    if blocked:
+        print(f"\n{len(blocked)} source(s) could not be verified from here — "
+              "not treated as failures:")
+        for b in blocked:
+            print(f"  SKIP  {b}")
+        print("  (CI runs from datacenter IPs that some portals bot-block; a "
+              "refusal tells us nothing about whether the source is valid.)")
+
     if failures:
         print("\nVALIDATION FAILED:")
         for f in failures:
             print(f"  FAIL  {f}")
         return 1
-    print(f"\nall {len(sources)} sources valid")
+    print(f"\n{len(sources) - len(blocked)} of {len(sources)} sources verified"
+          + (f", {len(blocked)} unverifiable from here" if blocked else ""))
     return 0
 
 
