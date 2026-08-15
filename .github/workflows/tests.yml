@@ -1,0 +1,24 @@
+name: Tests
+
+# The rules that decide what search hides. They have no network or database
+# dependency, so unlike the relevance suite (which needs a built index) they
+# can run on every push.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Duplicate-collapsing rules
+        run: python scripts/dedupe_test.py
+      - name: Page rendering and escaping
+        run: python scripts/render_test.py

@@ -9,6 +9,7 @@ embed_index.py checkpoints land. Public API: /api/search, /api/stats,
 
 from __future__ import annotations
 
+import os
 import time
 from collections import defaultdict, deque
 from contextlib import asynccontextmanager
@@ -17,13 +18,18 @@ from pathlib import Path
 import yaml
 from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import (FileResponse, HTMLResponse, PlainTextResponse,
+                               StreamingResponse)
 
+import pagerender
 from querylog import log_query
 from search import SearchEngine
 
 ROOT = Path(__file__).parent
 REPO_URL = "https://github.com/dominicm2023/open-data-uk"
+# Absolute URLs (canonical tags, sitemap, social previews) have to name the
+# real host, so a dev copy must not advertise itself as production.
+SITE_URL = os.environ.get("SITE_URL", "https://open-data.org.uk").rstrip("/")
 ATTRIBUTION = ("Contains public sector information licensed under the Open "
                "Government Licence v3.0 and other licences as stated per "
                "dataset. Metadata collated by the UK Open Data Index.")
@@ -267,31 +273,24 @@ def api_stats() -> dict:
     return engine.stats()
 
 
-@app.get("/dataset", include_in_schema=False)
-def dataset_page() -> FileResponse:
-    return FileResponse(ROOT / "web" / "dataset.html",
-                        headers={"Cache-Control": "no-cache"})
+def _dataset_record(key: str) -> dict | None:
+    """Everything we hold about one dataset, or None if we hold nothing.
 
-
-@app.get("/api/dataset",
-         summary="Dataset detail",
-         responses=RATE_LIMITED_RESPONSE,
-         description="Full record for one dataset: metadata, every resource "
-                     "with its verified availability, CSV column names where "
-                     "peeked, and related datasets.")
-def api_dataset(request: Request, response: Response,
-                key: str = Query(min_length=3, max_length=500)) -> dict:
+    Shared by the JSON API and the server-rendered page so the two can never
+    drift apart — the page used to be built by JavaScript from this same
+    payload, and the whole point of rendering it here is that it stays the
+    same page.
+    """
     import json as _json
     import sqlite3
     from paths import connect as db_connect
 
-    _rate_check(request, response)   # opens a DB connection per call
     conn = db_connect()
     conn.row_factory = sqlite3.Row
     try:
         row = conn.execute("SELECT * FROM datasets WHERE key = ?", (key,)).fetchone()
         if not row:
-            raise HTTPException(status_code=404, detail="Unknown dataset key")
+            return None
 
         try:
             resources = [dict(r) for r in conn.execute(
@@ -316,6 +315,11 @@ def api_dataset(request: Request, response: Response,
         except (IndexError, KeyError):
             pass
 
+        dup = conn.execute("SELECT canonical_key FROM duplicates WHERE key = ?",
+                           (key,)).fetchone()
+        retired = conn.execute("SELECT 1 FROM retired WHERE key = ?",
+                               (key,)).fetchone() is not None
+
         return {
             "key": key,
             "title": row["title"],
@@ -330,12 +334,155 @@ def api_dataset(request: Request, response: Response,
             "tags": _json.loads(row["tags"] or "[]"),
             "formats": _json.loads(row["formats_norm"] or "[]"),
             "availability": avail,
+            # Why search may not return this record. Both are absent from
+            # search results, so without saying so the API looks inconsistent
+            # with itself.
+            "duplicate_of": dup["canonical_key"] if dup else None,
+            "retired": retired,
             "resources": resources,
             "related": related,
             "attribution": ATTRIBUTION,
         }
     finally:
         conn.close()
+
+
+@app.get("/dataset", include_in_schema=False)
+def dataset_page(key: str = Query(default="", max_length=500)) -> HTMLResponse:
+    """The dataset page, rendered here rather than in the browser.
+
+    Not rate-limited, unlike /api/dataset: this is three indexed SQLite reads
+    with no model involved, and it's the page we *want* crawled — a limiter
+    here would turn a search engine indexing us into a wall of 429s.
+    """
+    rec = _dataset_record(key) if key else None
+    if rec is None:
+        return HTMLResponse(pagerender.render_missing(key or None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    return HTMLResponse(
+        pagerender.render_dataset(rec, SITE_URL),
+        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
+@app.get("/api/dataset",
+         summary="Dataset detail",
+         responses=RATE_LIMITED_RESPONSE,
+         description="Full record for one dataset: metadata, every resource "
+                     "with its verified availability, CSV column names where "
+                     "peeked, and related datasets.\n\n"
+                     "`duplicate_of` and `retired` explain why a record you "
+                     "can fetch here may never appear in `/api/search`: "
+                     "duplicates are collapsed onto the canonical copy whose "
+                     "key is given, and records the publisher has withdrawn "
+                     "are excluded.")
+def api_dataset(request: Request, response: Response,
+                key: str = Query(min_length=3, max_length=500)) -> dict:
+    _rate_check(request, response)
+    rec = _dataset_record(key)
+    if rec is None:
+        raise HTTPException(status_code=404, detail="Unknown dataset key")
+    return rec
+
+
+# --- Crawlers -----------------------------------------------------------
+#
+# The sitemap lists only the canonical, non-retired records — about 55,000 of
+# the 65,000 we hold. Offering a crawler 9,500 duplicate pages and 900
+# withdrawn ones spends its patience on pages we don't want ranked, and the
+# whole point of the exercise is the pages we do.
+
+SITEMAP_CHUNK = 25_000   # the sitemap spec caps a single file at 50,000 URLs
+
+INDEXABLE = ("FROM datasets d WHERE "
+             "NOT EXISTS (SELECT 1 FROM duplicates x WHERE x.key = d.key) AND "
+             "NOT EXISTS (SELECT 1 FROM retired r WHERE r.key = d.key)")
+
+
+def _indexable_count() -> int:
+    from paths import connect as db_connect
+    conn = db_connect()
+    try:
+        return conn.execute(f"SELECT COUNT(*) {INDEXABLE}").fetchone()[0]
+    finally:
+        conn.close()
+
+
+@app.get("/robots.txt", include_in_schema=False)
+def robots() -> PlainTextResponse:
+    """Crawl the pages, not the search box.
+
+    Every /api/search call runs a sentence transformer — half a second of CPU.
+    A crawler that discovers query URLs will happily fetch thousands of them,
+    so the API is disallowed while the dataset pages, which are cheap and are
+    the actual content, are wide open.
+    """
+    body = ("User-agent: *\n"
+            "Allow: /\n"
+            "Disallow: /api/\n"
+            "Disallow: /docs\n"
+            "Disallow: /redoc\n"
+            "Disallow: /openapi.json\n"
+            f"\nSitemap: {SITE_URL}/sitemap.xml\n")
+    return PlainTextResponse(body, headers={"Cache-Control": "public, max-age=86400"})
+
+
+@app.get("/sitemap.xml", include_in_schema=False)
+def sitemap_index() -> Response:
+    pages = max(1, -(-_indexable_count() // SITEMAP_CHUNK))   # ceil
+    entries = "".join(
+        f"<sitemap><loc>{SITE_URL}/sitemap-{n}.xml</loc></sitemap>"
+        for n in range(1, pages + 1))
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>'
+           '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+           f"{entries}</sitemapindex>")
+    return Response(xml, media_type="application/xml",
+                    headers={"Cache-Control": "public, max-age=86400"})
+
+
+@app.get("/sitemap-{page}.xml", include_in_schema=False)
+def sitemap_page(page: int) -> Response:
+    """One sitemap file, streamed straight off the cursor.
+
+    25,000 URLs is roughly 3 MB of XML. Built as a list that would be 3 MB of
+    process memory on every request; streamed, it's one row at a time, which
+    matters for a service running under a hard memory cap.
+    """
+    import sqlite3
+
+    from paths import connect as db_connect
+
+    if page < 1:
+        raise HTTPException(status_code=404, detail="No such sitemap page")
+
+    def rows():
+        yield ('<?xml version="1.0" encoding="UTF-8"?>'
+               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+        if page == 1:
+            for path, freq in (("/", "daily"), ("/about", "weekly")):
+                yield (f"<url><loc>{SITE_URL}{path}</loc>"
+                       f"<changefreq>{freq}</changefreq></url>")
+        conn = db_connect()
+        try:
+            cur = conn.execute(
+                f"SELECT d.key, d.modified {INDEXABLE} ORDER BY d.key "
+                "LIMIT ? OFFSET ?", (SITEMAP_CHUNK, (page - 1) * SITEMAP_CHUNK))
+            for key, modified in cur:
+                loc = SITE_URL + pagerender.dataset_path(key)
+                # &key= is a literal ampersand; XML needs it escaped or the
+                # file is rejected wholesale, not just that one URL.
+                loc = loc.replace("&", "&amp;")
+                stamp = str(modified or "")[:10]
+                lastmod = (f"<lastmod>{stamp}</lastmod>"
+                           if len(stamp) == 10 and stamp[4] == stamp[7] == "-" else "")
+                yield f"<url><loc>{loc}</loc>{lastmod}</url>"
+        except sqlite3.Error:
+            pass          # a half-written sitemap beats a 500 mid-stream
+        finally:
+            conn.close()
+        yield "</urlset>"
+
+    return StreamingResponse(rows(), media_type="application/xml",
+                             headers={"Cache-Control": "public, max-age=86400"})
 
 
 @app.get("/api/sources", summary="Harvested sources")

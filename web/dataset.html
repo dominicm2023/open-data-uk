@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dataset — UK Open Data Index</title>
+<!--HEAD-->
 <style>
   :root {
     --bg: #f7f7f5; --card: #ffffff; --ink: #1a1a1a; --muted: #6b6b68;
@@ -46,90 +46,15 @@
                display: inline-block; font-size: .95em; }
   ul.related { padding-left: 1.2rem; }
   .note { color: var(--muted); font-size: .9rem; }
+  .notice { background: var(--card); border: 1px solid var(--line);
+            border-left: 3px solid var(--amber); border-radius: .4rem;
+            padding: .7rem .9rem; font-size: .9rem; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <p><a href="/">&larr; Back to search</a></p>
-  <div id="content"><p class="note">Loading…</p></div>
+  <!--BODY-->
 </div>
-
-<script>
-const safeUrl = u => /^https?:\/\//i.test(u || "") ? esc(u) : "#";
-const esc = s => String(s ?? "").replace(/[&<>"]/g,
-  c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const SOURCE_NAMES = {
-  data_gov_uk: "data.gov.uk", london_datastore: "London Datastore",
-  nhsbsa: "NHSBSA", opendatani: "OpenDataNI", datamillnorth: "Data Mill North",
-  historic_england: "Historic England", calderdale: "Calderdale DataWorks",
-  bristol: "Open Data Bristol", glasgow: "Glasgow Open Data",
-};
-const VERDICT = {
-  data: ["data", "✓ data file verified"],
-  api: ["data", "⚙ service endpoint"],
-  webpage: ["webpage", "↪ webpage — more clicking needed"],
-  dead: ["dead", "✗ link dead"],
-  blocked: ["unknown", "? couldn't verify — publisher blocked our check"],
-  nofiles: ["unknown", "no files listed by the publisher"],
-};
-const fmtSize = n => n == null ? "" :
-  n > 1048576 ? (n / 1048576).toFixed(1) + " MB" :
-  n > 1024 ? Math.round(n / 1024) + " KB" : n + " B";
-
-(async () => {
-  const key = new URLSearchParams(location.search).get("key");
-  const el = document.getElementById("content");
-  if (!key) { el.innerHTML = '<p class="note">No dataset key given.</p>'; return; }
-  let d;
-  try {
-    const resp = await fetch(`/api/dataset?key=${encodeURIComponent(key)}`);
-    if (!resp.ok) throw new Error(resp.status);
-    d = await resp.json();
-  } catch (e) {
-    el.innerHTML = `<p class="note">Couldn't load dataset (${esc(e.message)}).</p>`;
-    return;
-  }
-  document.title = `${d.title} — UK Open Data Index`;
-
-  const lic = d.license
-    ? `<span class="chip lic">${esc(d.license)}</span>`
-    : '<span class="chip nolic">no licence stated</span>';
-  const av = d.availability && VERDICT[d.availability]
-    ? `<span class="chip ${VERDICT[d.availability][0]}">${VERDICT[d.availability][1]}</span>` : "";
-
-  const resRows = (d.resources || []).map(r => {
-    const v = r.verdict && VERDICT[r.verdict]
-      ? `<span class="chip ${VERDICT[r.verdict][0]}">${VERDICT[r.verdict][1]}</span>`
-      : '<span class="note">unchecked</span>';
-    const cols = r.columns
-      ? `<div class="cols">${r.columns.slice(0, 12).map(c => `<code>${esc(c)}</code>`).join("")}${r.columns.length > 12 ? "…" : ""}</div>` : "";
-    return `<tr>
-      <td><a href="${safeUrl(r.url)}" rel="noopener">${esc(r.name || r.url.split("/").pop() || "resource")}</a>${cols}</td>
-      <td>${esc(r.format_norm || "?")}</td>
-      <td>${v}</td>
-      <td>${fmtSize(r.size_bytes)}</td>
-    </tr>`;
-  }).join("");
-
-  const related = (d.related || []).map(r =>
-    `<li><a href="/dataset?key=${encodeURIComponent(r.key)}">${esc(r.title)}</a></li>`).join("");
-
-  el.innerHTML = `
-    <h1>${esc(d.title)}</h1>
-    <div class="meta">
-      <span class="chip src">${esc(SOURCE_NAMES[d.source] || d.source)}</span>
-      ${lic} ${av}
-      <span>${esc(d.publisher || "unknown publisher")}</span>
-      ${d.modified ? `<span>· updated ${esc(d.modified.slice(0, 10))}</span>` : ""}
-    </div>
-    <a class="cta" href="${safeUrl(d.landing_url)}" rel="noopener">Open at publisher ↗</a>
-    ${d.description ? `<div class="desc">${esc(d.description)}</div>` : ""}
-    <h2>Files &amp; links (${(d.resources || []).length})</h2>
-    ${resRows ? `<table><thead><tr><th>Resource</th><th>Format</th><th>Verified</th><th>Size</th></tr></thead><tbody>${resRows}</tbody></table>`
-              : '<p class="note">No downloadable resources listed by the publisher.</p>'}
-    ${related ? `<h2>More from ${esc(d.publisher)}</h2><ul class="related">${related}</ul>` : ""}
-    <p class="note">${esc(d.attribution)}</p>`;
-})();
-</script>
 </body>
 </html>

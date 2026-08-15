@@ -72,6 +72,11 @@ CREATE TABLE IF NOT EXISTS datasets (
     harvested_at    TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_datasets_source ON datasets (source_id);
+-- "More from this publisher" on every dataset page. Without this it is a
+-- full scan plus a sort of the whole table: measured at 97 ms per page view
+-- against 65k rows, which is the entire cost of the page.
+CREATE INDEX IF NOT EXISTS idx_datasets_publisher
+    ON datasets (publisher, modified DESC);
 
 -- Geography and update cadence recovered from CKAN "extras". Kept in its own
 -- table so the main dataset row shape (and its positional UPSERT) is untouched.

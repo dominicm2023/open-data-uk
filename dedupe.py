@@ -5,9 +5,17 @@ same dataset often appears 2-3 times. This script groups likely duplicates
 and elects one canonical copy per group; search then collapses the rest.
 
 Duplicate rule (deliberately conservative): identical normalised title AND
-(identical normalised publisher OR exactly one of the pair comes from the
-data_gov_uk aggregator). Generic titles like "Listed Buildings" from two
-different councils both on data.gov.uk are NOT collapsed.
+the two records name the same organisation — either the publisher strings
+match outright, or one is the aggregator's copy of the other and the two
+publisher names agree on who published it once the administrative wrapper
+("City Council", "Metropolitan Borough of") is stripped.
+
+Generic titles are the whole difficulty here. Councils publish dozens of
+identically-named datasets — "Council Spending", "Business Rates", "Fraud" —
+and collapsing Rochdale's onto Leeds's doesn't tidy the index, it deletes
+Rochdale's data from search. When we can't confirm two records are the same
+organisation we keep both: a duplicate we failed to spot costs a reader one
+extra line of results, a wrong merge costs them the dataset entirely.
 
 Canonical election: prefer a source portal over the aggregator, then more
 resources, then most recently modified.
@@ -42,6 +50,73 @@ def norm(text: str | None) -> str:
     return re.sub(r"[^a-z0-9]+", " ", (text or "").lower()).strip()
 
 
+# The administrative wrapper around an authority's name, and nothing else.
+# Deliberately not geo._ORG_WORDS, which also strips topical words: that list
+# reduces both "Historic England" and "Natural England" to "england", and two
+# national bodies that publish very different things would look like one.
+_PUBLISHER_NOISE = {
+    "council", "city", "of", "the", "and", "for", "borough", "district",
+    "county", "metropolitan", "royal", "greater", "combined", "unitary",
+    "authority", "authorities", "london", "corporation", "cbc", "mbc", "dc",
+    "cyngor", "bwrdeistref", "sirol", "comhairle",
+}
+
+
+def who(publisher: str | None) -> frozenset[str]:
+    """The words that say *which* organisation this is.
+
+    "Leeds City Council" and "Leeds" both come out as {leeds}; "Rochdale
+    Borough Council" comes out as {rochdale} and so can never be confused
+    with it.
+    """
+    return frozenset(norm(publisher).split()) - _PUBLISHER_NOISE
+
+
+def mergeable(a, b) -> bool:
+    """May these two same-titled records be treated as one dataset?"""
+    if norm(a["publisher"]) == norm(b["publisher"]):
+        return True
+    # An aggregator copy of a portal's own dataset: same organisation, but
+    # data.gov.uk may spell the name differently from the council's own
+    # portal. Only bridge the two when the names still agree on who published
+    # it — one being a fuller form of the other, never merely overlapping
+    # ("North Yorkshire" and "North Somerset" share a word and are not the
+    # same council).
+    if (a["source_id"] == AGGREGATOR) == (b["source_id"] == AGGREGATOR):
+        return False
+    wa, wb = who(a["publisher"]), who(b["publisher"])
+    return bool(wa) and bool(wb) and (wa <= wb or wb <= wa)
+
+
+def cluster(candidates: list) -> list[list]:
+    """Group same-titled records, every member agreeing with every other.
+
+    Joining on *any* match made merging transitive, and the aggregator sits
+    in the middle of everything: Bristol's "Fraud" merged with data.gov.uk's
+    copy, which merged with Calderdale's, so Bristol's dataset vanished into
+    Calderdale's. Requiring agreement with the whole cluster stops the chain
+    forming.
+    """
+    clusters: list[list] = []
+    for r in candidates:
+        for cl in clusters:
+            if all(mergeable(r, other) for other in cl):
+                cl.append(r)
+                break
+        else:
+            clusters.append([r])
+    return clusters
+
+
+def rank(r) -> tuple:
+    """Which copy of a duplicate group to keep as the canonical one."""
+    return (
+        r["source_id"] != AGGREGATOR,      # prefer the source portal
+        r["resource_count"] or 0,
+        r["modified"] or "",
+    )
+
+
 def main() -> None:
     conn = db_connect()
     conn.row_factory = sqlite3.Row
@@ -74,34 +149,12 @@ def main() -> None:
         if t:
             by_title[t].append(r)
 
-    def mergeable(a: sqlite3.Row, b: sqlite3.Row) -> bool:
-        if norm(a["publisher"]) == norm(b["publisher"]):
-            return True
-        # aggregator copy of a directly-harvested portal's dataset
-        return (a["source_id"] == AGGREGATOR) != (b["source_id"] == AGGREGATOR)
-
-    def rank(r: sqlite3.Row) -> tuple:
-        return (
-            r["source_id"] != AGGREGATOR,      # prefer the source portal
-            r["resource_count"] or 0,
-            r["modified"] or "",
-        )
-
     dup_rows: list[tuple[str, str]] = []
     groups = 0
     for candidates in by_title.values():
         if len(candidates) < 2:
             continue
-        # union-find-lite: greedily cluster mergeable rows
-        clusters: list[list[sqlite3.Row]] = []
-        for r in candidates:
-            for cl in clusters:
-                if any(mergeable(r, other) for other in cl):
-                    cl.append(r)
-                    break
-            else:
-                clusters.append([r])
-        for cl in clusters:
+        for cl in cluster(candidates):
             if len(cl) < 2:
                 continue
             groups += 1

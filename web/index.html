@@ -3,7 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UK Open Data Index</title>
+<title>UK Open Data Index — one search across every UK government data portal</title>
+<meta name="description" content="Search the open data published by UK national, devolved, regional, NHS and local government from one place. We check every link first, so you know whether there is real data behind it before you click.">
+<link rel="canonical" href="https://open-data.org.uk/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UK Open Data Index">
+<meta property="og:title" content="UK Open Data Index">
+<meta property="og:description" content="One search across the UK's scattered open government data — with every link verified.">
+<meta property="og:url" content="https://open-data.org.uk/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"UK Open Data Index",
+ "url":"https://open-data.org.uk/","inLanguage":"en-GB",
+ "potentialAction":{"@type":"SearchAction",
+   "target":{"@type":"EntryPoint","urlTemplate":"https://open-data.org.uk/?q={search_term_string}"},
+   "query-input":"required name=search_term_string"}}
+</script>
 <style>
   :root {
     --bg: #f7f7f5; --card: #ffffff; --ink: #1a1a1a; --muted: #6b6b68;
@@ -190,9 +205,15 @@ function render(payload) {
 }
 
 let inflight = null;
-async function search() {
+async function search(push = true) {
   const q = $("q").value.trim();
   if (!q) return;
+  // Put the query in the address bar so a search can be linked to, shared or
+  // bookmarked — and so the back button steps through searches rather than
+  // leaving the page.
+  if (push && new URLSearchParams(location.search).get("q") !== q)
+    history.pushState({q}, "", "/?q=" + encodeURIComponent(q));
+  document.title = `${q} — UK Open Data Index`;
   $("out").innerHTML = '<p class="note">Searching…</p>';
   if (inflight) inflight.abort();
   inflight = new AbortController();
@@ -207,6 +228,16 @@ async function search() {
 }
 
 $("searchform").addEventListener("submit", e => { e.preventDefault(); search(); });
+
+function fromUrl() {
+  const q = new URLSearchParams(location.search).get("q") || "";
+  $("q").value = q;
+  if (q) search(false);
+  else { $("out").innerHTML = ""; document.title = "UK Open Data Index"; }
+}
+window.addEventListener("popstate", fromUrl);
+fromUrl();
+
 loadStats();
 setInterval(loadStats, 30000);
 </script>
