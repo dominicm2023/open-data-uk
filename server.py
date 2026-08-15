@@ -15,7 +15,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 import yaml
-from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
@@ -23,6 +23,7 @@ from querylog import log_query
 from search import SearchEngine
 
 ROOT = Path(__file__).parent
+REPO_URL = "https://github.com/dominicm2023/open-data-uk"
 ATTRIBUTION = ("Contains public sector information licensed under the Open "
                "Government Licence v3.0 and other licences as stated per "
                "dataset. Metadata collated by the UK Open Data Index.")
@@ -105,18 +106,39 @@ def _prune_hits(now: float) -> None:
         del _hits[ip]
 
 
-def _rate_check(request: Request) -> None:
+def _rate_check(request: Request, response: Response) -> None:
+    """Enforce the fair-use limit, and always tell the client where it stands.
+
+    Without Retry-After and a remaining count a client can only discover the
+    limit by hitting it, then guess how long to wait — so a well-behaved
+    integration ends up looking like a badly-behaved one.
+    """
     ip = _client_ip(request)
     now = time.time()
     _prune_hits(now)
     dq = _hits[ip]
     while dq and dq[0] < now - RATE_WINDOW:
         dq.popleft()
+
+    reset_in = int(dq[0] + RATE_WINDOW - now) + 1 if dq else RATE_WINDOW
+    response.headers["X-RateLimit-Limit"] = str(RATE_LIMIT)
+    response.headers["X-RateLimit-Reset"] = str(reset_in)
+    # Counts THIS request, as GitHub and friends do — reporting the budget
+    # before consuming it makes a client think it has one more than it does,
+    # then hit a 429 it thought it had room for.
+    response.headers["X-RateLimit-Remaining"] = str(max(0, RATE_LIMIT - len(dq) - 1))
+
     if len(dq) >= RATE_LIMIT:
         raise HTTPException(
             status_code=429,
-            detail=f"Rate limit: {RATE_LIMIT} searches per minute. "
-                   "For bulk access, please get in touch instead of scraping.",
+            detail=(f"Rate limit: {RATE_LIMIT} requests per minute. "
+                    f"Retry in {reset_in}s. Need more? The whole index is "
+                    "rebuildable from open source — see "
+                    f"{REPO_URL} — or open an issue there to talk about bulk access."),
+            headers={"Retry-After": str(reset_in),
+                     "X-RateLimit-Limit": str(RATE_LIMIT),
+                     "X-RateLimit-Remaining": "0",
+                     "X-RateLimit-Reset": str(reset_in)},
         )
     dq.append(now)
 
@@ -133,8 +155,22 @@ def about() -> FileResponse:
                         headers={"Cache-Control": "no-cache"})
 
 
+RATE_LIMITED_RESPONSE = {
+    429: {
+        "description": (
+            "Rate limit exceeded. Carries `Retry-After` (seconds) and "
+            "`X-RateLimit-Reset`; every successful response also carries "
+            "`X-RateLimit-Remaining` so you can pace yourself rather than "
+            "discover the limit by hitting it."),
+        "content": {"application/json": {
+            "example": {"detail": "Rate limit: 30 requests per minute. Retry in 42s. ..."}}},
+    }
+}
+
+
 @app.get("/api/search",
          summary="Search the index",
+         responses=RATE_LIMITED_RESPONSE,
          description=(
              "Hybrid semantic + keyword search over dataset metadata, with a "
              "geographic arm when the query names a UK place.\n\n"
@@ -148,13 +184,17 @@ def about() -> FileResponse:
              "`geo.in_results` is the honest coverage signal: false means we "
              "hold no data published about that place, whatever the "
              "confidence says."))
-def api_search(request: Request,
+def api_search(request: Request, response: Response,
                q: str = Query(min_length=1, max_length=500,
                               description="Plain-English search query"),
                k: int = Query(default=10, ge=1, le=50,
-                              description="Number of results")) -> dict:
-    _rate_check(request)
-    payload = engine.search(q, k)
+                              description="Results to return (max 50)"),
+               offset: int = Query(default=0, ge=0, le=200,
+                                   description="Skip this many results, for "
+                                               "paging past the first page "
+                                               "(max 200)")) -> dict:
+    _rate_check(request, response)
+    payload = engine.search(q, k, offset=offset)
     log_query(q, k, payload)   # anonymous; see querylog.py
     payload["attribution"] = ATTRIBUTION
     return payload
@@ -173,16 +213,17 @@ def dataset_page() -> FileResponse:
 
 @app.get("/api/dataset",
          summary="Dataset detail",
+         responses=RATE_LIMITED_RESPONSE,
          description="Full record for one dataset: metadata, every resource "
                      "with its verified availability, CSV column names where "
                      "peeked, and related datasets.")
-def api_dataset(request: Request,
+def api_dataset(request: Request, response: Response,
                 key: str = Query(min_length=3, max_length=500)) -> dict:
     import json as _json
     import sqlite3
     from paths import connect as db_connect
 
-    _rate_check(request)   # opens a DB connection per call — worth limiting
+    _rate_check(request, response)   # opens a DB connection per call
     conn = db_connect()
     conn.row_factory = sqlite3.Row
     try:

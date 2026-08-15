@@ -121,8 +121,25 @@ curl "https://data.groundwatercast.com/api/search?q=flood+risk+in+brighton&k=3"
 }
 ```
 
-Also `GET /api/dataset?key=...`, `GET /api/stats`, `GET /api/sources`.
+Also `GET /api/dataset?key=...`, `GET /api/stats`, `GET /api/sources`, and a
+machine-readable spec at [`/openapi.json`](https://data.groundwatercast.com/openapi.json).
 Please keep the `attribution` field when republishing results.
+
+**Paging.** `k` returns up to 50; add `offset` (max 200) to page further.
+Responses carry `offset` and `available` — how many ranked candidates exist
+for that query, so you know when to stop.
+
+**Rate limiting.** 30 requests/minute per IP. Every response carries
+`X-RateLimit-Limit`, `X-RateLimit-Remaining` and `X-RateLimit-Reset`, so you
+can pace yourself rather than discover the limit by hitting it; a 429 also
+carries `Retry-After`. If you need more than that, don't scrape us — the
+whole index is rebuildable from this repo in about an hour, or
+[open an issue](https://github.com/dominicm2023/open-data-uk/issues) and
+let's talk.
+
+**Not there yet:** no filtering by source, licence or format, and no bulk
+export endpoint. If you want either, say so in an issue — knowing what
+people actually need beats guessing.
 
 ## Contributing
 

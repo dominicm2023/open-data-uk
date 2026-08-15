@@ -262,7 +262,7 @@ class SearchEngine:
             return {}, set()
         return dups, retired
 
-    def search(self, query: str, k: int = 10) -> dict:
+    def search(self, query: str, k: int = 10, offset: int = 0) -> dict:
         conn = self._conn()
         try:
             if self._place_vocab is None:
@@ -314,7 +314,9 @@ class SearchEngine:
                     continue
                 collapsed[canon] = max(collapsed.get(canon, 0.0), score)
 
-            top = sorted(collapsed, key=collapsed.get, reverse=True)[:k]
+            ranked = sorted(collapsed, key=collapsed.get, reverse=True)
+            total = len(ranked)
+            top = ranked[offset:offset + k]
             results = []
             for key in top:
                 row = conn.execute(
@@ -370,6 +372,12 @@ class SearchEngine:
                 "query": query,
                 "confidence": confidence,
                 "top_similarity": round(top_sim, 3),
+                "offset": offset,
+                # How many ranked candidates exist for this query. Not the
+                # number of matching datasets in the index — retrieval is
+                # capped at CANDIDATES per arm — so it is an honest "how much
+                # more can you page through", not a corpus-wide total.
+                "available": total,
                 "geo": geo,
                 "results": results,
             }
