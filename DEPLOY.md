@@ -23,7 +23,7 @@ our memory** so a bug in our service can never starve theirs.
 
 ## Decisions needed before starting
 
-1. **DNS.** Hostname is `data.groundwatercast.com`; the A record doesn't
+1. **DNS.** Hostname is `open-data.org.uk`; the A record doesn't
    exist yet and must be created in Cloudflare — see Step 5a for the
    proxied-vs-DNS-only choice.
 2. **Whether to use sudo.** Steps 4–6 (systemd, Caddy, logrotate) need root.
@@ -221,31 +221,37 @@ systemctl status opendata-index --no-pager
 
 ## Step 5 — DNS and Caddy site
 
-Hostname: **`data.groundwatercast.com`**.
+Hostname: **`open-data.org.uk`**.
 
-### 5a. The Cloudflare decision
+### 5a. DNS
 
-`groundwatercast.com` resolves to 104.21.59.55 / 172.67.215.31 — Cloudflare
-IPs, not the box. The apex is **proxied**, so the new record has two options:
+The domain is registered at OVH and its **nameservers point at Cloudflare**,
+so all records live in the Cloudflare zone for `open-data.org.uk`. Two
+records, both **proxied** (orange cloud):
 
-| | Proxied (orange cloud) | DNS-only (grey cloud) |
-|---|---|---|
-| A record | `data` → <your-origin-ip>, Proxied | `data` → <your-origin-ip>, DNS only |
-| Origin IP | hidden, as the apex is today | published for this hostname |
-| TLS | Cloudflare public + Caddy origin cert | Caddy cert only |
-| Extras | DDoS protection, caching, matches `purge_cf` tooling | none |
-| Risk | breaks if Cloudflare SSL mode is **Flexible** (redirect loop) | none |
+| Name | Type | Value | Proxy |
+|---|---|---|---|
+| `open-data.org.uk` (apex, shown as `@`) | A | `<your-origin-ip>` | Proxied |
+| `www` | A | `<your-origin-ip>` | Proxied |
 
-**Recommended: proxied**, for consistency with the apex and because Caddy
-already serves the proxied apex successfully from this box — which is
-itself proof the SSL mode is Full or Full (strict), not Flexible.
+Proxied hides the origin IP and gives DDoS protection and caching, matching
+how groundwatercast.com is already served from this box. It only breaks if
+Cloudflare's SSL mode is **Flexible** (redirect loop) — Full or Full (strict)
+is required, which the existing apex already proves is set.
 
-Creating the record is a change in your Cloudflare account, so it's yours
-to make (Cloudflare dashboard → groundwatercast.com → DNS → Add record).
+> **DNSSEC and nameserver changes don't mix.** If the registrar has DNSSEC
+> enabled with DS records for the *old* nameservers, resolvers reject the
+> zone once the nameservers change. Turn DNSSEC off at the registrar before
+> the switch, then re-enable it from Cloudflare's side afterwards.
 
-**Verify before continuing:** `dig +short data.groundwatercast.com` returns
+**Verify before continuing:** `dig +short open-data.org.uk` returns
 addresses. Caddy cannot issue a certificate for a name that doesn't resolve,
 so this must be done first.
+
+> Certificate issuance can fail for a few minutes after a DNS change with
+> *"During secondary validation: <old IP>"* — Let's Encrypt validates from
+> several vantage points and one of them is still holding a stale answer.
+> It clears itself; Caddy retries automatically.
 
 ### 5b. Caddy
 
@@ -253,9 +259,19 @@ Caddy 2.11.4 already owns :80/:443. Append a block to `/etc/caddy/Caddyfile`
 (leave the existing groundwatercast blocks untouched):
 
 ```caddy
-data.groundwatercast.com {
+open-data.org.uk, www.open-data.org.uk {
 	encode gzip
 	reverse_proxy 127.0.0.1:8010
+}
+```
+
+If the site previously answered on another hostname, don't just delete its
+block — replace the body with a permanent redirect so existing links and
+search results keep working:
+
+```caddy
+data.groundwatercast.com {
+	redir https://open-data.org.uk{uri} permanent
 }
 ```
 
@@ -274,7 +290,7 @@ sudo systemctl reload caddy                          # reload, not restart
 groundwatercast serving throughout, and a config error caught by `validate`
 never reaches the running server.
 
-**Verify:** `curl -sI https://data.groundwatercast.com` returns 200, and
+**Verify:** `curl -sI https://open-data.org.uk` returns 200, and
 groundwatercast.com still loads.
 
 ---
@@ -323,7 +339,7 @@ crontab -e                                    # delete the 20 14 line
 sudo systemctl disable --now opendata-index
 sudo rm /etc/systemd/system/opendata-index.service /etc/logrotate.d/opendata-index
 sudo systemctl daemon-reload
-sudo nano /etc/caddy/Caddyfile                # delete the data.groundwatercast.com block
+sudo nano /etc/caddy/Caddyfile                # delete the open-data.org.uk block
 sudo caddy validate --config /etc/caddy/Caddyfile && sudo systemctl reload caddy
 rm -rf ~/opendata-index
 ```

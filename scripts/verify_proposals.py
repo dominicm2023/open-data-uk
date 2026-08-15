@@ -23,7 +23,7 @@ from concurrent.futures import ThreadPoolExecutor
 import requests
 
 UA = {"User-Agent": "uk-open-data-index/0.2 (source verification; "
-                    "+https://data.groundwatercast.com/about)"}
+                    "+https://open-data.org.uk/about)"}
 TIMEOUT = 25
 MIN_DATASETS = 5   # below this it's a single product, not a catalogue
 

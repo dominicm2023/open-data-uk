@@ -1,8 +1,8 @@
 # UK Open Data Index
 
 **One search across 75,000+ UK government datasets, from 43 portals.**
-Live at **[data.groundwatercast.com](https://data.groundwatercast.com)** ·
-[open API](https://data.groundwatercast.com/docs) · no tracking, no sign-up.
+Live at **[open-data.org.uk](https://open-data.org.uk)** ·
+[open API](https://open-data.org.uk/docs) · no tracking, no sign-up.
 
 [![Validate sources](https://github.com/dominicm2023/open-data-uk/actions/workflows/validate-sources.yml/badge.svg)](https://github.com/dominicm2023/open-data-uk/actions/workflows/validate-sources.yml)
 
@@ -65,7 +65,7 @@ ONS Open Geography Portal, London Datastore, NHSBSA, OpenDataNI, Natural
 England, the Forestry Commission, NatureScot, Scotland's Spatial Hub, the
 North Sea Transition Authority, Historic England, and councils from
 Aberdeen to Canterbury. The full, live list is at
-[`/api/sources`](https://data.groundwatercast.com/api/sources).
+[`/api/sources`](https://open-data.org.uk/api/sources).
 
 New portals are found deterministically rather than by hand: see
 [`scripts/discover_sources.py`](scripts/discover_sources.py), which mines
@@ -89,10 +89,10 @@ job, and the [`Dockerfile`](Dockerfile) for deployment.
 
 Everything the search box does is a public JSON API — CORS enabled, no key
 needed, 30 searches/minute per IP. Interactive docs at
-[`/docs`](https://data.groundwatercast.com/docs).
+[`/docs`](https://open-data.org.uk/docs).
 
 ```bash
-curl "https://data.groundwatercast.com/api/search?q=flood+risk+in+brighton&k=3"
+curl "https://open-data.org.uk/api/search?q=flood+risk+in+brighton&k=3"
 ```
 
 ```jsonc
@@ -122,7 +122,7 @@ curl "https://data.groundwatercast.com/api/search?q=flood+risk+in+brighton&k=3"
 ```
 
 Also `GET /api/dataset?key=...`, `GET /api/stats`, `GET /api/sources`, and a
-machine-readable spec at [`/openapi.json`](https://data.groundwatercast.com/openapi.json).
+machine-readable spec at [`/openapi.json`](https://open-data.org.uk/openapi.json).
 Please keep the `attribution` field when republishing results.
 
 **Paging.** `k` returns up to 50; add `offset` (max 200) to page further.

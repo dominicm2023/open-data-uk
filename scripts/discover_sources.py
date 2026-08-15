@@ -40,7 +40,7 @@ from geo import _ORG_WORDS  # noqa: E402  (reuse: same "strip the org words" job
 from paths import connect as db_connect  # noqa: E402
 
 ROOT = Path(__file__).parent.parent
-UA = {"User-Agent": "uk-open-data-index/0.2 (source discovery; +https://data.groundwatercast.com/about)"}
+UA = {"User-Agent": "uk-open-data-index/0.2 (source discovery; +https://open-data.org.uk/about)"}
 TIMEOUT = 8   # a real portal answers fast; anything slower isn't worth the wait
 
 # Hostname shapes councils and agencies actually use

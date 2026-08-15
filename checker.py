@@ -55,7 +55,7 @@ from paths import DB_PATH, connect as db_connect
 # Identify ourselves honestly, with a contact URL — the conventional polite
 # -bot format, and far less likely to trip a WAF than a bare tool token.
 UA = ("Mozilla/5.0 (compatible; uk-open-data-index/0.2; "
-      "+https://data.groundwatercast.com/about)")
+      "+https://open-data.org.uk/about)")
 TIMEOUT = 12
 CSV_PEEK_BYTES = 16384
 MAX_COLUMNS = 40
