@@ -132,7 +132,10 @@ for that query, so you know when to stop.
 **Rate limiting.** 30 requests/minute per IP. Every response carries
 `X-RateLimit-Limit`, `X-RateLimit-Remaining` and `X-RateLimit-Reset`, so you
 can pace yourself rather than discover the limit by hitting it; a 429 also
-carries `Retry-After`. If you need more than that, don't scrape us — the
+carries `Retry-After`. The count is kept per server process, so in practice
+you'll often get more headroom and `Remaining` can jump between responses —
+stay under 30/min and you'll never be limited; above that is luck, not a
+contract. If you need more than that, don't scrape us — the
 whole index is rebuildable from this repo in about an hour, or
 [open an issue](https://github.com/dominicm2023/open-data-uk/issues) and
 let's talk.

@@ -70,11 +70,20 @@ class SearchEngine:
         self._keys: list[str] = []
         self._emb_mtime = 0.0
         self._place_vocab: set[str] | None = None
+        self._dup_cache: tuple[dict, set] | None = None
+        self._dup_mtime = 0.0
 
     @property
     def model(self):
         if self._model is None:
+            import torch
             from sentence_transformers import SentenceTransformer
+            # One thread per request. Encoding a single short query takes
+            # ~12 ms; letting torch grab all 8 cores for it just makes
+            # concurrent requests fight each other, which is worse than
+            # useless when the real concurrency comes from serving many
+            # users at once rather than one query faster.
+            torch.set_num_threads(1)
             self._model = SentenceTransformer(MODEL_NAME)
         return self._model
 
@@ -241,26 +250,54 @@ class SearchEngine:
             return {}
         return {r[0]: (r[1], r[2] or 0) for r in rows}
 
-    def _columns_for(self, conn: sqlite3.Connection, key: str) -> list[str] | None:
-        """CSV column names peeked by checker.py, if any resource has them."""
+    @staticmethod
+    def _columns_for_keys(conn: sqlite3.Connection,
+                          keys: list[str]) -> dict[str, list[str]]:
+        """CSV column names per dataset, for the whole result page at once.
+
+        One query for the page rather than one per result — at k=50 that was
+        50 round trips to render a single response.
+        """
+        if not keys:
+            return {}
+        marks = ",".join("?" * len(keys))
         try:
-            row = conn.execute(
-                "SELECT c.columns FROM resources r "
-                "JOIN resource_checks c ON c.url = r.url "
-                "WHERE r.dataset_key = ? AND c.columns IS NOT NULL LIMIT 1",
-                (key,)).fetchone()
+            rows = conn.execute(
+                f"SELECT r.dataset_key, c.columns FROM resources r "
+                f"JOIN resource_checks c ON c.url = r.url "
+                f"WHERE r.dataset_key IN ({marks}) AND c.columns IS NOT NULL",
+                keys).fetchall()
         except sqlite3.OperationalError:
-            return None
-        return json.loads(row[0]) if row else None
+            return {}
+        out: dict[str, list[str]] = {}
+        for key, cols in rows:
+            if key not in out:          # first resource with columns wins
+                out[key] = json.loads(cols)
+        return out
 
     def _dup_and_retired(self, conn: sqlite3.Connection) -> tuple[dict, set]:
+        """Duplicate and retired keys, cached in memory.
+
+        These tables only change when dedupe.py runs, but re-reading all
+        ~19,000 rows on *every* search was the single biggest cost in a
+        query — far more than the embedding maths. Cached against the
+        database's mtime so a nightly refresh is still picked up without a
+        restart.
+        """
         try:
-            dups = dict(conn.execute(
-                "SELECT key, canonical_key FROM duplicates").fetchall())
-            retired = {r[0] for r in conn.execute("SELECT key FROM retired")}
-        except sqlite3.OperationalError:  # dedupe.py not run yet
-            return {}, set()
-        return dups, retired
+            mtime = DB_PATH.stat().st_mtime
+        except OSError:
+            mtime = 0.0
+        if self._dup_cache is None or mtime > self._dup_mtime:
+            try:
+                dups = dict(conn.execute(
+                    "SELECT key, canonical_key FROM duplicates").fetchall())
+                retired = {r[0] for r in conn.execute("SELECT key FROM retired")}
+            except sqlite3.OperationalError:  # dedupe.py not run yet
+                return {}, set()
+            self._dup_cache = (dups, retired)
+            self._dup_mtime = mtime
+        return self._dup_cache
 
     def search(self, query: str, k: int = 10, offset: int = 0) -> dict:
         conn = self._conn()
@@ -317,6 +354,7 @@ class SearchEngine:
             ranked = sorted(collapsed, key=collapsed.get, reverse=True)
             total = len(ranked)
             top = ranked[offset:offset + k]
+            columns_by_key = self._columns_for_keys(conn, top)
             results = []
             for key in top:
                 row = conn.execute(
@@ -337,7 +375,7 @@ class SearchEngine:
                     "url": row["landing_url"],
                     "description": (row["description"] or "")[:280],
                     "availability": verdict,
-                    "columns": self._columns_for(conn, key),
+                    "columns": columns_by_key.get(key),
                     "covers_place": key in geo_set or None,
                 })
 

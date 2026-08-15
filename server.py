@@ -161,7 +161,12 @@ RATE_LIMITED_RESPONSE = {
             "Rate limit exceeded. Carries `Retry-After` (seconds) and "
             "`X-RateLimit-Reset`; every successful response also carries "
             "`X-RateLimit-Remaining` so you can pace yourself rather than "
-            "discover the limit by hitting it."),
+            "discover the limit by hitting it.\n\n"
+            "The limit is counted per server process, so with several "
+            "processes running you will often get more headroom than the "
+            "stated 30/min and `X-RateLimit-Remaining` may jump between "
+            "responses. Stay under 30/min and you will never be limited; "
+            "anything above that is luck, not contract."),
         "content": {"application/json": {
             "example": {"detail": "Rate limit: 30 requests per minute. Retry in 42s. ..."}}},
     }
