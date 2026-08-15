@@ -68,14 +68,16 @@
   <p>When we harvested the full catalogue, the metadata quality problem was
   worse than expected:</p>
   <div class="stat-row">
-    <div class="stat bad"><b>33%</b><span>state no licence — you can't legally know if you may reuse them</span></div>
+    <div class="stat bad"><b>34%</b><span>state no licence — you can't legally know if you may reuse them</span></div>
     <div class="stat bad"><b>40%</b><span>haven't been updated in over two years — though most were never meant to be</span></div>
-    <div class="stat bad"><b>25%</b><span>are duplicate copies of another catalogue's entry</span></div>
+    <div class="stat bad"><b>20%</b><span>are duplicate copies of another catalogue's entry</span></div>
   </div>
-  <p>Of the links we've verified, <strong>40% give you machine-readable
-  data</strong> — 15% a direct file, 25% an API you can query. Another
-  <strong>36% just lead to a webpage</strong>, where the hunt continues;
-  12% are genuinely broken, and 12% we couldn't check because the publisher
+  <p>We've followed the links on 97% of the catalogue. Of those,
+  <strong>36% give you machine-readable data</strong> — 12% a direct file,
+  24% an API you can query. Another <strong>30% just lead to a
+  webpage</strong>, where the hunt continues. For <strong>14% the publisher
+  lists no files at all</strong>, so there is nothing for us to follow; 10%
+  are genuinely broken, and 10% we couldn't check because the publisher
   blocked us.</p>
   <p>We normalise what can be normalised — hundreds of spellings of file
   formats and dozens of licence variants collapse to a consistent
@@ -91,12 +93,19 @@
   which is why coverage is far better than it first appears) and to links
   (a publisher blocking our checker is reported as "not verified", never as
   "dead").</p>
+  <p>Collapsing duplicates gets the same treatment. Councils publish dozens
+  of identically-titled datasets — "Council Spending", "Business Rates" —
+  and Rochdale's is not Leeds's. We only merge two records when we can
+  confirm they come from the same organisation, so a duplicate we fail to
+  spot costs you one extra line of results, rather than a wrong merge
+  costing you the dataset entirely.</p>
   <p>Those figures cover the <em>whole</em> harvested catalogue, including a
-  long tail of obscure records almost nobody reaches. Among the datasets you
-  can actually find through search — excluding collapsed duplicates and
-  retired records — licensing is better (28% state none) though the link
-  quality is much the same. We quote the whole-catalogue numbers because
-  they describe the real state of UK open data, not the flattering subset.</p>
+  long tail of obscure records almost nobody reaches. Among the 60,000-odd
+  datasets you can actually find through search — excluding collapsed
+  duplicates and retired records — licensing is better (29% state none)
+  though the link quality is much the same. We quote the whole-catalogue
+  numbers because they describe the real state of UK open data, not the
+  flattering subset.</p>
   <p class="note">All figures are measured from the index and shift as we add
   sources.</p>
 

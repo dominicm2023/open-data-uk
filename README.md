@@ -1,6 +1,6 @@
 # UK Open Data Index
 
-**One search across 75,000+ UK government datasets, from 43 portals.**
+**One search across 77,000+ UK government datasets, from 43 portals.**
 Live at **[open-data.org.uk](https://open-data.org.uk)** ·
 [open API](https://open-data.org.uk/docs) · no tracking, no sign-up.
 
@@ -30,10 +30,11 @@ publisher's own page, under the publisher's own licence.
 
 ### What we found building it
 
-Measured across the whole catalogue: **33%** of datasets state no licence,
-**40%** haven't been updated in two years, **25%** are duplicate copies of
-another portal's entry, and of the links we've verified only **40%** give
-you machine-readable data — **36%** just lead to another webpage.
+Measured across the whole catalogue: **34%** of datasets state no licence,
+**40%** haven't been updated in two years, **20%** are duplicate copies of
+another portal's entry, and of the links we've verified only **36%** give
+you machine-readable data — **30%** just lead to another webpage, and for
+**14%** the publisher lists no files at all.
 
 Those numbers are worse than they need to be, and we're careful not to make
 them look worse than they are. A publisher whose server blocks our checker
@@ -41,7 +42,7 @@ is reported as "not verified", never "dead". A dataset that declares it will
 never be updated again isn't counted as neglected. An API endpoint counts as
 usable data, not a miss. And a licence recorded in a non-standard field
 still counts as a licence — fixing that one bug alone moved the "no licence"
-figure from 56% to 33%.
+figure from 56% to 34%.
 
 ## What's here
 
@@ -56,11 +57,13 @@ figure from 56% to 33%.
 | Hybrid search engine | [`search.py`](search.py) — semantic + BM25 fusion, rare-term and publisher boosts, confidence signal |
 | Query-time geography | [`geo.py`](geo.py) — place detection, honest coverage reporting |
 | Web UI + JSON API | [`server.py`](server.py), [`web/`](web) — docs at `/docs` |
+| Server-rendered dataset pages | [`pagerender.py`](pagerender.py) — titles, snippets, canonical URLs and schema.org markup for 60,000 pages |
 | Data-quality report | [`report.py`](report.py) |
 | Relevance regression suite | [`scripts/relevance_test.py`](scripts/relevance_test.py) — 12 cases; **run it before and after any ranking change** |
+| Unit tests (no index needed) | [`scripts/dedupe_test.py`](scripts/dedupe_test.py), [`scripts/render_test.py`](scripts/render_test.py) — the rules that decide what search hides, and what gets escaped |
 | What people actually search for | [`scripts/query_report.py`](scripts/query_report.py) — over the anonymous query log |
 
-Currently indexing **75,000+ datasets from 43 portals** — data.gov.uk, the
+Currently indexing **77,000+ datasets from 43 portals** — data.gov.uk, the
 ONS Open Geography Portal, London Datastore, NHSBSA, OpenDataNI, Natural
 England, the Forestry Commission, NatureScot, Scotland's Spatial Hub, the
 North Sea Transition Authority, Historic England, and councils from
@@ -76,7 +79,7 @@ council hostnames against the API patterns we support.
 
 ```
 pip install -r requirements.txt
-python harvester.py            # full harvest (~65k datasets, ~10 min)
+python harvester.py            # full harvest (~77k datasets, ~12 min)
 python embed_index.py          # embed + build keyword index (CPU, ~40 min first run)
 python dedupe.py               # mark duplicates + retired records
 uvicorn server:app --port 8000 # UI at /, API docs at /docs

@@ -175,13 +175,19 @@ WorkingDirectory=/home/ubuntu/opendata-index
 Environment=DATA_DIR=/home/ubuntu/opendata-index/data
 Environment=HF_HOME=/home/ubuntu/opendata-index/model-cache
 ExecStart=/home/ubuntu/opendata-index/.venv/bin/uvicorn server:app \
-          --host 127.0.0.1 --port 8010 --no-proxy-headers
+          --host 127.0.0.1 --port 8010 --no-proxy-headers --workers 4
 Restart=on-failure
 RestartSec=10
 
-# Hard ceiling: the app measures 570 MB, so 1.2 GB is generous headroom
-# while still guaranteeing it can never crowd out groundwatercast.
-MemoryMax=1200M
+# Four workers, because one serves ~1.3 requests/second: a search spends
+# most of its time in the embedding model, holding the GIL, so a single
+# process serialises every visitor behind the slowest query.
+#
+# Each worker loads its own copy of the model and its own memory-mapped
+# vectors, so the cgroup sits around 1.9 GB in steady state (the box has
+# 20 GB spare). 3 GB is the ceiling that still guarantees we can never
+# crowd out groundwatercast.
+MemoryMax=3G
 CPUWeight=50
 
 NoNewPrivileges=true
@@ -201,7 +207,10 @@ systemctl status opendata-index --no-pager
 ```
 
 **Verify:** `curl -s http://127.0.0.1:8010/api/stats` returns JSON, and
-`systemctl show opendata-index -p MemoryCurrent` shows well under the cap.
+`systemctl show opendata-index -p MemoryCurrent` shows under the cap.
+(`MemoryCurrent` counts page cache for the 400 MB index too, so expect a
+figure well above the sum of the processes' resident sizes — cache is
+reclaimable and the cap will evict it rather than kill anything.)
 
 > `ProtectHome=read-only` lets the service read its own code and model cache
 > while making the rest of `/home` read-only to it — `ReadWritePaths` carves
