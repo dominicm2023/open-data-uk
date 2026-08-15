@@ -30,17 +30,18 @@ publisher's own page, under the publisher's own licence.
 
 ### What we found building it
 
-Measured across the whole catalogue: **32%** of datasets state no licence,
-**41%** haven't been updated in two years, **24%** are duplicate copies of
-another portal's entry, and of the links we've verified only **16%** lead to
-an actual data file.
+Measured across the whole catalogue: **33%** of datasets state no licence,
+**40%** haven't been updated in two years, **25%** are duplicate copies of
+another portal's entry, and of the links we've verified only **40%** give
+you machine-readable data — **36%** just lead to another webpage.
 
 Those numbers are worse than they need to be, and we're careful not to make
 them look worse than they are. A publisher whose server blocks our checker
 is reported as "not verified", never "dead". A dataset that declares it will
-never be updated again isn't counted as neglected. A licence recorded in a
-non-standard field still counts as a licence — fixing that one bug moved the
-"no licence" figure from 56% to 32%.
+never be updated again isn't counted as neglected. An API endpoint counts as
+usable data, not a miss. And a licence recorded in a non-standard field
+still counts as a licence — fixing that one bug alone moved the "no licence"
+figure from 56% to 33%.
 
 ## What's here
 
@@ -56,6 +57,8 @@ non-standard field still counts as a licence — fixing that one bug moved the
 | Query-time geography | [`geo.py`](geo.py) — place detection, honest coverage reporting |
 | Web UI + JSON API | [`server.py`](server.py), [`web/`](web) — docs at `/docs` |
 | Data-quality report | [`report.py`](report.py) |
+| Relevance regression suite | [`scripts/relevance_test.py`](scripts/relevance_test.py) — 12 cases; **run it before and after any ranking change** |
+| What people actually search for | [`scripts/query_report.py`](scripts/query_report.py) — over the anonymous query log |
 
 Currently indexing **75,000+ datasets from 43 portals** — data.gov.uk, the
 ONS Open Geography Portal, London Datastore, NHSBSA, OpenDataNI, Natural
@@ -137,10 +140,23 @@ metadata and link out to the publisher, so check the licence shown on a
 dataset (and on the publisher's own page) before reusing it. API responses
 carry an `attribution` field for this reason; please keep it.
 
-## Roadmap (post-MVP)
+## Roadmap
 
-- AI discovery assistant (RAG over the metadata) and MCP endpoint
-- Dataset change alerts / monitoring
-- LLM metadata enrichment for the 56% with no licence
-- More harvester protocols: Socrata, ONS API, bare-file sources
-- Series grouping and a proper reranker
+Verified-but-not-yet-harvestable portals are tracked in
+[PLATFORM_BACKLOG.md](PLATFORM_BACKLOG.md) — roughly 7,000 datasets behind
+three adapters. Next up:
+
+- **A GeoNode harvester**, mainly for DataMap Wales (1,927 datasets). Welsh
+  coverage is our weakest geography, so this is the highest-value single
+  adapter left.
+- **An MCP endpoint**, so other people's AI tools can query the index
+  directly — the cheapest way to make UK open data visible to assistants.
+- **Change alerts** — tell me when this dataset updates, goes stale, or
+  disappears. Nobody offers this and the harvester already detects it.
+- **Metadata enrichment** for the third of datasets with no stated licence
+  and the many with unusable descriptions — clearly marked as inferred,
+  never presented as harvested fact.
+- **A settlement-level gazetteer.** Place lookup currently resolves local
+  authorities, so "Hackney Wick" doesn't geocode.
+- **Series grouping and a reranker** — annual editions currently appear as
+  separate results.
