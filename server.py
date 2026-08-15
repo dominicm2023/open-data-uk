@@ -135,9 +135,19 @@ def about() -> FileResponse:
 
 @app.get("/api/search",
          summary="Search the index",
-         description="Hybrid semantic + keyword search. Returns ranked "
-                     "datasets with a confidence signal and, when the query "
-                     "names a UK place, a geographic coverage report.")
+         description=(
+             "Hybrid semantic + keyword search over dataset metadata, with a "
+             "geographic arm when the query names a UK place.\n\n"
+             "**What `confidence` means, and doesn't.** It measures how "
+             "closely the index matched your *words* — `strong` means we "
+             "found datasets that are clearly about your subject. It does "
+             "**not** mean your question is answered: if the UK publishes no "
+             "open data on that topic, a close match to the nearest subject "
+             "will still read `strong`. Treat it as 'we understood the "
+             "query', not 'here is the answer'.\n\n"
+             "`geo.in_results` is the honest coverage signal: false means we "
+             "hold no data published about that place, whatever the "
+             "confidence says."))
 def api_search(request: Request,
                q: str = Query(min_length=1, max_length=500,
                               description="Plain-English search query"),

@@ -17,11 +17,33 @@ _TAG = re.compile(r"<[^>]+>")
 _WS = re.compile(r"\s+")
 
 
+def fix_mojibake(text: str | None) -> str | None:
+    """Repair double-encoded UTF-8 ("Mayorâ€™s" -> "Mayor's").
+
+    Some publishers serve UTF-8 bytes already decoded as Latin-1, so a
+    right single quote arrives as the three characters â€™. Encoding back
+    to Latin-1 and decoding as UTF-8 undoes it. Only applied when the
+    telltale sequence is present and the round-trip actually succeeds, so
+    legitimately accented text is never mangled.
+    """
+    if not text or "â€" not in text:
+        return text
+    # cp1252, NOT latin-1: the giveaway characters € (U+20AC) and ™ (U+2122)
+    # live in cp1252's 0x80-0x9F range and don't exist in latin-1 at all, so
+    # a latin-1 round-trip just raises and silently repairs nothing.
+    for codec in ("cp1252", "latin-1"):
+        try:
+            return text.encode(codec).decode("utf-8")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            continue
+    return text
+
+
 def strip_html(text: str | None) -> str | None:
     """Some portals store descriptions as HTML; reduce to plain text."""
     if not text:
         return text
-    return _WS.sub(" ", _TAG.sub(" ", text)).strip()
+    return _WS.sub(" ", _TAG.sub(" ", fix_mojibake(text))).strip()
 
 
 # --- Licences -----------------------------------------------------------
