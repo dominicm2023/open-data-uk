@@ -37,6 +37,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import collections
 import csv
 import io
 import json
@@ -279,6 +280,21 @@ def aggregate_availability(conn: sqlite3.Connection) -> None:
             WHERE r.dataset_key = datasets.key
         )
     """)
+    # A catalogue entry with no files attached isn't "not yet checked" — there
+    # is nothing to check, and that is a finding about the record rather than
+    # a gap in our coverage. Distinguishing them keeps "unchecked" meaning
+    # only "we haven't got to it yet".
+    # Only when the publisher genuinely listed nothing. Absence from the
+    # resources table is NOT sufficient: ~1,900 datasets list files whose
+    # URLs we failed to store (resource_rows keeps only http(s) URLs), and
+    # telling a user "no files listed" about a record that advertises four
+    # CSVs would be our error dressed up as theirs.
+    conn.execute("""
+        UPDATE datasets SET availability = 'nofiles'
+        WHERE availability IS NULL
+          AND COALESCE(resource_count, 0) = 0
+          AND NOT EXISTS (SELECT 1 FROM resources r WHERE r.dataset_key = datasets.key)
+    """)
     conn.commit()
 
 
@@ -290,17 +306,23 @@ def main() -> None:
                     help="re-examine resources previously blocked or wrongly "
                          "recorded as dead because we were throttled")
     ap.add_argument("--workers", type=int, default=16)
+    ap.add_argument("--max-per-domain", type=int, default=MAX_PER_DOMAIN,
+                    help="cap per host per run; raise it for a one-off "
+                         "catch-up, leave it alone for the nightly job")
     args = ap.parse_args()
 
     conn = db_connect()
     conn.executescript(SCHEMA)
     todo = interleave_by_domain(
         pick_urls(conn, args.limit, args.first_only, args.recheck_blocked),
-        MAX_PER_DOMAIN,
+        args.max_per_domain,
     )
     domains = len({domain_of(u) for u, _ in todo})
+    busiest = max(collections.Counter(domain_of(u) for u, _ in todo).values(), default=0)
     print(f"{len(todo)} urls across {domains} domains "
-          f"(<= {MAX_PER_DOMAIN}/domain, {DOMAIN_INTERVAL}s apart)", flush=True)
+          f"(<= {args.max_per_domain}/domain, {DOMAIN_INTERVAL}s apart); "
+          f"busiest host has {busiest}, so expect >= {busiest * DOMAIN_INTERVAL / 60:.0f} min",
+          flush=True)
 
     throttle = DomainThrottle(DOMAIN_INTERVAL)
     done = 0

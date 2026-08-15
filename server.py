@@ -40,9 +40,20 @@ engine = SearchEngine()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Load the model and vectors before the first request hits
-    engine.model
-    engine.stats()
+    """Warm the model and vectors before the first request hits.
+
+    Never fatal. If the index is missing or corrupt we still start, so
+    /health can report *what* is wrong and a monitor can say so — rather
+    than the unit refusing to boot and systemd restart-looping with a
+    stack trace nobody sees.
+    """
+    for step, fn in (("model", lambda: engine.model),
+                     ("index", engine.stats)):
+        try:
+            fn()
+        except Exception as exc:  # noqa: BLE001
+            print(f"startup warning: could not warm {step}: "
+                  f"{type(exc).__name__}: {exc}", flush=True)
     yield
 
 
@@ -203,6 +214,52 @@ def api_search(request: Request, response: Response,
     log_query(q, k, payload)   # anonymous; see querylog.py
     payload["attribution"] = ATTRIBUTION
     return payload
+
+
+@app.get("/health",
+         summary="Liveness and readiness",
+         description="200 when the service can actually answer searches, 503 "
+                     "when it can't. Deliberately not rate-limited so a "
+                     "monitor can poll it, and deliberately does real work "
+                     "(a query against the index) rather than just returning "
+                     "OK — a process that is up but can't reach its data is "
+                     "down as far as a user is concerned.")
+def health(response: Response) -> dict:
+    import sqlite3
+    from paths import connect as db_connect
+
+    checks: dict[str, object] = {}
+    ok = True
+
+    # Can we reach the index and does it hold anything?
+    try:
+        conn = db_connect()
+        try:
+            n = conn.execute("SELECT COUNT(*) FROM datasets").fetchone()[0]
+        finally:
+            conn.close()
+        checks["datasets"] = n
+        if n == 0:
+            ok = False
+            checks["datasets_error"] = "index is empty"
+    except sqlite3.Error as exc:
+        ok = False
+        checks["datasets_error"] = str(exc)[:120]
+
+    # Are the vectors loaded and consistent with the index?
+    try:
+        matrix, keys = engine._vectors()
+        checks["embedded"] = 0 if matrix is None else int(matrix.shape[0])
+        if matrix is None or matrix.shape[0] != len(keys):
+            ok = False
+            checks["embeddings_error"] = "vectors missing or out of step with keys"
+    except Exception as exc:  # noqa: BLE001
+        ok = False
+        checks["embeddings_error"] = str(exc)[:120]
+
+    if not ok:
+        response.status_code = 503
+    return {"status": "ok" if ok else "degraded", **checks}
 
 
 @app.get("/api/stats", summary="Index statistics")

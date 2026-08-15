@@ -160,6 +160,7 @@ function render(payload) {
     webpage: ["webpage", "↪ webpage only"],
     dead: ["dead", "✗ links dead"],
     blocked: ["unknown", "? not verified"],
+    nofiles: ["unknown", "no files listed"],
   };
   $("out").innerHTML = banner + results.map(r => {
     const lic = r.license
