@@ -194,6 +194,10 @@ STATIC_FILES = {
     "icon-192.png": "image/png",
     "icon-512.png": "image/png",
     "manifest.webmanifest": "application/manifest+json",
+    # IndexNow ownership proof. Public by design — search engines fetch it
+    # back from the site root to confirm the submissions are really ours,
+    # so it belongs in the repo rather than in a secret.
+    "ed89a51325644371a1b02829527a3cdf.txt": "text/plain; charset=utf-8",
 }
 
 

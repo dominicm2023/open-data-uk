@@ -17,6 +17,13 @@ echo "=====REFRESH-RUN===== $(date -Is)"
 "$PY" embed_index.py
 "$PY" dedupe.py
 "$PY" checker.py --limit "$CHECK_LIMIT" --workers "$CHECK_WORKERS"
+
+# Tell the engines which pages actually changed tonight. Runs last, after the
+# checker, so a link that died today is announced today. Never fatal: a
+# search-engine ping failing is not a reason for the refresh to have failed,
+# and the script swallows its own errors for the same reason.
+"$PY" scripts/indexnow.py || true
+
 echo "=====REFRESH-DONE===== $(date -Is)"
 
 # The running server picks up new embeddings and DB rows on its next query —

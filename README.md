@@ -67,6 +67,7 @@ figure from 56% to 34%.
 | Relevance regression suite | [`scripts/relevance_test.py`](scripts/relevance_test.py) — 12 cases; **run it before and after any ranking change** |
 | Unit tests (no index needed) | [`scripts/dedupe_test.py`](scripts/dedupe_test.py), [`scripts/render_test.py`](scripts/render_test.py) — the rules that decide what search hides, and what gets escaped |
 | What people actually search for | [`scripts/query_report.py`](scripts/query_report.py) — over the anonymous query log |
+| Change notification | [`scripts/indexnow.py`](scripts/indexnow.py) — announces only the pages whose content actually moved |
 
 Currently indexing **77,000+ datasets from 43 portals** — data.gov.uk, the
 ONS Open Geography Portal, London Datastore, NHSBSA, OpenDataNI, Natural
