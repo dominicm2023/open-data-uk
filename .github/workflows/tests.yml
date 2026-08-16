@@ -22,3 +22,16 @@ jobs:
         run: python scripts/dedupe_test.py
       - name: Page rendering and escaping
         run: python scripts/render_test.py
+
+  live:
+    # The unit tests cover rendering with invented records; this covers real
+    # data through the real stack. Manual only — it talks to production.
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Crawl the live site and check what a search engine would see
+        run: python scripts/site_check.py --sample 10
