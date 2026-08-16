@@ -10,6 +10,7 @@ embed_index.py checkpoints land. Public API: /api/search, /api/stats,
 from __future__ import annotations
 
 import os
+import re
 import time
 from collections import defaultdict, deque
 from contextlib import asynccontextmanager
@@ -392,35 +393,103 @@ def api_dataset(request: Request, response: Response,
 # mode the search box can't offer.
 
 PER_PAGE = 100
-_PUBLISHER_TTL = 1800    # the index only changes on the nightly refresh
-_publisher_cache: tuple[float, list[tuple[str, int]]] = (0.0, [])
+_AGG_TTL = 1800          # the index only changes on the nightly refresh
+_agg_cache: tuple[float, dict] = (0.0, {})
+
+# A subject earns a page when more than one organisation publishes on it and
+# there is a list worth reading. Below that it's one publisher's private
+# vocabulary, and a page per stray tag is how you manufacture thin content.
+TOPIC_MIN_DATASETS = 5
+TOPIC_MIN_PUBLISHERS = 2
+# Same idea for "who publishes this": two councils sharing a title is a
+# coincidence, three is a pattern.
+WHO_MIN_PUBLISHERS = 3
+
+_NORM = re.compile(r"[^a-z0-9]+")
 
 
-def _publishers() -> list[tuple[str, int]]:
-    """Every publisher and how many findable datasets they have.
+def _norm_title(text: str) -> str:
+    return _NORM.sub(" ", (text or "").lower()).strip()
 
-    Grouping the whole table takes ~1.4 s, which is fine once but not per
-    request, so it's held for half an hour. Each worker keeps its own copy;
-    1,400 short tuples is nothing next to the model already resident.
+
+def _aggregates() -> dict:
+    """Publishers, subjects and shared dataset types — one scan, cached.
+
+    Each of these needs the whole findable set, and doing them separately
+    meant three full scans. One pass takes ~2 s and is held for half an hour
+    per worker; the result is a few hundred KB against a model that is
+    already resident.
     """
-    global _publisher_cache
+    global _agg_cache
+    import json as _json
+    from collections import Counter, defaultdict
+
     from paths import connect as db_connect
 
     now = time.time()
-    stamp, cached = _publisher_cache
-    if cached and now - stamp < _PUBLISHER_TTL:
+    stamp, cached = _agg_cache
+    if cached and now - stamp < _AGG_TTL:
         return cached
 
     conn = db_connect()
     try:
         rows = conn.execute(
-            f"SELECT d.publisher, COUNT(*) {INDEXABLE} AND d.publisher IS NOT NULL "
-            "AND TRIM(d.publisher) <> '' GROUP BY d.publisher "
-            "ORDER BY d.publisher COLLATE NOCASE").fetchall()
+            f"SELECT d.key, d.title, d.publisher, d.tags {INDEXABLE}").fetchall()
     finally:
         conn.close()
-    _publisher_cache = (now, [(r[0], r[1]) for r in rows])
-    return _publisher_cache[1]
+
+    pubs: Counter = Counter()
+    tag_n: Counter = Counter()
+    tag_pubs: defaultdict = defaultdict(set)
+    title_pubs: defaultdict = defaultdict(set)
+    title_label: dict[str, str] = {}
+
+    for _key, title, publisher, tags in rows:
+        if publisher and publisher.strip():
+            pubs[publisher] += 1
+        for raw in _json.loads(tags or "[]"):
+            tag = " ".join(str(raw).lower().split())
+            if tag and len(tag) > 1:
+                tag_n[tag] += 1
+                if publisher:
+                    tag_pubs[tag].add(publisher)
+        if title and publisher:
+            slug = _norm_title(title)
+            if len(slug) > 3:
+                title_pubs[slug].add(publisher)
+                # Keep a readable label — the normalised form is lower-case
+                # and stripped of punctuation, which reads like a slug.
+                title_label.setdefault(slug, " ".join(title.split()))
+
+    topics = sorted(
+        ((t, n, len(tag_pubs[t])) for t, n in tag_n.items()
+         if n >= TOPIC_MIN_DATASETS and len(tag_pubs[t]) >= TOPIC_MIN_PUBLISHERS),
+        key=lambda r: r[0])
+    shared_slugs = {s for s, p in title_pubs.items() if len(p) >= WHO_MIN_PUBLISHERS}
+    shared = sorted(((title_label[s], len(title_pubs[s])) for s in shared_slugs),
+                    key=lambda r: (-r[1], r[0].lower()))
+    # Only ~3,000 of the 60,000 rows belong to a shared title, so holding
+    # their keys costs little and turns the page into indexed lookups.
+    shared_keys: defaultdict = defaultdict(list)
+    for key, title, publisher, _tags in rows:
+        if title and publisher:
+            slug = _norm_title(title)
+            if slug in shared_slugs:
+                shared_keys[slug].append(key)
+
+    _agg_cache = (now, {
+        "publishers": sorted(pubs.items(), key=lambda r: r[0].lower()),
+        "topics": topics,
+        "topic_index": {t: (n, p) for t, n, p in topics},
+        "shared": shared,
+        "shared_index": {_norm_title(t): n for t, n in shared},
+        "shared_keys": dict(shared_keys),
+    })
+    return _agg_cache[1]
+
+
+def _publishers() -> list[tuple[str, int]]:
+    return _aggregates()["publishers"]
 
 
 @app.get("/publishers", include_in_schema=False)
@@ -466,6 +535,98 @@ def publisher_page(name: str = Query(default="", max_length=300),
         headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
 
 
+@app.get("/topics", include_in_schema=False)
+def topics_page() -> HTMLResponse:
+    return HTMLResponse(
+        pagerender.render_topics(_aggregates()["topics"], SITE_URL),
+        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
+@app.get("/topic", include_in_schema=False)
+def topic_page(tag: str = Query(default="", max_length=200),
+               page: int = Query(default=1, ge=1, le=1000)) -> HTMLResponse:
+    import json as _json
+    import sqlite3
+
+    from paths import connect as db_connect
+
+    tag = " ".join(tag.lower().split())
+    if not tag:
+        return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+
+    # Tags live in a JSON array, so there is no index to hit — the LIKE is a
+    # coarse filter that SQLite can run over the blob, then the exact match
+    # is confirmed in Python. Costs one scan; the page is edge-cached.
+    conn = db_connect()
+    conn.row_factory = sqlite3.Row
+    try:
+        candidates = conn.execute(
+            f"SELECT d.key, d.title, d.publisher, d.modified, d.availability, d.tags "
+            f"{INDEXABLE} AND LOWER(d.tags) LIKE ? ORDER BY d.modified DESC, d.key",
+            (f"%{tag}%",)).fetchall()
+    finally:
+        conn.close()
+
+    matches = [dict(r) for r in candidates
+               if any(" ".join(str(t).lower().split()) == tag
+                      for t in _json.loads(r["tags"] or "[]"))]
+    if not matches:
+        return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+
+    total = len(matches)
+    pages = max(1, -(-total // PER_PAGE))
+    if page > pages:
+        return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    publishers = len({m["publisher"] for m in matches if m["publisher"]})
+    window = matches[(page - 1) * PER_PAGE: page * PER_PAGE]
+    return HTMLResponse(
+        pagerender.render_topic(
+            tag, window, page, pages, total, publishers, SITE_URL,
+            per_page=PER_PAGE,
+            indexable=(total >= TOPIC_MIN_DATASETS
+                       and publishers >= TOPIC_MIN_PUBLISHERS)),
+        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
+@app.get("/who-publishes", include_in_schema=False)
+def who_publishes(name: str = Query(default="", max_length=300)) -> HTMLResponse:
+    import sqlite3
+
+    from paths import connect as db_connect
+
+    agg = _aggregates()
+    if not name:
+        return HTMLResponse(
+            pagerender.render_who_index(agg["shared"], SITE_URL),
+            headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+    slug = _norm_title(name)
+    if slug not in agg["shared_index"]:
+        return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+
+    keys = agg["shared_keys"].get(slug, [])
+    conn = db_connect()
+    conn.row_factory = sqlite3.Row
+    try:
+        placeholders = ",".join("?" * len(keys))
+        rows = [dict(r) for r in conn.execute(
+            "SELECT key, title, publisher, modified, availability FROM datasets "
+            f"WHERE key IN ({placeholders})", keys)] if keys else []
+    finally:
+        conn.close()
+
+    if not rows:
+        return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    return HTMLResponse(
+        pagerender.render_who(name, rows, SITE_URL),
+        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
 # --- Crawlers -----------------------------------------------------------
 #
 # The sitemap lists only the canonical, non-retired records — about 55,000 of
@@ -474,6 +635,14 @@ def publisher_page(name: str = Query(default="", max_length=300),
 # whole point of the exercise is the pages we do.
 
 SITEMAP_CHUNK = 25_000   # the sitemap spec caps a single file at 50,000 URLs
+
+# Records with no text, no files, no tags and no formats. They stay
+# reachable and crawlable, they are just not put forward for indexing —
+# see pagerender.is_thin() for the reasoning.
+NOTHING_TO_INDEX = ("LENGTH(TRIM(COALESCE(d.description,''))) < 40 "
+                    "AND COALESCE(d.resource_count,0) = 0 "
+                    "AND COALESCE(d.tags,'[]') IN ('[]','') "
+                    "AND COALESCE(d.formats_norm,'[]') IN ('[]','')")
 
 INDEXABLE = ("FROM datasets d WHERE "
              "NOT EXISTS (SELECT 1 FROM duplicates x WHERE x.key = d.key) AND "
@@ -484,7 +653,9 @@ def _indexable_count() -> int:
     from paths import connect as db_connect
     conn = db_connect()
     try:
-        return conn.execute(f"SELECT COUNT(*) {INDEXABLE}").fetchone()[0]
+        return conn.execute(
+            f"SELECT COUNT(*) {INDEXABLE} AND NOT ({NOTHING_TO_INDEX})"
+        ).fetchone()[0]
     finally:
         conn.close()
 
@@ -546,12 +717,20 @@ def sitemap_browse() -> Response:
     Declared before /sitemap-{page}.xml, which takes an int — route order is
     what stops "browse" being tried as a page number.
     """
-    rows = _publishers()
-    urls = [f"<url><loc>{SITE_URL}/publishers</loc><changefreq>weekly</changefreq></url>"]
-    for name, count in rows:
+    agg = _aggregates()
+    urls = [f"<url><loc>{SITE_URL}/{p}</loc><changefreq>weekly</changefreq></url>"
+            for p in ("publishers", "topics", "who-publishes")]
+    for name, count in agg["publishers"]:
         for page in range(1, max(1, -(-count // PER_PAGE)) + 1):
             loc = (SITE_URL + pagerender.publisher_path(name, page)).replace("&", "&amp;")
             urls.append(f"<url><loc>{loc}</loc></url>")
+    for tag, n, _pubs in agg["topics"]:
+        for page in range(1, max(1, -(-n // PER_PAGE)) + 1):
+            loc = (SITE_URL + pagerender.topic_path(tag, page)).replace("&", "&amp;")
+            urls.append(f"<url><loc>{loc}</loc></url>")
+    for title, _n in agg["shared"]:
+        loc = (SITE_URL + pagerender.who_path(title)).replace("&", "&amp;")
+        urls.append(f"<url><loc>{loc}</loc></url>")
     xml = ('<?xml version="1.0" encoding="UTF-8"?>'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
            f'{"".join(urls)}</urlset>')
@@ -584,8 +763,9 @@ def sitemap_page(page: int) -> Response:
         conn = db_connect()
         try:
             cur = conn.execute(
-                f"SELECT d.key, d.modified {INDEXABLE} ORDER BY d.key "
-                "LIMIT ? OFFSET ?", (SITEMAP_CHUNK, (page - 1) * SITEMAP_CHUNK))
+                f"SELECT d.key, d.modified {INDEXABLE} AND NOT ({NOTHING_TO_INDEX}) "
+                "ORDER BY d.key LIMIT ? OFFSET ?",
+                (SITEMAP_CHUNK, (page - 1) * SITEMAP_CHUNK))
             for key, modified in cur:
                 loc = SITE_URL + pagerender.dataset_path(key)
                 # &key= is a literal ampersand; XML needs it escaped or the

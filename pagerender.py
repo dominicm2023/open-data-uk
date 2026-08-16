@@ -89,6 +89,21 @@ def publisher_path(name: str, page: int = 1) -> str:
     return path if page <= 1 else f"{path}&page={page}"
 
 
+def norm_tag(tag: object) -> str:
+    """Lower-case, whitespace collapsed. Publishers store tags like " Bins "."""
+    return " ".join(str(tag or "").lower().split())
+
+
+def topic_path(tag: str, page: int = 1) -> str:
+    path = "/topic?tag=" + urllib.parse.quote(norm_tag(tag), safe="")
+    return path if page <= 1 else f"{path}&page={page}"
+
+
+def who_path(title: str) -> str:
+    """'Who publishes X?' — the page for a dataset type many bodies publish."""
+    return "/who-publishes?name=" + urllib.parse.quote(str(title), safe="")
+
+
 def plain_text(value: object) -> str:
     """Publisher prose reduced to one line: no tags, no runaway whitespace."""
     return " ".join(_TAGS.sub(" ", str(value or "")).split())
@@ -184,6 +199,27 @@ def json_ld(rec: dict, page_url: str) -> str:
     return json.dumps(data, ensure_ascii=False).replace("<", "\\u003c")
 
 
+def is_thin(rec: dict) -> bool:
+    """Does this page hold anything a reader could use?
+
+    A catalogue entry with no description, no files, no tags and no formats
+    is a title and a link, and offering 646 of those for indexing invites a
+    search engine to conclude the whole site is thin. It stays reachable and
+    stays crawlable — `follow`, and still linked from the publisher's page —
+    it just isn't put forward as something worth ranking.
+
+    Deliberately an AND of everything: 2,139 records have no prose but do
+    list files, and a page telling you exactly which four CSVs a council
+    published is not thin, whatever its word count.
+    """
+    return not (
+        len(plain_text(rec.get("description"))) >= 40
+        or rec.get("resources")
+        or [t for t in (rec.get("tags") or []) if t]
+        or [f for f in (rec.get("formats") or []) if f]
+    )
+
+
 def head_tags(rec: dict, site_url: str) -> str:
     """Title, description, canonical, social preview and structured data."""
     title = plain_text(rec.get("title")) or "Dataset"
@@ -199,7 +235,7 @@ def head_tags(rec: dict, site_url: str) -> str:
     robots = "index,follow"
     if rec.get("duplicate_of"):
         canonical = site_url + dataset_path(rec["duplicate_of"])
-    if rec.get("retired"):
+    if rec.get("retired") or is_thin(rec):
         robots = "noindex,follow"
 
     head = [
@@ -276,6 +312,20 @@ def body_html(rec: dict) -> str:
         f'<li><a href="{esc(dataset_path(r["key"]))}">{esc(r["title"])}</a></li>'
         for r in (rec.get("related") or []))
 
+    # Tags have always been harvested and used for ranking, but never shown.
+    # On the 11,000 records whose publisher wrote little or no description
+    # they are most of what there is to say about the subject.
+    seen, tags = set(), []
+    for raw in (rec.get("tags") or []):
+        key = norm_tag(raw)
+        if key and key not in seen:
+            seen.add(key)
+            tags.append(str(raw).strip())
+    tag_html = "".join(f'<a class="chip tag" href="{esc(topic_path(t))}">{esc(t)}</a>'
+                       for t in tags[:20])
+    formats = [f for f in (rec.get("formats") or []) if f][:8]
+    fmt_html = "".join(f'<span class="chip">{esc(f)}</span>' for f in formats)
+
     return f"""
     <h1>{esc(rec.get("title") or "Untitled dataset")}</h1>
     <div class="meta">
@@ -290,6 +340,10 @@ def body_html(rec: dict) -> str:
     {f'<div class="desc">{esc(rec["description"])}</div>' if rec.get("description") else ""}
     <h2>Files &amp; links ({len(rec.get("resources") or [])})</h2>
     {files}
+    {f'<h2>Formats</h2><div class="meta">{fmt_html}</div>' if fmt_html else ""}
+    {f'<h2>Subjects</h2><div class="meta">{tag_html}</div>'
+      '<p class="note">Tags as the publisher recorded them — each one lists '
+      'every dataset on that subject, from every portal we index.</p>' if tag_html else ""}
     {f'<h2>More from {esc(rec.get("publisher"))}</h2><ul class="related">{related}</ul>'
       f'<p class="note"><a href="{esc(publisher_path(rec["publisher"]))}">'
       f'All datasets from {esc(rec["publisher"])} →</a></p>' if related else ""}
@@ -373,12 +427,13 @@ def render_publishers(rows: list[tuple[str, int]], site_url: str) -> str:
     return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
 
 
-def render_publisher(name: str, rows: list[dict], page: int, pages: int,
-                     total: int, site_url: str, per_page: int = 100) -> str:
-    """One publisher's datasets, paginated."""
+def _dataset_items(rows: list[dict], show_publisher: bool = False) -> str:
+    """One <li> per dataset — the same line wherever datasets are listed."""
     items = []
     for r in rows:
         bits = []
+        if show_publisher and r.get("publisher"):
+            bits.append(esc(r["publisher"]))
         if r.get("modified"):
             bits.append(f"updated {esc(str(r['modified'])[:10])}")
         if chip := _chip(r.get("availability")):
@@ -386,6 +441,13 @@ def render_publisher(name: str, rows: list[dict], page: int, pages: int,
         meta = f' <span class="note">· {" · ".join(bits)}</span>' if bits else ""
         items.append(f'<li><a href="{esc(dataset_path(r["key"]))}">'
                      f'{esc(r["title"] or "Untitled dataset")}</a>{meta}</li>')
+    return "".join(items)
+
+
+def render_publisher(name: str, rows: list[dict], page: int, pages: int,
+                     total: int, site_url: str, per_page: int = 100) -> str:
+    """One publisher's datasets, paginated."""
+    items = _dataset_items(rows)
 
     # From the page size, never from len(rows) — the last page is short, and
     # multiplying by its length puts the reader in the wrong part of the list.
@@ -402,7 +464,7 @@ def render_publisher(name: str, rows: list[dict], page: int, pages: int,
             + (f", showing {first:,}–{first + len(rows) - 1:,} "
                f"(page {page} of {pages})" if pages > 1 else "")
             + '.</p>'
-            f'<ul class="datasets">{"".join(items)}</ul>'
+            f'<ul class="datasets">{items}</ul>'
             + (f'<p class="pager">{" · ".join(nav)}</p>' if nav else "")
             + '<p class="note"><a href="/publishers">All publishers</a></p>')
 
@@ -419,6 +481,140 @@ def render_publisher(name: str, rows: list[dict], page: int, pages: int,
         f"All {total:,} datasets published by {name} that we hold, each with "
         "the licence, formats and whether the link actually leads to data.",
         publisher_path(name, page), site_url, "\n".join(rel))
+    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+
+
+def render_topic(tag: str, rows: list[dict], page: int, pages: int, total: int,
+                 publishers: int, site_url: str, per_page: int = 100,
+                 indexable: bool = True) -> str:
+    """Everything on one subject, from every portal at once.
+
+    A council's own portal can only show you its own recycling data. This is
+    the view no single publisher can offer, which is the whole argument for
+    collating in the first place.
+    """
+    first = (page - 1) * per_page + 1 if rows else 0
+    nav, rel = [], []
+    for step, label, kind in ((-1, "← previous", "prev"), (1, "next →", "next")):
+        target = page + step
+        if 1 <= target <= pages:
+            nav.append(f'<a href="{esc(topic_path(tag, target))}">{label}</a>')
+            rel.append(f'<link rel="{kind}" href="{esc(site_url + topic_path(tag, target))}">')
+
+    body = (f"<h1>{esc(tag.title())}</h1>"
+            f'<p class="note">{total:,} dataset{"" if total == 1 else "s"} tagged '
+            f'"{esc(tag)}", from {publishers:,} '
+            f'organisation{"" if publishers == 1 else "s"}'
+            + (f", showing {first:,}–{first + len(rows) - 1:,} "
+               f"(page {page} of {pages})" if pages > 1 else "")
+            + ". Tags are the publishers' own; we don't add or infer them.</p>"
+            f'<ul class="datasets">{_dataset_items(rows, show_publisher=True)}</ul>'
+            + (f'<p class="pager">{" · ".join(nav)}</p>' if nav else "")
+            + '<p class="note"><a href="/topics">All subjects</a> · '
+              '<a href="/publishers">All publishers</a></p>')
+
+    head = simple_head(
+        f"{tag.title()} — UK open data" + (f" (page {page})" if page > 1 else ""),
+        f"{total:,} UK government datasets tagged \"{tag}\", from {publishers:,} "
+        "publishers across every portal we index — with the licence and "
+        "whether each link really leads to data.",
+        topic_path(tag, page), site_url, "\n".join(rel))
+    if not indexable:
+        # A tag only one publisher uses, or one with a handful of records, is
+        # that publisher's private vocabulary rather than a subject. The page
+        # works and stays linked; it just isn't offered up for ranking.
+        head = head.replace('content="index,follow"', 'content="noindex,follow"')
+    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+
+
+def render_topics(rows: list[tuple[str, int, int]], site_url: str) -> str:
+    """Index of subjects worth a page of their own."""
+    groups: dict[str, list[tuple[str, int, int]]] = {}
+    for tag, n, pubs in rows:
+        groups.setdefault(_initial(tag), []).append((tag, n, pubs))
+    letters = sorted(groups, key=lambda c: (c == "#", c))
+
+    nav = " ".join(f'<a href="#{esc(c)}">{esc(c)}</a>' for c in letters)
+    blocks = []
+    for letter in letters:
+        items = "".join(
+            f'<li><a href="{esc(topic_path(tag))}">{esc(tag)}</a>'
+            f' <span class="note">{n:,}</span></li>'
+            for tag, n, _ in groups[letter])
+        blocks.append(f'<h2 id="{esc(letter)}">{esc(letter)}</h2>'
+                      f'<ul class="cols">{items}</ul>')
+
+    body = (f"<h1>Browse by subject</h1>"
+            f'<p class="note">{len(rows):,} subjects that more than one '
+            "organisation publishes data on. These are the publishers' own "
+            "tags, normalised for case only — we don't invent categories, so "
+            "the vocabulary is as consistent as UK open data actually is.</p>"
+            f'<p class="letters">{nav}</p>' + "".join(blocks))
+    head = simple_head(
+        "Browse UK open data by subject",
+        f"{len(rows):,} subjects — from air quality to waste collection — each "
+        "listing every UK government dataset on it, from every portal at once.",
+        "/topics", site_url)
+    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+
+
+def render_who(title: str, rows: list[dict], site_url: str) -> str:
+    """Which organisations publish this same kind of dataset.
+
+    Genuinely unanswerable anywhere else: 91 councils publish a dataset
+    called "Conservation Areas" and no portal lists them together, because
+    each portal only knows its own.
+    """
+    items = []
+    for r in sorted(rows, key=lambda r: (r.get("publisher") or "").lower()):
+        bits = []
+        if r.get("modified"):
+            bits.append(f"updated {esc(str(r['modified'])[:10])}")
+        if chip := _chip(r.get("availability")):
+            bits.append(chip)
+        meta = f' <span class="note">· {" · ".join(bits)}</span>' if bits else ""
+        items.append(
+            f'<li><a href="{esc(dataset_path(r["key"]))}">'
+            f'{esc(r.get("publisher") or "unknown publisher")}</a>{meta}'
+            f'<br><span class="note">{esc(r.get("title") or "")}</span></li>')
+
+    with_data = sum(1 for r in rows if r.get("availability") in ("data", "api"))
+    body = (f"<h1>Who publishes “{esc(title)}” data?</h1>"
+            f'<p class="note">{len(rows):,} UK organisations publish a dataset '
+            f'of this name. {with_data:,} of them lead to a file or an API you '
+            "can actually use; the rest lead to a webpage, are broken, or "
+            "refused our checker. No single portal can show you this list, "
+            "because each one only knows its own records.</p>"
+            f'<ul class="datasets">{"".join(items)}</ul>'
+            '<p class="note"><a href="/who-publishes">Other datasets many '
+            'organisations publish</a></p>')
+    head = simple_head(
+        f"Who publishes {title} data? {len(rows):,} UK organisations",
+        f"{len(rows):,} UK councils and public bodies publish a dataset called "
+        f"\"{title}\". Every one listed, with whether the link leads to real data.",
+        who_path(title), site_url)
+    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+
+
+def render_who_index(rows: list[tuple[str, int]], site_url: str) -> str:
+    """Index of dataset types that many organisations publish."""
+    items = "".join(
+        f'<li><a href="{esc(who_path(title))}">{esc(title)}</a>'
+        f' <span class="note">{n:,} organisations</span></li>'
+        for title, n in rows)
+    body = ("<h1>Datasets that many organisations publish</h1>"
+            f'<p class="note">{len(rows):,} kinds of dataset that three or more '
+            "UK organisations each publish separately — conservation areas, "
+            "spending returns, allotment registers. Each page lists every "
+            "organisation publishing it, which is a question no individual "
+            "portal can answer.</p>"
+            f'<ul class="datasets">{items}</ul>')
+    head = simple_head(
+        "Datasets many UK organisations publish",
+        f"{len(rows):,} kinds of dataset — conservation areas, tree preservation "
+        "orders, spending returns — each listing every UK organisation that "
+        "publishes one.",
+        "/who-publishes", site_url)
     return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
 
 

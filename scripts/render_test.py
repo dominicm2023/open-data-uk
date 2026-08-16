@@ -166,6 +166,59 @@ check('rel="prev"' not in page1 and 'rel="next"' not in page1,
       "a single-page publisher declares no neighbours")
 check("1 dataset in the index." in page1, "one dataset is not '1 datasets'")
 
+# --- thin pages ---------------------------------------------------------
+# 646 records hold a title and nothing else. Offering those for indexing
+# invites a search engine to judge the whole site by them.
+empty = record(description=None, resources=[], tags=[], formats=[])
+check(pagerender.is_thin(empty), "a record with no text, files, tags or formats is thin")
+check('content="noindex,follow"' in pagerender.render_dataset(empty, SITE),
+      "a page with nothing on it is not offered for indexing")
+check(not pagerender.is_thin(record(description=None, tags=[], formats=[])),
+      "no prose but real files is NOT thin — 2,139 records are like this")
+check(not pagerender.is_thin(record(description=None, resources=[], formats=[],
+                                    tags=["air quality", "no2"])),
+      "no prose but real tags is not thin either")
+check('content="index,follow"' in pagerender.render_dataset(record(), SITE),
+      "an ordinary record is still indexable after the thin rule")
+
+# --- subjects -----------------------------------------------------------
+# Publishers store tags like " Bins ", which produced /topic?tag=%20bins —
+# a URL that could never match the subject index.
+check(pagerender.norm_tag("  Bring   Sites ") == "bring sites",
+      "tag normalisation strips and collapses whitespace")
+check(pagerender.topic_path(" Bins ") == "/topic?tag=bins",
+      "a tag link is built from the normalised form, not the raw string")
+tagged = pagerender.render_dataset(
+    record(tags=[" Bins ", "bins", "Waste Collection"]), SITE)
+check(tagged.count('class="chip tag"') == 2,
+      "tags differing only in case or spacing collapse to one chip")
+check('href="/topic?tag=waste%20collection"' in tagged,
+      "a multi-word tag links to its percent-encoded subject page")
+
+topic = pagerender.render_topic("recycling", rows(3), page=1, pages=1, total=57,
+                                publishers=25, site_url=SITE)
+check("57 datasets" in topic and "25 organisations" in topic,
+      "a subject page states its span across publishers")
+check('content="index,follow"' in topic, "a shared subject is indexable")
+lonely = pagerender.render_topic("nerc_ddc", rows(1), page=1, pages=1, total=1,
+                                 publishers=1, site_url=SITE, indexable=False)
+check('content="noindex,follow"' in lonely,
+      "a subject only one publisher uses is not offered for indexing")
+
+# --- who publishes what -------------------------------------------------
+who = pagerender.render_who("Conservation Areas", [
+    {"key": "a:1", "title": "Conservation Areas", "publisher": "Leeds City Council",
+     "modified": "2026-01-01", "availability": "data"},
+    {"key": "b:2", "title": "Conservation areas", "publisher": "Bristol City Council",
+     "modified": None, "availability": "webpage"}], SITE)
+check("2 UK organisations publish" in who, "the count leads the page")
+check("1 of them lead to a file or an API" in who,
+      "it says how many of those links are actually usable")
+check("Bristol City Council" in who and "Leeds City Council" in who,
+      "every publisher is named")
+check(f'canonical" href="{SITE}/who-publishes?name=Conservation%20Areas"' in who,
+      "the page canonicalises to its own encoded URL")
+
 # --- URL construction ---------------------------------------------------
 check(pagerender.dataset_path("a:b c") == "/dataset?key=a%3Ab%20c",
       "dataset paths percent-encode the whole key")
