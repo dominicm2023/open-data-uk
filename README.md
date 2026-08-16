@@ -35,11 +35,11 @@ publisher's own page, under the publisher's own licence.
 
 ### What we found building it
 
-Measured across the whole catalogue: **34%** of datasets state no licence,
-**40%** haven't been updated in two years, **20%** are duplicate copies of
-another portal's entry, and of the links we've verified only **36%** give
+Measured across the whole catalogue: **37%** of datasets state no licence,
+**48%** haven't been updated in two years, **19%** are duplicate copies of
+another portal's entry, and of the links we've verified only **37%** give
 you machine-readable data — **30%** just lead to another webpage, and for
-**14%** the publisher lists no files at all.
+**15%** the publisher lists no files at all.
 
 Those numbers are worse than they need to be, and we're careful not to make
 them look worse than they are. A publisher whose server blocks our checker
