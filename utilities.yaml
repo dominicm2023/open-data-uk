@@ -33,6 +33,11 @@ utilities:
     sector: Electricity distribution
     candidates: [northernpowergrid.opendatasoft.com, data.northernpowergrid.com]
 
+  # Both of these run a real OpenDataSoft portal that answers fine from a
+  # UK consumer connection, and refuses the TLS handshake from our VPS —
+  # every TLS version, curl and Python alike. They sit on OpenDataSoft's
+  # eu-1 (Ireland) cluster; the tenants we do harvest are on eu-central-1.
+  # Verified, unharvestable from where we run. See PLATFORM_BACKLOG.md.
   - name: Electricity North West
     sector: Electricity distribution
     candidates: [electricitynorthwest.opendatasoft.com, data.enwl.co.uk]

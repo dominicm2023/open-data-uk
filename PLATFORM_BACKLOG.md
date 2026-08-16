@@ -44,6 +44,24 @@ dataset. Same kind of platform, opposite provenance habits.
 but the worst leverage — bespoke code serving exactly one source each. Worth
 doing for the ~5,000 datasets now that the platform adapters are exhausted.
 
+## Verified but unreachable from production
+
+| Portal | Datasets | Why |
+|---|---:|---|
+| SP Energy Networks | 153 | TLS handshake refused from the VPS |
+| Electricity North West | 148 | TLS handshake refused from the VPS |
+
+Both are real OpenDataSoft portals. They verify from a UK consumer
+connection and fail from our OVH box with `tlsv1 alert internal error` —
+server-side, on every TLS version, in curl and Python alike. They are on
+OpenDataSoft's eu-1 (Ireland) cluster; the four tenants we harvest
+successfully are on eu-central-1 (Frankfurt).
+
+Left out of sources.yaml deliberately. Including them would fail every night
+while CI kept passing, because GitHub's runners can reach them and the
+machine that does the work cannot — the worst kind of green build. Worth
+retrying from a different egress, or asking OpenDataSoft.
+
 ## Not pursued
 
 `environment.data.gov.uk`, `osdatahub.os.uk`, `dataportal.orr.gov.uk`,

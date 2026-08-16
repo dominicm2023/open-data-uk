@@ -199,6 +199,52 @@ _LICENSE_URL_LABELS = {
 }
 
 
+# Creative Commons, written every way publishers write it. Exact-match
+# entries in _LICENSE_MAP caught "cc-by-4.0" but not "CC BY 4.0", so the
+# index carried 308 of one and 124 of the other — the same licence, and a
+# filter for either silently missed the rest.
+_CC_TRIGGER = re.compile(r"creative\s*commons|creativecommons|^cc[\s\-_]?(by|0|zero)",
+                         re.I)
+_CC_VERSION = re.compile(r"\b([1-4])\.([05])\b")
+# Longest first: "by-nc-sa" must not be read as "by-nc".
+#
+# The "by" has to be attached to a "cc" or a licences/ URL path, never loose.
+# Matching a bare "by" anywhere read "Data published by the council; see
+# creativecommons.org" as a grant of CC-BY — asserting a licence nobody gave,
+# which is the one mistake this field must not make.
+_CC_FLAVOURS = (
+    ("CC-BY-NC-SA", r"cc[\s\-_]*by[\s\-_]*nc[\s\-_]*sa|licenses[\s\-_]+by[\s\-_]+nc[\s\-_]+sa"
+                    r"|attribution[\s\-_]*non[\s\-_]*commercial[\s\-_]*share"),
+    ("CC-BY-NC-ND", r"cc[\s\-_]*by[\s\-_]*nc[\s\-_]*nd|licenses[\s\-_]+by[\s\-_]+nc[\s\-_]+nd"
+                    r"|attribution[\s\-_]*non[\s\-_]*commercial[\s\-_]*no[\s\-_]*deriv"),
+    ("CC-BY-SA", r"cc[\s\-_]*by[\s\-_]*sa|licenses[\s\-_]+by[\s\-_]+sa"
+                 r"|attribution[\s\-_]*share"),
+    ("CC-BY-NC", r"cc[\s\-_]*by[\s\-_]*nc|licenses[\s\-_]+by[\s\-_]+nc"
+                 r"|attribution[\s\-_]*non[\s\-_]*commercial"),
+    ("CC-BY-ND", r"cc[\s\-_]*by[\s\-_]*nd|licenses[\s\-_]+by[\s\-_]+nd"
+                 r"|attribution[\s\-_]*no[\s\-_]*deriv"),
+    ("CC-BY", r"cc[\s\-_]*by\b|licenses[\s\-_]+by\b|\battribution\b"),
+)
+
+
+def _creative_commons(key: str) -> str | None:
+    """Canonical CC identifier from any spelling, or None if it isn't CC."""
+    if not _CC_TRIGGER.search(key):
+        return None
+    # Punctuation to spaces, so "CC-BY-SA_4.0" and "CC BY SA 4.0" are one
+    # shape. The version is read before flattening, as it contains a dot.
+    version = _CC_VERSION.search(key)
+    flat = " ".join(re.sub(r"[^a-z0-9.]+", " ", key.lower()).split())
+
+    if re.search(r"\bcc0\b|\bcczero\b|\bzero\b|publicdomain|public domain", flat):
+        return "CC0-1.0"
+    for canonical, pattern in _CC_FLAVOURS:
+        if re.search(pattern, flat):
+            v = f"{version.group(1)}.{version.group(2)}" if version else "4.0"
+            return f"{canonical}-{v}"
+    return None
+
+
 def norm_license(license_id: str | None, license_title: str | None = None) -> str | None:
     """Return a canonical licence id, or None if absent/unspecified."""
     for raw in (license_id, license_title):
@@ -212,6 +258,8 @@ def norm_license(license_id: str | None, license_title: str | None = None) -> st
             return _LICENSE_MAP[key]
         if "open government licence" in key or "open government license" in key:
             return "OGL-UK-3.0"
+        if cc := _creative_commons(key):
+            return cc
         if key.startswith("http"):
             if "open-government-licence" in key:
                 return "OGL-UK-3.0"
@@ -219,8 +267,10 @@ def norm_license(license_id: str | None, license_title: str | None = None) -> st
                 return "CC-BY-4.0"
             if "creativecommons.org/publicdomain" in key:
                 return "CC0-1.0"
-        # Unrecognised: keep it, but short enough to render as a chip
-        text = raw.strip()
+        # Unrecognised: keep it, but repair the encoding and keep it short
+        # enough to render as a chip. Publishers paste licence text out of
+        # Word, so a fair number arrive with a mangled copyright symbol.
+        text = (fix_mojibake(raw) or raw).strip()
         return text if len(text) <= 60 else text[:57] + "..."
     return None
 

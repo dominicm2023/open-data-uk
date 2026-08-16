@@ -22,6 +22,8 @@ jobs:
         run: python scripts/dedupe_test.py
       - name: Page rendering and escaping
         run: python scripts/render_test.py
+      - name: Licence normalisation
+        run: python scripts/licence_test.py
 
   live:
     # The unit tests cover rendering with invented records; this covers real
