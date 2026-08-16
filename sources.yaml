@@ -469,3 +469,1634 @@ sources:
       # REST service — so say so rather than leave every record file-less.
       resources:
         - [attributes.url, "=Esri REST"]
+
+  # Both found by mining our own resource URLs: we already link to these
+  # domains from datasets held elsewhere, so they were sitting in the index
+  # waiting to be noticed.
+  - id: york_cyc
+    name: City of York Council (spatial)
+    type: dcat
+    api: https://data-cyc.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://data-cyc.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  - id: north_ayrshire
+    name: North Ayrshire Council
+    type: dcat
+    api: https://maps-north-ayrshire.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://maps-north-ayrshire.opendata.arcgis.com
+    dataset_url: "unused-for-dcat"
+
+  # --- Councils and public bodies via ArcGIS Hub ------------------------
+  # These publish real datasets — deprivation indices, blue-badge parking,
+  # flood management, listed buildings — through ArcGIS Online with no
+  # catalogue of their own that we can find. Hub's federated search exposes
+  # them per organisation.
+  #
+  # require_description is doing heavy lifting. An ArcGIS org shares
+  # everything it ever made public: a 10-council pilot returned 12,874
+  # records of which 28% had nothing at all and only 12% carried a
+  # description — titles like "Family Hub Logo form" and "surveyPoint".
+  # Keeping what the publisher bothered to describe cut it to 1,604 records,
+  # all described, none thin.
+
+  - id: agol_middlesbrough_council
+    name: "Middlesbrough Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "3cR2auvUpZIsWeSM", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_greater_london_authority
+    name: "GREATER LONDON AUTHORITY"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "drifeOPKLpgnJ8Qa", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_lancaster_city_council
+    name: "Lancaster City Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "BIbIT39XnVeg2ywe", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_brighton_hove_city_council
+    name: "Brighton & Hove City Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "9Ux8a8QK4ElCQAam", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_birmingham_city_council
+    name: "Birmingham City Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "JFNKdFga12gB5iSy", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_northumberland_county_counci
+    name: "Northumberland County Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "LrUbY6lLLgV3tEa5", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_chelmsford_city_council
+    name: "Chelmsford City Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "BZNs0xaSHDSi4V6G", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_north_northamptonshire_counc
+    name: "North Northamptonshire Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "SuC1rPA4UP1jdgwy", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_bassetlaw_district_council
+    name: "Bassetlaw District Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "P2LV4qXI9z8W2RdA", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_city_of_london
+    name: "City of London"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "LdBRG36fQPsW6307", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_salford_city_council
+    name: "Salford City Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "kkZ3q6EOlzIRG0yO", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_greater_manchester_combined_
+    name: "Greater Manchester Combined Authority"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "TSkUZPV4pvisWowL", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_east_riding_of_yorkshire_cou
+    name: "East Riding of Yorkshire Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "Qptn479QktK11k72", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_melton_borough_council
+    name: "Melton Borough Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "0a7Iq1YCMMAuR5pb", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_three_rivers_district_counci
+    name: "Three Rivers District Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "3aiaJoeXJBzdduyI", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_west_oxfordshire_district_co
+    name: "West Oxfordshire District Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "z8GJkxrWic0alJoM", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_doncaster_council
+    name: "Doncaster Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "tH1XNsNfdTMpj9GY", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_the_rivers_trust
+    name: "The Rivers Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "Bb8lfThdhugyc4G3", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_leeds_city_council
+    name: "Leeds City Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "brSffcdOV7o1pDVT", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_hertfordshire_county_council
+    name: "Hertfordshire County Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "Dc4lSfF20H0vTBeQ", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_renfrewshire_council
+    name: "Renfrewshire Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "fq3IIWzrdf1xBoPI", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_transport_for_west_midlands
+    name: "Transport for West Midlands"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "pyZO1twqdVI0YIld", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_east_dunbartonshire_council
+    name: "East Dunbartonshire Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "FQzLCYAdkXvRRiyW", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_stirling_council_insights_by
+    name: "Stirling Council - insights by location"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "cECIr59LclpO818r", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_the_wildlife_trusts
+    name: "The Wildlife Trusts"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "Y9jgVEvgymHqAYPW", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_fife_council
+    name: "Fife Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "PDjKizfiWWTgpUeI", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_gateshead_council_agol
+    name: "Gateshead Council AGOL"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "gTvs0fY5s2kJG3gO", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_national_trust
+    name: "National Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "NPIbx47lsIiu2pqz", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_durham_county_council
+    name: "Durham County Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "GaeCJQk3ti34eqpL", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_wessex_rivers_trust
+    name: "Wessex Rivers Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "b7gM2tDfZZXVm1zK", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_exmoor_national_park_authori
+    name: "Exmoor National Park Authority"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "nvL9EDc30lviBdlc", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_london_borough_of_newham
+    name: "London Borough of Newham"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "trOdpHvvP7HrTfdb", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_historic_england
+    name: "Historic England"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "ZOdPfBS3aqqDYPUQ", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_south_downs_national_park_au
+    name: "South Downs National Park Authority"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "LBG1Lnci7jBl9O0t", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_devon_county_council
+    name: "Devon County Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "ka8aUOhB0gOPX0Xb", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_kent_county_council
+    name: "Kent County Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "SHfL2d6KOPvYAtDV", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_south_lanarkshire_council
+    name: "South Lanarkshire Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "WwixemwPcRvN6BYp", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_fife_council_arcgis_online
+    name: "Fife Council (ArcGIS Online)"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "e4yMLodVNRqGnlnG", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_peak_district_national_park_
+    name: "Peak District National Park Authority"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "C36oYlzCOmDbFbhM", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_westcountry_rivers_trust
+    name: "Westcountry Rivers Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "tBP5GJFIDqRutptX", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_lancashire_county_council
+    name: "Lancashire County Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "9MmxkLJT84uEwsJx", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_scottish_government
+    name: "Scottish Government"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "4QkhM5AS8YOlkb6T", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_london_borough_of_merton
+    name: "London Borough of Merton"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "lDzXrGJF6LKIhYUB", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_london_borough_of_sutton
+    name: "London Borough of Sutton"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "1OATu14QvcQ3lnMw", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_national_parks_scotland
+    name: "National Parks Scotland"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "bB6hy3TK2FRc3AB0", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_transport_for_london
+    name: "Transport for London"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "YswvgzOodUvqkoCN", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_north_lanarkshire_council
+    name: "North Lanarkshire Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "9edRUxcMgH07BEka", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_falkirk_council
+    name: "Falkirk Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "ejHeInmA8D8R9Vok", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_bristol_avon_rivers_trust
+    name: "Bristol Avon Rivers Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "l9PngctakXDrvQYN", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_copeland_borough_council
+    name: "Copeland Borough Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "FOeNsIAoVWzxh1TN", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_port_of_london_authority
+    name: "Port Of London Authority"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "QgdzYlEcjteGD0VH", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_game_wildlife_conservation_t
+    name: "Game & Wildlife Conservation Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "ef1DdIdCuZAiLWPG", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_cornwall_wildlife_trust
+    name: "Cornwall Wildlife Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "ZWXz0JpKJ0L63uwv", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_environment_agency
+    name: "Environment Agency"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "JZM7qJpmv7vJ0Hzx", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_green_action_trust
+    name: "Green Action Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "XEVvZDwkV3U7tPch", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_mid_east_antrim_borough_coun
+    name: "Mid & East Antrim Borough Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "65ux41b9DoQZACr1", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_west_dunbartonshire_council
+    name: "West Dunbartonshire Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "wZYknYToxgELcbw2", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_scottish_government_marine_s
+    name: "Scottish Government: Marine Scotland"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "lxSAUdLBzqpQJnUP", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_london_borough_of_lambeth
+    name: "london borough of lambeth"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "YzAbPjFO62myKADc", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_defra_group_open
+    name: "Defra Group Open"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "KB6uNVj5ZcJr7jUP", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_norfolk_county_council
+    name: "Norfolk County Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "0jxh2fqzIlaK83xq", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_cannock_chase_council_and_st
+    name: "Cannock Chase Council and Stafford Borough Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "TZlAwZ6z4m2tSwbS", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_dartmoor_national_park_autho
+    name: "Dartmoor National Park Authority"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "ygaMbwTQr2O0LMlb", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_lisburn_castlereagh_city_cou
+    name: "Lisburn & Castlereagh City Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "pIqBr43vVZHPGSjI", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_lincolnshire_county_council
+    name: "Lincolnshire County Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "WZPLjyOOFu4PQ3GJ", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_kent_wildlife_trust
+    name: "Kent Wildlife Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "B0eq7yySGUhaT5sl", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_fermanagh_and_omagh_district
+    name: "Fermanagh And Omagh District Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "39IZsk7UcOCbMcPx", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_eden_rivers_trust
+    name: "Eden Rivers Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "a1IxhdP3jYA8D31B", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_aberdeen_city_council_arcgis
+    name: "Aberdeen City Council ArcGIS Online"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "0sktPVp3t1LvXc9z", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_national_education_nature_pa
+    name: "National Education Nature Park"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "N7YlixcRxR5tv3qH", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_antrim_and_newtownabbey_boro
+    name: "Antrim and Newtownabbey Borough Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "OwWrEnEHMDRIJssU", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_shetland_islands_council
+    name: "Shetland Islands Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "YeOQvMt8Y7Us4Q8a", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_berks_bucks_and_oxon_wildlif
+    name: "Berks, Bucks and Oxon Wildlife Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "mZLeUnrj76OCQON5", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_falkirkcouncil
+    name: "falkirkcouncil"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "2A1rJB9Piphr2k5E", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_the_coal_authority
+    name: "The Coal Authority"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "Qn4lKcPDVHNivEyr", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_scottish_wildlife_trust
+    name: "Scottish Wildlife Trust"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "byI4kn9uGfeTFbS1", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_nature_discovery_map_scotlan
+    name: "Nature Discovery Map Scotland"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "ELpYE44CpoxrJqcU", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_bristol_city_council
+    name: "Bristol City Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "a4vR8lmmksFixzmB", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_tunbridge_wells_borough_coun
+    name: "Tunbridge Wells Borough Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "tghlG7ZjtJZbhYYT", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_city_of_york_council
+    name: "City of York Council"                             # contain colons and ampersands
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "PucdQw82gWAXkLji", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40

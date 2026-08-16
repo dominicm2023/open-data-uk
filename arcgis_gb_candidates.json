@@ -1,0 +1,482 @@
+[
+ {
+  "org": "The Rivers Trust",
+  "orgId": "Bb8lfThdhugyc4G3",
+  "seen": 560,
+  "total": 6075
+ },
+ {
+  "org": "Bristol City Council",
+  "orgId": "a4vR8lmmksFixzmB",
+  "seen": 120,
+  "total": 4958
+ },
+ {
+  "org": "Leeds City Council",
+  "orgId": "brSffcdOV7o1pDVT",
+  "seen": 9,
+  "total": 3548
+ },
+ {
+  "org": "   Middlesbrough Council",
+  "orgId": "3cR2auvUpZIsWeSM",
+  "seen": 289,
+  "total": 3453
+ },
+ {
+  "org": "Hertfordshire County Council",
+  "orgId": "Dc4lSfF20H0vTBeQ",
+  "seen": 9,
+  "total": 3094
+ },
+ {
+  "org": "Renfrewshire Council",
+  "orgId": "fq3IIWzrdf1xBoPI",
+  "seen": 46,
+  "total": 2933
+ },
+ {
+  "org": "Transport for West Midlands",
+  "orgId": "pyZO1twqdVI0YIld",
+  "seen": 413,
+  "total": 2757
+ },
+ {
+  "org": "East Dunbartonshire Council",
+  "orgId": "FQzLCYAdkXvRRiyW",
+  "seen": 4,
+  "total": 2578
+ },
+ {
+  "org": "Stirling Council - insights by location",
+  "orgId": "cECIr59LclpO818r",
+  "seen": 469,
+  "total": 2356
+ },
+ {
+  "org": "The Wildlife Trusts",
+  "orgId": "Y9jgVEvgymHqAYPW",
+  "seen": 54,
+  "total": 2183
+ },
+ {
+  "org": "GREATER LONDON AUTHORITY",
+  "orgId": "drifeOPKLpgnJ8Qa",
+  "seen": 194,
+  "total": 1996
+ },
+ {
+  "org": "Fife Council",
+  "orgId": "PDjKizfiWWTgpUeI",
+  "seen": 71,
+  "total": 1724
+ },
+ {
+  "org": "Lancaster City Council",
+  "orgId": "BIbIT39XnVeg2ywe",
+  "seen": 101,
+  "total": 1558
+ },
+ {
+  "org": "Brighton & Hove City Council",
+  "orgId": "9Ux8a8QK4ElCQAam",
+  "seen": 1,
+  "total": 1384
+ },
+ {
+  "org": "Gateshead Council AGOL",
+  "orgId": "gTvs0fY5s2kJG3gO",
+  "seen": 6,
+  "total": 1353
+ },
+ {
+  "org": "National Trust",
+  "orgId": "NPIbx47lsIiu2pqz",
+  "seen": 175,
+  "total": 1315
+ },
+ {
+  "org": "Durham County Council",
+  "orgId": "GaeCJQk3ti34eqpL",
+  "seen": 20,
+  "total": 1226
+ },
+ {
+  "org": "Wessex Rivers Trust",
+  "orgId": "b7gM2tDfZZXVm1zK",
+  "seen": 1,
+  "total": 1194
+ },
+ {
+  "org": "Exmoor National Park Authority",
+  "orgId": "nvL9EDc30lviBdlc",
+  "seen": 58,
+  "total": 1126
+ },
+ {
+  "org": "London Borough of Newham",
+  "orgId": "trOdpHvvP7HrTfdb",
+  "seen": 2,
+  "total": 1063
+ },
+ {
+  "org": "Historic England",
+  "orgId": "ZOdPfBS3aqqDYPUQ",
+  "seen": 44,
+  "total": 1060
+ },
+ {
+  "org": "Birmingham City Council",
+  "orgId": "JFNKdFga12gB5iSy",
+  "seen": 1,
+  "total": 1001
+ },
+ {
+  "org": "South Downs National Park Authority",
+  "orgId": "LBG1Lnci7jBl9O0t",
+  "seen": 14,
+  "total": 998
+ },
+ {
+  "org": "Northumberland County Council",
+  "orgId": "LrUbY6lLLgV3tEa5",
+  "seen": 138,
+  "total": 897
+ },
+ {
+  "org": "Devon County Council ",
+  "orgId": "ka8aUOhB0gOPX0Xb",
+  "seen": 72,
+  "total": 874
+ },
+ {
+  "org": "Chelmsford City Council",
+  "orgId": "BZNs0xaSHDSi4V6G",
+  "seen": 2,
+  "total": 869
+ },
+ {
+  "org": "Tunbridge Wells Borough Council",
+  "orgId": "tghlG7ZjtJZbhYYT",
+  "seen": 205,
+  "total": 817
+ },
+ {
+  "org": "North Northamptonshire Council",
+  "orgId": "SuC1rPA4UP1jdgwy",
+  "seen": 1,
+  "total": 793
+ },
+ {
+  "org": "Kent County Council",
+  "orgId": "SHfL2d6KOPvYAtDV",
+  "seen": 33,
+  "total": 791
+ },
+ {
+  "org": "South Lanarkshire Council",
+  "orgId": "WwixemwPcRvN6BYp",
+  "seen": 2,
+  "total": 739
+ },
+ {
+  "org": "Fife Council (ArcGIS Online)",
+  "orgId": "e4yMLodVNRqGnlnG",
+  "seen": 12,
+  "total": 722
+ },
+ {
+  "org": "Peak District National Park Authority",
+  "orgId": "C36oYlzCOmDbFbhM",
+  "seen": 29,
+  "total": 647
+ },
+ {
+  "org": "Westcountry Rivers Trust",
+  "orgId": "tBP5GJFIDqRutptX",
+  "seen": 44,
+  "total": 645
+ },
+ {
+  "org": "Lancashire County Council",
+  "orgId": "9MmxkLJT84uEwsJx",
+  "seen": 53,
+  "total": 621
+ },
+ {
+  "org": "Bassetlaw District Council",
+  "orgId": "P2LV4qXI9z8W2RdA",
+  "seen": 3,
+  "total": 611
+ },
+ {
+  "org": "Scottish Government",
+  "orgId": "4QkhM5AS8YOlkb6T",
+  "seen": 45,
+  "total": 597
+ },
+ {
+  "org": "London Borough of Merton",
+  "orgId": "lDzXrGJF6LKIhYUB",
+  "seen": 11,
+  "total": 531
+ },
+ {
+  "org": "London Borough of Sutton",
+  "orgId": "1OATu14QvcQ3lnMw",
+  "seen": 7,
+  "total": 528
+ },
+ {
+  "org": "National Parks Scotland",
+  "orgId": "bB6hy3TK2FRc3AB0",
+  "seen": 67,
+  "total": 525
+ },
+ {
+  "org": "Transport for London",
+  "orgId": "YswvgzOodUvqkoCN",
+  "seen": 20,
+  "total": 503
+ },
+ {
+  "org": "North Lanarkshire Council",
+  "orgId": "9edRUxcMgH07BEka",
+  "seen": 79,
+  "total": 498
+ },
+ {
+  "org": "Falkirk Council",
+  "orgId": "ejHeInmA8D8R9Vok",
+  "seen": 19,
+  "total": 485
+ },
+ {
+  "org": "Bristol Avon Rivers Trust",
+  "orgId": "l9PngctakXDrvQYN",
+  "seen": 4,
+  "total": 465
+ },
+ {
+  "org": "Copeland Borough Council",
+  "orgId": "FOeNsIAoVWzxh1TN",
+  "seen": 36,
+  "total": 459
+ },
+ {
+  "org": "Port Of London Authority",
+  "orgId": "QgdzYlEcjteGD0VH",
+  "seen": 1,
+  "total": 427
+ },
+ {
+  "org": "Game & Wildlife Conservation Trust",
+  "orgId": "ef1DdIdCuZAiLWPG",
+  "seen": 46,
+  "total": 420
+ },
+ {
+  "org": "Cornwall Wildlife Trust",
+  "orgId": "ZWXz0JpKJ0L63uwv",
+  "seen": 3,
+  "total": 419
+ },
+ {
+  "org": "Environment Agency",
+  "orgId": "JZM7qJpmv7vJ0Hzx",
+  "seen": 239,
+  "total": 414
+ },
+ {
+  "org": "Green Action Trust",
+  "orgId": "XEVvZDwkV3U7tPch",
+  "seen": 4,
+  "total": 376
+ },
+ {
+  "org": "Mid & East Antrim Borough Council",
+  "orgId": "65ux41b9DoQZACr1",
+  "seen": 4,
+  "total": 344
+ },
+ {
+  "org": "West Dunbartonshire Council",
+  "orgId": "wZYknYToxgELcbw2",
+  "seen": 21,
+  "total": 326
+ },
+ {
+  "org": "City of London",
+  "orgId": "LdBRG36fQPsW6307",
+  "seen": 5,
+  "total": 325
+ },
+ {
+  "org": "Salford City Council",
+  "orgId": "kkZ3q6EOlzIRG0yO",
+  "seen": 2,
+  "total": 305
+ },
+ {
+  "org": "Scottish Government: Marine Scotland",
+  "orgId": "lxSAUdLBzqpQJnUP",
+  "seen": 23,
+  "total": 294
+ },
+ {
+  "org": "london borough of lambeth",
+  "orgId": "YzAbPjFO62myKADc",
+  "seen": 1,
+  "total": 290
+ },
+ {
+  "org": "Defra Group Open",
+  "orgId": "KB6uNVj5ZcJr7jUP",
+  "seen": 270,
+  "total": 289
+ },
+ {
+  "org": "Greater Manchester Combined Authority",
+  "orgId": "TSkUZPV4pvisWowL",
+  "seen": 4,
+  "total": 278
+ },
+ {
+  "org": "East Riding of Yorkshire Council",
+  "orgId": "Qptn479QktK11k72",
+  "seen": 15,
+  "total": 269
+ },
+ {
+  "org": "Melton Borough Council",
+  "orgId": "0a7Iq1YCMMAuR5pb",
+  "seen": 8,
+  "total": 265
+ },
+ {
+  "org": "Norfolk County Council",
+  "orgId": "0jxh2fqzIlaK83xq",
+  "seen": 1,
+  "total": 258
+ },
+ {
+  "org": "City of York Council",
+  "orgId": "PucdQw82gWAXkLji",
+  "seen": 146,
+  "total": 251
+ },
+ {
+  "org": "Cannock Chase Council and Stafford Borough Council",
+  "orgId": "TZlAwZ6z4m2tSwbS",
+  "seen": 1,
+  "total": 247
+ },
+ {
+  "org": "Dartmoor National Park Authority",
+  "orgId": "ygaMbwTQr2O0LMlb",
+  "seen": 53,
+  "total": 241
+ },
+ {
+  "org": "Lisburn & Castlereagh City Council",
+  "orgId": "pIqBr43vVZHPGSjI",
+  "seen": 3,
+  "total": 234
+ },
+ {
+  "org": "Lincolnshire County Council",
+  "orgId": "WZPLjyOOFu4PQ3GJ",
+  "seen": 21,
+  "total": 231
+ },
+ {
+  "org": "Kent Wildlife Trust",
+  "orgId": "B0eq7yySGUhaT5sl",
+  "seen": 2,
+  "total": 221
+ },
+ {
+  "org": "Fermanagh And Omagh District Council",
+  "orgId": "39IZsk7UcOCbMcPx",
+  "seen": 3,
+  "total": 211
+ },
+ {
+  "org": "Eden Rivers Trust",
+  "orgId": "a1IxhdP3jYA8D31B",
+  "seen": 5,
+  "total": 172
+ },
+ {
+  "org": "Three Rivers District Council",
+  "orgId": "3aiaJoeXJBzdduyI",
+  "seen": 68,
+  "total": 167
+ },
+ {
+  "org": "Aberdeen City Council ArcGIS Online",
+  "orgId": "0sktPVp3t1LvXc9z",
+  "seen": 20,
+  "total": 163
+ },
+ {
+  "org": "National Education Nature Park",
+  "orgId": "N7YlixcRxR5tv3qH",
+  "seen": 19,
+  "total": 151
+ },
+ {
+  "org": "Antrim and Newtownabbey Borough Council",
+  "orgId": "OwWrEnEHMDRIJssU",
+  "seen": 2,
+  "total": 151
+ },
+ {
+  "org": "Shetland Islands Council",
+  "orgId": "YeOQvMt8Y7Us4Q8a",
+  "seen": 6,
+  "total": 150
+ },
+ {
+  "org": "Berks, Bucks and Oxon Wildlife Trust",
+  "orgId": "mZLeUnrj76OCQON5",
+  "seen": 22,
+  "total": 148
+ },
+ {
+  "org": "falkirkcouncil",
+  "orgId": "2A1rJB9Piphr2k5E",
+  "seen": 3,
+  "total": 131
+ },
+ {
+  "org": "West Oxfordshire District Council",
+  "orgId": "z8GJkxrWic0alJoM",
+  "seen": 9,
+  "total": 128
+ },
+ {
+  "org": "The Coal Authority",
+  "orgId": "Qn4lKcPDVHNivEyr",
+  "seen": 1,
+  "total": 117
+ },
+ {
+  "org": "Scottish Wildlife Trust",
+  "orgId": "byI4kn9uGfeTFbS1",
+  "seen": 60,
+  "total": 110
+ },
+ {
+  "org": "Nature Discovery Map Scotland",
+  "orgId": "ELpYE44CpoxrJqcU",
+  "seen": 5,
+  "total": 105
+ },
+ {
+  "org": "Doncaster Council",
+  "orgId": "tH1XNsNfdTMpj9GY",
+  "seen": 1,
+  "total": 100
+ }
+]

@@ -73,7 +73,7 @@ NATIONS = {"E": "England", "N": "Northern Ireland",
 # Kept here rather than in dedupe.py — merging two datasets is a stricter
 # judgement than recognising a council, and should stay stricter.
 _PLATFORM_WORDS = {
-    "arcgis", "online", "hub", "portal", "geoportal", "gis", "maps", "map",
+    "arcgis", "agol", "online", "hub", "portal", "geoportal", "gis", "maps", "map",
     "open", "opendata", "data", "datastore", "dataworks", "datashare",
     "insight", "insights", "observatory", "spatial", "statistics", "stats",
     "digital", "web", "site", "team", "team's", "publisher", "account",

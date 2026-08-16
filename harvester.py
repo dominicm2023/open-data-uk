@@ -604,6 +604,29 @@ def harvest_json(src: dict, conn: sqlite3.Connection, limit: int | None) -> None
             for u, f in (cfg.get("resources") or [])])
 
     rows, blanked = drop_boilerplate(rows)
+
+    # A quality gate, for sources where the API returns everything an
+    # organisation ever shared rather than what it chose to publish.
+    #
+    # An ArcGIS Online org exposes working layers, survey forms and logo
+    # graphics alongside real datasets: a 10-council pilot returned 12,874
+    # records of which only 12% had any description and 28% had nothing at
+    # all — titles like "Family Hub Logo form" and "surveyPoint". Indexing
+    # that would bury the deprivation indices and flood maps underneath it.
+    #
+    # Requiring a description is a crude filter but an honest one: it keeps
+    # what the publisher bothered to describe.
+    dropped = 0
+    if cfg.get("require_description"):
+        floor = int(cfg.get("require_description"))
+        kept = [r for r in rows
+                if r[DESCRIPTION_COL] and len(r[DESCRIPTION_COL]) >= floor]
+        dropped = len(rows) - len(kept)
+        keep_keys = {r[0] for r in kept}
+        keys = [k for k in keys if k[0] in keep_keys]
+        res_rows = [r for r in res_rows if r[0] in keep_keys]
+        rows = kept
+
     conn.executemany(UPSERT, rows)
     conn.executemany("DELETE FROM resources WHERE dataset_key = ?", keys)
     conn.executemany("INSERT OR REPLACE INTO resources VALUES (?, ?, ?, ?)", res_rows)
@@ -613,7 +636,8 @@ def harvest_json(src: dict, conn: sqlite3.Connection, limit: int | None) -> None
     conn.commit()
     print(f"[{src['id']}] done: {len(rows)} stored (catalogue reports {total}), "
           f"{len(res_rows)} files"
-          + (f", {blanked} shared descriptions dropped" if blanked else ""),
+          + (f", {blanked} shared descriptions dropped" if blanked else "")
+          + (f", {dropped} undescribed records skipped" if dropped else ""),
           flush=True)
 
 
