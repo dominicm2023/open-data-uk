@@ -384,6 +384,88 @@ def api_dataset(request: Request, response: Response,
     return rec
 
 
+# --- Browse -------------------------------------------------------------
+#
+# Dataset pages had nothing linking to them: the only route in was the search
+# box, which calls an API we ask crawlers not to touch, so all 60,000 sat in
+# the sitemap as orphans. These two pages are the front door — and the browse
+# mode the search box can't offer.
+
+PER_PAGE = 100
+_PUBLISHER_TTL = 1800    # the index only changes on the nightly refresh
+_publisher_cache: tuple[float, list[tuple[str, int]]] = (0.0, [])
+
+
+def _publishers() -> list[tuple[str, int]]:
+    """Every publisher and how many findable datasets they have.
+
+    Grouping the whole table takes ~1.4 s, which is fine once but not per
+    request, so it's held for half an hour. Each worker keeps its own copy;
+    1,400 short tuples is nothing next to the model already resident.
+    """
+    global _publisher_cache
+    from paths import connect as db_connect
+
+    now = time.time()
+    stamp, cached = _publisher_cache
+    if cached and now - stamp < _PUBLISHER_TTL:
+        return cached
+
+    conn = db_connect()
+    try:
+        rows = conn.execute(
+            f"SELECT d.publisher, COUNT(*) {INDEXABLE} AND d.publisher IS NOT NULL "
+            "AND TRIM(d.publisher) <> '' GROUP BY d.publisher "
+            "ORDER BY d.publisher COLLATE NOCASE").fetchall()
+    finally:
+        conn.close()
+    _publisher_cache = (now, [(r[0], r[1]) for r in rows])
+    return _publisher_cache[1]
+
+
+@app.get("/publishers", include_in_schema=False)
+def publishers_page() -> HTMLResponse:
+    return HTMLResponse(
+        pagerender.render_publishers(_publishers(), SITE_URL),
+        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
+@app.get("/publisher", include_in_schema=False)
+def publisher_page(name: str = Query(default="", max_length=300),
+                   page: int = Query(default=1, ge=1, le=1000)) -> HTMLResponse:
+    import sqlite3
+
+    from paths import connect as db_connect
+
+    if not name:
+        return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+
+    conn = db_connect()
+    conn.row_factory = sqlite3.Row
+    try:
+        total = conn.execute(
+            f"SELECT COUNT(*) {INDEXABLE} AND d.publisher = ?", (name,)).fetchone()[0]
+        if not total:
+            return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                                headers={"Cache-Control": "no-store"})
+        pages = max(1, -(-total // PER_PAGE))
+        if page > pages:
+            return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                                headers={"Cache-Control": "no-store"})
+        rows = [dict(r) for r in conn.execute(
+            f"SELECT d.key, d.title, d.modified, d.availability {INDEXABLE} "
+            "AND d.publisher = ? ORDER BY d.modified DESC, d.key "
+            "LIMIT ? OFFSET ?", (name, PER_PAGE, (page - 1) * PER_PAGE))]
+    finally:
+        conn.close()
+
+    return HTMLResponse(
+        pagerender.render_publisher(name, rows, page, pages, total, SITE_URL,
+                                    per_page=PER_PAGE),
+        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
 # --- Crawlers -----------------------------------------------------------
 #
 # The sitemap lists only the canonical, non-retired records — about 55,000 of
@@ -416,27 +498,65 @@ def robots() -> PlainTextResponse:
     so the API is disallowed while the dataset pages, which are cheap and are
     the actual content, are wide open.
     """
-    body = ("User-agent: *\n"
-            "Allow: /\n"
-            "Disallow: /api/\n"
-            "Disallow: /docs\n"
-            "Disallow: /redoc\n"
-            "Disallow: /openapi.json\n"
-            f"\nSitemap: {SITE_URL}/sitemap.xml\n")
-    return PlainTextResponse(body, headers={"Cache-Control": "public, max-age=86400"})
+    body = (
+        "# This index exists to make UK open government data findable, by\n"
+        "# people and by the AI tools they ask. Assistants that read these\n"
+        "# pages and cite the publisher are doing exactly what it is for.\n"
+        "#\n"
+        "# Content signals (contentsignals.org):\n"
+        "#   search   = yes  build a search index over these pages\n"
+        "#   ai-input = yes  read them live to answer someone's question\n"
+        "#   ai-train = no   do not train or fine-tune models on them\n"
+        "#\n"
+        "# THE ai-train RESERVATION IS AN EXPRESS RESERVATION OF RIGHTS UNDER\n"
+        "# ARTICLE 4 OF EU DIRECTIVE 2019/790. It covers our own work — the\n"
+        "# collation, normalisation and link verification. The underlying\n"
+        "# dataset metadata belongs to its publishers under their own\n"
+        "# licences, most commonly the Open Government Licence v3.0.\n"
+        "\n"
+        "User-agent: *\n"
+        "Content-Signal: search=yes, ai-input=yes, ai-train=no\n"
+        "Allow: /\n"
+        "Disallow: /api/\n"
+        "Disallow: /docs\n"
+        "Disallow: /redoc\n"
+        "Disallow: /openapi.json\n"
+        f"\nSitemap: {SITE_URL}/sitemap.xml\n")
+    return PlainTextResponse(body, headers={"Cache-Control": "public, max-age=3600"})
 
 
 @app.get("/sitemap.xml", include_in_schema=False)
 def sitemap_index() -> Response:
     pages = max(1, -(-_indexable_count() // SITEMAP_CHUNK))   # ceil
-    entries = "".join(
+    entries = f"<sitemap><loc>{SITE_URL}/sitemap-browse.xml</loc></sitemap>"
+    entries += "".join(
         f"<sitemap><loc>{SITE_URL}/sitemap-{n}.xml</loc></sitemap>"
         for n in range(1, pages + 1))
     xml = ('<?xml version="1.0" encoding="UTF-8"?>'
            '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
            f"{entries}</sitemapindex>")
     return Response(xml, media_type="application/xml",
-                    headers={"Cache-Control": "public, max-age=86400"})
+                    headers={"Cache-Control": "public, max-age=21600"})
+
+
+@app.get("/sitemap-browse.xml", include_in_schema=False)
+def sitemap_browse() -> Response:
+    """The browse hierarchy: the publisher index and every publisher page.
+
+    Declared before /sitemap-{page}.xml, which takes an int — route order is
+    what stops "browse" being tried as a page number.
+    """
+    rows = _publishers()
+    urls = [f"<url><loc>{SITE_URL}/publishers</loc><changefreq>weekly</changefreq></url>"]
+    for name, count in rows:
+        for page in range(1, max(1, -(-count // PER_PAGE)) + 1):
+            loc = (SITE_URL + pagerender.publisher_path(name, page)).replace("&", "&amp;")
+            urls.append(f"<url><loc>{loc}</loc></url>")
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+           f'{"".join(urls)}</urlset>')
+    return Response(xml, media_type="application/xml",
+                    headers={"Cache-Control": "public, max-age=21600"})
 
 
 @app.get("/sitemap-{page}.xml", include_in_schema=False)
@@ -482,7 +602,7 @@ def sitemap_page(page: int) -> Response:
         yield "</urlset>"
 
     return StreamingResponse(rows(), media_type="application/xml",
-                             headers={"Cache-Control": "public, max-age=86400"})
+                             headers={"Cache-Control": "public, max-age=21600"})
 
 
 @app.get("/api/sources", summary="Harvested sources")

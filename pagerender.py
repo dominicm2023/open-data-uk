@@ -83,6 +83,12 @@ def dataset_path(key: str) -> str:
     return "/dataset?key=" + urllib.parse.quote(str(key), safe="")
 
 
+def publisher_path(name: str, page: int = 1) -> str:
+    """The one canonical path for a publisher's datasets."""
+    path = "/publisher?name=" + urllib.parse.quote(str(name), safe="")
+    return path if page <= 1 else f"{path}&page={page}"
+
+
 def plain_text(value: object) -> str:
     """Publisher prose reduced to one line: no tags, no runaway whitespace."""
     return " ".join(_TAGS.sub(" ", str(value or "")).split())
@@ -275,7 +281,8 @@ def body_html(rec: dict) -> str:
     <div class="meta">
       <span class="chip src">{esc(src.get("name") or rec.get("source") or "")}</span>
       {lic} {_chip(rec.get("availability"))}
-      <span>{esc(rec.get("publisher") or "unknown publisher")}</span>
+      <span>{f'<a href="{esc(publisher_path(rec["publisher"]))}">{esc(rec["publisher"])}</a>'
+             if rec.get("publisher") else "unknown publisher"}</span>
       {f'<span>· updated {esc(str(rec["modified"])[:10])}</span>' if rec.get("modified") else ""}
     </div>
     {"".join(notices)}
@@ -283,7 +290,9 @@ def body_html(rec: dict) -> str:
     {f'<div class="desc">{esc(rec["description"])}</div>' if rec.get("description") else ""}
     <h2>Files &amp; links ({len(rec.get("resources") or [])})</h2>
     {files}
-    {f'<h2>More from {esc(rec.get("publisher"))}</h2><ul class="related">{related}</ul>' if related else ""}
+    {f'<h2>More from {esc(rec.get("publisher"))}</h2><ul class="related">{related}</ul>'
+      f'<p class="note"><a href="{esc(publisher_path(rec["publisher"]))}">'
+      f'All datasets from {esc(rec["publisher"])} →</a></p>' if related else ""}
     <p class="note">{esc(rec.get("attribution") or "")}</p>"""
 
 
@@ -296,6 +305,121 @@ def render_dataset(rec: dict, site_url: str) -> str:
     return (_template()
             .replace("<!--HEAD-->", head_tags(rec, site_url))
             .replace("<!--BODY-->", body_html(rec)))
+
+
+def simple_head(title: str, description: str, path: str, site_url: str,
+                extra: str = "") -> str:
+    """Head tags for the browse pages — same shape as a dataset page's."""
+    url = site_url + path
+    return "\n".join([
+        f"<title>{esc(title)} — {SITE_NAME}</title>",
+        f'<meta name="description" content="{esc(description)}">',
+        f'<link rel="canonical" href="{esc(url)}">',
+        '<meta name="robots" content="index,follow">',
+        '<meta property="og:type" content="website">',
+        f'<meta property="og:site_name" content="{SITE_NAME}">',
+        f'<meta property="og:title" content="{esc(title)}">',
+        f'<meta property="og:description" content="{esc(description)}">',
+        f'<meta property="og:url" content="{esc(url)}">',
+        '<meta name="twitter:card" content="summary">',
+        extra,
+    ]).strip()
+
+
+def _initial(name: str) -> str:
+    """The heading a publisher files under. Anything non-alphabetic goes to #."""
+    first = (name or "?").strip()[:1].upper()
+    return first if first.isalpha() else "#"
+
+
+def render_publishers(rows: list[tuple[str, int]], site_url: str) -> str:
+    """Every publisher, grouped by initial.
+
+    This page exists because the dataset pages had nothing linking to them.
+    Search is the only way in, search runs on an API we ask crawlers not to
+    touch, so 60,000 pages sat in the sitemap as orphans. This is the front
+    door to them — and, incidentally, the browse mode the search box can't
+    offer.
+    """
+    total = sum(n for _, n in rows)
+    groups: dict[str, list[tuple[str, int]]] = {}
+    for name, count in rows:
+        groups.setdefault(_initial(name), []).append((name, count))
+    letters = sorted(groups, key=lambda c: (c == "#", c))
+
+    nav = " ".join(f'<a href="#{esc(c)}">{esc(c)}</a>' for c in letters)
+    blocks = []
+    for letter in letters:
+        items = "".join(
+            f'<li><a href="{esc(publisher_path(name))}">{esc(name)}</a>'
+            f' <span class="note">{count:,}</span></li>'
+            for name, count in groups[letter])
+        blocks.append(f'<h2 id="{esc(letter)}">{esc(letter)}</h2>'
+                      f'<ul class="cols">{items}</ul>')
+
+    body = (f"<h1>Browse by publisher</h1>"
+            f'<p class="note">{len(rows):,} organisations publish the '
+            f"{total:,} datasets you can find through this index. Counts "
+            f"exclude duplicate copies of another portal's entry and records "
+            f"the publisher has withdrawn.</p>"
+            f'<p class="letters">{nav}</p>' + "".join(blocks))
+
+    head = simple_head(
+        "Browse UK open data by publisher",
+        f"Every one of the {len(rows):,} government bodies, councils, NHS "
+        f"organisations and agencies publishing open data in the index, with "
+        f"{total:,} datasets between them.",
+        "/publishers", site_url)
+    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+
+
+def render_publisher(name: str, rows: list[dict], page: int, pages: int,
+                     total: int, site_url: str, per_page: int = 100) -> str:
+    """One publisher's datasets, paginated."""
+    items = []
+    for r in rows:
+        bits = []
+        if r.get("modified"):
+            bits.append(f"updated {esc(str(r['modified'])[:10])}")
+        if chip := _chip(r.get("availability")):
+            bits.append(chip)
+        meta = f' <span class="note">· {" · ".join(bits)}</span>' if bits else ""
+        items.append(f'<li><a href="{esc(dataset_path(r["key"]))}">'
+                     f'{esc(r["title"] or "Untitled dataset")}</a>{meta}</li>')
+
+    # From the page size, never from len(rows) — the last page is short, and
+    # multiplying by its length puts the reader in the wrong part of the list.
+    first = (page - 1) * per_page + 1 if rows else 0
+    nav = []
+    if page > 1:
+        nav.append(f'<a href="{esc(publisher_path(name, page - 1))}">← previous</a>')
+    if page < pages:
+        nav.append(f'<a href="{esc(publisher_path(name, page + 1))}">next →</a>')
+
+    body = (f"<h1>{esc(name)}</h1>"
+            f'<p class="note">{total:,} dataset{"" if total == 1 else "s"} in '
+            f"the index"
+            + (f", showing {first:,}–{first + len(rows) - 1:,} "
+               f"(page {page} of {pages})" if pages > 1 else "")
+            + '.</p>'
+            f'<ul class="datasets">{"".join(items)}</ul>'
+            + (f'<p class="pager">{" · ".join(nav)}</p>' if nav else "")
+            + '<p class="note"><a href="/publishers">All publishers</a></p>')
+
+    # Only the first page carries rel=prev/next; every page self-canonicalises,
+    # which is what Google wants now that it ignores prev/next for indexing.
+    rel = []
+    if page > 1:
+        rel.append(f'<link rel="prev" href="{esc(site_url + publisher_path(name, page - 1))}">')
+    if page < pages:
+        rel.append(f'<link rel="next" href="{esc(site_url + publisher_path(name, page + 1))}">')
+
+    head = simple_head(
+        f"{name} — open datasets" + (f" (page {page})" if page > 1 else ""),
+        f"All {total:,} datasets published by {name} that we hold, each with "
+        "the licence, formats and whether the link actually leads to data.",
+        publisher_path(name, page), site_url, "\n".join(rel))
+    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
 
 
 def render_missing(key: str | None) -> str:

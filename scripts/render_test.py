@@ -116,6 +116,56 @@ check("no description" in desc and "Council Spending" in desc,
 check(len(pagerender.meta_description(record(description="word " * 200))) < 200,
       "a long description is trimmed to snippet length")
 
+# --- browse pages -------------------------------------------------------
+# These exist so dataset pages aren't orphans. An ampersand is the trap: it
+# has to be percent-encoded in the path AND escaped again as an HTML
+# attribute, or the link is broken and the sitemap is invalid XML.
+AMP = "Marine Environmental Data & Information Network"
+
+pubs = pagerender.render_publishers([("Leeds City Council", 412), (AMP, 4042),
+                                     ("3D Data Ltd", 7)], SITE)
+check('href="/publisher?name=Leeds%20City%20Council"' in pubs,
+      "publisher links percent-encode the name")
+check("%26" in pubs and "Data & Information" not in pubs.split("<style>")[0],
+      "an ampersand in a publisher name is encoded, not left raw")
+check('id="#"' in pubs, "a publisher starting with a digit files under #")
+check(f"{SITE}/publishers" in pubs, "the publisher index canonicalises to itself")
+
+def rows(n: int) -> list[dict]:
+    return [{"key": f"x:{i}", "title": f"Survey {i}", "modified": "2026-01-02",
+             "availability": "data"} for i in range(n)]
+
+
+page2 = pagerender.render_publisher(AMP, rows(100), page=2, pages=41,
+                                    total=4042, site_url=SITE)
+raw_amp = re.findall(r'href="[^"]*&(?!amp;)[^"]*"', page2)
+check(not raw_amp, f"no href carries a bare ampersand ({raw_amp[:1]})")
+check('href="/publisher?name=Marine%20Environmental%20Data%20%26%20Information'
+      '%20Network&amp;page=3"' in page2,
+      "the next-page link is both percent-encoded and HTML-escaped")
+check('rel="prev"' in page2 and 'rel="next"' in page2,
+      "a middle page declares both neighbours")
+check(f'canonical" href="{SITE}/publisher?name=Marine%20Environmental%20Data'
+      f'%20%26%20Information%20Network&amp;page=2"' in page2,
+      "page 2 canonicalises to itself, not to page 1")
+check("showing 101–200" in page2 and "page 2 of 41" in page2,
+      "the reader is told where in the list they are")
+
+# The last page is short. Counting from len(rows) instead of the page size
+# puts the reader thousands of entries from where they actually are.
+last = pagerender.render_publisher(AMP, rows(42), page=41, pages=41,
+                                   total=4042, site_url=SITE)
+check("showing 4,001–4,042" in last,
+      "the short last page still numbers from the top of the list")
+
+page1 = pagerender.render_publisher(
+    "Leeds City Council", [{"key": "x:1", "title": "Spending", "modified": None,
+                            "availability": None}], page=1, pages=1, total=1,
+    site_url=SITE)
+check('rel="prev"' not in page1 and 'rel="next"' not in page1,
+      "a single-page publisher declares no neighbours")
+check("1 dataset in the index." in page1, "one dataset is not '1 datasets'")
+
 # --- URL construction ---------------------------------------------------
 check(pagerender.dataset_path("a:b c") == "/dataset?key=a%3Ab%20c",
       "dataset paths percent-encode the whole key")
