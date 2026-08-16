@@ -99,6 +99,22 @@ Records with nothing on them — no description, no files, no tags, no formats
 out of the sitemap. They remain reachable; they're just not put forward as
 worth ranking.
 
+## Council coverage
+
+[COUNCIL_COVERAGE.md](COUNCIL_COVERAGE.md) checks all 361 UK local
+authorities from the ONS register against what the index actually holds.
+**330 (91%) have data; only 26 (7%) run a data portal of their own that we
+harvest** — most reach us through a regional hub or through data.gov.uk.
+Wales is the gap: no Welsh council has an own portal or hub here, and ten
+have nothing at all.
+
+It regenerates from the index
+([`scripts/council_coverage.py`](scripts/council_coverage.py)) and feeds
+straight back into discovery — `discover_sources.py --from-councils
+--missing-only` probes the councils we hold nothing for, rather than only
+the publishers we already have. That found Stirling (578 datasets) and
+Brent (310).
+
 New portals are found deterministically rather than by hand: see
 [`scripts/discover_sources.py`](scripts/discover_sources.py), which mines
 our own resource URLs for portals we don't yet harvest and probes generated

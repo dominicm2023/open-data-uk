@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import collections
+import json
 import socket
 import sys
 import urllib.parse
@@ -38,6 +39,8 @@ import yaml
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from geo import _ORG_WORDS  # noqa: E402  (reuse: same "strip the org words" job)
 from paths import connect as db_connect  # noqa: E402
+sys.path.insert(0, str(Path(__file__).parent))
+from verify_proposals import slug_for  # noqa: E402  (one naming rule, not two)
 
 ROOT = Path(__file__).parent.parent
 UA = {"User-Agent": "uk-open-data-index/0.2 (source discovery; +https://open-data.org.uk/about)"}
@@ -109,6 +112,37 @@ def slugs_from_publishers() -> set[str]:
     return slugs
 
 
+def slugs_from_councils(missing_only: bool) -> set[str]:
+    """Hostname slugs for every UK council, from the ONS register.
+
+    Signal 2 could only generate candidates for councils already in the
+    index, which is exactly backwards: the councils worth probing are the
+    ones we hold nothing for. council_coverage.json says which those are.
+    """
+    path = ROOT / ("council_coverage.json" if missing_only else "councils.json")
+    if not path.exists():
+        print(f"  {path.name} not found — run scripts/council_coverage.py first")
+        return set()
+    entries = json.loads(path.read_text(encoding="utf-8"))
+    if missing_only:
+        entries = [e for e in entries if e.get("state") == "none"]
+
+    slugs: set[str] = set()
+    for entry in entries:
+        low = entry["name"].lower()
+        # "Bristol, City of" -> bristol;  "Kingston upon Hull, City of" -> hull
+        low = low.split(",")[0]
+        toks = [t for t in "".join(c if c.isalpha() else " " for c in low).split()
+                if t not in _ORG_WORDS and len(t) > 2]
+        if not toks:
+            continue
+        slugs.add(toks[-1])
+        slugs.add("".join(toks))
+        if len(toks) > 1:
+            slugs.add("-".join(toks))
+    return slugs
+
+
 def resolves(host: str) -> bool:
     try:
         socket.getaddrinfo(host, 443, proto=socket.IPPROTO_TCP)
@@ -146,8 +180,21 @@ def probe(host: str) -> tuple[str, str, str, int] | None:
     return None
 
 
+def already_known(host: str, known_slugs: set[str]) -> bool:
+    """Is this the same portal we already harvest under another hostname?
+
+    Councils put a vanity domain in front of a hosted portal, so
+    opendata.tunbridgewells.gov.uk and opendatanew-tunbridgewells.opendata.
+    arcgis.com are one source with two front doors. Comparing domains misses
+    that; comparing who it belongs to catches it.
+    """
+    return slug_for(host).replace("_", "") in known_slugs
+
+
 def yaml_entry(host: str, kind: str, api: str, n: int) -> str:
-    slug = host.split(".")[0].replace("-", "_")
+    # "data.stirling.gov.uk" -> stirling, not "data", which every portal is
+    # called and which would collide with the next one found.
+    slug = slug_for(host)
     dataset_url = ('"unused-for-dcat"' if kind == "dcat"
                    else f"https://{host}/dataset/{{name}}")
     api_line = api if kind == "dcat" else api.rsplit("/", 1)[0]
@@ -163,10 +210,15 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--from-index", action="store_true")
     ap.add_argument("--from-names", action="store_true")
+    ap.add_argument("--from-councils", action="store_true",
+                    help="generate candidates from the ONS council register")
+    ap.add_argument("--missing-only", action="store_true",
+                    help="with --from-councils, probe only councils we hold "
+                         "nothing for (see scripts/council_coverage.py)")
     ap.add_argument("--min-hits", type=int, default=20,
                     help="min resource URLs before an indexed domain is a candidate")
     args = ap.parse_args()
-    both = not (args.from_index or args.from_names)
+    both = not (args.from_index or args.from_names or args.from_councils)
 
     known = known_domains()
     candidates: set[str] = set()
@@ -175,6 +227,14 @@ def main() -> None:
         found = domains_from_index(known, args.min_hits)
         print(f"signal 1 (our own index): {len(found)} portal-shaped domains")
         candidates |= set(found)
+
+    if args.from_councils:
+        slugs = slugs_from_councils(args.missing_only)
+        generated = {p.format(s=s) for s in slugs for p in HOST_PATTERNS}
+        print(f"signal 3 (ONS council register"
+              f"{', gaps only' if args.missing_only else ''}): {len(slugs)} slugs "
+              f"-> {len(generated):,} candidate hostnames")
+        candidates |= generated
 
     if both or args.from_names:
         slugs = slugs_from_publishers()

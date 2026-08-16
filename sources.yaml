@@ -318,3 +318,19 @@ sources:
     api: https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets
     web: https://data.leicester.gov.uk
     dataset_url: https://data.leicester.gov.uk/explore/dataset/{name}/
+
+  # Found by scripts/discover_sources.py --from-councils, which probes the ONS
+  # council register rather than only the publishers we already hold.
+  - id: stirling
+    name: Stirling Council Open Data
+    type: dcat
+    api: https://data.stirling.gov.uk/api/feed/dcat-us/1.1.json
+    web: https://data.stirling.gov.uk
+    dataset_url: "unused-for-dcat"
+
+  - id: brent
+    name: Brent Council Open Data
+    type: ckan
+    api: https://data.brent.gov.uk/api/3/action
+    web: https://data.brent.gov.uk
+    dataset_url: https://data.brent.gov.uk/dataset/{name}

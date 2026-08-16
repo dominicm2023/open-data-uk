@@ -1,0 +1,3884 @@
+[
+ {
+  "code": "E07000223",
+  "name": "Adur",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 8,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000032",
+  "name": "Amber Valley",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000224",
+  "name": "Arun",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 6,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000170",
+  "name": "Ashfield",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000105",
+  "name": "Ashford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 30,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000200",
+  "name": "Babergh",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 25,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000002",
+  "name": "Barking and Dagenham",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 0,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E09000003",
+  "name": "Barnet",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 444,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E08000038",
+  "name": "Barnsley",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 5,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000066",
+  "name": "Basildon",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 108,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000084",
+  "name": "Basingstoke and Deane",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 9,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000171",
+  "name": "Bassetlaw",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 15,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000022",
+  "name": "Bath and North East Somerset",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 114,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000055",
+  "name": "Bedford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000004",
+  "name": "Bexley",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 3,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E08000025",
+  "name": "Birmingham",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 16,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000129",
+  "name": "Blaby",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 38,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000008",
+  "name": "Blackburn with Darwen",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000009",
+  "name": "Blackpool",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 21,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000033",
+  "name": "Bolsover",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 5,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000001",
+  "name": "Bolton",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 37,
+  "sources": [
+   "datamillnorth"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000136",
+  "name": "Boston",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 6,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000058",
+  "name": "Bournemouth, Christchurch and Poole",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 25,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000036",
+  "name": "Bracknell Forest",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 18,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000032",
+  "name": "Bradford",
+  "nation": "England",
+  "state": "own",
+  "direct": 62,
+  "aggregated": 109,
+  "sources": [
+   "bradford",
+   "datamillnorth"
+  ],
+  "own_sources": [
+   "bradford"
+  ]
+ },
+ {
+  "code": "E07000067",
+  "name": "Braintree",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 40,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000143",
+  "name": "Breckland",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000005",
+  "name": "Brent",
+  "nation": "England",
+  "state": "own",
+  "direct": 139,
+  "aggregated": 24,
+  "sources": [
+   "brent",
+   "london_datastore"
+  ],
+  "own_sources": [
+   "brent"
+  ]
+ },
+ {
+  "code": "E07000068",
+  "name": "Brentwood",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 26,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000043",
+  "name": "Brighton and Hove",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000023",
+  "name": "Bristol, City of",
+  "nation": "England",
+  "state": "own",
+  "direct": 225,
+  "aggregated": 125,
+  "sources": [
+   "bristol",
+   "wiltshire"
+  ],
+  "own_sources": [
+   "bristol"
+  ]
+ },
+ {
+  "code": "E07000144",
+  "name": "Broadland",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000006",
+  "name": "Bromley",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 6,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000234",
+  "name": "Bromsgrove",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000095",
+  "name": "Broxbourne",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000172",
+  "name": "Broxtowe",
+  "nation": "England",
+  "state": "own",
+  "direct": 23,
+  "aggregated": 22,
+  "sources": [
+   "broxtowe"
+  ],
+  "own_sources": [
+   "broxtowe"
+  ]
+ },
+ {
+  "code": "E06000060",
+  "name": "Buckinghamshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 4,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000117",
+  "name": "Burnley",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 7,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000002",
+  "name": "Bury",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000033",
+  "name": "Calderdale",
+  "nation": "England",
+  "state": "own",
+  "direct": 253,
+  "aggregated": 282,
+  "sources": [
+   "calderdale"
+  ],
+  "own_sources": [
+   "calderdale"
+  ]
+ },
+ {
+  "code": "E07000008",
+  "name": "Cambridge",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000007",
+  "name": "Camden",
+  "nation": "England",
+  "state": "own",
+  "direct": 648,
+  "aggregated": 704,
+  "sources": [
+   "camden",
+   "london_datastore"
+  ],
+  "own_sources": [
+   "camden"
+  ]
+ },
+ {
+  "code": "E07000192",
+  "name": "Cannock Chase",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000106",
+  "name": "Canterbury",
+  "nation": "England",
+  "state": "own",
+  "direct": 28,
+  "aggregated": 2,
+  "sources": [
+   "canterbury"
+  ],
+  "own_sources": [
+   "canterbury"
+  ]
+ },
+ {
+  "code": "E07000069",
+  "name": "Castle Point",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000056",
+  "name": "Central Bedfordshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 5,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000130",
+  "name": "Charnwood",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 12,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000070",
+  "name": "Chelmsford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 24,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000078",
+  "name": "Cheltenham",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 28,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000177",
+  "name": "Cherwell",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 13,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000049",
+  "name": "Cheshire East",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 145,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000050",
+  "name": "Cheshire West and Chester",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 88,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000034",
+  "name": "Chesterfield",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000225",
+  "name": "Chichester",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 19,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000118",
+  "name": "Chorley",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000001",
+  "name": "City of London",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000071",
+  "name": "Colchester",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 172,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000052",
+  "name": "Cornwall",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 24,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000079",
+  "name": "Cotswold",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 17,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000047",
+  "name": "County Durham",
+  "nation": "England",
+  "state": "hub",
+  "direct": 29,
+  "aggregated": 39,
+  "sources": [
+   "datamillnorth"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E08000026",
+  "name": "Coventry",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 7,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000226",
+  "name": "Crawley",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000008",
+  "name": "Croydon",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 0,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E06000063",
+  "name": "Cumberland",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000096",
+  "name": "Dacorum",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 24,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000005",
+  "name": "Darlington",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 6,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000107",
+  "name": "Dartford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000015",
+  "name": "Derby",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 18,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000035",
+  "name": "Derbyshire Dales",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 22,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000017",
+  "name": "Doncaster",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000059",
+  "name": "Dorset",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 11,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000108",
+  "name": "Dover",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 4,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000027",
+  "name": "Dudley",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 14,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000009",
+  "name": "Ealing",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 12,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000009",
+  "name": "East Cambridgeshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 414,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000040",
+  "name": "East Devon",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 39,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000085",
+  "name": "East Hampshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 19,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000242",
+  "name": "East Hertfordshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000137",
+  "name": "East Lindsey",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000011",
+  "name": "East Riding of Yorkshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000193",
+  "name": "East Staffordshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 37,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000244",
+  "name": "East Suffolk",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 3,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000061",
+  "name": "Eastbourne",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 7,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000086",
+  "name": "Eastleigh",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 9,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000207",
+  "name": "Elmbridge",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000010",
+  "name": "Enfield",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 0,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000072",
+  "name": "Epping Forest",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 3,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000208",
+  "name": "Epsom and Ewell",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 17,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000036",
+  "name": "Erewash",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 7,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000041",
+  "name": "Exeter",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000087",
+  "name": "Fareham",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 11,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000010",
+  "name": "Fenland",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 4,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000112",
+  "name": "Folkestone and Hythe",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000080",
+  "name": "Forest of Dean",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 18,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000119",
+  "name": "Fylde",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 17,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000037",
+  "name": "Gateshead",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 51,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000173",
+  "name": "Gedling",
+  "nation": "England",
+  "state": "own",
+  "direct": 54,
+  "aggregated": 56,
+  "sources": [
+   "gedling"
+  ],
+  "own_sources": [
+   "gedling"
+  ]
+ },
+ {
+  "code": "E07000081",
+  "name": "Gloucester",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 3,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000088",
+  "name": "Gosport",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000109",
+  "name": "Gravesham",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000145",
+  "name": "Great Yarmouth",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000011",
+  "name": "Greenwich",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 7,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000209",
+  "name": "Guildford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 32,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000012",
+  "name": "Hackney",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 94,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E06000006",
+  "name": "Halton",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 29,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000013",
+  "name": "Hammersmith and Fulham",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 12,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000131",
+  "name": "Harborough",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 4,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000014",
+  "name": "Haringey",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 0,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000073",
+  "name": "Harlow",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 24,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000015",
+  "name": "Harrow",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 8,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000089",
+  "name": "Hart",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000001",
+  "name": "Hartlepool",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 6,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000062",
+  "name": "Hastings",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 18,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000090",
+  "name": "Havant",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000016",
+  "name": "Havering",
+  "nation": "England",
+  "state": "hub",
+  "direct": 3,
+  "aggregated": 35,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E06000019",
+  "name": "Herefordshire, County of",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 3,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000098",
+  "name": "Hertsmere",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000037",
+  "name": "High Peak",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000017",
+  "name": "Hillingdon",
+  "nation": "England",
+  "state": "hub",
+  "direct": 2,
+  "aggregated": 1,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000132",
+  "name": "Hinckley and Bosworth",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 3,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000227",
+  "name": "Horsham",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 26,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000018",
+  "name": "Hounslow",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 41,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000011",
+  "name": "Huntingdonshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000120",
+  "name": "Hyndburn",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 5,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000202",
+  "name": "Ipswich",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 50,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000046",
+  "name": "Isle of Wight",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 12,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000053",
+  "name": "Isles of Scilly",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000019",
+  "name": "Islington",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 6,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E09000020",
+  "name": "Kensington and Chelsea",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 24,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000146",
+  "name": "King's Lynn and West Norfolk",
+  "nation": "England",
+  "state": "hub",
+  "direct": 25,
+  "aggregated": 36,
+  "sources": [
+   "norfolk"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E06000010",
+  "name": "Kingston upon Hull, City of",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 3,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000021",
+  "name": "Kingston upon Thames",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 24,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E08000034",
+  "name": "Kirklees",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000011",
+  "name": "Knowsley",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 9,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000022",
+  "name": "Lambeth",
+  "nation": "England",
+  "state": "hub",
+  "direct": 155,
+  "aggregated": 202,
+  "sources": [
+   "lambeth",
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000121",
+  "name": "Lancaster",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 7,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000035",
+  "name": "Leeds",
+  "nation": "England",
+  "state": "hub",
+  "direct": 309,
+  "aggregated": 299,
+  "sources": [
+   "datamillnorth"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E06000016",
+  "name": "Leicester",
+  "nation": "England",
+  "state": "own",
+  "direct": 392,
+  "aggregated": 403,
+  "sources": [
+   "leicester"
+  ],
+  "own_sources": [
+   "leicester"
+  ]
+ },
+ {
+  "code": "E07000063",
+  "name": "Lewes",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 9,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000023",
+  "name": "Lewisham",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 33,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000194",
+  "name": "Lichfield",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 23,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000138",
+  "name": "Lincoln",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000012",
+  "name": "Liverpool",
+  "nation": "England",
+  "state": "hub",
+  "direct": 10,
+  "aggregated": 21,
+  "sources": [
+   "datamillnorth"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E06000032",
+  "name": "Luton",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 18,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000110",
+  "name": "Maidstone",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000074",
+  "name": "Maldon",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 53,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000235",
+  "name": "Malvern Hills",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 4,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000003",
+  "name": "Manchester",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 41,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000174",
+  "name": "Mansfield",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 14,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000035",
+  "name": "Medway",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 27,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000133",
+  "name": "Melton",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000024",
+  "name": "Merton",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 15,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000042",
+  "name": "Mid Devon",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 27,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000203",
+  "name": "Mid Suffolk",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 26,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000228",
+  "name": "Mid Sussex",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000002",
+  "name": "Middlesbrough",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000042",
+  "name": "Milton Keynes",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 51,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000210",
+  "name": "Mole Valley",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 60,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000091",
+  "name": "New Forest",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 8,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000175",
+  "name": "Newark and Sherwood",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 84,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000021",
+  "name": "Newcastle upon Tyne",
+  "nation": "England",
+  "state": "hub",
+  "direct": 41,
+  "aggregated": 45,
+  "sources": [
+   "datamillnorth"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000195",
+  "name": "Newcastle-under-Lyme",
+  "nation": "England",
+  "state": "hub",
+  "direct": 41,
+  "aggregated": 66,
+  "sources": [
+   "datamillnorth"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E09000025",
+  "name": "Newham",
+  "nation": "England",
+  "state": "hub",
+  "direct": 3,
+  "aggregated": 0,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000043",
+  "name": "North Devon",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 38,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000038",
+  "name": "North East Derbyshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 9,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000012",
+  "name": "North East Lincolnshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 247,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000099",
+  "name": "North Hertfordshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 26,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000139",
+  "name": "North Kesteven",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 17,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000013",
+  "name": "North Lincolnshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 238,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000147",
+  "name": "North Norfolk",
+  "nation": "England",
+  "state": "hub",
+  "direct": 25,
+  "aggregated": 57,
+  "sources": [
+   "norfolk"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E06000061",
+  "name": "North Northamptonshire",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000024",
+  "name": "North Somerset",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 72,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000022",
+  "name": "North Tyneside",
+  "nation": "England",
+  "state": "hub",
+  "direct": 5,
+  "aggregated": 646,
+  "sources": [
+   "datamillnorth"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000218",
+  "name": "North Warwickshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 63,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000134",
+  "name": "North West Leicestershire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000065",
+  "name": "North Yorkshire",
+  "nation": "England",
+  "state": "own",
+  "direct": 50,
+  "aggregated": 185,
+  "sources": [
+   "north_yorkshire"
+  ],
+  "own_sources": [
+   "north_yorkshire"
+  ]
+ },
+ {
+  "code": "E06000057",
+  "name": "Northumberland",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 47,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000148",
+  "name": "Norwich",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 18,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000018",
+  "name": "Nottingham",
+  "nation": "England",
+  "state": "own",
+  "direct": 90,
+  "aggregated": 77,
+  "sources": [
+   "nottingham"
+  ],
+  "own_sources": [
+   "nottingham"
+  ]
+ },
+ {
+  "code": "E07000219",
+  "name": "Nuneaton and Bedworth",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 3,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000135",
+  "name": "Oadby and Wigston",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000004",
+  "name": "Oldham",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 31,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000178",
+  "name": "Oxford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 74,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000122",
+  "name": "Pendle",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 13,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000031",
+  "name": "Peterborough",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 36,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000026",
+  "name": "Plymouth",
+  "nation": "England",
+  "state": "own",
+  "direct": 107,
+  "aggregated": 167,
+  "sources": [
+   "plymouth"
+  ],
+  "own_sources": [
+   "plymouth"
+  ]
+ },
+ {
+  "code": "E06000044",
+  "name": "Portsmouth",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000123",
+  "name": "Preston",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 4,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000038",
+  "name": "Reading",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000026",
+  "name": "Redbridge",
+  "nation": "England",
+  "state": "hub",
+  "direct": 4,
+  "aggregated": 2,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E06000003",
+  "name": "Redcar and Cleveland",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 13,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000236",
+  "name": "Redditch",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000211",
+  "name": "Reigate and Banstead",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 17,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000124",
+  "name": "Ribble Valley",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 12,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000027",
+  "name": "Richmond upon Thames",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 2,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E08000005",
+  "name": "Rochdale",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 31,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000075",
+  "name": "Rochford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 36,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000125",
+  "name": "Rossendale",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 5,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000064",
+  "name": "Rother",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 30,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000018",
+  "name": "Rotherham",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000220",
+  "name": "Rugby",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000212",
+  "name": "Runnymede",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 42,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000176",
+  "name": "Rushcliffe",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 5,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000092",
+  "name": "Rushmoor",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 29,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000017",
+  "name": "Rutland",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 12,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000006",
+  "name": "Salford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 63,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000028",
+  "name": "Sandwell",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 11,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000014",
+  "name": "Sefton",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 15,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000111",
+  "name": "Sevenoaks",
+  "nation": "England",
+  "state": "own",
+  "direct": 26,
+  "aggregated": 36,
+  "sources": [
+   "sevenoaks"
+  ],
+  "own_sources": [
+   "sevenoaks"
+  ]
+ },
+ {
+  "code": "E08000039",
+  "name": "Sheffield",
+  "nation": "England",
+  "state": "own",
+  "direct": 222,
+  "aggregated": 55,
+  "sources": [
+   "datamillnorth",
+   "sheffield"
+  ],
+  "own_sources": [
+   "sheffield"
+  ]
+ },
+ {
+  "code": "E06000051",
+  "name": "Shropshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000039",
+  "name": "Slough",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000029",
+  "name": "Solihull",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000066",
+  "name": "Somerset",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000012",
+  "name": "South Cambridgeshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 376,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000039",
+  "name": "South Derbyshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 4,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000025",
+  "name": "South Gloucestershire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 18,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000044",
+  "name": "South Hams",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000140",
+  "name": "South Holland",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000141",
+  "name": "South Kesteven",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 25,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000149",
+  "name": "South Norfolk",
+  "nation": "England",
+  "state": "hub",
+  "direct": 25,
+  "aggregated": 32,
+  "sources": [
+   "norfolk"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000179",
+  "name": "South Oxfordshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 20,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000126",
+  "name": "South Ribble",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 13,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000196",
+  "name": "South Staffordshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 9,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000023",
+  "name": "South Tyneside",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000045",
+  "name": "Southampton",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 21,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000033",
+  "name": "Southend-on-Sea",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 35,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000028",
+  "name": "Southwark",
+  "nation": "England",
+  "state": "hub",
+  "direct": 4,
+  "aggregated": 16,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000213",
+  "name": "Spelthorne",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000240",
+  "name": "St Albans",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 24,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000013",
+  "name": "St. Helens",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 18,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000197",
+  "name": "Stafford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 6,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000198",
+  "name": "Staffordshire Moorlands",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 6,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000243",
+  "name": "Stevenage",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 6,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000007",
+  "name": "Stockport",
+  "nation": "England",
+  "state": "hub",
+  "direct": 24,
+  "aggregated": 52,
+  "sources": [
+   "datamillnorth"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E06000004",
+  "name": "Stockton-on-Tees",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 11,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000021",
+  "name": "Stoke-on-Trent",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000221",
+  "name": "Stratford-on-Avon",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000082",
+  "name": "Stroud",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 16,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000024",
+  "name": "Sunderland",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 725,
+  "sources": [
+   "datamillnorth"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000214",
+  "name": "Surrey Heath",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 46,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000029",
+  "name": "Sutton",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 33,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E07000113",
+  "name": "Swale",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 8,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000030",
+  "name": "Swindon",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 25,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000008",
+  "name": "Tameside",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 3,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000199",
+  "name": "Tamworth",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 17,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000215",
+  "name": "Tandridge",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 5,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000045",
+  "name": "Teignbridge",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 35,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000020",
+  "name": "Telford and Wrekin",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 3,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000076",
+  "name": "Tendring",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 57,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000093",
+  "name": "Test Valley",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000083",
+  "name": "Tewkesbury",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 9,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000114",
+  "name": "Thanet",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 7,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000102",
+  "name": "Three Rivers",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000034",
+  "name": "Thurrock",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 80,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000115",
+  "name": "Tonbridge and Malling",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000027",
+  "name": "Torbay",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000046",
+  "name": "Torridge",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 7,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000030",
+  "name": "Tower Hamlets",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 10,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E08000009",
+  "name": "Trafford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 25,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000116",
+  "name": "Tunbridge Wells",
+  "nation": "England",
+  "state": "own",
+  "direct": 205,
+  "aggregated": 228,
+  "sources": [
+   "tunbridge_wells"
+  ],
+  "own_sources": [
+   "tunbridge_wells"
+  ]
+ },
+ {
+  "code": "E07000077",
+  "name": "Uttlesford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 8,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000180",
+  "name": "Vale of White Horse",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 3,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000036",
+  "name": "Wakefield",
+  "nation": "England",
+  "state": "hub",
+  "direct": 22,
+  "aggregated": 16,
+  "sources": [
+   "datamillnorth"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E08000030",
+  "name": "Walsall",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 6,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000031",
+  "name": "Waltham Forest",
+  "nation": "England",
+  "state": "hub",
+  "direct": 2,
+  "aggregated": 3,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E09000032",
+  "name": "Wandsworth",
+  "nation": "England",
+  "state": "hub",
+  "direct": 2,
+  "aggregated": 5,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E06000007",
+  "name": "Warrington",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000222",
+  "name": "Warwick",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000103",
+  "name": "Watford",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000216",
+  "name": "Waverley",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 14,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000065",
+  "name": "Wealden",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000241",
+  "name": "Welwyn Hatfield",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000037",
+  "name": "West Berkshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 6,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000047",
+  "name": "West Devon",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 28,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000127",
+  "name": "West Lancashire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 4,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000142",
+  "name": "West Lindsey",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 36,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000062",
+  "name": "West Northamptonshire",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000181",
+  "name": "West Oxfordshire",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 25,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000245",
+  "name": "West Suffolk",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 5,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E09000033",
+  "name": "Westminster",
+  "nation": "England",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 1,
+  "sources": [
+   "london_datastore"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "E06000064",
+  "name": "Westmorland and Furness",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000010",
+  "name": "Wigan",
+  "nation": "England",
+  "state": "own",
+  "direct": 95,
+  "aggregated": 110,
+  "sources": [
+   "wigan"
+  ],
+  "own_sources": [
+   "wigan"
+  ]
+ },
+ {
+  "code": "E06000054",
+  "name": "Wiltshire",
+  "nation": "England",
+  "state": "own",
+  "direct": 30,
+  "aggregated": 29,
+  "sources": [
+   "wiltshire"
+  ],
+  "own_sources": [
+   "wiltshire"
+  ]
+ },
+ {
+  "code": "E07000094",
+  "name": "Winchester",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000040",
+  "name": "Windsor and Maidenhead",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 26,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000015",
+  "name": "Wirral",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 28,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000217",
+  "name": "Woking",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 23,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000041",
+  "name": "Wokingham",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E08000031",
+  "name": "Wolverhampton",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 40,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000237",
+  "name": "Worcester",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 5,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000229",
+  "name": "Worthing",
+  "nation": "England",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000238",
+  "name": "Wychavon",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 15,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000128",
+  "name": "Wyre",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 7,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E07000239",
+  "name": "Wyre Forest",
+  "nation": "England",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 13,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "E06000014",
+  "name": "York",
+  "nation": "England",
+  "state": "own",
+  "direct": 1360,
+  "aggregated": 1426,
+  "sources": [
+   "york"
+  ],
+  "own_sources": [
+   "york"
+  ]
+ },
+ {
+  "code": "N09000001",
+  "name": "Antrim and Newtownabbey",
+  "nation": "Northern Ireland",
+  "state": "hub",
+  "direct": 8,
+  "aggregated": 0,
+  "sources": [
+   "opendatani"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "N09000011",
+  "name": "Ards and North Down",
+  "nation": "Northern Ireland",
+  "state": "hub",
+  "direct": 2,
+  "aggregated": 0,
+  "sources": [
+   "opendatani"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "N09000002",
+  "name": "Armagh City, Banbridge and Craigavon",
+  "nation": "Northern Ireland",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 0,
+  "sources": [
+   "opendatani"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "N09000003",
+  "name": "Belfast",
+  "nation": "Northern Ireland",
+  "state": "hub",
+  "direct": 25,
+  "aggregated": 6,
+  "sources": [
+   "opendatani"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "N09000004",
+  "name": "Causeway Coast and Glens",
+  "nation": "Northern Ireland",
+  "state": "own",
+  "direct": 60,
+  "aggregated": 0,
+  "sources": [
+   "causeway_coast",
+   "opendatani"
+  ],
+  "own_sources": [
+   "causeway_coast"
+  ]
+ },
+ {
+  "code": "N09000005",
+  "name": "Derry City and Strabane",
+  "nation": "Northern Ireland",
+  "state": "hub",
+  "direct": 2,
+  "aggregated": 0,
+  "sources": [
+   "opendatani"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "N09000006",
+  "name": "Fermanagh and Omagh",
+  "nation": "Northern Ireland",
+  "state": "hub",
+  "direct": 15,
+  "aggregated": 0,
+  "sources": [
+   "opendatani"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "N09000007",
+  "name": "Lisburn and Castlereagh",
+  "nation": "Northern Ireland",
+  "state": "hub",
+  "direct": 2,
+  "aggregated": 0,
+  "sources": [
+   "opendatani"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "N09000009",
+  "name": "Mid Ulster",
+  "nation": "Northern Ireland",
+  "state": "own",
+  "direct": 54,
+  "aggregated": 0,
+  "sources": [
+   "mid_ulster",
+   "opendatani"
+  ],
+  "own_sources": [
+   "mid_ulster"
+  ]
+ },
+ {
+  "code": "N09000008",
+  "name": "Mid and East Antrim",
+  "nation": "Northern Ireland",
+  "state": "hub",
+  "direct": 2,
+  "aggregated": 0,
+  "sources": [
+   "opendatani"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "N09000010",
+  "name": "Newry, Mourne and Down",
+  "nation": "Northern Ireland",
+  "state": "hub",
+  "direct": 2,
+  "aggregated": 0,
+  "sources": [
+   "opendatani"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000033",
+  "name": "Aberdeen City",
+  "nation": "Scotland",
+  "state": "own",
+  "direct": 63,
+  "aggregated": 3,
+  "sources": [
+   "aberdeen",
+   "spatialhub_scotland"
+  ],
+  "own_sources": [
+   "aberdeen"
+  ]
+ },
+ {
+  "code": "S12000034",
+  "name": "Aberdeenshire",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 37,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000041",
+  "name": "Angus",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 19,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000035",
+  "name": "Argyll and Bute",
+  "nation": "Scotland",
+  "state": "own",
+  "direct": 56,
+  "aggregated": 0,
+  "sources": [
+   "argyll_bute",
+   "spatialhub_scotland"
+  ],
+  "own_sources": [
+   "argyll_bute"
+  ]
+ },
+ {
+  "code": "S12000036",
+  "name": "City of Edinburgh",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 21,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000005",
+  "name": "Clackmannanshire",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 37,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000006",
+  "name": "Dumfries and Galloway",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 4,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000042",
+  "name": "Dundee City",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 16,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000008",
+  "name": "East Ayrshire",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 7,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000045",
+  "name": "East Dunbartonshire",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 1,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000010",
+  "name": "East Lothian",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 6,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000011",
+  "name": "East Renfrewshire",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 9,
+  "aggregated": 6,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000014",
+  "name": "Falkirk",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 20,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000047",
+  "name": "Fife",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 10,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000049",
+  "name": "Glasgow City",
+  "nation": "Scotland",
+  "state": "own",
+  "direct": 162,
+  "aggregated": 0,
+  "sources": [
+   "glasgow",
+   "spatialhub_scotland"
+  ],
+  "own_sources": [
+   "glasgow"
+  ]
+ },
+ {
+  "code": "S12000017",
+  "name": "Highland",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 13,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000018",
+  "name": "Inverclyde",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 5,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000019",
+  "name": "Midlothian",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 5,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000020",
+  "name": "Moray",
+  "nation": "Scotland",
+  "state": "own",
+  "direct": 83,
+  "aggregated": 0,
+  "sources": [
+   "moray",
+   "spatialhub_scotland"
+  ],
+  "own_sources": [
+   "moray"
+  ]
+ },
+ {
+  "code": "S12000013",
+  "name": "Na h-Eileanan Siar",
+  "nation": "Scotland",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "S12000021",
+  "name": "North Ayrshire",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 29,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000050",
+  "name": "North Lanarkshire",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 19,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000023",
+  "name": "Orkney Islands",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 34,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000048",
+  "name": "Perth and Kinross",
+  "nation": "Scotland",
+  "state": "own",
+  "direct": 85,
+  "aggregated": 0,
+  "sources": [
+   "perth_kinross",
+   "spatialhub_scotland"
+  ],
+  "own_sources": [
+   "perth_kinross"
+  ]
+ },
+ {
+  "code": "S12000038",
+  "name": "Renfrewshire",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 5,
+  "aggregated": 1,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000026",
+  "name": "Scottish Borders",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 4,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000027",
+  "name": "Shetland Islands",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 3,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000028",
+  "name": "South Ayrshire",
+  "nation": "Scotland",
+  "state": "own",
+  "direct": 120,
+  "aggregated": 0,
+  "sources": [
+   "south_ayrshire",
+   "spatialhub_scotland"
+  ],
+  "own_sources": [
+   "south_ayrshire"
+  ]
+ },
+ {
+  "code": "S12000029",
+  "name": "South Lanarkshire",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 6,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000030",
+  "name": "Stirling",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 19,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000039",
+  "name": "West Dunbartonshire",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 5,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "S12000040",
+  "name": "West Lothian",
+  "nation": "Scotland",
+  "state": "hub",
+  "direct": 5,
+  "aggregated": 0,
+  "sources": [
+   "spatialhub_scotland"
+  ],
+  "own_sources": []
+ },
+ {
+  "code": "W06000019",
+  "name": "Blaenau Gwent",
+  "nation": "Wales",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000013",
+  "name": "Bridgend",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 7,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000018",
+  "name": "Caerphilly",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 8,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000015",
+  "name": "Cardiff",
+  "nation": "Wales",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000010",
+  "name": "Carmarthenshire",
+  "nation": "Wales",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000008",
+  "name": "Ceredigion",
+  "nation": "Wales",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000003",
+  "name": "Conwy",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 2,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000004",
+  "name": "Denbighshire",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 3,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000005",
+  "name": "Flintshire",
+  "nation": "Wales",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000002",
+  "name": "Gwynedd",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 4,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000001",
+  "name": "Isle of Anglesey",
+  "nation": "Wales",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000024",
+  "name": "Merthyr Tydfil",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000021",
+  "name": "Monmouthshire",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000012",
+  "name": "Neath Port Talbot",
+  "nation": "Wales",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000022",
+  "name": "Newport",
+  "nation": "Wales",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000009",
+  "name": "Pembrokeshire",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 9,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000023",
+  "name": "Powys",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 19,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000016",
+  "name": "Rhondda Cynon Taf",
+  "nation": "Wales",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000011",
+  "name": "Swansea",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 10,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000020",
+  "name": "Torfaen",
+  "nation": "Wales",
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000014",
+  "name": "Vale of Glamorgan",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
+  "own_sources": []
+ },
+ {
+  "code": "W06000006",
+  "name": "Wrexham",
+  "nation": "Wales",
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 4,
+  "sources": [],
+  "own_sources": []
+ }
+]
