@@ -543,6 +543,11 @@ def harvest_json(src: dict, conn: sqlite3.Connection, limit: int | None) -> None
     is only used where the listing genuinely can't stand alone.
     """
     cfg = src.get("json") or {}
+    # 126 of our sources are ArcGIS Hub organisations, all paginating against
+    # the same host. Unthrottled that is several thousand requests a night at
+    # one endpoint, from one IP, for our convenience. A fifth of a second
+    # between pages costs us minutes and costs them nothing.
+    pause = float(cfg.get("pause", 0.2))
     session = requests.Session()
     session.headers["User-Agent"] = USER_AGENT
     started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -575,6 +580,7 @@ def harvest_json(src: dict, conn: sqlite3.Connection, limit: int | None) -> None
         if not cfg.get("page_param") or len(records) >= (total or 0):
             break
         page += 1
+        time.sleep(pause)
 
     total = total or len(records)
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -593,6 +599,7 @@ def harvest_json(src: dict, conn: sqlite3.Connection, limit: int | None) -> None
                     rec = {**rec, **d.json()}
             except Exception:  # noqa: BLE001 - the listing row still stands
                 pass
+            time.sleep(pause)
         row = _normalise_json_record(rec, ident, cfg, src, now)
         if not row:
             continue
