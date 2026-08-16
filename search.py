@@ -299,7 +299,57 @@ class SearchEngine:
             self._dup_mtime = mtime
         return self._dup_cache
 
-    def search(self, query: str, k: int = 10, offset: int = 0) -> dict:
+    @staticmethod
+    def _filter_ranked(conn: sqlite3.Connection, ranked: list[str],
+                       availability: dict, filters: dict) -> list[str]:
+        """Drop candidates that don't match the requested constraints.
+
+        Applied after ranking and before paging, so `available` stays an
+        honest count of what a client can page through — filtering after the
+        slice would hand back short pages and a total that lied about them.
+
+        Every filter takes a comma-separated list and means OR within itself,
+        AND between fields: format=CSV,XLSX & availability=data is "a
+        spreadsheet or a CSV, and we checked the link and it really is a file".
+        """
+        if not ranked or not filters:
+            return ranked
+        marks = ",".join("?" * len(ranked))
+        rows = {r["key"]: r for r in conn.execute(
+            f"SELECT key, source_id, license_norm, formats_norm FROM datasets "
+            f"WHERE key IN ({marks})", ranked)}
+
+        want_source = filters.get("source")
+        want_licence = filters.get("license")
+        want_format = filters.get("format")
+        want_avail = filters.get("availability")
+
+        kept = []
+        for key in ranked:
+            row = rows.get(key)
+            if row is None:
+                continue
+            if want_source and (row["source_id"] or "").lower() not in want_source:
+                continue
+            if want_licence:
+                lic = (row["license_norm"] or "").lower()
+                # "none" is a real answer to "what licence is this under?",
+                # and the one a third of the catalogue gives.
+                if not (lic in want_licence or (not lic and "none" in want_licence)):
+                    continue
+            if want_format:
+                have = {f.lower() for f in json.loads(row["formats_norm"] or "[]")}
+                if not (have & want_format):
+                    continue
+            if want_avail:
+                verdict, _ = availability.get(key, (None, 0))
+                if (verdict or "unchecked") not in want_avail:
+                    continue
+            kept.append(key)
+        return kept
+
+    def search(self, query: str, k: int = 10, offset: int = 0,
+               filters: dict | None = None) -> dict:
         conn = self._conn()
         try:
             if self._place_vocab is None:
@@ -352,6 +402,7 @@ class SearchEngine:
                 collapsed[canon] = max(collapsed.get(canon, 0.0), score)
 
             ranked = sorted(collapsed, key=collapsed.get, reverse=True)
+            ranked = self._filter_ranked(conn, ranked, availability, filters or {})
             total = len(ranked)
             top = ranked[offset:offset + k]
             columns_by_key = self._columns_for_keys(conn, top)
@@ -416,6 +467,11 @@ class SearchEngine:
                 # capped at CANDIDATES per arm — so it is an honest "how much
                 # more can you page through", not a corpus-wide total.
                 "available": total,
+                # Echoed back as sorted lists: sets don't survive JSON, and a
+                # client that mistypes a filter should be able to see what we
+                # actually applied rather than guess from an empty result.
+                "filters": ({name: sorted(vals) for name, vals in filters.items()}
+                            if filters else None),
                 "geo": geo,
                 "results": results,
             }

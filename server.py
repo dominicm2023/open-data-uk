@@ -216,9 +216,40 @@ def api_search(request: Request, response: Response,
                offset: int = Query(default=0, ge=0, le=200,
                                    description="Skip this many results, for "
                                                "paging past the first page "
-                                               "(max 200)")) -> dict:
+                                               "(max 200)"),
+               availability: str = Query(
+                   default="", max_length=120,
+                   description="Keep only these link verdicts, comma-separated: "
+                               "`data` (we fetched it and it is a data file), "
+                               "`api`, `webpage`, `dead`, `blocked` (the "
+                               "publisher refused our checker), `nofiles`, "
+                               "`unchecked`. `availability=data,api` is the "
+                               "useful one: only things you can actually load."),
+               format: str = Query(
+                   default="", max_length=120,
+                   description="Keep only datasets offering one of these "
+                               "formats, comma-separated and normalised — "
+                               "`CSV`, `XLSX`, `GEOJSON`, `SHP`, `JSON`, `WMS`…"),
+               license: str = Query(
+                   default="", max_length=200,
+                   description="Keep only these licences, comma-separated, as "
+                               "returned in the `license` field — e.g. "
+                               "`OGL-UK-3.0`. Use `none` for the third of the "
+                               "catalogue that states no licence at all."),
+               source: str = Query(
+                   default="", max_length=200,
+                   description="Keep only these portals, comma-separated, by "
+                               "the `id` from /api/sources — e.g. "
+                               "`data_gov_uk,london_datastore`.")) -> dict:
     _rate_check(request, response)
-    payload = engine.search(q, k, offset=offset)
+
+    # Filters are AND between fields, OR within one. Values are lower-cased
+    # here so the caller need not care about case anywhere.
+    filters = {name: {v.strip().lower() for v in raw.split(",") if v.strip()}
+               for name, raw in (("availability", availability), ("format", format),
+                                 ("license", license), ("source", source))
+               if raw.strip()}
+    payload = engine.search(q, k, offset=offset, filters=filters or None)
     log_query(q, k, payload)   # anonymous; see querylog.py
     payload["attribution"] = ATTRIBUTION
     return payload

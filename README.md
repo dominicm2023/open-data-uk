@@ -171,9 +171,28 @@ whole index is rebuildable from this repo in about an hour, or
 [open an issue](https://github.com/dominicm2023/open-data-uk/issues) and
 let's talk.
 
-**Not there yet:** no filtering by source, licence or format, and no bulk
-export endpoint. If you want either, say so in an issue — knowing what
-people actually need beats guessing.
+**Filtering.** Four optional filters, comma-separated, AND between fields and
+OR within one:
+
+```bash
+# recycling data you can actually load, as a spreadsheet
+curl "https://open-data.org.uk/api/search?q=recycling+rates&availability=data,api&format=CSV"
+```
+
+| Filter | Values |
+|---|---|
+| `availability` | `data`, `api`, `webpage`, `dead`, `blocked`, `nofiles`, `unchecked` |
+| `format` | normalised format names — `CSV`, `XLSX`, `GEOJSON`, `SHP`, `WMS`… |
+| `license` | as returned in `license`, e.g. `OGL-UK-3.0`; `none` for the third that state none |
+| `source` | portal ids from [`/api/sources`](https://open-data.org.uk/api/sources) |
+
+Filters apply after ranking and before paging, so `available` stays an honest
+count of what you can page through, and the surviving results keep the order
+they had. The response echoes back the filters it applied, so a mistyped value
+shows up as `filters` rather than as a mysteriously empty page.
+
+**Not there yet:** no bulk export endpoint. If you want one, say so in an
+issue — knowing what people actually need beats guessing.
 
 ## Contributing
 
