@@ -219,6 +219,20 @@ check("Bristol City Council" in who and "Leeds City Council" in who,
 check(f'canonical" href="{SITE}/who-publishes?name=Conservation%20Areas"' in who,
       "the page canonicalises to its own encoded URL")
 
+shared_notice = pagerender.render_dataset(
+    record(title="Conservation Areas",
+           also_published={"title": "Conservation Areas", "count": 84}), SITE)
+check("83 other UK organisations publish" in shared_notice,
+      "a dataset page counts the OTHER publishers, not including itself")
+check('href="/who-publishes?name=Conservation%20Areas"' in shared_notice,
+      "and links to the page listing them")
+check("other UK organisation" not in pagerender.render_dataset(record(), SITE),
+      "a dataset nobody else publishes says nothing about it")
+solo = pagerender.render_dataset(
+    record(also_published={"title": "Odd One Out", "count": 1}), SITE)
+check("other UK organisation" not in solo,
+      "a count of one is this dataset alone, so no notice")
+
 # --- URL construction ---------------------------------------------------
 check(pagerender.dataset_path("a:b c") == "/dataset?key=a%3Ab%20c",
       "dataset paths percent-encode the whole key")

@@ -277,6 +277,18 @@ def body_html(rec: dict) -> str:
            else '<span class="chip nolic">no licence stated</span>')
 
     notices = []
+    # Dozens of councils publish a dataset of the same name, and until now
+    # each page was a dead end about one of them. This is the one link on a
+    # dataset page that no publisher's own catalogue could ever offer.
+    also = rec.get("also_published") or {}
+    if also.get("count", 0) > 1:
+        others = also["count"] - 1
+        notices.append(
+            f'<p class="notice">{others:,} other UK organisation'
+            f'{"" if others == 1 else "s"} publish a dataset called '
+            f'“{esc(also["title"])}”. '
+            f'<a href="{esc(who_path(also["title"]))}">See who, and whether '
+            "their links lead to real data →</a></p>")
     if rec.get("retired"):
         notices.append('<p class="notice">The publisher has marked this record '
                        'retired or superseded. It is kept here because links to '

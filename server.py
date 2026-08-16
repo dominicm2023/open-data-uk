@@ -55,7 +55,8 @@ async def lifespan(app: FastAPI):
     stack trace nobody sees.
     """
     for step, fn in (("model", lambda: engine.model),
-                     ("index", engine.stats)):
+                     ("index", engine.stats),
+                     ("browse aggregates", _aggregates)):
         try:
             fn()
         except Exception as exc:  # noqa: BLE001
@@ -360,6 +361,14 @@ def dataset_page(key: str = Query(default="", max_length=500)) -> HTMLResponse:
     if rec is None:
         return HTMLResponse(pagerender.render_missing(key or None), status_code=404,
                             headers={"Cache-Control": "no-store"})
+    try:
+        agg = _aggregates()
+        slug = _norm_title(rec.get("title") or "")
+        if count := agg["shared_index"].get(slug):
+            rec["also_published"] = {"title": agg["shared_label"][slug],
+                                     "count": count}
+    except Exception:  # noqa: BLE001 - a cross-link is never worth a 500
+        pass
     return HTMLResponse(
         pagerender.render_dataset(rec, SITE_URL),
         headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
@@ -442,7 +451,6 @@ def _aggregates() -> dict:
     tag_n: Counter = Counter()
     tag_pubs: defaultdict = defaultdict(set)
     title_pubs: defaultdict = defaultdict(set)
-    title_label: dict[str, str] = {}
 
     for _key, title, publisher, tags in rows:
         if publisher and publisher.strip():
@@ -457,16 +465,26 @@ def _aggregates() -> dict:
             slug = _norm_title(title)
             if len(slug) > 3:
                 title_pubs[slug].add(publisher)
-                # Keep a readable label — the normalised form is lower-case
-                # and stripped of punctuation, which reads like a slug.
-                title_label.setdefault(slug, " ".join(title.split()))
 
     topics = sorted(
         ((t, n, len(tag_pubs[t])) for t, n in tag_n.items()
          if n >= TOPIC_MIN_DATASETS and len(tag_pubs[t]) >= TOPIC_MIN_PUBLISHERS),
         key=lambda r: r[0])
     shared_slugs = {s for s, p in title_pubs.items() if len(p) >= WHO_MIN_PUBLISHERS}
-    shared = sorted(((title_label[s], len(title_pubs[s])) for s in shared_slugs),
+    # Pick the label readers should see. The normalised slug is lower-case and
+    # stripped of punctuation, and taking whichever spelling happened to come
+    # first gave "Conservation_Areas" — one publisher's underscore standing in
+    # for the 84 who wrote it normally. Take the commonest form instead, and
+    # only for the few hundred titles that need one.
+    forms: defaultdict = defaultdict(Counter)
+    for _key, title, publisher, _tags in rows:
+        if title and publisher:
+            slug = _norm_title(title)
+            if slug in shared_slugs:
+                forms[slug][" ".join(title.split())] += 1
+    title_label = {s: forms[s].most_common(1)[0][0] for s in shared_slugs if forms[s]}
+    shared = sorted(((title_label[s], len(title_pubs[s]))
+                     for s in shared_slugs if s in title_label),
                     key=lambda r: (-r[1], r[0].lower()))
     # Only ~3,000 of the 60,000 rows belong to a shared title, so holding
     # their keys costs little and turns the page into indexed lookups.
@@ -483,6 +501,7 @@ def _aggregates() -> dict:
         "topic_index": {t: (n, p) for t, n, p in topics},
         "shared": shared,
         "shared_index": {_norm_title(t): n for t, n in shared},
+        "shared_label": {_norm_title(t): t for t, n in shared},
         "shared_keys": dict(shared_keys),
     })
     return _agg_cache[1]
