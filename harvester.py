@@ -223,6 +223,10 @@ def harvest_source(src: dict, conn: sqlite3.Connection, limit: int | None) -> No
             if (g := geo_row(key, p)):
                 geo_rows.append(g)
         conn.executemany(UPSERT, rows)
+        # Clear first: a publisher who removes a bounding box would otherwise
+        # keep the old one forever, and geo search would go on matching a
+        # place the dataset no longer claims to cover.
+        conn.executemany("DELETE FROM dataset_geo WHERE dataset_key = ?", keys)
         conn.executemany(GEO_UPSERT, geo_rows)
         conn.executemany("DELETE FROM resources WHERE dataset_key = ?", keys)
         conn.executemany("INSERT OR REPLACE INTO resources VALUES (?, ?, ?, ?)", res_rows)
@@ -452,6 +456,206 @@ def harvest_ods(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
           f"(portal reports {total_at_source}), {errors} page errors", flush=True)
 
 
+GEONODE_PAGE = 200
+
+# GeoNode records who *uploaded* a layer, not who published it: the owner is
+# a named individual and sometimes a personal email address. We never store
+# those. The workspace is the only field that identifies an organisation, and
+# only for the minority that use a named one — the rest sit in the default
+# "geonode" workspace with no attribution at all (verified: the `attribution`
+# field is null on all 1,927 DataMap Wales layers).
+GEONODE_WORKSPACES = {
+    "inspire-nrw": "Natural Resources Wales",
+    "appdata-nrw": "Natural Resources Wales",
+    "appdata-ons": "Office for National Statistics",
+    "inspire-wg": "Welsh Government",
+    "appdata-wg": "Welsh Government",
+    "appdata-wg-marine": "Welsh Government",
+}
+
+
+def geonode_publisher(rec: dict, src: dict) -> str:
+    """Who published this layer, or the platform when nobody says.
+
+    Naming the uploader would put individuals — and in some cases their work
+    email address — into a public index, for no gain. Falling back to the
+    platform name is the honest answer to "where did this come from?" when
+    the record itself doesn't answer "who made it?".
+    """
+    ws = (rec.get("workspace") or "").strip().lower()
+    if ws in GEONODE_WORKSPACES:
+        return GEONODE_WORKSPACES[ws]
+    for prefix, name in GEONODE_WORKSPACES.items():
+        if ws.startswith(prefix + "-"):
+            return name
+    return src["name"]
+
+
+def geonode_resources(base: str, alternate: str | None) -> list[tuple]:
+    """The download and service URLs a GeoNode layer actually offers.
+
+    GeoNode 3's API exposes no links, but every layer is a GeoServer feature
+    type, so these are constructible from `alternate` and are real: all four
+    verified against DataMap Wales before this was written. The checker
+    confirms them per layer anyway, so a workspace that refuses one of them
+    gets marked rather than assumed.
+    """
+    if not alternate:
+        return []
+    wfs = f"{base}/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName={alternate}"
+    return [
+        (f"{wfs}&outputFormat=application/json", "GeoJSON (WFS)", "GeoJSON"),
+        (f"{wfs}&outputFormat=SHAPE-ZIP", "Shapefile (WFS)", "SHP"),
+        (f"{wfs}&outputFormat=csv", "CSV (WFS)", "CSV"),
+        (f"{base}/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+         "WMS service", "WMS"),
+    ]
+
+
+def normalise_geonode_layer(rec: dict, src: dict, base: str, now: str) -> tuple | None:
+    ident = rec.get("uuid") or (str(rec["pk"]) if rec.get("pk") else None)
+    if not ident:
+        return None
+    formats = [f for _u, _n, f in geonode_resources(base, rec.get("alternate"))]
+    keywords = [k.get("name") for k in (rec.get("keywords") or []) if k.get("name")]
+    if category := (rec.get("category") or {}).get("identifier"):
+        keywords.append(category)
+    # GeoNode writes "not_specified" where a licence is unset; that is the
+    # same thing as absent and must not be normalised into a licence.
+    lic = ((rec.get("license") or {}).get("identifier") or "").strip()
+    if lic in ("", "not_specified"):
+        lic = None
+    return (
+        f"{src['id']}:{ident}",
+        src["id"],
+        ident,
+        rec.get("name") or ident,
+        rec.get("title"),
+        strip_html(rec.get("raw_abstract") or rec.get("abstract")),
+        geonode_publisher(rec, src),
+        lic,
+        norm_license(lic),
+        rec.get("created"),
+        rec.get("last_updated") or rec.get("date"),
+        rec.get("detail_url") or f"{base}/layers/{rec.get('alternate') or ident}",
+        json.dumps(keywords),
+        json.dumps(formats),
+        json.dumps(norm_formats(formats)),
+        len(formats),
+        now,
+    )
+
+
+# Everything this index covers is in or around the British Isles, out to
+# Rockall and across the North Sea. A bounding box that misses this entirely
+# isn't data about somewhere else — it's a broken box, and a broken box is
+# worse than none: geo search would offer a Welsh dataset to someone asking
+# about the Indian Ocean.
+UK_ENVELOPE = (-25.0, 45.0, 5.0, 65.0)  # west, south, east, north
+
+
+def _intersects_uk(w: float, s: float, e: float, n: float) -> bool:
+    uw, us, ue, un = UK_ENVELOPE
+    return w <= ue and e >= uw and s <= un and n >= us
+
+
+def geonode_bbox(rec: dict) -> tuple[float, float, float, float] | None:
+    """West/south/east/north from the WGS84 polygon GeoNode publishes.
+
+    `bbox_polygon` is in the layer's own projection — EPSG:27700 for most of
+    Wales — so only `ll_bbox_polygon` is safe to read without reprojecting.
+
+    Two real faults in that field on DataMap Wales, both found by checking
+    the result against where Wales actually is rather than trusting it:
+
+    - Some layers emit the coordinates as (lat, lon). The Landmap series
+      reported a box at 51.33E, 5.47S — Wales with its axes swapped, in the
+      Indian Ocean. Swapping back recovers a correct box, so we do, rather
+      than throwing away real geography.
+    - Others carry a placeholder box from (-1,-1) to (0,0), off the coast of
+      Africa. Nothing recovers that one; it is dropped.
+    """
+    poly = (rec.get("ll_bbox_polygon") or {}).get("coordinates")
+    if not poly or not poly[0]:
+        return None
+    try:
+        pairs = [(float(p[0]), float(p[1])) for p in poly[0]]
+    except (TypeError, ValueError, IndexError):
+        return None
+    if not pairs:
+        return None
+
+    for lon_first in (True, False):
+        xs = [p[0] if lon_first else p[1] for p in pairs]
+        ys = [p[1] if lon_first else p[0] for p in pairs]
+        w, s, e, n = min(xs), min(ys), max(xs), max(ys)
+        if (-180 <= w <= e <= 180 and -90 <= s <= n <= 90
+                and not (w == e and s == n) and _intersects_uk(w, s, e, n)):
+            return (w, s, e, n)
+    return None
+
+
+def harvest_geonode(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
+    """Harvest a GeoNode catalogue (paged /api/v2/layers/)."""
+    session = requests.Session()
+    session.headers["User-Agent"] = USER_AGENT
+    started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    base = src["web"].rstrip("/")
+    print(f"[{src['id']}] harvesting GeoNode {src['api']} ...", flush=True)
+
+    layers, total, page, errors = [], None, 1, 0
+    while True:
+        try:
+            resp = session.get(src["api"], params={"page_size": GEONODE_PAGE,
+                                                   "page": page}, timeout=120)
+            # GeoNode answers 404 for the page after the last one rather than
+            # an empty list, so that is the end of the catalogue, not a fault.
+            if resp.status_code == 404 and layers:
+                break
+            resp.raise_for_status()
+            payload = resp.json()
+        except Exception as exc:  # noqa: BLE001
+            print(f"[{src['id']}] page {page} failed: {exc}", flush=True)
+            errors += 1
+            break
+        total = total or payload.get("total")
+        batch = payload.get("layers") or payload.get("resources") or []
+        if not batch:
+            break
+        layers += batch
+        print(f"[{src['id']}]   {len(layers)}/{total or '?'}", flush=True)
+        if limit and len(layers) >= limit:
+            layers = layers[:limit]
+            break
+        page += 1
+
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    rows = [r for rec in layers if (r := normalise_geonode_layer(rec, src, base, now))]
+    res_rows, keys, geo_rows = [], [], []
+    for rec in layers:
+        ident = rec.get("uuid") or (str(rec["pk"]) if rec.get("pk") else None)
+        if not ident:
+            continue
+        key = f"{src['id']}:{ident}"
+        keys.append((key,))
+        res_rows += resource_rows(key, geonode_resources(base, rec.get("alternate")))
+        if box := geonode_bbox(rec):
+            geo_rows.append((key, *box, None, rec.get("date")))
+
+    conn.executemany(UPSERT, rows)
+    conn.executemany("DELETE FROM resources WHERE dataset_key = ?", keys)
+    conn.executemany("INSERT OR REPLACE INTO resources VALUES (?, ?, ?, ?)", res_rows)
+    # Clear before writing, so a box that stops being valid stops being used.
+    conn.executemany("DELETE FROM dataset_geo WHERE dataset_key = ?", keys)
+    conn.executemany(GEO_UPSERT, geo_rows)
+    finished = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    conn.execute("INSERT INTO harvest_runs VALUES (?, ?, ?, ?, ?, ?)",
+                 (src["id"], started, finished, total, len(rows), errors))
+    conn.commit()
+    print(f"[{src['id']}] done: {len(rows)} stored (catalogue reports {total}), "
+          f"{len(geo_rows)} with a bounding box", flush=True)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--limit", type=int, default=None,
@@ -476,6 +680,8 @@ def main() -> int:
             harvest_dcat(src, conn)
         elif src.get("type") == "ods":
             harvest_ods(src, conn, args.limit)
+        elif src.get("type") == "geonode":
+            harvest_geonode(src, conn, args.limit)
         else:
             print(f"[{src['id']}] skipped: no harvester for type {src.get('type')!r}")
     conn.close()

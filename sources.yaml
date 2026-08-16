@@ -334,3 +334,13 @@ sources:
     api: https://data.brent.gov.uk/api/3/action
     web: https://data.brent.gov.uk
     dataset_url: https://data.brent.gov.uk/dataset/{name}
+
+  # GeoNode. Wales was the worst-covered nation by a distance — see
+  # COUNCIL_COVERAGE.md — and this is the platform holding most of its
+  # spatial data.
+  - id: datamap_wales
+    name: DataMap Wales
+    type: geonode
+    api: https://datamap.gov.wales/api/v2/layers/
+    web: https://datamap.gov.wales
+    dataset_url: "unused-for-geonode"

@@ -78,7 +78,30 @@ def check_ods(src: dict) -> str | None:
     return None
 
 
-CHECKS = {"ckan": check_ckan, "dcat": check_dcat, "ods": check_ods}
+def check_geonode(src: dict) -> str | None:
+    r = requests.get(src["api"], params={"page_size": 1}, headers=UA, timeout=60)
+    if r.status_code in BLOCKED_STATUSES:
+        raise Blocked(f"HTTP {r.status_code}")
+    if r.status_code != 200:
+        return f"HTTP {r.status_code} from GeoNode API"
+    body = r.json()
+    layers = body.get("layers") or body.get("resources")
+    if not isinstance(layers, list) or not layers:
+        return "no layers — not a GeoNode v2 catalogue"
+    if not isinstance(body.get("total"), int):
+        return "no total — GeoNode v2 pagination missing"
+    rec = layers[0]
+    if not rec.get("title") or not (rec.get("uuid") or rec.get("pk")):
+        return "layers lack title/uuid"
+    # Without `alternate` there is no GeoServer feature type, so we could
+    # index the record but never offer a download for it.
+    if not rec.get("alternate"):
+        return "layers lack `alternate` — no downloads could be built"
+    return None
+
+
+CHECKS = {"ckan": check_ckan, "dcat": check_dcat, "ods": check_ods,
+          "geonode": check_geonode}
 
 
 def main() -> int:

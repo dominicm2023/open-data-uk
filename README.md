@@ -1,6 +1,6 @@
 # UK Open Data Index
 
-**One search across 77,000+ UK government datasets, from 43 portals.**
+**One search across 80,000+ UK government datasets, from 46 portals.**
 Live at **[open-data.org.uk](https://open-data.org.uk)** ·
 [open API](https://open-data.org.uk/docs) · no tracking, no sign-up.
 
@@ -54,7 +54,7 @@ figure from 56% to 34%.
 | Piece | File(s) |
 |---|---|
 | Source registry ("registry as code") | [`sources.yaml`](sources.yaml) — add a portal via PR, CI validates it |
-| Harvesters (CKAN, DCAT/ArcGIS Hub/Socrata, OpenDataSoft) | [`harvester.py`](harvester.py) |
+| Harvesters (CKAN, DCAT/ArcGIS Hub/Socrata, OpenDataSoft, GeoNode) | [`harvester.py`](harvester.py) |
 | Licence/format normalisation | [`normalise.py`](normalise.py) |
 | Embeddings + keyword index | [`embed_index.py`](embed_index.py) |
 | Duplicate & retired-record detection | [`dedupe.py`](dedupe.py) |
@@ -69,7 +69,7 @@ figure from 56% to 34%.
 | What people actually search for | [`scripts/query_report.py`](scripts/query_report.py) — over the anonymous query log |
 | Change notification | [`scripts/indexnow.py`](scripts/indexnow.py) — announces only the pages whose content actually moved |
 
-Currently indexing **77,000+ datasets from 43 portals** — data.gov.uk, the
+Currently indexing **80,000+ datasets from 46 portals** — data.gov.uk, the
 ONS Open Geography Portal, London Datastore, NHSBSA, OpenDataNI, Natural
 England, the Forestry Commission, NatureScot, Scotland's Spatial Hub, the
 North Sea Transition Authority, Historic England, and councils from
@@ -124,7 +124,7 @@ council hostnames against the API patterns we support.
 
 ```
 pip install -r requirements.txt
-python harvester.py            # full harvest (~77k datasets, ~12 min)
+python harvester.py            # full harvest (~81k datasets, ~13 min)
 python embed_index.py          # embed + build keyword index (CPU, ~40 min first run)
 python dedupe.py               # mark duplicates + retired records
 uvicorn server:app --port 8000 # UI at /, API docs at /docs
@@ -233,9 +233,6 @@ Verified-but-not-yet-harvestable portals are tracked in
 [PLATFORM_BACKLOG.md](PLATFORM_BACKLOG.md) — roughly 7,000 datasets behind
 three adapters. Next up:
 
-- **A GeoNode harvester**, mainly for DataMap Wales (1,927 datasets). Welsh
-  coverage is our weakest geography, so this is the highest-value single
-  adapter left.
 - **An MCP endpoint**, so other people's AI tools can query the index
   directly — the cheapest way to make UK open data visible to assistants.
 - **Change alerts** — tell me when this dataset updates, goes stale, or

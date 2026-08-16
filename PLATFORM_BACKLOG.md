@@ -31,16 +31,18 @@ sampled datasets carried a resolvable licence, against ~44% index-wide.
 |---|---|---:|---|
 | NBN Atlas (biodiversity) | custom (bare JSON list) | 2,951 | `registry.nbnatlas.org/ws/dataResource` |
 | Cefas (marine science) | custom (paginated `items`) | 2,299 | `data-api.cefas.co.uk/api/holdings` |
-| **DataMap Wales** | GeoNode (`layers` + `total`) | 1,927 | `datamap.gov.wales/api/v2/layers/` |
 | Dept for Business & Trade | custom | 14 | `data.api.trade.gov.uk/v1/datasets?format=json` |
 
-**Suggested next: GeoNode.** Fewer UK deployments than the platforms above,
-but DataMap Wales matters disproportionately — Welsh coverage is our
-weakest geography, and 1,927 datasets would largely close it.
+**GeoNode: done.** DataMap Wales (1,927 layers) is harvested — see
+`harvest_geonode` in harvester.py. It closed the Welsh *data* gap but not the
+Welsh *council* gap: DataMap Wales records four publishers for the whole
+catalogue and none of them is a council, so COUNCIL_COVERAGE.md is unchanged
+for Wales. Scotland's Spatial Hub, by contrast, names the council on each
+dataset. Same kind of platform, opposite provenance habits.
 
-The two custom APIs (NBN, Cefas) have the biggest counts but the worst
-leverage: bespoke code serving exactly one source each. Worth doing
-eventually for the ~5,000 datasets, not before GeoNode.
+**Suggested next: the two custom APIs** (NBN, Cefas). Biggest counts left
+but the worst leverage — bespoke code serving exactly one source each. Worth
+doing for the ~5,000 datasets now that the platform adapters are exhausted.
 
 ## Not pursued
 
