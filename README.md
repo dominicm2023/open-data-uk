@@ -14,7 +14,7 @@ Environment Agency's England-wide flood maps — because we know their
 published boundary actually covers Brighton, even though the word never
 appears in them.
 
-Three things make it different from searching a catalogue directly:
+Four things make it different from searching a catalogue directly:
 
 - **It searches meaning, not just keywords.** Ask in plain English; results
   come back ranked by what you meant, from every portal at once.
@@ -24,6 +24,11 @@ Three things make it different from searching a catalogue directly:
   not a download — you find out before you click, not after.
 - **It admits what it doesn't have.** No results for your town? It says so,
   instead of quietly showing you Glasgow.
+- **It answers questions no single portal can.** 91 councils publish a
+  dataset called *Conservation Areas*, 77 publish *Tree Preservation Orders*,
+  227 publish an organogram. Each portal knows only its own, so nobody could
+  list them together — see
+  [who publishes what](https://open-data.org.uk/who-publishes).
 
 **Metadata only.** We never rehost anyone's data — every result links to the
 publisher's own page, under the publisher's own licence.
@@ -57,7 +62,7 @@ figure from 56% to 34%.
 | Hybrid search engine | [`search.py`](search.py) — semantic + BM25 fusion, rare-term and publisher boosts, confidence signal |
 | Query-time geography | [`geo.py`](geo.py) — place detection, honest coverage reporting |
 | Web UI + JSON API | [`server.py`](server.py), [`web/`](web) — docs at `/docs` |
-| Server-rendered dataset pages | [`pagerender.py`](pagerender.py) — titles, snippets, canonical URLs and schema.org markup for 60,000 pages |
+| Server-rendered pages | [`pagerender.py`](pagerender.py) — titles, snippets, canonical URLs and schema.org markup for 60,000 dataset pages, plus the browse hierarchy below |
 | Data-quality report | [`report.py`](report.py) |
 | Relevance regression suite | [`scripts/relevance_test.py`](scripts/relevance_test.py) — 12 cases; **run it before and after any ranking change** |
 | Unit tests (no index needed) | [`scripts/dedupe_test.py`](scripts/dedupe_test.py), [`scripts/render_test.py`](scripts/render_test.py) — the rules that decide what search hides, and what gets escaped |
@@ -69,6 +74,29 @@ England, the Forestry Commission, NatureScot, Scotland's Spatial Hub, the
 North Sea Transition Authority, Historic England, and councils from
 Aberdeen to Canterbury. The full, live list is at
 [`/api/sources`](https://open-data.org.uk/api/sources).
+
+## Browsing it
+
+Search is one way in; the site is also a plain, crawlable hierarchy, which
+matters because a catalogue nobody can link into is a catalogue nobody finds.
+
+| Page | What it is |
+|---|---|
+| [`/publishers`](https://open-data.org.uk/publishers) | all 1,493 organisations, grouped by initial |
+| [`/publisher?name=…`](https://open-data.org.uk/publisher?name=Leeds%20City%20Council) | everything one organisation publishes |
+| [`/topics`](https://open-data.org.uk/topics) | 2,088 subjects more than one organisation publishes on |
+| [`/topic?tag=…`](https://open-data.org.uk/topic?tag=allotments) | one subject, pooled across every portal |
+| [`/who-publishes`](https://open-data.org.uk/who-publishes) | 570 dataset types that three or more organisations each publish |
+| [`/who-publishes?name=…`](https://open-data.org.uk/who-publishes?name=Conservation%20Areas) | every organisation publishing that one, and whether their links work |
+
+Every dataset page is reachable in three hops from the home page without
+JavaScript, and links back to its publisher, its subjects, and the other
+organisations publishing the same thing.
+
+Records with nothing on them — no description, no files, no tags, no formats
+(646 of them) — and subjects only one publisher uses carry `noindex` and stay
+out of the sitemap. They remain reachable; they're just not put forward as
+worth ranking.
 
 New portals are found deterministically rather than by hand: see
 [`scripts/discover_sources.py`](scripts/discover_sources.py), which mines
