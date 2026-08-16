@@ -129,13 +129,32 @@ def main() -> None:
         );
         DROP TABLE IF EXISTS retired;
         CREATE TABLE retired (key TEXT PRIMARY KEY);
+
+        -- Tags live in a JSON array on the dataset row, which means the
+        -- subject pages had to scan the whole table and filter in Python:
+        -- 200ms a page against 4ms for everything else, on the page type
+        -- with the most URLs in the sitemap. Flattened here, once a night.
+        DROP TABLE IF EXISTS dataset_tags;
+        CREATE TABLE dataset_tags (
+            tag         TEXT NOT NULL,   -- lower-case, whitespace collapsed
+            dataset_key TEXT NOT NULL,
+            PRIMARY KEY (tag, dataset_key)
+        );
         """
     )
 
     rows = conn.execute(
         "SELECT key, source_id, title, publisher, description, "
-        "       resource_count, modified FROM datasets"
+        "       resource_count, modified, tags FROM datasets"
     ).fetchall()
+
+    # --- tags -------------------------------------------------------------
+    import json as _json
+    tag_rows = {(" ".join(str(t).lower().split()), r["key"])
+                for r in rows for t in _json.loads(r["tags"] or "[]")}
+    tag_rows = {(t, k) for t, k in tag_rows if len(t) > 1}
+    conn.executemany("INSERT INTO dataset_tags VALUES (?, ?)", sorted(tag_rows))
+    conn.execute("CREATE INDEX idx_dataset_tags_tag ON dataset_tags (tag)")
 
     # --- retired records ------------------------------------------------
     retired = [(r["key"],) for r in rows
@@ -169,6 +188,7 @@ def main() -> None:
     print(f"{total:,} datasets scanned")
     print(f"{len(retired):,} retired records flagged")
     print(f"{groups:,} duplicate groups; {len(dup_rows):,} non-canonical copies marked")
+    print(f"{len(tag_rows):,} tag/dataset pairs indexed")
     conn.close()
 
 
