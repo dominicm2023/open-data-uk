@@ -1,6 +1,6 @@
 # UK Open Data Index
 
-**One search across 84,000+ UK datasets, from 54 portals.**
+**One search across 100,000+ UK datasets, from 179 portals.**
 Live at **[open-data.org.uk](https://open-data.org.uk)** ·
 [open API](https://open-data.org.uk/docs) · no tracking, no sign-up.
 
@@ -69,8 +69,9 @@ figure from 56% to 34%.
 | Unit tests (no index needed) | [`scripts/dedupe_test.py`](scripts/dedupe_test.py), [`scripts/render_test.py`](scripts/render_test.py) — the rules that decide what search hides, and what gets escaped |
 | What people actually search for | [`scripts/query_report.py`](scripts/query_report.py) — over the anonymous query log |
 | Change notification | [`scripts/indexnow.py`](scripts/indexnow.py) — announces only the pages whose content actually moved |
+| Finding councils that publish through ArcGIS | [`scripts/find_council_portals.py`](scripts/find_council_portals.py) — asks Hub about each council we're missing, by name |
 
-Currently indexing **84,000+ datasets from 54 portals** — data.gov.uk, the
+Currently indexing **100,000+ datasets from 179 portals** — data.gov.uk, the
 ONS Open Geography Portal, London Datastore, NHSBSA, OpenDataNI, Natural
 England, the Forestry Commission, NatureScot, Scotland's Spatial Hub, the
 North Sea Transition Authority, Historic England, and councils from
@@ -111,17 +112,19 @@ hand, so "what are we missing?" has an answer instead of a guess.
 
 [COUNCIL_COVERAGE.md](COUNCIL_COVERAGE.md) checks all 361 UK local
 authorities from the ONS register against what the index actually holds.
-**330 (91%) have data; only 26 (7%) run a data portal of their own that we
-harvest** — most reach us through a regional hub or through data.gov.uk.
-Wales is the gap: no Welsh council has an own portal or hub here, and ten
-have nothing at all.
+**335 (93%) have data, and 94 (26%) now have their own portal indexed** —
+up from 26 before we learned to ask ArcGIS Hub about each council by name.
+Wales remains the gap: one Welsh council has its own portal, eleven reach us
+only through data.gov.uk and nine have nothing at all.
 
 It regenerates from the index
 ([`scripts/council_coverage.py`](scripts/council_coverage.py)) and feeds
-straight back into discovery — `discover_sources.py --from-councils
---missing-only` probes the councils we hold nothing for, rather than only
-the publishers we already have. That found Stirling (578 datasets) and
-Brent (310).
+straight back into discovery. Two routes out of it:
+`discover_sources.py --from-councils --missing-only` probes hostnames for
+councils we hold nothing for — that found Stirling (578) and Brent (310) —
+and [`find_council_portals.py`](scripts/find_council_portals.py) asks ArcGIS
+Hub about each missing council by name, which found 54 more, including the
+only Welsh council with an ArcGIS organisation.
 
 ### Utilities, transport and roads
 

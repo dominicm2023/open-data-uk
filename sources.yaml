@@ -2100,3 +2100,936 @@ sources:
       resources:
         - [attributes.url, "=Esri REST"]
       require_description: 40
+  # The only Welsh council with an ArcGIS organisation. Searching Hub for all
+  # 21 uncovered Welsh councils returned exactly one genuine match — the
+  # other three were Cardiff University, a public health team and a coastal
+  # forum, all sharing a word with a council and none of them being one.
+  # Welsh councils overwhelmingly do not publish open data anywhere we can
+  # reach; that is a finding, not a gap in our searching.
+  - id: agol_merthyr_tydfil
+    name: "Merthyr Tydfil County Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "Bq1L2EAOvjV6HrKy", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+
+  # --- Councils found by searching Hub for each one by name -------------
+  # Sampling Hub's GB results finds whoever publishes most. Asking it about
+  # each council in COUNCIL_COVERAGE.md that we had no source for finds the
+  # rest — 54 of 307, matched on exact identity so a county's portal is
+  # never credited to its districts.
+
+  - id: agol_barnet
+    name: "London Borough of Barnet"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "D3J9Zvv9O6xWivyZ", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_basildon
+    name: "Basildon Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "X8KUXVXJBYeCqnbX", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_basingstoke_and_deane
+    name: "Basingstoke and Deane Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "zMk4fycCuQH73X6X", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_belfast
+    name: "Belfast City Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "WcjS4Ep4z5C5zMF7", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_blackpool
+    name: "Blackpool Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "RueeNoynTFyAIwKy", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_bolton
+    name: "Bolton Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "F9FjmU0i1UNrc2uV", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_buckinghamshire
+    name: "Buckinghamshire Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "s58bFMrgEinsiUHq", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_cannock_chase
+    name: "Cannock Chase Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "8LdmheahlDLDIiCj", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_castle_point
+    name: "Castle Point Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "kHfjNOS2TIxJC1gj", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_chorley
+    name: "Chorley Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "TGqCzJFR5VZgfRJG", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_dacorum
+    name: "Dacorum Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "fhVAVjECBw7CyN83", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_dartford
+    name: "Dartford Borough Council - ArcGIS Online"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "OrZ7pO8Ag7olNJcC", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_derry_city_and_strabane
+    name: "Derry City and Strabane District Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "MYJe9IE8fg8BO4XD", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_east_renfrewshire
+    name: "East Renfrewshire Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "KLyYDdUQEILnCLk4", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_epping_forest
+    name: "Epping Forest District Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "w3pUmeoCWzX2UZNF", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_fareham
+    name: "Fareham ArcGIS Online"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "GkfG3fl2fC12LpzG", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_gravesham
+    name: "Gravesham Online Maps"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "gENhhjmVDYfAqqnx", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_harrow
+    name: "Harrow Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "R00vlDzhjUxwxCDQ", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_hillingdon
+    name: "London Borough of Hillingdon"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "vBu1s2ZA7rxzmHBD", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_horsham
+    name: "Horsham District Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "jaR1x1J0h8sd5Bbg", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_huntingdonshire
+    name: "Huntingdonshire District Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "nkRtEaqWG4C0BjC6", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_isles_of_scilly
+    name: "Council of the Isles of Scilly"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "bRfDE0cRA0x4yaPW", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_kensington_and_chelsea
+    name: "Royal Borough of Kensington and Chelsea"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "UW23u9K1TpNxQFQu", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_lichfield
+    name: "Lichfield District Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "pCNvuqillBxYX3LQ", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_lincoln
+    name: "City of Lincoln Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "SAXERAVfNofjcup2", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_newark_and_sherwood
+    name: "Newark and Sherwood District Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "AGZLWjTa7WOFFfN5", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_norwich
+    name: "Norwich City Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "OXIBXiLFCkTXlIOG", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_peterborough
+    name: "Peterborough City Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "YzzoWCP7EA9VHOiL", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_redcar_and_cleveland
+    name: "Redcar and Cleveland Borough Council - ArcGIS Online"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "pFzhng2mLeQFvhp9", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_rochdale
+    name: "Rochdale Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "753AKhm8qWS4ofeH", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_rotherham
+    name: "Rotherham Metropolitan Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "QJkYejDj6NJbaa9N", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_rushmoor
+    name: "Rushmoor Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "QVClNghUhmgiDmtr", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_rutland
+    name: "Rutland County Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "5xLBtqV0nP6SM52I", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_sefton
+    name: "Sefton MBC"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "vn1HTeDFvBOEaOZx", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_shropshire
+    name: "Shropshire Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "MPt8AYKqiTi3XOkP", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_stafford
+    name: "Stafford Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "zd8lmooSaBijuNVO", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_telford_and_wrekin
+    name: "Telford and Wrekin Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "AU9VxLgMXQBv7kGW", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_tendring
+    name: "Tendring District Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "XGj3Xy4TNq2ZdezO", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_tewkesbury
+    name: "Tewkesbury Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "HxtQoByBu1lxYPfN", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_tonbridge_and_malling
+    name: "Tonbridge & Malling Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "VwChj0wLQyAOsmgR", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_uttlesford
+    name: "Uttlesford District Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "wDcUiJYKtMulHM03", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_west_berkshire
+    name: "West Berkshire Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "S2bkscaWT0TOFiHI", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_west_lothian
+    name: "West Lothian Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "Sx4zi6vTSfTqa3IJ", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_winchester
+    name: "Winchester City Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "xA3KpRMU1N2W4DSo", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_wokingham
+    name: "Wokingham Borough Council"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "Uk58AEewwvNNTAX2", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40

@@ -63,6 +63,48 @@ dataset. Same kind of platform, opposite provenance habits.
 but the worst leverage — bespoke code serving exactly one source each. Worth
 doing for the ~5,000 datasets now that the platform adapters are exhausted.
 
+## ArcGIS Hub: the largest pool, and how to reach it
+
+Most UK councils that publish spatial data do it through an ArcGIS Online
+organisation with **no catalogue of its own**. There is no CKAN, no DCAT
+feed, and the Hub site hostname is a vanity domain that cannot be derived
+from anything — Bristol's is `opendata.bristol.gov.uk`, Tunbridge Wells'
+is `opendatanew-tunbridgewells.opendata.arcgis.com`. Guessing hostnames will
+never find them.
+
+Hub's federated search does know about them:
+
+    https://hub.arcgis.com/api/v3/datasets?filter[region]=GB      370,797
+    https://hub.arcgis.com/api/v3/datasets?filter[orgId]=<id>     per org
+
+Two ways to use it, and the second is much better:
+
+- **Sampling** the GB results finds whoever publishes most. 10,000 records
+  surfaced 247 organisations, but weighted towards Esri UK (86,260 datasets
+  of demo content) and a handful of large councils.
+- **Asking by name**, one council at a time, found 54 more in 307 — including
+  the only Welsh council with an ArcGIS organisation, which no amount of
+  sampling would have reached. `scripts/find_council_portals.py` does this.
+
+Match on **exact** identity. Subset matching credited Devon County Council's
+portal to East, Mid, North and West Devon, and handed Neath Port Talbot to
+the Port of London Authority.
+
+**An ArcGIS organisation is not a curated catalogue.** It exposes everything
+the organisation ever shared: working layers, survey forms, logo graphics. A
+10-council pilot returned 12,874 records of which 28% had nothing at all and
+only 12% carried a description — titles like "Family Hub Logo form" and
+"surveyPoint". Two rules make it usable:
+
+- `require_description: 40` on the source — keep what the publisher bothered
+  to describe. It cut 73,278 available records to 11,639, all described,
+  none thin.
+- Boilerplate detection in the harvester — a description shared by five or
+  more records in a source is about the organisation, not the dataset.
+
+Throwing away six sevenths is the right trade. The alternative was doubling
+the index with form definitions.
+
 ## Verified but unreachable from production
 
 | Portal | Datasets | Why |

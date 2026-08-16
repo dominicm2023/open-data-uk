@@ -97,21 +97,29 @@
   "code": "E07000066",
   "name": "Basildon",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 6,
   "aggregated": 108,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_basildon"
+  ],
+  "own_sources": [
+   "agol_basildon"
+  ]
  },
  {
   "code": "E07000084",
   "name": "Basingstoke and Deane",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 6,
   "aggregated": 9,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_basingstoke_and_deane"
+  ],
+  "own_sources": [
+   "agol_basingstoke_and_deane"
+  ]
  },
  {
   "code": "E07000171",
@@ -197,11 +205,15 @@
   "code": "E06000009",
   "name": "Blackpool",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 58,
   "aggregated": 21,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_blackpool"
+  ],
+  "own_sources": [
+   "agol_blackpool"
+  ]
  },
  {
   "code": "E07000033",
@@ -475,11 +487,15 @@
   "code": "E07000192",
   "name": "Cannock Chase",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 6,
   "aggregated": 10,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_cannock_chase"
+  ],
+  "own_sources": [
+   "agol_cannock_chase"
+  ]
  },
  {
   "code": "E07000106",
@@ -499,11 +515,15 @@
   "code": "E07000069",
   "name": "Castle Point",
   "nation": "England",
-  "state": "none",
-  "direct": 0,
+  "state": "own",
+  "direct": 7,
   "aggregated": 0,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_castle_point"
+  ],
+  "own_sources": [
+   "agol_castle_point"
+  ]
  },
  {
   "code": "E06000056",
@@ -603,11 +623,15 @@
   "code": "E07000118",
   "name": "Chorley",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 8,
   "aggregated": 1,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_chorley"
+  ],
+  "own_sources": [
+   "agol_chorley"
+  ]
  },
  {
   "code": "E09000001",
@@ -710,11 +734,15 @@
   "code": "E07000096",
   "name": "Dacorum",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 2,
   "aggregated": 24,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_dacorum"
+  ],
+  "own_sources": [
+   "agol_dacorum"
+  ]
  },
  {
   "code": "E06000005",
@@ -730,11 +758,15 @@
   "code": "E07000107",
   "name": "Dartford",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 22,
   "aggregated": 1,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_dartford"
+  ],
+  "own_sources": [
+   "agol_dartford"
+  ]
  },
  {
   "code": "E06000015",
@@ -944,11 +976,15 @@
   "code": "E07000072",
   "name": "Epping Forest",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 10,
   "aggregated": 3,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_epping_forest"
+  ],
+  "own_sources": [
+   "agol_epping_forest"
+  ]
  },
  {
   "code": "E07000208",
@@ -984,11 +1020,15 @@
   "code": "E07000087",
   "name": "Fareham",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 61,
   "aggregated": 11,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_fareham"
+  ],
+  "own_sources": [
+   "agol_fareham"
+  ]
  },
  {
   "code": "E07000010",
@@ -1082,11 +1122,15 @@
   "code": "E07000109",
   "name": "Gravesham",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 2,
   "aggregated": 1,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_gravesham"
+  ],
+  "own_sources": [
+   "agol_gravesham"
+  ]
  },
  {
   "code": "E07000145",
@@ -1190,13 +1234,16 @@
   "code": "E09000015",
   "name": "Harrow",
   "nation": "England",
-  "state": "hub",
-  "direct": 1,
+  "state": "own",
+  "direct": 62,
   "aggregated": 8,
   "sources": [
+   "agol_harrow",
    "london_datastore"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_harrow"
+  ]
  },
  {
   "code": "E07000089",
@@ -1284,13 +1331,16 @@
   "code": "E09000017",
   "name": "Hillingdon",
   "nation": "England",
-  "state": "hub",
-  "direct": 2,
+  "state": "own",
+  "direct": 26,
   "aggregated": 1,
   "sources": [
+   "agol_hillingdon",
    "london_datastore"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_hillingdon"
+  ]
  },
  {
   "code": "E07000132",
@@ -1306,11 +1356,15 @@
   "code": "E07000227",
   "name": "Horsham",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 1,
   "aggregated": 26,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_horsham"
+  ],
+  "own_sources": [
+   "agol_horsham"
+  ]
  },
  {
   "code": "E09000018",
@@ -1328,11 +1382,15 @@
   "code": "E07000011",
   "name": "Huntingdonshire",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 7,
   "aggregated": 1,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_huntingdonshire"
+  ],
+  "own_sources": [
+   "agol_huntingdonshire"
+  ]
  },
  {
   "code": "E07000120",
@@ -1368,11 +1426,15 @@
   "code": "E06000053",
   "name": "Isles of Scilly",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 26,
   "aggregated": 1,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_isles_of_scilly"
+  ],
+  "own_sources": [
+   "agol_isles_of_scilly"
+  ]
  },
  {
   "code": "E09000019",
@@ -1390,13 +1452,16 @@
   "code": "E09000020",
   "name": "Kensington and Chelsea",
   "nation": "England",
-  "state": "hub",
-  "direct": 1,
+  "state": "own",
+  "direct": 28,
   "aggregated": 24,
   "sources": [
+   "agol_kensington_and_chelsea",
    "london_datastore"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_kensington_and_chelsea"
+  ]
  },
  {
   "code": "E07000146",
@@ -1538,21 +1603,29 @@
   "code": "E07000194",
   "name": "Lichfield",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 19,
   "aggregated": 23,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_lichfield"
+  ],
+  "own_sources": [
+   "agol_lichfield"
+  ]
  },
  {
   "code": "E07000138",
   "name": "Lincoln",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 1,
   "aggregated": 1,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_lincoln"
+  ],
+  "own_sources": [
+   "agol_lincoln"
+  ]
  },
  {
   "code": "E08000012",
@@ -1749,11 +1822,15 @@
   "code": "E07000175",
   "name": "Newark and Sherwood",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 6,
   "aggregated": 84,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_newark_and_sherwood"
+  ],
+  "own_sources": [
+   "agol_newark_and_sherwood"
+  ]
  },
  {
   "code": "E08000021",
@@ -1959,11 +2036,15 @@
   "code": "E07000148",
   "name": "Norwich",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 10,
   "aggregated": 18,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_norwich"
+  ],
+  "own_sources": [
+   "agol_norwich"
+  ]
  },
  {
   "code": "E06000018",
@@ -2033,11 +2114,15 @@
   "code": "E06000031",
   "name": "Peterborough",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 6,
   "aggregated": 36,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_peterborough"
+  ],
+  "own_sources": [
+   "agol_peterborough"
+  ]
  },
  {
   "code": "E06000026",
@@ -2099,11 +2184,15 @@
   "code": "E06000003",
   "name": "Redcar and Cleveland",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 10,
   "aggregated": 13,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_redcar_and_cleveland"
+  ],
+  "own_sources": [
+   "agol_redcar_and_cleveland"
+  ]
  },
  {
   "code": "E07000236",
@@ -2191,11 +2280,15 @@
   "code": "E08000018",
   "name": "Rotherham",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 1,
   "aggregated": 2,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_rotherham"
+  ],
+  "own_sources": [
+   "agol_rotherham"
+  ]
  },
  {
   "code": "E07000220",
@@ -2241,11 +2334,15 @@
   "code": "E06000017",
   "name": "Rutland",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 4,
   "aggregated": 12,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_rutland"
+  ],
+  "own_sources": [
+   "agol_rutland"
+  ]
  },
  {
   "code": "E08000006",
@@ -2275,11 +2372,15 @@
   "code": "E08000014",
   "name": "Sefton",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 8,
   "aggregated": 15,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_sefton"
+  ],
+  "own_sources": [
+   "agol_sefton"
+  ]
  },
  {
   "code": "E07000111",
@@ -2314,11 +2415,15 @@
   "code": "E06000051",
   "name": "Shropshire",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 27,
   "aggregated": 1,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_shropshire"
+  ],
+  "own_sources": [
+   "agol_shropshire"
+  ]
  },
  {
   "code": "E06000039",
@@ -2529,11 +2634,15 @@
   "code": "E07000197",
   "name": "Stafford",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 5,
   "aggregated": 6,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_stafford"
+  ],
+  "own_sources": [
+   "agol_stafford"
+  ]
  },
  {
   "code": "E07000198",
@@ -2708,21 +2817,29 @@
   "code": "E06000020",
   "name": "Telford and Wrekin",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 11,
   "aggregated": 3,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_telford_and_wrekin"
+  ],
+  "own_sources": [
+   "agol_telford_and_wrekin"
+  ]
  },
  {
   "code": "E07000076",
   "name": "Tendring",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 8,
   "aggregated": 57,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_tendring"
+  ],
+  "own_sources": [
+   "agol_tendring"
+  ]
  },
  {
   "code": "E07000093",
@@ -2738,11 +2855,15 @@
   "code": "E07000083",
   "name": "Tewkesbury",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 4,
   "aggregated": 9,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_tewkesbury"
+  ],
+  "own_sources": [
+   "agol_tewkesbury"
+  ]
  },
  {
   "code": "E07000114",
@@ -2780,11 +2901,15 @@
   "code": "E07000115",
   "name": "Tonbridge and Malling",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 1,
   "aggregated": 1,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_tonbridge_and_malling"
+  ],
+  "own_sources": [
+   "agol_tonbridge_and_malling"
+  ]
  },
  {
   "code": "E06000027",
@@ -2847,11 +2972,15 @@
   "code": "E07000077",
   "name": "Uttlesford",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 52,
   "aggregated": 8,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_uttlesford"
+  ],
+  "own_sources": [
+   "agol_uttlesford"
+  ]
  },
  {
   "code": "E07000180",
@@ -2973,11 +3102,15 @@
   "code": "E06000037",
   "name": "West Berkshire",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 23,
   "aggregated": 6,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_west_berkshire"
+  ],
+  "own_sources": [
+   "agol_west_berkshire"
+  ]
  },
  {
   "code": "E07000047",
@@ -3099,11 +3232,15 @@
   "code": "E07000094",
   "name": "Winchester",
   "nation": "England",
-  "state": "none",
-  "direct": 0,
+  "state": "own",
+  "direct": 5,
   "aggregated": 0,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_winchester"
+  ],
+  "own_sources": [
+   "agol_winchester"
+  ]
  },
  {
   "code": "E06000040",
@@ -3139,11 +3276,15 @@
   "code": "E06000041",
   "name": "Wokingham",
   "nation": "England",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 29,
   "aggregated": 1,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_wokingham"
+  ],
+  "own_sources": [
+   "agol_wokingham"
+  ]
  },
  {
   "code": "E08000031",
@@ -3263,13 +3404,16 @@
   "code": "N09000003",
   "name": "Belfast",
   "nation": "Northern Ireland",
-  "state": "hub",
-  "direct": 25,
+  "state": "own",
+  "direct": 32,
   "aggregated": 6,
   "sources": [
+   "agol_belfast",
    "opendatani"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_belfast"
+  ]
  },
  {
   "code": "N09000004",
@@ -3290,13 +3434,16 @@
   "code": "N09000005",
   "name": "Derry City and Strabane",
   "nation": "Northern Ireland",
-  "state": "hub",
-  "direct": 2,
+  "state": "own",
+  "direct": 10,
   "aggregated": 0,
   "sources": [
+   "agol_derry_city_and_strabane",
    "opendatani"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_derry_city_and_strabane"
+  ]
  },
  {
   "code": "N09000006",
@@ -3524,15 +3671,18 @@
   "code": "S12000011",
   "name": "East Renfrewshire",
   "nation": "Scotland",
-  "state": "hub",
-  "direct": 376,
+  "state": "own",
+  "direct": 461,
   "aggregated": 6,
   "sources": [
+   "agol_east_renfrewshire",
    "agol_renfrewshire_council",
    "opendata_scot",
    "spatialhub_scotland"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_east_renfrewshire"
+  ]
  },
  {
   "code": "S12000014",
@@ -3820,14 +3970,17 @@
   "code": "S12000040",
   "name": "West Lothian",
   "nation": "Scotland",
-  "state": "hub",
-  "direct": 10,
+  "state": "own",
+  "direct": 14,
   "aggregated": 0,
   "sources": [
+   "agol_west_lothian",
    "opendata_scot",
    "spatialhub_scotland"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_west_lothian"
+  ]
  },
  {
   "code": "W06000019",
@@ -3943,11 +4096,15 @@
   "code": "W06000024",
   "name": "Merthyr Tydfil",
   "nation": "Wales",
-  "state": "aggregator",
-  "direct": 0,
+  "state": "own",
+  "direct": 16,
   "aggregated": 1,
-  "sources": [],
-  "own_sources": []
+  "sources": [
+   "agol_merthyr_tydfil"
+  ],
+  "own_sources": [
+   "agol_merthyr_tydfil"
+  ]
  },
  {
   "code": "W06000021",
