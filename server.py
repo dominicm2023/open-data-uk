@@ -9,6 +9,7 @@ embed_index.py checkpoints land. Public API: /api/search, /api/stats,
 
 from __future__ import annotations
 
+import functools
 import os
 import re
 import time
@@ -162,16 +163,56 @@ def _rate_check(request: Request, response: Response) -> None:
     dq.append(now)
 
 
+@functools.lru_cache(maxsize=4)
+def _hand_written_page(name: str) -> str:
+    """A static page, with the stylesheet URL stamped with its content hash."""
+    return pagerender.with_assets(
+        (ROOT / "web" / name).read_text(encoding="utf-8"))
+
+
 @app.get("/", include_in_schema=False)
-def home() -> FileResponse:
-    return FileResponse(ROOT / "web" / "index.html",
+def home() -> HTMLResponse:
+    return HTMLResponse(_hand_written_page("index.html"),
                         headers={"Cache-Control": "no-cache"})
 
 
 @app.get("/about", include_in_schema=False)
-def about() -> FileResponse:
-    return FileResponse(ROOT / "web" / "about.html",
+def about() -> HTMLResponse:
+    return HTMLResponse(_hand_written_page("about.html"),
                         headers={"Cache-Control": "no-cache"})
+
+
+# Static assets: one stylesheet and the icons, all immutable in practice.
+# Named individually rather than mounting web/ as a static directory — that
+# would also expose the HTML templates, and a request for /dataset.html
+# would serve the raw file with its placeholders unfilled.
+STATIC_FILES = {
+    "site.css": "text/css; charset=utf-8",
+    "favicon.svg": "image/svg+xml",
+    "favicon.ico": "image/x-icon",
+    "apple-touch-icon.png": "image/png",
+    "icon-192.png": "image/png",
+    "icon-512.png": "image/png",
+    "manifest.webmanifest": "application/manifest+json",
+}
+
+
+def _static(name: str) -> FileResponse:
+    # Safe to cache hard: the stylesheet is linked with a content hash in its
+    # URL (pagerender.asset_version), so the address changes whenever the
+    # bytes do and a stale copy can never be served for the current page.
+    ttl = 86400
+    return FileResponse(
+        ROOT / "web" / name, media_type=STATIC_FILES[name],
+        headers={"Cache-Control":
+                 f"public, max-age={ttl}, stale-while-revalidate=604800"})
+
+
+for _name in STATIC_FILES:
+    # HEAD as well as GET: caches and link-preview fetchers ask for headers
+    # before bodies, and a 405 on the favicon reads as a broken asset.
+    app.add_api_route(f"/{_name}", (lambda n=_name: (lambda: _static(n)))(),
+                      methods=["GET", "HEAD"], include_in_schema=False)
 
 
 RATE_LIMITED_RESPONSE = {

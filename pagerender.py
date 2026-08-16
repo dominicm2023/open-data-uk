@@ -15,6 +15,7 @@ a dataset page is three indexed SQLite reads and some string building.
 from __future__ import annotations
 
 import functools
+import hashlib
 import html
 import json
 import re
@@ -315,8 +316,9 @@ def body_html(rec: dict) -> str:
             f"<td>{verdict}</td><td>{esc(_size(res.get('size_bytes')))}</td></tr>")
 
     files = (
-        '<table><thead><tr><th>Resource</th><th>Format</th><th>Verified</th>'
-        f'<th>Size</th></tr></thead><tbody>{"".join(rows)}</tbody></table>'
+        '<div class="table-wrap"><table><thead><tr><th>Resource</th>'
+        '<th>Format</th><th>Verified</th><th>Size</th></tr></thead>'
+        f'<tbody>{"".join(rows)}</tbody></table></div>'
         if rows else
         '<p class="note">No downloadable resources listed by the publisher.</p>')
 
@@ -363,8 +365,30 @@ def body_html(rec: dict) -> str:
 
 
 @functools.lru_cache(maxsize=1)
+def asset_version() -> str:
+    """Short content hash of the stylesheet, for cache-busting its URL.
+
+    Without this a restyle reaches nobody who has visited before until their
+    cache expires — which is exactly how a genuine contrast fix sat invisible
+    behind a day-old copy of the file. The URL changes when the bytes change,
+    so the cache can be long and still always correct.
+    """
+    try:
+        return hashlib.sha256(
+            (ROOT / "web" / "site.css").read_bytes()).hexdigest()[:8]
+    except OSError:
+        return "0"
+
+
+def with_assets(html_text: str) -> str:
+    return html_text.replace('href="/site.css"',
+                             f'href="/site.css?v={asset_version()}"')
+
+
+@functools.lru_cache(maxsize=1)
 def _template() -> str:
-    return (ROOT / "web" / "dataset.html").read_text(encoding="utf-8")
+    return with_assets(
+        (ROOT / "web" / "dataset.html").read_text(encoding="utf-8"))
 
 
 def render_dataset(rec: dict, site_url: str) -> str:

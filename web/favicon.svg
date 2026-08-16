@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="UK Open Data Index">
+  <!-- An index: rows of a list, ragged because the data is. Three bars read
+       at 16px where anything finer turns to mush. -->
+  <rect width="64" height="64" rx="14" fill="#14549c"/>
+  <g fill="#ffffff">
+    <rect x="14" y="18" width="36" height="7" rx="3.5"/>
+    <rect x="14" y="29" width="26" height="7" rx="3.5" opacity=".82"/>
+    <rect x="14" y="40" width="15" height="7" rx="3.5" opacity=".62"/>
+  </g>
+</svg>

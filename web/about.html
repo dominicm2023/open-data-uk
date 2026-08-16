@@ -12,44 +12,39 @@
 <meta property="og:description" content="How we collate UK open government data, verify every link, and stay honest about what we don't have.">
 <meta property="og:url" content="https://open-data.org.uk/about">
 <meta name="twitter:card" content="summary">
-<style>
-  :root {
-    --bg: #f7f7f5; --card: #ffffff; --ink: #1a1a1a; --muted: #6b6b68;
-    --line: #e4e4e0; --accent: #1d70b8; --warn: #b10e1e; --ok: #00703c;
-    color-scheme: light dark;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #131313; --card: #1e1e1e; --ink: #ececec; --muted: #9a9a97;
-            --line: #2e2e2c; --accent: #5aa4dd; --warn: #f47b86; --ok: #6bc79a; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink);
-         font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
-  h1 { font-size: 1.6rem; letter-spacing: -0.02em; margin: 0 0 .25rem; }
-  h1 span, a { color: var(--accent); }
-  h2 { font-size: 1.15rem; margin-top: 2.2rem; }
-  a { text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .stat-row { display: flex; gap: .8rem; flex-wrap: wrap; margin: 1.4rem 0; }
-  .stat { background: var(--card); border: 1px solid var(--line);
-          border-radius: .7rem; padding: .8rem 1.1rem; flex: 1; min-width: 130px; }
-  .stat b { display: block; font-size: 1.35rem; }
-  .stat.bad b { color: var(--warn); }
-  .stat span { color: var(--muted); font-size: .8rem; }
-  table { width: 100%; border-collapse: collapse; font-size: .9rem; }
-  th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--line); }
-  th { color: var(--muted); font-weight: 600; }
-  td.num { text-align: right; font-variant-numeric: tabular-nums; }
-  .back { font-size: .9rem; }
-  code { background: var(--card); border: 1px solid var(--line);
-         border-radius: .3rem; padding: .1rem .35rem; font-size: .85em; }
-</style>
+<link rel="stylesheet" href="/site.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#14549c">
 </head>
 <body>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="/">
+      <svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="currentColor" opacity=".12"/>
+        <g fill="currentColor">
+          <rect x="14" y="18" width="36" height="7" rx="3.5"/>
+          <rect x="14" y="29" width="26" height="7" rx="3.5" opacity=".8"/>
+          <rect x="14" y="40" width="15" height="7" rx="3.5" opacity=".6"/>
+        </g>
+      </svg>
+      UK <b>Open Data</b> Index
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/">Search</a>
+      <a href="/publishers">Publishers</a>
+      <a href="/topics">Subjects</a>
+      <a href="/who-publishes">Who publishes what</a>
+      <a href="/about" aria-current="page">About</a>
+      <a href="/docs">API</a>
+    </nav>
+  </div>
+</header>
 <div class="wrap">
-  <p class="back"><a href="/">&larr; Back to search</a></p>
-  <h1>About the <span>UK Open Data Index</span></h1>
+  <h1>About the UK Open Data Index</h1>
   <p>The UK's open government data is scattered across dozens of portals with
   inconsistent, often broken metadata — effectively invisible to both people
   and AI tools. This project harvests the <strong>metadata</strong> of every

@@ -239,6 +239,35 @@ check(pagerender.dataset_path("a:b c") == "/dataset?key=a%3Ab%20c",
 check("noindex" in pagerender.render_missing("nope:nope"),
       "a 404 page is never offered for indexing")
 
+# --- the stylesheet ------------------------------------------------------
+# One file now, after three inline copies drifted apart. These pin the two
+# things that silently broke while they were separate.
+CSS = (Path(__file__).parent.parent / "web" / "site.css").read_text(encoding="utf-8")
+dark = CSS.split("prefers-color-scheme: dark", 1)[-1]
+
+check("--on-accent" in CSS.split("prefers-color-scheme: dark", 1)[0]
+      and "--on-accent" in dark,
+      "text on the accent colour is defined for BOTH schemes")
+check("color: #fff" not in CSS and "color: white" not in CSS,
+      "no hard-coded white text — it fails on the dark accent")
+for token in ("--accent", "--ink", "--bg", "--muted", "--ok", "--warn", "--amber"):
+    check(token in dark, f"{token} is redefined for dark mode")
+check(".table-wrap" in CSS and "overflow-x" in CSS,
+      "wide tables scroll inside their own box on a phone")
+check("columns: 3" in CSS, "the publisher and subject lists are multi-column")
+
+for page in ("index.html", "about.html", "dataset.html"):
+    src = (Path(__file__).parent.parent / "web" / page).read_text(encoding="utf-8")
+    check("<style>" not in src, f"{page} carries no inline stylesheet copy")
+    check('href="/site.css"' in src, f"{page} links the shared stylesheet")
+    check("site-header" in src, f"{page} has the shared header")
+
+check(len(pagerender.asset_version()) >= 6,
+      "the stylesheet URL carries a content hash, so a restyle is never "
+      "hidden behind a cached copy")
+check('href="/site.css?v=' in pagerender.render_dataset(record(), SITE),
+      "and rendered pages link the hashed URL")
+
 print()
 print("all rendering rules hold" if not failures
       else f"{len(failures)} failure(s): " + "; ".join(failures))

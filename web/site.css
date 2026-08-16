@@ -1,0 +1,353 @@
+/* UK Open Data Index — one stylesheet for every page.
+ *
+ * There used to be three copies of this, inline in index.html, about.html
+ * and dataset.html, and they had drifted: the About page was missing the
+ * amber "webpage only" colour and every style the browse pages rely on, so
+ * a chip that meant one thing on a result meant nothing two clicks later.
+ * One file, served with a long cache, is both the design system and the fix.
+ *
+ * Mobile first. Everything below reads on a 320px phone; the wider layouts
+ * are additive.
+ */
+
+:root {
+  /* Ink and ground. Warm greys — a pure grey next to the blue reads cold
+     and clinical, which is the wrong feeling for a public-good tool. */
+  --bg: #f7f7f5;
+  --card: #ffffff;
+  --ink: #16181c;
+  --muted: #61656d;
+  --line: #e3e3de;
+  --line-strong: #cfd0ca;
+
+  /* One accent, civic blue, close to the GOV.UK link colour people already
+     associate with government data. */
+  --accent: #14549c;
+  --accent-soft: #e8f0f9;
+  /* Text that sits ON the accent. It cannot be a fixed white: in dark mode
+     the accent inverts to a light blue, and white on light blue measured
+     2.21:1 — the one thing on the site that failed contrast outright. */
+  --on-accent: #ffffff;
+
+  /* Status colours double as the availability badges, so they must hold
+     AA contrast on both --card and --bg. */
+  --ok: #0a6b45;
+  --warn: #a4192b;
+  --amber: #7a5c00;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --pad: 1.15rem;
+  --measure: 44rem;        /* comfortable reading width for prose */
+  --wide: 60rem;           /* listing pages earn more room */
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121316;
+    --card: #1b1d21;
+    --ink: #e9eaec;
+    --muted: #9a9ea7;
+    --line: #2b2e34;
+    --line-strong: #3c4048;
+    --accent: #7ab3ee;
+    --accent-soft: #16283c;
+    --on-accent: #0d1620;
+    --ok: #5cc79a;
+    --warn: #f4818e;
+    --amber: #d7b04b;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Counts sit in lists and tables and must not jitter as they change. */
+.num, td.num, .count, .stat b { font-variant-numeric: tabular-nums; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Layout ---------------------------------------------------- */
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 1.5rem 1.1rem 4rem;
+}
+.wrap.wide { max-width: var(--wide); }
+
+@media (min-width: 40rem) {
+  .wrap { padding: 2.25rem 1.5rem 5rem; }
+}
+
+/* ---------- Site header ----------------------------------------------- */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+}
+.site-header .bar {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: .7rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  font-size: 1rem;
+}
+.brand:hover { text-decoration: none; }
+.brand svg { display: block; flex: none; }
+.brand b { color: var(--accent); font-weight: 650; }
+
+.site-nav {
+  display: flex;
+  gap: .25rem;
+  flex-wrap: wrap;
+  font-size: .875rem;
+}
+.site-nav a {
+  padding: .3rem .6rem;
+  border-radius: 99px;
+  color: var(--muted);
+}
+.site-nav a:hover { background: var(--accent-soft); color: var(--accent); text-decoration: none; }
+.site-nav a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); }
+
+/* ---------- Type ------------------------------------------------------ */
+
+h1 {
+  font-size: clamp(1.4rem, 1.15rem + 1.1vw, 1.85rem);
+  line-height: 1.22;
+  letter-spacing: -0.022em;
+  margin: .2rem 0 .6rem;
+  font-weight: 660;
+}
+h2 {
+  font-size: 1.06rem;
+  letter-spacing: -0.01em;
+  margin: 2.1rem 0 .7rem;
+  font-weight: 640;
+}
+h3 { font-size: 1rem; margin: 0 0 .3rem; line-height: 1.35; font-weight: 620; }
+p { margin: 0 0 .9rem; }
+.lede { font-size: 1.02rem; color: var(--muted); margin-bottom: 1.4rem; }
+.note { color: var(--muted); font-size: .875rem; }
+small { font-size: .8125rem; }
+
+code {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: .08rem .35rem;
+  font-size: .85em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Search ---------------------------------------------------- */
+
+.searchbar { display: flex; gap: .5rem; margin: 1.25rem 0 1rem; }
+input[type=search] {
+  flex: 1;
+  min-width: 0;                /* or a long query stretches the flex row */
+  font: inherit;
+  padding: .75rem .95rem;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--line-strong);
+  background: var(--card);
+  color: var(--ink);
+  outline: none;
+}
+input[type=search]:focus { border-color: var(--accent); }
+button {
+  font: inherit;
+  font-weight: 560;
+  padding: .75rem 1.15rem;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--accent);
+  color: var(--on-accent);
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.08); }
+
+/* ---------- Cards and chips ------------------------------------------- */
+
+.result {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .9rem 1rem;
+  margin-bottom: .7rem;
+}
+.meta {
+  font-size: .8125rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem .45rem;
+  align-items: center;
+  margin: .35rem 0 .5rem;
+}
+.chip {
+  border: 1px solid var(--line-strong);
+  border-radius: 99px;
+  padding: .06rem .55rem;
+  white-space: nowrap;
+  font-size: .8125rem;
+}
+.chip.src, .chip.covers, .chip.tag { border-color: var(--accent); color: var(--accent); }
+.chip.tag:hover { background: var(--accent-soft); text-decoration: none; }
+.chip.lic, .chip.data { border-color: var(--ok); color: var(--ok); }
+.chip.webpage { border-color: var(--amber); color: var(--amber); }
+.chip.nolic, .chip.dead { border-color: var(--warn); color: var(--warn); }
+.chip.unknown { border-color: var(--line-strong); color: var(--muted); }
+
+.desc {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .9rem 1rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;     /* publishers paste unbroken URLs into prose */
+}
+.result .desc { background: none; border: 0; padding: 0; white-space: normal;
+                font-size: .9rem; opacity: .88; }
+
+.cta {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--on-accent) !important;
+  padding: .6rem 1.05rem;
+  border-radius: var(--radius);
+  margin: .9rem 0;
+  font-weight: 560;
+}
+.cta:hover { text-decoration: none; filter: brightness(1.08); }
+
+.banner, .notice {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--amber);
+  background: var(--card);
+  border-radius: var(--radius-sm);
+  padding: .65rem .85rem;
+  font-size: .9rem;
+  margin-bottom: .8rem;
+}
+.banner { border-left-color: var(--warn); color: var(--warn); }
+
+/* ---------- Stats ----------------------------------------------------- */
+
+.stat-row { display: flex; gap: .7rem; flex-wrap: wrap; margin: 1.3rem 0; }
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .75rem 1rem;
+  flex: 1 1 8.5rem;
+}
+.stat b { display: block; font-size: 1.3rem; letter-spacing: -0.02em; }
+.stat.bad b { color: var(--warn); }
+.stat span { color: var(--muted); font-size: .78rem; line-height: 1.4; display: block; }
+
+/* ---------- Tables ---------------------------------------------------- */
+
+/* Wide tables scroll inside their own box rather than pushing the page
+   sideways — the resource table on a dataset page can be 50 rows of long
+   filenames. */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+th, td {
+  text-align: left;
+  padding: .5rem .55rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+td.num { text-align: right; }
+
+/* ---------- Lists ----------------------------------------------------- */
+
+ul.cols {
+  columns: 3 14rem;            /* collapses to one column on a phone */
+  column-gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: .6rem 0 0;
+}
+ul.cols li { break-inside: avoid; margin-bottom: .32rem; font-size: .92rem; }
+
+ul.datasets { list-style: none; padding: 0; margin: .6rem 0 0; }
+ul.datasets li { padding: .55rem 0; border-bottom: 1px solid var(--line); }
+ul.datasets li:last-child { border-bottom: 0; }
+
+ul.related { padding-left: 1.15rem; margin: .5rem 0; }
+ul.related li { margin-bottom: .25rem; }
+
+.letters { display: flex; flex-wrap: wrap; gap: .4rem; font-weight: 600; margin: .8rem 0 0; }
+.letters a { padding: .1rem .45rem; border-radius: var(--radius-sm); }
+.letters a:hover { background: var(--accent-soft); text-decoration: none; }
+
+.pager { display: flex; gap: 1.1rem; margin-top: 1.4rem; flex-wrap: wrap; }
+h2[id] { scroll-margin-top: 1rem; }
+
+.cols {                        /* CSV column names under a resource */
+  font-size: .8125rem;
+  color: var(--muted);
+  margin: .3rem 0 0;
+}
+.cols code { margin: .1rem .12rem .1rem 0; display: inline-block; }
+.result .cols { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.details { font-size: .82rem; }
+.back { font-size: .875rem; margin-bottom: .5rem; }
+
+/* ---------- Footer ---------------------------------------------------- */
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .8125rem;
+  line-height: 1.7;
+}
+
+/* ---------- Motion ---------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  a, button, .chip { transition: background-color .12s ease, color .12s ease; }
+}
