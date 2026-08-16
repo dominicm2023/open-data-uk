@@ -105,6 +105,22 @@ only 12% carried a description — titles like "Family Hub Logo form" and
 Throwing away six sevenths is the right trade. The alternative was doubling
 the index with form definitions.
 
+## Real, but nothing survives the quality gate
+
+**Neath Port Talbot County Borough Council** — 139 items in its ArcGIS
+organisation, not one of them carrying a description. The gate rejected the
+entire source, so it is out of sources.yaml rather than sitting there
+yielding nothing every night.
+
+It is tempting to make an exception: Neath Port Talbot would be only the
+second Welsh council with a portal, and 139 titles with working service
+endpoints is not nothing. But the gate exists because an ArcGIS organisation
+shares its working layers alongside its data, and with no descriptions at all
+there is no way to tell which of the 139 are datasets. A rule applied
+everywhere except where it is inconvenient is not a rule.
+
+If they describe their layers, it qualifies automatically.
+
 ## Verified but unreachable from production
 
 | Portal | Datasets | Why |

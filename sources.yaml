@@ -3220,3 +3220,89 @@ sources:
       resources:
         - [attributes.url, "=Esri REST"]
       require_description: 40
+  # --- Found by searching Hub for whole sectors -------------------------
+  # Asking about "fire and rescue", "national park authority", "harbour" and
+  # the like turns up bodies that no council list contains. Neath Port Talbot
+  # arrived this way after the by-name search had wrongly matched it to the
+  # Port of London Authority — the second Welsh council with any portal.
+
+  - id: agol_scottish_enterprise
+    name: "Scottish Enterprise"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "9ryyft1AtdG7MeaX", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_scottish_canals
+    name: "Scottish Canals"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "zqVHg5bAKuLwkW3f", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_lee_valley
+    name: "Lee Valley Regional Park Authority"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "UONCmJBskAbYcnSt", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_crown_estate
+    name: "The Crown Estate"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "PZklK9Q45mfMFuZs", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
