@@ -129,12 +129,18 @@ def check_json(src: dict) -> str | None:
         items = items.get(step) if isinstance(items, dict) else None
     if not isinstance(items, list) or not items:
         return f"no record list at {path or '(root)'}"
-    rec, first = items[0], cfg.get("id", "id")
-    if not isinstance(rec, dict):
+    if not isinstance(items[0], dict):
         return "records are not objects"
-    if rec.get(first) in (None, ""):
-        return f"records have no {first!r} to key on"
-    if not rec.get(cfg.get("title", "title")) and not cfg.get("detail"):
+
+    def dig(obj, path):
+        for step in filter(None, path.split(".")):
+            obj = obj.get(step) if isinstance(obj, dict) else None
+        return obj
+
+    rec = items[0]
+    if dig(rec, cfg.get("id", "id")) in (None, ""):
+        return f"records have no {cfg.get('id', 'id')!r} to key on"
+    if not dig(rec, cfg.get("title", "title")) and not cfg.get("detail"):
         return "records have no title and no detail endpoint to fetch one"
     return None
 

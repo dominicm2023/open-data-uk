@@ -311,7 +311,27 @@ _MEDIA_TYPE_MAP = {
 }
 
 # Loose spellings seen in the wild -> canonical format.
+# Multi-word format labels. norm_format() only passes through single tokens,
+# so anything with a space in it was dropped outright — which is why 4,767
+# resources pointing at an ArcGIS REST service carried no format at all, and
+# the API's `format` filter could never find them. Esri writes the same thing
+# four ways; they collapse to one name here, as licences do.
 _FORMAT_ALIASES = {
+    "esri rest": "ESRI-REST",
+    "esri map service": "ESRI-REST",
+    "esri feature service": "ESRI-REST",
+    "esri image service": "ESRI-REST",
+    "arcgis geoservices rest api": "ESRI-REST",
+    "geoservice": "ESRI-REST",
+    "arcgis hub dataset": "HTML",       # a portal page, not a service
+    "web page": "HTML",
+    "esri shapefile": "SHP",
+    "esri file geodatabase": "GDB",
+    "open geospatial consortium wms": "WMS",
+    "open geospatial consortium wfs": "WFS",
+    "comma separated values": "CSV",
+    "microsoft excel": "XLSX",
+    "plain text": "TXT",
     "csv": "CSV",
     ".csv": "CSV",
     "csv file": "CSV",

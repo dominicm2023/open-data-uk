@@ -444,3 +444,28 @@ sources:
     api: https://opendata.scot/data.json
     web: https://opendata.scot
     dataset_url: "unused-for-dcat"
+
+  # ArcGIS Hub's federated search, filtered to one organisation. Their data
+  # has no catalogue of its own — the Hub site hostname is a vanity domain
+  # that can't be derived — but the search API exposes it per org.
+  - id: national_highways
+    name: National Highways
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://www.nationalhighways.co.uk
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "mZXeBXkkZpekxjXT", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      # The Hub record never states a format, but `url` is always an Esri
+      # REST service — so say so rather than leave every record file-less.
+      resources:
+        - [attributes.url, "=Esri REST"]

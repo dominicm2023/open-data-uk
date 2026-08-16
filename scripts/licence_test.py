@@ -1,4 +1,4 @@
-"""Regression tests for licence normalisation.
+"""Regression tests for licence and format normalisation.
 
 The whole point of collating is that one licence should have one name. The
 index was carrying 308 datasets under "CC-BY-4.0" and 124 under "CC BY 4.0"
@@ -102,6 +102,25 @@ check(norm_license("NB for Publisher: Use https://creativecommons.org/chooser/ "
 check(norm_license(None), None, "absent stays absent")
 check(norm_license(""), None, "empty stays absent")
 check(norm_license("   "), None, "whitespace stays absent")
+
+# --- formats -------------------------------------------------------------
+# norm_format() only passed through single tokens, so every multi-word label
+# was dropped: 4,767 resources pointing at an ArcGIS REST service carried no
+# format at all and the API's `format` filter could never find them.
+from normalise import norm_format  # noqa: E402
+
+for spelling in ("Esri REST", "ESRI REST", "GeoService",
+                 "ArcGIS GeoServices REST API", "Esri Map Service"):
+    check(norm_format(spelling), "ESRI-REST", f"{spelling!r} is one format")
+check(norm_format("ARCGIS HUB DATASET"), "HTML",
+      "a Hub portal page is a web page, not a service")
+check(norm_format("Esri Shapefile"), "SHP", "multi-word shapefile resolves")
+check(norm_format("Comma Separated Values"), "CSV", "spelled-out CSV resolves")
+check(norm_format("CSV"), "CSV", "the plain token still works")
+check(norm_format("NetCDF"), "NETCDF", "an unknown single token passes through")
+check(norm_format("some unknown thing here"), None,
+      "unknown multi-word text is not invented into a format")
+check(norm_format(None), None, "absent format stays absent")
 
 print()
 print("all licence rules hold" if not failures

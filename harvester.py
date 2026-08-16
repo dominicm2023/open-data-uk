@@ -600,9 +600,10 @@ def harvest_json(src: dict, conn: sqlite3.Connection, limit: int | None) -> None
         key = f"{src['id']}:{ident}"
         keys.append((key,))
         res_rows += resource_rows(key, [
-            (_dig(rec, u), cfg.get("resource_name", "download"), _dig(rec, f) if f else None)
+            (_dig(rec, u), cfg.get("resource_name", "download"), _fmt(rec, f))
             for u, f in (cfg.get("resources") or [])])
 
+    rows, blanked = drop_boilerplate(rows)
     conn.executemany(UPSERT, rows)
     conn.executemany("DELETE FROM resources WHERE dataset_key = ?", keys)
     conn.executemany("INSERT OR REPLACE INTO resources VALUES (?, ?, ?, ?)", res_rows)
@@ -611,7 +612,53 @@ def harvest_json(src: dict, conn: sqlite3.Connection, limit: int | None) -> None
                  (src["id"], started, finished, total, len(rows), errors))
     conn.commit()
     print(f"[{src['id']}] done: {len(rows)} stored (catalogue reports {total}), "
-          f"{len(res_rows)} files", flush=True)
+          f"{len(res_rows)} files"
+          + (f", {blanked} shared descriptions dropped" if blanked else ""),
+          flush=True)
+
+
+DESCRIPTION_COL = 5          # position of `description` in the UPSERT tuple
+BOILERPLATE_MIN = 5          # copies before a description stops being one
+
+
+def drop_boilerplate(rows: list[tuple]) -> tuple[list[tuple], int]:
+    """Blank descriptions that repeat across a source.
+
+    ArcGIS Hub organisations paste one HTML blurb about themselves onto every
+    layer they publish: 200 National Highways records carried 54 distinct
+    descriptions, one of them on 30 datasets. A paragraph that appears on
+    thirty datasets is not a description of any of them, and repeating it
+    would put the same wall of text on hundreds of pages.
+
+    Blanked rather than kept, so the page falls back to the generated summary
+    and the thin-page rule can judge the record on what it actually has.
+    """
+    counts: dict[str, int] = {}
+    for row in rows:
+        text = row[DESCRIPTION_COL]
+        if text:
+            counts[text] = counts.get(text, 0) + 1
+    shared = {t for t, n in counts.items() if n >= BOILERPLATE_MIN}
+    if not shared:
+        return rows, 0
+    cleaned = [
+        (row[:DESCRIPTION_COL] + (None,) + row[DESCRIPTION_COL + 1:])
+        if row[DESCRIPTION_COL] in shared else row
+        for row in rows
+    ]
+    return cleaned, sum(counts[t] for t in shared)
+
+
+def _fmt(rec: dict, spec: str | None):
+    """A resource format: a path into the record, or a literal after "=".
+
+    Some APIs never state the format but it is knowable from the endpoint —
+    ArcGIS Hub's `url` is always an Esri REST service — so the config can say
+    so outright rather than us inventing a field that isn't there.
+    """
+    if not spec:
+        return None
+    return spec[1:] if spec.startswith("=") else _dig(rec, spec)
 
 
 def _normalise_json_record(rec: dict, ident, cfg: dict, src: dict,
@@ -635,10 +682,7 @@ def _normalise_json_record(rec: dict, ident, cfg: dict, src: dict,
         lic = None
     tags = _dig(rec, cfg["tags"]) if cfg.get("tags") else None
     tags = [t for t in tags if isinstance(t, str)] if isinstance(tags, list) else []
-    formats = [f for _u, f in (cfg.get("resources") or [])
-               if (f and _dig(rec, f))] or [f for _u, f in (cfg.get("resources") or [])
-                                            if _dig(rec, _u)]
-    fmt_values = [_dig(rec, f) if f else "ZIP" for _u, f in (cfg.get("resources") or [])
+    fmt_values = [_fmt(rec, f) for _u, f in (cfg.get("resources") or [])
                   if _dig(rec, _u)]
     landing = (cfg["landing"].format(id=ident) if cfg.get("landing")
                else _dig(rec, cfg.get("landing_field", "")) or src["web"])
