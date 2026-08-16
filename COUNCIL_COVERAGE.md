@@ -334,38 +334,38 @@ A council reached through a hub or through data.gov.uk isn't failing at anything
 
 | Council | Data | Datasets | Held as |
 |---|---|---:|---|
-| Aberdeen City | ✅ | 66 | aberdeen |
-| Aberdeenshire | 🔵 | 37 | spatialhub_scotland |
-| Angus | 🔵 | 19 | spatialhub_scotland |
-| Argyll and Bute | ✅ | 56 | argyll_bute |
-| City of Edinburgh | 🔵 | 21 | spatialhub_scotland |
-| Clackmannanshire | 🔵 | 37 | spatialhub_scotland |
-| Dumfries and Galloway | 🔵 | 4 | spatialhub_scotland |
-| Dundee City | 🔵 | 16 | spatialhub_scotland |
-| East Ayrshire | 🔵 | 7 | spatialhub_scotland |
-| East Dunbartonshire | 🔵 | 1 | spatialhub_scotland |
-| East Lothian | 🔵 | 6 | spatialhub_scotland |
-| East Renfrewshire | 🔵 | 15 | spatialhub_scotland |
-| Falkirk | 🔵 | 20 | spatialhub_scotland |
-| Fife | 🔵 | 10 | spatialhub_scotland |
-| Glasgow City | ✅ | 162 | glasgow |
-| Highland | 🔵 | 13 | spatialhub_scotland |
-| Inverclyde | 🔵 | 5 | spatialhub_scotland |
-| Midlothian | 🔵 | 5 | spatialhub_scotland |
-| Moray | ✅ | 83 | moray |
+| Aberdeen City | ✅ | 134 | aberdeen |
+| Aberdeenshire | 🔵 | 74 | opendata_scot, spatialhub_scotland |
+| Angus | 🔵 | 35 | opendata_scot, spatialhub_scotland |
+| Argyll and Bute | ✅ | 98 | argyll_bute |
+| City of Edinburgh | 🔵 | 101 | opendata_scot, spatialhub_scotland |
+| Clackmannanshire | 🔵 | 68 | opendata_scot, spatialhub_scotland |
+| Dumfries and Galloway | 🔵 | 7 | opendata_scot, spatialhub_scotland |
+| Dundee City | 🔵 | 159 | opendata_scot, spatialhub_scotland |
+| East Ayrshire | 🔵 | 14 | opendata_scot, spatialhub_scotland |
+| East Dunbartonshire | 🔵 | 2 | opendata_scot, spatialhub_scotland |
+| East Lothian | 🔵 | 12 | opendata_scot, spatialhub_scotland |
+| East Renfrewshire | 🔵 | 118 | opendata_scot, spatialhub_scotland |
+| Falkirk | 🔵 | 40 | opendata_scot, spatialhub_scotland |
+| Fife | 🔵 | 19 | opendata_scot, spatialhub_scotland |
+| Glasgow City | ✅ | 322 | glasgow |
+| Highland | 🔵 | 60 | opendata_scot, spatialhub_scotland |
+| Inverclyde | 🔵 | 10 | opendata_scot, spatialhub_scotland |
+| Midlothian | 🔵 | 10 | opendata_scot, spatialhub_scotland |
+| Moray | ✅ | 169 | moray |
 | Na h-Eileanan Siar | ⬜ |  | — |
-| North Ayrshire | 🔵 | 29 | spatialhub_scotland |
-| North Lanarkshire | 🔵 | 19 | spatialhub_scotland |
-| Orkney Islands | 🔵 | 34 | spatialhub_scotland |
-| Perth and Kinross | ✅ | 85 | perth_kinross |
-| Renfrewshire | 🔵 | 6 | spatialhub_scotland |
-| Scottish Borders | 🔵 | 4 | spatialhub_scotland |
-| Shetland Islands | 🔵 | 3 | spatialhub_scotland |
-| South Ayrshire | ✅ | 120 | south_ayrshire |
-| South Lanarkshire | 🔵 | 6 | spatialhub_scotland |
-| Stirling | 🔵 | 19 | spatialhub_scotland |
-| West Dunbartonshire | 🔵 | 5 | spatialhub_scotland |
-| West Lothian | 🔵 | 5 | spatialhub_scotland |
+| North Ayrshire | 🔵 | 99 | opendata_scot, spatialhub_scotland |
+| North Lanarkshire | 🔵 | 38 | opendata_scot, spatialhub_scotland |
+| Orkney Islands | 🔵 | 68 | opendata_scot, spatialhub_scotland |
+| Perth and Kinross | ✅ | 169 | perth_kinross |
+| Renfrewshire | 🔵 | 105 | opendata_scot, spatialhub_scotland |
+| Scottish Borders | 🔵 | 7 | opendata_scot, spatialhub_scotland |
+| Shetland Islands | 🔵 | 6 | opendata_scot, spatialhub_scotland |
+| South Ayrshire | ✅ | 187 | south_ayrshire |
+| South Lanarkshire | 🔵 | 12 | opendata_scot, spatialhub_scotland |
+| Stirling | 🔵 | 581 | opendata_scot, spatialhub_scotland |
+| West Dunbartonshire | 🔵 | 10 | opendata_scot, spatialhub_scotland |
+| West Lothian | 🔵 | 10 | opendata_scot, spatialhub_scotland |
 
 ## Wales
 

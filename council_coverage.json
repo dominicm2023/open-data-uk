@@ -3266,10 +3266,11 @@
   "name": "Aberdeen City",
   "nation": "Scotland",
   "state": "own",
-  "direct": 63,
+  "direct": 131,
   "aggregated": 3,
   "sources": [
    "aberdeen",
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": [
@@ -3281,9 +3282,10 @@
   "name": "Aberdeenshire",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 37,
+  "direct": 74,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3293,9 +3295,10 @@
   "name": "Angus",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 19,
+  "direct": 35,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3305,10 +3308,11 @@
   "name": "Argyll and Bute",
   "nation": "Scotland",
   "state": "own",
-  "direct": 56,
+  "direct": 98,
   "aggregated": 0,
   "sources": [
    "argyll_bute",
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": [
@@ -3320,9 +3324,10 @@
   "name": "City of Edinburgh",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 21,
+  "direct": 101,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3332,9 +3337,10 @@
   "name": "Clackmannanshire",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 37,
+  "direct": 68,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3344,9 +3350,10 @@
   "name": "Dumfries and Galloway",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 4,
+  "direct": 7,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3356,9 +3363,10 @@
   "name": "Dundee City",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 16,
+  "direct": 159,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3368,9 +3376,10 @@
   "name": "East Ayrshire",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 7,
+  "direct": 14,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3380,9 +3389,10 @@
   "name": "East Dunbartonshire",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 1,
+  "direct": 2,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3392,9 +3402,10 @@
   "name": "East Lothian",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 6,
+  "direct": 12,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3404,9 +3415,10 @@
   "name": "East Renfrewshire",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 9,
+  "direct": 112,
   "aggregated": 6,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3416,9 +3428,10 @@
   "name": "Falkirk",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 20,
+  "direct": 40,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3428,9 +3441,10 @@
   "name": "Fife",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 10,
+  "direct": 19,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3440,10 +3454,11 @@
   "name": "Glasgow City",
   "nation": "Scotland",
   "state": "own",
-  "direct": 162,
+  "direct": 322,
   "aggregated": 0,
   "sources": [
    "glasgow",
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": [
@@ -3455,9 +3470,10 @@
   "name": "Highland",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 13,
+  "direct": 60,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3467,9 +3483,10 @@
   "name": "Inverclyde",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 5,
+  "direct": 10,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3479,9 +3496,10 @@
   "name": "Midlothian",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 5,
+  "direct": 10,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3491,10 +3509,11 @@
   "name": "Moray",
   "nation": "Scotland",
   "state": "own",
-  "direct": 83,
+  "direct": 169,
   "aggregated": 0,
   "sources": [
    "moray",
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": [
@@ -3516,9 +3535,10 @@
   "name": "North Ayrshire",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 29,
+  "direct": 99,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3528,9 +3548,10 @@
   "name": "North Lanarkshire",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 19,
+  "direct": 38,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3540,9 +3561,10 @@
   "name": "Orkney Islands",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 34,
+  "direct": 68,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3552,9 +3574,10 @@
   "name": "Perth and Kinross",
   "nation": "Scotland",
   "state": "own",
-  "direct": 85,
+  "direct": 169,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "perth_kinross",
    "spatialhub_scotland"
   ],
@@ -3567,9 +3590,10 @@
   "name": "Renfrewshire",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 5,
+  "direct": 104,
   "aggregated": 1,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3579,9 +3603,10 @@
   "name": "Scottish Borders",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 4,
+  "direct": 7,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3591,9 +3616,10 @@
   "name": "Shetland Islands",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 3,
+  "direct": 6,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3603,9 +3629,10 @@
   "name": "South Ayrshire",
   "nation": "Scotland",
   "state": "own",
-  "direct": 120,
+  "direct": 187,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "south_ayrshire",
    "spatialhub_scotland"
   ],
@@ -3618,9 +3645,10 @@
   "name": "South Lanarkshire",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 6,
+  "direct": 12,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3630,9 +3658,10 @@
   "name": "Stirling",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 19,
+  "direct": 581,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3642,9 +3671,10 @@
   "name": "West Dunbartonshire",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 5,
+  "direct": 10,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []
@@ -3654,9 +3684,10 @@
   "name": "West Lothian",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 5,
+  "direct": 10,
   "aggregated": 0,
   "sources": [
+   "opendata_scot",
    "spatialhub_scotland"
   ],
   "own_sources": []

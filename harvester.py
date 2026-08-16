@@ -13,6 +13,7 @@ upserts, so re-running refreshes the index in place.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sqlite3
 import sys
@@ -253,24 +254,64 @@ def harvest_source(src: dict, conn: sqlite3.Connection, limit: int | None) -> No
 
 
 def _dcat_publisher(ds: dict, src: dict) -> str:
-    """Publisher name, guarding against the two ways feeds get this wrong:
-    unresolved template junk ('{{source}}') from some ArcGIS Hub feeds, and
-    Socrata's habit of putting the bare hostname in publisher.name."""
-    name = ((ds.get("publisher") or {}).get("name") or "").strip()
-    looks_like_host = ("." in name and " " not in name and name.islower())
-    if not name or "{{" in name or looks_like_host:
-        return src["name"]
-    return name
+    """Publisher name, guarding against the ways feeds get this wrong.
+
+    Three failure modes seen in the wild: unresolved template junk
+    ('{{source}}') from some ArcGIS Hub feeds, Socrata's habit of putting the
+    bare hostname in publisher.name, and aggregators that omit `publisher`
+    entirely while naming the real organisation in `contactPoint`.
+
+    That last one matters: opendata.scot carries no publisher at all, but its
+    contactPoint names 67 distinct Scottish bodies — councils, the Scottish
+    Parliament, Public Health Scotland. Falling straight back to the source
+    name would have filed all 2,507 datasets under one invented publisher and
+    told the council tracker nothing.
+    """
+    def usable(name: str | None) -> str | None:
+        name = (name or "").strip()
+        looks_like_host = ("." in name and " " not in name and name.islower())
+        return None if (not name or "{{" in name or looks_like_host) else name
+
+    return (usable((ds.get("publisher") or {}).get("name"))
+            or usable((ds.get("contactPoint") or {}).get("fn"))
+            or src["name"])
+
+
+def _dcat_landing(ds: dict) -> str | None:
+    """A human-facing page for this dataset, from wherever the feed put it.
+
+    Feeds that omit landingPage often still list the portal page as a
+    distribution — ArcGIS Hub calls it "Web Page" — so prefer that over
+    linking a reader straight at a REST endpoint.
+    """
+    if landing := ds.get("landingPage"):
+        return landing
+    dists = ds.get("distribution") or []
+    named = next((d for d in dists
+                  if "web" in str(d.get("title") or "").lower()), None)
+    for d in ([named] if named else []) + dists:
+        url = d.get("accessURL") or d.get("downloadURL")
+        if isinstance(url, str) and url.startswith("http"):
+            return url
+    return None
 
 
 def normalise_dcat_dataset(ds: dict, src: dict, now: str) -> tuple | None:
     """Map a DCAT-US dataset entry (ArcGIS Hub feeds etc.) onto our schema."""
-    ident = ds.get("identifier") or ds.get("landingPage")
+    landing = _dcat_landing(ds)
+    ident = ds.get("identifier") or landing
     if not ident:
-        return None
+        # No id and no link, but a title and a named publisher is still a
+        # real record. Key it on those, which stay stable between harvests —
+        # a random id would create a new dataset every night.
+        title = (ds.get("title") or "").strip()
+        if not title:
+            return None
+        seed = f"{_dcat_publisher(ds, src)}|{title}".encode("utf-8")
+        ident = "sha1:" + hashlib.sha1(seed).hexdigest()[:16]
     distributions = ds.get("distribution") or []
     formats_raw = [d.get("format") or d.get("mediaType") for d in distributions]
-    landing = ds.get("landingPage") or ident
+    landing = landing or ident
     name = landing.rstrip("/").rsplit("/", 1)[-1] or ident
     license_raw = strip_html(ds.get("license"))
     if license_raw:

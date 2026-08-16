@@ -59,9 +59,19 @@ def check_dcat(src: dict) -> str | None:
     datasets = r.json().get("dataset")
     if not isinstance(datasets, list) or not datasets:
         return "DCAT feed has no dataset list"
-    if not (datasets[0].get("title") and
-            (datasets[0].get("identifier") or datasets[0].get("landingPage"))):
-        return "DCAT entries lack title/identifier"
+    # A title is required; an identifier is not. Aggregators like
+    # opendata.scot carry neither identifier nor landingPage and are still
+    # perfectly harvestable — harvester.py recovers a link from the
+    # distributions and keys on publisher+title. The check must not be
+    # stricter than the harvester, or CI rejects sources that work.
+    first = datasets[0]
+    if not first.get("title"):
+        return "DCAT entries lack a title"
+    has_link = bool(first.get("identifier") or first.get("landingPage")) or any(
+        str(d.get("accessURL") or d.get("downloadURL") or "").startswith("http")
+        for d in (first.get("distribution") or []))
+    if not has_link:
+        return "DCAT entries have no identifier, landing page or distribution"
     return None
 
 

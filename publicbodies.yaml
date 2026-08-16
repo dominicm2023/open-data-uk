@@ -1,0 +1,185 @@
+# Public bodies beyond councils and utilities: central government agencies,
+# devolved statistics services, regulators, national parks, police and the
+# combined authorities.
+#
+# Same rules as utilities.yaml — `candidates` are domains to probe, not
+# claims, and scripts/utility_coverage.py decides which are real. Several
+# entries here are certainly wrong; that is what probing is for.
+#
+# `note: key` marks a source known to require registration. Listed for
+# completeness, never probed: harvesting anonymously past a registration gate
+# would be helping ourselves to something the publisher chose to meter.
+
+bodies:
+
+  # --- Devolved statistics services -------------------------------------
+  - name: Statistics for Scotland
+    sector: Devolved statistics
+    candidates: [statistics.gov.scot, data.gov.scot, opendata.scot]
+
+  - name: StatsWales
+    sector: Devolved statistics
+    candidates: [statswales.gov.wales, open.statswales.gov.wales]
+
+  - name: NISRA (Northern Ireland Statistics)
+    sector: Devolved statistics
+    candidates: [data.nisra.gov.uk, build.nisra.gov.uk]
+
+  - name: Welsh Government
+    sector: Devolved statistics
+    candidates: [datamap.gov.wales, open.gov.wales]
+
+  # --- Environment and land ---------------------------------------------
+  - name: Environment Agency
+    sector: Environment
+    candidates: [environment.data.gov.uk, data.environment-agency.gov.uk]
+
+  - name: DEFRA
+    sector: Environment
+    candidates: [environment.data.gov.uk, data.defra.gov.uk, defra.opendatasoft.com]
+
+  - name: Natural England
+    sector: Environment
+    candidates: [naturalengland-defra.opendata.arcgis.com, data.naturalengland.org.uk]
+
+  - name: Marine Management Organisation
+    sector: Environment
+    candidates: [mmo.opendata.arcgis.com, data.marinemanagement.org.uk]
+
+  - name: Joint Nature Conservation Committee
+    sector: Environment
+    candidates: [jncc.opendata.arcgis.com, data.jncc.gov.uk, hub.jncc.gov.uk]
+
+  - name: British Geological Survey
+    sector: Environment
+    candidates: [data.bgs.ac.uk, bgs.opendata.arcgis.com, webservices.bgs.ac.uk]
+
+  - name: Coal Authority
+    sector: Environment
+    candidates: [opendata-coalauthority.hub.arcgis.com, data.coal.gov.uk]
+
+  - name: Environment Agency (ecology and fish)
+    sector: Environment
+    candidates: [environment.data.gov.uk, ea-ecology.opendata.arcgis.com]
+
+  # --- Food, health and safety ------------------------------------------
+  - name: Food Standards Agency
+    sector: Health and safety
+    candidates: [data.food.gov.uk, ratings.food.gov.uk, api.ratings.food.gov.uk]
+
+  - name: UK Health Security Agency
+    sector: Health and safety
+    candidates: [api.ukhsa-dashboard.data.gov.uk, coronavirus.data.gov.uk]
+
+  - name: NHS England
+    sector: Health and safety
+    candidates: [digital.nhs.uk, data.england.nhs.uk, opendata.nhsbsa.net]
+
+  - name: Care Quality Commission
+    sector: Health and safety
+    candidates: [api.cqc.org.uk, data.cqc.org.uk]
+    note: key
+
+  - name: Health and Safety Executive
+    sector: Health and safety
+    candidates: [data.hse.gov.uk, hse.opendata.arcgis.com]
+
+  # --- Regulators and registries ----------------------------------------
+  - name: Ofcom
+    sector: Regulators
+    candidates: [data.ofcom.org.uk, ofcom.opendata.arcgis.com]
+
+  - name: Ofsted
+    sector: Regulators
+    candidates: [data.ofsted.gov.uk, ofsted.opendata.arcgis.com]
+
+  - name: HM Land Registry
+    sector: Regulators
+    candidates: [landregistry.data.gov.uk, use-land-property-data.service.gov.uk]
+
+  - name: Companies House
+    sector: Regulators
+    candidates: [api.company-information.service.gov.uk, download.companieshouse.gov.uk]
+    note: key
+
+  - name: Charity Commission
+    sector: Regulators
+    candidates: [register-of-charities.charitycommission.gov.uk, data.charitycommission.gov.uk]
+
+  - name: UK Research and Innovation
+    sector: Regulators
+    candidates: [gtr.ukri.org, data.ukri.org]
+
+  # --- Policing and emergency -------------------------------------------
+  - name: Police (Home Office)
+    sector: Policing
+    candidates: [data.police.uk]
+
+  - name: Police Scotland
+    sector: Policing
+    candidates: [data.scotland.police.uk, scottish-police.opendata.arcgis.com]
+
+  # --- Heritage and culture ---------------------------------------------
+  - name: Historic Environment Scotland
+    sector: Heritage
+    candidates: [portal.historicenvironment.scot, opendata-historicscotland.hub.arcgis.com,
+                 inventory.historicenvironment.scot]
+
+  - name: Cadw (Welsh historic environment)
+    sector: Heritage
+    candidates: [cadw.gov.wales, datamap.gov.wales]
+
+  - name: The National Archives
+    sector: Heritage
+    candidates: [discovery.nationalarchives.gov.uk, data.nationalarchives.gov.uk]
+
+  # --- National parks ----------------------------------------------------
+  - name: Lake District National Park
+    sector: National parks
+    candidates: [data-lakedistrict.opendata.arcgis.com, opendata.lakedistrict.gov.uk]
+
+  - name: Peak District National Park
+    sector: National parks
+    candidates: [open-data-peakdistrict.opendata.arcgis.com, data.peakdistrict.gov.uk]
+
+  - name: South Downs National Park
+    sector: National parks
+    candidates: [data-southdowns.opendata.arcgis.com, opendata.southdowns.gov.uk]
+
+  - name: Dartmoor National Park
+    sector: National parks
+    candidates: [dartmoor.opendata.arcgis.com, data.dartmoor.gov.uk]
+
+  - name: Cairngorms National Park
+    sector: National parks
+    candidates: [cairngorms.opendata.arcgis.com, data.cairngorms.co.uk]
+
+  - name: New Forest National Park
+    sector: National parks
+    candidates: [newforest.opendata.arcgis.com, data.newforestnpa.gov.uk]
+
+  # --- Combined authorities and city regions ----------------------------
+  - name: Greater London Authority
+    sector: Combined authorities
+    candidates: [data.london.gov.uk, apps.london.gov.uk]
+
+  - name: Greater Manchester Combined Authority
+    sector: Combined authorities
+    candidates: [data.gmcameetings.co.uk, gmdatastore.opendata.arcgis.com,
+                 mappinggm.opendata.arcgis.com]
+
+  - name: West Midlands Combined Authority
+    sector: Combined authorities
+    candidates: [data.wmca.org.uk, wmca.opendata.arcgis.com]
+
+  - name: Liverpool City Region
+    sector: Combined authorities
+    candidates: [data.liverpoolcityregion-ca.gov.uk, lcrca.opendata.arcgis.com]
+
+  - name: West Yorkshire Combined Authority
+    sector: Combined authorities
+    candidates: [datashare.westyorks-ca.gov.uk, wyca.opendata.arcgis.com]
+
+  - name: Transport for the North
+    sector: Combined authorities
+    candidates: [data.transportforthenorth.com, tfn.opendata.arcgis.com]

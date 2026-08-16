@@ -433,3 +433,14 @@ sources:
       resources:
         - [publicArchiveUrl, ""]
 
+
+  # Scotland's aggregator. Carries no `publisher` or `landingPage` at all,
+  # but names 67 real organisations in contactPoint — councils, the Scottish
+  # Parliament, Public Health Scotland — so the DCAT adapter now falls back
+  # to that rather than filing 2,507 datasets under one invented publisher.
+  - id: opendata_scot
+    name: opendata.scot (Scottish open data)
+    type: dcat
+    api: https://opendata.scot/data.json
+    web: https://opendata.scot
+    dataset_url: "unused-for-dcat"
