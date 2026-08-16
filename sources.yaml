@@ -344,3 +344,44 @@ sources:
     api: https://datamap.gov.wales/api/v2/layers/
     web: https://datamap.gov.wales
     dataset_url: "unused-for-geonode"
+
+  # --- Utilities and infrastructure ------------------------------------
+  # Not government: regulated network operators and the water industry's
+  # shared platform. Found by scripts/utility_coverage.py, which probes the
+  # sectors Ofgem and Ofwat license rather than a register — there isn't one.
+  # Licences here vary and are often not OGL, so the per-dataset licence we
+  # harvest matters more than usual.
+  - id: ukpowernetworks
+    name: UK Power Networks
+    type: ods
+    api: https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets
+    web: https://ukpowernetworks.opendatasoft.com
+    dataset_url: https://ukpowernetworks.opendatasoft.com/explore/dataset/{name}/
+
+  - id: northernpowergrid
+    name: Northern Powergrid
+    type: ods
+    api: https://northernpowergrid.opendatasoft.com/api/explore/v2.1/catalog/datasets
+    web: https://northernpowergrid.opendatasoft.com
+    dataset_url: https://northernpowergrid.opendatasoft.com/explore/dataset/{name}/
+
+  - id: cadentgas
+    name: Cadent Gas
+    type: ods
+    api: https://cadentgas.opendatasoft.com/api/explore/v2.1/catalog/datasets
+    web: https://cadentgas.opendatasoft.com
+    dataset_url: https://cadentgas.opendatasoft.com/explore/dataset/{name}/
+
+  - id: nged
+    name: National Grid Electricity Distribution
+    type: ckan
+    api: https://connecteddata.nationalgrid.co.uk/api/3/action
+    web: https://connecteddata.nationalgrid.co.uk
+    dataset_url: https://connecteddata.nationalgrid.co.uk/dataset/{name}
+
+  - id: stream_water
+    name: Stream (UK water industry open data)
+    type: dcat
+    api: https://www.streamwaterdata.co.uk/data.json
+    web: https://www.streamwaterdata.co.uk
+    dataset_url: "unused-for-dcat"

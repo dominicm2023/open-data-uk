@@ -99,6 +99,11 @@ Records with nothing on them — no description, no files, no tags, no formats
 out of the sitemap. They remain reachable; they're just not put forward as
 worth ranking.
 
+## Coverage trackers
+
+Two checklists, both regenerated from the index rather than maintained by
+hand, so "what are we missing?" has an answer instead of a guess.
+
 ## Council coverage
 
 [COUNCIL_COVERAGE.md](COUNCIL_COVERAGE.md) checks all 361 UK local
@@ -114,6 +119,23 @@ straight back into discovery — `discover_sources.py --from-councils
 --missing-only` probes the councils we hold nothing for, rather than only
 the publishers we already have. That found Stirling (578 datasets) and
 Brent (310).
+
+### Utilities, transport and roads
+
+[UTILITIES_COVERAGE.md](UTILITIES_COVERAGE.md) does the same for the
+organisations running the physical infrastructure — energy networks, water
+companies, road and rail operators. There is no register for these, so
+[`utilities.yaml`](utilities.yaml) is a curated candidate list built against
+the sectors Ofgem and Ofwat license, and
+[`scripts/utility_coverage.py`](scripts/utility_coverage.py) probes every
+candidate against every catalogue API we can harvest.
+
+Of 36 organisations: **5 run a catalogue we can harvest** (~1,140 datasets),
+5 serve a real data site with no catalogue behind it, 3 sit behind a
+registration gate we deliberately don't try to bypass, and the rest had no
+portal at any address we could guess. That ratio is the finding — this
+sector mostly publishes CSVs linked from corporate pages, which a person can
+find and a harvester cannot.
 
 New portals are found deterministically rather than by hand: see
 [`scripts/discover_sources.py`](scripts/discover_sources.py), which mines

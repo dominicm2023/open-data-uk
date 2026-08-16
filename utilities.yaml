@@ -1,0 +1,178 @@
+# Candidate open-data portals outside government: the utilities, network
+# operators and transport bodies that run the UK's physical infrastructure.
+#
+# Councils came from a register (ONS). There is no equivalent for this, but
+# the sectors are not arbitrary either: Ofgem licenses a known set of
+# electricity and gas networks, Ofwat a known set of water companies, and the
+# transport bodies are a short list. So this is curated, but it is curated
+# against the licensing structure rather than assembled from whatever came to
+# mind.
+#
+# `candidates` are domains to probe, not claims. scripts/utility_coverage.py
+# tries each against every catalogue API we can harvest and records what
+# actually answered — several entries here will be wrong, and that is the
+# point of probing rather than asserting.
+#
+# `note: key` marks a source known to need registration or an API key. We
+# list those for completeness and do not attempt them: harvesting anonymously
+# past a registration gate would be helping ourselves to something the
+# publisher chose to meter.
+
+utilities:
+
+  # --- Electricity distribution (Ofgem-licensed DNOs) -------------------
+  - name: UK Power Networks
+    sector: Electricity distribution
+    candidates: [ukpowernetworks.opendatasoft.com, data.ukpowernetworks.co.uk]
+
+  - name: Scottish and Southern Electricity Networks
+    sector: Electricity distribution
+    candidates: [data.ssen.co.uk, ssen.opendatasoft.com]
+
+  - name: Northern Powergrid
+    sector: Electricity distribution
+    candidates: [northernpowergrid.opendatasoft.com, data.northernpowergrid.com]
+
+  - name: Electricity North West
+    sector: Electricity distribution
+    candidates: [electricitynorthwest.opendatasoft.com, data.enwl.co.uk]
+
+  - name: SP Energy Networks
+    sector: Electricity distribution
+    candidates: [spenergynetworks.opendatasoft.com, data.spenergynetworks.co.uk]
+
+  - name: National Grid Electricity Distribution
+    sector: Electricity distribution
+    candidates: [connecteddata.nationalgrid.co.uk, nationalgrid.opendatasoft.com]
+
+  # --- Electricity system operation and transmission --------------------
+  - name: National Energy System Operator (NESO)
+    sector: Electricity system operator
+    candidates: [data.neso.energy, data.nationalgrideso.com]
+
+  - name: National Grid Electricity Transmission
+    sector: Electricity transmission
+    candidates: [nationalgrid.opendatasoft.com, data.nationalgridet.com]
+
+  # --- Gas networks -----------------------------------------------------
+  - name: National Gas Transmission
+    sector: Gas transmission
+    candidates: [data.nationalgas.com, nationalgas.opendatasoft.com]
+
+  - name: Cadent Gas
+    sector: Gas distribution
+    candidates: [cadentgas.opendatasoft.com, data.cadentgas.com]
+
+  - name: Northern Gas Networks
+    sector: Gas distribution
+    candidates: [northerngasnetworks.opendatasoft.com, data.northerngasnetworks.co.uk]
+
+  - name: SGN
+    sector: Gas distribution
+    candidates: [sgn.opendatasoft.com, data.sgn.co.uk]
+
+  - name: Wales and West Utilities
+    sector: Gas distribution
+    candidates: [wwutilities.opendatasoft.com, data.wwutilities.co.uk]
+
+  # --- Water and sewerage (Ofwat-regulated, plus Scotland and NI) -------
+  # Stream is the water industry's shared open-data platform; if it answers,
+  # it may cover several of the companies below in one source.
+  - name: Stream (water industry shared platform)
+    sector: Water
+    candidates: [streamwaterdata.co.uk, data.streamwaterdata.co.uk]
+
+  - name: Thames Water
+    sector: Water
+    candidates: [data.thameswater.co.uk, thameswater.opendatasoft.com]
+
+  - name: Severn Trent Water
+    sector: Water
+    candidates: [severntrent.opendatasoft.com, data.stwater.co.uk]
+
+  - name: United Utilities
+    sector: Water
+    candidates: [unitedutilities.opendatasoft.com, data.unitedutilities.com]
+
+  - name: Anglian Water
+    sector: Water
+    candidates: [anglianwater.opendatasoft.com, data.anglianwater.co.uk]
+
+  - name: Yorkshire Water
+    sector: Water
+    candidates: [yorkshirewater.opendatasoft.com, data.yorkshirewater.co.uk]
+
+  - name: Northumbrian Water
+    sector: Water
+    candidates: [northumbrianwater.opendatasoft.com, data.nwl.co.uk]
+
+  - name: South West Water
+    sector: Water
+    candidates: [southwestwater.opendatasoft.com, data.southwestwater.co.uk]
+
+  - name: Wessex Water
+    sector: Water
+    candidates: [wessexwater.opendatasoft.com, data.wessexwater.co.uk]
+
+  - name: Southern Water
+    sector: Water
+    candidates: [southernwater.opendatasoft.com, data.southernwater.co.uk]
+
+  - name: Dwr Cymru Welsh Water
+    sector: Water
+    candidates: [dwrcymru.opendatasoft.com, data.dwrcymru.com]
+
+  - name: Affinity Water
+    sector: Water
+    candidates: [affinitywater.opendatasoft.com, data.affinitywater.co.uk]
+
+  - name: South East Water
+    sector: Water
+    candidates: [southeastwater.opendatasoft.com, data.southeastwater.co.uk]
+
+  - name: Scottish Water
+    sector: Water
+    candidates: [scottishwater.opendatasoft.com, data.scottishwater.co.uk]
+
+  - name: Northern Ireland Water
+    sector: Water
+    candidates: [niwater.opendatasoft.com, data.niwater.com]
+
+  # --- Roads ------------------------------------------------------------
+  - name: National Highways
+    sector: Roads
+    candidates: [nationalhighways.opendatasoft.com, roads.data.nationalhighways.co.uk,
+                 data.nationalhighways.co.uk, nationalhighways-nhpp.opendata.arcgis.com]
+
+  - name: Transport Scotland
+    sector: Roads
+    candidates: [data.transport.gov.scot, transportscotland.opendatasoft.com]
+
+  # --- Rail -------------------------------------------------------------
+  - name: Network Rail
+    sector: Rail
+    candidates: [data.networkrail.co.uk, networkrail.opendatasoft.com]
+    note: key
+
+  - name: Office of Rail and Road
+    sector: Rail
+    candidates: [dataportal.orr.gov.uk, data.orr.gov.uk]
+
+  # --- Buses and urban transport ---------------------------------------
+  - name: Bus Open Data Service (DfT)
+    sector: Bus
+    candidates: [data.bus-data.dft.gov.uk]
+    note: key
+
+  - name: Transport for London
+    sector: Urban transport
+    candidates: [api.tfl.gov.uk, data.tfl.gov.uk, tfl.opendatasoft.com]
+    note: key
+
+  - name: Transport for Greater Manchester
+    sector: Urban transport
+    candidates: [data.tfgm.com, tfgm.opendatasoft.com]
+
+  - name: Transport for West Midlands
+    sector: Urban transport
+    candidates: [data.tfwm.org.uk, tfwm.opendatasoft.com]
