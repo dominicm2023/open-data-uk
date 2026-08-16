@@ -1,0 +1,25 @@
+bodies:
+  - name: MEDIN (Marine Environmental Data and Information Network)
+    sector: Marine
+    candidates: [portal.medin.org.uk, medin.org.uk, data.medin.org.uk]
+  - name: Environmental Information Data Centre (UKCEH)
+    sector: Environment
+    candidates: [catalogue.ceh.ac.uk, eidc.ac.uk, data.ceh.ac.uk]
+  - name: SpatialData.gov.scot
+    sector: Devolved statistics
+    candidates: [spatialdata.gov.scot, data.spatialdata.gov.scot]
+  - name: Centre for Environmental Data Analysis
+    sector: Environment
+    candidates: [catalogue.ceda.ac.uk, data.ceda.ac.uk, archive.ceda.ac.uk]
+  - name: Cambridgeshire Insight
+    sector: Local insight
+    candidates: [data.cambridgeshireinsight.org.uk, cambridgeshireinsight.org.uk]
+  - name: Cefas Data Hub
+    sector: Marine
+    candidates: [data.cefas.co.uk, data-api.cefas.co.uk]
+  - name: Marine Management Organisation
+    sector: Marine
+    candidates: [data.marinemanagement.org.uk, mmo.opendata.arcgis.com]
+  - name: Animal and Plant Health Agency
+    sector: Environment
+    candidates: [data.apha.gov.uk, apha.opendata.arcgis.com]

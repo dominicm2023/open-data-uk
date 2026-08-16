@@ -63,6 +63,29 @@ dataset. Same kind of platform, opposite provenance habits.
 but the worst leverage — bespoke code serving exactly one source each. Worth
 doing for the ~5,000 datasets now that the platform adapters are exhausted.
 
+## CSW (OGC Catalogue Service for the Web) — done, with one limitation
+
+`harvest_csw()` speaks CSW 2.0.2, the standard behind INSPIRE spatial
+catalogues (GeoNetwork and friends). SpatialData.gov.scot is the first:
+1,161 records, 98% with a description, 99% with a downloadable resource.
+
+Two things worth knowing for the next CSW source:
+
+- It paginates by telling you where the next record starts, not by page
+  number, and reports `nextRecord="0"` when there is no more.
+- `dc:rights` on INSPIRE catalogues is usually an access-constraint code —
+  "otherRestrictions", "copyright" — not a licence. Passing those through
+  would invent a licence out of a constraint code, so they are dropped.
+  Which is why only 38 of 1,161 carry a licence here: that is what the
+  catalogue actually states.
+
+**Limitation: publisher.** The basic Dublin Core record CSW returns has no
+publisher field, so all 1,161 are attributed to the catalogue rather than to
+the body that made them — the same shape of problem DataMap Wales has. The
+organisation is available in the fuller ISO 19139 output schema
+(`outputSchema=http://www.isotc211.org/2005/gmd`), which would need a second
+parser. Worth doing if more CSW sources appear.
+
 ## ArcGIS Hub: the largest pool, and how to reach it
 
 Most UK councils that publish spatial data do it through an ArcGIS Online

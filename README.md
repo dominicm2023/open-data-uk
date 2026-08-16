@@ -1,6 +1,6 @@
 # UK Open Data Index
 
-**One search across 103,000+ UK datasets, from 192 portals.**
+**One search across 104,000+ UK datasets, from 193 portals.**
 Live at **[open-data.org.uk](https://open-data.org.uk)** ·
 [open API](https://open-data.org.uk/docs) · no tracking, no sign-up.
 
@@ -54,7 +54,7 @@ figure from 56% to 34%.
 | Piece | File(s) |
 |---|---|
 | Source registry ("registry as code") | [`sources.yaml`](sources.yaml) — add a portal via PR, CI validates it |
-| Harvesters (CKAN, DCAT/ArcGIS Hub/Socrata, OpenDataSoft, GeoNode, bespoke JSON) | [`harvester.py`](harvester.py) |
+| Harvesters (CKAN, DCAT/ArcGIS Hub/Socrata, OpenDataSoft, GeoNode, CSW, bespoke JSON) | [`harvester.py`](harvester.py) |
 | How we introduce ourselves, and why the wording matters | [`agent.py`](agent.py) |
 | Licence/format normalisation | [`normalise.py`](normalise.py) |
 | Embeddings + keyword index | [`embed_index.py`](embed_index.py) |
@@ -71,7 +71,7 @@ figure from 56% to 34%.
 | Change notification | [`scripts/indexnow.py`](scripts/indexnow.py) — announces only the pages whose content actually moved |
 | Finding councils that publish through ArcGIS | [`scripts/find_council_portals.py`](scripts/find_council_portals.py) — asks Hub about each council we're missing, by name |
 
-Currently indexing **103,000+ datasets from 192 portals** — data.gov.uk, the
+Currently indexing **104,000+ datasets from 193 portals** — data.gov.uk, the
 ONS Open Geography Portal, London Datastore, NHSBSA, OpenDataNI, Natural
 England, the Forestry Commission, NatureScot, Scotland's Spatial Hub, the
 North Sea Transition Authority, Historic England, and councils from

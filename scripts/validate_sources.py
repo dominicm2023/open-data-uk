@@ -145,8 +145,37 @@ def check_json(src: dict) -> str | None:
     return None
 
 
+def check_csw(src: dict) -> str | None:
+    """An OGC CSW 2.0.2 catalogue (GeoNetwork and friends)."""
+    import xml.etree.ElementTree as ET
+    ns = {"csw": "http://www.opengis.net/cat/csw/2.0.2",
+          "dc": "http://purl.org/dc/elements/1.1/"}
+    r = requests.get(src["api"], headers=UA, timeout=60, params={
+        "service": "CSW", "version": "2.0.2", "request": "GetRecords",
+        "typeNames": "csw:Record", "resultType": "results",
+        "elementSetName": "full", "maxRecords": "1",
+        "outputSchema": "http://www.opengis.net/cat/csw/2.0.2"})
+    if r.status_code in BLOCKED_STATUSES:
+        raise Blocked(f"HTTP {r.status_code}")
+    if r.status_code != 200:
+        return f"HTTP {r.status_code} from CSW endpoint"
+    try:
+        root = ET.fromstring(r.content)
+    except Exception:  # noqa: BLE001
+        return "CSW response is not XML"
+    results = root.find("csw:SearchResults", ns)
+    if results is None:
+        return "no csw:SearchResults — not a CSW 2.0.2 endpoint"
+    if not int(results.get("numberOfRecordsMatched") or 0):
+        return "catalogue is empty"
+    rec = results.find("csw:Record", ns)
+    if rec is None or rec.find("dc:identifier", ns) is None:
+        return "records lack dc:identifier"
+    return None
+
+
 CHECKS = {"ckan": check_ckan, "dcat": check_dcat, "ods": check_ods,
-          "geonode": check_geonode, "json": check_json}
+          "geonode": check_geonode, "json": check_json, "csw": check_csw}
 
 
 def main() -> int:

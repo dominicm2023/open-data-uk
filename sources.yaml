@@ -3306,3 +3306,12 @@ sources:
       resources:
         - [attributes.url, "=Esri REST"]
       require_description: 40
+  # OGC Catalogue Service for the Web — the standard behind INSPIRE spatial
+  # catalogues. Scotland's spatial data portal speaks it; the same adapter
+  # should work on any other UK GeoNetwork we find.
+  - id: spatialdata_scot
+    name: SpatialData.gov.scot
+    type: csw
+    api: https://spatialdata.gov.scot/geonetwork/srv/eng/csw
+    web: https://spatialdata.gov.scot
+    dataset_url: "https://spatialdata.gov.scot/geonetwork/srv/eng/catalog.search#/metadata/{id}"

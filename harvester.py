@@ -496,6 +496,132 @@ def harvest_ods(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
           f"(portal reports {total_at_source}), {errors} page errors", flush=True)
 
 
+CSW_NS = {
+    "csw": "http://www.opengis.net/cat/csw/2.0.2",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dct": "http://purl.org/dc/terms/",
+}
+CSW_PAGE = 50          # servers commonly cap maxRecords well below 100
+
+
+def _csw_text(rec, tag: str) -> str | None:
+    el = rec.find(tag, CSW_NS)
+    return el.text.strip() if el is not None and el.text else None
+
+
+def _csw_all(rec, tag: str) -> list[str]:
+    return [e.text.strip() for e in rec.findall(tag, CSW_NS) if e is not None and e.text]
+
+
+def normalise_csw_record(rec, src: dict, now: str) -> tuple | None:
+    """Map one csw:Record (Dublin Core) onto our schema."""
+    ident = _csw_text(rec, "dc:identifier")
+    title = _csw_text(rec, "dc:title")
+    if not ident or not title:
+        return None
+    # dc:rights on INSPIRE catalogues is usually an access-constraint code
+    # ("otherRestrictions"), which is not a licence and must not become one.
+    rights = _csw_text(rec, "dc:rights")
+    if rights and rights.lower() in ("otherrestrictions", "restricted",
+                                     "unclassified", "copyright", "license",
+                                     "licence", "intellectualpropertyrights"):
+        rights = None
+    urls = [u for u in _csw_all(rec, "dc:URI") + _csw_all(rec, "dct:references")
+            if u.startswith("http")]
+    subjects = _csw_all(rec, "dc:subject")[:25]
+    landing = src.get("dataset_url", "").format(id=ident) if src.get("dataset_url") else None
+    return (
+        f"{src['id']}:{ident}",
+        src["id"],
+        ident,
+        ident,
+        title,
+        strip_html(_csw_text(rec, "dct:abstract") or _csw_text(rec, "dc:description")),
+        src["name"],
+        rights,
+        norm_license(rights),
+        None,
+        _csw_text(rec, "dct:modified") or _csw_text(rec, "dc:date"),
+        landing or (urls[0] if urls else src["web"]),
+        json.dumps(subjects),
+        json.dumps([]),
+        json.dumps([]),
+        len(urls),
+        now,
+    ), urls
+
+
+def harvest_csw(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
+    """Harvest an OGC Catalogue Service for the Web (CSW 2.0.2).
+
+    The standard behind INSPIRE-compliant spatial catalogues — GeoNetwork
+    and friends. Unlike everything else here it speaks XML, and paginates by
+    telling you where the next record starts rather than by page number.
+    """
+    import xml.etree.ElementTree as ET
+
+    session = requests.Session()
+    session.headers["User-Agent"] = USER_AGENT
+    started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    print(f"[{src['id']}] harvesting CSW {src['api']} ...", flush=True)
+
+    rows, res_rows, keys = [], [], []
+    total, start, errors = None, 1, 0
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    while True:
+        params = {"service": "CSW", "version": "2.0.2", "request": "GetRecords",
+                  "typeNames": "csw:Record", "resultType": "results",
+                  "elementSetName": "full", "maxRecords": str(CSW_PAGE),
+                  "startPosition": str(start),
+                  "outputSchema": "http://www.opengis.net/cat/csw/2.0.2"}
+        try:
+            resp = session.get(src["api"], params=params, timeout=90)
+            resp.raise_for_status()
+            root = ET.fromstring(resp.content)
+        except Exception as exc:  # noqa: BLE001
+            print(f"[{src['id']}] records from {start} failed: {exc}", flush=True)
+            errors += 1
+            break
+
+        results = root.find("csw:SearchResults", CSW_NS)
+        if results is None:
+            break
+        if total is None:
+            total = int(results.get("numberOfRecordsMatched") or 0)
+        batch = results.findall("csw:Record", CSW_NS)
+        if not batch:
+            break
+        for rec in batch:
+            got = normalise_csw_record(rec, src, now)
+            if not got:
+                continue
+            row, urls = got
+            rows.append(row)
+            keys.append((row[0],))
+            res_rows += resource_rows(row[0], [(u, "resource", None) for u in urls])
+        print(f"[{src['id']}]   {len(rows)}/{total}", flush=True)
+
+        if limit and len(rows) >= limit:
+            rows, keys = rows[:limit], keys[:limit]
+            break
+        # The server says where to continue; 0 means there is no more.
+        nxt = int(results.get("nextRecord") or 0)
+        if not nxt or nxt <= start:
+            break
+        start = nxt
+        time.sleep(0.2)
+
+    conn.executemany(UPSERT, rows)
+    conn.executemany("DELETE FROM resources WHERE dataset_key = ?", keys)
+    conn.executemany("INSERT OR REPLACE INTO resources VALUES (?, ?, ?, ?)", res_rows)
+    finished = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    conn.execute("INSERT INTO harvest_runs VALUES (?, ?, ?, ?, ?, ?)",
+                 (src["id"], started, finished, total, len(rows), errors))
+    conn.commit()
+    print(f"[{src['id']}] done: {len(rows)} stored (catalogue reports {total}), "
+          f"{len(res_rows)} files", flush=True)
+
+
 def _dig(obj, path: str):
     """Follow a dotted path into nested JSON, tolerating anything missing.
 
@@ -966,6 +1092,8 @@ def main() -> int:
             harvest_geonode(src, conn, args.limit)
         elif src.get("type") == "json":
             harvest_json(src, conn, args.limit)
+        elif src.get("type") == "csw":
+            harvest_csw(src, conn, args.limit)
         else:
             print(f"[{src['id']}] skipped: no harvester for type {src.get('type')!r}")
     conn.close()
