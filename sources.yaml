@@ -3033,3 +3033,190 @@ sources:
       resources:
         - [attributes.url, "=Esri REST"]
       require_description: 40
+  - id: agol_bgs
+    name: "British Geological Survey"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "7bJVHfju2RXdGZa4", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+
+  # --- National bodies on ArcGIS, missed by a keyword filter ------------
+  # My first pass required a word like "council" or "agency" in the name, so
+  # it skipped "CBHC | RCAHMW" (the Welsh royal commission on historic
+  # monuments), "SpatialNI" and "Met Office" — all unmistakably public, none
+  # of them saying so in a way a regex noticed.
+
+  - id: agol_rcahmw
+    name: "Royal Commission on the Ancient and Historical Monuments of Wales"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "YFaBqL5jL3y8fq7s", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_spatialni
+    name: "SpatialNI (Northern Ireland spatial data)"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "DjHFXcTDD9ZBRCqe", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_dfi_ni
+    name: "Department for Infrastructure (Northern Ireland)"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "i8LHQZrSk9zIffRU", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_ordnance_survey
+    name: "Ordnance Survey"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "piNGxor37zqmvRAm", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_met_office
+    name: "Met Office"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "Lq3V5RFuTBC9I7kv", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_dft
+    name: "Department for Transport"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "qUwnXV5uf1zyW6Y2", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_daera_agol
+    name: "DAERA (Northern Ireland) spatial data"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "kswen6BYexuc1SUk", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
+  - id: agol_marine_planning
+    name: "Development and Marine Planning"
+    type: json
+    api: https://hub.arcgis.com/api/v3/datasets
+    web: https://hub.arcgis.com
+    dataset_url: "unused-for-json"
+    json:
+      list: data
+      total: meta.total
+      page_param: "page[number]"
+      params: {"filter[orgId]": "tAsKtfU7NSGC9Yj9", "page[size]": 100}
+      id: id
+      title: attributes.name
+      description: attributes.description
+      license: attributes.license
+      modified: attributes.modified
+      landing: "https://hub.arcgis.com/datasets/{id}"
+      resources:
+        - [attributes.url, "=Esri REST"]
+      require_description: 40
