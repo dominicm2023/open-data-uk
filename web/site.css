@@ -141,6 +141,23 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .site-nav a:hover { background: var(--accent-soft); color: var(--accent); text-decoration: none; }
 .site-nav a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); }
 
+/* On a phone the six nav items wrapped to three rows and the header ate
+   133px of an 812px screen. Scroll them in one row instead — everything
+   stays reachable, and the fold moves back down where it belongs. */
+@media (max-width: 40rem) {
+  .site-header .bar { padding: .5rem .9rem; gap: .35rem; }
+  .site-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 100%;
+    font-size: .8125rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav a { padding: .25rem .5rem; white-space: nowrap; }
+}
+
 /* ---------- Type ------------------------------------------------------ */
 
 h1 {
