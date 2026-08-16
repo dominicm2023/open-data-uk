@@ -23,10 +23,12 @@ from pathlib import Path
 
 import requests
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from agent import HEADERS
+
 ROOT = Path(__file__).parent.parent
 OUT = ROOT / "gazetteer.json"
-UA = {"User-Agent": "uk-open-data-index/0.2 (gazetteer build; "
-                    "+https://open-data.org.uk/about)"}
+UA = HEADERS
 
 # Local Authority Districts (December 2025) Boundaries UK BFC — ONS Open Geography
 LAD_CSV = ("https://open-geography-portalx-ons.hub.arcgis.com/api/download/v1/"

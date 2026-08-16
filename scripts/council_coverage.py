@@ -46,6 +46,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from dedupe import who  # noqa: E402  (same "strip the admin wrapper" rule)
+from agent import HEADERS  # noqa: E402
 from paths import connect as db_connect  # noqa: E402
 
 ROOT = Path(__file__).parent.parent
@@ -56,8 +57,7 @@ OUT = ROOT / "COUNCIL_COVERAGE.md"
 OUT_JSON = ROOT / "council_coverage.json"
 AGGREGATOR = "data_gov_uk"
 
-UA = {"User-Agent": "uk-open-data-index/0.2 (council coverage; "
-                    "+https://open-data.org.uk/about)"}
+UA = HEADERS
 # Local Authority Districts (December 2025) — the same ONS table the gazetteer
 # is built from, so the two can never disagree about what a council is called.
 LAD_CSV = ("https://open-geography-portalx-ons.hub.arcgis.com/api/download/v1/"

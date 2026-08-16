@@ -4,11 +4,11 @@ The organisations that run the UK's physical infrastructure: energy networks, wa
 
 | | Count |
 |---|---:|
-| ✅ already harvested | 5 |
-| 🟢 portal found, not yet harvested | 2 |
-| 🌐 site exists, no catalogue API | 5 |
+| ✅ already harvested | 7 |
+| 🟢 portal found, not yet harvested | 0 |
+| 🌐 site exists, no catalogue API | 4 |
 | 🔑 needs registration or an API key | 3 |
-| ⬜ nothing resolved | 21 |
+| ⬜ nothing resolved | 22 |
 
 🌐 is the interesting category and the reason this sector is harder than local government: the organisation publishes data, but as files linked from a corporate page rather than through a catalogue. A person can find it; a harvester cannot. Those need either a bespoke adapter each or a human to add the files by hand.
 
@@ -19,11 +19,11 @@ The organisations that run the UK's physical infrastructure: energy networks, wa
 | Bus Open Data Service (DfT) | Bus | 🔑 | — |  |  |
 | National Grid Electricity Distribution | Electricity distribution | ✅ | ckan | 92 | `https://connecteddata.nationalgrid.co.uk/api/3/action/package_search` |
 | Northern Powergrid | Electricity distribution | ✅ | ods | 100 | `https://northernpowergrid.opendatasoft.com/api/explore/v2.1/catalog/datasets` |
+| Scottish and Southern Electricity Networks | Electricity distribution | ✅ | ckan | 35 | `https://data-api.ssen.co.uk/api/3/action/package_search` |
 | UK Power Networks | Electricity distribution | ✅ | ods | 137 | `https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets` |
-| Electricity North West | Electricity distribution | 🟢 | ods | 148 | `https://electricitynorthwest.opendatasoft.com/api/explore/v2.1/catalog/datasets` |
-| SP Energy Networks | Electricity distribution | 🟢 | ods | 153 | `https://spenergynetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets` |
-| Scottish and Southern Electricity Networks | Electricity distribution | 🌐 | — |  |  |
-| National Energy System Operator (NESO) | Electricity system operator | ⬜ | — |  |  |
+| Electricity North West | Electricity distribution | ⬜ | — |  |  |
+| SP Energy Networks | Electricity distribution | ⬜ | — |  |  |
+| National Energy System Operator (NESO) | Electricity system operator | ✅ | ckan | 129 | `https://api.neso.energy/api/3/action/package_search` |
 | National Grid Electricity Transmission | Electricity transmission | ⬜ | — |  |  |
 | Cadent Gas | Gas distribution | ✅ | ods | 413 | `https://cadentgas.opendatasoft.com/api/explore/v2.1/catalog/datasets` |
 | Northern Gas Networks | Gas distribution | ⬜ | — |  |  |

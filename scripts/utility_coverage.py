@@ -30,12 +30,14 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import requests
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from agent import HEADERS
 import yaml
 
 ROOT = Path(__file__).parent.parent
 OUT = ROOT / "UTILITIES_COVERAGE.md"
-UA = {"User-Agent": "uk-open-data-index/0.2 (platform discovery; "
-                    "+https://open-data.org.uk/about)"}
+UA = HEADERS
 TIMEOUT = 15
 
 # Every catalogue shape we have a harvester for. Ordered cheapest-first;
@@ -101,12 +103,21 @@ def check(entry: dict) -> dict:
         out["state"] = "gated"
         return out
 
-    # Plenty of these serve only on www — streamwaterdata.co.uk fails TLS
-    # bare and answers fine with the prefix. Cheaper to try both than to
-    # hand-maintain the variants in the yaml.
+    # Two shapes worth trying automatically rather than hand-maintaining:
+    #
+    #  www.   — streamwaterdata.co.uk fails TLS bare and answers with it.
+    #  *-api. — data.ssen.co.uk is a Next.js front end and its catalogue
+    #           API is a whole CKAN on data-api.ssen.co.uk. Probing only the
+    #           address a human would visit reported "no catalogue API" for a
+    #           portal that has an entirely ordinary one next door.
     wanted = []
     for h in entry["candidates"]:
-        wanted += [h] if h.startswith("www.") else [h, "www." + h]
+        wanted.append(h)
+        if not h.startswith("www."):
+            wanted.append("www." + h)
+        head, _, tail = h.partition(".")
+        if tail and not head.endswith("-api") and head != "api":
+            wanted += [f"{head}-api.{tail}", f"api.{tail}"]
     for host in [h for h in dict.fromkeys(wanted) if resolves(h)]:
         if hit := probe(host):
             kind, api, n = hit
@@ -133,9 +144,15 @@ def main() -> int:
     with ThreadPoolExecutor(max_workers=8) as pool:
         rows = list(pool.map(check, entries))
 
-    known = {s["web"].split("//")[-1].rstrip("/")
-             for s in yaml.safe_load(
-                 open(ROOT / "sources.yaml", encoding="utf-8"))["sources"]}
+    # Match on the API host as well as the web host. SSEN's registry entry
+    # points `web` at the Next.js front end and `api` at the CKAN next door,
+    # so comparing only `web` reported a source we harvest nightly as still
+    # outstanding.
+    known = set()
+    for s in yaml.safe_load(open(ROOT / "sources.yaml", encoding="utf-8"))["sources"]:
+        for field in ("web", "api"):
+            if s.get(field):
+                known.add(s[field].split("//")[-1].split("/")[0].rstrip("/"))
     for r in rows:
         if r.get("domain") in known:
             r["state"] = "harvested"

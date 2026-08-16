@@ -20,10 +20,14 @@ import json
 import sys
 from concurrent.futures import ThreadPoolExecutor
 
+from pathlib import Path
+
 import requests
 
-UA = {"User-Agent": "uk-open-data-index/0.2 (source verification; "
-                    "+https://open-data.org.uk/about)"}
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from agent import HEADERS
+
+UA = HEADERS
 TIMEOUT = 25
 MIN_DATASETS = 5   # below this it's a single product, not a catalogue
 

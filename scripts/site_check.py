@@ -28,8 +28,12 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections import Counter
+from pathlib import Path
 
-UA = {"User-Agent": "uk-open-data-index site-check (+https://open-data.org.uk/about)"}
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from agent import HEADERS  # noqa: E402
+
+UA = HEADERS
 PAUSE = 0.3          # seconds between requests — we are a guest on our own box
 
 failures: list[str] = []

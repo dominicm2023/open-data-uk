@@ -29,9 +29,28 @@ sampled datasets carried a resolvable licence, against ~44% index-wide.
 
 | Portal | Platform | Datasets | Verified endpoint |
 |---|---|---:|---|
-| NBN Atlas (biodiversity) | custom (bare JSON list) | 2,951 | `registry.nbnatlas.org/ws/dataResource` |
-| Cefas (marine science) | custom (paginated `items`) | 2,299 | `data-api.cefas.co.uk/api/holdings` |
-| Dept for Business & Trade | custom | 14 | `data.api.trade.gov.uk/v1/datasets?format=json` |
+| — | — | — | all three attempted; see below |
+
+**A generic JSON adapter, not three bespoke ones.** The differences between
+these were entirely *where the fields are*, which is data rather than code,
+so `harvest_json()` takes the shape as config under `json:` in sources.yaml
+— list path, id/title/licence fields, an optional per-record detail URL.
+
+**NBN Atlas: harvested, 2,955.** Its listing carries no description, licence
+or download, but all three are one request away, so the adapter fetches
+detail per record. Every record ends up with a real archive download.
+
+**Cefas: attempted and dropped.** The listing gives a title and nothing else,
+and `/api/holdings/{id}` returns 403 for all but a handful — holding 5
+answers, 100/500/1200/2000 do not. 2,299 records with a title and no
+description, licence or file is exactly what the thin-page rule exists to
+keep out of the index. Config is written and works; it needs the detail
+endpoint opened up, not more code.
+
+**Dept for Business & Trade: attempted and dropped.** 14 datasets whose
+titles are slugs (`kings-award-for-enterprise-recipients`) with no
+description and no working metadata endpoint — `/versions/latest/metadata`
+400s with or without `format=json`. Not worth 14 thin records.
 
 **GeoNode: done.** DataMap Wales (1,927 layers) is harvested — see
 `harvest_geonode` in harvester.py. It closed the Welsh *data* gap but not the

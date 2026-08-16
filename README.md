@@ -1,6 +1,6 @@
 # UK Open Data Index
 
-**One search across 80,000+ UK government datasets, from 46 portals.**
+**One search across 84,000+ UK datasets, from 54 portals.**
 Live at **[open-data.org.uk](https://open-data.org.uk)** ·
 [open API](https://open-data.org.uk/docs) · no tracking, no sign-up.
 
@@ -54,7 +54,8 @@ figure from 56% to 34%.
 | Piece | File(s) |
 |---|---|
 | Source registry ("registry as code") | [`sources.yaml`](sources.yaml) — add a portal via PR, CI validates it |
-| Harvesters (CKAN, DCAT/ArcGIS Hub/Socrata, OpenDataSoft, GeoNode) | [`harvester.py`](harvester.py) |
+| Harvesters (CKAN, DCAT/ArcGIS Hub/Socrata, OpenDataSoft, GeoNode, bespoke JSON) | [`harvester.py`](harvester.py) |
+| How we introduce ourselves, and why the wording matters | [`agent.py`](agent.py) |
 | Licence/format normalisation | [`normalise.py`](normalise.py) |
 | Embeddings + keyword index | [`embed_index.py`](embed_index.py) |
 | Duplicate & retired-record detection | [`dedupe.py`](dedupe.py) |
@@ -69,11 +70,13 @@ figure from 56% to 34%.
 | What people actually search for | [`scripts/query_report.py`](scripts/query_report.py) — over the anonymous query log |
 | Change notification | [`scripts/indexnow.py`](scripts/indexnow.py) — announces only the pages whose content actually moved |
 
-Currently indexing **80,000+ datasets from 46 portals** — data.gov.uk, the
+Currently indexing **84,000+ datasets from 54 portals** — data.gov.uk, the
 ONS Open Geography Portal, London Datastore, NHSBSA, OpenDataNI, Natural
 England, the Forestry Commission, NatureScot, Scotland's Spatial Hub, the
 North Sea Transition Authority, Historic England, and councils from
-Aberdeen to Canterbury. The full, live list is at
+Aberdeen to Canterbury, plus the energy networks, the water
+industry's shared platform and the UK biodiversity network. The full, live
+list is at
 [`/api/sources`](https://open-data.org.uk/api/sources).
 
 ## Browsing it
@@ -130,12 +133,17 @@ the sectors Ofgem and Ofwat license, and
 [`scripts/utility_coverage.py`](scripts/utility_coverage.py) probes every
 candidate against every catalogue API we can harvest.
 
-Of 36 organisations: **5 run a catalogue we can harvest** (~1,140 datasets),
-5 serve a real data site with no catalogue behind it, 3 sit behind a
+Of 36 organisations: **7 run a catalogue we harvest** (~1,300 datasets),
+4 serve a real data site with no catalogue behind it, 3 sit behind a
 registration gate we deliberately don't try to bypass, and the rest had no
-portal at any address we could guess. That ratio is the finding — this
-sector mostly publishes CSVs linked from corporate pages, which a person can
-find and a harvester cannot.
+portal at any address we could guess. This sector mostly publishes CSVs
+linked from corporate pages, which a person can find and a harvester cannot.
+
+Two of those seven were found only after fixing our own User-Agent. Several
+publishers' firewalls refuse any request whose UA contains "discovery" or
+"harvester" while waving through the same request calling itself "bot" — so
+SSEN was recorded as having no catalogue API while running an entirely
+ordinary CKAN. See [`agent.py`](agent.py).
 
 New portals are found deterministically rather than by hand: see
 [`scripts/discover_sources.py`](scripts/discover_sources.py), which mines

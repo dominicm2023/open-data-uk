@@ -38,12 +38,13 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from geo import _ORG_WORDS  # noqa: E402  (reuse: same "strip the org words" job)
+from agent import HEADERS  # noqa: E402
 from paths import connect as db_connect  # noqa: E402
 sys.path.insert(0, str(Path(__file__).parent))
 from verify_proposals import slug_for  # noqa: E402  (one naming rule, not two)
 
 ROOT = Path(__file__).parent.parent
-UA = {"User-Agent": "uk-open-data-index/0.2 (source discovery; +https://open-data.org.uk/about)"}
+UA = HEADERS
 TIMEOUT = 8   # a real portal answers fast; anything slower isn't worth the wait
 
 # Hostname shapes councils and agencies actually use

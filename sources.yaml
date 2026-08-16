@@ -386,3 +386,50 @@ sources:
     web: https://www.streamwaterdata.co.uk
     dataset_url: "unused-for-dcat"
 
+
+  # Both found only after the User-Agent stopped describing the job — see
+  # agent.py. Their WAFs 403 any UA containing "discovery", so both were
+  # recorded as "site exists, no catalogue API" while running ordinary CKAN.
+  # SSEN's catalogue lives on a sibling host: the public site is a Next.js
+  # front end, the API is next door.
+  - id: ssen
+    name: SSEN Distribution
+    type: ckan
+    api: https://data-api.ssen.co.uk/api/3/action
+    web: https://data.ssen.co.uk
+    dataset_url: https://data.ssen.co.uk/dataset/{name}
+
+  - id: neso
+    name: National Energy System Operator
+    type: ckan
+    api: https://api.neso.energy/api/3/action
+    web: https://www.neso.energy
+    dataset_url: https://www.neso.energy/dataset/{name}
+
+  # --- Bespoke JSON catalogues -----------------------------------------
+  # These speak no standard at all, so the shape lives here as config rather
+  # than as three near-identical adapters. See harvest_json in harvester.py.
+  - id: nbn_atlas
+    name: NBN Atlas (UK biodiversity network)
+    type: json
+    api: https://registry.nbnatlas.org/ws/dataResource
+    web: https://registry.nbnatlas.org
+    dataset_url: "unused-for-json"
+    json:
+      list: ""                       # a bare list at the document root
+      id: uid
+      name: uid
+      title: name
+      created: dateCreated
+      modified: lastUpdated
+      # The listing carries no description, licence or download; all three
+      # are one request away, and without them every record would be a title
+      # and a link — thin enough that we'd noindex it anyway.
+      detail: "https://registry.nbnatlas.org/ws/dataResource/{id}"
+      description: pubDescription
+      license: licenseType
+      publisher: provider.name
+      landing: "https://registry.nbnatlas.org/public/show/{id}"
+      resources:
+        - [publicArchiveUrl, ""]
+

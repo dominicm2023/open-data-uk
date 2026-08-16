@@ -13,11 +13,14 @@ import sys
 from pathlib import Path
 
 import requests
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from agent import HEADERS
 import yaml
 
 ROOT = Path(__file__).parent.parent
 REQUIRED = {"id", "name", "type", "api", "web", "dataset_url"}
-UA = {"User-Agent": "uk-open-data-index/0.1 (source validation)"}
+UA = HEADERS
 
 
 class Blocked(Exception):
@@ -100,8 +103,34 @@ def check_geonode(src: dict) -> str | None:
     return None
 
 
+def check_json(src: dict) -> str | None:
+    """A bespoke JSON catalogue, described by `json:` config on the source."""
+    cfg = src.get("json") or {}
+    r = requests.get(src["api"], params=cfg.get("params") or {}, headers=UA,
+                     timeout=60)
+    if r.status_code in BLOCKED_STATUSES:
+        raise Blocked(f"HTTP {r.status_code}")
+    if r.status_code != 200:
+        return f"HTTP {r.status_code} from JSON catalogue"
+    body = r.json()
+    path = cfg.get("list", "")
+    items = body
+    for step in filter(None, path.split(".")):
+        items = items.get(step) if isinstance(items, dict) else None
+    if not isinstance(items, list) or not items:
+        return f"no record list at {path or '(root)'}"
+    rec, first = items[0], cfg.get("id", "id")
+    if not isinstance(rec, dict):
+        return "records are not objects"
+    if rec.get(first) in (None, ""):
+        return f"records have no {first!r} to key on"
+    if not rec.get(cfg.get("title", "title")) and not cfg.get("detail"):
+        return "records have no title and no detail endpoint to fetch one"
+    return None
+
+
 CHECKS = {"ckan": check_ckan, "dcat": check_dcat, "ods": check_ods,
-          "geonode": check_geonode}
+          "geonode": check_geonode, "json": check_json}
 
 
 def main() -> int:

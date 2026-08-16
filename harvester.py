@@ -46,10 +46,9 @@ def geo_row(key: str, pkg: dict) -> tuple | None:
     return (key, w, s, e, n, freq, ref)
 
 ROOT = Path(__file__).parent
+from agent import USER_AGENT  # noqa: E402  (see agent.py: the wording matters)
 from paths import DB_PATH, connect as db_connect  # noqa: E402
 PAGE_SIZE = 500  # CKAN caps rows at 1000; 500 keeps responses a sane size
-# NB: OpenDataNI's WAF 403s any UA containing the word "harvester"
-USER_AGENT = "uk-open-data-index/0.1 (metadata indexer prototype)"
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS datasets (
@@ -456,6 +455,173 @@ def harvest_ods(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
           f"(portal reports {total_at_source}), {errors} page errors", flush=True)
 
 
+def _dig(obj, path: str):
+    """Follow a dotted path into nested JSON, tolerating anything missing.
+
+    "links.Self.href" walks three levels; "" returns the object itself, which
+    is how a bare list at the document root is addressed.
+    """
+    if not path:
+        return obj
+    for step in path.split("."):
+        if isinstance(obj, dict):
+            obj = obj.get(step)
+        elif isinstance(obj, list) and step.isdigit():
+            obj = obj[int(step)] if int(step) < len(obj) else None
+        else:
+            return None
+        if obj is None:
+            return None
+    return obj
+
+
+def harvest_json(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
+    """Harvest a bespoke JSON catalogue described by config in sources.yaml.
+
+    Three of the portals worth having speak no standard at all — NBN Atlas
+    returns a bare list, Cefas paginates under `items`, the Department for
+    Business and Trade nests under `datasets`. Writing three adapters for
+    three sources is poor leverage; the differences between them are entirely
+    *where the fields are*, which is data, not code.
+
+    So the shape lives in sources.yaml under `json:`:
+
+        json:
+          list: items            # where the records are ("" = bare list)
+          page_param: page       # omit for a single-shot endpoint
+          total: totalItems
+          id: id
+          title: title
+          description: abstract
+          landing: "https://example.org/dataset/{id}"
+          detail: "https://example.org/api/item/{id}"   # optional second fetch
+
+    A `detail` URL is fetched per record when the listing is too thin to be
+    worth indexing — NBN's list has no description, licence or download, and
+    all three are one request away. That costs one request per dataset, so it
+    is only used where the listing genuinely can't stand alone.
+    """
+    cfg = src.get("json") or {}
+    session = requests.Session()
+    session.headers["User-Agent"] = USER_AGENT
+    started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    print(f"[{src['id']}] harvesting JSON {src['api']} ...", flush=True)
+
+    records, total, errors = [], None, 0
+    page = int(cfg.get("page_start", 1))
+    while True:
+        params = dict(cfg.get("params") or {})
+        if cfg.get("page_param"):
+            params[cfg["page_param"]] = page
+        try:
+            resp = session.get(src["api"], params=params, timeout=90)
+            resp.raise_for_status()
+            payload = resp.json()
+        except Exception as exc:  # noqa: BLE001
+            print(f"[{src['id']}] page {page} failed: {exc}", flush=True)
+            errors += 1
+            break
+        batch = _dig(payload, cfg.get("list", ""))
+        if not isinstance(batch, list) or not batch:
+            break
+        if total is None and cfg.get("total"):
+            total = _dig(payload, cfg["total"])
+        records += batch
+        print(f"[{src['id']}]   {len(records)}/{total or '?'}", flush=True)
+        if limit and len(records) >= limit:
+            records = records[:limit]
+            break
+        if not cfg.get("page_param") or len(records) >= (total or 0):
+            break
+        page += 1
+
+    total = total or len(records)
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    rows, res_rows, keys = [], [], []
+    detail_url = cfg.get("detail")
+    for i, rec in enumerate(records, 1):
+        ident = _dig(rec, cfg.get("id", "id"))
+        if ident in (None, ""):
+            continue
+        if detail_url:
+            if i % 200 == 0:
+                print(f"[{src['id']}]   detail {i}/{len(records)}", flush=True)
+            try:
+                d = session.get(detail_url.format(id=ident), timeout=60)
+                if d.ok:
+                    rec = {**rec, **d.json()}
+            except Exception:  # noqa: BLE001 - the listing row still stands
+                pass
+        row = _normalise_json_record(rec, ident, cfg, src, now)
+        if not row:
+            continue
+        rows.append(row)
+        key = f"{src['id']}:{ident}"
+        keys.append((key,))
+        res_rows += resource_rows(key, [
+            (_dig(rec, u), cfg.get("resource_name", "download"), _dig(rec, f) if f else None)
+            for u, f in (cfg.get("resources") or [])])
+
+    conn.executemany(UPSERT, rows)
+    conn.executemany("DELETE FROM resources WHERE dataset_key = ?", keys)
+    conn.executemany("INSERT OR REPLACE INTO resources VALUES (?, ?, ?, ?)", res_rows)
+    finished = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    conn.execute("INSERT INTO harvest_runs VALUES (?, ?, ?, ?, ?, ?)",
+                 (src["id"], started, finished, total, len(rows), errors))
+    conn.commit()
+    print(f"[{src['id']}] done: {len(rows)} stored (catalogue reports {total}), "
+          f"{len(res_rows)} files", flush=True)
+
+
+def _normalise_json_record(rec: dict, ident, cfg: dict, src: dict,
+                           now: str) -> tuple | None:
+    def field(key: str):
+        """A configured field, or None when the source doesn't have one.
+
+        Not _dig(rec, cfg.get(key, "")) — an empty path means "the whole
+        record" to _dig, which is right for a root-level list and very wrong
+        for a missing field: it handed the entire dict to strip_html.
+        """
+        return _dig(rec, cfg[key]) if cfg.get(key) else None
+
+    title = _dig(rec, cfg.get("title", "title"))
+    if not title:
+        return None
+    lic = _dig(rec, cfg["license"]) if cfg.get("license") else None
+    # Several of these write "other" or "none" where they mean "unstated",
+    # which must not become a licence.
+    if isinstance(lic, str) and lic.strip().lower() in ("other", "none", "unknown", ""):
+        lic = None
+    tags = _dig(rec, cfg["tags"]) if cfg.get("tags") else None
+    tags = [t for t in tags if isinstance(t, str)] if isinstance(tags, list) else []
+    formats = [f for _u, f in (cfg.get("resources") or [])
+               if (f and _dig(rec, f))] or [f for _u, f in (cfg.get("resources") or [])
+                                            if _dig(rec, _u)]
+    fmt_values = [_dig(rec, f) if f else "ZIP" for _u, f in (cfg.get("resources") or [])
+                  if _dig(rec, _u)]
+    landing = (cfg["landing"].format(id=ident) if cfg.get("landing")
+               else _dig(rec, cfg.get("landing_field", "")) or src["web"])
+    return (
+        f"{src['id']}:{ident}",
+        src["id"],
+        str(ident),
+        str(field("name") or ident),
+        str(title),
+        strip_html(field("description")),
+        field("publisher") or src["name"],
+        lic,
+        norm_license(lic),
+        field("created"),
+        field("modified"),
+        landing,
+        json.dumps(tags),
+        json.dumps([f for f in fmt_values if f]),
+        json.dumps(norm_formats(fmt_values)),
+        len(fmt_values),
+        now,
+    )
+
+
 GEONODE_PAGE = 200
 
 # GeoNode records who *uploaded* a layer, not who published it: the owner is
@@ -682,6 +848,8 @@ def main() -> int:
             harvest_ods(src, conn, args.limit)
         elif src.get("type") == "geonode":
             harvest_geonode(src, conn, args.limit)
+        elif src.get("type") == "json":
+            harvest_json(src, conn, args.limit)
         else:
             print(f"[{src['id']}] skipped: no harvester for type {src.get('type')!r}")
     conn.close()
