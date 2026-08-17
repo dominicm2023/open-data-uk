@@ -683,6 +683,20 @@ def lab_page() -> HTMLResponse:
                  "X-Robots-Tag": "noindex, nofollow, noarchive"})
 
 
+@app.get("/lab/posters", include_in_schema=False)
+def lab_posters() -> HTMLResponse:
+    """The reviewed findings at poster scale. Under /lab, so private by default."""
+    from pathlib import Path
+
+    path = Path(__file__).parent / "posters.html"
+    if not path.exists():
+        return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    return HTMLResponse(path.read_text(encoding="utf-8"),
+                        headers={"Cache-Control": "no-store, private",
+                                 "X-Robots-Tag": "noindex, nofollow"})
+
+
 @app.get("/lab/gallery", include_in_schema=False)
 def lab_gallery() -> HTMLResponse:
     """The drawn index, behind the same gate as the rest of the workshop.

@@ -151,8 +151,8 @@ def _para(text: str, x: int, y: int, cls: str, size: float, max_px: float,
     return svg, len(lines) * leading
 
 
-def _provenance(y: int, query: str, verify: str,
-                byline: str = "") -> tuple[str, int]:
+def _provenance(y: int, query: str, verify: str, byline: str = "",
+                width: int = W) -> tuple[str, int]:
     """The band every graphic carries. Two or three slots, brand rule on top.
 
     `byline` is the structural signal that separates the two properties: an
@@ -164,21 +164,21 @@ def _provenance(y: int, query: str, verify: str,
     # point of printing it: a claim is only checkable if the reader can see
     # the entire thing that produced it.
     reserve = _w(byline, 12, "p-val") + 90 if byline else 0
-    lines = _wrap(query, 11, W - 2 * PAD - reserve, "p-mono")
+    lines = _wrap(query, 11, width - 2 * PAD - reserve, "p-mono")
     rows = "".join(
         f'<text x="{PAD}" y="{y + 40 + i * 14}" class="p-mono">{esc(line)}</text>'
         for i, line in enumerate(lines))
     height = max(BAND, 40 + len(lines) * 14 + 22)
     sign = ""
     if byline:
-        sign = (f'<text x="{W - PAD}" y="{y + 24}" class="p-key" '
+        sign = (f'<text x="{width - PAD}" y="{y + 24}" class="p-key" '
                 f'text-anchor="end">ARGUMENT BY</text>'
-                f'<text x="{W - PAD}" y="{y + 41}" class="p-val" '
+                f'<text x="{width - PAD}" y="{y + 41}" class="p-val" '
                 f'text-anchor="end">{esc(byline)}</text>')
     return (
-        f'<rect x="0" y="{y}" width="{W}" height="{height}" '
+        f'<rect x="0" y="{y}" width="{width}" height="{height}" '
         f'fill="var(--accent-soft)"/>'
-        f'<rect x="0" y="{y}" width="{W}" height="2" fill="var(--accent)"/>'
+        f'<rect x="0" y="{y}" width="{width}" height="2" fill="var(--accent)"/>'
         f'<text x="{PAD}" y="{y + 24}" class="p-key">'
         f'{"HOW IT WAS MEASURED" if not byline else "MEASURED FROM"}</text>'
         f'{rows}'
