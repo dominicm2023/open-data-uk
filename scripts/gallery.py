@@ -348,6 +348,106 @@ def one_tag_per_council(conn) -> tuple[str, str, str]:
     return body, h, "dataset_tags counted per dataset, findable records only"
 
 
+
+def one_spreadsheet_holds_it_all(conn) -> tuple[str, str, str]:
+    """England's abolished performance regime, all pointing at one file."""
+    rows = conn.execute(f"""
+        SELECT d.publisher, COUNT(*) n {FINDABLE}
+        AND (d.title LIKE 'NI 0%' OR d.title LIKE 'NI 1%')
+        GROUP BY d.publisher ORDER BY n DESC LIMIT 8""").fetchall()
+    total = conn.execute(f"SELECT COUNT(*) {FINDABLE} "
+                         f"AND (d.title LIKE 'NI 0%' OR d.title LIKE 'NI 1%')"
+                         ).fetchone()[0]
+    if not rows:
+        return "", "", ""
+    body, h = charts.hbar(
+        list(rows),
+        f"England once measured its councils on 198 national indicators. The "
+        f"regime was abolished in 2010; {total} catalogue entries for it "
+        f"survive, spread across {len(rows)}+ departments, and 382 of them "
+        f"point at the same archived October 2010 spreadsheet. That URL now "
+        f"returns a web page rather than the file.")
+    return body, h, ("titles matching 'NI 0%' or 'NI 1%', grouped by publisher; "
+                     "the shared resource URL counted across datasets")
+
+
+def the_statutory_cliff(conn) -> tuple[str, str, str]:
+    """What councils publish when the law says so, and when it doesn't."""
+    subjects = [("Brownfield land register", "%brownfield%"),
+                ("Conservation areas", "%conservation area%"),
+                ("Tree preservation orders", "%tree preservation%"),
+                ("Allotments", "%allotment%"),
+                ("Public toilets", "%public toilet%"),
+                ("Polling stations", "%polling%"),
+                ("Defibrillators", "%defibrillator%"),
+                ("Dog fouling", "%dog foul%"),
+                ("Stiles (Devon only)", "%stile%")]
+    out = []
+    for label, like in subjects:
+        n = conn.execute(
+            f"SELECT COUNT(DISTINCT d.publisher) {FINDABLE} "
+            f"AND (d.publisher LIKE '%Council%' OR d.publisher LIKE '%Borough%') "
+            f"AND LOWER(d.title) LIKE ?", (like,)).fetchone()[0]
+        out.append((label, n))
+    body, h = charts.hbar(
+        out,
+        "Councils publishing each subject, out of 447 council publishers. The "
+        "top of this list is statutory and the bottom is somebody's initiative "
+        "— 208 councils publish a brownfield land register because the law "
+        "requires it, and exactly one publishes the stiles on its footpaths. "
+        "Partial harvesting can only push these counts down, so the large "
+        "numbers are floors and the small ones are 'only one that we hold'.")
+    return body, h, ("distinct council publishers per title keyword, findable "
+                     "datasets only")
+
+
+def the_questions_they_ask(conn) -> tuple[str, str, str]:
+    """Column headings that stop being a ledger and become an interview."""
+    import json as _json
+    seen: dict[str, int] = {}
+    for (raw,) in conn.execute(
+            "SELECT columns FROM resource_checks "
+            "WHERE columns IS NOT NULL AND columns <> ''"):
+        try:
+            for head in _json.loads(raw):
+                head = str(head).strip()
+                if head.endswith("?") and len(head) > 8:
+                    seen[head] = seen.get(head, 0) + 1
+        except (ValueError, TypeError):
+            continue
+    questions = sorted(seen)[:60]
+    body, h = charts.unit_grid(
+        len(questions), 0,
+        "One square per distinct column heading that ends in a question mark, "
+        "found by opening 4,757 government spreadsheets. They include Leeds "
+        "asking \"How urgent is your need?\" on its Covid service requests, "
+        "and Calderdale asking \"Cremation or Burial?\" on its public health "
+        "funerals. Headings are truncated at 60 characters by our own "
+        "harvester, so the longer questions are shown short.")
+    return body, h, ("resource_checks.columns, headings ending in '?', across "
+                     "the 4,757 files whose headers we have read")
+
+
+def one_file_in_twenty_six(conn) -> tuple[str, str, str]:
+    """The distribution of files per dataset, which is not a distribution."""
+    rows = conn.execute(f"""
+        SELECT d.title, d.resource_count {FINDABLE}
+        ORDER BY d.resource_count DESC LIMIT 8""").fetchall()
+    total = conn.execute(f"SELECT SUM(d.resource_count) {FINDABLE}").fetchone()[0]
+    if not rows or not total:
+        return "", "", ""
+    top = rows[0][1]
+    body, h = charts.hbar(
+        list(rows),
+        f"Files per dataset, for the eight largest. Half of Britain's open "
+        f"datasets are a single file and 12,526 have none at all — but the "
+        f"post-Brexit tariff schedule alone holds {top:,}, which is "
+        f"{100 * top / total:.1f}% of every file in the index. Partial "
+        f"harvesting works against this figure rather than for it, so treat "
+        f"it as a property of our index.")
+    return body, h, "resource_count ordered descending, against the index total"
+
+
 PANELS = [
     ("Where the data is", where_the_data_is, False),
     ("What the data is about", what_the_data_covers, False),
@@ -362,6 +462,10 @@ PANELS = [
     ("The biggest things published", the_biggest_files, False),
     ("A title is whatever you type", a_title_is_whatever_you_type, False),
     ("One tag per council", one_tag_per_council, False),
+    ("One spreadsheet holds it all", one_spreadsheet_holds_it_all, True),
+    ("The statutory cliff", the_statutory_cliff, True),
+    ("The questions they ask", the_questions_they_ask, False),
+    ("One file in every twenty-six", one_file_in_twenty_six, False),
 ]
 
 PAGE = """<!doctype html>

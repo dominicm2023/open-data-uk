@@ -189,6 +189,51 @@
    "objection": "There is no size variable in this database \u2014 no budget, no headcount. With n=5 for the \"big\" group there is no test here, only an anecdote.",
    "blindness": "Near total for these bodies: 97% of their records reach us via data.gov.uk. DWP publishes through Stat-Xplore, HMRC through gov.uk collections, DHSC through NHS dashboards \u2014 none of which we harvest. We would be measuring their CKAN housekeeping.",
    "sql": "n/a \u2014 killed before it needed one"
+  },
+  {
+   "title": "In UK spending data the supplier is a name, not a number",
+   "verdict": "PROVABLE NOW",
+   "claim": "Of 152 datasets carrying a supplier column across 80 public bodies, only Crown Commercial Service publishes a structured organisation identifier, so a supplier can be followed within one body's files but not between them.",
+   "numbers": "2,472 procurement datasets. Reading real CSV headers: 152 datasets across 80 publishers have a supplier, vendor or payee column, 69 carry any company identifier, 59 a VAT number, and 53 are in Open Contracting Data Standard shape - all 53 from one publisher. The dominant local template is name-only: Supplier appears 385 times, Supplier Postcode 260, and postcode is the only widely shared quasi-key.",
+   "objection": "Cabinet Office would say Contracts Finder is the join key and is OCDS-compliant, which is true and must appear on the graphic. The honest rebuttal is scope: Contracts Finder covers notices above threshold, while the spend files that show where money actually landed are the ones with no identifier. The two halves of the trail use different keys.",
+   "blindness": "Columns have been read for 213 of 2,472 procurement datasets (8.6%), and the sample skews toward files clean enough to parse, which if anything overstates schema quality. Put the 8.6% on the graphic.",
+   "sql": "resource_checks.columns matched against supplier/vendor/payee and against identifier/VAT/OCDS patterns, grouped by publisher"
+  },
+  {
+   "title": "The national catalogue files Leeds's data under Sunderland",
+   "verdict": "PROVABLE NOW",
+   "claim": "data.gov.uk attributes 119 datasets about Leeds to Sunderland City Council and another 119 to North Tyneside, so the national catalogue is not a reliable list of who published what.",
+   "numbers": "Sunderland holds 696 findable records and North Tyneside 616, each including 119 whose titles name Leeds - \"Who's who in Leeds\", \"Food hygiene ratings for food establishments in Leeds API\", \"Collection of council tax and non-domestic rates - Leeds area\". Separately, 241 Northern Irish records look empty on data.gov.uk while the same datasets carry files on OpenDataNI's own portal.",
+   "objection": "\"That is your harvester misreading our feed.\" Checked directly against the data.gov.uk package API, which returns organization = Sunderland City Council for a dataset titled \"Who's who in Leeds\". The mis-attribution is upstream and we reproduce it faithfully.",
+   "blindness": "None for the claim itself - it is verifiable one API call at a time. But it inflates our own per-publisher figures too, because our dedupe does not catch cross-source mirrors.",
+   "sql": "publisher IN ('Sunderland City Council', 'North Tyneside Metropolitan Borough Council') AND LOWER(title) LIKE '%leeds%', confirmed against ckan.publishing.service.gov.uk package_show"
+  },
+  {
+   "title": "The catalogue entry that points at nothing",
+   "verdict": "MISLEADING AS FRAMED",
+   "claim": "Dropped as an accountability claim. The 12,526 empty records are real; almost none of them is a withheld dataset.",
+   "numbers": "14.8% of findable datasets have no resource. But 2,141 are ArcGIS web maps, dashboards and logos indexed as datasets; 1,214 are MEDIN discovery records, where describing third-party data with a contact is the design; 439 are OpenDataNI mirrors whose originals have files. Strip those, require a post-2018 record, and about 728 remain - 0.9%, well under every baseline.",
+   "objection": "\"Most of your empties are pre-2015 records from bodies that no longer exist.\" Correct: the wholly-empty publisher list is a graveyard - Service Personnel and Veterans Agency, Wycombe, Waveney, the Government Car and Despatch Agency. 2,867 of the 4,086 records created in 2013 are empty, from one legacy import.",
+   "blindness": "The ArcGIS portion rests on sources we have harvested 3-30% of, so that slice is unrepresentative as well as mislabelled.",
+   "sql": "resource_count = 0 decomposed by source and publisher, with the test that 95% of empties come from publishers who do attach files elsewhere"
+  },
+  {
+   "title": "Who gets inspected, and who publishes it",
+   "verdict": "NOT SUPPORTED",
+   "claim": "Dropped. The corpus is too small, the searches too dirty, and the gaps are ours rather than theirs.",
+   "numbers": "Every keyword collapses: 605 licence hits are 24% oil, gas and carbon-storage rights rather than regulation of anyone, and 161 inspection hits are dominated by bee and plant-health inspections. The trap: publisher LIKE '%Care Quality%' returns 369, of which only 25 are the Care Quality Commission - 344 are the Healthcare Quality Improvement Partnership, because \"healthCare Quality\" matches.",
+   "objection": "Food hygiene ratings are published centrally by the Food Standards Agency for every establishment in Great Britain. A chart showing few councils publishing them describes correct centralisation and implies concealment where there is none.",
+   "blindness": "Fatal. Ofgem, Estyn, the Office for Nuclear Regulation and the Local Government Ombudsman all sit at zero datasets because we do not harvest them. A bar chart with Ofgem at zero would be a false accusation sourced from a hole in our own crawler.",
+   "sql": "n/a - killed before it needed one"
+  },
+  {
+   "title": "The seasonal state",
+   "verdict": "NOT SUPPORTED",
+   "claim": "Dropped. No rhythm survives a source split.",
+   "numbers": "After excluding bulk-load days, which are 67% of all records with a creation date, the monthly spread runs 1,554 to 2,118 around a mean of 1,795. March, the financial year end, is 3.8% above mean, which is noise. December is the second-busiest month on data.gov.uk and the quietest month everywhere else: the two halves disagree in direction.",
+   "objection": "The field records when a portal first saw a dataset, not when a department published it. The one clean signal is an office-hours curve peaking at 10-11am, which confirms exactly that.",
+   "blindness": "23% of datasets have no creation date at all, and it is missing entirely for every ArcGIS source, Cefas and both Scottish portals, so this was structurally a study of CKAN portals.",
+   "sql": "n/a - killed by the source split"
   }
  ]
 }
