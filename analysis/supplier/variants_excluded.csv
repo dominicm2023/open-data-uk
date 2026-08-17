@@ -1,0 +1,66 @@
+company,string,gbp,reason
+BT Group,B.T.L. BELMOPAN,60057.98,same
+BT Group,B.T.L.-BELMOPAN,115608.64,"Belize Telemedia, Belmopan"
+BT Group,B.T.U. (Maintenance) Ltd.,1859.68,unrelated maintenance firm
+BT Group,BRITISH TELECOM AL-SAUDIA LTD.,220235.0,JV
+BT Group,BT AL SAUDIA,195629.79,JV
+BT Group,BT AL SUADIA,105075.0,JV
+BT Group,BT AL-SAUDIA LTD.,78247.5,JV
+BT Group,BT Academy Riding school,7200.0,riding school
+BT Group,BT Al Saudia,1345139.61,"JV, excluded per grouping rule"
+BT Group,BT Al-Saudia,88154.9,JV
+BT Group,BT CETFW37YW,1494.43,"card fragment, identity unverifiable"
+BT Group,BT DISCLOSURE SCOTLAND,100.0,"card line, payee is Disclosure Scotland"
+BT Group,BT DONALD,34213.0,person's initials
+BT Group,BT MACFARLANE LTD,1405.48,unrelated (initials)
+BT Group,BT MAKEDONIJA,720.69,"Beogradska?/Balkan card line, not BT plc"
+BT Group,BT MARINE PROPELLERS LTD,1000.0,unrelated
+BT Group,BT PAY BY PHONE          GATESHEAD NEW,767.81,"pay-by-phone parking line, payee unclear"
+BT Group,BT PHILIPPE LIQUORS-N,1211.86,unrelated card line
+BT Group,BT WAREHOUSE WINES SP,2229.66,unrelated card line
+BT Group,British Telecom Al Saudia Ltd,138184.01,JV
+BT Group,British Telecom Al-Saudi Ltd.,78247.5,JV
+BT Group,British Telecom Al-Saudia Ltd.,227027.18,JV
+BT Group,MAKRO MACHELEN BT WIN,10498.76,same
+BT Group,MAKRO MACHELEN BT WINK,11633.34,"Belgian cash-and-carry card line, BT is a ref fragment"
+BT Group,MECHANICAL QUALITY BT.,1377.31,unrelated
+BT Group,PAYPAL KOBOL BT,887.99,"PayPal line, BT = Hungarian company suffix (Bt.)"
+BT Group,Reverse duplicated transaction - see also BT 10032177 - MHCLG coronavirus hardship fund,851709.0,note field pasted into supplier column
+Royal Mail,Royal Mail Courier Services Ltd,64210.89,presents as a distinct legal entity we could not verify as Royal Mail Group
+EDF Energy,EUROPEAN COMMISSION (EDF),3174615794.34,"EDF = European Development Fund, not the utility (GBP 3.17bn — the acronym trap, reported separately)"
+British Gas / Centrica,SOCIETY OF BRITISH GAS INDUSTRIES (SBGI),1240.0,"trade association, not the company"
+Capita,CAPITA TP HSBC,246522344.1,"same pass-through, HSBC account (GBP 246.5m)"
+Capita,CAPITA TP NATWEST,35610511570.44,"pass-through: DfE 'funding to pay Teachers' Pensions' routed via Capita's third-party bank account (GBP 35.6bn — reported separately, not payments TO Capita)"
+Capita,Capita Consortium Nominees No 1 & No 2 Ltd,153000.0,"nominee vehicle, beneficial recipient unclear"
+Capita,THE DEANERY C OF E HIGH GOVERNORS CAPITA,29349.0,same
+Capita,THE DEANERY CHURCH OF ENGLAND HIGH GOVERNORS CAPITA,92712.77,school governors' account administered by Capita; beneficiary is the school
+Serco,CORPORACION SERCOPLUS,5823.04,Peruvian IT retailer
+Serco,HANOI TOSERCO,23245.61,same
+Serco,HANOI TOSERCO 1,2311.98,same
+Serco,HANOI TOSERCO-MOTO,2063.46,same
+Serco,Hanoi Toserco,70896.82,"Hanoi Tourist Service Company, Vietnam"
+Serco,PHONG VE HANOI TOSERCO,45416.82,same
+Serco,SERCO PROJECTS LLC,3800.0,presents as a distinct LLC we could not verify as Serco Group
+Serco,SERCORIEGO,782.96,unrelated card line
+G4S,AMAZON.CO.UK 2X58G4SO4,1880.49,Amazon order reference containing G4S
+G4S,FRIENDS OF BOXING4SCHOOLS,4200.0,same
+G4S,Group 4,30180.55,"bare string, could be anything"
+G4S,WAYNE LLEWELLYN T/A FRIENDS OF BOXING4SCHOOLS,5040.0,'boxing4schools' substring hit
+Microsoft,DRI MICROSOFT,77.48,"merchant of record is Digital River, not Microsoft"
+Microsoft,DRI MICROSOFT O,99.0,same
+Microsoft,SENTILLION/MICROSOFT,29689.2,"acquired company; payment may predate acquisition, unverifiable"
+Amazon (incl. AWS),AWS BATHROOM SUPPLIES LTD,6765.0,bathroom supplier
+Amazon (incl. AWS),Amazon Public Relations,30350.57,identity unverifiable (could be a PR firm named Amazon)
+Amazon (incl. AWS),Amazon-EcoMedia Ltd,1920.0,unrelated company
+Amazon (incl. AWS),IN AMAZON LIGHTS INC.,1202.18,unrelated
+Amazon (incl. AWS),INT*AMAZON LIGHTS INC.,784.01,unrelated
+Amazon (incl. AWS),VILLA AMAZONIA,896.43,hotel
+Amazon (incl. AWS),WWW.AMAZONMEDICAL.CO.U,594.9,"Amazon Medical, unrelated"
+HMRC (as payee),CSR/HMRC,16608527.44,"compound label, payee unclear"
+HMRC (as payee),GBSRE ADMIN HMRC,30000.0,"compound label, payee unclear"
+HMRC (as payee),GOMA HMRCAZ LGISOR VEM,1493.32,"garbled card line (Goma, DRC)"
+HMRC (as payee),Inland Revenue Department,10338.0,"'Inland Revenue Department' is the naming style of overseas IRDs (NZ/HK), publisher context unverified"
+HMRC (as payee),NATWEST- INTERNAL HMRC USE ONLY,1969511.16,"bank-account label, payee unclear"
+HMRC (as payee),PWC LLP (HMRC GRANTS),1672643.15,payee is PwC
+Severn Trent,SEVERN TRENT COSTAIN WATER LIMITED,44068825.63,joint venture with Costain
+Anglian Water,WAVE ANGLIAN WATER BUSINESS,405142.0,Wave is the Anglian/NWG joint venture brand

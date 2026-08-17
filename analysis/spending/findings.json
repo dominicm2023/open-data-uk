@@ -1,0 +1,2915 @@
+{
+ "totals": {
+  "transactions": 11806377,
+  "gbp_total": 3269164975567.92,
+  "first_date": "2008-04-01",
+  "last_date": "2026-08-10",
+  "publishers": 77,
+  "undated_rows": 73199
+ },
+ "reconciliation": {
+  "raw_parsed": {
+   "rows": 11859379,
+   "gbp": 3416191526209.61
+  },
+  "cross_file_duplicates_removed": {
+   "rows": 42861,
+   "gbp": 16615696025.86
+  },
+  "blank_supplier_rows_removed": {
+   "rows": 10141,
+   "gbp": 130410854615.83
+  },
+  "clean": {
+   "rows": 11806377,
+   "gbp": 3269164975567.92
+  },
+  "out_of_window_dates_dropped_at_parse": {
+   "rows": 1,
+   "gbp": 87940.56
+  },
+  "scale_outlier_files_for_hand_checking": [
+   {
+    "publisher": "The National Archives",
+    "dataset_key": "data_gov_uk:700c2f38-a242-4009-9313-0b9422a67a7a",
+    "file": "e96874f826bad37b2f5c2ffac392b8c624c2f0f2.bin",
+    "rows": 25,
+    "file_median": 27991.39,
+    "series_median": 38.3,
+    "gbp": 1814025.22
+   },
+   {
+    "publisher": "The National Archives",
+    "dataset_key": "data_gov_uk:700c2f38-a242-4009-9313-0b9422a67a7a",
+    "file": "eab5cbd9f9bdfbcaa8360f8d03c371f5f7072eed.bin",
+    "rows": 32,
+    "file_median": 17600.0,
+    "series_median": 38.3,
+    "gbp": 1130438.62
+   },
+   {
+    "publisher": "Salisbury NHS Foundation Trust",
+    "dataset_key": "data_gov_uk:88c0ff75-0efb-4e9b-b8d5-2282eb03efb8",
+    "file": "27b9bc18f647147f4be0873fbc2083e854f45c55.bin",
+    "rows": 44,
+    "file_median": 22234.77,
+    "series_median": 5.42,
+    "gbp": 1312036.81
+   },
+   {
+    "publisher": "Salisbury NHS Foundation Trust",
+    "dataset_key": "data_gov_uk:88c0ff75-0efb-4e9b-b8d5-2282eb03efb8",
+    "file": "31f361f663ec90faacec33d2566bfb19aed9486d.bin",
+    "rows": 37,
+    "file_median": 24696.0,
+    "series_median": 5.42,
+    "gbp": 2687157.08
+   },
+   {
+    "publisher": "Salisbury NHS Foundation Trust",
+    "dataset_key": "data_gov_uk:88c0ff75-0efb-4e9b-b8d5-2282eb03efb8",
+    "file": "e2d70b083059c8030e2bf03382cb87ec2feacc9d.bin",
+    "rows": 149,
+    "file_median": 6512.6,
+    "series_median": 5.42,
+    "gbp": 3376581.25
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "01ef3838e1ce6c757f6e79c0f2eab8c2cc556d62.bin",
+    "rows": 984,
+    "file_median": 75391.0,
+    "series_median": 300.0,
+    "gbp": 307073999.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "0209623bcbe8fb9a0b8bf3e4754fa2f6d8432e6f.bin",
+    "rows": 63,
+    "file_median": 189730.0,
+    "series_median": 300.0,
+    "gbp": 319867242.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "020d0916835adc90de9839736543dd7291180536.bin",
+    "rows": 709,
+    "file_median": 79662.0,
+    "series_median": 300.0,
+    "gbp": 328188254.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "0429f4553d03e124fea504ed4557d2033f1f7d8b.bin",
+    "rows": 706,
+    "file_median": 88856.0,
+    "series_median": 300.0,
+    "gbp": 388685409.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "048d257bf30e096c99bea2fd5fd6a31c0da5cb0a.bin",
+    "rows": 191,
+    "file_median": 86033.0,
+    "series_median": 300.0,
+    "gbp": 53618556.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "0906fbf0089273a7dc465bdd8049bd0663c82d34.bin",
+    "rows": 934,
+    "file_median": 101832.0,
+    "series_median": 300.0,
+    "gbp": 331774676.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "096e8254abf7f1675d6b896dc89a0ccffdf0728e.bin",
+    "rows": 680,
+    "file_median": 109254.0,
+    "series_median": 300.0,
+    "gbp": 266544793.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "0e7eaee1fbe5735f2736d23d05ef09a4eb6b32e1.bin",
+    "rows": 899,
+    "file_median": 85175.0,
+    "series_median": 300.0,
+    "gbp": 317638370.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "12595eb432c5c7c35bbf6cf60683594c3c4fb86d.bin",
+    "rows": 846,
+    "file_median": 85386.0,
+    "series_median": 300.0,
+    "gbp": 400573380.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "1296d9bb544ccade1230492d6bc27455fbc74f19.bin",
+    "rows": 1294,
+    "file_median": 92711.0,
+    "series_median": 300.0,
+    "gbp": 496091388.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "1318dfa26261e4c86681fac45aea22ad4c0e2a90.bin",
+    "rows": 820,
+    "file_median": 91765.0,
+    "series_median": 300.0,
+    "gbp": 323214944.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "18d2ec43a614dbd47466f0118c560b875e648361.bin",
+    "rows": 909,
+    "file_median": 79672.0,
+    "series_median": 300.0,
+    "gbp": 277042932.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "1e094f64f1129346956a827ad39d9326874514de.bin",
+    "rows": 643,
+    "file_median": 93665.0,
+    "series_median": 300.0,
+    "gbp": 290890223.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "1e6543574a46a5fbeb41f6bb7482dfd3f7fa5edb.bin",
+    "rows": 980,
+    "file_median": 71030.0,
+    "series_median": 300.0,
+    "gbp": 318833954.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "1eb90ff404bb2dde4399e31954415977b1b32085.bin",
+    "rows": 820,
+    "file_median": 79973.0,
+    "series_median": 300.0,
+    "gbp": 354391940.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "1fc143c3b40329673b05ebe9cbb947984694242f.bin",
+    "rows": 756,
+    "file_median": 109268.0,
+    "series_median": 300.0,
+    "gbp": 409645789.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "2b2e255127f8b779e40803a245e1af26d07648ab.bin",
+    "rows": 1218,
+    "file_median": 75000.0,
+    "series_median": 300.0,
+    "gbp": 389242655.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "2f2b4465c3d99f5545c63007e2f429600cea008e.bin",
+    "rows": 123,
+    "file_median": 146863.0,
+    "series_median": 300.0,
+    "gbp": 265296125.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "30a10447cd8433266ad098fc6d50098f8c608652.bin",
+    "rows": 936,
+    "file_median": 89618.0,
+    "series_median": 300.0,
+    "gbp": 349903784.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "349c1bfc45f6cef8567364e2b3727ad82aff2f18.bin",
+    "rows": 917,
+    "file_median": 68875.0,
+    "series_median": 300.0,
+    "gbp": 217440067.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "374e8ae5ffaaec1dd3d6d21ec723c7c3d884bc1a.bin",
+    "rows": 1568,
+    "file_median": 65757.0,
+    "series_median": 300.0,
+    "gbp": 259539731.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "3bc55585c1d2f0867f3aa8c92dd5fd1b66a7d0ff.bin",
+    "rows": 768,
+    "file_median": 86130.0,
+    "series_median": 300.0,
+    "gbp": 383970312.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "3f5152fc4b8de70f365065a97a00c6feaad02bfc.bin",
+    "rows": 899,
+    "file_median": 93214.0,
+    "series_median": 300.0,
+    "gbp": 347950859.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "42cefe502c75acb6a8b8ba09890405d6def7dbcd.bin",
+    "rows": 1085,
+    "file_median": 90299.0,
+    "series_median": 300.0,
+    "gbp": 465435282.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "44044f51d4d9a1b4f7be2b850e21591eafced11b.bin",
+    "rows": 196,
+    "file_median": 85777.0,
+    "series_median": 300.0,
+    "gbp": 146034035.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "49c1d3e28c3867665bcae36d4e606756fe9e3f91.bin",
+    "rows": 817,
+    "file_median": 111825.0,
+    "series_median": 300.0,
+    "gbp": 386740013.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "4ac2154f625c3f9bc790e4312906ac6856138a0a.bin",
+    "rows": 1031,
+    "file_median": 67914.0,
+    "series_median": 300.0,
+    "gbp": 277310653.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "52f1f063f5a89cd7c50c76feb2b997ea71ae3716.bin",
+    "rows": 955,
+    "file_median": 64336.0,
+    "series_median": 300.0,
+    "gbp": 230728077.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "5c33ca874cb298c45f503c83064ad9a12093901d.bin",
+    "rows": 638,
+    "file_median": 79750.0,
+    "series_median": 300.0,
+    "gbp": 229229023.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "5e93a9d3360b8edb4827247dbad06c87dc65b2d2.bin",
+    "rows": 1250,
+    "file_median": 90869.0,
+    "series_median": 300.0,
+    "gbp": 687645493.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "5f7bfb641a84634693c3a1c6444b11bea98f6bc3.bin",
+    "rows": 812,
+    "file_median": 86672.0,
+    "series_median": 300.0,
+    "gbp": 286620740.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "655903485d5ed64cd20921ce96b1b6bd0a339563.bin",
+    "rows": 415,
+    "file_median": 164951.0,
+    "series_median": 300.0,
+    "gbp": 328057730.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "677b9b726d50a03a10106dd005f3fc31a2355a8b.bin",
+    "rows": 867,
+    "file_median": 79194.0,
+    "series_median": 300.0,
+    "gbp": 327386900.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "693f91516d7e6b4dc6d014904f2192a4bff3a97d.bin",
+    "rows": 790,
+    "file_median": 72000.0,
+    "series_median": 300.0,
+    "gbp": 529284063.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "7617e50884514745bdc03897520dabd0bbd1ecf1.bin",
+    "rows": 715,
+    "file_median": 72500.0,
+    "series_median": 300.0,
+    "gbp": 335454576.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "778cda134213fe8317fbea693465fd276d221b7b.bin",
+    "rows": 645,
+    "file_median": 90801.0,
+    "series_median": 300.0,
+    "gbp": 409477958.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "7f4fee0c32b0d67ef51c6e20a986fa9b81e9636c.bin",
+    "rows": 803,
+    "file_median": 85899.0,
+    "series_median": 300.0,
+    "gbp": 394025714.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "85e83260914da809016da8f16827dcedc6ae6325.bin",
+    "rows": 596,
+    "file_median": 59288.0,
+    "series_median": 300.0,
+    "gbp": 237080334.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "876f4df491d793ed1e89c3f29af3efddce802210.bin",
+    "rows": 663,
+    "file_median": 99486.0,
+    "series_median": 300.0,
+    "gbp": 315277857.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "88675d734558ff6b72b6d7eb969547f5c08318dc.bin",
+    "rows": 553,
+    "file_median": 70714.0,
+    "series_median": 300.0,
+    "gbp": 180266957.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "98c9e868a016487c5ac9c57c03f7129ac95f39ad.bin",
+    "rows": 813,
+    "file_median": 107569.0,
+    "series_median": 300.0,
+    "gbp": 449402089.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "991ee3fbd8e44cad65f6b120ff1697e73cd81635.bin",
+    "rows": 856,
+    "file_median": 84518.0,
+    "series_median": 300.0,
+    "gbp": 297945776.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "a3b09e179d7f10962fff234219fc3b782d77507a.bin",
+    "rows": 1465,
+    "file_median": 61337.0,
+    "series_median": 300.0,
+    "gbp": 365608163.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "a9a33edaef1dd117d68b69b21bf26c09944249bc.bin",
+    "rows": 841,
+    "file_median": 68575.0,
+    "series_median": 300.0,
+    "gbp": 432433723.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "b7a8866045d0761f642821f286102e890699d56e.bin",
+    "rows": 1087,
+    "file_median": 67775.0,
+    "series_median": 300.0,
+    "gbp": 324476726.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "bd90ccfbca760d406adcacc7762d96a5a02cd61a.bin",
+    "rows": 705,
+    "file_median": 91900.0,
+    "series_median": 300.0,
+    "gbp": 277142405.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "be10ba4d441741e9b2352cabfbfffc8e00831957.bin",
+    "rows": 769,
+    "file_median": 97721.0,
+    "series_median": 300.0,
+    "gbp": 338650041.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "be590a17a965e0400d1b5a1a51afc7e8fc34edab.bin",
+    "rows": 58,
+    "file_median": 92505.0,
+    "series_median": 300.0,
+    "gbp": 137277566.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "c0972a9fc69313d241a72f88061ffce67a4706f2.bin",
+    "rows": 799,
+    "file_median": 84820.0,
+    "series_median": 300.0,
+    "gbp": 247267993.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "c2432c20547e57c8c687244ee8bb72aa457eeb66.bin",
+    "rows": 858,
+    "file_median": 83710.0,
+    "series_median": 300.0,
+    "gbp": 304044617.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "c8cf29e0f9baded650344e37caa175cb0736ecee.bin",
+    "rows": 495,
+    "file_median": 73460.0,
+    "series_median": 300.0,
+    "gbp": 235334766.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "c9ebf2c641dd57f2de62248125ebff4c67ae72ed.bin",
+    "rows": 914,
+    "file_median": 65100.0,
+    "series_median": 300.0,
+    "gbp": 207855850.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "d08d68d31d549c0f55006fe0444cbb8cf3909332.bin",
+    "rows": 785,
+    "file_median": 91200.0,
+    "series_median": 300.0,
+    "gbp": 281727023.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "d2716152166a8113c10fcfb4a5825ec62037d6d0.bin",
+    "rows": 873,
+    "file_median": 93169.0,
+    "series_median": 300.0,
+    "gbp": 286012516.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "e038f212010978a22af5bc9d62ea4154184c1ff8.bin",
+    "rows": 66,
+    "file_median": 131875.0,
+    "series_median": 300.0,
+    "gbp": 118428212.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "e31cb8ea3da0263cea0e1b9626a5cad278094db8.bin",
+    "rows": 975,
+    "file_median": 69000.0,
+    "series_median": 300.0,
+    "gbp": 227745670.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "e57034f8fd0d9ee37979faf3087ae150b9d55955.bin",
+    "rows": 429,
+    "file_median": 61571.0,
+    "series_median": 300.0,
+    "gbp": 209762264.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "f08e0c51ffd8a47c9bf102fc122c1c2d39ccdcac.bin",
+    "rows": 957,
+    "file_median": 66824.0,
+    "series_median": 300.0,
+    "gbp": 310222551.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "f31f74a91e00f532ce4e7fc49fc059f71e005184.bin",
+    "rows": 1148,
+    "file_median": 83583.0,
+    "series_median": 300.0,
+    "gbp": 369285226.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "f594eceb2591d3f72393dab14aadc9bc2377c2d5.bin",
+    "rows": 1193,
+    "file_median": 65189.0,
+    "series_median": 300.0,
+    "gbp": 208632239.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "f670f2ca16c954d59604c3d1d44f1018a42ab4f4.bin",
+    "rows": 420,
+    "file_median": 165070.0,
+    "series_median": 300.0,
+    "gbp": 351716225.0
+   },
+   {
+    "publisher": "Department for Work and Pensions",
+    "dataset_key": "data_gov_uk:ccdc397a-3984-453b-a9d7-e285074bba4d",
+    "file": "fe2574cfa5a4e1949fbadb23f91c9b7d53aea37b.bin",
+    "rows": 407,
+    "file_median": 77580.0,
+    "series_median": 300.0,
+    "gbp": 200118630.0
+   }
+  ]
+ },
+ "by_year_month": [
+  {
+   "year_month": "2008-04",
+   "n": 3111,
+   "gbp": 3831602052.55
+  },
+  {
+   "year_month": "2008-05",
+   "n": 2701,
+   "gbp": 3715075497.28
+  },
+  {
+   "year_month": "2008-06",
+   "n": 2722,
+   "gbp": 4090707195.26
+  },
+  {
+   "year_month": "2008-07",
+   "n": 2784,
+   "gbp": 4203787556.81
+  },
+  {
+   "year_month": "2008-08",
+   "n": 2136,
+   "gbp": 4226865006.85
+  },
+  {
+   "year_month": "2008-09",
+   "n": 2012,
+   "gbp": 3664276675.77
+  },
+  {
+   "year_month": "2008-10",
+   "n": 2137,
+   "gbp": 3813726117.45
+  },
+  {
+   "year_month": "2008-11",
+   "n": 3091,
+   "gbp": 4230096076.92
+  },
+  {
+   "year_month": "2008-12",
+   "n": 2394,
+   "gbp": 3763712073.61
+  },
+  {
+   "year_month": "2009-01",
+   "n": 2243,
+   "gbp": 3709381279.12
+  },
+  {
+   "year_month": "2009-02",
+   "n": 3816,
+   "gbp": 4145298593.41
+  },
+  {
+   "year_month": "2009-03",
+   "n": 4207,
+   "gbp": 4328511154.05
+  },
+  {
+   "year_month": "2009-04",
+   "n": 3102,
+   "gbp": 4197305619.14
+  },
+  {
+   "year_month": "2009-05",
+   "n": 2378,
+   "gbp": 3888466646.26
+  },
+  {
+   "year_month": "2009-06",
+   "n": 2357,
+   "gbp": 4177876207.71
+  },
+  {
+   "year_month": "2009-07",
+   "n": 2136,
+   "gbp": 4060307507.74
+  },
+  {
+   "year_month": "2009-08",
+   "n": 1842,
+   "gbp": 4484385410.86
+  },
+  {
+   "year_month": "2009-09",
+   "n": 2543,
+   "gbp": 4088359128.54
+  },
+  {
+   "year_month": "2009-10",
+   "n": 1515,
+   "gbp": 3774950824.67
+  },
+  {
+   "year_month": "2009-11",
+   "n": 1442,
+   "gbp": 4082193356.98
+  },
+  {
+   "year_month": "2009-12",
+   "n": 2166,
+   "gbp": 4770938067.18
+  },
+  {
+   "year_month": "2010-01",
+   "n": 1461,
+   "gbp": 3924741848.37
+  },
+  {
+   "year_month": "2010-02",
+   "n": 2929,
+   "gbp": 5027932574.12
+  },
+  {
+   "year_month": "2010-03",
+   "n": 4354,
+   "gbp": 6355592219.2
+  },
+  {
+   "year_month": "2010-04",
+   "n": 50431,
+   "gbp": 11612226173.14
+  },
+  {
+   "year_month": "2010-05",
+   "n": 50507,
+   "gbp": 12106510496.1
+  },
+  {
+   "year_month": "2010-06",
+   "n": 48607,
+   "gbp": 21444723298.42
+  },
+  {
+   "year_month": "2010-07",
+   "n": 47869,
+   "gbp": 19559695779.06
+  },
+  {
+   "year_month": "2010-08",
+   "n": 42425,
+   "gbp": 19789887896.61
+  },
+  {
+   "year_month": "2010-09",
+   "n": 45769,
+   "gbp": 22185907180.65
+  },
+  {
+   "year_month": "2010-10",
+   "n": 43403,
+   "gbp": 11476796642.05
+  },
+  {
+   "year_month": "2010-11",
+   "n": 51381,
+   "gbp": 12688545071.56
+  },
+  {
+   "year_month": "2010-12",
+   "n": 43339,
+   "gbp": 12508493069.37
+  },
+  {
+   "year_month": "2011-01",
+   "n": 40326,
+   "gbp": 9397306587.16
+  },
+  {
+   "year_month": "2011-02",
+   "n": 46932,
+   "gbp": 20165608543.27
+  },
+  {
+   "year_month": "2011-03",
+   "n": 53564,
+   "gbp": 10693040759.52
+  },
+  {
+   "year_month": "2011-04",
+   "n": 49750,
+   "gbp": 13787787664.93
+  },
+  {
+   "year_month": "2011-05",
+   "n": 50670,
+   "gbp": 13366519007.07
+  },
+  {
+   "year_month": "2011-06",
+   "n": 55649,
+   "gbp": 10937612066.83
+  },
+  {
+   "year_month": "2011-07",
+   "n": 57666,
+   "gbp": 11880861611.14
+  },
+  {
+   "year_month": "2011-08",
+   "n": 57919,
+   "gbp": 12834893627.41
+  },
+  {
+   "year_month": "2011-09",
+   "n": 67360,
+   "gbp": 22573037462.28
+  },
+  {
+   "year_month": "2011-10",
+   "n": 64108,
+   "gbp": 18177470828.25
+  },
+  {
+   "year_month": "2011-11",
+   "n": 81040,
+   "gbp": 13424352655.4
+  },
+  {
+   "year_month": "2011-12",
+   "n": 68317,
+   "gbp": 21670304772.08
+  },
+  {
+   "year_month": "2012-01",
+   "n": 62842,
+   "gbp": 11037487105.07
+  },
+  {
+   "year_month": "2012-02",
+   "n": 63492,
+   "gbp": 22630144653.95
+  },
+  {
+   "year_month": "2012-03",
+   "n": 103888,
+   "gbp": 30082065843.68
+  },
+  {
+   "year_month": "2012-04",
+   "n": 77823,
+   "gbp": 13190413223.09
+  },
+  {
+   "year_month": "2012-05",
+   "n": 85700,
+   "gbp": 12676324350.09
+  },
+  {
+   "year_month": "2012-06",
+   "n": 67037,
+   "gbp": 13765111967.53
+  },
+  {
+   "year_month": "2012-07",
+   "n": 106502,
+   "gbp": 22221303738.93
+  },
+  {
+   "year_month": "2012-08",
+   "n": 86360,
+   "gbp": 22235349817.0
+  },
+  {
+   "year_month": "2012-09",
+   "n": 91278,
+   "gbp": 19847954765.88
+  },
+  {
+   "year_month": "2012-10",
+   "n": 97903,
+   "gbp": 12761193091.16
+  },
+  {
+   "year_month": "2012-11",
+   "n": 90210,
+   "gbp": 15155658623.12
+  },
+  {
+   "year_month": "2012-12",
+   "n": 96524,
+   "gbp": 26299582157.66
+  },
+  {
+   "year_month": "2013-01",
+   "n": 90716,
+   "gbp": 22566883576.6
+  },
+  {
+   "year_month": "2013-02",
+   "n": 105878,
+   "gbp": 23677288562.76
+  },
+  {
+   "year_month": "2013-03",
+   "n": 109049,
+   "gbp": 34359530785.89
+  },
+  {
+   "year_month": "2013-04",
+   "n": 102647,
+   "gbp": 30413999140.28
+  },
+  {
+   "year_month": "2013-05",
+   "n": 101293,
+   "gbp": 25573658901.12
+  },
+  {
+   "year_month": "2013-06",
+   "n": 96777,
+   "gbp": 21372049472.77
+  },
+  {
+   "year_month": "2013-07",
+   "n": 109287,
+   "gbp": 25759413820.53
+  },
+  {
+   "year_month": "2013-08",
+   "n": 111014,
+   "gbp": 25986046641.58
+  },
+  {
+   "year_month": "2013-09",
+   "n": 106568,
+   "gbp": 25866604081.3
+  },
+  {
+   "year_month": "2013-10",
+   "n": 110560,
+   "gbp": 22467493129.58
+  },
+  {
+   "year_month": "2013-11",
+   "n": 105531,
+   "gbp": 22892703668.08
+  },
+  {
+   "year_month": "2013-12",
+   "n": 105472,
+   "gbp": 25500942107.4
+  },
+  {
+   "year_month": "2014-01",
+   "n": 107998,
+   "gbp": 23627994683.29
+  },
+  {
+   "year_month": "2014-02",
+   "n": 105279,
+   "gbp": 25871719500.6
+  },
+  {
+   "year_month": "2014-03",
+   "n": 122051,
+   "gbp": 25232204499.07
+  },
+  {
+   "year_month": "2014-04",
+   "n": 121334,
+   "gbp": 19310782598.61
+  },
+  {
+   "year_month": "2014-05",
+   "n": 113517,
+   "gbp": 22379848406.42
+  },
+  {
+   "year_month": "2014-06",
+   "n": 122879,
+   "gbp": 20975290006.76
+  },
+  {
+   "year_month": "2014-07",
+   "n": 122364,
+   "gbp": 23414112982.33
+  },
+  {
+   "year_month": "2014-08",
+   "n": 111529,
+   "gbp": 20773071568.04
+  },
+  {
+   "year_month": "2014-09",
+   "n": 113144,
+   "gbp": 21999809693.64
+  },
+  {
+   "year_month": "2014-10",
+   "n": 124479,
+   "gbp": 22190199616.93
+  },
+  {
+   "year_month": "2014-11",
+   "n": 100424,
+   "gbp": 18255469303.01
+  },
+  {
+   "year_month": "2014-12",
+   "n": 106262,
+   "gbp": 22668616475.6
+  },
+  {
+   "year_month": "2015-01",
+   "n": 122501,
+   "gbp": 20670642988.52
+  },
+  {
+   "year_month": "2015-02",
+   "n": 108323,
+   "gbp": 22167826761.59
+  },
+  {
+   "year_month": "2015-03",
+   "n": 107123,
+   "gbp": 22623718511.57
+  },
+  {
+   "year_month": "2015-04",
+   "n": 72248,
+   "gbp": 25094849543.11
+  },
+  {
+   "year_month": "2015-05",
+   "n": 68041,
+   "gbp": 17641195258.05
+  },
+  {
+   "year_month": "2015-06",
+   "n": 75983,
+   "gbp": 18148602454.07
+  },
+  {
+   "year_month": "2015-07",
+   "n": 76972,
+   "gbp": 22442978306.63
+  },
+  {
+   "year_month": "2015-08",
+   "n": 63794,
+   "gbp": 17290470819.97
+  },
+  {
+   "year_month": "2015-09",
+   "n": 78972,
+   "gbp": 8996942305.85
+  },
+  {
+   "year_month": "2015-10",
+   "n": 77305,
+   "gbp": 15724992651.19
+  },
+  {
+   "year_month": "2015-11",
+   "n": 69407,
+   "gbp": 16666532750.65
+  },
+  {
+   "year_month": "2015-12",
+   "n": 60147,
+   "gbp": 20559117614.53
+  },
+  {
+   "year_month": "2016-01",
+   "n": 68862,
+   "gbp": 17527801517.0
+  },
+  {
+   "year_month": "2016-02",
+   "n": 71587,
+   "gbp": 17034989171.74
+  },
+  {
+   "year_month": "2016-03",
+   "n": 83559,
+   "gbp": 19650841253.79
+  },
+  {
+   "year_month": "2016-04",
+   "n": 58027,
+   "gbp": 24721780890.2
+  },
+  {
+   "year_month": "2016-05",
+   "n": 54534,
+   "gbp": 17040507986.47
+  },
+  {
+   "year_month": "2016-06",
+   "n": 60520,
+   "gbp": 19290089955.64
+  },
+  {
+   "year_month": "2016-07",
+   "n": 65559,
+   "gbp": 22472569314.37
+  },
+  {
+   "year_month": "2016-08",
+   "n": 64637,
+   "gbp": 17717999444.55
+  },
+  {
+   "year_month": "2016-09",
+   "n": 59459,
+   "gbp": 8239633675.08
+  },
+  {
+   "year_month": "2016-10",
+   "n": 69384,
+   "gbp": 18879231298.99
+  },
+  {
+   "year_month": "2016-11",
+   "n": 62610,
+   "gbp": 17014786700.59
+  },
+  {
+   "year_month": "2016-12",
+   "n": 69555,
+   "gbp": 22989072409.39
+  },
+  {
+   "year_month": "2017-01",
+   "n": 97348,
+   "gbp": 21754728972.84
+  },
+  {
+   "year_month": "2017-02",
+   "n": 69565,
+   "gbp": 20241317498.95
+  },
+  {
+   "year_month": "2017-03",
+   "n": 93942,
+   "gbp": 25445280937.67
+  },
+  {
+   "year_month": "2017-04",
+   "n": 68354,
+   "gbp": 32542250805.78
+  },
+  {
+   "year_month": "2017-05",
+   "n": 57680,
+   "gbp": 28522780324.82
+  },
+  {
+   "year_month": "2017-06",
+   "n": 44014,
+   "gbp": 26964682343.67
+  },
+  {
+   "year_month": "2017-07",
+   "n": 56018,
+   "gbp": 26250399361.69
+  },
+  {
+   "year_month": "2017-08",
+   "n": 47840,
+   "gbp": 23900072248.7
+  },
+  {
+   "year_month": "2017-09",
+   "n": 36215,
+   "gbp": 20774006810.26
+  },
+  {
+   "year_month": "2017-10",
+   "n": 38993,
+   "gbp": 14188672167.19
+  },
+  {
+   "year_month": "2017-11",
+   "n": 49414,
+   "gbp": 23130958887.98
+  },
+  {
+   "year_month": "2017-12",
+   "n": 65344,
+   "gbp": 28505780355.36
+  },
+  {
+   "year_month": "2018-01",
+   "n": 54865,
+   "gbp": 24767864406.04
+  },
+  {
+   "year_month": "2018-02",
+   "n": 32401,
+   "gbp": 12408703224.91
+  },
+  {
+   "year_month": "2018-03",
+   "n": 47140,
+   "gbp": 14250595920.17
+  },
+  {
+   "year_month": "2018-04",
+   "n": 29592,
+   "gbp": 13891644352.45
+  },
+  {
+   "year_month": "2018-05",
+   "n": 43513,
+   "gbp": 12976614401.69
+  },
+  {
+   "year_month": "2018-06",
+   "n": 27162,
+   "gbp": 13973185855.2
+  },
+  {
+   "year_month": "2018-07",
+   "n": 45146,
+   "gbp": 13778097555.66
+  },
+  {
+   "year_month": "2018-08",
+   "n": 31478,
+   "gbp": 12876815156.75
+  },
+  {
+   "year_month": "2018-09",
+   "n": 32391,
+   "gbp": 11036613802.18
+  },
+  {
+   "year_month": "2018-10",
+   "n": 29638,
+   "gbp": 2525118920.72
+  },
+  {
+   "year_month": "2018-11",
+   "n": 62003,
+   "gbp": 22746261709.93
+  },
+  {
+   "year_month": "2018-12",
+   "n": 62674,
+   "gbp": 25484750250.44
+  },
+  {
+   "year_month": "2019-01",
+   "n": 44351,
+   "gbp": 26934242260.47
+  },
+  {
+   "year_month": "2019-02",
+   "n": 64227,
+   "gbp": 10868634136.59
+  },
+  {
+   "year_month": "2019-03",
+   "n": 52655,
+   "gbp": 12252068122.13
+  },
+  {
+   "year_month": "2019-04",
+   "n": 77482,
+   "gbp": 16825231519.37
+  },
+  {
+   "year_month": "2019-05",
+   "n": 81142,
+   "gbp": 16579505617.56
+  },
+  {
+   "year_month": "2019-06",
+   "n": 72654,
+   "gbp": 28370359039.46
+  },
+  {
+   "year_month": "2019-07",
+   "n": 62486,
+   "gbp": 21612120986.31
+  },
+  {
+   "year_month": "2019-08",
+   "n": 74308,
+   "gbp": 23679078748.84
+  },
+  {
+   "year_month": "2019-09",
+   "n": 71283,
+   "gbp": 29755509640.9
+  },
+  {
+   "year_month": "2019-10",
+   "n": 61009,
+   "gbp": 22259240473.74
+  },
+  {
+   "year_month": "2019-11",
+   "n": 81414,
+   "gbp": 23107406484.38
+  },
+  {
+   "year_month": "2019-12",
+   "n": 82145,
+   "gbp": 25925363077.5
+  },
+  {
+   "year_month": "2020-01",
+   "n": 60941,
+   "gbp": 25524762653.96
+  },
+  {
+   "year_month": "2020-02",
+   "n": 52113,
+   "gbp": 21637817634.44
+  },
+  {
+   "year_month": "2020-03",
+   "n": 64872,
+   "gbp": 25111184559.14
+  },
+  {
+   "year_month": "2020-04",
+   "n": 73581,
+   "gbp": 32348397635.12
+  },
+  {
+   "year_month": "2020-05",
+   "n": 45853,
+   "gbp": 23445771997.9
+  },
+  {
+   "year_month": "2020-06",
+   "n": 38567,
+   "gbp": 22605968736.01
+  },
+  {
+   "year_month": "2020-07",
+   "n": 61271,
+   "gbp": 23345431402.94
+  },
+  {
+   "year_month": "2020-08",
+   "n": 36886,
+   "gbp": 22980569057.65
+  },
+  {
+   "year_month": "2020-09",
+   "n": 42233,
+   "gbp": 32939931457.52
+  },
+  {
+   "year_month": "2020-10",
+   "n": 48292,
+   "gbp": 28374589019.82
+  },
+  {
+   "year_month": "2020-11",
+   "n": 57467,
+   "gbp": 48161926724.97
+  },
+  {
+   "year_month": "2020-12",
+   "n": 42426,
+   "gbp": 26225618243.7
+  },
+  {
+   "year_month": "2021-01",
+   "n": 38059,
+   "gbp": 7284908289.4
+  },
+  {
+   "year_month": "2021-02",
+   "n": 37778,
+   "gbp": 23248740954.1
+  },
+  {
+   "year_month": "2021-03",
+   "n": 53734,
+   "gbp": 58038934994.13
+  },
+  {
+   "year_month": "2021-04",
+   "n": 29215,
+   "gbp": 32793895143.04
+  },
+  {
+   "year_month": "2021-05",
+   "n": 44887,
+   "gbp": 35837285238.44
+  },
+  {
+   "year_month": "2021-06",
+   "n": 47167,
+   "gbp": 22101260929.89
+  },
+  {
+   "year_month": "2021-07",
+   "n": 48447,
+   "gbp": 25203515906.56
+  },
+  {
+   "year_month": "2021-08",
+   "n": 40400,
+   "gbp": 8141490005.52
+  },
+  {
+   "year_month": "2021-09",
+   "n": 38178,
+   "gbp": 9896782947.91
+  },
+  {
+   "year_month": "2021-10",
+   "n": 42643,
+   "gbp": 11397534357.12
+  },
+  {
+   "year_month": "2021-11",
+   "n": 41415,
+   "gbp": 8070193330.79
+  },
+  {
+   "year_month": "2021-12",
+   "n": 34978,
+   "gbp": 12140772890.45
+  },
+  {
+   "year_month": "2022-01",
+   "n": 46868,
+   "gbp": 26279130149.7
+  },
+  {
+   "year_month": "2022-02",
+   "n": 37449,
+   "gbp": 24406256666.2
+  },
+  {
+   "year_month": "2022-03",
+   "n": 48152,
+   "gbp": 28265109729.02
+  },
+  {
+   "year_month": "2022-04",
+   "n": 28269,
+   "gbp": 18568462066.98
+  },
+  {
+   "year_month": "2022-05",
+   "n": 29947,
+   "gbp": 15204505141.09
+  },
+  {
+   "year_month": "2022-06",
+   "n": 35267,
+   "gbp": 15097612016.56
+  },
+  {
+   "year_month": "2022-07",
+   "n": 36908,
+   "gbp": 15739973632.64
+  },
+  {
+   "year_month": "2022-08",
+   "n": 37199,
+   "gbp": 14489412044.37
+  },
+  {
+   "year_month": "2022-09",
+   "n": 35960,
+   "gbp": 15291309868.81
+  },
+  {
+   "year_month": "2022-10",
+   "n": 32763,
+   "gbp": 17070281968.13
+  },
+  {
+   "year_month": "2022-11",
+   "n": 46297,
+   "gbp": 14948858084.97
+  },
+  {
+   "year_month": "2022-12",
+   "n": 22130,
+   "gbp": 797180403.5
+  },
+  {
+   "year_month": "2023-01",
+   "n": 38831,
+   "gbp": 806727968.67
+  },
+  {
+   "year_month": "2023-02",
+   "n": 42690,
+   "gbp": 719802137.4
+  },
+  {
+   "year_month": "2023-03",
+   "n": 49853,
+   "gbp": 1115085851.78
+  },
+  {
+   "year_month": "2023-04",
+   "n": 28380,
+   "gbp": 880029469.74
+  },
+  {
+   "year_month": "2023-05",
+   "n": 31400,
+   "gbp": 731086585.45
+  },
+  {
+   "year_month": "2023-06",
+   "n": 30865,
+   "gbp": 872803877.18
+  },
+  {
+   "year_month": "2023-07",
+   "n": 35031,
+   "gbp": 697832124.63
+  },
+  {
+   "year_month": "2023-08",
+   "n": 42395,
+   "gbp": 1716004542.35
+  },
+  {
+   "year_month": "2023-09",
+   "n": 37767,
+   "gbp": 848076631.81
+  },
+  {
+   "year_month": "2023-10",
+   "n": 34806,
+   "gbp": 2280256687.89
+  },
+  {
+   "year_month": "2023-11",
+   "n": 41877,
+   "gbp": 1459869213.91
+  },
+  {
+   "year_month": "2023-12",
+   "n": 38498,
+   "gbp": 1784973627.04
+  },
+  {
+   "year_month": "2024-01",
+   "n": 42757,
+   "gbp": 2958974051.31
+  },
+  {
+   "year_month": "2024-02",
+   "n": 45787,
+   "gbp": 2092035450.45
+  },
+  {
+   "year_month": "2024-03",
+   "n": 49500,
+   "gbp": 6030398722.67
+  },
+  {
+   "year_month": "2024-04",
+   "n": 30704,
+   "gbp": 2492987346.04
+  },
+  {
+   "year_month": "2024-05",
+   "n": 30608,
+   "gbp": 2292557076.44
+  },
+  {
+   "year_month": "2024-06",
+   "n": 27434,
+   "gbp": 3110324448.02
+  },
+  {
+   "year_month": "2024-07",
+   "n": 39193,
+   "gbp": 1886626807.81
+  },
+  {
+   "year_month": "2024-08",
+   "n": 38817,
+   "gbp": 2752329191.67
+  },
+  {
+   "year_month": "2024-09",
+   "n": 23193,
+   "gbp": 2211430340.92
+  },
+  {
+   "year_month": "2024-10",
+   "n": 36180,
+   "gbp": 1584087886.23
+  },
+  {
+   "year_month": "2024-11",
+   "n": 36926,
+   "gbp": 1619783437.71
+  },
+  {
+   "year_month": "2024-12",
+   "n": 29286,
+   "gbp": 2341457220.82
+  },
+  {
+   "year_month": "2025-01",
+   "n": 39739,
+   "gbp": 2047159379.09
+  },
+  {
+   "year_month": "2025-02",
+   "n": 36466,
+   "gbp": 1354229855.36
+  },
+  {
+   "year_month": "2025-03",
+   "n": 31307,
+   "gbp": 2621632091.44
+  },
+  {
+   "year_month": "2025-04",
+   "n": 37061,
+   "gbp": 1777226109.18
+  },
+  {
+   "year_month": "2025-05",
+   "n": 32636,
+   "gbp": 3215031784.93
+  },
+  {
+   "year_month": "2025-06",
+   "n": 28798,
+   "gbp": 1575861676.71
+  },
+  {
+   "year_month": "2025-07",
+   "n": 36395,
+   "gbp": 1736292007.62
+  },
+  {
+   "year_month": "2025-08",
+   "n": 28547,
+   "gbp": 2582827090.03
+  },
+  {
+   "year_month": "2025-09",
+   "n": 29959,
+   "gbp": 2281433688.66
+  },
+  {
+   "year_month": "2025-10",
+   "n": 42531,
+   "gbp": 795441441.29
+  },
+  {
+   "year_month": "2025-11",
+   "n": 36546,
+   "gbp": 632780441.12
+  },
+  {
+   "year_month": "2025-12",
+   "n": 37534,
+   "gbp": 791302299.02
+  },
+  {
+   "year_month": "2026-01",
+   "n": 25785,
+   "gbp": 597796421.62
+  },
+  {
+   "year_month": "2026-02",
+   "n": 29336,
+   "gbp": 615458392.49
+  },
+  {
+   "year_month": "2026-03",
+   "n": 37929,
+   "gbp": 879507118.2
+  },
+  {
+   "year_month": "2026-04",
+   "n": 32120,
+   "gbp": 1976943321.49
+  },
+  {
+   "year_month": "2026-05",
+   "n": 41645,
+   "gbp": 1156637330.64
+  },
+  {
+   "year_month": "2026-06",
+   "n": 42831,
+   "gbp": 1463402674.79
+  },
+  {
+   "year_month": "2026-07",
+   "n": 8263,
+   "gbp": 35281769.73
+  },
+  {
+   "year_month": "2026-08",
+   "n": 5143,
+   "gbp": 13678165.51
+  }
+ ],
+ "per_publisher": [
+  {
+   "publisher": "Department of Health and Social Care",
+   "files": 273,
+   "files_parsed": 242,
+   "parse_rate": 0.886,
+   "first_date": "2010-06-01",
+   "last_date": "2022-11-30",
+   "gbp_total": 1432506093537.66,
+   "tx": 180068,
+   "median_amount": 66220.61
+  },
+  {
+   "publisher": "Department for Education",
+   "files": 210,
+   "files_parsed": 208,
+   "parse_rate": 0.99,
+   "first_date": "2010-04-01",
+   "last_date": "2022-03-31",
+   "gbp_total": 1011273151498.72,
+   "tx": 2194986,
+   "median_amount": 38926.56
+  },
+  {
+   "publisher": "Ministry of Housing, Communities and Local Government",
+   "files": 181,
+   "files_parsed": 176,
+   "parse_rate": 0.972,
+   "first_date": "2008-04-01",
+   "last_date": "2017-11-30",
+   "gbp_total": 357995272432.4,
+   "tx": 377418,
+   "median_amount": 27311.0
+  },
+  {
+   "publisher": "Home Office",
+   "files": 122,
+   "files_parsed": 94,
+   "parse_rate": 0.77,
+   "first_date": "2010-05-12",
+   "last_date": "2018-06-29",
+   "gbp_total": 84545024331.14,
+   "tx": 100265,
+   "median_amount": 73200.0
+  },
+  {
+   "publisher": "Department for International Development",
+   "files": 297,
+   "files_parsed": 122,
+   "parse_rate": 0.411,
+   "first_date": "2010-04-01",
+   "last_date": "2020-08-31",
+   "gbp_total": 81484664634.74,
+   "tx": 222147,
+   "median_amount": 3733.0
+  },
+  {
+   "publisher": "Department for Work and Pensions",
+   "files": 335,
+   "files_parsed": 197,
+   "parse_rate": 0.588,
+   "first_date": "2010-04-01",
+   "last_date": "2026-06-30",
+   "gbp_total": 65633486950.83,
+   "tx": 3125924,
+   "median_amount": 235.0
+  },
+  {
+   "publisher": "Ministry of Defence",
+   "files": 356,
+   "files_parsed": 142,
+   "parse_rate": 0.399,
+   "first_date": "2010-04-01",
+   "last_date": "2020-03-31",
+   "gbp_total": 56230363085.41,
+   "tx": 413477,
+   "median_amount": 6769.34
+  },
+  {
+   "publisher": "HM Revenue and Customs",
+   "files": 264,
+   "files_parsed": 264,
+   "parse_rate": 1.0,
+   "first_date": "2010-04-01",
+   "last_date": "2026-06-30",
+   "gbp_total": 31385603852.96,
+   "tx": 131411,
+   "median_amount": 51282.05
+  },
+  {
+   "publisher": "Department for Science, Innovation and Technology",
+   "files": 70,
+   "files_parsed": 33,
+   "parse_rate": 0.471,
+   "first_date": "2023-08-31",
+   "last_date": "2026-02-26",
+   "gbp_total": 27935871937.06,
+   "tx": 4272,
+   "median_amount": 114077.66
+  },
+  {
+   "publisher": "Foreign, Commonwealth and Development Office (FCDO)",
+   "files": 152,
+   "files_parsed": 108,
+   "parse_rate": 0.711,
+   "first_date": "2020-09-01",
+   "last_date": "2024-10-31",
+   "gbp_total": 20962337609.55,
+   "tx": 201392,
+   "median_amount": 1140.5
+  },
+  {
+   "publisher": "Department for Digital, Culture, Media and Sport",
+   "files": 57,
+   "files_parsed": 53,
+   "parse_rate": 0.93,
+   "first_date": "2010-04-07",
+   "last_date": "2014-10-29",
+   "gbp_total": 17230978323.37,
+   "tx": 11467,
+   "median_amount": 700.7
+  },
+  {
+   "publisher": "Ministry of Justice",
+   "files": 55,
+   "files_parsed": 55,
+   "parse_rate": 1.0,
+   "first_date": "2010-05-12",
+   "last_date": "2014-12-31",
+   "gbp_total": 14842030773.87,
+   "tx": 41332,
+   "median_amount": 39487.0
+  },
+  {
+   "publisher": "Department for Energy Security and Net Zero",
+   "files": 75,
+   "files_parsed": 35,
+   "parse_rate": 0.467,
+   "first_date": "2023-08-01",
+   "last_date": "2026-02-27",
+   "gbp_total": 10038469855.57,
+   "tx": 5634,
+   "median_amount": 86808.0
+  },
+  {
+   "publisher": "Foreign and Commonwealth Office",
+   "files": 230,
+   "files_parsed": 143,
+   "parse_rate": 0.622,
+   "first_date": "2010-04-01",
+   "last_date": "2018-07-31",
+   "gbp_total": 7810957531.85,
+   "tx": 129273,
+   "median_amount": 1003.42
+  },
+  {
+   "publisher": "Transport for Greater Manchester",
+   "files": 61,
+   "files_parsed": 60,
+   "parse_rate": 0.984,
+   "first_date": "2011-04-01",
+   "last_date": "2026-03-31",
+   "gbp_total": 6715529995.51,
+   "tx": 179511,
+   "median_amount": 2860.0
+  },
+  {
+   "publisher": "National Offender Management Service",
+   "files": 55,
+   "files_parsed": 52,
+   "parse_rate": 0.945,
+   "first_date": "2010-01-10",
+   "last_date": "2014-05-31",
+   "gbp_total": 5898237967.07,
+   "tx": 18732,
+   "median_amount": 52826.0
+  },
+  {
+   "publisher": "Bristol City Council",
+   "files": 59,
+   "files_parsed": 59,
+   "parse_rate": 1.0,
+   "first_date": "2020-01-02",
+   "last_date": "2026-05-29",
+   "gbp_total": 3386201951.65,
+   "tx": 344651,
+   "median_amount": 1449.93
+  },
+  {
+   "publisher": "United Lincolnshire Hospitals NHS Trust",
+   "files": 185,
+   "files_parsed": 171,
+   "parse_rate": 0.924,
+   "first_date": "2010-05-04",
+   "last_date": "2024-09-24",
+   "gbp_total": 2654760957.98,
+   "tx": 16549,
+   "median_amount": 49972.29
+  },
+  {
+   "publisher": "Royal Borough of Greenwich",
+   "files": 44,
+   "files_parsed": 40,
+   "parse_rate": 0.909,
+   "first_date": "2012-02-01",
+   "last_date": "2017-06-30",
+   "gbp_total": 2617753453.66,
+   "tx": 308607,
+   "median_amount": 1465.68
+  },
+  {
+   "publisher": "The Pennine Acute Hospitals NHS Trust",
+   "files": 138,
+   "files_parsed": 132,
+   "parse_rate": 0.957,
+   "first_date": "2010-04-06",
+   "last_date": "2021-06-30",
+   "gbp_total": 2514731277.83,
+   "tx": 20887,
+   "median_amount": 37774.93
+  },
+  {
+   "publisher": "Cabinet Office",
+   "files": 98,
+   "files_parsed": 70,
+   "parse_rate": 0.714,
+   "first_date": "2010-04-01",
+   "last_date": "2015-12-31",
+   "gbp_total": 2452976429.05,
+   "tx": 9625,
+   "median_amount": 60000.0
+  },
+  {
+   "publisher": "NHS East and North Hertfordshire CCG",
+   "files": 39,
+   "files_parsed": 38,
+   "parse_rate": 0.974,
+   "first_date": "2019-03-31",
+   "last_date": "2022-06-30",
+   "gbp_total": 2419124808.77,
+   "tx": 16499,
+   "median_amount": 8058.33
+  },
+  {
+   "publisher": "Isle of Wight NHS Trust",
+   "files": 92,
+   "files_parsed": 91,
+   "parse_rate": 0.989,
+   "first_date": "2018-04-30",
+   "last_date": "2025-11-30",
+   "gbp_total": 1879345059.7,
+   "tx": 6694,
+   "median_amount": 50240.75
+  },
+  {
+   "publisher": "Department for Environment, Food and Rural Affairs",
+   "files": 483,
+   "files_parsed": 370,
+   "parse_rate": 0.766,
+   "first_date": "2010-04-01",
+   "last_date": "2013-11-29",
+   "gbp_total": 1854789925.79,
+   "tx": 39867,
+   "median_amount": 1176.0
+  },
+  {
+   "publisher": "Portsmouth Hospital NHS Trust",
+   "files": 43,
+   "files_parsed": 41,
+   "parse_rate": 0.953,
+   "first_date": "2022-04-30",
+   "last_date": "2025-10-31",
+   "gbp_total": 1626327656.5,
+   "tx": 19853,
+   "median_amount": 3961.52
+  },
+  {
+   "publisher": "NHS Thames Valley ICB",
+   "files": 3,
+   "files_parsed": 3,
+   "parse_rate": 1.0,
+   "first_date": "2024-03-28",
+   "last_date": "2026-07-01",
+   "gbp_total": 1500841868.2,
+   "tx": 11337,
+   "median_amount": 4782.59
+  },
+  {
+   "publisher": "East Sussex Healthcare NHS Trust",
+   "files": 141,
+   "files_parsed": 140,
+   "parse_rate": 0.993,
+   "first_date": "2014-10-02",
+   "last_date": "2026-07-30",
+   "gbp_total": 1363111785.35,
+   "tx": 16024,
+   "median_amount": 44384.11
+  },
+  {
+   "publisher": "NHS Business Services Authority",
+   "files": 87,
+   "files_parsed": 86,
+   "parse_rate": 0.989,
+   "first_date": "2019-04-05",
+   "last_date": "2026-06-26",
+   "gbp_total": 1305649099.6,
+   "tx": 10652,
+   "median_amount": 33532.8
+  },
+  {
+   "publisher": "NHS Norfolk and Suffolk ICB - 25k Expenditure Report",
+   "files": 3,
+   "files_parsed": 3,
+   "parse_rate": 1.0,
+   "first_date": "2026-04-01",
+   "last_date": "2026-06-30",
+   "gbp_total": 1154540830.29,
+   "tx": 10393,
+   "median_amount": 4503.0
+  },
+  {
+   "publisher": "Maidstone and Tunbridge Wells NHS Trust",
+   "files": 73,
+   "files_parsed": 72,
+   "parse_rate": 0.986,
+   "first_date": "2020-04-02",
+   "last_date": "2026-04-29",
+   "gbp_total": 1116115170.47,
+   "tx": 12693,
+   "median_amount": 36952.86
+  },
+  {
+   "publisher": "UK Trade and Investment",
+   "files": 73,
+   "files_parsed": 73,
+   "parse_rate": 1.0,
+   "first_date": "2010-02-08",
+   "last_date": "2016-05-31",
+   "gbp_total": 1021830194.66,
+   "tx": 100010,
+   "median_amount": 800.0
+  },
+  {
+   "publisher": "Coventry and Warwickshire Partnership NHS Trust",
+   "files": 187,
+   "files_parsed": 182,
+   "parse_rate": 0.973,
+   "first_date": "2010-04-09",
+   "last_date": "2026-05-28",
+   "gbp_total": 782469603.67,
+   "tx": 15749,
+   "median_amount": 22320.0
+  },
+  {
+   "publisher": "Pennine Care NHS Foundation Trust",
+   "files": 85,
+   "files_parsed": 67,
+   "parse_rate": 0.788,
+   "first_date": "2021-01-04",
+   "last_date": "2026-08-10",
+   "gbp_total": 776596145.25,
+   "tx": 3582,
+   "median_amount": 62982.66
+  },
+  {
+   "publisher": "North Yorkshire Council",
+   "files": 6,
+   "files_parsed": 5,
+   "parse_rate": 0.833,
+   "first_date": "2023-04-26",
+   "last_date": "2026-06-30",
+   "gbp_total": 670617577.73,
+   "tx": 160073,
+   "median_amount": 442.27
+  },
+  {
+   "publisher": "HM Treasury",
+   "files": 168,
+   "files_parsed": 76,
+   "parse_rate": 0.452,
+   "first_date": "2010-04-06",
+   "last_date": "2014-02-28",
+   "gbp_total": 539819781.74,
+   "tx": 4238,
+   "median_amount": 4449.65
+  },
+  {
+   "publisher": "UK Sport",
+   "files": 135,
+   "files_parsed": 125,
+   "parse_rate": 0.926,
+   "first_date": "2010-03-24",
+   "last_date": "2021-07-08",
+   "gbp_total": 497156257.06,
+   "tx": 3394,
+   "median_amount": 61216.0
+  },
+  {
+   "publisher": "South Gloucestershire Council",
+   "files": 20,
+   "files_parsed": 14,
+   "parse_rate": 0.7,
+   "first_date": "2010-09-05",
+   "last_date": "2011-11-30",
+   "gbp_total": 468622365.76,
+   "tx": 47575,
+   "median_amount": 1285.37
+  },
+  {
+   "publisher": "Shropshire Community Health NHS Trust",
+   "files": 179,
+   "files_parsed": 173,
+   "parse_rate": 0.966,
+   "first_date": "2011-07-08",
+   "last_date": "2026-08-01",
+   "gbp_total": 436117578.46,
+   "tx": 1976540,
+   "median_amount": 5.74
+  },
+  {
+   "publisher": "Tate",
+   "files": 100,
+   "files_parsed": 100,
+   "parse_rate": 1.0,
+   "first_date": "2010-04-01",
+   "last_date": "2019-03-31",
+   "gbp_total": 404411677.36,
+   "tx": 4100,
+   "median_amount": 59350.0
+  },
+  {
+   "publisher": "South Central Ambulance Service NHS Foundation Trust",
+   "files": 42,
+   "files_parsed": 42,
+   "parse_rate": 1.0,
+   "first_date": "2021-09-29",
+   "last_date": "2025-09-29",
+   "gbp_total": 404009369.82,
+   "tx": 6735,
+   "median_amount": 32806.55
+  },
+  {
+   "publisher": "Uttlesford District Council",
+   "files": 7,
+   "files_parsed": 7,
+   "parse_rate": 1.0,
+   "first_date": "2019-04-02",
+   "last_date": "2026-03-27",
+   "gbp_total": 388027856.15,
+   "tx": 34488,
+   "median_amount": 1341.6
+  },
+  {
+   "publisher": "Former council of North Yorkshire",
+   "files": 12,
+   "files_parsed": 11,
+   "parse_rate": 0.917,
+   "first_date": "2022-04-01",
+   "last_date": "2023-03-31",
+   "gbp_total": 343213474.95,
+   "tx": 110512,
+   "median_amount": 191.28
+  },
+  {
+   "publisher": "National Institute for Health and Care Excellence",
+   "files": 159,
+   "files_parsed": 117,
+   "parse_rate": 0.736,
+   "first_date": "2010-04-30",
+   "last_date": "2022-03-01",
+   "gbp_total": 280192045.19,
+   "tx": 2289,
+   "median_amount": 55289.19
+  },
+  {
+   "publisher": "Rushmoor Borough Council",
+   "files": 189,
+   "files_parsed": 187,
+   "parse_rate": 0.989,
+   "first_date": "2010-04-06",
+   "last_date": "2026-05-28",
+   "gbp_total": 263016125.35,
+   "tx": 64009,
+   "median_amount": 1030.0
+  },
+  {
+   "publisher": "Salisbury NHS Foundation Trust",
+   "files": 119,
+   "files_parsed": 111,
+   "parse_rate": 0.933,
+   "first_date": "2010-04-09",
+   "last_date": "2020-07-31",
+   "gbp_total": 233503959.2,
+   "tx": 938471,
+   "median_amount": 5.0
+  },
+  {
+   "publisher": "The National Archives",
+   "files": 298,
+   "files_parsed": 270,
+   "parse_rate": 0.906,
+   "first_date": "2010-04-07",
+   "last_date": "2025-04-07",
+   "gbp_total": 207830679.47,
+   "tx": 13759,
+   "median_amount": 600.0
+  },
+  {
+   "publisher": "UK Shared Business Services",
+   "files": 42,
+   "files_parsed": 42,
+   "parse_rate": 1.0,
+   "first_date": "2015-10-02",
+   "last_date": "2025-05-30",
+   "gbp_total": 150739536.6,
+   "tx": 17489,
+   "median_amount": 227.7
+  },
+  {
+   "publisher": "Milton Keynes Hospital NHS Foundation Trust",
+   "files": 192,
+   "files_parsed": 84,
+   "parse_rate": 0.438,
+   "first_date": "2010-12-01",
+   "last_date": "2018-07-31",
+   "gbp_total": 113004128.53,
+   "tx": 1957,
+   "median_amount": 45017.92
+  },
+  {
+   "publisher": "Whittington Hospital NHS Trust",
+   "files": 34,
+   "files_parsed": 29,
+   "parse_rate": 0.853,
+   "first_date": "2012-02-02",
+   "last_date": "2014-12-19",
+   "gbp_total": 105654121.34,
+   "tx": 1255,
+   "median_amount": 47248.1
+  },
+  {
+   "publisher": "George Eliot Hospital NHS Trust",
+   "files": 17,
+   "files_parsed": 17,
+   "parse_rate": 1.0,
+   "first_date": "2022-04-12",
+   "last_date": "2025-08-29",
+   "gbp_total": 99990220.93,
+   "tx": 834,
+   "median_amount": 56199.19
+  },
+  {
+   "publisher": "Plymouth City Council",
+   "files": 5,
+   "files_parsed": 4,
+   "parse_rate": 0.8,
+   "first_date": "2015-03-02",
+   "last_date": "2015-12-22",
+   "gbp_total": 94926865.59,
+   "tx": 20213,
+   "median_amount": 995.77
+  },
+  {
+   "publisher": "Natural History Museum",
+   "files": 39,
+   "files_parsed": 36,
+   "parse_rate": 0.923,
+   "first_date": "2010-11-08",
+   "last_date": "2014-04-04",
+   "gbp_total": 92005192.16,
+   "tx": 55860,
+   "median_amount": 152.0
+  },
+  {
+   "publisher": "UK Commission for Employment and Skills",
+   "files": 16,
+   "files_parsed": 12,
+   "parse_rate": 0.75,
+   "first_date": "2008-07-07",
+   "last_date": "2011-02-24",
+   "gbp_total": 60189022.64,
+   "tx": 491,
+   "median_amount": 139680.0
+  },
+  {
+   "publisher": "Blaby District Council",
+   "files": 71,
+   "files_parsed": 71,
+   "parse_rate": 1.0,
+   "first_date": "2013-01-03",
+   "last_date": "2019-01-10",
+   "gbp_total": 58829813.52,
+   "tx": 17253,
+   "median_amount": 745.18
+  },
+  {
+   "publisher": "Animal and Plant Health Agency",
+   "files": 17,
+   "files_parsed": 17,
+   "parse_rate": 1.0,
+   "first_date": "2010-04-01",
+   "last_date": "2011-08-30",
+   "gbp_total": 47306634.62,
+   "tx": 367,
+   "median_amount": 39803.31
+  },
+  {
+   "publisher": "Eden District Council",
+   "files": 99,
+   "files_parsed": 98,
+   "parse_rate": 0.99,
+   "first_date": "2013-01-11",
+   "last_date": "2018-09-28",
+   "gbp_total": 44397756.37,
+   "tx": 9913,
+   "median_amount": 1349.8
+  },
+  {
+   "publisher": "Victoria & Albert Museum",
+   "files": 31,
+   "files_parsed": 31,
+   "parse_rate": 1.0,
+   "first_date": "2010-05-10",
+   "last_date": "2012-11-30",
+   "gbp_total": 41753049.32,
+   "tx": 646,
+   "median_amount": 44579.0
+  },
+  {
+   "publisher": "Government Legal Department",
+   "files": 43,
+   "files_parsed": 10,
+   "parse_rate": 0.233,
+   "first_date": "2013-01-09",
+   "last_date": "2014-01-31",
+   "gbp_total": 36885133.1,
+   "tx": 505,
+   "median_amount": 25277.11
+  },
+  {
+   "publisher": "Royal United Hospital Bath NHS Foundation Trust",
+   "files": 15,
+   "files_parsed": 14,
+   "parse_rate": 0.933,
+   "first_date": "2008-10-24",
+   "last_date": "2012-04-18",
+   "gbp_total": 32534437.93,
+   "tx": 473,
+   "median_amount": 45866.29
+  },
+  {
+   "publisher": "Office of Rail and Road",
+   "files": 123,
+   "files_parsed": 60,
+   "parse_rate": 0.488,
+   "first_date": "2017-06-07",
+   "last_date": "2026-03-27",
+   "gbp_total": 29115097.83,
+   "tx": 473,
+   "median_amount": 39706.1
+  },
+  {
+   "publisher": "Children and Family Court Advisory and Support Service",
+   "files": 39,
+   "files_parsed": 12,
+   "parse_rate": 0.308,
+   "first_date": "2023-01-06",
+   "last_date": "2026-03-30",
+   "gbp_total": 22424629.79,
+   "tx": 543,
+   "median_amount": 26869.18
+  },
+  {
+   "publisher": "Northern Ireland Office",
+   "files": 45,
+   "files_parsed": 23,
+   "parse_rate": 0.511,
+   "first_date": "2021-04-02",
+   "last_date": "2026-04-30",
+   "gbp_total": 13485072.32,
+   "tx": 157,
+   "median_amount": 41307.27
+  },
+  {
+   "publisher": "Cheltenham Borough Council",
+   "files": 12,
+   "files_parsed": 12,
+   "parse_rate": 1.0,
+   "first_date": "2019-12-05",
+   "last_date": "2020-12-29",
+   "gbp_total": 13204354.65,
+   "tx": 3407,
+   "median_amount": 1774.9
+  },
+  {
+   "publisher": "London Borough of Richmond Upon Thames",
+   "files": 1,
+   "files_parsed": 1,
+   "parse_rate": 1.0,
+   "first_date": null,
+   "last_date": null,
+   "gbp_total": 12257699.43,
+   "tx": 1953,
+   "median_amount": 2021.02
+  },
+  {
+   "publisher": "Equality and Human Rights Commission",
+   "files": 12,
+   "files_parsed": 6,
+   "parse_rate": 0.5,
+   "first_date": "2011-06-01",
+   "last_date": "2012-04-30",
+   "gbp_total": 11193650.39,
+   "tx": 1661,
+   "median_amount": 2168.17
+  },
+  {
+   "publisher": "Charity Commission for England and Wales",
+   "files": 69,
+   "files_parsed": 35,
+   "parse_rate": 0.507,
+   "first_date": "2013-04-03",
+   "last_date": "2015-03-31",
+   "gbp_total": 9046037.13,
+   "tx": 275,
+   "median_amount": 25859.69
+  },
+  {
+   "publisher": "Veterinary Laboratories Agency",
+   "files": 16,
+   "files_parsed": 16,
+   "parse_rate": 1.0,
+   "first_date": "2010-04-12",
+   "last_date": "2011-08-30",
+   "gbp_total": 7956624.27,
+   "tx": 161,
+   "median_amount": 37743.24
+  },
+  {
+   "publisher": "Former district of Harrogate",
+   "files": 23,
+   "files_parsed": 23,
+   "parse_rate": 1.0,
+   "first_date": "2023-04-05",
+   "last_date": "2025-04-09",
+   "gbp_total": 5591938.14,
+   "tx": 2058,
+   "median_amount": 324.85
+  },
+  {
+   "publisher": "Wales Office",
+   "files": 32,
+   "files_parsed": 30,
+   "parse_rate": 0.938,
+   "first_date": "2010-01-06",
+   "last_date": "2012-09-28",
+   "gbp_total": 3449240.64,
+   "tx": 615,
+   "median_amount": 1225.96
+  },
+  {
+   "publisher": "Queen Elizabeth II Conference Centre",
+   "files": 10,
+   "files_parsed": 6,
+   "parse_rate": 0.6,
+   "first_date": null,
+   "last_date": null,
+   "gbp_total": 1475617.79,
+   "tx": 536,
+   "median_amount": 800.0
+  },
+  {
+   "publisher": "Department for Exiting the European Union",
+   "files": 2,
+   "files_parsed": 2,
+   "parse_rate": 1.0,
+   "first_date": "2016-11-07",
+   "last_date": "2017-02-03",
+   "gbp_total": 1372610.44,
+   "tx": 2,
+   "median_amount": 1372000.0
+  },
+  {
+   "publisher": "Scotland Office",
+   "files": 11,
+   "files_parsed": 7,
+   "parse_rate": 0.636,
+   "first_date": "2009-04-01",
+   "last_date": "2011-06-23",
+   "gbp_total": 1335041.89,
+   "tx": 22,
+   "median_amount": 37897.54
+  },
+  {
+   "publisher": "National Fraud Authority",
+   "files": 3,
+   "files_parsed": 3,
+   "parse_rate": 1.0,
+   "first_date": "2010-05-27",
+   "last_date": "2011-09-20",
+   "gbp_total": 1155661.67,
+   "tx": 25,
+   "median_amount": 45541.41
+  },
+  {
+   "publisher": "Parliamentary and Health Service Ombudsman (PHSO)",
+   "files": 4,
+   "files_parsed": 3,
+   "parse_rate": 0.75,
+   "first_date": "2021-08-12",
+   "last_date": "2021-10-25",
+   "gbp_total": 922481.82,
+   "tx": 12,
+   "median_amount": 65091.07
+  },
+  {
+   "publisher": "Sea Fish Industry Authority",
+   "files": 8,
+   "files_parsed": 5,
+   "parse_rate": 0.625,
+   "first_date": "2010-04-01",
+   "last_date": "2012-09-25",
+   "gbp_total": 646521.69,
+   "tx": 6,
+   "median_amount": 162771.62
+  },
+  {
+   "publisher": "Sustainable Development Commission",
+   "files": 4,
+   "files_parsed": 4,
+   "parse_rate": 1.0,
+   "first_date": "2010-10-26",
+   "last_date": "2010-10-26",
+   "gbp_total": 321397.64,
+   "tx": 7,
+   "median_amount": 32419.48
+  },
+  {
+   "publisher": "Valuation Office Agency",
+   "files": 22,
+   "files_parsed": 20,
+   "parse_rate": 0.909,
+   "first_date": "2014-05-12",
+   "last_date": "2016-04-04",
+   "gbp_total": 26693.37,
+   "tx": 44,
+   "median_amount": 599.0
+  },
+  {
+   "publisher": "Wigan Metropolitan Borough Council",
+   "files": 2,
+   "files_parsed": 0,
+   "parse_rate": 0.0,
+   "first_date": null,
+   "last_date": null,
+   "gbp_total": null,
+   "tx": null,
+   "median_amount": null
+  },
+  {
+   "publisher": "Weston Area Health NHS Trust",
+   "files": 7,
+   "files_parsed": 0,
+   "parse_rate": 0.0,
+   "first_date": null,
+   "last_date": null,
+   "gbp_total": null,
+   "tx": null,
+   "median_amount": null
+  },
+  {
+   "publisher": "Trafford Council",
+   "files": 4,
+   "files_parsed": 0,
+   "parse_rate": 0.0,
+   "first_date": null,
+   "last_date": null,
+   "gbp_total": null,
+   "tx": null,
+   "median_amount": null
+  },
+  {
+   "publisher": "Sandwell Metropolitan Borough Council",
+   "files": 1,
+   "files_parsed": 0,
+   "parse_rate": 0.0,
+   "first_date": null,
+   "last_date": null,
+   "gbp_total": null,
+   "tx": null,
+   "median_amount": null
+  },
+  {
+   "publisher": "Rochdale Borough Council",
+   "files": 6,
+   "files_parsed": 0,
+   "parse_rate": 0.0,
+   "first_date": null,
+   "last_date": null,
+   "gbp_total": null,
+   "tx": null,
+   "median_amount": null
+  },
+  {
+   "publisher": "Head Office and Corporate Services",
+   "files": 7,
+   "files_parsed": 0,
+   "parse_rate": 0.0,
+   "first_date": null,
+   "last_date": null,
+   "gbp_total": null,
+   "tx": null,
+   "median_amount": null
+  },
+  {
+   "publisher": "Food Standards Agency",
+   "files": 35,
+   "files_parsed": 0,
+   "parse_rate": 0.0,
+   "first_date": null,
+   "last_date": null,
+   "gbp_total": null,
+   "tx": null,
+   "median_amount": null
+  },
+  {
+   "publisher": "City of London",
+   "files": 1,
+   "files_parsed": 0,
+   "parse_rate": 0.0,
+   "first_date": null,
+   "last_date": null,
+   "gbp_total": null,
+   "tx": null,
+   "median_amount": null
+  }
+ ],
+ "failure_census": [
+  {
+   "status": "parsed",
+   "files": 5593
+  },
+  {
+   "status": "excluded-approvals-dataset",
+   "files": 570
+  },
+  {
+   "status": "not-csv-html-or-xml",
+   "files": 354
+  },
+  {
+   "status": "fetch-failed",
+   "files": 215
+  },
+  {
+   "status": "no-amount-column",
+   "files": 148
+  },
+  {
+   "status": "no-header",
+   "files": 147
+  },
+  {
+   "status": "not-csv-xlsx-zip",
+   "files": 52
+  },
+  {
+   "status": "no-supplier-column",
+   "files": 50
+  },
+  {
+   "status": "not-csv-xls-ole",
+   "files": 49
+  },
+  {
+   "status": "not-csv-pdf",
+   "files": 2
+  }
+ ],
+ "failure_detail": {
+  "fetch_errors": [
+   {
+    "note": "http-403",
+    "n": 94
+   },
+   {
+    "note": "http-404",
+    "n": 88
+   },
+   {
+    "note": "http-202",
+    "n": 19
+   },
+   {
+    "note": "request-error: ConnectionError",
+    "n": 12
+   },
+   {
+    "note": "stream-error: ConnectionError",
+    "n": 1
+   },
+   {
+    "note": "http-400",
+    "n": 1
+   }
+  ],
+  "mojibake_files": 2,
+  "cp1252_files": 2546,
+  "mdy_date_files": 38
+ },
+ "largest_transactions": [
+  {
+   "publisher": "Department of Health and Social Care",
+   "date": "2021-03-24",
+   "supplier_raw": "HM TREASURY HMT",
+   "amount": 34000000000.0,
+   "source_file": "465fd2f512c79f679c557f526bf9a8f832d40f9b.bin"
+  },
+  {
+   "publisher": "Department of Health and Social Care",
+   "date": "2020-11-05",
+   "supplier_raw": "HM TREASURY HMT",
+   "amount": 25000000000.0,
+   "source_file": "833c6ddb72d0515f86057ee48b6aa63ceb4a5a6c.bin"
+  },
+  {
+   "publisher": "Department of Health and Social Care",
+   "date": "2020-04-01",
+   "supplier_raw": "NHS ENGLAND CBA033",
+   "amount": 12009966000.0,
+   "source_file": "75013887ce44df5b51f24e0dba0efb6b77daec9c.bin"
+  },
+  {
+   "publisher": "Department of Health and Social Care",
+   "date": "2022-09-01",
+   "supplier_raw": "NHS ENGLAND CBA033",
+   "amount": 9358232000.0,
+   "source_file": "49d44852179850d813af2da81c393eb77739b395.bin"
+  },
+  {
+   "publisher": "Department of Health and Social Care",
+   "date": "2022-03-01",
+   "supplier_raw": "NHS ENGLAND CBA033",
+   "amount": 9328715000.0,
+   "source_file": "1758d2216ff57c418a06d686336d2ef596e03d61.bin"
+  },
+  {
+   "publisher": "Department of Health and Social Care",
+   "date": "2022-02-01",
+   "supplier_raw": "NHS ENGLAND CBA033",
+   "amount": 9012146000.0,
+   "source_file": "6b5def4b47b3e79a379df4eb2ef25c4214c4eea4.bin"
+  },
+  {
+   "publisher": "Department of Health and Social Care",
+   "date": "2022-10-03",
+   "supplier_raw": "NHS ENGLAND CBA033",
+   "amount": 8885804000.0,
+   "source_file": "6ee6bd60a3d89cf0f3cf61f98b6867fbc82346e4.bin"
+  },
+  {
+   "publisher": "Department of Health and Social Care",
+   "date": "2022-08-01",
+   "supplier_raw": "NHS ENGLAND CBA033",
+   "amount": 8867705000.0,
+   "source_file": "27aefbf143a4b9ec9137e02476a1c5ebeecd7d60.bin"
+  },
+  {
+   "publisher": "Department of Health and Social Care",
+   "date": "2022-11-01",
+   "supplier_raw": "NHS ENGLAND CBA033",
+   "amount": 8808229000.0,
+   "source_file": "e31aec5134cf7a514c973f935b976ed0acc48b27.bin"
+  },
+  {
+   "publisher": "Department of Health and Social Care",
+   "date": "2022-07-01",
+   "supplier_raw": "NHS ENGLAND CBA033",
+   "amount": 8796410000.0,
+   "source_file": "06d18760527026a2bdd91abf0d58db22cd158900.bin"
+  }
+ ],
+ "negative_rows": {
+  "n": 436532,
+  "gbp": -131714588666.36
+ },
+ "council_coverage": {
+  "register_size": 361,
+  "councils_in_corpus": 9,
+  "matches": {
+   "Blaby": "Blaby District Council",
+   "Cheltenham": "Cheltenham Borough Council",
+   "Greenwich": "Royal Borough of Greenwich",
+   "North Yorkshire": "Former council of North Yorkshire",
+   "Plymouth": "Plymouth City Council",
+   "Richmond upon Thames": "London Borough of Richmond Upon Thames",
+   "Rushmoor": "Rushmoor Borough Council",
+   "South Gloucestershire": "South Gloucestershire Council",
+   "Uttlesford": "Uttlesford District Council"
+  },
+  "non_council_publishers": [
+   "Animal and Plant Health Agency",
+   "Bristol City Council",
+   "Cabinet Office",
+   "Charity Commission for England and Wales",
+   "Children and Family Court Advisory and Support Service",
+   "Coventry and Warwickshire Partnership NHS Trust",
+   "Department for Digital, Culture, Media and Sport",
+   "Department for Education",
+   "Department for Energy Security and Net Zero",
+   "Department for Environment, Food and Rural Affairs",
+   "Department for Exiting the European Union",
+   "Department for International Development",
+   "Department for Science, Innovation and Technology",
+   "Department for Work and Pensions",
+   "Department of Health and Social Care",
+   "East Sussex Healthcare NHS Trust",
+   "Eden District Council",
+   "Equality and Human Rights Commission",
+   "Foreign and Commonwealth Office",
+   "Foreign, Commonwealth and Development Office (FCDO)",
+   "Former district of Harrogate",
+   "George Eliot Hospital NHS Trust",
+   "Government Legal Department",
+   "HM Revenue and Customs",
+   "HM Treasury",
+   "Home Office",
+   "Isle of Wight NHS Trust",
+   "Maidstone and Tunbridge Wells NHS Trust",
+   "Milton Keynes Hospital NHS Foundation Trust",
+   "Ministry of Defence",
+   "Ministry of Housing, Communities and Local Government",
+   "Ministry of Justice",
+   "NHS Business Services Authority",
+   "NHS East and North Hertfordshire CCG",
+   "NHS Norfolk and Suffolk ICB - 25k Expenditure Report",
+   "NHS Thames Valley ICB",
+   "National Fraud Authority",
+   "National Institute for Health and Care Excellence",
+   "National Offender Management Service",
+   "Natural History Museum",
+   "North Yorkshire Council",
+   "Northern Ireland Office",
+   "Office of Rail and Road",
+   "Parliamentary and Health Service Ombudsman (PHSO)",
+   "Pennine Care NHS Foundation Trust",
+   "Portsmouth Hospital NHS Trust",
+   "Queen Elizabeth II Conference Centre",
+   "Royal United Hospital Bath NHS Foundation Trust",
+   "Salisbury NHS Foundation Trust",
+   "Scotland Office",
+   "Sea Fish Industry Authority",
+   "Shropshire Community Health NHS Trust",
+   "South Central Ambulance Service NHS Foundation Trust",
+   "Sustainable Development Commission",
+   "Tate",
+   "The National Archives",
+   "The Pennine Acute Hospitals NHS Trust",
+   "Transport for Greater Manchester",
+   "UK Commission for Employment and Skills",
+   "UK Shared Business Services",
+   "UK Sport",
+   "UK Trade and Investment",
+   "United Lincolnshire Hospitals NHS Trust",
+   "Valuation Office Agency",
+   "Veterinary Laboratories Agency",
+   "Victoria & Albert Museum",
+   "Wales Office",
+   "Whittington Hospital NHS Trust"
+  ]
+ }
+}

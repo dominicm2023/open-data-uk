@@ -1,0 +1,496 @@
+{
+  "mega_transfers": [
+    {
+      "publisher": "Department of Health and Social Care",
+      "supplier_raw": "HM TREASURY HMT",
+      "date": "2021-03-24",
+      "amount": 34000000000.0
+    },
+    {
+      "publisher": "Department of Health and Social Care",
+      "supplier_raw": "HM TREASURY HMT",
+      "date": "2020-11-05",
+      "amount": 25000000000.0
+    }
+  ],
+  "pairs": 9523,
+  "bodies": 4919,
+  "gbp_to_public_bodies_excl_mega": 1724040964570.14,
+  "publisher_shares": [
+    {
+      "publisher": "Department of Health and Social Care",
+      "total_gbp": 1373506093537.66,
+      "public_body_gbp": 1250199859956.8,
+      "share": 0.9102
+    },
+    {
+      "publisher": "NHS Thames Valley ICB",
+      "total_gbp": 1500841868.2,
+      "public_body_gbp": 1279841339.07,
+      "share": 0.8527
+    },
+    {
+      "publisher": "Scotland Office",
+      "total_gbp": 1335041.89,
+      "public_body_gbp": 1129326.31,
+      "share": 0.8459
+    },
+    {
+      "publisher": "NHS East and North Hertfordshire CCG",
+      "total_gbp": 2419124808.77,
+      "public_body_gbp": 1968855978.51,
+      "share": 0.8139
+    },
+    {
+      "publisher": "NHS Norfolk and Suffolk ICB - 25k Expenditure Report",
+      "total_gbp": 1154540830.29,
+      "public_body_gbp": 938254571.33,
+      "share": 0.8127
+    },
+    {
+      "publisher": "Pennine Care NHS Foundation Trust",
+      "total_gbp": 776596145.25,
+      "public_body_gbp": 572440701.53,
+      "share": 0.7371
+    },
+    {
+      "publisher": "Home Office",
+      "total_gbp": 84545024331.14,
+      "public_body_gbp": 59254875312.54,
+      "share": 0.7009
+    },
+    {
+      "publisher": "Former district of Harrogate",
+      "total_gbp": 5591938.14,
+      "public_body_gbp": 3680231.14,
+      "share": 0.6581
+    },
+    {
+      "publisher": "Department for Science, Innovation and Technology",
+      "total_gbp": 27935871937.06,
+      "public_body_gbp": 16315999388.51,
+      "share": 0.5841
+    },
+    {
+      "publisher": "The Pennine Acute Hospitals NHS Trust",
+      "total_gbp": 2514731277.83,
+      "public_body_gbp": 1406166069.81,
+      "share": 0.5592
+    },
+    {
+      "publisher": "United Lincolnshire Hospitals NHS Trust",
+      "total_gbp": 2654760957.98,
+      "public_body_gbp": 1466393262.33,
+      "share": 0.5524
+    },
+    {
+      "publisher": "Whittington Hospital NHS Trust",
+      "total_gbp": 105654121.34,
+      "public_body_gbp": 53879830.04,
+      "share": 0.51
+    },
+    {
+      "publisher": "George Eliot Hospital NHS Trust",
+      "total_gbp": 99990220.93,
+      "public_body_gbp": 49216153.87,
+      "share": 0.4922
+    },
+    {
+      "publisher": "Northern Ireland Office",
+      "total_gbp": 13485072.32,
+      "public_body_gbp": 6253704.79,
+      "share": 0.4638
+    },
+    {
+      "publisher": "Shropshire Community Health NHS Trust",
+      "total_gbp": 436117578.46,
+      "public_body_gbp": 201113595.29,
+      "share": 0.4611
+    },
+    {
+      "publisher": "Coventry and Warwickshire Partnership NHS Trust",
+      "total_gbp": 782469603.67,
+      "public_body_gbp": 324945414.32,
+      "share": 0.4153
+    },
+    {
+      "publisher": "Government Legal Department",
+      "total_gbp": 36885133.1,
+      "public_body_gbp": 14293986.27,
+      "share": 0.3875
+    },
+    {
+      "publisher": "Sea Fish Industry Authority",
+      "total_gbp": 646521.69,
+      "public_body_gbp": 233282.7,
+      "share": 0.3608
+    },
+    {
+      "publisher": "Portsmouth Hospital NHS Trust",
+      "total_gbp": 1626327656.5,
+      "public_body_gbp": 586156698.53,
+      "share": 0.3604
+    },
+    {
+      "publisher": "East Sussex Healthcare NHS Trust",
+      "total_gbp": 1363111785.35,
+      "public_body_gbp": 481013059.02,
+      "share": 0.3529
+    },
+    {
+      "publisher": "Blaby District Council",
+      "total_gbp": 58829813.52,
+      "public_body_gbp": 20620661.3,
+      "share": 0.3505
+    },
+    {
+      "publisher": "Royal United Hospital Bath NHS Foundation Trust",
+      "total_gbp": 32534437.93,
+      "public_body_gbp": 10232275.08,
+      "share": 0.3145
+    },
+    {
+      "publisher": "UK Trade and Investment",
+      "total_gbp": 1021830194.66,
+      "public_body_gbp": 304694706.11,
+      "share": 0.2982
+    },
+    {
+      "publisher": "Department for Education",
+      "total_gbp": 1011273151498.73,
+      "public_body_gbp": 272225122149.46,
+      "share": 0.2692
+    },
+    {
+      "publisher": "NHS Business Services Authority",
+      "total_gbp": 1305649099.6,
+      "public_body_gbp": 343924051.32,
+      "share": 0.2634
+    },
+    {
+      "publisher": "Ministry of Justice",
+      "total_gbp": 14842030773.87,
+      "public_body_gbp": 3881705690.37,
+      "share": 0.2615
+    },
+    {
+      "publisher": "Foreign and Commonwealth Office",
+      "total_gbp": 7810957531.85,
+      "public_body_gbp": 2007781555.22,
+      "share": 0.257
+    },
+    {
+      "publisher": "Salisbury NHS Foundation Trust",
+      "total_gbp": 233503959.2,
+      "public_body_gbp": 60013079.61,
+      "share": 0.257
+    },
+    {
+      "publisher": "Ministry of Housing, Communities and Local Government",
+      "total_gbp": 357995272432.4,
+      "public_body_gbp": 87177432460.41,
+      "share": 0.2435
+    },
+    {
+      "publisher": "Isle of Wight NHS Trust",
+      "total_gbp": 1879345059.7,
+      "public_body_gbp": 406621265.99,
+      "share": 0.2164
+    },
+    {
+      "publisher": "Milton Keynes Hospital NHS Foundation Trust",
+      "total_gbp": 113004128.53,
+      "public_body_gbp": 24276808.6,
+      "share": 0.2148
+    },
+    {
+      "publisher": "Maidstone and Tunbridge Wells NHS Trust",
+      "total_gbp": 1116115170.47,
+      "public_body_gbp": 230158737.05,
+      "share": 0.2062
+    },
+    {
+      "publisher": "UK Shared Business Services",
+      "total_gbp": 150739536.6,
+      "public_body_gbp": 28087632.91,
+      "share": 0.1863
+    },
+    {
+      "publisher": "The National Archives",
+      "total_gbp": 207830679.47,
+      "public_body_gbp": 38371611.81,
+      "share": 0.1846
+    },
+    {
+      "publisher": "Eden District Council",
+      "total_gbp": 44397756.37,
+      "public_body_gbp": 6638740.99,
+      "share": 0.1495
+    },
+    {
+      "publisher": "Cheltenham Borough Council",
+      "total_gbp": 13204354.65,
+      "public_body_gbp": 1938485.83,
+      "share": 0.1468
+    },
+    {
+      "publisher": "Royal Borough of Greenwich",
+      "total_gbp": 2617753453.66,
+      "public_body_gbp": 363756866.55,
+      "share": 0.139
+    },
+    {
+      "publisher": "Department for Work and Pensions",
+      "total_gbp": 65633486950.83,
+      "public_body_gbp": 9024319611.63,
+      "share": 0.1375
+    },
+    {
+      "publisher": "Cabinet Office",
+      "total_gbp": 2452976429.05,
+      "public_body_gbp": 336968691.91,
+      "share": 0.1374
+    },
+    {
+      "publisher": "Bristol City Council",
+      "total_gbp": 3386201951.65,
+      "public_body_gbp": 457445521.79,
+      "share": 0.1351
+    },
+    {
+      "publisher": "Wales Office",
+      "total_gbp": 3449240.64,
+      "public_body_gbp": 456932.23,
+      "share": 0.1325
+    },
+    {
+      "publisher": "Foreign, Commonwealth and Development Office (FCDO)",
+      "total_gbp": 20962337609.55,
+      "public_body_gbp": 2713371797.9,
+      "share": 0.1294
+    },
+    {
+      "publisher": "National Offender Management Service",
+      "total_gbp": 5898237967.07,
+      "public_body_gbp": 725643522.85,
+      "share": 0.123
+    },
+    {
+      "publisher": "Rushmoor Borough Council",
+      "total_gbp": 263016125.35,
+      "public_body_gbp": 32083544.33,
+      "share": 0.122
+    },
+    {
+      "publisher": "Charity Commission for England and Wales",
+      "total_gbp": 9046037.13,
+      "public_body_gbp": 1075288.0,
+      "share": 0.1189
+    },
+    {
+      "publisher": "National Institute for Health and Care Excellence",
+      "total_gbp": 280192045.19,
+      "public_body_gbp": 30195755.37,
+      "share": 0.1078
+    },
+    {
+      "publisher": "Department for Digital, Culture, Media and Sport",
+      "total_gbp": 17230978323.37,
+      "public_body_gbp": 1833445504.45,
+      "share": 0.1064
+    },
+    {
+      "publisher": "Queen Elizabeth II Conference Centre",
+      "total_gbp": 1475617.79,
+      "public_body_gbp": 153610.71,
+      "share": 0.1041
+    },
+    {
+      "publisher": "Children and Family Court Advisory and Support Service",
+      "total_gbp": 22424629.79,
+      "public_body_gbp": 2262974.74,
+      "share": 0.1009
+    },
+    {
+      "publisher": "South Central Ambulance Service NHS Foundation Trust",
+      "total_gbp": 404009369.82,
+      "public_body_gbp": 38802166.21,
+      "share": 0.096
+    },
+    {
+      "publisher": "Office of Rail and Road",
+      "total_gbp": 29115097.83,
+      "public_body_gbp": 2471175.62,
+      "share": 0.0849
+    },
+    {
+      "publisher": "Former council of North Yorkshire",
+      "total_gbp": 343213474.95,
+      "public_body_gbp": 28214100.7,
+      "share": 0.0822
+    },
+    {
+      "publisher": "Uttlesford District Council",
+      "total_gbp": 388027856.15,
+      "public_body_gbp": 27741425.16,
+      "share": 0.0715
+    },
+    {
+      "publisher": "HM Treasury",
+      "total_gbp": 539819781.74,
+      "public_body_gbp": 34303282.21,
+      "share": 0.0635
+    },
+    {
+      "publisher": "North Yorkshire Council",
+      "total_gbp": 670617577.73,
+      "public_body_gbp": 41860599.37,
+      "share": 0.0624
+    },
+    {
+      "publisher": "Department for Environment, Food and Rural Affairs",
+      "total_gbp": 1854789925.79,
+      "public_body_gbp": 113876990.65,
+      "share": 0.0614
+    },
+    {
+      "publisher": "Plymouth City Council",
+      "total_gbp": 94926865.59,
+      "public_body_gbp": 5485733.63,
+      "share": 0.0578
+    },
+    {
+      "publisher": "Parliamentary and Health Service Ombudsman (PHSO)",
+      "total_gbp": 922481.82,
+      "public_body_gbp": 51666.0,
+      "share": 0.056
+    },
+    {
+      "publisher": "National Fraud Authority",
+      "total_gbp": 1155661.67,
+      "public_body_gbp": 64248.0,
+      "share": 0.0556
+    },
+    {
+      "publisher": "HM Revenue and Customs",
+      "total_gbp": 31385603852.96,
+      "public_body_gbp": 1528301544.67,
+      "share": 0.0487
+    },
+    {
+      "publisher": "Ministry of Defence",
+      "total_gbp": 56230363085.41,
+      "public_body_gbp": 2692509418.16,
+      "share": 0.0479
+    },
+    {
+      "publisher": "London Borough of Richmond Upon Thames",
+      "total_gbp": 12257699.43,
+      "public_body_gbp": 565947.08,
+      "share": 0.0462
+    },
+    {
+      "publisher": "Tate",
+      "total_gbp": 404411677.36,
+      "public_body_gbp": 17099815.23,
+      "share": 0.0423
+    },
+    {
+      "publisher": "Department for Energy Security and Net Zero",
+      "total_gbp": 10038469855.57,
+      "public_body_gbp": 360416867.47,
+      "share": 0.0359
+    },
+    {
+      "publisher": "Natural History Museum",
+      "total_gbp": 92005192.16,
+      "public_body_gbp": 3219797.23,
+      "share": 0.035
+    },
+    {
+      "publisher": "South Gloucestershire Council",
+      "total_gbp": 468622365.76,
+      "public_body_gbp": 15626641.37,
+      "share": 0.0333
+    },
+    {
+      "publisher": "Transport for Greater Manchester",
+      "total_gbp": 6715529995.51,
+      "public_body_gbp": 178675927.34,
+      "share": 0.0266
+    },
+    {
+      "publisher": "Equality and Human Rights Commission",
+      "total_gbp": 11193650.39,
+      "public_body_gbp": 291430.62,
+      "share": 0.026
+    },
+    {
+      "publisher": "Animal and Plant Health Agency",
+      "total_gbp": 47306634.62,
+      "public_body_gbp": 1038349.89,
+      "share": 0.0219
+    },
+    {
+      "publisher": "Department for International Development",
+      "total_gbp": 81484664634.74,
+      "public_body_gbp": 1532516506.87,
+      "share": 0.0188
+    },
+    {
+      "publisher": "Veterinary Laboratories Agency",
+      "total_gbp": 7956624.27,
+      "public_body_gbp": 69103.65,
+      "share": 0.0087
+    },
+    {
+      "publisher": "UK Sport",
+      "total_gbp": 497156257.06,
+      "public_body_gbp": 3726399.3,
+      "share": 0.0075
+    },
+    {
+      "publisher": "UK Commission for Employment and Skills",
+      "total_gbp": 60189022.64,
+      "public_body_gbp": 449017.0,
+      "share": 0.0075
+    },
+    {
+      "publisher": "Victoria & Albert Museum",
+      "total_gbp": 41753049.32,
+      "public_body_gbp": 185019.48,
+      "share": 0.0044
+    },
+    {
+      "publisher": "Valuation Office Agency",
+      "total_gbp": 26693.37,
+      "public_body_gbp": 0.0,
+      "share": 0.0
+    },
+    {
+      "publisher": "Sustainable Development Commission",
+      "total_gbp": 321397.64,
+      "public_body_gbp": 0.0,
+      "share": 0.0
+    },
+    {
+      "publisher": "Department for Exiting the European Union",
+      "total_gbp": 1372610.44,
+      "public_body_gbp": 0.0,
+      "share": 0.0
+    }
+  ],
+  "excluded_by_rule_gbp": {
+    "foreign government/body": 1929925631.18,
+    "charity/association/church": 792448675.99,
+    "non-UK ministry naming (UK has Defence/Justice/Housing)": 1283182196.05,
+    "education institution (out of scope)": 6367004378.68,
+    "payee unclear / ambiguous": 79660554.73,
+    "fee-funded regulator (borderline, excluded)": 55377827.72,
+    "private/charity ambulance": 19930175.88,
+    "abbreviation false positive (eyeballed)": 147098.84,
+    "police-adjacent non-state body": 24106668.76,
+    "private pension fund": 15225.0
+  },
+  "residual_unreviewed_tail_gbp": 427629969.25
+}

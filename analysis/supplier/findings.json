@@ -1,0 +1,838 @@
+{
+  "_meta": {
+    "analysis": "supplier identity across public bodies (analysis #9)",
+    "corpus": "../spending/corpus.db, clean set is_dup=0 AND supplier_raw<>'' (11,806,377 txns, GBP 3,269,164,975,567.92, 77 publishers, 241,495 distinct supplier_raw strings \u2014 verified by 00_build_agg.py)",
+    "blindness": "9 councils + 68 central bodies/NHS/ALBs. This is 'the bodies that publish, parsed', never 'the UK'. Never sum across publishers.",
+    "scripts": {
+      "00_build_agg.py": "corpus -> agg.db (per supplier x publisher rollup)",
+      "01_variant_census.py": "Q1 name-variant census -> variants.csv, variants_excluded.csv, census_summary.json",
+      "02_cross_body.py": "Q2 cross-body presence -> cross_body.json, cross_body_gainers.csv",
+      "03_flows.py": "Q3 public-body flows -> flows.csv, flows_summary.json",
+      "04_prices.py": "Q4 recurring-amount test -> recurring_candidates.csv (NOT SUPPORTED)"
+    }
+  },
+  "q1_variant_census": {
+    "method": "broad regex net per company over 241,495 distinct supplier strings, then every matched string eyeballed; exclusions are exact strings with reasons (variants_excluded.csv). Company = corporate group; JVs, unverifiable lookalikes and pass-through accounts excluded.",
+    "headline": {
+      "companies_censused": 18,
+      "included_variant_strings": 1350,
+      "excluded_ambiguous_strings": 65
+    },
+    "per_company": [
+      {
+        "company": "Amazon (incl. AWS)",
+        "variants": 566,
+        "publishers": 25,
+        "txns": 8086,
+        "gbp": 780940308.29,
+        "note": "Amazon group: AWS, retail, Marketplace, Business, Pay, and hundreds of card-statement lines with per-order references."
+      },
+      {
+        "company": "Capita",
+        "variants": 141,
+        "publishers": 49,
+        "txns": 48062,
+        "gbp": 3408356854.76,
+        "note": "Capita plc group incl. Business Services, Resourcing, Symonds, Veredus, Pay360, Hartshead, Gwent."
+      },
+      {
+        "company": "BT Group",
+        "variants": 116,
+        "publishers": 57,
+        "txns": 16808,
+        "gbp": 3743940572.17,
+        "note": "Includes BT plc, Openreach, BT Global Services, Syntegra, Redcare, Engage IT, Business Direct, EE excluded (not matched by net)."
+      },
+      {
+        "company": "Microsoft",
+        "variants": 94,
+        "publishers": 24,
+        "txns": 945,
+        "gbp": 175965384.62,
+        "note": "Microsoft Corp/Ltd/Ireland incl. invoice-suffixed card lines (Microsoft-G0...) and Microsoft Store."
+      },
+      {
+        "company": "G4S",
+        "variants": 91,
+        "publishers": 30,
+        "txns": 91569,
+        "gbp": 2990252899.07,
+        "note": "G4S group incl. overseas subsidiaries (Kenya, DRC, Uganda, Ghana, Jordan...) and predecessor Group 4 Securicor."
+      },
+      {
+        "company": "HMRC (as payee)",
+        "variants": 76,
+        "publishers": 48,
+        "txns": 7039,
+        "gbp": 6934563641.3,
+        "note": "HMRC and its predecessor the (UK) Inland Revenue as a PAYEE: PAYE/NI, VAT, CIS remittances by other bodies."
+      },
+      {
+        "company": "EDF Energy",
+        "variants": 52,
+        "publishers": 42,
+        "txns": 11766,
+        "gbp": 1471815411.83,
+        "note": "EDF Energy group incl. Customers, Networks, Trading, R&D, Nuclear Generation."
+      },
+      {
+        "company": "NHS Supply Chain (SCCL)",
+        "variants": 48,
+        "publishers": 23,
+        "txns": 1263219,
+        "gbp": 8656309778.12,
+        "note": "NHS Supply Chain brand + Supply Chain Coordination Ltd (its legal operator) + the NHS BSA-era account label; one operation across eras."
+      },
+      {
+        "company": "British Gas / Centrica",
+        "variants": 32,
+        "publishers": 32,
+        "txns": 6671,
+        "gbp": 69931922.01,
+        "note": "Centrica group incl. British Gas Trading/Services/Business, PH Jones. Corona Energy deliberately NOT in the net: it is Macquarie-owned, not Centrica (an early draft of this census wrongly netted it)."
+      },
+      {
+        "company": "Royal Mail",
+        "variants": 31,
+        "publishers": 38,
+        "txns": 224466,
+        "gbp": 1412812854.59,
+        "note": "Royal Mail Group incl. Wholesale, Holdings, Retail, online shop card lines."
+      },
+      {
+        "company": "Serco",
+        "variants": 31,
+        "publishers": 32,
+        "txns": 57634,
+        "gbp": 3722514230.76,
+        "note": "Serco Group plc incl. Assurance, Regional Services, Listening, Leisure, Defence Science."
+      },
+      {
+        "company": "Virgin Media",
+        "variants": 21,
+        "publishers": 31,
+        "txns": 2855,
+        "gbp": 48739216.25,
+        "note": "Virgin Media only (incl. Payments, Business, O2 merged entity). ALL other Virgin companies are separate businesses and are excluded by construction \u2014 see ambiguities."
+      },
+      {
+        "company": "Thames Water",
+        "variants": 12,
+        "publishers": 15,
+        "txns": 1062,
+        "gbp": 19475911.63,
+        "note": ""
+      },
+      {
+        "company": "Anglian Water",
+        "variants": 11,
+        "publishers": 11,
+        "txns": 1194,
+        "gbp": 24727991.33,
+        "note": "Incl. predecessor-named 'ANGLIAN WATER AUTHORITY' (legacy ledger name). Wave (JV) excluded."
+      },
+      {
+        "company": "Severn Trent",
+        "variants": 10,
+        "publishers": 10,
+        "txns": 553,
+        "gbp": 223532757.32,
+        "note": "Severn Trent plc incl. Services Defence."
+      },
+      {
+        "company": "South West Water (Pennon)",
+        "variants": 7,
+        "publishers": 9,
+        "txns": 80,
+        "gbp": 1115146.09,
+        "note": "Pennon group incl. Bristol Water t/a line."
+      },
+      {
+        "company": "Yorkshire Water",
+        "variants": 6,
+        "publishers": 7,
+        "txns": 84,
+        "gbp": 2936642.9,
+        "note": ""
+      },
+      {
+        "company": "NHS Professionals",
+        "variants": 5,
+        "publishers": 6,
+        "txns": 3629,
+        "gbp": 631778541.43,
+        "note": "DHSC-owned staffing bank."
+      }
+    ],
+    "exhibits": {
+      "capita_pass_through": "CAPITA TP NATWEST (GBP 35.61bn, 1,042 txns) + CAPITA TP HSBC (GBP 246.5m) are DfE 'Funding to pay Teachers' Pensions' routed through Capita's third-party bank accounts, 2010-04..2014-07. Pension money under a contractor's bank-account label; excluded from Capita's census total.",
+      "edf_acronym_trap": "EUROPEAN COMMISSION (EDF) = European Development Fund, GBP 3.17bn across 2 publishers. A naive 'EDF' match hands the electricity company three billion pounds of aid money.",
+      "card_statement_explosion": "Amazon's 566 strings are mostly one-off card-statement lines with per-order references (AMAZON.CO.UK MU5VK08U4...); Microsoft has 18+ invoice-suffixed 'Microsoft-G0...' strings. Purchase-card exports multiply variants without limit.",
+      "corona_energy_near_miss": "An early draft of this census netted Corona Energy under British Gas/Centrica. Corona Energy is Macquarie-owned. Kept as a documented near-miss: eyeballing is the control that caught it."
+    },
+    "excluded_by_company": {
+      "BT Group": [
+        {
+          "string": "BT Al Saudia",
+          "gbp": 1345139.61,
+          "reason": "JV, excluded per grouping rule"
+        },
+        {
+          "string": "Reverse duplicated transaction - see also BT 10032177 - MHCLG coronavirus hardship fund",
+          "gbp": 851709.0,
+          "reason": "note field pasted into supplier column"
+        },
+        {
+          "string": "British Telecom Al-Saudia Ltd.",
+          "gbp": 227027.18,
+          "reason": "JV"
+        },
+        {
+          "string": "BRITISH TELECOM AL-SAUDIA LTD.",
+          "gbp": 220235.0,
+          "reason": "JV"
+        },
+        {
+          "string": "BT AL SAUDIA",
+          "gbp": 195629.79,
+          "reason": "JV"
+        },
+        {
+          "string": "British Telecom Al Saudia Ltd",
+          "gbp": 138184.01,
+          "reason": "JV"
+        },
+        {
+          "string": "B.T.L.-BELMOPAN",
+          "gbp": 115608.64,
+          "reason": "Belize Telemedia, Belmopan"
+        },
+        {
+          "string": "BT AL SUADIA",
+          "gbp": 105075.0,
+          "reason": "JV"
+        },
+        {
+          "string": "BT Al-Saudia",
+          "gbp": 88154.9,
+          "reason": "JV"
+        },
+        {
+          "string": "BT AL-SAUDIA LTD.",
+          "gbp": 78247.5,
+          "reason": "JV"
+        },
+        {
+          "string": "British Telecom Al-Saudi Ltd.",
+          "gbp": 78247.5,
+          "reason": "JV"
+        },
+        {
+          "string": "B.T.L. BELMOPAN",
+          "gbp": 60057.98,
+          "reason": "same"
+        },
+        {
+          "string": "BT DONALD",
+          "gbp": 34213.0,
+          "reason": "person's initials"
+        },
+        {
+          "string": "MAKRO MACHELEN BT WINK",
+          "gbp": 11633.34,
+          "reason": "Belgian cash-and-carry card line, BT is a ref fragment"
+        },
+        {
+          "string": "MAKRO MACHELEN BT WIN",
+          "gbp": 10498.76,
+          "reason": "same"
+        },
+        {
+          "string": "BT Academy Riding school",
+          "gbp": 7200.0,
+          "reason": "riding school"
+        },
+        {
+          "string": "BT WAREHOUSE WINES SP",
+          "gbp": 2229.66,
+          "reason": "unrelated card line"
+        },
+        {
+          "string": "B.T.U. (Maintenance) Ltd.",
+          "gbp": 1859.68,
+          "reason": "unrelated maintenance firm"
+        },
+        {
+          "string": "BT CETFW37YW",
+          "gbp": 1494.43,
+          "reason": "card fragment, identity unverifiable"
+        },
+        {
+          "string": "BT MACFARLANE LTD",
+          "gbp": 1405.48,
+          "reason": "unrelated (initials)"
+        },
+        {
+          "string": "MECHANICAL QUALITY BT.",
+          "gbp": 1377.31,
+          "reason": "unrelated"
+        },
+        {
+          "string": "BT PHILIPPE LIQUORS-N",
+          "gbp": 1211.86,
+          "reason": "unrelated card line"
+        },
+        {
+          "string": "BT MARINE PROPELLERS LTD",
+          "gbp": 1000.0,
+          "reason": "unrelated"
+        },
+        {
+          "string": "PAYPAL KOBOL BT",
+          "gbp": 887.99,
+          "reason": "PayPal line, BT = Hungarian company suffix (Bt.)"
+        },
+        {
+          "string": "BT PAY BY PHONE          GATESHEAD NEW",
+          "gbp": 767.81,
+          "reason": "pay-by-phone parking line, payee unclear"
+        },
+        {
+          "string": "BT MAKEDONIJA",
+          "gbp": 720.69,
+          "reason": "Beogradska?/Balkan card line, not BT plc"
+        },
+        {
+          "string": "BT DISCLOSURE SCOTLAND",
+          "gbp": 100.0,
+          "reason": "card line, payee is Disclosure Scotland"
+        }
+      ],
+      "Royal Mail": [
+        {
+          "string": "Royal Mail Courier Services Ltd",
+          "gbp": 64210.89,
+          "reason": "presents as a distinct legal entity we could not verify as Royal Mail Group"
+        }
+      ],
+      "EDF Energy": [
+        {
+          "string": "EUROPEAN COMMISSION (EDF)",
+          "gbp": 3174615794.34,
+          "reason": "EDF = European Development Fund, not the utility (GBP 3.17bn \u2014 the acronym trap, reported separately)"
+        }
+      ],
+      "British Gas / Centrica": [
+        {
+          "string": "SOCIETY OF BRITISH GAS INDUSTRIES (SBGI)",
+          "gbp": 1240.0,
+          "reason": "trade association, not the company"
+        }
+      ],
+      "Capita": [
+        {
+          "string": "CAPITA TP NATWEST",
+          "gbp": 35610511570.44,
+          "reason": "pass-through: DfE 'funding to pay Teachers' Pensions' routed via Capita's third-party bank account (GBP 35.6bn \u2014 reported separately, not payments TO Capita)"
+        },
+        {
+          "string": "CAPITA TP HSBC",
+          "gbp": 246522344.1,
+          "reason": "same pass-through, HSBC account (GBP 246.5m)"
+        },
+        {
+          "string": "Capita Consortium Nominees No 1 & No 2 Ltd",
+          "gbp": 153000.0,
+          "reason": "nominee vehicle, beneficial recipient unclear"
+        },
+        {
+          "string": "THE DEANERY CHURCH OF ENGLAND HIGH GOVERNORS CAPITA",
+          "gbp": 92712.77,
+          "reason": "school governors' account administered by Capita; beneficiary is the school"
+        },
+        {
+          "string": "THE DEANERY C OF E HIGH GOVERNORS CAPITA",
+          "gbp": 29349.0,
+          "reason": "same"
+        }
+      ],
+      "Serco": [
+        {
+          "string": "Hanoi Toserco",
+          "gbp": 70896.82,
+          "reason": "Hanoi Tourist Service Company, Vietnam"
+        },
+        {
+          "string": "PHONG VE HANOI TOSERCO",
+          "gbp": 45416.82,
+          "reason": "same"
+        },
+        {
+          "string": "HANOI TOSERCO",
+          "gbp": 23245.61,
+          "reason": "same"
+        },
+        {
+          "string": "CORPORACION SERCOPLUS",
+          "gbp": 5823.04,
+          "reason": "Peruvian IT retailer"
+        },
+        {
+          "string": "SERCO PROJECTS LLC",
+          "gbp": 3800.0,
+          "reason": "presents as a distinct LLC we could not verify as Serco Group"
+        },
+        {
+          "string": "HANOI TOSERCO 1",
+          "gbp": 2311.98,
+          "reason": "same"
+        },
+        {
+          "string": "HANOI TOSERCO-MOTO",
+          "gbp": 2063.46,
+          "reason": "same"
+        },
+        {
+          "string": "SERCORIEGO",
+          "gbp": 782.96,
+          "reason": "unrelated card line"
+        }
+      ],
+      "G4S": [
+        {
+          "string": "Group 4",
+          "gbp": 30180.55,
+          "reason": "bare string, could be anything"
+        },
+        {
+          "string": "WAYNE LLEWELLYN T/A FRIENDS OF BOXING4SCHOOLS",
+          "gbp": 5040.0,
+          "reason": "'boxing4schools' substring hit"
+        },
+        {
+          "string": "FRIENDS OF BOXING4SCHOOLS",
+          "gbp": 4200.0,
+          "reason": "same"
+        },
+        {
+          "string": "AMAZON.CO.UK 2X58G4SO4",
+          "gbp": 1880.49,
+          "reason": "Amazon order reference containing G4S"
+        }
+      ],
+      "Microsoft": [
+        {
+          "string": "SENTILLION/MICROSOFT",
+          "gbp": 29689.2,
+          "reason": "acquired company; payment may predate acquisition, unverifiable"
+        },
+        {
+          "string": "DRI MICROSOFT O",
+          "gbp": 99.0,
+          "reason": "same"
+        },
+        {
+          "string": "DRI MICROSOFT",
+          "gbp": 77.48,
+          "reason": "merchant of record is Digital River, not Microsoft"
+        }
+      ],
+      "Amazon (incl. AWS)": [
+        {
+          "string": "Amazon Public Relations",
+          "gbp": 30350.57,
+          "reason": "identity unverifiable (could be a PR firm named Amazon)"
+        },
+        {
+          "string": "AWS BATHROOM SUPPLIES LTD",
+          "gbp": 6765.0,
+          "reason": "bathroom supplier"
+        },
+        {
+          "string": "Amazon-EcoMedia Ltd",
+          "gbp": 1920.0,
+          "reason": "unrelated company"
+        },
+        {
+          "string": "IN AMAZON LIGHTS INC.",
+          "gbp": 1202.18,
+          "reason": "unrelated"
+        },
+        {
+          "string": "VILLA AMAZONIA",
+          "gbp": 896.43,
+          "reason": "hotel"
+        },
+        {
+          "string": "INT*AMAZON LIGHTS INC.",
+          "gbp": 784.01,
+          "reason": "unrelated"
+        },
+        {
+          "string": "WWW.AMAZONMEDICAL.CO.U",
+          "gbp": 594.9,
+          "reason": "Amazon Medical, unrelated"
+        }
+      ],
+      "HMRC (as payee)": [
+        {
+          "string": "CSR/HMRC",
+          "gbp": 16608527.44,
+          "reason": "compound label, payee unclear"
+        },
+        {
+          "string": "NATWEST- INTERNAL HMRC USE ONLY",
+          "gbp": 1969511.16,
+          "reason": "bank-account label, payee unclear"
+        },
+        {
+          "string": "PWC LLP (HMRC GRANTS)",
+          "gbp": 1672643.15,
+          "reason": "payee is PwC"
+        },
+        {
+          "string": "GBSRE ADMIN HMRC",
+          "gbp": 30000.0,
+          "reason": "compound label, payee unclear"
+        },
+        {
+          "string": "Inland Revenue Department",
+          "gbp": 10338.0,
+          "reason": "'Inland Revenue Department' is the naming style of overseas IRDs (NZ/HK), publisher context unverified"
+        },
+        {
+          "string": "GOMA HMRCAZ LGISOR VEM",
+          "gbp": 1493.32,
+          "reason": "garbled card line (Goma, DRC)"
+        }
+      ],
+      "Severn Trent": [
+        {
+          "string": "SEVERN TRENT COSTAIN WATER LIMITED",
+          "gbp": 44068825.63,
+          "reason": "joint venture with Costain"
+        }
+      ],
+      "Anglian Water": [
+        {
+          "string": "WAVE ANGLIAN WATER BUSINESS",
+          "gbp": 405142.0,
+          "reason": "Wave is the Anglian/NWG joint venture brand"
+        }
+      ]
+    }
+  },
+  "q2_cross_body_presence": {
+    "clean_set": "is_dup=0 AND supplier_raw<>''",
+    "distinct_supplier_strings_exact": 241495,
+    "distinct_supplier_strings_normalised": 218542,
+    "exact_match_publishers": {
+      "2+": 15989,
+      "3+": 4230,
+      "5+": 1324,
+      "10+": 181,
+      "20+": 12
+    },
+    "normalised_publishers": {
+      "2+": 18758,
+      "3+": 6019,
+      "5+": 2108,
+      "10+": 482,
+      "20+": 66
+    },
+    "normalisation": "upper; punctuation->space; drop LTD/LIMITED/PLC/AND tokens; drop leading THE; collapse spaces",
+    "gap_reading": {
+      "exact_strings_in_2plus_publishers": 15989,
+      "normalised_names_in_2plus_publishers": 18758,
+      "exact_10plus": 181,
+      "normalised_10plus": 482,
+      "exact_20plus": 12,
+      "normalised_20plus": 66,
+      "note": "even a trivially conservative normalisation (case/punct/LTD/PLC/THE) grows the 10+-publisher set 2.7x and the 20+-publisher set 5.5x; fuzzier truth is larger, this is the floor."
+    },
+    "example_gainer": "SOFTCAT: one normalised name, 11 exact strings, best single string seen in 18 publishers, the name in 41 (cross_body_gainers.csv)."
+  },
+  "q3_public_body_flows": {
+    "supported": true,
+    "scope": "UK core public bodies as payees (central gov, local gov incl. MBC/LBC abbreviations, NHS, police/fire, agencies, LGPS funds, NDPBs). Excluded and quantified: education institutions, foreign governments, charities with 'council' in the name, fee-funded regulators, private ambulance, payee-unclear labels (flows_summary.json.excluded_by_rule_gbp).",
+    "eyeballing": "every included normalised name >= GBP 1M eyeballed; unreviewed tail is 427,629,969 GBP across rule-matched names < 1M each.",
+    "pairs": 9523,
+    "bodies": 4919,
+    "gbp_to_public_bodies_excl_mega": 1724040964570.14,
+    "mega_transfers_reported_separately": [
+      {
+        "publisher": "Department of Health and Social Care",
+        "supplier_raw": "HM TREASURY HMT",
+        "date": "2021-03-24",
+        "amount": 34000000000.0
+      },
+      {
+        "publisher": "Department of Health and Social Care",
+        "supplier_raw": "HM TREASURY HMT",
+        "date": "2020-11-05",
+        "amount": 25000000000.0
+      }
+    ],
+    "publisher_shares_top": [
+      {
+        "publisher": "Department of Health and Social Care",
+        "total_gbp": 1373506093537.66,
+        "public_body_gbp": 1250199859956.8,
+        "share": 0.9102
+      },
+      {
+        "publisher": "NHS Thames Valley ICB",
+        "total_gbp": 1500841868.2,
+        "public_body_gbp": 1279841339.07,
+        "share": 0.8527
+      },
+      {
+        "publisher": "NHS East and North Hertfordshire CCG",
+        "total_gbp": 2419124808.77,
+        "public_body_gbp": 1968855978.51,
+        "share": 0.8139
+      },
+      {
+        "publisher": "NHS Norfolk and Suffolk ICB - 25k Expenditure Report",
+        "total_gbp": 1154540830.29,
+        "public_body_gbp": 938254571.33,
+        "share": 0.8127
+      },
+      {
+        "publisher": "Pennine Care NHS Foundation Trust",
+        "total_gbp": 776596145.25,
+        "public_body_gbp": 572440701.53,
+        "share": 0.7371
+      },
+      {
+        "publisher": "Home Office",
+        "total_gbp": 84545024331.14,
+        "public_body_gbp": 59254875312.54,
+        "share": 0.7009
+      },
+      {
+        "publisher": "Department for Science, Innovation and Technology",
+        "total_gbp": 27935871937.06,
+        "public_body_gbp": 16315999388.51,
+        "share": 0.5841
+      },
+      {
+        "publisher": "The Pennine Acute Hospitals NHS Trust",
+        "total_gbp": 2514731277.83,
+        "public_body_gbp": 1406166069.81,
+        "share": 0.5592
+      },
+      {
+        "publisher": "United Lincolnshire Hospitals NHS Trust",
+        "total_gbp": 2654760957.98,
+        "public_body_gbp": 1466393262.33,
+        "share": 0.5524
+      },
+      {
+        "publisher": "Whittington Hospital NHS Trust",
+        "total_gbp": 105654121.34,
+        "public_body_gbp": 53879830.04,
+        "share": 0.51
+      },
+      {
+        "publisher": "Shropshire Community Health NHS Trust",
+        "total_gbp": 436117578.46,
+        "public_body_gbp": 201113595.29,
+        "share": 0.4611
+      },
+      {
+        "publisher": "Coventry and Warwickshire Partnership NHS Trust",
+        "total_gbp": 782469603.67,
+        "public_body_gbp": 324945414.32,
+        "share": 0.4153
+      },
+      {
+        "publisher": "Portsmouth Hospital NHS Trust",
+        "total_gbp": 1626327656.5,
+        "public_body_gbp": 586156698.53,
+        "share": 0.3604
+      },
+      {
+        "publisher": "East Sussex Healthcare NHS Trust",
+        "total_gbp": 1363111785.35,
+        "public_body_gbp": 481013059.02,
+        "share": 0.3529
+      },
+      {
+        "publisher": "UK Trade and Investment",
+        "total_gbp": 1021830194.66,
+        "public_body_gbp": 304694706.11,
+        "share": 0.2982
+      },
+      {
+        "publisher": "Department for Education",
+        "total_gbp": 1011273151498.73,
+        "public_body_gbp": 272225122149.46,
+        "share": 0.2692
+      },
+      {
+        "publisher": "NHS Business Services Authority",
+        "total_gbp": 1305649099.6,
+        "public_body_gbp": 343924051.32,
+        "share": 0.2634
+      },
+      {
+        "publisher": "Ministry of Justice",
+        "total_gbp": 14842030773.87,
+        "public_body_gbp": 3881705690.37,
+        "share": 0.2615
+      },
+      {
+        "publisher": "Foreign and Commonwealth Office",
+        "total_gbp": 7810957531.85,
+        "public_body_gbp": 2007781555.22,
+        "share": 0.257
+      },
+      {
+        "publisher": "Salisbury NHS Foundation Trust",
+        "total_gbp": 233503959.2,
+        "public_body_gbp": 60013079.61,
+        "share": 0.257
+      },
+      {
+        "publisher": "Ministry of Housing, Communities and Local Government",
+        "total_gbp": 357995272432.4,
+        "public_body_gbp": 87177432460.41,
+        "share": 0.2435
+      },
+      {
+        "publisher": "Isle of Wight NHS Trust",
+        "total_gbp": 1879345059.7,
+        "public_body_gbp": 406621265.99,
+        "share": 0.2164
+      },
+      {
+        "publisher": "Milton Keynes Hospital NHS Foundation Trust",
+        "total_gbp": 113004128.53,
+        "public_body_gbp": 24276808.6,
+        "share": 0.2148
+      },
+      {
+        "publisher": "Maidstone and Tunbridge Wells NHS Trust",
+        "total_gbp": 1116115170.47,
+        "public_body_gbp": 230158737.05,
+        "share": 0.2062
+      },
+      {
+        "publisher": "UK Shared Business Services",
+        "total_gbp": 150739536.6,
+        "public_body_gbp": 28087632.91,
+        "share": 0.1863
+      }
+    ],
+    "excluded_by_rule_gbp": {
+      "foreign government/body": 1929925631.18,
+      "charity/association/church": 792448675.99,
+      "non-UK ministry naming (UK has Defence/Justice/Housing)": 1283182196.05,
+      "education institution (out of scope)": 6367004378.68,
+      "payee unclear / ambiguous": 79660554.73,
+      "fee-funded regulator (borderline, excluded)": 55377827.72,
+      "private/charity ambulance": 19930175.88,
+      "abbreviation false positive (eyeballed)": 147098.84,
+      "police-adjacent non-state body": 24106668.76,
+      "private pension fund": 15225.0
+    },
+    "headline_flows": [
+      {
+        "from": "Department of Health and Social Care",
+        "to": "NHS ENGLAND CBA033",
+        "gbp": 951582534602.39,
+        "txns": 307
+      },
+      {
+        "from": "Department of Health and Social Care",
+        "to": "NHS ENGLAND",
+        "gbp": 42914809436.4,
+        "txns": 22
+      },
+      {
+        "from": "Department of Health and Social Care",
+        "to": "PUBLIC HEALTH ENGLAND PHE033",
+        "gbp": 29227947180.6,
+        "txns": 308
+      },
+      {
+        "from": "Department of Health and Social Care",
+        "to": "NHS BUSINESS SERVICES AUTHORITY NHSBSA",
+        "gbp": 22096052680.72,
+        "txns": 480
+      },
+      {
+        "from": "Home Office",
+        "to": "GREATER LONDON AUTHORITY G",
+        "gbp": 12352426256.37,
+        "txns": 363
+      },
+      {
+        "from": "Ministry of Housing, Communities and Local Government",
+        "to": "GREATER LONDON AUTHORITY",
+        "gbp": 10233612641.42,
+        "txns": 813
+      },
+      {
+        "from": "Department for Science, Innovation and Technology",
+        "to": "UKRI ENGINEERING PHYSICAL SCIENCES RESEARCH COUNCIL",
+        "gbp": 7949419661.0,
+        "txns": 26
+      },
+      {
+        "from": "Department of Health and Social Care",
+        "to": "UK HEALTH SECURITY AGENCY UKHSA",
+        "gbp": 7069753638.4,
+        "txns": 18
+      },
+      {
+        "from": "Department for Education",
+        "to": "BIRMINGHAM CITY COUNCIL",
+        "gbp": 6966499686.1,
+        "txns": 4274
+      },
+      {
+        "from": "Department for Education",
+        "to": "LANCASHIRE COUNTY COUNCIL",
+        "gbp": 6731403574.34,
+        "txns": 3495
+      },
+      {
+        "from": "Department for Education",
+        "to": "KENT COUNTY COUNCIL",
+        "gbp": 6690388877.58,
+        "txns": 6463
+      },
+      {
+        "from": "Department for Education",
+        "to": "HAMPSHIRE COUNTY COUNCIL",
+        "gbp": 6390895413.02,
+        "txns": 1421
+      },
+      {
+        "from": "Department for Education",
+        "to": "ESSEX COUNTY COUNCIL",
+        "gbp": 5490436623.36,
+        "txns": 2066
+      },
+      {
+        "from": "Department for Education",
+        "to": "SURREY COUNTY COUNCIL",
+        "gbp": 4779398345.64,
+        "txns": 3519
+      },
+      {
+        "from": "Department of Health and Social Care",
+        "to": "NHS SUPPLY CHAIN",
+        "gbp": 4615533156.64,
+        "txns": 587
+      }
+    ]
+  },
+  "q4_same_thing_different_prices": {
+    "supported": false,
+    "verdict": "NOT SUPPORTED",
+    "evidence": "334,200 (supplier, publisher, amount) triples recur >=3 months; 1,034 (normalised supplier, amount) pairs recur in >=2 publishers. Inspected: they are round-number grants (WFP/ICRC/UNDP contributions), statutory fixed fees (ICO GBP 500 registration), franking-machine top-ups (Neopost GBP 2,000/4,000), redaction labels (REDACTED, SUPPLIER NAME WITHHELD), and NHS pharmacy stock at national list prices (identical Janssen GBP 32,450.52 lines across 4 trusts). None is a unit price."
+  }
+}

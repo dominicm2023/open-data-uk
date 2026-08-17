@@ -1,0 +1,20 @@
+{
+  "clean_set": "is_dup=0 AND supplier_raw<>''",
+  "distinct_supplier_strings_exact": 241495,
+  "distinct_supplier_strings_normalised": 218542,
+  "exact_match_publishers": {
+    "2+": 15989,
+    "3+": 4230,
+    "5+": 1324,
+    "10+": 181,
+    "20+": 12
+  },
+  "normalised_publishers": {
+    "2+": 18758,
+    "3+": 6019,
+    "5+": 2108,
+    "10+": 482,
+    "20+": 66
+  },
+  "normalisation": "upper; punctuation->space; drop LTD/LIMITED/PLC/AND tokens; drop leading THE; collapse spaces"
+}
