@@ -448,6 +448,81 @@ def one_file_in_twenty_six(conn) -> tuple[str, str, str]:
     return body, h, "resource_count ordered descending, against the index total"
 
 
+
+def every_monitored_overflow(conn) -> tuple[str, str, str]:
+    """England's storm overflows at their true positions, from fetched data.
+
+    The first panel drawn from data we fetched rather than metadata we hold.
+    The deprivation-gradient claim this join was built to test is NOT
+    supported — the analysis that killed it is in analysis/sewage/REPORT.md —
+    so this shows the geography and declines the inference.
+    """
+    import csv as _csv
+    path = ROOT / "analysis" / "sewage" / "joined.csv"
+    if not path.exists():
+        return "", "", ""
+    rows = list(_csv.DictReader(open(path, encoding="utf-8")))
+    # 14,180 circles is a megabyte of markup; bin the quiet ones into the
+    # density grid and draw only the loud ones as sized points.
+    boxes, points = [], []
+    for r in rows:
+        try:
+            lon, lat = float(r["lon"]), float(r["lat"])
+            n = float(r["spill_count"] or 0)
+        except (ValueError, KeyError):
+            continue
+        boxes.append((lon - 0.01, lat - 0.008, lon + 0.01, lat + 0.008))
+        if n >= 100:
+            points.append({"lon": lon, "lat": lat, "value": n,
+                           "fill": "var(--cat-4)"})
+    body, h = charts.uk_map(
+        points,
+        f"Every one of England's {len(rows):,} monitored storm overflows "
+        f"shades the map; the {len(points)} that spilled 100 or more times "
+        f"in 2025 are drawn as circles, area proportional to spill count. "
+        f"Wales and Scotland are different regimes and are not shown. We "
+        f"tested whether spills track deprivation: they do not — the full "
+        f"working is in the repo, and the middle of the distribution is "
+        f"where the spilling is.",
+        [("100+ spills in 2025", "var(--cat-4)")])
+    # underlay the full population as density behind the points
+    grid, gh = charts.bbox_density(
+        boxes, "")
+    return grid + body, max(h, gh), (
+        "analysis/sewage/joined.csv — EA Event Duration Monitoring 2025 "
+        "annual return, all English water companies, joined by coordinates")
+
+
+def rivers_are_the_boundaries(conn) -> tuple[str, str, str]:
+    """The methodological finding: the join everyone does is a coin flip."""
+    import csv as _csv
+    path = ROOT / "analysis" / "sewage" / "joined.csv"
+    if not path.exists():
+        return "", "", ""
+    rows = list(_csv.DictReader(open(path, encoding="utf-8")))
+    near = multi = 0
+    for r in rows:
+        try:
+            if float(r.get("dist_to_lsoa_boundary_m") or 9e9) <= 50:
+                near += 1
+            if int(r.get("candidate_imd_deciles_100m") or 1) > 1:
+                multi += 1
+        except ValueError:
+            continue
+    body, h = charts.share_bar(
+        multi, len(rows), "of storm overflows sit on a statistical boundary",
+        f"{multi:,} of {len(rows):,} monitored overflows have more than one "
+        f"candidate deprivation decile within 100 metres, and {near:,} sit "
+        f"within 50 metres of a neighbourhood boundary — because sewers "
+        f"discharge to rivers, and rivers are where the boundaries were "
+        f"drawn. Any analysis that assigns an overflow to exactly one "
+        f"neighbourhood is flipping a coin for half its points. Ours "
+        f"reported a band instead, and the band says: no deprivation "
+        f"gradient.")
+    return body, h, ("analysis/sewage/joined.csv — distance to nearest LSOA "
+                     "boundary and candidate deciles within 100m, per overflow")
+
+
 PANELS = [
     ("Where the data is", where_the_data_is, False),
     ("What the data is about", what_the_data_covers, False),
@@ -466,6 +541,8 @@ PANELS = [
     ("The statutory cliff", the_statutory_cliff, True),
     ("The questions they ask", the_questions_they_ask, False),
     ("One file in every twenty-six", one_file_in_twenty_six, False),
+    ("Every monitored overflow", every_monitored_overflow, True),
+    ("Rivers are the boundaries", rivers_are_the_boundaries, True),
 ]
 
 PAGE = """<!doctype html>

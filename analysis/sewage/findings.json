@@ -1,0 +1,1113 @@
+{
+ "inputs": {
+  "edm": {
+   "file": "EDM_2025_Storm_Overflow_Annual_Return.zip",
+   "vintage": "calendar year 2025",
+   "publisher": "Environment Agency (annual return, all English WaSCs)",
+   "licence": "OGL-UK-3.0",
+   "url": "https://www.data.gov.uk/dataset/event-duration-monitoring-storm-overflows-annual-returns"
+  },
+  "imd": {
+   "file": "IoD2019_File7_scores_ranks_deciles.csv",
+   "vintage": "IMD 2019 (population denominators mid-2015)",
+   "publisher": "MHCLG",
+   "licence": "OGL-UK-3.0"
+  },
+  "lsoa_pwc": {
+   "file": "lsoa2011_pwc.json",
+   "vintage": "LSOA Dec 2011 population-weighted centroids (ONS, 2022 republication)"
+  },
+  "lsoa_bsc": {
+   "file": "lsoa2011_bsc.json",
+   "vintage": "LSOA Dec 2011 boundaries, super-generalised clipped (BSC) V4 (ONS)"
+  },
+  "ruc": {
+   "file": "ruc2011_lsoa.json",
+   "vintage": "Rural Urban Classification 2011 of LSOAs (ONS)"
+  },
+  "coastline": {
+   "file": "../../coastline.json",
+   "note": "ultra-generalised ONS/OS coastline, ~1 km tolerance; used only for 5 km coastal flag"
+  }
+ },
+ "parsing": {
+  "rows_skipped": {
+   "bad_duration": 64,
+   "bad_ngr": 57
+  },
+  "overflows_parsed": 14181,
+  "overflows_england": 14180,
+  "excluded_wales_or_unassigned": 1,
+  "welsh_water_english_sites": 120,
+  "assignment_method_counts": {
+   "bgc": 11195,
+   "pip_missed": 688,
+   "bfc": 1952,
+   "bgc_missed_bsc_hit": 346
+  }
+ },
+ "method_comparison": {
+  "bgc_vs_bsc": {
+   "n": 12915,
+   "lsoa_disagreements": 1461,
+   "lsoa_disagreement_pct": 11.31,
+   "decile_disagreements": 1192,
+   "decile_disagreement_pct": 9.23
+  },
+  "bgc_vs_centroid": {
+   "n": 13055,
+   "lsoa_disagreements": 5004,
+   "lsoa_disagreement_pct": 38.33,
+   "decile_disagreements": 4040,
+   "decile_disagreement_pct": 30.95
+  },
+  "bsc_vs_centroid": {
+   "n": 13308,
+   "lsoa_disagreements": 5002,
+   "lsoa_disagreement_pct": 37.59,
+   "decile_disagreements": 4017,
+   "decile_disagreement_pct": 30.18
+  },
+  "validation_sample_agreed_points_vs_bfc": {
+   "n": 298,
+   "lsoa_confirmed": 292,
+   "lsoa_confirmed_pct": 97.99,
+   "decile_confirmed": 295,
+   "decile_confirmed_pct": 98.99
+  },
+  "bfc_arbitration_of_disputed": {
+   "n": 1654,
+   "bfc_sides_with_bgc": 1373,
+   "bfc_sides_with_bsc": 230,
+   "bfc_sides_with_neither": 51
+  }
+ },
+ "boundary_proximity": {
+  "buffer_m": 100.0,
+  "methods_agree": {
+   "n": 11454,
+   "median_m": 102.8,
+   "pct_within_25m": 27.0,
+   "pct_within_50m": 37.1,
+   "pct_within_100m": 49.3
+  },
+  "methods_disagree": {
+   "n": 1461,
+   "median_m": 10.3,
+   "pct_within_25m": 81.7,
+   "pct_within_50m": 94.7,
+   "pct_within_100m": 99.7
+  },
+  "pct_overflows_with_multiple_candidate_lsoas_100m": 51.4,
+  "pct_overflows_with_multiple_candidate_deciles_100m": 43.3
+ },
+ "strata": {
+  "all_england": {
+   "deciles": {
+    "1": {
+     "overflows": 1267,
+     "spills": 22546.0,
+     "hours": 83206.624,
+     "lsoas": 3284,
+     "pop": 5394816.0,
+     "mean_edm_operational_pct": 96.948,
+     "spills_per_lsoa": 6.865,
+     "hours_per_lsoa": 25.337,
+     "spills_per_100k_pop": 417.92,
+     "overflows_per_100_lsoas": 38.581,
+     "spills_per_overflow": 17.795
+    },
+    "2": {
+     "overflows": 1102,
+     "spills": 17816.0,
+     "hours": 68071.224,
+     "lsoas": 3284,
+     "pop": 5512051.0,
+     "mean_edm_operational_pct": 96.333,
+     "spills_per_lsoa": 5.425,
+     "hours_per_lsoa": 20.728,
+     "spills_per_100k_pop": 323.219,
+     "overflows_per_100_lsoas": 33.557,
+     "spills_per_overflow": 16.167
+    },
+    "3": {
+     "overflows": 1133,
+     "spills": 21560.0,
+     "hours": 113003.497,
+     "lsoas": 3285,
+     "pop": 5628403.0,
+     "mean_edm_operational_pct": 97.128,
+     "spills_per_lsoa": 6.563,
+     "hours_per_lsoa": 34.4,
+     "spills_per_100k_pop": 383.057,
+     "overflows_per_100_lsoas": 34.49,
+     "spills_per_overflow": 19.029
+    },
+    "4": {
+     "overflows": 1456,
+     "spills": 32605.0,
+     "hours": 208232.972,
+     "lsoas": 3284,
+     "pop": 5579079.0,
+     "mean_edm_operational_pct": 97.263,
+     "spills_per_lsoa": 9.928,
+     "hours_per_lsoa": 63.408,
+     "spills_per_100k_pop": 584.415,
+     "overflows_per_100_lsoas": 44.336,
+     "spills_per_overflow": 22.394
+    },
+    "5": {
+     "overflows": 1693,
+     "spills": 37394.0,
+     "hours": 276186.478,
+     "lsoas": 3285,
+     "pop": 5525827.0,
+     "mean_edm_operational_pct": 97.123,
+     "spills_per_lsoa": 11.383,
+     "hours_per_lsoa": 84.075,
+     "spills_per_100k_pop": 676.713,
+     "overflows_per_100_lsoas": 51.537,
+     "spills_per_overflow": 22.087
+    },
+    "6": {
+     "overflows": 1848,
+     "spills": 41991.0,
+     "hours": 303450.016,
+     "lsoas": 3284,
+     "pop": 5556757.0,
+     "mean_edm_operational_pct": 97.803,
+     "spills_per_lsoa": 12.787,
+     "hours_per_lsoa": 92.403,
+     "spills_per_100k_pop": 755.675,
+     "overflows_per_100_lsoas": 56.273,
+     "spills_per_overflow": 22.722
+    },
+    "7": {
+     "overflows": 1869,
+     "spills": 38879.0,
+     "hours": 280726.802,
+     "lsoas": 3284,
+     "pop": 5409036.0,
+     "mean_edm_operational_pct": 97.396,
+     "spills_per_lsoa": 11.839,
+     "hours_per_lsoa": 85.483,
+     "spills_per_100k_pop": 718.779,
+     "overflows_per_100_lsoas": 56.912,
+     "spills_per_overflow": 20.802
+    },
+    "8": {
+     "overflows": 1602,
+     "spills": 33253.0,
+     "hours": 224031.906,
+     "lsoas": 3285,
+     "pop": 5422910.0,
+     "mean_edm_operational_pct": 97.654,
+     "spills_per_lsoa": 10.123,
+     "hours_per_lsoa": 68.198,
+     "spills_per_100k_pop": 613.195,
+     "overflows_per_100_lsoas": 48.767,
+     "spills_per_overflow": 20.757
+    },
+    "9": {
+     "overflows": 1337,
+     "spills": 28413.0,
+     "hours": 213226.302,
+     "lsoas": 3284,
+     "pop": 5377675.0,
+     "mean_edm_operational_pct": 97.494,
+     "spills_per_lsoa": 8.652,
+     "hours_per_lsoa": 64.929,
+     "spills_per_100k_pop": 528.351,
+     "overflows_per_100_lsoas": 40.713,
+     "spills_per_overflow": 21.251
+    },
+    "10": {
+     "overflows": 873,
+     "spills": 15667.0,
+     "hours": 94735.32,
+     "lsoas": 3285,
+     "pop": 5321650.0,
+     "mean_edm_operational_pct": 97.104,
+     "spills_per_lsoa": 4.769,
+     "hours_per_lsoa": 28.839,
+     "spills_per_100k_pop": 294.401,
+     "overflows_per_100_lsoas": 26.575,
+     "spills_per_overflow": 17.946
+    }
+   },
+   "spearman_decile_vs_spills_per_lsoa": 0.152,
+   "spearman_decile_vs_overflow_density": 0.164,
+   "spearman_decile_vs_spills_per_overflow": 0.297,
+   "deprived_half_over_affluent_half_spills_per_lsoa": 0.834,
+   "deprived_half_over_affluent_half_hours_per_lsoa": 0.671
+  },
+  "urban_only": {
+   "deciles": {
+    "1": {
+     "overflows": 1223,
+     "spills": 21614.0,
+     "hours": 78313.986,
+     "lsoas": 3230,
+     "pop": 5311225.0,
+     "mean_edm_operational_pct": 96.942,
+     "spills_per_lsoa": 6.692,
+     "hours_per_lsoa": 24.246,
+     "spills_per_100k_pop": 406.949,
+     "overflows_per_100_lsoas": 37.864,
+     "spills_per_overflow": 17.673
+    },
+    "2": {
+     "overflows": 992,
+     "spills": 15828.0,
+     "hours": 56263.147,
+     "lsoas": 3146,
+     "pop": 5297252.0,
+     "mean_edm_operational_pct": 96.258,
+     "spills_per_lsoa": 5.031,
+     "hours_per_lsoa": 17.884,
+     "spills_per_100k_pop": 298.796,
+     "overflows_per_100_lsoas": 31.532,
+     "spills_per_overflow": 15.956
+    },
+    "3": {
+     "overflows": 888,
+     "spills": 15099.0,
+     "hours": 63139.871,
+     "lsoas": 3042,
+     "pop": 5236919.0,
+     "mean_edm_operational_pct": 96.883,
+     "spills_per_lsoa": 4.964,
+     "hours_per_lsoa": 20.756,
+     "spills_per_100k_pop": 288.318,
+     "overflows_per_100_lsoas": 29.191,
+     "spills_per_overflow": 17.003
+    },
+    "4": {
+     "overflows": 820,
+     "spills": 12798.0,
+     "hours": 48581.273,
+     "lsoas": 2784,
+     "pop": 4764419.0,
+     "mean_edm_operational_pct": 96.693,
+     "spills_per_lsoa": 4.597,
+     "hours_per_lsoa": 17.45,
+     "spills_per_100k_pop": 268.616,
+     "overflows_per_100_lsoas": 29.454,
+     "spills_per_overflow": 15.607
+    },
+    "5": {
+     "overflows": 788,
+     "spills": 11959.0,
+     "hours": 47782.555,
+     "lsoas": 2550,
+     "pop": 4323208.0,
+     "mean_edm_operational_pct": 96.777,
+     "spills_per_lsoa": 4.69,
+     "hours_per_lsoa": 18.738,
+     "spills_per_100k_pop": 276.623,
+     "overflows_per_100_lsoas": 30.902,
+     "spills_per_overflow": 15.176
+    },
+    "6": {
+     "overflows": 687,
+     "spills": 11266.0,
+     "hours": 49772.972,
+     "lsoas": 2412,
+     "pop": 4067971.0,
+     "mean_edm_operational_pct": 97.302,
+     "spills_per_lsoa": 4.671,
+     "hours_per_lsoa": 20.636,
+     "spills_per_100k_pop": 276.944,
+     "overflows_per_100_lsoas": 28.483,
+     "spills_per_overflow": 16.399
+    },
+    "7": {
+     "overflows": 823,
+     "spills": 13461.0,
+     "hours": 65982.632,
+     "lsoas": 2416,
+     "pop": 3972278.0,
+     "mean_edm_operational_pct": 97.036,
+     "spills_per_lsoa": 5.572,
+     "hours_per_lsoa": 27.311,
+     "spills_per_100k_pop": 338.874,
+     "overflows_per_100_lsoas": 34.065,
+     "spills_per_overflow": 16.356
+    },
+    "8": {
+     "overflows": 724,
+     "spills": 13439.0,
+     "hours": 66792.21,
+     "lsoas": 2492,
+     "pop": 4078664.0,
+     "mean_edm_operational_pct": 97.562,
+     "spills_per_lsoa": 5.393,
+     "hours_per_lsoa": 26.803,
+     "spills_per_100k_pop": 329.495,
+     "overflows_per_100_lsoas": 29.053,
+     "spills_per_overflow": 18.562
+    },
+    "9": {
+     "overflows": 625,
+     "spills": 10500.0,
+     "hours": 48754.623,
+     "lsoas": 2505,
+     "pop": 4073448.0,
+     "mean_edm_operational_pct": 97.141,
+     "spills_per_lsoa": 4.192,
+     "hours_per_lsoa": 19.463,
+     "spills_per_100k_pop": 257.767,
+     "overflows_per_100_lsoas": 24.95,
+     "spills_per_overflow": 16.8
+    },
+    "10": {
+     "overflows": 534,
+     "spills": 9104.0,
+     "hours": 44597.533,
+     "lsoas": 2669,
+     "pop": 4310594.0,
+     "mean_edm_operational_pct": 97.389,
+     "spills_per_lsoa": 3.411,
+     "hours_per_lsoa": 16.709,
+     "spills_per_100k_pop": 211.201,
+     "overflows_per_100_lsoas": 20.007,
+     "spills_per_overflow": 17.049
+    }
+   },
+   "spearman_decile_vs_spills_per_lsoa": -0.539,
+   "spearman_decile_vs_overflow_density": -0.745,
+   "spearman_decile_vs_spills_per_overflow": 0.224,
+   "deprived_half_over_affluent_half_spills_per_lsoa": 1.118,
+   "deprived_half_over_affluent_half_hours_per_lsoa": 0.893
+  },
+  "rural_only": {
+   "deciles": {
+    "1": {
+     "overflows": 44,
+     "spills": 932.0,
+     "hours": 4892.638,
+     "lsoas": 54,
+     "pop": 83591.0,
+     "mean_edm_operational_pct": 97.123,
+     "spills_per_lsoa": 17.259,
+     "hours_per_lsoa": 90.604,
+     "spills_per_100k_pop": 1114.953,
+     "overflows_per_100_lsoas": 81.481,
+     "spills_per_overflow": 21.182
+    },
+    "2": {
+     "overflows": 110,
+     "spills": 1988.0,
+     "hours": 11808.076,
+     "lsoas": 138,
+     "pop": 214799.0,
+     "mean_edm_operational_pct": 97.017,
+     "spills_per_lsoa": 14.406,
+     "hours_per_lsoa": 85.566,
+     "spills_per_100k_pop": 925.516,
+     "overflows_per_100_lsoas": 79.71,
+     "spills_per_overflow": 18.073
+    },
+    "3": {
+     "overflows": 245,
+     "spills": 6461.0,
+     "hours": 49863.626,
+     "lsoas": 243,
+     "pop": 391484.0,
+     "mean_edm_operational_pct": 98.014,
+     "spills_per_lsoa": 26.588,
+     "hours_per_lsoa": 205.2,
+     "spills_per_100k_pop": 1650.387,
+     "overflows_per_100_lsoas": 100.823,
+     "spills_per_overflow": 26.371
+    },
+    "4": {
+     "overflows": 636,
+     "spills": 19807.0,
+     "hours": 159651.699,
+     "lsoas": 500,
+     "pop": 814660.0,
+     "mean_edm_operational_pct": 97.998,
+     "spills_per_lsoa": 39.614,
+     "hours_per_lsoa": 319.303,
+     "spills_per_100k_pop": 2431.321,
+     "overflows_per_100_lsoas": 127.2,
+     "spills_per_overflow": 31.143
+    },
+    "5": {
+     "overflows": 905,
+     "spills": 25435.0,
+     "hours": 228403.924,
+     "lsoas": 735,
+     "pop": 1202619.0,
+     "mean_edm_operational_pct": 97.424,
+     "spills_per_lsoa": 34.605,
+     "hours_per_lsoa": 310.754,
+     "spills_per_100k_pop": 2114.967,
+     "overflows_per_100_lsoas": 123.129,
+     "spills_per_overflow": 28.105
+    },
+    "6": {
+     "overflows": 1161,
+     "spills": 30725.0,
+     "hours": 253677.044,
+     "lsoas": 872,
+     "pop": 1488786.0,
+     "mean_edm_operational_pct": 98.099,
+     "spills_per_lsoa": 35.235,
+     "hours_per_lsoa": 290.914,
+     "spills_per_100k_pop": 2063.762,
+     "overflows_per_100_lsoas": 133.142,
+     "spills_per_overflow": 26.464
+    },
+    "7": {
+     "overflows": 1046,
+     "spills": 25418.0,
+     "hours": 214744.17,
+     "lsoas": 868,
+     "pop": 1436758.0,
+     "mean_edm_operational_pct": 97.679,
+     "spills_per_lsoa": 29.283,
+     "hours_per_lsoa": 247.401,
+     "spills_per_100k_pop": 1769.122,
+     "overflows_per_100_lsoas": 120.507,
+     "spills_per_overflow": 24.3
+    },
+    "8": {
+     "overflows": 878,
+     "spills": 19814.0,
+     "hours": 157239.696,
+     "lsoas": 793,
+     "pop": 1344246.0,
+     "mean_edm_operational_pct": 97.731,
+     "spills_per_lsoa": 24.986,
+     "hours_per_lsoa": 198.285,
+     "spills_per_100k_pop": 1473.986,
+     "overflows_per_100_lsoas": 110.719,
+     "spills_per_overflow": 22.567
+    },
+    "9": {
+     "overflows": 712,
+     "spills": 17913.0,
+     "hours": 164471.679,
+     "lsoas": 779,
+     "pop": 1304227.0,
+     "mean_edm_operational_pct": 97.805,
+     "spills_per_lsoa": 22.995,
+     "hours_per_lsoa": 211.132,
+     "spills_per_100k_pop": 1373.457,
+     "overflows_per_100_lsoas": 91.399,
+     "spills_per_overflow": 25.159
+    },
+    "10": {
+     "overflows": 339,
+     "spills": 6563.0,
+     "hours": 50137.787,
+     "lsoas": 616,
+     "pop": 1011056.0,
+     "mean_edm_operational_pct": 96.655,
+     "spills_per_lsoa": 10.654,
+     "hours_per_lsoa": 81.393,
+     "spills_per_100k_pop": 649.123,
+     "overflows_per_100_lsoas": 55.032,
+     "spills_per_overflow": 19.36
+    }
+   },
+   "spearman_decile_vs_spills_per_lsoa": -0.103,
+   "spearman_decile_vs_overflow_density": -0.018,
+   "spearman_decile_vs_spills_per_overflow": -0.03,
+   "deprived_half_over_affluent_half_spills_per_lsoa": 1.076,
+   "deprived_half_over_affluent_half_hours_per_lsoa": 0.983
+  },
+  "coastal_only": {
+   "deciles": {
+    "1": {
+     "overflows": 329,
+     "spills": 7332.0,
+     "hours": 31881.795,
+     "lsoas": 803,
+     "pop": 1275135.0,
+     "mean_edm_operational_pct": 97.863,
+     "spills_per_lsoa": 9.131,
+     "hours_per_lsoa": 39.703,
+     "spills_per_100k_pop": 574.998,
+     "overflows_per_100_lsoas": 40.971,
+     "spills_per_overflow": 22.286
+    },
+    "2": {
+     "overflows": 276,
+     "spills": 4878.0,
+     "hours": 19677.372,
+     "lsoas": 871,
+     "pop": 1454175.0,
+     "mean_edm_operational_pct": 94.997,
+     "spills_per_lsoa": 5.6,
+     "hours_per_lsoa": 22.592,
+     "spills_per_100k_pop": 335.448,
+     "overflows_per_100_lsoas": 31.688,
+     "spills_per_overflow": 17.674
+    },
+    "3": {
+     "overflows": 249,
+     "spills": 4951.0,
+     "hours": 27793.103,
+     "lsoas": 879,
+     "pop": 1524970.0,
+     "mean_edm_operational_pct": 97.731,
+     "spills_per_lsoa": 5.633,
+     "hours_per_lsoa": 31.619,
+     "spills_per_100k_pop": 324.662,
+     "overflows_per_100_lsoas": 28.328,
+     "spills_per_overflow": 19.884
+    },
+    "4": {
+     "overflows": 389,
+     "spills": 8183.0,
+     "hours": 47343.803,
+     "lsoas": 790,
+     "pop": 1356505.0,
+     "mean_edm_operational_pct": 96.67,
+     "spills_per_lsoa": 10.358,
+     "hours_per_lsoa": 59.929,
+     "spills_per_100k_pop": 603.241,
+     "overflows_per_100_lsoas": 49.241,
+     "spills_per_overflow": 21.036
+    },
+    "5": {
+     "overflows": 372,
+     "spills": 7670.0,
+     "hours": 54017.059,
+     "lsoas": 688,
+     "pop": 1150612.0,
+     "mean_edm_operational_pct": 96.023,
+     "spills_per_lsoa": 11.148,
+     "hours_per_lsoa": 78.513,
+     "spills_per_100k_pop": 666.602,
+     "overflows_per_100_lsoas": 54.07,
+     "spills_per_overflow": 20.618
+    },
+    "6": {
+     "overflows": 316,
+     "spills": 6825.0,
+     "hours": 42391.036,
+     "lsoas": 565,
+     "pop": 931460.0,
+     "mean_edm_operational_pct": 98.728,
+     "spills_per_lsoa": 12.08,
+     "hours_per_lsoa": 75.028,
+     "spills_per_100k_pop": 732.721,
+     "overflows_per_100_lsoas": 55.929,
+     "spills_per_overflow": 21.598
+    },
+    "7": {
+     "overflows": 313,
+     "spills": 6321.0,
+     "hours": 43969.117,
+     "lsoas": 555,
+     "pop": 890566.0,
+     "mean_edm_operational_pct": 97.148,
+     "spills_per_lsoa": 11.389,
+     "hours_per_lsoa": 79.224,
+     "spills_per_100k_pop": 709.773,
+     "overflows_per_100_lsoas": 56.396,
+     "spills_per_overflow": 20.195
+    },
+    "8": {
+     "overflows": 203,
+     "spills": 3923.0,
+     "hours": 23422.327,
+     "lsoas": 507,
+     "pop": 804291.0,
+     "mean_edm_operational_pct": 97.461,
+     "spills_per_lsoa": 7.738,
+     "hours_per_lsoa": 46.198,
+     "spills_per_100k_pop": 487.759,
+     "overflows_per_100_lsoas": 40.039,
+     "spills_per_overflow": 19.325
+    },
+    "9": {
+     "overflows": 189,
+     "spills": 4526.0,
+     "hours": 36163.973,
+     "lsoas": 447,
+     "pop": 717562.0,
+     "mean_edm_operational_pct": 97.96,
+     "spills_per_lsoa": 10.125,
+     "hours_per_lsoa": 80.904,
+     "spills_per_100k_pop": 630.747,
+     "overflows_per_100_lsoas": 42.282,
+     "spills_per_overflow": 23.947
+    },
+    "10": {
+     "overflows": 91,
+     "spills": 1802.0,
+     "hours": 9790.848,
+     "lsoas": 286,
+     "pop": 460150.0,
+     "mean_edm_operational_pct": 98.774,
+     "spills_per_lsoa": 6.301,
+     "hours_per_lsoa": 34.234,
+     "spills_per_100k_pop": 391.611,
+     "overflows_per_100_lsoas": 31.818,
+     "spills_per_overflow": 19.802
+    }
+   },
+   "spearman_decile_vs_spills_per_lsoa": 0.212,
+   "spearman_decile_vs_overflow_density": 0.212,
+   "spearman_decile_vs_spills_per_overflow": -0.03,
+   "deprived_half_over_affluent_half_spills_per_lsoa": 0.879,
+   "deprived_half_over_affluent_half_hours_per_lsoa": 0.736
+  },
+  "inland_only": {
+   "deciles": {
+    "1": {
+     "overflows": 938,
+     "spills": 15214.0,
+     "hours": 51324.829,
+     "lsoas": 2481,
+     "pop": 4119681.0,
+     "mean_edm_operational_pct": 96.627,
+     "spills_per_lsoa": 6.132,
+     "hours_per_lsoa": 20.687,
+     "spills_per_100k_pop": 369.3,
+     "overflows_per_100_lsoas": 37.807,
+     "spills_per_overflow": 16.22
+    },
+    "2": {
+     "overflows": 826,
+     "spills": 12938.0,
+     "hours": 48393.851,
+     "lsoas": 2413,
+     "pop": 4057876.0,
+     "mean_edm_operational_pct": 96.78,
+     "spills_per_lsoa": 5.362,
+     "hours_per_lsoa": 20.055,
+     "spills_per_100k_pop": 318.837,
+     "overflows_per_100_lsoas": 34.231,
+     "spills_per_overflow": 15.663
+    },
+    "3": {
+     "overflows": 884,
+     "spills": 16609.0,
+     "hours": 85210.394,
+     "lsoas": 2406,
+     "pop": 4103433.0,
+     "mean_edm_operational_pct": 96.958,
+     "spills_per_lsoa": 6.903,
+     "hours_per_lsoa": 35.416,
+     "spills_per_100k_pop": 404.759,
+     "overflows_per_100_lsoas": 36.741,
+     "spills_per_overflow": 18.788
+    },
+    "4": {
+     "overflows": 1067,
+     "spills": 24422.0,
+     "hours": 160889.169,
+     "lsoas": 2494,
+     "pop": 4222574.0,
+     "mean_edm_operational_pct": 97.479,
+     "spills_per_lsoa": 9.792,
+     "hours_per_lsoa": 64.51,
+     "spills_per_100k_pop": 578.368,
+     "overflows_per_100_lsoas": 42.783,
+     "spills_per_overflow": 22.888
+    },
+    "5": {
+     "overflows": 1321,
+     "spills": 29724.0,
+     "hours": 222169.42,
+     "lsoas": 2597,
+     "pop": 4375215.0,
+     "mean_edm_operational_pct": 97.433,
+     "spills_per_lsoa": 11.446,
+     "hours_per_lsoa": 85.548,
+     "spills_per_100k_pop": 679.372,
+     "overflows_per_100_lsoas": 50.866,
+     "spills_per_overflow": 22.501
+    },
+    "6": {
+     "overflows": 1532,
+     "spills": 35166.0,
+     "hours": 261058.98,
+     "lsoas": 2719,
+     "pop": 4625297.0,
+     "mean_edm_operational_pct": 97.612,
+     "spills_per_lsoa": 12.933,
+     "hours_per_lsoa": 96.013,
+     "spills_per_100k_pop": 760.297,
+     "overflows_per_100_lsoas": 56.344,
+     "spills_per_overflow": 22.954
+    },
+    "7": {
+     "overflows": 1556,
+     "spills": 32558.0,
+     "hours": 236757.685,
+     "lsoas": 2729,
+     "pop": 4518470.0,
+     "mean_edm_operational_pct": 97.446,
+     "spills_per_lsoa": 11.93,
+     "hours_per_lsoa": 86.756,
+     "spills_per_100k_pop": 720.554,
+     "overflows_per_100_lsoas": 57.017,
+     "spills_per_overflow": 20.924
+    },
+    "8": {
+     "overflows": 1399,
+     "spills": 29330.0,
+     "hours": 200609.579,
+     "lsoas": 2778,
+     "pop": 4618619.0,
+     "mean_edm_operational_pct": 97.682,
+     "spills_per_lsoa": 10.558,
+     "hours_per_lsoa": 72.214,
+     "spills_per_100k_pop": 635.038,
+     "overflows_per_100_lsoas": 50.36,
+     "spills_per_overflow": 20.965
+    },
+    "9": {
+     "overflows": 1148,
+     "spills": 23887.0,
+     "hours": 177062.328,
+     "lsoas": 2837,
+     "pop": 4660113.0,
+     "mean_edm_operational_pct": 97.417,
+     "spills_per_lsoa": 8.42,
+     "hours_per_lsoa": 62.412,
+     "spills_per_100k_pop": 512.584,
+     "overflows_per_100_lsoas": 40.465,
+     "spills_per_overflow": 20.807
+    },
+    "10": {
+     "overflows": 782,
+     "spills": 13865.0,
+     "hours": 84944.472,
+     "lsoas": 2999,
+     "pop": 4861500.0,
+     "mean_edm_operational_pct": 96.909,
+     "spills_per_lsoa": 4.623,
+     "hours_per_lsoa": 28.324,
+     "spills_per_100k_pop": 285.2,
+     "overflows_per_100_lsoas": 26.075,
+     "spills_per_overflow": 17.73
+    }
+   },
+   "spearman_decile_vs_spills_per_lsoa": 0.176,
+   "spearman_decile_vs_overflow_density": 0.164,
+   "spearman_decile_vs_spills_per_overflow": 0.273,
+   "deprived_half_over_affluent_half_spills_per_lsoa": 0.818,
+   "deprived_half_over_affluent_half_hours_per_lsoa": 0.654
+  },
+  "all_england_op90plus": {
+   "deciles": {
+    "1": {
+     "overflows": 1153,
+     "spills": 21122.0,
+     "hours": 78339.43,
+     "lsoas": 3284,
+     "pop": 5394816.0,
+     "mean_edm_operational_pct": 99.095,
+     "spills_per_lsoa": 6.432,
+     "hours_per_lsoa": 23.855,
+     "spills_per_100k_pop": 391.524,
+     "overflows_per_100_lsoas": 35.11,
+     "spills_per_overflow": 18.319
+    },
+    "2": {
+     "overflows": 996,
+     "spills": 16370.0,
+     "hours": 62698.613,
+     "lsoas": 3284,
+     "pop": 5512051.0,
+     "mean_edm_operational_pct": 99.019,
+     "spills_per_lsoa": 4.985,
+     "hours_per_lsoa": 19.092,
+     "spills_per_100k_pop": 296.986,
+     "overflows_per_100_lsoas": 30.329,
+     "spills_per_overflow": 16.436
+    },
+    "3": {
+     "overflows": 1043,
+     "spills": 20235.0,
+     "hours": 107284.618,
+     "lsoas": 3285,
+     "pop": 5628403.0,
+     "mean_edm_operational_pct": 99.102,
+     "spills_per_lsoa": 6.16,
+     "hours_per_lsoa": 32.659,
+     "spills_per_100k_pop": 359.516,
+     "overflows_per_100_lsoas": 31.75,
+     "spills_per_overflow": 19.401
+    },
+    "4": {
+     "overflows": 1345,
+     "spills": 30713.0,
+     "hours": 200022.222,
+     "lsoas": 3284,
+     "pop": 5579079.0,
+     "mean_edm_operational_pct": 99.239,
+     "spills_per_lsoa": 9.352,
+     "hours_per_lsoa": 60.908,
+     "spills_per_100k_pop": 550.503,
+     "overflows_per_100_lsoas": 40.956,
+     "spills_per_overflow": 22.835
+    },
+    "5": {
+     "overflows": 1571,
+     "spills": 35663.0,
+     "hours": 266033.336,
+     "lsoas": 3285,
+     "pop": 5525827.0,
+     "mean_edm_operational_pct": 99.101,
+     "spills_per_lsoa": 10.856,
+     "hours_per_lsoa": 80.984,
+     "spills_per_100k_pop": 645.388,
+     "overflows_per_100_lsoas": 47.823,
+     "spills_per_overflow": 22.701
+    },
+    "6": {
+     "overflows": 1754,
+     "spills": 40782.0,
+     "hours": 296706.599,
+     "lsoas": 3284,
+     "pop": 5556757.0,
+     "mean_edm_operational_pct": 99.264,
+     "spills_per_lsoa": 12.418,
+     "hours_per_lsoa": 90.349,
+     "spills_per_100k_pop": 733.917,
+     "overflows_per_100_lsoas": 53.41,
+     "spills_per_overflow": 23.251
+    },
+    "7": {
+     "overflows": 1740,
+     "spills": 36647.0,
+     "hours": 265327.433,
+     "lsoas": 3284,
+     "pop": 5409036.0,
+     "mean_edm_operational_pct": 99.293,
+     "spills_per_lsoa": 11.159,
+     "hours_per_lsoa": 80.794,
+     "spills_per_100k_pop": 677.514,
+     "overflows_per_100_lsoas": 52.984,
+     "spills_per_overflow": 21.061
+    },
+    "8": {
+     "overflows": 1514,
+     "spills": 31819.0,
+     "hours": 215962.352,
+     "lsoas": 3285,
+     "pop": 5422910.0,
+     "mean_edm_operational_pct": 99.231,
+     "spills_per_lsoa": 9.686,
+     "hours_per_lsoa": 65.742,
+     "spills_per_100k_pop": 586.751,
+     "overflows_per_100_lsoas": 46.088,
+     "spills_per_overflow": 21.017
+    },
+    "9": {
+     "overflows": 1244,
+     "spills": 27121.0,
+     "hours": 205483.108,
+     "lsoas": 3284,
+     "pop": 5377675.0,
+     "mean_edm_operational_pct": 99.211,
+     "spills_per_lsoa": 8.259,
+     "hours_per_lsoa": 62.571,
+     "spills_per_100k_pop": 504.326,
+     "overflows_per_100_lsoas": 37.881,
+     "spills_per_overflow": 21.801
+    },
+    "10": {
+     "overflows": 809,
+     "spills": 15214.0,
+     "hours": 93322.738,
+     "lsoas": 3285,
+     "pop": 5321650.0,
+     "mean_edm_operational_pct": 99.252,
+     "spills_per_lsoa": 4.631,
+     "hours_per_lsoa": 28.409,
+     "spills_per_100k_pop": 285.889,
+     "overflows_per_100_lsoas": 24.627,
+     "spills_per_overflow": 18.806
+    }
+   },
+   "spearman_decile_vs_spills_per_lsoa": 0.152,
+   "spearman_decile_vs_overflow_density": 0.152,
+   "spearman_decile_vs_spills_per_overflow": 0.297,
+   "deprived_half_over_affluent_half_spills_per_lsoa": 0.819,
+   "deprived_half_over_affluent_half_hours_per_lsoa": 0.663
+  }
+ },
+ "band": {
+  "all_england": {
+   "deprived_edge": {
+    "spills_per_lsoa": [
+     9.707,
+     7.152,
+     7.074,
+     10.542,
+     12.741,
+     13.435,
+     10.569,
+     8.361,
+     6.052,
+     2.702
+    ],
+    "spearman_decile_vs_spills_per_lsoa": -0.273,
+    "deprived_half_over_affluent_half": 1.148
+   },
+   "affluent_edge": {
+    "spills_per_lsoa": [
+     4.11,
+     4.015,
+     5.454,
+     8.491,
+     10.508,
+     12.691,
+     13.101,
+     11.634,
+     11.108,
+     7.223
+    ],
+    "spearman_decile_vs_spills_per_lsoa": 0.624,
+    "deprived_half_over_affluent_half": 0.584
+   }
+  },
+  "urban_only": {
+   "deprived_edge": {
+    "spills_per_lsoa": [
+     9.488,
+     6.487,
+     5.122,
+     4.61,
+     5.247,
+     4.558,
+     4.171,
+     3.841,
+     2.414,
+     1.692
+    ],
+    "spearman_decile_vs_spills_per_lsoa": -0.964,
+    "deprived_half_over_affluent_half": 1.856
+   },
+   "affluent_edge": {
+    "spills_per_lsoa": [
+     3.996,
+     3.686,
+     4.259,
+     3.824,
+     4.445,
+     5.126,
+     6.782,
+     6.421,
+     6.154,
+     5.447
+    ],
+    "spearman_decile_vs_spills_per_lsoa": 0.818,
+    "deprived_half_over_affluent_half": 0.675
+   }
+  },
+  "rural_only": {
+   "deprived_edge": {
+    "spills_per_lsoa": [
+     22.833,
+     22.297,
+     31.514,
+     43.57,
+     38.739,
+     37.989,
+     28.378,
+     22.567,
+     17.754,
+     7.08
+    ],
+    "spearman_decile_vs_spills_per_lsoa": -0.43,
+    "deprived_half_over_affluent_half": 1.397
+   },
+   "affluent_edge": {
+    "spills_per_lsoa": [
+     10.926,
+     11.5,
+     20.416,
+     34.472,
+     31.54,
+     33.614,
+     30.691,
+     28.015,
+     27.04,
+     14.919
+    ],
+    "spearman_decile_vs_spills_per_lsoa": 0.248,
+    "deprived_half_over_affluent_half": 0.811
+   }
+  },
+  "coastal_only": {
+   "deprived_edge": {
+    "spills_per_lsoa": [
+     11.067,
+     6.685,
+     5.862,
+     10.728,
+     11.065,
+     11.821,
+     10.099,
+     6.791,
+     7.515,
+     4.881
+    ],
+    "spearman_decile_vs_spills_per_lsoa": -0.297,
+    "deprived_half_over_affluent_half": 1.105
+   },
+   "affluent_edge": {
+    "spills_per_lsoa": [
+     7.167,
+     4.569,
+     5.25,
+     8.906,
+     11.092,
+     13.818,
+     12.966,
+     9.675,
+     12.908,
+     7.825
+    ],
+    "spearman_decile_vs_spills_per_lsoa": 0.564,
+    "deprived_half_over_affluent_half": 0.647
+   }
+  },
+  "inland_only": {
+   "deprived_edge": {
+    "spills_per_lsoa": [
+     9.267,
+     7.32,
+     7.517,
+     10.483,
+     13.185,
+     13.771,
+     10.665,
+     8.648,
+     5.822,
+     2.494
+    ],
+    "spearman_decile_vs_spills_per_lsoa": -0.261,
+    "deprived_half_over_affluent_half": 1.154
+   },
+   "affluent_edge": {
+    "spills_per_lsoa": [
+     3.121,
+     3.814,
+     5.529,
+     8.359,
+     10.353,
+     12.456,
+     13.129,
+     11.992,
+     10.825,
+     7.166
+    ],
+    "spearman_decile_vs_spills_per_lsoa": 0.636,
+    "deprived_half_over_affluent_half": 0.561
+   }
+  }
+ },
+ "op90_note": "13169 of 14180 overflows had EDM operational >=90% of the reporting period"
+}
