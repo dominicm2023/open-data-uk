@@ -404,13 +404,38 @@ LAT0 = 55.0                       # the parallel the projection is true at
 
 def project(lon: float, lat: float, w: int, h: int,
             pad: int = 0) -> tuple[float, float]:
-    import math
-    k = math.cos(math.radians(LAT0))
-    x0, x1 = UK["west"] * k, UK["east"] * k
-    fx = (lon * k - x0) / (x1 - x0)
-    fy = 1 - (lat - UK["south"]) / (UK["north"] - UK["south"])
-    return pad + fx * (w - 2 * pad), pad + fy * (h - 2 * pad)
+    """Equirectangular, at one scale on both axes, fitted and centred.
 
+    The first version multiplied longitude by cos(lat) and then normalised the
+    result across the same range — so the factor cancelled algebraically and
+    no correction was applied at all. Ten degrees of longitude and eleven of
+    latitude were stretched to fill a 664x504 box, which is 2.43 times too
+    wide. Britain runs south-west to north-east, and stretching it sideways
+    rotates that axis toward the horizontal: the map read as tilted.
+
+    The fix is to scale both axes by the same number and letterbox whatever is
+    left over. Britain's true aspect at this latitude is about 0.54, so a
+    correctly-shaped map is tall and narrow and leaves free space either side
+    — which is where the legend now goes, rather than being stretched away.
+    """
+    import math
+
+    k = math.cos(math.radians(LAT0))
+    x_span = (UK["east"] - UK["west"]) * k
+    y_span = UK["north"] - UK["south"]
+    avail_w, avail_h = w - 2 * pad, h - 2 * pad
+    scale = min(avail_w / x_span, avail_h / y_span)
+    ox = pad + (avail_w - x_span * scale) / 2
+    oy = pad + (avail_h - y_span * scale) / 2
+    return (ox + (lon - UK["west"]) * k * scale,
+            oy + (UK["north"] - lat) * scale)
+
+
+def map_frame(w: int, h: int, pad: int) -> tuple[float, float, float, float]:
+    """The box the land actually occupies, so callers can use the gutters."""
+    x0, y0 = project(UK["west"], UK["north"], w, h, pad)
+    x1, y1 = project(UK["east"], UK["south"], w, h, pad)
+    return x0, y0, x1, y1
 
 
 def _coastline(w: int, h: int, pad: int) -> str:
@@ -459,7 +484,10 @@ def uk_map(points: list[dict], caption: str, legend: list[tuple[str, str]]
     correcting for.
     """
     import math
-    h = 560
+    # Taller than the other charts on purpose. Britain's true aspect is 0.54,
+    # so the width is set by the height; at 560 the country came out 274px
+    # across in a 720px frame, which is correct and too small to read.
+    h = 700
     top = max((p.get("value") or 0) for p in points) or 1
     out = [f'<rect x="0" y="0" width="{W}" height="{h}" fill="var(--card)"/>',
            _coastline(W, h, PAD)]
@@ -468,11 +496,16 @@ def uk_map(points: list[dict], caption: str, legend: list[tuple[str, str]]
         r = 3 + 16 * math.sqrt((p.get("value") or 0) / top)
         out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" '
                    f'fill="{p.get("fill", "var(--cat-1)")}" opacity=".72"/>')
+    # Stacked in the left gutter. A correctly-shaped UK leaves about 190px
+    # free either side, so the legend no longer has to sit under the map
+    # competing with the caption.
+    lx0 = int(map_frame(W, h, PAD)[0])
+    gutter = max(120, lx0 - PAD - 10)
     for i, (label, fill) in enumerate(legend):
-        lx = PAD + i * 168
-        out.append(f'<circle cx="{lx + 6}" cy="{h - 30}" r="6" fill="{fill}"/>'
-                   f'<text x="{lx + 18}" y="{h - 26}" class="t-label">'
-                   f'{esc(_fit(label, 14, 140, "t-label"))}</text>')
+        ly = PAD + 18 + i * 24
+        out.append(f'<circle cx="{PAD + 6}" cy="{ly - 4}" r="6" fill="{fill}"/>'
+                   f'<text x="{PAD + 18}" y="{ly}" class="t-label">'
+                   f'{esc(_fit(label, 14, gutter, "t-label"))}</text>')
     cap, cap_h = _para(caption, PAD, h + 4, "t-label", 14, W - 2 * PAD, 19)
     return "".join(out) + cap, h + 4 + cap_h + 6
 
@@ -491,7 +524,7 @@ def bbox_density(boxes: list[tuple[float, float, float, float]],
     covering the whole country tells you nothing about any place in it, and
     left in they flood every cell equally.
     """
-    h = 560
+    h = 700
     span_x = UK["east"] - UK["west"]
     span_y = UK["north"] - UK["south"]
     grid: dict[tuple[int, int], int] = {}
@@ -511,8 +544,11 @@ def bbox_density(boxes: list[tuple[float, float, float, float]],
     if not grid:
         return "", PAD
     top = max(grid.values())
-    cw = (W - 2 * PAD) / cells
-    ch = (h - 2 * PAD) / cells
+    # Cell corners go through the same projection as the coastline, or the
+    # grid drifts off the land it is supposed to describe.
+    fx0, fy0, fx1, fy1 = map_frame(W, h, PAD)
+    cw = (fx1 - fx0) / cells
+    ch = (fy1 - fy0) / cells
     out = [f'<rect x="0" y="0" width="{W}" height="{h}" fill="var(--card)"/>',
            _coastline(W, h, PAD)]
     import math
@@ -521,7 +557,7 @@ def bbox_density(boxes: list[tuple[float, float, float, float]],
         # on a linear ramp everywhere else would read as empty.
         f = math.log1p(n) / math.log1p(top)
         step = min(5, 1 + int(f * 5))
-        out.append(f'<rect x="{PAD + gx * cw:.1f}" y="{PAD + gy * ch:.1f}" '
+        out.append(f'<rect x="{fx0 + gx * cw:.1f}" y="{fy0 + gy * ch:.1f}" '
                    f'width="{cw + 0.6:.1f}" height="{ch + 0.6:.1f}" '
                    f'fill="var(--seq-{step})"/>')
     km = span_y * 111 / cells
