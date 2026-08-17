@@ -67,21 +67,85 @@ def esc(v: object) -> str:
     return escape(str(v), quote=True)
 
 
-def _wrap(text: str, width: int) -> list[str]:
-    """Break a string into lines of roughly `width` characters, on spaces."""
+# Average advance width as a fraction of font size, per text class. SVG has
+# no reflow: text that doesn't fit doesn't wrap, it is drawn over whatever is
+# beside it. So the width has to be predicted before drawing, and predicting
+# it too narrow is the failure that puts labels through bars.
+#
+# These were measured in a browser with getBBox rather than assumed, then
+# given headroom. A single figure for everything was wrong in both
+# directions: 62px bold tabular digits actually run to 0.72em, and the
+# letter-spaced uppercase keys to 0.70em, because `letter-spacing: .09em`
+# adds to every character. Both were being under-estimated by a third.
+EM_BY_CLASS = {
+    "t-big": 0.78,      # measured 0.72 — bold, tabular, 62px
+    "p-key": 0.75,      # measured 0.70 — uppercase plus .09em tracking
+    "t-value": 0.60,    # measured 0.56 — bold tabular numerals
+    "p-mono": 0.60,     # measured 0.55
+    "t-label": 0.56,    # measured 0.50
+    "p-val": 0.53,      # measured 0.48
+    "t-unit": 0.50,     # measured 0.44
+}
+EM_DEFAULT = 0.60
+
+SIZE_BY_CLASS = {"t-big": 62, "t-unit": 15, "t-label": 14, "t-value": 14,
+                 "p-key": 9.5, "p-val": 12, "p-mono": 11}
+
+
+def _em(cls: str) -> float:
+    return EM_BY_CLASS.get(cls, EM_DEFAULT)
+
+
+def _w(text: str, size: float, cls: str = "") -> float:
+    return len(str(text)) * size * _em(cls)
+
+
+def _fit(text: str, size: float, max_px: float, cls: str = "") -> str:
+    """Shorten text to fit a box, with an ellipsis so the cut is visible."""
+    text = str(text)
+    if _w(text, size, cls) <= max_px:
+        return text
+    per = size * _em(cls)
+    keep = max(1, int(max_px / per) - 1)
+    return text[:keep].rstrip(" ,;:-") + "…"
+
+
+def _wrap(text: str, size: float, max_px: float, cls: str = "") -> list[str]:
+    """Break text into lines that each fit `max_px`, on spaces where possible."""
+    per = size * _em(cls)
+    budget = max(8, int(max_px / per))
     words, lines, cur = str(text).split(), [], ""
-    for w in words:
-        if cur and len(cur) + 1 + len(w) > width:
+    for word in words:
+        # A single token longer than the line (a long SQL clause, a hostname)
+        # has to be broken mid-word or it overflows the box on its own.
+        while len(word) > budget:
+            if cur:
+                lines.append(cur)
+                cur = ""
+            lines.append(word[:budget])
+            word = word[budget:]
+        if cur and len(cur) + 1 + len(word) > budget:
             lines.append(cur)
-            cur = w
+            cur = word
         else:
-            cur = f"{cur} {w}".strip()
+            cur = f"{cur} {word}".strip()
     if cur:
         lines.append(cur)
     return lines
 
 
-def _provenance(y: int, query: str, verify: str, byline: str = "") -> str:
+def _para(text: str, x: int, y: int, cls: str, size: float, max_px: float,
+          leading: int) -> tuple[str, int]:
+    """A wrapped run of text. Returns the SVG and the height it consumed."""
+    lines = _wrap(text, size, max_px, cls)
+    svg = "".join(
+        f'<text x="{x}" y="{y + i * leading}" class="{cls}">{esc(line)}</text>'
+        for i, line in enumerate(lines))
+    return svg, len(lines) * leading
+
+
+def _provenance(y: int, query: str, verify: str,
+                byline: str = "") -> tuple[str, int]:
     """The band every graphic carries. Two or three slots, brand rule on top.
 
     `byline` is the structural signal that separates the two properties: an
@@ -89,10 +153,15 @@ def _provenance(y: int, query: str, verify: str, byline: str = "") -> str:
     signed. Someone can then tell a measurement from an argument without
     knowing anything about either brand.
     """
-    q = _wrap(query, 62)[:2]
+    # The band grows to fit the whole query. Truncating it would defeat the
+    # point of printing it: a claim is only checkable if the reader can see
+    # the entire thing that produced it.
+    reserve = _w(byline, 12, "p-val") + 90 if byline else 0
+    lines = _wrap(query, 11, W - 2 * PAD - reserve, "p-mono")
     rows = "".join(
         f'<text x="{PAD}" y="{y + 40 + i * 14}" class="p-mono">{esc(line)}</text>'
-        for i, line in enumerate(q))
+        for i, line in enumerate(lines))
+    height = max(BAND, 40 + len(lines) * 14 + 22)
     sign = ""
     if byline:
         sign = (f'<text x="{W - PAD}" y="{y + 24}" class="p-key" '
@@ -100,13 +169,14 @@ def _provenance(y: int, query: str, verify: str, byline: str = "") -> str:
                 f'<text x="{W - PAD}" y="{y + 41}" class="p-val" '
                 f'text-anchor="end">{esc(byline)}</text>')
     return (
-        f'<rect x="0" y="{y}" width="{W}" height="{BAND}" fill="var(--accent-soft)"/>'
+        f'<rect x="0" y="{y}" width="{W}" height="{height}" '
+        f'fill="var(--accent-soft)"/>'
         f'<rect x="0" y="{y}" width="{W}" height="2" fill="var(--accent)"/>'
         f'<text x="{PAD}" y="{y + 24}" class="p-key">'
         f'{"HOW IT WAS MEASURED" if not byline else "MEASURED FROM"}</text>'
         f'{rows}'
-        f'<text x="{PAD}" y="{y + BAND - 8}" class="p-val">{esc(verify)}</text>'
-        f'{sign}')
+        f'<text x="{PAD}" y="{y + height - 10}" class="p-val">{esc(verify)}</text>'
+        f'{sign}'), height
 
 
 def _frame(body: str, height: int, title: str, desc: str) -> str:
@@ -134,42 +204,58 @@ def share_bar(part: int, whole: int, label: str, sub: str) -> tuple[str, int]:
     hides its denominator and a bar alone hides its precision.
     """
     pct = round(100 * part / whole) if whole else 0
-    y = PAD + 66
+    y = PAD + 62
     filled = int((W - 2 * PAD) * part / whole) if whole else 0
+    # The unit sits on its own line under the number rather than beside it.
+    # Placing it alongside meant predicting the width of 62px bold digits from
+    # how many there were, which put "state no licence" through the "34%".
+    # 24px below the baseline left the 62px number's em box overlapping the
+    # label's by 7.6px — invisible only because digits have no descenders,
+    # which is not a property to rely on.
+    lead, lead_h = _para(label, PAD, y + 38, "t-unit", 15, W - 2 * PAD, 20)
+    bar_y = y + 24 + lead_h + 8
+    caption, cap_h = _para(sub, PAD, bar_y + 48, "t-label", 14, W - 2 * PAD, 19)
     body = (
         f'<text x="{PAD}" y="{y}" class="t-big">{pct}%</text>'
-        f'<text x="{PAD + 14 + len(str(pct)) * 38}" y="{y}" class="t-unit">'
-        f'{esc(label)}</text>'
-        f'<rect x="{PAD}" y="{y + 26}" width="{W - 2 * PAD}" height="26" rx="4" '
+        f'{lead}'
+        f'<rect x="{PAD}" y="{bar_y}" width="{W - 2 * PAD}" height="26" rx="4" '
         f'fill="var(--line)"/>'
-        f'<rect x="{PAD}" y="{y + 26}" width="{filled}" height="26" rx="4" '
+        f'<rect x="{PAD}" y="{bar_y}" width="{filled}" height="26" rx="4" '
         f'fill="var(--cat-1)"/>'
-        f'<text x="{PAD}" y="{y + 76}" class="t-label">{esc(sub)}</text>')
-    return body, y + 96
+        f'{caption}')
+    return body, bar_y + 48 + cap_h + 6
 
 
 def hbar(rows: list[tuple[str, int]], unit: str, dead: bool = False) -> tuple[str, int]:
-    """Ranked horizontal bars. Labels sit outside, values inside or after."""
+    """Ranked horizontal bars, labels right-aligned into the gutter.
+
+    Right-aligning against the bars is what keeps this safe: a label can only
+    ever grow away from the bar it belongs to, so the worst case is a label
+    truncated at the left edge rather than one printed over the data. The
+    previous version cut names at 34 characters, which at 14px is about 248px
+    of text in a 204px gutter — every long council name crossed its own bar.
+    """
     if not rows:
         return "", PAD
     top = max(v for _, v in rows) or 1
-    span = W - PAD - LABEL_W - 70
+    gutter = LABEL_W - PAD - 12          # room for the label itself
+    span = W - LABEL_W - PAD - 78        # bar track, leaving room for the value
     out = []
     for i, (name, value) in enumerate(rows):
         y = PAD + i * ROW
         w = max(2, int(span * value / top))
         fill = "url(#hatch)" if dead else f"var(--cat-{min(i + 1, 5)})"
         out.append(
-            f'<text x="{PAD}" y="{y + 19}" class="t-label">'
-            f'{esc(name[:34])}</text>'
+            f'<text x="{LABEL_W - 12}" y="{y + 19}" class="t-label" '
+            f'text-anchor="end">{esc(_fit(name, 14, gutter, "t-label"))}</text>'
             f'<rect x="{LABEL_W}" y="{y + 6}" width="{w}" height="17" rx="3" '
             f'fill="{fill}"/>'
             f'<text x="{LABEL_W + w + 8}" y="{y + 19}" class="t-value">'
             f'{value:,}</text>')
     height = PAD + len(rows) * ROW
-    out.append(f'<text x="{PAD}" y="{height + 16}" class="t-label">'
-               f'{esc(unit)}</text>')
-    return "".join(out), height + 32
+    cap, cap_h = _para(unit, PAD, height + 16, "t-label", 14, W - 2 * PAD, 19)
+    out.append(cap)
+    return "".join(out), height + 16 + cap_h + 6
 
 
 def unit_grid(total: int, marked: int, caption: str) -> tuple[str, int]:
@@ -191,9 +277,10 @@ def unit_grid(total: int, marked: int, caption: str) -> tuple[str, int]:
         cells.append(f'<rect x="{x}" y="{y}" width="{size}" height="{size}" '
                      f'rx="3" fill="{fill}"/>')
     height = PAD + rows_n * (size + gap)
-    cells.append(f'<text x="{PAD}" y="{height + 18}" class="t-label">'
-                 f'{esc(caption)}</text>')
-    return "".join(cells), height + 34
+    cap, cap_h = _para(caption, PAD, height + 18, "t-label", 14,
+                       W - 2 * PAD, 19)
+    cells.append(cap)
+    return "".join(cells), height + 18 + cap_h + 6
 
 
 # --- dispatch ------------------------------------------------------------
@@ -254,16 +341,21 @@ def _with_fallbacks(svg: str) -> str:
     return svg
 
 
-def render(f: dict, byline: str = "") -> str:
+def render(f: dict, byline: str = "", measured: str = "") -> str:
     """One finding, one SVG. Empty string if the shape doesn't suit a chart."""
     body, height = _chart_for(f)
     if not body:
         return ""
-    verify = f.get("link", "open-data.org.uk")
+    # Where to check it, and when it was true. The scheme is dropped because
+    # the band is read, not clicked.
+    verify = f.get("link", "open-data.org.uk").split("://")[-1]
+    if measured:
+        verify = f"{verify} · measured {measured}"
     query = f.get("sql") or "measured from the index"
+    band, band_h = _provenance(height, query, verify, byline)
     return _with_fallbacks(_frame(
-        body + _provenance(height, query, verify, byline),
-        height + BAND, f.get("headline", ""), f.get("detail", "")[:300]))
+        body + band, height + band_h,
+        f.get("headline", ""), f.get("detail", "")[:300]))
 
 
 def standalone(svg: str, joined_up: bool = False) -> str:

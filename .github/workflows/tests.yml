@@ -24,6 +24,12 @@ jobs:
         run: python scripts/render_test.py
       - name: Licence normalisation
         run: python scripts/licence_test.py
+      # SVG doesn't reflow, so text that doesn't fit is drawn over whatever is
+      # beside it and the chart still renders and still validates. Only a
+      # geometry check catches that, and the text comes from findings.json,
+      # which changes every night.
+      - name: Chart geometry
+        run: python scripts/charts_test.py
 
   live:
     # The unit tests cover rendering with invented records; this covers real

@@ -686,20 +686,27 @@ def render_findings(findings: list[dict], measured: str, site_url: str) -> str:
     auto = [f for f in findings if f.get("tier", 5) <= 2]
     cards = []
     for f in auto:
-        svg = charts.render(f)
-        figure = f"<figure>{svg}</figure>" if svg else ""
-        prov = (
-            '<div class="provenance">'
-            '<div class="slot query"><b>How it was measured</b>'
-            f'<code>{esc(f.get("sql") or "measured from the index")}</code></div>'
-            f'<div class="slot verify"><b>Measured</b>{esc(measured)}</div>'
-            "</div>")
+        svg = charts.render(f, measured=measured)
+        # The provenance band lives inside the SVG, so a chart carries its own
+        # query wherever it ends up. Repeating it in HTML underneath said "how
+        # it was measured" twice on every card. When there is no chart, the
+        # HTML band is the only place the query can go.
+        if svg:
+            body = f"<figure>{svg}</figure>"
+        else:
+            body = (
+                '<div class="provenance">'
+                '<div class="slot query"><b>How it was measured</b>'
+                f'<code>{esc(f.get("sql") or "measured from the index")}</code>'
+                "</div>"
+                f'<div class="slot verify"><b>Measured</b>{esc(measured)}</div>'
+                "</div>")
         cards.append(
             f'<article class="finding">'
             f'<h2><span class="tier">Tier {f.get("tier")}</span> '
             f'{esc(f.get("headline", ""))}</h2>'
             f'<p class="lede">{esc(f.get("detail", ""))}</p>'
-            f"{figure}{prov}</article>")
+            f"{body}</article>")
 
     held = [f for f in findings if f.get("tier", 5) > 2]
     queued = ""
