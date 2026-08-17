@@ -503,3 +503,42 @@ footer {
   border: 1px solid var(--accent);
 }
 .tier.review { background: transparent; color: var(--amber); border-color: var(--amber); }
+
+/* ---------- Workshop: the two liveries next to each other -------------
+ *
+ * Only ever seen behind auth. The point is a direct comparison, so the two
+ * charts must sit side by side on a wide screen and stack on a narrow one —
+ * a comparison you have to scroll between isn't one.
+ */
+
+.livery-pair {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: 1fr;
+  margin: 1.2rem 0 2rem;
+}
+@media (min-width: 60rem) {
+  .livery-pair { grid-template-columns: 1fr 1fr; }
+}
+.livery-pair figure {
+  margin: 0;
+  padding: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.livery-pair figcaption {
+  padding: .55rem .9rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  background: var(--accent);
+}
+/* Side by side the charts are half-width, so they get no scroll floor —
+   squashed-but-comparable beats legible-but-not-side-by-side here. */
+.livery-pair svg { display: block; width: 100%; min-width: 0; height: auto; }
+.finding > h3 { margin: 0; padding: 1.2rem 1.4rem 0; font-size: 1.1rem; }
+.finding > h3 + .lede { padding-top: .6rem; }

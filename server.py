@@ -655,6 +655,34 @@ def findings_page() -> HTMLResponse:
         headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
 
 
+@app.get("/lab", include_in_schema=False)
+def lab_page() -> HTMLResponse:
+    """The private workshop. Auth is Caddy's job, not this function's.
+
+    Deliberately no password check here. Putting one in application code
+    means every future route under /lab has to remember it, and forgetting
+    once publishes the unreviewed queue. Caddy gates the path prefix, so a
+    route added here is behind the door by default rather than by discipline.
+    Sending no-store as well: this page holds claims we have decided are not
+    fit to publish, and a shared cache should not keep a copy.
+    """
+    import json
+    from datetime import datetime, timezone
+    from pathlib import Path
+
+    path = Path(__file__).parent / "findings.json"
+    if not path.exists():
+        return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    findings = json.loads(path.read_text(encoding="utf-8"))
+    measured = datetime.fromtimestamp(
+        path.stat().st_mtime, tz=timezone.utc).strftime("%d %B %Y")
+    return HTMLResponse(
+        pagerender.render_lab(findings, measured, SITE_URL),
+        headers={"Cache-Control": "no-store, private",
+                 "X-Robots-Tag": "noindex, nofollow, noarchive"})
+
+
 @app.get("/topics", include_in_schema=False)
 def topics_page() -> HTMLResponse:
     return HTMLResponse(
@@ -821,6 +849,10 @@ def robots() -> PlainTextResponse:
         "Content-Signal: search=yes, ai-input=yes, ai-train=no\n"
         "Allow: /\n"
         "Disallow: /api/\n"
+        # Behind HTTP auth anyway; listed so a crawler doesn't spend requests
+        # collecting 401s, and so the exclusion survives if auth is ever
+        # loosened for a while.
+        "Disallow: /lab\n"
         "Disallow: /docs\n"
         "Disallow: /redoc\n"
         "Disallow: /openapi.json\n"

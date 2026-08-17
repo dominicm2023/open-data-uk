@@ -390,3 +390,43 @@ systemctl --user enable --now opendata-index
 
 Caddy still needs a root-owned config edit, so this only removes two of the
 three sudo touchpoints — unless you front it with something else entirely.
+
+---
+
+## The workshop at `/lab`
+
+A private zone for trying out Joined Up's livery and for reviewing the
+findings that must not auto-publish (tier 3 and up). Auth is **Caddy's**, not
+the application's:
+
+```
+@lab path /lab /lab/*
+basic_auth @lab {
+	joined <bcrypt hash>
+}
+header @lab {
+	X-Robots-Tag "noindex, nofollow, noarchive"
+	Cache-Control "no-store, private"
+}
+```
+
+Gating the path prefix at the edge rather than in `server.py` is deliberate.
+An application-level check has to be repeated on every new handler, and
+forgetting once would publish the unreviewed queue — the one thing this zone
+exists to prevent. Anything added under `/lab` is private by default.
+
+To change the password:
+
+```bash
+caddy hash-password --plaintext 'new-passphrase'
+```
+
+Put the hash in `/etc/caddy/Caddyfile`, then **always**
+`sudo caddy validate --config /etc/caddy/Caddyfile` before
+`sudo systemctl reload caddy` — that file also serves groundwatercast, so a
+syntax error takes down a site that has nothing to do with this one. Back it
+up first; there are timestamped `Caddyfile.bak-*` copies alongside it.
+
+The byline on Joined Up graphics comes from `LAB_BYLINE` in the service
+environment, defaulting to "Joined Up". Set it in the systemd unit to sign
+with a person's name.

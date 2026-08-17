@@ -18,6 +18,7 @@ import functools
 import hashlib
 import html
 import json
+import os
 import re
 import urllib.parse
 from pathlib import Path
@@ -747,4 +748,91 @@ def render_findings(findings: list[dict], measured: str, site_url: str) -> str:
         "hosting, missing licences, councils publishing nothing, and data that "
         "outlived the councils that published it. Each with the query behind it.",
         "/findings", site_url)
+    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+
+
+LAB_BYLINE = os.environ.get("LAB_BYLINE", "Joined Up")
+
+
+def render_lab(findings: list[dict], measured: str, site_url: str) -> str:
+    """The workshop: Joined Up's livery, and the findings a person must judge.
+
+    Behind HTTP auth at the edge, which is what makes it useful. Two things
+    can happen here that must not happen in public:
+
+    Tier 3 and up get drawn. They are exactly the claims that need a person —
+    a named organisation, a join across sources, an argument — and judging one
+    is much easier with the chart in front of you than as a line of text in a
+    queue. Nothing here is published; this is the queue with pictures.
+
+    And both liveries render side by side. The whole credibility model rests
+    on a reader being able to tell a measurement from an argument at a glance,
+    which is not a claim anyone should accept from a design document. Put them
+    next to each other and it is either obvious or it isn't.
+    """
+    import charts
+
+    hero = next((f for f in findings if f.get("kind") == "dead-hosts"
+                 and "councils" in f.get("numbers", {})), findings[0])
+    compare = (
+        "<h2>The same finding, both liveries</h2>"
+        '<p class="note">Left is the index: unsigned, ending in the query that '
+        "produced it. Right is Joined Up: same skeleton, same chart grammar, "
+        "signed. If you cannot tell them apart at a glance the separation "
+        "isn't working, and the separation is the whole reason the index can "
+        "claim to be neutral.</p>"
+        '<div class="livery-pair">'
+        f'<figure><figcaption>Index</figcaption>'
+        f'{charts.render(hero, measured=measured)}</figure>'
+        f'<figure class="joined-up"><figcaption>Joined Up</figcaption>'
+        f'{charts.render(hero, byline=LAB_BYLINE, measured=measured)}</figure>'
+        "</div>")
+
+    by_tier: dict[int, list[dict]] = {}
+    for f in findings:
+        by_tier.setdefault(f.get("tier", 5), []).append(f)
+
+    note = {
+        1: "A fact about our own index. Publishes unattended.",
+        2: "A pattern across many bodies. Publishes unattended.",
+        3: "Names one organisation. Every one of these so far had a cause "
+           "outside our data that changed what it meant — an abolished "
+           "council, a decommissioned portal, files removed by a different "
+           "agency. Read the chart, then go and check the cause.",
+        4: "A join across sources. The join is where this goes wrong: "
+           "mismatched geographies, different reporting periods, events "
+           "counted as volumes. Nobody should publish one of these without "
+           "having checked it themselves.",
+        5: "An argument. A person writes this one, in their own name.",
+    }
+
+    blocks = []
+    for tier in sorted(by_tier):
+        blocks.append(f'<h2>Tier {tier}</h2><p class="note">{note[tier]}</p>')
+        for f in by_tier[tier]:
+            svg = charts.render(f, byline=LAB_BYLINE, measured=measured)
+            figure = f"<figure>{svg}</figure>" if svg else (
+                '<p class="note">No chart — this one is a prompt, not a '
+                "measurement. It needs writing, not drawing.</p>")
+            blocks.append(
+                f'<article class="finding joined-up">'
+                f'<h3>{esc(f.get("headline", ""))}</h3>'
+                f'<p class="lede">{esc(f.get("detail", ""))}</p>'
+                f"{figure}</article>")
+
+    body = ("<h1>Workshop</h1>"
+            "<p>Not published. This is where Joined Up's graphics get tried "
+            "out, and where the findings that need a person get drawn so they "
+            "can be judged rather than skimmed.</p>"
+            f'<p class="note">Measured {esc(measured)}. '
+            f'{len(findings)} findings. Signed as "{esc(LAB_BYLINE)}" — set '
+            "<code>LAB_BYLINE</code> in the service environment to change "
+            "it.</p>"
+            + compare + "".join(blocks))
+
+    head = "\n".join([
+        f"<title>Workshop — {SITE_NAME}</title>",
+        '<meta name="robots" content="noindex,nofollow,noarchive">',
+        '<meta name="referrer" content="no-referrer">',
+    ])
     return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
