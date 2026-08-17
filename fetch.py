@@ -34,12 +34,14 @@ from __future__ import annotations
 
 import argparse
 import csv
+import os
 import io
 import json
 import sqlite3
 import zipfile
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
+from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
@@ -57,6 +59,7 @@ WORKERS = 6
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS resource_contents (
+    vantage     TEXT,        -- which network saw this, so a gap can be explained
     url         TEXT PRIMARY KEY,
     kind        TEXT,        -- archive | table | json | unknown
     real_format TEXT,        -- what it turned out to be, normalised
@@ -69,6 +72,20 @@ CREATE TABLE IF NOT EXISTS resource_contents (
     fetched_at  TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_contents_kind ON resource_contents(kind);
+
+-- What each network can actually reach. Learned from outcomes rather than
+-- configured, because the pattern is not guessable: SP Energy Networks and
+-- Electricity North West answer a home connection and refuse the datacentre,
+-- while plenty of rate-limited APIs are friendlier to the server than to a
+-- laptop on a domestic line.
+CREATE TABLE IF NOT EXISTS host_reach (
+    host      TEXT,
+    vantage   TEXT,
+    ok        INTEGER DEFAULT 0,
+    failed    INTEGER DEFAULT 0,
+    last_seen TEXT,
+    PRIMARY KEY (host, vantage)
+);
 """
 
 
@@ -311,8 +328,60 @@ def probe(url: str) -> dict:
     return row
 
 
+def learn_reach(conn: sqlite3.Connection, rows: list[dict], vantage: str) -> None:
+    """Record what this network could and could not reach.
+
+    A resource counts as reached if we learned anything about it. Transport
+    failures — refused, timed out, reset — count against the host for this
+    vantage only, never against the publisher: the whole reason for keeping
+    this per-network is that "we could not reach it" and "it is not there"
+    are different facts, and only one of them is about them.
+    """
+    tally: dict[str, list[int]] = {}
+    for r in rows:
+        host = urlparse(r["url"]).hostname or ""
+        if not host:
+            continue
+        note = (r.get("note") or "").lower()
+        blocked = any(w in note for w in ("connection", "timeout", "timed out",
+                                          "sslerror", "refused", "reset",
+                                          "toomanyredirects", "proxyerror"))
+        t = tally.setdefault(host, [0, 0])
+        t[1 if blocked else 0] += 1
+    now = datetime.now(timezone.utc).isoformat()
+    for host, (ok, failed) in tally.items():
+        conn.execute(
+            "INSERT INTO host_reach (host, vantage, ok, failed, last_seen) "
+            "VALUES (?, ?, ?, ?, ?) ON CONFLICT(host, vantage) DO UPDATE SET "
+            "ok = ok + excluded.ok, failed = failed + excluded.failed, "
+            "last_seen = excluded.last_seen", (host, vantage, ok, failed, now))
+    conn.commit()
+
+
+def unreachable_here(conn: sqlite3.Connection, vantage: str) -> set[str]:
+    """Hosts this network has tried and consistently failed to reach.
+
+    Three strikes and nothing to show for them. Kept deliberately loose: one
+    failure is weather, and a host that has ever answered us is worth trying
+    again.
+    """
+    return {h for (h,) in conn.execute(
+        "SELECT host FROM host_reach WHERE vantage = ? AND ok = 0 AND failed >= 3",
+        (vantage,))}
+
+
+def reachable_elsewhere(conn: sqlite3.Connection, vantage: str) -> set[str]:
+    """Hosts another network reaches that this one cannot — the work to swap."""
+    return {h for (h,) in conn.execute(
+        "SELECT DISTINCT r.host FROM host_reach r WHERE r.ok > 0 AND r.vantage <> ? "
+        "AND EXISTS (SELECT 1 FROM host_reach m WHERE m.host = r.host "
+        "            AND m.vantage = ? AND m.ok = 0 AND m.failed >= 3)",
+        (vantage, vantage))}
+
+
 def pick(conn: sqlite3.Connection, limit: int, source: str | None,
-         zips_only: bool, title: str | None = None) -> list[str]:
+         zips_only: bool, title: str | None = None,
+         vantage: str = "", handover: bool = False) -> list[str]:
     """Resources worth looking inside, least-known first.
 
     Prefers what we know least about: a resource with no recorded format
@@ -334,8 +403,7 @@ def pick(conn: sqlite3.Connection, limit: int, source: str | None,
         # "deepen the index generally".
         where.append("LOWER(d.title) LIKE ?")
         params.append(f"%{title.lower()}%")
-    params.append(limit)
-    return [r[0] for r in conn.execute(f"""
+    urls = [r[0] for r in conn.execute(f"""
         SELECT rs.url
         FROM resources rs
         JOIN resource_checks rc ON rc.url = rs.url
@@ -344,23 +412,77 @@ def pick(conn: sqlite3.Connection, limit: int, source: str | None,
         GROUP BY rs.url
         ORDER BY (d.formats_norm IN ('[]', '') OR d.formats_norm IS NULL) DESC,
                  rs.url
-        LIMIT ?""", params)]
+        LIMIT ?""", params + [limit * 6])]
+
+    # Route by what this network has learned it can reach. Hosts that have
+    # refused us three times running are left for the other vantage point,
+    # and --handover does the mirror image: only the work this network is
+    # uniquely able to do.
+    if vantage:
+        blind = unreachable_here(conn, vantage)
+        if handover:
+            wanted = reachable_elsewhere(conn, vantage)
+            urls = [u for u in urls if (urlparse(u).hostname or "") in wanted]
+        else:
+            urls = [u for u in urls if (urlparse(u).hostname or "") not in blind]
+    return urls[:limit]
 
 
 def store(conn: sqlite3.Connection, rows: list[dict]) -> None:
     conn.executemany(
         "INSERT OR REPLACE INTO resource_contents "
         "(url, kind, real_format, members, columns, rows_seen, bytes_total, "
-        " bytes_read, note, fetched_at) VALUES "
+        " bytes_read, note, fetched_at, vantage) VALUES "
         "(:url, :kind, :real_format, :members, :columns, :rows_seen, "
-        " :bytes_total, :bytes_read, :note, :fetched_at)",
+        " :bytes_total, :bytes_read, :note, :fetched_at, :vantage)",
         [{"members": None, "columns": None, "rows_seen": None,
           "bytes_total": None, "bytes_read": None, "real_format": None,
-          "note": None, **r,
+          "note": None, "vantage": None, **r,
           "members": json.dumps(r["members"]) if r.get("members") else None,
           "columns": json.dumps(r["columns"]) if r.get("columns") else None}
          for r in rows])
     conn.commit()
+
+
+def export_rows(conn: sqlite3.Connection, vantage: str, path: Path) -> int:
+    """Everything this network learned, for merging into the other's database.
+
+    The two vantage points necessarily run against different copies, so
+    handover only works if each can tell the other what it found and what it
+    could not reach. Small enough to move by scp; JSON so it can be read
+    before it is trusted.
+    """
+    contents = [dict(zip([c[0] for c in cur.description], row))
+                for cur in [conn.execute(
+                    "SELECT * FROM resource_contents WHERE vantage = ?", (vantage,))]
+                for row in cur]
+    reach = [dict(zip([c[0] for c in cur.description], row))
+             for cur in [conn.execute(
+                 "SELECT * FROM host_reach WHERE vantage = ?", (vantage,))]
+             for row in cur]
+    path.write_text(json.dumps({"vantage": vantage, "contents": contents,
+                                "reach": reach}, indent=1), encoding="utf-8")
+    return len(contents)
+
+
+def import_rows(conn: sqlite3.Connection, path: Path) -> tuple[int, int]:
+    """Merge another network's findings. Its reach counts stay under its own
+    vantage, so neither side inherits the other's blind spots as its own."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(resource_contents)")}
+    rows = [{k: v for k, v in r.items() if k in cols} for r in data["contents"]]
+    for r in rows:
+        keys = ", ".join(r)
+        conn.execute(f"INSERT OR REPLACE INTO resource_contents ({keys}) "
+                     f"VALUES ({', '.join(':' + k for k in r)})", r)
+    for r in data["reach"]:
+        conn.execute(
+            "INSERT INTO host_reach (host, vantage, ok, failed, last_seen) "
+            "VALUES (:host, :vantage, :ok, :failed, :last_seen) "
+            "ON CONFLICT(host, vantage) DO UPDATE SET ok = excluded.ok, "
+            "failed = excluded.failed, last_seen = excluded.last_seen", r)
+    conn.commit()
+    return len(rows), len(data["reach"])
 
 
 def main() -> int:
@@ -370,11 +492,32 @@ def main() -> int:
     ap.add_argument("--zips-only", action="store_true")
     ap.add_argument("--title", help="only datasets whose title contains this")
     ap.add_argument("--workers", type=int, default=WORKERS)
+    ap.add_argument("--vantage", default=os.environ.get("FETCH_VANTAGE")
+                    or ("vps" if Path("/etc/caddy").exists() else "local"),
+                    help="which network this is running on")
+    ap.add_argument("--export", help="write this vantage's findings to a file")
+    ap.add_argument("--import", dest="import_", help="merge another vantage's file")
+    ap.add_argument("--handover", action="store_true",
+                    help="only hosts the other vantage point reaches and this "
+                         "one cannot")
     args = ap.parse_args()
 
     conn = connect()
     conn.executescript(SCHEMA)
-    urls = pick(conn, args.limit, args.source, args.zips_only, args.title)
+    # The table predates the vantage column, and CREATE TABLE IF NOT EXISTS
+    # will not add it to an existing one.
+    if "vantage" not in {r[1] for r in conn.execute(
+            "PRAGMA table_info(resource_contents)")}:
+        conn.execute("ALTER TABLE resource_contents ADD COLUMN vantage TEXT")
+        conn.commit()
+    if args.import_:
+        n, hosts = import_rows(conn, Path(args.import_))
+        print(f"merged {n:,} descriptions and {hosts} host-reach rows")
+        conn.close()
+        return 0
+
+    urls = pick(conn, args.limit, args.source, args.zips_only, args.title,
+                args.vantage, args.handover)
     if not urls:
         print("nothing left to look inside for that selection")
         return 0
@@ -382,7 +525,10 @@ def main() -> int:
 
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         rows = list(pool.map(probe, urls))
+    for r in rows:
+        r["vantage"] = args.vantage
     store(conn, rows)
+    learn_reach(conn, rows, args.vantage)
 
     kinds: dict[str, int] = {}
     read = 0
@@ -394,6 +540,10 @@ def main() -> int:
         print(f"   {kind:9} {n:>5}")
     print(f"\nread {read / 1e6:.1f} MB to describe {declared / 1e6:.1f} MB "
           f"of files — we keep the description, never the data")
+    if args.export:
+        n = export_rows(conn, args.vantage, Path(args.export))
+        print(f"exported {n:,} descriptions from {args.vantage} "
+              f"to {args.export}, for the other vantage point to merge")
     conn.close()
     return 0
 

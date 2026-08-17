@@ -32,3 +32,6 @@ venv/
 .idea/
 .vscode/
 scratch/
+
+local_fetch.json
+vps_fetch.json
