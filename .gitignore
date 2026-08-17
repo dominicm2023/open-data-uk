@@ -37,3 +37,8 @@ local_fetch.json
 vps_fetch.json
 gallery.html
 posters.html
+
+# Fetched raw data for analysis: never committed, never served.
+# Derived aggregates and the code that made them are committed instead.
+analysis/*/raw/
+analysis/*/cache/
