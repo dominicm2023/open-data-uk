@@ -380,3 +380,170 @@ def standalone(svg: str, joined_up: bool = False) -> str:
         svg = svg.replace(f"var({name}, {LITERALS[name]})", literal)
         svg = svg.replace(f"var({name})", literal)
     return svg
+
+
+# --- geography -----------------------------------------------------------
+#
+# A real projection, not a decorative grid. The gazetteer holds ONS centroids
+# for 352 of the 361 councils, and 29,103 datasets carry a genuine bounding
+# box, so these are drawn where things actually are. An equirectangular
+# projection is wrong almost everywhere on Earth and fine across ten degrees
+# of latitude, provided the x axis is squeezed by cos(lat) — without that the
+# UK comes out visibly fat, which readers notice even when they can't say why.
+
+UK = {"west": -8.6, "east": 2.0, "south": 49.8, "north": 61.0}
+LAT0 = 55.0                       # the parallel the projection is true at
+
+
+def project(lon: float, lat: float, w: int, h: int,
+            pad: int = 0) -> tuple[float, float]:
+    import math
+    k = math.cos(math.radians(LAT0))
+    x0, x1 = UK["west"] * k, UK["east"] * k
+    fx = (lon * k - x0) / (x1 - x0)
+    fy = 1 - (lat - UK["south"]) / (UK["north"] - UK["south"])
+    return pad + fx * (w - 2 * pad), pad + fy * (h - 2 * pad)
+
+
+def uk_map(points: list[dict], caption: str, legend: list[tuple[str, str]]
+           ) -> tuple[str, int]:
+    """One circle per place, at its real position, area proportional to value.
+
+    Area, not radius — a circle whose *radius* doubles looks four times
+    bigger, which overstates by exactly the factor people are worst at
+    correcting for.
+    """
+    import math
+    h = 560
+    top = max((p.get("value") or 0) for p in points) or 1
+    out = [f'<rect x="0" y="0" width="{W}" height="{h}" fill="var(--card)"/>']
+    for p in points:
+        x, y = project(p["lon"], p["lat"], W, h, PAD)
+        r = 3 + 16 * math.sqrt((p.get("value") or 0) / top)
+        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" '
+                   f'fill="{p.get("fill", "var(--cat-1)")}" opacity=".72"/>')
+    for i, (label, fill) in enumerate(legend):
+        lx = PAD + i * 168
+        out.append(f'<circle cx="{lx + 6}" cy="{h - 30}" r="6" fill="{fill}"/>'
+                   f'<text x="{lx + 18}" y="{h - 26}" class="t-label">'
+                   f'{esc(_fit(label, 14, 140, "t-label"))}</text>')
+    cap, cap_h = _para(caption, PAD, h + 4, "t-label", 14, W - 2 * PAD, 19)
+    return "".join(out) + cap, h + 4 + cap_h + 6
+
+
+def bbox_density(boxes: list[tuple[float, float, float, float]],
+                 caption: str, cells: int = 96) -> tuple[str, int]:
+    """Where the UK's open data is *about*, from 29,000 declared extents.
+
+    Binned onto a grid rather than drawn box by box. Overlapping 24,000
+    translucent rectangles produced the same picture in 2 MB of markup, which
+    is a lot of bytes to say something a counted grid says exactly — and the
+    grid can state its own cell size, so a reader knows the resolution of what
+    they are looking at instead of guessing from ink.
+
+    Nationwide extents are excluded and counted in the caption: a dataset
+    covering the whole country tells you nothing about any place in it, and
+    left in they flood every cell equally.
+    """
+    h = 560
+    span_x = UK["east"] - UK["west"]
+    span_y = UK["north"] - UK["south"]
+    grid: dict[tuple[int, int], int] = {}
+    drawn = national = 0
+    for west, south, east, north in boxes:
+        if (east - west) > span_x * 0.6 and (north - south) > span_y * 0.6:
+            national += 1
+            continue
+        drawn += 1
+        cx0 = int((west - UK["west"]) / span_x * cells)
+        cx1 = int((east - UK["west"]) / span_x * cells)
+        cy0 = int((UK["north"] - north) / span_y * cells)
+        cy1 = int((UK["north"] - south) / span_y * cells)
+        for gx in range(max(0, cx0), min(cells, cx1 + 1)):
+            for gy in range(max(0, cy0), min(cells, cy1 + 1)):
+                grid[(gx, gy)] = grid.get((gx, gy), 0) + 1
+    if not grid:
+        return "", PAD
+    top = max(grid.values())
+    cw = (W - 2 * PAD) / cells
+    ch = (h - 2 * PAD) / cells
+    out = [f'<rect x="0" y="0" width="{W}" height="{h}" fill="var(--card)"/>']
+    import math
+    for (gx, gy), n in grid.items():
+        # Log scale: a handful of places are described hundreds of times, and
+        # on a linear ramp everywhere else would read as empty.
+        f = math.log1p(n) / math.log1p(top)
+        step = min(5, 1 + int(f * 5))
+        out.append(f'<rect x="{PAD + gx * cw:.1f}" y="{PAD + gy * ch:.1f}" '
+                   f'width="{cw + 0.6:.1f}" height="{ch + 0.6:.1f}" '
+                   f'fill="var(--seq-{step})"/>')
+    km = span_y * 111 / cells
+    full = (f"{caption} {drawn:,} local extents binned onto a {cells}x{cells} "
+            f"grid, about {km:.0f} km a cell, shaded by log count. "
+            f"{national:,} nationwide extents are excluded — they describe no "
+            f"particular place.")
+    cap, cap_h = _para(full, PAD, h + 4, "t-label", 14, W - 2 * PAD, 19)
+    return "".join(out) + cap, h + 4 + cap_h + 6
+
+
+# --- time ----------------------------------------------------------------
+
+def timeline(series: list[tuple[str, int]], caption: str,
+             highlight: dict[str, str] | None = None) -> tuple[str, int]:
+    """Counts by period, as columns. Every period between first and last is
+    drawn even when empty — a gap is data, and closing it up hides it."""
+    if not series:
+        return "", PAD
+    top = max(v for _, v in series) or 1
+    h = 250
+    left = PAD + 34
+    step = (W - left - PAD) / max(1, len(series))
+    out = []
+    for i, (label, value) in enumerate(series):
+        x = left + i * step
+        bar_h = (h - 46) * value / top
+        fill = (highlight or {}).get(label, "var(--cat-1)")
+        out.append(f'<rect x="{x:.1f}" y="{h - 40 - bar_h:.1f}" '
+                   f'width="{max(1.5, step - 3):.1f}" height="{bar_h:.1f}" '
+                   f'fill="{fill}"/>')
+        if len(series) <= 30 or i % max(1, len(series) // 12) == 0:
+            out.append(f'<text x="{x + step / 2:.1f}" y="{h - 24}" '
+                       f'class="t-label" text-anchor="middle">'
+                       f'{esc(str(label)[-4:])}</text>')
+    out.append(f'<line x1="{left}" y1="{h - 40}" x2="{W - PAD}" y2="{h - 40}" '
+               f'stroke="var(--chart-baseline)" stroke-width="1"/>')
+    out.append(f'<text x="{PAD}" y="{PAD + 10}" class="t-value">{top:,}</text>')
+    cap, cap_h = _para(caption, PAD, h + 2, "t-label", 14, W - 2 * PAD, 19)
+    return "".join(out) + cap, h + 2 + cap_h + 6
+
+
+# --- composition ---------------------------------------------------------
+
+def treemap(items: list[tuple[str, int]], caption: str) -> tuple[str, int]:
+    """Area by share, laid out in slices then rows.
+
+    A simple slice-and-dice rather than squarified: the aspect ratios are
+    worse but the order is preserved left to right, so a reader can follow
+    the ranking as well as the areas. For a dozen items that trade is right.
+    """
+    if not items:
+        return "", PAD
+    h = 330
+    total = sum(v for _, v in items) or 1
+    x, out = PAD, []
+    width = W - 2 * PAD
+    for i, (label, value) in enumerate(items):
+        w = width * value / total
+        fill = f"var(--seq-{min(5, 1 + i % 5)})"
+        out.append(f'<rect x="{x:.1f}" y="{PAD}" width="{max(1, w - 2):.1f}" '
+                   f'height="{h - PAD - 30}" rx="3" fill="{fill}"/>')
+        if w > 58:
+            out.append(
+                f'<text x="{x + 8:.1f}" y="{PAD + 22}" class="t-label" '
+                f'fill="var(--ink)">{esc(_fit(label, 14, w - 16, "t-label"))}'
+                f'</text>'
+                f'<text x="{x + 8:.1f}" y="{PAD + 41}" class="t-value">'
+                f'{value:,}</text>')
+        x += w
+    cap, cap_h = _para(caption, PAD, h + 2, "t-label", 14, W - 2 * PAD, 19)
+    return "".join(out) + cap, h + 2 + cap_h + 6
