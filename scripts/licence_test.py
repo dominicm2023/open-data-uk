@@ -122,6 +122,24 @@ check(norm_format("some unknown thing here"), None,
       "unknown multi-word text is not invented into a format")
 check(norm_format(None), None, "absent format stays absent")
 
+# --- descriptions --------------------------------------------------------
+# Entities have to go as well as tags, or "&nbsp;" and "&amp;" reach the page
+# as markup a reader shouldn't see. 1,155 descriptions carried a literal
+# "&amp;" before this.
+from normalise import strip_html  # noqa: E402
+
+check(strip_html("<p>cruises&nbsp;carried out &amp; run</p>"),
+      "cruises carried out & run", "tags and entities both go")
+check(strip_html("Fish &amp; chips &quot;quoted&quot;"),
+      'Fish & chips "quoted"', "ampersands and quotes decode")
+# Unescaping happens after stripping, so an author writing *about* a script
+# tag keeps their meaning — and pagerender escapes it again when rendering.
+check(strip_html("&lt;script&gt;alert(1)&lt;/script&gt;"),
+      "<script>alert(1)</script>",
+      "an escaped tag stays text rather than being stripped as markup")
+check(strip_html("plain text"), "plain text", "plain text is untouched")
+check(strip_html(None), None, "absent description stays absent")
+
 print()
 print("all licence rules hold" if not failures
       else f"{len(failures)} failure(s): " + "; ".join(failures))

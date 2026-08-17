@@ -726,6 +726,7 @@ def harvest_json(src: dict, conn: sqlite3.Connection, limit: int | None) -> None
             except Exception:  # noqa: BLE001 - the listing row still stands
                 pass
             time.sleep(pause)
+        rec = flatten_bag(rec, cfg)
         row = _normalise_json_record(rec, ident, cfg, src, now)
         if not row:
             continue
@@ -806,6 +807,49 @@ def drop_boilerplate(rows: list[tuple]) -> tuple[list[tuple], int]:
     return cleaned, sum(counts[t] for t in shared)
 
 
+def flatten_bag(rec: dict, cfg: dict) -> dict:
+    """Fold a name/value property list into something field paths can address.
+
+    Cefas returns its metadata as 74 property objects rather than fields:
+
+        {"propertyName": "Desc", "values": [{"value": "<p>A series of ..."}]}
+
+    So every real field — abstract, keywords, formats, licence terms — is
+    invisible to a dotted path. This lifts them to rec["_bag"][name], a list
+    of strings, and everything downstream addresses them normally.
+
+    Values come from a controlled vocabulary written "Vocab:Term"
+    ("Freq:Not planned", "Format:DOC", "RestrictionCode:Public"). The
+    displayValue is preferred where the API gives one; where it doesn't, the
+    term after the colon is the human-readable half.
+    """
+    spec = cfg.get("bag")
+    if not spec:
+        return rec
+    entries = _dig(rec, spec.get("list", "properties")) or []
+    key_field = spec.get("key", "propertyName")
+    bag: dict[str, list[str]] = {}
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        name = entry.get(key_field)
+        out: list[str] = []
+        for v in (entry.get(spec.get("values", "values")) or []):
+            if not isinstance(v, dict):
+                continue
+            text = v.get("displayValue") or v.get("value")
+            if not isinstance(text, str) or not text.strip():
+                continue
+            if not v.get("displayValue") and ":" in text:
+                head, _, tail = text.partition(":")
+                if tail.strip() and " " not in head:
+                    text = tail
+            out.append(text.strip())
+        if name and out:
+            bag[name] = out
+    return {**rec, "_bag": bag}
+
+
 def _fmt(rec: dict, spec: str | None):
     """A resource format: a path into the record, or a literal after "=".
 
@@ -837,10 +881,25 @@ def _normalise_json_record(rec: dict, ident, cfg: dict, src: dict,
     # which must not become a licence.
     if isinstance(lic, str) and lic.strip().lower() in ("other", "none", "unknown", ""):
         lic = None
-    tags = _dig(rec, cfg["tags"]) if cfg.get("tags") else None
-    tags = [t for t in tags if isinstance(t, str)] if isinstance(tags, list) else []
+    tag_paths = cfg.get("tags")
+    tag_paths = [tag_paths] if isinstance(tag_paths, str) else (tag_paths or [])
+    tags: list[str] = []
+    for path in tag_paths:
+        got = _dig(rec, path)
+        if isinstance(got, str):
+            tags.append(got)
+        elif isinstance(got, list):
+            tags += [t for t in got if isinstance(t, str)]
+    seen_tags: dict[str, None] = {}
+    for tag in tags:
+        seen_tags.setdefault(tag, None)
+    tags = list(seen_tags)[:25]
     fmt_values = [_fmt(rec, f) for _u, f in (cfg.get("resources") or [])
                   if _dig(rec, _u)]
+    if cfg.get("formats"):
+        extra = _dig(rec, cfg["formats"])
+        if isinstance(extra, list):
+            fmt_values += [f for f in extra if isinstance(f, str)]
     landing = (cfg["landing"].format(id=ident) if cfg.get("landing")
                else _dig(rec, cfg.get("landing_field", "")) or src["web"])
     return (

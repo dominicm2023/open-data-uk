@@ -8,6 +8,7 @@ the index speaks one vocabulary.
 
 from __future__ import annotations
 
+import html
 import json
 import re
 
@@ -40,10 +41,19 @@ def fix_mojibake(text: str | None) -> str | None:
 
 
 def strip_html(text: str | None) -> str | None:
-    """Some portals store descriptions as HTML; reduce to plain text."""
+    """Some portals store descriptions as HTML; reduce to plain text.
+
+    Entities have to be unescaped as well as tags removed, or "&nbsp;" and
+    "&amp;" survive into the page and read as markup a reader shouldn't be
+    seeing — 1,155 descriptions in the index carried a literal "&amp;".
+    Unescape *after* stripping tags: doing it first would turn an escaped
+    "&lt;script&gt;" into a real tag that the stripper then removes, which
+    changes the author's meaning.
+    """
     if not text:
         return text
-    return _WS.sub(" ", _TAG.sub(" ", fix_mojibake(text))).strip()
+    stripped = _TAG.sub(" ", fix_mojibake(text))
+    return _WS.sub(" ", html.unescape(stripped)).strip()
 
 
 # --- Licences -----------------------------------------------------------

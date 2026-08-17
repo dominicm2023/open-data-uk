@@ -3315,3 +3315,34 @@ sources:
     api: https://spatialdata.gov.scot/geonetwork/srv/eng/csw
     web: https://spatialdata.gov.scot
     dataset_url: "https://spatialdata.gov.scot/geonetwork/srv/eng/catalog.search#/metadata/{id}"
+
+  # Cefas — the UK's marine science agency. Attempted and wrongly rejected
+  # once: I tested the detail endpoint with dataset ids I invented, and it
+  # answers 403 rather than 404 for ids that don't exist, so I concluded it
+  # was gated. Every real id returns 200. The metadata is then held as 74
+  # property objects rather than fields, under values[].value — which the
+  # first look also missed. See `bag` below.
+  - id: cefas
+    name: Cefas Data Hub
+    type: json
+    api: https://data-api.cefas.co.uk/api/holdings
+    web: https://data.cefas.co.uk
+    dataset_url: "unused-for-json"
+    json:
+      list: items
+      total: totalItems
+      page_param: page
+      params: {count: 100}
+      id: id
+      detail: "https://data-api.cefas.co.uk/api/holdings/{id}"
+      bag: {list: properties}
+      title: title
+      description: _bag.Desc.0
+      license: _bag.CondForReUse.0
+      modified: _bag.HoldingRevDate.0
+      created: _bag.StartDate.0
+      formats: _bag.Formats
+      tags: [_bag.MedinKeywords, _bag.InspireThemes, _bag.InspireCats]
+      landing: "https://data.cefas.co.uk/#/View/{id}"
+      resources:
+        - [links.Map.href, "=API"]
