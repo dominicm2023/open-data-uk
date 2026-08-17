@@ -1,0 +1,448 @@
+[
+ {
+  "host": "inspire.misoportal.com",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 904,
+  "publishers": [
+   "Adur District Council",
+   "Arun District Council",
+   "Barnsley Metropolitan Borough Council",
+   "Basingstoke and Deane Borough Council",
+   "Bedford Borough Council",
+   "Birmingham City Council",
+   "Borough Council of King's Lynn and West Norfolk",
+   "Boston Borough Council",
+   "Bridgend County Borough Council",
+   "Bromsgrove District Council",
+   "Caerphilly County Borough Council",
+   "Calderdale Metropolitan Borough Council",
+   "Cheltenham Borough Council",
+   "Cherwell District Council",
+   "Chesterfield Borough Council",
+   "City and County of Swansea",
+   "Corby Borough Council",
+   "Coventry City Council",
+   "Craven District Council",
+   "Dorset County Council",
+   "Dover District Council",
+   "East Cambridgeshire District Council",
+   "East Northamptonshire Council",
+   "East Riding of Yorkshire Council",
+   "East Staffordshire Borough Council",
+   "Eastbourne Borough Council",
+   "Erewash Borough Council",
+   "Fenland District Council",
+   "Forest of Dean District Council",
+   "Gateshead Council",
+   "Gosport Borough Council",
+   "Harborough District Council",
+   "Hartlepool Borough Council",
+   "Hastings Borough Council",
+   "Health and Safety Executive",
+   "Hull City Council",
+   "Huntingdonshire District Council",
+   "Hyndburn Borough Council",
+   "Kirklees Council",
+   "Leeds City Council",
+   "Lewes District Council",
+   "Liverpool City Council",
+   "London Borough of Brent",
+   "London Borough of Bromley",
+   "London Borough of Ealing",
+   "London Borough of Hounslow",
+   "London Borough of Islington",
+   "London Borough of Lewisham",
+   "London Borough of Merton",
+   "London Borough of Wandsworth",
+   "Manchester City Council",
+   "Mendip District Council",
+   "Merthyr Tydfil County Borough Council",
+   "Mid Suffolk District Council",
+   "Mole Valley District Council",
+   "New Forest District Council",
+   "North East Lincolnshire Council",
+   "North Yorkshire County Council",
+   "Northampton Borough Council",
+   "Norwich City Council",
+   "Oxford City Council",
+   "Oxfordshire County Council",
+   "Peak District National Park Authority",
+   "Pembrokeshire County Council",
+   "Portsmouth City Council",
+   "Rochdale Borough Council",
+   "Rushcliffe Borough Council",
+   "Rutland County Council",
+   "Ryedale District Council",
+   "Sandwell Metropolitan Borough Council",
+   "Sefton Metropolitan Borough Council",
+   "Sevenoaks District Council",
+   "Shepway District Council",
+   "South Cambridgeshire District Council",
+   "South Downs National Park Authority",
+   "South Gloucestershire Council",
+   "South Northamptonshire Council",
+   "South Ribble Borough Council",
+   "South Somerset District Council",
+   "South Staffordshire Council",
+   "Southwark London Borough Council",
+   "Staffordshire County Council",
+   "Stroud District Council",
+   "Telford & Wrekin Council",
+   "Tewkesbury Borough Council",
+   "Torridge District Council",
+   "Wakefield Metropolitan District Council",
+   "Walsall Council",
+   "Warwick District Council",
+   "Watford Borough Council",
+   "Waverley Borough Council",
+   "Wealden District Council",
+   "Wellingborough Borough Council",
+   "West Dorset District Council",
+   "West Lindsey District Council",
+   "West Somerset District Council",
+   "Wirral Metropolitan Borough Council",
+   "Worcester City Council",
+   "Wychavon District Council",
+   "Wyre Forest District Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "itportal.decc.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 444,
+  "publishers": [
+   "North Sea Transition Authority"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "services.spatialni.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectionError",
+  "resources": 331,
+  "publishers": [
+   "OpenDataNI"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "msmap1.atkinsgeospatial.com",
+  "state": "tls-broken",
+  "detail": "TLS: SSLError",
+  "resources": 223,
+  "publishers": [
+   "Marine Environmental Data & Information Network",
+   "Scottish Government SpatialData.gov.scot",
+   "SpatialData.gov.scot"
+  ],
+  "sources": [
+   "data_gov_uk",
+   "spatialdata_scot"
+  ]
+ },
+ {
+  "host": "gisservices.spatialni.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 113,
+  "publishers": [
+   "Office for National Statistics",
+   "OpenDataNI"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "maps.northlincs.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectionError",
+  "resources": 102,
+  "publishers": [
+   "North Lincolnshire Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "data.barrowbc.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 99,
+  "publishers": [
+   "Barrow Borough Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "inspire.northyorkmoors.org.uk",
+  "state": "no-answer",
+  "detail": "ConnectionError",
+  "resources": 92,
+  "publishers": [
+   "North York Moors National Park Authority"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "www.opendatanottingham.org.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 74,
+  "publishers": [
+   "Nottingham City Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "map.salford.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectionError",
+  "resources": 69,
+  "publishers": [
+   "Salford City Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "support.environment.data.gov.uk",
+  "state": "no-dns",
+  "detail": "does not resolve",
+  "resources": 61,
+  "publishers": [
+   "Environment Agency"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "maps.oldham.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 57,
+  "publishers": [
+   "Oldham Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "www2.oxopendata.uk",
+  "state": "no-dns",
+  "detail": "does not resolve",
+  "resources": 50,
+  "publishers": [
+   "Oxford City Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "mapping.milton-keynes.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 48,
+  "publishers": [
+   "Milton Keynes Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "data.peterborough.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 39,
+  "publishers": [
+   "Peterborough City Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "www.bathandnortheastsomersetccg.nhs.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 22,
+  "publishers": [
+   "NHS Bath and North East Somerset CCG"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "www.london.nhs.uk",
+  "state": "no-answer",
+  "detail": "ConnectionError",
+  "resources": 22,
+  "publishers": [
+   "NHS London (SHA)"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "data.horsham.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 21,
+  "publishers": [
+   "Horsham District Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "www.slc.co.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 19,
+  "publishers": [
+   "Department for Education",
+   "Student Loans Company Limited"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "www.ninis2.nisra.gov.uk",
+  "state": "no-dns",
+  "detail": "does not resolve",
+  "resources": 19,
+  "publishers": [
+   "Department for the Economy - Statistics & Research Branch (Tertiary Education)",
+   "Northern Ireland Statistics and Research Agency",
+   "Police Service of Northern Ireland"
+  ],
+  "sources": [
+   "opendatani"
+  ]
+ },
+ {
+  "host": "uploads.scarborough.gov.uk",
+  "state": "no-dns",
+  "detail": "does not resolve",
+  "resources": 18,
+  "publishers": [
+   "Scarborough Borough Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "inspire.ribblevalley.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 12,
+  "publishers": [
+   "Ribble Valley Borough Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "www.courtsni.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 12,
+  "publishers": [
+   "Department of Justice (Northern Ireland)",
+   "Northern Ireland Statistics and Research Agency"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "media.education.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 12,
+  "publishers": [
+   "British Educational Communications and Technology Agency",
+   "Department for Education",
+   "School Food Trust",
+   "Training and Development Agency for Schools"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "www.ncin.org.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 12,
+  "publishers": [
+   "Public Health England"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "www.dardni.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectionError",
+  "resources": 12,
+  "publishers": [
+   "Department of Agriculture and Rural Development (Northern Ireland)"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "dassh.to",
+  "state": "no-dns",
+  "detail": "does not resolve",
+  "resources": 11,
+  "publishers": [
+   "Marine Environmental Data & Information Network"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ },
+ {
+  "host": "data.cambridgeshire.gov.uk",
+  "state": "no-answer",
+  "detail": "ConnectTimeout",
+  "resources": 11,
+  "publishers": [
+   "Cambridgeshire County Council"
+  ],
+  "sources": [
+   "data_gov_uk"
+  ]
+ }
+]
