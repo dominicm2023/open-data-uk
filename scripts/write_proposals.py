@@ -313,6 +313,110 @@ PROPOSALS = [
         "sql": "title LIKE gift / hospitality / register of interest / pecuniary — note "
                "the Gift Aid and hospitality-trade false positives",
     },
+    {
+        "title": "Nobody updated it — the platform just touched the record",
+        "verdict": "PROVABLE NOW",
+        "claim": "9,027 datasets from 673 different publishers all carry the same "
+                 "last-modified date, so \"last updated\" on the national catalogue "
+                 "often means the platform touched the record, not that anybody "
+                 "updated the data.",
+        "numbers": "One day, 2026-07-08, stamps 9,027 datasets across 673 publishers "
+                   "— including 102 from Allerdale and 97 from Wycombe, councils "
+                   "abolished years ago and incapable of updating anything. Five more "
+                   "bulk-churn dates cover thousands each; a third of the index sits "
+                   "on one. Excluding them, staleness rises from 34.8% to 44.6%.",
+        "objection": "None that survives: a council abolished in 2023 did not update "
+                     "its data in July 2026. The care needed is in the wording — this "
+                     "is about what the field means, not about anyone concealing "
+                     "anything.",
+        "blindness": "This one is about our own reading of someone else's field, and "
+                     "it corrects a figure we already publish: our staleness numbers "
+                     "are a floor, because churn makes the catalogue look fresher "
+                     "than it is.",
+        "sql": "SELECT substr(modified,1,10) d, COUNT(*), COUNT(DISTINCT publisher) "
+               "FROM datasets GROUP BY 1 HAVING COUNT(*) > 1500 ORDER BY 2 DESC",
+    },
+    {
+        "title": "One in five is a single file nobody has touched in three years",
+        "verdict": "PROVABLE NOW",
+        "claim": "17,255 of 84,486 datasets are a single file whose catalogue record "
+                 "has not been touched in over three years, and dead links are twice "
+                 "as common in that group.",
+        "numbers": "20.4% single-resource and untouched 3+ years. Dead-link rate 10.3% "
+                   "among them against 5.0% among recently-updated records — the "
+                   "index-wide baseline is 6.9%, so the stale set is genuinely worse "
+                   "and the fresh set genuinely better.",
+        "objection": "The Home Office does still publish monthly asylum statistics; it "
+                     "is the catalogue record that was abandoned, not the data. We can "
+                     "measure decay of the index, never decay of the data — and a "
+                     "finished one-off publication is not neglected at all.",
+        "blindness": "The stale set is led by Natural England, JNCC and ONS, and "
+                     "inspection shows completed 1990s marine surveys and superseded "
+                     "census geographies that are correctly frozen. Never title this "
+                     "\"abandoned\".",
+        "sql": "resource_count <= 1 AND modified < date('now','-3 years'), with "
+               "availability compared against the same cut",
+    },
+    {
+        "title": "Councils publish maps, not money",
+        "verdict": "MISLEADING AS FRAMED",
+        "claim": "Survives only as presence-or-absence per council, never as a ratio "
+                 "of dataset counts.",
+        "numbers": "By dataset count spatial beats spending 5.3:1 — but by file count "
+                   "only 1.45:1, because councils publish five years of monthly "
+                   "spending CSVs as one dataset and each boundary layer as its own. "
+                   "What holds: of 176 council catalogues with 20+ datasets, 99% "
+                   "contain a map and 59% contain anything about spending, contracts "
+                   "or pay.",
+        "objection": "\"You are counting CKAN granularity conventions, not political "
+                     "priority.\" Any council press office spots that in a minute. And "
+                     "INSPIRE compels a per-layer record while the Transparency Code "
+                     "compels a monthly file, not a catalogue entry.",
+        "blindness": "Restricting to substantial catalogues discards 80% of UK "
+                     "councils. Checked and survived one test: excluding ArcGIS Hub "
+                     "sources entirely, which structurally cannot host a spending CSV, "
+                     "the skew remains.",
+        "sql": "council-attributed datasets classified spatial vs spending/contract/"
+               "pay, compared by dataset count AND by resource count",
+    },
+    {
+        "title": "Who is 'the publisher'?",
+        "verdict": "MISLEADING AS FRAMED",
+        "claim": "Publishable only with our own bug admitted on the face of the "
+                 "graphic.",
+        "numbers": "Zero datasets have a blank publisher, so the \"published by "
+                   "nobody\" version is dead. About 11,300 (13%) name a platform "
+                   "rather than a body. But in 54 sources covering 24,280 datasets "
+                   "(28.7%) a single publisher string covers 95%+ of the source — our "
+                   "publisher field is often just the label of the catalogue we "
+                   "harvested.",
+        "objection": "\"Your publisher field is your source name. Fix your harvester "
+                     "before you write about our accountability.\" It lands, and it "
+                     "should.",
+        "blindness": "Includes a specific defect of ours: all 2,197 records published "
+                     "by \"Freedom of Information Disclosure Log\" are NHSBSA, and the "
+                     "real body is recoverable from the host.",
+        "sql": "publisher grouped against source_id and landing_url host, to separate "
+               "platform labels from accountable organisations",
+    },
+    {
+        "title": "The bigger the budget, the quieter the publisher",
+        "verdict": "NOT SUPPORTED",
+        "claim": "Dropped. The proxy inverts the moment you change the unit.",
+        "numbers": "Five large departments hold 1.48% of datasets but 3.13% of files — "
+                   "their share doubles when you count files instead of records. HMRC "
+                   "publishes 30x fewer datasets than Natural England and 18.2 files "
+                   "per dataset against 1.5. Correlation between publisher size and "
+                   "anything: -0.003, across 385 publishers.",
+        "objection": "There is no size variable in this database — no budget, no "
+                     "headcount. With n=5 for the \"big\" group there is no test here, "
+                     "only an anecdote.",
+        "blindness": "Near total for these bodies: 97% of their records reach us via "
+                     "data.gov.uk. DWP publishes through Stat-Xplore, HMRC through "
+                     "gov.uk collections, DHSC through NHS dashboards — none of which "
+                     "we harvest. We would be measuring their CKAN housekeeping.",
+        "sql": "n/a — killed before it needed one",
+    },
 ]
 
 

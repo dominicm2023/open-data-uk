@@ -79,6 +79,17 @@ API_HINTS = ("wms", "wfs", "wmts", "arcgis", "geoserver", "/rest/", "ogc",
 # Refusals aimed at us, not evidence about the data
 BLOCKED_STATUSES = {401, 403, 429, 503}
 
+# The server answered and declined the request we made. That is not evidence
+# the data is gone, which is the only thing "dead" is allowed to mean.
+#
+# 952 links were filed as dead on a 400, and 943 of them were ArcGIS or OGC
+# endpoints replying "you did not give me the parameters I need" — the service
+# is alive and a browser reaches it fine. A 409, a 422 or the occasional
+# joke 418 say the same thing: we asked wrongly, or we were recognised as a
+# bot. Reporting any of those as a broken link blames a publisher for our own
+# request.
+REFUSED_STATUSES = {400, 409, 418, 422, 424, 451}
+
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS resource_checks (
     url          TEXT PRIMARY KEY,
@@ -120,7 +131,7 @@ class DomainThrottle:
 
 
 def classify(url: str, status: int, ctype: str, fmt: str | None) -> str:
-    if status in BLOCKED_STATUSES:
+    if status in BLOCKED_STATUSES or status in REFUSED_STATUSES:
         return "blocked"
     if status == 0 or status >= 400:
         return "dead"
