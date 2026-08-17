@@ -1,4 +1,4 @@
-"""Normalisation of the messy bits of CKAN metadata: licences and formats.
+"""Normalisation of the messy bits of CKAN metadata: licences, formats, dates.
 
 Portals disagree wildly on how they record the same thing — e.g. a CSV
 resource appears as "CSV", "csv", ".csv", "text/csv" or a full IANA
@@ -11,6 +11,7 @@ from __future__ import annotations
 import html
 import json
 import re
+from datetime import datetime, timezone
 
 # --- Descriptions -------------------------------------------------------
 
@@ -54,6 +55,66 @@ def strip_html(text: str | None) -> str | None:
         return text
     stripped = _TAG.sub(" ", fix_mojibake(text))
     return _WS.sub(" ", html.unescape(stripped)).strip()
+
+
+# --- Dates --------------------------------------------------------------
+
+# A date column is only useful if every value in it is a date. Ours weren't:
+# one stored `modified` in six was something else, and because the column is
+# read as text — sorted, sliced to a year, bucketed by age — none of it
+# failed loudly. It just produced wrong answers. Three ways it happened:
+#
+#   1786367211609        epoch milliseconds, stored verbatim by the ArcGIS
+#                        Hub feeds. Reads as the year 1786.
+#   18:15                a Cefas timestamp cut at its first colon (see
+#                        harvester.flatten_bag, which used to do the cutting).
+#   {{modified:toISO}}   an ArcGIS Hub template the portal never rendered.
+#
+# Only the first is recoverable from the value itself. The rest are dropped:
+# a wrong date is worse than a missing one, because "unknown" is a state the
+# freshness stats and the dataset page both already handle honestly.
+
+# The window a *metadata* timestamp can credibly fall in. Not a statement
+# about the data — Cefas holds surveys from 1902 — but about the catalogue
+# record, and no catalogue here predates the web. The upper bound is next
+# year rather than today: publishers do post-date records, and clock skew of
+# a few hours around New Year shouldn't null a good date.
+DATE_FLOOR_YEAR = 1990
+
+_EPOCH = re.compile(r"-?[0-9]{10}(?:[0-9]{3})?$")
+_LEADING_YEAR = re.compile(r"([0-9]{4})(?:[^0-9]|$)")
+
+
+def norm_date(value, now: datetime | None = None) -> str | None:
+    """A stored date string, or None when the value isn't a date at all.
+
+    Epoch seconds/milliseconds are converted; anything that cannot be read as
+    a plausible calendar date — a template, a time fragment, a year outside
+    the window above — becomes None rather than a value that only looks like
+    a date until something tries to use it.
+
+    Partial dates ("2018-12", "2023-09-29") are kept as they are: they sort
+    and slice correctly, and a truncated date is still true.
+    """
+    if value is None:
+        return None
+    text = str(value).strip()
+    if not text or "{{" in text:
+        return None
+
+    if _EPOCH.fullmatch(text):
+        divisor = 1000 if len(text.lstrip("-")) == 13 else 1
+        try:
+            text = datetime.fromtimestamp(
+                int(text) / divisor, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        except (OSError, OverflowError, ValueError):
+            return None
+
+    match = _LEADING_YEAR.match(text)
+    if not match:
+        return None
+    ceiling = (now or datetime.now(timezone.utc)).year + 1
+    return text if DATE_FLOOR_YEAR <= int(match.group(1)) <= ceiling else None
 
 
 # --- Licences -----------------------------------------------------------

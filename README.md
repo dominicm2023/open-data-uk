@@ -36,7 +36,7 @@ publisher's own page, under the publisher's own licence.
 ### What we found building it
 
 Measured across the whole catalogue: **37%** of datasets state no licence,
-**48%** haven't been updated in two years, **19%** are duplicate copies of
+**42%** haven't been updated in two years, **19%** are duplicate copies of
 another portal's entry, and of the links we've verified only **37%** give
 you machine-readable data — **30%** just lead to another webpage, and for
 **15%** the publisher lists no files at all.
@@ -67,6 +67,7 @@ figure from 56% to 34%.
 | Data-quality report | [`report.py`](report.py) |
 | Relevance regression suite | [`scripts/relevance_test.py`](scripts/relevance_test.py) — 12 cases; **run it before and after any ranking change** |
 | Unit tests (no index needed) | [`scripts/dedupe_test.py`](scripts/dedupe_test.py), [`scripts/render_test.py`](scripts/render_test.py) — the rules that decide what search hides, and what gets escaped |
+| Date sanity | [`scripts/dates_test.py`](scripts/dates_test.py) — unit cases, plus `--audit` to assert every stored date in a built index really is one |
 | What people actually search for | [`scripts/query_report.py`](scripts/query_report.py) — over the anonymous query log |
 | Change notification | [`scripts/indexnow.py`](scripts/indexnow.py) — announces only the pages whose content actually moved |
 | Finding councils that publish through ArcGIS | [`scripts/find_council_portals.py`](scripts/find_council_portals.py) — asks Hub about each council we're missing, by name |

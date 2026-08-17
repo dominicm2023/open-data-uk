@@ -24,6 +24,11 @@ jobs:
         run: python scripts/render_test.py
       - name: Licence normalisation
         run: python scripts/licence_test.py
+      # A text column of dates fails silently: one stored `modified` in six
+      # was epoch milliseconds, a cut timestamp or an unrendered template,
+      # and everything downstream sorted and sliced it as if it were a date.
+      - name: Date normalisation
+        run: python scripts/dates_test.py
       # SVG doesn't reflow, so text that doesn't fit is drawn over whatever is
       # beside it and the chart still renders and still validates. Only a
       # geometry check catches that, and the text comes from findings.json,

@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sqlite3
 import sys
 import time
@@ -23,9 +24,9 @@ from pathlib import Path
 import requests
 import yaml
 
-from normalise import (bbox_from_extras, license_from_extras, norm_formats,
-                       norm_license, reference_date_from_extras, strip_html,
-                       update_frequency_from_extras)
+from normalise import (bbox_from_extras, license_from_extras, norm_date,
+                       norm_formats, norm_license, reference_date_from_extras,
+                       strip_html, update_frequency_from_extras)
 
 GEO_UPSERT = """
 INSERT OR REPLACE INTO dataset_geo
@@ -152,8 +153,8 @@ def normalise_package(pkg: dict, src: dict, now: str) -> tuple:
          or license_from_extras(pkg.get("extras"))),
         norm_license(pkg.get("license_id") or license_from_extras(pkg.get("extras")),
                      pkg.get("license_title")),
-        pkg.get("metadata_created"),
-        pkg.get("metadata_modified"),
+        norm_date(pkg.get("metadata_created")),
+        norm_date(pkg.get("metadata_modified")),
         src["dataset_url"].format(name=name),
         json.dumps(tags),
         json.dumps([f for f in formats_raw if f]),
@@ -327,8 +328,8 @@ def normalise_dcat_dataset(ds: dict, src: dict, now: str) -> tuple | None:
         _dcat_publisher(ds, src),
         license_raw,
         norm_license(license_raw),
-        ds.get("issued"),
-        ds.get("modified"),
+        norm_date(ds.get("issued")),
+        norm_date(ds.get("modified")),
         landing,
         json.dumps(keywords),
         json.dumps([f for f in formats_raw if f]),
@@ -413,7 +414,7 @@ def normalise_ods_dataset(ds: dict, src: dict, now: str) -> tuple | None:
         license_raw,
         norm_license(license_raw, md.get("license_url")),
         None,  # ODS exposes no creation date, only modification
-        md.get("modified"),
+        norm_date(md.get("modified")),
         f"{base}/explore/dataset/{did}/",
         json.dumps([k for k in keywords if k]),
         json.dumps(formats),
@@ -541,7 +542,7 @@ def normalise_csw_record(rec, src: dict, now: str) -> tuple | None:
         rights,
         norm_license(rights),
         None,
-        _csw_text(rec, "dct:modified") or _csw_text(rec, "dc:date"),
+        norm_date(_csw_text(rec, "dct:modified") or _csw_text(rec, "dc:date")),
         landing or (urls[0] if urls else src["web"]),
         json.dumps(subjects),
         json.dumps([]),
@@ -807,6 +808,11 @@ def drop_boilerplate(rows: list[tuple]) -> tuple[list[tuple], int]:
     return cleaned, sum(counts[t] for t in shared)
 
 
+# The "Vocab" half of a "Vocab:Term" bag value: a bare word. Excludes digits
+# so no timestamp can match it.
+VOCAB_PREFIX = re.compile(r"[A-Za-z][A-Za-z_]*")
+
+
 def flatten_bag(rec: dict, cfg: dict) -> dict:
     """Fold a name/value property list into something field paths can address.
 
@@ -822,6 +828,12 @@ def flatten_bag(rec: dict, cfg: dict) -> dict:
     ("Freq:Not planned", "Format:DOC", "RestrictionCode:Public"). The
     displayValue is preferred where the API gives one; where it doesn't, the
     term after the colon is the human-readable half.
+
+    The vocabulary half is always a bare word, and the test has to say so.
+    "Anything before a colon with no space in it" also matches the date half
+    of "2025-11-11T12:18:15", which it cut down to "18:15" — every Cefas
+    HoldingRevDate and StartDate in the index, 2,919 rows, reduced to minutes
+    and seconds with the date thrown away.
     """
     spec = cfg.get("bag")
     if not spec:
@@ -842,7 +854,10 @@ def flatten_bag(rec: dict, cfg: dict) -> dict:
                 continue
             if not v.get("displayValue") and ":" in text:
                 head, _, tail = text.partition(":")
-                if tail.strip() and " " not in head:
+                # not tail.startswith("//"): "https://..." is a URL, and its
+                # scheme is a bare word that would otherwise pass as a vocab.
+                if (tail.strip() and not tail.startswith("//")
+                        and VOCAB_PREFIX.fullmatch(head)):
                     text = tail
             out.append(text.strip())
         if name and out:
@@ -912,8 +927,8 @@ def _normalise_json_record(rec: dict, ident, cfg: dict, src: dict,
         field("publisher") or src["name"],
         lic,
         norm_license(lic),
-        field("created"),
-        field("modified"),
+        norm_date(field("created")),
+        norm_date(field("modified")),
         landing,
         json.dumps(tags),
         json.dumps([f for f in fmt_values if f]),
@@ -1002,8 +1017,8 @@ def normalise_geonode_layer(rec: dict, src: dict, base: str, now: str) -> tuple 
         geonode_publisher(rec, src),
         lic,
         norm_license(lic),
-        rec.get("created"),
-        rec.get("last_updated") or rec.get("date"),
+        norm_date(rec.get("created")),
+        norm_date(rec.get("last_updated") or rec.get("date")),
         rec.get("detail_url") or f"{base}/layers/{rec.get('alternate') or ident}",
         json.dumps(keywords),
         json.dumps(formats),
