@@ -3340,7 +3340,14 @@ sources:
       description: _bag.Desc.0
       license: _bag.CondForReUse.0
       modified: _bag.HoldingRevDate.0
-      created: _bag.StartDate.0
+      # No created: StartDate is not one. Cefas exports it as
+      # "beginTimePosition" and labels it "Start date for the resource" — the
+      # earliest date the *data* covers, which for 183 holdings is before
+      # 1990 and for one is 1902. Recorded as a creation date it claimed the
+      # catalogue record was written in 1902, and put that year into the
+      # dataset page's schema.org dateCreated. It belongs with the other
+      # temporal-coverage fields (dataset_geo.reference_date), which the JSON
+      # harvester does not write yet.
       formats: _bag.Formats
       tags: [_bag.MedinKeywords, _bag.InspireThemes, _bag.InspireCats]
       landing: "https://data.cefas.co.uk/#/View/{id}"
