@@ -18,6 +18,13 @@ echo "=====REFRESH-RUN===== $(date -Is)"
 "$PY" dedupe.py
 "$PY" checker.py --limit "$CHECK_LIMIT" --workers "$CHECK_WORKERS"
 
+# Re-measure the findings against tonight's index, and re-probe the hosts
+# that stopped answering. --repair matters as much as the finding does: a
+# host we wrongly recorded as unreachable is us telling visitors someone's
+# data is broken when it isn't, and that should not survive a night.
+"$PY" scripts/dead_hosts.py --repair || true
+"$PY" scripts/findings.py || true
+
 # Tell the engines which pages actually changed tonight. Runs last, after the
 # checker, so a link that died today is announced today. Never fatal: a
 # search-engine ping failing is not a reason for the refresh to have failed,

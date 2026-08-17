@@ -368,3 +368,138 @@ footer {
 @media (prefers-reduced-motion: no-preference) {
   a, button, .chip { transition: background-color .12s ease, color .12s ease; }
 }
+
+/* ---------- Findings: two liveries, one grammar ------------------------
+ *
+ * The index measures and Joined Up argues, so their graphics have to be
+ * tellable apart at a glance — but a reader must also see they come from
+ * the same workshop. Shared skeleton, divergent accent, and one structural
+ * signal: an index graphic is unsigned and ends in a query, a Joined Up
+ * graphic carries a byline.
+ *
+ * Contrast for every pair here was measured, not estimated, in both modes.
+ */
+
+:root {
+  /* Joined Up's accent. Teal sits in the same civic register as the blue,
+     is never confusable with it, and — unlike a red — isn't party-coded. */
+  --ju-accent: #0e6e63;         /* 6.12:1 on white, 5.71:1 on --bg */
+  --ju-on-accent: #ffffff;      /* 6.12:1 on --ju-accent */
+  --ju-accent-soft: #e4f1ee;
+  --ju-accent-deep: #0a5349;    /* 7.72:1 on --ju-accent-soft */
+
+  /* Chart grammar, shared by both. */
+  --chart-grid: var(--line);
+  --chart-baseline: var(--line-strong);
+  --chart-label: var(--muted);
+  --chart-value: var(--ink);
+
+  /* Categorical. Slot 1 is whichever brand is publishing; the rest point at
+     the semantic tokens rather than copying their values, so they follow
+     into dark mode. Hardcoding the hexes looked identical in light mode and
+     left three of the four below 3:1 on the dark ground. */
+  --cat-1: var(--accent);
+  --cat-2: var(--muted);
+  --cat-3: var(--amber);
+  --cat-4: var(--warn);
+  --cat-5: var(--ok);
+
+  /* Single-hue sequential ramps, light to dark. */
+  --seq-1: #dce8f6; --seq-2: #abc6e6; --seq-3: #7099cb;
+  --seq-4: #3d72ad; --seq-5: #14549c;
+
+  /* The non-colour carrier for "dead" or "missing". Colour alone never
+     says it — the same rule the availability chips already follow. */
+  --hatch-dead: repeating-linear-gradient(135deg,
+      transparent 0 5px, rgba(255, 255, 255, .45) 5px 8px);
+}
+
+.joined-up {
+  --accent: var(--ju-accent);
+  --accent-soft: var(--ju-accent-soft);
+  --on-accent: var(--ju-on-accent);
+  --cat-1: var(--ju-accent);
+  --seq-1: #d9efe9; --seq-2: #a3d6c9; --seq-3: #66b3a2;
+  --seq-4: #348d7d; --seq-5: #0e6e63;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ju-accent: #5ecdb6;       /* 9.63:1 on --bg, 8.75:1 on --card */
+    --ju-on-accent: #0c1f1a;    /* 8.87:1 on --ju-accent */
+    --ju-accent-soft: #12302a;
+    --ju-accent-deep: #8fdccb;
+    --seq-1: #24384f; --seq-2: #31517a; --seq-3: #4470a4;
+    --seq-4: #5f91cc; --seq-5: #7ab3ee;
+    --hatch-dead: repeating-linear-gradient(135deg,
+        transparent 0 5px, rgba(0, 0, 0, .4) 5px 8px);
+  }
+  .joined-up {
+    --seq-1: #17352f; --seq-2: #215048; --seq-3: #2f7264;
+    --seq-4: #459a87; --seq-5: #5ecdb6;
+  }
+}
+
+/* ---------- Provenance: on every graphic, both brands -----------------
+ *
+ * A full-bleed band with a 2px brand rule, so a screenshot cropped by
+ * someone reposting it still carries a recognisable fragment. This is the
+ * most important element on any chart we make: it is what makes the claim
+ * checkable by someone who doesn't believe it.
+ */
+
+.provenance {
+  border-top: 2px solid var(--accent);
+  background: var(--accent-soft);
+  display: flex;
+  flex-wrap: wrap;              /* a long hostname must not push the band
+                                   off a 320px screen */
+  gap: .9em 2.5em;
+  align-items: baseline;
+  padding: 1em 1.4em;
+  font-size: .8125rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.provenance .slot b {
+  display: block;
+  font-size: .72em;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--muted);          /* 5.05:1 on the tinted ground, both modes */
+}
+.provenance .query { flex: 1 1 14rem; min-width: 0; }
+.provenance .query code { font-size: .95em; overflow-wrap: anywhere; }
+.provenance .verify { font-variant-numeric: tabular-nums; }
+
+/* ---------- Finding cards --------------------------------------------- */
+
+.finding {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 1.6rem 0;
+}
+.finding > h2, .finding > .lede, .finding > .draft { margin: 0; padding: 0 1.4rem; }
+.finding > h2 { padding-top: 1.2rem; font-size: 1.22rem; line-height: 1.3; }
+.finding > .lede { padding-top: .7rem; padding-bottom: 1.2rem; color: var(--ink); }
+.finding figure { margin: 0; padding: 0 1.4rem 1.2rem; overflow-x: auto; }
+/* A chart squeezed into a phone's width scales its 13px labels down to
+   about 5px, which is not a chart any more. Below the floor it scrolls
+   sideways inside its own box instead — the page itself never does. */
+.finding svg { display: block; width: 100%; min-width: 34rem; height: auto; }
+.tier {
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .18em .55em;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.tier.review { background: transparent; color: var(--amber); border-color: var(--amber); }

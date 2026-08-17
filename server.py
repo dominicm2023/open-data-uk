@@ -630,6 +630,31 @@ def publisher_page(name: str = Query(default="", max_length=300),
         headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
 
 
+@app.get("/findings", include_in_schema=False)
+def findings_page() -> HTMLResponse:
+    """Findings, read from the file the nightly run writes.
+
+    Deliberately not computed per request: these are expensive aggregate
+    queries, and a page that recomputed them would let a crawler run a table
+    scan on demand. The file is the published record — if it is missing, say
+    so rather than inventing an empty page that reads as "we found nothing".
+    """
+    import json
+    from datetime import datetime, timezone
+    from pathlib import Path
+
+    path = Path(__file__).parent / "findings.json"
+    if not path.exists():
+        return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    findings = json.loads(path.read_text(encoding="utf-8"))
+    measured = datetime.fromtimestamp(
+        path.stat().st_mtime, tz=timezone.utc).strftime("%d %B %Y")
+    return HTMLResponse(
+        pagerender.render_findings(findings, measured, SITE_URL),
+        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
 @app.get("/topics", include_in_schema=False)
 def topics_page() -> HTMLResponse:
     return HTMLResponse(
@@ -827,6 +852,9 @@ def sitemap_browse() -> Response:
     agg = _aggregates()
     urls = [f"<url><loc>{SITE_URL}/{p}</loc><changefreq>weekly</changefreq></url>"
             for p in ("publishers", "topics", "who-publishes")]
+    # Findings change every night the numbers move, unlike the browse hubs.
+    urls.append(f"<url><loc>{SITE_URL}/findings</loc>"
+                f"<changefreq>daily</changefreq></url>")
     for name, count in agg["publishers"]:
         for page in range(1, max(1, -(-count // PER_PAGE)) + 1):
             loc = (SITE_URL + pagerender.publisher_path(name, page)).replace("&", "&amp;")

@@ -664,3 +664,80 @@ def render_missing(key: str | None) -> str:
             "been withdrawn by its publisher, or the link may be mistyped.</p>"
             '<p><a class="cta" href="/">Search the index</a></p>')
     return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+
+
+def render_findings(findings: list[dict], measured: str, site_url: str) -> str:
+    """What the index knows that no single portal can see.
+
+    Published while still being built, deliberately. Every claim here names
+    real organisations, and the fastest way to find out we are wrong about
+    one is to show it to them with the query attached — a council replying
+    "we do publish that, you missed it" is a correction and a new source in
+    the same message. That has already been the most productive way we find
+    data. So the page carries the date it was measured, the query behind
+    every number, and a plain route to challenge it.
+
+    Only tiers 1-2 appear. They describe patterns; tier 3 and up name a body
+    or make an argument, and every tier-3 claim the engine has produced so
+    far had a cause outside our data that changed what it meant.
+    """
+    import charts
+
+    auto = [f for f in findings if f.get("tier", 5) <= 2]
+    cards = []
+    for f in auto:
+        svg = charts.render(f)
+        figure = f"<figure>{svg}</figure>" if svg else ""
+        prov = (
+            '<div class="provenance">'
+            '<div class="slot query"><b>How it was measured</b>'
+            f'<code>{esc(f.get("sql") or "measured from the index")}</code></div>'
+            f'<div class="slot verify"><b>Measured</b>{esc(measured)}</div>'
+            "</div>")
+        cards.append(
+            f'<article class="finding">'
+            f'<h2><span class="tier">Tier {f.get("tier")}</span> '
+            f'{esc(f.get("headline", ""))}</h2>'
+            f'<p class="lede">{esc(f.get("detail", ""))}</p>'
+            f"{figure}{prov}</article>")
+
+    held = [f for f in findings if f.get("tier", 5) > 2]
+    queued = ""
+    if held:
+        items = "".join(f"<li>{esc(f.get('headline', ''))} "
+                        f'<span class="note">tier {f.get("tier")}</span></li>'
+                        for f in held)
+        queued = ("<h2>Held back for a person</h2>"
+                  f'<p class="note">{len(held)} further findings are not '
+                  "published automatically. A claim naming one organisation "
+                  "implies a cause, and the cause usually lives outside our "
+                  "data: the first four this engine produced were a council "
+                  "abolished in 2023, a stale copy of our own database, a "
+                  "portal switched off that the national catalogue never "
+                  "pruned, and files removed by a different agency. All four "
+                  "were true as measurements and misleading as sentences.</p>"
+                  f'<ul class="datasets">{items}</ul>')
+
+    body = (
+        "<h1>Findings</h1>"
+        '<p>Things this index can see that no single portal can, because each '
+        "portal only knows its own records. Every number below carries the "
+        "query that produced it, so anyone — including anyone who thinks it "
+        "is wrong — can re-run it.</p>"
+        f'<p class="note">Measured {esc(measured)}. These figures move as we '
+        "add sources, and this page is being built in the open, so expect it "
+        "to change. If a finding is wrong about your organisation we want to "
+        "know: <a href=\"https://github.com/dominicm2023/open-data-uk/issues\" "
+        'rel="noopener">open an issue</a> and we will re-check and correct it. '
+        "Telling us we have missed data you publish is the single most useful "
+        "thing you can do — it is how a good share of our coverage gets "
+        "found.</p>"
+        + "".join(cards) + queued)
+
+    head = simple_head(
+        "Findings — what the UK's open data shows",
+        f"{len(auto)} measured findings about UK open government data: dead "
+        "hosting, missing licences, councils publishing nothing, and data that "
+        "outlived the councils that published it. Each with the query behind it.",
+        "/findings", site_url)
+    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
