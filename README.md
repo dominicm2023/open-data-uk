@@ -66,7 +66,7 @@ figure from 56% to 34%.
 | Server-rendered pages | [`pagerender.py`](pagerender.py) — titles, snippets, canonical URLs and schema.org markup for 60,000 dataset pages, plus the browse hierarchy below |
 | Data-quality report | [`report.py`](report.py) |
 | Relevance regression suite | [`scripts/relevance_test.py`](scripts/relevance_test.py) — 12 cases; **run it before and after any ranking change** |
-| Unit tests (no index needed) | [`scripts/dedupe_test.py`](scripts/dedupe_test.py), [`scripts/render_test.py`](scripts/render_test.py) — the rules that decide what search hides, and what gets escaped |
+| Unit tests (no index needed) | [`scripts/dedupe_test.py`](scripts/dedupe_test.py), [`scripts/render_test.py`](scripts/render_test.py) — the rules that decide what search hides, and what gets escaped; [`scripts/placeholder_test.py`](scripts/placeholder_test.py) — what every harvester refuses when a portal serves its template instead of its data |
 | What people actually search for | [`scripts/query_report.py`](scripts/query_report.py) — over the anonymous query log |
 | Change notification | [`scripts/indexnow.py`](scripts/indexnow.py) — announces only the pages whose content actually moved |
 | Finding councils that publish through ArcGIS | [`scripts/find_council_portals.py`](scripts/find_council_portals.py) — asks Hub about each council we're missing, by name |

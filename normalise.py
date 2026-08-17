@@ -12,6 +12,35 @@ import html
 import json
 import re
 
+# --- Unrendered templates -----------------------------------------------
+
+
+def unrendered(text) -> bool:
+    """True when a portal served its own template instead of a value.
+
+    ArcGIS Hub feeds intermittently emit the Handlebars source — "{{name}}",
+    "{{description}}", "{{default.description}}" — where the rendered value
+    belongs. It is not a value any publisher wrote and nothing can be
+    recovered from it, so every field that can carry one is checked here
+    rather than in each of the six harvesters.
+    """
+    return "{{" in text if isinstance(text, str) else False
+
+
+# --- Titles --------------------------------------------------------------
+
+
+def norm_title(raw) -> str | None:
+    """A usable title, or None when the portal didn't render one.
+
+    A dataset with no title has nothing to show in search results, on a
+    publisher's listing or in the FTS index, so callers treat None as "not a
+    record" and drop it rather than storing a row headed "{{name}}".
+    """
+    title = (str(raw).strip() if raw is not None else "")
+    return None if not title or unrendered(title) else title
+
+
 # --- Descriptions -------------------------------------------------------
 
 _TAG = re.compile(r"<[^>]+>")
@@ -49,11 +78,18 @@ def strip_html(text: str | None) -> str | None:
     Unescape *after* stripping tags: doing it first would turn an escaped
     "&lt;script&gt;" into a real tag that the stripper then removes, which
     changes the author's meaning.
+
+    An unrendered template comes back as None. Unlike a title, a description
+    is not what makes a record a record: the rest of it may be perfectly
+    sound, so the field is blanked and the page falls back to its generated
+    summary. Every harvester runs descriptions through here, which is why the
+    rule lives here rather than at each ingest point.
     """
     if not text:
         return text
     stripped = _TAG.sub(" ", fix_mojibake(text))
-    return _WS.sub(" ", html.unescape(stripped)).strip()
+    plain = _WS.sub(" ", html.unescape(stripped)).strip()
+    return None if unrendered(plain) else plain
 
 
 # --- Licences -----------------------------------------------------------
