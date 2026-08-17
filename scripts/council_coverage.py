@@ -7,6 +7,8 @@ the ONS register, each marked with what we hold for it.
 Four states, and the distinctions matter:
 
   own         we harvest that council's own data portal
+  filtered    we harvest their portal and stored almost nothing from it, because
+              our own quality gate rejected it
   hub         we hold their data through a regional hub someone else runs —
               the London Datastore, Scotland's Spatial Hub, OpenDataNI
   aggregator  we hold it only through data.gov.uk's copy
@@ -198,6 +200,29 @@ def match(council_words: frozenset, index: dict,
     return [entry for words, entry in index.items() if words == wanted]
 
 
+def gate_casualties(conn) -> dict[str, tuple[int, int]]:
+    """Sources whose records our quality gate almost entirely rejected.
+
+    A council here is not silent: it runs a portal, we fetched it, and we
+    chose not to store what it offered. Reporting that as "no open data we
+    can find" is a claim about them for a decision of ours — Neath Port
+    Talbot advertised 139 datasets, we kept none, and the coverage page said
+    it published nothing.
+
+    The gate itself is right: ArcGIS organisations share working layers,
+    survey forms and logo graphics alongside data, and requiring a
+    description took 73,278 available records down to 11,639 real ones. The
+    error is in what we then say about the council.
+    """
+    rows = conn.execute(
+        "SELECT h.source_id, h.total_at_source, h.harvested FROM harvest_runs h "
+        "WHERE h.started_at = (SELECT MAX(started_at) FROM harvest_runs h2 "
+        "                      WHERE h2.source_id = h.source_id) "
+        "AND h.total_at_source >= 20").fetchall()
+    return {sid: (adv, got) for sid, adv, got in rows
+            if adv and got / adv < 0.02}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--offline", action="store_true",
@@ -207,11 +232,12 @@ def main() -> int:
     councils = load_councils(args.offline)
     conn = db_connect()
     index = publisher_index(conn)
+    casualties = gate_casualties(conn)
     conn.close()
     src_ids = source_identities()
 
     rows, by_nation = [], defaultdict(
-        lambda: {"own": 0, "hub": 0, "aggregator": 0, "none": 0})
+        lambda: {"own": 0, "hub": 0, "aggregator": 0, "filtered": 0, "none": 0})
     for c in councils:
         words = identity(c["name"])
         hits = match(words, index, c["name"]) if words else []
@@ -226,6 +252,13 @@ def main() -> int:
         own = sorted(s for s in sources if src_ids.get(s) == words)
         state = ("own" if own else "hub" if sources
                  else "aggregator" if aggregated else "none")
+        # We reached their portal and kept nothing. Not silence, a decision
+        # of ours, and it must not be reported as theirs.
+        if state in ("none", "aggregator") and not direct:
+            filtered_from = [sid for sid, (_a, _g) in casualties.items()
+                             if identity(sid.replace("_", " ")) == words]
+            if filtered_from:
+                state = "filtered"
         rows.append({**c, "state": state, "direct": direct,
                      "aggregated": aggregated, "publishers": names,
                      "sources": sources, "own_sources": own})
@@ -270,7 +303,7 @@ def main() -> int:
         lines += [f"## {nation}", "",
                   "| Council | Data | Datasets | Held as |", "|---|---|---:|---|"]
         for r in [x for x in rows if x["nation"] == nation]:
-            mark = {"own": "✅", "hub": "🔵",
+            mark = {"own": "✅", "filtered": "🟠", "hub": "🔵",
                     "aggregator": "🟡", "none": "⬜"}[r["state"]]
             n = r["direct"] + r["aggregated"]
             held = (", ".join(r["own_sources"] or r["sources"]) if r["sources"]

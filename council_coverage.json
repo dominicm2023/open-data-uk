@@ -502,7 +502,7 @@
   "name": "Canterbury",
   "nation": "England",
   "state": "own",
-  "direct": 28,
+  "direct": 21,
   "aggregated": 2,
   "sources": [
    "canterbury"
@@ -2229,7 +2229,7 @@
   "code": "E08000005",
   "name": "Rochdale",
   "nation": "England",
-  "state": "aggregator",
+  "state": "filtered",
   "direct": 0,
   "aggregated": 31,
   "sources": [],
@@ -3192,8 +3192,8 @@
   "name": "Wigan",
   "nation": "England",
   "state": "own",
-  "direct": 95,
-  "aggregated": 110,
+  "direct": 94,
+  "aggregated": 109,
   "sources": [
    "wigan"
   ],
@@ -3410,7 +3410,7 @@
   "name": "Causeway Coast and Glens",
   "nation": "Northern Ireland",
   "state": "own",
-  "direct": 60,
+  "direct": 59,
   "aggregated": 0,
   "sources": [
    "causeway_coast",
@@ -3572,7 +3572,7 @@
   "name": "City of Edinburgh",
   "nation": "Scotland",
   "state": "hub",
-  "direct": 101,
+  "direct": 100,
   "aggregated": 0,
   "sources": [
    "opendata_scot",
@@ -3716,7 +3716,7 @@
   "name": "Glasgow City",
   "nation": "Scotland",
   "state": "own",
-  "direct": 322,
+  "direct": 319,
   "aggregated": 0,
   "sources": [
    "glasgow",
@@ -4113,7 +4113,7 @@
   "code": "W06000012",
   "name": "Neath Port Talbot",
   "nation": "Wales",
-  "state": "none",
+  "state": "filtered",
   "direct": 0,
   "aggregated": 0,
   "sources": [],

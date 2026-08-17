@@ -178,6 +178,69 @@ def the_oldest_things(conn) -> tuple[str, str, str]:
                      "corrupt dates excluded")
 
 
+
+def the_one_thing_we_agree_on(conn) -> tuple[str, str, str]:
+    """The org chart is the most standardised document in British government."""
+    n = conn.execute(f"SELECT COUNT(*) {FINDABLE} AND d.title = ?",
+                     ("Organogram of Staff Roles & Salaries",)).fetchone()[0]
+    pubs = conn.execute(
+        f"SELECT COUNT(DISTINCT d.publisher) {FINDABLE} "
+        f"AND LOWER(d.title) LIKE '%organogram%'").fetchone()[0]
+    total = conn.execute(
+        f"SELECT COUNT(*) {FINDABLE} AND LOWER(d.title) LIKE '%organogram%'"
+    ).fetchone()[0]
+    body, h = share_of(n, total, "share the identical title",
+                       f"{total} organogram datasets from {pubs} different public "
+                       f"bodies, {n} of them titled \"Organogram of Staff Roles & "
+                       f"Salaries\" character for character. The 2010 Transparency "
+                       f"Code specified the format, and it is the one thing the "
+                       f"whole state agrees on how to record: its own hierarchy.")
+    return body, h, ("title = 'Organogram of Staff Roles & Salaries', against all "
+                     "datasets whose title contains 'organogram'")
+
+
+def share_of(part, whole, label, sub):
+    return charts.share_bar(part, whole, label, sub)
+
+
+def a_catalogue_of_questions(conn) -> tuple[str, str, str]:
+    """One body's catalogue is almost entirely answers to public questions."""
+    foi = conn.execute(
+        f"SELECT COUNT(*) {FINDABLE} AND d.source_id = 'nhsbsa' "
+        f"AND d.title GLOB 'FOI-*'").fetchone()[0]
+    total = conn.execute(
+        f"SELECT COUNT(*) {FINDABLE} AND d.source_id = 'nhsbsa'").fetchone()[0]
+    body, h = charts.share_bar(
+        foi, total, "are titled only with a reference number",
+        f"Of the NHS Business Services Authority's {total:,} published datasets, "
+        f"{foi:,} are titled nothing but a case number — FOI-03941, FOI-03938 — "
+        f"because each one is the answer to a question a member of the public "
+        f"asked. The other 51 are its real data, and they are excellent.")
+    return body, h, "source_id = 'nhsbsa', titles matching the pattern FOI-*"
+
+
+def published_once(conn) -> tuple[str, str, str]:
+    """What publishers say when asked how often they will update."""
+    rows = conn.execute("""
+        SELECT LOWER(REPLACE(TRIM(g.update_frequency), ' ', '')) f, COUNT(*) n
+        FROM dataset_geo g JOIN datasets d ON d.key = g.dataset_key
+        WHERE NOT EXISTS (SELECT 1 FROM duplicates x WHERE x.key = d.key)
+          AND NOT EXISTS (SELECT 1 FROM retired r WHERE r.key = d.key)
+          AND g.update_frequency IS NOT NULL AND TRIM(g.update_frequency) <> ''
+        GROUP BY f ORDER BY n DESC LIMIT 8""").fetchall()
+    total = sum(n for _, n in rows)
+    body, h = charts.treemap(
+        [(f, n) for f, n in rows],
+        f"What publishers answer when the metadata asks how often a dataset will "
+        f"be updated, across {total:,} spatial records on data.gov.uk that answer "
+        f"at all. This is their own vocabulary from a fixed list, not our "
+        f"judgement — and only these records are asked the question, so it is a "
+        f"fact about INSPIRE spatial metadata rather than about UK open data "
+        f"generally.")
+    return body, h, ("dataset_geo.update_frequency grouped, findable datasets "
+                     "only — the field exists on data.gov.uk records alone")
+
+
 PANELS = [
     ("Where the data is", where_the_data_is, False),
     ("What the data is about", what_the_data_covers, False),
@@ -185,6 +248,9 @@ PANELS = [
     ("When it was last touched", a_century_of_data, False),
     ("Every way to publish a file", the_long_tail_of_formats, False),
     ("What we have counted longest", the_oldest_things, False),
+    ("The one thing the state agrees on", the_one_thing_we_agree_on, False),
+    ("A catalogue made of questions", a_catalogue_of_questions, False),
+    ("Published once, by their own account", published_once, True),
 ]
 
 PAGE = """<!doctype html>
