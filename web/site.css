@@ -564,3 +564,48 @@ footer {
 .tier.ok { color: var(--ok); border-color: var(--ok); background: transparent; }
 .tier.amber { color: var(--amber); border-color: var(--amber); background: transparent; }
 .tier.warn { color: var(--warn); border-color: var(--warn); background: transparent; }
+
+/* ---------- Text that sits ON a sequential ramp ------------------------
+ *
+ * The treemap writes its labels inside the tiles, and the ramp runs from
+ * pale to saturated, so no single ink colour works across it. Using --ink
+ * throughout put the labels at 2.35:1 on the darkest tile in light mode and
+ * 1.83:1 in dark — the same failure as white-on-accent, in a new place.
+ *
+ * Steps 1-3 take the page's ink and 4-5 take its opposite. That split holds
+ * for both brands in both themes, which is why the ramps are ordered this
+ * way rather than the tokens being chosen per chart. Two ramp values moved a
+ * shade to clear AA rather than leaving a label at 4.0:1.
+ */
+
+:root {
+  --on-seq-1: var(--ink);
+  --on-seq-2: var(--ink);
+  --on-seq-3: var(--ink);
+  --on-seq-4: #ffffff;   /* 4.99:1 on --seq-4 */
+  --on-seq-5: #ffffff;   /* 7.56:1 on --seq-5 */
+  --seq-3: #7099cb;
+}
+
+.joined-up {
+  --seq-4: #2b7867;      /* darkened from #348d7d: white was 4.00:1 */
+  --on-seq-4: #ffffff;   /* 5.27:1 */
+  --on-seq-5: #ffffff;   /* 6.12:1 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --seq-3: #3f6899;    /* darkened from #4470a4: ink was 4.26:1 */
+    --on-seq-1: var(--ink);
+    --on-seq-2: var(--ink);
+    --on-seq-3: var(--ink);   /* 4.78:1 after the shift */
+    --on-seq-4: #16181c;      /* 5.42:1 */
+    --on-seq-5: #16181c;      /* 8.05:1 */
+  }
+  .joined-up {
+    --seq-4: #459a87;
+    --on-seq-3: var(--ink);   /* 4.70:1 */
+    --on-seq-4: #16181c;      /* 5.27:1 */
+    --on-seq-5: #16181c;      /* 9.21:1 */
+  }
+}

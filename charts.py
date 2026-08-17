@@ -43,9 +43,15 @@ LITERALS = {
     "--chart-label": "#61656d", "--chart-value": "#16181c",
     "--cat-1": "#14549c", "--cat-2": "#61656d", "--cat-3": "#7a5c00",
     "--cat-4": "#a4192b", "--cat-5": "#0a6b45",
+    "--seq-1": "#dce8f6", "--seq-2": "#abc6e6", "--seq-3": "#7099cb",
+    "--seq-4": "#3d72ad", "--seq-5": "#14549c",
+    "--on-seq-1": "#16181c", "--on-seq-2": "#16181c", "--on-seq-3": "#16181c",
+    "--on-seq-4": "#ffffff", "--on-seq-5": "#ffffff",
 }
 JU_LITERALS = {"--accent": "#0e6e63", "--accent-soft": "#e4f1ee",
-               "--cat-1": "#0e6e63"}
+               "--cat-1": "#0e6e63",
+               "--seq-1": "#d9efe9", "--seq-2": "#a3d6c9", "--seq-3": "#66b3a2",
+               "--seq-4": "#2b7867", "--seq-5": "#0e6e63"}
 
 STYLE = """
 text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
@@ -538,12 +544,23 @@ def treemap(items: list[tuple[str, int]], caption: str) -> tuple[str, int]:
         out.append(f'<rect x="{x:.1f}" y="{PAD}" width="{max(1, w - 2):.1f}" '
                    f'height="{h - PAD - 30}" rx="3" fill="{fill}"/>')
         if w > 58:
+            # The label sits on the tile, so its colour comes from that
+            # tile's own on- token: the ramp runs pale to saturated and one
+            # ink colour cannot serve both ends.
+            #
+            # As an inline style, not a fill attribute. A presentation
+            # attribute loses to any stylesheet rule, and `.t-label` already
+            # sets a fill — so every override written as fill="..." was
+            # silently discarded and the labels rendered in --muted, at
+            # 3.02:1 on the tile. The arithmetic was right and the cascade
+            # ignored it.
+            on = f"var(--on-seq-{min(5, 1 + i % 5)})"
             out.append(
                 f'<text x="{x + 8:.1f}" y="{PAD + 22}" class="t-label" '
-                f'fill="var(--ink)">{esc(_fit(label, 14, w - 16, "t-label"))}'
+                f'style="fill:{on}">{esc(_fit(label, 14, w - 16, "t-label"))}'
                 f'</text>'
-                f'<text x="{x + 8:.1f}" y="{PAD + 41}" class="t-value">'
-                f'{value:,}</text>')
+                f'<text x="{x + 8:.1f}" y="{PAD + 41}" class="t-value" '
+                f'style="fill:{on}">{value:,}</text>')
         x += w
     cap, cap_h = _para(caption, PAD, h + 2, "t-label", 14, W - 2 * PAD, 19)
     return "".join(out) + cap, h + 2 + cap_h + 6

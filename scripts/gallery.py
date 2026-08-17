@@ -241,6 +241,113 @@ def published_once(conn) -> tuple[str, str, str]:
                      "only — the field exists on data.gov.uk records alone")
 
 
+
+def the_oldest_thing_is_a_fish(conn) -> tuple[str, str, str]:
+    """How far back the observations reach, by declared reference date."""
+    rows = conn.execute("""
+        SELECT CAST(substr(g.reference_date, 1, 4) AS INTEGER) y, COUNT(*) n
+        FROM dataset_geo g JOIN datasets d ON d.key = g.dataset_key
+        WHERE NOT EXISTS (SELECT 1 FROM duplicates x WHERE x.key = d.key)
+          AND NOT EXISTS (SELECT 1 FROM retired r WHERE r.key = d.key)
+          AND g.reference_date IS NOT NULL AND g.reference_date <> ''
+          AND CAST(substr(g.reference_date, 1, 4) AS INTEGER) BETWEEN 1700 AND 2027
+        GROUP BY y ORDER BY y""").fetchall()
+    if not rows:
+        return "", "", ""
+    # By decade: a year-by-year axis across three centuries is unreadable, and
+    # the early end is a handful of records a century.
+    decades: dict[int, int] = {}
+    for year, n in rows:
+        decades[year // 10 * 10] = decades.get(year // 10 * 10, 0) + n
+    first, last = min(decades), max(decades)
+    series = [(str(d), decades.get(d, 0)) for d in range(first, last + 10, 10)]
+    early = sum(n for y, n in rows if y < 1900)
+    body, h = charts.timeline(
+        series,
+        f"What period the data describes, not when the record was written, by "
+        f"decade. {early} datasets reach back past 1900 — the earliest are "
+        f"British Geological Survey mine plans at 1800, and a marine fish "
+        f"recording scheme whose observations start in 1743, thirty years "
+        f"before the Boston Tea Party. Those round early years mean \"as far "
+        f"back as the collection goes\", not a precise date.",
+        highlight={str(first): "var(--cat-5)"})
+    return body, h, ("dataset_geo.reference_date by decade, 1700-2027; one "
+                     "impossible value of 0201-07-14 excluded as a typo")
+
+
+def the_biggest_files(conn) -> tuple[str, str, str]:
+    """The largest things anyone has published, as far as we measured."""
+    rows = conn.execute(f"""
+        SELECT d.title, rc.size_bytes
+        FROM resource_checks rc JOIN resources r ON r.url = rc.url
+        JOIN datasets d ON d.key = r.dataset_key
+        WHERE rc.size_bytes IS NOT NULL AND NOT EXISTS
+              (SELECT 1 FROM duplicates x WHERE x.key = d.key)
+        GROUP BY rc.url ORDER BY rc.size_bytes DESC LIMIT 8""").fetchall()
+    if not rows:
+        return "", "", ""
+    measured = conn.execute(
+        "SELECT COUNT(*) FROM resource_checks WHERE size_bytes IS NOT NULL"
+    ).fetchone()[0]
+    total = conn.execute("SELECT COUNT(DISTINCT url) FROM resources").fetchone()[0]
+    body, h = charts.hbar(
+        [(title, size // 1_000_000_000) for title, size in rows],
+        f"Gigabytes, for the largest files we have measured. The biggest is "
+        f"98 GB of X-ray scans of 600-million-year-old embryo-like fossils, "
+        f"and most of the rest is deep-sea video — one 45 GB entry turned out "
+        f"to be a DVD disc image, VIDEO_TS folder and all. Only "
+        f"{measured:,} of {total:,} resource URLs report a size, so this is "
+        f"the largest we could measure, not the largest that exists.")
+    return body, h, ("resource_checks.size_bytes, the 11.6% of resource URLs "
+                     "that report a Content-Length")
+
+
+def a_title_is_whatever_you_type(conn) -> tuple[str, str, str]:
+    """What a national registry accepts when nobody checks."""
+    rows = conn.execute(f"""
+        SELECT d.source_id, COUNT(*) n {FINDABLE}
+        AND LENGTH(TRIM(d.title)) <= 4
+        GROUP BY d.source_id ORDER BY n DESC LIMIT 6""").fetchall()
+    titles = [r[0] for r in conn.execute(f"""
+        SELECT DISTINCT TRIM(d.title) {FINDABLE}
+        AND LENGTH(TRIM(d.title)) <= 4 AND d.source_id = 'nbn_atlas'
+        ORDER BY LENGTH(TRIM(d.title)), TRIM(d.title) LIMIT 40""")]
+    total = sum(n for _, n in rows)
+    body, h = charts.unit_grid(
+        len(titles), len(titles),
+        f"One square per distinct title of four characters or fewer in the "
+        f"National Biodiversity Network's registry. They include "
+        f"{', '.join(repr(x) for x in titles[:8])} — live registry entries, "
+        f"each with its own public page. {total} such records exist across "
+        f"the index; the biodiversity registry is the outlier.")
+    return body, h, ("titles of four characters or fewer, grouped by source; "
+                     "NBN Atlas is fully harvested")
+
+
+def one_tag_per_council(conn) -> tuple[str, str, str]:
+    """The most exhaustively tagged dataset in the index."""
+    row = conn.execute("""
+        SELECT d.title, COUNT(*) n FROM dataset_tags t
+        JOIN datasets d ON d.key = t.dataset_key
+        WHERE NOT EXISTS (SELECT 1 FROM duplicates x WHERE x.key = d.key)
+        GROUP BY d.key ORDER BY n DESC LIMIT 1""").fetchone()
+    if not row:
+        return "", "", ""
+    title, n = row
+    top = conn.execute("""
+        SELECT d.title, COUNT(*) n FROM dataset_tags t
+        JOIN datasets d ON d.key = t.dataset_key
+        WHERE NOT EXISTS (SELECT 1 FROM duplicates x WHERE x.key = d.key)
+        GROUP BY d.key ORDER BY n DESC LIMIT 8""").fetchall()
+    body, h = charts.hbar(
+        list(top),
+        f"Tags per dataset, for the eight most exhaustively tagged records in "
+        f"the index. The winner is \"{title}\" with {n} — one for every UK "
+        f"local authority from Aberdeen City to York, plus a handful of "
+        f"themes. Somebody typed all of them.")
+    return body, h, "dataset_tags counted per dataset, findable records only"
+
+
 PANELS = [
     ("Where the data is", where_the_data_is, False),
     ("What the data is about", what_the_data_covers, False),
@@ -251,6 +358,10 @@ PANELS = [
     ("The one thing the state agrees on", the_one_thing_we_agree_on, False),
     ("A catalogue made of questions", a_catalogue_of_questions, False),
     ("Published once, by their own account", published_once, True),
+    ("How far back it reaches", the_oldest_thing_is_a_fish, False),
+    ("The biggest things published", the_biggest_files, False),
+    ("A title is whatever you type", a_title_is_whatever_you_type, False),
+    ("One tag per council", one_tag_per_council, False),
 ]
 
 PAGE = """<!doctype html>

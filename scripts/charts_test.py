@@ -123,6 +123,45 @@ def check_svg(svg: str, name: str) -> None:
           + (f" — {overlaps[0][0]!r} into {overlaps[0][1]!r}" if overlaps else ""))
 
 
+def _lum(hexcode: str) -> float:
+    hexcode = hexcode.lstrip("#")
+    parts = [int(hexcode[i:i + 2], 16) / 255 for i in (0, 2, 4)]
+    lin = [c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+           for c in parts]
+    return 0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2]
+
+
+def contrast(a: str, b: str) -> float:
+    la, lb = _lum(a), _lum(b)
+    return (max(la, lb) + 0.05) / (min(la, lb) + 0.05)
+
+
+def check_label_contrast() -> None:
+    """Text drawn on a filled shape must be readable on it.
+
+    This is the third contrast fault in the project and the second of exactly
+    this shape: a token that is right against the page background and wrong
+    against a coloured fill. The treemap wrote its labels in --ink on every
+    tile of a pale-to-saturated ramp, which measured 2.35:1 on the darkest
+    tile in light mode and 1.83:1 in dark.
+    """
+    ramps = {
+        "index light": (["#dce8f6", "#abc6e6", "#7099cb", "#3d72ad", "#14549c"],
+                        ["#16181c", "#16181c", "#16181c", "#ffffff", "#ffffff"]),
+        "index dark": (["#24384f", "#31517a", "#3f6899", "#5f91cc", "#7ab3ee"],
+                       ["#e9eaec", "#e9eaec", "#e9eaec", "#16181c", "#16181c"]),
+        "joined up light": (["#d9efe9", "#a3d6c9", "#66b3a2", "#2b7867", "#0e6e63"],
+                            ["#16181c", "#16181c", "#16181c", "#ffffff", "#ffffff"]),
+        "joined up dark": (["#17352f", "#215048", "#2f7264", "#459a87", "#5ecdb6"],
+                           ["#e9eaec", "#e9eaec", "#e9eaec", "#16181c", "#16181c"]),
+    }
+    for name, (fills, inks) in ramps.items():
+        worst = min(contrast(ink, fill) for ink, fill in zip(inks, fills))
+        check(worst >= 4.5,
+              f"{name}: every ramp step carries readable label text "
+              f"(worst {worst:.2f}:1)")
+
+
 def check_the_checker() -> None:
     """Prove the geometry checks can fail.
 
@@ -160,6 +199,10 @@ def check_the_checker() -> None:
 
 
 def main() -> int:
+    print("--- label text on coloured fills")
+    check_label_contrast()
+
+    print()
     print("--- can these checks fail?")
     check_the_checker()
     print()
