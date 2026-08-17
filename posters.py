@@ -121,7 +121,8 @@ def frame(body: str, title: str, desc: str, query: str, byline: str = "",
 # --- forms ---------------------------------------------------------------
 
 def converge(outer: int, centre: str, outer_label: str, note: str,
-             lit: int | None = None, top: int = 300) -> str:
+             lit: int | None = None, top: int = 300,
+             dead: bool = True) -> str:
     """Many things joined to one point, drawn as spokes into a dead centre.
 
     For the findings whose entire substance is that one failure looks like
@@ -135,17 +136,22 @@ def converge(outer: int, centre: str, outer_label: str, note: str,
     for i in range(outer):
         angle = (i / outer) * math.tau - math.pi / 2
         x, y = cx + r * math.cos(angle), cy + r * math.sin(angle)
-        colour = "var(--cat-4)" if i < lit else "var(--line-strong)"
+        colour = ("var(--cat-4)" if dead else "var(--cat-1)")             if i < lit else "var(--line-strong)"
         spokes.append(f'<line x1="{cx}" y1="{cy}" x2="{x:.1f}" y2="{y:.1f}" '
                       f'stroke="{colour}" stroke-width="0.9" opacity=".5"/>')
         dots.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="4.5" '
                     f'fill="{colour}"/>')
-    hole = (f'<circle cx="{cx}" cy="{cy}" r="34" fill="var(--card)" '
-            f'stroke="var(--cat-4)" stroke-width="2.5"/>'
-            f'<line x1="{cx - 15}" y1="{cy - 15}" x2="{cx + 15}" y2="{cy + 15}" '
-            f'stroke="var(--cat-4)" stroke-width="2.5"/>'
-            f'<line x1="{cx + 15}" y1="{cy - 15}" x2="{cx - 15}" y2="{cy + 15}" '
-            f'stroke="var(--cat-4)" stroke-width="2.5"/>')
+    if dead:
+        hole = (f'<circle cx="{cx}" cy="{cy}" r="34" fill="var(--card)" '
+                f'stroke="var(--cat-4)" stroke-width="2.5"/>'
+                f'<line x1="{cx - 15}" y1="{cy - 15}" x2="{cx + 15}" y2="{cy + 15}" '
+                f'stroke="var(--cat-4)" stroke-width="2.5"/>'
+                f'<line x1="{cx + 15}" y1="{cy - 15}" x2="{cx - 15}" y2="{cy + 15}" '
+                f'stroke="var(--cat-4)" stroke-width="2.5"/>')
+    else:
+        # A solid hub: the many things are real and the centre is too — one
+        # company wearing every one of those names.
+        hole = (f'<circle cx="{cx}" cy="{cy}" r="30" fill="var(--cat-1)"/>')
     label = (f'<text x="{cx}" y="{cy + 74}" class="h-note" '
              f'text-anchor="middle">{esc(_fit(centre, 13, 300, "t-label"))}</text>')
     ring = (f'<text x="{cx}" y="{cy - r - 24}" class="h-note" '
@@ -342,6 +348,66 @@ def posters() -> list[dict]:
              "among the most consistently published data in the index.", top=top),
          "query": "source_id='nhsbsa', split on title GLOB 'FOI-*'",
          "desc": "2,248 records, 2,192 of them FOI answers"},
+
+        {"kicker": "We fetched the actual files", "brand": "joined-up",
+         "byline": "Joined Up",
+         "title": "We went looking for every council's spending. Nine could be read.",
+         "art": lambda top: matrix(
+             361, 9, "spending parsed", "not parseable or not found",
+             "361 UK councils. 82 have a spending dataset in a catalogue; 20 "
+             "had a link that returned data; 9 yielded machine-readable rows "
+             "once fetched — 11.8 million transactions between them. The "
+             "Transparency Code asks for a monthly file, not a readable one, "
+             "and this is what that difference costs.", top=top),
+         "query": "analysis/spending: 193 datasets selected, 7,180 files fetched, "
+                  "parse census in REPORT.md — 354 CSVs were HTML, 570 the wrong genre",
+         "desc": "361 squares, nine lit"},
+
+        {"kicker": "We checked, so you don't have to", "brand": "joined-up",
+         "byline": "Joined Up",
+         "title": "Sewage spills don't track deprivation. Half of them can't even be assigned to a neighbourhood.",
+         "art": lambda top: headline(
+             "52%", "of storm overflows sit on a statistical boundary",
+             "We joined all 14,180 monitored English overflows to the index "
+             "of deprivation, both polygon resolutions, urban and coastal "
+             "controls, ambiguous points pushed to both sides. The gradient "
+             "is not there: the band straddles even in every stratum. What is "
+             "there: sewers discharge to rivers, rivers are the boundary "
+             "lines, so the join every campaign does is a coin flip for half "
+             "its points.", top=top),
+         "query": "analysis/sewage: EA EDM 2025 x IMD 2019, method comparison and "
+                  "band treatment in REPORT.md — deprived/affluent ratio band [0.58, 1.15]",
+         "desc": "The null result, stated as the finding"},
+
+        {"kicker": "One company, spelt 116 ways", "brand": "joined-up",
+         "byline": "Joined Up",
+         "title": "BT appears in public spending under 116 different names.",
+         "art": lambda top: converge(
+             116, "BT Group — £3.74bn", "116 spellings, 57 public bodies",
+             "Capita appears under 141 spellings, G4S under 91, and HMRC "
+             "itself is paid under 76 — one of them misspelt. No identifier "
+             "is published, only free text, so following one company across "
+             "the state means untangling every variant by hand. We did: "
+             "every match was eyeballed, and 65 ambiguous ones were thrown "
+             "out and listed.", top=top, dead=False),
+         "query": "analysis/supplier/variants.csv — 18 companies, every variant "
+                  "eyeballed, exclusions in variants_excluded.csv",
+         "desc": "116 spokes converging on one company"},
+
+        {"kicker": "Where the money actually goes", "brand": "joined-up",
+         "byline": "Joined Up",
+         "title": "More than half of the spending in Britain's transparency files is the state paying itself.",
+         "art": lambda top: headline(
+             "£1.72tn", "from public bodies to public bodies",
+             "53% of the £3.27tn corpus: NHS block grants, pension transfers, "
+             "department-to-Treasury flows. DHSC sends 91% of its published "
+             "spend to other public bodies, and two of its single transfers "
+             "each exceed the combined 18-year spending of every council in "
+             "the corpus. The transparency files exist to show us the state's "
+             "suppliers; mostly they show the state's plumbing.", top=top),
+         "query": "analysis/supplier/flows.csv — 9,523 publisher-to-body pairs, "
+                  "4,919 public bodies, every name over £1M eyeballed",
+         "desc": "The state paying itself, at headline scale"},
     ]
 
 
@@ -392,8 +458,10 @@ def main() -> int:
                              max_px=900 if wide else 470,
                              cls="h-title" if wide else "h-title2")
         svg = frame(head + spec["art"](last + 40), spec["title"], spec["desc"],
-                    spec["query"], measured="17 August 2026")
-        blocks.append(f'<section class="poster"><h2>{i:02d}</h2>{svg}</section>')
+                    spec["query"], byline=spec.get("byline", ""),
+                    measured="17 August 2026")
+        cls = "poster joined-up" if spec.get("brand") == "joined-up" else "poster"
+        blocks.append(f'<section class="{cls}"><h2>{i:02d}</h2>{svg}</section>')
         print(f"   {i:02d}  {spec['title'][:66]}")
 
     # replace, not format: the page carries inline CSS and every brace
