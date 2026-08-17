@@ -1,0 +1,331 @@
+"""Write the reviewed graphics slate the workshop renders.
+
+Fifteen proposed graphics, each checked against the index by a separate pass
+instructed to find reasons the claim is wrong rather than to confirm it. Six
+survived. The record of the nine that did not is the more useful half: every
+one of them failed in a way the next batch could repeat.
+
+Kept as a script rather than hand-edited JSON so the reasoning stays in
+version control next to the numbers it justifies.
+"""
+
+from __future__ import annotations
+
+import json
+from collections import Counter
+from pathlib import Path
+
+OUT = Path(__file__).parent.parent / "proposals.json"
+
+PROPOSALS = [
+    {
+        "title": "Brownfield land registers: statutory since 2017, findable for 28 councils",
+        "verdict": "PROVABLE NOW",
+        "claim": "Of 296 English councils legally required to publish a brownfield "
+                 "land register, 116 appear in the national open-data index and only "
+                 "28 have a link that still returns data.",
+        "numbers": "116/296 (39.2%) present; 28 (7.8%) with a working link; 24 (6.6%) "
+                   "openly licensed and fetchable. Dead-link rate on land and property "
+                   "registers is 24.5% against a 6.9% baseline — 3.6x, z=8.3.",
+        "objection": "The statutory duty is to publish, not to publish as open data. "
+                     "Councils satisfy it with a PDF or a webpage we do not harvest. "
+                     "The claim must be about open-data availability, never secrecy.",
+        "blindness": "Measurably near zero, and it runs the wrong way: aggregator-only "
+                     "councils publish these at 33.8% against 30.1% for councils with "
+                     "their own portal, so our blindness is hiding nothing.",
+        "sql": "brownfield land register in title; availability IN ('data','api'); "
+               "denominator = 296 English councils",
+    },
+    {
+        "title": "Council spending: discoverable in a catalogue for 82 of 361",
+        "verdict": "PROVABLE NOW",
+        "claim": "Of 361 UK councils, 82 have a machine-readable spending dataset "
+                 "discoverable in a public data catalogue; for only 20 could we verify "
+                 "the file still downloads.",
+        "numbers": "1,859 spend and payment datasets index-wide, 325 attributable to a "
+                   "council. 111 councils have one, 82 machine-readable, 20 verified "
+                   "live. Of the 325, 42 are dead and 26 blocked.",
+        "objection": "\"We publish our £500 spending CSVs monthly on our own website "
+                     "under the Transparency Code. We are not obliged to register them "
+                     "in a data catalogue, and yours is a catalogue index.\" Correct, "
+                     "and fatal to any \"your council doesn't publish\" framing.",
+        "blindness": "At least 112 of the 250 non-matching councils, 45%: twenty-six "
+                     "hold nothing at all and 86 aggregator councils have fewer than "
+                     "ten datasets in total. Absence from a nine-dataset catalogue is "
+                     "the expected outcome, not evidence.",
+        "sql": "title LIKE spend / payments to supplier / purchase card / expenditure / "
+               "invoice; council attribution by exact identity match",
+    },
+    {
+        "title": "Air quality: fewer than three in ten councils publish their own",
+        "verdict": "PROVABLE NOW",
+        "claim": "Fewer than three in ten UK councils publish their own air quality "
+                 "dataset as open data; only 16% publish their statutory Air Quality "
+                 "Management Areas.",
+        "numbers": "97 of 335 councils (29%), excluding those we hold nothing for. "
+                   "AQMAs specifically: 58/361 (16%). The rate is flat across coverage "
+                   "states — own 31%, hub 28%, aggregator 28% — so blindness is not "
+                   "driving it.",
+        "objection": "\"Councils discharge their air quality duty by reporting to "
+                     "Defra, not by running an open data portal. The measurements are "
+                     "on uk-air.defra.gov.uk.\" True, so this must say \"publishes its "
+                     "own dataset\", never \"the data is unavailable\".",
+        "blindness": "Bounded at 26 councils, 7.2%. Even assuming every one of them "
+                     "publishes, the ceiling is 35%.",
+        "sql": "title LIKE air quality / no2 / nitrogen dioxide / air pollut / pm10 / pm2.5",
+    },
+    {
+        "title": "Whether your council's data has an address depends on which nation you are in",
+        "verdict": "PROVABLE NOW",
+        "claim": "73% of Northern Irish and 53% of Scottish councils run their own "
+                 "catalogue, against 26% in England and one of 22 in Wales.",
+        "numbers": "Own portal by nation: NI 8/11 (73%), Scotland 17/32 (53%), England "
+                   "77/296 (26%), Wales 1/22 (4.5%). By type: districts 20%, unitaries "
+                   "35%, metropolitan 33%.",
+        "objection": "\"Not running your own portal isn't a failure — publishing via "
+                     "data.gov.uk or a national geoportal is the correct and cheaper "
+                     "thing for a small district.\" Right, so frame this as "
+                     "discoverability, never as a virtue ranking.",
+        "blindness": "The own-portal figure is probe-backed: 2,141 candidate hostnames "
+                     "resolved and API-probed, 327 ArcGIS organisations enumerated, and "
+                     "no Welsh council among them. Wales is not merely unlooked-at.",
+        "sql": "council_coverage.json state=='own', grouped by nation and by ONS code prefix",
+    },
+    {
+        "title": "NHS prescribing data is genuinely good, and the catalogue hides it",
+        "verdict": "PROVABLE NOW",
+        "claim": "NHSBSA's 2,248 catalogue entries are 2,197 FOI disclosure-log records "
+                 "and 51 datasets — but those 51 are 1,692 CSV files under one open "
+                 "licence, among the most consistently published data in the index.",
+        "numbers": "51 real datasets, 1,692 resources, 100% CSV, 50 of 51 OGL-UK-3.0, "
+                   "monthly series up to 145 files deep. The FOI log is where quality "
+                   "drops: 1,089 of its 2,197 entries have no files at all.",
+        "objection": "\"You counted our FOI transparency log as datasets to inflate a "
+                     "number, then called our data unreadable on the strength of a 403 "
+                     "you got from a bot.\" Both halves would land, which is exactly "
+                     "why this one is framed as praise.",
+        "blindness": "50 of the 51 are 'blocked' — their firewall refusing our checker. "
+                     "That says nothing about the data and must not be presented as if "
+                     "it did.",
+        "sql": "source_id='nhsbsa', split on publisher='Freedom of Information "
+               "Disclosure Log' OR title LIKE 'FOI-%'",
+    },
+    {
+        "title": "One dead host took the statutory air quality data of about forty councils",
+        "verdict": "PROVABLE NOW",
+        "claim": "57 dead air quality datasets sit on a single vanished host, so one "
+                 "shared-infrastructure failure looks like forty separate acts of "
+                 "neglect.",
+        "numbers": "Air quality on data.gov.uk: 60 of 133 checked are dead (45.1%) "
+                   "against 9.3% for everything else on the same source — 4.9x with the "
+                   "source held constant. 57 of the 93 dead URLs are on one host, "
+                   "inspire.misoportal.com.",
+        "objection": "\"You are blaming councils for a vendor's server.\" Exactly right, "
+                     "which is why it has to be told as an infrastructure story. Framed "
+                     "as council negligence it is refutable in one traceroute.",
+        "blindness": "None. The comparison holds the source constant, so it cannot be a "
+                     "harvester artefact.",
+        "sql": "availability='dead' AND source_id='data_gov_uk' AND air-quality title "
+               "predicate, grouped by resource hostname",
+    },
+    {
+        "title": "Senior pay exists as a document, almost never as data",
+        "verdict": "NEEDS DATA FETCH",
+        "claim": "Only 21 of 361 councils publish senior pay as reusable data rather "
+                 "than a PDF — the statutory duty is satisfied by a document, which is "
+                 "why the data barely exists.",
+        "numbers": "119 datasets; 38 councils by exact name; 21 machine-readable; 8 "
+                   "link-verified. Of 84 council pay datasets, 17 are PDF and 31 record "
+                   "no format at all.",
+        "objection": "The Localism Act 2011 requires a pay policy statement — a document "
+                     "approved by full council. It has never been an open-data "
+                     "requirement, so \"published by almost nobody\" reads as an "
+                     "accusation of law-breaking against near-total compliance.",
+        "blindness": "Several of the strongest-looking hits are abolished councils — "
+                     "Wycombe, St Edmundsbury, South Lakeland — publishing 2013-15 "
+                     "relics.",
+        "sql": "title LIKE senior pay / senior salar / remuneration / pay policy / pay "
+               "multiple. Gender pay gap deliberately excluded: different duty, and "
+               "folding it in to inflate the numerator would be dishonest.",
+    },
+    {
+        "title": "Flood risk: 181 of the Environment Agency's 260 datasets are zip archives",
+        "verdict": "NEEDS DATA FETCH",
+        "claim": "Held. We cannot see inside a ZIP from a metadata index, and 44.6% of "
+                 "flood datasets are ZIP-only or record no format at all.",
+        "numbers": "803 datasets. 17.9% open in Excel or a browser, 37% need GIS "
+                   "software, 25.8% are ZIP-only, 18.8% record no format. Licence 36% "
+                   "unstated and dead 6.9% — both exactly the index baseline, so there "
+                   "is no story in either.",
+        "objection": "\"Ordinary people don't download shapefiles, they type a postcode "
+                     "into the government's flood risk service. You have measured the "
+                     "wrong artefact.\"",
+        "blindness": "Severe at council level: attribution swings from 41% for councils "
+                     "with their own portal to 6% for aggregator-only. That gradient is "
+                     "our blindness, not council behaviour, so no council-level flood "
+                     "claim is safe.",
+        "sql": "title LIKE '%flood%' — no false positives, floodlight returns zero",
+    },
+    {
+        "title": "Homelessness: the data is good, and it is national",
+        "verdict": "NEEDS DATA FETCH",
+        "claim": "Viable as a data story, not as a transparency story. MHCLG publishes "
+                 "statutory homelessness, rough sleeping and right-to-buy at "
+                 "local-authority level under an open licence.",
+        "numbers": "168 datasets, but 90 are not council-published and MHCLG alone "
+                   "publishes 44. Only 24 of 361 councils (6.6%) publish anything, and "
+                   "York alone accounts for 24 datasets.",
+        "objection": "\"Councils won't tell you\" is simply false — the data exists, is "
+                     "good, and is national. Any graphic carrying actual figures needs "
+                     "the MHCLG spreadsheets downloaded first.",
+        "blindness": "Not the issue here. A chunk of it is archival: NI 156 was "
+                     "abolished with the National Indicator set in 2010.",
+        "sql": "title LIKE homeless / temporary accommodation / right to buy / empty "
+               "homes / vacant dwelling",
+    },
+    {
+        "title": "Sewage data exists. You're not allowed to use it.",
+        "verdict": "NOT SUPPORTED",
+        "claim": "Dropped. The data argues the opposite of the intended point.",
+        "numbers": "Water-industry publishers: 21% state no licence, 79% clearly open, "
+                   "zero dead. Everyone else: 33% no licence, 37% clearly open. Every "
+                   "water company storm overflow dataset is CC-BY-4.0. The worst "
+                   "no-licence rates belong to The Rivers Trust (14 of 47), EIDC (11 of "
+                   "11) and Natural Resources Wales (7 of 7).",
+        "objection": "\"You picked the wrong villain — the water companies are the best "
+                     "licensers in your own dataset, and 30% is below your own 34% "
+                     "index-wide baseline.\"",
+        "blindness": "23 of the 56 no-licence rows come from sources whose index-wide "
+                     "null-licence rate exceeds 50% — our harvester failing to read a "
+                     "licence field, not a publisher omitting one.",
+        "sql": "Cleaned set is 184 datasets across 40 publishers. The original 204 "
+               "caught hospital discharge, river discharge, lightning discharge and "
+               "prison discharge.",
+    },
+    {
+        "title": "Public bodies publish. Private monopolies don't.",
+        "verdict": "NOT SUPPORTED",
+        "claim": "Dropped. It inverts, and it is refutable from our own repository.",
+        "numbers": "24 of 35 utilities (69%) run a machine-readable catalogue. Only 6 "
+                   "of 39 public bodies (15%) do. 13 of 14 named water companies "
+                   "publish. The real variable is the existence of a mandated "
+                   "aggregator: the public sector has data.gov.uk, the utilities built "
+                   "their own portals and the Stream platform instead.",
+        "objection": "\"Your own repository records our portal with 153 datasets and "
+                     "explains that your server cannot complete a TLS handshake with "
+                     "it. You published a graphic saying we do not publish.\" That is "
+                     "SP Energy Networks and Electricity North West, and it is "
+                     "indefensible.",
+        "blindness": "Six of 35 are genuine unknowns and two more are registration-gated "
+                     "and deliberately never probed. Collapsing those into \"doesn't "
+                     "publish\" is precisely the error that would sink it.",
+        "sql": "utilities.yaml cross-referenced against sources.yaml. Note "
+               "UTILITIES_COVERAGE.md is stale and omits eight catalogues we harvest.",
+    },
+    {
+        "title": "Open data is a London luxury",
+        "verdict": "NOT SUPPORTED",
+        "claim": "Dropped. The claim inverts when tested.",
+        "numbers": "Median datasets per council: London boroughs 20, non-London England "
+                   "17, Scotland 58.5, Wales 2.5. Three boroughs — Camden, Barnet, "
+                   "Lambeth — are 59% of London's total. Westminster has 2 datasets; "
+                   "Croydon, Enfield, Haringey and Barking & Dagenham have 1 each. "
+                   "DataMap Wales (1,767) is larger than the London Datastore (1,301).",
+        "objection": "Per-council counting is meaningless without population, which we "
+                     "do not hold. Camden and Westminster are near-identical in size "
+                     "and differ by 345 times — that is council policy, not geography.",
+        "blindness": "Low relevance: the claim fails in the direction opposite to our "
+                     "blindness, so the falsification is robust.",
+        "sql": "council-attributed dataset counts grouped by ONS code prefix; E09 "
+               "identifies London boroughs",
+    },
+    {
+        "title": "Data that only a professional can open",
+        "verdict": "NOT SUPPORTED",
+        "claim": "Dropped. Three quarters of the effect is our own harvester "
+                 "configuration.",
+        "numbers": "Specialist-only reads as 27.6% of datasets that state a format. But "
+                   "10,926 of the 14,504 specialist-only rows (75.3%) have ESRI-REST as "
+                   "their only format, and sources.yaml stamps a literal '=Esri REST' on "
+                   "every record in 140 of 199 sources regardless of what the page "
+                   "actually offers. Excluding those it is 8.7%; on data.gov.uk, which "
+                   "reports observed formats, 13.2%.",
+        "objection": "A boundary map genuinely needs a boundary format, and offering WMS "
+                     "alongside CSV is best practice rather than gatekeeping. Publishing "
+                     "\"one in four\" when the honest figure is under one in ten invites "
+                     "refutation.",
+        "blindness": "37.9% of the index records no format at all, and it is systematic "
+                     "by source — the London Datastore's entire 1,301 holdings have "
+                     "none, so any format graphic silently excludes London.",
+        "sql": "json_each over formats_norm bucketed into consumer and specialist; "
+               "re-run excluding the 140 hardcoded sources",
+    },
+    {
+        "title": "Health data is national, health inequality is local",
+        "verdict": "NOT SUPPORTED",
+        "claim": "Dropped. It reverses under a granularity test.",
+        "numbers": "Of 216 health-inequality datasets, national bodies publish 135 and "
+                   "42% of theirs carry small-area geography; local and other publishers "
+                   "publish 81, of which 31% do. National bodies are more likely to "
+                   "publish local detail, not less.",
+        "objection": "\"Small-area health data in England is mostly on Fingertips and "
+                     "OHID, which you never harvested, so your denominator is not the "
+                     "universe of health data.\"",
+        "blindness": "Widening the search to descriptions contaminates badly: "
+                     "'mortality' catches tree mortality in Sabah, banded mongooses, "
+                     "saiga antelope and North Sea fishing mortality.",
+        "sql": "title LIKE life expectancy / mortality / health inequalit, split by "
+               "publisher and by small-area geography keywords",
+    },
+    {
+        "title": "Section 106: the money developers promise",
+        "verdict": "NOT SUPPORTED",
+        "claim": "Dropped. Publishing it would be factually false.",
+        "numbers": "The 3,057 starting figure was a search bug: '%cil%' is a substring "
+                   "of 'council', and 2,418 of 2,791 title hits contained it — a 21x "
+                   "overcount. Genuine universe: 144 datasets, of which 94 are geometry "
+                   "and 5 carry money. Statutory Infrastructure Funding Statements, "
+                   "mandatory since 2020: two in the whole index.",
+        "objection": "The documents exist as PDFs on some 300 council websites. A "
+                     "graphic saying councils don't publish what developers promised "
+                     "would be false about the world; almost all of the gap is our "
+                     "harvest scope.",
+        "blindness": "Total. This is the clearest case in the set of our own blindness "
+                     "masquerading as somebody's secrecy.",
+        "sql": "Do not use LIKE '%cil%'. Use word-boundary matching on 'CIL', 'section "
+               "106', 'planning obligation', 'infrastructure funding statement'.",
+    },
+    {
+        "title": "Gifts and hospitality registers",
+        "verdict": "NOT SUPPORTED",
+        "claim": "Dropped. There is no honest version of this claim.",
+        "numbers": "199 matches, almost all central-government ministerial registers, "
+                   "plus outright false positives — Gift Aid repayments to charities, "
+                   "job postings in hospitality trades. Councils: four datasets across "
+                   "three councils, two under their own name, none with a link we could "
+                   "verify.",
+        "objection": "Every UK council is statutorily required to maintain a register of "
+                     "members' interests and essentially all publish one as a webpage. A "
+                     "graphic saying three of 361 publish one is trivially refuted by any "
+                     "council linking its own page.",
+        "blindness": "Irrelevant here — the claim is false about the world, not merely "
+                     "unsupported by our index.",
+        "sql": "title LIKE gift / hospitality / register of interest / pecuniary — note "
+               "the Gift Aid and hospitality-trade false positives",
+    },
+]
+
+
+def main() -> int:
+    OUT.write_text(json.dumps({"reviewed": "17 August 2026",
+                               "proposals": PROPOSALS}, indent=1),
+                   encoding="utf-8")
+    tally = Counter(p["verdict"] for p in PROPOSALS)
+    for verdict, n in tally.most_common():
+        print(f"   {n:>2}  {verdict}")
+    print(f"\n{len(PROPOSALS)} proposals — wrote {OUT.name}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

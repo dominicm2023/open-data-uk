@@ -542,3 +542,25 @@ footer {
 .livery-pair svg { display: block; width: 100%; min-width: 0; height: auto; }
 .finding > h3 { margin: 0; padding: 1.2rem 1.4rem 0; font-size: 1.1rem; }
 .finding > h3 + .lede { padding-top: .6rem; }
+
+/* ---------- Graphics slate (workshop only) ---------------------------- */
+
+.proposal {
+  border-left: 3px solid var(--line-strong);
+  padding: .1rem 0 .1rem 1rem;
+  margin: 1.4rem 0;
+}
+.proposal h3 { font-size: 1.05rem; line-height: 1.35; margin: 0 0 .4rem; }
+.proposal .lede { margin: .3rem 0 .5rem; }
+.proposal .note { margin: .35rem 0; }
+.proposal pre {
+  overflow-x: auto;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: .7rem .8rem;
+  font-size: .78rem;
+}
+.tier.ok { color: var(--ok); border-color: var(--ok); background: transparent; }
+.tier.amber { color: var(--amber); border-color: var(--amber); background: transparent; }
+.tier.warn { color: var(--warn); border-color: var(--warn); background: transparent; }

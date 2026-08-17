@@ -189,7 +189,7 @@ def main() -> int:
         {"kind": "coverage", "headline": "long nation caption",
          "sql": "council_coverage.json", "link": "https://open-data.org.uk",
          "numbers": {"nation": "Yorkshire and the Humber Combined Authority Area",
-                     "without_data": 97, "councils": 100}},
+                     "no_trace": 97, "published_centrally": 3, "councils": 100}},
         {"kind": "licensing", "headline": "big denominator",
          "sql": "SELECT COUNT(*) FROM datasets WHERE license_norm IS NULL",
          "link": "https://open-data.org.uk",
@@ -200,6 +200,13 @@ def main() -> int:
         check(bool(svg), f"{f['headline']}: drew at all")
         if svg:
             check_svg(svg, f["headline"])
+
+    print("\n--- a finding whose numbers don't fit its chart")
+    broken_shape = {"kind": "coverage", "headline": "renamed field",
+                    "sql": "x", "link": "https://open-data.org.uk",
+                    "numbers": {"nation": "England", "renamed": 5}}
+    check(charts.render(broken_shape) == "",
+          "a missing number yields no chart rather than an exception")
 
     print("\n--- a signed Joined Up graphic")
     svg = charts.render(findings[0], byline="Dominic Matthews",

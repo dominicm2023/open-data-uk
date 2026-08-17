@@ -141,7 +141,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 114,
+  "aggregated": 42,
   "sources": [],
   "own_sources": []
  },
@@ -251,9 +251,9 @@
   "code": "E06000058",
   "name": "Bournemouth, Christchurch and Poole",
   "nation": "England",
-  "state": "aggregator",
+  "state": "none",
   "direct": 0,
-  "aggregated": 25,
+  "aggregated": 0,
   "sources": [],
   "own_sources": []
  },
@@ -637,11 +637,16 @@
   "code": "E09000001",
   "name": "City of London",
   "nation": "England",
-  "state": "none",
-  "direct": 0,
-  "aggregated": 0,
-  "sources": [],
-  "own_sources": []
+  "state": "own",
+  "direct": 55,
+  "aggregated": 145,
+  "sources": [
+   "agol_city_of_london",
+   "london_datastore"
+  ],
+  "own_sources": [
+   "agol_city_of_london"
+  ]
  },
  {
   "code": "E07000071",
@@ -784,7 +789,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 22,
+  "aggregated": 19,
   "sources": [],
   "own_sources": []
  },
@@ -850,7 +855,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 414,
+  "aggregated": 44,
   "sources": [],
   "own_sources": []
  },
@@ -858,21 +863,19 @@
   "code": "E07000040",
   "name": "East Devon",
   "nation": "England",
-  "state": "hub",
-  "direct": 34,
-  "aggregated": 39,
-  "sources": [
-   "agol_devon_county_council"
-  ],
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 12,
+  "sources": [],
   "own_sources": []
  },
  {
   "code": "E07000085",
   "name": "East Hampshire",
   "nation": "England",
-  "state": "aggregator",
+  "state": "none",
   "direct": 0,
-  "aggregated": 19,
+  "aggregated": 0,
   "sources": [],
   "own_sources": []
  },
@@ -880,12 +883,10 @@
   "code": "E07000242",
   "name": "East Hertfordshire",
   "nation": "England",
-  "state": "hub",
-  "direct": 266,
-  "aggregated": 1,
-  "sources": [
-   "agol_hertfordshire_county_council"
-  ],
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
   "own_sources": []
  },
  {
@@ -902,13 +903,15 @@
   "code": "E06000011",
   "name": "East Riding of Yorkshire",
   "nation": "England",
-  "state": "hub",
+  "state": "own",
   "direct": 86,
   "aggregated": 10,
   "sources": [
    "agol_east_riding_of_yorkshire_cou"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_east_riding_of_yorkshire_cou"
+  ]
  },
  {
   "code": "E07000193",
@@ -916,7 +919,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 37,
+  "aggregated": 33,
   "sources": [],
   "own_sources": []
  },
@@ -1467,13 +1470,10 @@
   "code": "E07000146",
   "name": "King's Lynn and West Norfolk",
   "nation": "England",
-  "state": "hub",
-  "direct": 47,
-  "aggregated": 36,
-  "sources": [
-   "agol_norfolk_county_council",
-   "norfolk"
-  ],
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 13,
+  "sources": [],
   "own_sources": []
  },
  {
@@ -1746,12 +1746,10 @@
   "code": "E07000042",
   "name": "Mid Devon",
   "nation": "England",
-  "state": "hub",
-  "direct": 34,
-  "aggregated": 27,
-  "sources": [
-   "agol_devon_county_council"
-  ],
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
   "own_sources": []
  },
  {
@@ -1848,12 +1846,10 @@
   "code": "E07000195",
   "name": "Newcastle-under-Lyme",
   "nation": "England",
-  "state": "hub",
-  "direct": 41,
-  "aggregated": 66,
-  "sources": [
-   "datamillnorth"
-  ],
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 21,
+  "sources": [],
   "own_sources": []
  },
  {
@@ -1875,12 +1871,10 @@
   "code": "E07000043",
   "name": "North Devon",
   "nation": "England",
-  "state": "hub",
-  "direct": 34,
-  "aggregated": 38,
-  "sources": [
-   "agol_devon_county_council"
-  ],
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 11,
+  "sources": [],
   "own_sources": []
  },
  {
@@ -1889,7 +1883,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 9,
+  "aggregated": 6,
   "sources": [],
   "own_sources": []
  },
@@ -1897,24 +1891,20 @@
   "code": "E06000012",
   "name": "North East Lincolnshire",
   "nation": "England",
-  "state": "hub",
-  "direct": 33,
-  "aggregated": 247,
-  "sources": [
-   "agol_lincolnshire_county_council"
-  ],
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 9,
+  "sources": [],
   "own_sources": []
  },
  {
   "code": "E07000099",
   "name": "North Hertfordshire",
   "nation": "England",
-  "state": "hub",
-  "direct": 266,
-  "aggregated": 26,
-  "sources": [
-   "agol_hertfordshire_county_council"
-  ],
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 25,
+  "sources": [],
   "own_sources": []
  },
  {
@@ -1931,38 +1921,35 @@
   "code": "E06000013",
   "name": "North Lincolnshire",
   "nation": "England",
-  "state": "hub",
-  "direct": 33,
-  "aggregated": 238,
-  "sources": [
-   "agol_lincolnshire_county_council"
-  ],
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 167,
+  "sources": [],
   "own_sources": []
  },
  {
   "code": "E07000147",
   "name": "North Norfolk",
   "nation": "England",
-  "state": "hub",
-  "direct": 47,
-  "aggregated": 57,
-  "sources": [
-   "agol_norfolk_county_council",
-   "norfolk"
-  ],
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 34,
+  "sources": [],
   "own_sources": []
  },
  {
   "code": "E06000061",
   "name": "North Northamptonshire",
   "nation": "England",
-  "state": "hub",
+  "state": "own",
   "direct": 27,
   "aggregated": 0,
   "sources": [
    "agol_north_northamptonshire_counc"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_north_northamptonshire_counc"
+  ]
  },
  {
   "code": "E06000024",
@@ -1970,7 +1957,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 72,
+  "aggregated": 70,
   "sources": [],
   "own_sources": []
  },
@@ -1992,7 +1979,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 63,
+  "aggregated": 4,
   "sources": [],
   "own_sources": []
  },
@@ -2024,13 +2011,15 @@
   "code": "E06000057",
   "name": "Northumberland",
   "nation": "England",
-  "state": "hub",
+  "state": "own",
   "direct": 316,
   "aggregated": 47,
   "sources": [
    "agol_northumberland_county_counci"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_northumberland_county_counci"
+  ]
  },
  {
   "code": "E07000148",
@@ -2461,7 +2450,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 376,
+  "aggregated": 6,
   "sources": [],
   "own_sources": []
  },
@@ -2471,7 +2460,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 4,
+  "aggregated": 1,
   "sources": [],
   "own_sources": []
  },
@@ -2519,13 +2508,10 @@
   "code": "E07000149",
   "name": "South Norfolk",
   "nation": "England",
-  "state": "hub",
-  "direct": 47,
-  "aggregated": 32,
-  "sources": [
-   "agol_norfolk_county_council",
-   "norfolk"
-  ],
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 9,
+  "sources": [],
   "own_sources": []
  },
  {
@@ -2534,7 +2520,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 20,
+  "aggregated": 4,
   "sources": [],
   "own_sources": []
  },
@@ -2554,7 +2540,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 9,
+  "aggregated": 5,
   "sources": [],
   "own_sources": []
  },
@@ -2650,7 +2636,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 6,
+  "aggregated": 2,
   "sources": [],
   "own_sources": []
  },
@@ -2734,7 +2720,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 46,
+  "aggregated": 41,
   "sources": [],
   "own_sources": []
  },
@@ -2879,13 +2865,15 @@
   "code": "E07000102",
   "name": "Three Rivers",
   "nation": "England",
-  "state": "hub",
+  "state": "own",
   "direct": 103,
   "aggregated": 0,
   "sources": [
    "agol_three_rivers_district_counci"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_three_rivers_district_counci"
+  ]
  },
  {
   "code": "E06000034",
@@ -2965,6 +2953,7 @@
    "tunbridge_wells"
   ],
   "own_sources": [
+   "agol_tunbridge_wells_borough_coun",
    "tunbridge_wells"
   ]
  },
@@ -3116,24 +3105,20 @@
   "code": "E07000047",
   "name": "West Devon",
   "nation": "England",
-  "state": "hub",
-  "direct": 34,
-  "aggregated": 28,
-  "sources": [
-   "agol_devon_county_council"
-  ],
+  "state": "aggregator",
+  "direct": 0,
+  "aggregated": 1,
+  "sources": [],
   "own_sources": []
  },
  {
   "code": "E07000127",
   "name": "West Lancashire",
   "nation": "England",
-  "state": "hub",
-  "direct": 212,
-  "aggregated": 4,
-  "sources": [
-   "agol_lancashire_county_council"
-  ],
+  "state": "none",
+  "direct": 0,
+  "aggregated": 0,
+  "sources": [],
   "own_sources": []
  },
  {
@@ -3160,13 +3145,15 @@
   "code": "E07000181",
   "name": "West Oxfordshire",
   "nation": "England",
-  "state": "hub",
+  "state": "own",
   "direct": 88,
-  "aggregated": 25,
+  "aggregated": 9,
   "sources": [
    "agol_west_oxfordshire_district_co"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_west_oxfordshire_district_co"
+  ]
  },
  {
   "code": "E07000245",
@@ -3342,7 +3329,7 @@
   "nation": "England",
   "state": "aggregator",
   "direct": 0,
-  "aggregated": 13,
+  "aggregated": 6,
   "sources": [],
   "own_sources": []
  },
@@ -3360,21 +3347,24 @@
   ],
   "own_sources": [
    "agol_city_of_york_council",
-   "york"
+   "york",
+   "york_cyc"
   ]
  },
  {
   "code": "N09000001",
   "name": "Antrim and Newtownabbey",
   "nation": "Northern Ireland",
-  "state": "hub",
+  "state": "own",
   "direct": 48,
   "aggregated": 0,
   "sources": [
    "agol_antrim_and_newtownabbey_boro",
    "opendatani"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_antrim_and_newtownabbey_boro"
+  ]
  },
  {
   "code": "N09000011",
@@ -3464,14 +3454,16 @@
   "code": "N09000007",
   "name": "Lisburn and Castlereagh",
   "nation": "Northern Ireland",
-  "state": "hub",
+  "state": "own",
   "direct": 15,
   "aggregated": 0,
   "sources": [
    "agol_lisburn_castlereagh_city_cou",
    "opendatani"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_lisburn_castlereagh_city_cou"
+  ]
  },
  {
   "code": "N09000009",
@@ -3492,14 +3484,16 @@
   "code": "N09000008",
   "name": "Mid and East Antrim",
   "nation": "Northern Ireland",
-  "state": "hub",
+  "state": "own",
   "direct": 77,
   "aggregated": 0,
   "sources": [
    "agol_mid_east_antrim_borough_coun",
    "opendatani"
   ],
-  "own_sources": []
+  "own_sources": [
+   "agol_mid_east_antrim_borough_coun"
+  ]
  },
  {
   "code": "N09000010",
@@ -3672,11 +3666,10 @@
   "name": "East Renfrewshire",
   "nation": "Scotland",
   "state": "own",
-  "direct": 461,
-  "aggregated": 6,
+  "direct": 93,
+  "aggregated": 5,
   "sources": [
    "agol_east_renfrewshire",
-   "agol_renfrewshire_council",
    "opendata_scot",
    "spatialhub_scotland"
   ],
@@ -4120,12 +4113,10 @@
   "code": "W06000012",
   "name": "Neath Port Talbot",
   "nation": "Wales",
-  "state": "hub",
-  "direct": 11,
+  "state": "none",
+  "direct": 0,
   "aggregated": 0,
-  "sources": [
-   "agol_port_of_london_authority"
-  ],
+  "sources": [],
   "own_sources": []
  },
  {

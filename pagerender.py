@@ -820,6 +820,13 @@ def render_lab(findings: list[dict], measured: str, site_url: str) -> str:
                 f'<p class="lede">{esc(f.get("detail", ""))}</p>'
                 f"{figure}</article>")
 
+    slate = ""
+    slate_path = ROOT / "proposals.json"
+    if slate_path.exists():
+        data = json.loads(slate_path.read_text(encoding="utf-8"))
+        slate = render_proposals(data.get("proposals", []),
+                                 data.get("reviewed", "recently"))
+
     body = ("<h1>Workshop</h1>"
             "<p>Not published. This is where Joined Up's graphics get tried "
             "out, and where the findings that need a person get drawn so they "
@@ -828,7 +835,7 @@ def render_lab(findings: list[dict], measured: str, site_url: str) -> str:
             f'{len(findings)} findings. Signed as "{esc(LAB_BYLINE)}" — set '
             "<code>LAB_BYLINE</code> in the service environment to change "
             "it.</p>"
-            + compare + "".join(blocks))
+            + slate + compare + "".join(blocks))
 
     head = "\n".join([
         f"<title>Workshop — {SITE_NAME}</title>",
@@ -836,3 +843,61 @@ def render_lab(findings: list[dict], measured: str, site_url: str) -> str:
         '<meta name="referrer" content="no-referrer">',
     ])
     return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+
+
+VERDICT_CLASS = {
+    "PROVABLE NOW": "ok",
+    "NEEDS DATA FETCH": "amber",
+    "MISLEADING AS FRAMED": "warn",
+    "NOT SUPPORTED": "warn",
+}
+
+
+def render_proposals(proposals: list[dict], reviewed: str) -> str:
+    """The graphics slate, with the verdict on each and why.
+
+    This exists because a list of punchy ideas is the easy half. Fifteen
+    claims that sound good will contain several the data cannot carry, and
+    publishing one of those costs more credibility than the other fourteen
+    earn. So each proposal keeps its verdict, its numbers, the query behind
+    them, and — the part that matters — the strongest objection the
+    organisation being named would make.
+
+    Rendered as a section of the workshop, never publicly.
+    """
+    rows = []
+    for p in proposals:
+        verdict = p.get("verdict", "UNREVIEWED")
+        cls = VERDICT_CLASS.get(verdict, "")
+        objection = p.get("objection", "")
+        claim = p.get("claim", "")
+        rows.append(
+            f'<article class="proposal">'
+            f'<h3><span class="tier {esc(cls)}">{esc(verdict)}</span> '
+            f'{esc(p.get("title", ""))}</h3>'
+            + (f'<p class="lede">{esc(claim)}</p>' if claim else "")
+            + (f'<p class="note"><b>Numbers.</b> {esc(p.get("numbers", ""))}</p>'
+               if p.get("numbers") else "")
+            + (f'<p class="note"><b>Strongest objection.</b> {esc(objection)}</p>'
+               if objection else "")
+            + (f'<p class="note"><b>Our own blindness.</b> '
+               f'{esc(p.get("blindness", ""))}</p>' if p.get("blindness") else "")
+            + (f'<details><summary>How it would be measured</summary>'
+               f'<pre><code>{esc(p.get("sql", ""))}</code></pre></details>'
+               if p.get("sql") else "")
+            + "</article>")
+
+    counts: dict[str, int] = {}
+    for p in proposals:
+        counts[p.get("verdict", "UNREVIEWED")] = \
+            counts.get(p.get("verdict", "UNREVIEWED"), 0) + 1
+    tally = " · ".join(f"{n} {v.lower()}" for v, n in sorted(counts.items()))
+
+    return ("<h2>Graphics slate</h2>"
+            f'<p class="note">{len(proposals)} proposed graphics, reviewed '
+            f'{esc(reviewed)}. {esc(tally)}. Each was checked against the index '
+            "by a separate pass whose instruction was to find reasons the "
+            "claim is wrong, not to confirm it. The recurring failure is "
+            'always the same shape: "they do not publish it" turning out to '
+            'mean "we never looked".</p>'
+            + "".join(rows))

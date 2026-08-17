@@ -309,9 +309,13 @@ def _chart_for(f: dict) -> tuple[str, int]:
                          f"{n['datasets']:,} datasets from {n['councils']} "
                          f"councils abolished since 2019")
     if kind == "coverage":
-        return share_bar(n["without_data"], n["councils"],
-                         f"of councils in {n['nation']}",
-                         "publish no open data we can find anywhere")
+        central = n.get("published_centrally", 0)
+        return share_bar(
+            n["no_trace"], n["councils"], f"of councils in {n['nation']}",
+            "leave no trace in the UK's open data"
+            + (f" — a further {central} publish centrally, through a national "
+               f"portal, so their data exists but is not attributed to them"
+               if central else ""))
     if kind == "link-rot":
         return hbar([(o["publisher"], o["dead"]) for o in n.get("others", [])[:8]],
                     "dead links per publisher (of those we followed)", dead=True)
@@ -342,8 +346,18 @@ def _with_fallbacks(svg: str) -> str:
 
 
 def render(f: dict, byline: str = "", measured: str = "") -> str:
-    """One finding, one SVG. Empty string if the shape doesn't suit a chart."""
-    body, height = _chart_for(f)
+    """One finding, one SVG. Empty string if the shape doesn't suit a chart.
+
+    A finding whose numbers don't match what the chart expects yields no
+    chart, never an exception. findings.py is rewritten whenever an analysis
+    is sharpened, and renaming one key there once took the whole findings
+    page down with a KeyError. A page that loses a picture is a much smaller
+    failure than a page that loses itself.
+    """
+    try:
+        body, height = _chart_for(f)
+    except (KeyError, TypeError, ValueError, ZeroDivisionError):
+        return ""
     if not body:
         return ""
     # Where to check it, and when it was true. The scheme is dropped because

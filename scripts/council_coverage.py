@@ -45,7 +45,7 @@ import requests
 import yaml
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from dedupe import who  # noqa: E402  (same "strip the admin wrapper" rule)
+from dedupe import norm, who  # noqa: E402  (same "strip the admin wrapper" rule)
 from agent import HEADERS  # noqa: E402
 from paths import connect as db_connect  # noqa: E402
 
@@ -81,8 +81,21 @@ _PLATFORM_WORDS = {
 
 
 def identity(name: str) -> frozenset[str]:
-    """The words that say which council this is, ignoring platform branding."""
-    return frozenset(who(name)) - _PLATFORM_WORDS
+    """The words that say which council this is, ignoring platform branding.
+
+    The fallback exists for City of London, whose every word — "city", "of",
+    "london" — is on a noise list, so it reduced to the empty set and could
+    never match any publisher. It was recorded as publishing nothing while
+    the index held 195 of its datasets, and that false negative was on the
+    published coverage page. When stripping noise leaves nothing, keep the
+    name's own words instead: a name made entirely of common words still
+    identifies one council, and matching is exact-set equality, so a wider
+    set cannot collide with a narrower one.
+    """
+    words = frozenset(who(name)) - _PLATFORM_WORDS
+    if words:
+        return words
+    return frozenset(norm(name).split()) - _PLATFORM_WORDS
 
 
 def fetch_councils() -> list[dict]:
@@ -118,8 +131,16 @@ def source_identities() -> dict[str, frozenset]:
     -> {london}, which is no single borough's.
     """
     src = yaml.safe_load(open(ROOT / "sources.yaml", encoding="utf-8"))["sources"]
-    return {s["id"]: identity(s["id"].replace("_", " ") + " " + s["name"])
-            for s in src}
+    # From the name only. Folding the id in poisoned 33 of 199 sources:
+    # generated ids are truncated to a fixed length, so
+    # "agol_northumberland_county_counci" contributed the fragment "counci",
+    # which who() does not recognise as an administrative wrapper and so could
+    # not strip. The identity then failed to equal the council's, and eight
+    # councils that do run their own portal — Northumberland, East Riding,
+    # North Northamptonshire, Three Rivers, West Oxfordshire and three
+    # Northern Irish boroughs — were filed as publishing through someone
+    # else's.
+    return {s["id"]: identity(s["name"]) for s in src}
 
 
 def publisher_index(conn) -> dict[frozenset, dict]:
@@ -144,15 +165,37 @@ def publisher_index(conn) -> dict[frozenset, dict]:
     return index
 
 
-def match(council_words: frozenset, index: dict) -> list[dict]:
-    """Publishers whose name reduces to this council's words and adds none.
+# Councils whose ordinary name differs from the ONS register's spelling. Only
+# for the same body under another name — never a different tier of government.
+# Kept explicit rather than inferred: every heuristic tried here credited some
+# district with its county's portal, and a short list of real aliases is both
+# more honest and easier to check than a cleverer rule.
+_ALIASES = {
+    "Kingston upon Hull, City of": frozenset({"hull"}),
+    "Newcastle upon Tyne": frozenset({"newcastle"}),
+}
 
-    The direction matters. Allowing extra words would let "Durham University"
-    satisfy County Durham; requiring the publisher to be a subset means we
-    only claim a council when the name really is theirs.
+
+def match(council_words: frozenset, index: dict,
+          council_name: str = "") -> list[dict]:
+    """Publishers that ARE this council — exact identity, plus known aliases.
+
+    This used to accept any publisher whose words were a subset of the
+    council's, to stop "Durham University" satisfying County Durham. It let
+    the leak in from the other end instead: {devon} is a subset of
+    {mid, devon}, so Devon County Council's 61 datasets were credited to Mid
+    Devon, Hertfordshire's 267 to East Hertfordshire, Lancashire's 216 to West
+    Lancashire, and — sharing only the word "port" — the Port of London
+    Authority's to Neath Port Talbot. Six councils were recorded as covered on
+    the strength of a different organisation's publishing.
+
+    Bournemouth, Christchurch and Poole was the subtlest of them: it matched
+    its own three predecessor councils, all abolished in 2019. That is not BCP
+    publishing, it is the data of dead councils, which we count separately and
+    for the opposite reason.
     """
-    return [entry for words, entry in index.items()
-            if words <= council_words]
+    wanted = _ALIASES.get(council_name, council_words)
+    return [entry for words, entry in index.items() if words == wanted]
 
 
 def main() -> int:
@@ -171,7 +214,7 @@ def main() -> int:
         lambda: {"own": 0, "hub": 0, "aggregator": 0, "none": 0})
     for c in councils:
         words = identity(c["name"])
-        hits = match(words, index) if words else []
+        hits = match(words, index, c["name"]) if words else []
         direct = sum(h["direct"] for h in hits)
         aggregated = sum(h["aggregated"] for h in hits)
         names = sorted({n for h in hits for n in h["names"]})

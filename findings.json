@@ -94,43 +94,74 @@
  {
   "tier": 2,
   "kind": "coverage",
-  "headline": "16 of 296 councils in England publish no open data we can find",
-  "detail": "Checked against the ONS register of local authorities. 'None' means we hold nothing under that council's name from any of our sources, including data.gov.uk, and no portal answered at any address we could find. Councils: Ashfield, Cambridge, City of London, Crawley, Cumberland, Exeter, Folkestone and Hythe, Hart, Havant, Hertsmere, Maidstone, Redditch, South Tyneside, West Northamptonshire, Westmorland and Furness, Worthing",
+  "headline": "5 of 296 councils in England leave no trace in the UK's open data at all",
+  "detail": "Checked against the ONS register of local authorities. These councils have no datasets under their own name and are not named in anybody else's either \u2014 not their own site, not data.gov.uk, not a regional portal. A further 15 in England appear only inside another publisher's records, usually a national geoportal: their data exists but cannot be attributed to them, which is a finding about attribution rather than about the council. Councils with no trace: Bournemouth, Christchurch and Poole, Folkestone and Hythe, Mid Devon, West Northamptonshire, Westmorland and Furness",
   "numbers": {
    "nation": "England",
-   "without_data": 16,
-   "councils": 296
+   "no_trace": 5,
+   "published_centrally": 15,
+   "councils": 296,
+   "centrally": [
+    "Ashfield",
+    "Cambridge",
+    "Crawley",
+    "Cumberland",
+    "East Hampshire",
+    "East Hertfordshire",
+    "Exeter",
+    "Hart",
+    "Havant",
+    "Hertsmere",
+    "Maidstone",
+    "Redditch",
+    "South Tyneside",
+    "West Lancashire",
+    "Worthing"
+   ]
   },
-  "sql": "council_coverage.json, state == 'none'",
-  "post": "16 of 296 councils in England publish no open data that we can find anywhere \u2014 not on their own site, not on data.gov.uk. Full list and method: https://open-data.org.uk/about",
+  "sql": "council_coverage.json state=='none', minus councils named in another publisher's titles or descriptions",
+  "post": "5 of 296 councils in England leave no trace in the UK's open data \u2014 nothing under their name anywhere. Method: https://open-data.org.uk/about",
   "link": "https://open-data.org.uk/publishers"
  },
  {
   "tier": 2,
   "kind": "coverage",
-  "headline": "1 of 32 councils in Scotland publish no open data we can find",
-  "detail": "Checked against the ONS register of local authorities. 'None' means we hold nothing under that council's name from any of our sources, including data.gov.uk, and no portal answered at any address we could find. Councils: Na h-Eileanan Siar",
+  "headline": "1 of 32 councils in Scotland leave no trace in the UK's open data at all",
+  "detail": "Checked against the ONS register of local authorities. These councils have no datasets under their own name and are not named in anybody else's either \u2014 not their own site, not data.gov.uk, not a regional portal. Councils with no trace: Na h-Eileanan Siar",
   "numbers": {
    "nation": "Scotland",
-   "without_data": 1,
-   "councils": 32
+   "no_trace": 1,
+   "published_centrally": 0,
+   "councils": 32,
+   "centrally": []
   },
-  "sql": "council_coverage.json, state == 'none'",
-  "post": "1 of 32 councils in Scotland publish no open data that we can find anywhere \u2014 not on their own site, not on data.gov.uk. Full list and method: https://open-data.org.uk/about",
+  "sql": "council_coverage.json state=='none', minus councils named in another publisher's titles or descriptions",
+  "post": "1 of 32 councils in Scotland leave no trace in the UK's open data \u2014 nothing under their name anywhere. Method: https://open-data.org.uk/about",
   "link": "https://open-data.org.uk/publishers"
  },
  {
   "tier": 2,
   "kind": "coverage",
-  "headline": "9 of 22 councils in Wales publish no open data we can find",
-  "detail": "Checked against the ONS register of local authorities. 'None' means we hold nothing under that council's name from any of our sources, including data.gov.uk, and no portal answered at any address we could find. Councils: Blaenau Gwent, Cardiff, Carmarthenshire, Ceredigion, Flintshire, Isle of Anglesey, Newport, Rhondda Cynon Taf, Torfaen",
+  "headline": "2 of 22 councils in Wales leave no trace in the UK's open data at all",
+  "detail": "Checked against the ONS register of local authorities. These councils have no datasets under their own name and are not named in anybody else's either \u2014 not their own site, not data.gov.uk, not a regional portal. A further 8 in Wales appear only inside another publisher's records, usually a national geoportal: their data exists but cannot be attributed to them, which is a finding about attribution rather than about the council. Councils with no trace: Isle of Anglesey, Rhondda Cynon Taf",
   "numbers": {
    "nation": "Wales",
-   "without_data": 9,
-   "councils": 22
+   "no_trace": 2,
+   "published_centrally": 8,
+   "councils": 22,
+   "centrally": [
+    "Blaenau Gwent",
+    "Cardiff",
+    "Carmarthenshire",
+    "Ceredigion",
+    "Flintshire",
+    "Neath Port Talbot",
+    "Newport",
+    "Torfaen"
+   ]
   },
-  "sql": "council_coverage.json, state == 'none'",
-  "post": "9 of 22 councils in Wales publish no open data that we can find anywhere \u2014 not on their own site, not on data.gov.uk. Full list and method: https://open-data.org.uk/about",
+  "sql": "council_coverage.json state=='none', minus councils named in another publisher's titles or descriptions",
+  "post": "2 of 22 councils in Wales leave no trace in the UK's open data \u2014 nothing under their name anywhere. Method: https://open-data.org.uk/about",
   "link": "https://open-data.org.uk/publishers"
  },
  {

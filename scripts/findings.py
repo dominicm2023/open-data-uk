@@ -76,8 +76,29 @@ def finding(tier: int, kind: str, headline: str, detail: str, numbers: dict,
 
 # --- Tier 2: coverage ----------------------------------------------------
 
+def _named_elsewhere(conn, council: str) -> int:
+    """Datasets that name this council but are published by somebody else.
+
+    A council with no datasets of its own has not necessarily published
+    nothing. Wales is the case that forced this check: 19 of its 22 councils
+    are named in DataMap Wales records, published centrally through the
+    national geoportal under one publisher. Counting them as publishing
+    nothing was true of our attribution and false about Wales.
+    """
+    core = " ".join(sorted(w for w in council.lower().replace(",", " ").split()
+                           if w not in {"of", "the", "and", "city", "county",
+                                        "council", "borough", "district"}))
+    if not core:
+        return 0
+    like = f"%{core}%"
+    return conn.execute(
+        "SELECT COUNT(*) FROM datasets WHERE publisher IS NOT ? AND "
+        "(LOWER(title) LIKE ? OR LOWER(description) LIKE ?)",
+        (council, like, like)).fetchone()[0]
+
+
 def coverage_gaps(conn) -> list[dict]:
-    """Councils publishing nothing we can find, by nation."""
+    """Councils with no data of their own, split by whether anyone holds theirs."""
     path = ROOT / "council_coverage.json"
     if not path.exists():
         return []
@@ -87,20 +108,36 @@ def coverage_gaps(conn) -> list[dict]:
     for c in councils:
         if c["state"] == "none":
             by_nation.setdefault(c["nation"], []).append(c["name"])
+
     for nation, names in sorted(by_nation.items()):
         total = sum(1 for c in councils if c["nation"] == nation)
+        central = {n: _named_elsewhere(conn, n) for n in names}
+        elsewhere = sorted(n for n, k in central.items() if k)
+        nowhere = sorted(n for n, k in central.items() if not k)
+        if not nowhere:
+            continue
         out.append(finding(
             2, "coverage",
-            f"{len(names)} of {total} councils in {nation} publish no open data we can find",
-            "Checked against the ONS register of local authorities. 'None' means "
-            "we hold nothing under that council's name from any of our sources, "
-            "including data.gov.uk, and no portal answered at any address we "
-            "could find. Councils: " + ", ".join(sorted(names)),
-            {"nation": nation, "without_data": len(names), "councils": total},
-            "council_coverage.json, state == 'none'",
-            f"{len(names)} of {total} councils in {nation} publish no open data "
-            f"that we can find anywhere — not on their own site, not on "
-            f"data.gov.uk. Full list and method: {SITE}/about",
+            f"{len(nowhere)} of {total} councils in {nation} leave no trace in "
+            f"the UK's open data at all",
+            "Checked against the ONS register of local authorities. These "
+            "councils have no datasets under their own name and are not named "
+            "in anybody else's either — not their own site, not data.gov.uk, "
+            "not a regional portal. "
+            + (f"A further {len(elsewhere)} in {nation} appear only inside "
+               f"another publisher's records, usually a national geoportal: "
+               f"their data exists but cannot be attributed to them, which is "
+               f"a finding about attribution rather than about the council. "
+               if elsewhere else "")
+            + "Councils with no trace: " + ", ".join(nowhere),
+            {"nation": nation, "no_trace": len(nowhere),
+             "published_centrally": len(elsewhere), "councils": total,
+             "centrally": elsewhere},
+            "council_coverage.json state=='none', minus councils named in "
+            "another publisher's titles or descriptions",
+            f"{len(nowhere)} of {total} councils in {nation} leave no trace in "
+            f"the UK's open data — nothing under their name anywhere. "
+            f"Method: {SITE}/about",
             f"{SITE}/publishers"))
     return out
 
