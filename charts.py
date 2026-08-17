@@ -47,6 +47,7 @@ LITERALS = {
     "--seq-4": "#3d72ad", "--seq-5": "#14549c",
     "--on-seq-1": "#16181c", "--on-seq-2": "#16181c", "--on-seq-3": "#16181c",
     "--on-seq-4": "#ffffff", "--on-seq-5": "#ffffff",
+    "--land": "#eceae4", "--land-edge": "#cfd0ca",
 }
 JU_LITERALS = {"--accent": "#0e6e63", "--accent-soft": "#e4f1ee",
                "--cat-1": "#0e6e63",
@@ -411,6 +412,44 @@ def project(lon: float, lat: float, w: int, h: int,
     return pad + fx * (w - 2 * pad), pad + fy * (h - 2 * pad)
 
 
+
+def _coastline(w: int, h: int, pad: int) -> str:
+    """The UK drawn as filled land, under whatever the chart is plotting.
+
+    Without this the maps were a hundred circles floating in blank space with
+    nothing to locate them against. The geometry is vendored in
+    coastline.json — ONS country boundaries under the Open Government Licence,
+    simplified to about a kilometre — rather than fetched from a tile server,
+    because these graphics have to render with no network at all.
+
+    Returns an empty string if the file is missing, so a chart degrades to the
+    old floating-circles version rather than failing.
+    """
+    import json as _json
+    from pathlib import Path as _Path
+
+    path = _Path(__file__).parent / "coastline.json"
+    if not path.exists():
+        return ""
+    try:
+        rings = _json.loads(path.read_text(encoding="utf-8"))["rings"]
+    except (ValueError, KeyError, OSError):
+        return ""
+    out = []
+    for ring in rings:
+        pts = []
+        for lon, lat in ring:
+            x, y = project(lon, lat, w, h, pad)
+            pts.append(f"{x:.1f},{y:.1f}")
+        if len(pts) >= 3:
+            out.append("M" + "L".join(pts) + "Z")
+    if not out:
+        return ""
+    return (f'<path d="{" ".join(out)}" fill="var(--land)" '
+            f'stroke="var(--land-edge)" stroke-width="0.7" '
+            f'stroke-linejoin="round"/>')
+
+
 def uk_map(points: list[dict], caption: str, legend: list[tuple[str, str]]
            ) -> tuple[str, int]:
     """One circle per place, at its real position, area proportional to value.
@@ -422,7 +461,8 @@ def uk_map(points: list[dict], caption: str, legend: list[tuple[str, str]]
     import math
     h = 560
     top = max((p.get("value") or 0) for p in points) or 1
-    out = [f'<rect x="0" y="0" width="{W}" height="{h}" fill="var(--card)"/>']
+    out = [f'<rect x="0" y="0" width="{W}" height="{h}" fill="var(--card)"/>',
+           _coastline(W, h, PAD)]
     for p in points:
         x, y = project(p["lon"], p["lat"], W, h, PAD)
         r = 3 + 16 * math.sqrt((p.get("value") or 0) / top)
@@ -473,7 +513,8 @@ def bbox_density(boxes: list[tuple[float, float, float, float]],
     top = max(grid.values())
     cw = (W - 2 * PAD) / cells
     ch = (h - 2 * PAD) / cells
-    out = [f'<rect x="0" y="0" width="{W}" height="{h}" fill="var(--card)"/>']
+    out = [f'<rect x="0" y="0" width="{W}" height="{h}" fill="var(--card)"/>',
+           _coastline(W, h, PAD)]
     import math
     for (gx, gy), n in grid.items():
         # Log scale: a handful of places are described hundreds of times, and

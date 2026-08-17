@@ -609,3 +609,26 @@ footer {
     --on-seq-5: #16181c;      /* 9.21:1 */
   }
 }
+
+/* ---------- Land, under the maps ---------------------------------------
+ *
+ * A map of circles with no coastline under it is a scatter plot pretending
+ * to be geography. The land comes from coastline.json, vendored ONS
+ * boundaries — not a tile server, because these graphics must draw with no
+ * network and survive being saved as an image.
+ *
+ * Deliberately quiet: it is a reference frame, not the subject. Slightly off
+ * the card colour so it reads as land rather than as a panel edge.
+ */
+
+:root {
+  --land: #eceae4;
+  --land-edge: #cfd0ca;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --land: #22252a;
+    --land-edge: #3c4048;
+  }
+}
