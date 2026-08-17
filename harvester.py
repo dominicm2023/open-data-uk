@@ -24,8 +24,8 @@ import requests
 import yaml
 
 from normalise import (bbox_from_extras, license_from_extras, norm_formats,
-                       norm_license, reference_date_from_extras, strip_html,
-                       update_frequency_from_extras)
+                       norm_license, norm_title, reference_date_from_extras,
+                       strip_html, unrendered, update_frequency_from_extras)
 
 GEO_UPSERT = """
 INSERT OR REPLACE INTO dataset_geo
@@ -131,7 +131,10 @@ def resource_rows(key: str, resources: list[tuple]) -> list[tuple]:
     return list(seen.values())
 
 
-def normalise_package(pkg: dict, src: dict, now: str) -> tuple:
+def normalise_package(pkg: dict, src: dict, now: str) -> tuple | None:
+    title = norm_title(pkg.get("title"))
+    if not title:
+        return None
     resources = pkg.get("resources") or []
     formats_raw = [r.get("format") for r in resources]
     formats_norm = norm_formats(formats_raw)
@@ -143,7 +146,7 @@ def normalise_package(pkg: dict, src: dict, now: str) -> tuple:
         src["id"],
         pkg["id"],
         name,
-        pkg.get("title"),
+        title,
         strip_html(pkg.get("notes")),
         org,
         # data.gov.uk often leaves the standard fields empty and puts the
@@ -211,10 +214,16 @@ def harvest_source(src: dict, conn: sqlite3.Connection, limit: int | None) -> No
             break
 
         now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-        rows = [normalise_package(p, src, now) for p in packages]
+        rows = [r for p in packages if (r := normalise_package(p, src, now))]
+        # Files and geography only for the packages we actually stored —
+        # otherwise a record we refused (no usable title) still gets resource
+        # rows, orphaned against a dataset that isn't there.
+        stored_keys = {r[0] for r in rows}
         res_rows, keys, geo_rows = [], [], []
         for p in packages:
             key = f"{src['id']}:{p['id']}"
+            if key not in stored_keys:
+                continue
             keys.append((key,))
             res_rows += resource_rows(key, [
                 (r.get("url"), r.get("name"), r.get("format"))
@@ -270,7 +279,7 @@ def _dcat_publisher(ds: dict, src: dict) -> str:
     def usable(name: str | None) -> str | None:
         name = (name or "").strip()
         looks_like_host = ("." in name and " " not in name and name.islower())
-        return None if (not name or "{{" in name or looks_like_host) else name
+        return None if (not name or unrendered(name) or looks_like_host) else name
 
     return (usable((ds.get("publisher") or {}).get("name"))
             or usable((ds.get("contactPoint") or {}).get("fn"))
@@ -298,15 +307,18 @@ def _dcat_landing(ds: dict) -> str | None:
 
 def normalise_dcat_dataset(ds: dict, src: dict, now: str) -> tuple | None:
     """Map a DCAT-US dataset entry (ArcGIS Hub feeds etc.) onto our schema."""
+    # ArcGIS Hub sometimes serves its own template here, so 17 records across
+    # eight councils were indexed under the literal title "{{name}}" — a
+    # search result and a listing entry with nothing in them to read.
+    title = norm_title(ds.get("title"))
+    if not title:
+        return None
     landing = _dcat_landing(ds)
     ident = ds.get("identifier") or landing
     if not ident:
         # No id and no link, but a title and a named publisher is still a
         # real record. Key it on those, which stay stable between harvests —
         # a random id would create a new dataset every night.
-        title = (ds.get("title") or "").strip()
-        if not title:
-            return None
         seed = f"{_dcat_publisher(ds, src)}|{title}".encode("utf-8")
         ident = "sha1:" + hashlib.sha1(seed).hexdigest()[:16]
     distributions = ds.get("distribution") or []
@@ -322,7 +334,7 @@ def normalise_dcat_dataset(ds: dict, src: dict, now: str) -> tuple | None:
         src["id"],
         ident,
         name,
-        ds.get("title"),
+        title,
         strip_html(ds.get("description")),
         _dcat_publisher(ds, src),
         license_raw,
@@ -357,12 +369,18 @@ def harvest_dcat(src: dict, conn: sqlite3.Connection) -> None:
 
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     rows = [r for ds in datasets if (r := normalise_dcat_dataset(ds, src, now))]
+    # Only for the datasets that became rows: a record refused for having no
+    # usable title must not leave resource rows pointing at a dataset key
+    # that was never written.
+    stored_keys = {r[0] for r in rows}
     res_rows, keys = [], []
     for ds in datasets:
         ident = ds.get("identifier") or ds.get("landingPage")
         if not ident:
             continue
         key = f"{src['id']}:{ident}"
+        if key not in stored_keys:
+            continue
         keys.append((key,))
         res_rows += resource_rows(key, [
             (d.get("downloadURL") or d.get("accessURL"), d.get("title"),
@@ -396,7 +414,8 @@ def normalise_ods_dataset(ds: dict, src: dict, now: str) -> tuple | None:
     """
     md = (ds.get("metas") or {}).get("default") or {}
     did = ds.get("dataset_id")
-    if not did:
+    title = norm_title(md.get("title"))
+    if not did or not title:
         return None
     base = src["web"].rstrip("/")
     license_raw = md.get("license")
@@ -407,7 +426,7 @@ def normalise_ods_dataset(ds: dict, src: dict, now: str) -> tuple | None:
         src["id"],
         did,
         did,
-        md.get("title"),
+        title,
         strip_html(md.get("description")),
         md.get("publisher") or src["name"],
         license_raw,
@@ -516,7 +535,7 @@ def _csw_all(rec, tag: str) -> list[str]:
 def normalise_csw_record(rec, src: dict, now: str) -> tuple | None:
     """Map one csw:Record (Dublin Core) onto our schema."""
     ident = _csw_text(rec, "dc:identifier")
-    title = _csw_text(rec, "dc:title")
+    title = norm_title(_csw_text(rec, "dc:title"))
     if not ident or not title:
         return None
     # dc:rights on INSPIRE catalogues is usually an access-constraint code
@@ -873,7 +892,7 @@ def _normalise_json_record(rec: dict, ident, cfg: dict, src: dict,
         """
         return _dig(rec, cfg[key]) if cfg.get(key) else None
 
-    title = _dig(rec, cfg.get("title", "title"))
+    title = norm_title(_dig(rec, cfg.get("title", "title")))
     if not title:
         return None
     lic = _dig(rec, cfg["license"]) if cfg.get("license") else None
@@ -907,7 +926,7 @@ def _normalise_json_record(rec: dict, ident, cfg: dict, src: dict,
         src["id"],
         str(ident),
         str(field("name") or ident),
-        str(title),
+        title,
         strip_html(field("description")),
         field("publisher") or src["name"],
         lic,
@@ -981,7 +1000,8 @@ def geonode_resources(base: str, alternate: str | None) -> list[tuple]:
 
 def normalise_geonode_layer(rec: dict, src: dict, base: str, now: str) -> tuple | None:
     ident = rec.get("uuid") or (str(rec["pk"]) if rec.get("pk") else None)
-    if not ident:
+    title = norm_title(rec.get("title"))
+    if not ident or not title:
         return None
     formats = [f for _u, _n, f in geonode_resources(base, rec.get("alternate"))]
     keywords = [k.get("name") for k in (rec.get("keywords") or []) if k.get("name")]
@@ -997,7 +1017,7 @@ def normalise_geonode_layer(rec: dict, src: dict, base: str, now: str) -> tuple 
         src["id"],
         ident,
         rec.get("name") or ident,
-        rec.get("title"),
+        title,
         strip_html(rec.get("raw_abstract") or rec.get("abstract")),
         geonode_publisher(rec, src),
         lic,
@@ -1098,12 +1118,13 @@ def harvest_geonode(src: dict, conn: sqlite3.Connection, limit: int | None) -> N
 
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     rows = [r for rec in layers if (r := normalise_geonode_layer(rec, src, base, now))]
+    stored_keys = {r[0] for r in rows}
     res_rows, keys, geo_rows = [], [], []
     for rec in layers:
         ident = rec.get("uuid") or (str(rec["pk"]) if rec.get("pk") else None)
-        if not ident:
-            continue
         key = f"{src['id']}:{ident}"
+        if not ident or key not in stored_keys:
+            continue
         keys.append((key,))
         res_rows += resource_rows(key, geonode_resources(base, rec.get("alternate")))
         if box := geonode_bbox(rec):
