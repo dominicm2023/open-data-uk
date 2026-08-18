@@ -1,0 +1,360 @@
+
+=== Fortune tellers MCC ===
+Foreign and Commonwealth Office | LOCATION FESTI-FETES | 732.09 | 2015-06-05 | AMUSEMENT PARKS,CARNIVALS,CIRCUS,FORTUNE TELLERS | None | 570567ce43cb0789ebea73b29c2b73d8e371d56d.bin
+Foreign and Commonwealth Office | TIVOLI BILLETCENTER | 1248.81 | 2017-10-12 | AMUSEMENT PARKS,CARNIVALS,CIRCUS,FORTUNE TELLERS | None | 3fb0fe4d8bb5affe71001cd79ab15fac62e62f91.bin
+Foreign and Commonwealth Office | WWW.TIVOLI.DK | 1235.58 | 2017-11-03 | AMUSEMENT PARKS,CARNIVALS,CIRCUS,FORTUNE TELLERS | None | 16d5a3de0035e10d2107d65991a91c378ee9f3a8.bin
+Foreign and Commonwealth Office | WWW.TIVOLI.DK | 1235.58 | 2017-11-03 | AMUSEMENT PARKS,CARNIVALS,CIRCUS,FORTUNE TELLERS | None | 16d5a3de0035e10d2107d65991a91c378ee9f3a8.bin
+Foreign and Commonwealth Office | ESCAPE LIMASSOL OLD TO | 917.21 | 2017-11-22 | AMUSEMENT PARKS,CARNIVALS,CIRCUS,FORTUNE TELLERS | None | 16d5a3de0035e10d2107d65991a91c378ee9f3a8.bin
+Foreign and Commonwealth Office | ESCAPE LIMASSOL OLD TO | 1100.65 | 2017-11-22 | AMUSEMENT PARKS,CARNIVALS,CIRCUS,FORTUNE TELLERS | None | 16d5a3de0035e10d2107d65991a91c378ee9f3a8.bin
+Foreign and Commonwealth Office | VARTIGO | 607.41 | 2017-11-27 | AMUSEMENT PARKS,CARNIVALS,CIRCUS,FORTUNE TELLERS | None | 16d5a3de0035e10d2107d65991a91c378ee9f3a8.bin
+Foreign, Commonwealth and Development Office (FCDO) | D PRODUCCIONES | 1149.19 | 2022-06-18 | AMUSEMENT PARKS,CARNIVALS,CIRCUS,FORTUNE TELLERS | None | b658116de288c9b7aa4ed02bba0d01d589a59819.bin
+
+=== Aquariums MCC ===
+Foreign and Commonwealth Office | AQUATIC CONSTRUCTIONS | 858.51 | 2016-02-08 | AQUARIUMS, DOLPHINARIUMS, AND SEAQUARIUMS | None | 22402504bc4bc0e58812f73c612c6793eca40c45.bin
+Foreign and Commonwealth Office | AQUATIC CONSTRUCTIONS | 504.65 | 2017-05-18 | AQUARIUMS, DOLPHINARIUMS, AND SEAQUARIUMS | None | a6c8c99a7f6d248467779dd131523d35e2dfb213.bin
+Foreign and Commonwealth Office | ACUARIO INBURSA 2 | 1400.24 | 2018-02-15 | AQUARIUMS, DOLPHINARIUMS, AND SEAQUARIUMS | None | af15eac721aa6628bd9b40ba7f137d14ed3c2a82.bin
+Foreign and Commonwealth Office | ACUARIO INBURSA 2 | 1400.24 | 2018-02-15 | AQUARIUMS, DOLPHINARIUMS, AND SEAQUARIUMS | None | af15eac721aa6628bd9b40ba7f137d14ed3c2a82.bin
+Foreign, Commonwealth and Development Office (FCDO) | TRIVOLI AQUARIUM | 956.79 | 2020-12-10 | AQUARIUMS, DOLPHINARIUMS, AND SEAQUARIUMS | None | 6ee9adb0a46da1ed1475bc10c6f8be92f9084c79.bin
+Foreign, Commonwealth and Development Office (FCDO) | TRIVOLI AQUARIUM | 783.18 | 2021-03-29 | AQUARIUMS, DOLPHINARIUMS, AND SEAQUARIUMS | None | 36d9c828fa310d20523d4bcae96f1e8720677ec2.bin
+Foreign, Commonwealth and Development Office (FCDO) | TRIVOLI AQUARIUM | 776.75 | 2021-08-09 | AQUARIUMS, DOLPHINARIUMS, AND SEAQUARIUMS | None | a0d07ce9dab33b4cd8ecde2157fe0e5bfa76e334.bin
+Foreign, Commonwealth and Development Office (FCDO) | IMAGINATION | 575.16 | 2022-07-21 | AQUARIUMS, DOLPHINARIUMS, AND SEAQUARIUMS | None | 9b6b95f60439a60f17524a0bc830c0f0203aa78e.bin
+
+=== Pawn shops MCC ===
+Foreign and Commonwealth Office | AJ-TUOTTEET OY | 608.32 | 2015-08-20 | PAWN SHOPS | None | c01380b248342b25cc8a486fb5ccc5b58d4088d1.bin
+
+=== Furriers MCC ===
+Foreign and Commonwealth Office | IKEA LONG ISLAND | 922.57 | 2015-11-13 | FURRIERS AND FUR SHOPS | None | 9ef07069cfa672146c3685d4a720bf1777e2738f.bin
+Foreign and Commonwealth Office | NOMIN HIVS UNITED | 1526.75 | 2015-11-19 | FURRIERS AND FUR SHOPS | None | 9ef07069cfa672146c3685d4a720bf1777e2738f.bin
+
+=== Nightclub MCC top ===
+Foreign and Commonwealth Office | THE UNION JACK CLUB | 1668.28 | 2017-03-16 | BAR,LOUNGE,DISCO,NIGHTCLUB,TAVERN-ALCOHOLIC DRINKS | d7451dfb0a15e03c4a5b3558cf7c08b2cc1d4576.bin
+Foreign and Commonwealth Office | THE UNION JACK CLUB | 1535.64 | 2017-03-29 | BAR,LOUNGE,DISCO,NIGHTCLUB,TAVERN-ALCOHOLIC DRINKS | d7451dfb0a15e03c4a5b3558cf7c08b2cc1d4576.bin
+Foreign and Commonwealth Office | THE UNION JACK CLUB | 1535.64 | 2017-03-29 | BAR,LOUNGE,DISCO,NIGHTCLUB,TAVERN-ALCOHOLIC DRINKS | d7451dfb0a15e03c4a5b3558cf7c08b2cc1d4576.bin
+Foreign and Commonwealth Office | THE UNION JACK CLUB | 1529.29 | 2017-03-21 | BAR,LOUNGE,DISCO,NIGHTCLUB,TAVERN-ALCOHOLIC DRINKS | d7451dfb0a15e03c4a5b3558cf7c08b2cc1d4576.bin
+Foreign and Commonwealth Office | HACKNEY WICK | 1500.0 | 2015-07-08 | BAR,LOUNGE,DISCO,NIGHTCLUB,TAVERN-ALCOHOLIC DRINKS | 2aad614814152e110237abb2865744734860878f.bin
+Foreign and Commonwealth Office | BAR PRESIDENCIAL | 1471.56 | 2016-02-24 | BAR,LOUNGE,DISCO,NIGHTCLUB,TAVERN-ALCOHOLIC DRINKS | 7ace08cb590cc43fc3450b73a2dc5b54fc8fef7e.bin
+Foreign and Commonwealth Office | BAR PRESIDENCIAL | 1471.56 | 2016-02-24 | BAR,LOUNGE,DISCO,NIGHTCLUB,TAVERN-ALCOHOLIC DRINKS | 7ace08cb590cc43fc3450b73a2dc5b54fc8fef7e.bin
+Foreign and Commonwealth Office | BAR PRESIDENCIAL | 1471.56 | 2016-02-24 | BAR,LOUNGE,DISCO,NIGHTCLUB,TAVERN-ALCOHOLIC DRINKS | 7ace08cb590cc43fc3450b73a2dc5b54fc8fef7e.bin
+
+=== Appleby horse ramp ===
+Eden District Council | METCALFE PLANT & TOOL HIRE LTD | 1400.0 | 2014-08-22 | APPLEBY HORSE RAMP | APFAIR | 649afcb14608cb509923c218c154a7c803942b2f.bin
+
+=== Grotto expense ===
+Department for Digital, Culture, Media and Sport | GROTTO WOODLANDS | 16.14 | 2011-03-29 | EXF - Travel | dc19e22a6760e267a2852953755afe4263f53558.bin
+Department for Digital, Culture, Media and Sport | GROTTO WOODLANDS | 24.5 | 2011-03-29 | EXF - Travel | dc19e22a6760e267a2852953755afe4263f53558.bin
+Natural History Museum | ANTHONYS FISH GROTTO SAN | 76.11 | 2013-11-11 | B/S - Current Assets -  InterCompany | c25e828d9a0237dc7192fc8410519a7b821bc417.bin
+Bristol City Council | Great Grottos Limited | 1800.0 | 2026-02-10 | Marketing \ Non-staff advertising | fe78826e7a2a002acc54143a6e10f1eb71cdc1f9.bin
+
+=== Victoria Day donkeys context ===
+Rushmoor Borough Council | Apg Traffic Limited | 2250.0 | 2010-10-07 | Victoria Day | 64c1abd7804a36ae2d1f61241e45b02cacee5947.bin
+Rushmoor Borough Council | Fools Paradise Limited | 1380.0 | 2022-06-23 | Victoria Day | a4a028cd2c34ffcfe1159e9286abf93e6d05f33a.bin
+Rushmoor Borough Council | Hughmark Continent Ltd | 1080.0 | 2010-09-09 | Victoria Day | dc3f310b66791799d5f2aaea3a5b21dc31e9684c.bin
+Rushmoor Borough Council | Veolia Environmental Services | 1080.0 | 2010-10-07 | Victoria Day | 64c1abd7804a36ae2d1f61241e45b02cacee5947.bin
+Rushmoor Borough Council | Hughmark Continental Ltd | 1080.0 | 2012-06-14 | Victoria Day | fe6a7ad0fbefd68e1b05aa5a99d6181c16150c6d.bin
+Rushmoor Borough Council | Hughmark Continental Ltd | 1080.0 | 2014-06-26 | Victoria Day | 5a8a8a1da48582e85296294d0c87f62f34dc0e78.bin
+Rushmoor Borough Council | Nutkhut Ltd | 1000.0 | 2022-06-02 | Victoria Day | a4a028cd2c34ffcfe1159e9286abf93e6d05f33a.bin
+Rushmoor Borough Council | H H Clark (Caterers) Ltd | 719.4 | 2019-06-13 | Victoria Day | 478943251f1576442adb978bdb4d04ff8f2363e3.bin
+Rushmoor Borough Council | H H Clark (Caterers) Ltd | 697.8 | 2018-07-05 | Victoria Day | 3ed572ca34085dd8b8c085b6e1fd35f47c21ffa9.bin
+Rushmoor Borough Council | Sign-Fx | 697.0 | 2018-06-21 | Victoria Day | cebd60acd5c294954a1aec5233ca8e21a2088c3d.bin
+Rushmoor Borough Council | Fence Hire (Southern) Ltd | 630.0 | 2019-06-20 | Victoria Day | 478943251f1576442adb978bdb4d04ff8f2363e3.bin
+Rushmoor Borough Council | H H Clark (Caterers) Ltd | 606.3 | 2017-09-14 | Victoria Day | 1b7972f66f8c039701e5faae7f8bea9bf79a9a57.bin
+Rushmoor Borough Council | Mill Cottage Farm Experience | 532.0 | 2012-05-31 | Victoria Day | 888d5b2b507ded43a24fc7c32f936bc24cda06a8.bin
+Rushmoor Borough Council | Altitude | 506.25 | 2010-08-12 | Victoria Day | a8f8628bc1ee6dea8b2a163af964477259af7982.bin
+Rushmoor Borough Council | Cadence Drum & Bugle Corps | 500.0 | 2019-06-20 | Victoria Day | 478943251f1576442adb978bdb4d04ff8f2363e3.bin
+
+=== SUPP icecream (13) ===
+  'Northern Bloc Ice Cream Ltd' | Rushmoor Borough Council | n=12 | sum=7204.32
+  'Northumbrian Ice Cream Company Ltd' | South Gloucestershire Council | n=5 | sum=3518.09
+  'MORELLIS GELATO LONDON (ONE) LTD' | UK Trade and Investment | n=4 | sum=1740.02
+  'BEACON FARM ICE CREAM' | North Yorkshire Council | n=1 | sum=500.00
+  'BRADWELLS ICE CREAM LTD' | UK Trade and Investment | n=1 | sum=995.00
+  'Free Ice Cream Limited' | Bristol City Council | n=1 | sum=1000.00
+  'IL GELATO' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=522.60
+  'JERSEY JACK GELATO' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=1215.56
+  'NICE CREAM' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=1980.98
+  'NORDIC GELATO' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=2318.16
+  'PURBECK ICE CREAM LTD' | UK Trade and Investment | n=1 | sum=1000.00
+  'ROLL ICE CREAM' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=789.99
+  'TAYWELL ICE CREAMS LTD' | UK Trade and Investment | n=1 | sum=1000.00
+
+=== SUPP elvis (4) ===
+  'ELVIS BERNARD CARTY' | Foreign, Commonwealth and Development Office (FCDO) | n=3 | sum=133578.98
+  'Elvis Kargbo' | Department for International Development | n=3 | sum=4386.00
+  'RED INC LTD T/A ELVIS JESUS' | UK Trade and Investment | n=3 | sum=2976.60
+  'IZI ELVIS ZARATE' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=1453.14
+
+=== SUPP cheer (1) ===
+  'Eclipse Allstars Cheerleading' | Rushmoor Borough Council | n=2 | sum=2000.00
+
+=== SUPP grotto (3) ===
+  'GROTTO WOODLANDS' | Department for Digital, Culture, Media and Sport | n=2 | sum=40.64
+  'ANTHONYS FISH GROTTO SAN' | Natural History Museum | n=1 | sum=76.11
+  'Great Grottos Limited' | Bristol City Council | n=1 | sum=1800.00
+
+=== SUPP mistletoe (1) ===
+  'MISTLETOE MEADOWS TREE' | Foreign and Commonwealth Office | n=2 | sum=2657.97
+
+=== SUPP sprout (2) ===
+  'SPROUT SOCIAL INC' | NHS Business Services Authority | n=6 | sum=67152.46
+  'SPROUT SOCIAL INC' | HM Revenue and Customs | n=3 | sum=90000.00
+
+=== SUPP gravy (1) ===
+  'LITTLE LAUGHING GRAVY SA' | Natural History Museum | n=1 | sum=37.40
+
+=== SUPP pudding (3) ===
+  'PROOF OF THE PUDDING' | Foreign and Commonwealth Office | n=2 | sum=2231.28
+  'BUXTON PUDDING CO LTD' | UK Trade and Investment | n=1 | sum=532.25
+  'COUNTRY PUDDINGS LIMITED' | UK Trade and Investment | n=1 | sum=1000.00
+
+=== SUPP jelly (1) ===
+  'JELLY PRODUCTS LTD' | UK Trade and Investment | n=2 | sum=1688.07
+
+=== SUPP crumble (1) ===
+  'BUTTERCRUMBLE LTD' | North Yorkshire Council | n=1 | sum=3024.00
+
+=== SUPP fairy (1) ===
+  'FAIRY GLAM LTD' | UK Trade and Investment | n=1 | sum=3000.00
+
+=== SUPP pixie (2) ===
+  'IN THE PIXIE AND THE' | Foreign and Commonwealth Office | n=1 | sum=990.73
+  'PIXIE HARNESSES LTD' | UK Trade and Investment | n=1 | sum=539.00
+
+=== SUPP goblin (1) ===
+  'Goblins Hold Consulting Ltd' | UK Trade and Investment | n=6 | sum=25759.17
+
+=== SUPP yeti (4) ===
+  'Hotel Yak & Yeti' | Department for International Development | n=3 | sum=4767.70
+  'Yeti Airlines' | Department for International Development | n=2 | sum=3816.39
+  'HUNGRY YETI' | The National Archives | n=1 | sum=10.00
+  'Yeti Airlines Domestic (P.) Ltd' | Department for International Development | n=1 | sum=727.24
+
+=== SUPP dodo (3) ===
+  'DODO TRAVEL & TOURS EU' | Foreign and Commonwealth Office | n=3 | sum=2271.78
+  'DODO TRAVEL & TOURS' | Foreign and Commonwealth Office | n=1 | sum=820.50
+  'FLYING DODO BREW CO LT' | Foreign and Commonwealth Office | n=1 | sum=1410.27
+
+=== SUPP dinosaur (6) ===
+  'DINOSAUR' | Transport for Greater Manchester | n=48 | sum=510190.70
+  'DINOSAUR RESOURCE CENTER' | Department for Digital, Culture, Media and Sport | n=3 | sum=2273.48
+  'Dinosaur Adventure Live Ltd' | Rushmoor Borough Council | n=3 | sum=13761.32
+  'Robot Dinosaur Productions Limited' | Bristol City Council | n=3 | sum=8000.00
+  'DINOSAUR PILE-UP LTD' | UK Trade and Investment | n=2 | sum=825.00
+  'ROBOT DINOSAUR PRODUCTIONS LIMITED' | Bristol City Council | n=1 | sum=2500.00
+
+=== SUPP womble (20) ===
+  'Womble Bond Dickinson (UK) LLP' | Bristol City Council | n=144 | sum=970876.92
+  'Womble Bond Dickinson (UK) LLP (Client Account)' | Department for Education | n=23 | sum=29316714.76
+  'Womble Bond Dickinson (UK) LLP' | Department for Education | n=16 | sum=64187399.14
+  'Womble Bond Dickinson (Uk) Llp' | Rushmoor Borough Council | n=15 | sum=111183.81
+  'WOMBLE BOND DICKINSON (UK) LLP' | North Yorkshire Council | n=13 | sum=12501.60
+  'WOMBLE BOND DICKINSON  UK LLP' | Department for Education | n=7 | sum=148175.41
+  'WOMBLETON PARISH COUNCIL' | North Yorkshire Council | n=2 | sum=8424.00
+  'WOMBLETON SPORTS AND RECREATION CLUB LTD' | North Yorkshire Council | n=2 | sum=1000.00
+  'Womble Bond Dickinson (UK) LLP' | Children and Family Court Advisory and Support Service | n=2 | sum=259014.63
+  'Womble Bond Dickinson (UK) LLP Client Account' | Bristol City Council | n=2 | sum=3303.00
+  'WOMBLE BOND DICKINSON  UK LLP' | Department for Work and Pensions | n=1 | sum=30735.00
+  'WOMBLE BOND DICKINSON (UK) LLP' | Cheltenham Borough Council | n=1 | sum=636.00
+  'WOMBLE BOND DICKINSON (UK) LLP' | Department of Health and Social Care | n=1 | sum=620000.00
+  'WOMBLE BOND DICKINSON (UK) LLP' | Former council of North Yorkshire | n=1 | sum=4760.00
+  'WOMBLETON PARISH COUNCIL' | Former council of North Yorkshire | n=1 | sum=5008.00
+  ... 5 more
+
+=== SUPP penguin (6) ===
+  'Penguin Ink Limited' | Bristol City Council | n=6 | sum=2225.70
+  'FLYING PENGUIN ENTERPRISES LTD' | UK Trade and Investment | n=2 | sum=1296.78
+  'SPOTTED PENGUIN' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=3043.71
+  'PENGUIN RANDOM HOUSE' | Department of Health and Social Care | n=1 | sum=997.50
+  'PENGUIN RANDOM HOUSE' | Foreign and Commonwealth Office | n=1 | sum=913.32
+  'Spotted Penguin' | The National Archives | n=1 | sum=997.92
+
+=== SUPP flamingo (3) ===
+  'FLAMINGO SWIMMING POOL' | Foreign and Commonwealth Office | n=5 | sum=4024.13
+  'FLAMINGO RESEARCH LI' | Department of Health and Social Care | n=2 | sum=59000.00
+  'FLAMINGO RESEARCH LIMITED' | Department of Health and Social Care | n=2 | sum=56000.00
+
+=== SUPP punch (4) ===
+  'PUNCH RECORDS DJ WORKSHOPS LTD' | UK Trade and Investment | n=7 | sum=6392.81
+  'PUNCH LTD' | Natural History Museum | n=1 | sum=250.00
+  'QUALITYSOLICITORS PUNCH ROBSON' | Ministry of Justice | n=1 | sum=50085.24
+  'THE PUNCH BOWL           THORN' | Department for Environment, Food and Rural Affairs | n=1 | sum=793.60
+
+=== SUPP wrestl (3) ===
+  'All Star Superslam Wrestling' | Rushmoor Borough Council | n=11 | sum=22648.85
+  'CUMBERLAND AND WESTMORLAND WRESTLING ASSOCIATION LTD' | Eden District Council | n=1 | sum=750.00
+  'G LITTLEWOOD (FIRST CLASS WRESTLING)' | North Yorkshire Council | n=1 | sum=1049.60
+
+=== SUPP sumo (3) ===
+  'Sumo Design' | Natural History Museum | n=8 | sum=11012.72
+  'Buzz Sumo' | Department for International Development | n=1 | sum=765.23
+  'Sumo Services Ltd' | Department for Environment, Food and Rural Affairs | n=1 | sum=31426.01
+
+=== SUPP disco (3) ===
+  'BAR,LOUNGE,DISCO,NIGHTCLUB,TAVERN-ALCOHOLIC DRINKS' | Foreign, Commonwealth and Development Office (FCDO) | n=249 | sum=284119.06
+  'Headphone Revolution Ltd t/a Silent Disco King' | Bristol City Council | n=1 | sum=11597.41
+  'MDA / MADAGASCAR DISCO' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=772.23
+
+=== SUPP boogie (2) ===
+  'BOOGIE BODS' | Blaby District Council | n=1 | sum=230.00
+  'Etsy.com BoogieandBoun' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=1085.57
+
+=== SUPP dominoes (8) ===
+  'DOMINOS PIZZA' | Natural History Museum | n=3 | sum=100.91
+  'Domino Building Services Limited' | Bristol City Council | n=2 | sum=1000.00
+  'DOMINO' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=572.83
+  'DOMINO PUBLISHING COMPANY LTD' | UK Trade and Investment | n=1 | sum=500.00
+  'DOMINO RECORDING COMPANY LTD' | UK Trade and Investment | n=1 | sum=500.00
+  'Domino Building Services Ltd' | Rushmoor Borough Council | n=1 | sum=1045.00
+  'GRUPO DOMINO LAS CONDE' | Foreign and Commonwealth Office | n=1 | sum=569.23
+  'WWW.DOMINOS.CO.UK' | Natural History Museum | n=1 | sum=40.46
+
+=== SUPP darts (4) ===
+  'Saffron Walden Youth Darts' | Uttlesford District Council | n=4 | sum=2538.00
+  'DARTS CHESTER LIMITED' | Foreign and Commonwealth Office | n=3 | sum=2294.75
+  'DARTS CHESTER LIMITED' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=823.68
+  'DARTS WORLD LTD' | North Yorkshire Council | n=1 | sum=28814.05
+
+=== SUPP gurning (7) ===
+  'Gurney Pease Academy' | Department for Education | n=236 | sum=6147755.30
+  'May Gurney Ltd' | Department for Environment, Food and Rural Affairs | n=27 | sum=1410925.20
+  'Farrington Gurney Primary School' | Department for Education | n=18 | sum=471659.80
+  'GURNEY HARDEN' | Ministry of Justice | n=7 | sum=252824.52
+  'SIGURNOST' | Foreign, Commonwealth and Development Office (FCDO) | n=6 | sum=4316.21
+  'MAY GURNEY LTD' | Department for Environment, Food and Rural Affairs | n=5 | sum=4704.00
+  'FARRINGTON GURNEY CHURCH OF ENGLAND PRIMARY SCHOOL' | Department for Education | n=1 | sum=25000.00
+
+=== SUPP shanty (1) ===
+  'THE PORTSMOUTH SHANTYMEN' | Royal Borough of Greenwich | n=1 | sum=600.00
+
+=== SUPP bagpipe (1) ===
+  'MCCALLUM BAGPIPES' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=4881.50
+
+=== SUPP yodel (4) ===
+  'DR SAMUEL AYODELE AJAYI' | Shropshire Community Health NHS Trust | n=48 | sum=24625.00
+  'Ayodele O Ogunyemi' | Department for International Development | n=1 | sum=6877.00
+  'Dr Christian Ayodele' | Department for International Development | n=1 | sum=5167.00
+  'YODELDIRECT' | Eden District Council | n=1 | sum=20.14
+
+=== SUPP stiltwalk (2) ===
+  'Stilton C of E Primary Academy' | Department for Education | n=41 | sum=2065482.73
+  'STILTZ LTD' | North Yorkshire Council | n=3 | sum=33018.00
+
+=== SUPP trampoline (3) ===
+  'Sunken Trampolines Ltd' | Bristol City Council | n=3 | sum=12843.49
+  'SPRINGFREE TRAMPOLINES' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=1695.00
+  'TRAMPOLINE SYSTEMS LTD' | UK Trade and Investment | n=1 | sum=11880.00
+
+=== SUPP soft play (1) ===
+  "OH GEE'S BALLOONS & LUXURY SOFT PLAY" | Shropshire Community Health NHS Trust | n=1 | sum=90.00
+
+=== SUPP petting (1) ===
+  '2Nd Chance Petting Farm' | Rushmoor Borough Council | n=2 | sum=650.00
+
+=== SUPP birdsofprey (3) ===
+  'YOREDALE BIRDS OF PREY LTD' | North Yorkshire Council | n=13 | sum=8910.00
+  'Berkshire Birds Of Prey' | Rushmoor Borough Council | n=9 | sum=4150.00
+  'YOREDALE BIRDS OF PREY LTD' | Former council of North Yorkshire | n=7 | sum=7890.00
+
+=== SUPP hawk (24) ===
+  'HAWK MANAGEMENT UK LTD' | Department for Education | n=220 | sum=18061710.17
+  'Mount Hawk Academy' | Department for Education | n=171 | sum=2582556.61
+  'Hawk Protection Limited' | Home Office | n=7 | sum=206891.75
+  'HAWK AND OWL TRUST' | Ministry of Housing, Communities and Local Government | n=4 | sum=65595.78
+  'Hawk Incentives Limited' | Bristol City Council | n=3 | sum=1714951.16
+  'HAWK ASSOCIATES LTD' | UK Trade and Investment | n=2 | sum=99294.00
+  'HAWK SYSTEMS UK LTD' | Royal Borough of Greenwich | n=2 | sum=2110.80
+  'HAWK WARGAMES LTD' | UK Trade and Investment | n=2 | sum=4250.00
+  'MESSRS GEORGE HAWKS#TA11 7EL' | Ministry of Justice | n=2 | sum=50384.05
+  'HARROGATE HAWKS RUGBY LEAGUE' | North Yorkshire Council | n=1 | sum=1000.00
+  'HAWK MANAGEMENT (UK) LTD' | Royal Borough of Greenwich | n=1 | sum=2600.00
+  'HAWK MANAGEMENT UK LTD' | Ministry of Housing, Communities and Local Government | n=1 | sum=1800.00
+  'HAWK PLANT HIRE LTD (HAWK GROUP)' | UK Trade and Investment | n=1 | sum=724.00
+  'HAWK PLANT LTD' | UK Trade and Investment | n=1 | sum=550.00
+  'HAWK PROTECTION LTD' | Ministry of Defence | n=1 | sum=45900.00
+  ... 9 more
+
+=== SUPP kestrel (10) ===
+  'Kestrel Mead Primary Academy' | Department for Education | n=46 | sum=6523563.01
+  'Kestrel Grove Nursing Home' | Plymouth City Council | n=8 | sum=15120.00
+  'KESTREL (CONTRACTORS) LTD' | Royal Borough of Greenwich | n=4 | sum=11417.84
+  'KESTREL LINER AGENCIES' | Foreign, Commonwealth and Development Office (FCDO) | n=3 | sum=4090.83
+  'KESTREL CAM' | Transport for Greater Manchester | n=2 | sum=2350.00
+  'KESTREL HOUSE' | Royal Borough of Greenwich | n=2 | sum=6022.27
+  'KESTREL MEAD PRIMARY ACADEMY' | Department for Education | n=1 | sum=25000.00
+  'KESTREL UK (FRANCHISE) LTD T/A SOCCER SCENE' | UK Trade and Investment | n=1 | sum=977.50
+  'Kestrel Contractors Ltd' | Rushmoor Borough Council | n=1 | sum=16645.00
+  'Kestrel Guards Limited' | Rushmoor Borough Council | n=1 | sum=410.00
+
+=== SUPP wormery (1) ===
+  'Go Eat Worms Illustration' | South Gloucestershire Council | n=1 | sum=555.00
+
+=== SUPP slug (2) ===
+  'SLUG & LETTUCE' | Natural History Museum | n=1 | sum=23.15
+  'Slug & Lettuce Company Ltd' | UK Trade and Investment | n=1 | sum=631.75
+
+=== SUPP crab (4) ===
+  'CRAB CLINICAL INFORMATICS LTD' | UK Trade and Investment | n=1 | sum=669.31
+  'CRAB CLINICAL INFORMATICS LTD' | United Lincolnshire Hospitals NHS Trust | n=1 | sum=62640.00
+  'CRAB LANE PRIMARY SCHOOL' | Transport for Greater Manchester | n=1 | sum=849.00
+  "MO'S CRAB AND  PASTA FACT" | Natural History Museum | n=1 | sum=39.18
+
+=== SUPP lobster (3) ===
+  'Lobster Construction Management' | Uttlesford District Council | n=3 | sum=17548.14
+  'RED LOBSTER MEDIA PRODUCTIONS LTD' | UK Trade and Investment | n=2 | sum=873.15
+  'BLUE LOBSTER' | Department for Environment, Food and Rural Affairs | n=1 | sum=39600.00
+
+=== SUPP oyster (32) ===
+  'The Oyster Partnership Ltd' | Uttlesford District Council | n=838 | sum=1445522.48
+  'OYSTER AUTOTOPUP' | The National Archives | n=499 | sum=11840.00
+  'The Oyster Partnership Limited' | Rushmoor Borough Council | n=267 | sum=417166.55
+  'THE OYSTER PARTNERSHIP' | Royal Borough of Greenwich | n=134 | sum=516618.79
+  'OYSTER PARTNERSHIP' | Blaby District Council | n=79 | sum=81298.91
+  'OYSTER PARTNERSHIP' | Eden District Council | n=75 | sum=126995.50
+  'Castleford Oyster Park Primary School' | Department for Education | n=74 | sum=7837183.18
+  'LITTLE OYSTER LTD' | Royal Borough of Greenwich | n=72 | sum=81405.00
+  'THE OYSTER PARTNERSHIP LIMITED' | Blaby District Council | n=65 | sum=104010.15
+  'LITTLE OYSTER RESIDENTIAL HOME' | Royal Borough of Greenwich | n=54 | sum=61200.00
+  'OYSTER BUS AUTOTOP' | The National Archives | n=54 | sum=1200.00
+  'OYSTER AUTOTOPUP         0845 3309876' | Ministry of Housing, Communities and Local Government | n=24 | sum=660.01
+  'Oyster Partnership Limited' | Bristol City Council | n=18 | sum=18197.20
+  'OYSTER BUS AUTOTOP       0845 3309876' | Ministry of Housing, Communities and Local Government | n=12 | sum=420.00
+  'COLCHESTER OYSTER FISHERY  LIMITED' | Ministry of Defence | n=9 | sum=403500.00
+  ... 17 more
+
+=== SUPP toffee (2) ===
+  'TOFFEE HAMMER PRODUCTIONS LTD' | The National Archives | n=1 | sum=19900.00
+  'TOFFEE MOON LTD' | UK Trade and Investment | n=1 | sum=500.00
+
+=== SUPP fudge (2) ===
+  'VFI Fudge Love OY' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=1782.17
+  'FUDGE KITCHEN LTD' | UK Trade and Investment | n=1 | sum=1500.00
+
+=== SUPP wellies (7) ===
+  'Horfield Welly Pre-School' | Bristol City Council | n=13 | sum=115608.23
+  'WAYNE LLEWELLYN T/A FRIENDS OF BOXING4SCHOOLS' | Royal Borough of Greenwich | n=6 | sum=5040.00
+  'W J D Llewellyn & Sons' | South Gloucestershire Council | n=5 | sum=6815.68
+  'STEPHEN LLEWELLYN' | Department for Environment, Food and Rural Affairs | n=2 | sum=1895.00
+  'LLEWELLYN MCLAREN CONSULTING LTD' | The National Archives | n=1 | sum=15570.00
+  'MALCOLM AR LLEWELLYN' | UK Trade and Investment | n=1 | sum=218.00
+  'WELLYBOBS DAY NURSERY LTD' | North Yorkshire Council | n=1 | sum=1303.00
+
+=== SUPP anorak (1) ===
+  'ANORAK' | Department for Digital, Culture, Media and Sport | n=1 | sum=412.00
+
+=== SUPP leek (7) ===
+  'Leek High School' | Department for Education | n=70 | sum=7767029.64
+  'Leek First School' | Department for Education | n=29 | sum=1283826.86
+  'LEEK COLLEGE OF HE & SCHOOL OF ART' | Department for Education | n=15 | sum=654021.53
+  'LEEK HEALTH CENTRE' | Shropshire Community Health NHS Trust | n=15 | sum=34650.00
+  'Leek First SChool' | Department for Education | n=11 | sum=374516.81
+  'LEEK HIGH SCHOOL' | Department for Education | n=1 | sum=25000.00
+  'ST MARYS RC PRIMARY SCHOOL LEEK' | Department for Education | n=1 | sum=25000.00
+
+=== SUPP conker (1) ===
+  'Conker Publishing' | Bristol City Council | n=1 | sum=567.00
+
+=== SUPP quoits (1) ===
+  'HAWES QUOITS CLUB' | North Yorkshire Council | n=2 | sum=1495.00
+
+=== SUPP shovehapenny (2) ===
+  'MALT SHOVEL COMMUNITY FOOTBALL CLUB' | North Yorkshire Council | n=1 | sum=2000.00
+  'THE WOOD SHOVE SHOP' | Natural History Museum | n=1 | sum=54.75

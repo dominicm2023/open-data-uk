@@ -1,0 +1,34 @@
+firm,publisher,txns,top_amounts (amount xcount)
+Marston,Ministry of Justice,47,72242.3x1; 94288.08x1; 62677.56x1; 27031.89x1; 69170.07x1; 42188.36x1; 37256.69x1; 87629.58x1
+Marston,Department for Work and Pensions,8,22000.0x1; 27395.0x1; 21093.0x1; 0.0x1; 23434.0x1; 6962.0x1; 26033.0x1; 28567.0x1
+Marston,Royal Borough of Greenwich,77,2803.03x2; 1992.19x2; 2520.63x2; 1144.0x2; 3540.0x1; -3540.0x1; 13548.44x1; -13548.44x1
+Marston,Bristol City Council,423,75.0x2; -75.0x2; -396087.85x2; 396087.85x2; -402470.1x2; 402470.1x2; 975.0x2; 2525.34x1
+Marston,Rushmoor Borough Council,1,582.0x1
+Marston,North Yorkshire Council,10,31727.12x1; -31727.12x1; 16549.69x1; -16549.69x1; 18882.46x1; -18882.46x1; 26290.85x1; -26290.85x1
+Marston,"Department for Environment, Food and Rural Affairs",1,582.3x1
+Bristow & Sutor,Bristol City Council,463,75.0x7; 225.0x2; 7974.98x1; -7830.67x1; 3945.37x1; -3768.67x1; 5262.28x1; -5262.28x1
+Bristow & Sutor,South Gloucestershire Council,4,12.5x1; 304.5x1; 72.5x1; 498.5x1
+Bristow & Sutor,Cheltenham Borough Council,1,527.12x1
+Bristow & Sutor,North Yorkshire Council,29,3469.24x1; -3469.24x1; 2910.25x1; -2910.25x1; 2984.68x1; -2984.68x1; 2559.18x1; -2559.18x1
+Bristow & Sutor,Blaby District Council,1,368.62x1
+Jacobs (enforcement),North Yorkshire Council,10,4465.0x1; -4465.0x1; 2610.0x1; -2610.0x1; 6573.0x1; -6573.0x1; 2680.59x1; -2680.59x1
+Equita,HM Revenue and Customs,28,25072.54x1; 25246.26x1; 40068.51x1; 45364.85x1; 47302.28x1; 37902.15x1; 40590.57x1; 26741.53x1
+Equita,Royal Borough of Greenwich,50,867.84x2; 622.86x2; 517.97x2; 522.8x2; 5841.75x1; -4868.13x1; 3481.09x1; -2900.93x1
+Equita,North Yorkshire Council,12,9350.75x1; -9350.75x1; 7451.2x1; -7451.2x1; 7403.43x1; -7403.43x1; 3370.0x1; -3370.0x1
+Rossendales,HM Revenue and Customs,54,40499.71x1; 36759.82x1; 103676.03x1; 129494.85x1; 149788.29x1; 222334.33x1; 33410.63x1; 79692.31x1
+Rossendales,Ministry of Justice,12,58051.58x1; 204262.4x1; 138996.0x1; 60733.1x1; 68306.0x1; 358068.93x1; 73247.8x1; 477432.0x1
+Rossendales,Royal Borough of Greenwich,3,3774.0x1; 540.0x1; 1800.0x1
+Rossendales,Blaby District Council,6,319.42x1; 312.22x1; 419.6x1; 377.34x1; 2310.0x1; 720.01x1
+Rossendales,Bristol City Council,34,8046.7x1; -8046.7x1; 7620.5x1; -7260.73x1; 11295.83x1; -11060.02x1; 5169.11x1; -3627.12x1
+CDER,Bristol City Council,1,1939.79x1
+CDER,Department of Health and Social Care,1,617.0x1
+Whyte & Co,Royal Borough of Greenwich,386,1586.21x2; 1029.87x2; 1677.08x2; 607.46x2; 818.5x2; 1033.06x2; 1684.21x2; 781.53x2
+Rundles,Royal Borough of Greenwich,141,585.18x2; 522.78x2; 1451.11x2; 3006.17x1; -3006.17x1; 6601.19x1; -5500.99x1; 7989.65x1
+Rundles,South Gloucestershire Council,26,430.0x2; 24.5x2; 63.07x1; 235.5x1; 262.0x1; 102.0x1; 2.56x1; 442.5x1
+Rundles,Uttlesford District Council,20,310.0x4; 75.0x2; 1294.29x1; 837.57x1; 627.16x1; 567.3x1; 486.06x1; 450.56x1
+Rundles,Transport for Greater Manchester,1,3084.9x1
+JBW,Royal Borough of Greenwich,56,516.0x1; 3408.0x1; -3408.0x1; 3666.0x1; -3666.0x1; 5868.55x1; -5868.55x1; 3179.5x1
+JBW,Plymouth City Council,1,425.0x1
+Ross & Roberts,Royal Borough of Greenwich,187,885.13x3; 660.45x2; 958.73x2; 922.89x2; 1125.98x1; 1293.8x1; 1039.65x1; 1780.74x1
+Ross & Roberts,Bristol City Council,18,2673.97x1; -2673.97x1; 546.3x1; 1903.68x1; -1324.74x1; 3402.23x1; -3327.23x1; 3102.16x1
+Ross & Roberts,Rushmoor Borough Council,3,1381.4x1; -1071.14x1; 1633.44x1

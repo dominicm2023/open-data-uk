@@ -1,0 +1,811 @@
+
+=== llama (1) ===
+  'IZI EL TALLER SE LLAMA' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=932.52
+
+=== alpaca (6) ===
+  'Alpacas Peopleton Brook Farm t/a Peopleton Farm' | Bristol City Council | n=91 | sum=162870.50
+  'RICHARD HARTLEY T/A THE ALPACA COLLECTION' | UK Trade and Investment | n=3 | sum=2126.24
+  'BEACON ALPACAS' | North Yorkshire Council | n=1 | sum=9516.21
+  'FALLOWFIELD ALPACAS' | UK Trade and Investment | n=1 | sum=1000.00
+  'ISABEL LANGDON T/A ALPACA SELECT' | UK Trade and Investment | n=1 | sum=1250.00
+  'WILDWOOD ALPACAS' | Shropshire Community Health NHS Trust | n=1 | sum=165.00
+
+=== falconry (7) ===
+  "Falconer's Hill Academy" | Department for Education | n=58 | sum=3867578.75
+  "Falconer's Hill Community Junior Sch" | Department for Education | n=57 | sum=825758.59
+  'Falconers Hill Infant School' | Department for Education | n=43 | sum=2300211.41
+  'COUNTRYWIDE FALCONRY & PEST CONTROL SERVICES LTD' | Royal Borough of Greenwich | n=3 | sum=1560.00
+  'Gmg Falconry' | Rushmoor Borough Council | n=3 | sum=1050.00
+  'HEATHER FALCONER' | Transport for Greater Manchester | n=1 | sum=2000.00
+  'Operations & Communications Centre Falconers Chase Norfolk  NR18 0WW' | National Offender Management Service | n=1 | sum=30000.00
+
+=== donkey (2) ===
+  "Kelly'S Donkeys" | Rushmoor Borough Council | n=2 | sum=650.00
+  'South East Donkeys' | Rushmoor Borough Council | n=2 | sum=650.00
+
+=== ferret (7) ===
+  'Ferret Information Systems Ltd' | Rushmoor Borough Council | n=14 | sum=4976.00
+  'FERRET INFORMATION SYSTEMS' | Blaby District Council | n=6 | sum=2851.00
+  'CURIOUS FERRET LTD' | UK Trade and Investment | n=2 | sum=3000.00
+  'FERRET INFORMATION SYSTEMS LTD' | North Yorkshire Council | n=2 | sum=1722.44
+  'FERRETS INCORPORATED LTD' | Ministry of Defence | n=1 | sum=134848.73
+  'Ferret Information Systems Ltd' | Uttlesford District Council | n=1 | sum=468.00
+  'THE STRAY FERRET LTD' | North Yorkshire Council | n=1 | sum=3000.00
+
+=== hedgehog (1) ===
+  'Curious Hedgehogs' | Bristol City Council | n=45 | sum=648704.90
+
+=== badger (13) ===
+  'Badger Hill Primary School' | Department for Education | n=57 | sum=3137218.95
+  'Badger Hill Academy' | Department for Education | n=56 | sum=2843495.72
+  'BADGERS QUICK SKIPS' | Royal Borough of Greenwich | n=3 | sum=3608.04
+  'BADGER PRINT AND DESIGN' | Shropshire Community Health NHS Trust | n=2 | sum=227.00
+  'BADGER SOFTWARE LTD' | UK Trade and Investment | n=2 | sum=1163.83
+  'BADGER HILL PRIMARY SCHOOL' | Department for Education | n=1 | sum=27000.00
+  'BADGER SOFTWARE LTD' | Foreign and Commonwealth Office | n=1 | sum=47350.00
+  'BADGER SOFTWARE LTD' | Home Office | n=1 | sum=42880.80
+  'BADGER SOFTWARE LTD' | Maidstone and Tunbridge Wells NHS Trust | n=1 | sum=43680.00
+  'BADGERS OF BOHEMIA LTD T/A TURN UP THE COLOUR (TUTC)' | North Yorkshire Council | n=1 | sum=4000.00
+  'Badger Design Ltd' | South Gloucestershire Council | n=1 | sum=1522.50
+  'FAT BADGER HARROGATE (UK) LTD' | Former district of Harrogate | n=1 | sum=350.00
+  'GREEN BADGER' | Eden District Council | n=1 | sum=960.00
+
+=== bees (24) ===
+  'BUSY BEE CLEANING SERVICES LTD' | South Central Ambulance Service NHS Foundation Trust | n=32 | sum=1843720.12
+  'NEW QUE BEE STORE' | Foreign and Commonwealth Office | n=19 | sum=19701.84
+  'Busy Bee Day Nursery' | Bristol City Council | n=9 | sum=186242.31
+  'IN  BEE FLAT LLC' | Foreign, Commonwealth and Development Office (FCDO) | n=5 | sum=12536.21
+  'RED BEE MEDIA LTD' | Department for Work and Pensions | n=5 | sum=182194.00
+  'NEW QUE BEE STORE' | Foreign, Commonwealth and Development Office (FCDO) | n=4 | sum=4661.96
+  'BEE PEDAL READY' | Transport for Greater Manchester | n=3 | sum=17733.97
+  'Jane Bee Safeguarding Ltd' | Bristol City Council | n=3 | sum=6500.00
+  'BEE DESIGN CONSULTANCY LTD' | UK Trade and Investment | n=2 | sum=2000.00
+  'BEE SENG AIRCOND & ENG' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=1311.56
+  'CUMBERLAND BEEKEEPERS ASSOCIATION PENRITH BRANCH' | Eden District Council | n=2 | sum=2517.20
+  'Fleet & District Beekeepers Association' | Rushmoor Borough Council | n=2 | sum=1300.00
+  'HONEY BEE CAR RENTALS' | Foreign and Commonwealth Office | n=2 | sum=1730.22
+  'APPLES AND PEARS APIARIES LTD' | UK Trade and Investment | n=1 | sum=1250.00
+  'BEE HAPPY PRINTS' | North Yorkshire Council | n=1 | sum=561.50
+  'BEE QS SERVICES LTD' | North Yorkshire Council | n=1 | sum=904.97
+  'BEE TEE ALARMS LTD' | Department for Environment, Food and Rural Affairs | n=1 | sum=522.00
+  'Bee Communications' | Equality and Human Rights Commission | n=1 | sum=504.72
+  'Community Beekeeping' | Natural History Museum | n=1 | sum=1323.00
+  'DEVON BEEKEEPERS 550' | Department for Environment, Food and Rural Affairs | n=1 | sum=1021.50
+  'GOOGLE *BUZZY BEE SHOP' | Department for Environment, Food and Rural Affairs | n=1 | sum=641.00
+  'QUEEN BEE FILMS LTD' | UK Trade and Investment | n=1 | sum=572.89
+  'The British Beekeepers Association' | Department for Environment, Food and Rural Affairs | n=1 | sum=33534.90
+  'Vee Gee Bee' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=647.65
+
+=== pigeon (1) ===
+  'DIGIPIGEON LTD' | UK Trade and Investment | n=3 | sum=4618.34
+
+=== swan (54) ===
+  'Joseph Swan School' | Department for Education | n=222 | sum=19301584.84
+  'SWAN SURGERY' | NHS Norfolk and Suffolk ICB - 25k Expenditure Report | n=72 | sum=700586.15
+  'JOSEPH SWAN ACADEMY' | Department for Education | n=59 | sum=9431277.85
+  'THE SWAN PRACTICE (K82007)' | NHS Thames Valley ICB | n=54 | sum=1572004.55
+  "Hanley Swan St Gabriel's St Mary's CofE Primary" | Department for Education | n=50 | sum=1423304.92
+  'The Swan School' | Department for Education | n=44 | sum=3253503.06
+  'SWANS TRAVEL' | Transport for Greater Manchester | n=38 | sum=586954.57
+  'Swan Advocacy' | Bristol City Council | n=23 | sum=26898.40
+  'Joseph Swan Academy' | Department for Education | n=18 | sum=2805741.05
+  'Black Swan Training Solutions' | Rushmoor Borough Council | n=15 | sum=29470.00
+  'SWANS TRAVEL LTD' | UK Trade and Investment | n=10 | sum=7709.93
+  'THE SWAN NETWORK' | NHS Thames Valley ICB | n=10 | sum=133517.82
+  'BLACK SWAN PNG LTD' | Foreign, Commonwealth and Development Office (FCDO) | n=6 | sum=10053.58
+  'Swan Family Centres Limited' | Children and Family Court Advisory and Support Service | n=6 | sum=196888.75
+  'Swan Family Centres Ltd' | Bristol City Council | n=6 | sum=10794.00
+  'STAR SWAN PRIVATE HIRE' | Transport for Greater Manchester | n=4 | sum=2624.00
+  'SWAN PETROLEUM           WHITTINGTON' | Department for Environment, Food and Rural Affairs | n=4 | sum=2895.11
+  'SWANS TRAVEL LTD' | Foreign and Commonwealth Office | n=4 | sum=6543.82
+  'C.V. SWAN FAN MAKKUM' | Royal Borough of Greenwich | n=3 | sum=13025.00
+  'JOSEPH SWAN SCHOOL' | Department for Education | n=3 | sum=235026.00
+  'Mr Daniel Swan' | Plymouth City Council | n=3 | sum=1713.75
+  'SELBY SWANS GYMNASTIC ACADEMY' | North Yorkshire Council | n=3 | sum=2650.00
+  'SWAN TEST & CALIBRATIO' | Department for Environment, Food and Rural Affairs | n=3 | sum=3594.00
+  'Swan Films Ltd' | Bristol City Council | n=3 | sum=2740.27
+  'Swan Generators Ltd' | Coventry and Warwickshire Partnership NHS Trust | n=3 | sum=77213.00
+  ... 29 more
+
+=== reindeer (2) ===
+  'REAL REINDEER LIMITED' | Royal Borough of Greenwich | n=2 | sum=4500.00
+  'THE REINDEER CENTRE' | Royal Borough of Greenwich | n=1 | sum=1680.00
+
+=== goat (7) ===
+  'DANCING GOAT COFFEE LTD' | North Yorkshire Council | n=28 | sum=12746.84
+  'DANCING GOAT COFFEE LTD' | Former council of North Yorkshire | n=15 | sum=6046.20
+  'MOUNTAIN GOAT LTD' | UK Trade and Investment | n=2 | sum=1500.00
+  'MOUNTAIN GOAT TOURS & HOLIDAYS' | UK Trade and Investment | n=2 | sum=2399.50
+  'GOAT FASHION LTD' | UK Trade and Investment | n=1 | sum=700.00
+  'GOAT GUANGZHOU' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=1153.59
+  'The Grazing Goat, London' | Department for Science, Innovation and Technology | n=1 | sum=506.22
+
+=== owl (21) ===
+  'OWL CENTRE LTD (THE)' | NHS Norfolk and Suffolk ICB - 25k Expenditure Report | n=10 | sum=619159.00
+  'WISE OWL BUSINESS SOLUTIONS LTD' | Ministry of Housing, Communities and Local Government | n=8 | sum=5375.00
+  'BARN OWL NESTBOX NETWORK' | North Yorkshire Council | n=5 | sum=3850.00
+  'HAWK AND OWL TRUST' | Ministry of Housing, Communities and Local Government | n=4 | sum=65595.78
+  'Whitleigh Wise Owls Two' | Plymouth City Council | n=4 | sum=10870.00
+  'EXHIBITOR APPLICATION SYSTEMS LTD T/A EVENT OWL' | Former council of North Yorkshire | n=3 | sum=1080.00
+  'Little Owls Preschool' | Plymouth City Council | n=3 | sum=3815.10
+  'TOENSMEIER ENTSORGUNG OWL GMBH & CO.KG' | Ministry of Defence | n=3 | sum=212954.28
+  'The Owl Centre Ltd' | Bristol City Council | n=3 | sum=1883.30
+  'WISE OWL BUSINESS SOLUTIONS LTD' | Transport for Greater Manchester | n=2 | sum=1885.00
+  'BUSINESS OWL' | North Yorkshire Council | n=1 | sum=2430.00
+  'Hawk & Owl Trust' | South Gloucestershire Council | n=1 | sum=2083.20
+  'OWL PEST CONTROL' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=688.63
+  'OWLS AC' | Blaby District Council | n=1 | sum=1234.00
+  'OWLS ATHLETICS CLUB' | Blaby District Council | n=1 | sum=750.00
+  'OWLS HALL ENVIRONMENTAL LTD' | UK Trade and Investment | n=1 | sum=550.00
+  'Owls Hall Environmental Ltd' | Uttlesford District Council | n=1 | sum=12562.12
+  'WISE OWL BUSINESS SOLU' | Department for Education | n=1 | sum=714.00
+  'WISE OWL BUSINESS SOLU' | Department of Health and Social Care | n=1 | sum=834.00
+  'WISE OWL BUSINESS SOLUTI' | Natural History Museum | n=1 | sum=714.00
+  'Wise Owl Business Solutions Ltd' | Department for International Development | n=1 | sum=625.00
+
+=== sheep (10) ===
+  'BLACK SHEEP PRESS' | Shropshire Community Health NHS Trust | n=117 | sum=4341.30
+  'Sheep Dip Lane Academy' | Department for Education | n=31 | sum=2189158.49
+  'BLUE SHEEP LTD' | Department for Education | n=11 | sum=1684591.05
+  'JENNONS LTD T/A THE LITTLE GREEN SHEEP COMPANY' | UK Trade and Investment | n=3 | sum=1000.00
+  'BLACKER SHEEP LTD' | UK Trade and Investment | n=2 | sum=953.23
+  'Blue Sheep Limited' | UK Commission for Employment and Skills | n=2 | sum=83506.00
+  'JENNONS LTD T/A LITTLE GREEN SHEEP' | UK Trade and Investment | n=2 | sum=2554.27
+  'THE BRITISH TEXEL SHEEP SOCIETY LTD' | UK Trade and Investment | n=2 | sum=2000.00
+  'BLACK SHEEP WOOLS LTD' | UK Trade and Investment | n=1 | sum=1766.75
+  'FFL TRADING (BIG SHEEP & LITTLE COW FARM)' | North Yorkshire Council | n=1 | sum=1680.00
+
+=== alpaca2 (9) ===
+  'Alpacas Peopleton Brook Farm t/a Peopleton Farm' | Bristol City Council | n=91 | sum=162870.50
+  'RICHARD HARTLEY T/A THE ALPACA COLLECTION' | UK Trade and Investment | n=3 | sum=2126.24
+  'BEACON ALPACAS' | North Yorkshire Council | n=1 | sum=9516.21
+  'Bellamatrix ICt Foundation' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=36706.00
+  'FALLOWFIELD ALPACAS' | UK Trade and Investment | n=1 | sum=1000.00
+  'ISABEL LANGDON T/A ALPACA SELECT' | UK Trade and Investment | n=1 | sum=1250.00
+  'IZI EL TALLER SE LLAMA' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=932.52
+  'MERPAGO LLAMAPERFECTA' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=742.08
+  'WILDWOOD ALPACAS' | Shropshire Community Health NHS Trust | n=1 | sum=165.00
+
+=== duck (8) ===
+  'CYBER-DUCK LTD' | UK Trade and Investment | n=3 | sum=2000.00
+  'BLUE DUCK EDUCATION LTD' | UK Trade and Investment | n=2 | sum=2000.00
+  'Cyber Duck Ltd' | Department for Science, Innovation and Technology | n=1 | sum=32975.00
+  'DUCK-2-WATER LTD         02380 339996' | Department for Environment, Food and Rural Affairs | n=1 | sum=561.00
+  'Ducks In A Row' | Rushmoor Borough Council | n=1 | sum=1200.00
+  'LITTLE DUCKS NURSERY  HEMINGBROUGH LTD' | North Yorkshire Council | n=1 | sum=28600.00
+  'MR J DUCK' | Royal Borough of Greenwich | n=1 | sum=1272.00
+  "WATER OFF A DUCK'S BACK LTD" | UK Trade and Investment | n=1 | sum=1000.00
+
+=== pony (4) ===
+  'Parc Ponies Limited' | Rushmoor Borough Council | n=5 | sum=1675.00
+  'PONIES 4  PARTIES' | Blaby District Council | n=3 | sum=1325.00
+  'PONY' | Foreign and Commonwealth Office | n=2 | sum=1108.75
+  'ANIMAL MAGIC PONY PARTIES LTD' | Royal Borough of Greenwich | n=1 | sum=2076.00
+
+=== camel (7) ===
+  'CAMEL VALLEY LTD' | Foreign and Commonwealth Office | n=5 | sum=4679.84
+  'CAMEL VALLEY LTD' | Foreign, Commonwealth and Development Office (FCDO) | n=4 | sum=8904.72
+  'CAMEL VALLEY VINEYARD' | UK Trade and Investment | n=2 | sum=3000.00
+  'JOSEPH`S AMAZING CAMELS LIMITED' | Royal Borough of Greenwich | n=2 | sum=3180.00
+  'BLUE CAMEL ENERGY' | Department for International Development | n=1 | sum=68989.54
+  'CAMEL EVENT PRODUCTION' | Former council of North Yorkshire | n=1 | sum=611.20
+  'THE GREEN CAMEL INVESTMENTS LTD' | Foreign and Commonwealth Office | n=1 | sum=48243.53
+
+=== magician (32) ===
+  'Magic Dragon Pre School  Playgroup' | Bristol City Council | n=47 | sum=220837.44
+  'Magic Roundabout Nursery' | Bristol City Council | n=17 | sum=202377.22
+  'MAGIC MILESTONES LTD' | Home Office | n=11 | sum=333069.88
+  'MARQUEE MAGIC' | Royal Borough of Greenwich | n=11 | sum=11085.60
+  'IMAGE MAGIC CORPORATE' | Foreign, Commonwealth and Development Office (FCDO) | n=9 | sum=10687.51
+  'MAGIC BREAKFAST' | Department for Education | n=9 | sum=1005315.37
+  'GARDEN MAGIC MONTAN' | Foreign and Commonwealth Office | n=8 | sum=9807.58
+  'Black Magic Toners Pvt. Ltd.' | Department for International Development | n=5 | sum=3911.74
+  'Entertainers (Magic Of Mowtown) Ltd' | Rushmoor Borough Council | n=4 | sum=24359.81
+  'Magic Cleaning Solutions' | Bristol City Council | n=4 | sum=2362.66
+  'Entertainers (Magic Of Motown) Ltd' | Rushmoor Borough Council | n=3 | sum=15633.46
+  'ALEXANDRA THORPE T/A MAGIC MUSE MARQUEES' | North Yorkshire Council | n=2 | sum=3501.99
+  'ENTERTAINERS MAGIC OF MOTOWN LTD' | North Yorkshire Council | n=2 | sum=18235.64
+  'GREEN MAGIC CO' | The National Archives | n=2 | sum=268.20
+  'Magic Milestones Ltd' | Natural History Museum | n=2 | sum=805.09
+  'PLANT MAGIC PLUS LTD' | UK Trade and Investment | n=2 | sum=1000.00
+  'TOUCH THE MAGIC CLEANE' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=1035.13
+  'WOVEN MAGIC' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=2559.00
+  'ANIMAL MAGIC' | Royal Borough of Greenwich | n=1 | sum=1000.00
+  'ANIMAL MAGIC PONY PARTIES LTD' | Royal Borough of Greenwich | n=1 | sum=2076.00
+  'Confetti Magic Ltd' | Plymouth City Council | n=1 | sum=2005.00
+  'Dazzle Magic Mirror' | Rushmoor Borough Council | n=1 | sum=550.00
+  'ICE MAGIC INTERNATIONAL LTD' | UK Trade and Investment | n=1 | sum=1000.00
+  'MAGIC CARPET ADVERTISI' | Foreign and Commonwealth Office | n=1 | sum=945.30
+  'MAGIC EVIDENCE ECOSYSTEM FOUNDATION' | National Institute for Health and Care Excellence | n=1 | sum=25000.00
+  ... 7 more
+
+=== puppet (9) ===
+  'LIFE AND LIMB PUPPETS' | North Yorkshire Council | n=2 | sum=2870.00
+  'EB *PUPPET CAMP LONDON' | The National Archives | n=1 | sum=62.34
+  'HANDSPRING PUPPET COMPANY' | Royal Borough of Greenwich | n=1 | sum=16200.00
+  'Juggle Puppet Entertainment' | Rushmoor Borough Council | n=1 | sum=625.00
+  'LEMPEN PUPPET THEATRE COMPANY' | North Yorkshire Council | n=1 | sum=500.00
+  "SWALLOW'S WINGS PUPPETRY CIC" | North Yorkshire Council | n=1 | sum=756.00
+  'TATWOOD PUPPETS LTD' | North Yorkshire Council | n=1 | sum=846.40
+  'THE PUPPET COMPANY LTD' | UK Trade and Investment | n=1 | sum=1000.00
+  'The Puppet Company ltd' | Bristol City Council | n=1 | sum=450.95
+
+=== circus (18) ===
+  'The Invisible Circus C.I.C' | Bristol City Council | n=11 | sum=91882.50
+  'Steamship Circus Ltd' | Rushmoor Borough Council | n=8 | sum=7685.00
+  'GLOUCESTER CIRCUS GARDEN COMMITTEE' | Royal Borough of Greenwich | n=6 | sum=70075.09
+  'CIRCUS MALABARISTAS LIMITED' | Royal Borough of Greenwich | n=2 | sum=7572.00
+  'Do Good Things Limited t/a Circus Journal' | Bristol City Council | n=2 | sum=2260.00
+  'THE CIRCUS HOUSE CIC' | Transport for Greater Manchester | n=2 | sum=3340.00
+  'AIRCRAFT CIRCUS LIMITED' | Royal Borough of Greenwich | n=1 | sum=1400.00
+  'ASTRAL CIRCUS' | Eden District Council | n=1 | sum=700.00
+  'Amusement Parks/Circus' | Ministry of Defence | n=1 | sum=999.84
+  'BELL & BULLOCK CIRCUS THEATRE' | Royal Borough of Greenwich | n=1 | sum=2200.00
+  'CIRCUS COMMUNICATIONS LTD' | UK Trade and Investment | n=1 | sum=9450.00
+  'CIRCUS FUNTASIA' | Eden District Council | n=1 | sum=553.50
+  'CIRCUS SPACE' | Ministry of Housing, Communities and Local Government | n=1 | sum=42619.00
+  'Circus City t/a Handstand Arts' | Bristol City Council | n=1 | sum=4050.00
+  'Jack In A Box Circus Entertainment' | Rushmoor Borough Council | n=1 | sum=450.00
+  "LET'S CIRCUS LLP" | North Yorkshire Council | n=1 | sum=900.00
+  'NOFIT STATE CIRCUS' | North Yorkshire Council | n=1 | sum=1120.58
+  'NOFIT STATE COMMUNITY CIRCUS LTD' | UK Trade and Investment | n=1 | sum=500.00
+
+=== brassband (4) ===
+  'THE BOLLYWOOD BRASS BAND LLP' | Royal Borough of Greenwich | n=5 | sum=19590.00
+  'Alder Valley Brass Band' | Rushmoor Borough Council | n=2 | sum=575.00
+  'HUNMNABY BRASS BAND' | North Yorkshire Council | n=1 | sum=925.00
+  'KIRKBYMOORSIDE BRASS BAND' | North Yorkshire Council | n=1 | sum=1265.74
+
+=== panto (3) ===
+  'Scenic Pantomimes Limited' | Rushmoor Borough Council | n=16 | sum=54912.66
+  'Scenic Pantomimes' | Rushmoor Borough Council | n=13 | sum=39578.32
+  'Dunmow Pantomime Group' | Uttlesford District Council | n=1 | sum=500.00
+
+=== juggle (2) ===
+  'Chris Welford Juggler' | Rushmoor Borough Council | n=2 | sum=720.00
+  'Juggle Puppet Entertainment' | Rushmoor Borough Council | n=1 | sum=625.00
+
+=== hypnotist (4) ===
+  'UK HYPNOSIS ACADEMY LT' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=2000.00
+  'HYPNOS CONTRACT BEDS L' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=1310.40
+  'HYPNOS LIMITED' | Foreign and Commonwealth Office | n=1 | sum=1220.00
+  'PAYPAL  UKHYPNOACAD' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=1497.00
+
+=== santa (11) ===
+  'SANTA FE' | Foreign and Commonwealth Office | n=24 | sum=24314.30
+  'SANTA MARIA PUBLICIDAD' | Foreign, Commonwealth and Development Office (FCDO) | n=8 | sum=11756.59
+  'CORP CLUB SANTA MARTA' | Foreign and Commonwealth Office | n=4 | sum=4425.96
+  'SANTA MONICA DESIGNS LTD' | UK Trade and Investment | n=3 | sum=500.00
+  'COSTCO SANTA FE' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=1041.08
+  'FUNDACION SANTA FE DE' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=4245.99
+  'ITV TEXT SANTA LTD' | Cabinet Office | n=2 | sum=550000.00
+  'MT 01 - SANTA CRUZ' | Foreign and Commonwealth Office | n=1 | sum=531.36
+  'SANTA FE REST' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=501.38
+  'SANTA LUZ' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=910.50
+  'TOYOTA SANTA FE' | Foreign and Commonwealth Office | n=1 | sum=561.48
+
+=== bouncy (2) ===
+  'Bouncy Jam Ltd' | UK Trade and Investment | n=1 | sum=2000.00
+  'FUNHOUSE BOUNCY CASTLES' | Blaby District Council | n=1 | sum=650.00
+
+=== jester (2) ===
+  'RUSS ERWYD T/AS CONWY JESTER' | Royal Borough of Greenwich | n=1 | sum=1950.00
+  'The Jester Exchange Ltd' | Bristol City Council | n=1 | sum=3000.00
+
+=== wizard (8) ===
+  'CRAFTY WIZARDS LTD' | Royal Borough of Greenwich | n=52 | sum=174122.67
+  'DISPLAY WIZARD LTD' | Royal Borough of Greenwich | n=7 | sum=8536.88
+  'WINSTANLEY WIZARDS TABLE TENNIS CLUB' | Blaby District Council | n=5 | sum=2388.00
+  'TEXT WIZARD COPYWRITING LTD' | UK Trade and Investment | n=2 | sum=2532.44
+  'DATABASE WIZARD INC' | Foreign and Commonwealth Office | n=1 | sum=548.44
+  'DISPLAY WIZARD' | Foreign and Commonwealth Office | n=1 | sum=705.18
+  'SOLUTIONS WIZARD TECH' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=552.70
+  'WIZARD PAINT REPAIRS' | Foreign and Commonwealth Office | n=1 | sum=545.59
+
+=== clown (2) ===
+  'CLOWNS NURSERY LTD' | North Yorkshire Council | n=4 | sum=2362.50
+  'Little Clowns Nursery Limited' | South Gloucestershire Council | n=1 | sum=1701.00
+
+=== balloon model (11) ===
+  'Air Balloon Surgery' | Bristol City Council | n=50 | sum=283420.72
+  'BALLOON ARTISTRY' | Natural History Museum | n=7 | sum=207.06
+  'BALLOON ALOFT CANBERRA' | Foreign and Commonwealth Office | n=5 | sum=4920.91
+  'Air Balloon Hill Primary School (General Account)' | Bristol City Council | n=3 | sum=14012.00
+  'Air Balloon Gates & Automation' | South Gloucestershire Council | n=1 | sum=1600.00
+  'BALLOON CREATIONS LIMITED' | Transport for Greater Manchester | n=1 | sum=630.00
+  'BALLOONS BY KANDY KRUSH' | North Yorkshire Council | n=1 | sum=1000.00
+  'BALLOONS COSTA RICA CO' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=2419.86
+  'Enchanted Balloons Bristol Limited' | Bristol City Council | n=1 | sum=575.00
+  'FAST BALLOONS.COM' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=621.99
+  "OH GEE'S BALLOONS & LUXURY SOFT PLAY" | Shropshire Community Health NHS Trust | n=1 | sum=90.00
+
+=== taxidermy (2) ===
+  'London Taxidermy' | Natural History Museum | n=3 | sum=1870.00
+  'MCKENZIE TAXIDERMY' | Natural History Museum | n=2 | sum=847.69
+
+=== coffin (1) ===
+  'OASIS TRANSFORMATION TRADING COMPANY LTD T/A OASIS COFFINS' | UK Trade and Investment | n=1 | sum=644.00
+
+=== funeral (43) ===
+  'Funeral Services Limited t/a Co-op Funeral Care' | Bristol City Council | n=389 | sum=1527765.00
+  'Dignity Funerals Limited' | Bristol City Council | n=167 | sum=1032947.01
+  'THE TENDER TOUCH FUNERAL SERVICES LTD' | Royal Borough of Greenwich | n=23 | sum=17639.97
+  'Neil Curtis & Sons Funeral Contractors Ltd' | Cheltenham Borough Council | n=15 | sum=38420.00
+  'FALSGRAVE FUNERAL SERVICE' | Former council of North Yorkshire | n=13 | sum=17796.63
+  'LILLEYWHITE FUNERAL SERVICE' | Transport for Greater Manchester | n=13 | sum=32288.00
+  'Westlakes Funeral Services' | Plymouth City Council | n=11 | sum=10170.00
+  'JOSEPH SWIFT FUNERAL DIRECTORS' | Blaby District Council | n=9 | sum=9811.00
+  'FALSGRAVE FUNERAL SERVICE' | North Yorkshire Council | n=8 | sum=9429.13
+  'Ian George (Funerals) Limited' | Cheltenham Borough Council | n=6 | sum=8199.00
+  'ROBERT HARRISON & SONS LTD (FUNERAL DIRECTORS)' | Former council of North Yorkshire | n=6 | sum=1774.77
+  'DIGNITY FUNERALS LTD' | North Yorkshire Council | n=5 | sum=3624.83
+  'The Co-operative Funeralcare' | South Gloucestershire Council | n=5 | sum=3750.00
+  'Funeralcare' | South Gloucestershire Council | n=4 | sum=3300.00
+  'BEDALE & DISTRICT FUNERAL SERVICE' | Former council of North Yorkshire | n=3 | sum=1095.99
+  'HOWCROFTS FUNERAL SERVICES' | Former council of North Yorkshire | n=3 | sum=1262.66
+  'WALKERS FUNERAL DIRECTORS' | Eden District Council | n=3 | sum=3397.00
+  'WILLOW INDEPENDENT FUNERAL SERVICE LIMITED' | Royal Borough of Greenwich | n=3 | sum=2586.50
+  'Amspac Funeral Bags' | Bristol City Council | n=2 | sum=5398.50
+  'Co-Op Funeral Directors' | Rushmoor Borough Council | n=2 | sum=1570.00
+  'DANLY FUNERAL ASSISTANCE LTD' | Royal Borough of Greenwich | n=2 | sum=1282.50
+  'Dignity Funerals' | Rushmoor Borough Council | n=2 | sum=2412.00
+  'FALSGRAVE FUNERAL SERVICE LTD' | North Yorkshire Council | n=2 | sum=1713.00
+  'FERGUS COURT FUNERAL SERVICES' | North Yorkshire Council | n=2 | sum=3200.00
+  'THE CJ WILLIAMS FUNERAL SERVICE' | Shropshire Community Health NHS Trust | n=2 | sum=108.00
+  ... 18 more
+
+=== pest (53) ===
+  'Brand Pest Control' | Rushmoor Borough Council | n=184 | sum=155244.26
+  'Advanced Pest Control' | Bristol City Council | n=155 | sum=153477.00
+  'RENTOKIL INITIAL PEST CONTROL' | Eden District Council | n=68 | sum=59941.16
+  'CROSS PEST CONTROL SER' | Department for Environment, Food and Rural Affairs | n=34 | sum=37015.18
+  'AJ Pest Control Ltd' | Uttlesford District Council | n=21 | sum=7622.00
+  'Attack Pests Ltd T/AThe Bristol Pest Controller' | Bristol City Council | n=19 | sum=19243.75
+  'Bristol Pest Control Ltd' | Bristol City Council | n=17 | sum=20122.50
+  'RENTOKIL PEST CONTROL' | Royal Borough of Greenwich | n=17 | sum=10771.72
+  'CROSS PEST CONTROL SERVICES' | Department for Environment, Food and Rural Affairs | n=16 | sum=19586.09
+  'PEST FORCE' | Blaby District Council | n=14 | sum=4390.00
+  'Action Pest Control Ltd' | Bristol City Council | n=13 | sum=19950.00
+  'INSECTA PEST CONTROL' | Foreign and Commonwealth Office | n=13 | sum=10549.15
+  'Total Pest Control' | Rushmoor Borough Council | n=12 | sum=18519.00
+  'BROMLEY PEST CONTROL' | Royal Borough of Greenwich | n=11 | sum=16510.00
+  'A & H PEST CONTROL SERVICES' | Royal Borough of Greenwich | n=10 | sum=21141.60
+  'GREEN BUG PEST CONTROL' | Foreign, Commonwealth and Development Office (FCDO) | n=10 | sum=6451.28
+  '1ENV GLOBAL PEST CONTROL SERVICES' | North Yorkshire Council | n=7 | sum=6371.13
+  'INT. PEST CONTROL' | Foreign, Commonwealth and Development Office (FCDO) | n=7 | sum=6419.86
+  'RENTOKIL PEST CONTROL' | HM Treasury | n=7 | sum=4645.60
+  'Falcon Pest Control Ltd' | Bristol City Council | n=6 | sum=23395.00
+  'WASP SOFTWARE LTD' | Ministry of Housing, Communities and Local Government | n=6 | sum=15600.00
+  'EAST COAST PEST CONTROL' | North Yorkshire Council | n=5 | sum=7789.20
+  'GLADE PEST CONTROL SER' | Department for Environment, Food and Rural Affairs | n=5 | sum=10362.00
+  'RED WASP MARKETING LTD' | UK Trade and Investment | n=5 | sum=47000.00
+  'PEST CONTROL CONSULTANTS & SERVICES' | Department for International Development | n=4 | sum=8515.88
+  ... 28 more
+
+=== marmalade (1) ===
+  'Marmalade On Toast' | Queen Elizabeth II Conference Centre | n=8 | sum=4000.00
+
+=== cricket (65) ===
+  'Aldershot Cricket Club' | Rushmoor Borough Council | n=18 | sum=43366.92
+  'Little Bardfield Cricket Club' | Uttlesford District Council | n=11 | sum=7926.00
+  'SHREWSBURY CRICKET CLUB' | Shropshire Community Health NHS Trust | n=10 | sum=10977.00
+  'Cove Cricket Club' | Rushmoor Borough Council | n=6 | sum=6888.71
+  'MARYLEBONE CRICKET CLUB' | UK Trade and Investment | n=6 | sum=22805.38
+  'Gloucester County Cricket Club Ltd' | Bristol City Council | n=5 | sum=3574.16
+  'OSWESTRY CRICKET CLUB LTD' | Shropshire Community Health NHS Trust | n=4 | sum=420.00
+  'Stansted Hall & Elsenham Cricket Club' | Uttlesford District Council | n=4 | sum=5500.00
+  'Wenden Cricket Club' | Uttlesford District Council | n=4 | sum=8756.00
+  'GOLDSBOROUGH CRICKET CLUB' | North Yorkshire Council | n=3 | sum=17505.44
+  'SCARBOROUGH CRICKET CLUB' | North Yorkshire Council | n=3 | sum=78452.06
+  'TEMPLE SOWERBY CRICKET CLUB' | Eden District Council | n=3 | sum=5800.00
+  'COUNTESTHORPE CRICKET CLUB' | Blaby District Council | n=2 | sum=3456.00
+  'DURHAM COUNTY CRICKET CLUB' | UK Trade and Investment | n=2 | sum=9500.00
+  'Hatfield Heath Cricket Club' | Uttlesford District Council | n=2 | sum=1096.08
+  'NOTTINGHAMSHIRE COUNTY CRICKET CLUB LTD' | UK Trade and Investment | n=2 | sum=794.00
+  'SKIPTON CRICKET CLUB' | North Yorkshire Council | n=2 | sum=3500.00
+  'SPOFFORTH CRICKET CLUB' | Former council of North Yorkshire | n=2 | sum=14450.00
+  'STAFFIELD CRICKET CLUB' | Eden District Council | n=2 | sum=4000.00
+  'Somerset County Cricket Club Ltd' | South Gloucestershire Council | n=2 | sum=1221.70
+  'Stansted Cricket Club' | Uttlesford District Council | n=2 | sum=4000.00
+  'THORNTON LE MOOR CRICKET CLUB' | North Yorkshire Council | n=2 | sum=49692.00
+  'ALDBROUGH ST JOHN CRICKET CLUB' | North Yorkshire Council | n=1 | sum=1000.00
+  'ANSTEY&GLENFIELD CRICKET CLUB' | Blaby District Council | n=1 | sum=17611.62
+  'APPLEBY EDEN CRICKET CLUB' | Eden District Council | n=1 | sum=6000.00
+  ... 40 more
+
+=== allotment (13) ===
+  'Dig It Community Allotment' | Uttlesford District Council | n=14 | sum=27694.00
+  'KNARESBOROUGH ALLOTMENTS SELF HELP SCHEME' | North Yorkshire Council | n=2 | sum=10530.94
+  'Patchway Pretoria Road Allotment Society' | South Gloucestershire Council | n=2 | sum=6200.00
+  'Great Chesterford Allotment Association' | Uttlesford District Council | n=1 | sum=800.00
+  'HARLOW HILL ALLOTMENT ASSOCI' | North Yorkshire Council | n=1 | sum=1439.49
+  'KILNSEY COMMUNITY ALLOTMENT' | Former council of North Yorkshire | n=1 | sum=1500.00
+  'LEICESTER CITY PERMANENT ALLOTMENT SOCIETY' | Blaby District Council | n=1 | sum=2260.00
+  'PICKERING & DISTRICT SMALLHOLDING & ALLOTMENTS ASSOCIATION' | North Yorkshire Council | n=1 | sum=600.00
+  'TYLDESLEY ALLOTMENTS ASSOCIATION' | Transport for Greater Manchester | n=1 | sum=10000.00
+  'WATER PLUS - 0375009062 -  HAYDEN ROAD ALLOTMENTS, OLD GLOUCESTER ROAD, HAYDEN,  CHELTENHAM  - WATER  CHARGE - 07/07/2020-07/08/2020' | Cheltenham Borough Council | n=1 | sum=19700.06
+  'WATER PLUS 0375009062 - ALLOTMENTS, HATHERLEY ROAD, CHELTENHAM - WATER CHARGE - 07/08/2020-07/09/2020' | Cheltenham Borough Council | n=1 | sum=546.44
+  'WATER PLUS 0375009062 - HAYDEN ROAD ALLOTMENTS, OLD GLOUCESTER ROAD, HAYDEN, CHELTENHAM - WATER CHARGE - 07/08/2020-07/09/2020' | Cheltenham Borough Council | n=1 | sum=3336.57
+  'WOODLAND ALLOTMENTS TENANTS GROUP' | Former council of North Yorkshire | n=1 | sum=800.00
+
+=== bowls (31) ===
+  'Farnborough Bowling Club' | Rushmoor Borough Council | n=8 | sum=8030.00
+  'Farnborough Gate Bowling Club' | Rushmoor Borough Council | n=7 | sum=19147.93
+  'APPLEBY BOWLING CLUB' | Eden District Council | n=6 | sum=5800.00
+  'Aldershot Underwood Bowling Club' | Rushmoor Borough Council | n=5 | sum=2972.98
+  'Clavering Bowls Club' | Uttlesford District Council | n=5 | sum=1694.37
+  'ENDERBY BOWLS CLUB' | Blaby District Council | n=3 | sum=10925.00
+  'Thaxted Bowling Club' | Uttlesford District Council | n=3 | sum=1650.00
+  'Bradley Stoke Bowls Club' | South Gloucestershire Council | n=2 | sum=2400.00
+  'Royal British Legion Bowling Club' | Rushmoor Borough Council | n=2 | sum=1900.00
+  'THORNTON LE DALE BOWLING CLUB' | North Yorkshire Council | n=2 | sum=2700.00
+  'AYTON BOWLING CLUB' | North Yorkshire Council | n=1 | sum=500.00
+  'CHELTENHAM WHADDON BOWLS CLUB' | Cheltenham Borough Council | n=1 | sum=2200.00
+  'FILEY SOUTHDENE BOWLING CLUB' | Former council of North Yorkshire | n=1 | sum=500.00
+  'FILEY SOUTHDENE BOWLING CLUB' | North Yorkshire Council | n=1 | sum=1000.00
+  'GREAT AYTON BOWLS CLUB' | North Yorkshire Council | n=1 | sum=1500.00
+  'Great Chesterford Bowls Club' | Uttlesford District Council | n=1 | sum=3500.00
+  'HARROGATE INDOOR BOWLING CLUB' | North Yorkshire Council | n=1 | sum=1700.00
+  'HEMINGBROUGH BOWLS CLUB' | Former council of North Yorkshire | n=1 | sum=792.00
+  'HUNMANBY CROWN GREEN BOWLING CLUB' | North Yorkshire Council | n=1 | sum=1000.00
+  'KIRBY MUXLOE BOWLS CLUB' | Blaby District Council | n=1 | sum=1120.00
+  'KNARESBOROUGH BOWLING CLUB' | Former council of North Yorkshire | n=1 | sum=500.00
+  'LAZONBY BOWLING CLUB' | Eden District Council | n=1 | sum=2250.00
+  'LOW HARROGATE CROWN GREEN BOWLING CLUB' | North Yorkshire Council | n=1 | sum=1020.00
+  'PATELEY BRIDGE & UPPER NIDDERDALE BOWLING CLUB' | North Yorkshire Council | n=1 | sum=7566.47
+  'PENRITH FRIARS BOWLING CLUB' | Eden District Council | n=1 | sum=786.00
+  ... 6 more
+
+=== bells (1) ===
+  'ALL SAINTS KIRKBYMOORSIDE BELL RINGERS' | North Yorkshire Council | n=1 | sum=1000.00
+
+=== maypole (1) ===
+  'MAYPOLE LTD' | UK Trade and Investment | n=4 | sum=3324.70
+
+=== fishchip (3) ===
+  'AA Fish & Chips Ltd' | Bristol City Council | n=1 | sum=750.00
+  'SMITHS FISH & CHIPS-BP' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=902.76
+  'SMUGGLERS FISH AND CHIP SHELSTON' | Department for Environment, Food and Rural Affairs | n=1 | sum=1476.09
+
+=== tearoom (4) ===
+  'FLOWER POWER TEA ROOM' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=1132.09
+  'HARRIETS CAFE TEAROOMS   BURY ST EDMUN' | Department for Environment, Food and Rural Affairs | n=1 | sum=1043.10
+  'THE ENGLISH TEAROOM' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=661.98
+  'THE POPPY HOUSE (TEA ROOMS) LTD' | Shropshire Community Health NHS Trust | n=1 | sum=50.00
+
+=== cheese (11) ===
+  'BELTON CHEESE LTD' | UK Trade and Investment | n=4 | sum=4269.01
+  'Giant Cheese Ltd' | Rushmoor Borough Council | n=4 | sum=10927.60
+  'RIPPON CHEESE STOR' | Foreign and Commonwealth Office | n=4 | sum=4860.20
+  'RJC ENTERPRISES LTD T/A THE TRUCKLE CHEESE CO' | UK Trade and Investment | n=4 | sum=1267.20
+  "LACEY'S CHEESE" | North Yorkshire Council | n=2 | sum=2000.00
+  'North Street Cheese Company Ltd' | Bristol City Council | n=2 | sum=10000.00
+  'PRIMA CHEESE LTD' | UK Trade and Investment | n=2 | sum=1189.64
+  'WINDYRIDGE CHEESE LTD' | UK Trade and Investment | n=2 | sum=1000.00
+  'CHEESE & WINE' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=584.28
+  'Rippon cheese Stores' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=3881.56
+  'THE MEADOW CHEESE COMPANY LIMITED' | UK Trade and Investment | n=1 | sum=3000.00
+
+=== pie (5) ===
+  'SQUARE PIE LTD' | UK Trade and Investment | n=2 | sum=2500.00
+  'Mud Pie Explorers CIC' | Bristol City Council | n=1 | sum=9610.00
+  'PIE MINISTER LTD' | UK Trade and Investment | n=1 | sum=1000.00
+  'THE PIE MAN' | Department of Health and Social Care | n=1 | sum=654.48
+  'THE PIE MAN' | Foreign and Commonwealth Office | n=1 | sum=1282.94
+
+=== sausage (7) ===
+  'THE COSMIC SAUSAGES' | Royal Borough of Greenwich | n=3 | sum=4100.00
+  'WESTAWAY SAUSAGES LTD' | UK Trade and Investment | n=3 | sum=3000.00
+  'CLIP MX SIMPLY SAUSAGE' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=2667.63
+  'A TURNER & SONS SAUSAGE LTD' | UK Trade and Investment | n=1 | sum=749.21
+  'BROAD OAK FARM SAUSAGE CO LTD' | UK Trade and Investment | n=1 | sum=541.69
+  'THE BRITISH PREMIUM SAUSAGE COMPANY' | UK Trade and Investment | n=1 | sum=219.39
+  'THE SAUSAGE FACTORY' | Department for Digital, Culture, Media and Sport | n=1 | sum=62.71
+
+=== brewery (63) ===
+  'AMUSEMENT & LEISURE EQUIPMENT SUPPLIERS (ALES UK)' | UK Trade and Investment | n=59 | sum=506700.96
+  'C Brewer & Sons Ltd' | Bristol City Council | n=47 | sum=29055.99
+  'C BREWER AND SONS LIMITED' | Royal Borough of Greenwich | n=12 | sum=9801.68
+  'WOLD TOPPERS LTD T/A WOLD TOP BREWERY' | North Yorkshire Council | n=12 | sum=9495.86
+  'BOYDELL & BREWER LTD' | The National Archives | n=6 | sum=398.78
+  'PATTINSON & BREWER SOLICITORS' | Royal Borough of Greenwich | n=6 | sum=103216.00
+  'BATH ALES LTD' | UK Trade and Investment | n=5 | sum=2871.25
+  'MONTCALM LONDON HOTELS LTD T/A THE MONTCALM AT THE BREWERY' | UK Trade and Investment | n=5 | sum=17730.00
+  'BICYCLE CRAFT BREWERY' | Foreign, Commonwealth and Development Office (FCDO) | n=4 | sum=7225.87
+  'C BREWER & SONS' | Foreign, Commonwealth and Development Office (FCDO) | n=4 | sum=3984.10
+  'BOX STEAM BREWERY LTD' | UK Trade and Investment | n=3 | sum=2022.39
+  'Brewers' | Natural History Museum | n=3 | sum=1438.81
+  'INSIGHT DRIVEN INNOVATION LTD T/A GLASTONBURY ALES' | UK Trade and Investment | n=3 | sum=3000.00
+  'STONE ROWE BREWER LLP' | Royal Borough of Greenwich | n=3 | sum=4739.00
+  "Young & Co's Brewery PLC" | Department for Education | n=3 | sum=28176.36
+  'BREWERS FAYRE 41518475' | The National Archives | n=2 | sum=24.02
+  'C BREWER & SONS' | Natural History Museum | n=2 | sum=91.66
+  'C Brewer & Sons Ltd' | Rushmoor Borough Council | n=2 | sum=681.53
+  'HOBSONS BREWERY LTD' | UK Trade and Investment | n=2 | sum=1200.03
+  'JOULES BREWERY' | Shropshire Community Health NHS Trust | n=2 | sum=415.00
+  'LANCASTER BREWERY' | UK Trade and Investment | n=2 | sum=1165.00
+  'OAKHAM ALES LTD' | UK Trade and Investment | n=2 | sum=2388.20
+  'T.Brewer & Co Ltd' | Natural History Museum | n=2 | sum=1127.96
+  'THE ILKLEY BREWERY COMPANY LTD' | UK Trade and Investment | n=2 | sum=3385.69
+  'WYE VALLEY BREWERY LTD' | UK Trade and Investment | n=2 | sum=1000.00
+  ... 38 more
+
+=== gin (6) ===
+  'THE GIN COMPANY' | Foreign, Commonwealth and Development Office (FCDO) | n=3 | sum=6875.93
+  'THE GIN FLAVORS' | Foreign, Commonwealth and Development Office (FCDO) | n=3 | sum=3284.61
+  'BERMONDSEY GIN LTD' | UK Trade and Investment | n=2 | sum=2755.55
+  'BROKERS GIN LTD' | UK Trade and Investment | n=2 | sum=2500.00
+  'FOREST GIN LTD' | UK Trade and Investment | n=1 | sum=750.00
+  'GMF DERECH HAMESHI GIN' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=1325.55
+
+=== teapot (1) ===
+  'THE TEAPOTTERY LTD' | UK Trade and Investment | n=1 | sum=665.00
+
+=== bunting (5) ===
+  'BUNTINGFORD MEDICAL CENTRE' | NHS East and North Hertfordshire CCG | n=179 | sum=3901577.48
+  'FLAG AND BUNTING LTD' | Foreign and Commonwealth Office | n=2 | sum=3000.00
+  'Josephine Bunting' | Rushmoor Borough Council | n=1 | sum=1500.00
+  'Jude Bunting' | Equality and Human Rights Commission | n=1 | sum=594.00
+  'KREATIVE BUNTING LTD' | Foreign and Commonwealth Office | n=1 | sum=774.00
+
+=== village hall (153) ===
+  'CULMINGTON VILLAGE HALL' | Shropshire Community Health NHS Trust | n=33 | sum=3593.00
+  'LITTLE WENLOCK VILLAGE HALL' | Shropshire Community Health NHS Trust | n=15 | sum=4060.00
+  'UFFINGTON VILLAGE HALL' | Shropshire Community Health NHS Trust | n=14 | sum=455.00
+  'TILSTOCK BRADBURY VILLAGE HALL' | Shropshire Community Health NHS Trust | n=12 | sum=9092.70
+  'CLEOBURY NORTH VILLAGE HALL' | Shropshire Community Health NHS Trust | n=11 | sum=450.00
+  'BICTON VILLAGE HALL' | Shropshire Community Health NHS Trust | n=9 | sum=3882.75
+  'Duddenhoe End Village Hall' | Uttlesford District Council | n=9 | sum=3018.67
+  'EARDINGTON VILLAGE HALL' | Shropshire Community Health NHS Trust | n=9 | sum=5325.00
+  'Hempstead Village Hall Management Comm' | Uttlesford District Council | n=9 | sum=9504.00
+  'Little Hallingbury Village Hall' | Uttlesford District Council | n=9 | sum=4110.00
+  'Hatfield Broad Oak Village Hall' | Uttlesford District Council | n=8 | sum=4776.80
+  'Leaden Roding Village Hall Trust' | Uttlesford District Council | n=8 | sum=2250.00
+  'Widdington Village Hall' | Uttlesford District Council | n=8 | sum=15463.15
+  'Emersons Green Village Hall' | South Gloucestershire Council | n=7 | sum=2314.75
+  'FITZ VILLAGE HALL' | Shropshire Community Health NHS Trust | n=7 | sum=111.25
+  'FORD VILLAGE HALL' | Shropshire Community Health NHS Trust | n=7 | sum=1182.00
+  'GREYSTOKE VILLAGE HALL' | Eden District Council | n=7 | sum=14126.44
+  'Little Chesterford Village Hall' | Uttlesford District Council | n=7 | sum=2120.00
+  'Sewards End Village Hall Trust' | Uttlesford District Council | n=7 | sum=2870.00
+  'BASCHURCH VILLAGE HALL' | Shropshire Community Health NHS Trust | n=6 | sum=156.00
+  'Molehill Green Village Hall' | Uttlesford District Council | n=6 | sum=7222.00
+  'Newport Village Hall' | Uttlesford District Council | n=6 | sum=4900.00
+  'Broxted Village Hall' | Uttlesford District Council | n=5 | sum=8131.50
+  'CROSBY RAVENSWORTH VILLAGE HALL' | Eden District Council | n=5 | sum=6865.68
+  'GARRIGILL VILLAGE HALL' | Eden District Council | n=5 | sum=9605.80
+  ... 128 more
+
+=== brass (13) ===
+  'BRAHM LTD T/A BRASS' | UK Trade and Investment | n=37 | sum=276514.50
+  'Cactus Brass' | Rushmoor Borough Council | n=14 | sum=12161.39
+  'THE BOLLYWOOD BRASS BAND LLP' | Royal Borough of Greenwich | n=5 | sum=19590.00
+  'PARTNERS IN BRASS P L' | Foreign and Commonwealth Office | n=3 | sum=2749.01
+  'Alder Valley Brass Band' | Rushmoor Borough Council | n=2 | sum=575.00
+  'Cove Brass' | Rushmoor Borough Council | n=2 | sum=1150.00
+  'BACK CHAT BRASS' | North Yorkshire Council | n=1 | sum=1870.00
+  'BROMPTON QUARTER BRASS' | Department for Digital, Culture, Media and Sport | n=1 | sum=46.50
+  'CAPE COD BRASS & SECUR' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=709.62
+  'FIRST CLASS BRASS LIMITED' | Ministry of Defence | n=1 | sum=33600.00
+  'HUNMNABY BRASS BAND' | North Yorkshire Council | n=1 | sum=925.00
+  'KIRKBYMOORSIDE BRASS BAND' | North Yorkshire Council | n=1 | sum=1265.74
+  'TRUSTEES FOR SUTTONS GOT BRASS' | North Yorkshire Council | n=1 | sum=2000.00
+
+=== ukulele (1) ===
+  'The Ukulele Orchestra Of Great Britain' | Rushmoor Borough Council | n=6 | sum=35468.16
+
+=== knit (3) ===
+  'SIMPLEX KNITTING CO LTD' | UK Trade and Investment | n=3 | sum=3986.05
+  'ATLANTIC KNITWEAR' | UK Trade and Investment | n=1 | sum=1000.00
+  'KNITWIRE PRODUCTS' | UK Trade and Investment | n=1 | sum=3000.00
+
+=== crochet (2) ===
+  "Let'S Crochet Uk" | Rushmoor Borough Council | n=2 | sum=1574.42
+  'CROCHET LUCIEN' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=638.26
+
+=== unicorn (12) ===
+  'UNICORN FIRE & SAFETY SOLUTIONS LTD' | Shropshire Community Health NHS Trust | n=186 | sum=61485.33
+  'Unicorn Primary School' | Department for Education | n=62 | sum=7258914.54
+  'UNICORN INN' | The National Archives | n=4 | sum=111.64
+  'STALLION AND UNICORN LIMITED' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=1240000.00
+  'UNICORN HOUSE' | Royal Borough of Greenwich | n=2 | sum=9706.41
+  'Unicorn Training' | Cabinet Office | n=2 | sum=64333.00
+  'GSPL - UNICORN SHIPPING' | HM Revenue and Customs | n=1 | sum=98000.00
+  'GSPL-Unicorn Shipping' | HM Revenue and Customs | n=1 | sum=102000.00
+  'UNICORN PRIMARY SCHOOL' | Department for Education | n=1 | sum=25000.00
+  'UNICORN PRODUCTS LTD' | UK Trade and Investment | n=1 | sum=450.00
+  'UNICORN TRAINING GROUP LTD' | UK Trade and Investment | n=1 | sum=1000.00
+  'UNICORN,' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=3193.19
+
+=== dragon (31) ===
+  'Snap Dragons Nursery' | Bristol City Council | n=86 | sum=2619442.09
+  'DRAGON DRIVING' | Transport for Greater Manchester | n=69 | sum=84757.64
+  'Magic Dragon Pre School  Playgroup' | Bristol City Council | n=47 | sum=220837.44
+  'THE DRAGON COMPANY' | Shropshire Community Health NHS Trust | n=18 | sum=2036.70
+  'DOUBLE DRAGON INTERNATIONAL LTD' | Department of Health and Social Care | n=12 | sum=6686829.94
+  'Dragon Play & Sports Ltd' | Bristol City Council | n=7 | sum=357330.25
+  'GEORGE & DRAGON LONDON LLP' | Department for Work and Pensions | n=6 | sum=165966.00
+  'DRAGON STEEL SERVI' | Department for Environment, Food and Rural Affairs | n=4 | sum=3626.66
+  'GEORGE & DRAGON LONDON LLP' | Department for Education | n=4 | sum=187869.60
+  'THREE DRAGONS (LC) LTD' | Ministry of Housing, Communities and Local Government | n=4 | sum=93220.80
+  'CRAFT DRAGON LTD' | UK Trade and Investment | n=2 | sum=1555.00
+  'Dragon Pump Services Ltd' | Bristol City Council | n=2 | sum=3872.00
+  'HMS DRAGON' | UK Trade and Investment | n=2 | sum=1768.90
+  'KURO DRAGON LTD' | UK Trade and Investment | n=2 | sum=2189.49
+  'RED DRAGON' | Foreign and Commonwealth Office | n=2 | sum=0.00
+  'BLUE DRAGON CHILDREN FOUNDATION' | Foreign and Commonwealth Office | n=1 | sum=50000.52
+  'DRAGON CAPITAL FINANCE LIMITED' | Foreign and Commonwealth Office | n=1 | sum=52393.00
+  'DRAGON ELECTRONICS - B' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=1001.00
+  'DRAGON ELECTRONICS-CPE' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=640.83
+  'DRAGON HEAT' | Blaby District Council | n=1 | sum=2083.33
+  'DRAGON SCHOOL' | Department for Education | n=1 | sum=81600.00
+  'DRAGON SECURITY' | Department for Environment, Food and Rural Affairs | n=1 | sum=632.96
+  'DRAGON SECURITY          01603 777791' | Department for Environment, Food and Rural Affairs | n=1 | sum=621.93
+  'Dinky Dragons' | Uttlesford District Council | n=1 | sum=300.00
+  'GEORGE & DRAGON' | Ministry of Housing, Communities and Local Government | n=1 | sum=2100.00
+  ... 6 more
+
+=== mermaid (7) ===
+  'THE MYTTON & MERMAID HOTEL' | Shropshire Community Health NHS Trust | n=20 | sum=3388.90
+  'MERMAIDS UK' | Shropshire Community Health NHS Trust | n=5 | sum=1500.00
+  'MERMAIDS TAIL' | Department for Digital, Culture, Media and Sport | n=2 | sum=100.00
+  'MERMAIDS TAIL' | Natural History Museum | n=1 | sum=50.00
+  'Mermaid Training' | Bristol City Council | n=1 | sum=650.00
+  'Mermaids' | Rushmoor Borough Council | n=1 | sum=700.00
+  'PAYPAL MERMAIDTHEA' | Foreign and Commonwealth Office | n=1 | sum=1696.59
+
+=== knight? (15) ===
+  "Haberdashers' Aske's Knights Academy" | Department for Education | n=359 | sum=68220009.15
+  'The Knights Templar School' | Department for Education | n=332 | sum=50109780.17
+  'Knights Brown Construction Ltd' | Bristol City Council | n=42 | sum=3950921.66
+  'Haberdasher’s Aske’s Knights Temple Grove' | Department for Education | n=22 | sum=2126175.09
+  "Haberdasher's Aske's Knights Temple Grove" | Department for Education | n=13 | sum=1016024.94
+  'THE KNIGHTS TEMPLAR SCHOOL' | Department for Education | n=10 | sum=1533746.75
+  'HABERDASHERS ASKE KNIGHTS ACADEMY' | Department for Education | n=5 | sum=190167.69
+  'Knights Training Academy' | Department for Education | n=5 | sum=167203.86
+  'KNIGHTS TEMPLAR TAXI' | UK Trade and Investment | n=4 | sum=1750.53
+  'KNIGHTS PLC' | Transport for Greater Manchester | n=2 | sum=10033.00
+  'Colchester Institute Corps c/o Knights' | HM Revenue and Customs | n=1 | sum=41000.00
+  'DAISY KNIGHTS LTD' | UK Trade and Investment | n=1 | sum=991.33
+  'DIRECT MEATS (KNIGHTS FARM) LTD' | UK Trade and Investment | n=1 | sum=2945.55
+  'KNIGHTS GLASS' | Department for Environment, Food and Rural Affairs | n=1 | sum=816.00
+  'Knights' | Rushmoor Borough Council | n=1 | sum=377.00
+
+=== ghost (1) ===
+  'Ghost Hill Infant and Nursery School' | Department for Education | n=43 | sum=2096927.76
+
+=== monster (15) ===
+  'MONSTER GOVERNMENT SOLUTIONS' | Department for Work and Pensions | n=114 | sum=28199336.53
+  'MOBILE MONSTERS LEVY' | Foreign, Commonwealth and Development Office (FCDO) | n=15 | sum=11919.43
+  'MONSTER CLEANING COMPANY (M D SIMCOX)' | Former council of North Yorkshire | n=14 | sum=6116.26
+  'GUY WIMPORY T/AS  SPONSOR MONSTER' | Royal Borough of Greenwich | n=10 | sum=10230.00
+  'OFFICE MONSTER' | Foreign, Commonwealth and Development Office (FCDO) | n=4 | sum=8918.90
+  'WWW.UKKITMONSTER.CO.UK' | Foreign, Commonwealth and Development Office (FCDO) | n=4 | sum=8616.80
+  'MONSTER PET SUPPLIES LLP' | UK Trade and Investment | n=3 | sum=5699.40
+  'LITTLE MONSTER ADVERTISING LTD' | Transport for Greater Manchester | n=2 | sum=1450.00
+  'MOBILE MONSTER' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=1912.55
+  'MONSTER WORLDWIDE DEUT' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=1837.59
+  'GUY WIMPORY T/AS  SEA - SPONSOR MONSTER' | Royal Borough of Greenwich | n=1 | sum=1500.00
+  'MONSTER' | Foreign and Commonwealth Office | n=1 | sum=1280.35
+  'MONSTER SWEDEN' | Foreign and Commonwealth Office | n=1 | sum=886.57
+  'SQ *MONSTER SOUND PROD' | Foreign and Commonwealth Office | n=1 | sum=1215.90
+  'SQ MONSTER SOUND PROD' | Foreign and Commonwealth Office | n=1 | sum=520.35
+
+=== ninja (2) ===
+  'RED NINJA LTD' | UK Trade and Investment | n=3 | sum=3000.00
+  'RED NINJA' | Transport for Greater Manchester | n=1 | sum=900.00
+
+=== banana (6) ===
+  'RED BANANA WIRELESS LTD' | UK Trade and Investment | n=6 | sum=3000.00
+  'SH Pratt (Bananas) Ltd' | Department of Health and Social Care | n=3 | sum=106881.78
+  'BANANA MOON CLOTHING' | Foreign, Commonwealth and Development Office (FCDO) | n=2 | sum=1587.50
+  'BANANA FINGERS LTD' | Natural History Museum | n=1 | sum=12.49
+  'BANANA LIFE INVESTMENT' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=815.48
+  'BANANA MOON WORKSHOP' | Foreign and Commonwealth Office | n=1 | sum=857.37
+
+=== sparkle (10) ===
+  'Sparklean Services Nig Ltd' | Department for International Development | n=189 | sum=310114.35
+  'SPARKLEAN SERVICES NIG' | Foreign, Commonwealth and Development Office (FCDO) | n=38 | sum=46745.07
+  'SPARKLEAN SERVICES NIG LTD' | Foreign, Commonwealth and Development Office (FCDO) | n=8 | sum=205703.88
+  'TI SPARKLE UK LIMITED' | Ministry of Housing, Communities and Local Government | n=7 | sum=241528.00
+  'SPARKLE GOLD RETAIL VE' | Foreign, Commonwealth and Development Office (FCDO) | n=4 | sum=4109.44
+  'SPARKLES DAY NURSERY' | North Yorkshire Council | n=3 | sum=5831.11
+  'SPARKLE & LIGHT LTD' | UK Trade and Investment | n=1 | sum=1250.00
+  'SPARKLE AND SHINE' | North Yorkshire Council | n=1 | sum=1200.00
+  'Sparkle Suppliers' | Department for International Development | n=1 | sum=14739.58
+  'The Daily Sparkle' | South Gloucestershire Council | n=1 | sum=588.00
+
+=== cheeky (2) ===
+  'CHEEKY PRODUCTIONS LTD' | UK Trade and Investment | n=1 | sum=1000.00
+  'THE CHEEKY MONKEY CO LTD T/A MELT' | UK Trade and Investment | n=1 | sum=1250.00
+
+=== wig (7) ===
+  'Saint John Fisher Catholic Voluntary Academy, Wigs' | Department for Education | n=9 | sum=491481.36
+  'Saint John Fisher Catholic Voluntary Academy  Wigs' | Department for Education | n=2 | sum=93886.63
+  'The Whitehall & Industry Group (WIG)' | Equality and Human Rights Commission | n=2 | sum=4095.00
+  'PEN & WIG' | Natural History Museum | n=1 | sum=128.95
+  'Saint John Fisher Catholic Voluntary Academy   Wigs' | Department for Education | n=1 | sum=54338.63
+  'Saint John Fisher Catholic Voluntary Academy Wigs' | Department for Education | n=1 | sum=54338.65
+  'Shepperton Wig Company' | Rushmoor Borough Council | n=1 | sum=1000.00
+
+=== corgi (4) ===
+  'Corgi Technical Services Ltd' | Bristol City Council | n=8 | sum=12665.00
+  'CORGI TECHNICAL SERVICES LTD' | Royal Borough of Greenwich | n=2 | sum=3292.80
+  'CORGI DIRECT' | Royal Borough of Greenwich | n=1 | sum=512.70
+  'GRAFTON MERCHANTING GB LTD T/A CORGI DIRECT' | Royal Borough of Greenwich | n=1 | sum=512.73
+
+=== trump (1) ===
+  'TRUMP INTERNATIONAL GO' | Foreign and Commonwealth Office | n=3 | sum=2360.00
+
+=== squirrel (4) ===
+  'SQUIRREL MEDICAL' | Shropshire Community Health NHS Trust | n=2 | sum=1074.00
+  'MR B SQUIRRELL#DX 453' | Ministry of Justice | n=1 | sum=36525.00
+  'RED SQUIRREL PROPERTY SHOP LIMITED' | Royal Borough of Greenwich | n=1 | sum=1150.00
+  'Red Squirrel Survival Trust' | Department for Environment, Food and Rural Affairs | n=1 | sum=80938.00
+
+=== weasel (1) ===
+  'WEASELTRON ENTERTAINMENT LIMITED' | UK Trade and Investment | n=1 | sum=441.55
+
+=== toad (1) ===
+  'Toad Hall Pre School' | Plymouth City Council | n=1 | sum=18838.52
+
+=== frog (13) ===
+  'Eat That Frog C.I.C.' | Department for Education | n=82 | sum=3019119.52
+  'RED FROG HIRE LTD' | HM Revenue and Customs | n=48 | sum=3565056.23
+  'Frog Software Training Ltd' | Uttlesford District Council | n=23 | sum=25734.60
+  'GOLDEN FROG PUBLIC RELATIONS LTD' | North Yorkshire Council | n=10 | sum=13365.63
+  'FROG BY ADAM HANDL' | Foreign and Commonwealth Office | n=4 | sum=4250.00
+  'EAT THAT FROG CIC' | Department for Work and Pensions | n=3 | sum=117764.00
+  'Eat That Frog CIC' | Bristol City Council | n=1 | sum=7866.67
+  'FROG BY ADAM' | Foreign and Commonwealth Office | n=1 | sum=1400.00
+  'FROG LIFE 631' | Department for Environment, Food and Rural Affairs | n=1 | sum=1468.80
+  'Frog Cables' | Department for International Development | n=1 | sum=2481.36
+  'RICHARD FLOWER T/A FUZZY-FROG GAMES' | UK Trade and Investment | n=1 | sum=500.00
+  'Red Frog Hire Limited' | HM Revenue and Customs | n=1 | sum=162103.20
+  'The  Tall Frog' | Foreign, Commonwealth and Development Office (FCDO) | n=1 | sum=709.50
+
+=== mole (19) ===
+  'MOLE VALLEY DC' | Ministry of Housing, Communities and Local Government | n=431 | sum=22114528.89
+  'MOLE VALLEY DISTRICT COUNCIL' | Department for Work and Pensions | n=88 | sum=2414063.00
+  'MOLE GROUNDWORKS' | Blaby District Council | n=60 | sum=137673.25
+  'MOLE VALLEY FARMERS' | Department for Environment, Food and Rural Affairs | n=17 | sum=15412.32
+  'MOLE VALLEY DISTRICT COUNCIL' | Ministry of Defence | n=8 | sum=1809284.42
+  'MOLE VALLEY FARMERS      FROME' | Department for Environment, Food and Rural Affairs | n=6 | sum=7045.58
+  'MOLE VALLEY FARMERS      ST COLUMB MAJ' | Department for Environment, Food and Rural Affairs | n=3 | sum=3515.41
+  'MOLE RESTAURANTE MEXIC' | Natural History Museum | n=2 | sum=88.43
+  'MOLE SOLUTIONS' | Transport for Greater Manchester | n=2 | sum=11500.00
+  'MOLE VALLEY DISTRICT COUNCIL' | Cabinet Office | n=2 | sum=53841.00
+  'MOLE VALLEY DISTRICT COUNCIL' | Department of Health and Social Care | n=2 | sum=181261.40
+  'MOLE VALLEY FARMERS      BRIDGWATER' | Department for Environment, Food and Rural Affairs | n=2 | sum=2641.44
+  'CASCADE DRINKS/MOLES BREWERY' | UK Trade and Investment | n=1 | sum=83.32
+  'MOLE ENGINEERING (WIRRAL) LTD' | Transport for Greater Manchester | n=1 | sum=1762.00
+  'MOLE ENGINEERING LTD' | UK Trade and Investment | n=1 | sum=552.14
+  'MOLE VALLEY DISTRICT COUNCIL (G)' | Home Office | n=1 | sum=27264.00
+  'MOLE VALLEY FARMERS      NEWTON ABBOT' | Department for Environment, Food and Rural Affairs | n=1 | sum=870.58
+  'MOLE VALLEY FARMERS      ST COLUMB' | Department for Environment, Food and Rural Affairs | n=1 | sum=952.38
+  'Mole Valley Farmers' | Plymouth City Council | n=1 | sum=592.20
+
+=== otter (6) ===
+  'SPOTTY OTTER LTD T/A LITTLE TREKKERS' | UK Trade and Investment | n=4 | sum=1500.00
+  'OTTER.AI' | Foreign, Commonwealth and Development Office (FCDO) | n=3 | sum=2657.89
+  'Otter Nurseries Pl' | Plymouth City Council | n=2 | sum=3518.80
+  'BISHOP OTTER ACADEMY TRUST' | Department for Education | n=1 | sum=30000.00
+  'OTTER WATERSPORTS' | Department for Environment, Food and Rural Affairs | n=1 | sum=1127.52
+  'Otter.Ai' | The National Archives | n=1 | sum=542.40
+
+=== beaver (15) ===
+  'Beaver Road Primary School' | Department for Education | n=182 | sum=15186714.66
+  'Beaver Green Primary School' | Department for Education | n=78 | sum=7836782.72
+  'BEAVER HEALTHCARE EQUIPMENT (T/A OCURA HEALTHCARE FURNITURE)' | Shropshire Community Health NHS Trust | n=37 | sum=14923.66
+  'BEAVER HEALTHCARE EQUIPMENT' | Shropshire Community Health NHS Trust | n=21 | sum=19136.83
+  'BEAVER BUS' | Blaby District Council | n=16 | sum=9016.00
+  'R.S.BEAVER LIMITED' | Ministry of Defence | n=15 | sum=1306579.49
+  'BEAVER SOLUTIONS' | Ministry of Housing, Communities and Local Government | n=12 | sum=9936.00
+  'Beaver Electrical Ltd' | Bristol City Council | n=11 | sum=47947.40
+  'BEAVER ROAD PRIMARY SCHOOL' | Department for Education | n=6 | sum=294294.00
+  'Beaver Maintenance Limited' | South Gloucestershire Council | n=2 | sum=3865.21
+  'BEAVER 84' | Department for Environment, Food and Rural Affairs | n=1 | sum=952.92
+  'BEAVER 84' | Ministry of Defence | n=1 | sum=29428.34
+  'BEAVER TOOL HIRE/CHICH' | Department for Environment, Food and Rural Affairs | n=1 | sum=1443.00
+  'BEAVER-VISITEC INTERNATIONAL SALES LTD' | Portsmouth Hospital NHS Trust | n=1 | sum=-37256.76
+  'Beaver  Plants Ltd' | Rushmoor Borough Council | n=1 | sum=356.80

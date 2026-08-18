@@ -1,0 +1,671 @@
+
+=== Capita (\bCAPITA\b) — 146 strings, GBP 39,265,665,831 ===
+   35,610,511,570    1,042tx  1pub  2010-04..2014-07  [Department for Education              ] |CAPITA TP NATWEST|
+    2,685,144,898   24,487tx 20pub  2010-04..2026-06  [Department for Work and Pensions      ] |CAPITA BUSINESS SERVICES LTD|
+      246,522,344      817tx  1pub  2010-04..2014-07  [Department for Education              ] |CAPITA TP HSBC|
+      101,025,488    9,052tx 15pub  2010-04..2023-06  [Cabinet Office                        ] |CAPITA RESOURCING LTD|
+       87,031,023      237tx 16pub  2010-04..2026-05  [Home Office                           ] |Capita Business Services Ltd|
+       86,247,560      134tx  1pub  2011-08..2017-03  [Department for Education              ] |CAPITA LIFE & PENSIONS SERVICES LTD|
+       66,071,809      268tx  4pub  2010-04..2021-01  [Department for Education              ] |CAPITA BUSINESS SERVICES|
+       47,157,147      172tx  5pub  2010-07..2022-10  [Department for Work and Pensions      ] |CAPITA|
+       37,942,832      221tx  1pub  2017-04..2022-03  [Department for Education              ] |CAPITA PLC|
+       31,789,654      137tx  2pub  2012-03..2026-06  [Department for Work and Pensions      ] |CAPITA CUSTOMER MANAGEMENT LTD|
+       26,448,889    1,967tx  1pub  2012-10..2019-12  [Department for Work and Pensions      ] |CAPITA CIVIL SERVICE LEARNING|
+       25,065,931       90tx  1pub  2021-03..2022-03  [Department for Education              ] |Capita Employee Benefits Ltd|
+       24,557,315    1,679tx  4pub  2010-04..2016-03  [Department for Work and Pensions      ] |CAPITA RESOURCING LIMITED|
+       16,429,271      668tx  9pub  2010-04..2017-05  [Department for Education              ] |CAPITA SYMONDS LTD|
+       15,531,101      238tx  1pub  2020-12..2026-04  [HM Revenue and Customs                ] |CAPITA CONSULTING|
+       15,441,560      533tx  1pub  2012-02..2017-06  [Royal Borough of Greenwich            ] |CAPITA IT SERVICES (BSF) LIMITED|
+       13,496,120      773tx  1pub  2012-02..2020-03  [Ministry of Defence                   ] |CAPITA SECURE INFORMATION SOLUTIONS LIMITED|
+        7,366,841       78tx  1pub  2010-04..2017-05  [Department for Education              ] |VEREDUS C/O CAPITA RESOURCING LTD|
+        6,537,121       65tx  2pub  2014-09..2018-09  [Department for Education              ] |CAPITA PROPERTY & INFRASTRUCTURE LTD|
+        6,007,994       13tx  1pub  2021-08..2023-06  [Department for Work and Pensions      ] |CAPITA BUSINESS SERVICES LTD#3WAY|
+        5,791,284       43tx  2pub  2010-04..2013-10  [Department for Education              ] |CAPITA EDUCATION RESOURCING|
+        5,444,858       50tx  1pub  2020-03..2024-08  [NHS Business Services Authority       ] |CAPITA IB SOLUTIONS (UK) LTD|
+        5,416,385    1,552tx  1pub  2014-08..2017-11  [Ministry of Housing, Communities and L] |CAPITA BUS. SERV. LTD (CON LAB)|
+        5,229,170      146tx  1pub  2011-03..2011-12  [Home Office                           ] |Capita Secure Information Systems|
+        4,815,565       15tx  4pub  2010-10..2017-08  [Department for Work and Pensions      ] |CAPITA HARTSHEAD|
+        4,346,591      185tx  1pub  2012-01..2012-06  [Home Office                           ] |Capita Secure Information Solution|
+        4,134,504       91tx  1pub  2013-01..2014-01  [Government Legal Department           ] |Capita Resourcing Ltd (Staff)|
+        3,796,542       31tx  1pub  2011-11..2013-02  [Department for International Developme] |CAPITA HELM CORPORATION LTD|
+        3,747,011      145tx  1pub  2012-02..2017-05  [Royal Borough of Greenwich            ] |CAPITA  BUSINESS SERVICES LTD|
+        3,664,535       37tx  1pub  2010-04..2012-01  [HM Revenue and Customs                ] |Capita Health Solutions Limited|
+        3,258,980       25tx  6pub  2012-07..2021-11  [Ministry of Justice                   ] |CAPITA SECURE INFORMATION SOLUTIONS LTD|
+        3,252,706       72tx  7pub  2010-04..2015-12  [Home Office                           ] |Capita Resourcing Ltd|
+        3,235,859      681tx  2pub  2013-11..2022-01  [Department for International Developme] |Capita  Business Services|
+        3,028,165    1,898tx  1pub  2013-09..2015-02  [Department for Education              ] |Capita Resourcing|
+        2,983,031       19tx  1pub  2010-04..2011-06  [Department for Environment, Food and R] |Capita Hartshead Ltd|
+        2,863,092       21tx  1pub  2014-03..2015-03  [Department for Education              ] |CAPITA LTD|
+        2,743,958       38tx  2pub  2013-07..2017-05  [Foreign and Commonwealth Office       ] |CAPITA PROPERTY AND INFRASTRUCTURE LTD|
+        2,520,493        1tx  1pub  2013-09..2013-09  [Department for Education              ] |CAPITA BUSINESS SERV|
+        2,249,282       28tx  2pub  2011-05..2012-05  [National Offender Management Service  ] |CAPITA SECURE INFORMATION SYSTEMS LTD|
+        2,180,161       91tx  1pub  2015-04..2018-05  [Home Office                           ] |CAPITA BUSINESS SERVICES LTD (E)|
+        2,158,082       15tx  2pub  2012-02..2017-06  [Ministry of Justice                   ] |CAPITA SECURE INFORMATION SYSTEMS|
+        2,079,497       25tx  1pub  2019-12..2023-03  [Department for Work and Pensions      ] |CAPITA BUSINESS SERVICES LTD TA KNOWLEDGEPOOL|
+        1,999,659       18tx  1pub  2014-12..2018-01  [Department for Work and Pensions      ] |CAPITA PIP ASSESSMENTS|
+        1,798,760       25tx  2pub  2010-04..2012-08  [Department for Environment, Food and R] |Capita Symonds Ltd|
+        1,518,469       14tx  2pub  2017-03..2022-02  [Department for Education              ] |Capita Property and Infrastructure Limited|
+        1,498,275       29tx  2pub  2013-01..2014-03  [Foreign and Commonwealth Office       ] |CAPITA SYMONDS LIMITED|
+        1,401,983       32tx  1pub  2010-06..2012-08  [Ministry of Justice                   ] |CAPITA HARTSHEAD LTD|
+        1,211,838       37tx  3pub  2010-06..2022-06  [Foreign and Commonwealth Office       ] |CAPITA GROUP PLC|
+        1,108,281       21tx  1pub  2022-07..2024-02  [Bristol City Council                  ] |Pay360 Ltd (By Capita)|
+          948,504      550tx  1pub  2014-07..2017-11  [Ministry of Housing, Communities and L] |CAPITA BUS. SERV. LTD (CSL)|
+          940,737       27tx  1pub  2014-06..2015-01  [Department of Health and Social Care  ] |CAPITA BUSINESS SERVICES LTD (CL1 ONLY)|
+          915,914       18tx  1pub  2010-07..2013-10  [Ministry of Housing, Communities and L] |CAPITA BUSINESS|
+          886,087       18tx  2pub  2010-05..2012-05  [National Institute for Health and Care] |CAPITA BUSINESS TRAVEL|
+          867,037       12tx  2pub  2011-12..2013-05  [Ministry of Justice                   ] |CAPITA SYMONDS|
+          823,532       25tx  1pub  2010-04..2015-10  [Department for International Developme] |CAPITA  IT SERVICES|
+          770,737       31tx  1pub  2015-02..2019-07  [Department of Health and Social Care  ] |CAPITA BUSINESS SERVICES LTD CL1 ONLY|
+          738,616       16tx  1pub  2016-01..2017-03  [Department for Education              ] |VEREDUS TA CAPITA RESOURCING LTD|
+          733,122        7tx  1pub  2023-08..2024-05  [Department for Energy Security and Net] |Capita Pension Solutions Ltd|
+          678,297      131tx  1pub  2012-02..2013-10  [Department for International Developme] |CAPITA LEARNING &DEVELOPMENT|
+          630,952       40tx  2pub  2011-03..2013-01  [Ministry of Defence                   ] |CAPITA SECURE INFORMATION SYSTEMS LIMITED|
+          595,392       20tx  2pub  2011-06..2015-03  [The Pennine Acute Hospitals NHS Trust ] |CAPITA IB SOLUTIONS UK LTD|
+          553,403        6tx  1pub  2010-04..2010-08  [Ministry of Housing, Communities and L] |CAPITA COMMUNICATIONS|
+          543,367        5tx  1pub  2019-04..2019-08  [Department for Work and Pensions      ] |CAPITA BUSINESS SERVICES LTD T/A KNOWLEDGEPOOL|
+          493,973        2tx  1pub  2013-06..2013-06  [Department for Education              ] |Capita BusinessServices Ltd|
+          473,285      151tx  1pub  2014-01..2017-04  [Royal Borough of Greenwich            ] |CAPITA  RESOURCING LTD|
+          455,471       19tx  1pub  2010-04..2016-01  [Ministry of Housing, Communities and L] |CAPITA CONFERENCES|
+          449,738       17tx  1pub  2010-10..2014-12  [Ministry of Defence                   ] |Capita Resourcing Limited|
+          446,625       53tx  3pub  2015-03..2022-02  [Rushmoor Borough Council              ] |Capita Secure Information Solutions Ltd|
+          431,302        8tx  1pub  2020-03..2025-07  [Uttlesford District Council           ] |Capita Secure Info Solutions Ltd|
+          362,679       12tx  1pub  2015-03..2016-11  [United Lincolnshire Hospitals NHS Trus] |CAPITA PROPERY & INFRASTRUCTURE LTD|
+          344,366        7tx  1pub  2013-07..2014-07  [Ministry of Defence                   ] |Capita Hartshead EM|
+          328,441        6tx  1pub  2011-07..2016-11  [Department for Work and Pensions      ] |CAPITA HEALTH SOLUTIONS|
+          277,681        3tx  1pub  2018-12..2019-01  [The Pennine Acute Hospitals NHS Trust ] |Capita Property And Infrastructure Ltd|
+          256,574       47tx  2pub  2013-01..2018-10  [Ministry of Defence                   ] |CAPITA BUSINESS SERVICES LIMITED|
+          231,166        3tx  1pub  2015-05..2016-06  [Home Office                           ] |CAPITA IT SERVICES|
+          219,122       13tx  2pub  2013-12..2017-11  [Department for Education              ] |Capita Business Services|
+          197,433        8tx  1pub  2012-06..2013-05  [Home Office                           ] |CAPITA CONSULTING LTD|
+          194,857        7tx  1pub  2012-11..2015-10  [Ministry of Defence                   ] |CAPITA HEALTH AND WELLBEING LTD|
+          190,880       35tx  1pub  2016-04..2018-01  [Department for International Developme] |Capita Business Serivces Ltd|
+          179,227        3tx  2pub  2010-05..2010-11  [Ministry of Defence                   ] |Capita Business Travel|
+          177,609        9tx  3pub  2015-05..2017-11  [Department for Education              ] |Capita Ltd|
+          169,842        5tx  2pub  2012-03..2014-01  [Government Legal Department           ] |Capita Secure Information Solutions|
+          161,975        3tx  1pub  2022-03..2023-03  [Maidstone and Tunbridge Wells NHS Trus] |CAPITA IB SOLUTIONS LIMITED|
+          161,846        3tx  1pub  2013-03..2013-09  [Ministry of Defence                   ] |CAPITA HARTSHEAD EM|
+          161,271        5tx  1pub  2014-06..2015-07  [Ministry of Defence                   ] |THE CAPITA GROUP PLC|
+          156,114        4tx  2pub  2015-03..2025-10  [Ministry of Defence                   ] |Capita Business Services Limited|
+          153,000        1tx  1pub  2011-11..2011-11  [Department for Environment, Food and R] |Capita Consortium Nominees No 1 & No 2 Ltd|
+          145,624      208tx  3pub  2010-06..2021-11  [Rushmoor Borough Council              ] |Capita|
+          139,436        4tx  1pub  2014-09..2015-03  [Home Office                           ] |CAPITA TRAVEL AND EVENTS LTD|
+          134,871        1tx  1pub  2012-02..2012-02  [HM Revenue and Customs                ] |Capita Health Services Limited|
+          122,251       63tx  1pub  2013-01..2018-12  [Blaby District Council                ] |CAPITA BUSINESS SERVICESLTD|
+          107,998        4tx  2pub  2014-09..2020-08  [The Pennine Acute Hospitals NHS Trust ] |Capita Ib Solutions (Uk) Ltd|
+          101,375       18tx  1pub  2010-10..2011-10  [South Gloucestershire Council         ] |Capita SHG Resourcing|
+           95,944       30tx  1pub  2011-06..2014-06  [Rushmoor Borough Council              ] |Capita Ib Solutions|
+           94,942        1tx  1pub  2017-09..2017-09  [Foreign and Commonwealth Office       ] |CAPITA TRANSLATION AND INTERPRETING LTD|
+           92,713        3tx  1pub  2012-06..2014-06  [Department for Education              ] |THE DEANERY CHURCH OF ENGLAND HIGH GOVERNORS CAPITA|
+           90,693        3tx  1pub  2013-05..2014-05  [Coventry and Warwickshire Partnership ] |Capita IB Solutions (UK) Ltd|
+           85,070        2tx  1pub  2018-05..2018-05  [Ministry of Defence                   ] |CAPITA TRAVEL AND EVENTS LIMITED|
+           81,000        3tx  1pub  2018-04..2018-10  [Coventry and Warwickshire Partnership ] |Capita Secure Info Solutions Ltd (IBS)|
+           80,054        8tx  1pub  2014-07..2016-12  [Royal Borough of Greenwich            ] |CAPITA TREASURY SOLUTIONS LTD|
+           74,210       11tx  1pub  2011-04..2012-03  [Transport for Greater Manchester      ] |CAPITA GWENT LTD|
+           73,549        3tx  1pub  2013-12..2015-11  [HM Revenue and Customs                ] |CAPITA SYMONDS (NATIONAL GRID|
+           64,573        2tx  1pub  2012-03..2012-03  [Coventry and Warwickshire Partnership ] |Capita IB Solutions (Uk) Ltd|
+           63,565        2tx  1pub  2016-02..2016-02  [Department for Education              ] |CAPITA TRAVEL & EVENTS|
+           58,550        1tx  1pub  2026-06..2026-06  [Department for Work and Pensions      ] |CAPITA PENSION SOLUTIONS LTD|
+           56,701        3tx  1pub  2015-12..2015-12  [Ministry of Housing, Communities and L] |CAPITA BUSINESS SERVICES (USE 44656|
+           53,978        9tx  1pub  2022-03..2023-06  [Rushmoor Borough Council              ] |Capita Ib Solutions Limited|
+           51,931        2tx  1pub  2014-02..2014-09  [Home Office                           ] |CAPITA RESOURCING LIMITED T/A VEREDUS|
+           51,520        1tx  1pub  2022-08..2022-08  [HM Revenue and Customs                ] |CAPITA RESOURCING T/AS VEREDUS|
+           49,400       10tx  1pub  2014-08..2017-09  [Blaby District Council                ] |CAPITA TREASURY SOLUTIONS LIMITED|
+           48,314        1tx  1pub  2011-02..2011-02  [Ministry of Justice                   ] |CAPITA CIVIL SUPERANNUATION|
+           44,460        8tx  1pub  2016-09..2017-02  [Department for International Developme] |Capita ITPS|
+           43,667       48tx  6pub  2011-04..2019-04  [Foreign and Commonwealth Office       ] |CAPITA BUS SVS-MOTO|
+           41,246        1tx  1pub  2010-06..2010-06  [Department of Health and Social Care  ] |CAPITA SHG RESOURCING|
+           39,514        1tx  1pub  2016-09..2016-09  [Royal Borough of Greenwich            ] |CAPITA IT SERVICES LTD T/A NETWORK TECHNOLOGY SOLU|
+           33,405        1tx  1pub  2010-04..2010-04  [UK Commission for Employment and Skill] |Capita Resourcing Ltd t/a Veredus|
+           32,850        1tx  1pub  2024-03..2024-03  [United Lincolnshire Hospitals NHS Trus] |Capita It Services Limited|
+           31,044        1tx  1pub  2013-03..2013-03  [Government Legal Department           ] |Capita Symonds|
+           30,858        1tx  1pub  2012-03..2012-03  [National Institute for Health and Care] |CAPITA RESOURCING|
+           29,349        1tx  1pub  2017-06..2017-06  [Department for Education              ] |THE DEANERY C OF E HIGH GOVERNORS CAPITA|
+           29,022        1tx  1pub  2010-07..2010-07  [Cabinet Office                        ] |CAPITA SYMONDS (FORMERLY INVENTURES LTD)|
+           28,923        1tx  1pub  2017-09..2017-09  [Coventry and Warwickshire Partnership ] |Capita Property and Infrastructure|
+           27,295        6tx  1pub  2012-08..2012-11  [UK Trade and Investment               ] |CAPITA RESOURCING LTD T/A VEREDUS EXECUTIVE RESOURCING|
+           17,382        9tx  1pub  2013-11..2015-06  [Eden District Council                 ] |CAPITA PROPERTY CONSULTANCY|
+           15,649        6tx  1pub  2010-05..2015-01  [Rushmoor Borough Council              ] |Capita Software Services Ltd|
+           13,220        6tx  1pub  2012-04..2017-05  [Royal Borough of Greenwich            ] |CAPITA GAS REGISTRATION AND ANCILLARY SERV LTD|
+           12,844        9tx  4pub  2011-11..2020-10  [Department of Health and Social Care  ] |CAPITA BUSINESS SERVS|
+           12,443        5tx  1pub  2022-07..2025-12  [Bristol City Council                  ] |Capita Pension Solutions Limited|
+           10,944        1tx  1pub  2011-06..2011-06  [Equality and Human Rights Commission  ] |Capita Conferences Administration|
+           10,309        3tx  1pub  2013-01..2013-03  [Ministry of Housing, Communities and L] |CAPITA FINANCIAL RESOURCING|
+            9,782        8tx  1pub  2010-09..2011-03  [Ministry of Housing, Communities and L] |*CAPITA SYMONDS LTD|
+            9,360        1tx  1pub  2010-05..2010-05  [The National Archives                 ] |CAPITA ASSURANCE AND TESTING|
+            4,302        1tx  1pub  2015-01..2015-01  [Department for International Developme] |Capita Travel and Events|
+            4,066        1tx  1pub  2011-06..2011-06  [Ministry of Defence                   ] |CAPITA HEALTH SOLUTIONS LIMITED|
+            2,826        7tx  1pub  2013-10..2015-10  [Rushmoor Borough Council              ] |Capita Conferences|
+            2,500        1tx  1pub  2020-06..2020-06  [Bristol City Council                  ] |Capita Property & Infrastructure Ltd|
+            1,715        4tx  1pub  2015-01..2015-01  [Rushmoor Borough Council              ] |capita|
+            1,554        1tx  1pub  2015-02..2015-02  [Department for International Developme] |Capita Travel & Events|
+            1,010        1tx  1pub  2015-12..2015-12  [Plymouth City Council                 ] |Capita Software Services|
+              793        1tx  1pub  2013-08..2013-08  [Department for Education              ] |CAPITA LEARNING & DEVELOPMENT|
+              669        1tx  1pub  2011-12..2011-12  [Department for Environment, Food and R] |CAPITA BUS SVS-MOTO      LONDON|
+              621        1tx  1pub  2010-09..2010-09  [Department for Digital, Culture, Media] |CAPITA TRVL  LI196493|
+              523        1tx  1pub  2012-11..2012-11  [Natural History Museum                ] |Capita Health Solutions|
+               40        5tx  1pub  2014-05..2014-12  [Shropshire Community Health NHS Trust ] |CAPITA TRANSLATION AND INTERPRETING|
+                0        2tx  1pub  2024-05..2024-05  [UK Shared Business Services           ] |Capita Health and Wellbeing Ltd|
+             -279        1tx  1pub  2013-07..2013-07  [Ministry of Housing, Communities and L] |*CAPITA BUSINESS SERV(SE 407766)|
+
+=== Serco (SERCO) — 39 strings, GBP 3,722,668,571 ===
+    2,077,452,933   45,867tx 14pub  2010-04..2026-06  [Department of Health and Social Care  ] |SERCO LTD|
+    1,097,234,905    5,645tx  5pub  2010-04..2026-06  [Ministry of Defence                   ] |SERCO LIMITED|
+      134,887,296      136tx  2pub  2012-07..2018-07  [Department for Work and Pensions      ] |SERCO PUBLIC SERVICES LTD|
+      105,294,430    1,175tx  3pub  2011-01..2022-03  [Department for Education              ] |Serco Limited|
+       96,766,935      364tx  1pub  2010-05..2013-03  [Home Office                           ] |SERCO  LTD|
+       88,176,302       80tx  1pub  2010-04..2012-08  [HM Revenue and Customs                ] |Serco Assurance|
+       42,028,156    3,619tx  7pub  2010-05..2026-05  [Rushmoor Borough Council              ] |Serco Ltd|
+       29,183,511      148tx  1pub  2010-05..2013-08  [Home Office                           ] |SERCO|
+       19,581,356      235tx  1pub  2012-08..2016-07  [Ministry of Defence                   ] |SERCO LIMITED (LABORATORY ASSETS ONLY)|
+       16,132,728      167tx  2pub  2011-06..2016-02  [Ministry of Housing, Communities and L] |SERCO REGIONAL SERVICES LTD|
+        4,015,276       42tx  1pub  2012-07..2014-06  [Department of Health and Social Care  ] |SERCO LISTENING LTD|
+        2,951,212       16tx  1pub  2011-02..2012-11  [Home Office                           ] |SERCO JUSTICE|
+        2,673,011        9tx  2pub  2010-06..2012-12  [HM Revenue and Customs                ] |SERCO ASSURANCE|
+        2,047,018       23tx  1pub  2020-05..2022-03  [Department for Education              ] |SERCO HOLDINGS LIMITED|
+        1,146,904        5tx  1pub  2010-09..2014-12  [Ministry of Defence                   ] |SERCO GROUP PLC|
+          975,952        6tx  1pub  2016-12..2017-11  [Ministry of Housing, Communities and L] |SERCO REGIONAL SERVICES LIMITED|
+          563,139       14tx  1pub  2010-07..2012-06  [Ministry of Defence                   ] |SERCO TECHNICAL CONSULTANCY SERVICES|
+          561,896        6tx  1pub  2010-04..2013-09  [Cabinet Office                        ] |SERCO CONSULTING|
+          448,861       14tx  1pub  2010-04..2011-04  [HM Revenue and Customs                ] |Serco Integrated Services|
+           70,897       41tx  1pub  2011-05..2013-03  [Department for International Developme] |Hanoi Toserco|
+           69,700        2tx  1pub  2010-11..2010-11  [Ministry of Defence                   ] |SERCO LEISURE OPERATING LTD|
+           66,413        3tx  2pub  2010-04..2014-05  [UK Commission for Employment and Skill] |Serco|
+           54,756        2tx  1pub  2010-04..2010-04  [Animal and Plant Health Agency        ] |Serco Ltd - Government Consult|
+           54,477        2tx  1pub  2015-03..2015-03  [Plymouth City Council                 ] |Serco Regional Services|
+           45,417       30tx  2pub  2013-07..2021-11  [Foreign and Commonwealth Office       ] |PHONG VE HANOI TOSERCO|
+           44,180        1tx  1pub  2019-04..2019-04  [HM Revenue and Customs                ] |SERCO SHARED SERVICE CENTRE|
+           44,057        1tx  1pub  2010-12..2010-12  [Home Office                           ] |SERCO (G)|
+           30,622        1tx  1pub  2010-07..2010-07  [Department for Environment, Food and R] |Serco Consulting Ltd~114639650|
+           23,246       16tx  2pub  2014-06..2021-06  [Foreign and Commonwealth Office       ] |HANOI TOSERCO|
+           18,613       17tx  4pub  2011-06..2012-09  [Department for Environment, Food and R] |SERCO DEFENCE SCIENCE|
+            5,823        2tx  1pub  2023-11..2023-11  [Foreign, Commonwealth and Development ] |CORPORACION SERCOPLUS|
+            4,153        4tx  3pub  2013-09..2016-09  [Foreign and Commonwealth Office       ] |SERCO EPC|
+            3,800        1tx  1pub  2014-06..2014-06  [UK Trade and Investment               ] |SERCO PROJECTS LLC|
+            2,326        1tx  1pub  None..None  [Ministry of Housing, Communities and L] |SERCO GOVERNMENT CONSULTING|
+            2,312        2tx  1pub  2022-09..2022-09  [Foreign, Commonwealth and Development ] |HANOI TOSERCO 1|
+            2,213       28tx  1pub  2014-04..2015-07  [Shropshire Community Health NHS Trust ] |SERCO LEISURE|
+            2,063        1tx  1pub  2013-06..2013-06  [Foreign and Commonwealth Office       ] |HANOI TOSERCO-MOTO|
+              900        1tx  1pub  2012-02..2012-02  [Department for Environment, Food and R] |SERCO DEFENCE SCIENCE    YORK|
+              783        1tx  1pub  2024-06..2024-06  [Foreign, Commonwealth and Development ] |SERCORIEGO|
+
+=== G4S (G4S|GROUP 4) — 95 strings, GBP 2,990,294,200 ===
+      501,604,210      601tx  1pub  2018-06..2026-04  [Department for Work and Pensions      ] |G4S SECURE SOLUTIONS UK LTD-2WM|
+      381,910,404    1,142tx  1pub  2010-05..2018-06  [Home Office                           ] |G4S CARE & JUSTICE SERVICES (UK) LTD|
+      377,790,023      786tx  1pub  2018-07..2026-05  [Department for Work and Pensions      ] |G4S SECURE SOLUTIONS UK LTD|
+      351,727,166       80tx  1pub  2020-07..2022-03  [Department of Health and Social Care  ] |G4S FACILITIES MANAGEMENT (UK) LIMITED|
+      288,507,205      220tx  1pub  2010-05..2012-10  [National Offender Management Service  ] |G4S CARE & JUSTICE SERVICES LTD|
+      272,702,583   84,109tx  1pub  2011-07..2023-07  [Department for Work and Pensions      ] |G4S REGIONAL MANAGEMENT UK & I LTD|
+      237,420,504      908tx  3pub  2014-07..2026-06  [Department for Work and Pensions      ] |G4S FACILITIES MANAGEMENT (UK) LTD|
+      211,454,040      456tx  2pub  2021-05..2026-04  [Department of Health and Social Care  ] |G4S SECURE SOLUTIONS (UK) LIMITED|
+       91,149,076    1,057tx  3pub  2010-07..2020-11  [Ministry of Justice                   ] |G4S INTEGRATED SERVICES (UK) LTD|
+       54,470,035       59tx  2pub  2013-05..2020-12  [Foreign and Commonwealth Office       ] |G4S RISK MANAGEMENT LTD|
+       49,696,288      172tx  2pub  2016-11..2023-10  [Department for Work and Pensions      ] |G4S GOVERNMENT AND OUTSOURCING SERVICES UK LTD|
+       40,842,480       84tx  1pub  2013-06..2015-04  [Foreign and Commonwealth Office       ] |G4S RISK MANAGEMENT LTD FORMALLY ARMOURGROUP SERVICES LTD|
+       20,233,821       67tx  2pub  2014-06..2017-06  [Home Office                           ] |G4S|
+       17,247,767       17tx  1pub  2015-03..2017-06  [The Pennine Acute Hospitals NHS Trust ] |G4S FINANCE SHARED SERVS CENTRE|
+       14,536,054       46tx  1pub  2015-01..2019-12  [Department for Work and Pensions      ] |G4S LTD|
+       12,325,790       52tx  1pub  2010-04..2015-04  [Ministry of Defence                   ] |G4S FSI LIMITED|
+       10,758,568       27tx  2pub  2017-10..2022-04  [The Pennine Acute Hospitals NHS Trust ] |G4s Facilities Management (Uk) Ltd|
+        8,671,616       23tx  1pub  2013-09..2015-10  [Department for Work and Pensions      ] |G4S CUSTOMER SUPPORT SERVICES|
+        7,881,203       30tx  1pub  2013-06..2016-03  [Foreign and Commonwealth Office       ] |G4S SECURE SOLUTIONS UK|
+        6,164,912       55tx  1pub  2011-04..2015-05  [Ministry of Defence                   ] |G4S CARE AND JUSTICE SERVICES (UK) LIMITED|
+        4,687,826       17tx  1pub  2014-06..2015-03  [Foreign and Commonwealth Office       ] |G4S SECURE SOLUTIONS (UK)|
+        3,556,148       14tx  1pub  2010-05..2011-07  [Home Office                           ] |G4S JUSTICE SERVICES LTD - AIM|
+        3,547,347       13tx  1pub  2016-12..2018-01  [Department for International Developme] |G4S Risk Management Ltd|
+        2,986,650       69tx  2pub  2013-07..2022-06  [Foreign and Commonwealth Office       ] |G4S SECURITY SERVICES KENYA LTD|
+        2,854,882       13tx  2pub  2013-02..2021-08  [Foreign, Commonwealth and Development ] |G4S RISK MANAGEMENT LIMITED|
+        1,963,312       57tx  2pub  2014-07..2022-06  [Foreign and Commonwealth Office       ] |G4S SECURITY SERVICE DRC SPRL|
+        1,869,215       56tx  3pub  2011-07..2022-06  [Foreign and Commonwealth Office       ] |G4S SECURITY SERVICES|
+        1,412,946       44tx  1pub  2010-06..2014-09  [Ministry of Defence                   ] |G4S ASSESSMENT SERVICES (UK) LIMITED|
+        1,316,370       37tx  2pub  2016-08..2022-05  [Foreign, Commonwealth and Development ] |G4S SECURE SOLUTIONS INT JORDAN|
+        1,104,093      424tx  5pub  2014-04..2025-12  [Home Office                           ] |G4S CASH SOLUTIONS (UK) LTD|
+          861,230       33tx  2pub  2016-03..2021-12  [Foreign and Commonwealth Office       ] |G4S SECURITY SERIVICES GHANA LTD|
+          839,826       23tx  2pub  2016-11..2022-06  [Foreign, Commonwealth and Development ] |G4S SECURE SOLUTIONS|
+          800,548       21tx  1pub  2020-09..2022-06  [Foreign, Commonwealth and Development ] |G4S SECURITY SERVICES UGANDA LTD|
+          552,920       13tx  1pub  2023-03..2023-12  [Maidstone and Tunbridge Wells NHS Trus] |G4S HEALTH SERVICES (UK) LTD|
+          493,942        5tx  1pub  2013-05..2013-05  [Home Office                           ] |G4S RISK MANAGEMENT LTD (Afghanistan)|
+          493,205       18tx  1pub  2010-09..2014-05  [Home Office                           ] |G4S CASH SERVICES (UK) LIMITED|
+          412,058       14tx  1pub  2013-08..2014-06  [Foreign and Commonwealth Office       ] |G4S SECURITY SERVICE (DRC) SPRL|
+          363,230       85tx  6pub  2011-04..2025-11  [Home Office                           ] |G4S SECURE SOLUTIONS (UK) LTD|
+          359,212        1tx  1pub  2012-06..2012-06  [National Offender Management Service  ] |G4s Justice Services Ltd|
+          317,908        2tx  1pub  2011-10..2011-11  [Department for Work and Pensions      ] |G4S FORENSIC MEDICAL SERVICES UK LTD|
+          270,338      233tx  4pub  2012-01..2024-10  [Foreign, Commonwealth and Development ] |G4S SECURE|
+          253,196        5tx  1pub  2015-08..2015-08  [Foreign and Commonwealth Office       ] |G4S SECURE SOLUTIONS SA|
+          192,284        2tx  1pub  2012-07..2013-07  [Home Office                           ] |G4S TECHNOLOGY LIMITED|
+          185,936        5tx  1pub  2010-11..2011-05  [Department for Environment, Food and R] |G4S Policing Solutions Ltd|
+          179,836        7tx  1pub  2013-06..2014-05  [Foreign and Commonwealth Office       ] |G4S SECURITY SERVICES OY|
+          156,069        3tx  1pub  2012-05..2012-07  [National Offender Management Service  ] |G4S INTEGRATED SERVICES UK LTD|
+          141,500        2tx  1pub  2018-03..2018-06  [Department for International Developme] |G4S Secure Solutions Sierra Leone Ltd|
+          121,256        2tx  1pub  2011-12..2012-01  [Ministry of Defence                   ] |G4S SECURITY LTD|
+          118,960       38tx  1pub  2011-04..2014-06  [Department for International Developme] |G4S FACILITY SERVICES (INDIA) PVT. L|
+           81,839       47tx  1pub  2014-07..2018-05  [Transport for Greater Manchester      ] |G4S FINANCE SHARED SERVICE CENTRE|
+           61,801       40tx  1pub  2011-04..2014-06  [Transport for Greater Manchester      ] |G4S CASH SERVICES UK LTD|
+           57,123        1tx  1pub  2011-11..2011-11  [Ministry of Defence                   ] |G4S SECURITY|
+           56,568       77tx  2pub  2010-11..2014-03  [Natural History Museum                ] |G4S Cash Services (UK) Ltd|
+           52,704        2tx  1pub  2015-01..2015-02  [Foreign and Commonwealth Office       ] |G4S SECURITY SERIVICES GHANA LIMITED|
+           51,379        2tx  1pub  2013-07..2013-08  [Foreign and Commonwealth Office       ] |G4S SECURITY SERVICES (UGANDA) LTD|
+           45,950        1tx  1pub  2011-06..2011-06  [HM Revenue and Customs                ] |G4S Integrated Services (UK) Ltd|
+           39,169        1tx  1pub  2019-08..2019-08  [Department for Work and Pensions      ] |G4S FIRE & SECURITY SYSTEMS|
+           38,649        3tx  2pub  2010-05..2014-07  [National Offender Management Service  ] |G4S Secure Solutions (UK) Ltd|
+           35,826        1tx  1pub  2013-08..2013-08  [Foreign and Commonwealth Office       ] |GROUP 4 SECURICOR LLC|
+           30,385        2tx  2pub  2013-03..2015-01  [Home Office                           ] |G4S POLICING SOLUTIONS LTD|
+           30,181        1tx  1pub  2011-07..2011-07  [Home Office                           ] |Group 4|
+           25,176        1tx  1pub  2013-03..2013-03  [Home Office                           ] |G4S ASSESSMENT SERVICES (UK) LTD|
+           21,906        1tx  1pub  2013-04..2013-04  [United Lincolnshire Hospitals NHS Trus] |G4S TECHNOLOGY LTD|
+           20,895        1tx  1pub  2013-11..2013-11  [Ministry of Defence                   ] |G4S INTEGRATED SERVICES(UK)  LTD|
+           19,113       18tx  1pub  2014-12..2017-12  [Foreign and Commonwealth Office       ] |G4S SECURITY SE|
+           15,563       12tx  1pub  2015-03..2015-12  [Plymouth City Council                 ] |G4S Cash Services (UK) Limited|
+           15,545       16tx  2pub  2018-01..2024-08  [Foreign, Commonwealth and Development ] |G4S SECURITY SYST A MO|
+           14,558       10tx  1pub  2021-03..2021-10  [Foreign, Commonwealth and Development ] |G4S FACILITY SERVICES|
+            9,159        9tx  1pub  2021-08..2024-03  [Foreign, Commonwealth and Development ] |G4S SECURITY SER725197|
+            7,499       24tx  1pub  2019-04..2024-08  [Uttlesford District Council           ] |G4S Cash Solutions (UK) Limited|
+            6,109        3tx  1pub  2013-04..2014-03  [Natural History Museum                ] |G4S International Logistics (UK) Ltd|
+            5,040        6tx  1pub  2017-01..2017-06  [Royal Borough of Greenwich            ] |WAYNE LLEWELLYN T/A FRIENDS OF BOXING4SCHOOLS|
+            4,468        2tx  1pub  2015-07..2018-03  [Foreign and Commonwealth Office       ] |G4S RISK|
+            4,385        5tx  1pub  2016-08..2017-03  [Foreign and Commonwealth Office       ] |G4S SECURITY SYSTEMS S|
+            4,200        2tx  1pub  2013-10..2014-09  [Royal Borough of Greenwich            ] |FRIENDS OF BOXING4SCHOOLS|
+            4,199        6tx  1pub  2012-04..2014-11  [Royal Borough of Greenwich            ] |G4S SECURE SOLUTIONS (UK)LTD|
+            3,002        4tx  1pub  2011-02..2011-04  [South Gloucestershire Council         ] |G4S Assessment Services (UK) Limited|
+            2,850        3tx  1pub  2015-09..2015-12  [Plymouth City Council                 ] |CSE Assessment Services G4S|
+            2,566        5tx  1pub  2014-06..2015-11  [Foreign and Commonwealth Office       ] |G4S SECURE SOLUTIONS S|
+            2,339        2tx  1pub  2015-12..2016-01  [Foreign and Commonwealth Office       ] |G4S SECURE SOLUTIONS I|
+            2,192        1tx  1pub  2012-10..2012-10  [Department for International Developme] |G4S Specialist Training (UK) Ltd|
+            2,139        3tx  1pub  2023-04..2024-05  [Foreign, Commonwealth and Development ] |G4S (BOTSWANA) BLOCK 3|
+            2,003        2tx  1pub  2022-02..2022-03  [Foreign, Commonwealth and Development ] |G4S SECURITY SER|
+            1,914        2tx  1pub  2017-02..2017-08  [Foreign and Commonwealth Office       ] |G4S SECURITY SERVICE|
+            1,880        1tx  1pub  2022-03..2022-03  [Foreign, Commonwealth and Development ] |AMAZON.CO.UK 2X58G4SO4|
+            1,740        1tx  1pub  2016-03..2016-03  [Royal Borough of Greenwich            ] |G4S INVESTIGATION SOLUTIONS (UK) LTD|
+            1,560        1tx  1pub  2010-11..2010-11  [South Gloucestershire Council         ] |G4S Assessment Services (UK) Ltd|
+            1,491        2tx  1pub  2014-03..2014-11  [Department for International Developme] |G4S Integrated services (UK) Ltd|
+            1,212        2tx  1pub  2013-11..2013-11  [Foreign and Commonwealth Office       ] |G4S TECH|
+            1,050        2tx  1pub  2016-04..2016-07  [Foreign and Commonwealth Office       ] |GROUP 4 SECURICOR|
+              576        1tx  1pub  2012-03..2012-03  [Department for Environment, Food and R] |G4S SECURE               SUTTON|
+              300        1tx  1pub  2012-08..2012-08  [UK Trade and Investment               ] |G4S REGIONAL MANAGEMENT (UK & I) LTD|
+                6        1tx  1pub  2014-02..2014-02  [The National Archives                 ] |G4S INTEGRATED SERVICE|
+                0        2tx  1pub  2012-09..2012-09  [Home Office                           ] |G4S CARE AND JUSTICE SERVICES(MIDLANDS & EAST OF ENGLAND)|
+                0        2tx  1pub  2012-09..2012-09  [Home Office                           ] |G4S CARE AND JUSTICE SERVICES(NORTH EAST YORKSHIRE & HUMBER)|
+
+=== Mitie (MITIE) — 68 strings, GBP 2,082,831,839 ===
+      741,092,893    2,070tx  1pub  2021-02..2026-06  [Department for Work and Pensions      ] |MITIE FM LTD|
+      431,294,376    3,483tx  1pub  2021-08..2026-06  [Department for Work and Pensions      ] |MITIE FM LTD - 2WM|
+      349,992,308      566tx  5pub  2010-04..2026-04  [Department of Health and Social Care  ] |MITIE SECURITY LTD|
+      152,001,937      285tx  1pub  2011-06..2018-06  [Home Office                           ] |MITIE CARE & CUSTODY LTD|
+       99,843,768      689tx  1pub  2021-10..2025-02  [HM Revenue and Customs                ] |Mitie Limited|
+       72,209,016      722tx  3pub  2012-03..2014-12  [Ministry of Justice                   ] |MITIE JUSTICE LTD|
+       48,978,270      343tx  3pub  2020-01..2024-09  [HM Revenue and Customs                ] |Mitie Security Limited|
+       38,292,653       25tx  1pub  2021-06..2022-03  [Department of Health and Social Care  ] |MITIE LIMITED|
+       23,004,973      409tx  1pub  2018-12..2026-06  [Department for Work and Pensions      ] |MITIE PROPERTY SERVICES UK LTD|
+       20,456,217      466tx  4pub  2010-05..2014-05  [Ministry of Justice                   ] |MITIE TECHNICAL FACILITIES MANAGEMENT LTD|
+       20,111,389       24tx  1pub  2025-04..2026-06  [HM Revenue and Customs                ] |MITIE LTD (MFS)|
+       19,284,920       45tx  1pub  2025-07..2026-06  [HM Revenue and Customs                ] |MITIE FM LIMITED|
+        9,520,583      430tx  1pub  2010-04..2012-09  [Ministry of Housing, Communities and L] |MITIE MANAGED SERVICES (SOUTHERN) L|
+        8,412,479      115tx  3pub  2010-04..2012-06  [Ministry of Housing, Communities and L] |MITIE MANAGED SERVICES LTD|
+        7,803,130    1,285tx  1pub  2011-02..2018-05  [Department for International Developme] |MITIE Technical Facilities Management Ltd|
+        5,438,831       11tx  2pub  2010-05..2020-02  [HM Revenue and Customs                ] |MITIE SECURITY LIMITED|
+        4,080,610       55tx  2pub  2021-02..2026-08  [Foreign, Commonwealth and Development ] |Mitie FM Ltd|
+        3,922,840      108tx  3pub  2011-11..2017-06  [Royal Borough of Greenwich            ] |MITIE TECHNICAL FACILITIES MANAGEMENT|
+        3,574,789      844tx  2pub  2010-04..2015-12  [Cabinet Office                        ] |MITIE BUSINESS SERVICES LTD|
+        2,274,258       31tx  1pub  2010-04..2012-09  [Department for Environment, Food and R] |MITIE Security London Ltd|
+        2,241,614       18tx  1pub  2023-04..2025-06  [Department for Work and Pensions      ] |UTILYX LTD TA MITIE ENERGY|
+        2,189,267       18tx  1pub  2017-11..2018-11  [The Pennine Acute Hospitals NHS Trust ] |Mitie Security|
+        1,760,476       28tx  1pub  2025-12..2026-06  [Department for Work and Pensions      ] |MITIE SECURITY LTD - 2WM|
+        1,462,536       18tx  1pub  2012-01..2013-07  [Ministry of Justice                   ] |MITIE FACILITIES SERVICES LIMITED|
+        1,279,816       46tx  1pub  2020-01..2024-02  [Bristol City Council                  ] |Mitie Property Services UK Limited|
+        1,195,348      146tx  1pub  2010-08..2012-10  [Ministry of Housing, Communities and L] |MITIE FAC SERV LTD (STH WEST & WALE|
+        1,148,799        2tx  1pub  2025-03..2025-03  [HM Revenue and Customs                ] |Mitie LTD (MFS)|
+        1,129,699        6tx  1pub  2020-04..2020-04  [HM Revenue and Customs                ] |MITIE Security Limited|
+          928,918        1tx  1pub  2019-12..2019-12  [HM Revenue and Customs                ] |MITIE SEQURITY LIMITED|
+          879,925      353tx  3pub  2010-04..2013-07  [Ministry of Housing, Communities and L] |MITIE CATERING SERVICES LTD|
+          750,594       30tx  1pub  2010-04..2012-10  [Ministry of Defence                   ] |MITIE CLEANING & ENVIRONMENTAL  SERVICES LIMITED|
+          705,799       17tx  1pub  2011-03..2012-04  [Department for Education              ] |MITIE CLEANING & ENVIRONMENTAL|
+          612,274       11tx  2pub  2011-03..2019-02  [Ministry of Justice                   ] |MITIE TILLEY ROOFING LTD|
+          592,749       10tx  1pub  2010-08..2011-03  [Department for Education              ] |MITIE CLEANING & ENVIRONMENTAL SERVICES LTD|
+          469,780       93tx  2pub  2017-04..2025-05  [Department for Education              ] |MITIE GROUP PLC|
+          460,662        8tx  1pub  2011-02..2012-07  [Ministry of Justice                   ] |MITIE PROPERTY SERVICES (UK) LTD (MPS)|
+          430,877      127tx  1pub  2011-04..2014-12  [Transport for Greater Manchester      ] |MITIE CLEANING & SUPPORT SERVS LTD|
+          361,200        2tx  1pub  2010-05..2010-05  [Department for Education              ] |MITIE ENGINEERING MAINTENANCE NORTH  LTD|
+          278,009        7tx  1pub  2010-04..2010-07  [Department for Education              ] |MITIE CLEANING SOUTH EAST LTD|
+          239,704       18tx  1pub  2025-12..2026-06  [Department for Work and Pensions      ] |MITIE TECHNICAL FM LTD-2WM|
+          236,693        8tx  1pub  2014-09..2016-03  [Royal Borough of Greenwich            ] |MITIE PROPERTY SERVICES (UK) LTD-SOUTHERN|
+          228,191        5tx  1pub  2010-09..2011-11  [National Offender Management Service  ] |MITIE ENGINEERING SERVICES (BRISTOL) LTD|
+          206,536        3tx  1pub  2011-04..2011-06  [Ministry of Defence                   ] |Mitie Infrastructure Ltd|
+          194,654        6tx  2pub  2010-07..2012-07  [Cabinet Office                        ] |MITIE DOCUMENT SOLUTIONS|
+          179,301        6tx  1pub  2010-05..2010-09  [Ministry of Defence                   ] |Mitie Engineering Maintenance|
+          156,432       11tx  1pub  2010-05..2010-05  [Department for Education              ] |MITIE ENGINEERING MAINTENANCE LTD|
+          142,650      232tx  1pub  2011-06..2017-05  [Department for International Developme] |MITIE Catering Services Ltd|
+          115,463        6tx  1pub  2010-07..2010-12  [Department for Education              ] |MITIE CLEANING LTD|
+          115,398        1tx  1pub  2016-01..2016-01  [HM Revenue and Customs                ] |MITIE TECHNICAL FACILITIES MANAGEME|
+           87,110        1tx  1pub  2021-01..2021-01  [The Pennine Acute Hospitals NHS Trust ] |Mitie Technical Facilities Management Ltd|
+           74,104        2tx  1pub  2010-07..2010-08  [National Offender Management Service  ] |MITIE PROPERTY SERVICES (UK) LIMITED|
+           57,542        2tx  1pub  2013-08..2013-09  [Ministry of Defence                   ] |MITIE PROPERTY SERVICES (UK) LTD|
+           51,538        1tx  1pub  2019-05..2019-05  [Ministry of Defence                   ] |MITIE PROPERTY SERVICES (UK)  LIMITED|
+           47,964        1tx  1pub  2012-04..2012-04  [National Offender Management Service  ] |MITIE PEST CONTROL LTD|
+           43,483        3tx  1pub  2010-04..2011-01  [Ministry of Housing, Communities and L] |MITIE FACILITIES SERVICES LTD|
+           43,149        1tx  1pub  2010-07..2010-07  [National Offender Management Service  ] |MITIE ENGINEERING SERVICES (NORTHERN REGION) LTD|
+           43,146        1tx  1pub  2010-12..2010-12  [Ministry of Defence                   ] |Mitie Technical Facilties Management Ltd|
+           35,104        1tx  1pub  2010-09..2010-09  [National Offender Management Service  ] |MITIE AIR CONDITIONING (WEST) LIMITED|
+           26,029        1tx  1pub  2010-05..2010-05  [Cabinet Office                        ] |MITIE BUSINESS SERVICES|
+           23,588        1tx  1pub  2010-04..2010-04  [Department for Education              ] |MITIE CLEANING NORTH LTD|
+            3,939        6tx  1pub  2011-05..2011-07  [Transport for Greater Manchester      ] |MITIE WASTE & ENVIRONMENTAL LTD|
+            3,720        1tx  1pub  2015-03..2015-03  [Royal Borough of Greenwich            ] |MITIE TILLEY ROOFING LIMITED|
+            2,500        5tx  1pub  2019-10..2019-10  [Department for International Developme] |Mitie|
+            2,375        1tx  1pub  2013-01..2013-01  [Transport for Greater Manchester      ] |MITIE COMPLIANCE|
+            1,403        1tx  1pub  2015-02..2015-02  [Department for International Developme] |MITIE Security (London) Limited|
+              878        3tx  1pub  2019-09..2019-09  [Shropshire Community Health NHS Trust ] |MITIE LANDSCAPES|
+              665        1tx  1pub  2013-07..2013-07  [Department for International Developme] |MITIE CLEANING ( SE ) LTD|
+                0        2tx  1pub  2012-02..2012-02  [Ministry of Housing, Communities and L] |*MITIE SECURITY (LONDON) LTD|
+
+=== Sodexo (SODEXH?O) — 32 strings, GBP 1,529,294,449 ===
+      794,923,711    7,793tx  5pub  2010-04..2026-06  [Ministry of Defence                   ] |SODEXO LTD|
+      309,546,589       90tx  1pub  2020-07..2021-07  [Department of Health and Social Care  ] |SODEXO LTD.|
+      233,605,279      385tx  1pub  2013-05..2018-06  [Home Office                           ] |SODEXO MOTIVATION SOLUTIONS UK LTD|
+       94,621,093      222tx  2pub  2010-05..2017-03  [Home Office                           ] |SODEXHO PASS LTD|
+       74,519,104      165tx  1pub  2012-01..2013-04  [Home Office                           ] |SODEXO PASS LTD|
+        8,861,025       49tx  1pub  2012-02..2015-12  [Home Office                           ] |SODEXO PROPERTY SOLUTIONS LTD|
+        5,943,281       12tx  1pub  2013-07..2013-07  [Home Office                           ] |SODEXO|
+        4,770,816       20tx  1pub  2020-05..2020-09  [Department of Health and Social Care  ] |SODEXO  LTD|
+        1,435,888       15tx  2pub  2012-04..2015-06  [Department for Education              ] |SODEXHO PRESTIGE LTD|
+          503,331        8tx  1pub  2016-01..2016-07  [Ministry of Defence                   ] |SODEXO CYPRUS LTD|
+          233,626        2tx  1pub  2011-05..2011-12  [Ministry of Defence                   ] |SODEXHO PRESTIGE LIMITED|
+           94,519       33tx  1pub  2016-08..2018-12  [Blaby District Council                ] |SODEXO MOTIVATION  - DIRECT DEBIT ONLY|
+           87,027        2tx  1pub  2010-07..2011-02  [Ministry of Defence                   ] |SODEXO DEFENCE SERVICES LIMITED|
+           33,576       22tx  1pub  2010-06..2016-01  [UK Trade and Investment               ] |SODEXO LTD T/A SODEXO PRESTIGE|
+           23,966       12tx  1pub  2011-07..2012-08  [Department for Environment, Food and R] |SODEXHO /AIRMILES/|
+           19,845        4tx  1pub  2022-11..2024-02  [Foreign, Commonwealth and Development ] |PARAM/  SODEXO AS|
+           16,763        6tx  1pub  2013-06..2019-07  [Ministry of Defence                   ] |SODEXO MOTIVATION SOLUTIONS U.K. LIMITED|
+            6,748        3tx  1pub  2020-03..2020-12  [Bristol City Council                  ] |Sodexo Limited|
+            6,726        9tx  2pub  2011-11..2015-10  [UK Trade and Investment               ] |SODEXO LTD T/A SODEXO DEFENCE SERVICES|
+            5,671        5tx  1pub  None..None  [London Borough of Richmond Upon Thames] |Sodexo Education Services Ltd|
+            5,528        1tx  1pub  2012-05..2012-05  [Royal Borough of Greenwich            ] |SODEXHO MESSES|
+            4,859        2tx  1pub  2022-03..2022-06  [Foreign, Commonwealth and Development ] |SODEXO BENEFITS AND RE|
+            4,396        4tx  1pub  2010-05..2011-03  [UK Trade and Investment               ] |SODEXO PRESTIGE LTD|
+            4,072        4tx  1pub  2017-10..2018-11  [Blaby District Council                ] |SODEXO MOTIVATION SOLUTIONS UK LIMITED|
+            4,054        3tx  1pub  2023-02..2023-05  [Foreign, Commonwealth and Development ] |SODEXO BRITISH EMBASSY|
+            3,498        4tx  2pub  2011-11..2016-07  [Department for Environment, Food and R] |SODEXO-BSS|
+            3,498        8tx  2pub  2012-08..2023-03  [Rushmoor Borough Council              ] |Sodexo Ltd|
+            2,790        3tx  2pub  2016-04..2019-05  [Department for Education              ] |SODEXO PRESTIGE|
+            1,535        1tx  1pub  2014-05..2014-05  [Foreign and Commonwealth Office       ] |SODEXHO PARLEMENT EUR|
+              840        2tx  1pub  2014-06..2015-07  [Blaby District Council                ] |SODEXO LIMITED|
+              769        1tx  1pub  2011-01..2011-01  [Rushmoor Borough Council              ] |Sodexho Limited|
+               24        1tx  1pub  2015-03..2015-03  [UK Trade and Investment               ] |SODEXO DEFENCE SERVICES LTD T/A WARMINSTER INFANTRY|
+
+=== Amey (AMEY) — 26 strings, GBP 2,787,857,897 ===
+      693,846,569      882tx  1pub  2017-08..2026-03  [Transport for Greater Manchester      ] |KEOLIS AMEY METROLINK LTD|
+      672,534,610      594tx  1pub  2014-06..2018-10  [Ministry of Defence                   ] |CARILLIONAMEY LIMITED|
+      540,150,851      236tx  1pub  2014-07..2018-09  [Ministry of Defence                   ] |CARILLIONAMEY (HOUSING PRIME) LIMITED|
+      306,315,572      387tx  1pub  2018-10..2020-03  [Ministry of Defence                   ] |AMEY DEFENCE SERVICES LIMITED|
+      186,620,609       61tx  1pub  2018-10..2020-03  [Ministry of Defence                   ] |AMEY DEFENCE SERVICES (HOUSING) LIMITED|
+      154,903,882    1,952tx  6pub  2010-05..2026-06  [Home Office                           ] |AMEY COMMUNITY LTD|
+      107,853,690      585tx  1pub  2010-11..2013-05  [Home Office                           ] |AMEY COMMUNITY|
+       93,236,950       65tx  1pub  2011-08..2012-10  [National Offender Management Service  ] |GEO AMEY PECS LTD|
+        8,313,386      755tx  1pub  2014-07..2018-09  [Eden District Council                 ] |AMEY PLC|
+        6,480,000       91tx  1pub  2021-12..2026-03  [Transport for Greater Manchester      ] |AMEY RAIL LTD|
+        5,942,847       10tx  1pub  2015-03..2015-12  [Plymouth City Council                 ] |Amey L G Ltd|
+        5,257,898      199tx  1pub  2020-01..2026-03  [Transport for Greater Manchester      ] |AMEY MAP SERVICES LTD|
+        2,058,724       16tx  1pub  2010-09..2012-07  [National Offender Management Service  ] |Amey Limited|
+        1,353,888        2tx  1pub  2015-12..2015-12  [Plymouth City Council                 ] |Amey LG Limited|
+        1,258,485       11tx  2pub  2011-03..2020-03  [Ministry of Defence                   ] |Amey Community Ltd|
+          558,571       25tx  2pub  2012-05..2018-01  [Department for Education              ] |AMEY|
+          492,621       91tx  1pub  2014-07..2021-12  [Transport for Greater Manchester      ] |AMEY (CONSULTING & RAIL)|
+          293,550       33tx  1pub  2013-01..2014-01  [Government Legal Department           ] |Amey Community Limited|
+          131,517       35tx  2pub  2013-06..2026-03  [Transport for Greater Manchester      ] |AMEY LG LTD|
+           68,483        4tx  1pub  2017-04..2018-05  [Transport for Greater Manchester      ] |AMEY OW LIMITED|
+           56,609       20tx  1pub  2015-06..2020-11  [Transport for Greater Manchester      ] |AMEY METERING LTD|
+           48,891        1tx  1pub  2020-07..2020-07  [Department for Education              ] |KEOLIS AMEY DOCKLANDS LIMITED|
+           40,694        1tx  1pub  2011-06..2011-06  [National Offender Management Service  ] |Amey|
+           19,439        1tx  1pub  2024-09..2024-09  [Transport for Greater Manchester      ] |Keolis Amey Metrolink Ltd|
+           18,609        2tx  1pub  2024-05..2024-05  [Transport for Greater Manchester      ] |AMEY LG LIMITED|
+              951        3tx  1pub  2012-11..2013-11  [Natural History Museum                ] |AMEYZOO|
+
+=== Interserve (INTERSERVE) — 40 strings, GBP 1,904,389,576 ===
+      798,080,260    2,398tx  1pub  2010-04..2020-03  [Ministry of Defence                   ] |INTERSERVE (DEFENCE) LTD|
+      253,528,549      729tx  1pub  2018-05..2021-03  [Department for Work and Pensions      ] |INTERSERVE FACILITIES MANAGEMENT LTD-2WM|
+      171,127,594    1,173tx  2pub  2010-11..2020-07  [Home Office                           ] |INTERSERVE FACILITIES MANAGEMENT|
+      150,163,065    5,958tx  3pub  2010-04..2022-06  [Foreign and Commonwealth Office       ] |INTERSERVE FM LTD|
+       93,631,892      593tx  1pub  2014-10..2018-06  [Home Office                           ] |INTERSERVE (FACILITIES MANAGEMENT) LTD.|
+       68,626,430      404tx  2pub  2012-02..2021-01  [Department for Education              ] |INTERSERVE FACILITIES MANAGEMENT LTD|
+       66,070,608      267tx  7pub  2011-08..2021-05  [National Offender Management Service  ] |INTERSERVE CONSTRUCTION LTD|
+       58,273,065   21,316tx  1pub  2012-05..2018-07  [Department for Work and Pensions      ] |INTERSERVE WORKING FUTURES|
+       51,781,027      461tx  1pub  2017-11..2022-03  [Department for Education              ] |Interserve Learning & Employment (Services) Ltd|
+       47,103,151      173tx  4pub  2010-04..2012-06  [National Offender Management Service  ] |INTERSERVE PROJECT SERVICES LTD|
+       34,616,651      109tx  1pub  2010-04..2011-09  [Department for Environment, Food and R] |Interserve Project Services Ltd|
+       19,191,062       84tx  1pub  2011-09..2012-09  [Department for Environment, Food and R] |Interserve Construction Ltd|
+       19,004,559    4,564tx  1pub  2012-05..2016-11  [Ministry of Housing, Communities and L] |INTERSERVE (FACILITIES MANAGEMENT)|
+       14,148,108    1,042tx  2pub  2017-01..2021-01  [Department for International Developme] |Interserve Facilities Management Limited|
+       13,628,875       57tx  1pub  2016-12..2018-01  [Department for Education              ] |Interserve Construction Limited|
+       10,225,676       33tx  2pub  2011-07..2019-06  [Ministry of Defence                   ] |INTERSERVE CONSTRUCTION LIMITED|
+        8,988,009       68tx  1pub  2014-09..2014-09  [Home Office                           ] |INTERSERVE LTD|
+        8,967,915       10tx  1pub  2014-07..2015-03  [Department for Education              ] |INTERSERVE|
+        5,324,403       84tx  1pub  2014-03..2015-02  [Department for Education              ] |Interserve Academies Trust|
+        5,162,161       31tx  2pub  2010-10..2012-05  [South Gloucestershire Council         ] |Interserve Project Services Limited|
+        4,236,510        7tx  1pub  2010-05..2011-06  [Home Office                           ] |INTERSERVE PROJECT SERVICES LIMITED|
+          774,918       64tx  2pub  2014-06..2017-05  [Royal Borough of Greenwich            ] |INTERSERVE FS (UK) LTD|
+          469,002        2tx  1pub  2011-05..2012-11  [Home Office                           ] |Interserve (Facilities Mgmt) Ltd|
+          285,000        4tx  1pub  2014-11..2016-04  [Department for Education              ] |INTERSERVE ACADEMIES TRUST|
+          179,914        6tx  1pub  2012-02..2012-08  [Department for Environment, Food and R] |Interserve Site Services|
+          175,805        3tx  1pub  2011-11..2012-05  [Ministry of Defence                   ] |INTERSERVE DEFENCE LTD|
+          144,042      153tx  1pub  2021-09..2024-03  [Foreign, Commonwealth and Development ] |INTERSERVE (FACILITIES|
+          126,905        2tx  1pub  2010-10..2010-10  [Ministry of Justice                   ] |INTERSERVE PROJECT SERVICES  LTD|
+          115,256      334tx  1pub  2013-03..2015-02  [Ministry of Housing, Communities and L] |INTERSERVE (FM) LTD (AUTOGRAPH)|
+          104,086        5tx  2pub  2010-09..2020-01  [Home Office                           ] |Interserve|
+           52,942        4tx  1pub  2015-09..2016-05  [HM Revenue and Customs                ] |INTERSERVE FACILITIES MANAGEMENT LT|
+           34,003        1tx  1pub  2011-12..2011-12  [HM Revenue and Customs                ] |Interserve Facilities Management Li|
+           21,875        1tx  1pub  2012-07..2012-07  [National Offender Management Service  ] |Interserve Facilities Managment Ltd|
+           10,647       11tx  2pub  2017-08..2021-03  [Foreign and Commonwealth Office       ] |INTERSERVE FACILIT|
+            8,140       22tx  1pub  2015-01..2015-08  [Shropshire Community Health NHS Trust ] |INTERSERVE HEALTHCARE|
+            3,793        1tx  1pub  2019-10..2019-10  [Department for International Developme] |Interserve (Facilities Management) LTD|
+            2,658      172tx  1pub  2014-05..2022-09  [Shropshire Community Health NHS Trust ] |INTERSERVE FACILITES MANAGEMENT|
+              516        1tx  1pub  2016-07..2016-07  [Foreign and Commonwealth Office       ] |WWW.INTERSERVE.COM|
+              500        1tx  1pub  2020-01..2020-01  [Department for International Developme] |Interserve FM Ltd|
+                0        2tx  1pub  2011-09..2011-10  [National Offender Management Service  ] |INTERSERVE ENGINEERING SERVICES LTD|
+
+=== Kier (\bKIER\b) — 53 strings, GBP 935,477,871 ===
+      228,122,542      238tx  2pub  2010-04..2011-11  [National Offender Management Service  ] |KIER REGIONAL LTD|
+      160,957,435      231tx  1pub  2016-12..2022-03  [Department for Education              ] |Kier Construction Southern|
+       91,376,839      417tx  4pub  2012-01..2026-06  [Department for Work and Pensions      ] |KIER CONSTRUCTION LTD|
+       53,499,994       68tx  2pub  2014-03..2021-10  [Department for Education              ] |KIER CONSTRUCTION SOUTHERN|
+       52,152,954       52tx  1pub  2017-05..2020-03  [Ministry of Defence                   ] |Kier Graham Defence Limited|
+       44,305,098       67tx  1pub  2016-12..2022-03  [Department for Education              ] |Kier London|
+       42,021,523      103tx  2pub  2012-09..2023-02  [Transport for Greater Manchester      ] |KIER CONSTRUCTION - NORTHERN|
+       36,781,861      123tx  2pub  2018-12..2021-06  [Department for Education              ] |Kier Construction Limited|
+       29,317,492       41tx  1pub  2010-05..2012-09  [National Offender Management Service  ] |KIER NORTHERN|
+       26,976,368       87tx  1pub  2016-12..2022-03  [Department for Education              ] |Kier Construction Central|
+       21,700,230      121tx  1pub  2022-04..2025-05  [Isle of Wight NHS Trust               ] |KIER INFRASTRUCTURE AND OVERSEAS LTD|
+       19,217,876      128tx  1pub  2015-01..2018-11  [United Lincolnshire Hospitals NHS Trus] |KIER SERVICES MAINTENANCE EAST|
+       16,192,956       50tx  1pub  2016-12..2022-03  [Department for Education              ] |Kier Construction Eastern|
+       11,273,586       64tx  1pub  2024-04..2026-06  [Department for Work and Pensions      ] |KIER SERVICES LTD|
+       11,197,601       51tx  1pub  2016-12..2018-01  [Department for Education              ] |Kier - Northern|
+       10,162,433       15tx  1pub  2014-09..2015-03  [Department for Education              ] |KIER CONSTRUCTION SCOTLAND|
+        8,999,821       35tx  2pub  2012-04..2014-02  [Ministry of Justice                   ] |KIER CONSTRUCTION|
+        7,941,138      147tx  4pub  2011-03..2022-12  [Department of Health and Social Care  ] |KIER FACILITIES SERVICES LTD|
+        6,698,337       16tx  1pub  2010-10..2011-11  [South Gloucestershire Council         ] |Kier Regional Limited|
+        6,099,700        8tx  1pub  2014-12..2015-03  [Department for Education              ] |KIER CONSTRUCTION CENTRAL|
+        5,694,242       25tx  1pub  2016-12..2022-03  [Department for Education              ] |Kier Western & Wales|
+        4,894,421       36tx  2pub  2015-08..2021-04  [Ministry of Defence                   ] |KIER CONSTRUCTION LIMITED|
+        4,505,705       21tx  1pub  2016-12..2021-11  [Department for Education              ] |Kier Construction Scotland|
+        4,306,434        8tx  1pub  2014-10..2015-03  [Department for Education              ] |KIER CONSTRUCTION EASTERN|
+        4,178,821       41tx  1pub  2010-05..2013-05  [Home Office                           ] |KIER BUILDING SERVICES|
+        3,587,023       15tx  1pub  2012-02..2012-08  [Royal Borough of Greenwich            ] |KIER BUILDING MAINTENANCE|
+        3,519,632       20tx  1pub  2012-02..2013-03  [Ministry of Justice                   ] |KIER WESTERN|
+        3,117,177        4tx  1pub  2015-01..2015-03  [Department for Education              ] |KIER LONDON|
+        2,571,392        4tx  1pub  2021-05..2021-07  [Department of Health and Social Care  ] |KIER INTEGRATED SERVICES LIMITED|
+        1,825,341        7tx  1pub  2023-08..2025-01  [Bristol City Council                  ] |Kier Transportation Limited|
+        1,480,560       26tx  1pub  2012-09..2016-01  [HM Revenue and Customs                ] |KIER PROPERTY DEVELOPMENTS LTD|
+        1,475,324       35tx  1pub  2010-05..2011-02  [Ministry of Justice                   ] |KIER BUILDING SERVICES ENG|
+        1,349,369        3tx  1pub  2015-01..2015-03  [Department for Education              ] |KIER - NORTHERN|
+        1,305,964        7tx  1pub  2022-09..2023-07  [Bristol City Council                  ] |Kier Highways Limited|
+        1,282,747        5tx  1pub  2014-03..2014-09  [National Institute for Health and Care] |KIER CONSTRUCTION-NORTHERN|
+        1,274,019       25tx  1pub  2014-04..2015-09  [Coventry and Warwickshire Partnership ] |Kier Services Ltd - Maintenance West|
+          984,062        8tx  1pub  2011-02..2012-06  [HM Revenue and Customs                ] |Kier Property Developments Ltd|
+          608,781       20tx  2pub  2017-01..2023-04  [Bristol City Council                  ] |Kier Construction Ltd|
+          488,118        7tx  1pub  2010-07..2012-02  [National Offender Management Service  ] |KIER FACILITIES SERVICES LIMITED|
+          406,348       15tx  1pub  2015-03..2015-12  [Plymouth City Council                 ] |Kier MG Limited (Kier Services)|
+          267,113        3tx  1pub  2019-06..2019-09  [East Sussex Healthcare NHS Trust      ] |KIER CONSTRUCTION - SOUTHERN|
+          228,000        1tx  1pub  2022-10..2022-10  [United Lincolnshire Hospitals NHS Trus] |Kier Services Ltd|
+          196,414        1tx  1pub  2012-03..2012-03  [Royal United Hospital Bath NHS Foundat] |KIER REGIONAL LTD T/A KIER WESTERN|
+          194,883        4tx  2pub  2016-08..2018-11  [Department for Education              ] |KIER BUSINESS SERVICES LTD|
+          191,654        2tx  1pub  2017-02..2017-07  [Department for Education              ] |Kier Business Services|
+          120,719        7tx  1pub  2024-07..2026-03  [Transport for Greater Manchester      ] |KIER INTEGRATED SERVICES|
+          119,737        7tx  1pub  2019-05..2020-11  [Uttlesford District Council           ] |Kier Business Services Ltd|
+          107,271        1tx  1pub  2017-11..2017-11  [Department of Health and Social Care  ] |KIER INFRASTRUCTURE AND OVERSEAS LTD TA KIER HEALTH|
+           98,426        1tx  1pub  2012-03..2012-03  [Victoria & Albert Museum              ] |Wallis Kier Group|
+           87,727        3tx  1pub  2011-04..2011-07  [Ministry of Defence                   ] |Kier Facilities Services Ltd|
+           10,000        1tx  1pub  2016-04..2016-04  [Ministry of Housing, Communities and L] |KIER FOUNDATION|
+            3,662        2tx  1pub  2023-11..2023-11  [Rushmoor Borough Council              ] |Kier Charles Property Services Ltd|
+            1,000        1tx  1pub  2020-12..2020-12  [Bristol City Council                  ] |Kier Living Limited|
+
+=== Sopra Steria (SOPRA|STERIA) — 28 strings, GBP 1,052,497,937 ===
+      421,188,612    1,269tx  9pub  2010-05..2015-03  [Ministry of Justice                   ] |STERIA LTD|
+      198,968,664      681tx  3pub  2015-02..2024-06  [Home Office                           ] |SOPRA STERIA LTD|
+      147,426,299    1,422tx  3pub  2010-04..2015-01  [Ministry of Defence                   ] |STERIA LIMITED|
+      133,946,754      440tx  1pub  2010-05..2014-12  [Home Office                           ] |STERIA UK|
+       81,392,344      410tx  2pub  2015-01..2026-02  [Ministry of Defence                   ] |SOPRA STERIA LIMITED|
+       28,987,961      172tx  2pub  2010-05..2015-02  [Home Office                           ] |STERIA|
+       15,988,782       41tx  4pub  2010-05..2013-09  [Home Office                           ] |Steria Limited|
+       11,184,105        1tx  1pub  None..None  [Ministry of Housing, Communities and L] |STERIA SERVICES LIMITED|
+        4,192,903       26tx  1pub  2010-06..2011-04  [Department for Environment, Food and R] |Steria Limited~105040261|
+        3,187,636       13tx  2pub  2011-05..2011-11  [Home Office                           ] |Steria|
+        2,116,118       22tx  2pub  2015-03..2020-10  [Home Office                           ] |Sopra Steria Limited|
+        1,716,000       15tx  1pub  2014-08..2014-12  [Ministry of Justice                   ] |SOPRA GROUP LTD|
+          915,421       32tx  1pub  2010-05..2012-09  [Home Office                           ] |Steria Ltd|
+          541,803        8tx  1pub  2010-10..2011-05  [Department for Environment, Food and R] |Sopra Group Ltd|
+          441,659        6tx  1pub  2010-07..2010-12  [National Offender Management Service  ] |National Offender Management Services (Steria)|
+          125,644       24tx  1pub  2015-03..2015-12  [Plymouth City Council                 ] |Wisteria House Dementia Care Ltd|
+           81,422       31tx  1pub  2016-10..2017-04  [Transport for Greater Manchester      ] |SOPRA STERIA RECRUITMENT LTD|
+           45,206        2tx  2pub  2020-06..2022-07  [Department for Education              ] |Sopra Steria Ltd|
+           21,483        1tx  1pub  2010-11..2010-11  [Ministry of Housing, Communities and L] |STERIA LTD(USE434628)|
+           16,053       11tx  1pub  2011-01..2011-11  [South Gloucestershire Council         ] |Wisteria House|
+            3,181        5tx  2pub  2015-06..2022-06  [Foreign, Commonwealth and Development ] |CATCAKES REPOSTERIA CR|
+            3,008        5tx  1pub  2022-01..2024-01  [Foreign, Commonwealth and Development ] |FLORISTERIA SIEMPRE VE|
+            2,874        3tx  1pub  2015-06..2016-09  [Blaby District Council                ] |STERIA  LIMITED|
+            1,563        2tx  2pub  2014-11..2022-06  [Foreign and Commonwealth Office       ] |FLORISTERIA DON ELOY|
+            1,419        2tx  1pub  2022-09..2024-09  [Foreign, Commonwealth and Development ] |FLORISTERIA INES-28, C|
+              885        1tx  1pub  2021-11..2021-11  [Foreign, Commonwealth and Development ] |PAYPAL  SOPRANO|
+               81        1tx  1pub  2013-05..2013-05  [Natural History Museum                ] |OSTERIA PANEVINO|
+               62        1tx  1pub  2011-02..2011-02  [Natural History Museum                ] |OSTERIA A LE DUE SPADE|
+
+=== Liberata (LIBERATA) — 9 strings, GBP 113,875,244 ===
+      109,974,059      517tx  7pub  2010-04..2016-07  [Ministry of Justice                   ] |LIBERATA UK LTD|
+        1,584,091       91tx  3pub  2010-06..2014-06  [Department for Digital, Culture, Media] |Liberata UK Ltd|
+        1,006,693        9tx  1pub  2010-04..2016-01  [The National Archives                 ] |MOJ LIBERATA|
+          610,639        6tx  1pub  2014-02..2014-03  [Department for Education              ] |Liberata IT Solutions Ltd t/a Trinit|
+          406,194       15tx  1pub  2014-05..2016-11  [Royal Borough of Greenwich            ] |LIBERATA UK LTD T/AS TRINITY SERVICES|
+          145,820       15tx  1pub  2023-01..2024-04  [Bristol City Council                  ] |Liberata UK Limited t/a CapacityGrid|
+          105,796        2tx  1pub  2011-11..2012-01  [HM Revenue and Customs                ] |HM Courts Service (Liberata UK Ltd)|
+           41,400        1tx  1pub  2013-07..2013-07  [HM Revenue and Customs                ] |HM COURTS SERVICE (LIBERATA UK LTD)|
+              552        1tx  1pub  2015-01..2015-01  [The National Archives                 ] |WWW.LIBERATA.COM|
+
+=== Veolia (VEOLIA|\bONYX\b) — 34 strings, GBP 253,494,679 ===
+      118,494,077      104tx  1pub  2010-04..2020-03  [Ministry of Defence                   ] |VEOLIA WATER NEVIS LIMITED|
+       38,700,696      190tx  2pub  2015-03..2026-07  [East Sussex Healthcare NHS Trust      ] |VEOLIA ENERGY & UTILITY SERVICES UK PLC|
+       32,391,471    2,413tx  1pub  2010-04..2019-08  [Rushmoor Borough Council              ] |Veolia Environmental Services|
+       31,333,327    2,678tx  4pub  2012-02..2026-08  [Royal Borough of Greenwich            ] |VEOLIA ES (UK) LTD|
+        7,749,575       16tx  1pub  2020-04..2021-05  [United Lincolnshire Hospitals NHS Trus] |VEOLIA ES RESOURCE EFFICIENCY LTD|
+        6,957,578       52tx  1pub  2010-10..2019-01  [Ministry of Defence                   ] |VEOLIA WATER OUTSOURCING LIMITED|
+        6,152,444      699tx  1pub  2010-04..2020-03  [Ministry of Defence                   ] |VEOLIA ES (UK) LIMITED|
+        1,663,633       28tx  1pub  2010-04..2012-08  [HM Revenue and Customs                ] |Veolia Environmental Services Plc|
+        1,633,531       30tx  1pub  None..None  [London Borough of Richmond Upon Thames] |Veolia ES (UK) Limited|
+        1,363,690       35tx  1pub  2018-11..2021-08  [Department for Education              ] |VEOLIA ENVIRONNEMENT DEVELOPMENT CENTRE LTD|
+        1,121,182       25tx  1pub  2022-04..2023-03  [United Lincolnshire Hospitals NHS Trus] |Veolia Es (Uk) Ltd|
+        1,075,147       35tx  1pub  2021-02..2026-07  [East Sussex Healthcare NHS Trust      ] |VEOLIA ENVIRONMENTAL SERVICES (UK) PLC|
+        1,053,872       13tx  1pub  2022-01..2024-03  [United Lincolnshire Hospitals NHS Trus] |Veolia Energy & Utility Services Uk Plc|
+          726,843        6tx  1pub  2022-02..2023-04  [United Lincolnshire Hospitals NHS Trus] |Veolia Es Resource Efficiency Ltd|
+          671,022        8tx  1pub  2019-02..2021-04  [The Pennine Acute Hospitals NHS Trust ] |Veolia Chp Uk Ltd|
+          437,417        9tx  1pub  2012-09..2013-05  [HM Revenue and Customs                ] |VEOLIA ENVIRONMENTAL SERVICES PLC|
+          401,122        6tx  1pub  2010-05..2010-10  [Ministry of Defence                   ] |VEOLIA WATER PROJECTS LTD|
+          397,799        2tx  1pub  2011-05..2011-09  [Department for Environment, Food and R] |Veolia Water|
+          364,333        9tx  1pub  2024-04..2025-07  [George Eliot Hospital NHS Trust       ] |VEOLIA ES RESOURCE EFFICIENCY (UK)|
+          296,862        1tx  1pub  2024-06..2024-06  [Department for Energy Security and Net] |Veolia Energy Utility Services Uk Ltd|
+          192,636        6tx  1pub  2021-09..2022-02  [Department for Education              ] |Veolia Environment Development Centre LTD|
+           89,854        3tx  1pub  2010-05..2010-10  [Ministry of Defence                   ] |VEOLIA UMWELTSERVICE NORD-WEST  GMBH|
+           59,534        1tx  1pub  2012-02..2012-02  [Ministry of Defence                   ] |VEOLIA ES FIELD SERVICES LTD|
+           38,564       26tx  1pub  2011-07..2012-09  [Department for Environment, Food and R] |WWW.VEOLIA.CO.UK|
+           33,546        1tx  1pub  2012-01..2012-01  [Ministry of Defence                   ] |VEOLIA WATER|
+           24,052      105tx  1pub  2014-10..2023-08  [Shropshire Community Health NHS Trust ] |VEOLIA WATER TECHNOLOGIES|
+           23,914        8tx  1pub  2017-01..2017-06  [Royal Borough of Greenwich            ] |VEOLIA CHP UK LIMITED|
+           20,455       29tx  1pub  2024-02..2025-11  [Shropshire Community Health NHS Trust ] |VWS (UK) LTD T/A VEOLIA WATER TECHNOLOGIES|
+           12,964        2tx  1pub  2023-05..2023-05  [Bristol City Council                  ] |Veolia ES|
+            5,359        2tx  1pub  2012-04..2012-07  [Ministry of Housing, Communities and L] |VEOLIA ENVIRONMENTAL|
+            4,164        2tx  1pub  2020-11..2024-02  [Foreign, Commonwealth and Development ] |VEOLIA ES CANADA|
+            2,738        1tx  1pub  2012-07..2012-07  [Department for Environment, Food and R] |VEOLIA WATER CTR|
+              733        1tx  1pub  2011-08..2011-08  [Department for Environment, Food and R] |WWW.VEOLIA.CO.UK         01543 455557|
+              544        1tx  1pub  2017-05..2017-05  [Foreign and Commonwealth Office       ] |VEOLIA EAU GD LYON|
+
+=== Biffa (BIFFA) — 5 strings, GBP 3,073,940 ===
+        1,963,594      908tx  3pub  2014-03..2026-06  [HM Revenue and Customs                ] |BIFFA WASTE SERVICES LTD|
+          910,922       57tx  2pub  2010-04..2018-06  [Ministry of Defence                   ] |BIFFA WASTE SERVICES LIMITED|
+          165,771        5tx  2pub  2015-03..2020-05  [HM Revenue and Customs                ] |Biffa Waste Services Ltd|
+           23,363       14tx  2pub  2010-10..2020-10  [Cheltenham Borough Council            ] |Biffa Waste Services Limited|
+           10,291       15tx  1pub  2011-09..2012-09  [Department for Environment, Food and R] |BIFFA WASTE|
+
+=== Suez (\bSUEZ\b|\bSITA\b) — 21 strings, GBP 30,336,691 ===
+       25,297,882       91tx  1pub  2010-10..2011-11  [South Gloucestershire Council         ] |SITA UK LTD|
+        2,295,832       41tx  1pub  2011-01..2012-10  [Victoria & Albert Museum              ] |Cofely GDF Suez|
+        1,175,557       12tx  1pub  2021-04..2022-11  [Department of Health and Social Care  ] |SUEZ RECYCLING AND RECOVERY UK LTD|
+        1,020,098       26tx  1pub  2012-03..2012-07  [National Offender Management Service  ] |GDF SUEZ SALES LTD (GAS)|
+          173,347        1tx  1pub  2011-06..2011-06  [Ministry of Defence                   ] |Suez Canal Authority|
+          132,894        6tx  1pub  2015-10..2016-07  [Ministry of Defence                   ] |ELECTRABEL GDF SUEZ|
+           75,000        1tx  1pub  2019-03..2019-03  [HM Revenue and Customs                ] |SUEZ Recycling and Recovery Holings UK Ltd|
+           59,554        4tx  2pub  2012-09..2013-09  [Ministry of Defence                   ] |SITA UK LIMITED|
+           34,513        1tx  1pub  2010-09..2010-09  [Ministry of Defence                   ] |GDF SUEZ MARKETING LIMITED|
+           22,175        6tx  1pub  2011-04..2016-02  [Rushmoor Borough Council              ] |Sita Uk Ltd|
+           19,252       32tx  3pub  2011-01..2012-09  [Department for Environment, Food and R] |SITA HOLDINGS UK|
+            9,200        2tx  1pub  2011-04..2016-05  [Rushmoor Borough Council              ] |Sita Trust|
+            5,750        1tx  1pub  2016-10..2016-10  [Rushmoor Borough Council              ] |Suez R & R|
+            5,710        1tx  1pub  2011-04..2011-04  [South Gloucestershire Council         ] |Sita UK Ltd|
+            3,972        1tx  1pub  2010-07..2010-07  [Ministry of Defence                   ] |SITA MITTE GMBH & CO. KG.|
+            2,235        1tx  1pub  2013-06..2013-06  [Rushmoor Borough Council              ] |Sita Uk|
+            1,260        1tx  1pub  2017-04..2017-04  [Blaby District Council                ] |SUEZ R&R|
+              692        1tx  1pub  2015-06..2015-06  [Foreign and Commonwealth Office       ] |GDF SUEZ|
+              601        1tx  1pub  2012-07..2012-07  [Department for Environment, Food and R] |SITA HOLDINGS UK         WESTON SUPER|
+              599        1tx  1pub  2012-09..2012-09  [Department for Environment, Food and R] |SITA HOLDINGS UK LTD|
+              569        1tx  1pub  2012-03..2012-03  [Department for Environment, Food and R] |SITA|
+
+=== Carillion (CARILLION|\bEAGA\b|PLANNED MAINTENANCE ENGINEERING) — 47 strings, GBP 2,051,494,900 ===
+      672,534,610      594tx  1pub  2014-06..2018-10  [Ministry of Defence                   ] |CARILLIONAMEY LIMITED|
+      540,150,851      236tx  1pub  2014-07..2018-09  [Ministry of Defence                   ] |CARILLIONAMEY (HOUSING PRIME) LIMITED|
+      489,521,561      472tx  1pub  2010-04..2014-06  [Ministry of Defence                   ] |CARILLIONENTERPRISE LIMITED|
+      235,226,919      166tx  1pub  2011-04..2018-01  [Ministry of Defence                   ] |CARILLION CONSTRUCTION LIMITED|
+       22,648,283       27tx  2pub  2011-04..2015-03  [Department for Education              ] |CARILLION PLC|
+       16,183,596       10tx  1pub  2016-12..2017-11  [Department for Education              ] |Carillion Plc|
+       14,681,612       42tx  1pub  2017-02..2018-06  [Home Office                           ] |CARILLION AMBS LTD T/A CPM|
+       11,541,472      121tx  2pub  2010-05..2021-03  [Department for Education              ] |CARILLION CONSTRUCTION LTD|
+        8,385,943        2tx  1pub  2012-07..2012-07  [Ministry of Defence                   ] |CARILLION ENTERPRISE LIMITED|
+        6,909,571       80tx  1pub  2010-05..2013-01  [Ministry of Justice                   ] |CARILLION PLANNED MAINTENANCE|
+        5,745,658       51tx  1pub  2010-05..2011-11  [National Offender Management Service  ] |CARILLION JM LIMITED|
+        5,477,282       22tx  1pub  2014-08..2016-09  [Home Office                           ] |CARILLION (MAPLE OAK) LTD|
+        5,235,634       10tx  1pub  2017-11..2018-02  [Ministry of Defence                   ] |CARILLIONARAMARK LIMITED|
+        4,218,513       26tx  1pub  2010-07..2012-06  [National Offender Management Service  ] |CARILLION SERVICES 2006 LTD|
+        2,820,028       88tx  1pub  2011-05..2014-05  [Department for Digital, Culture, Media] |Carillion Services Ltd|
+        1,711,244       37tx  1pub  2010-04..2010-08  [Ministry of Defence                   ] |CARILLION (AMBS) LTD|
+        1,347,007        9tx  1pub  2011-04..2013-07  [Department for Digital, Culture, Media] |Carillion Services Limited|
+          785,874        4tx  1pub  2008-12..2009-09  [Ministry of Housing, Communities and L] |CARILLION REGENERATION LTD|
+          746,208       22tx  1pub  2010-04..2011-10  [Ministry of Defence                   ] |Carillion Enterprise Ltd|
+          689,047        2tx  1pub  2018-09..2018-12  [Ministry of Defence                   ] |CARILLION CONSTRUCTION LIMITED - IN LIQUIDATION|
+          621,645        3tx  1pub  2019-01..2019-01  [Department for Education              ] |Carillion PLC (in liquidation)|
+          501,273       14tx  1pub  2010-04..2011-04  [Department for International Developme] |PLANNED MAINTENANCE ENGINEERING LTD|
+          378,803        4tx  1pub  2018-01..2018-02  [Foreign and Commonwealth Office       ] |CARILLION ALAWI LLC|
+          361,169        3tx  1pub  2012-07..2015-01  [Home Office                           ] |CARILLION SERVICES LTD T/A CARILLION FACILITES MANAGEMENT|
+          337,236        2tx  1pub  2013-07..2013-08  [Foreign and Commonwealth Office       ] |AL FUTTAIM CARILLION LLC|
+          310,641        3tx  1pub  2010-05..2010-07  [Ministry of Justice                   ] |CARILLION CONSTRUCTION LTD T/A CARILLION PROPERTY SERVICES|
+          260,133       28tx  1pub  2011-06..2017-06  [Transport for Greater Manchester      ] |CARILLION SERVICES SOLUTIONS (PP SC|
+          250,314        7tx  1pub  2011-11..2012-07  [Ministry of Defence                   ] |CARILLION ENTERPRISE LTD|
+          214,624       23tx  1pub  2011-06..2014-12  [Transport for Greater Manchester      ] |CARILLION SERVICES SOLUTIONS (OPG R|
+          206,096        5tx  1pub  2010-04..2010-05  [Ministry of Defence                   ] |CARILLION (AMBS) LIMITED|
+          189,840        4tx  1pub  2012-07..2013-06  [Ministry of Defence                   ] |CARILLION SERVICES LIMITED|
+          177,750       18tx  1pub  2014-05..2018-10  [Transport for Greater Manchester      ] |CARILLION AS AGENT FOR STOCKPORT MB|
+          144,134        1tx  1pub  2010-06..2010-06  [HM Revenue and Customs                ] |Planned Maintenance Engineering Ltd|
+          129,492        5tx  2pub  2010-05..2016-10  [Department for International Developme] |CARILLION COMMUNICATIONS LTD|
+          125,000        3tx  1pub  2015-06..2016-04  [Department for Education              ] |CARILLION ACADEMIES TRUST|
+          118,696        2tx  1pub  2010-04..2010-07  [Cabinet Office                        ] |CARILLION AMBS LTD|
+          103,757        2tx  1pub  2010-12..2010-12  [Department for Environment, Food and R] |Carillion Planned Maintenance|
+           93,714       41tx  1pub  2011-05..2017-01  [Transport for Greater Manchester      ] |CARILLION SERVICES SOLUTIONS (OPG S|
+           85,249        2tx  1pub  2013-04..2013-05  [Ministry of Justice                   ] |CARILLION ADVICE SERVICES|
+           79,733        2tx  1pub  2011-04..2011-04  [Department for Digital, Culture, Media] |eaga plc Switchover Help Scheme|
+           77,258       26tx  1pub  2010-10..2011-11  [South Gloucestershire Council         ] |Carillion Highway Maintenance Limited|
+           49,052        1tx  1pub  2011-03..2011-03  [Department for Environment, Food and R] |Carillion Construction Ltd|
+           47,144        1tx  1pub  2011-05..2011-05  [Transport for Greater Manchester      ] |CARILLION CONSTRN TA CARILLION RAIL|
+           34,768        1tx  1pub  2010-10..2010-10  [South Gloucestershire Council         ] |Carillion Construction Limited|
+           29,970       17tx  1pub  2016-05..2018-03  [Transport for Greater Manchester      ] |CARILLION SERVICES LTD|
+            4,984        1tx  1pub  2014-06..2014-06  [Transport for Greater Manchester      ] |Carillion Service Solutions|
+            1,515        2tx  1pub  2010-12..2011-07  [South Gloucestershire Council         ] |Eaga Heating Services Limited|

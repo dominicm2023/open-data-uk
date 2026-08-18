@@ -1,0 +1,516 @@
+[
+  {
+    "company": "Capita",
+    "variants": 141,
+    "publishers": 49,
+    "txns": 48062,
+    "gbp": 3408356854.76,
+    "note": "Capita plc group: Business Services, Resourcing/Veredus, Symonds, IB Solutions, Secure Information, IT Services, Pay360, Hartshead, Gwent, Health, Travel & Events, Employee Benefits, Life & Pensions, Pension Solutions, Treasury Solutions, Translation & Interpreting. Excludes the teachers'-pension pass-through accounts (GBP 35.86bn) per the known trap.",
+    "excluded": [
+      {
+        "string": "CAPITA TP NATWEST",
+        "gbp": 35610511570.44,
+        "reason": "pass-through: DfE 'funding to pay Teachers' Pensions' routed via Capita's third-party bank account (GBP 35.6bn \u2014 not payments TO Capita)"
+      },
+      {
+        "string": "CAPITA TP HSBC",
+        "gbp": 246522344.1,
+        "reason": "same pass-through, HSBC account (GBP 246.5m)"
+      },
+      {
+        "string": "Capita Consortium Nominees No 1 & No 2 Ltd",
+        "gbp": 153000.0,
+        "reason": "nominee vehicle, beneficial recipient unclear"
+      },
+      {
+        "string": "THE DEANERY CHURCH OF ENGLAND HIGH GOVERNORS CAPITA",
+        "gbp": 92712.77,
+        "reason": "school governors' account administered by Capita; beneficiary is the school"
+      },
+      {
+        "string": "THE DEANERY C OF E HIGH GOVERNORS CAPITA",
+        "gbp": 29349.0,
+        "reason": "same"
+      }
+    ]
+  },
+  {
+    "company": "Serco",
+    "variants": 31,
+    "publishers": 32,
+    "txns": 57634,
+    "gbp": 3722514230.76,
+    "note": "Serco Group plc: Ltd/Limited, Public Services, Assurance, Justice, Regional Services, Listening, Holdings, Leisure, Defence Science, Consulting, Integrated Services, Shared Service Centre.",
+    "excluded": [
+      {
+        "string": "Hanoi Toserco",
+        "gbp": 70896.82,
+        "reason": "Hanoi Tourist Service Company, Vietnam"
+      },
+      {
+        "string": "PHONG VE HANOI TOSERCO",
+        "gbp": 45416.82,
+        "reason": "same"
+      },
+      {
+        "string": "HANOI TOSERCO",
+        "gbp": 23245.61,
+        "reason": "same"
+      },
+      {
+        "string": "CORPORACION SERCOPLUS",
+        "gbp": 5823.04,
+        "reason": "Peruvian IT retailer"
+      },
+      {
+        "string": "SERCO PROJECTS LLC",
+        "gbp": 3800.0,
+        "reason": "presents as a distinct LLC we could not verify as Serco Group"
+      },
+      {
+        "string": "HANOI TOSERCO 1",
+        "gbp": 2311.98,
+        "reason": "same"
+      },
+      {
+        "string": "HANOI TOSERCO-MOTO",
+        "gbp": 2063.46,
+        "reason": "same"
+      },
+      {
+        "string": "SERCORIEGO",
+        "gbp": 782.96,
+        "reason": "unrelated card line"
+      }
+    ]
+  },
+  {
+    "company": "G4S",
+    "variants": 91,
+    "publishers": 30,
+    "txns": 91569,
+    "gbp": 2990252899.07,
+    "note": "G4S group incl. overseas subsidiaries (Kenya, DRC, Uganda, Ghana, Jordan, Botswana...) and predecessor Group 4 Securicor.",
+    "excluded": [
+      {
+        "string": "Group 4",
+        "gbp": 30180.55,
+        "reason": "bare string, could be anything"
+      },
+      {
+        "string": "WAYNE LLEWELLYN T/A FRIENDS OF BOXING4SCHOOLS",
+        "gbp": 5040.0,
+        "reason": "'boxing4schools' substring hit"
+      },
+      {
+        "string": "FRIENDS OF BOXING4SCHOOLS",
+        "gbp": 4200.0,
+        "reason": "same"
+      },
+      {
+        "string": "AMAZON.CO.UK 2X58G4SO4",
+        "gbp": 1880.49,
+        "reason": "Amazon order reference containing G4S"
+      }
+    ]
+  },
+  {
+    "company": "Mitie",
+    "variants": 68,
+    "publishers": 25,
+    "txns": 13278,
+    "gbp": 2082831839.47,
+    "note": "Mitie Group plc: FM, Security, Care & Custody, Justice, Technical FM, Managed Services, Catering, Cleaning & Environmental, Property Services, Tilley Roofing, Pest Control, Engineering, Landscapes, Utilyx t/a Mitie Energy. No exclusions needed \u2014 every netted string is the company.",
+    "excluded": []
+  },
+  {
+    "company": "Sodexo",
+    "variants": 32,
+    "publishers": 18,
+    "txns": 8891,
+    "gbp": 1529294449.2,
+    "note": "Sodexo group incl. pre-2008 spelling Sodexho: Ltd, Pass (voucher arm), Motivation Solutions, Prestige, Defence Services, Property Solutions, Education Services, Cyprus/Norway/embassy card lines. No exclusions needed.",
+    "excluded": []
+  },
+  {
+    "company": "Amey",
+    "variants": 19,
+    "publishers": 12,
+    "txns": 4280,
+    "gbp": 788019635.32,
+    "note": "Amey plc (Ferrovial-owned to 2022): Community, LG, Defence Services (the post-CarillionAmey MoD contracts), Rail, OW, Metering, MAP Services, plc. JVs excluded and listed: Keolis Amey (Metrolink/DLR, Keolis-led), GEOAmey (prisoner escort), CarillionAmey (censused as its own line).",
+    "excluded": [
+      {
+        "string": "KEOLIS AMEY METROLINK LTD",
+        "gbp": 693846568.61,
+        "reason": "JV, Keolis-led (70:30), Manchester Metrolink operator \u2014 GBP 693.8m, listed not censused"
+      },
+      {
+        "string": "CARILLIONAMEY LIMITED",
+        "gbp": 672534609.63,
+        "reason": "censused separately as CarillionAmey (JV)"
+      },
+      {
+        "string": "CARILLIONAMEY (HOUSING PRIME) LIMITED",
+        "gbp": 540150851.4,
+        "reason": "censused separately as CarillionAmey (JV)"
+      },
+      {
+        "string": "GEO AMEY PECS LTD",
+        "gbp": 93236950.39,
+        "reason": "GEOAmey: 50:50 JV with GEO Group (prisoner escort & custody) \u2014 GBP 93.2m, listed not censused"
+      },
+      {
+        "string": "KEOLIS AMEY DOCKLANDS LIMITED",
+        "gbp": 48891.43,
+        "reason": "JV, Keolis-led, DLR operator"
+      },
+      {
+        "string": "Keolis Amey Metrolink Ltd",
+        "gbp": 19438.73,
+        "reason": "same JV"
+      },
+      {
+        "string": "AMEYZOO",
+        "gbp": 951.48,
+        "reason": "exotic-pet zoo in Bovingdon, not Amey plc"
+      }
+    ]
+  },
+  {
+    "company": "Interserve",
+    "variants": 38,
+    "publishers": 18,
+    "txns": 40262,
+    "gbp": 1898780173.0,
+    "note": "Interserve group: (Defence), FM/Facilities Management, Construction, Project Services, Working Futures, Learning & Employment, FS (UK), Site Services, Healthcare, Engineering Services.",
+    "excluded": [
+      {
+        "string": "Interserve Academies Trust",
+        "gbp": 5324402.61,
+        "reason": "academy trust sponsored by the firm; beneficiary is schools, not the company"
+      },
+      {
+        "string": "INTERSERVE ACADEMIES TRUST",
+        "gbp": 285000.0,
+        "reason": "same"
+      }
+    ]
+  },
+  {
+    "company": "Kier",
+    "variants": 50,
+    "publishers": 24,
+    "txns": 2373,
+    "gbp": 883311255.16,
+    "note": "Kier Group plc: Regional, Construction (all regions), Services/Maintenance, Facilities Services, Building Services/Maintenance, Highways, Transportation, Integrated Services, Infrastructure & Overseas, Business Services, Property Developments, MG (ex May Gurney), Living, Wallis (Kier Group subsidiary).",
+    "excluded": [
+      {
+        "string": "Kier Graham Defence Limited",
+        "gbp": 52152954.29,
+        "reason": "JV with John Graham Construction (DIO estate works) \u2014 GBP 52.2m, listed not censused"
+      },
+      {
+        "string": "KIER FOUNDATION",
+        "gbp": 10000.0,
+        "reason": "the firm's charity, not the trading company"
+      },
+      {
+        "string": "Kier Charles Property Services Ltd",
+        "gbp": 3662.0,
+        "reason": "presents as a person-named local firm we could not verify as Kier Group"
+      }
+    ]
+  },
+  {
+    "company": "Sopra Steria",
+    "variants": 18,
+    "publishers": 18,
+    "txns": 4589,
+    "gbp": 1051904384.84,
+    "note": "Sopra Steria group incl. predecessors Steria (merged 2014) and Sopra Group, plus Sopra Steria Recruitment. SSCL, its majority-owned shared-services JV with the Cabinet Office, is censused as its own flagged line.",
+    "excluded": [
+      {
+        "string": "National Offender Management Services (Steria)",
+        "gbp": 441658.69,
+        "reason": "compound label, payee unclear (NOMS' Steria-run shared services)"
+      },
+      {
+        "string": "Wisteria House Dementia Care Ltd",
+        "gbp": 125643.86,
+        "reason": "'Wisteria' substring hit \u2014 care home"
+      },
+      {
+        "string": "Wisteria House",
+        "gbp": 16052.65,
+        "reason": "same"
+      },
+      {
+        "string": "CATCAKES REPOSTERIA CR",
+        "gbp": 3180.92,
+        "reason": "Spanish 'reposteria' (bakery) card line"
+      },
+      {
+        "string": "FLORISTERIA SIEMPRE VE",
+        "gbp": 3007.51,
+        "reason": "Spanish florist card line"
+      },
+      {
+        "string": "FLORISTERIA DON ELOY",
+        "gbp": 1562.75,
+        "reason": "same"
+      },
+      {
+        "string": "FLORISTERIA INES-28, C",
+        "gbp": 1418.56,
+        "reason": "same"
+      },
+      {
+        "string": "PAYPAL  SOPRANO",
+        "gbp": 884.9,
+        "reason": "'Soprano' substring hit on a PayPal card line"
+      },
+      {
+        "string": "OSTERIA PANEVINO",
+        "gbp": 80.88,
+        "reason": "Italian restaurant card line"
+      },
+      {
+        "string": "OSTERIA A LE DUE SPADE",
+        "gbp": 61.65,
+        "reason": "same"
+      }
+    ]
+  },
+  {
+    "company": "SSCL (Sopra Steria JV)",
+    "variants": 5,
+    "publishers": 6,
+    "txns": 1389,
+    "gbp": 603274440.15,
+    "note": "Shared Services Connected Ltd: Sopra Steria's majority-owned JV with the Cabinet Office, running back-office for DWP/Home Office/MoJ etc. Flagged as a JV line, not merged into Sopra Steria proper. Accounts-receivable and on-behalf labels excluded: money through those lines is owed to the client department, not SSCL.",
+    "excluded": [
+      {
+        "string": "SSCL (ENVIRONMENT AGENCY)",
+        "gbp": 1901038.86,
+        "reason": "compound label, payee unclear"
+      },
+      {
+        "string": "SSCL - ACCOUNTS RECEIVABLE",
+        "gbp": 1017874.0,
+        "reason": "AR account label: paying an invoice SSCL raised on behalf of a client department; beneficiary is the department"
+      },
+      {
+        "string": "SSCL on behalf of Cabinet Office",
+        "gbp": 467078.07,
+        "reason": "explicit on-behalf label; beneficiary is the Cabinet Office"
+      },
+      {
+        "string": "SSCL ACCOUNTS RECEIVABLE TEAM",
+        "gbp": 240197.0,
+        "reason": "same"
+      },
+      {
+        "string": "CABINET OFFICE SSCL ACCOUNTS RECEIVABLE",
+        "gbp": 102394.0,
+        "reason": "same"
+      },
+      {
+        "string": "SSCL - Accounts Receivable",
+        "gbp": 45076.0,
+        "reason": "same"
+      },
+      {
+        "string": "HOME OFFICE SSCL",
+        "gbp": 15977.43,
+        "reason": "compound label, payee unclear"
+      }
+    ]
+  },
+  {
+    "company": "Liberata",
+    "variants": 6,
+    "publishers": 12,
+    "txns": 645,
+    "gbp": 112721354.74,
+    "note": "Liberata UK Ltd incl. t/a Trinity Services and t/a CapacityGrid.",
+    "excluded": [
+      {
+        "string": "MOJ LIBERATA",
+        "gbp": 1006693.34,
+        "reason": "compound label (TNA paying the MoJ's Liberata-run service), payee unclear"
+      },
+      {
+        "string": "HM Courts Service (Liberata UK Ltd)",
+        "gbp": 105796.0,
+        "reason": "payee presents as HM Courts Service; Liberata is only the operator"
+      },
+      {
+        "string": "HM COURTS SERVICE (LIBERATA UK LTD)",
+        "gbp": 41400.0,
+        "reason": "same"
+      }
+    ]
+  },
+  {
+    "company": "Veolia",
+    "variants": 34,
+    "publishers": 18,
+    "txns": 6547,
+    "gbp": 253494678.81,
+    "note": "Veolia group: ES (UK)/Environmental Services, Energy & Utility Services, CHP, Resource Efficiency, Water (incl. Nevis and Outsourcing SPVs for MoD's Project Aquatrine), Water Technologies/VWS, overseas lines. Predecessor brand Onyx netted, zero strings found (null). No exclusions needed.",
+    "excluded": []
+  },
+  {
+    "company": "Biffa",
+    "variants": 5,
+    "publishers": 9,
+    "txns": 999,
+    "gbp": 3073940.44,
+    "note": "Biffa Waste Services. No exclusions needed.",
+    "excluded": []
+  },
+  {
+    "company": "Suez",
+    "variants": 13,
+    "publishers": 10,
+    "txns": 153,
+    "gbp": 26669547.06,
+    "note": "Suez recycling & recovery UK incl. predecessor SITA UK (renamed 2016) and SITA Holdings UK. NOT GDF Suez: the energy group (now Engie) has been a separate listed company from Suez's waste business since 2008 \u2014 all GDF Suez strings excluded. SITA the airline-IT firm is the other trap: the bare string 'SITA' is excluded as unverifiable.",
+    "excluded": [
+      {
+        "string": "Cofely GDF Suez",
+        "gbp": 2295831.71,
+        "reason": "GDF Suez = energy group (now Engie), separate from the Suez waste company since 2008"
+      },
+      {
+        "string": "GDF SUEZ SALES LTD (GAS)",
+        "gbp": 1020097.66,
+        "reason": "same \u2014 gas supply"
+      },
+      {
+        "string": "Suez Canal Authority",
+        "gbp": 173346.65,
+        "reason": "the Egyptian state canal authority"
+      },
+      {
+        "string": "ELECTRABEL GDF SUEZ",
+        "gbp": 132894.33,
+        "reason": "same \u2014 Belgian energy arm"
+      },
+      {
+        "string": "GDF SUEZ MARKETING LIMITED",
+        "gbp": 34512.61,
+        "reason": "same"
+      },
+      {
+        "string": "Sita Trust",
+        "gbp": 9200.0,
+        "reason": "landfill communities fund charity, not the operating company"
+      },
+      {
+        "string": "GDF SUEZ",
+        "gbp": 691.91,
+        "reason": "same"
+      },
+      {
+        "string": "SITA",
+        "gbp": 569.1,
+        "reason": "bare string: could be SITA the airline-IT company; unverifiable"
+      }
+    ]
+  },
+  {
+    "company": "Carillion",
+    "variants": 34,
+    "publishers": 13,
+    "txns": 868,
+    "gbp": 333569741.39,
+    "note": "Carillion plc group: Construction (incl. 'in liquidation' tail lines), plc, AMBS t/a CPM, JM (ex Mowlem), Services/Services 2006, Planned Maintenance (incl. legal entity Planned Maintenance Engineering Ltd, Carillion-owned since the 2006 Mowlem acquisition), Maple Oak, Regeneration, Advice Services, Highway Maintenance, Rail. JVs censused separately or listed: CarillionAmey, CarillionEnterprise, CarillionAramark, Carillion Alawi, Al Futtaim Carillion.",
+    "excluded": [
+      {
+        "string": "CARILLIONAMEY LIMITED",
+        "gbp": 672534609.63,
+        "reason": "censused separately as CarillionAmey (JV)"
+      },
+      {
+        "string": "CARILLIONAMEY (HOUSING PRIME) LIMITED",
+        "gbp": 540150851.4,
+        "reason": "censused separately as CarillionAmey (JV)"
+      },
+      {
+        "string": "CARILLIONENTERPRISE LIMITED",
+        "gbp": 489521561.2,
+        "reason": "censused separately as CarillionEnterprise (JV)"
+      },
+      {
+        "string": "CARILLION ENTERPRISE LIMITED",
+        "gbp": 8385943.38,
+        "reason": "censused separately as CarillionEnterprise (JV)"
+      },
+      {
+        "string": "CARILLIONARAMARK LIMITED",
+        "gbp": 5235633.92,
+        "reason": "JV with Aramark (defence catering) \u2014 GBP 5.2m, listed not censused"
+      },
+      {
+        "string": "Carillion Enterprise Ltd",
+        "gbp": 746208.38,
+        "reason": "censused separately as CarillionEnterprise (JV)"
+      },
+      {
+        "string": "CARILLION ALAWI LLC",
+        "gbp": 378803.13,
+        "reason": "Oman JV"
+      },
+      {
+        "string": "AL FUTTAIM CARILLION LLC",
+        "gbp": 337236.3,
+        "reason": "Dubai JV"
+      },
+      {
+        "string": "CARILLION ENTERPRISE LTD",
+        "gbp": 250313.92,
+        "reason": "censused separately as CarillionEnterprise (JV)"
+      },
+      {
+        "string": "CARILLION AS AGENT FOR STOCKPORT MB",
+        "gbp": 177750.0,
+        "reason": "agent label: beneficiary is Stockport MBC works, payee role unclear"
+      },
+      {
+        "string": "CARILLION ACADEMIES TRUST",
+        "gbp": 125000.0,
+        "reason": "academy trust sponsored by the firm; beneficiary is schools"
+      },
+      {
+        "string": "eaga plc Switchover Help Scheme",
+        "gbp": 79732.92,
+        "reason": "eaga: payment at/before Carillion's April 2011 acquisition completed; ownership at payment date unverifiable"
+      },
+      {
+        "string": "Eaga Heating Services Limited",
+        "gbp": 1514.92,
+        "reason": "same \u2014 payments start Dec 2010, pre-acquisition"
+      }
+    ]
+  },
+  {
+    "company": "CarillionAmey (JV)",
+    "variants": 2,
+    "publishers": 1,
+    "txns": 830,
+    "gbp": 1212685461.03,
+    "note": "CarillionAmey Ltd: the 50:50 Carillion/Amey JV holding the MoD National Housing Prime and regional FM contracts 2014-2018. Censused as its own flagged line \u2014 its GBP 1.2bn belongs to neither parent alone, and its curve IS the Carillion collapse story in this corpus.",
+    "excluded": []
+  },
+  {
+    "company": "CarillionEnterprise (JV)",
+    "variants": 4,
+    "publishers": 1,
+    "txns": 503,
+    "gbp": 498904026.88,
+    "note": "CarillionEnterprise Ltd: Carillion/Enterprise plc JV holding MoD Regional Prime contracts to 2014, predecessor of the CarillionAmey arrangement.",
+    "excluded": []
+  }
+]

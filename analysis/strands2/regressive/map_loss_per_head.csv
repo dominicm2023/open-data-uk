@@ -1,0 +1,305 @@
+ons_code,name,cls,loss_ph,change_pct,imd_avg_score,clean,league_excluded,handcheck
+E06000001,Hartlepool UA,UA,441.57,-48.41,35.04,True,False,
+E06000002,Middlesbrough UA,UA,484.19,-49.06,40.46,True,False,
+E06000003,Redcar & Cleveland UA,UA,369.52,-47.99,29.79,True,False,
+E06000004,Stockton-on-Tees UA,UA,285.52,-45.94,25.79,True,False,
+E06000005,Darlington UA,UA,313.09,-48.07,25.66,True,False,
+E06000006,Halton UA,UA,205.67,-23.94,32.32,False,False,rsg_zero_2024_check_rollin
+E06000007,Warrington UA,UA,278.34,-60.82,18.94,True,False,
+E06000008,Blackburn with Darwen UA,UA,403.1,-44.01,36.01,True,False,
+E06000009,Blackpool UA,UA,431.01,-42.16,45.04,True,False,
+E06000010,Kingston-upon-Hull UA,UA,397.08,-41.52,40.56,True,False,
+E06000011,East Riding of Yorkshire UA,UA,188.28,-37.9,15.6,True,False,
+E06000012,North East Lincolnshire UA,UA,338.19,-45.02,31.34,True,False,
+E06000013,North Lincolnshire UA,UA,177.94,-29.81,22.1,True,False,
+E06000014,York UA,UA,221.43,-56.12,11.73,True,False,
+E06000015,Derby City UA,UA,240.86,-38.95,26.32,True,False,
+E06000016,Leicester City UA,UA,433.53,-47.77,30.88,True,False,
+E06000017,Rutland UA,UA,166.21,-46.59,8.38,True,False,
+E06000018,Nottingham City UA,UA,428.27,-46.38,34.89,True,False,
+E06000019,Herefordshire UA,UA,305.22,-62.54,18.89,True,False,
+E06000020,Telford & the Wrekin UA,UA,332.92,-48.49,24.99,True,False,
+E06000021,Stoke-on-Trent UA,UA,378.26,-44.09,34.5,True,False,
+E06000022,Bath & North East Somerset UA,UA,182.48,-46.1,11.75,False,False,rsg_zero_2024_check_rollin
+E06000023,Bristol UA,UA,320.61,-45.94,26.36,False,False,rsg_zero_2024_check_rollin
+E06000024,North Somerset UA,UA,220.43,-47.96,15.83,True,False,
+E06000025,South Gloucestershire UA,UA,200.06,-47.03,11.66,False,False,rsg_zero_2024_check_rollin
+E06000026,Plymouth UA,UA,317.93,-47.17,26.62,True,False,
+E06000027,Torbay UA,UA,365.09,-49.44,28.1,True,False,
+E06000030,Swindon UA,UA,215.3,-47.11,18.62,True,False,
+E06000031,Peterborough UA,UA,267.45,-41.02,27.82,True,False,
+E06000032,Luton UA,UA,399.36,-57.54,25.91,True,False,
+E06000033,Southend-on-Sea UA,UA,310.23,-50.83,22.37,True,False,
+E06000034,Thurrock UA,UA,538.79,-92.0,20.93,False,True,cliff_after_2018_one_year_check;incomplete_financing_return
+E06000035,Medway Towns UA,UA,230.6,-45.14,23.94,True,False,
+E06000036,Bracknell Forest UA,UA,208.69,-47.48,10.24,True,False,
+E06000037,West Berkshire UA,UA,-16.12,7.7,9.95,False,True,incomplete_financing_return
+E06000038,Reading UA,UA,302.28,-52.8,19.62,True,False,
+E06000039,Slough UA,UA,355.32,-56.26,22.97,True,False,
+E06000040,Windsor & Maidenhead UA,UA,145.01,-55.85,8.38,True,False,
+E06000041,Wokingham UA,UA,195.52,-74.26,5.85,False,False,cliff_after_2018_one_year_check
+E06000042,Milton Keynes UA,UA,251.17,-45.52,17.98,True,False,
+E06000043,Brighton & Hove UA,UA,274.49,-45.9,20.76,True,False,
+E06000044,Portsmouth UA,UA,272.85,-40.48,26.9,True,False,
+E06000045,Southampton UA,UA,354.08,-49.94,26.88,True,False,
+E06000046,Isle of Wight UA,UA,384.04,-53.06,23.29,True,False,
+E06000047,Durham UA,UA,335.11,-45.36,26.79,True,False,
+E06000049,Cheshire East UA,UA,206.08,-58.45,14.48,True,False,
+E06000050,Cheshire West and Chester UA,UA,401.73,-82.48,18.08,False,False,cliff_after_2018_one_year_check
+E06000051,Shropshire UA,UA,333.87,-65.85,17.15,True,False,
+E06000052,Cornwall UA,UA,203.34,-32.89,23.07,False,False,rsg_zero_2024_check_rollin
+E06000054,Wiltshire UA,UA,256.1,-69.19,13.45,True,False,
+E06000055,Bedford UA,UA,252.33,-42.54,18.93,True,False,
+E06000056,Central Bedfordshire UA,UA,411.36,-99.74,12.15,False,True,cliff_after_2018_one_year_check;incomplete_financing_return
+E06000057,Northumberland UA,UA,289.24,-43.77,22.08,True,False,
+E07000008,Cambridge,SD,47.59,-36.67,14.85525914232045,True,False,
+E07000009,East Cambridgeshire,SD,0.45,-0.53,11.506953897679505,True,False,
+E07000010,Fenland,SD,56.08,-50.17,25.426080200475777,True,False,
+E07000011,Huntingdonshire,SD,-1.12,1.72,12.550419673919285,True,False,
+E07000012,South Cambridgeshire,SD,-18.11,24.24,8.495506485940655,True,False,
+E07000032,Amber Valley,SD,12.98,-15.9,17.969648798595678,True,False,
+E07000033,Bolsover,SD,8.61,-7.45,25.046826546196595,True,False,
+E07000034,Chesterfield,SD,-7.65,7.83,24.925672218871753,True,False,
+E07000035,Derbyshire Dales,SD,-2.06,3.15,11.89506290124589,True,False,
+E07000036,Erewash,SD,35.36,-38.57,18.81849783753619,True,False,
+E07000037,High Peak,SD,17.83,-21.0,15.642041432208297,True,False,
+E07000038,North East Derbyshire,SD,28.01,-32.17,17.39950295501751,True,False,
+E07000039,South Derbyshire,SD,-20.12,43.04,14.494147838186658,False,True,gainer_rates_growth;incomplete_financing_return
+E07000040,East Devon,SD,-7.29,11.67,12.76445906200318,True,False,
+E07000041,Exeter,SD,50.51,-41.63,16.2149470342696,True,False,
+E07000042,Mid Devon,SD,23.34,-26.59,16.927565844035083,True,False,
+E07000043,North Devon,SD,55.61,-47.6,20.55942097661477,True,False,
+E07000044,South Hams,SD,27.68,-37.43,13.72366664703249,True,False,
+E07000045,Teignbridge,SD,39.1,-45.49,15.892973082319926,True,False,
+E07000046,Torridge,SD,35.51,-29.45,23.269302871275187,True,False,
+E07000047,West Devon,SD,48.83,-53.46,18.051853220873113,True,False,
+E07000061,Eastbourne,SD,68.68,-58.55,22.10972695784901,True,False,
+E07000062,Hastings,SD,24.95,-32.98,34.28096148449482,False,True,incomplete_financing_return
+E07000063,Lewes,SD,30.42,-40.74,15.758048875320698,True,False,
+E07000064,Rother,SD,20.2,-25.93,19.767791323289554,True,False,
+E07000065,Wealden,SD,8.78,-14.59,12.311432049237835,True,False,
+E07000066,Basildon,SD,21.09,-23.92,23.24338964886151,True,False,
+E07000067,Braintree,SD,26.5,-36.31,14.723522473925463,True,False,
+E07000068,Brentwood,SD,54.83,-77.98,10.007034579793986,False,False,cliff_after_2018_one_year_check
+E07000069,Castle Point,SD,25.28,-33.6,16.841585867420164,True,False,
+E07000070,Chelmsford,SD,24.04,-34.12,12.220971938065414,True,False,
+E07000071,Colchester,SD,54.68,-74.64,16.777951859222565,True,False,
+E07000072,Epping Forest,SD,24.56,-29.63,15.068371528690998,True,False,
+E07000073,Harlow,SD,24.14,-21.55,21.413385140915214,True,False,
+E07000074,Maldon DC,SD,-28.16,36.4,14.168959060231758,False,False,gainer_rates_growth
+E07000075,Rochford,SD,20.98,-30.7,10.449120621654615,True,False,
+E07000076,Tendring DC,SD,28.46,-27.08,30.48435388250229,True,False,
+E07000077,Uttlesford,SD,5.28,-5.79,9.257571703538524,True,False,
+E07000078,Cheltenham,SD,20.97,-29.6,14.260484055509812,True,False,
+E07000079,Cotswold,SD,-5.77,8.54,11.060759269649788,True,False,
+E07000080,Forest of Dean,SD,67.53,-73.66,18.01326559544079,True,False,
+E07000081,Gloucester,SD,32.68,-35.99,21.806558091987828,True,False,
+E07000082,Stroud,SD,4.71,-7.09,10.796690376282392,True,False,
+E07000083,Tewkesbury,SD,17.63,-23.2,12.14215585716259,True,False,
+E07000084,Basingstoke & Deane,SD,43.76,-66.4,12.823105477801995,True,False,
+E07000085,East Hampshire,SD,13.01,-25.48,10.28387715470032,True,False,
+E07000086,Eastleigh,SD,19.1,-32.5,10.192133171030495,True,False,
+E07000087,Fareham,SD,13.5,-26.81,9.019535387473738,True,False,
+E07000088,Gosport,SD,13.1,-16.18,20.541237844661797,True,False,
+E07000089,Hart DC,SD,19.86,-44.06,5.544381111287674,True,False,
+E07000090,Havant,SD,35.74,-45.05,21.8062772453339,True,False,
+E07000091,New Forest,SD,19.47,-29.86,13.014539997210989,True,False,
+E07000092,Rushmoor,SD,84.7,-68.15,15.903380440493452,True,False,
+E07000093,Test Valley,SD,-42.5,72.56,11.930777943503196,False,False,gainer_rates_growth
+E07000094,Winchester,SD,-12.91,22.5,9.615210265868539,True,False,
+E07000095,Broxbourne,SD,25.7,-33.32,17.989346097538185,True,False,
+E07000096,Dacorum,SD,47.23,-69.25,13.004143354896303,True,False,
+E07000098,Hertsmere,SD,95.37,-94.33,13.937791754316237,False,False,cliff_after_2018_one_year_check
+E07000099,North Hertfordshire,SD,26.74,-38.16,11.627403530100068,True,False,
+E07000102,Three Rivers,SD,15.98,-24.4,9.870606697386625,True,False,
+E07000103,Watford,SD,149.76,-99.34,15.409594521941298,False,True,cliff_after_2018_one_year_check;incomplete_financing_return
+E07000105,Ashford,SD,-2.94,4.02,18.545545478729835,True,False,
+E07000106,Canterbury,SD,38.69,-41.56,16.797480217708546,True,False,
+E07000107,Dartford,SD,-45.33,41.7,18.81152114825511,False,False,gainer_rates_growth
+E07000108,Dover,SD,9.1,-9.71,22.161402949420868,True,False,
+E07000109,Gravesham,SD,48.57,-56.76,21.414084037270015,True,False,
+E07000110,Maidstone,SD,15.3,-24.97,16.502573454870465,True,False,
+E07000111,Sevenoaks,SD,23.26,-40.67,12.43710195066221,True,False,
+E07000112,Folkestone & Hythe,SD,105.65,-98.12,24.14902074873905,False,True,cliff_after_2018_one_year_check;incomplete_financing_return
+E07000113,Swale,SD,9.54,-10.23,27.07550628850467,True,False,
+E07000114,Thanet,SD,21.47,-20.12,31.31361993820715,True,False,
+E07000115,Tonbridge & Malling,SD,10.01,-14.13,13.332679191279944,True,False,
+E07000116,Tunbridge Wells,SD,25.04,-43.22,11.310038092787925,True,False,
+E07000117,Burnley,SD,45.33,-29.64,37.793384038871444,True,False,
+E07000118,Chorley,SD,23.18,-28.2,16.86314095184992,True,False,
+E07000119,Fylde,SD,25.41,-33.06,15.874918320114421,True,False,
+E07000120,Hyndburn BC,SD,27.82,-18.88,34.332791432102155,True,False,
+E07000121,Lancaster,SD,27.4,-21.23,24.164914834929867,True,False,
+E07000122,Pendle,SD,40.72,-30.98,30.723193149847095,True,False,
+E07000123,Preston,SD,82.03,-65.03,29.53076156261794,True,False,
+E07000124,Ribble Valley,SD,9.17,-12.01,10.593864403014406,True,False,
+E07000125,Rossendale,SD,59.76,-63.72,24.061505574922933,True,False,
+E07000126,South Ribble,SD,5.81,-8.32,15.330010730728905,True,False,
+E07000127,West Lancashire,SD,27.61,-28.64,18.644482983944098,True,False,
+E07000128,Wyre,SD,29.3,-30.21,20.857837629854124,True,False,
+E07000129,Blaby,SD,-2.43,3.2,10.628682618467877,True,False,
+E07000130,Charnwood BC,SD,34.96,-46.91,13.237586834278147,True,False,
+E07000131,Harborough,SD,-82.63,136.29,8.014496020710393,False,False,gainer_rates_growth
+E07000132,Hinckley & Bosworth,SD,5.34,-7.32,13.460977357899873,True,False,
+E07000133,Melton,SD,24.78,-30.56,12.532510636627679,True,False,
+E07000134,North West Leicestershire,SD,-142.72,197.71,14.573204515026058,False,False,gainer_rates_growth
+E07000135,Oadby & Wigston,SD,40.26,-48.07,12.958279526293227,True,False,
+E07000136,Boston BC,SD,45.61,-35.19,22.967301503386754,True,False,
+E07000137,East Lindsey,SD,-6.85,4.93,29.89153743807399,True,False,
+E07000138,Lincoln City,SD,60.44,-45.47,26.88913969740709,True,False,
+E07000139,North Kesteven,SD,-4.93,5.37,11.553116119658425,True,False,
+E07000140,South Holland,SD,38.05,-32.72,17.896494865472082,True,False,
+E07000141,South Kesteven,SD,48.57,-60.64,13.498579898978303,True,False,
+E07000142,West Lindsey,SD,49.87,-44.94,20.354826394715893,True,False,
+E07000143,Breckland,SD,33.79,-38.27,19.614194514307762,True,False,
+E07000144,Broadland,SD,14.56,-19.67,11.816581168164516,True,False,
+E07000145,Great Yarmouth,SD,24.91,-21.46,33.09689619226284,True,False,
+E07000146,King's Lynn & West Norfolk,SD,19.11,-15.72,23.72035306523162,True,False,
+E07000147,North Norfolk,SD,28.9,-28.7,21.057617396131594,True,False,
+E07000148,Norwich City,SD,62.46,-49.51,27.598930702703488,True,False,
+E07000149,South Norfolk,SD,6.12,-7.99,13.31788865768794,True,False,
+E07000170,Ashfield,SD,10.75,-11.24,26.307633621143093,True,False,
+E07000171,Bassetlaw,SD,85.27,-63.63,22.588079074388304,True,False,
+E07000172,Broxtowe,SD,33.7,-42.84,14.23820325116017,True,False,
+E07000173,Gedling,SD,18.05,-21.19,14.89400433090527,True,False,
+E07000174,Mansfield,SD,47.9,-38.65,28.503084959730288,True,False,
+E07000175,Newark & Sherwood ,SD,13.29,-12.4,19.226734654910516,True,False,
+E07000176,Rushcliffe,SD,4.57,-8.39,7.1802094413958075,True,False,
+E07000177,Cherwell,SD,-21.76,25.41,14.410383403491823,False,False,gainer_rates_growth
+E07000178,Oxford,SD,39.85,-32.9,16.706607952635796,True,False,
+E07000179,South Oxfordshire,SD,29.73,-53.71,8.458925659785733,True,False,
+E07000180,Vale of White Horse DC,SD,42.5,-76.17,8.357478219292839,False,False,cliff_after_2018_one_year_check
+E07000181,West Oxfordshire,SD,5.07,-9.92,8.684223913303686,True,False,
+E07000192,Cannock Chase,SD,17.86,-17.26,20.42641686465631,True,False,
+E07000193,East Staffordshire,SD,35.32,-34.57,19.028227889386212,True,False,
+E07000194,Lichfield,SD,7.75,-12.8,12.566322036390728,True,False,
+E07000195,Newcastle-under-Lyme,SD,34.54,-33.81,18.92915128918597,True,False,
+E07000196,South Staffordshire,SD,-56.87,83.41,13.123768637650684,False,False,gainer_rates_growth
+E07000197,Stafford BC,SD,7.64,-10.88,13.677620328678202,True,False,
+E07000198,Staffordshire Moorlands,SD,25.04,-28.52,15.040029868883261,True,False,
+E07000199,Tamworth,SD,72.75,-86.14,21.061077060745966,False,False,cliff_after_2018_one_year_check
+E07000200,Babergh,SD,-4.0,6.2,14.26682001112347,True,False,
+E07000202,Ipswich,SD,10.27,-10.78,25.890312250352228,True,False,
+E07000203,Mid Suffolk,SD,-6.25,8.43,13.225204616412803,True,False,
+E07000207,Elmbridge,SD,17.17,-34.61,7.943852494128421,True,False,
+E07000208,Epsom & Ewell,SD,36.98,-59.46,8.833034578569698,True,False,
+E07000209,Guildford,SD,61.93,-98.72,9.39513981739827,False,True,cliff_after_2018_one_year_check;incomplete_financing_return
+E07000210,Mole Valley,SD,9.68,-20.91,9.511189300742716,True,False,
+E07000211,Reigate and Banstead,SD,42.55,-85.23,11.276083673797203,False,False,cliff_after_2018_one_year_check
+E07000212,Runnymede,SD,52.47,-63.37,12.012295521931476,True,False,
+E07000213,Spelthorne,SD,70.95,-86.15,14.942642317252057,False,False,cliff_after_2018_one_year_check
+E07000214,Surrey Heath,SD,60.72,-90.31,8.065892043191825,False,False,cliff_after_2018_one_year_check
+E07000215,Tandridge,SD,34.08,-75.19,11.896133726750005,True,False,
+E07000216,Waverley,SD,27.52,-55.82,7.494057761005072,True,False,
+E07000217,Woking BC,SD,28.08,-35.66,10.803590952305498,True,False,
+E07000218,North Warwickshire,SD,-81.29,87.14,17.90682813670039,False,False,gainer_rates_growth
+E07000219,Nuneaton & Bedworth,SD,95.1,-98.76,23.540249377976824,False,True,cliff_after_2018_one_year_check;incomplete_financing_return
+E07000220,Rugby,SD,86.06,-98.94,14.119128983772917,False,True,cliff_after_2018_one_year_check;incomplete_financing_return
+E07000221,Stratford-on-Avon,SD,1.34,-2.19,11.728325756709518,True,False,
+E07000222,Warwick,SD,55.41,-65.68,12.004755826427537,False,False,cliff_after_2018_one_year_check
+E07000223,Adur,SD,34.32,-42.01,17.59389002927935,True,False,
+E07000224,Arun,SD,20.5,-26.31,18.63834735073113,True,False,
+E07000225,Chichester,SD,11.64,-20.71,14.084918070366093,True,False,
+E07000226,Crawley,SD,19.11,-21.3,18.94030057626232,True,False,
+E07000227,Horsham,SD,17.91,-38.73,9.889918698351655,True,False,
+E07000228,Mid Sussex,SD,38.44,-87.71,7.747182970356719,False,False,cliff_after_2018_one_year_check
+E07000229,Worthing,SD,50.61,-66.54,17.011700229910527,True,False,
+E07000234,Bromsgrove,SD,53.53,-90.98,11.696548984606338,False,False,cliff_after_2018_one_year_check
+E07000235,Malvern Hills,SD,28.06,-38.62,16.06590884732584,True,False,
+E07000236,Redditch BC,SD,31.92,-36.39,22.52386476226406,True,False,
+E07000237,Worcester,SD,45.73,-56.87,20.41448803287617,True,False,
+E07000238,Wychavon,SD,-10.7,16.37,15.765628988187125,True,False,
+E07000239,Wyre Forest,SD,41.05,-47.83,22.436670087049066,True,False,
+E07000240,St Albans,SD,54.23,-82.6,8.339150169644567,False,False,cliff_after_2018_one_year_check
+E07000241,Welwyn Hatfield,SD,49.93,-61.74,14.215473909868912,True,False,
+E07000242,East Hertfordshire,SD,64.27,-98.84,8.188423696085488,False,True,cliff_after_2018_one_year_check;incomplete_financing_return
+E07000243,Stevenage,SD,28.95,-32.22,19.694863188533017,True,False,
+E08000001,Bolton,MD,213.87,-29.43,30.69,False,False,rsg_zero_2024_check_rollin
+E08000002,Bury MBC,MD,273.11,-45.47,23.68,False,False,rsg_zero_2024_check_rollin
+E08000003,Manchester,MD,271.81,-26.86,40.0,False,False,rsg_zero_2024_check_rollin
+E08000004,Oldham,MD,321.26,-37.62,33.15,False,False,rsg_zero_2024_check_rollin
+E08000005,Rochdale,MD,265.09,-30.47,34.42,False,False,rsg_zero_2024_check_rollin
+E08000006,Salford,MD,300.26,-32.79,34.21,False,False,rsg_zero_2024_check_rollin
+E08000007,Stockport MBC,MD,181.54,-36.07,20.83,False,False,rsg_zero_2024_check_rollin
+E08000008,Tameside,MD,247.23,-31.99,31.37,False,False,rsg_zero_2024_check_rollin
+E08000009,Trafford,MD,141.33,-29.83,16.09,False,False,rsg_zero_2024_check_rollin
+E08000010,Wigan MBC,MD,199.38,-30.1,25.71,False,False,rsg_zero_2024_check_rollin
+E08000011,Knowsley,MD,455.65,-35.06,43.01,False,False,rsg_zero_2024_check_rollin
+E08000012,Liverpool,MD,427.07,-37.76,42.41,False,False,rsg_zero_2024_check_rollin
+E08000013,St Helens MBC,MD,254.07,-32.26,31.52,False,False,rsg_zero_2024_check_rollin
+E08000014,Sefton,MD,241.69,-34.26,27.04,False,False,rsg_zero_2024_check_rollin
+E08000015,Wirral,MD,284.29,-36.98,29.59,False,False,rsg_zero_2024_check_rollin
+E08000016,Barnsley,MD,319.66,-43.91,29.93,True,False,
+E08000017,Doncaster,MD,316.87,-41.73,30.29,True,False,
+E08000018,Rotherham,MD,223.02,-35.06,29.55,True,False,
+E08000019,Sheffield,MD,258.37,-37.03,27.06,True,False,
+E08000021,Newcastle,MD,424.66,-48.01,29.79,True,False,
+E08000022,North Tyneside,MD,502.92,-69.58,22.28,True,False,
+E08000023,South Tyneside,MD,526.79,-52.61,31.51,True,False,
+E08000024,Sunderland,MD,397.78,-42.6,30.59,True,False,
+E08000025,Birmingham,MD,458.08,-46.64,38.07,False,False,rsg_zero_2024_check_rollin
+E08000026,Coventry,MD,367.05,-50.46,25.61,False,False,rsg_zero_2024_check_rollin
+E08000027,Dudley,MD,314.98,-48.09,24.1,False,False,rsg_zero_2024_check_rollin
+E08000028,Sandwell,MD,660.09,-67.14,34.88,False,False,rsg_zero_2024_check_rollin
+E08000029,Solihull,MD,161.35,-35.36,17.37,False,False,rsg_zero_2024_check_rollin
+E08000030,Walsall,MD,393.14,-47.93,31.55,False,False,rsg_zero_2024_check_rollin
+E08000031,Wolverhampton,MD,440.03,-46.34,32.1,False,False,rsg_zero_2024_check_rollin
+E08000032,Bradford,MD,369.74,-46.76,34.67,True,False,
+E08000033,Calderdale,MD,290.21,-46.59,26.35,True,False,
+E08000034,Kirklees,MD,200.25,-40.46,25.15,True,False,
+E08000035,Leeds,MD,305.88,-48.54,27.3,True,False,
+E08000036,Wakefield,MD,287.27,-43.74,27.31,True,False,
+E08000037,Gateshead,MD,384.5,-47.92,28.22,True,False,
+E09000002,Barking & Dagenham,LB,343.73,-44.57,32.77,True,False,
+E09000003,Barnet,LB,189.35,-46.09,16.15,True,False,
+E09000004,Bexley,LB,248.97,-52.69,16.27,True,False,
+E09000005,Brent,LB,390.49,-46.54,25.56,True,False,
+E09000006,Bromley,LB,205.48,-55.88,14.16,True,False,
+E09000007,Camden,LB,534.5,-46.36,20.13,True,False,
+E09000008,Croydon,LB,305.08,-51.22,22.48,True,False,
+E09000009,Ealing,LB,328.28,-49.51,22.71,True,False,
+E09000010,Enfield,LB,324.61,-46.55,25.78,True,False,
+E09000011,Greenwich,LB,466.27,-49.23,24.46,True,False,
+E09000012,Hackney,LB,512.38,-39.24,32.53,True,False,
+E09000013,Hammersmith & Fulham,LB,492.36,-46.93,22.27,True,False,
+E09000014,Haringey,LB,400.86,-42.87,27.96,True,False,
+E09000015,Harrow,LB,319.54,-65.29,15.03,True,False,
+E09000016,Havering,LB,256.62,-60.37,16.79,True,False,
+E09000017,Hillingdon,LB,239.86,-48.5,18.22,True,False,
+E09000018,Hounslow,LB,324.25,-58.04,21.49,True,False,
+E09000019,Islington,LB,352.72,-33.31,27.54,True,False,
+E09000020,Kensington & Chelsea,LB,612.69,-61.4,21.53,True,False,
+E09000021,Kingston Upon Thames,LB,229.9,-59.01,11.38,True,False,
+E09000022,Lambeth,LB,459.94,-43.43,25.42,True,False,
+E09000023,Lewisham,LB,688.77,-69.18,26.66,True,False,
+E09000024,Merton,LB,210.46,-43.95,14.65,True,False,
+E09000025,Newham,LB,214.59,-26.95,29.58,True,False,
+E09000026,Redbridge,LB,294.01,-53.36,17.2,True,False,
+E09000027,Richmond upon Thames,LB,221.31,-62.31,9.42,True,False,
+E09000028,Southwark,LB,460.63,-39.75,25.81,True,False,
+E09000029,Sutton,LB,288.31,-51.64,13.99,True,False,
+E09000030,Tower Hamlets,LB,586.37,-47.3,27.91,True,False,
+E09000031,Waltham Forest,LB,365.89,-46.28,25.21,True,False,
+E09000032,Wandsworth,LB,322.87,-45.45,16.61,True,False,
+E09000033,Westminster,LB,19.66,-2.24,20.34,True,False,
+E10000003,Cambridgeshire CC,SC,176.74,-56.64,13.86,True,False,
+E10000007,Derbyshire CC,SC,224.61,-51.59,18.39,True,False,
+E10000008,Devon CC,SC,238.54,-58.5,16.61,True,False,
+E10000011,East Sussex CC,SC,231.65,-55.02,19.77,True,False,
+E10000012,Essex CC,SC,201.92,-54.08,17.02,True,False,
+E10000013,Gloucestershire CC,SC,315.16,-84.43,14.93,False,False,cliff_after_2018_one_year_check
+E10000014,Hampshire CC,SC,153.57,-57.31,12.69,True,False,
+E10000015,Hertfordshire CC,SC,184.86,-56.63,12.73,True,False,
+E10000016,Kent CC,SC,203.22,-53.81,19.54,True,False,
+E10000017,Lancashire CC,SC,253.63,-52.58,23.44,True,False,
+E10000018,Leicestershire CC,SC,145.81,-51.91,12.33,True,False,
+E10000019,Lincolnshire CC,SC,233.48,-50.39,20.29,True,False,
+E10000020,Norfolk CC,SC,305.67,-57.36,21.18,True,False,
+E10000024,Nottinghamshire CC,SC,228.34,-55.41,19.0,True,False,
+E10000025,Oxfordshire CC,SC,144.49,-57.74,11.66,True,False,
+E10000028,Staffordshire CC,SC,214.22,-60.13,16.57,True,False,
+E10000029,Suffolk CC,SC,204.8,-48.58,18.46,True,False,
+E10000030,Surrey CC,SC,176.93,-58.83,10.09,True,False,
+E10000031,Warwickshire CC,SC,200.89,-57.22,15.64,True,False,
+E10000032,West Sussex CC,SC,166.81,-57.76,14.43,True,False,
+E10000034,Worcestershire CC,SC,193.39,-58.21,18.09,True,False,

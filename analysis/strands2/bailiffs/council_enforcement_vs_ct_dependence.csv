@@ -1,0 +1,10 @@
+council,cls,n_enforcement_firms,firms,window_first,window_last,txns,gross_paid_to_firms_gbp,net_cost_gbp,population,pop_vintage,gross_per_1000_residents_gbp,net_per_1000_residents_gbp,ct_share_financing_pct_2024_25,ct_share_nre_pct_2024_25
+Bristol,UA,5,Bristow & Sutor; CDER Group; Marston; Ross & Roberts; Rossendales,2020-01,2026-05,939,9218240.54,86957.78,494225,2024-25,18651.91,175.95,60.5,60.7
+Greenwich,LB,8,CCS Enforcement Services; Equita; JBW Group; Marston; Ross & Roberts; Rossendales; Rundles; Whyte & Co,2012-02,2017-06,902,2190421.95,624995.84,264008,2013-14,8296.8,2367.34,45.6,42.9
+North Yorkshire,UA,8,Bristow & Sutor; Capital Resolve; Civil Enforcement Agents Ltd; Equita; Illion Digital Tech (debt software); JTR Collections; Jacobs (enforcement); Marston,2022-04,2026-06,103,256478.48,28821.36,633692,2024-25,404.74,45.48,76.0,81.0
+Blaby,SD,3,Bristow & Sutor; Enforcement Services (name as published); Rossendales,2013-03,2018-12,10,194027.21,194027.21,100421,2018-19,1932.14,1932.14,58.0,66.9
+South Gloucestershire,UA,2,Bristow & Sutor; Rundles,2010-10,2011-11,30,12789.43,12789.43,269107,2013-14,47.53,47.53,74.3,74.7
+Uttlesford,SD,1,Rundles,2019-04,2025-09,20,8275.46,8275.46,94953,2024-25,87.15,87.15,59.2,65.4
+Cheltenham,SD,2,Bristow & Sutor; Quality Bailiffs (Enforcement Bailiffs Ltd),2020-07,2020-10,2,5927.12,5927.12,117090,2018-19,50.62,50.62,64.3,66.8
+Rushmoor,SD,3,Marston; Quality Bailiffs (Enforcement Bailiffs Ltd); Ross & Roberts,2016-03,2023-11,5,4991.56,3920.42,95142,2018-19,52.46,41.21,64.2,72.4
+Plymouth,UA,1,JBW Group,2015-12,2015-12,1,425.0,425.0,259175,2013-14,1.64,1.64,58.4,54.0

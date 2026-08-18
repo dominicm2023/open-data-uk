@@ -1,0 +1,410 @@
+pattern,supplier_raw,publisher,txns,gbp,first,last,expense_types_sample
+MARSTON,Marston Vale Middle School,Department for Education,196,12282385.82,2013-01,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+MARSTON,New Marston Primary School,Department for Education,60,5233793.95,2017-02,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+MARSTON,Marston Green Infant Academy,Department for Education,58,4520845.44,2016-12,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+MARSTON,MARSTON GROUP,Ministry of Justice,47,3375276.68,2010-05,2013-06,"130001-Other Income,111620-Bailiff Fees (NOS),610200-Debtors < 1 Year - VAT,223000-Other Expenditure"
+MARSTON,MARSTON VALE MIDDLE SCHOOL,Department for Education,17,2258720.8,2012-07,2018-01,"Current Grants,Grants"
+MARSTON,South Marston Church of England Primary School,Department for Education,51,1497215.05,2017-01,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+MARSTON,Marston Green Infant Academy Trust,Department for Education,50,1152668.03,2014-04,2015-02,Grants
+MARSTON,MARSTON GREEN INFANT SCHOOL,Department for Education,4,387917.0,2014-01,2015-03,Grants
+MARSTON,J Marston Engineers Ltd t/a Mortuary Solutions,Bristol City Council,2,310540.71,2024-04,2026-03,New Construction
+MARSTON,MARSTON HOTELS LIMITED,Ministry of Defence,5,185798.32,2014-04,2014-09,"Transportation of personnel, freight and travel expenses"
+MARSTON,MARSTON & GRUNDY LLP,Transport for Greater Manchester,39,163293.82,2011-04,2017-06,"Capital Costs - Capital Project Main Contract Works,Maintenance,Property & Equipment Maintenance,Capital Costs - Engineering Support Services,Capital Costs - Quantity Surveying Services,Capital Costs - Project Support Services,Capital Costs - Contract Administration Services,Metrolink Maintenance & "
+MARSTON,MARSTON GROUP LTD,Department for Work and Pensions,8,155484.0,2012-11,2016-12,"BAILIFF OTHER,BAILIFF COMMISSION"
+MARSTON,HS MARSTON AEROSPACE LTD,Ministry of Defence,3,152982.35,2010-11,2010-12,Purchase of inventory and services
+MARSTON,J MARSTON ENGS LTD/MORTUARY SOLUTIONS,United Lincolnshire Hospitals NHS Trust,3,126564.09,2015-04,2015-06,STRUCTURE
+MARSTON,MARSTON GROUP LIMITED,Royal Borough of Greenwich,77,84181.34,2014-07,2017-06,"Services Private Contractor,Services Joint Authorities,Professional Fees"
+MARSTON,Marston (Holdings) Limited,Bristol City Council,357,44362.36,2020-06,2026-05,"Services - Fees and Charges,TPP - Other,Services - Security,Services - Professional Fees"
+MARSTON,SOUTH MARSTON CHURCH OF ENGLAND PRIMARY SCHOOL,Department for Education,1,27000.0,2016-06,2016-06,Grants
+MARSTON,PRIORS MARSTON & PRIORS HARDWICK SCHOOL LTD,Department for Education,1,25950.0,2011-02,2011-02,CURRENT GRANTS
+MARSTON,South Marston CE Academy,Department for Education,3,25673.92,2016-12,2016-12,Grants
+MARSTON,LEA MARSTON HOTEL,"Department for Environment, Food and Rural Affairs",2,11216.7,2012-06,2012-06,Room hire for operations deliveryivery staff training
+MARSTON,Marston Group Limited,Bristol City Council,66,9957.55,2020-01,2026-02,"TPP - Other,Services - Fees and Charges"
+MARSTON,LONG MARSTON PARISH COUNCIL,North Yorkshire Council,2,7000.0,2023-09,2026-04,000002 Public Sector Body
+MARSTON,MARSTON AND GRUNDY,Transport for Greater Manchester,2,6681.0,2011-04,2011-04,"Capital Costs - Engineering Support Services,Maintenance"
+MARSTON,Marston Properties Limited,London Borough of Richmond Upon Thames,3,4314.0,,,"Rents Payable,Landlord Service"
+MARSTON,MARSTON CONSULTING LTD (T/A CORPORATE CLOTHING DIRECTOR-E.COM,UK Trade and Investment,2,2333.95,2010-11,2011-01,"Passport Business Development Credits,Basic Grants - SESA Solo Support Scheme"
+MARSTON,WENDY MARSTON EVENTS LIMITED,UK Trade and Investment,3,1989.82,2014-08,2014-09,"Other Professional Services - Export Vouchers (Autumn Statement),Other Professional Services-Export Vouchers (Autumn Statement)"
+MARSTON,Marston Robing Limited,Plymouth City Council,1,1071.0,2015-11,2015-11,Purchase Of Clothing & Uniforms
+MARSTON,MARSTON AGRICULTURAL SERVICES LTD,UK Trade and Investment,1,1000.0,2011-03,2011-03,Basic Grants - SESA Solo Support Scheme
+MARSTON,SMARSTONE LDA,"Foreign, Commonwealth and Development Office (FCDO)",1,864.12,2022-06,2022-06,HARDWARE STORES
+MARSTON,Marston Book Services Ltd,Bristol City Council,1,837.22,2020-03,2020-03,Materials for resale
+MARSTON,"ST MARY THE VIRGIN, POTTERS MARSTON",Blaby District Council,2,658.0,2014-08,2017-09,
+MARSTON,MARSTON GROUP LTD,"Department for Environment, Food and Rural Affairs",1,582.3,2012-06,2012-06,STATUTORY BODIES
+MARSTON,Marston Group Ltd,Rushmoor Borough Council,1,582.0,2016-06,2016-06,Refund Of Overpayment
+MARSTON,MARSTON BOOK SERVICES LTD,"Ministry of Housing, Communities and Local Government",1,305.0,2012-07,2012-07,Publications
+MARSTON,MARSTON GROUP LTD,North Yorkshire Council,10,0.0,2025-11,2026-06,201600 Financial Services > Debt Collection & Recovery
+BRISTOW,BRISTOWS LLP,Home Office,16,6949578.52,2017-05,2018-03,"Legal Fees & Services,Legal Services & Fees,Professional & Administration Services"
+BRISTOW,Collyer Bristow LLP,HM Revenue and Customs,1,41800.0,2019-04,2019-04,Tribunal appellant costs
+BRISTOW,J.E. BRISTOW (ELECTRICAL) LTD,National Offender Management Service,1,30594.0,2011-02,2011-02,Other - Acquisitions
+BRISTOW,Bristow & Sutor,Bristol City Council,463,24074.75,2020-01,2026-05,Services - Fees and Charges
+BRISTOW,Paul Bristow Associates Ltd,Bristol City Council,9,5538.05,2020-01,2024-11,Materials for resale
+BRISTOW,BRISTOWS LTD,UK Trade and Investment,1,1241.24,2010-07,2010-07,Catering
+BRISTOW,Bristow & Sutor,South Gloucestershire Council,4,888.0,2011-01,2011-07,Other Private Contractors
+BRISTOW,COLLYER BRISTOW SOLICITORS,UK Trade and Investment,1,600.0,2011-01,2011-01,Travel and Subsistence O'seas - Market Visit Scheme
+BRISTOW,Bristow & Sutor,Cheltenham Borough Council,1,527.12,2020-07,2020-07,R5006-LTC001
+BRISTOW,BRISTOW & SUTOR,North Yorkshire Council,29,403.84,2025-10,2026-06,201600 Financial Services > Debt Collection & Recovery
+BRISTOW,BRISTOW SUTOR,Blaby District Council,1,368.62,2013-03,2013-03,
+JACOBS,JACOBS U.K. LIMITED,Ministry of Defence,319,76492381.72,2012-10,2020-03,"Fees for professional services,Design services and minor equipment purchases,Purchase of buildings and military equipment,Development costs for military equipment,Environmental clear up,Estate management,Dilapidation charges,Research and development,Preparation of land & buildings for disposal,FATS "
+JACOBS,JACOBS,Department for Education,309,24000898.83,2012-05,2015-03,"Capital Grants,Programme Costs,Professional Services Other,Professional Fees - Capital,Technical Costs - Capital,Professional Services Consultancy and Contingent Labour,Grants,Programme costs"
+JACOBS,Alderman Jacobs School,Department for Education,259,16881739.43,2012-04,2022-03,"Grants expenditure,Grants Expenditure,Current Grants,Capital Grants,Grants"
+JACOBS,Jacobs Engineering UK Ltd,"Department for Environment, Food and Rural Affairs",168,12495054.63,2010-04,2012-07,"Construction Service Providers,Environmental Services,Marine, Coastal & Inland Waterways Services,Construction Service Providers, Environmental Services,Construction Service Providers & Technical Consultancy,Technical Consultancy,Construction,Marketing & Media,Professional Services Consultancy,Profe"
+JACOBS,JACOBS UK LTD,Transport for Greater Manchester,772,8727719.7,2011-05,2026-03,"Capital Costs - Mechanical & Engineering Support Services,Property & Equipment Maintenance,Capital Costs - Design Support Services,Capital Costs - Programme and Project Management Services,Security Services,Procurement Services,Traffic and Transportation Surveys,Quantity Surveying Services,Capital C"
+JACOBS,JACOBS U.K. LTD,Ministry of Defence,70,3481957.35,2010-04,2012-09,"Purchase of buildings and military equipment,Design services and minor equipment purchases,Fees for professional services,Payments made in advance,Dilapidation charges"
+JACOBS,JACOBS ENGINEERING UK,National Offender Management Service,75,3061329.26,2010-05,2012-07,"WIP - Professional Fees,Structural works / maintenance - Fees & professional services,New structural works, structural maintenance and equipment,Professional Advice"
+JACOBS,Jacobs,Department for Education,61,2878275.28,2016-12,2018-01,"Professional Services Other,Professional Services Consultancy and Contingent Labour,Programme costs"
+JACOBS,Jacobs LES Ltd,"Department for Environment, Food and Rural Affairs",37,2268615.42,2010-12,2012-04,"Main Contractors,Marine, Coastal & Inland Waterways Services,Building Management,Building Management & Marine, Coastal & Inland Waterways,Building Repair & Maintenance,Main Contractors & Marine, Coastal & Inland Waterways,Construction,Clinical & Medical,Professional Services Technical Services"
+JACOBS,BROWNE JACOBSON LLP,HM Revenue and Customs,10,1962548.2,2014-02,2019-04,"Dilapidations,Landlord Charges,Rent,Min AW non-struc VAT"
+JACOBS,JACOBS ENGINEERING U.K. LIMITED,Ministry of Defence,35,1853558.46,2010-05,2016-01,"Estate management,Design services and minor equipment purchases,Sub Contracted Work"
+JACOBS,JACOBS U.K. LTD,Department for Work and Pensions,12,1738783.1,2025-09,2026-06,"CT ESTATES ACCESSIBILITY AND INCLUSION DELP,CHG WPT BOH ESTATES PROFFESSIONAL FEES (TEMP HOLD)"
+JACOBS,BROWNE JACOBSON LLP,Department of Health and Social Care,51,1651646.71,2019-06,2022-04,"Legal Fees,Professional fees,Good received not invoiced (ST)"
+JACOBS,BROWNE JACOBSON SOLICITORS,Department for Education,29,1408349.38,2013-04,2017-05,"Professional Services Other,Professional Services Consultancy and Contingent Labour"
+JACOBS,BROWNE JACOBSON SOLICITORS,Department for Work and Pensions,27,1104839.0,2017-05,2021-03,"CA - OTHER RECEIVABLES - CRU PAYMENTS RECOVERIES,PROFESSIONAL ADVICE & OPINION VAT RECOVERABLE,Exp - Purchase Of Goods/Services - Consultancy,EXP - PURCHASE OF GOODS/SERVICES - ACCOMMODATION &BLDNG MNGMT- RENT TO LANDLORDS"
+JACOBS,Browne Jacobson Llp,United Lincolnshire Hospitals NHS Trust,21,1100201.07,2022-04,2024-07,"Legal Services,Legal Fees Other,Property Lease,Legal Fees Property"
+JACOBS,Browne Jacobson,"Department for Environment, Food and Rural Affairs",20,1080667.77,2010-04,2012-09,Legal costs
+JACOBS,Jacobs UK Ltd,"Department for Environment, Food and Rural Affairs",11,637294.2,2012-08,2012-09,"Construction,Professional Services - CCL"
+JACOBS,JACOBS ONE LIMITED,Ministry of Defence,7,582872.98,2012-10,2012-11,"Purchase of buildings and military equipment,Dilapidation charges"
+JACOBS,Jacobs UK Ltd,Department for Education,11,535068.18,2021-05,2022-02,"Staff - Temporary Staff,Grants Expenditure"
+JACOBS,JACOBS ENGINEERING UK,Home Office,10,465807.47,2010-11,2011-02,"Engineering,Professional & Admin Services.Consultant - Imp & Del - PROG,Professional & Admin Services.Land Blding & Prop Serv - ADMN,Building, Construction Service.Build a new structure (FA),Professional & Admin Services."
+JACOBS,Jacobs Engineering (UK) Ltd,HM Revenue and Customs,4,390994.0,2010-07,2012-05,"Business Consultancy,Technical Services (Property),Legal Service Sol's"
+JACOBS,BROWNE JACOBSON,George Eliot Hospital NHS Trust,10,288982.1,2024-01,2024-10,"Fees-Legal,Suspense Rbs Contra"
+JACOBS,Browne Jacobson Llp,Rushmoor Borough Council,117,256890.04,2019-08,2026-05,"Contract Costs,Counsels Fees,Community Safety Partnership,Contract Procurement,Consultancy,Admin Equipment,Promotions,On-line Planning Applications,Professional Subscriptions,Publicity and Advertising,Annual Report Publication,Corporate Firewall,Miscellaneous Expenses,Closure Compensation"
+JACOBS,ALDERMAN JACOBS SCHOOL,Department for Education,4,234814.0,2013-07,2014-02,Grants
+JACOBS,BROWNE JACOBSON,United Lincolnshire Hospitals NHS Trust,6,205673.61,2011-08,2014-09,"LOSSES _ COMPENSATIONS,MEDICAL NEGLIGENCE"
+JACOBS,JACOBS UK LTD,National Offender Management Service,4,187782.44,2012-08,2012-10,"WIP - Professional Fees,Professional Advice"
+JACOBS,Jacobs Uk Ltd,Home Office,4,166061.37,2010-07,2011-01,Land and Buildings maintenance
+JACOBS,BROWNE JACOBSON (INVOICES ONLY),United Lincolnshire Hospitals NHS Trust,5,165171.84,2018-11,2021-07,MEDICAL NEGLIGENCE
+JACOBS,JACOBS ENGINEERING UK LTD,Ministry of Justice,3,112522.9,2011-04,2011-07,222002-Other Property Costs
+JACOBS,BROWNE JACOBSON LLP,Cabinet Office,3,107836.0,2015-06,2015-10,"CONSULTANTS VAT RECOVERABLE,OTHER LEGAL FEES"
+JACOBS,BROWNE JACOBSON LLP,Blaby District Council,25,84864.59,2015-06,2018-10,
+JACOBS,Browne Jacobson LLP,Plymouth City Council,20,79906.92,2015-03,2015-12,"Payments,Legal Expenses"
+JACOBS,JACOBS & TRICKS,Ministry of Justice,3,79500.0,2013-03,2013-04,"Crime Lower,06/03/2013"
+JACOBS,BROWNE JACOBSON LLP,Royal Borough of Greenwich,3,66143.6,2012-07,2014-03,
+JACOBS,Jacobs UK Limited,Department for Education,2,56972.23,2021-04,2021-08,Grants Expenditure
+JACOBS,Browne Jacobson LLP,Uttlesford District Council,20,54167.8,2020-03,2025-03,"Legal Services - Legal Fees,Housing (Misc) - Fees,Housing Dev - Business Plan,Consultancy - Business Plan,Consultants - General"
+JACOBS,Browne Jacobson LLP,Bristol City Council,22,46531.2,2022-07,2026-04,"Insurance - Payment of Claims,Internal Professional Fees,Input VAT,Internal Trading Recharge - Accountancy,Internal Trading Charges - Accountancy,Services - Fees and Charges,New Construction,External Professional Fees,Services - External Legal Fees"
+JACOBS,Jacobs UK Limited,Office of Rail and Road,1,39030.0,2024-05,2024-05,Consultancy - Advisory
+JACOBS,JACOBS UK LTD,North Yorkshire Council,4,34714.31,2023-08,2024-01,"391100 Works - Construction, Repair & Maintenance > Buildings"
+JACOBS,Browne Jacobson Llp,"Department for Science, Innovation and Technology",1,34085.8,2025-03,2025-03,Legal Costs
+JACOBS,Jacobs UK Ltd,Bristol City Council,9,34054.36,2022-07,2023-07,"External Professional Fees,Services - Fees and Charges"
+JACOBS,Browne Jacobson,Department for International Development,6,30134.94,2016-06,2016-08,"Project delivery costs – supplier services,Legal costs"
+JACOBS,Browne Jacobson Llp,Coventry and Warwickshire Partnership NHS Trust,1,27846.2,2011-08,2011-08,Legal/Prof Fees
+JACOBS,Browne Jacobson LLP,Cabinet Office,1,26379.0,2014-12,2014-12,Legal Fees
+JACOBS,GARY JACOBS & CO LTD,Ministry of Justice,1,26042.06,2013-08,2013-08,
+JACOBS,Brownejacobson,Cabinet Office,1,25938.4,2015-02,2015-02,Legal Fees
+JACOBS,ALDERMAN JACOBS COUNTY PRIMARY SCHOOL,Department for Education,1,25000.0,2010-12,2010-12,CURRENT GRANTS
+JACOBS,JACOBS UK LTD,Former council of North Yorkshire,2,10699.95,2022-04,2022-11,"391100 Works - Construction, Repair & Maintenance > Buildings"
+JACOBS,Jacobs Engineering,South Gloucestershire Council,1,6750.0,2011-05,2011-05,Other Private Contractors
+JACOBS,M.D.Jacobs Conservation & Preservat,Natural History Museum,4,6400.0,2014-01,2014-03,Professional Services/Fees
+JACOBS,Jacobs Education,Bristol City Council,3,3608.5,2025-08,2026-05,"Services - Fees and Charges,Services - Consultants"
+JACOBS,Browne Jacobson LLP,Cheltenham Borough Council,2,2500.0,2020-01,2020-01,R4400-PLP105
+JACOBS,JACOBS UK LTD,"Ministry of Housing, Communities and Local Government",1,2369.4,,,
+JACOBS,Mrs Josephine Jacobs,Rushmoor Borough Council,2,1723.08,2023-02,2023-02,"Rent Deposit,Rent Deposits"
+JACOBS,Mark Jacobs,Natural History Museum,1,1500.0,2011-08,2011-08,P/L - Consultancy
+JACOBS,SP   JACOBS DIGITAL,"Foreign, Commonwealth and Development Office (FCDO)",1,1040.23,2022-01,2022-01,PHOTOGRAPHIC STUDIOS
+JACOBS,BROWNE JACOBSON,North Yorkshire Council,1,1000.0,2024-03,2024-03,280000 Legal Services
+JACOBS,SHOPJACOBSENPLUSDK,Foreign and Commonwealth Office,1,963.11,2016-01,2016-01,"EQUIP, FURNITURE, HOME FURNSHNGS STRS (EXCPT APPL)"
+JACOBS,Brownejacobson LLP,Bristol City Council,1,959.0,2022-10,2022-10,Insurance - Payment of Claims
+JACOBS,BROWNE JACOBSON SOLICITORS,Milton Keynes Hospital NHS Foundation Trust,1,625.0,2013-11,2013-11,Travel & Subsistence
+JACOBS,Jacobs Photo & Video,South Gloucestershire Council,1,591.64,2011-08,2011-08,Long Service Awards
+JACOBS,WWW.JACOBSDIGITAL.,Natural History Museum,1,404.06,2011-10,2011-10,P/L - Equip & Related Costs
+JACOBS,Jacobs digital,"Department for Digital, Culture, Media and Sport",1,358.33,2011-08,2011-08,P/L - Equip & Related Costs
+JACOBS,JACOBS DEBT RECOVERY,North Yorkshire Council,10,0.0,2025-11,2026-06,201600 Financial Services > Debt Collection & Recovery
+EQUITA,Equitas Academy Trust,Department for Education,373,22432903.63,2012-07,2015-02,"Current Grants,Grants"
+EQUITA,EQUITA LTD,HM Revenue and Customs,28,1327082.47,2013-12,2016-04,"Debt coll serv (DEL),Debt coll serv (AME)"
+EQUITA,Equitable Life Assurance Society,"Department for Environment, Food and Rural Affairs",4,768995.62,2010-06,2011-02,Building Management
+EQUITA,AEQUITAS OAKENGATES LTD,Shropshire Community Health NHS Trust,34,112308.98,2020-08,2026-02,"Rent,Accomodation Insurance,Minor Works"
+EQUITA,EQUITABLE LIFE ASSURANCE SOCIETY,HM Treasury,4,99284.38,2011-02,2011-04,"Equitable Life Enq.Vat Nonrecv,Program costs other prof svcs,Equitable Life Enquiry"
+EQUITA,EQUITAS ACADEMIES TRUST,Department for Education,1,40000.0,2012-10,2012-10,Grants
+EQUITA,AEQUITAS LEGAL,Royal Borough of Greenwich,5,26337.52,2015-04,2016-07,Insurance Claims
+EQUITA,EQUITA LTD,Royal Borough of Greenwich,50,25788.8,2014-11,2016-09,"Services Joint Authorities,Services Private Contractor"
+EQUITA,Aequitas Consulting,Department for International Development,1,16260.0,2014-05,2014-05,Project delivery costs - supplier services
+EQUITA,AEQUITAS SHIFNAL LTD,Shropshire Community Health NHS Trust,12,5640.0,2024-07,2026-03,Meeting Expenses/Room Hire
+EQUITA,AEQUITAS CONSULTING LTD,UK Trade and Investment,2,1448.0,2014-10,2014-10,Receipt of Fees and Charges - Overseas Market Introduction Service
+EQUITA,EQUITABLE HOUSE LIMITED,Royal Borough of Greenwich,1,500.0,2015-05,2015-05,Refunds
+EQUITA,EQUITA LIMITED,North Yorkshire Council,12,0.0,2024-03,2026-06,351200 Street & Traffic Management > Parking > Fines Collection
+ROSSENDALE,ROSSENDALE TRANSPORT,Transport for Greater Manchester,833,55103040.54,2011-04,2026-03,"Supported Bus Services,Concessionary Reimbursement,Driver Intervention Course Delivery Costs,Clean Bus Technology Fund Grant,Bus Recovery Funding,Bus Recovery Fund,Income"
+ROSSENDALE,ROSSENDALE BC,"Ministry of Housing, Communities and Local Government",499,29042386.87,2008-04,2017-11,"Revenue Support grant payable,Area Based Grants,Cap Grants to Local Authorities (DEL),Current (non AEF) Grants to Local Authorities,NNDR Outturn Adjustments,National Non Domestic Rates (NNDR) Payments,NNDR Billing Authorities Receipts,Miscellaneous Legal Costs,Services provided by other Govt Orgs,Cu"
+ROSSENDALE,ACCRINGTON & ROSSENDALE COLLEGE,Department for Education,328,27080035.39,2012-04,2020-06,"Grants expenditure,ESFA TL ADULT EDUCATION BUDGET,ESFA APPRENTICESHIPS 1618 PARTICIPATION,Current Grants,Grants,Programme Costs,Training,Loans and Funding"
+ROSSENDALE,ROSSENDALE BOROUGH COUNCIL,Department for Work and Pensions,86,3212560.0,2010-04,2017-05,"HOUSING BENEFIT ADMIN,Housing Benefit Admin,HB COOL DEL PROGRAMME,EP PROVIDER PAYMENT - WORK PROGRAMME,HOUSING BENEFIT ADMINISTRATION"
+ROSSENDALE,ROSSENDALES LTD,HM Revenue and Customs,49,3154245.95,2012-09,2016-03,"Debt collection serv,Debt coll serv (DEL),Debt coll serv (AME)"
+ROSSENDALE,ROSSENDALES LTD,Ministry of Justice,12,1913240.98,2013-03,2013-10,
+ROSSENDALE,Rossendales Limited,HM Revenue and Customs,4,246109.94,2012-05,2012-08,Debt collection serv
+ROSSENDALE,ROSSENDALE BOROUGH COUNCIL,Department of Health and Social Care,2,170433.95,2021-04,2021-07,Revenue Grants to local authorities
+ROSSENDALE,ACCRINGTON & ROSSENDALE COLLEGE (G),Home Office,2,64283.28,2012-02,2012-09,Grants
+ROSSENDALE,ROSSENDALE BOROUGH COUNCIL,Ministry of Defence,1,25553.0,2014-01,2014-01,Administration
+ROSSENDALE,Rossendales Ltd,HM Revenue and Customs,1,25131.54,2014-02,2014-02,Debt coll serv (Del)
+ROSSENDALE,ROSSENDALE SCHOOL PRIORY,Former council of North Yorkshire,1,22212.0,2022-04,2022-04,171011 Education > School Services
+ROSSENDALE,ROSSENDALES LTD,Royal Borough of Greenwich,3,6114.0,2012-07,2013-07,
+ROSSENDALE,ROSSENDALES,Blaby District Council,6,4458.59,2016-08,2018-12,
+ROSSENDALE,Rossendales Ltd,Bristol City Council,34,4004.24,2020-01,2020-03,Services - Fees and Charges
+ROSSENDALE,ROSSENDALE GROUP L,"Department for Environment, Food and Rural Affairs",4,2957.04,2011-08,2012-09,"GENERAL RETAIL AND WHOLESALE,Service of lifting chains for the Navigation lock at Boston,Overhead crane service for the TWA,Tirfor winch service and safety harness purchase"
+ROSSENDALE,Rossendales Training Ltd,South Gloucestershire Council,1,2102.5,2011-08,2011-08,Training Expenses
+ROSSENDALE,ROSSENDALE GROUP,"Department for Environment, Food and Rural Affairs",1,600.0,2012-04,2012-04,GENERAL RETAIL AND WHOLESALE
+ROSSENDALE,ROSSENDALE LEISURE TRUST,North Yorkshire Council,1,500.0,2023-08,2023-08,299999 Arts & Leisure Services > Not Elsewhere Classified
+NEWLYN,NEWLYN CONTRACTORS LTD,Royal Borough of Greenwich,31,4749394.08,2014-06,2016-12,Newbuild
+NEWLYN,St Newlyn East Learning Academy,Department for Education,55,2582995.38,2016-12,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+NEWLYN,Newlyn School,Department for Education,52,2450162.76,2016-12,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+NEWLYN,ST NEWLYN EAST PRIMARY SCHOOL,Department for Education,5,554381.0,2014-05,2015-03,Grants
+NEWLYN,NEWLYN ART GALLERY LTD,"Ministry of Housing, Communities and Local Government",11,370188.83,2008-08,2009-06,"EU Gts (Cap) to Prvt/Sec Persons & NPISH,EU Cur Grnt to Priv Sect-Persons & NPISH"
+NEWLYN,NEWLYN SCHOOL,Department for Education,1,25000.0,2014-10,2014-10,Grants
+NEWLYN,NEWLYN,Shropshire Community Health NHS Trust,2,4524.0,2018-05,2018-05,Patient Aids/Appliances : Mobility
+DUKES,Duke's Aldridge Academy,Department for Education,115,29694554.14,2017-11,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+DUKES,The Dukeries Academy,Department for Education,130,18083161.35,2016-12,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+DUKES,Dukeries Academy,Department for Education,226,14490235.13,2013-01,2015-02,Grants
+DUKES,Duke of York's Royal Military School,Department for Education,164,12819176.28,2016-12,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+DUKES,DYRMS-DukeYorkMilitarySchoo,Department for Education,229,9839044.5,2012-04,2015-02,"Current Grants,Capital Grants,Grants"
+DUKES,Janet Duke Primary School,Department for Education,62,9665592.6,2018-01,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+DUKES,Dukesgate Academy,Department for Education,225,7197797.9,2012-08,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+DUKES,The Duke of York's Royal Military School,Department for Education,16,1310650.95,2021-02,2021-07,"Grants expenditure,Grants Expenditure"
+DUKES,DUKE OF YORKS ROYAL MILITARY  SCHOOL,Ministry of Defence,1,176042.89,2015-03,2015-03,Grants to NDPBs
+DUKES,THE DUKERIES ACADEMY,Department for Education,1,140086.4,2013-02,2013-02,Grants
+DUKES,DUKE OF EDINBURGHS AWARD,Department for Education,4,125000.0,2010-04,2010-12,CURRENT GRANTS
+DUKES,Duke of Lancaster School,Department for Education,5,119835.58,2022-01,2022-03,Grants Expenditure
+DUKES,DAVISON FLYNN DUKE SOLICITORS,Ministry of Justice,4,116523.0,2013-01,2013-08,Crime Lower
+DUKES,DUKERIES COLLEGE,Department for Education,12,112724.0,2012-04,2012-06,Current Grants
+DUKES,DUKERIES HEALTHCARE LTD,Royal Borough of Greenwich,29,104551.99,2012-02,2014-06,
+DUKES,DUKE OF YORKS ROYAL MILITARY SCHOOL,Department for Education,1,88590.89,2011-07,2011-07,CURRENT GRANTS
+DUKES,The Duke of Edinburgh's Award,Department for Education,1,60322.0,2022-02,2022-02,Grants Expenditure
+DUKES,C W DUKE & SONS LTD,Royal United Hospital Bath NHS Foundation Trust,1,41585.86,2011-03,2011-03,Capital Expenditure
+DUKES,H.R.H. THE DUKE OF YORK,UK Trade and Investment,6,30683.37,2011-02,2011-12,"Printing Costs -,Travel and Subsistence O'seas -,Other Accomodation costs -"
+DUKES,C W Duke & Sons Ltd,Bristol City Council,5,25549.0,2025-06,2026-03,"Rent,Services - Professional Fees"
+DUKES,JANET DUKE PRIMARY SCHOOL,Department for Education,1,25000.0,2017-02,2017-02,Grants
+DUKES,THE DUKES MIDDLE SCHOOL,Department for Education,1,25000.0,2012-02,2012-02,Current Grants
+DUKES,R D Duke,Uttlesford District Council,3,20400.0,2024-06,2025-05,"Rents,Engery Efficiency - Cap Wks L&B"
+DUKES,Duke Center for International Development,Department for International Development,1,7329.38,2019-07,2019-07,Training - Course Fees
+DUKES,DUKESGATE ACADEMY,Transport for Greater Manchester,1,5045.0,2024-06,2024-06,Capital Costs - Miscellaneous External costs
+DUKES,DUKES GROCERY,"Foreign, Commonwealth and Development Office (FCDO)",1,4183.28,2022-10,2022-10,"EATING PLACES, RESTAURANTS"
+DUKES,Plymouth Duke of Edinburgh Award Scheme C,Plymouth City Council,1,4000.0,2015-03,2015-03,Grants  Private Contractors
+DUKES,DUKES HOTEL LTD,UK Trade and Investment,2,2000.0,2012-07,2013-08,Basic Grants - SESA Solo Support Scheme
+DUKES,The Duke Of York,Rushmoor Borough Council,1,2000.0,2020-12,2020-12,Covid Local Rstrct (Clsd) Addum
+DUKES,HMS IRON DUKE,UK Trade and Investment,3,1608.06,2014-09,2015-10,"Corporate Event Management and Marketing-Support to Campaigns,Air Travel - Sector Events - UK"
+DUKES,DUKES COURT TRAVEL,Foreign and Commonwealth Office,1,1581.0,2014-03,2014-03,Travel Agencies
+DUKES,DUKES HEAD HOTEL,"Department for Environment, Food and Rural Affairs",1,1500.0,2012-04,2012-04,
+DUKES,DUKE PRINTING CENTER,"Foreign, Commonwealth and Development Office (FCDO)",1,909.44,2023-11,2023-11,2741
+DUKES,IN  DUKE PRINTING CENT,"Foreign, Commonwealth and Development Office (FCDO)",1,779.04,2024-04,2024-04,2741
+DUKES,DUKE'S COURT TRAVEL LTD,UK Trade and Investment,1,774.0,2016-03,2016-03,Air Travel - Non-Specific Programme activity
+DUKES,DUKES 92,"Department for Environment, Food and Rural Affairs",1,653.35,2012-07,2012-07,"Emmission Trading Scheme Phase 3 training event, 26 delegates, 25/06/12"
+DUKES,THE THIN WHITE DUKE,Natural History Museum,1,28.1,2013-04,2013-04,B/S - Current Assets -  InterCompany
+DUKES,DUKES CANOE CLUB WAIKIKI,Natural History Museum,1,26.73,2010-12,2010-12,MF - Travel Costs
+DUKES,THE DUKE,The National Archives,1,15.5,2014-05,2014-05,
+CDER,JOHN R MCDERMOTT QC,Ministry of Justice,2,128574.61,2013-03,2013-08,Crime Higher
+CDER,MR J MCDERMOTT#DX 14223,Ministry of Justice,1,26050.0,2011-02,2011-02,311200-Criminal Legal Aid
+CDER,CDER Group Limited,Bristol City Council,1,1939.79,2025-12,2025-12,Council Tax
+CDER,P MCDERMOTT T/A FDI MARKETING ASSOCIATES,UK Trade and Investment,1,950.0,2010-07,2010-07,Authoring and Copywriting Costs
+CDER,CDER GROUP LIMITED.,Department of Health and Social Care,1,617.0,2020-12,2020-12,
+CDER,DONNA MCDERMOTT,Royal Borough of Greenwich,1,500.0,2014-07,2014-07,Childminding Service
+ANDREW_JAMES,ANDREW JAMES,Royal Borough of Greenwich,5,-2171.2,2015-01,2015-03,"Community Care Direct Payments,Contributions Other Bodies"
+EXCEL,NATIONAL INSTITUTE FOR CLINICAL EXCELLENCE (NICE),Department of Health and Social Care,127,553217380.63,2010-06,2022-11,"ENDPBs Admin Revenue Grant in Aid,Grant in Aid Funding (Cash) - ENDPBs,Revenue Policy Payments,CASH FUNDING Rev Inside RAB,Grants to non profit institutions (CUR),Policy Payments,Outsourcing Contract"
+EXCEL,EDEXCEL,Department for Education,37,82167400.88,2011-11,2016-11,"Programme Costs,DfE Programme Costs,Professional Services Other,Programme costs"
+EXCEL,Excelsior Academy,Department for Education,378,69888288.24,2012-04,2022-03,"Grants expenditure,Grants Expenditure,Current Grants,Capital Grants,Grants"
+EXCEL,SOCIAL CARE INSTITUTE FOR EXCELLENCE SCIE,Department of Health and Social Care,86,28216242.87,2012-08,2022-11,"Revenue Grants to non-profit institutions,Outsourcing Contract,Good received not invoiced (ST),Grants to non profit institutions (CUR),Other programme expenditure,Policy Payments,Contractor/Staff Substitution"
+EXCEL,The Excel Academy,Department for Education,82,24059525.92,2016-12,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+EXCEL,London Academy of Excellence,Department for Education,151,19167190.56,2012-08,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+EXCEL,The Excel Academy Partnership,Department for Education,215,15801009.92,2012-04,2015-02,"Current Grants,Capital Grants,Grants"
+EXCEL,Excellent Education Academies Trust,Department for Education,240,11850276.09,2013-09,2015-02,Grants
+EXCEL,PROGRESS TO EXCELLENCE LTD,Department for Education,195,10395961.24,2017-04,2020-11,"Grants expenditure,ESFA ADULT APPRENTICESHIPS,ESFA APPRENTICESHIPS 1618 PARTICIPATION,Training,Loans and Funding"
+EXCEL,London Academy of Excellence Tottenham,Department for Education,66,9558420.95,2017-11,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+EXCEL,SOCIAL CARE INSTITUTE FOR EXCELLENCE,National Institute for Health and Care Excellence,26,8579006.6,2013-04,2020-04,Contr Other External
+EXCEL,COUNCIL FOR HEALTHCARE REGULATORY EXCELLENCE (CHRE),Department of Health and Social Care,43,6759217.09,2010-06,2014-03,"Revenue Grant in Aid to NDPBs,Admin Revenue Grant-in-Aid ENDPBs,Arm Length Bodies-Revenue Subsidy,Admin Capital Grant-in-Aid to ENDPBs,Policy Payments,ENDPBs Admin Revenue Grant in Aid,ENDPBs Admin Capital Grant in Aid,Committee costs"
+EXCEL,LONDON ACADEMY OF EXCELLENCE,Department for Education,13,6111502.53,2012-07,2014-10,"Current Grants,Grants"
+EXCEL,SOCIAL CARE INSTITUTE FOR EXCELLENCE (SCIE),Department of Health and Social Care,4,3874074.0,2010-06,2011-10,"Training non pay costs,Grants to non profit institutions (Current),Revenue Grants to Other Bodies,Grants to non profit institutions (CUR)"
+EXCEL,MANUFACTURING EXCELLENCE LTD,Department for Education,75,3007312.62,2018-11,2022-03,"Grants expenditure,ESFA ADULT APPRENTICESHIPS,Grants Expenditure"
+EXCEL,Atlantic Centre of Excellence MAT,Department for Education,86,2141949.97,2014-06,2015-02,Grants
+EXCEL,SOCIAL CARE INSTITUTE FOR EXCELLENCE,Department for Education,15,1905010.3,2010-09,2015-05,"CURRENT GRANTS,Current Grants,Grants"
+EXCEL,EXCELSIOR ACADEMY,Department for Education,10,1834695.6,2010-10,2020-02,"Grants expenditure,CAPITAL GRANTS,Current Grants,Grants"
+EXCEL,CENTRE EXCELLENCE OF LIFE SCIENCES,"Ministry of Housing, Communities and Local Government",9,1026096.05,2008-11,2009-03,"EU Cur Grnt to Priv Sect-Persons & NPISH,EU Gts (Cap) to Prvt/Sec Persons & NPISH"
+EXCEL,FUNDING CONTRIBUTION TOWARDS THE EDCTP REGIONAL NETWORKS OF EXCELLENCE,Department of Health and Social Care,1,1000000.0,2022-03,2022-03,Research & development
+EXCEL,CENTRE FOR ADHD RESEARCH AND EXCELLENCE (THE),NHS Norfolk and Suffolk ICB - 25k Expenditure Report,11,914550.04,2026-04,2026-06,Healthcare Independent Sector
+EXCEL,DEXCEL PHARMA LTD,Department of Health and Social Care,16,889078.63,2011-02,2012-07,"Stock Essential Medicines Additions,Storage costs"
+EXCEL,EXCEL LONDON,Foreign and Commonwealth Office,7,728736.47,2014-02,2014-07,Programme Spend (Oracle Projects Control Account)
+EXCEL,EXCELPOINT LTD,HM Revenue and Customs,8,665343.24,2018-07,2022-10,"Soft Licen Integral,Soft Licen Off shelf,Desktop Managed Serv,IT Software Licenses and Support,SW Lic Sup Off shlf"
+EXCEL,"Engage, Enrich, Excel Academies",Department for Education,22,645137.15,2014-12,2015-02,Grants
+EXCEL,JM EXCELLENCE IN TRAINING LTD,Department for Education,8,460601.86,2021-07,2022-03,Grants Expenditure
+EXCEL,EXCELLO LAW LIMITED,Transport for Greater Manchester,1,411100.0,2025-04,2025-04,Capital Costs - Land Acquisition and Related Costs
+EXCEL,Excelsis Training Ltd,Department for Education,8,351585.88,2021-08,2022-03,Grants Expenditure
+EXCEL,CENTRE FOR ADHD RESEARCH AND EXCELLENCE (THE),NHS Thames Valley ICB,11,332499.33,2026-01,2026-04,"Healthcare Independent Sector,Miscellaneous Expenditure"
+EXCEL,EXCELLENCE-SOLUTIONS Ltd,Department for Education,8,318131.4,2019-03,2020-12,Grants expenditure
+EXCEL,EXCELL3 INDEPENDENT SCHOOLS,Department for Education,4,300000.0,2014-04,2015-05,Grants
+EXCEL,2 EXCEL AVIATION LIMITED,Ministry of Defence,5,281930.0,2012-11,2013-03,Sub Contracted Research
+EXCEL,NEWQUAY FOR EXCELLENCE TRG LTD,"Ministry of Housing, Communities and Local Government",6,277226.32,2008-04,2009-03,EU Cur Grnt to Priv Sect-Persons & NPISH
+EXCEL,EXCEL SOLICITORS,Ministry of Justice,7,261580.0,2013-01,2013-07,"Legal Help,Crime Lower"
+EXCEL,CONSTRUCTING EXCELLE EAST (CO-OP) L,"Ministry of Housing, Communities and Local Government",12,260785.7,2012-04,2013-10,Work In Progress Pre-Cert 40373 Spend
+EXCEL,NATIONAL INSTITUTE FOR HEALTH  AND CLINICAL EXCELLENCE,Department for International Development,4,250000.0,2015-09,2016-04,Aid Programme - Accountable Grant Payments
+EXCEL,EXCELL3,Department for Education,5,248000.0,2010-05,2010-12,CURRENT GRANTS
+EXCEL,EXCELLENCE IN HEALTH & CARE SKILLS GROUP,Department for Work and Pensions,5,222580.0,2019-07,2021-02,CA - OTHER RECEIVABLES - ESF EC CLAIMS PENDING
+EXCEL,Baltic Centre for Media Excellence,"Foreign, Commonwealth and Development Office (FCDO)",7,222071.46,2021-12,2022-03,
+EXCEL,THE ACADEMY FOR CHARACTER & EXCELLENCE,Department for Education,4,200000.0,2018-12,2020-03,Grants expenditure
+EXCEL,EXCELLIMS CORPORATION,Ministry of Defence,1,183231.76,2013-12,2013-12,Other Services & Office costs
+EXCEL,ATLANTIC CENTRE OF EXCELLENCE MAT,Department for Education,4,170375.0,2016-03,2017-07,Grants
+EXCEL,FOUNDATION FOR ACADEMIC EXCELLANCE AND ACCESS (FAEA),Foreign and Commonwealth Office,4,148262.29,2013-07,2015-06,Programme Spend (Oracle Projects Control Account)
+EXCEL,Achieving Excellence UK Ltd,Department for Education,4,139252.98,2021-12,2022-03,Grants Expenditure
+EXCEL,EXCELLENTCARE MEDICAL (HUIZHOU),Department of Health and Social Care,1,119142.65,2020-06,2020-06,Delivery of NHS Transaction related operational efficiency
+EXCEL,Education Excel Ltd,Bristol City Council,93,113294.0,2023-10,2026-05,"Services - Professional Fees,Services - Fees and Charges"
+EXCEL,EXCELCARE HOMECARE DIVISION LIMITED,Royal Borough of Greenwich,138,109347.17,2012-02,2014-01,
+EXCEL,EXCEL COLLEGE,Department for Education,2,94500.0,2010-06,2010-06,CURRENT GRANTS
+EXCEL,VIRTUAL CENTRE OF EXCELLENCE IN MOBILE,Ministry of Defence,2,91000.0,2011-03,2011-11,Sub Contracted Research
+EXCEL,EDUCATION EXCELLENCE FOR ALL TRUST,Department for Education,2,90650.0,2013-04,2014-11,Grants
+EXCEL,EDEXCEL LTD,Department for Work and Pensions,3,79007.94,2010-04,2011-01,STAFF COSTS
+EXCEL,EXCELSIOR MULTI ACADEMY TRUST,Department for Education,1,70000.0,2017-03,2017-03,Grants
+EXCEL,EXCELERATE TECHNOLOGY LTD,Home Office,1,69420.0,2012-04,2012-04,Lab & Scientific Equip (FA).Laboratory & scientific equip.
+EXCEL,THE EUROPEAN CENTRE OF EXCELLENCE FOR COUNTERING HYBRID THREATS,"Foreign, Commonwealth and Development Office (FCDO)",2,68868.04,2021-02,2022-03,
+EXCEL,EDEXCEL LIMITED,Ministry of Defence,5,65357.06,2010-10,2012-08,"Miscellaneous Administration Costs,Externally delivered education and training.,Purchase of inventory and services,Externally delivered education and training"
+EXCEL,EXCEL CENTRES STRATFORD LTD,Department for Education,1,60600.0,2022-03,2022-03,Grants Expenditure
+EXCEL,PROCUREMENT EXCELLENCE,Department for Work and Pensions,1,59651.4,2010-08,2010-08,COMPUTER SERVICES
+EXCEL,THE TRAINING PLACE OF EXCELLENCE Ltd,Department for Education,2,59361.65,2021-10,2021-11,Grants Expenditure
+EXCEL,EXCEL CARS,North Yorkshire Council,29,56266.73,2023-07,2026-06,361450 Passenger Transport > Taxi Services
+EXCEL,Shiva Excel LTD (Ramada Hotel LDN Dockla,UK Sport,1,55357.9,2011-11,2011-11,Programme
+EXCEL,PROCUREMENT EXCELLENCE LTD,Department for Work and Pensions,1,50767.15,2010-08,2010-08,MANAGEMENT CONSULTANCY
+EXCEL,1Excellence Trust,Department for Education,1,50000.0,2021-08,2021-08,Grants Expenditure
+EXCEL,EXCEL CARS,Former council of North Yorkshire,22,45772.27,2022-04,2023-03,361450 Passenger Transport > Taxi Services
+EXCEL,EXCEL FLOORING (LEEDS) LTD,National Offender Management Service,1,44427.84,2011-09,2011-09,General Maintenance Materials
+EXCEL,Centre for Management Excellence UK Limited,Department for International Development,3,43965.0,2013-10,2017-01,"Project delivery costs - supplier services,Project delivery costs â€“ supplier services"
+EXCEL,EXCELLENTIA GLOBAL LTD,"Foreign, Commonwealth and Development Office (FCDO)",18,37087.25,2021-07,2024-06,"CONSULTING, MANAGEMENT, AND PUBLIC RELATIONS SVCS,7392"
+EXCEL,The Academy For Character And Excellence,Department for Education,1,35935.9,2020-10,2020-10,Grants expenditure
+EXCEL,SOFTWARE OF EXCELLENCE UK LTD,Shropshire Community Health NHS Trust,122,35793.57,2014-06,2024-06,"Software Support,VAT Contracted Out Services Input Tax,Dental Surgery Equipment,Computer Software / Licence  Fees,Training Expenses,Additions - Assets Under Construction Dental Equipment"
+EXCEL,PROCUREMENT EXCELLENCE LTD,Cabinet Office,1,32538.22,2010-07,2010-07,MPRG Consultants Spend
+EXCEL,THE NATIONAL INSTITUTE FOR HEALTH & CLINICAL EXCELLENCE,Ministry of Defence,1,29974.0,2013-06,2013-06,Medical treatment & stores and welfare services
+EXCEL,Association for Public Service Excellenc,Uttlesford District Council,8,29436.4,2024-07,2025-11,"Subscriptions,Consultants - General,Conferences - Seminars & Meetings,Travel/Expenses - Conference Expenses"
+EXCEL,EXCEL LONDON INVISION,Cabinet Office,1,27000.0,2012-08,2012-08,Supplies and Services
+EXCEL,Train Motivate Excel LTD,HM Revenue and Customs,1,26560.0,2022-10,2022-10,Training and tuition
+EXCEL,Excel Tutors Ltd,Department for Education,1,26400.0,2022-03,2022-03,Grants Expenditure
+EXCEL,EARLY EXCELLENCE LTD,Former council of North Yorkshire,3,23125.0,2022-06,2023-03,261520 Human Resources > Training & Conferences > Training
+EXCEL,F. van Gool EXCELVET-Consultants,Department for International Development,1,17825.06,2016-11,2016-11,Research and development costs - supplier services
+EXCEL,HUMBER CENTRE FOR EXCELLENCE,"Ministry of Housing, Communities and Local Government",2,16977.49,2008-06,2008-06,EU Cur Grnt to Priv Sect-Persons & NPISH
+EXCEL,THE CENTRE OF EXCELLENCE IN DIGITAL TECHNOLOGY & MEDIA LTD T/A CODEWORKS,UK Trade and Investment,1,16040.0,2011-03,2011-03,Event Management - Outward missions
+EXCEL,NORTH OF ENGLAND EXCELLENCE LTD,UK Trade and Investment,4,11050.0,2013-11,2014-07,"Facilities Management Contract - Trade Marketing Events,Conference and Exhibition Services - Trade Marketing Events,Corporate Event Management and Marketing-Trade Marketing Events,Sponsorship Support - Mid-Sized Business Events"
+EXCEL,Social Care Institute for Excellence,Bristol City Council,4,10725.0,2023-07,2026-03,"Services - Fees and Charges,Training Expenses"
+EXCEL,Excelsior Firm LLC,Department for International Development,1,10597.87,2011-04,2011-04,Technical and Advisory Services
+EXCEL,EDEXCEL LTD,Royal Borough of Greenwich,7,10244.45,2012-04,2013-04,
+EXCEL,Ghana-India Kofi Annan Centre of Excellence in ICT,Department for International Development,2,8804.88,2011-10,2017-06,"Conferences, Seminars & Meeting/Event Resource,Project delivery costs â€“ supplier services"
+EXCEL,EXCELL LIFT TRUCK TRAINING LTD,Transport for Greater Manchester,6,8650.0,2019-11,2026-03,Training
+EXCEL,SOCIAL CARE INSTITUTE FOR EXCELLENCE,Royal Borough of Greenwich,2,7920.0,2014-01,2014-04,
+EXCEL,THE EXCELLENT RAMP SYSTEM,Eden District Council,3,7680.0,2018-06,2018-07,1996 Mandatory Renovation Grants
+EXCEL,NATIONAL INSTITUTE FOR HEALTH & CARE EXCELLENCE (NICE),UK Trade and Investment,3,6466.2,2014-03,2015-01,"Air Travel Overseas-Investment - Sectors (Autumn Statement),Other Goods/Services-Investment - Sectors (Autumn Statement)"
+EXCEL,Creating Excellence,South Gloucestershire Council,1,6355.3,2011-05,2011-05,Fees & Charges Income - General
+EXCEL,Excelsior Comics Ltd,Bristol City Council,1,6000.0,2025-01,2025-01,Grants paid out
+EXCEL,EXCEL LABS,Foreign and Commonwealth Office,8,5861.25,2016-11,2018-03,"DENTAL/LAB/MED/OPHTHALMIC HOSP EQUIP & SUPPLIES,MEDICAL AND DENTAL LABORATORIES"
+EXCEL,Edexcel,Plymouth City Council,2,5162.4,2015-12,2015-12,Examination Fees Pupils
+EXCEL,PROCUREMENT EXCELLENCE LTD,"Ministry of Housing, Communities and Local Government",2,4752.0,2011-12,2012-02,Management Consultancy
+EXCEL,QUANTUM JOBS.COM LTD T/A EXCELLENCE IN LEARNING,Royal Borough of Greenwich,4,4403.42,2014-09,2016-07,"Corp Training Train Dev Fund,Conference Expenses"
+EXCEL,CHELEXCEL NIG LTD,Foreign and Commonwealth Office,5,4236.51,2015-12,2016-02,"CONTRACTORS,SPECIAL TRADE-NOT ELSEWHERE CLASSIFIED"
+EXCEL,EXCEL LABS PVT LTD,Foreign and Commonwealth Office,6,4177.97,2015-06,2017-06,DENTAL/LAB/MED/OPHTHALMIC HOSP EQUIP & SUPPLIES
+EXCEL,EXCEL SOCIAL CARE RECRUITMENT LTD,Royal Borough of Greenwich,3,4082.75,2015-10,2016-03,"Professional Fees,BIA`s (Best Interest Assessment)"
+EXCEL,EXCEL STEEL STOCK,"Department for Environment, Food and Rural Affairs",3,4071.6,2011-12,2012-06,BUILDING MATERIALS
+EXCEL,CONSTRUCTING EXCELLENCE IN THE NORTH EAST LTD,UK Trade and Investment,1,4000.0,2012-02,2012-02,Event Management - Trade Marketing Events
+EXCEL,P X-HOUSE OF EXCELLENC,"Foreign, Commonwealth and Development Office (FCDO)",2,3745.94,2023-02,2023-03,5722
+EXCEL,EXCEL AUTO WORKSHOP,"Foreign, Commonwealth and Development Office (FCDO)",3,3684.07,2020-11,2022-07,"AUTO & TRUCK DLRS-SALES,SVC, REPRS,PRTS, & LEASING"
+EXCEL,AERIAL EXCELENCE,Foreign and Commonwealth Office,3,3084.58,2016-07,2016-12,"CABLE, SATELLITE, OTHER PAY TELEVISION, RADIO SVCS"
+EXCEL,EXCEL LEARNING TRUST,North Yorkshire Council,1,3035.1,2025-11,2025-11,151000 Consultancy > Business
+EXCEL,EXCEL TECHNICAL CONSULTING LTD,UK Trade and Investment,3,2999.0,2014-01,2014-12,"Other Professional Services-Gateway - Export Vouchers (Autumn Statement),Other Professional Services - Gateway - Export Vouchers (Autumn Statement)"
+EXCEL,EXCEL AUTO WORKSHOP,Foreign and Commonwealth Office,2,2897.11,2017-06,2017-06,AUTOMOTIVE SERVICE SHOPS
+EXCEL,Association for Public Service Excellence (APSE),Cheltenham Borough Council,2,2805.0,2020-02,2020-05,"R4429-RYC007,Services - other fees"
+EXCEL,Excel Screen Printers(RENTS),Plymouth City Council,2,2730.0,2015-03,2015-09,Rents
+EXCEL,Excel Telecom (Pvt) Ltd,Department for International Development,1,2702.6,2013-01,2013-01,Mobile telephones & accessories
+EXCEL,Excel Power Ltd,Rushmoor Borough Council,1,2598.0,2024-02,2024-02,Operational Equipment
+EXCEL,THE SOCIAL CARE INSTITUTE FOR EXCELLENCE,Former council of North Yorkshire,1,2500.0,2023-01,2023-01,159999 Consultancy > Not Elsewhere Classified
+EXCEL,THE SOCIAL CARE INSTITUTE FOR EXCELLENCE,North Yorkshire Council,1,2500.0,2023-12,2023-12,159999 Consultancy > Not Elsewhere Classified
+EXCEL,Excelsior Ltd,South Gloucestershire Council,1,2445.0,2011-01,2011-01,Fees & Charges Income - General
+EXCEL,EXCEL LABS,"Foreign, Commonwealth and Development Office (FCDO)",2,2407.17,2021-11,2022-04,MEDICAL AND DENTAL LABORATORIES
+EXCEL,EXCEL CARE SOLUTIONS LTD,Royal Borough of Greenwich,2,2370.0,2012-11,2012-11,
+EXCEL,EDEXCEL LIMITED,"Department for Environment, Food and Rural Affairs",2,2078.4,2011-11,2012-08,"BOOKS AND PERIODICALS,NVQ 2 Training"
+EXCEL,EXCEL STATIONER,Foreign and Commonwealth Office,2,2032.09,2017-08,2017-08,"OFFICE, SCHOOL SUPPLY, AND STATIONERY STORES"
+EXCEL,THE CENTRE OF EXCELLENCE FOR LIFE SCIENCES LTD T/A CELSCELS,UK Trade and Investment,2,2000.0,2011-10,2011-10,Event Management - Trade Marketing Events
+EXCEL,EXCELL 3 LTD,UK Trade and Investment,3,1960.36,2013-02,2013-07,"Scheme Management Charges - Passport Business Development Credits,Basic Grants - SESA Solo Support Scheme,Scheme Management Charges-Passport Business Development Credits"
+EXCEL,IMPLANT CENTRES OF EXCELLENCE LTD,Shropshire Community Health NHS Trust,2,1950.0,2020-10,2020-10,"Training Expenses,Course Fees"
+EXCEL,ALOFT LONDON EXCEL,UK Trade and Investment,3,1920.0,2011-12,2011-12,"Travel and Subsistence UK - Sector Events - UK,Other Accomodation costs - Sector Events - UK"
+EXCEL,Recognising Excellence Limited,South Gloucestershire Council,1,1800.0,2010-12,2010-12,Legal Fees
+EXCEL,EXCEL HR CONSULT LTD.,"Foreign, Commonwealth and Development Office (FCDO)",2,1707.4,2023-08,2023-11,7392
+EXCEL,DENTAL EXCELLENCE LAB,Shropshire Community Health NHS Trust,27,1614.4,2021-12,2023-04,Dental Surgery Sundries
+EXCEL,CENTRE FOR MANAGEMENT EXCELLENCE UK LTD,UK Trade and Investment,4,1580.31,2012-07,2014-08,"Scheme Management Charges - Passport Business Development Credits,Scheme Management Charges-Passport Business Development Credits,Other Professional Services - Gateway - Export Vouchers (Autumn Statement)"
+EXCEL,THE EXCELSIOR HOTEL,Foreign and Commonwealth Office,2,1326.91,2013-06,2013-06,Hotels/Motels/Resorts
+EXCEL,Edexcel Limited,South Gloucestershire Council,2,1300.0,2011-03,2011-06,External Lecturers Fees
+EXCEL,ARES CENTRE OF EXCELLE,"Foreign, Commonwealth and Development Office (FCDO)",1,1281.48,2024-08,2024-08,5912
+EXCEL,EXCELLEM.D. INC,"Foreign, Commonwealth and Development Office (FCDO)",1,1262.69,2021-08,2021-08,"HEALTH PRACTITIONERS, MEDICAL SRVCS-NOT ELSEWHERE"
+EXCEL,EXCEL PARTNERSHIP,"Department for Environment, Food and Rural Affairs",1,1260.0,2012-06,2012-06,MISCELLANEOUS INDUSTRIAL/COMMERCIAL SUPPLIES
+EXCEL,YOCO    EXCELLENCE,"Foreign, Commonwealth and Development Office (FCDO)",1,1176.83,2022-10,2022-10,RECREATION SERVICES (NOT ELSEWHERE CLASSIFIED)
+EXCEL,EXCELSIOR CARPETS & FLOORING CONTRACTORS,Blaby District Council,3,1140.0,2013-07,2016-08,
+EXCEL,IHP SPECIALISTS LTD T/A CRICKET EXCELLENCE,UK Trade and Investment,2,1130.0,2013-11,2014-07,Other Professional Services - Export Vouchers (Autumn Statement)
+EXCEL,MOC-Kofi Annan Centre of Excellence in ICT,Department for International Development,2,1036.0,2012-04,2012-04,"Conferences, Seminars & Meeting/Event Resource"
+EXCEL,"EXCELLENCE, ACHIEVEMENT & LEARNING LTD",UK Trade and Investment,1,1000.0,2012-10,2012-10,Basic Grants - SESA Solo Support Scheme
+EXCEL,GELPACK EXCELSIOR LTD,UK Trade and Investment,1,1000.0,2013-04,2013-04,Basic Grants - SESA Solo Support Scheme
+EXCEL,SEAMARK DEVELOPMENTS INTERNATIONAL LTD T/A EXCEL INFLATABLES,UK Trade and Investment,1,1000.0,2011-02,2011-02,Basic Grants - SESA Solo Support Scheme
+EXCEL,SWINTON AND DISTRICT EXCELSIOR BAND,North Yorkshire Council,1,1000.0,2025-10,2025-10,299999 Arts & Leisure Services > Not Elsewhere Classified
+EXCEL,EXCELERATE RESOURCES LTD,UK Trade and Investment,1,997.5,2014-01,2014-01,Other Professional Services-Export Vouchers (Autumn Statement)
+EXCEL,EXCEL PUBLISHING CO LTD,UK Trade and Investment,1,990.0,2013-05,2013-05,Advertising - Great Campaign Advertising
+EXCEL,DISTRIBUIDORA EXCELON,"Foreign, Commonwealth and Development Office (FCDO)",1,878.68,2023-05,2023-05,5331
+EXCEL,EXCELL CARS,Foreign and Commonwealth Office,1,872.27,2016-02,2016-02,TRAVEL AGENCIES
+EXCEL,EXCELLENCE IN ACTION LTD,Shropshire Community Health NHS Trust,1,750.0,2021-06,2021-06,Training Expenses
+EXCEL,The Big Fish 117 Excellent Project,Rushmoor Borough Council,1,750.0,2014-04,2014-04,Direct Grants
+EXCEL,EXCELLENT PARTNER EQUA,"Foreign, Commonwealth and Development Office (FCDO)",1,704.64,2023-05,2023-05,4812
+EXCEL,NORTH OF ENGLAND EXCELLENCE,Transport for Greater Manchester,1,695.0,2013-04,2013-04,Training
+EXCEL,ASSOCIATION OF PUBLIC SERVICE EXCELLENCE,Blaby District Council,1,675.0,2017-10,2017-10,
+EXCEL,Excel Bookshop Enterprises,Department for International Development,1,627.91,2015-03,2015-03,Office Supplies
+EXCEL,EDUCATIONAL EXCELLENCE,Royal Borough of Greenwich,1,600.0,2013-07,2013-07,
+EXCEL,EXCEL PEST MANAGEMENT,North Yorkshire Council,1,600.0,2023-12,2023-12,181500 Environmental Services > Animal Services > Pest & Animal Control
+EXCEL,Excel Digital,"Foreign, Commonwealth and Development Office (FCDO)",1,569.63,2024-09,2024-09,2741
+EXCEL,Recognising Excellence Ltd,Rushmoor Borough Council,1,550.0,2013-09,2013-09,Lexcel Annual Maintenance Review
+EXCEL,FEREXCEL LDA,Foreign and Commonwealth Office,1,508.38,2016-03,2016-03,WHOLESALE CLUBS
+EXCEL,EXCEL ENGLISH LANGUAGE SCHOOL LTD,UK Trade and Investment,1,500.0,2011-04,2011-04,Travel and Subsistence O'seas - Trade Marketing Events
+EXCEL,ASSOC PUBLIC SVCE EXCELLENCE,Transport for Greater Manchester,1,475.0,2022-05,2022-05,Training
+EXCEL,ACADEMY OF EQUALITY & EXCELLENCE LTD,UK Trade and Investment,1,450.0,2014-03,2014-03,Subsistence Overseas-Market Visit Scheme
+EXCEL,EXCEL PEST MANAGEMENT,Former council of North Yorkshire,1,340.0,2022-10,2022-10,181500 Environmental Services > Animal Services > Pest & Animal Control
+EXCEL,HOTEL EXCELSIOR,Natural History Museum,1,320.11,2013-06,2013-06,MF - Travel Costs
+EXCEL,EXCEL ACE LTD,Shropshire Community Health NHS Trust,1,300.0,2020-02,2020-02,Course Fees
+EXCEL,Language Excel Limited,Rushmoor Borough Council,1,258.0,2025-10,2025-10,Desktop Software
+EXCEL,NATIONAL INSTITUTE FOR HEALTH AND CLINICAL EXCELLENCE (NICE),UK Trade and Investment,1,45.82,2011-05,2011-05,Travel and Subsistence UK - Inward Investment Events
+EXCEL,EXCEL LONDON,Natural History Museum,1,15.0,2014-03,2014-03,B/S - Current Assets -  InterCompany
+WHYTE,Whyteleafe Primary School,Department for Education,59,6465153.01,2016-12,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+WHYTE,THOMAS BOYD WHYTE,Ministry of Justice,8,583791.33,2013-01,2013-08,"Crime Lower,06/03/2013"
+WHYTE,Whytemead Primary School,Department for Education,8,516624.54,2021-10,2022-03,Grants Expenditure
+WHYTE,WHYTE & CO,Royal Borough of Greenwich,386,294589.39,2012-02,2017-06,"Debt Collection Agency Charges,Student Award Payment,Professional Fees,Equipment"
+WHYTE,ALLIED CARE LTD T/A WHYTEACRES,Royal Borough of Greenwich,54,77287.75,2012-02,2014-05,
+WHYTE,WHYTELEAFE PRIMARY SCHOOL,Department for Education,1,25000.0,2014-10,2014-10,Grants
+WHYTE,WHYTES COACHES LTD,Foreign and Commonwealth Office,3,3019.2,2015-09,2017-11,"LIMOUSINES AND TAXICABS,TRAVEL AGENCIES"
+WHYTE,Whytehead Property Management Ltd Client,Rushmoor Borough Council,2,2410.0,2013-12,2014-07,Rent Deposit
+WHYTE,WHYTE & IVORY LTD,UK Trade and Investment,3,1923.01,2011-02,2012-05,"Scheme Management Charges - Passport Business Development Credits,Travel and Subsistence O'seas - Passport Development & Events"
+WHYTE,WHYTES COACHES LTD,"Foreign, Commonwealth and Development Office (FCDO)",1,550.8,2023-03,2023-03,4789
+WHYTE,WHYTES COACHES LTD,UK Trade and Investment,1,395.0,2014-11,2014-11,Subsistence UK - Sector Events - UK
+RUNDLE,GRAHAM DENNIS TRUNDLE,Transport for Greater Manchester,46,87459.75,2020-07,2025-02,Driver Intervention Course Delivery Costs
+RUNDLE,RUNDLES & CO LTD,Royal Borough of Greenwich,141,85946.43,2014-09,2017-06,"Student Award Payment,Equipment"
+RUNDLE,MRS C J RUNDLE,Transport for Greater Manchester,1,45000.0,2016-10,2016-10,Capital Costs - Land Acquisition and Related Costs
+RUNDLE,F H BRUNDLE,"Department for Environment, Food and Rural Affairs",16,26838.14,2011-07,2012-08,"BUILDING MATERIALS,FENCING MATERIALS FOR BOUNDARY WORKS,Gates and Fencing for Health and Safety issues at Bidston,Steel work for key clamping around assets,Galvanised tube fittings for Teddington guard fence,Extension to Public Safety Risk Assessment fencing - materials only,Safety handrail for floo"
+RUNDLE,G TRUNDLE,Transport for Greater Manchester,11,16129.19,2014-01,2021-09,Driver Intervention Course Delivery Costs
+RUNDLE,Rundle & Co Limited,South Gloucestershire Council,26,11901.43,2010-10,2011-11,"Other Private Contractors,VAT Element"
+RUNDLE,Rundle & Co Ltd,Uttlesford District Council,20,8275.46,2019-04,2025-09,"Revenues Admin - Consultants,Revenues Admin - Fees,HMRC VAT"
+RUNDLE,RUNDLE & CO LTD,Transport for Greater Manchester,1,3084.9,2020-10,2020-10,"Rent, Rates & Service Charges"
+RUNDLE,F H BRUNDLE,Royal Borough of Greenwich,7,2903.77,2015-12,2016-11,Materials
+RUNDLE,F H BRUNDLE LTD,"Department for Environment, Food and Rural Affairs",1,2128.55,2012-06,2012-06,BUILDING MATERIALS
+RUNDLE,F H BRUNDLE (MIDLANDS),"Department for Environment, Food and Rural Affairs",2,1783.33,2012-02,2012-03,BUILDING MATERIALS
+RUNDLE,F H Brundle,Natural History Museum,2,1516.92,2012-11,2013-01,Exhibition Production
+RUNDLE,F H Brundle,"Department for Digital, Culture, Media and Sport",1,552.27,2011-05,2011-05,MF - General Running Costs
+RUNDLE,F H BRUNDLE,Natural History Museum,2,404.46,2013-03,2013-03,B/S - Current Assets -  InterCompany
+RUNDLE,F H BRUNDLE,"Department for Digital, Culture, Media and Sport",3,129.54,2011-05,2011-08,Exhibition Production
+JBW,JBW GROUP LIMITED,Royal Borough of Greenwich,56,16046.97,2014-03,2017-06,"Services Private Contractor,Services Joint Authorities"
+JBW,JBW Group,Plymouth City Council,1,425.0,2015-12,2015-12,Bailiff Costs
+ROSS_ROBERTS,ROSS & ROBERTS LTD,Royal Borough of Greenwich,187,111276.4,2012-02,2017-06,"Student Award Payment,Debt Collection Agency Charges"
+ROSS_ROBERTS,Ross & Roberts Ltd.,Bristol City Council,18,2619.09,2020-03,2023-03,Services - Fees and Charges
+ROSS_ROBERTS,Ross & Roberts Limited,Rushmoor Borough Council,3,1943.7,2016-03,2017-07,Bailiff Fees
+CHANDLERS,Chandlers Ridge Academy,Department for Education,206,7838918.89,2012-08,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+CHANDLERS,Gilmorton Chandler Church of England Primary Schoo,Department for Education,56,3022033.6,2016-12,2022-03,"Grants expenditure,Grants Expenditure,Grants"
+CHANDLERS,Gilmorton Chandler C of E Primary Sc,Department for Education,103,1343885.03,2013-07,2015-02,Grants
+CHANDLERS,GILMORTON CHANDLER COFE PRIMARY SCHOOL,Department for Education,2,250000.0,2017-02,2017-04,Grants
+CHANDLERS,CHANDLERS RIDGE ACADEMY,Department for Education,3,149947.2,2014-07,2015-01,Grants
+CHANDLERS,GILMORTON CHANDLER CHURCH OF ENGLAND PRIMARY SCHOOL,Department for Education,2,105315.8,2014-09,2014-12,Grants
+CHANDLERS,CHANDLERS RIDGE PRIMARY SCHOOL,Department for Education,1,25000.0,2012-04,2012-04,Current Grants
+CHANDLERS,GILMORTON CHANDLER CE PRIMARY SCHOOL,Department for Education,1,25000.0,2013-02,2013-02,Grants
+CHANDLERS,CHANDLER MACLEOD GRP,Foreign and Commonwealth Office,18,23282.15,2013-07,2014-02,"Employment/Temp Help Agen,Travel"
+CHANDLERS,Wills Chandler Solicitors,Rushmoor Borough Council,2,9041.0,2021-11,2022-06,"Miscellaneous Expenses,Flexible Homeless Cost"
+CHANDLERS,CHANDLER GOODING LIMITED,"Ministry of Housing, Communities and Local Government",3,5587.5,2010-05,2010-08,Publishing
+CHANDLERS,Force 4 Chandlery Ltd.,Bristol City Council,3,3448.01,2020-03,2020-04,"Protective Clothing,Materials"
+CHANDLERS,NANNY CAY CHANDLERY,"Foreign, Commonwealth and Development Office (FCDO)",1,1884.69,2022-02,2022-02,"MARINAS, MARINE SERVICE/SUPPLIES"
+CHANDLERS,WHITBY & CHANDLER,"Department for Environment, Food and Rural Affairs",1,1286.98,2012-03,2012-03,MISCELLANEOUS INDUSTRIAL/COMMERCIAL SUPPLIES
+CHANDLERS,Force 4 Chandlery Ltd,Bristol City Council,1,1024.85,2024-10,2024-10,R&M - Departmental planned (internal)
+CHANDLERS,CHANDLER RETAIL LTD,Former council of North Yorkshire,3,839.54,2022-06,2022-09,111200 Catering > Food & Beverages
+CHANDLERS,CHANDLERS HOTEL,"Department for Environment, Food and Rural Affairs",1,703.0,2012-04,2012-04,
+CHANDLERS,CHANDLER (FARM EQUIPMENT),"Department for Environment, Food and Rural Affairs",1,647.47,2012-04,2012-04,Vehicle service
+CHANDLERS,CHANDLERS OIL & GAS LTD,"Department for Environment, Food and Rural Affairs",1,625.46,2012-04,2012-04,Gas oil
+CHANDLERS,FORCE 4 CHANDLERY,"Department for Environment, Food and Rural Affairs",1,539.9,2012-06,2012-06,LEISURE ACTIVITIES
+CHANDLERS,C R Chandler,Rushmoor Borough Council,1,295.0,2020-04,2020-04,Rent Deposits
+STA_INTL,STA International Limited,Bristol City Council,1,2548.89,2023-06,2023-06,Services - Supplies and Services to service users

@@ -1,0 +1,31 @@
+cls,position,name,ons_code,loss_ph,change_pct,imd_avg_score,imd_rank_in_class,class_n
+LB,biggest_loser,Lewisham,E09000023,688.77,-69.18,26.66,7,32
+LB,biggest_loser,Kensington & Chelsea,E09000020,612.69,-61.4,21.53,17,32
+LB,biggest_loser,Tower Hamlets,E09000030,586.37,-47.3,27.91,5,32
+LB,smallest_loser,Bromley,E09000006,205.48,-55.88,14.16,29,32
+LB,smallest_loser,Barnet,E09000003,189.35,-46.09,16.15,26,32
+LB,smallest_loser,Westminster,E09000033,19.66,-2.24,20.34,19,32
+MD,biggest_loser,South Tyneside,E08000023,526.79,-52.61,31.51,13,36
+MD,biggest_loser,North Tyneside,E08000022,502.92,-69.58,22.28,33,36
+MD,biggest_loser,Newcastle,E08000021,424.66,-48.01,29.79,19,36
+MD,smallest_loser,Sheffield,E08000019,258.37,-37.03,27.06,25,36
+MD,smallest_loser,Rotherham,E08000018,223.02,-35.06,29.55,21,36
+MD,smallest_loser,Kirklees,E08000034,200.25,-40.46,25.15,30,36
+SC,biggest_loser,Norfolk CC,E10000020,305.67,-57.36,21.18,2,21
+SC,biggest_loser,Lancashire CC,E10000017,253.63,-52.58,23.44,1,21
+SC,biggest_loser,Devon CC,E10000008,238.54,-58.5,16.61,11,21
+SC,smallest_loser,Hampshire CC,E10000014,153.57,-57.31,12.69,18,21
+SC,smallest_loser,Leicestershire CC,E10000018,145.81,-51.91,12.33,19,21
+SC,smallest_loser,Oxfordshire CC,E10000025,144.49,-57.74,11.66,20,21
+SD,biggest_loser,Bassetlaw,E07000171,85.27,-63.63,22.588079074388304,27,162
+SD,biggest_loser,Rushmoor,E07000092,84.7,-68.15,15.903380440493452,74,162
+SD,biggest_loser,Preston,E07000123,82.03,-65.03,29.53076156261794,9,162
+SD,smallest_loser,Wychavon,E07000238,-10.7,16.37,15.765628988187125,77,162
+SD,smallest_loser,Winchester,E07000094,-12.91,22.5,9.615210265868539,144,162
+SD,smallest_loser,South Cambridgeshire,E07000012,-18.11,24.24,8.495506485940655,151,162
+UA,biggest_loser,Middlesbrough UA,E06000002,484.19,-49.06,40.46,3,53
+UA,biggest_loser,Hartlepool UA,E06000001,441.57,-48.41,35.04,5,53
+UA,biggest_loser,Leicester City UA,E06000016,433.53,-47.77,30.88,10,53
+UA,smallest_loser,North Lincolnshire UA,E06000013,177.94,-29.81,22.1,29,53
+UA,smallest_loser,Rutland UA,E06000017,166.21,-46.59,8.38,51,53
+UA,smallest_loser,Windsor & Maidenhead UA,E06000040,145.01,-55.85,8.38,51,53

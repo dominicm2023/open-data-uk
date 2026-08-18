@@ -1,0 +1,448 @@
+=== distinct expense_type count ===
+(40891,)
+40892 18084
+
+########## EXPENSE_TYPE ##########
+
+=== regalia (1) ===
+  'Civic Regalia' | n=4 | sum=3217.94
+
+=== mayor (13) ===
+  'Mayoral Charity Dinner Dance' | n=23 | sum=68911.44
+  'Mayor-making' | n=20 | sum=16180.32
+  'Mayors Charity Golf' | n=10 | sum=7588.74
+  'Lord Mayors Allowance' | n=4 | sum=4800.00
+  'Mayors At Home' | n=2 | sum=2459.75
+  'Lord Mayors Gift Stock' | n=1 | sum=1594.75
+  'Mayor Making - Refreshments' | n=1 | sum=455.30
+  'Mayor-making Refreshments' | n=1 | sum=928.25
+  'Mayoral Charity Event' | n=1 | sum=7091.80
+  'Mayoral Charity Golf' | n=1 | sum=300.00
+  'Mayoral Day Hospitality' | n=1 | sum=520.00
+  'Mayors Civic Service' | n=1 | sum=1437.00
+  'Mayors Event Refreshments' | n=1 | sum=740.86
+
+=== civic (40) ===
+  'Politics & Civic Affairs.Human aid & relief Sect 4' | n=407 | sum=128683595.76
+  'ASSOCIATIONS-CIVIC, SOCIAL, AND FRATERNAL' | n=181 | sum=212178.35
+  'Politics & Civic Affairs.REFUGEE PROG. SECT 95' | n=126 | sum=32148919.40
+  'Politics & Civic Affairs.Displaced pers.assistance' | n=53 | sum=45320454.87
+  'Politics & Civic Affairs' | n=52 | sum=2260559.61
+  'Politics & Civic Affairs.Refugee repatriation.serv' | n=37 | sum=8152995.88
+  'Politics & Civic Affairs.Emergency house services' | n=30 | sum=4496676.17
+  'Civic Cont Bill' | n=28 | sum=269820.25
+  'Civic/Social/Fraternal Assc' | n=22 | sum=20980.56
+  'Public/Civic Functions' | n=22 | sum=75141.17
+  'Politics & Civic Affairs.REFUGEE PROG\\. SECT 95' | n=12 | sum=3964176.00
+  'Politics & Civic Affairs.Property tax' | n=7 | sum=1563558.80
+  'Politics & Civic Affairs - Refugee repatriation' | n=6 | sum=152562.44
+  'Politics & Civic Affairs.Research Programs.' | n=6 | sum=295806.66
+  'Civic Insignia' | n=4 | sum=2841.09
+  'Civic Regalia' | n=4 | sum=3217.94
+  'Politics & Civic Affairs.Asylum Dispersed Accom' | n=3 | sum=406174.29
+  'Civic Ceremonial' | n=2 | sum=1194.95
+  'Civic, Social, and Fraternal Associations' | n=2 | sum=38.00
+  'Politics & Civic Affairs.Research Programs' | n=2 | sum=52221.20
+  ... 20 more
+
+=== pest (38) ===
+  'Waste Disposal and pest control' | n=608 | sum=588980.77
+  'Pest Control' | n=249 | sum=276461.56
+  '181500 Environmental Services > Animal Services > Pest & Animal Control' | n=48 | sum=57368.98
+  'P/L - RoutineMaint - Pest Control' | n=31 | sum=44282.75
+  'Contract : Pest Control' | n=21 | sum=2568.31
+  'Pest/Animal Control - Other Materials' | n=11 | sum=4042.00
+  'Pest & Animal Control - Planned Repairs' | n=10 | sum=6958.09
+  'P/L - Pest Control' | n=5 | sum=8433.39
+  'Pest/Animal Control - Ad hoc Repair' | n=3 | sum=1494.42
+  '5 night stay at a Florida hotel for 1 person for Florida Pesticides Residue Workshop.' | n=2 | sum=1137.62
+  'Equipment for pest control' | n=2 | sum=1172.50
+  'Pest Control - Markyate Flood Storage Area' | n=2 | sum=1597.36
+  'Pest control' | n=2 | sum=47479.06
+  'Accomodation for 15 people  on Contingency: Exercise Incursion of Exotic Pest' | n=1 | sum=1385.50
+  'Cleaning & Waste, Construction Project more than £10k, FM Interserve Pest Control, FM Interserve Works, Health And Safety, Mail & Porterage Services, Miscellaneous Expenditure: inc subscriptions and equipment maintenance, Repair and maintenance of furniture and fittings, Repairs And Refurbishment: Fees Residential, Repairs And Refurbishment: Works Residential, Security: Works Residential' | n=1 | sum=92967.36
+  'Construction Project more than £10k, FM Interserve Building Fabric Maintenance, FM Interserve Pest Control, FM Interserve Works' | n=1 | sum=32662.98
+  'FM Interserve Pest Control' | n=1 | sum=32000.00
+  'Humane pest control, animal trap and game products' | n=1 | sum=1713.60
+  'MOLE CATCHMENT-CONTROL BUILDINGS, PEST CONTROL-FLOODSCHEME' | n=1 | sum=510.00
+  'PREMISES CONTRACT PESTS' | n=1 | sum=882.31
+  ... 18 more
+
+=== christmas (12) ===
+  'Aldershot Christmas Lights' | n=43 | sum=48217.36
+  'Farnborough Christmas Lights' | n=20 | sum=12938.57
+  'Farnborough Christmas Events' | n=10 | sum=8429.80
+  'Christmas Events' | n=5 | sum=3500.50
+  'Aldershot Community Christmas Festival' | n=1 | sum=400.00
+  'Christmas Vouchers' | n=1 | sum=5000.00
+  'Christmas cards for retail sale' | n=1 | sum=1117.48
+  'Christmas tree & installation & stand' | n=1 | sum=690.00
+  'STAFF FLOW W/E 07/12/2025 WEEK 36 25/26 - INCL CHRISTMAS ADVANCE' | n=1 | sum=245585.63
+  'STAFF FLOW W/E 08/12/24 WEEK 36 - 24/25 Advance for Christmas Incl' | n=1 | sum=309156.47
+  'STAFF FLOW W/E 6/12/20 & ADVANCE FOR XMAS PERIOD' | n=1 | sum=200855.88
+  'christmas items for retail sale' | n=1 | sum=998.28
+
+=== flag (4) ===
+  'Green Flag Parks Other Items' | n=90 | sum=364864.69
+  'Flag Flying' | n=8 | sum=267187.56
+  'Flag mast refurbishment (x5)' | n=1 | sum=2049.36
+  'MER 10 176 eHMI Manage Synchronisation by Use of SSO ID Build and Test, MER 10 177 eHMI Manage Synchronisation by Use of SSO ID - Design, MER 10 178 - eHMI PEACH Flag Visible to Trader' | n=1 | sum=25539.12
+
+=== clock (4) ===
+  'CLOCK, JEWELRY, AND WATCH REPAIR SHOPS' | n=28 | sum=31822.45
+  'CLOCK, JEWELRY, WATCH, AND SILVERWARE STORE' | n=6 | sum=4509.99
+  'Clock Repairs' | n=1 | sum=275.00
+  'Watch/Clock/Jewelry Repair' | n=1 | sum=1130.63
+
+=== dog (14) ===
+  'Kennel/Feed Stray Dogs' | n=129 | sum=100231.90
+  'Littering and Dog Fouling FPN' | n=57 | sum=381823.42
+  'Dog Contract O.O.H retainer' | n=51 | sum=42592.99
+  'Kennel Feed Stray Dogs' | n=20 | sum=17726.40
+  'Stray Dog Out of Hours Service' | n=20 | sum=10792.62
+  'Animal Material & Supplies. Detect Dogs-Kennel & Misc-PROG' | n=10 | sum=922951.20
+  'Animal Material & Supplies.Detect Dogs-Kennel & Misc-PROG' | n=9 | sum=791529.41
+  'Animal Material & Supplies.Detect Dogs-Kennel & Misc' | n=7 | sum=596062.56
+  'Dog Contract Collection' | n=7 | sum=5306.54
+  'Meeting Expenses/Room Hire Premises-Roden Dogs Trust' | n=7 | sum=300.00
+  'Dogs - Kennelling Costs' | n=5 | sum=519382.55
+  'Dog Control' | n=1 | sum=896.79
+  'Lifting arm for dog doublet' | n=1 | sum=780.00
+  'Stray Dogs Contract' | n=1 | sum=4364.98
+
+=== horse (7) ===
+  'CONTINGENT RENT ON HORSEGUARDS PFI' | n=13 | sum=17049976.03
+  'APPLEBY HORSE RAMP' | n=1 | sum=1400.00
+  'CABINET OFFICE RELOCATIONS TO 1 HORSE GUARDS ROAD (TO BE RECOVERED)' | n=1 | sum=28490.53
+  'Fence Posts cordon area off horses - repair work River Till' | n=1 | sum=537.12
+  'Horse Guard Rent and Rate' | n=1 | sum=326240.29
+  'Horse Guard Service Charge' | n=1 | sum=87726.37
+  'RENT ON HORSEGUARDS PFI' | n=1 | sum=341026.82
+
+=== wig (1) ===
+  'WIG AND TOUPEE SHOPS' | n=1 | sum=634.16
+
+=== robes (1) ===
+  'Civic Robes' | n=1 | sum=1281.50
+
+=== medal (3) ===
+  'Medals' | n=301 | sum=997845.45
+  'Human Resource Development.Medals' | n=4 | sum=862007.40
+  'Sports & Recreational Supplies.Medals.' | n=1 | sum=86400.00
+
+=== trophy (2) ===
+  'Purchase of 14 trophies including engraving and delivery costs. The trophies are used to recognise outstanding achievements in the staff awards.' | n=1 | sum=976.37
+  'Spectrophotometer' | n=1 | sum=1539.00
+
+=== tea (12) ===
+  '2 day room hire Intelligence training 14 staff plus tea and coffee' | n=1 | sum=675.84
+  'Half day venue hire with tea, coffee and buffet for 25 people for a development workshop' | n=1 | sum=555.00
+  'Management Team meeting - venue, projector, tea/coffee - 15 people' | n=1 | sum=528.70
+  'Meeting room 14 Agency people including lunch and tea/coffee' | n=1 | sum=520.80
+  'Meeting room and lunch and tea/coffee for 12 staff' | n=1 | sum=684.00
+  'Meeting room for 16 Agency people including lunch and tea/coffee' | n=1 | sum=595.20
+  'One day venue hire and buffet lunch and tea and coffee provided for 40 people including stakeholders for a Marine Planning workshop in Hull. Overnight accommodation for 9 people.' | n=1 | sum=920.00
+  'Re-stocking five kitchens tea coffee and sugar Manley House' | n=1 | sum=596.78
+  'Room hire tea/coffee and lunch for 50; Area Leadership Group' | n=1 | sum=712.00
+  'Room, equipment hire and tea, coffee and buffet for 25 people for a workshop with other regulatory bodies' | n=1 | sum=1298.50
+  'Tea, coffee for Operations teams work in field-stores' | n=1 | sum=590.35
+  'Tea, coffee, sugar for stores-for field teams' | n=1 | sum=557.21
+
+=== sandwich (1) ===
+  'Marine managment organisation licence for Sandwich scheme' | n=1 | sum=2700.00
+
+=== entertain (68) ===
+  'Official entertainment and hospitality' | n=1636 | sum=1831264.96
+  'Entertainment & Hospitality' | n=363 | sum=204290.93
+  'Official entertainment and hospitality.' | n=144 | sum=130618.31
+  'Amusement/Entertainment' | n=64 | sum=169715.14
+  'Entertaining' | n=51 | sum=4233.99
+  'Entertainment UK - Inward Investment Events' | n=28 | sum=8379.11
+  'Entertainment UK - Sector Events - UK' | n=24 | sum=11332.47
+  'Entertainment + hospitality' | n=15 | sum=7072.59
+  'Entertaining Overseas-Other Programme Costs' | n=13 | sum=7866.55
+  'Entertainment UK' | n=12 | sum=8778.16
+  'Entertaining Overseas-Healthcare UK' | n=11 | sum=18010.05
+  "Entertainment O'Seas" | n=11 | sum=33490.93
+  'Entertainment' | n=8 | sum=4407.66
+  'Entertainment UK - Trade Development Support' | n=8 | sum=15183.55
+  "Entertainment O'Seas - Sector Events - Abroad" | n=5 | sum=1040.13
+  'Entertainment UK -' | n=5 | sum=2006.54
+  'Entertainment UK - ASEAN Business Council' | n=5 | sum=1309.79
+  'VIDEO ENTERTAINMENT RENTAL STORES' | n=5 | sum=3678.16
+  'Entertaining UK-Default' | n=3 | sum=22.90
+  'Entertaining UK-Healthcare UK' | n=3 | sum=345.00
+  ... 48 more
+
+=== hospitality (106) ===
+  'Hospitality' | n=2167 | sum=1112832.52
+  'Official entertainment and hospitality' | n=1636 | sum=1831264.96
+  'Entertainment & Hospitality' | n=363 | sum=204290.93
+  'P/L - Hospitality' | n=254 | sum=88115.32
+  'HOSPITALITY' | n=162 | sum=18174.71
+  'Official entertainment and hospitality.' | n=144 | sum=130618.31
+  'EXP - PURCHASE OF GOODS/SERVICES - CATERING & HOSPITALITY - WORKING LUNCHES' | n=122 | sum=20134.00
+  'Catering and Hospitality Expenditure - Sector Events - Abroad' | n=54 | sum=50783.66
+  'Travel, Subsistence and Hospitality' | n=46 | sum=4173821.60
+  'EXP - PURCHASE OF GOODS/SERVICES - CATERING & HOSPITALITY - REFRESHMENTS' | n=30 | sum=2239.00
+  'Catering and Hospitality Expenditure-Sector Events - Abroad' | n=24 | sum=72138.29
+  'Business Hospitality (former DEE)' | n=23 | sum=115179.97
+  'Hospitality - UK - Default' | n=23 | sum=1203.83
+  'P/L - Trustees Travel & Hospitality' | n=21 | sum=4013.81
+  'Catering and Hospitality Expenditure-Trade Marketing Events' | n=17 | sum=4044.28
+  'Catering and Hospitality Expenditure - Trade Marketing Events' | n=15 | sum=2153.86
+  'Entertainment + hospitality' | n=15 | sum=7072.59
+  'Catering and Hospitality Expenditure - Trade Development Support' | n=11 | sum=2436.66
+  'Hospitality - UK - Other Programme Costs' | n=10 | sum=611.97
+  'Catering and Hospitality Expenditure-Investment - Sectors (Autumn Statement)' | n=9 | sum=3118.64
+  ... 86 more
+
+=== panto (1) ===
+  'Panto Expenditure' | n=508 | sum=948252.50
+
+=== fireworks (4) ===
+  'Fireworks Event Expenditure' | n=84 | sum=175282.49
+  'Fireworks Expenditure' | n=26 | sum=97005.76
+  'Fireworks Event' | n=3 | sum=736.79
+  'Fireworks Event Float' | n=3 | sum=24000.00
+
+=== queen (9) ===
+  'CHG 622177 BRIGHTON QUEENS SQUARE' | n=6 | sum=2124986.00
+  '5 nights lodging allowance for 1 person on secondment at for Queens Jubilee at Buckingham Palace' | n=2 | sum=1070.00
+  'Queensmead Refurbishments' | n=2 | sum=2051.00
+  '15 Waterways crew working at Diamond Jubilee Pageant' | n=1 | sum=6105.00
+  '16B padlocks bought for River Jubilee and Surrounding assets' | n=1 | sum=643.68
+  '5 nights B & B for 1 person on secondment at for Queens Jubilee at Buckingham Palace' | n=1 | sum=535.00
+  'Queens Road Pitch Dressing' | n=1 | sum=4508.00
+  'Silver Jubilee Art Project Grant' | n=1 | sum=500.00
+  'Toolbags and tools -operating flood doors Jubilee Bridge Thorne' | n=1 | sum=1998.72
+
+=== toilets (23) ===
+  'TISSUES HAND TOWELS & TOILET PAPER' | n=49924 | sum=443629.83
+  'Toiletries & Personal Hygiene Products' | n=34470 | sum=179720.94
+  'TOILETRIES PERSONAL HYGIENE PRODUCTS' | n=13539 | sum=79049.22
+  'Patient Aids/Appliances : Toileting' | n=4153 | sum=1312079.24
+  'TOILETRIES PERSONAL HYGIENE PRODUCT' | n=2602 | sum=23164.46
+  'Public Conveniences' | n=34 | sum=186778.14
+  'Toilet Fit-Out' | n=21 | sum=2874254.93
+  'Toilets' | n=13 | sum=200063.43
+  'TPP - Public Conveniences' | n=11 | sum=16508.58
+  'Toilet Provision' | n=4 | sum=22404.00
+  '2 weeks hire of 2 welfare unit/toilet and generator including cleaning' | n=1 | sum=942.00
+  'Cambray Depot - Investigate blocked toilet' | n=1 | sum=560.63
+  'Gloucester Depot Drying Room and Toilets Air Freshener' | n=1 | sum=964.52
+  'Payment for tiling toilets at Orchard House' | n=1 | sum=675.00
+  'Penrith Bluebell Lane Public Convenience' | n=1 | sum=609.14
+  'Replacement toilet' | n=1 | sum=1320.00
+  'Rimac toilets service and maintenance costs' | n=1 | sum=2041.15
+  'Specialist floor covering in toilet areas' | n=1 | sum=2464.80
+  'Specialist flooring for toilets - Orchard House' | n=1 | sum=1250.00
+  'TOILET ROLLS & PAPER TOWELS' | n=1 | sum=59.15
+  ... 3 more
+
+=== cemetery (16) ===
+  '120000 Cemetery & Crematorium' | n=127 | sum=139015.32
+  'NI Burials' | n=103 | sum=157240.00
+  '121000 Cemetery & Crematorium > Burial & Cremation' | n=73 | sum=113385.16
+  '129999 Cemetery & Crematorium > Not Elsewhere Classified' | n=24 | sum=25152.28
+  'Cemeteries' | n=21 | sum=36877.83
+  'ADHOC WORKS FOR BURIALS' | n=17 | sum=54384.77
+  'St Michaels Cemetery' | n=15 | sum=11643.65
+  'Burial Charges' | n=10 | sum=16738.00
+  'Burial & Cremations - Other Prof Fees' | n=9 | sum=15420.00
+  '121100 Cemetery & Crematorium > Equipment' | n=7 | sum=17601.74
+  '121200 Cemetery & Crematorium > Maintenance' | n=6 | sum=17152.50
+  '121300 Cemetery & Crematorium > Body Transport Service' | n=3 | sum=1579.61
+  'Appleby Cemetery' | n=1 | sum=1547.62
+  'Burial Fees' | n=1 | sum=860.00
+  'Burial Fees - National Assitance Act' | n=1 | sum=1300.00
+  'Penrith Cemetery Chapel' | n=1 | sum=4699.64
+
+=== witchcraft (17) ===
+  'Network switches' | n=120 | sum=12808876.04
+  'Switchboard Telephone Calls' | n=48 | sum=52245.21
+  'Edge switches' | n=27 | sum=771948.05
+  'Switchboard Maintenence System' | n=12 | sum=295502.04
+  'Network Switch Acces' | n=8 | sum=315417.42
+  'Additions - Assets Under Construction Whitchurch Hospital - Electrical Switches' | n=7 | sum=24369.57
+  '30 of KVM switching units for roll-out of market EDC system' | n=1 | sum=552.68
+  '4 Netgear AGM731F - 1000Base-SX (LC) SFP GBIC Module and 4 x Netgear GS110TPv3 8-Port Gigabit PoE Smart ProSAFE Switch' | n=1 | sum=1082.50
+  'Additional Switches and Modules for LAN Project' | n=1 | sum=199577.05
+  'CMMS47263 Generator, switch and socket supply and install' | n=1 | sum=2152.80
+  'Capital: 2015/16 Spine 2 - CSA Waverley - Management Switch Cisco 3850X 24- port LANBase single power supply WS-C3850-24T-L  x8' | n=1 | sum=16006.00
+  'Formatting Scientifc and Evidence and Electronic Switching System Key Deliverables documents' | n=1 | sum=774.01
+  'Invoice 558856 for 90 x Keyboard Video Mouse switch (R246375)' | n=1 | sum=1766.88
+  'Pennine Care - BNS - Cisco Catalyst bundle including licenses and switches.' | n=1 | sum=96317.64
+  'Phone switching eqpt' | n=1 | sum=42035.63
+  'PoE Switches 3rd Floor 25th' | n=1 | sum=754.80
+  'To help bird trappers in Myanmar switch to alternative livelihoods.' | n=1 | sum=131553.00
+
+=== miscellaneous (99) ===
+  'Miscellaneous Expenditure' | n=13584 | sum=1905146722.20
+  'MISCELLANEOUS EXPENDITURE' | n=13322 | sum=60244823.00
+  'MISCELLANEOUS AND SPECIALTY RETAIL STORES' | n=2847 | sum=3097695.31
+  'Miscellaneous Laboratory Chemicals Gases Reagents' | n=2658 | sum=145586.67
+  'MISCELLANEOUS INDUSTRIAL/COMMERCIAL SUPPLIES' | n=2529 | sum=3204505.47
+  'MISCELLANEOUS GENERAL MERCHANDISE' | n=1857 | sum=2018498.51
+  'MIsc' | n=1210 | sum=10453625.81
+  'MISCELLANEOUS PUBLISHING AND PRINTING' | n=899 | sum=1006156.95
+  'MISCELLANEOUS HOUSE FURNISHING SPECIALTY SHOPS' | n=867 | sum=955201.57
+  'MISC FOOD STORE-CONVENIENCE,MRKT,SPLTY,VENDNG MACS' | n=776 | sum=736750.06
+  'Miscellaneous Legal Costs' | n=717 | sum=37063456.54
+  'Miscellaneous Administration Costs' | n=555 | sum=107426053.47
+  'MISCELLANEOUS EXPENSES' | n=544 | sum=4288451.54
+  'Miscellaneous' | n=445 | sum=9417111.66
+  'MISCELLANEOUS CONSUMABLE ITEMS' | n=245 | sum=509812.54
+  'Miscellaneous Expenditure: inc subscriptions and equipment maintenance' | n=231 | sum=3889005.44
+  'MISCELLANEOUS REPAIR SHOPS AND RELATED SERVICES' | n=159 | sum=176647.35
+  'MIscellaneous IT Expenditure' | n=121 | sum=825924.93
+  'Miscellaneous Expenditure (L9)' | n=88 | sum=5163916.46
+  'Miscellaneous Expenses' | n=84 | sum=159254.10
+  ... 79 more
+
+=== sundry (32) ===
+  'Dental Surgery Sundries' | n=43133 | sum=946374.98
+  'Paper Items & General Stationery Sundries' | n=41984 | sum=911287.82
+  'STATIONERY SUNDRIES' | n=32468 | sum=103878.05
+  'PAPER ITEMS GENERAL STATIONERY SUNDRIES' | n=24248 | sum=398406.05
+  'CLEANING MATERIALS PRODUCTS SUNDRIES' | n=13208 | sum=168002.09
+  'Paper Items & General Sationery Sundries' | n=3932 | sum=35554.18
+  'DENTAL SURGERY SUNDRIES' | n=1712 | sum=14331.68
+  'PAPER GENERAL STATIONERY SUNDRIES' | n=1235 | sum=26762.82
+  'CLEANING MATERIAL PRODUCTS SUNDRIES' | n=1228 | sum=19377.19
+  'SUNDRY CONSUMABLES' | n=815 | sum=68486192.25
+  'Capital Sundries Expenditure' | n=347 | sum=14619721.78
+  'Optical Equipment Sundries' | n=250 | sum=17548.07
+  'GPC Sundry Expenditure' | n=150 | sum=64311.13
+  'Sundry Building Supplies' | n=35 | sum=49328.65
+  '341199 Stationery > Sundries > Not Elsewhere Classified' | n=7 | sum=20850.86
+  'General Sundries - Associated Capital Co' | n=7 | sum=5251.25
+  'Sundry Debtors' | n=6 | sum=984190.40
+  '341100 Stationery > Sundries' | n=5 | sum=39733.14
+  '341114 Stationery > Sundries > Writing & Drawing' | n=2 | sum=1595.00
+  'Debtors - Sundry' | n=2 | sum=3582937.48
+  ... 12 more
+
+=== other (1) ===
+  'Other' | n=20 | sum=103820062.94
+
+=== bees (36) ===
+  'Provision of inpatient CYPMHS to the Bee Together Lead Provider Collaborative in 2024/25' | n=15 | sum=1553767.09
+  'Bee Together LPC provision of GM CYPMHS inpatient services and North West FCAMHS 2024/25' | n=11 | sum=2910657.79
+  'Bee Together GM CYPMHS LPC FCAMHS activity for 2025/26' | n=7 | sum=896540.48
+  'Bee Together GM CYPMHS LPC inpatients activity for 2025/26' | n=7 | sum=3116527.10
+  'Bee Together GM CYPMHS LPC activity for 2025/26' | n=4 | sum=228777.68
+  'Bee Together LPC funding for FCAMHS Q3 and Q4 of 2023/24' | n=4 | sum=586764.76
+  'Provision of inpatient CYPMHS to the Bee Together Lead Provider Collaborative' | n=2 | sum=60000.00
+  'Adaption of bee hive units' | n=1 | sum=572.00
+  'Additional Feeder for Apidea (Bee Hive)' | n=1 | sum=641.00
+  'April to June 2024 SLA Invoice - Bee Together LPCprovision of CYPMHSinpatient services 2024/25' | n=1 | sum=336754.50
+  'August 2627 Bee Together LPCprovision of CYPMHSinpatient services' | n=1 | sum=233815.23
+  'Bee Together LPC - FCAMHS LDA funding for 2023/24' | n=1 | sum=70000.00
+  'Bee Together LPC 2023/24 provision of CYPMHS at Galaxy House' | n=1 | sum=662861.50
+  'Bee Together LPC 2023/24Provision of CYPMHS' | n=1 | sum=662861.50
+  'Bee Together LPC funding to GMMH for NHSE approved reinvestment proposals' | n=1 | sum=113447.00
+  'Bee Together LPC provision of GM CYPMHS inpatient services and North West FCAMHS 2024/25 The split is as follows: J17 – £5,069,51' | n=1 | sum=435020.09
+  'Bee Together LPC – YP originating from GM admitted to The Cove 2025/26' | n=1 | sum=40160.30
+  'Bumble Bee Colonies (Audax) each 10-20 workers' | n=1 | sum=2121.60
+  'FAO Al Ford. Bee Together LPC provision of CYPMHS inpatient services 2024/25' | n=1 | sum=721899.50
+  'HIE York East Hotel 6 Seasonal Bee Inspectors visit to York' | n=1 | sum=730.00
+  ... 16 more
+
+=== swan (7) ===
+  'OPS WDC WSD WL SWANSEA JOBCENTRE PLUS' | n=84 | sum=25592.50
+  'OPS PEN PS SWANSEA PC' | n=71 | sum=144982.68
+  'CHG 620144 SWANSEA GROVE HOUSE (MSEC)' | n=14 | sum=2128161.00
+  'CP Swan Meadow - Electricity' | n=1 | sum=10570.67
+  'DDR SWANSEA & NPT QTR 2' | n=1 | sum=57268.50
+  'Donation to the Swan Sanctuary' | n=1 | sum=500.00
+  'Scalpel Handles, No. 3, x 10, Scalpel Handles, No. 4, x 10, Swann Morton Blades, various, x 32, Heated Spatulas, x 6' | n=1 | sum=601.74
+
+########## EXPENSE_AREA ##########
+
+=== mayor (1) ===
+  'CF Lord Mayors Stroke Fund' | n=1 | sum=18105.75
+
+=== civic (1) ===
+  'Kingswood Civic Centre' | n=66 | sum=138311.79
+
+=== allotment (1) ===
+  'Allotments' | n=1 | sum=3594.00
+
+=== pest (1) ===
+  'Pest Control' | n=4 | sum=3707.69
+
+=== flag (1) ===
+  'CG- Green flags' | n=3 | sum=402714.00
+
+=== clock (1) ===
+  'Warmley Clock Tower' | n=2 | sum=2538.35
+
+=== dog (2) ===
+  'Dog Warden' | n=18 | sum=36849.28
+  'Shropshire CAMHS Team Premises-Roden Dogs Trust' | n=2 | sum=100.00
+
+=== horse (6) ===
+  'Blackhorse RAC' | n=27 | sum=22449.33
+  '1 HORSEGUARDS ROAD' | n=10 | sum=20933644.34
+  'REFERBISHMENT 1 HORSEGUARDS ROAD' | n=2 | sum=174646.66
+  'Tote Proceeds to Horseracing' | n=2 | sum=58895524.00
+  'Blackhorse Lane Primary, Emersons Green' | n=1 | sum=2145.00
+  'Support for Horseracing' | n=1 | sum=9000000.00
+
+=== trophy (1) ===
+  'Muscular Dystrophy Campaign' | n=169 | sum=447.04
+
+=== tea (1) ===
+  'Secure Accommodation Tea,' | n=11 | sum=1489890.46
+
+=== queen (1) ===
+  'Coronation Park Playing Fields' | n=1 | sum=2618.66
+
+=== toilets (4) ===
+  'Public Conveniences' | n=21 | sum=79389.38
+  'Wickwar Road Public Conveniences' | n=6 | sum=4196.60
+  'Flaxpits Lane Public Conveniences' | n=1 | sum=1044.57
+  'Soundwell Road Public Conveniences' | n=1 | sum=542.06
+
+=== cemetery (4) ===
+  'Cemeteries' | n=9 | sum=17288.48
+  'Mangotsfield Cemetery' | n=9 | sum=6311.44
+  'Filton Cemetery' | n=6 | sum=1909.44
+  'Mays Hill Cemetery' | n=6 | sum=1211.10
+
+=== witchcraft (2) ===
+  'PHONES AND SWITCHBOARDS' | n=2 | sum=-37785.20
+  'Digital Switchover Programme' | n=1 | sum=66444.10
+
+=== miscellaneous (11) ===
+  'MISC RFR 5' | n=1089 | sum=8589255.00
+  'Misc Balance Sheet' | n=411 | sum=8947879.99
+  'MISCELLANEOUS FINANCE' | n=325 | sum=170385015.03
+  'MISCELLANEOUS EXPENDITURE' | n=130 | sum=1102536.00
+  'MISCELLANEOUS MISC EXPENDITURE' | n=39 | sum=86648.89
+  'MISC AGREED BY FD - PROG' | n=11 | sum=3579668.56
+  'MISC OTHER SDH' | n=4 | sum=225026.82
+  'Misc Serv - non OGDs' | n=2 | sum=1765670.00
+  'Miscellaneous expenses' | n=2 | sum=1052.54
+  'Misc.Central Items' | n=1 | sum=11865.00
+  'Miscellaneous' | n=1 | sum=4000.00
+
+=== sundry (1) ===
+  'OGC SUNDRY FINANCE' | n=1 | sum=43200.00
+
+=== other (1) ===
+  'Other' | n=2905 | sum=34385753.57
+
+=== bees (1) ===
+  'National Bee Unit' | n=1 | sum=51500.00
+
+=== swan (8) ===
+  'OPS PEN PS SWANSEA PC' | n=3207 | sum=1070848.55
+  'OPS WDC WSD WL SWANSEA JOBCENTRE PLUS' | n=952 | sum=186769.73
+  'CSD WL SWANSEA JOBCENTRE PLUS' | n=36 | sum=3596.85
+  'OPS WDC WSD NW LIVERPOOL OLD SWAN JOBCENTRE PLUS' | n=32 | sum=3263.86
+  'Swansea' | n=10 | sum=372178.59
+  'CRC Swanswell Point' | n=4 | sum=219938.72
+  'CSD NW LIVERPOOL OLD SWAN JOBCENTRE PLUS' | n=1 | sum=32.00
+  '[CLOSED] OPS WDC WSD NW LIVERPOOL OLD SWAN JOBCENTRE PLUS' | n=1 | sum=48.00

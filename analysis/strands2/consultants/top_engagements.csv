@@ -1,0 +1,19 @@
+amount_gbp,firm,category,supplier_raw,payer,date,expense_type,hand_check
+44014030.69,Deloitte,consulting,DELOITTE,Department of Health and Social Care,2021-06-28,Consultancy/Professional Advice (expense_area Global Health),"single ledger row, txn 8001907635; COVID-era DHSC (Test-and-Trace period); no duplicate found"
+19419273.51,Deloitte,consulting,DELOITTE,Department of Health and Social Care,2020-07-22,Delivery of NHS Transaction related operational efficiency,one row bundling six invoice numbers (8001284976/978/987/988/990/991); no duplicate
+11959200.0,Reed,welfare_to_work,REED IN PARTNERSHIP LTD,Department for Work and Pensions,2021-08-13,EP CEP RESTART CPA 5C HOME COUNTIES,"Restart scheme contract payment; welfare-to-work, NOT agency staff"
+9820144.93,PA Consulting,consulting,PA CONSULTING SERVICES LIMITED,"Ministry of Housing, Communities and Local Government",(file gives no dates),(none),"source file 16bde454... has no date column for any of its 1,181 rows; amount verified single row"
+8444541.0,Deloitte,consulting,DELOITTE,Department of Health and Social Care,2020-07-23,Delivery of NHS Transaction related operational efficiency,no duplicate
+7855054.2,Deloitte,consulting,DELOITTE,Department of Health and Social Care,2021-04-09,Contractor/ Staff Substitution,DHSC's own label: consultants substituting for staff
+7812000.0,Reed,welfare_to_work,REED IN PARTNERSHIP LTD,Department for Work and Pensions,2021-08-13,EP CEP RESTART CPA 2A NORTH EAST & HUMBERSIDE,Restart scheme
+6948928.8,BCG,consulting,THE BOSTON CONSULTING GROUP UK LLP,Department of Health and Social Care,2021-02-15,Outsourcing Contract (expense_area Global Health),COVID-era; BCG barely appears in the corpus before 2020-21
+6113775.0,McKinsey,consulting,McKinsey Development Partners,"Foreign, Commonwealth and Development Office (FCDO)",2021-01-29,(none given),McKinsey development-programmes entity; FCDO ledger gives no expense_type
+5838330.0,McKinsey,consulting,MCKINSEY AND CO INC UK,Department of Health and Social Care,2021-07-30,Consultancy/Professional Advice,COVID-era DHSC
+5245452.0,KPMG,consulting,KPMG LLP,Ministry of Defence,2017-11-15,Fees for professional services,largest single KPMG fee row; MOD
+5069988.0,PwC,consulting,PRICEWATERHOUSECOOPERS LLP,Ministry of Defence,2017-06-26,Fees for professional services,largest single PwC UK fee row; MOD
+3600000.0,EY,consulting,ERNST & YOUNG,Department for Work and Pensions,2019-11-05,EXP - PURCHASE OF GOODS/SERVICES - SUPPORT,largest single EY row
+2580000.0,Reed,agency_staff,REED EMPLOYMENT PLC,"Ministry of Housing, Communities and Local Government",(file gives no dates),(none),largest single Reed agency row; same dateless MHCLG file as the PA row
+1102000.0,Gartner,consulting,GARTNER UK LTD,HM Revenue and Customs,2023-04-05,SW Lic Sup Off shlf,"software licence/research subscription, not advice work — Gartner is mostly research subscriptions"
+838000.0,Manpower,agency_staff,MANPOWER UK LTD,Royal Borough of Greenwich,2015-07-01,Expenditure Payments,one month of Greenwich's master-vendor temp-staff contract (GBP 106.8m total 2012-2017)
+450000.0,Comensura,agency_staff,Comensura Ltd,Bristol City Council,2024-08-30,Agency Staff,Bristol neutral-vendor agency contract (GBP 35.9m total 2024-2026)
+370000.0,Matrix SCM,agency_staff,MATRIX SCM LTD,Former council of North Yorkshire,2022-09-21,Temporary & Agency Staff,North Yorkshire neutral-vendor contract

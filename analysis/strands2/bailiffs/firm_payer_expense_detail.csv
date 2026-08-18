@@ -1,0 +1,140 @@
+firm,supplier_raw,publisher,expense_type,year,txns,gbp,n_negative,gbp_negative,min_amt,max_amt
+Marston,MARSTON GROUP,Ministry of Justice,130001-Other Income,,7,499573.1,0,0.0,25081.56,102225.34
+Marston,MARSTON GROUP,Ministry of Justice,130001-Other Income,2010,12,809889.02,0,0.0,27031.89,99446.0
+Marston,MARSTON GROUP,Ministry of Justice,610200-Debtors < 1 Year - VAT,2011,15,1196143.39,0,0.0,5258.0,142994.38
+Marston,MARSTON GROUP,Ministry of Justice,130001-Other Income,2011,5,376920.23,0,0.0,25414.46,134383.99
+Marston,MARSTON GROUP,Ministry of Justice,111620-Bailiff Fees (NOS),2011,4,328684.61,0,0.0,64048.54,106077.69
+Marston,MARSTON GROUP,Ministry of Justice,610200-Debtors < 1 Year - VAT,2012,2,164066.33,0,0.0,71523.0,92543.33
+Marston,MARSTON GROUP,Ministry of Justice,223000-Other Expenditure,2013,2,0.0,1,-239169.24,-239169.24,239169.24
+Marston,MARSTON GROUP LTD,Department for Work and Pensions,BAILIFF OTHER,2012,1,22000.0,0,0.0,22000.0,22000.0
+Marston,MARSTON GROUP LTD,Department for Work and Pensions,BAILIFF OTHER,2013,1,27395.0,0,0.0,27395.0,27395.0
+Marston,MARSTON GROUP LTD,Department for Work and Pensions,BAILIFF COMMISSION,2014,1,21093.0,0,0.0,21093.0,21093.0
+Marston,MARSTON GROUP LTD,Department for Work and Pensions,BAILIFF COMMISSION,2015,3,30396.0,0,0.0,0.0,23434.0
+Marston,MARSTON GROUP LTD,Department for Work and Pensions,BAILIFF COMMISSION,2016,2,54600.0,0,0.0,26033.0,28567.0
+Marston,MARSTON GROUP LIMITED,Royal Borough of Greenwich,Services Joint Authorities,2014,8,16919.7,0,0.0,1144.0,2803.03
+Marston,MARSTON GROUP LIMITED,Royal Borough of Greenwich,Services Private Contractor,2014,4,0.0,2,-17088.44,-13548.44,13548.44
+Marston,MARSTON GROUP LIMITED,Royal Borough of Greenwich,Services Private Contractor,2015,16,13151.97,8,-65759.86,-12358.3,14829.96
+Marston,MARSTON GROUP LIMITED,Royal Borough of Greenwich,Services Joint Authorities,2015,8,7703.02,4,-38515.08,-15206.43,18247.72
+Marston,MARSTON GROUP LIMITED,Royal Borough of Greenwich,Services Private Contractor,2016,26,25101.81,13,-125509.12,-28205.44,33846.52
+Marston,MARSTON GROUP LIMITED,Royal Borough of Greenwich,Professional Fees,2016,2,1918.36,1,-109.11,-109.11,2027.47
+Marston,MARSTON GROUP LIMITED,Royal Borough of Greenwich,Services Private Contractor,2017,12,18450.48,6,-92252.31,-19807.68,23769.22
+Marston,MARSTON GROUP LIMITED,Royal Borough of Greenwich,Professional Fees,2017,1,936.0,0,0.0,936.0,936.0
+Marston,Marston (Holdings) Limited,Bristol City Council,Services - Fees and Charges,2020,2,0.0,1,-2525.34,-2525.34,2525.34
+Marston,Marston (Holdings) Limited,Bristol City Council,Services - Fees and Charges,2022,24,0.0,12,-50084.8,-6356.5,6356.5
+Marston,Marston (Holdings) Limited,Bristol City Council,TPP - Other,2022,10,0.0,5,-145789.17,-40855.42,40855.42
+Marston,Marston (Holdings) Limited,Bristol City Council,Services - Fees and Charges,2023,14,0.0,7,-39103.98,-9567.42,9567.42
+Marston,Marston (Holdings) Limited,Bristol City Council,TPP - Other,2023,2,0.0,1,-29802.81,-29802.81,29802.81
+Marston,Marston (Holdings) Limited,Bristol City Council,Services - Fees and Charges,2024,118,3067.76,57,-1114559.82,-402470.1,402470.1
+Marston,Marston (Holdings) Limited,Bristol City Council,Services - Professional Fees,2025,3,27235.8,0,0.0,5860.8,15360.0
+Marston,Marston (Holdings) Limited,Bristol City Council,Services - Fees and Charges,2025,115,10053.8,57,-368627.63,-17097.17,17097.17
+Marston,Marston (Holdings) Limited,Bristol City Council,Services - Security,2025,3,4005.0,0,0.0,975.0,2055.0
+Marston,Marston (Holdings) Limited,Bristol City Council,Services - Fees and Charges,2026,66,0.0,33,-182250.41,-11971.19,11971.19
+Marston,Marston Group Limited,Bristol City Council,TPP - Other,2020,16,9957.55,7,-660073.37,-110522.0,110522.0
+Marston,Marston Group Limited,Bristol City Council,TPP - Other,2022,6,0.0,3,-96361.29,-41769.19,41769.19
+Marston,Marston Group Limited,Bristol City Council,TPP - Other,2023,22,0.0,11,-817637.02,-545893.97,545893.97
+Marston,Marston Group Limited,Bristol City Council,TPP - Other,2024,18,0.0,9,-3844655.98,-632153.6,632153.6
+Marston,Marston Group Limited,Bristol City Council,Services - Fees and Charges,2026,4,0.0,2,-267607.47,-137611.44,137611.44
+Marston,Marston Group Ltd,Rushmoor Borough Council,Refund Of Overpayment,2016,1,582.0,0,0.0,582.0,582.0
+Marston,MARSTON GROUP LTD,North Yorkshire Council,201600 Financial Services > Debt Collection & Recovery,2025,2,0.0,1,-27991.75,-27991.75,27991.75
+Marston,MARSTON GROUP LTD,North Yorkshire Council,201600 Financial Services > Debt Collection & Recovery,2026,8,0.0,4,-93450.12,-31727.12,31727.12
+Marston,MARSTON GROUP LTD,"Department for Environment, Food and Rural Affairs",STATUTORY BODIES,2012,1,582.3,0,0.0,582.3,582.3
+Bristow & Sutor,Bristow & Sutor,Bristol City Council,Services - Fees and Charges,2020,46,3759.09,17,-97560.64,-10835.77,10835.77
+Bristow & Sutor,Bristow & Sutor,Bristol City Council,Services - Fees and Charges,2022,38,455.87,17,-53844.62,-4247.25,4247.25
+Bristow & Sutor,Bristow & Sutor,Bristol City Council,Services - Fees and Charges,2023,73,2155.97,33,-126299.42,-7485.94,7683.34
+Bristow & Sutor,Bristow & Sutor,Bristol City Council,Services - Fees and Charges,2024,120,6670.81,54,-429803.71,-14807.38,14807.38
+Bristow & Sutor,Bristow & Sutor,Bristol City Council,Services - Fees and Charges,2025,139,7078.95,66,-505986.87,-21906.84,21906.84
+Bristow & Sutor,Bristow & Sutor,Bristol City Council,Services - Fees and Charges,2026,47,3954.06,22,-185433.99,-23076.74,23076.74
+Bristow & Sutor,Bristow & Sutor,South Gloucestershire Council,Other Private Contractors,2011,4,888.0,0,0.0,12.5,498.5
+Bristow & Sutor,Bristow & Sutor,Cheltenham Borough Council,R5006-LTC001,2020,1,527.12,0,0.0,527.12,527.12
+Bristow & Sutor,BRISTOW & SUTOR,North Yorkshire Council,201600 Financial Services > Debt Collection & Recovery,2025,6,0.0,3,-9942.36,-4084.59,4084.59
+Bristow & Sutor,BRISTOW & SUTOR,North Yorkshire Council,201600 Financial Services > Debt Collection & Recovery,2026,23,403.84,11,-34015.99,-4329.97,4329.97
+Bristow & Sutor,BRISTOW SUTOR,Blaby District Council,,2013,1,368.62,0,0.0,368.62,368.62
+Jacobs (enforcement),JACOBS DEBT RECOVERY,North Yorkshire Council,201600 Financial Services > Debt Collection & Recovery,2025,2,0.0,1,-2730.0,-2730.0,2730.0
+Jacobs (enforcement),JACOBS DEBT RECOVERY,North Yorkshire Council,201600 Financial Services > Debt Collection & Recovery,2026,8,0.0,4,-16328.59,-6573.0,6573.0
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (DEL),2013,1,25072.54,0,0.0,25072.54,25072.54
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (DEL),2014,10,396156.05,0,0.0,25246.26,64999.88
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (AME),2014,4,210232.39,0,0.0,42326.25,65822.86
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (DEL),2015,8,542268.65,0,0.0,29684.95,104889.32
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (AME),2015,4,114107.48,0,0.0,25667.29,32764.72
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (DEL),2016,1,39245.36,0,0.0,39245.36,39245.36
+Equita,EQUITA LTD,Royal Borough of Greenwich,Services Joint Authorities,2014,8,5062.94,0,0.0,517.97,867.84
+Equita,EQUITA LTD,Royal Borough of Greenwich,Services Private Contractor,2015,20,10250.31,10,-51252.28,-7336.53,8803.82
+Equita,EQUITA LTD,Royal Borough of Greenwich,Services Joint Authorities,2015,6,3454.32,3,-17271.85,-9502.79,11403.33
+Equita,EQUITA LTD,Royal Borough of Greenwich,Services Private Contractor,2016,16,7021.23,8,-35106.64,-6063.72,7276.45
+Equita,EQUITA LIMITED,North Yorkshire Council,351200 Street & Traffic Management > Parking > Fines Collection,2024,2,0.0,1,-3370.0,-3370.0,3370.0
+Equita,EQUITA LIMITED,North Yorkshire Council,351200 Street & Traffic Management > Parking > Fines Collection,2025,4,0.0,2,-15622.93,-7944.51,7944.51
+Equita,EQUITA LIMITED,North Yorkshire Council,351200 Street & Traffic Management > Parking > Fines Collection,2026,6,0.0,3,-24205.38,-9350.75,9350.75
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt collection serv,2012,5,460218.7,0,0.0,36759.82,149788.29
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt collection serv,2013,12,928786.62,0,0.0,26119.1,222334.33
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (DEL),2013,1,46328.05,0,0.0,46328.05,46328.05
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (DEL),2014,9,385924.44,0,0.0,27393.11,69055.07
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (AME),2014,3,153173.99,0,0.0,45630.9,58230.95
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (DEL),2015,14,930424.97,0,0.0,28225.18,138184.68
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (AME),2015,3,101997.17,0,0.0,29777.89,41378.25
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (DEL),2016,2,147392.01,0,0.0,55228.11,92163.9
+Rossendales,Rossendales Limited,HM Revenue and Customs,Debt collection serv,2012,4,246109.94,0,0.0,25105.02,127415.36
+Rossendales,Rossendales Ltd,HM Revenue and Customs,Debt coll serv (Del),2014,1,25131.54,0,0.0,25131.54,25131.54
+Rossendales,ROSSENDALES LTD,Ministry of Justice,,2013,12,1913240.98,0,0.0,58051.58,477432.0
+Rossendales,ROSSENDALES LTD,Royal Borough of Greenwich,,2012,1,3774.0,0,0.0,3774.0,3774.0
+Rossendales,ROSSENDALES LTD,Royal Borough of Greenwich,,2013,2,2340.0,0,0.0,540.0,1800.0
+Rossendales,ROSSENDALES,Blaby District Council,,2016,1,319.42,0,0.0,319.42,319.42
+Rossendales,ROSSENDALES,Blaby District Council,,2017,2,731.82,0,0.0,312.22,419.6
+Rossendales,ROSSENDALES,Blaby District Council,,2018,3,3407.35,0,0.0,377.34,2310.0
+Rossendales,Rossendales Ltd,Bristol City Council,Services - Fees and Charges,2020,34,4004.24,15,-93714.23,-11919.12,11919.12
+CDER,CDER Group Limited,Bristol City Council,Council Tax,2025,1,1939.79,0,0.0,1939.79,1939.79
+CDER,CDER GROUP LIMITED.,Department of Health and Social Care,,2020,1,617.0,0,0.0,617.0,617.0
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,,2012,43,33056.59,0,0.0,503.66,1635.91
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,,2013,47,36367.99,1,-2827.34,-2827.34,3392.81
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,,2014,30,26930.03,0,0.0,510.07,1999.19
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Student Award Payment,2014,20,18435.84,2,-7545.14,-4589.59,4589.59
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Debt Collection Agency Charges,2014,12,12621.37,0,0.0,486.28,1638.89
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Professional Fees,2014,4,1962.15,0,0.0,431.96,563.89
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Debt Collection Agency Charges,2015,25,28875.09,0,0.0,685.13,1658.18
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Student Award Payment,2015,58,28467.72,29,-142338.56,-9420.06,11304.07
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Professional Fees,2015,7,4827.73,0,0.0,523.31,1371.67
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Debt Collection Agency Charges,2016,27,33129.97,0,0.0,522.26,1819.56
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Student Award Payment,2016,56,25411.36,28,-127056.89,-7621.03,9145.24
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Professional Fees,2016,9,5678.1,0,0.0,530.87,853.87
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Debt Collection Agency Charges,2017,15,24040.59,0,0.0,603.29,2958.67
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Student Award Payment,2017,26,10225.27,13,-51126.34,-6082.22,7298.66
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Professional Fees,2017,5,3781.72,0,0.0,664.98,893.33
+Whyte & Co,WHYTE & CO,Royal Borough of Greenwich,Equipment,2017,2,777.87,1,-3889.35,-3889.35,4667.22
+Rundles,RUNDLES & CO LTD,Royal Borough of Greenwich,Student Award Payment,2014,8,5118.14,1,-3006.17,-3006.17,3006.17
+Rundles,RUNDLES & CO LTD,Royal Borough of Greenwich,Student Award Payment,2015,40,19130.71,20,-95653.57,-9566.31,11479.58
+Rundles,RUNDLES & CO LTD,Royal Borough of Greenwich,Student Award Payment,2016,69,43764.93,34,-216054.98,-12636.3,15163.56
+Rundles,RUNDLES & CO LTD,Royal Borough of Greenwich,Student Award Payment,2017,22,16342.11,11,-81710.63,-11093.68,13312.51
+Rundles,RUNDLES & CO LTD,Royal Borough of Greenwich,Equipment,2017,2,1590.54,1,-7952.71,-7952.71,9543.25
+Rundles,Rundle & Co Limited,South Gloucestershire Council,VAT Element,2010,8,8218.52,0,0.0,607.58,1963.27
+Rundles,Rundle & Co Limited,South Gloucestershire Council,Other Private Contractors,2010,3,927.78,0,0.0,79.78,430.0
+Rundles,Rundle & Co Limited,South Gloucestershire Council,Other Private Contractors,2011,15,2755.13,0,0.0,2.56,498.5
+Rundles,Rundle & Co Ltd,Uttlesford District Council,Revenues Admin - Fees,2019,5,2495.5,0,0.0,364.42,627.16
+Rundles,Rundle & Co Ltd,Uttlesford District Council,Revenues Admin - Consultants,2019,1,837.57,0,0.0,837.57,837.57
+Rundles,Rundle & Co Ltd,Uttlesford District Council,Revenues Admin - Consultants,2020,1,1294.29,0,0.0,1294.29,1294.29
+Rundles,Rundle & Co Ltd,Uttlesford District Council,Revenues Admin - Fees,2020,2,1016.22,0,0.0,438.25,577.97
+Rundles,Rundle & Co Ltd,Uttlesford District Council,HMRC VAT,2021,1,75.0,0,0.0,75.0,75.0
+Rundles,Rundle & Co Ltd,Uttlesford District Council,HMRC VAT,2022,1,75.0,0,0.0,75.0,75.0
+Rundles,Rundle & Co Ltd,Uttlesford District Council,HMRC VAT,2023,5,1317.61,0,0.0,145.3,336.31
+Rundles,Rundle & Co Ltd,Uttlesford District Council,HMRC VAT,2024,2,544.27,0,0.0,150.0,394.27
+Rundles,Rundle & Co Ltd,Uttlesford District Council,HMRC VAT,2025,2,620.0,0,0.0,310.0,310.0
+Rundles,RUNDLE & CO LTD,Transport for Greater Manchester,"Rent, Rates & Service Charges",2020,1,3084.9,0,0.0,3084.9,3084.9
+JBW,JBW GROUP LIMITED,Royal Borough of Greenwich,,2014,1,516.0,0,0.0,516.0,516.0
+JBW,JBW GROUP LIMITED,Royal Borough of Greenwich,Services Private Contractor,2014,6,0.0,3,-12942.55,-5868.55,5868.55
+JBW,JBW GROUP LIMITED,Royal Borough of Greenwich,Services Joint Authorities,2015,4,1376.96,2,-6884.78,-4235.2,5082.24
+JBW,JBW GROUP LIMITED,Royal Borough of Greenwich,Services Private Contractor,2015,4,1325.42,2,-6627.06,-3378.44,4054.13
+JBW,JBW GROUP LIMITED,Royal Borough of Greenwich,Services Private Contractor,2016,25,7891.18,12,-39080.83,-4483.4,5380.08
+JBW,JBW GROUP LIMITED,Royal Borough of Greenwich,Services Private Contractor,2017,16,4937.41,8,-24686.98,-4208.43,5050.12
+JBW,JBW Group,Plymouth City Council,Bailiff Costs,2015,1,425.0,0,0.0,425.0,425.0
+Ross & Roberts,ROSS & ROBERTS LTD,Royal Borough of Greenwich,,2012,22,21225.74,0,0.0,517.95,1780.74
+Ross & Roberts,ROSS & ROBERTS LTD,Royal Borough of Greenwich,,2013,19,12701.84,1,-4069.55,-4069.55,4883.46
+Ross & Roberts,ROSS & ROBERTS LTD,Royal Borough of Greenwich,,2014,13,9654.34,0,0.0,541.45,1243.62
+Ross & Roberts,ROSS & ROBERTS LTD,Royal Borough of Greenwich,Student Award Payment,2014,17,7739.53,4,-19062.78,-7235.86,7235.86
+Ross & Roberts,ROSS & ROBERTS LTD,Royal Borough of Greenwich,Debt Collection Agency Charges,2014,1,626.26,0,0.0,626.26,626.26
+Ross & Roberts,ROSS & ROBERTS LTD,Royal Borough of Greenwich,Student Award Payment,2015,50,24281.59,24,-120916.49,-8573.86,10288.63
+Ross & Roberts,ROSS & ROBERTS LTD,Royal Borough of Greenwich,Debt Collection Agency Charges,2015,3,1816.83,0,0.0,563.73,683.0
+Ross & Roberts,ROSS & ROBERTS LTD,Royal Borough of Greenwich,Student Award Payment,2016,46,23060.45,21,-110412.22,-8778.87,10534.64
+Ross & Roberts,ROSS & ROBERTS LTD,Royal Borough of Greenwich,Student Award Payment,2017,14,7743.28,7,-38716.5,-8313.39,9976.07
+Ross & Roberts,ROSS & ROBERTS LTD,Royal Borough of Greenwich,Debt Collection Agency Charges,2017,2,2426.54,0,0.0,516.54,1910.0
+Ross & Roberts,Ross & Roberts Ltd.,Bristol City Council,Services - Fees and Charges,2020,15,2223.39,7,-19108.55,-4164.93,4389.93
+Ross & Roberts,Ross & Roberts Ltd.,Bristol City Council,Services - Fees and Charges,2023,3,395.7,1,-451.64,-451.64,451.64
+Ross & Roberts,Ross & Roberts Limited,Rushmoor Borough Council,Bailiff Fees,2016,2,310.26,1,-1071.14,-1071.14,1381.4
+Ross & Roberts,Ross & Roberts Limited,Rushmoor Borough Council,Bailiff Fees,2017,1,1633.44,0,0.0,1633.44,1633.44

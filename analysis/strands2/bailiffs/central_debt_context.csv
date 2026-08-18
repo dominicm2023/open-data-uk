@@ -1,0 +1,220 @@
+group,supplier_raw,publisher,expense_type_class,year,txns,gbp
+Indesser/iDS,INDESSER,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2015,4,217461.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2016,20,979182.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2017,15,761212.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,EXP - PURCHASE OF GOODS/SERVICES - OFFICE RELATED - CONTRACTED OUT OFFICE,2017,10,547619.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,EXP - PURCHASE OF GOODS/SERVICES - OTHER PROF SERVICES - DEBT COLLECTION,2017,2,87705.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,PROFESSIONAL ADVICE & OPINION VAT RECOVERABLE,2017,2,108635.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,EXP - PURCHASE OF GOODS/SERVICES - OFFICE RELATED - CONTRACTED OUT OFFICE,2018,27,1840623.27
+Indesser/iDS,INDESSER,Department for Work and Pensions,EXP - PURCHASE OF GOODS/SERVICES - OTHER PROF SERVICES - DEBT COLLECTION,2018,17,669427.89
+Indesser/iDS,INDESSER,Department for Work and Pensions,EXP - PURCHASE OF GOODS/SERVICES - SUPPORT - ICT OUTSOURCING NETWORKS,2018,2,74520.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,EXP - PURCHASE OF GOODS/SERVICES - OFFICE RELATED - CONTRACTED OUT OFFICE,2019,3,202282.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,EXP - PURCHASE OF GOODS/SERVICES - OTHER PROF SERVICES - DEBT COLLECTION,2019,21,1003315.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,EXP - PURCHASE OF GOODS/SERVICES - OFFICE RELATED - CONTRACTED OUT OFFICE,2020,2,78579.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,EXP - PURCHASE OF GOODS/SERVICES - OTHER PROF SERVICES - DEBT COLLECTION,2020,30,1633588.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,CMG OPS EXTERNAL CONTRACTS/SLAS INDESSER,2021,10,551929.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,EXP - PURCHASE OF GOODS/SERVICES - OTHER PROF SERVICES - DEBT COLLECTION,2021,7,414997.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,OPS CFC DEBT INVESTMENT,2021,9,745191.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,CMG OPS EXTERNAL CONTRACTS/SLA DEBT SERVICES,2022,3,151096.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,CMG OPS EXTERNAL CONTRACTS/SLAS INDESSER,2022,10,529704.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,OPS CFC DEBT ENFORCEMENT,2022,10,3103565.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,OPS CFC DEBT INVESTMENT,2022,9,654181.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,OPS CFC RISK & INTELLIGENCE SERVICE,2022,3,647273.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,OPS OPP INTEGRATION & CONTRACTING TEAM,2022,1,159408.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,OPS CFC DEBT ENFORCEMENT,2023,12,853205.0
+Indesser/iDS,INDESSER,Department for Work and Pensions,OPS CFC DEBT ENFORCEMENT,2024,4,147383.0
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD,HM Revenue and Customs,Debt coll serv (DEL),2015,3,1232061.53
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD,HM Revenue and Customs,Debt coll serv (DEL),2016,33,18208662.08
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD,HM Revenue and Customs,External Database IS,2016,1,401731.97
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Data Purchases,2017,1,401731.97
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Debt coll serv (DEL),2017,50,38239434.18
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Data Purchases,2018,6,738749.71
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Debt coll serv (DEL),2018,36,26078234.4
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Data Purchases,2019,4,683186.05
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Debt coll serv (DEL),2019,24,25410703.46
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Contracted Services,2020,8,10486575.12
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Data Purchases,2020,9,411488.59
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Debt coll serv (DEL),2020,17,12737446.19
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Contracted Services,2021,5,8222284.56
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Data Purchases,2021,2,196030.57
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Debt coll serv (DEL),2021,20,10818391.01
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Contracted Services,2022,1,242376.0
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Data Purchases,2022,1,109029.6
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Debt coll serv (DEL),2022,24,40877756.79
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,Debt coll serv (DEL),2023,6,3920680.35
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD,Home Office,Business Process Outsourcing,2017,5,211474.83
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD,Home Office,Professional & Admin Services,2017,1,48122.16
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD,Home Office,Professional & Admin Services,2018,3,134475.28
+Indesser/iDS,INTEGRATED DEBT SERVICES LTD,Home Office,Public Administration Services,2018,1,38631.88
+Indesser/iDS,INDESSER,NHS Business Services Authority,Professional Fees,2019,1,53048.04
+Indesser/iDS,INDESSER,NHS Business Services Authority,Professional Fees,2021,7,1117778.29
+Indesser/iDS,INDESSER,NHS Business Services Authority,Software Licences,2021,1,369543.17
+Indesser/iDS,INDESSER,NHS Business Services Authority,Exemption Check Costs,2022,3,183600.0
+Indesser/iDS,INDESSER,NHS Business Services Authority,Professional Fees,2022,4,498647.19
+Indesser/iDS,INDESSER,NHS Business Services Authority,Software Licences,2022,3,180685.25
+Indesser/iDS,INDESSER,NHS Business Services Authority,Exemption Check Costs,2023,16,1288819.87
+Indesser/iDS,INDESSER,NHS Business Services Authority,Professional Fees,2023,14,553026.7
+Indesser/iDS,INDESSER,NHS Business Services Authority,Exemption Check Costs,2024,11,736822.33
+Indesser/iDS,INDESSER,NHS Business Services Authority,Professional Fees,2024,13,364550.47
+Indesser/iDS,INDESSER,NHS Business Services Authority,Exemption Check Costs,2025,9,766771.8
+Indesser/iDS,INDESSER,NHS Business Services Authority,Professional Fees,2025,12,555354.7
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll serv (DEL),2013,1,135874.88
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt collection serv,2013,6,1685753.06
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Legal Serv's Agencys,2013,1,28069.86
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll serv (DEL),2014,6,334373.61
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll serv (DEL),2015,12,2971598.55
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll serv (DEL),2016,12,6412628.64
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll serv (DEL),2017,12,861877.91
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll serv (DEL),2018,6,188641.2
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll serv (DEL),2022,2,382086.32
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll serv (DEL),2023,43,24792231.96
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll service (DEL),2023,4,1828156.75
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,SW Lic Sup Off shelf,2023,1,27002.3
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,SW Lic Sup Off shlf,2023,2,54004.6
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Software Licence Ren,2023,1,27002.3
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Data Purchases,2024,2,234721.03
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll serv (DEL),2024,41,42901375.69
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll serv (DEL),2025,33,38188029.47
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt collection service (DEL),2025,3,3989864.59
+TDX Group,TDX GROUP LTD,HM Revenue and Customs,Debt coll serv (DEL),2026,14,20588825.21
+iQor,iQor holdings Limited,HM Revenue and Customs,Commission,2010,1,166199.11
+iQor,iQor holdings Limited,HM Revenue and Customs,Commission Fees,2010,1,226772.44
+iQor,iQor holdings Limited,HM Revenue and Customs,Distraint App Rem,2010,1,37338.54
+iQor,iQor holdings Limited,HM Revenue and Customs,Commission Fees,2011,4,769453.09
+iQor,iQor holdings Limited,HM Revenue and Customs,Debt Collection Services,2011,2,614278.82
+iQor,iQor holdings Limited,HM Revenue and Customs,Debt collection serv,2011,9,1685210.38
+iQor,IQOR HOLDINGS LTD,HM Revenue and Customs,Debt collection serv,2012,9,754896.78
+iQor,iQor holdings Limited,HM Revenue and Customs,Debt collection serv,2012,16,2497721.59
+iQor,IQOR HOLDINGS LTD,HM Revenue and Customs,Debt collection serv,2013,11,1614058.67
+Advantis Credit,ADVANTIS CREDIT LTD,HM Revenue and Customs,Debt collection serv,2012,5,313736.4
+Advantis Credit,ADVANTIS CREDIT LTD,HM Revenue and Customs,Debt coll serv (DEL),2013,2,120600.67
+Advantis Credit,ADVANTIS CREDIT LTD,HM Revenue and Customs,Debt collection serv,2013,12,1087845.41
+Advantis Credit,ADVANTIS CREDIT LTD,HM Revenue and Customs,Debt coll serv (AME),2014,3,131162.68
+Advantis Credit,ADVANTIS CREDIT LTD,HM Revenue and Customs,Debt coll serv (DEL),2014,14,824147.21
+Advantis Credit,ADVANTIS CREDIT LTD,HM Revenue and Customs,Debt coll serv (DEL),2015,14,1183186.36
+Advantis Credit,ADVANTIS CREDIT LTD,HM Revenue and Customs,Debt coll serv (DEL),2016,2,151142.09
+Akinika,AKINIKA,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2013,3,170674.0
+Akinika,AKINIKA,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2014,13,958822.0
+Akinika,AKINIKA,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2015,11,618010.0
+Akinika,AKINIKA,Department for Work and Pensions,BAILIFF COMMISSION,2016,1,5498.0
+Akinika,AKINIKA,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2016,3,64553.0
+Akinika,AKINIKA HOLDINGS (UK) LIMITED,HM Revenue and Customs,Debt coll serv (DEL),2013,1,55688.8
+Akinika,AKINIKA HOLDINGS (UK) LIMITED,HM Revenue and Customs,Debt collection serv,2013,9,733195.34
+Akinika,AKINIKA HOLDINGS (UK) LIMITED,HM Revenue and Customs,Debt coll serv (AME),2014,4,148882.63
+Akinika,AKINIKA HOLDINGS (UK) LIMITED,HM Revenue and Customs,Debt coll serv (DEL),2014,14,661514.95
+Akinika,AKINIKA HOLDINGS (UK) LIMITED,HM Revenue and Customs,Debt coll serv (DEL),2015,13,933923.7
+Akinika,AKINIKA HOLDINGS (UK) LIMITED,HM Revenue and Customs,Debt coll serv (DEL),2016,2,171274.56
+Bluestone Credit Mgmt,BLUESTONE CREDIT MANAGEMENT LTD,HM Revenue and Customs,Debt collection serv,2012,4,251403.8
+Bluestone Credit Mgmt,BLUESTONE CREDIT MANAGEMENT LTD,HM Revenue and Customs,Debt coll serv (DEL),2013,1,32550.58
+Bluestone Credit Mgmt,BLUESTONE CREDIT MANAGEMENT LTD,HM Revenue and Customs,Debt collection serv,2013,10,467691.25
+Bluestone Credit Mgmt,BLUESTONE CREDIT MANAGEMENT LTD,HM Revenue and Customs,Debt coll serv (DEL),2014,6,183897.4
+Bluestone Credit Mgmt,BLUESTONE CREDIT MANAGEMENT LTD,HM Revenue and Customs,Debt coll serv (AME),2015,1,45420.6
+Bluestone Credit Mgmt,BLUESTONE CREDIT MANAGEMENT LTD,HM Revenue and Customs,Debt coll serv (DEL),2015,9,449754.86
+Bluestone Credit Mgmt,BLUESTONE CREDIT MANAGEMENT LTD,HM Revenue and Customs,Debt coll serv (DEL),2016,4,191272.14
+Commercial Collection Services,Commercial Collection Services,HM Revenue and Customs,Commission Fees,2010,1,69239.06
+Commercial Collection Services,Commercial Collection Services,HM Revenue and Customs,Commission Fees,2011,5,403973.51
+Commercial Collection Services,Commercial Collection Services,HM Revenue and Customs,Debt Collection Services,2011,1,60388.48
+Commercial Collection Services,Commercial Collection Services,HM Revenue and Customs,Debt collection serv,2011,10,1368237.13
+Commercial Collection Services,Commercial Collection Services,HM Revenue and Customs,Distraint App Rem,2011,1,180888.34
+Commercial Collection Services,COMMERCIAL COLLECTION SERVICES,HM Revenue and Customs,Debt collection serv,2012,9,729357.66
+Commercial Collection Services,Commercial Collection Services,HM Revenue and Customs,Debt collection serv,2012,14,1804143.64
+Commercial Collection Services,COMMERCIAL COLLECTION SERVICES,HM Revenue and Customs,Debt coll serv (DEL),2013,1,37056.84
+Commercial Collection Services,COMMERCIAL COLLECTION SERVICES,HM Revenue and Customs,Debt collection serv,2013,16,1421401.91
+Commercial Collection Services,COMMERCIAL COLLECTION SERVICES,HM Revenue and Customs,Debt coll serv (DEL),2014,10,530317.68
+Commercial Collection Services,COMMERCIAL COLLECTION SERVICES,HM Revenue and Customs,Debt coll serv (DEL),2015,21,1257491.56
+Commercial Collection Services,COMMERCIAL COLLECTION SERVICES,HM Revenue and Customs,Debt coll serv (DEL),2016,3,238571.77
+Credit Solutions,Credit Solutions,HM Revenue and Customs,Commission Fees,2010,1,45010.69
+Credit Solutions,Credit Solutions,HM Revenue and Customs,Commission Fees,2011,5,458097.9
+Credit Solutions,Credit Solutions,HM Revenue and Customs,Debt Collection Services,2011,1,137133.86
+Credit Solutions,Credit Solutions,HM Revenue and Customs,Debt collection serv,2011,6,417992.61
+Credit Solutions,Credit Solutions,HM Revenue and Customs,Debt collection serv,2012,2,150904.71
+Drydens/drydensfairfax,DRYDENS LTD,Department for Work and Pensions,AOS CONTRACTED OUT SERVICES,2012,4,103248.0
+Drydens/drydensfairfax,DRYDENS LTD,Department for Work and Pensions,BAILIFF COMMISSION,2012,6,61341.66
+Drydens/drydensfairfax,DRYDENS LTD,Department for Work and Pensions,CONFERENCES AND MEETINGS,2012,1,7957.0
+Drydens/drydensfairfax,DRYDENS LTD,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2012,12,308829.58
+Drydens/drydensfairfax,DRYDENS LTD,Department for Work and Pensions,DWP COURT FEES & RELATED EXPENSES,2012,10,166264.72
+Drydens/drydensfairfax,DRYDENS FAIRFAX SOLICITORS,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2013,5,145214.0
+Drydens/drydensfairfax,DRYDENS LTD,Department for Work and Pensions,BAILIFF COMMISSION,2013,4,38713.0
+Drydens/drydensfairfax,DRYDENS LTD,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2013,8,192788.0
+Drydens/drydensfairfax,DRYDENS LTD,Department for Work and Pensions,DWP COURT FEES & RELATED EXPENSES,2013,5,149742.0
+Drydens/drydensfairfax,DRYDENS FAIRFAX SOLICITORS,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2014,4,107809.0
+Drydens/drydensfairfax,DRYDENS LTD,Department for Work and Pensions,BAILIFF COMMISSION,2014,3,73992.0
+Drydens/drydensfairfax,DRYDENS FAIRFAX SOLICITORS,Department for Work and Pensions,BAILIFF COMMISSION,2015,1,28892.0
+Drydens/drydensfairfax,DRYDENS FAIRFAX SOLICITORS,Department for Work and Pensions,CONTRACTED OUT OFFICE SERVICES,2015,2,83890.0
+Drydens/drydensfairfax,DRYDENS LTD,Department for Work and Pensions,BAILIFF COMMISSION,2015,2,85188.0
+Drydens/drydensfairfax,DRYDENS FAIRFAX SOLICITORS,Department for Work and Pensions,BAILIFF COMMISSION,2016,1,23234.0
+Drydens/drydensfairfax,DRYDENSFAIRFAX SOLICITORS,HM Revenue and Customs,Debt collection serv,2012,6,878943.68
+Drydens/drydensfairfax,DRYDENSFAIRFAX SOLICITORS,HM Revenue and Customs,Debt coll serv (DEL),2013,2,116899.81
+Drydens/drydensfairfax,DRYDENSFAIRFAX SOLICITORS,HM Revenue and Customs,Debt collection serv,2013,19,3019534.17
+Drydens/drydensfairfax,DRYDENSFAIRFAX SOLICITORS,HM Revenue and Customs,Debt coll serv (DEL),2014,14,747682.45
+Drydens/drydensfairfax,DRYDENSFAIRFAX SOLICITORS,HM Revenue and Customs,Debt coll serv (DEL),2015,19,931622.78
+Drydens/drydensfairfax,DRYDENSFAIRFAX SOLICITORS,HM Revenue and Customs,Debt coll serv (DEL),2016,2,147005.95
+Qualco,QUALCO UK LTD,Department for Work and Pensions,CMG OPS EXTERNAL CONTRACTS/SLA DEBT SERVICES,2024,2,66750.0
+Qualco,QUALCO UK LTD,Department for Work and Pensions,CMG OPS EXTERNAL CONTRACTS/SLAS BAILIFFS,2024,1,114000.0
+Capital Resolve,CAPITAL RESOLVE LTD,North Yorkshire Council,201600 Financial Services > Debt Collection & Recovery,2023,1,1500.87
+CCI Credit Management,CCI LEGAL SERVICES LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2014,10,228.52
+CCI Credit Management,CCI LEGAL SERVICES LTD,Shropshire Community Health NHS Trust,Other Operating Income Non NHS,2014,6,6.34
+CCI Credit Management,CCI LEGAL SERVICES LTD,Shropshire Community Health NHS Trust,VAT Contracted Out Services Input Tax,2014,1,2.47
+CCI Credit Management,CCI LEGAL SERVICES LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2015,14,1047.69
+CCI Credit Management,CCI LEGAL SERVICES LTD,Shropshire Community Health NHS Trust,VAT Contracted Out Services Input Tax,2015,3,39.6
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2016,7,45.5
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,VAT Contracted Out Services Input Tax,2016,1,1.6
+CCI Credit Management,CCI LEGAL SERVICES LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2016,11,164.0
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2017,26,862.94
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2018,19,371.67
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2019,20,710.74
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,VAT Contracted Out Services Input Tax,2019,1,0.4
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2020,47,638.9
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2021,41,1349.26
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,VAT Contracted Out Services Input Tax,2021,3,10.4
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2022,20,303.15
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,VAT Contracted Out Services Input Tax,2022,3,32.13
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2023,36,327.02
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,VAT Contracted Out Services Input Tax,2023,3,10.33
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Admin & Clerical Band 3,2024,1,21.01
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2024,74,2857.42
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2025,49,1052.26
+CCI Credit Management,CCI CREDIT MANAGEMENT LTD,Shropshire Community Health NHS Trust,Debt Recovery & Credit Control,2026,31,334.45
+JTR Collections,JTR COLLECTIONS,Former council of North Yorkshire,201600 Financial Services > Debt Collection & Recovery,2022,4,2692.85
+JTR Collections,JTR COLLECTIONS,Former council of North Yorkshire,280000 Legal Services,2022,10,6407.98
+JTR Collections,JTR COLLECTIONS,Former council of North Yorkshire,280000 Legal Services,2023,6,3265.05
+JTR Collections,JTR COLLECTIONS,North Yorkshire Council,280000 Legal Services,2023,7,3617.21
+Marston,MARSTON GROUP LTD,"Department for Environment, Food and Rural Affairs",STATUTORY BODIES,2012,1,582.3
+Marston,MARSTON GROUP LTD,Department for Work and Pensions,BAILIFF OTHER,2012,1,22000.0
+Marston,MARSTON GROUP LTD,Department for Work and Pensions,BAILIFF OTHER,2013,1,27395.0
+Marston,MARSTON GROUP LTD,Department for Work and Pensions,BAILIFF COMMISSION,2014,1,21093.0
+Marston,MARSTON GROUP LTD,Department for Work and Pensions,BAILIFF COMMISSION,2015,3,30396.0
+Marston,MARSTON GROUP LTD,Department for Work and Pensions,BAILIFF COMMISSION,2016,2,54600.0
+Marston,MARSTON GROUP,Ministry of Justice,130001-Other Income,,7,499573.1
+Marston,MARSTON GROUP,Ministry of Justice,130001-Other Income,2010,12,809889.02
+Marston,MARSTON GROUP,Ministry of Justice,111620-Bailiff Fees (NOS),2011,4,328684.61
+Marston,MARSTON GROUP,Ministry of Justice,130001-Other Income,2011,5,376920.23
+Marston,MARSTON GROUP,Ministry of Justice,610200-Debtors < 1 Year - VAT,2011,15,1196143.39
+Marston,MARSTON GROUP,Ministry of Justice,610200-Debtors < 1 Year - VAT,2012,2,164066.33
+Marston,MARSTON GROUP,Ministry of Justice,223000-Other Expenditure,2013,2,0.0
+Marston,MARSTON GROUP LTD,North Yorkshire Council,201600 Financial Services > Debt Collection & Recovery,2025,2,0.0
+Marston,MARSTON GROUP LTD,North Yorkshire Council,201600 Financial Services > Debt Collection & Recovery,2026,8,0.0
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (DEL),2013,1,25072.54
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (AME),2014,4,210232.39
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (DEL),2014,10,396156.05
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (AME),2015,4,114107.48
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (DEL),2015,8,542268.65
+Equita,EQUITA LTD,HM Revenue and Customs,Debt coll serv (DEL),2016,1,39245.36
+Equita,EQUITA LTD,Royal Borough of Greenwich,Services Joint Authorities,2014,8,5062.94
+Equita,EQUITA LTD,Royal Borough of Greenwich,Services Joint Authorities,2015,6,3454.32
+Equita,EQUITA LTD,Royal Borough of Greenwich,Services Private Contractor,2015,20,10250.31
+Equita,EQUITA LTD,Royal Borough of Greenwich,Services Private Contractor,2016,16,7021.23
+Rossendales,Rossendales Ltd,Bristol City Council,Services - Fees and Charges,2020,34,4004.24
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt collection serv,2012,5,460218.7
+Rossendales,Rossendales Limited,HM Revenue and Customs,Debt collection serv,2012,4,246109.94
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (DEL),2013,1,46328.05
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt collection serv,2013,12,928786.62
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (AME),2014,3,153173.99
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (DEL),2014,9,385924.44
+Rossendales,Rossendales Ltd,HM Revenue and Customs,Debt coll serv (Del),2014,1,25131.54
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (AME),2015,3,101997.17
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (DEL),2015,14,930424.97
+Rossendales,ROSSENDALES LTD,HM Revenue and Customs,Debt coll serv (DEL),2016,2,147392.01
+Rossendales,ROSSENDALES LTD,Ministry of Justice,,2013,12,1913240.98
+Rossendales,ROSSENDALES LTD,Royal Borough of Greenwich,,2012,1,3774.0
+Rossendales,ROSSENDALES LTD,Royal Borough of Greenwich,,2013,2,2340.0

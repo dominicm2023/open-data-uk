@@ -1,0 +1,241 @@
+
+=== Flag Flying detail ===
+Department for Digital, Culture, Media and Sport | Brophy Grounds Maintenance Ltd | 26189.48 | 2011-04-13 | Flag Flying | State Ceremonials Prog Costs | 5429e6df9de094f5be6611413134ef693c4a945c.bin
+Department for Digital, Culture, Media and Sport | The Flag Consultancy Ltd | 56500.0 | 2011-05-10 | Flag Flying | State Ceremonials Prog Costs | 5429e6df9de094f5be6611413134ef693c4a945c.bin
+Department for Digital, Culture, Media and Sport | Brophy Grounds Maintenance Ltd | 30246.68 | 2011-08-01 | Flag Flying | State Ceremonials Prog Costs | 5429e6df9de094f5be6611413134ef693c4a945c.bin
+Department for Digital, Culture, Media and Sport | Brophy Grounds Maintenance Ltd | 24235.18 | 2011-08-01 | Flag Flying | State Ceremonials Prog Costs | 5429e6df9de094f5be6611413134ef693c4a945c.bin
+Department for Digital, Culture, Media and Sport | Brophy Grounds Maintenance Ltd | 25305.61 | 2011-09-02 | Flag Flying | State Ceremonials Prog Costs | 5429e6df9de094f5be6611413134ef693c4a945c.bin
+Department for Digital, Culture, Media and Sport | Brophy Grounds Maintenance Ltd | 21661.71 | 2011-10-20 | Flag Flying | State Ceremonials Prog Costs | 5429e6df9de094f5be6611413134ef693c4a945c.bin
+Department for Digital, Culture, Media and Sport | Brophy Grounds Maintenance Ltd | 26381.63 | 2012-01-18 | Flag Flying | State Ceremonials Prog Costs | 5429e6df9de094f5be6611413134ef693c4a945c.bin
+Department for Digital, Culture, Media and Sport | Piggotts Co Ltd | 56667.27 | 2012-11-21 | Flag Flying | State Ceremonials Prog Costs | 203e7f74a31ef2ce3bed6237cdaa50e3a42c0f5c.bin
+
+=== Bumble bees ===
+Department for Environment, Food and Rural Affairs | AGRALAN LTD 740 | 2121.6 | 2012-04-25 | Bumble Bee Colonies (Audax) each 10-20 workers | None | 78b0192fcdcaa85ba5e03997852378d0e63e7ebc.bin
+
+=== Dog doublet ===
+Department for Environment, Food and Rural Affairs | VP FABRICATION LTD | 780.0 | 2012-07-20 | Lifting arm for dog doublet | None | 0599f366dd07edcb977c5c1a0693af191a9a07da.bin
+
+=== Exotic Pest exercise ===
+Department for Environment, Food and Rural Affairs | TOWN & COUNTRY LODGE | 1385.5 | 2012-06-08 | Accomodation for 15 people  on Contingency: Exercise Incursion of Exotic Pest | None | 78b0192fcdcaa85ba5e03997852378d0e63e7ebc.bin
+
+=== Alpacas Bristol sample ===
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 1992.0 | 2022-07-19 | Services - Professional Fees | None | dfad8ce8019a14f377b777e640a5d77acfb5aebd.bin
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 992.0 | 2022-08-02 | Services - Professional Fees | None | 98f0f8d9457c542cf533d81ddcf8e3a2ef1ee3b6.bin
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 2348.5 | 2022-08-02 | Services - Professional Fees | None | 98f0f8d9457c542cf533d81ddcf8e3a2ef1ee3b6.bin
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 992.0 | 2022-08-03 | Services - Professional Fees | None | 98f0f8d9457c542cf533d81ddcf8e3a2ef1ee3b6.bin
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 2562.0 | 2022-08-03 | Services - Professional Fees | None | 98f0f8d9457c542cf533d81ddcf8e3a2ef1ee3b6.bin
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 1839.6 | 2022-08-03 | Services - Professional Fees | None | 98f0f8d9457c542cf533d81ddcf8e3a2ef1ee3b6.bin
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 152.4 | 2022-08-03 | Services - Professional Fees | None | 98f0f8d9457c542cf533d81ddcf8e3a2ef1ee3b6.bin
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 744.0 | 2022-09-02 | Services - Professional Fees | None | ca67893c93fd17f4ce10f8395997bf5a3e2b62c2.bin
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 1921.5 | 2022-09-02 | Services - Professional Fees | None | ca67893c93fd17f4ce10f8395997bf5a3e2b62c2.bin
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 1494.0 | 2022-09-14 | Services - Fees and Charges | None | ca67893c93fd17f4ce10f8395997bf5a3e2b62c2.bin
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 1240.0 | 2022-11-02 | Services - Professional Fees | None | df359fa8c087f904c8e7fc8df108da30b7539932.bin
+Bristol City Council | Alpacas Peopleton Brook Farm t/a Peopleton Farm | 2158.0 | 2022-12-28 | Services - Fees and Charges | None | a9417d050c4f32beea29b4e18d532c836e706740.bin
+
+=== Donkeys Rushmoor ===
+Rushmoor Borough Council | South East Donkeys | 325.0 | 2019-06-13 | Victoria Day | Community | 478943251f1576442adb978bdb4d04ff8f2363e3.bin
+Rushmoor Borough Council | South East Donkeys | 325.0 | 2019-12-05 | Marketing/Promotion | Community | b14b0687e81a1cbddc777fa7de15742d82ae61ff.bin
+Rushmoor Borough Council | Kelly'S Donkeys | 325.0 | 2021-11-25 | Aldershot Promotions | Community | 6b7b6653eb05b68d5913ccae1328641abdabd253.bin
+Rushmoor Borough Council | Kelly'S Donkeys | 325.0 | 2021-12-02 | Aldershot Promotions | Community | b78504ed98eb687922e5cfbf67a432b0cc3ff10c.bin
+
+=== Reindeer Greenwich ===
+Royal Borough of Greenwich | THE REINDEER CENTRE | 1680.0 | 2014-01-02 | None | None | a1dc5a777dfd9a85ff4dcef7cd00d7ded7bfebcb.bin
+Royal Borough of Greenwich | REAL REINDEER LIMITED | 1500.0 | 2016-01-04 | Woolwich Winter Warmer | Chief Executives | a04f3a6b3052c39e8d4839c46802cfa27298bfdb.bin
+Royal Borough of Greenwich | REAL REINDEER LIMITED | 3000.0 | 2016-12-08 | Woolwich Winter Warmer | Chief Executives | 30adca386e42f7a589d40ba7b5142721203f4837.bin
+
+=== Camels ===
+Royal Borough of Greenwich | JOSEPH`S AMAZING CAMELS LIMITED | 795.0 | 2016-04-08 | Other Services | Chief Executives | 061851bb81011d12678a94b18453b60f475ba916.bin
+Royal Borough of Greenwich | JOSEPH`S AMAZING CAMELS LIMITED | 2385.0 | 2016-07-01 | Other Services | Chief Executives | 94b3c715c5a586e71efbdaa8e5886e16772a3d2f.bin
+
+=== Jester ===
+Royal Borough of Greenwich | RUSS ERWYD T/AS CONWY JESTER | 1950.0 | 2017-05-10 | Green Flag Parks Other Items | Chief Executives | 8d7e9332fac31951ab674b9d2429ef3d21c84cd6.bin
+
+=== Ukulele ===
+Rushmoor Borough Council | The Ukulele Orchestra Of Great Britain | 5402.39 | 2010-04-22 | Payment to Artistes | Community | 5382e2da2f419eaee7e2a552ef07517e36c66834.bin
+Rushmoor Borough Council | The Ukulele Orchestra Of Great Britain | 5612.7 | 2010-10-21 | Payment to Artistes | Community | 64c1abd7804a36ae2d1f61241e45b02cacee5947.bin
+Rushmoor Borough Council | The Ukulele Orchestra Of Great Britain | 5759.6 | 2011-03-23 | Payment to Artistes | Community | 9c62423968df831e65f4b93bff5dffbeb81bbc55.bin
+Rushmoor Borough Council | The Ukulele Orchestra Of Great Britain | 5855.18 | 2011-11-03 | Payment to Artistes | Community | c51210f2b471de0d786095409883a484a7dcbead.bin
+Rushmoor Borough Council | The Ukulele Orchestra Of Great Britain | 5904.78 | 2012-11-01 | Payment to Artistes | Community | 2158f7bf38a75683e2e5d287ffc9fc6c66d39aef.bin
+Rushmoor Borough Council | The Ukulele Orchestra Of Great Britain | 6933.51 | 2015-08-13 | Payment to Artistes | Community | a00851d80e39b212041e22c8f16ae17dd10ba81f.bin
+
+=== Cosmic Sausages ===
+Royal Borough of Greenwich | THE COSMIC SAUSAGES | 2000.0 | 2012-03-12 | None | None | c6680c7805b98c76add73a4b417a3d4aea991f85.bin
+Royal Borough of Greenwich | THE COSMIC SAUSAGES | 1100.0 | 2012-08-14 | None | None | 262dab69ab7a5ef79f914788f1717494e994a381.bin
+Royal Borough of Greenwich | THE COSMIC SAUSAGES | 1000.0 | 2013-07-01 | None | None | db967502f7a9956da2e2b77bdab079900f405706.bin
+
+=== Falconry Greenwich ===
+Royal Borough of Greenwich | COUNTRYWIDE FALCONRY & PEST CONTROL SERVICES LTD | 520.0 | 2013-08-14 | None | None | 00f474569d96fc56a8fad81aa47248e77bc75356.bin
+Royal Borough of Greenwich | COUNTRYWIDE FALCONRY & PEST CONTROL SERVICES LTD | 520.0 | 2014-10-06 | Other Services | Chief Executives | c8de256799b320c55f2d11e2811ee70130c76208.bin
+Royal Borough of Greenwich | COUNTRYWIDE FALCONRY & PEST CONTROL SERVICES LTD | 520.0 | 2015-10-06 | Other Services | Chief Executives | 373c0134a381c58828268ab1974ee460de95eedc.bin
+
+=== Bell ringers ===
+North Yorkshire Council | ALL SAINTS KIRKBYMOORSIDE BELL RINGERS | 1000.0 | 2026-05-27 | 151510 Healthcare > Public Health | Resources Directorate and Central Services - Revenue | e5e140c591fd8c09c35f0b8232ff5890332735b3.bin
+
+=== Trump golf ===
+Foreign and Commonwealth Office | TRUMP INTERNATIONAL GO | 2360.0 | 2013-08-19 | Public Golf Courses | None | b2126ddd08d0de64021c88744b68099a41e452a9.bin
+Foreign and Commonwealth Office | TRUMP INTERNATIONAL GO | 4545.0 | 2013-08-19 | Public Golf Courses | None | b2126ddd08d0de64021c88744b68099a41e452a9.bin
+Foreign and Commonwealth Office | TRUMP INTERNATIONAL GO | -4545.0 | 2013-09-16 | Public Golf Courses | None | 39978e0a09a4d44715e6d0933b28335946ec3d24.bin
+
+=== Wig and toupee ===
+Foreign and Commonwealth Office | JAOKEN | 634.16 | 2015-02-24 | WIG AND TOUPEE SHOPS | None | 38b67b067459f4488f0ea404523becf2fdbf1772.bin
+
+=== MoD circus ===
+Ministry of Defence | Amusement/Rec Serv - Def | 3000.0 | 2020-01-30 | Amusement/Entertainment | None | 4211de5b8ca50714e782c605a52b509b91653cf1.bin
+Ministry of Defence | Amusement/Rec Serv - Def | 3000.0 | 2020-01-31 | Amusement/Entertainment | None | 4211de5b8ca50714e782c605a52b509b91653cf1.bin
+Ministry of Defence | Health & Beauty Spas | 3000.0 | 2020-01-31 | Amusement/Entertainment | None | 4211de5b8ca50714e782c605a52b509b91653cf1.bin
+Ministry of Defence | Theatrical Producers | 511.7 | 2020-01-31 | Amusement/Entertainment | None | 4211de5b8ca50714e782c605a52b509b91653cf1.bin
+Ministry of Defence | Theatrical Producers | 1680.0 | 2020-02-01 | Amusement/Entertainment | None | 4211de5b8ca50714e782c605a52b509b91653cf1.bin
+
+=== Amusement Parks/Circus supplier ===
+Ministry of Defence | Amusement Parks/Circus | 999.84 | 2020-02-07 | Amusement/Entertainment | None | 4211de5b8ca50714e782c605a52b509b91653cf1.bin
+
+=== Marmalade On Toast ===
+Queen Elizabeth II Conference Centre | Marmalade On Toast | 500.0 | None | Marketing | Commercial | c1a1284ad52e4e76caa1b435efdadaa45fcd8de9.bin
+Queen Elizabeth II Conference Centre | Marmalade On Toast | 500.0 | None | Marketing | Commercial | c1a1284ad52e4e76caa1b435efdadaa45fcd8de9.bin
+Queen Elizabeth II Conference Centre | Marmalade On Toast | 500.0 | None | Marketing | Commercial | c1a1284ad52e4e76caa1b435efdadaa45fcd8de9.bin
+Queen Elizabeth II Conference Centre | Marmalade On Toast | 500.0 | None | Marketing | Commercial | 1a61a761795019a755cf9c49f2b4b5e3d0be0177.bin
+Queen Elizabeth II Conference Centre | Marmalade On Toast | 500.0 | None | Marketing | Commercial | 632c02162102494c00b5d52c0c32da74d80ad0cf.bin
+Queen Elizabeth II Conference Centre | Marmalade On Toast | 500.0 | None | Marketing | Commercial | 632c02162102494c00b5d52c0c32da74d80ad0cf.bin
+Queen Elizabeth II Conference Centre | Marmalade On Toast | 500.0 | None | Marketing | Commercial | 38399afa1cae0077bfbbae857e3d8bab914a5e65.bin
+Queen Elizabeth II Conference Centre | Marmalade On Toast | 500.0 | None | Marketing | Commercial | abec5531702b0f2fee9bda019d71917ffe3bf840.bin
+
+=== Giant Cheese ===
+Rushmoor Borough Council | Giant Cheese Ltd | 1940.0 | 2021-09-16 | Climate Change Project | Democratic Services | f50f752b126a538d1575ee5cf01ba31e6cb764d0.bin
+Rushmoor Borough Council | Giant Cheese Ltd | 3236.0 | 2021-11-11 | Aldershot Promotions | Community | 6b7b6653eb05b68d5913ccae1328641abdabd253.bin
+Rushmoor Borough Council | Giant Cheese Ltd | 3751.6 | 2023-11-23 | Aldershot Promotions | Community | 05a52f56bb57961cb40179240d0a694572b21044.bin
+Rushmoor Borough Council | Giant Cheese Ltd | 2000.0 | 2024-03-14 | Aldershot Promotions | Community | c5806e5126bcf7ffea3b197e7b7234e1cc22f889.bin
+
+=== Weaseltron ===
+UK Trade and Investment | WEASELTRON ENTERTAINMENT LIMITED | 441.55 | 2016-05-12 | Other Professional Services - First Time Exporter Credits | Trade Group - English Regions | 11f67db00698a133aea9b7cab8309cb9685809b6.bin
+
+=== Teapottery ===
+UK Trade and Investment | THE TEAPOTTERY LTD | 665.0 | 2012-02-10 | Travel and Subsistence O'seas - Market Visit Scheme | UK Trade and Investments - Regional Directorate | 9a94bdeee5ae1973f879857423a7eedc30d5efec.bin
+
+=== Mr Squirrell MoJ ===
+Ministry of Justice | MR B SQUIRRELL#DX 453 | 36525.0 | 2011-02-07 | 311200-Criminal Legal Aid | AU999-National Taxing Teams | 9f49678d4891a089c2c4294ed7ca1c50235cac7e.bin
+
+=== HMS Dragon ===
+UK Trade and Investment | HMS DRAGON | 1000.0 | 2015-03-04 | Regional Directorate Americas, East Asia and Australasia-Catering Supplies | Defence and Security Organisation - Regional Directorates | 9c5bb518f6f27619489c5a2bdd78b50087b19748.bin
+UK Trade and Investment | HMS DRAGON | 768.9 | 2015-05-11 | Corporate Event Management and Marketing-Support to Defence & Security Campaigns | Defence and Security Organisation - Regional Directorates | 26b7113b1fc6f9d0e75cfb6b14914026c07c4313.bin
+
+=== Sodexo Motivation millions ===
+Home Office | SODEXO MOTIVATION SOLUTIONS UK LTD | 1000000.0 | 2013-05-08 | Asylum Provision.Asylum Services | UKBA - UK Border Agency | b2dc47133a943926c5f6b58615b500bbadfaa578.bin
+Home Office | SODEXO MOTIVATION SOLUTIONS UK LTD | 1000000.0 | 2013-05-13 | Asylum Provision.Asylum Services | UKBA - UK Border Agency | b2dc47133a943926c5f6b58615b500bbadfaa578.bin
+Home Office | SODEXO MOTIVATION SOLUTIONS UK LTD | 1000000.0 | 2013-05-21 | Asylum Provision.Asylum Services | UKBA - UK Border Agency | b2dc47133a943926c5f6b58615b500bbadfaa578.bin
+Home Office | SODEXO MOTIVATION SOLUTIONS UK LTD | 1000000.0 | 2013-06-03 | Asylum Provision.Asylum services | Finance and Commercial | b0c331ff1261ae2812f4b8a05d84b355009bb600.bin
+Home Office | SODEXO MOTIVATION SOLUTIONS UK LTD | 1000000.0 | 2013-06-06 | Asylum Provision.Asylum services | Finance and Commercial | b0c331ff1261ae2812f4b8a05d84b355009bb600.bin
+Home Office | SODEXO MOTIVATION SOLUTIONS UK LTD | 1000000.0 | 2013-06-06 | Asylum Provision.Asylum services | Finance and Commercial | b0c331ff1261ae2812f4b8a05d84b355009bb600.bin
+Home Office | SODEXO MOTIVATION SOLUTIONS UK LTD | 1000000.0 | 2013-06-07 | Asylum Provision.Asylum services | Finance and Commercial | b0c331ff1261ae2812f4b8a05d84b355009bb600.bin
+Home Office | SODEXO MOTIVATION SOLUTIONS UK LTD | 1000000.0 | 2013-12-04 | Asylum Provision | Visa & Immigration | 360b52f4d824df8546deb10cd8858089e392912e.bin
+Home Office | SODEXO MOTIVATION SOLUTIONS UK LTD | 1000000.0 | 2013-12-17 | Asylum Provision | Visa & Immigration | 360b52f4d824df8546deb10cd8858089e392912e.bin
+Home Office | SODEXO MOTIVATION SOLUTIONS UK LTD | 1000000.0 | 2014-01-14 | Asylum Provision | UKBA Asylum Support | e3ad929a7716025635c444bf6676b004b4532288.bin
+
+=== Taxidermy NHM ===
+Natural History Museum | London Taxidermy | 550.0 | 2011-12-02 | Equipment < £5k | PEG Gallery Learning | a3878bb757eba1a83833e2041a79a953a34f3d8e.bin
+Natural History Museum | MCKENZIE TAXIDERMY | 332.16 | 2012-03-29 | P/L - Conservation | Zoology Curation | a6981b1231a81d9dc51e16185bb6a4bad75e239b.bin
+Natural History Museum | MCKENZIE TAXIDERMY | 515.53 | 2012-03-29 | P/L - Conservation | Zoology Curation | a6981b1231a81d9dc51e16185bb6a4bad75e239b.bin
+Natural History Museum | London Taxidermy | 850.0 | 2013-02-18 | Resources | PEG Learning Programme Developers | b10f0beddfad5510777878cdcf926c26ce78e0af.bin
+Natural History Museum | London Taxidermy | 470.0 | 2013-06-27 | MF - General Running Costs | VE VLE Learning Experience | 4e04f271f5266695db3378353647cb7c0768b21d.bin
+
+=== DCMS 1p to X ===
+Department for Digital, Culture, Media and Sport | X | 0.01 | 2011-05-05 | P/L - Equip & Related Costs | Entomology Research | 763a39730d2b112236ec111791de224e1097f6cb.bin
+Natural History Museum | X | 0.01 | 2011-09-29 | Irrecoverable VAT | Palaeontology Admin | f57d27e835f8818a18d46e50c51f1e0669e0238b.bin
+
+=== Kirkbymoorside brass band ===
+North Yorkshire Council | KIRKBYMOORSIDE BRASS BAND | 1265.74 | 2024-02-09 | 291120 Arts & Leisure Services > Organised Activities | District & Borough Services - Revenue | 11b6c77b50cb705de24bf98970e11851e7fd1d8c.bin
+
+=== Sheep Dip Lane sample ===
+Department for Education | Sheep Dip Lane Academy | 82522.65 | 2020-04-08 | Grants expenditure | IFD EDUCATION FUNDING GROUP | 8ada54f2f3f1437ce9e35932528ba2a393692b84.bin
+Department for Education | Sheep Dip Lane Academy | -82522.65 | 2020-05-01 | Grants expenditure | IFD EDUCATION FUNDING GROUP | 01504735102b2f0a44300a1596b11d00b35843d1.bin
+Department for Education | Sheep Dip Lane Academy | 82522.65 | 2020-05-01 | Grants expenditure | IFD EDUCATION FUNDING GROUP | 01504735102b2f0a44300a1596b11d00b35843d1.bin
+
+=== Monster Gov Solutions sample ===
+Department for Work and Pensions | MONSTER GOVERNMENT SOLUTIONS | 111754.53 | 2012-10-12 | MANAGED SERVICE UNIVERSAL JOBMATCH | CHG TRANSFORMING LABOUR MARKET SERVICES | 9923e0f07f44af65205964278d3eefc85a31837c.bin
+Department for Work and Pensions | MONSTER GOVERNMENT SOLUTIONS | 2587727.0 | 2012-11-26 | MANAGED SERVICE UNIVERSAL JOBMATCH | CHG TRANSFORMING LABOUR MARKET SERVICES | ddb24f2c0f90177de306c917572b85c632826699.bin
+Department for Work and Pensions | MONSTER GOVERNMENT SOLUTIONS | 69670.0 | 2012-12-07 | MANAGED SERVICE UNIVERSAL JOBMATCH | CHG TRANSFORMING LABOUR MARKET SERVICES | 61a53b42d1d0e116865351d2fd3aa82d47d39652.bin
+
+=== Ponies 4 Parties ===
+Blaby District Council | PONIES 4  PARTIES | 525.0 | 2013-07-31 | None | Other | 494724cdac2b66ad2afc0f2161f4387c22c98311.bin
+Blaby District Council | PONIES 4  PARTIES | 450.0 | 2014-08-13 | None | Health Improvement & Leisure | c76f3f5c7de5a4ee534144d4d91fb8f17f5f7cd3.bin
+Blaby District Council | PONIES 4  PARTIES | 350.0 | 2015-08-10 | None | Health Improvement & Leisure | 0a33e756f9556e2ffe4a779583781586d06fa0bc.bin
+
+=== Bouncy castles Blaby ===
+Blaby District Council | FUNHOUSE BOUNCY CASTLES | 650.0 | 2015-09-17 | None | Health Improvement & Leisure | 2c5f43bc3edba653a529a900a150ff70791be038.bin
+
+=== Civic Regalia rows ===
+Rushmoor Borough Council | Thomas Fattorini Ltd | 638.56 | 2015-03-19 | Civic Regalia | Democratic Services | 01750727180a43211e3c25f5e1634481e52edfb5.bin
+Rushmoor Borough Council | Thomas Fattorini Ltd | 1039.7 | 2019-11-21 | Civic Regalia | Democratic Services | cdfbeb471ba58c057f77f786237d2eca6c0bed61.bin
+Rushmoor Borough Council | Thomas Fattorini Ltd | 481.92 | 2025-04-17 | Civic Regalia | Democratic Services | 969cfed4af662ababb403d31609b9e5d38b509db.bin
+Rushmoor Borough Council | Thomas Fattorini Ltd | 1057.76 | 2025-04-17 | Civic Regalia | Democratic Services | 969cfed4af662ababb403d31609b9e5d38b509db.bin
+
+=== Mayor-making sample ===
+Rushmoor Borough Council | Aramark Ltd | 1327.5 | 2010-06-10 | Mayor-making | Democratic Services | a7055df10ea0c728730f7bbd55291b461bcf2460.bin
+Rushmoor Borough Council | Baxterstorey | 1674.9 | 2011-06-09 | Mayor-making | Democratic Services | 6f6b82e4ed8e51ed632b5d529d5044547e448c04.bin
+Rushmoor Borough Council | Veolia Environmental Services | 650.0 | 2011-09-08 | Mayor-making | Democratic Services | 2b6be537ba89e4229474519d42cecf43e76dcc04.bin
+Rushmoor Borough Council | Baxterstorey | 1178.18 | 2012-07-05 | Mayor-making | Democratic Services | 664584784f3f95b7add1db334ecc914cfb3902cd.bin
+Rushmoor Borough Council | Veolia Environmental Services | 650.0 | 2012-07-19 | Mayor-making | Democratic Services | 664584784f3f95b7add1db334ecc914cfb3902cd.bin
+Rushmoor Borough Council | Baxterstorey | 866.18 | 2013-06-06 | Mayor-making | Democratic Services | 582efde3e00e7f9484422b5acc68464673e9d341.bin
+Rushmoor Borough Council | Thomas Fattorini Ltd | 615.72 | 2014-02-20 | Mayor-making | Democratic Services | 8213dd560459701a9271c1a59c0c5365df3c7e28.bin
+Rushmoor Borough Council | Edwards And Ward Ltd | 928.25 | 2014-07-03 | Mayor-making Refreshments | Democratic Services | ef31d0d3d8410535de7e807ef9b7620933e1d139.bin
+Rushmoor Borough Council | Bottle And Basket | 355.5 | 2015-05-28 | Mayor-making | Democratic Services | 131df54753263697a37e671c2a5fdb320441f84c.bin
+Rushmoor Borough Council | Edwards And Ward Ltd | 900.0 | 2015-06-25 | Mayor-making | Democratic Services | 2bd5a8276a4c1c47ede1a09838e6d2c7fec6ba1f.bin
+Rushmoor Borough Council | Bottle And Basket | 455.3 | 2016-05-26 | Mayor Making - Refreshments | Democratic Services | 83d880758da053701912bb174c5173d6cf909f6e.bin
+Rushmoor Borough Council | Abm Catering Limited | 1005.0 | 2016-06-16 | Mayor-making | Democratic Services | 64b857ef7cabd16c3211085a254d20f8dcafb0d2.bin
+Rushmoor Borough Council | Thomas Fattorini Ltd | 674.02 | 2017-03-30 | Mayor-making | Democratic Services | aaf8995f77ee4ae49d81f2a4845d92c481fcc6d3.bin
+Rushmoor Borough Council | Thomas Fattorini Ltd | 699.63 | 2018-05-03 | Mayor-making | Democratic Services | ff6487e220d27126633f270973b2f1273ac29ff3.bin
+Rushmoor Borough Council | Abm Catering Limited | 700.0 | 2018-08-16 | Mayor-making | Democratic Services | 97f829ea5bec564409452a168fc532b5d4b1946c.bin
+Rushmoor Borough Council | Thomas Fattorini Ltd | 302.23 | 2019-02-21 | Mayor-making | Democratic Services | ae3120c6ccab744c59e22754caf46b135c7234e6.bin
+Rushmoor Borough Council | Abm Catering Limited | 725.0 | 2019-06-27 | Mayor-making | Democratic Services | 478943251f1576442adb978bdb4d04ff8f2363e3.bin
+Rushmoor Borough Council | Abm Catering Limited | 562.5 | 2020-01-23 | Mayor-making | Democratic Services | 818fe23ede98b5d332b414b308277b71584ba524.bin
+Rushmoor Borough Council | Thomas Fattorini Ltd | 785.37 | 2021-05-14 | Mayor-making | Democratic Services | 9949c0361dd5ef1237940f0c8ff31d2fa4731c8e.bin
+Rushmoor Borough Council | Thomas Fattorini Ltd | 810.6 | 2022-04-21 | Mayor-making | Democratic Services | de9589b58d3e483352c4c1a66e19cb3f4378db2d.bin
+Rushmoor Borough Council | Thomas Fattorini Ltd | 387.57 | 2023-05-04 | Mayor-making | Democratic Services | 94375f8ec85963072ee244383926fa434ba38fc9.bin
+Rushmoor Borough Council | Thomas Fattorini Ltd | 1310.42 | 2026-05-07 | Mayor-making | Democratic Services | ba6b14779b8c1161d0dc3489bcc9d449db2ca2ed.bin
+
+=== Kennel/Feed Stray Dogs sample ===
+Rushmoor Borough Council | Bowenhurst Kennels | 929.0 | 2010-04-29 | Kennel Feed Stray Dogs | Environmental Health and Housing | 5382e2da2f419eaee7e2a552ef07517e36c66834.bin
+Rushmoor Borough Council | Bowenhurst Kennels | 807.5 | 2010-05-13 | Kennel Feed Stray Dogs | Environmental Health and Housing | 984654b28ca724d3adcfb293a7a5ffb59b964a29.bin
+Rushmoor Borough Council | Bowenhurst Kennels | 877.76 | 2010-06-17 | Kennel Feed Stray Dogs | Environmental Health and Housing | a7055df10ea0c728730f7bbd55291b461bcf2460.bin
+Rushmoor Borough Council | Bowenhurst Kennels | 807.5 | 2010-07-22 | Kennel Feed Stray Dogs | Environmental Health and Housing | 7510e3a31d07a94181b8e80c2542e337fe2155f0.bin
+Rushmoor Borough Council | Bowenhurst Kennels | 827.75 | 2010-08-19 | Kennel Feed Stray Dogs | Environmental Health and Housing | a8f8628bc1ee6dea8b2a163af964477259af7982.bin
+
+=== MCC-style oddities in expense_type ===
+  '2 chest freezers required for Holding Times sample storage' | n=1 | sum=547.99
+  '2 \xa0domestic fridge/freezers required for the new molecular biology laboratories set up at the Weymouth site.' | n=1 | sum=521.98
+  'AMUSEMENT PARKS,CARNIVALS,CIRCUS,FORTUNE TELLERS' | n=8 | sum=8226.52
+  'APPLEBY SWIMMING POOL' | n=1 | sum=27675.38
+  'AQUARIUMS, DOLPHINARIUMS, AND SEAQUARIUMS' | n=8 | sum=7255.52
+  'BAR,LOUNGE,DISCO,NIGHTCLUB,TAVERN-ALCOHOLIC DRINKS' | n=64 | sum=60562.49
+  'Bedwatch & Escort' | n=246 | sum=4046446.64
+  'Contracted-out Escorts' | n=333 | sum=333922488.46
+  'Escorting - In Country' | n=2 | sum=47943.34
+  'Escorting - Overseas' | n=1 | sum=25939.60
+  'FREEZER, LOCKER MEAT PROVISIONERS' | n=33 | sum=27731.38
+  'FURRIERS AND FUR SHOPS' | n=2 | sum=2449.32
+  'Freezer for Coldharbour Farm office for storage of biological samples' | n=1 | sum=558.00
+  'Freezer for photographic negatives' | n=1 | sum=1747.18
+  'Freezer/Meat Lockers' | n=2 | sum=1252.00
+  'H&S feature (battery pack for recorder as oposed to electricity for use in the aquariums)' | n=1 | sum=598.28
+  'In Country Escort' | n=9 | sum=2189222.61
+  'In Country Escorting' | n=88 | sum=17285015.53
+  'MOTOR HOME AND RECREATIONAL VEHICLE RENTAL' | n=3 | sum=3960.09
+  'MOTOR HOME DEALERS' | n=19 | sum=18312.38
+  'Motor Home/Rv Rentals' | n=1 | sum=566.20
+  'Overseas Escorts' | n=73 | sum=10665022.01
+  'PAWN SHOPS' | n=1 | sum=608.32
+  'Prison Escort & Bedwatchers' | n=5 | sum=730047.91
+  'Product Updating' | n=1 | sum=25000.00
+  'Public Golf Courses' | n=3 | sum=2360.00
+  'Public Order, Security, Safety.Domestic Escort Services' | n=150 | sum=64245873.42
+  'Public Order, Security, Safety.Escorting services' | n=114 | sum=18877012.11
+  'Public Order, Security, Safety.Escorting services.' | n=53 | sum=12340082.14
+  'REPATRIATION SERVICES.ESCORT SERVICES' | n=9 | sum=11328165.56
+  'Repatriation Services - Escort Services' | n=2 | sum=2491019.45
+  'S17 escorts' | n=4 | sum=5013.42
+  'SWIMMING POOLS - SALES AND SUPPLIES' | n=83 | sum=88728.76
+  'Secure Escorts' | n=1 | sum=82.80
+  'Southwood Golf Course SANG Setup' | n=95 | sum=501441.40
+  'Swimming Pool Maint' | n=2 | sum=1822.00
+  'Swimming Pools/Sales/Serv' | n=5 | sum=3639.93
+  'Swimming pool/room hire and lunch for 12 staff on 10 days water Safety training' | n=1 | sum=2515.34
+  'blender, fridge, freezer' | n=1 | sum=2867.96

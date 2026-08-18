@@ -1,0 +1,257 @@
+firm_matched,supplier_raw,txns,gbp,reason
+Reed,Alec Reed Academy,159,42931663.06,"academy school (named after Reed founder), DfE grant funding"
+Bain,MCBAINS LTD,229,23600669.45,"McBains, construction consultancy, unrelated"
+Reed,The Alec Reed Academy,153,16012007.55,"academy school, DfE grant funding"
+Bain,Baines' Endowed Primary School & Children's Centre,77,8667639.48,school
+Reed,Reedswood E-ACT Academy,77,8549246.5,school
+Reed,Reedswood E-ACT Primary School,139,5164660.5,school
+Reed,Reed Business School Ltd,65,2669630.65,"Reed family business school; DfE rows are grant funding, not services"
+Matrix SCM,MATRIX BOOKING LTD,12,1631525.87,"Matrix-named firm, not Matrix SCM"
+Manpower,Manpower Direct UK Ltd,24,1539177.04,"ManpowerDirect UK, security guarding firm, not ManpowerGroup"
+Bain,BAINES SIMMONS LIMITED,49,1370202.66,"aviation safety consultancy, unrelated"
+Reed,Freedom Group Of Companies Ltd,5,1330328.17,"'REED' inside Freedom/Freedman/etc, unrelated"
+EY,Levitt Bernstein Associates Ltd,101,1327953.81,architects; 'ERNST' substring inside 'Bernstein'
+Reed,Genus Breeding Ltd.,29,1213382.46,cattle breeding
+Reed,WOMENS INTERNATIONAL LEAGUE FOR PEACE AND FREEDOM,8,1179614.45,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,REED EXHIBITIONS LTD,42,1168080.75,"RELX (Reed Elsevier) exhibitions, different company"
+Bain,NORBAIN SD LTD (CO REG 06248590),20,1120955.09,CCTV distributor
+PwC,Phoenix Group Holdings Ltd c/o PWC,1,1100000.0,payment to Phoenix Group via PwC as agent (c/o)
+Hays,HAYS TRAVEL LIMITED,29,1000810.32,"Hays Travel (Sunderland travel agent), different company"
+Reed,Breedon Southern Ltd,22,830112.68,aggregates
+Reed,FREEDOM HOME CARE LTD,28,818259.55,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,REEDS SOLICITORS LTD,15,793754.52,solicitors
+Bain,NORBAIN SD LTD,10,714299.39,CCTV distributor
+Reed,STERNBERG REED SOLICITORS,14,607615.34,solicitors
+KPMG,Hiscox PLC c/o KPMG LLP,2,550000.0,payment to Hiscox via KPMG (c/o)
+Bain,McBains Ltd,10,542751.77,"McBains, construction consultancy, unrelated"
+EY,Vale Europe Ltd c/o Ernst & Young LLP,1,485000.0,payment to Vale Europe via EY (c/o)
+Manpower,MANPOWER DIRECT (UK) LTD,13,406575.16,"ManpowerDirect UK, security guarding firm, not ManpowerGroup"
+Reed,FREEDOM TAXIS HARROGATE LTD,126,379736.33,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,REED LOCATION,568,375197.9,"Greenwich housing disturbance/relocation payments, not the recruiter"
+Matrix SCM,MATRIX RESEARCH & CONSULTANCY LTD,7,325798.18,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,MATRIX DISPLAY SYSTEMS LTD,7,313741.0,"Matrix-named firm, not Matrix SCM"
+PwC,St. George's University  c/o PWC,1,300000.0,payment to St George's University via PwC (c/o)
+Reed,Creedy Court,27,297180.5,care home/venue
+KPMG,Delinian Ltd c/o KPMG Law,2,296255.0,payment to Delinian via KPMG Law (c/o)
+Matrix SCM,Biomatrix Water Solutions Limited,4,280840.56,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,MATRIX EVIDENCE LTD,14,268721.18,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,Matrix Moulding Systems Ltd,7,264274.12,"Matrix-named firm, not Matrix SCM"
+Reed,THE FREEDOM FUND (G),4,262775.0,"'REED' inside Freedom/Freedman/etc, unrelated"
+KPMG,CITY OF LONDON KPMG ACADEMY HACKNEY,5,251336.75,"academy school (KPMG-sponsored), not KPMG"
+PwC,RPM Ltd c/o PWC LLP,1,250000.0,payment to RPM Ltd via PwC (c/o)
+Reed,The Freedom Fund,2,250000.0,"'REED' inside Freedom/Freedman/etc, unrelated"
+PwC,Worldpay (UK) c/o PWC LLP,1,240989.8,payment to Worldpay via PwC (c/o)
+Reed,FREEDOM TRANSPORT SOLUTIONS LTD,85,235625.94,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,REED BUSINESS INFORMATION LTD,24,233726.22,RELX publishing
+Matrix SCM,MATRIX ACADEMY TRUST,3,232900.0,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,Matrix Booking Ltd,3,228880.61,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,CASE MATRIX NETWORK,6,226555.75,"Matrix-named firm, not Matrix SCM"
+Reed,Breedon Cement Ltd,2,220197.01,aggregates
+Bain,COBAINS SOLICITORS,7,219405.96,solicitors
+KPMG,Associated Newspapers Ltd c/o KPMG,1,207770.22,payment to Associated Newspapers via KPMG (c/o)
+Matrix SCM,KMATRIX DATA SERVICES LTD,7,187000.0,"Matrix-named firm, not Matrix SCM"
+Reed,FREEDOM COMMUNICATIONS (UK) LTD,6,179223.53,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,FREEDOM COMMUNICATIONS (IUK) LTD,6,174047.5,"'REED' inside Freedom/Freedman/etc, unrelated"
+Matrix SCM,MATRIX BOOKING LIMITED,5,173656.08,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,MATRIX INSIGHT,4,162352.86,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,PURPLE MATRIX LTD,4,161952.86,"Matrix-named firm, not Matrix SCM"
+EY,Dolphin Drilling Ltd c/o Ernst & Young LLP,1,150000.0,payment to Dolphin Drilling via EY (c/o)
+Bain,Baines' Endowed Primary School,3,147576.0,school
+Reed,CREED LANE LAW GROUP,2,147047.44,law firm
+Matrix SCM,MATRIX CHAMBERS,5,145597.0,"Matrix-named firm, not Matrix SCM"
+Bain,Baines School,2,136462.0,school
+Reed,REED BUSINESS INFORMATION,13,132501.49,RELX publishing
+EY,HOWARD BERNSTEIN SOLICITORS,2,132346.02,solicitors; Bernstein false match
+PwC,Baring Asset Management Ltd c/o PWC,1,130371.95,payment to Barings via PwC (c/o)
+KPMG,Poundland Ltd. c/o KPMG Law,1,130000.0,payment to Poundland via KPMG Law (c/o)
+Reed,REED BUSINESS INFORMATION (EAST GRIN,13,127062.0,RELX publishing
+KPMG,HBOS PLC & Lloyds Bank c/o KPMG LLP,1,125000.0,payment to HBOS/Lloyds via KPMG (c/o)
+Bain,Bell & Bain Ltd,1,124897.7,"printers, Glasgow"
+KPMG,Delinian Ltd. c/o KPMG Law,1,114400.0,payment to Delinian via KPMG Law (c/o)
+Deloitte,Rank Group PLC c/o Deloittes,1,111892.0,payment to Rank Group via Deloitte as agent (c/o)
+Reed,Lexis Nexis Reed Elsevier (Uk) Ltd T/A,6,111864.0,RELX / LexisNexis
+Bain,THE GOVERNORS OF BAINES SCHOOL GRANT ACCOUNT,2,110405.0,school grant account
+Reed,FREEDOM GROUP,3,109312.54,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,REED EXHIBITIONS FZ-LLC,3,102063.23,RELX exhibitions
+Reed,Reed Exhibitions Ltd,5,98746.44,RELX exhibitions
+Deloitte,Wm Morrisons Supermarkets PLC c/o Deloitte LLP,1,95000.0,payment to Morrisons via Deloitte as agent (c/o)
+Reed,MESSRS CREED LANE LAW GROUP#EC4V 5BR,2,91243.45,law firm
+Bain,BAINS SOLICITORS,3,90000.0,solicitors
+Matrix SCM,MATRIX SECURITY WATCHDOG,81,87615.44,"Matrix-named firm, not Matrix SCM"
+Reed,WOMENS INTERNATIONAL LEAGUE FOR PEACE + FREEDOM,2,85502.55,"'REED' inside Freedom/Freedman/etc, unrelated"
+Matrix SCM,Matrix Academy Trust,1,80000.0,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,MATRIX BOOKING LIMIT,2,79545.6,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,KNOWLEDGE MATRIX LTD,5,79000.0,"Matrix-named firm, not Matrix SCM"
+Reed,Fourth Freedom Forum Inc.,3,76852.67,"'REED' inside Freedom/Freedman/etc, unrelated"
+PwC,Sojourn Hotels Ltd c/o PwC,1,75000.0,payment to Sojourn Hotels via PwC (c/o)
+Matrix SCM,Matrix Development Consultants,2,73771.76,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,Matrix Evidence Ltd,2,73615.68,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,Matrix Control Solutions Limited,8,70225.8,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,MATRIX CHAMBERS LTD,2,65280.0,"Matrix-named firm, not Matrix SCM"
+Deloitte,Deloitte Real Estate (LLP No 3 a/c),2,64946.4,"client-money account, likely routed payment"
+Bain,THE GOVERNORS OF BAINES SCHOOL GRANT ACC,1,61431.8,school grant account
+PwC,Hippodrome Casino Ltd c/o PWC,1,60000.0,payment to Hippodrome via PwC (c/o)
+Bain,GILES D BAIN,1,57312.0,individual
+Reed,SABINA BOWLER-REED,2,57262.64,individual
+Reed,Rare Breeds Survival Trust,3,57000.0,charity
+Matrix SCM,CAMBRIDGE MATRIX LIMITED,2,54988.0,"Matrix-named firm, not Matrix SCM"
+Reed,WILLIAM REED BUSINESS MEDIA LTD,12,52122.0,"William Reed, trade publisher, unrelated"
+EY,ERNST HEINE,1,43826.09,individual/unrelated; not EY
+Bain,BAINBRIDGE BUILDING CONTRACT,1,42294.65,builder
+Reed,Fiona Reed Associates Ltd,1,41400.0,unrelated consultancy (individual)
+Reed,Freedom Fire  Security Maintenance Ltd,1,40440.0,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,STERNBERG REED,1,40165.08,solicitors
+Deloitte,WGIS c/o Deloitte Legal,1,40000.0,payment to WGIS via Deloitte Legal as agent (c/o)
+EY,HOWARD BERNSTEIN SOLICITORS [ADVOCATE],1,38963.41,solicitors; Bernstein false match
+Matrix SCM,MATRIX GLOBAL NETWORKS,22,37549.64,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,Bellamatrix ICt Foundation,1,36706.0,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,MATRIX RESEARCH AND CONSULTANCY LTD,1,35177.15,"Matrix-named firm, not Matrix SCM"
+PwC,PricewaterhouseCoopers LLP Total,1,34565.0,"ledger 'Total' artifact row, double-count risk"
+Reed,STERNBERG REED SOLICITORS-ADVOCATE,1,34261.74,solicitors
+Deloitte,DELOITTE LLP NO 2 ACCOUNT,1,34050.0,"client-money account, likely routed payment"
+Reed,REED EXPOSITIONS FRANCE,2,33734.35,RELX exhibitions
+Reed,MESSRS FREEDMAN SHARMAN & COMPANY#DX 45603,1,33199.01,"'REED' inside Freedom/Freedman/etc, unrelated"
+Matrix SCM,MATRIX LAW,1,33000.0,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,MATRIX PRINT CONSULTANTS LIMITED,8,32225.0,"Matrix-named firm, not Matrix SCM"
+Reed,CREED LANE LAW GROUP-ADVOCATE,1,31337.62,law firm
+Matrix SCM,GEOMATRIX EARTH SCIENCE LIMITED,1,30898.8,"Matrix-named firm, not Matrix SCM"
+Reed,RARE BREEDS SURVIVAL TRUST,1,30000.0,charity
+Matrix SCM,MATRIX EVIDENCE LTD#RB30510167,1,29779.5,"Matrix-named firm, not Matrix SCM"
+Reed,Reed Business Information Ltd.,1,29375.0,RELX publishing
+Matrix SCM,MATRIX INSIGHT LTD,1,28911.0,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,Enable Infomatrix Ltd,1,28860.94,"Matrix-named firm, not Matrix SCM"
+Bain,Bainbridge Building Contractors,1,28296.44,builder
+Reed,MICHAEL J REED LTD,1,28140.0,unrelated
+Matrix SCM,MATRIX TRAFFIC & TRANSPORT DATA LTD,39,28120.0,"Matrix-named firm, not Matrix SCM"
+Reed,GISHA - Legal Centre For Freedom of Movement,1,27629.33,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,SHREEDAR MOTORS LIMITED,1,27309.51,"motors, SHREEDar false match"
+Reed,GRAMPOUND-WITH-CREED COFE SCHOOL,1,25154.1,school
+Reed,Reed Elsevier (UK) Ltd,1,25030.17,RELX
+Hays,HAYSFIELD GIRLS SCHOOL,1,25000.0,school
+Reed,GRAMPOUND WITH CREED C OF E PRIMARY SCHOOL,1,25000.0,school
+Bain,GILES BAIN,17,24204.0,individual
+Hays,Chaysestar Entertainment CIC,5,22101.16,unrelated CIC
+Reed,FREEDMAN&TURNER,9,21679.01,"'REED' inside Freedom/Freedman/etc, unrelated"
+Bain,BIRCH BAINBRIDGE BUILDING & INTERIORS,3,21558.81,builder
+Matrix SCM,Purple Matrix Ltd,3,20430.0,"Matrix-named firm, not Matrix SCM"
+Reed,Freedom Health Centre,1,17329.42,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,Freedom of Speech Ltd,14,16995.25,"'REED' inside Freedom/Freedman/etc, unrelated"
+Matrix SCM,STRATAMATRIX LTD,15,12755.26,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,MATRIX PRINT CONSULTANTS,3,12045.0,"Matrix-named firm, not Matrix SCM"
+Reed,REED EXPO FRANCE,4,12036.52,RELX exhibitions
+Reed,Reed Engineering Building Services L,3,11782.32,building services
+Reed,H&H REEDS PRINTERS LTD,14,11708.0,printers
+Matrix SCM,Matrix Vocational Associates Limited,13,11070.0,"Matrix-named firm, not Matrix SCM"
+Hays,HAYSAM ABOU-DOMA,5,10997.0,individual
+Reed,Freedom Electronics,5,10867.29,"'REED' inside Freedom/Freedman/etc, unrelated"
+Bain,BAINBRIDGE PARISH COUNCIL,4,10512.5,parish council
+Reed,REEDERJ VLAUN HOLDING B.V. /V&S CHARTERS,2,10000.0,Dutch charter firm
+Reed,REEDMAN SERVICES LTD,12,9876.85,unrelated
+Reed,Reeds Solicitors LLP,5,9785.96,solicitors
+Reed,Reed Business Informations Ltd,6,9383.23,RELX publishing
+Matrix SCM,MATRIX CHAMBERS LIMITED,6,8982.0,"Matrix-named firm, not Matrix SCM"
+Reed,REED CHILL CHEATER,10,8922.13,canoe/outdoor gear maker
+Bain,MR GILES BAIN,7,8820.0,individual
+Reed,Reed Elsevier (UK) Ltd T/A LN,10,7967.92,RELX / LexisNexis
+Reed,Reed Business Information,9,7661.65,RELX publishing
+Reed,LEWIS REED (WAV) LTD,3,7250.0,wheelchair vehicles
+PA Consulting,FPA CONSULTING,4,7225.0,"FPA Consulting, unrelated"
+Reed,REED SMITH LLP,3,6574.39,"Reed Smith, US law firm, unrelated"
+Matrix SCM,MATRIX SPORTS LLP,5,6550.0,"Matrix-named firm, not Matrix SCM"
+Reed,YOCO HARLEY REED SA,1,6446.35,unrelated
+Manpower,Quantum Manpower Services Limited,3,6417.0,unrelated
+Reed,REED BUSINESS INFORM,6,6310.0,RELX publishing
+Reed,GMF FREEDIO LTD,6,6212.84,unrelated
+Matrix SCM,MATRIX TRAINING ASSOCIATES LTD,5,5820.0,"Matrix-named firm, not Matrix SCM"
+Reed,W Reed (Builders) Limited,2,5671.13,builder
+Reed,625600FREEDMAN&TURNER,2,5398.19,"'REED' inside Freedom/Freedman/etc, unrelated"
+Matrix SCM,MEETING MATRIX GLOBAL SALES,2,5293.75,"Matrix-named firm, not Matrix SCM"
+Reed,fREEDMAN&TURNER,1,4667.22,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,FREEDMAN & TURNER,1,4545.53,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,Reed Business Information Ltd,4,4533.0,RELX publishing
+Reed,FREEDOM OF SPEECH LTD,5,4526.4,"'REED' inside Freedom/Freedman/etc, unrelated"
+Bain,SDAD BILBAINA DE RECRE,1,4510.75,"Bilbao club, purchase card"
+Bain,NORBAIN DUNASFERN,5,4440.0,CCTV distributor
+Matrix SCM,"""MATRIX"" MAGAZIN",5,4379.09,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,Matrix BES ltd,5,4377.9,"Matrix-named firm, not Matrix SCM"
+Hays,HAYS TRAVEL,9,4099.59,"Hays Travel, different company"
+Reed,PERCY & REED PRODUCT LTD,2,4000.0,haircare brand
+PA Consulting,PPA CONSULTING LTD,1,3776.34,"PPA Consulting, unrelated"
+Reed,REED-CHILL CHEATER LTD,4,3648.6,canoe/outdoor gear maker
+Reed,FREEDOM AIR CONDITIONI,3,3437.72,"'REED' inside Freedom/Freedman/etc, unrelated"
+Matrix SCM,Matrix Traffic and Transport Data Limited,2,3400.0,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,Matrix Control Solutions Ltd,4,3169.32,"Matrix-named firm, not Matrix SCM"
+Reed,BREEDON NORTHERN LTD,1,3125.0,aggregates
+Matrix SCM,MATRIX RSS LTD,1,3000.0,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,MATRIX ENTERPRISES LTD,2,3000.0,"Matrix-named firm, not Matrix SCM"
+Reed,REEDMIDEM.COM,3,2957.95,RELX (Reed MIDEM)
+Reed,KIERAN SCRAGG & NEIL REED T/A IKO,1,2633.22,individuals t/a
+Bain,BAINES WILSON,2,2261.71,solicitors
+BCG,BCG DIRECT LIMITED,56,2167.86,"direct mail company, not Boston Consulting"
+Reed,*REED BUSINESS INFORMATION LTD,1,2100.0,RELX publishing
+Reed,FREEDOM OF SPEECH,3,2076.0,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,Freedom Of Speech,1,1944.0,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,SUBSCRIPTION/REED,1,1939.68,RELX subscription
+Reed,FREEDOM FURNITURE 82,1,1834.45,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,REEDY SUPPLIES LTD,1,1790.06,unrelated
+Bain,S C BAINBRIDGE FUNERAL DIRECTORS,1,1745.0,funeral directors
+Bain,SOCIEDAD BILBAINA RECR,1,1733.3,"Bilbao club, purchase card"
+Reed,FREEDOM PROPERTIES,2,1716.94,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,Emma Reed,4,1650.0,individual
+Bain,SQ  SEMIS URBAINS / UR,2,1543.32,"French urban seeds, purchase card"
+Reed,CAMPAIGN FOR FREEDOM OF INFORMATION,4,1540.0,"'REED' inside Freedom/Freedman/etc, unrelated"
+Bain,WILLIAM BAIN CO,1,1501.6,unrelated company
+Reed,REED CHILL CHEATER       BRAUNTON,3,1500.0,canoe/outdoor gear maker
+Matrix SCM,MATRIX PARTNERSHIP LTD,2,1500.0,"Matrix-named firm, not Matrix SCM"
+Reed,REED BUSINESS SCHOOL,1,1473.6,"Reed family business school, training course purchase"
+Matrix SCM,COMPUTAMATRIX LTD,5,1385.29,"Matrix-named firm, not Matrix SCM"
+Reed,ALAN REED ART LTD,1,1344.1,artist
+Reed,DR JUDITH FREEDMAN,1,1325.66,"'REED' inside Freedom/Freedman/etc, unrelated"
+Bain,PESAPAL-ALBAININSTIT,1,1259.48,"purchase card, unrelated"
+Reed,Creed Food Services  Ltd,4,1231.67,food services
+Reed,REED EXHIBITIONS LT,2,1137.6,RELX exhibitions
+Reed,REED HALL,1,1134.0,venue
+Reed,Peter Creed,2,1100.0,individual
+EY,BERNSTOCK SPEIRS,1,1000.0,hat maker; Bernstock false match
+Bain,BAINBRIDGE VILLAGE HALL,1,1000.0,village hall
+Bain,BAINBRIDGE CHRISTMAS LIGHTS,1,1000.0,village event
+Reed,BLONDE D'AQUITAINE BREEDERS SOCIETY OF GB LTD T/A BRITISH BLONDE SOCIETY,1,1000.0,cattle breeders
+Matrix SCM,MATRIX MANAGEMENT SYSTEMS LTD,1,1000.0,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,BIOMATRIX PHARMA LTD,1,1000.0,"Matrix-named firm, not Matrix SCM"
+Reed,WHISPERING REEDS BOATS,1,978.62,boats
+BCG,MERPAGO ABCGARDEN,1,900.75,"purchase card, unrelated"
+Reed,SUBSCRIPTION/REED        BUS.INFO,1,900.0,RELX subscription
+Matrix SCM,MATRIX WAREHOUSE,1,881.96,"Matrix-named firm, not Matrix SCM"
+Reed,FREEDOM LOGISTICS,1,876.89,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,REED MIDEM,1,803.55,RELX (Reed MIDEM)
+Reed,REED BUSINESS INFORMATION LIMITED,1,775.0,RELX publishing
+EY,SAL BEL EY L LASH P VI,1,748.62,garbled purchase-card string; not EY
+Reed,Reed Building Services,1,725.0,building services
+Matrix SCM,SUNNYVILE MATRIX VENTU,1,698.58,"Matrix-named firm, not Matrix SCM"
+Reed,FREEDOM GROUP OF COMPANIES,1,695.0,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,Freedom Scientific Ltd,1,690.0,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,ALFAHMAWI FOR REED.,1,644.83,unrelated
+Matrix SCM,MATRIX HOLDINGS LIMITE,1,636.13,"Matrix-named firm, not Matrix SCM"
+Hays,HAYSDEN TRAINING,1,625.0,unrelated trainer
+Matrix SCM,PHARMAMATRIX LTD,1,625.0,"Matrix-named firm, not Matrix SCM"
+Reed,ACRA SCREED LTD,1,600.0,flooring screed
+Manpower,MANPOWER DEVELOPMENT INSTITUTE,1,597.86,unrelated institute
+Matrix SCM,MATRIXUA3,1,591.76,"Matrix-named firm, not Matrix SCM"
+Reed,REED MIDEM LTD,1,590.0,RELX (Reed MIDEM)
+Manpower,MANPOWER & MAINTENANCE,1,585.4,unrelated
+Reed,REED EXHIBITIONS,1,552.65,RELX exhibitions
+Reed,REED BUS INFORMATION,1,538.92,RELX publishing
+Matrix SCM,MATRIX PRETORIA,1,518.68,"Matrix-named firm, not Matrix SCM"
+Matrix SCM,MATRIX TELEMATICS LTD,1,516.0,"Matrix-named firm, not Matrix SCM"
+Reed,FREEDOM CONFECTIONERY LTD,1,500.0,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,FREEDOM PROGRAMME,1,450.0,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,DUNCAN REEDS LTD,2,450.0,unrelated
+Reed,MARK REED,2,447.5,individual
+Bain,SYMES BAINS BROOMER SOLICITORS,1,399.0,solicitors
+Reed,FREED FOODS - MISTER FREED,1,347.35,"'REED' inside Freedom/Freedman/etc, unrelated"
+Reed,REED BUSINESS INFORMAT,2,284.0,RELX publishing
+Reed,Reed Business,1,200.0,RELX publishing
+Reed,FREEDOM FASHION LTD,1,200.0,"'REED' inside Freedom/Freedman/etc, unrelated"
+BCG,BCG OXFORD,1,119.13,"purchase card, ambiguous (possibly BCG vaccine clinic)"
+Bain,C O H BAINES LTD,4,111.24,unrelated company
+Matrix SCM,MATRIX SOLUTIONS INTERNATIONAL Ltd (ANZ TRAINING),12,-20077.86,"Matrix-named firm, not Matrix SCM"

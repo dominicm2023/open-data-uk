@@ -1,0 +1,560 @@
+fy,firm,category,sector,gbp,txns
+2009-10,Adecco,agency_staff,central_gov,919.4,1
+2010-11,Adecco,agency_staff,central_gov,828560.09,90
+2010-11,Deloitte,consulting,central_gov,24093200.22,240
+2010-11,EY,consulting,central_gov,9364898.92,84
+2010-11,EY,consulting,nhs,1875301.0,8
+2010-11,Gartner,consulting,central_gov,1563780.68,27
+2010-11,Hays,agency_staff,central_gov,2144279.36,833
+2010-11,Hays,agency_staff,councils,312586.61,359
+2010-11,KPMG,consulting,central_gov,21000321.31,154
+2010-11,KPMG,consulting,councils,8817.18,1
+2010-11,KPMG,consulting,nhs,350611.87,8
+2010-11,KPMG,routed_fund,central_gov,25834876.76,27
+2010-11,Manpower,agency_staff,central_gov,635005.15,22
+2010-11,McKinsey,consulting,central_gov,1783512.5,11
+2010-11,Michael Page,agency_staff,central_gov,375204.24,151
+2010-11,Michael Page,agency_staff,councils,16649.67,14
+2010-11,PA Consulting,consulting,central_gov,25885355.58,279
+2010-11,PwC,consulting,central_gov,44409018.67,364
+2010-11,PwC,consulting,councils,247849.65,11
+2010-11,PwC,consulting,nhs,137738.2,5
+2010-11,Reed,agency_staff,central_gov,3748318.27,1101
+2010-11,Reed,agency_staff,councils,20589.0,36
+2010-11,Reed,welfare_to_work,central_gov,41354813.87,172
+2011-12,Adecco,agency_staff,central_gov,1090415.18,61
+2011-12,Adecco,agency_staff,councils,7712.54,8
+2011-12,Comensura,agency_staff,other_local,304850.01,53
+2011-12,Deloitte,consulting,central_gov,13624288.32,225
+2011-12,Deloitte,consulting,nhs,40000.0,1
+2011-12,EY,consulting,central_gov,11453065.49,181
+2011-12,EY,consulting,nhs,2935078.0,10
+2011-12,EY,consulting,other_local,1339400.22,48
+2011-12,Gartner,consulting,central_gov,658160.0,17
+2011-12,Hays,agency_staff,central_gov,2412896.1,1452
+2011-12,Hays,agency_staff,councils,440948.49,479
+2011-12,Hays,agency_staff,other_local,172384.35,62
+2011-12,KPMG,consulting,central_gov,21383897.72,244
+2011-12,KPMG,consulting,nhs,319830.0,9
+2011-12,KPMG,consulting,other_local,910690.72,55
+2011-12,KPMG,routed_fund,central_gov,29708523.48,39
+2011-12,Manpower,agency_staff,central_gov,39728.53,11
+2011-12,Manpower,agency_staff,councils,2078777.02,9
+2011-12,McKinsey,consulting,central_gov,1140000.0,7
+2011-12,Michael Page,agency_staff,central_gov,394475.42,189
+2011-12,Michael Page,agency_staff,councils,16186.33,18
+2011-12,PA Consulting,consulting,central_gov,29108173.66,272
+2011-12,PA Consulting,consulting,councils,16632.0,1
+2011-12,PwC,consulting,central_gov,38276032.64,343
+2011-12,PwC,consulting,councils,586605.6,16
+2011-12,PwC,consulting,nhs,89062.0,3
+2011-12,Reed,agency_staff,central_gov,3125561.47,1578
+2011-12,Reed,agency_staff,councils,22958.81,34
+2011-12,Reed,welfare_to_work,central_gov,18886632.76,1424
+2012-13,Adecco,agency_staff,central_gov,838315.82,93
+2012-13,Adecco,agency_staff,councils,34425.3,36
+2012-13,Comensura,agency_staff,other_local,263746.57,47
+2012-13,Deloitte,consulting,central_gov,23498257.0,272
+2012-13,Deloitte,consulting,nhs,131963.46,4
+2012-13,Deloitte,consulting,other_local,3500.0,1
+2012-13,EY,consulting,central_gov,16994457.1,203
+2012-13,EY,consulting,councils,37750.0,3
+2012-13,EY,consulting,nhs,359101.46,5
+2012-13,EY,consulting,other_local,2615698.92,50
+2012-13,Gartner,consulting,central_gov,1297727.39,23
+2012-13,Hays,agency_staff,central_gov,1645060.04,1934
+2012-13,Hays,agency_staff,councils,83957.69,85
+2012-13,Hays,agency_staff,other_local,106825.84,27
+2012-13,KPMG,consulting,central_gov,31391717.84,461
+2012-13,KPMG,consulting,councils,55479.0,5
+2012-13,KPMG,consulting,nhs,427466.0,17
+2012-13,KPMG,consulting,other_local,710001.34,33
+2012-13,KPMG,routed_fund,central_gov,23558065.44,23
+2012-13,Manpower,agency_staff,central_gov,67556.29,87
+2012-13,Manpower,agency_staff,councils,20866901.94,70
+2012-13,McKinsey,consulting,central_gov,3475645.0,18
+2012-13,McKinsey,consulting,nhs,28500.0,1
+2012-13,Michael Page,agency_staff,central_gov,1121784.36,405
+2012-13,PA Consulting,consulting,central_gov,35486737.04,309
+2012-13,PA Consulting,consulting,councils,51088.3,4
+2012-13,PwC,consulting,central_gov,51691417.94,433
+2012-13,PwC,consulting,councils,230855.06,9
+2012-13,PwC,consulting,nhs,357480.4,7
+2012-13,PwC,routed_fund,central_gov,3012863.0,1
+2012-13,Reed,agency_staff,central_gov,1894384.75,1405
+2012-13,Reed,agency_staff,councils,60778.52,66
+2012-13,Reed,welfare_to_work,central_gov,13693146.43,3983
+2013-14,Adecco,agency_staff,central_gov,944673.18,335
+2013-14,Adecco,agency_staff,councils,54166.69,51
+2013-14,Deloitte,consulting,central_gov,33947956.3,332
+2013-14,Deloitte,consulting,councils,21297.89,3
+2013-14,Deloitte,consulting,nhs,261522.61,7
+2013-14,Deloitte,consulting,other_local,1000.0,1
+2013-14,EY,consulting,central_gov,25394902.08,178
+2013-14,EY,consulting,councils,94114.0,11
+2013-14,EY,consulting,nhs,2826396.86,24
+2013-14,EY,consulting,other_local,2656802.17,43
+2013-14,Gartner,consulting,central_gov,251719.32,5
+2013-14,Hays,agency_staff,central_gov,1788277.55,999
+2013-14,Hays,agency_staff,councils,130076.01,106
+2013-14,Hays,agency_staff,other_local,588331.27,91
+2013-14,KPMG,consulting,central_gov,28031454.81,195
+2013-14,KPMG,consulting,councils,14400.0,7
+2013-14,KPMG,consulting,nhs,425352.0,11
+2013-14,KPMG,consulting,other_local,242683.0,8
+2013-14,KPMG,routed_fund,central_gov,4164115.35,11
+2013-14,Manpower,agency_staff,central_gov,98590.73,97
+2013-14,Manpower,agency_staff,councils,26915935.41,66
+2013-14,McKinsey,consulting,central_gov,6386386.6,17
+2013-14,McKinsey,consulting,nhs,56500.0,2
+2013-14,Michael Page,agency_staff,central_gov,751859.01,410
+2013-14,Michael Page,agency_staff,councils,1852.5,3
+2013-14,Michael Page,agency_staff,other_local,5000.0,1
+2013-14,PA Consulting,consulting,central_gov,59280248.48,485
+2013-14,PA Consulting,consulting,councils,142172.91,7
+2013-14,PwC,consulting,central_gov,68795292.47,512
+2013-14,PwC,consulting,councils,255838.75,11
+2013-14,PwC,routed_fund,central_gov,65156258.4,13
+2013-14,Reed,agency_staff,central_gov,454416.56,371
+2013-14,Reed,agency_staff,councils,80503.87,88
+2013-14,Reed,welfare_to_work,central_gov,23271851.82,9332
+2014-15,Adecco,agency_staff,central_gov,370220.8,411
+2014-15,Adecco,agency_staff,councils,4051.6,10
+2014-15,BCG,consulting,central_gov,50000.0,1
+2014-15,Bain,consulting,central_gov,248000.0,3
+2014-15,Deloitte,consulting,central_gov,33928315.35,271
+2014-15,Deloitte,consulting,nhs,181964.38,7
+2014-15,EY,consulting,central_gov,42049796.03,222
+2014-15,EY,consulting,councils,78198.0,12
+2014-15,EY,consulting,nhs,1844024.36,11
+2014-15,EY,consulting,other_local,686654.28,37
+2014-15,Gartner,consulting,central_gov,32700.0,1
+2014-15,Hays,agency_staff,central_gov,1090818.44,567
+2014-15,Hays,agency_staff,councils,148471.63,185
+2014-15,Hays,agency_staff,other_local,543349.34,55
+2014-15,KPMG,consulting,central_gov,41017152.05,202
+2014-15,KPMG,consulting,councils,23283.13,8
+2014-15,KPMG,consulting,nhs,286108.5,8
+2014-15,KPMG,consulting,other_local,796613.22,21
+2014-15,KPMG,routed_fund,central_gov,6223543.82,13
+2014-15,Manpower,agency_staff,central_gov,1628992.26,53
+2014-15,Manpower,agency_staff,councils,17572685.55,51
+2014-15,McKinsey,consulting,central_gov,22415029.95,28
+2014-15,McKinsey,consulting,nhs,1500000.0,5
+2014-15,Michael Page,agency_staff,central_gov,161063.82,61
+2014-15,Michael Page,agency_staff,councils,33946.25,41
+2014-15,Michael Page,agency_staff,other_local,17058.87,22
+2014-15,PA Consulting,consulting,central_gov,66638750.43,663
+2014-15,PwC,consulting,central_gov,61998387.03,438
+2014-15,PwC,consulting,councils,315230.22,15
+2014-15,PwC,consulting,nhs,608024.6,3
+2014-15,PwC,routed_fund,central_gov,79171669.0,4
+2014-15,Reed,agency_staff,central_gov,198598.7,193
+2014-15,Reed,agency_staff,councils,200009.29,228
+2014-15,Reed,welfare_to_work,central_gov,18303548.0,11612
+2015-16,Adecco,agency_staff,central_gov,46447.76,53
+2015-16,Bain,consulting,central_gov,6639200.0,7
+2015-16,Deloitte,consulting,central_gov,28153815.37,196
+2015-16,Deloitte,consulting,nhs,82712.0,2
+2015-16,Deloitte,consulting,other_local,20000.0,2
+2015-16,EY,consulting,central_gov,33927403.62,125
+2015-16,EY,consulting,councils,108821.0,15
+2015-16,EY,consulting,nhs,2591945.19,19
+2015-16,EY,consulting,other_local,1265027.96,35
+2015-16,Gartner,consulting,central_gov,258046.53,6
+2015-16,Gartner,consulting,councils,47300.0,1
+2015-16,Hays,agency_staff,central_gov,40405.56,104
+2015-16,Hays,agency_staff,councils,182567.02,181
+2015-16,Hays,agency_staff,nhs,46762.2,1
+2015-16,Hays,agency_staff,other_local,710229.83,83
+2015-16,KPMG,consulting,central_gov,40674111.71,307
+2015-16,KPMG,consulting,councils,14400.0,5
+2015-16,KPMG,consulting,nhs,502256.65,11
+2015-16,KPMG,consulting,other_local,564125.68,23
+2015-16,KPMG,routed_fund,central_gov,24684271.37,26
+2015-16,Manpower,agency_staff,central_gov,2437367.57,41
+2015-16,Manpower,agency_staff,councils,23440826.5,73
+2015-16,McKinsey,consulting,central_gov,28703609.81,53
+2015-16,McKinsey,consulting,nhs,900000.0,6
+2015-16,Michael Page,agency_staff,central_gov,83689.56,43
+2015-16,Michael Page,agency_staff,councils,58641.5,52
+2015-16,Michael Page,agency_staff,nhs,27300.0,1
+2015-16,PA Consulting,consulting,central_gov,38106190.47,343
+2015-16,PA Consulting,consulting,nhs,48992.16,1
+2015-16,PA Consulting,consulting,other_local,13732.75,1
+2015-16,PwC,consulting,central_gov,73797771.25,493
+2015-16,PwC,consulting,councils,192080.52,12
+2015-16,PwC,consulting,other_local,442517.0,4
+2015-16,PwC,routed_fund,central_gov,114594543.0,5
+2015-16,Reed,agency_staff,central_gov,2632.53,3
+2015-16,Reed,agency_staff,councils,378238.52,153
+2015-16,Reed,welfare_to_work,central_gov,9243151.44,5794
+2016-17,Adecco,agency_staff,central_gov,970.62,1
+2016-17,BCG,consulting,central_gov,1212862.0,3
+2016-17,Bain,consulting,central_gov,11854093.38,14
+2016-17,Deloitte,consulting,central_gov,31096062.52,191
+2016-17,Deloitte,consulting,councils,9087.0,2
+2016-17,Deloitte,consulting,nhs,226714.0,6
+2016-17,Deloitte,consulting,other_local,92775.0,4
+2016-17,EY,consulting,central_gov,10651193.23,37
+2016-17,EY,consulting,councils,119568.0,14
+2016-17,EY,consulting,nhs,1598825.55,6
+2016-17,EY,consulting,other_local,1563537.59,19
+2016-17,Gartner,consulting,central_gov,244200.0,2
+2016-17,Hays,agency_staff,central_gov,329734.49,201
+2016-17,Hays,agency_staff,councils,778747.16,217
+2016-17,Hays,agency_staff,nhs,3285.01,26
+2016-17,Hays,agency_staff,other_local,511283.84,138
+2016-17,KPMG,consulting,central_gov,29619008.21,259
+2016-17,KPMG,consulting,councils,6000.0,4
+2016-17,KPMG,consulting,nhs,562558.05,22
+2016-17,KPMG,consulting,other_local,877260.25,27
+2016-17,KPMG,routed_fund,central_gov,51404894.73,24
+2016-17,Manpower,agency_staff,central_gov,2209936.84,27
+2016-17,Manpower,agency_staff,councils,15242124.3,86
+2016-17,Matrix SCM,agency_staff,councils,38700.0,2
+2016-17,McKinsey,consulting,central_gov,22967119.8,36
+2016-17,Michael Page,agency_staff,central_gov,116028.04,20
+2016-17,Michael Page,agency_staff,councils,7777.5,10
+2016-17,Michael Page,agency_staff,other_local,110435.28,24
+2016-17,PA Consulting,consulting,central_gov,16401196.03,137
+2016-17,PA Consulting,consulting,nhs,802069.52,7
+2016-17,PA Consulting,consulting,other_local,7840.0,1
+2016-17,PwC,consulting,central_gov,82612212.21,474
+2016-17,PwC,consulting,councils,164595.99,6
+2016-17,PwC,consulting,other_local,110141.0,2
+2016-17,PwC,routed_fund,central_gov,74784961.74,5
+2016-17,Reed,agency_staff,councils,499278.11,215
+2016-17,Reed,agency_staff,nhs,3226.25,1
+2016-17,Reed,agency_staff,other_local,8263.96,4
+2016-17,Reed,welfare_to_work,central_gov,5145719.0,1825
+2017-18,BCG,consulting,central_gov,1073050.0,2
+2017-18,BCG,consulting,nhs,249500.0,1
+2017-18,Bain,consulting,central_gov,5201018.77,9
+2017-18,Deloitte,consulting,central_gov,23431685.68,160
+2017-18,Deloitte,consulting,nhs,91200.0,2
+2017-18,Deloitte,consulting,other_local,6000.0,1
+2017-18,EY,consulting,central_gov,11402417.45,97
+2017-18,EY,consulting,councils,102820.0,9
+2017-18,EY,consulting,nhs,8418.4,1
+2017-18,EY,consulting,other_local,1368465.3,10
+2017-18,Gartner,consulting,central_gov,324570.1,6
+2017-18,Hays,agency_staff,central_gov,465090.7,73
+2017-18,Hays,agency_staff,councils,271764.84,90
+2017-18,Hays,agency_staff,nhs,9236.93,71
+2017-18,Hays,agency_staff,other_local,313720.14,187
+2017-18,KPMG,consulting,central_gov,48872506.64,588
+2017-18,KPMG,consulting,councils,4500.0,2
+2017-18,KPMG,consulting,nhs,1093764.5,13
+2017-18,KPMG,consulting,other_local,916586.5,24
+2017-18,KPMG,routed_fund,central_gov,49892647.65,16
+2017-18,Manpower,agency_staff,central_gov,2442662.72,39
+2017-18,Manpower,agency_staff,councils,656559.85,14
+2017-18,Matrix SCM,agency_staff,councils,36000.0,1
+2017-18,McKinsey,consulting,central_gov,24807274.98,57
+2017-18,Michael Page,agency_staff,central_gov,502823.14,15
+2017-18,Michael Page,agency_staff,other_local,112158.58,28
+2017-18,PA Consulting,consulting,central_gov,13868307.44,129
+2017-18,PA Consulting,consulting,nhs,562706.1,6
+2017-18,PA Consulting,consulting,other_local,11760.0,2
+2017-18,PwC,consulting,central_gov,79506531.88,487
+2017-18,PwC,consulting,councils,2462.4,1
+2017-18,PwC,consulting,nhs,60480.0,2
+2017-18,PwC,consulting,other_local,22100.0,2
+2017-18,PwC,routed_fund,central_gov,384813.0,1
+2017-18,Reed,agency_staff,councils,69602.52,7
+2017-18,Reed,agency_staff,nhs,6452.5,2
+2017-18,Reed,agency_staff,other_local,291524.39,52
+2017-18,Reed,welfare_to_work,central_gov,8798159.47,301
+2018-19,Adecco,agency_staff,central_gov,5014.3,5
+2018-19,BCG,consulting,central_gov,646800.0,1
+2018-19,BCG,consulting,nhs,1211141.0,2
+2018-19,Deloitte,consulting,central_gov,27080293.2,163
+2018-19,Deloitte,consulting,nhs,294937.52,6
+2018-19,Deloitte,consulting,other_local,9500.0,1
+2018-19,EY,consulting,central_gov,20472151.5,234
+2018-19,EY,consulting,councils,85577.0,12
+2018-19,EY,consulting,nhs,49335.3,2
+2018-19,EY,consulting,other_local,2738628.9,17
+2018-19,EY,routed_fund,central_gov,918086.44,7
+2018-19,Gartner,consulting,central_gov,1051310.6,10
+2018-19,Hays,agency_staff,central_gov,852687.6,428
+2018-19,Hays,agency_staff,councils,97495.45,119
+2018-19,Hays,agency_staff,nhs,36755.46,47
+2018-19,Hays,agency_staff,other_local,152426.91,95
+2018-19,KPMG,consulting,central_gov,38837386.58,510
+2018-19,KPMG,consulting,nhs,4867471.57,30
+2018-19,KPMG,consulting,other_local,331626.77,13
+2018-19,KPMG,routed_fund,central_gov,25728288.76,31
+2018-19,Manpower,agency_staff,central_gov,169677.04,2
+2018-19,McKinsey,consulting,central_gov,15575711.24,53
+2018-19,Michael Page,agency_staff,central_gov,93280.4,27
+2018-19,Michael Page,agency_staff,other_local,172918.84,34
+2018-19,PA Consulting,consulting,central_gov,21755908.65,174
+2018-19,PA Consulting,consulting,nhs,459180.83,3
+2018-19,PA Consulting,consulting,other_local,20586.14,1
+2018-19,PwC,consulting,central_gov,61134006.63,385
+2018-19,PwC,consulting,nhs,261428.7,3
+2018-19,PwC,consulting,other_local,57750.0,5
+2018-19,PwC,routed_fund,central_gov,70739663.78,7
+2018-19,Reed,agency_staff,central_gov,55078.16,2
+2018-19,Reed,agency_staff,nhs,12905.0,1
+2018-19,Reed,agency_staff,other_local,394272.25,51
+2018-19,Reed,routed_fund,central_gov,233409.49,4
+2018-19,Reed,welfare_to_work,central_gov,18504285.77,617
+2019-20,Deloitte,consulting,central_gov,35475470.7,285
+2019-20,Deloitte,consulting,councils,67000.0,1
+2019-20,Deloitte,consulting,nhs,113016.0,2
+2019-20,Deloitte,consulting,other_local,53262.79,2
+2019-20,Deloitte,routed_fund,central_gov,883816.65,11
+2019-20,EY,consulting,central_gov,9901062.08,79
+2019-20,EY,consulting,councils,45008.4,5
+2019-20,EY,consulting,other_local,2016838.85,18
+2019-20,EY,routed_fund,central_gov,3790960.89,27
+2019-20,Gartner,consulting,central_gov,1501672.4,9
+2019-20,Gartner,consulting,nhs,185839.98,1
+2019-20,Hays,agency_staff,central_gov,507455.29,101
+2019-20,Hays,agency_staff,councils,31786.11,56
+2019-20,Hays,agency_staff,nhs,21656.77,66
+2019-20,Hays,agency_staff,other_local,239840.69,137
+2019-20,KPMG,consulting,central_gov,21923621.52,254
+2019-20,KPMG,consulting,councils,9675.0,1
+2019-20,KPMG,consulting,nhs,992498.06,7
+2019-20,KPMG,consulting,other_local,51547.1,4
+2019-20,KPMG,routed_fund,central_gov,29116349.7,38
+2019-20,McKinsey,consulting,central_gov,10387233.68,39
+2019-20,Michael Page,agency_staff,central_gov,20286.0,15
+2019-20,Michael Page,agency_staff,other_local,116859.83,62
+2019-20,PA Consulting,consulting,central_gov,9423301.42,88
+2019-20,PA Consulting,consulting,councils,99812.5,2
+2019-20,PA Consulting,consulting,other_local,16985.6,2
+2019-20,PwC,consulting,central_gov,48362735.07,332
+2019-20,PwC,consulting,nhs,89944.5,3
+2019-20,PwC,consulting,other_local,116869.0,4
+2019-20,PwC,routed_fund,central_gov,90121381.15,13
+2019-20,Reed,agency_staff,councils,30489.07,34
+2019-20,Reed,agency_staff,other_local,446951.9,53
+2019-20,Reed,routed_fund,central_gov,771168.71,13
+2019-20,Reed,welfare_to_work,central_gov,13338261.12,145
+2020-21,BCG,consulting,central_gov,31964215.87,34
+2020-21,Deloitte,consulting,central_gov,107951385.63,286
+2020-21,Deloitte,consulting,councils,37430.0,1
+2020-21,Deloitte,consulting,nhs,63216.0,1
+2020-21,Deloitte,consulting,other_local,50000.0,1
+2020-21,Deloitte,routed_fund,central_gov,174076.0,1
+2020-21,EY,consulting,central_gov,36067544.36,216
+2020-21,EY,consulting,councils,612037.5,9
+2020-21,EY,consulting,nhs,235375.75,4
+2020-21,EY,consulting,other_local,1922969.38,28
+2020-21,EY,routed_fund,central_gov,5987585.14,26
+2020-21,Gartner,consulting,central_gov,1475240.4,8
+2020-21,Hays,agency_staff,central_gov,649435.6,162
+2020-21,Hays,agency_staff,councils,17468.12,3
+2020-21,Hays,agency_staff,nhs,34166.53,36
+2020-21,Hays,agency_staff,other_local,100028.5,59
+2020-21,KPMG,consulting,central_gov,27483748.6,204
+2020-21,KPMG,consulting,councils,112629.84,6
+2020-21,KPMG,consulting,nhs,991281.45,14
+2020-21,KPMG,consulting,other_local,608770.0,5
+2020-21,KPMG,routed_fund,central_gov,10045726.94,24
+2020-21,McKinsey,consulting,central_gov,51263529.97,74
+2020-21,Michael Page,agency_staff,central_gov,1047780.68,240
+2020-21,Michael Page,agency_staff,other_local,151223.8,73
+2020-21,PA Consulting,consulting,central_gov,18507872.61,106
+2020-21,PA Consulting,consulting,nhs,257900.0,5
+2020-21,PwC,consulting,central_gov,48046559.19,282
+2020-21,PwC,consulting,nhs,132869.92,4
+2020-21,PwC,consulting,other_local,32077.0,1
+2020-21,PwC,routed_fund,central_gov,73641998.0,8
+2020-21,Reed,agency_staff,central_gov,5319646.63,31
+2020-21,Reed,agency_staff,councils,8918.13,3
+2020-21,Reed,agency_staff,other_local,44013.22,31
+2020-21,Reed,routed_fund,central_gov,39919.05,1
+2020-21,Reed,welfare_to_work,central_gov,35651201.0,134
+2021-22,BCG,consulting,central_gov,6938004.68,28
+2021-22,Deloitte,consulting,central_gov,155841231.88,268
+2021-22,Deloitte,consulting,nhs,69216.0,1
+2021-22,Deloitte,consulting,other_local,80000.0,1
+2021-22,Deloitte,routed_fund,central_gov,1068128.4,9
+2021-22,EY,consulting,central_gov,31085899.43,177
+2021-22,EY,consulting,councils,94481.0,2
+2021-22,EY,consulting,nhs,72900.63,2
+2021-22,EY,consulting,other_local,2688381.01,14
+2021-22,EY,routed_fund,central_gov,6707152.45,30
+2021-22,Gartner,consulting,central_gov,2159424.43,22
+2021-22,Hays,agency_staff,central_gov,1476613.03,453
+2021-22,Hays,agency_staff,councils,8625.74,3
+2021-22,Hays,agency_staff,nhs,94174.08,60
+2021-22,Hays,agency_staff,other_local,144538.36,58
+2021-22,KPMG,consulting,central_gov,26752708.17,369
+2021-22,KPMG,consulting,councils,10934.0,1
+2021-22,KPMG,consulting,nhs,1494173.45,13
+2021-22,KPMG,consulting,other_local,54773.13,4
+2021-22,KPMG,routed_fund,central_gov,781624.1,7
+2021-22,McKinsey,consulting,central_gov,38912548.48,52
+2021-22,Michael Page,agency_staff,central_gov,2430679.89,370
+2021-22,Michael Page,agency_staff,other_local,53845.95,18
+2021-22,PA Consulting,consulting,central_gov,34239182.02,168
+2021-22,PwC,consulting,central_gov,51569958.28,256
+2021-22,PwC,consulting,nhs,146255.43,5
+2021-22,PwC,routed_fund,central_gov,61035792.0,9
+2021-22,Reed,agency_staff,central_gov,68571.0,2
+2021-22,Reed,agency_staff,councils,15219.26,2
+2021-22,Reed,agency_staff,other_local,339396.77,47
+2021-22,Reed,welfare_to_work,central_gov,112445568.0,227
+2022-23,BCG,consulting,central_gov,366177.56,2
+2022-23,Deloitte,consulting,central_gov,46964989.56,177
+2022-23,Deloitte,consulting,councils,72757.0,1
+2022-23,Deloitte,consulting,nhs,180240.0,4
+2022-23,Deloitte,consulting,other_local,564828.5,5
+2022-23,EY,consulting,central_gov,15003948.34,94
+2022-23,EY,consulting,councils,140933.14,8
+2022-23,EY,consulting,nhs,1238280.77,14
+2022-23,EY,consulting,other_local,3118571.27,10
+2022-23,Gartner,consulting,central_gov,3025378.82,24
+2022-23,Gartner,consulting,councils,148358.33,2
+2022-23,Gartner,consulting,nhs,95880.0,1
+2022-23,Hays,agency_staff,central_gov,951605.64,166
+2022-23,Hays,agency_staff,councils,246072.82,106
+2022-23,Hays,agency_staff,nhs,9927.47,16
+2022-23,Hays,agency_staff,other_local,305675.8,132
+2022-23,KPMG,consulting,central_gov,22455649.6,308
+2022-23,KPMG,consulting,councils,64730.0,3
+2022-23,KPMG,consulting,nhs,435698.9,6
+2022-23,KPMG,consulting,other_local,347616.6,11
+2022-23,Matrix SCM,agency_staff,councils,6529024.51,151
+2022-23,McKinsey,consulting,central_gov,7290170.0,8
+2022-23,McKinsey,consulting,nhs,258000.0,1
+2022-23,Michael Page,agency_staff,central_gov,110316.13,10
+2022-23,Michael Page,agency_staff,nhs,26279.65,1
+2022-23,Michael Page,agency_staff,other_local,63478.3,9
+2022-23,PA Consulting,consulting,central_gov,8716573.58,74
+2022-23,PA Consulting,consulting,councils,59300.0,1
+2022-23,PwC,consulting,central_gov,16179908.62,76
+2022-23,PwC,consulting,councils,525265.0,5
+2022-23,PwC,consulting,nhs,350408.33,5
+2022-23,PwC,routed_fund,central_gov,5720612.0,1
+2022-23,Reed,agency_staff,councils,184025.28,16
+2022-23,Reed,agency_staff,other_local,328679.01,48
+2022-23,Reed,welfare_to_work,central_gov,120736236.0,501
+2023-24,Adecco,agency_staff,central_gov,2018.03,2
+2023-24,Deloitte,consulting,central_gov,39621494.22,189
+2023-24,Deloitte,consulting,councils,81364.0,1
+2023-24,Deloitte,consulting,nhs,306495.0,6
+2023-24,Deloitte,consulting,other_local,50000.0,2
+2023-24,EY,consulting,central_gov,33612261.62,159
+2023-24,EY,consulting,councils,597501.01,12
+2023-24,EY,consulting,nhs,213690.9,6
+2023-24,EY,consulting,other_local,2968844.1,30
+2023-24,Gartner,consulting,central_gov,2393119.74,16
+2023-24,Gartner,consulting,councils,98590.0,2
+2023-24,Gartner,consulting,nhs,95880.0,1
+2023-24,Hays,agency_staff,central_gov,2438623.16,353
+2023-24,Hays,agency_staff,councils,127530.27,43
+2023-24,Hays,agency_staff,other_local,356989.3,251
+2023-24,KPMG,consulting,central_gov,18632563.21,299
+2023-24,KPMG,consulting,councils,1050602.3,12
+2023-24,KPMG,consulting,nhs,433857.3,10
+2023-24,KPMG,consulting,other_local,136366.54,13
+2023-24,Matrix SCM,agency_staff,councils,5001291.47,39
+2023-24,McKinsey,consulting,central_gov,9947595.9,22
+2023-24,Michael Page,agency_staff,central_gov,137154.03,23
+2023-24,Michael Page,agency_staff,councils,264280.0,44
+2023-24,Michael Page,agency_staff,other_local,171877.84,22
+2023-24,PA Consulting,consulting,central_gov,2691198.95,38
+2023-24,PA Consulting,consulting,councils,2600.0,1
+2023-24,PA Consulting,consulting,nhs,457859.86,9
+2023-24,PA Consulting,consulting,other_local,65000.0,1
+2023-24,PwC,consulting,central_gov,15255560.77,81
+2023-24,PwC,consulting,councils,1090740.0,8
+2023-24,PwC,consulting,nhs,968049.16,9
+2023-24,PwC,consulting,other_local,140000.0,1
+2023-24,PwC,routed_fund,central_gov,49500.0,1
+2023-24,Reed,agency_staff,central_gov,363916.99,19
+2023-24,Reed,agency_staff,councils,69296.14,19
+2023-24,Reed,agency_staff,other_local,320527.01,52
+2023-24,Reed,welfare_to_work,central_gov,87907310.0,591
+2024-25,Adecco,agency_staff,central_gov,556.23,1
+2024-25,Comensura,agency_staff,councils,15598047.25,93
+2024-25,Deloitte,consulting,central_gov,43500416.14,163
+2024-25,Deloitte,consulting,nhs,449572.2,7
+2024-25,EY,consulting,central_gov,35407729.45,279
+2024-25,EY,consulting,councils,943592.34,15
+2024-25,EY,consulting,nhs,804736.8,8
+2024-25,EY,consulting,other_local,1696710.85,13
+2024-25,Gartner,consulting,central_gov,2648746.4,16
+2024-25,Gartner,consulting,nhs,95880.0,1
+2024-25,Hays,agency_staff,central_gov,1942728.19,332
+2024-25,Hays,agency_staff,councils,935554.06,318
+2024-25,Hays,agency_staff,other_local,112571.24,60
+2024-25,KPMG,consulting,central_gov,16598516.33,203
+2024-25,KPMG,consulting,councils,325778.0,12
+2024-25,KPMG,consulting,nhs,96775.35,1
+2024-25,KPMG,consulting,other_local,783956.29,13
+2024-25,Matrix SCM,agency_staff,councils,50561.68,37
+2024-25,McKinsey,consulting,central_gov,1336499.83,4
+2024-25,Michael Page,agency_staff,central_gov,42350.24,10
+2024-25,Michael Page,agency_staff,councils,166100.0,49
+2024-25,Michael Page,agency_staff,other_local,81882.86,22
+2024-25,PA Consulting,consulting,central_gov,4092864.4,38
+2024-25,PA Consulting,consulting,other_local,49335.0,3
+2024-25,PwC,consulting,central_gov,5788416.56,58
+2024-25,PwC,consulting,councils,219960.0,4
+2024-25,Reed,agency_staff,central_gov,12813.42,22
+2024-25,Reed,agency_staff,councils,33312.46,9
+2024-25,Reed,agency_staff,other_local,590113.21,52
+2024-25,Reed,welfare_to_work,central_gov,93405253.0,962
+2025-26,Adecco,agency_staff,nhs,231954.0,7
+2025-26,Comensura,agency_staff,councils,17911660.56,116
+2025-26,Deloitte,consulting,central_gov,47637882.34,152
+2025-26,Deloitte,consulting,nhs,306960.0,4
+2025-26,EY,consulting,central_gov,31311451.04,276
+2025-26,EY,consulting,councils,645839.38,16
+2025-26,EY,consulting,other_local,2693827.42,15
+2025-26,Gartner,consulting,central_gov,3674253.0,24
+2025-26,Hays,agency_staff,central_gov,239778.18,32
+2025-26,Hays,agency_staff,councils,926169.79,360
+2025-26,Hays,agency_staff,other_local,10635.9,1
+2025-26,KPMG,consulting,central_gov,14302877.01,174
+2025-26,KPMG,consulting,councils,254157.23,11
+2025-26,KPMG,consulting,nhs,241698.33,4
+2025-26,KPMG,consulting,other_local,1149916.8,16
+2025-26,Matrix SCM,agency_staff,councils,1546148.88,141
+2025-26,Michael Page,agency_staff,councils,279481.47,115
+2025-26,Michael Page,agency_staff,other_local,47002.52,6
+2025-26,PA Consulting,consulting,central_gov,10580961.39,57
+2025-26,PwC,consulting,central_gov,866717.2,19
+2025-26,PwC,consulting,councils,137919.0,6
+2025-26,PwC,consulting,nhs,1419885.21,9
+2025-26,Reed,agency_staff,central_gov,108366.0,2
+2025-26,Reed,agency_staff,councils,71359.93,10
+2025-26,Reed,agency_staff,other_local,774685.98,57
+2025-26,Reed,welfare_to_work,central_gov,86799503.11,850
+2026-27,Adecco,agency_staff,nhs,64240.0,2
+2026-27,Comensura,agency_staff,councils,2432603.86,18
+2026-27,Deloitte,consulting,central_gov,13387107.54,57
+2026-27,EY,consulting,central_gov,4968714.09,64
+2026-27,EY,consulting,councils,145923.25,3
+2026-27,EY,consulting,nhs,548040.0,8
+2026-27,Gartner,consulting,central_gov,374280.0,2
+2026-27,Hays,agency_staff,councils,33842.76,9
+2026-27,KPMG,consulting,central_gov,4252018.31,36
+2026-27,KPMG,consulting,councils,110973.75,5
+2026-27,KPMG,consulting,nhs,432660.0,7
+2026-27,Matrix SCM,agency_staff,councils,787029.18,10
+2026-27,PA Consulting,consulting,central_gov,1964256.0,12
+2026-27,PwC,consulting,central_gov,594540.0,1
+2026-27,Reed,agency_staff,central_gov,130274.0,1
+2026-27,Reed,welfare_to_work,central_gov,20555119.14,170
+unknown,Adecco,agency_staff,central_gov,767244.36,1
+unknown,Deloitte,consulting,central_gov,134878.88,3
+unknown,EY,consulting,central_gov,4873450.8,25
+unknown,Gartner,consulting,central_gov,446607.5,4
+unknown,Hays,agency_staff,central_gov,600765.89,2
+unknown,KPMG,consulting,central_gov,1315114.88,4
+unknown,KPMG,consulting,councils,1375.0,1
+unknown,KPMG,consulting,nhs,1034873.62,3
+unknown,Michael Page,agency_staff,central_gov,304584.37,1
+unknown,PA Consulting,consulting,central_gov,12699474.7,8
+unknown,PwC,consulting,central_gov,4129744.83,14
+unknown,Reed,agency_staff,central_gov,2670174.42,7

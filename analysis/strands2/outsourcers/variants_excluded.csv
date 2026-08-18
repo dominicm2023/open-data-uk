@@ -1,0 +1,71 @@
+company,string,gbp,reason
+Capita,CAPITA TP HSBC,246522344.1,"same pass-through, HSBC account (GBP 246.5m)"
+Capita,CAPITA TP NATWEST,35610511570.44,pass-through: DfE 'funding to pay Teachers' Pensions' routed via Capita's third-party bank account (GBP 35.6bn — not payments TO Capita)
+Capita,Capita Consortium Nominees No 1 & No 2 Ltd,153000.0,"nominee vehicle, beneficial recipient unclear"
+Capita,THE DEANERY C OF E HIGH GOVERNORS CAPITA,29349.0,same
+Capita,THE DEANERY CHURCH OF ENGLAND HIGH GOVERNORS CAPITA,92712.77,school governors' account administered by Capita; beneficiary is the school
+Serco,CORPORACION SERCOPLUS,5823.04,Peruvian IT retailer
+Serco,HANOI TOSERCO,23245.61,same
+Serco,HANOI TOSERCO 1,2311.98,same
+Serco,HANOI TOSERCO-MOTO,2063.46,same
+Serco,Hanoi Toserco,70896.82,"Hanoi Tourist Service Company, Vietnam"
+Serco,PHONG VE HANOI TOSERCO,45416.82,same
+Serco,SERCO PROJECTS LLC,3800.0,presents as a distinct LLC we could not verify as Serco Group
+Serco,SERCORIEGO,782.96,unrelated card line
+G4S,AMAZON.CO.UK 2X58G4SO4,1880.49,Amazon order reference containing G4S
+G4S,FRIENDS OF BOXING4SCHOOLS,4200.0,same
+G4S,Group 4,30180.55,"bare string, could be anything"
+G4S,WAYNE LLEWELLYN T/A FRIENDS OF BOXING4SCHOOLS,5040.0,'boxing4schools' substring hit
+Amey,AMEYZOO,951.48,"exotic-pet zoo in Bovingdon, not Amey plc"
+Amey,CARILLIONAMEY (HOUSING PRIME) LIMITED,540150851.4,censused separately as CarillionAmey (JV)
+Amey,CARILLIONAMEY LIMITED,672534609.63,censused separately as CarillionAmey (JV)
+Amey,GEO AMEY PECS LTD,93236950.39,"GEOAmey: 50:50 JV with GEO Group (prisoner escort & custody) — GBP 93.2m, listed not censused"
+Amey,KEOLIS AMEY DOCKLANDS LIMITED,48891.43,"JV, Keolis-led, DLR operator"
+Amey,KEOLIS AMEY METROLINK LTD,693846568.61,"JV, Keolis-led (70:30), Manchester Metrolink operator — GBP 693.8m, listed not censused"
+Amey,Keolis Amey Metrolink Ltd,19438.73,same JV
+Interserve,INTERSERVE ACADEMIES TRUST,285000.0,same
+Interserve,Interserve Academies Trust,5324402.61,"academy trust sponsored by the firm; beneficiary is schools, not the company"
+Kier,KIER FOUNDATION,10000.0,"the firm's charity, not the trading company"
+Kier,Kier Charles Property Services Ltd,3662.0,presents as a person-named local firm we could not verify as Kier Group
+Kier,Kier Graham Defence Limited,52152954.29,"JV with John Graham Construction (DIO estate works) — GBP 52.2m, listed not censused"
+Sopra Steria,CATCAKES REPOSTERIA CR,3180.92,Spanish 'reposteria' (bakery) card line
+Sopra Steria,FLORISTERIA DON ELOY,1562.75,same
+Sopra Steria,"FLORISTERIA INES-28, C",1418.56,same
+Sopra Steria,FLORISTERIA SIEMPRE VE,3007.51,Spanish florist card line
+Sopra Steria,National Offender Management Services (Steria),441658.69,"compound label, payee unclear (NOMS' Steria-run shared services)"
+Sopra Steria,OSTERIA A LE DUE SPADE,61.65,same
+Sopra Steria,OSTERIA PANEVINO,80.88,Italian restaurant card line
+Sopra Steria,PAYPAL  SOPRANO,884.9,'Soprano' substring hit on a PayPal card line
+Sopra Steria,Wisteria House,16052.65,same
+Sopra Steria,Wisteria House Dementia Care Ltd,125643.86,'Wisteria' substring hit — care home
+SSCL (Sopra Steria JV),CABINET OFFICE SSCL ACCOUNTS RECEIVABLE,102394.0,same
+SSCL (Sopra Steria JV),HOME OFFICE SSCL,15977.43,"compound label, payee unclear"
+SSCL (Sopra Steria JV),SSCL (ENVIRONMENT AGENCY),1901038.86,"compound label, payee unclear"
+SSCL (Sopra Steria JV),SSCL - ACCOUNTS RECEIVABLE,1017874.0,AR account label: paying an invoice SSCL raised on behalf of a client department; beneficiary is the department
+SSCL (Sopra Steria JV),SSCL - Accounts Receivable,45076.0,same
+SSCL (Sopra Steria JV),SSCL ACCOUNTS RECEIVABLE TEAM,240197.0,same
+SSCL (Sopra Steria JV),SSCL on behalf of Cabinet Office,467078.07,explicit on-behalf label; beneficiary is the Cabinet Office
+Liberata,HM COURTS SERVICE (LIBERATA UK LTD),41400.0,same
+Liberata,HM Courts Service (Liberata UK Ltd),105796.0,payee presents as HM Courts Service; Liberata is only the operator
+Liberata,MOJ LIBERATA,1006693.34,"compound label (TNA paying the MoJ's Liberata-run service), payee unclear"
+Suez,Cofely GDF Suez,2295831.71,"GDF Suez = energy group (now Engie), separate from the Suez waste company since 2008"
+Suez,ELECTRABEL GDF SUEZ,132894.33,same — Belgian energy arm
+Suez,GDF SUEZ,691.91,same
+Suez,GDF SUEZ MARKETING LIMITED,34512.61,same
+Suez,GDF SUEZ SALES LTD (GAS),1020097.66,same — gas supply
+Suez,SITA,569.1,bare string: could be SITA the airline-IT company; unverifiable
+Suez,Sita Trust,9200.0,"landfill communities fund charity, not the operating company"
+Suez,Suez Canal Authority,173346.65,the Egyptian state canal authority
+Carillion,AL FUTTAIM CARILLION LLC,337236.3,Dubai JV
+Carillion,CARILLION ACADEMIES TRUST,125000.0,academy trust sponsored by the firm; beneficiary is schools
+Carillion,CARILLION ALAWI LLC,378803.13,Oman JV
+Carillion,CARILLION AS AGENT FOR STOCKPORT MB,177750.0,"agent label: beneficiary is Stockport MBC works, payee role unclear"
+Carillion,CARILLION ENTERPRISE LIMITED,8385943.38,censused separately as CarillionEnterprise (JV)
+Carillion,CARILLION ENTERPRISE LTD,250313.92,censused separately as CarillionEnterprise (JV)
+Carillion,CARILLIONAMEY (HOUSING PRIME) LIMITED,540150851.4,censused separately as CarillionAmey (JV)
+Carillion,CARILLIONAMEY LIMITED,672534609.63,censused separately as CarillionAmey (JV)
+Carillion,CARILLIONARAMARK LIMITED,5235633.92,"JV with Aramark (defence catering) — GBP 5.2m, listed not censused"
+Carillion,CARILLIONENTERPRISE LIMITED,489521561.2,censused separately as CarillionEnterprise (JV)
+Carillion,Carillion Enterprise Ltd,746208.38,censused separately as CarillionEnterprise (JV)
+Carillion,Eaga Heating Services Limited,1514.92,"same — payments start Dec 2010, pre-acquisition"
+Carillion,eaga plc Switchover Help Scheme,79732.92,eaga: payment at/before Carillion's April 2011 acquisition completed; ownership at payment date unverifiable

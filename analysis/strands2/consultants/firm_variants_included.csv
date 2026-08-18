@@ -1,0 +1,409 @@
+firm,supplier_raw,category,scope,txns,gbp
+Reed,REED IN PARTNERSHIP LTD,welfare_to_work,uk,37874,667774508.84
+PwC,PWC GEC Client Account,routed_fund,uk,40,463013846.92
+PwC,PRICEWATERHOUSECOOPERS,consulting,uk,2181,380465610.82
+KPMG,KPMG LLP,consulting,uk,2215,290839318.53
+EY,ERNST & YOUNG LLP,consulting,uk,1427,262398850.33
+Deloitte,DELOITTE LLP,consulting,uk,1313,253360887.01
+Deloitte,DELOITTE,consulting,uk,371,207897350.3
+PwC,PRICEWATERHOUSECOOPERS LLP,consulting,uk,1247,191905245.88
+PA Consulting,PA CONSULTING GROUP LTD,consulting,uk,1683,178459218.89
+PwC,PWC Gec Client Account,routed_fund,uk,18,166559488.0
+PA Consulting,PA CONSULTING SERVICES LTD,consulting,uk,1261,161838481.24
+Deloitte,DELOITTE LLP (L),consulting,uk,400,140218628.22
+Manpower,MANPOWER UK LTD,agency_staff,uk,598,109841598.98
+KPMG,KPMG East Africa Limited,routed_fund,overseas_member,42,102360557.0
+KPMG,KPMG DEVELOPMENT SERVICE,routed_fund,overseas_member,100,83265581.03
+EY,ERNST AND YOUNG LLP,consulting,uk,683,78331291.81
+McKinsey,MCKINSEY & COMPANY INC  UNITED KINGDOM,consulting,overseas_member,66,64414806.15
+EY,ERNST & YOUNG,consulting,uk,503,56600355.73
+KPMG,KPMG EAST AFRICA LTD,routed_fund,overseas_member,48,46607203.57
+McKinsey,MCKINSEY AND CO INC UK,consulting,overseas_member,66,46393757.5
+KPMG,KPMG,consulting,uk,574,43820782.44
+PwC,Pricewaterhousecoopers,consulting,uk,217,42554873.26
+KPMG,CSL - KPMG LLP,consulting,uk,1068,39073233.09
+KPMG,KPMG LLP,routed_fund,uk,48,38965609.1
+Comensura,Comensura Ltd,agency_staff,uk,227,35942311.67
+McKinsey,McKinsey and Company Inc East Africa Pty Ltd,consulting,overseas_member,107,32647382.58
+KPMG,KPMG EAST AFRICA LTD,consulting,overseas_member,192,32309063.37
+BCG,THE BOSTON CONSULTING GROUP UK LLP,consulting,uk,25,31211510.8
+McKinsey,McKinsey Development Partners,consulting,overseas_member,26,31200748.36
+PwC,PRICEWATERHOUSE COOPERS LLP,consulting,uk,214,30643517.25
+Reed,REED IN PARTNERSHIP HACKNEY LTD,welfare_to_work,uk,102,29538826.08
+Deloitte,DELOITTE MCS LTD,consulting,uk,249,27025390.91
+PA Consulting,PA CONSULTING GROUP,consulting,uk,186,25645586.62
+PwC,PricewaterhouseCoopers Pvt.Ltd,consulting,uk,224,23868484.25
+Reed,REED IN PARTNERSHIP,welfare_to_work,uk,554,23701173.93
+Bain,BAIN & COMPANCY INC UNITED KINGDOM,consulting,overseas_member,29,23470312.15
+McKinsey,McKinsey & Co  Inc UK,consulting,overseas_member,66,21654622.5
+McKinsey,McKINSEY & COMPANY,consulting,uk,49,19710065.93
+Deloitte,Deloitte LLP,consulting,uk,201,18187961.85
+EY,Ernst & Young LLP,routed_fund,uk,90,17403784.92
+KPMG,KPMG FIDUCIAIRE,consulting,overseas_member,163,17170286.38
+PwC,PRICE WATERHOUSE COOPERS LLP,consulting,uk,130,14686346.81
+Gartner,GARTNER UK LTD,consulting,uk,107,14368152.11
+PA Consulting,PA CONSULTING SERVICES LIMITED,consulting,uk,36,13845453.43
+Matrix SCM,MATRIX SCM LTD,agency_staff,uk,218,13706724.0
+Deloitte,DELOITTE MCS LIMITED,consulting,uk,83,13172233.66
+Deloitte,DELOITTE TOUCHE TOHAMATSU INDIA PRIVATE LTD (DTTIPL),consulting,overseas_member,114,11576191.45
+Hays,HAYS SPECIALIST RECRUITMENT LTD,agency_staff,uk,4674,11543563.75
+McKinsey,Mckinsey And Company Inc East Africa Pty Ltd,consulting,overseas_member,25,11151929.8
+EY,ERNST &  YOUNG PRIVATE LTD,consulting,uk,302,10666659.02
+Reed,REED SPECIALIST RECRUITMENT LTD,agency_staff,uk,2605,10510794.34
+PA Consulting,PA Consulting Services Limited,consulting,uk,46,10362135.39
+Hays,Hays Specialist Recruitment Ltd,agency_staff,uk,3458,10320880.34
+KPMG,KPMG Advisory Limited,consulting,uk,75,10242164.17
+EY,Ernst And Young Llp,consulting,uk,149,10198358.76
+BCG,The Boston Consulting Group UK LLP,consulting,uk,41,9694077.31
+KPMG,CSL KPMG LLP,consulting,uk,192,9382735.39
+PwC,Pricewaterhousecoopers Llp,consulting,uk,29,9158382.91
+PwC,PricewaterhouseCoopers Limited (KENYA3),consulting,overseas_member,67,7922891.21
+KPMG,KPMG Advisory Limited,routed_fund,uk,35,7907224.02
+PwC,PRICE WATERHOUSE COOPER LLP,consulting,uk,63,7420876.25
+McKinsey,Mckinsey Development Partners Limited,consulting,overseas_member,12,7098663.27
+PwC,PRICEWATERHOUSE COOPERS,consulting,uk,35,7060803.43
+PwC,Pricewaterhouse Coopers LLP,consulting,uk,106,6781332.17
+Deloitte,Deloitte MCS Ltd,consulting,uk,69,6626666.01
+Deloitte,Deloitte Llp,consulting,uk,46,6458144.09
+Deloitte,Deloitte Consulting Pvt Ltd Co.,consulting,uk,29,6350475.59
+EY,Ernst and Young LLP,consulting,uk,20,6225258.47
+Deloitte,DELOITTE (UGANDA) LTD,consulting,overseas_member,3,6200000.0
+Deloitte,Deloitte M C S Ltd,consulting,uk,35,5985800.52
+PA Consulting,PA Consulting Services Ltd,consulting,uk,45,5749473.01
+PwC,PRICEWATERHOUSECOOPER LLP - SPF CLIENT MONEY,routed_fund,uk,1,5390077.0
+Reed,Reed Solutions,agency_staff,uk,98,5259700.48
+KPMG,Kpmg Llp,consulting,uk,46,5104764.05
+Gartner,GARTNER,consulting,uk,39,5102531.56
+EY,Ernst & Young LLP,consulting,uk,92,4933623.35
+Deloitte,DRIVERS JONAS DELOITTE,consulting,uk,123,4737639.1
+McKinsey,"McKinsey & Co, Inc UK",consulting,overseas_member,22,4577205.69
+PwC,PRICEWATERHOUSECOOPERS PRIVATE LTD,consulting,uk,54,4451584.3
+KPMG,KPMG (Registered),consulting,uk,122,4412456.0
+Deloitte,DELOITTE AND TOUCHE LLP,consulting,uk,38,4402558.76
+PwC,PRICE WATERHOUSE COOPER,consulting,uk,16,4193699.12
+Manpower,MANPOWER UK LIMITED,agency_staff,uk,49,4176975.7
+KPMG,KPMG (KASPL),consulting,overseas_member,62,4112379.5
+KPMG,KPMG CIO ADVISORY LTD,consulting,uk,18,4108934.84
+Deloitte,Deloitte Touche Tohmatsu India Private Limited,consulting,overseas_member,85,4088863.46
+PwC,Pricewaterhousecoopers Pvt Ltd,consulting,uk,34,4016727.0
+PwC,PRICEWATERHOUSECOOPERS DEVELOPMENT,consulting,uk,118,3864534.0
+Deloitte,DELOITTE TOUCHE TOHMATSU INDIA PRIVA,consulting,overseas_member,160,3812580.23
+KPMG,KPMG East Africa Limited,consulting,overseas_member,6,3779971.0
+PwC,Price Waterhouse Coopers,consulting,uk,44,3527995.08
+PA Consulting,PA CONSULTING,consulting,uk,20,3496942.91
+KPMG,KPMG Development Services,consulting,overseas_member,70,3412126.72
+PwC,Pricewaterhousecoopers Limited (Kenya3),consulting,overseas_member,19,3348418.21
+Michael Page,MICHAEL PAGE INTERNATIONAL PLC,agency_staff,uk,606,3262004.13
+KPMG,KPMG Auditores e Consultores SA,consulting,overseas_member,43,3250157.79
+PA Consulting,PA Consulting Group,consulting,uk,22,2854026.55
+BCG,THE BOSTON CONSULTING GROUP,consulting,uk,7,2723503.0
+Reed,REED EMPLOYMENT PLC,agency_staff,uk,55,2702289.0
+Reed,Reed in Partnership Limited,welfare_to_work,uk,61,2688367.32
+McKinsey,MCKINSEY & COMPANY INC,consulting,overseas_member,13,2624700.0
+PA Consulting,PA CONSULTING SERVICES LIMITED (T/AS,consulting,uk,28,2571278.95
+Adecco,ADECCO UK LTD,agency_staff,uk,1092,2532904.27
+McKinsey,MCKINSEY & COMPANY,consulting,uk,12,2519880.0
+Deloitte,DELOITTE TOUCHE TOHMATSU INDIA LLP,consulting,overseas_member,84,2515742.97
+Reed,REED,welfare_to_work,uk,23,2475025.91
+PA Consulting,Pa Consulting Services Ltd,consulting,uk,34,2386889.0
+EY,EY LLP,consulting,uk,89,2275839.04
+Deloitte,DELOITTE & TOUCHE LLP,consulting,uk,13,2252786.4
+McKinsey,MCKINSEY & CO INC,consulting,overseas_member,9,2114450.0
+PA Consulting,PA CONSULTING SERVIC,consulting,uk,13,2110244.76
+Hays,HAYS SPECIALIST RECRUITMENT LIMITED,agency_staff,uk,262,2063558.58
+KPMG,KPMG Advisory Limited - AcT2,routed_fund,uk,6,2036753.38
+PwC,PricewaterhouseCoopers Private Limited,consulting,uk,30,1875521.5
+Reed,REED IN PARTNERSHIP LIMITED,welfare_to_work,uk,25,1827421.85
+Michael Page,MICHAEL PAGE INTERNATIONAL RECRUITMENT LTD,agency_staff,uk,608,1784080.2
+PwC,PRICEWATERHOUSECOOPERS LLP,routed_fund,uk,2,1778000.0
+PwC,Pricewaterhousecoopers (Global),consulting,uk,10,1760426.71
+PwC,PricewaterhouseCoopers LLP,consulting,uk,23,1733143.96
+Adecco,ADECCO ALFRED MARKS,agency_staff,uk,59,1696381.27
+PwC,PWC LLP (HMRC GRANTS),routed_fund,uk,7,1672643.15
+Hays,Hays Construction & Property,agency_staff,uk,1837,1639987.13
+Deloitte,DELOITTE (UGANDA) LIMITED,consulting,overseas_member,18,1629520.98
+Manpower,MANPOWER GROUP SOLUTIONS SRL,agency_staff,overseas_member,15,1628625.69
+KPMG,KPMG Assurance and Consulting Services LLP,consulting,uk,14,1605879.0
+Hays,Hays,agency_staff,uk,1129,1592934.82
+KPMG,KPMG Uganda,consulting,overseas_member,12,1549408.4
+Deloitte,Deloitte & Touche,consulting,uk,12,1518985.28
+PwC,Pricewaterhousecoopers LLP,consulting,uk,16,1348619.0
+Deloitte,DELOITTE LLP,routed_fund,uk,10,1347658.4
+EY,ERNST AND YOUNG_001,consulting,uk,5,1138906.81
+PwC,PRICEWATERHOUSECOOPE,consulting,uk,4,1114037.43
+Michael Page,MICHAEL PAGE INTERNATIONAL RECRUITM,agency_staff,uk,320,1099500.24
+PA Consulting,PA Consulting,consulting,uk,20,1068378.44
+Reed,REED SPECIALIST,agency_staff,uk,1161,1057867.72
+KPMG,KPMG Advisory Limited - AcT2,consulting,uk,11,1046816.93
+Reed,REED SPECIALIST RECRUITMENT LIMITED,routed_fund,uk,18,1044497.25
+Gartner,Gartner UK Ltd,consulting,uk,19,897836.59
+PA Consulting,Pa Consulting,consulting,uk,8,896544.0
+Gartner,GARTNER GROUP UK LTD,consulting,uk,12,851583.33
+Michael Page,Michael Page International Recruitment,agency_staff,uk,276,850701.85
+Michael Page,MICHAEL PAGE INTERNATIONAL,agency_staff,uk,249,842797.31
+PwC,Pricewaterhouse Coopers,consulting,uk,11,837348.72
+EY,Ernst & Young,consulting,uk,29,831201.46
+Reed,REED EMPLOYMENT,agency_staff,uk,926,825885.48
+Deloitte,DELOITTE MSC LTD,consulting,uk,11,817507.89
+KPMG,KPMG FEES ACCOUNT,consulting,uk,4,817127.3
+PwC,Price Waterhouse Coopers LLp,consulting,uk,23,784968.65
+Deloitte,Deloitte MCS Ltd,routed_fund,uk,11,778362.65
+Adecco,ADECCO,agency_staff,uk,5,763852.1
+PwC,Pricewaterhousecoopers Pvt. Ltd.,consulting,uk,64,756457.29
+McKinsey,Mckinsey&co,consulting,uk,2,736563.0
+Reed,REED LEARNING LTD,agency_staff,uk,28,694413.18
+Michael Page,MICHAEL PAGE INTERNATIONAL RECRUITMENT LIMITED,agency_staff,uk,374,683975.63
+Deloitte,Deloitte,consulting,uk,32,667367.07
+Gartner,GARTNER UK LIMITED,consulting,uk,19,641635.0
+PwC,"PRICEWATERHOUSECOOPERS, GHANA",consulting,overseas_member,18,631019.85
+Michael Page,PAGE GROUP ISRAEL LIMITED,agency_staff,overseas_member,17,629141.99
+McKinsey,Mckinsey And Company Inc Uk,consulting,overseas_member,2,607750.0
+Hays,HAYS PERSONNEL SERVICES,agency_staff,uk,1,600244.84
+PwC,PricewaterhouseCoopers,consulting,uk,12,595296.42
+Gartner,GARTNERGROUP UK LTD,consulting,uk,10,585640.0
+Comensura,COMENSURA LTD,agency_staff,uk,100,568596.58
+KPMG,KPMG Llp Fees Account,consulting,uk,21,523507.09
+PwC,PRICEWATERHOUSECOOPERS  GHANA,consulting,overseas_member,30,511428.68
+Manpower,MANPOWER S R L,agency_staff,overseas_member,19,501300.9
+PA Consulting,P A CONSULTING SERVICES LTD,consulting,uk,10,496074.68
+Deloitte,Deloitte Touche Tohmatsu India LLP,consulting,overseas_member,32,490613.14
+EY,ERNST&YOUNG LLP,consulting,uk,2,483232.8
+Deloitte,DELOITTE MCS,consulting,uk,11,482249.67
+McKinsey,MCKINSEY & CO INC. UNITED KINGDOM,consulting,overseas_member,4,475560.0
+Hays,Hays Specialist Recruitment,agency_staff,uk,639,472145.74
+Gartner,Gartner Uk Ltd,consulting,uk,2,447000.0
+McKinsey,MCKINSEY & CO,consulting,uk,2,419940.0
+KPMG,KPMG ANGOLA & MOZAMBIQUE,consulting,overseas_member,14,410423.58
+Reed,Reed Specialist Recruitment Ltd,agency_staff,uk,59,404955.41
+EY,ERNST AND YOUNG SAS,consulting,overseas_member,5,403891.64
+Deloitte,Deloitte Kenya,consulting,overseas_member,12,399358.01
+PwC,PRICEWATERHOUSE,consulting,uk,15,398682.5
+Bain,BAIN & COMPANY,consulting,uk,2,392000.0
+Reed,Reed Personnel Services Plc,agency_staff,uk,213,361923.51
+PwC,PwC UK,consulting,uk,9,357382.16
+Deloitte,Deloitte MCS Limited,consulting,uk,5,350166.4
+Reed,REED EMPLOYMENT SERVICES,agency_staff,uk,447,349016.29
+EY,Ernst And  Young,consulting,uk,3,345584.22
+KPMG,WWW.KPMG.CO.UK,consulting,uk,190,342199.54
+PwC,PRICEWATERHOUSE COOPERS PRIVATE LIMITED,consulting,uk,10,306203.0
+PwC,PRICEWATERHOUSECOOPERS AFRICA,consulting,overseas_member,5,305568.0
+KPMG,KPMG IDAS WA,consulting,overseas_member,14,305079.53
+PA Consulting,P A Consulting Group,consulting,uk,6,304982.55
+Deloitte,DELOITTE CONSULTING LLP,consulting,uk,5,301681.0
+KPMG,KPMG IT ADVISORY LIMITED,consulting,uk,4,298155.0
+Adecco,ADECCO UK LIMITED,agency_staff,uk,9,296194.0
+Gartner,GARTNER U.K. LTD,consulting,uk,4,292094.2
+Gartner,Gartner Uk Limited,consulting,uk,3,287640.0
+PwC,Price Waterhouse Coopers LLP,consulting,uk,7,285063.0
+Matrix SCM,Matrix SCM Ltd,agency_staff,uk,163,282031.72
+PwC,PRICEWATERHOUSECOOPERS PVT LTD,consulting,uk,6,280336.0
+McKinsey,"McKinsey & Co, Inc. United Kingdom",consulting,overseas_member,1,258000.0
+PwC,PRICE WATERHOUSE COOPERS,consulting,uk,5,238334.7
+Reed,REED TALENT SOLUTIONS LTD,agency_staff,uk,7,235975.07
+PwC,PRICEWATERHOUSECOOPERS (KENYA),consulting,overseas_member,14,227489.3
+KPMG,KPMG Kenya,consulting,overseas_member,20,222661.38
+PwC,PRICEWATERHOUSECOOPERS MANAGEMENT CONSULTING (SHANGHAI) LIMITED BEIJING BRANCH,consulting,overseas_member,4,221710.27
+Deloitte,Akintola Williams Deloitte Consultin,consulting,overseas_member,4,220716.46
+PwC,PRICEWATERHOUSECOOPERS SERVICES,consulting,uk,4,219351.48
+Deloitte,DELOITTE CONSULTING (PTY) LTD,consulting,overseas_member,6,215711.95
+Hays,HAYS,agency_staff,uk,32,214159.99
+Reed,Reed Employment plc,agency_staff,uk,256,212405.9
+PA Consulting,P A CONSULTING GROUP,consulting,uk,12,209893.21
+KPMG,KPMG LLP Fees Account,consulting,uk,5,198290.06
+Deloitte,DELOITTE & TOUCHE,consulting,uk,4,197344.74
+EY,Ernst & Young Llp,consulting,uk,2,193445.22
+KPMG,KPMG - CSL,consulting,uk,4,191281.78
+Gartner,GARTNER U.K. LIMITED,consulting,uk,1,185839.98
+PwC,PwC Rwanda Limited,consulting,overseas_member,15,182100.96
+EY,EY PROFESSIONAL SERVICES LIMITED,consulting,uk,1,178575.0
+PA Consulting,PA CONSULTING GROUPS,consulting,uk,3,174532.66
+Deloitte,Deloitte Touche Tohmatsu India Pvt. Ltd.,consulting,overseas_member,10,172334.1
+Reed,REED TALENT SOLUTIONS T/A CONSULTAN,agency_staff,uk,6,170651.65
+Manpower,MANPOWER PLC,agency_staff,uk,46,165538.55
+KPMG,KPMG Rwanda,consulting,overseas_member,13,161687.97
+Deloitte,Drivers Jonas Deloitte,consulting,uk,79,159839.12
+KPMG,KPMG ADVISORY HONG KONG LIMITED,consulting,overseas_member,4,156073.58
+KPMG,KPMG Inc.,consulting,overseas_member,4,152895.48
+Gartner,GARTNER GROUP,consulting,uk,3,152700.0
+Gartner,Gartner UK Limited,consulting,uk,3,148700.0
+Michael Page,Michael Page Int. Recruitment Ltd,agency_staff,uk,92,146989.56
+McKinsey,MCKINSEY AND COMPANY,consulting,uk,2,140000.0
+Hays,HAYS ACCOUNTANCY & FINANCE,agency_staff,uk,321,139002.25
+Hays,HAYS SPECIALIST RECRUITMENT,agency_staff,uk,229,136033.26
+McKinsey,McKinsey & Co  Inc. UK,consulting,overseas_member,1,134065.0
+Michael Page,Michael Page International Recruitment Ltd,agency_staff,uk,24,131298.85
+EY,Ernst & Young Ford Rhodes Sidat  Hyder,consulting,overseas_member,21,126963.9
+Michael Page,Michael Page International Recruitment Limited T/A Page Personnel,agency_staff,uk,17,126360.0
+PwC,PricewaterhouseCoopers (SA),consulting,overseas_member,6,121818.81
+PwC,PRICEWATERHOUSECOOPERS DRC SAS (PWC RDC SAS),consulting,overseas_member,4,119526.4
+Hays,HAYS EXECUTIVE,agency_staff,uk,3,108963.0
+McKinsey,McKinsey & Company Inc Africa Pty Ltd,consulting,overseas_member,2,108136.01
+KPMG,KPMG GHANA LLP,consulting,overseas_member,5,106622.71
+Reed,Reed,agency_staff,uk,84,106317.91
+Deloitte,Deloitte Mcs Ltd,consulting,uk,2,104430.0
+EY,ERNST YOUNG KURUMSAL FINANSMAN DANISMANLIK AS,consulting,overseas_member,1,103792.98
+PwC,PricewaterhouseCoopers Incorporated,consulting,overseas_member,2,101545.0
+KPMG,KPMG LLP (CSL),consulting,uk,66,101504.3
+KPMG,KPMG LLP FEES,consulting,uk,1,100000.0
+Reed,REED TECHNOLOGY,agency_staff,uk,13,99052.14
+PwC,"PRICEWATERHOUSECOOPERS CONSULTANTS (SHENZHEN) LIMITED, BEIJING BRANCH",consulting,overseas_member,1,95001.06
+Manpower,MANPOWER UK,agency_staff,uk,1,95000.0
+KPMG,KPMG.,consulting,uk,14,93312.13
+McKinsey,McKinsey & Company - India,consulting,overseas_member,3,93141.95
+PA Consulting,*PA CONSULTING SERVICES LIMITED,consulting,uk,4,92752.73
+Manpower,Elan Computing Ltd (A Manpower Compa,agency_staff,uk,18,88905.88
+PwC,PRICE WATERHOUSECOOPERS DUBAI BRANCH,consulting,overseas_member,1,87338.28
+Deloitte,DELOITTE CONSULTING LTD,consulting,uk,1,84000.0
+BCG,THE BOSTON CONSULTING GROUP LLP,consulting,uk,1,82660.0
+PwC,PricewaterhouseCoopers NGN,consulting,overseas_member,6,82395.55
+Deloitte,Deloitte and Touche LLP~114191649,consulting,uk,2,82381.6
+EY,ERNST & YOUNG KENYA,consulting,overseas_member,4,81795.08
+Bain,Bain & Company,consulting,uk,2,80000.0
+PwC,PricewaterhouseCoopers Advisory Ltd,consulting,uk,7,75338.5
+Deloitte,Deloitte MCS,consulting,uk,3,75104.77
+PwC,PRICEWATERHOUSE COOPERS ASSOCIATES AFRICA LTD,consulting,overseas_member,2,74682.72
+EY,Ernst & Young  Limitada,consulting,overseas_member,6,74405.42
+Reed,Reed Employment,agency_staff,uk,50,73833.26
+EY,ERNST & YOUNG (CHINA) ADVISORY LIMITED,consulting,overseas_member,1,73789.61
+PwC,Price Waterhouse Coopers Llp,consulting,uk,2,73437.5
+PwC,PricewaterhouseCoopers Inc.,consulting,overseas_member,2,73067.16
+EY,Ernst & Young Pvt Ltd,consulting,uk,5,72537.07
+PwC,PRICEWATERHOUSECOOPERS PRIVATE LIMIT,consulting,uk,2,70753.72
+PwC,PriceWaterhouseCoopers,consulting,uk,9,69138.45
+Deloitte,Deloitte  Llp,consulting,uk,2,69018.85
+Reed,REED TALENT SOLUTIONS LIMITED TA CONSULTANCY PLUS,agency_staff,uk,2,68571.0
+PwC,Pricewaterhouse Coopers Llp,consulting,uk,6,67945.7
+Reed,REED,agency_staff,uk,27,66625.13
+KPMG,KPMG Taseer Hadi and Co,consulting,overseas_member,11,62436.62
+EY,ERNST & YOUNG GLOBAL SERVICES LTD,consulting,overseas_member,2,61832.37
+Reed,REED SPECIALIST RECRUITMENT,agency_staff,uk,8,61542.44
+Reed,Reed Talent Solutions t/a Consultancyplus,agency_staff,uk,19,60411.45
+KPMG,KPMG LLP FEES ACCOUNT,consulting,uk,2,60031.44
+KPMG,KPMG MANAGEMENT CONSULTING,consulting,uk,2,59298.17
+KPMG,KPMG CONSULTING,consulting,uk,1,56470.97
+PwC,PricewaterhouseCoopers (Ghana) Limited,consulting,overseas_member,5,55934.49
+EY,Ernst & Young ( Ghana),consulting,overseas_member,2,55686.29
+Reed,REED SPECIALIST RECRUITMENT LIMITED,agency_staff,uk,1,55054.03
+KPMG,KPMG RDC,consulting,overseas_member,2,54810.69
+EY,ERNST AND YOUNG ADVISORY SERVICES,consulting,uk,1,54792.88
+EY,Ernst and Young,consulting,uk,2,54660.08
+PwC,PWC,consulting,uk,1,51839.0
+Deloitte,Deloitte  LLP,consulting,uk,1,51772.85
+Gartner,AST Gartner UK Ltd,consulting,uk,1,51344.3
+Deloitte,Deloitte Limited,consulting,uk,2,50719.12
+PwC,PRICEWATERHOUSE COOPERS PRIVATE LIMI,consulting,uk,4,50386.16
+Gartner,GARTNER GROUP UK LIMITED,consulting,uk,1,49800.0
+Deloitte,DELOITTES LLP,consulting,uk,1,48950.0
+EY,Ernst and  Young Nigeria,consulting,overseas_member,2,47862.45
+Gartner,GARTNER GROUP UK LTD~105026640,consulting,uk,1,46935.38
+EY,Ernst & Young Ford Rhodes Sidat Hyder,consulting,overseas_member,5,46533.18
+EY,ERNST & YOUNG ADVISORY,consulting,uk,4,44300.0
+PwC,Ã–hrlings PricewaterhouseCoopers AB,consulting,overseas_member,2,43486.59
+KPMG,KPMG Advisory Services Private Limited,consulting,uk,3,40793.88
+Deloitte,DELOITTE TOUCHE FINANCIAL ADVISORY SERVICES LIMITED,consulting,uk,1,40000.0
+Deloitte,PT DELOITTE ADVIS INDONESIA,consulting,overseas_member,1,39988.56
+KPMG,KPMG Sierra Leone,consulting,overseas_member,1,39263.06
+KPMG,KPMG ADVISORY CHINA LIMITED,consulting,overseas_member,1,39102.42
+Reed,Reed Specialist Recruitment,agency_staff,uk,1,38985.86
+EY,Ernst & Young Ford Rhodes,consulting,overseas_member,5,38847.86
+EY,Ernst & Young (Local),consulting,uk,1,37465.53
+EY,ERNST YOUNG,consulting,uk,1,37148.0
+PwC,PWC POLAND,consulting,overseas_member,1,36143.28
+Deloitte,Deloitte Malawi Advisory Services,consulting,overseas_member,2,35900.39
+PwC,PWC UK,consulting,uk,3,35551.76
+KPMG,KPMG FAS CO LTD,consulting,overseas_member,1,35459.98
+EY,EY Ford Rhodes,consulting,overseas_member,6,35360.0
+Hays,Hays Accountancy,agency_staff,uk,1,34801.67
+Deloitte,Deloitte Touche LLP,consulting,uk,1,34740.0
+KPMG,KPMG (Regstd.),consulting,uk,8,34579.1
+Reed,Reed in Partnership Skills (UK) Ltd,welfare_to_work,uk,1,34436.0
+PwC,PriceWaterhouseCoopers Afrique,consulting,overseas_member,1,33204.24
+Michael Page,Michael Page International,agency_staff,uk,32,32836.0
+Hays,Hays Accountancy Personnel,agency_staff,uk,47,32310.86
+Michael Page,Michael Page Ltd,agency_staff,uk,1,32300.4
+Gartner,Gartner U.K. Limited,consulting,uk,1,31800.0
+PwC,PRICE WATERHOUSE COOPERS DOO BEOGRAD,consulting,overseas_member,1,31407.63
+KPMG,KPMG ADVISORY SERVICES PVT LTD,consulting,uk,1,30000.0
+Deloitte,Deloitte & Touche LLP,consulting,uk,1,29375.0
+PA Consulting,PA Consulting Services Ltd (UK1),consulting,uk,1,29217.5
+McKinsey,McKinsey & Company,consulting,uk,1,28500.0
+PwC,PRICEWATERHOUSECOOPERS LLP (PWC),consulting,uk,2,28370.4
+PwC,PRICEWATERHOUSECOOPERS CONSULTORES AUDITORES Y COMPANIA LIMITADA,consulting,overseas_member,1,28195.98
+KPMG,KPMG Services (PTY) Limited,consulting,overseas_member,2,28132.8
+PwC,PricewaterhouseCoopers (Tanzania) Limited,consulting,overseas_member,1,27843.73
+Michael Page,MICHAEL PAGE INTERNATIONAL RECRUIT. LTD,agency_staff,uk,1,27300.0
+KPMG,KPMG ADVISORY SERVICES,consulting,uk,1,26534.47
+PwC,PriceWaterhouseCooper,consulting,uk,1,26150.0
+Deloitte,Drivers Jonas Deloitte LLP,consulting,uk,1,26050.26
+Michael Page,Michael Page International Recruitme,agency_staff,uk,1,25773.25
+PwC,PricewaterhouseCoopers Ltd,consulting,uk,1,25267.73
+McKinsey,Mckinsey & Company,consulting,uk,1,25000.0
+Deloitte,DELOITTE  LLP,consulting,uk,4,23757.91
+EY,Ernst & Young Zambia (ZMW),consulting,overseas_member,1,23510.44
+Deloitte,DRIVERS JONAS (DELOITTE LLP),consulting,uk,13,23206.88
+EY,ERNST  & YOUNG Limitada,consulting,overseas_member,4,22422.63
+Hays,HAYS HEALTHCARE LIMITED,agency_staff,uk,1,22037.2
+Hays,HAYS PERSONNEL SERVICE,agency_staff,uk,14,21281.81
+Hays,HAYS INFORMATATION TECHNOLOGY,agency_staff,uk,13,20586.91
+KPMG,KPMG Advisory Services Pvt Ltd ( India),consulting,overseas_member,5,20585.27
+EY,Ernst & Young Vietnam Ltd,consulting,overseas_member,1,20123.15
+Deloitte,Deloitte Yousuf Adil  Chartered Accountants,consulting,overseas_member,7,19984.11
+PwC,PricewaterhouseCoopers Rwanda Limited,consulting,overseas_member,3,19669.63
+Deloitte,Deloitte Malawi,consulting,overseas_member,3,19023.09
+PwC,Price Waterhouse Chartered Accountants LLP,consulting,uk,1,18950.0
+Deloitte,Deloitte & Touche (Mocambique)  Lda,consulting,overseas_member,4,18806.46
+KPMG,KPMG Limited,consulting,uk,1,18394.09
+KPMG,KPMG Malawi,consulting,overseas_member,1,17619.05
+PwC,PriceWaterhouseCoopers (KENYA2),consulting,overseas_member,2,16898.95
+Michael Page,Michael Page UK Ltd,agency_staff,uk,37,15395.03
+KPMG,KPMG AUDITORES E CONSULTORES,consulting,overseas_member,2,14037.66
+PwC,PricewaterhouseCoopers Ltd.,consulting,uk,2,12617.73
+KPMG,KPMG GHANA,consulting,overseas_member,1,11615.0
+KPMG,KPMG Advisory N.V.,consulting,overseas_member,1,11476.0
+EY,Ernst & Young South Sudan,consulting,overseas_member,1,10534.3
+KPMG,KPMG YON. DANISMANLIGI,consulting,overseas_member,3,10284.0
+KPMG,KPMG Zambia Limited,consulting,overseas_member,1,9094.69
+Reed,REEDLEARNING.CO.UK,agency_staff,uk,12,8955.2
+Reed,REED LEARNING PLC,agency_staff,uk,8,8790.31
+PwC,PriceWaterHouseCoopers,consulting,uk,1,8354.24
+Deloitte,Deloitte & Touche Zambia,consulting,overseas_member,1,8226.87
+PwC,Price Waterhouse,consulting,uk,1,7902.0
+Reed,REED ONLINE LIMITED,agency_staff,uk,1,7829.38
+Deloitte,DELOITTE KOSOVA SHPK,consulting,overseas_member,8,6598.69
+PwC,PricewaterhouseCoopers inc,consulting,overseas_member,5,6461.8
+Hays,HAYS ACCOUNTANCY AND FINANCE,agency_staff,uk,1,4700.0
+Manpower,Manpower UK Ltd,agency_staff,uk,1,4647.0
+Hays,HAYS ACCOUNTANCY PERSONNEL,agency_staff,uk,3,4420.0
+Michael Page,MICHAEL PAGE INTERNATIONAL RECRUITMENT,agency_staff,uk,1,4242.43
+Reed,WWW.REEDLEARNING.C,agency_staff,uk,4,3910.6
+EY,Ernst & Young Certified Public Accountants,consulting,uk,1,3375.0
+Reed,REED ONLINE LIMITED (E,agency_staff,uk,3,3310.01
+Gartner,ACT GARTNER EVENTS USD,consulting,uk,2,3166.26
+Deloitte,"Deloitte Yousuf Adil, Chartered Accountants",consulting,overseas_member,2,2930.45
+Reed,REED LEARNING,agency_staff,uk,3,2811.78
+EY,Ernst & Young India,consulting,overseas_member,1,2800.0
+PwC,PWC Vietnam,consulting,overseas_member,2,2747.86
+Adecco,ADECCO RRHH,agency_staff,overseas_member,3,2574.26
+PwC,PricewaterhouseCoopers Uganda,consulting,overseas_member,1,2209.91
+Gartner,ACT GARTNER BUS PROC,consulting,uk,1,1861.01
+Gartner,ACT GARTNER EVENTS EUR,consulting,uk,1,1790.27
+Hays,Hays Office Support,agency_staff,uk,3,1569.93
+Reed,REED LEARNING BACS 22/2,agency_staff,uk,2,1528.3
+PwC,Price Waterhouse Cooper,consulting,uk,1,1394.03
+KPMG,Kpmg Fees Account,consulting,uk,1,1375.0
+PwC,PWC ACADEMY LLC 148520,consulting,overseas_member,1,1295.91
+Reed,REEDLEARNING,agency_staff,uk,1,1128.0
+Reed,REED TRAINING,agency_staff,uk,4,1026.0
+Hays,Hays Social Care Ltd,agency_staff,uk,1,925.07
+Michael Page,MICHAEL PAGE **USE ACCOUNT 130114***,agency_staff,uk,3,900.0
+Reed,Reed Learning PLC,agency_staff,uk,1,899.0
+KPMG,KPMG AUSTRALIA,consulting,overseas_member,1,885.08
+Reed,REED LEARNING BACS 21/12,agency_staff,uk,1,760.0
+Manpower,Manpower,agency_staff,uk,1,735.0
+EY,ERNST&YOUNG KAZAKHSTAN,consulting,overseas_member,1,707.96
+PwC,PRICE WATERHOUSE COOPER V,consulting,uk,1,616.45
+Gartner,GARTNER CONF SEC22IV,consulting,uk,1,615.63
+Hays,Hays Construction & Property DO NOT USE,agency_staff,uk,1,608.0
+PwC,PRICEWATERHOUSE COOPER,consulting,uk,1,594.0
+Reed,Reed Specialist Recruitment Limited,agency_staff,uk,1,586.13
+Reed,WWW.REEDLEARNING.C       0207 5205100,agency_staff,uk,1,537.3

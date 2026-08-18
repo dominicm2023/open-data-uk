@@ -1,0 +1,20 @@
+firm,tier,payers,txns,gross_outflow_gbp,net_gbp,first,last
+Marston,debt_enforcement,"Bristol City Council; Department for Environment, Food and Rural Affairs; Department for Work and Pensions; Ministry of Justice; North Yorkshire Council; Royal Borough of Greenwich; Rushmoor Borough Council",567,11989350.35,3670426.23,2010-05,2026-06
+Rossendales,debt_enforcement,Blaby District Council; Bristol City Council; HM Revenue and Customs; Ministry of Justice; Royal Borough of Greenwich,109,5447019.47,5353305.24,2012-05,2020-03
+Equita,debt_enforcement,HM Revenue and Customs; North Yorkshire Council; Royal Borough of Greenwich,90,1499700.35,1352871.27,2013-12,2026-06
+Bristow & Sutor,debt_enforcement,Blaby District Council; Bristol City Council; Cheltenham Borough Council; North Yorkshire Council; South Gloucestershire Council,498,1469149.93,26262.33,2011-01,2026-06
+Whyte & Co,debt_enforcement,Royal Borough of Greenwich,386,629373.01,294589.39,2012-02,2017-06
+Rundles,debt_enforcement,Royal Borough of Greenwich; South Gloucestershire Council; Transport for Greater Manchester; Uttlesford District Council,188,513586.28,109208.22,2010-10,2025-09
+Ross & Roberts,debt_enforcement,Bristol City Council; Royal Borough of Greenwich; Rushmoor Borough Council,208,429648.06,115839.19,2012-02,2023-03
+Enforcement Services (name as published),debt_enforcement,Blaby District Council,3,189200.0,189200.0,2014-01,2014-12
+Able Investigations (eviction/property),property_enforcement,Bristol City Council,36,132773.33,132773.33,2020-07,2025-12
+JBW Group,debt_enforcement,Plymouth City Council; Royal Borough of Greenwich,57,106694.17,16471.97,2014-03,2017-06
+Jacobs (enforcement),debt_enforcement,North Yorkshire Council,10,19058.59,0.0,2025-11,2026-06
+JTR Collections,debt_enforcement,Former council of North Yorkshire; North Yorkshire Council,27,15983.09,15983.09,2022-05,2023-10
+Civil Enforcement Agents Ltd,debt_enforcement,Former council of North Yorkshire; North Yorkshire Council,10,9584.95,9584.95,2022-10,2025-11
+Bail Enforcement Agency Ltd,property_enforcement,Royal Borough of Greenwich,10,9340.0,9340.0,2012-02,2013-11
+Quality Bailiffs (Enforcement Bailiffs Ltd),debt_enforcement,Cheltenham Borough Council; Rushmoor Borough Council,2,6794.72,6794.72,2020-10,2023-11
+CDER Group,debt_enforcement,Bristol City Council; Department of Health and Social Care,2,2556.79,2556.79,2020-12,2025-12
+Capital Resolve,debt_enforcement,North Yorkshire Council,1,1500.87,1500.87,2023-09,2023-09
+Illion Digital Tech (debt software),debt_enforcement,Former council of North Yorkshire,4,1348.61,1348.61,2022-04,2023-01
+CCS Enforcement Services,debt_enforcement,Royal Borough of Greenwich,2,1052.51,1052.51,2012-08,2013-05

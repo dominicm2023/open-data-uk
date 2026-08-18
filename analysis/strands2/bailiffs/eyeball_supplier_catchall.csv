@@ -1,0 +1,169 @@
+pattern,supplier_raw,publisher,txns,gbp,first,last,ets
+ENFORC_IN_NAME,LAW ENFORCEMENT INTERNATIONAL  LIMITED,Ministry of Defence,22,2739416.56,2012-03,2019-03,"General services and support,Purchase of buildings and military equipment,Spend on Inventory - General,Purchase of inventory and services,Inventory Accruals"
+ENFORC_IN_NAME,LAW ENFORCEMENT INTERNATIONAL LTD,Foreign and Commonwealth Office,11,581944.2,2014-10,2018-03,"Misc Security Payments,Assets Under Construction (Oracle PA Control Account),Programme Spend (Oracle Projects Control Account)"
+ENFORC_IN_NAME,CHILD MAINTENANCE ENFORCEMENT COMMISSION,Department for Work and Pensions,6,431306.0,2011-08,2013-07,"TREDDS APPS DEV MANDAYS,PRIME BILLABLE EXTRAS PRIME CONTRACT MANAGEMENT (PCM)"
+ENFORC_IN_NAME,IMPERIAL CIVIL ENFORCEMENT SOLUTIONS LTD,Royal Borough of Greenwich,40,344872.18,2012-03,2017-06,"Software Licences,Other Services,Services Private Contractor"
+ENFORC_IN_NAME,CARIBBEAN CUSTOMS LAW ENFORCEMENT,"Foreign, Commonwealth and Development Office (FCDO)",8,289958.99,2020-10,2021-10,
+ENFORC_IN_NAME,LAW ENFORCEMENT INTERNATIONAL LTD,"Foreign, Commonwealth and Development Office (FCDO)",5,207696.0,2021-01,2022-06,
+ENFORC_IN_NAME,ENFORCEMENT SERVICES,Blaby District Council,3,189200.0,2014-01,2014-12,
+ENFORC_IN_NAME,Imperial Civil Enforcement Solutions,Plymouth City Council,15,178010.55,2015-03,2015-12,"Other Agency & Contracted Services,Private Contractors"
+ENFORC_IN_NAME,Imperial Civil Enforcement Solutions,Rushmoor Borough Council,95,140524.18,2014-11,2026-05,"Contract Costs,Parking Contract Costs,Operational Equipment,Computer Equipment and Software,Cinergic,DVLA Agreement,Property Portfolio Review,Training Expenses,Application Software,Card Trasaction Fee"
+ENFORC_IN_NAME,Able Investigations and Enforcement Solutions Limited,Bristol City Council,36,132773.33,2020-07,2025-12,"Services - Fees and Charges,Services - Supplies and Services to service users,Services - Consultants,Services - Professional Fees,Services - Security,New Construction,Services - Court Fees,R&M - Build"
+ENFORC_IN_NAME,Court Enforcement Services Ltd,HM Revenue and Customs,1,105021.02,2021-04,2021-04,Tribunal appellant costs
+ENFORC_IN_NAME,ENFORCE TECHNOLOGY,Department for International Development,3,52856.85,2010-06,2012-06,"Computer hardware maintenance,Hardware"
+ENFORC_IN_NAME,Conduent Parking Enforcement Solutions Ltd,Bristol City Council,3,49545.47,2020-02,2020-05,"Computing - Purchase of Software,Computing - Repair and Maint"
+ENFORC_IN_NAME,US IMMIGRATION AND CUSTOMS ENFORCEMENT,Home Office,1,40765.12,2017-11,2017-11,Other Government Department
+ENFORC_IN_NAME,CHILD MAINTENANCE & ENFORCEMENT COMMISSION,Department for Work and Pensions,1,31390.0,2013-02,2013-02,TREDDS APPS DEV MANDAYS
+ENFORC_IN_NAME,TRAFFIC ENFORCEMENT CENTRE,North Yorkshire Council,24,30000.0,2023-08,2024-01,201600 Financial Services > Debt Collection & Recovery
+ENFORC_IN_NAME,IMPERIAL CIVIL ENFORCEMENT SOLUTIONS,North Yorkshire Council,6,24732.66,2025-10,2026-05,261411 Human Resources > Temporary & Agency Staff > Administration & Clerical
+ENFORC_IN_NAME,High Court Enforcement,Bristol City Council,1,20512.77,2020-07,2020-07,Ex Gratia Payments
+ENFORC_IN_NAME,Imperial Civil Enforcement Solutions Limited,Cheltenham Borough Council,1,13060.65,2020-03,2020-03,R4531-CPK001
+ENFORC_IN_NAME,BAIL ENFORCEMENT AGENCY LTD,Royal Borough of Greenwich,10,9340.0,2012-02,2013-11,
+ENFORC_IN_NAME,ENFORCEMENT SERVICES LTD,North Yorkshire Council,1,9220.0,2025-10,2025-10,"231810 Works - Construction, Repair & Maintenance > Roads > Surveys"
+ENFORC_IN_NAME,CIVIL ENFORCEMENT AGENTS LTD,North Yorkshire Council,9,8319.85,2023-07,2025-11,151000 Consultancy > Business
+ENFORC_IN_NAME,Law Enforcement consulting Ltd,Department for International Development,3,6390.0,2012-08,2012-12,Technical and Advisory Services
+ENFORC_IN_NAME,Traffic Enforcement Centre,South Gloucestershire Council,2,6000.0,2010-10,2011-06,Fees - General
+ENFORC_IN_NAME,Enforcement Bailiffs Ltd t/a Quality Bailiffs,Cheltenham Borough Council,1,5400.0,2020-10,2020-10,R4400-OPS122
+ENFORC_IN_NAME,Alliance Enforcement Security Services,Uttlesford District Council,1,3139.2,2021-03,2021-03,Env Protection Emergency Respo
+ENFORC_IN_NAME,Traffic Enforcement Centre,Cheltenham Borough Council,1,2500.0,2020-02,2020-02,R4401-CPK001
+ENFORC_IN_NAME,Enforcement Bailiffs Ltd,Rushmoor Borough Council,1,1394.72,2023-11,2023-11,General Repairs and Maintenance
+ENFORC_IN_NAME,WEST MERCIA ENFORCEMENT CENTRE,Shropshire Community Health NHS Trust,6,1276.83,2014-04,2026-06,Court Order Payment
+ENFORC_IN_NAME,CIVIL ENFORCEMENT AGENTS LTD,Former council of North Yorkshire,1,1265.1,2022-10,2022-10,151000 Consultancy > Business
+ENFORC_IN_NAME,ENFORCE-IT LTD,UK Trade and Investment,1,1250.0,2014-05,2014-05,Current Grants To Private Sector - NPISH-TAP Solo Support Scheme (Autumn Statement)
+ENFORC_IN_NAME,CCS ENFORCEMENT SERVICES LTD,Royal Borough of Greenwich,2,1052.51,2012-08,2013-05,
+BAILIFF_IN_NAME,K BAILIFF & SON LTD,Eden District Council,2,22983.98,2018-03,2018-03,
+BAILIFF_IN_NAME,Enforcement Bailiffs Ltd t/a Quality Bailiffs,Cheltenham Borough Council,1,5400.0,2020-10,2020-10,R4400-OPS122
+BAILIFF_IN_NAME,Enforcement Bailiffs Ltd,Rushmoor Borough Council,1,1394.72,2023-11,2023-11,General Repairs and Maintenance
+SUTOR,Bristow & Sutor,Bristol City Council,463,24074.75,2020-01,2026-05,Services - Fees and Charges
+SUTOR,Bristow & Sutor,South Gloucestershire Council,4,888.0,2011-01,2011-07,Other Private Contractors
+SUTOR,Bristow & Sutor,Cheltenham Borough Council,1,527.12,2020-07,2020-07,R5006-LTC001
+SUTOR,BRISTOW & SUTOR,North Yorkshire Council,29,403.84,2025-10,2026-06,201600 Financial Services > Debt Collection & Recovery
+SUTOR,BRISTOW SUTOR,Blaby District Council,1,368.62,2013-03,2013-03,
+DEBT_IN_NAME,INTEGRATED DEBT SERVICES LTD T/AS,HM Revenue and Customs,214,179574098.55,2017-01,2023-03,"Debt coll serv (DEL),Data Purchases,Contracted Services"
+DEBT_IN_NAME,INTEGRATED DEBT SERVICES LTD,HM Revenue and Customs,37,19842455.58,2015-11,2016-12,"Debt coll serv (DEL),External Database IS"
+DEBT_IN_NAME,Government of Lesotho  Multi Debt Relief Initiative,Department for International Development,1,1124435.0,2013-03,2013-03,Aid Programme - Contributions to Debt Relief
+DEBT_IN_NAME,FRP OTHER DEBTORS,Foreign and Commonwealth Office,8,464087.64,2016-10,2017-01,
+DEBT_IN_NAME,INTEGRATED DEBT SERVICES LTD,Home Office,10,432704.15,2017-04,2018-06,"Professional & Admin Services,Public Administration Services,Business Process Outsourcing"
+DEBT_IN_NAME,DWP DEBT MANAGEMENT,Department for Work and Pensions,1,184532.0,2016-12,2016-12,DWP RECHARGES TO SHARED SERVICES
+DEBT_IN_NAME,RNY OTHER DEBTORS,Foreign and Commonwealth Office,1,62669.55,2016-04,2016-04,
+DEBT_IN_NAME,TJD OTHER DEBTORS,Foreign and Commonwealth Office,2,52170.7,2010-06,2010-09,Recharge Suspense Account (Oracle PA Control Account)
+DEBT_IN_NAME,NATIONAL DEBT ASSOCIATION OF CHINA,Foreign and Commonwealth Office,1,44333.98,2016-12,2016-12,
+DEBT_IN_NAME,BRISTOL DEBT ADVICE CENTRE,Ministry of Justice,1,27721.0,2013-01,2013-01,
+DEBT_IN_NAME,Debt Management Office,Bristol City Council,1,19821.43,2025-04,2025-04,Loan interest
+DEBT_IN_NAME,Public Debt Management Practice,Department for International Development,1,8635.63,2015-05,2015-05,Project delivery costs â€“ supplier services
+DEBT_IN_NAME,DWP Debt Management,Uttlesford District Council,7,6234.14,2023-04,2026-01,"Housing rent refunds movement,Housing rent refund movement,Housing rent refund,Hsg Rent Refunds Movements,Housing Rent"
+DEBT_IN_NAME,Solarplicity Debt Funding Ltd.,Uttlesford District Council,1,4670.75,2023-08,2023-08,Surrender of lease for solar panels
+DEBT_IN_NAME,J B DEBT RECOVERY,HM Treasury,2,3758.4,2012-09,2012-09,
+DEBT_IN_NAME,DWP DEBT MANAGEMENT (FCM),North Yorkshire Council,2,2659.03,2024-03,2026-05,201900 Financial Services > Refund
+DEBT_IN_NAME,MY PROPERTY BOX (DEBT ACCOUNT),North Yorkshire Council,1,2300.0,2025-11,2025-11,250010 Housing Management > Letting  / Estate Agents
+DEBT_IN_NAME,LSE COMMERCIAL DEBT,Foreign and Commonwealth Office,1,1500.0,2017-04,2017-04,"COLLEGES, UNIV, PRO SCHOOLS, JUNIOR COLLEGES"
+DEBT_IN_NAME,THE DEBT RECOVERY BUREAU LTD LIABILITY PARTNERSHIP,UK Trade and Investment,1,1096.35,2011-09,2011-09,Scheme Management Charges - Passport Business Development Credits
+DEBT_IN_NAME,Debt Management Compensation R U,Rushmoor Borough Council,1,725.0,2021-01,2021-01,General Repairs and Maintenance
+DEBT_IN_NAME,"DEBT, MARRIAGE, PERSONAL-COUNSELING SERVICE","Foreign, Commonwealth and Development Office (FCDO)",1,698.57,2020-09,2020-09,
+DEBT_IN_NAME,DWP DEBT MANAGEMENT,North Yorkshire Council,1,636.16,2023-11,2023-11,200000 Financial Services
+DEBT_IN_NAME,HMCTS HISTORIC DEBT TEAM,Royal Borough of Greenwich,1,610.0,2017-03,2017-03,Expenditure Payments
+DEBT_IN_NAME,Trace Debt Recovery Uk Ltd,Rushmoor Borough Council,1,487.5,2017-05,2017-05,Training Expenses
+DEBT_IN_NAME,THE DEBT RECOVERY BUREAU LLP,UK Trade and Investment,2,185.0,2014-12,2014-12,Other Professional Services - Gateway - Export Vouchers (Autumn Statement)
+DEBT_IN_NAME,HMCTS HISTORIC DEBT TEAM,Shropshire Community Health NHS Trust,2,34.35,2018-11,2019-01,Court Order Payment
+DEBT_IN_NAME,JACOBS DEBT RECOVERY,North Yorkshire Council,10,0.0,2025-11,2026-06,201600 Financial Services > Debt Collection & Recovery
+DEBT_IN_NAME,SLC OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",2,-2181.4,2020-10,2020-10,
+DEBT_IN_NAME,BEB OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-25130.2,2021-10,2021-10,
+DEBT_IN_NAME,INN OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-25397.08,2022-01,2022-01,
+DEBT_IN_NAME,TAD OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-25555.9,2022-03,2022-03,
+DEBT_IN_NAME,NIA OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-25777.41,2021-03,2021-03,
+DEBT_IN_NAME,EAC OTHER DEBTORS,Foreign and Commonwealth Office,1,-25831.1,2016-10,2016-10,
+DEBT_IN_NAME,SWS OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-27138.65,2021-11,2021-11,
+DEBT_IN_NAME,ROB OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-27544.71,2021-12,2021-12,
+DEBT_IN_NAME,STB OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-28587.99,2020-12,2020-12,
+DEBT_IN_NAME,UAD OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-29052.22,2022-03,2022-03,
+DEBT_IN_NAME,QAD OTHER DEBTORS,Foreign and Commonwealth Office,1,-29695.08,2018-01,2018-01,
+DEBT_IN_NAME,SKS OTHER DEBTORS,Foreign and Commonwealth Office,1,-30320.01,2016-12,2016-12,
+DEBT_IN_NAME,PAS OTHER DEBTORS,Foreign and Commonwealth Office,1,-31479.91,2018-02,2018-02,
+DEBT_IN_NAME,TAD OTHER DEBTORS,Foreign and Commonwealth Office,1,-31993.85,2016-06,2016-06,
+DEBT_IN_NAME,TRP OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-33690.01,2020-09,2020-09,
+DEBT_IN_NAME,RSM OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-33695.03,2021-11,2021-11,
+DEBT_IN_NAME,THB OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-33973.82,2021-02,2021-02,
+DEBT_IN_NAME,SIN OTHER DEBTORS,Foreign and Commonwealth Office,1,-35466.19,2017-08,2017-08,
+DEBT_IN_NAME,PRL OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-36543.03,2020-10,2020-10,
+DEBT_IN_NAME,VNH OTHER DEBTORS,Foreign and Commonwealth Office,1,-36662.33,2016-10,2016-10,
+DEBT_IN_NAME,NEH OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-39073.92,2021-07,2021-07,
+DEBT_IN_NAME,GNE OTHER DEBTORS,Foreign and Commonwealth Office,1,-40444.13,2017-08,2017-08,
+DEBT_IN_NAME,BDH Other Debtors,"Foreign, Commonwealth and Development Office (FCDO)",4,-40563.34,2021-03,2021-09,
+DEBT_IN_NAME,BTG OTHER DEBTORS,Foreign and Commonwealth Office,1,-45821.0,2016-08,2016-08,Rent and Service Charges
+DEBT_IN_NAME,BAD OTHER DEBTORS,Foreign and Commonwealth Office,1,-48323.22,2016-04,2016-04,
+DEBT_IN_NAME,IND OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",2,-51662.57,2020-10,2021-12,
+DEBT_IN_NAME,BTG OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-52500.0,2021-01,2021-01,
+DEBT_IN_NAME,THB OTHER DEBTORS,Foreign and Commonwealth Office,3,-52557.65,2017-10,2018-07,
+DEBT_IN_NAME,SIN OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",2,-56122.15,2022-03,2022-03,
+DEBT_IN_NAME,USW OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-57410.66,2021-09,2021-09,
+DEBT_IN_NAME,SLC OTHER DEBTORS,Foreign and Commonwealth Office,2,-60751.32,2016-08,2017-03,Programme Spend (Oracle Projects Control Account)
+DEBT_IN_NAME,HKN OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",2,-62497.95,2021-01,2021-08,
+DEBT_IN_NAME,KEN OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-63170.04,2021-03,2021-03,
+DEBT_IN_NAME,AUC OTHER DEBTORS,Foreign and Commonwealth Office,1,-67095.75,2016-05,2016-05,
+DEBT_IN_NAME,MOR OTHER DEBTORS,Foreign and Commonwealth Office,1,-69662.89,2016-04,2016-04,
+DEBT_IN_NAME,ZAK OTHER DEBTORS,Foreign and Commonwealth Office,2,-73259.92,2017-04,2017-05,
+DEBT_IN_NAME,NIA OTHER DEBTORS,Foreign and Commonwealth Office,2,-79429.67,2016-04,2017-12,
+DEBT_IN_NAME,MEX OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-83303.52,2022-02,2022-02,
+DEBT_IN_NAME,SNF OTHER DEBTORS,Foreign and Commonwealth Office,2,-84436.73,2017-03,2018-07,
+DEBT_IN_NAME,UAA OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",3,-89100.73,2021-03,2021-07,
+DEBT_IN_NAME,JAT OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",3,-90122.82,2020-12,2021-04,
+DEBT_IN_NAME,IRT OTHER DEBTORS,Foreign and Commonwealth Office,1,-98423.33,2017-11,2017-11,
+DEBT_IN_NAME,NZW OTHER DEBTORS,Foreign and Commonwealth Office,2,-108699.04,2016-07,2016-10,Rates Taxes Residential
+DEBT_IN_NAME,PAK OTHER DEBTORS,Foreign and Commonwealth Office,3,-111938.35,2017-04,2018-02,
+DEBT_IN_NAME,ZAK OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",7,-115427.48,2021-03,2021-03,
+DEBT_IN_NAME,NZW OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",2,-116294.12,2020-10,2021-08,
+DEBT_IN_NAME,BEB OTHER DEBTORS,Foreign and Commonwealth Office,2,-134138.87,2016-07,2018-03,Multiple Accounts
+DEBT_IN_NAME,CHP OTHER DEBTORS,Foreign and Commonwealth Office,3,-141612.88,2017-06,2018-02,
+DEBT_IN_NAME,BLS OTHER DEBTORS,Foreign and Commonwealth Office,4,-151710.76,2016-07,2017-06,Overseas Reclaimable Taxes
+DEBT_IN_NAME,IND OTHER DEBTORS,Foreign and Commonwealth Office,6,-189178.28,2017-01,2018-07,
+DEBT_IN_NAME,PHM OTHER DEBTORS,Foreign and Commonwealth Office,1,-190725.19,2016-11,2016-11,
+DEBT_IN_NAME,COB OTHER DEBTORS,Foreign and Commonwealth Office,5,-191296.19,2016-05,2018-01,
+DEBT_IN_NAME,ZIH OTHER DEBTORS,Foreign and Commonwealth Office,3,-198845.23,2017-01,2017-08,
+DEBT_IN_NAME,ETA OTHER DEBTORS,Foreign and Commonwealth Office,3,-203433.31,2016-06,2017-01,Overseas Reclaimable Taxes
+DEBT_IN_NAME,FRP OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-214981.83,2021-10,2021-10,
+DEBT_IN_NAME,DEC OTHER DEBTORS,Foreign and Commonwealth Office,2,-244368.02,2016-05,2016-05,
+DEBT_IN_NAME,ETA OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",4,-245920.93,2021-03,2022-05,
+DEBT_IN_NAME,CHS OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-269872.15,2022-03,2022-03,
+DEBT_IN_NAME,SPM OTHER DEBTORS,Foreign and Commonwealth Office,2,-280090.16,2016-12,2018-02,
+DEBT_IN_NAME,ZML OTHER DEBTORS,Foreign and Commonwealth Office,1,-306263.56,2018-07,2018-07,
+DEBT_IN_NAME,BUR OTHER DEBTORS,Foreign and Commonwealth Office,10,-365242.79,2016-05,2018-03,Recharge Suspense Account (Oracle PA Control Account)
+DEBT_IN_NAME,BRB OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-389271.57,2020-10,2020-10,
+DEBT_IN_NAME,ESS OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-484568.36,2022-02,2022-02,
+DEBT_IN_NAME,ARB OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",1,-484570.87,2020-09,2020-09,
+DEBT_IN_NAME,SAP OTHER DEBTORS,Foreign and Commonwealth Office,3,-549429.33,2017-06,2018-03,
+DEBT_IN_NAME,CHP OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",4,-605475.4,2021-10,2021-10,
+DEBT_IN_NAME,MUP OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",3,-614267.25,2022-02,2022-03,
+DEBT_IN_NAME,PEL OTHER DEBTORS,"Foreign, Commonwealth and Development Office (FCDO)",2,-774030.68,2020-09,2020-11,
+DEBT_IN_NAME,RSM OTHER DEBTORS,Foreign and Commonwealth Office,7,-1432009.0,2016-11,2016-12,
+DEBT_IN_NAME,CAO OTHER DEBTORS,Foreign and Commonwealth Office,8,-9318412.66,2016-12,2017-07,
+DEBT_IN_NAME,IDJ OTHER DEBTORS,Foreign and Commonwealth Office,3,-12384962.96,2017-12,2018-01,
+COLLECTIONS_IN_NAME,Bmi Healthcare Collections,The Pennine Acute Hospitals NHS Trust,26,5480200.23,2017-11,2019-02,Purch Healthcare From Non Nhs
+COLLECTIONS_IN_NAME,BMI HEALTHCARE COLLECTIONS,East Sussex Healthcare NHS Trust,20,728736.48,2015-04,2017-09,"BMI GORING - SERVICES RECEIVED,ESPERANCE - SERVICES RECEIVED,M&S GENERAL SUPPLIES-OTHER"
+COLLECTIONS_IN_NAME,BMI HEALTHCARE COLLECTIONS,Milton Keynes Hospital NHS Foundation Trust,18,463015.13,2016-10,2018-07,Commercial Sector
+COLLECTIONS_IN_NAME,JISC COLLECTIONS,Department of Health and Social Care,2,213183.46,2016-05,2016-08,Service charge
+COLLECTIONS_IN_NAME,3VB COLLECTIONS ACCOUNT,HM Revenue and Customs,1,26550.0,2014-05,2014-05,Counsel fees - Litig
+COLLECTIONS_IN_NAME,National Art Collections Fund,Natural History Museum,1,15000.0,2012-11,2012-11,SS Consult/Prof Fees
+COLLECTIONS_IN_NAME,JTR COLLECTIONS,Former council of North Yorkshire,20,12365.88,2022-05,2023-03,"280000 Legal Services,201600 Financial Services > Debt Collection & Recovery"
+COLLECTIONS_IN_NAME,JISC Collections & Janet Ltd,Natural History Museum,8,9280.32,2012-07,2014-02,P/L - Serials
+COLLECTIONS_IN_NAME,Collections Management Network,"Department for Digital, Culture, Media and Sport",2,5000.0,2011-03,2011-07,SS Consult/Prof Fees
+COLLECTIONS_IN_NAME,JISC Collections,Natural History Museum,4,3779.01,2011-10,2012-01,P/L - Serials
+COLLECTIONS_IN_NAME,JTR COLLECTIONS,North Yorkshire Council,7,3617.21,2023-07,2023-10,280000 Legal Services
+COLLECTIONS_IN_NAME,DWP Collections Norcross,"Department for Environment, Food and Rural Affairs",2,3223.64,2011-07,2011-07,"Government Gateway charges May 11,Government Gateway charges April 11"
+COLLECTIONS_IN_NAME,UNIQUE COLLECTIONS LTD,UK Trade and Investment,1,3000.0,2014-07,2014-07,Other Professional Services - Export Vouchers (Autumn Statement)
+COLLECTIONS_IN_NAME,DWP COLLECTIONS,HM Treasury,3,2784.61,2012-01,2012-12,
+COLLECTIONS_IN_NAME,DOVE TALE COLLECTIONS,"Foreign, Commonwealth and Development Office (FCDO)",2,2124.02,2023-05,2023-09,5199
+COLLECTIONS_IN_NAME,EVITAVONNI COLLECTIONS LTD,UK Trade and Investment,1,1890.5,2014-03,2014-03,Other Professional Services-Export Vouchers (Autumn Statement)
+COLLECTIONS_IN_NAME,EB *DCDC16-COLLECTIONS,The National Archives,3,1712.64,2016-08,2016-08,
+COLLECTIONS_IN_NAME,DWP Collections,"Department for Environment, Food and Rural Affairs",1,1306.4,2011-05,2011-05,Government gateway
+COLLECTIONS_IN_NAME,Collections Management Network,Natural History Museum,1,1200.0,2011-09,2011-09,SS Consult/Prof Fees
+COLLECTIONS_IN_NAME,EXCLUSIVE COLLECTIONS LTD,UK Trade and Investment,2,1100.0,2010-06,2011-06,"Travel and Subsistence O'seas,Travel and Subsistence O'seas - Market Visit Scheme"
+COLLECTIONS_IN_NAME,DAVID PIRNIA T/A PIRNIA COLLECTIONS,UK Trade and Investment,1,1000.0,2010-09,2010-09,Basic Grants
+COLLECTIONS_IN_NAME,Gilbert White & The Oates Collections t/a Gilbert White’s House and Gardens Museum,Bristol City Council,1,995.0,2026-02,2026-02,Grants
+COLLECTIONS_IN_NAME,ASTBURY COLLECTIONS T/A EVERCREATURES,UK Trade and Investment,1,857.97,2014-05,2014-05,Other Professional Services-Export Vouchers (Autumn Statement)
+COLLECTIONS_IN_NAME,COLLECTIONS TRUST,"Department for Digital, Culture, Media and Sport",3,670.63,2011-03,2011-07,"P/L - Conservation,MF - Travel Costs"
+COLLECTIONS_IN_NAME,HMCTS MERSEYSIDE COLLECTIONS,Shropshire Community Health NHS Trust,3,656.44,2017-02,2017-04,Court Order Payment
+COLLECTIONS_IN_NAME,COLLECTIONS TRUST,Natural History Museum,2,390.0,2013-03,2013-03,"B/S - Prepayments Drs (ManAccts),B/S - Current Assets -  InterCompany"
+COLLECTIONS_IN_NAME,Legal Recoveries and Collections Ltd,UK Shared Business Services,11,366.54,2022-04,2023-12,Legal & Professional Services
+COLLECTIONS_IN_NAME,PAYPAL  COLLECTIONS,Natural History Museum,1,249.9,2013-03,2013-03,Specimen Conservation
+COLLECTIONS_IN_NAME,Collections Trust,"Department for Digital, Culture, Media and Sport",1,169.17,2011-08,2011-08,MF - Travel Costs
+COLLECTIONS_IN_NAME,COLLECTIONS TRUST,Eden District Council,1,84.23,2017-11,2017-11,

@@ -1,0 +1,83 @@
+
+=== MoD Colchester Oyster Fishery ===
+Ministry of Defence | COLCHESTER OYSTER FISHERY  LIMITED | 165000.0 | 2010-04-09 | Fees for professional services | Defence Estates | c77d19f16d583eaa1e70ea47d70b15aa474950c0.bin
+Ministry of Defence | COLCHESTER OYSTER FISHERY  LIMITED | 53000.0 | 2013-06-26 | Rent and rates | Defence Infrastructure Organisation | cd609e500edb4d449da67027a2855f9ffe76b2a8.bin
+Ministry of Defence | COLCHESTER OYSTER FISHERY  LIMITED | 26500.0 | 2014-01-16 | Rent and rates | Defence Infrastructure Organisation | ed845bd7fd815891c9a3f18a18d4b47d60e170e8.bin
+Ministry of Defence | COLCHESTER OYSTER FISHERY  LIMITED | 26500.0 | 2014-06-25 | Rent and rates | DEFENCE INFRASTRUCTURE ORGANISATION | a2cc960bba5bd9d3d42639c50db3965ba5491ca1.bin
+Ministry of Defence | COLCHESTER OYSTER FISHERY  LIMITED | 26500.0 | 2014-12-17 | Rent and rates | DEFENCE INFRASTRUCTURE ORGANISATION | 3fd97672c24f8add6872c38f324a78c0c8dec744.bin
+Ministry of Defence | COLCHESTER OYSTER FISHERY  LIMITED | 26500.0 | 2015-06-25 | Rent and rates | DEFENCE INFRASTRUCTURE ORGANISATION | a54e7ad997a43a7283dd69d4befb8865fc38a47d.bin
+Ministry of Defence | COLCHESTER OYSTER FISHERY  LIMITED | 26500.0 | 2015-12-16 | Rent and rates | DEFENCE INFRASTRUCTURE ORGANISATION | d58dc82d711a4df8988096760657076f13884294.bin
+Ministry of Defence | COLCHESTER OYSTER FISHERY  LIMITED | 26500.0 | 2015-12-16 | Rent and rates | DEFENCE INFRASTRUCTURE ORGANISATION | 413cfbf13f1de7a45763ff4ee172e16881885726.bin
+Ministry of Defence | COLCHESTER OYSTER FISHERY  LIMITED | 26500.0 | 2016-06-24 | Rent and rates | DEFENCE INFRASTRUCTURE ORGANISATION | 19bbb3faad2e2d8c6260702da50fa61e48c18af3.bin
+
+=== Darts World NYC ===
+North Yorkshire Council | DARTS WORLD LTD | 28814.05 | 2025-12-24 | 291300 Arts & Leisure Services > Performing Arts | District & Borough Services - Revenue | 1759cfb1830f033e71d54fb2d3596523cfd9a011.bin
+
+=== McCallum Bagpipes ===
+Foreign, Commonwealth and Development Office (FCDO) | MCCALLUM BAGPIPES | 2167.5 | 2023-03-20 | 5733 | None | 1c670181183a3baa542c6750b632c921cc8728d5.bin
+Foreign, Commonwealth and Development Office (FCDO) | MCCALLUM BAGPIPES | 2714.0 | 2024-02-07 | 5733 | None | 9abbdaef0a1b4bfa304618de24d6978f81958f08.bin
+
+=== Superslam Wrestling ===
+Rushmoor Borough Council | All Star Superslam Wrestling | 2356.52 | 2017-11-16 | Payment to Artistes | Community | 3942bcc6cb0d1cfea9eea5c74e0b0cb6bc550ba8.bin
+Rushmoor Borough Council | All Star Superslam Wrestling | 2096.21 | 2018-03-01 | Payment to Artistes | Community | 3f4d28c6370a1cdf8a302edd7cc90686cea8c108.bin
+Rushmoor Borough Council | All Star Superslam Wrestling | 1859.3 | 2018-11-15 | Payment to Artistes | Community | 4657e1902e54fa6928d0cba87cc43a8b6b7012f8.bin
+Rushmoor Borough Council | All Star Superslam Wrestling | 1445.63 | 2019-03-14 | Payment to Artistes | Community | 46a28f9ab37b12890b147d8774e61da9502cfecf.bin
+Rushmoor Borough Council | All Star Superslam Wrestling | 1858.82 | 2020-02-27 | Payment to Artistes | Community | aacdff14940548beeb18bf3c937569d1d5ff73e4.bin
+Rushmoor Borough Council | All Star Superslam Wrestling | 2037.89 | 2021-11-25 | Payment to Artistes | Community | 6b7b6653eb05b68d5913ccae1328641abdabd253.bin
+Rushmoor Borough Council | All Star Superslam Wrestling | 2483.85 | 2022-03-03 | Payment to Artistes | Community | 475329a66c0748e23d1d20d060c5c2d4cb8cd6e1.bin
+Rushmoor Borough Council | All Star Superslam Wrestling | 1813.27 | 2022-11-17 | Payment to Artistes | Community | fbbbd09d63e7a28d2da45d50a48963a8cc127d1d.bin
+Rushmoor Borough Council | All Star Superslam Wrestling | 2690.59 | 2023-03-23 | Payment to Artistes | Community | 35b36f9cb76ecc496f71f56ac701adb67eaf7a94.bin
+Rushmoor Borough Council | All Star Superslam Wrestling | 2185.2 | 2024-03-07 | Payment to Artistes | Community | c5806e5126bcf7ffea3b197e7b7234e1cc22f889.bin
+Rushmoor Borough Council | All Star Superslam Wrestling | 1821.57 | 2024-12-05 | Payment to Artistes | Community | d845d67056c90a8971d72ac7f5415b5217cc4c8a.bin
+
+=== Hawes Quoits Club ===
+North Yorkshire Council | HAWES QUOITS CLUB | 995.0 | 2023-12-12 | 339999 Sports & Playground Equipment & Maintenance > Not Elsewhere Classified | Resources Directorate and Central Services - Revenue | 6d633286bbaeec102f96342799a8b84d3220c0d1.bin
+North Yorkshire Council | HAWES QUOITS CLUB | 500.0 | 2024-02-08 | 339999 Sports & Playground Equipment & Maintenance > Not Elsewhere Classified | Resources Directorate and Central Services - Revenue | 11b6c77b50cb705de24bf98970e11851e7fd1d8c.bin
+
+=== Free Ice Cream ===
+Bristol City Council | Free Ice Cream Limited | 1000.0 | 2024-04-17 | Services - Fees and Charges | None | e0a0edd72f36ad102fb45b5b8b6290fb3a745eac.bin
+
+=== Silent Disco King ===
+Bristol City Council | Headphone Revolution Ltd t/a Silent Disco King | 11597.41 | 2024-06-13 | Equipment - Purchase | None | ae1b97bc1abeba12d85e56b79e30774bd876b0eb.bin
+
+=== Portsmouth Shantymen ===
+Royal Borough of Greenwich | THE PORTSMOUTH SHANTYMEN | 600.0 | 2017-05-17 | Green Flag Parks Other Items | Chief Executives | 8d7e9332fac31951ab674b9d2429ef3d21c84cd6.bin
+
+=== Cumberland wrestling ===
+Eden District Council | CUMBERLAND AND WESTMORLAND WRESTLING ASSOCIATION LTD | 750.0 | 2017-12-01 | Community Development & Engagement | None | 84824ecca599a7a3521e2913ee477c14636b8c4e.bin
+
+=== Dinosaur Adventure Live ===
+Rushmoor Borough Council | Dinosaur Adventure Live Ltd | 7898.75 | 2023-09-14 | Payment to Artistes | Community | d7c010d13f26d457e055f8ec7755ad7e33409210.bin
+Rushmoor Borough Council | Dinosaur Adventure Live Ltd | 3948.74 | 2024-08-22 | Payment to Artistes | Community | 6d3265a0ab1b7052fa66e017c0ed99aba5f4bdbc.bin
+Rushmoor Borough Council | Dinosaur Adventure Live Ltd | 1913.83 | 2025-06-19 | Payment to Artistes | Community | 139f502841b16d0102c5aeb866f74a2be398e292.bin
+
+=== Hungry Yeti ===
+The National Archives | HUNGRY YETI | 10.0 | 2013-09-19 | None | None | 7977e94a419ec1f10fe1850008aad6805c006e5c.bin
+
+=== Mistletoe ===
+Foreign and Commonwealth Office | MISTLETOE MEADOWS TREE | 1434.87 | 2016-12-14 | LAWN AND GARDEN SUPPLY STORES | None | cc4bffb5625bbd0a0ba69d3943ef89dd625e3c0c.bin
+Foreign and Commonwealth Office | MISTLETOE MEADOWS TREE | 1223.1 | 2018-02-01 | LAWN AND GARDEN SUPPLY STORES | None | af15eac721aa6628bd9b40ba7f137d14ed3c2a82.bin
+
+=== Curious Hedgehogs sample ===
+Bristol City Council | Curious Hedgehogs | 37181.78 | 2022-06-07 | TPP - Grants | None | e68e728655744c4da56ba88b040bada88f491904.bin
+Bristol City Council | Curious Hedgehogs | 33584.1 | 2022-08-22 | TPP - Grants | None | 98f0f8d9457c542cf533d81ddcf8e3a2ef1ee3b6.bin
+Bristol City Council | Curious Hedgehogs | 3925.91 | 2022-09-01 | TPP - Grants | None | ca67893c93fd17f4ce10f8395997bf5a3e2b62c2.bin
+Bristol City Council | Curious Hedgehogs | 22030.42 | 2022-10-20 | TPP - Grants | None | e7816ec7a29a65f472f6e91cfce2226c862ef77d.bin
+
+=== Grazing Goat DSIT ===
+Department for Science, Innovation and Technology | The Grazing Goat, London | 506.22 | 2025-04-23 | None | None | 1958252791c5944ef81643da2948faa8931ccab5.bin
+
+=== Petting farm ===
+Rushmoor Borough Council | 2Nd Chance Petting Farm | 325.0 | 2022-11-24 | Aldershot Promotions | Community | fbbbd09d63e7a28d2da45d50a48963a8cc127d1d.bin
+Rushmoor Borough Council | 2Nd Chance Petting Farm | 325.0 | 2022-12-01 | Aldershot Promotions | Community | 3f53e637e1281722e5899ce405739589f2a20de7.bin
+
+=== files table columns ===
+(0, 'url', 'TEXT', 0, None, 1)
+(1, 'publisher', 'TEXT', 0, None, 0)
+(2, 'parsed_rows', 'INTEGER', 0, None, 0)
+(3, 'skipped_rows', 'INTEGER', 0, None, 0)
+(4, 'status', 'TEXT', 0, None, 0)
+(5, 'note', 'TEXT', 0, None, 0)
+
+=== file URLs for key source_files ===
+cols: ['url', 'publisher', 'parsed_rows', 'skipped_rows', 'status', 'note']

@@ -1,0 +1,126 @@
+firm,tier,flag,payer,supplier_raw,year,txns,gross_outflow_gbp,gross_inflow_gbp,net_gbp
+Marston,debt_enforcement,,Ministry of Justice,MARSTON GROUP,,7,499573.1,0.0,499573.1
+Marston,debt_enforcement,,Ministry of Justice,MARSTON GROUP,2010,12,809889.02,0.0,809889.02
+Marston,debt_enforcement,,Ministry of Justice,MARSTON GROUP,2011,24,1901748.23,0.0,1901748.23
+Marston,debt_enforcement,,Ministry of Justice,MARSTON GROUP,2012,2,164066.33,0.0,164066.33
+Marston,debt_enforcement,,Ministry of Justice,MARSTON GROUP,2013,2,239169.24,-239169.24,0.0
+Marston,debt_enforcement,,Department for Work and Pensions,MARSTON GROUP LTD,2012,1,22000.0,0.0,22000.0
+Marston,debt_enforcement,,Department for Work and Pensions,MARSTON GROUP LTD,2013,1,27395.0,0.0,27395.0
+Marston,debt_enforcement,,Department for Work and Pensions,MARSTON GROUP LTD,2014,1,21093.0,0.0,21093.0
+Marston,debt_enforcement,,Department for Work and Pensions,MARSTON GROUP LTD,2015,3,30396.0,0.0,30396.0
+Marston,debt_enforcement,,Department for Work and Pensions,MARSTON GROUP LTD,2016,2,54600.0,0.0,54600.0
+Marston,debt_enforcement,,Royal Borough of Greenwich,MARSTON GROUP LIMITED,2014,12,34008.14,-17088.44,16919.7
+Marston,debt_enforcement,,Royal Borough of Greenwich,MARSTON GROUP LIMITED,2015,24,125129.93,-104274.94,20854.99
+Marston,debt_enforcement,,Royal Borough of Greenwich,MARSTON GROUP LIMITED,2016,28,152638.4,-125618.23,27020.17
+Marston,debt_enforcement,,Royal Borough of Greenwich,MARSTON GROUP LIMITED,2017,13,111638.79,-92252.31,19386.48
+Marston,debt_enforcement,,Bristol City Council,Marston (Holdings) Limited,2020,2,2525.34,-2525.34,0.0
+Marston,debt_enforcement,,Bristol City Council,Marston (Holdings) Limited,2022,34,195873.97,-195873.97,0.0
+Marston,debt_enforcement,,Bristol City Council,Marston (Holdings) Limited,2023,16,68906.79,-68906.79,0.0
+Marston,debt_enforcement,,Bristol City Council,Marston (Holdings) Limited,2024,118,1117627.58,-1114559.82,3067.76
+Marston,debt_enforcement,,Bristol City Council,Marston (Holdings) Limited,2025,121,409922.23,-368627.63,41294.6
+Marston,debt_enforcement,,Bristol City Council,Marston (Holdings) Limited,2026,66,182250.41,-182250.41,0.0
+Marston,debt_enforcement,,Bristol City Council,Marston Group Limited,2020,16,670030.92,-660073.37,9957.55
+Marston,debt_enforcement,,Bristol City Council,Marston Group Limited,2022,6,96361.29,-96361.29,0.0
+Marston,debt_enforcement,,Bristol City Council,Marston Group Limited,2023,22,817637.02,-817637.02,0.0
+Marston,debt_enforcement,,Bristol City Council,Marston Group Limited,2024,18,3844655.98,-3844655.98,0.0
+Marston,debt_enforcement,,Bristol City Council,Marston Group Limited,2026,4,267607.47,-267607.47,0.0
+Marston,debt_enforcement,refund_row,Rushmoor Borough Council,Marston Group Ltd,2016,1,582.0,0.0,582.0
+Marston,debt_enforcement,,North Yorkshire Council,MARSTON GROUP LTD,2025,2,27991.75,-27991.75,0.0
+Marston,debt_enforcement,,North Yorkshire Council,MARSTON GROUP LTD,2026,8,93450.12,-93450.12,0.0
+Marston,debt_enforcement,,"Department for Environment, Food and Rural Affairs",MARSTON GROUP LTD,2012,1,582.3,0.0,582.3
+Bristow & Sutor,debt_enforcement,,Bristol City Council,Bristow & Sutor,2020,46,101319.73,-97560.64,3759.09
+Bristow & Sutor,debt_enforcement,,Bristol City Council,Bristow & Sutor,2022,38,54300.49,-53844.62,455.87
+Bristow & Sutor,debt_enforcement,,Bristol City Council,Bristow & Sutor,2023,73,128455.39,-126299.42,2155.97
+Bristow & Sutor,debt_enforcement,,Bristol City Council,Bristow & Sutor,2024,120,436474.52,-429803.71,6670.81
+Bristow & Sutor,debt_enforcement,,Bristol City Council,Bristow & Sutor,2025,139,513065.82,-505986.87,7078.95
+Bristow & Sutor,debt_enforcement,,Bristol City Council,Bristow & Sutor,2026,47,189388.05,-185433.99,3954.06
+Bristow & Sutor,debt_enforcement,,South Gloucestershire Council,Bristow & Sutor,2011,4,888.0,0.0,888.0
+Bristow & Sutor,debt_enforcement,,Cheltenham Borough Council,Bristow & Sutor,2020,1,527.12,0.0,527.12
+Bristow & Sutor,debt_enforcement,,North Yorkshire Council,BRISTOW & SUTOR,2025,6,9942.36,-9942.36,0.0
+Bristow & Sutor,debt_enforcement,,North Yorkshire Council,BRISTOW & SUTOR,2026,23,34419.83,-34015.99,403.84
+Bristow & Sutor,debt_enforcement,,Blaby District Council,BRISTOW SUTOR,2013,1,368.62,0.0,368.62
+Jacobs (enforcement),debt_enforcement,,North Yorkshire Council,JACOBS DEBT RECOVERY,2025,2,2730.0,-2730.0,0.0
+Jacobs (enforcement),debt_enforcement,,North Yorkshire Council,JACOBS DEBT RECOVERY,2026,8,16328.59,-16328.59,0.0
+Equita,debt_enforcement,,HM Revenue and Customs,EQUITA LTD,2013,1,25072.54,0.0,25072.54
+Equita,debt_enforcement,,HM Revenue and Customs,EQUITA LTD,2014,14,606388.44,0.0,606388.44
+Equita,debt_enforcement,,HM Revenue and Customs,EQUITA LTD,2015,12,656376.13,0.0,656376.13
+Equita,debt_enforcement,,HM Revenue and Customs,EQUITA LTD,2016,1,39245.36,0.0,39245.36
+Equita,debt_enforcement,,Royal Borough of Greenwich,EQUITA LTD,2014,8,5062.94,0.0,5062.94
+Equita,debt_enforcement,,Royal Borough of Greenwich,EQUITA LTD,2015,26,82228.76,-68524.13,13704.63
+Equita,debt_enforcement,,Royal Borough of Greenwich,EQUITA LTD,2016,16,42127.87,-35106.64,7021.23
+Equita,debt_enforcement,,North Yorkshire Council,EQUITA LIMITED,2024,2,3370.0,-3370.0,0.0
+Equita,debt_enforcement,,North Yorkshire Council,EQUITA LIMITED,2025,4,15622.93,-15622.93,0.0
+Equita,debt_enforcement,,North Yorkshire Council,EQUITA LIMITED,2026,6,24205.38,-24205.38,0.0
+Rossendales,debt_enforcement,,HM Revenue and Customs,ROSSENDALES LTD,2012,5,460218.7,0.0,460218.7
+Rossendales,debt_enforcement,,HM Revenue and Customs,ROSSENDALES LTD,2013,13,975114.67,0.0,975114.67
+Rossendales,debt_enforcement,,HM Revenue and Customs,ROSSENDALES LTD,2014,12,539098.43,0.0,539098.43
+Rossendales,debt_enforcement,,HM Revenue and Customs,ROSSENDALES LTD,2015,17,1032422.14,0.0,1032422.14
+Rossendales,debt_enforcement,,HM Revenue and Customs,ROSSENDALES LTD,2016,2,147392.01,0.0,147392.01
+Rossendales,debt_enforcement,,HM Revenue and Customs,Rossendales Limited,2012,4,246109.94,0.0,246109.94
+Rossendales,debt_enforcement,,HM Revenue and Customs,Rossendales Ltd,2014,1,25131.54,0.0,25131.54
+Rossendales,debt_enforcement,,Ministry of Justice,ROSSENDALES LTD,2013,12,1913240.98,0.0,1913240.98
+Rossendales,debt_enforcement,,Royal Borough of Greenwich,ROSSENDALES LTD,2012,1,3774.0,0.0,3774.0
+Rossendales,debt_enforcement,,Royal Borough of Greenwich,ROSSENDALES LTD,2013,2,2340.0,0.0,2340.0
+Rossendales,debt_enforcement,,Blaby District Council,ROSSENDALES,2016,1,319.42,0.0,319.42
+Rossendales,debt_enforcement,,Blaby District Council,ROSSENDALES,2017,2,731.82,0.0,731.82
+Rossendales,debt_enforcement,,Blaby District Council,ROSSENDALES,2018,3,3407.35,0.0,3407.35
+Rossendales,debt_enforcement,,Bristol City Council,Rossendales Ltd,2020,34,97718.47,-93714.23,4004.24
+CDER Group,debt_enforcement,,Bristol City Council,CDER Group Limited,2025,1,1939.79,0.0,1939.79
+CDER Group,debt_enforcement,,Department of Health and Social Care,CDER GROUP LIMITED.,2020,1,617.0,0.0,617.0
+Whyte & Co,debt_enforcement,,Royal Borough of Greenwich,WHYTE & CO,2012,43,33056.59,0.0,33056.59
+Whyte & Co,debt_enforcement,,Royal Borough of Greenwich,WHYTE & CO,2013,47,39195.33,-2827.34,36367.99
+Whyte & Co,debt_enforcement,,Royal Borough of Greenwich,WHYTE & CO,2014,66,67494.53,-7545.14,59949.39
+Whyte & Co,debt_enforcement,,Royal Borough of Greenwich,WHYTE & CO,2015,90,204509.1,-142338.56,62170.54
+Whyte & Co,debt_enforcement,,Royal Borough of Greenwich,WHYTE & CO,2016,92,191276.32,-127056.89,64219.43
+Whyte & Co,debt_enforcement,,Royal Borough of Greenwich,WHYTE & CO,2017,48,93841.14,-55015.69,38825.45
+Rundles,debt_enforcement,,Royal Borough of Greenwich,RUNDLES & CO LTD,2014,8,8124.31,-3006.17,5118.14
+Rundles,debt_enforcement,,Royal Borough of Greenwich,RUNDLES & CO LTD,2015,40,114784.28,-95653.57,19130.71
+Rundles,debt_enforcement,,Royal Borough of Greenwich,RUNDLES & CO LTD,2016,69,259819.91,-216054.98,43764.93
+Rundles,debt_enforcement,,Royal Borough of Greenwich,RUNDLES & CO LTD,2017,24,107595.99,-89663.34,17932.65
+Rundles,debt_enforcement,,South Gloucestershire Council,Rundle & Co Limited,2010,11,9146.3,0.0,9146.3
+Rundles,debt_enforcement,,South Gloucestershire Council,Rundle & Co Limited,2011,15,2755.13,0.0,2755.13
+Rundles,debt_enforcement,,Uttlesford District Council,Rundle & Co Ltd,2019,6,3333.07,0.0,3333.07
+Rundles,debt_enforcement,,Uttlesford District Council,Rundle & Co Ltd,2020,3,2310.51,0.0,2310.51
+Rundles,debt_enforcement,,Uttlesford District Council,Rundle & Co Ltd,2021,1,75.0,0.0,75.0
+Rundles,debt_enforcement,,Uttlesford District Council,Rundle & Co Ltd,2022,1,75.0,0.0,75.0
+Rundles,debt_enforcement,,Uttlesford District Council,Rundle & Co Ltd,2023,5,1317.61,0.0,1317.61
+Rundles,debt_enforcement,,Uttlesford District Council,Rundle & Co Ltd,2024,2,544.27,0.0,544.27
+Rundles,debt_enforcement,,Uttlesford District Council,Rundle & Co Ltd,2025,2,620.0,0.0,620.0
+Rundles,debt_enforcement,payer_may_be_debtor,Transport for Greater Manchester,RUNDLE & CO LTD,2020,1,3084.9,0.0,3084.9
+JBW Group,debt_enforcement,,Royal Borough of Greenwich,JBW GROUP LIMITED,2014,7,13458.55,-12942.55,516.0
+JBW Group,debt_enforcement,,Royal Borough of Greenwich,JBW GROUP LIMITED,2015,8,16214.22,-13511.84,2702.38
+JBW Group,debt_enforcement,,Royal Borough of Greenwich,JBW GROUP LIMITED,2016,25,46972.01,-39080.83,7891.18
+JBW Group,debt_enforcement,,Royal Borough of Greenwich,JBW GROUP LIMITED,2017,16,29624.39,-24686.98,4937.41
+JBW Group,debt_enforcement,,Plymouth City Council,JBW Group,2015,1,425.0,0.0,425.0
+Ross & Roberts,debt_enforcement,,Royal Borough of Greenwich,ROSS & ROBERTS LTD,2012,22,21225.74,0.0,21225.74
+Ross & Roberts,debt_enforcement,,Royal Borough of Greenwich,ROSS & ROBERTS LTD,2013,19,16771.39,-4069.55,12701.84
+Ross & Roberts,debt_enforcement,,Royal Borough of Greenwich,ROSS & ROBERTS LTD,2014,31,37082.91,-19062.78,18020.13
+Ross & Roberts,debt_enforcement,,Royal Borough of Greenwich,ROSS & ROBERTS LTD,2015,53,147014.91,-120916.49,26098.42
+Ross & Roberts,debt_enforcement,,Royal Borough of Greenwich,ROSS & ROBERTS LTD,2016,46,133472.67,-110412.22,23060.45
+Ross & Roberts,debt_enforcement,,Royal Borough of Greenwich,ROSS & ROBERTS LTD,2017,16,48886.32,-38716.5,10169.82
+Ross & Roberts,debt_enforcement,,Bristol City Council,Ross & Roberts Ltd.,2020,15,21331.94,-19108.55,2223.39
+Ross & Roberts,debt_enforcement,,Bristol City Council,Ross & Roberts Ltd.,2023,3,847.34,-451.64,395.7
+Ross & Roberts,debt_enforcement,,Rushmoor Borough Council,Ross & Roberts Limited,2016,2,1381.4,-1071.14,310.26
+Ross & Roberts,debt_enforcement,,Rushmoor Borough Council,Ross & Roberts Limited,2017,1,1633.44,0.0,1633.44
+Quality Bailiffs (Enforcement Bailiffs Ltd),debt_enforcement,,Cheltenham Borough Council,Enforcement Bailiffs Ltd t/a Quality Bailiffs,2020,1,5400.0,0.0,5400.0
+Quality Bailiffs (Enforcement Bailiffs Ltd),debt_enforcement,expense_code_R&M,Rushmoor Borough Council,Enforcement Bailiffs Ltd,2023,1,1394.72,0.0,1394.72
+Civil Enforcement Agents Ltd,debt_enforcement,,North Yorkshire Council,CIVIL ENFORCEMENT AGENTS LTD,2023,2,2912.1,0.0,2912.1
+Civil Enforcement Agents Ltd,debt_enforcement,,North Yorkshire Council,CIVIL ENFORCEMENT AGENTS LTD,2024,6,3251.75,0.0,3251.75
+Civil Enforcement Agents Ltd,debt_enforcement,,North Yorkshire Council,CIVIL ENFORCEMENT AGENTS LTD,2025,1,2156.0,0.0,2156.0
+Civil Enforcement Agents Ltd,debt_enforcement,,Former council of North Yorkshire,CIVIL ENFORCEMENT AGENTS LTD,2022,1,1265.1,0.0,1265.1
+JTR Collections,debt_enforcement,,North Yorkshire Council,JTR COLLECTIONS,2023,7,3617.21,0.0,3617.21
+JTR Collections,debt_enforcement,,Former council of North Yorkshire,JTR COLLECTIONS,2022,14,9100.83,0.0,9100.83
+JTR Collections,debt_enforcement,,Former council of North Yorkshire,JTR COLLECTIONS,2023,6,3265.05,0.0,3265.05
+Capital Resolve,debt_enforcement,,North Yorkshire Council,CAPITAL RESOLVE LTD,2023,1,1500.87,0.0,1500.87
+CCS Enforcement Services,debt_enforcement,,Royal Borough of Greenwich,CCS ENFORCEMENT SERVICES LTD,2012,1,541.72,0.0,541.72
+CCS Enforcement Services,debt_enforcement,,Royal Borough of Greenwich,CCS ENFORCEMENT SERVICES LTD,2013,1,510.79,0.0,510.79
+Enforcement Services (name as published),debt_enforcement,generic_name_finance_area,Blaby District Council,ENFORCEMENT SERVICES,2014,3,189200.0,0.0,189200.0
+Illion Digital Tech (debt software),debt_enforcement,software_not_agent,Former council of North Yorkshire,ILLION DIGITAL TECH SOLUTIONS UK LTD,2022,3,930.48,0.0,930.48
+Illion Digital Tech (debt software),debt_enforcement,software_not_agent,Former council of North Yorkshire,ILLION DIGITAL TECH SOLUTIONS UK LTD,2023,1,418.13,0.0,418.13
+Able Investigations (eviction/property),property_enforcement,,Bristol City Council,Able Investigations and Enforcement Solutions Limited,2020,6,13691.0,0.0,13691.0
+Able Investigations (eviction/property),property_enforcement,,Bristol City Council,Able Investigations and Enforcement Solutions Limited,2022,1,4454.25,0.0,4454.25
+Able Investigations (eviction/property),property_enforcement,,Bristol City Council,Able Investigations and Enforcement Solutions Limited,2023,9,27868.33,0.0,27868.33
+Able Investigations (eviction/property),property_enforcement,,Bristol City Council,Able Investigations and Enforcement Solutions Limited,2024,13,60175.25,0.0,60175.25
+Able Investigations (eviction/property),property_enforcement,,Bristol City Council,Able Investigations and Enforcement Solutions Limited,2025,7,26584.5,0.0,26584.5
+Bail Enforcement Agency Ltd,property_enforcement,trade_unclear,Royal Borough of Greenwich,BAIL ENFORCEMENT AGENCY LTD,2012,7,5980.0,0.0,5980.0
+Bail Enforcement Agency Ltd,property_enforcement,trade_unclear,Royal Borough of Greenwich,BAIL ENFORCEMENT AGENCY LTD,2013,3,3360.0,0.0,3360.0

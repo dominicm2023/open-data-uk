@@ -1,0 +1,723 @@
+bucket,supplier_raw,n_txn,gbp_total,n_publishers,a_publisher
+sheep,011 TORCHYS SHEPHERD,1,1693.95,1,"Foreign, Commonwealth and Development Office (FCDO)"
+pest,1ENV GLOBAL PEST CONTROL SERVICES,7,6371.13,1,North Yorkshire Council
+zoo_farm,2Nd Chance Petting Farm,2,650.0,1,Rushmoor Borough Council
+pest,A & H PEST CONTROL SERVICES,10,21141.6,1,Royal Borough of Greenwich
+sausage,A TURNER & SONS SAUSAGE LTD,1,749.21,1,UK Trade and Investment
+pest,A.P.C.S ACTIVE PEST CONTROL SOLUTIONS,1,535.0,1,North Yorkshire Council
+aardvark,AARDVARK EM LIMITED,2,53594.58,1,Ministry of Defence
+pest,ABSOLUTE PEST CONTROL LTD,1,34790.0,1,East Sussex Healthcare NHS Trust
+cuckoo,ABSOLUTELY CUCKOO LTD,8,3925.11,1,UK Trade and Investment
+circus,AIRCRAFT CIRCUS LIMITED,1,1400.0,1,Royal Borough of Greenwich
+pest,AJ Pest Control Ltd,21,7622.0,1,Uttlesford District Council
+coffin,ALEXANDRA SCOFFIN LIMITED,1,1312.0,1,Royal Borough of Greenwich
+sheep,ALISON O'NEILL T/A ALISON O'NEILL SHEPHERDESS,2,3000.0,1,UK Trade and Investment
+bell_ring,ALL SAINTS KIRKBYMOORSIDE BELL RINGERS,1,1000.0,1,North Yorkshire Council
+reptile,AMPHIBIAN & REPTILE BOURNEMOUTH,1,566.5,1,"Department for Environment, Food and Rural Affairs"
+sheep,ANNE SHEPHERD,7,3261.64,1,Shropshire Community Health NHS Trust
+santa,ANTHONYS FISH GROTTO SAN,1,76.11,1,Natural History Museum
+bees,APPLES AND PEARS APIARIES LTD,1,1250.0,1,UK Trade and Investment
+pest,ARK PEST CONTROL LIMITED,3,1918.8,1,Royal Borough of Greenwich
+armadillo,ARMADILLO MANAGED SERVICES LTD,1,63600.0,1,HM Treasury
+armadillo,ARMADILLO MERINO,1,1295.08,1,Foreign and Commonwealth Office
+circus,ASTRAL CIRCUS,1,700.0,1,Eden District Council
+aardvark,Aardvark Planning Law,30,72607.2,1,Rushmoor Borough Council
+pest,Action Pest Control Ltd,13,19950.0,1,Bristol City Council
+pest,Advanced Pest Control,155,153477.0,1,Bristol City Council
+brass_band,Alder Valley Brass Band,2,575.0,1,Rushmoor Borough Council
+dolphin,Aldershot Dolphins Underwater Club,1,650.0,1,Rushmoor Borough Council
+wrestl,All Star Superslam Wrestling,11,22648.85,1,Rushmoor Borough Council
+alpaca,Alpacas Peopleton Brook Farm t/a Peopleton Farm,91,162870.5,1,Bristol City Council
+reptile,Amphibian and Reptile Conservation,2,104500.0,1,"Department for Environment, Food and Rural Affairs"
+circus,Amusement Parks/Circus,1,999.84,1,Ministry of Defence
+snake,Apples and Snakes Ltd,1,641.6,1,Plymouth City Council
+armadillo,Armadillo Managed Services Ltd,5,201433.67,1,Office of Rail and Road
+armadillo,Armadillo Sec Ltd,10,18072.0,1,UK Shared Business Services
+armadillo,Armadillo new media communications L,3,4300.0,1,Natural History Museum
+windmill,Ashdon Windmill Trust Ltd,1,500.0,1,Uttlesford District Council
+pest,Attack Pests Ltd T/AThe Bristol Pest Controller,19,19243.75,1,Bristol City Council
+badger,BADGER HILL PRIMARY SCHOOL,1,27000.0,1,Department for Education
+badger,BADGER PRINT AND DESIGN,2,227.0,1,Shropshire Community Health NHS Trust
+badger,BADGER SOFTWARE LTD,5,135074.63,4,Foreign and Commonwealth Office
+badger,BADGERS OF BOHEMIA LTD T/A TURN UP THE COLOUR (TUTC),1,4000.0,1,North Yorkshire Council
+badger,BADGERS QUICK SKIPS,3,3608.04,1,Royal Borough of Greenwich
+disco,"BAR,LOUNGE,DISCO,NIGHTCLUB,TAVERN-ALCOHOLIC DRINKS",249,284119.06,1,"Foreign, Commonwealth and Development Office (FCDO)"
+owl,BARN OWL NESTBOX NETWORK,5,3850.0,1,North Yorkshire Council
+alpaca,BEACON ALPACAS,1,9516.21,1,North Yorkshire Council
+bees,BEE DESIGN CONSULTANCY LTD,2,2000.0,1,UK Trade and Investment
+bees,BEE HAPPY PRINTS,1,561.5,1,North Yorkshire Council
+bees,BEE PEDAL READY,3,17733.97,1,Transport for Greater Manchester
+bees,BEE QS SERVICES LTD,1,904.97,1,North Yorkshire Council
+bees,BEE SENG AIRCOND & ENG,2,1311.56,1,"Foreign, Commonwealth and Development Office (FCDO)"
+bees,BEE TEE ALARMS LTD,1,522.0,1,"Department for Environment, Food and Rural Affairs"
+bees,BEES (Bespoke Engaging Educational Services LTD),2,7156.0,1,Plymouth City Council
+circus,BELL & BULLOCK CIRCUS THEATRE,1,2200.0,1,Royal Borough of Greenwich
+towncrier,BELLMAN MEDIA LTD,218,717411.88,1,UK Trade and Investment
+cheese,BELTON CHEESE LTD,4,4269.01,1,UK Trade and Investment
+pest,BERMUDA PEST CONTROL,1,40067.0,1,Foreign and Commonwealth Office
+otter,BISHOP OTTER ACADEMY TRUST,1,30000.0,1,Department for Education
+sheep,BLACK SHEEP PRESS,117,4341.3,1,Shropshire Community Health NHS Trust
+sheep,BLACK SHEEP WOOLS LTD,1,1766.75,1,UK Trade and Investment
+swan,BLACK SWAN PNG LTD,6,10053.58,1,"Foreign, Commonwealth and Development Office (FCDO)"
+swan,BLACK SWAN PRINTER,1,706.44,1,"Department for Environment, Food and Rural Affairs"
+sheep,BLACKER SHEEP LTD,2,953.23,1,UK Trade and Investment
+camel,BLUE CAMEL ENERGY,1,68989.54,1,Department for International Development
+duck,BLUE DUCK EDUCATION LTD,2,2000.0,1,UK Trade and Investment
+lobster,BLUE LOBSTER,1,39600.0,1,"Department for Environment, Food and Rural Affairs"
+sheep,BLUE SHEEP LTD,11,1684591.05,1,Department for Education
+sausage,BROAD OAK FARM SAUSAGE CO LTD,1,541.69,1,UK Trade and Investment
+pest,BROMLEY PEST CONTROL,11,16510.0,1,Royal Borough of Greenwich
+owl,BUSINESS OWL,1,2430.0,1,North Yorkshire Council
+bees,BUSY BEE CLEANING SERVICES LTD,32,1843720.12,1,South Central Ambulance Service NHS Foundation Trust
+bees,BUSY BEES CHILDCARE VOUCHERS,65,78871.26,1,Eden District Council
+bees,BUSY BEES NURSERIES,31,1054730.84,2,Department for Education
+bees,BUSY BEES NURSERIES LTD,148,8051382.83,1,Department for Education
+pudding,BUXTON PUDDING CO LTD,1,532.25,1,UK Trade and Investment
+lighthouse,Backwell CofE Junior School (Lighthouse Schools Partnership),3,1950.0,1,Bristol City Council
+badger,Badger Design Ltd,1,1522.5,1,South Gloucestershire Council
+badger,Badger Hill Academy,56,2843495.72,1,Department for Education
+badger,Badger Hill Primary School,57,3137218.95,1,Department for Education
+dolphin,Bakers Dolphin Coach Travel,2,3024.0,1,South Gloucestershire Council
+disco,Bars/Taverns/Lounges/Discos,10,16484.38,2,Foreign and Commonwealth Office
+bees,Bee Communications,1,504.72,1,Equality and Human Rights Commission
+sheep,Ben Shepherd,2,11000.0,1,Department for International Development
+falconry,Berkshire Birds Of Prey,9,4150.0,1,Rushmoor Borough Council
+swan,Black Swan Training Solutions,15,29470.0,1,Rushmoor Borough Council
+sheep,Blue Sheep Limited,2,83506.0,1,UK Commission for Employment and Skills
+bouncy,Bouncy Jam Ltd,1,2000.0,1,UK Trade and Investment
+pest,Brand Pest Control,184,155244.26,1,Rushmoor Borough Council
+bees,Bright Bees Nursery Ltd,3,196206.85,1,Department for Education
+pest,Bristol Pest Control Ltd,17,20122.5,1,Bristol City Council
+pest,British Pest Control Association,1,544.5,1,Bristol City Council
+bees,Busy Bee Day Nursery,9,186242.31,1,Bristol City Council
+bees,Busy Bees Childcare Ltd,3,85141.76,1,Milton Keynes Hospital NHS Foundation Trust
+bees,Busy Bees Day Nursery (Salisbury),1,570.0,1,Bristol City Council
+bees,Busy Bees Education and Training,27,1431454.61,1,Department for Education
+bees,Busy Bees at Plymouth,1,9330.9,1,Plymouth City Council
+butterfly_farm,Butterfly Conservation,9,595651.05,1,"Department for Environment, Food and Rural Affairs"
+swan,C.V. SWAN FAN MAKKUM,3,13025.0,1,Royal Borough of Greenwich
+camel,CAMEL EVENT PRODUCTION,1,611.2,1,Former council of North Yorkshire
+camel,CAMEL VALLEY LTD,9,13584.56,2,Foreign and Commonwealth Office
+camel,CAMEL VALLEY VINEYARD,2,3000.0,1,UK Trade and Investment
+flag,CAR FLAGPOLE CO,3,8670.09,1,"Foreign, Commonwealth and Development Office (FCDO)"
+funfair,CAROUSEL RIDES LTD,4,17460.0,1,Royal Borough of Greenwich
+sheep,CARTMELL SHEPHERD SOLICITORS,1,522.0,1,Eden District Council
+pest,CENTRAL PEST CONTROL,2,535.0,1,Blaby District Council
+cheese,CHEESE & WINE,1,584.28,1,"Foreign, Commonwealth and Development Office (FCDO)"
+circus,CIRCUS COMMUNICATIONS LTD,1,9450.0,1,UK Trade and Investment
+circus,CIRCUS FUNTASIA,1,553.5,1,Eden District Council
+circus,CIRCUS MALABARISTAS LIMITED,2,7572.0,1,Royal Borough of Greenwich
+circus,CIRCUS SPACE,1,42619.0,1,"Ministry of Housing, Communities and Local Government"
+archery,CLICKERS ARCHERY LIMITED,1,425.83,1,Blaby District Council
+sausage,CLIP MX SIMPLY SAUSAGE,2,2667.63,1,"Foreign, Commonwealth and Development Office (FCDO)"
+sheep,CLIVE SHEPHERD & CO LLP,1,30390.25,1,Ministry of Justice
+clown,CLOWNS NURSERY LTD,4,2362.5,1,North Yorkshire Council
+pest,COMMAND PEST CONTROL LTD,1,644.4,1,"Department for Environment, Food and Rural Affairs"
+santa,CORP CLUB SANTA MARTA,4,4425.96,1,Foreign and Commonwealth Office
+santa,COSTCO SANTA FE,2,1041.08,1,"Foreign, Commonwealth and Development Office (FCDO)"
+pudding,COUNTRY PUDDINGS LIMITED,1,1000.0,1,UK Trade and Investment
+falconry,COUNTRYWIDE FALCONRY & PEST CONTROL SERVICES LTD,3,1560.0,1,Royal Borough of Greenwich
+pest,COUNTRYWIDE FALCONRY & PEST CONTROL SERVICES LTD,3,1560.0,1,Royal Borough of Greenwich
+crab,CRAB CLINICAL INFORMATICS LTD,2,63309.31,2,UK Trade and Investment
+crab,CRAB LANE PRIMARY SCHOOL,1,849.0,1,Transport for Greater Manchester
+wizard,CRAFTY WIZARDS LTD,52,174122.67,1,Royal Borough of Greenwich
+knitting,CROCHET LUCIEN,1,638.26,1,"Foreign, Commonwealth and Development Office (FCDO)"
+pest,CROSS PEST CONTROL SER,34,37015.18,1,"Department for Environment, Food and Rural Affairs"
+pest,CROSS PEST CONTROL SERVICES,16,19586.09,1,"Department for Environment, Food and Rural Affairs"
+cheese,CRYER & STOTT CHEESEMONGERS LTD,5,3105.45,1,North Yorkshire Council
+cuckoo,CUCKOO HALL ACADEMIES TRUST,3,180787.0,1,Department for Education
+cuckoo,CUCKOO HALL ACADEMY,14,2728827.75,1,Department for Education
+cuckoo,CUCKOO HALL PRIMARY SCHOOL,1,25000.0,1,Department for Education
+cuckoo,CUCKOO INTERNATIONAL,1,752.02,1,"Foreign, Commonwealth and Development Office (FCDO)"
+cuckoo,CUCKOO INTERNATIONAL (,7,5418.47,1,"Foreign, Commonwealth and Development Office (FCDO)"
+cuckoo,CUCKOO INTERNATIONAL S,5,3533.39,1,Foreign and Commonwealth Office
+wrestl,CUMBERLAND AND WESTMORLAND WRESTLING ASSOCIATION LTD,1,750.0,1,Eden District Council
+bees,CUMBERLAND BEEKEEPERS ASSOCIATION PENRITH BRANCH,2,2517.2,1,Eden District Council
+ferret,CURIOUS FERRET LTD,2,3000.0,1,UK Trade and Investment
+duck,CYBER-DUCK LTD,3,2000.0,1,UK Trade and Investment
+lighthouse,Carla Keyte t/a Lighthouse Childcare Consortium Ltd,14,29400.0,1,Bristol City Council
+sheep,Cartmell Shepherd,2,220000.0,1,Eden District Council
+pest,Chew Valley Pest Control Ltd,1,624.0,1,Bristol City Council
+lighthouse,Chew Valley School (Lighthouse Schools Partnership),39,231075.34,1,Bristol City Council
+juggle,Chris Welford Juggler,2,720.0,1,Rushmoor Borough Council
+sheep,Church Of The Good Shepherd,8,3456.77,1,Rushmoor Borough Council
+circus,Circus City t/a Handstand Arts,1,4050.0,1,Bristol City Council
+bees,Community Beekeeping,1,1323.0,1,Natural History Museum
+cuckoo,Cuckoo Hall Academies Trust,68,568389.13,1,Department for Education
+cuckoo,Cuckoo Hall Academy,174,13205044.47,1,Department for Education
+cuckoo,Cuckoo Hall Primary Academy,69,12227691.29,1,Department for Education
+hedgehog,Curious Hedgehogs,45,648704.9,1,Bristol City Council
+duck,Cyber Duck Ltd,1,32975.0,1,"Department for Science, Innovation and Technology"
+goat,DANCING GOAT COFFEE LTD,43,18793.04,2,Former council of North Yorkshire
+wizard,DATABASE WIZARD INC,1,548.44,1,Foreign and Commonwealth Office
+dolphin,DDC DOLPHIN LTD,1,952.78,1,UK Trade and Investment
+dinosaur,DETTREX MEDIA LTD,2,7600.0,1,UK Trade and Investment
+bees,DEVON BEEKEEPERS 550,1,1021.5,1,"Department for Environment, Food and Rural Affairs"
+pigeon,DIGIPIGEON LTD,3,4618.34,1,UK Trade and Investment
+dinosaur,DINOSAUR,48,510190.7,1,Transport for Greater Manchester
+dinosaur,DINOSAUR PILE-UP LTD,2,825.0,1,UK Trade and Investment
+dinosaur,DINOSAUR RESOURCE CENTER,3,2273.48,1,"Department for Digital, Culture, Media and Sport"
+pest,DISPATCH PEST CONTROL,2,1237.85,1,North Yorkshire Council
+wizard,DISPLAY WIZARD,1,705.18,1,Foreign and Commonwealth Office
+wizard,DISPLAY WIZARD LTD,7,8536.88,1,Royal Borough of Greenwich
+dolphin,DOLPHIN CLUB,16,17236.92,1,"Foreign, Commonwealth and Development Office (FCDO)"
+dolphin,DOLPHIN COMMUNICATIONS (VOICE SYSTEMS) LTD,9,497890.8,1,Ministry of Justice
+dolphin,DOLPHIN COMPUTER ACCES,1,600.6,1,Foreign and Commonwealth Office
+dolphin,DOLPHIN COMPUTER ACCESS,1,1050.0,1,Charity Commission for England and Wales
+dolphin,DOLPHIN COMPUTER ACCESS LTD,7,93973.86,2,Department for Education
+dolphin,DOLPHIN HOTEL,1,3035.15,1,"Department for Environment, Food and Rural Affairs"
+dolphin,DOLPHIN HOUSE,1,32110.0,1,"Ministry of Housing, Communities and Local Government"
+dolphin,DOLPHIN HOUSE SURGERY,275,5600064.88,1,NHS East and North Hertfordshire CCG
+dolphin,DOLPHIN INTERNATIONAL COMMUNICATIONS LTD,2,2336.22,1,UK Trade and Investment
+dolphin,DOLPHIN MOBILITY LTD,73,271899.2,1,Royal Borough of Greenwich
+dolphin,DOLPHIN MOBILITY YORKSHIRE & CUMBRIA LTD,38,120433.55,2,Eden District Council
+dolphin,DOLPHIN MOVERS,3,1801.74,1,HM Treasury
+dolphin,DOLPHIN SOLUTIONS LIMITED,1,501.72,1,Royal Borough of Greenwich
+dolphin,DOLPHIN STAIR LIFTS,4,18791.0,1,Eden District Council
+dolphin,DOLPHIN STAIRLIFTS (NORTH EAST) LIMITED,1,7870.0,1,North Yorkshire Council
+dolphin,DOLPHIN TELECOMMUNICATIONS LTD,3,-51222.79,1,Home Office
+dolphin,DOLPHIN VILLAGE,3,4082.66,1,"Foreign, Commonwealth and Development Office (FCDO)"
+windmill,DRAPERS WINDMILL TRUST,1,1386.0,1,"Ministry of Housing, Communities and Local Government"
+duck,DUCK-2-WATER LTD         02380 339996,1,561.0,1,"Department for Environment, Food and Rural Affairs"
+allotment,Dig It Community Allotment,14,27694.0,1,Uttlesford District Council
+dinosaur,Dinosaur Adventure Live Ltd,3,13761.32,1,Rushmoor Borough Council
+disco,Dk Discos,1,300.0,1,Rushmoor Borough Council
+circus,Do Good Things Limited t/a Circus Journal,2,2260.0,1,Bristol City Council
+dolphin,Dolphin Driling Ltd.,1,350000.0,1,HM Revenue and Customs
+dolphin,Dolphin Drilling Ltd c/o Ernst & Young LLP,1,150000.0,1,HM Revenue and Customs
+dolphin,Dolphin Enterprises Europe,1,420.7,1,South Gloucestershire Council
+dolphin,Dolphin Lifts (Western) Ltd,178,877186.06,1,Bristol City Council
+dolphin,Dolphin Mobility,3,12828.0,1,Rushmoor Borough Council
+dolphin,Dolphin Mobility Chobham,1,6625.0,1,Uttlesford District Council
+dolphin,Dolphin Square,2,10440.0,1,Department for International Development
+dolphin,Dolphin Stairlifts South-West,35,161537.78,1,Plymouth City Council
+duck,Ducks In A Row,1,1200.0,1,Rushmoor Borough Council
+panto,Dunmow Pantomime Group,1,500.0,1,Uttlesford District Council
+pest,EAST COAST PEST CONTROL,5,7789.2,1,North Yorkshire Council
+toad_frog,EAT THAT FROG CIC,3,117764.0,1,Department for Work and Pensions
+puppet,EB *PUPPET CAMP LONDON,1,62.34,1,The National Archives
+elvis,ELVIS BERNARD CARTY,3,133578.98,1,"Foreign, Commonwealth and Development Office (FCDO)"
+emu,EMU LTD,5,278555.8,1,"Department for Environment, Food and Rural Affairs"
+owl,EXHIBITOR APPLICATION SYSTEMS LTD T/A EVENT OWL,2,720.0,1,Former council of North Yorkshire
+lighthouse,Easton Church of England Primary (Lighthouse Schools Partnership),36,792643.18,1,Bristol City Council
+pest,Eastwick Pest Control Solutions,1,275.0,1,Uttlesford District Council
+toad_frog,Eat That Frog C.I.C.,82,3019119.52,1,Department for Education
+toad_frog,Eat That Frog CIC,1,7866.67,1,Bristol City Council
+pest,Elimination Pest Control,1,600.0,1,Bristol City Council
+elvis,Elvis Kargbo,2,2934.0,1,Department for International Development
+falconry,FALCON COMMUNICATIONS LTD,1,3190.0,1,UK Trade and Investment
+falconry,FALCON CONSTRUCTION & JOINERY COMPANY,1,7185.0,1,Royal Borough of Greenwich
+falconry,FALCON COPIERS PLC,1,525.61,1,Royal Borough of Greenwich
+falconry,FALCON EDUCATION ACADEMIES TRUST,2,674166.0,1,Department for Education
+falconry,FALCON FOODSERVICE EQUIPMENT,59,3362493.92,1,National Offender Management Service
+falconry,FALCON GLOBAL LTD,1,1000.0,1,UK Trade and Investment
+falconry,FALCON HOTEL CARMARTHEN,1,560.0,1,"Department for Environment, Food and Rural Affairs"
+falconry,FALCON INNOVATIONS LTD,2,364.15,1,UK Trade and Investment
+falconry,FALCON INSURANCE LTD,1,924.01,1,Foreign and Commonwealth Office
+falconry,FALCON PANEL PRODUCTS LTD,6,6821.98,1,Royal Borough of Greenwich
+falconry,FALCON PROMOTIONS,1,1972.8,1,Royal Borough of Greenwich
+falconry,FALCON SELF DRIVE LTD,1,640.0,1,Charity Commission for England and Wales
+falconry,FALCON SUPPORT SERVICES LIMITED,599,175709890.76,1,Ministry of Defence
+falconry,FALCONS PRIMARY SCHOOL,8,1090783.96,1,Department for Education
+alpaca,FALLOWFIELD ALPACAS,1,1000.0,1,UK Trade and Investment
+spider_org,FARMSTRONGS LTD T/A SPIDER TOURING,1,5000.0,1,North Yorkshire Council
+blacksmith,FARRIER HOUSE SURGERY,2,66.0,1,Shropshire Community Health NHS Trust
+badger,FAT BADGER HARROGATE (UK) LTD,1,350.0,1,Former district of Harrogate
+ferret,FERRET INFORMATION SYSTEMS,6,2851.0,1,Blaby District Council
+ferret,FERRET INFORMATION SYSTEMS LTD,2,1722.44,1,North Yorkshire Council
+ferret,FERRETS INCORPORATED LTD,1,134848.73,1,Ministry of Defence
+sheep,FFL TRADING (BIG SHEEP & LITTLE COW FARM),1,1680.0,1,North Yorkshire Council
+bunting,FLAG AND BUNTING LTD,2,3000.0,1,Foreign and Commonwealth Office
+flag,FLAGPOLE EXPRESS LTD,1,1170.7,1,Eden District Council
+flamingo,FLAMINGO RESEARCH LI,2,59000.0,1,Department of Health and Social Care
+flamingo,FLAMINGO RESEARCH LIMITED,2,56000.0,1,Department of Health and Social Care
+flamingo,FLAMINGO SWIMMING POOL,5,4024.13,1,Foreign and Commonwealth Office
+toad_frog,FROG BY ADAM,1,1400.0,1,Foreign and Commonwealth Office
+toad_frog,FROG BY ADAM HANDL,4,4250.0,1,Foreign and Commonwealth Office
+toad_frog,FROG LIFE 631,1,1468.8,1,"Department for Environment, Food and Rural Affairs"
+fudge,FUDGE KITCHEN LTD,1,1500.0,1,UK Trade and Investment
+santa,FUNDACION SANTA FE DE,2,4245.99,1,"Foreign, Commonwealth and Development Office (FCDO)"
+bouncy,FUNHOUSE BOUNCY CASTLES,1,650.0,1,Blaby District Council
+falconry,Falcon & Partner Limited DO NOT USE,2,1367.24,1,South Gloucestershire Council
+falconry,Falcon & Partner Ltd,8,6014.26,1,South Gloucestershire Council
+falconry,Falcon & Partner Ltd Consulting Structural Engineer,29,22064.39,1,Bristol City Council
+falconry,Falcon Copiers PLC,1,565.55,1,Plymouth City Council
+falconry,Falcon Document Solutions Ltd,1,690.9,1,Plymouth City Council
+falconry,Falcon Education Academies Trust,13,1767254.89,1,Department for Education
+falconry,Falcon Engineering Enterprises,7,6527.83,1,Department for International Development
+falconry,Falcon Facilities Management Services Limited,4,4177.12,1,Bristol City Council
+falconry,Falcon Pest Control Ltd,6,23395.0,1,Bristol City Council
+pest,Falcon Pest Control Ltd,6,23395.0,1,Bristol City Council
+falconry,Falcon Services,22,13257.25,1,South Gloucestershire Council
+falconry,Falcons Primary School,61,5298892.31,1,Department for Education
+ferret,Ferret Information Systems Ltd,15,5444.0,2,Rushmoor Borough Council
+lighthouse,Fishponds Church Of England Academy (Lighthouse Schools Partnership),32,584854.0,1,Bristol City Council
+bees,Fleet & District Beekeepers Association,2,1300.0,1,Rushmoor Borough Council
+toad_frog,Frog Cables,1,2481.36,1,Department for International Development
+toad_frog,Frog Software Training Ltd,23,25734.6,1,Uttlesford District Council
+wrestl,G LITTLEWOOD (FIRST CLASS WRESTLING),1,1049.6,1,North Yorkshire Council
+giraffe,GIRAFFE,6,97.9,1,Natural History Museum
+giraffe,GIRAFFE 1779,1,14.2,1,The National Archives
+giraffe,GIRAFFE CONCEPTS,2,344.92,1,Natural History Museum
+giraffe,GIRAFFE JUICE BAR,1,15.0,1,Natural History Museum
+pest,GLADE PEST CONTROL SER,5,10362.0,1,"Department for Environment, Food and Rural Affairs"
+pest,GLADE PEST CONTROL SERVICE,1,1848.0,1,"Department for Environment, Food and Rural Affairs"
+pest,GLADE PEST CONTROL SERVICES,2,4032.0,1,"Department for Environment, Food and Rural Affairs"
+flag,GLASSFIBRE FLAGPOLES LTD,2,2141.76,1,Royal Borough of Greenwich
+dolphin,GLENNYS GLOVER T/A MAINLINE DOLPHIN,49,69755.0,1,Transport for Greater Manchester
+circus,GLOUCESTER CIRCUS GARDEN COMMITTEE,6,70075.09,1,Royal Borough of Greenwich
+goat,GOAT FASHION LTD,1,700.0,1,UK Trade and Investment
+goat,GOAT GUANGZHOU,1,1153.59,1,"Foreign, Commonwealth and Development Office (FCDO)"
+blacksmith,GODBOLD BLACKSMITHS LIMITED,18,30596.78,1,North Yorkshire Council
+dolphin,GODOLPHIN INFANT SCHOOL,1,25000.0,1,Department for Education
+dolphin,GODOLPHIN JUNIOR SCHOOL,7,571422.08,1,Department for Education
+toad_frog,GOLDEN FROG PUBLIC RELATIONS LTD,10,13365.63,1,North Yorkshire Council
+swan,GOLDEN SWAN INDIAN CUISINE,1,44.52,1,Natural History Museum
+sheep,GOOD SHEPHERD CATHOLIC PRIMARY SCHOOL,2,50000.0,1,Department for Education
+sheep,GOOD SHEPHERD CATHOLIC SCHOOL,1,25000.0,1,Department for Education
+bees,GOOGLE *BUZZY BEE SHOP,1,641.0,1,"Department for Environment, Food and Rural Affairs"
+badger,GREEN BADGER,1,960.0,1,Eden District Council
+pest,GREEN BUG PEST CONTROL,10,6451.28,1,"Foreign, Commonwealth and Development Office (FCDO)"
+santa,GROTTO WOODLANDS,2,40.64,1,"Department for Digital, Culture, Media and Sport"
+unicorn,GSPL - UNICORN SHIPPING,1,98000.0,1,HM Revenue and Customs
+unicorn,GSPL-Unicorn Shipping,1,102000.0,1,HM Revenue and Customs
+ghost,Ghost Hill Infant and Nursery School,43,2096927.76,1,Department for Education
+cheese,Giant Cheese Ltd,4,10927.6,1,Rushmoor Borough Council
+giraffe,Giraffe,4,101.55,1,Natural History Museum
+giraffe,Giraffe Access,1,6660.0,1,Rushmoor Borough Council
+giraffe,Giraffe Access Ltd,6,2940.0,1,Bristol City Council
+giraffe,Giraffe Engineering Ltd,6,10940.0,1,Bristol City Council
+falconry,Gmg Falconry,3,1050.0,1,Rushmoor Borough Council
+dolphin,Godolphin Infant School,241,10805144.89,1,Department for Education
+dolphin,Godolphin Junior Academy,60,7711514.38,1,Department for Education
+dolphin,Godolphin Junior School,28,1426790.62,1,Department for Education
+dolphin,Godolphin Primary School,8,155207.12,1,Department for Education
+sheep,Good Shepherd Catholic Primary and Nursery School,67,4239988.56,1,Department for Education
+sheep,Good Shepherd Catholic School,56,3555819.91,1,Department for Education
+sheep,Good Shepherd Primary Catholic Voluntary Academy,62,6516937.45,1,Department for Education
+archery,Grand National Archery Society,62,3306290.0,1,UK Sport
+swan,Gray Swan Security Inc,2,702730.0,1,"Department for Science, Innovation and Technology"
+allotment,Great Chesterford Allotment Association,1,800.0,1,Uttlesford District Council
+santa,Great Grottos Limited,1,1800.0,1,Bristol City Council
+toilet,Griffin Toilet Hire Ltd,2,1800.0,1,Bristol City Council
+puppet,HANDSPRING PUPPET COMPANY,1,16200.0,1,Royal Borough of Greenwich
+allotment,HARLOW HILL ALLOTMENT ASSOCI,1,1439.49,1,North Yorkshire Council
+owl,HAWK AND OWL TRUST,4,65595.78,1,"Ministry of Housing, Communities and Local Government"
+pest,HEATH PEST CONTROL,1,704.64,1,"Department for Environment, Food and Rural Affairs"
+hippo,HIPPO DIGITAL LIMITED,172,8322507.25,1,NHS Business Services Authority
+hippo,HIPPO DIGITAL LTD,322,38523178.98,3,Department for Education
+hippo,HIPPO FRANKLIN,1,44.25,1,Natural History Museum
+bees,HONEY BEE CAR RENTALS,2,1730.22,1,Foreign and Commonwealth Office
+bees,HONEY BEES LIMITED,2,960.3,1,Blaby District Council
+sheep,HOWARD SHEPHERD (UK) LIMITED,4,214142.64,1,Ministry of Defence
+brass_band,HUNMNABY BRASS BAND,1,925.0,1,North Yorkshire Council
+swan,Hanley Swan St Gabriel's St Mary's CofE Primary,50,1423304.92,1,Department for Education
+sheep,Hannah Shepherd,3,2561.47,1,Rushmoor Borough Council
+owl,Hawk & Owl Trust,1,2083.2,1,South Gloucestershire Council
+disco,Headphone Revolution Ltd t/a Silent Disco King,1,11597.41,1,Bristol City Council
+lighthouse,Horfield Church of England Primary School (Lighthouse Schools Partnership),4,69610.3,1,Bristol City Council
+bees,IN  BEE FLAT LLC,5,12536.21,1,"Foreign, Commonwealth and Development Office (FCDO)"
+pest,INSECTA PEST CONTROL,13,10549.15,1,Foreign and Commonwealth Office
+pest,INT. PEST CONTROL,7,6419.86,1,"Foreign, Commonwealth and Development Office (FCDO)"
+alpaca,ISABEL LANGDON T/A ALPACA SELECT,1,1250.0,1,UK Trade and Investment
+santa,ITV TEXT SANTA LTD,2,550000.0,1,Cabinet Office
+llama,IZI EL TALLER SE LLAMA,1,932.52,1,"Foreign, Commonwealth and Development Office (FCDO)"
+elvis,IZI ELVIS ZARATE,2,1453.14,1,"Foreign, Commonwealth and Development Office (FCDO)"
+jellyfish,JELLYFISH GROUP LTD,1,827.1,1,"Foreign, Commonwealth and Development Office (FCDO)"
+sheep,JENNONS LTD T/A LITTLE GREEN SHEEP,2,2554.27,1,UK Trade and Investment
+sheep,JENNONS LTD T/A THE LITTLE GREEN SHEEP COMPANY,3,1000.0,1,UK Trade and Investment
+pest,JONES & SON PEST CONTROL SUPPLIES LTD,2,1500.0,1,UK Trade and Investment
+swan,JOSEPH SWAN ACADEMY,59,9431277.85,1,Department for Education
+swan,JOSEPH SWAN SCHOOL,3,235026.0,1,Department for Education
+camel,JOSEPH`S AMAZING CAMELS LIMITED,2,3180.0,1,Royal Borough of Greenwich
+sheep,JShepherd,1,9239.53,1,Department for International Development
+circus,Jack In A Box Circus Entertainment,1,450.0,1,Rushmoor Borough Council
+bees,Jane Bee Safeguarding Ltd,3,6500.0,1,Bristol City Council
+swan,Joseph Swan Academy,18,2805741.05,1,Department for Education
+swan,Joseph Swan School,222,19301584.84,1,Department for Education
+bunting,Josephine Bunting,1,1500.0,1,Rushmoor Borough Council
+bunting,Jude Bunting,1,594.0,1,Equality and Human Rights Commission
+puppet,Juggle Puppet Entertainment,1,625.0,1,Rushmoor Borough Council
+juggle,Juggle Puppet Entertainment,1,625.0,1,Rushmoor Borough Council
+allotment,KILNSEY COMMUNITY ALLOTMENT,1,1500.0,1,Former council of North Yorkshire
+brass_band,KIRKBYMOORSIDE BRASS BAND,1,1265.74,1,North Yorkshire Council
+dolphin,KIRSTY DOLPHIN,1,925.65,1,Shropshire Community Health NHS Trust
+allotment,KNARESBOROUGH ALLOTMENTS SELF HELP SCHEME,2,10530.94,1,North Yorkshire Council
+bunting,KREATIVE BUNTING LTD,1,774.0,1,Foreign and Commonwealth Office
+donkey,Kelly'S Donkeys,2,650.0,1,Rushmoor Borough Council
+cheese,LACEY'S CHEESE,2,2000.0,1,North Yorkshire Council
+allotment,LEICESTER CITY PERMANENT ALLOTMENT SOCIETY,1,2260.0,1,Blaby District Council
+puppet,LEMPEN PUPPET THEATRE COMPANY,1,500.0,1,North Yorkshire Council
+circus,LET'S CIRCUS LLP,1,900.0,1,North Yorkshire Council
+puppet,LIFE AND LIMB PUPPETS,2,2870.0,1,North Yorkshire Council
+lighthouse,LIGHTHOUSE (UK) LTD,1,1000.0,1,UK Trade and Investment
+lighthouse,LIGHTHOUSE FUTURES TRUST,9,7144.83,2,Former council of North Yorkshire
+lighthouse,LIGHTHOUSE GROUP,5,303015.63,1,"Ministry of Housing, Communities and Local Government"
+lighthouse,LIGHTHOUSE GROUP UK LTD,29,938282.49,1,"Ministry of Housing, Communities and Local Government"
+lighthouse,LIGHTHOUSE HARMONIZE EDUCATION TRUST,107,3360584.55,1,Department for Education
+lighthouse,LIGHTHOUSE MEDICAL LTD,95,9938773.67,2,Isle of Wight NHS Trust
+lighthouse,LIGHTHOUSE SCHOOL,25,265666.99,2,Former council of North Yorkshire
+lighthouse,LIGHTHOUSE SCHOOLS PARTNERSHIP,8,716044.0,1,Department for Education
+lighthouse,LIGHTHOUSE SCHOOLS PARTNERSHIP ST PETERS TEACHING SCHOOL,9,1154128.31,1,Department for Education
+lighthouse,LIGHTHOUSE WOMEN'S AID LTD TRADING AS IPSWICH WOMEN'S AID,14,431807.0,1,Ministry of Justice
+reptile,LILLY'S REPTILE RESCUE CIC,1,1000.0,1,North Yorkshire Council
+duck,LITTLE DUCKS NURSERY  HEMINGBROUGH LTD,1,28600.0,1,North Yorkshire Council
+gravy,LITTLE LAUGHING GRAVY SA,1,37.4,1,Natural History Museum
+knitting,Let'S Crochet Uk,2,1574.42,1,Rushmoor Borough Council
+lighthouse,Lighthouse (Training and Development) Ltd,43,3142183.6,1,Department for Education
+lighthouse,Lighthouse (UK) Ltd,1,1200.0,1,The National Archives
+lighthouse,Lighthouse School Leeds,59,2401666.46,1,Department for Education
+lighthouse,Lighthouse Schools Partnership,16,2780066.31,1,Department for Education
+clown,Little Clowns Nursery Limited,1,1701.0,1,South Gloucestershire Council
+owl,Little Owls Preschool,3,3815.1,1,Plymouth City Council
+lobster,Lobster Construction Management,3,17548.14,1,Uttlesford District Council
+taxidermy,London Taxidermy,3,1870.0,1,Natural History Museum
+toilet,Luxury Toilet Hire Uk LTD,1,9495.0,1,Uttlesford District Council
+dolphin,MANTILLA LTD -DOLPHIN SQUARE HOTEL,12,45996.15,1,Foreign and Commonwealth Office
+maypole,MAYPOLE LTD,4,3324.7,1,UK Trade and Investment
+bagpipe,MCCALLUM BAGPIPES,2,4881.5,1,"Foreign, Commonwealth and Development Office (FCDO)"
+taxidermy,MCKENZIE TAXIDERMY,2,847.69,1,Natural History Museum
+disco,MDA / MADAGASCAR DISCO,1,772.23,1,"Foreign, Commonwealth and Development Office (FCDO)"
+knight_medieval,MEDIEVAL MUSIC IN THE DALES,1,996.0,1,North Yorkshire Council
+mermaid,MERMAIDS TAIL,3,150.0,2,"Department for Digital, Culture, Media and Sport"
+mermaid,MERMAIDS UK,5,1500.0,1,Shropshire Community Health NHS Trust
+blacksmith,MESSRS TAIT FARRIER GRAHAM#DX60304,1,29937.23,1,Ministry of Justice
+regalia,MICHAELS CIVIC ROBES,1,1656.0,1,Royal Borough of Greenwich
+armadillo,MINISTRY OF WOOL LTD T/A ARMADILLO MERINO,5,3930.42,1,UK Trade and Investment
+pest,MITIE PEST CONTROL LTD,1,47964.0,1,National Offender Management Service
+crab,MO'S CRAB AND  PASTA FACT,1,39.18,1,Natural History Museum
+thatching,MOTOR INSURANCE REPAIR RESEARCH CENTRE (THE) T/A THATCHAM RESEARCH,32,248528.37,1,Home Office
+goat,MOUNTAIN GOAT LTD,2,1500.0,1,UK Trade and Investment
+goat,MOUNTAIN GOAT TOURS & HOLIDAYS,2,2399.5,1,UK Trade and Investment
+squirrel,MR B SQUIRRELL#DX 453,1,36525.0,1,Ministry of Justice
+swan,MR C T SWAN T/A SWAN PRODUCTS,1,28950.9,1,Ministry of Defence
+duck,MR J DUCK,1,1272.0,1,Royal Borough of Greenwich
+santa,MT 01 - SANTA CRUZ,1,531.36,1,Foreign and Commonwealth Office
+giraffe,MY GIRAFFE LTD,1,31980.0,1,Department of Health and Social Care
+sheep,MY SHEPHERD HOUSE,2,4000.0,1,Royal Borough of Greenwich
+marmalade,Marmalade On Toast,3,1500.0,1,Queen Elizabeth II Conference Centre
+toilet,Mendip Toilet Hire,49,89242.0,1,Bristol City Council
+mermaid,Mermaid Training,1,650.0,1,Bristol City Council
+mermaid,Mermaids,1,700.0,1,Rushmoor Borough Council
+regalia,Michaels Civic Robes,2,1819.0,2,Bristol City Council
+swan,Mr Daniel Swan,3,1713.75,1,Plymouth City Council
+pest,NBC BIRD & PEST SOLUTIONS LTD,47,1023442.65,1,Ministry of Defence
+pest,NBC Bird & Pest Solutions Ltd,2,25920.0,1,Plymouth City Council
+bees,NEW QUE BEE STORE,23,24363.8,2,Foreign and Commonwealth Office
+circus,NOFIT STATE CIRCUS,1,1120.58,1,North Yorkshire Council
+circus,NOFIT STATE COMMUNITY CIRCUS LTD,1,500.0,1,UK Trade and Investment
+reptile,NORTHAMPTON REPTILE CENTR,1,208.45,1,Natural History Museum
+lighthouse,NORTHERN LIGHTHOUSE BOARD,2,190556.08,2,"Department for Environment, Food and Rural Affairs"
+cheese,North Street Cheese Company Ltd,2,10000.0,1,Bristol City Council
+coffin,OASIS TRANSFORMATION TRADING COMPANY LTD T/A OASIS COFFINS,1,644.0,1,UK Trade and Investment
+viking,OFFICE DEPOT (INTL) LTD T/A VIKING DIRECT,8,6220.29,1,Royal Borough of Greenwich
+swan,OLD SWAN HOTEL,1,250.0,1,Eden District Council
+otter,OTTER WATERSPORTS,1,1127.52,1,"Department for Environment, Food and Rural Affairs"
+otter,OTTER.AI,3,2657.89,1,"Foreign, Commonwealth and Development Office (FCDO)"
+owl,OWL CENTRE LTD (THE),10,619159.0,1,NHS Norfolk and Suffolk ICB - 25k Expenditure Report
+pest,OWL PEST CONTROL,1,688.63,1,"Foreign, Commonwealth and Development Office (FCDO)"
+owl,OWL PEST CONTROL,1,688.63,1,"Foreign, Commonwealth and Development Office (FCDO)"
+owl,OWLS AC,1,1234.0,1,Blaby District Council
+owl,OWLS ATHLETICS CLUB,1,750.0,1,Blaby District Council
+owl,OWLS HALL ENVIRONMENTAL LTD,1,550.0,1,UK Trade and Investment
+crier_misc,OYEZ PROFESSIONAL SERVICES LTD,1,817.34,1,Royal Borough of Greenwich
+toilet,OZLOOS TOILET HIRE,2,84.0,1,Shropshire Community Health NHS Trust
+viking,Office Depot Internation (UK) Ltd T/A Viking,3,3424.36,1,Bristol City Council
+otter,Otter Nurseries Pl,2,3518.8,1,Plymouth City Council
+otter,Otter.Ai,1,542.4,1,The National Archives
+owl,Owls Hall Environmental Ltd,1,12562.12,1,Uttlesford District Council
+crier_misc,Oyez Professional Services Limited,3,45442.1,2,Equality and Human Rights Commission
+mermaid,PAYPAL MERMAIDTHEA,1,1696.59,1,Foreign and Commonwealth Office
+sword,PEN&SWORD BOOKS LT,15,26170.59,1,The National Archives
+pest,PEST CONTROL CONSULTANTS & SERVICES,4,8515.88,1,Department for International Development
+allotment,PICKERING & DISTRICT SMALLHOLDING & ALLOTMENTS ASSOCIATION,1,600.0,1,North Yorkshire Council
+sword,POOLEY SWORD LIMITED,6,62787.29,1,Ministry of Defence
+thatching,PRC DTR THATCHAM ST FINIANS SCHOOL,2,655178.16,1,Department for Education
+cheese,PRIMA CHEESE LTD,2,1189.64,1,UK Trade and Investment
+pudding,PROOF OF THE PUDDING,2,2231.28,1,Foreign and Commonwealth Office
+pest,PROPEST CONTROL LIMITE,3,2191.19,1,"Foreign, Commonwealth and Development Office (FCDO)"
+parsnip,Parsnip Mash Ltd,2,2731.34,1,Bristol City Council
+allotment,Patchway Pretoria Road Allotment Society,2,6200.0,1,South Gloucestershire Council
+bees,QUEEN BEE FILMS LTD,1,572.89,1,UK Trade and Investment
+pest,Quickil Pest Control Services Ltd,1,4364.98,1,London Borough of Richmond Upon Thames
+santa,REAL REINDEER LIMITED,2,4500.0,1,Royal Borough of Greenwich
+bees,RED BEE MEDIA LTD,5,182194.0,1,Department for Work and Pensions
+toad_frog,RED FROG HIRE LTD,48,3565056.23,1,HM Revenue and Customs
+elvis,RED INC LTD T/A ELVIS JESUS,3,2976.6,1,UK Trade and Investment
+lobster,RED LOBSTER MEDIA PRODUCTIONS LTD,2,873.15,1,UK Trade and Investment
+ninja,RED NINJA,1,900.0,1,Transport for Greater Manchester
+ninja,RED NINJA LTD,3,3000.0,1,UK Trade and Investment
+squirrel,RED SQUIRREL PROPERTY SHOP LIMITED,1,1150.0,1,Royal Borough of Greenwich
+pest,RED WASP MARKETING LTD,5,47000.0,1,UK Trade and Investment
+blacksmith,REDACTED T/A Fire Iron Art Blacksmiths,1,1500.0,1,Bristol City Council
+pest,RENTOKIL INITIAL PEST CONTROL,67,59058.85,1,Eden District Council
+pest,RENTOKIL PEST CONTROL,24,15218.78,3,"Department for Environment, Food and Rural Affairs"
+wig,RH SMITH AND SONS (WIGMAKERS) T/A SMIFFY'S,1,600.0,1,UK Trade and Investment
+rhubarb,RHUBARB FOOD DESIGN,1,70000.0,1,Foreign and Commonwealth Office
+rhubarb,RHUBARB HEAD OFFICE,1,9663.53,1,"Foreign, Commonwealth and Development Office (FCDO)"
+rhubarb,RHUBARB T3 HEARGROW,1,2.49,1,Natural History Museum
+rhubarb,RHUBARB T3 HEATHRO,1,13.51,1,Natural History Museum
+rhubarb,RHUBARBFOODDM4,1,2181.07,1,"Foreign, Commonwealth and Development Office (FCDO)"
+toad_frog,RICHARD FLOWER T/A FUZZY-FROG GAMES,1,500.0,1,UK Trade and Investment
+alpaca,RICHARD HARTLEY T/A THE ALPACA COLLECTION,3,2126.24,1,UK Trade and Investment
+sheep,RICHARD SHEPHERD MUSIC FOUNDATION,2,4980.0,1,North Yorkshire Council
+cheese,RIPPON CHEESE STOR,4,4860.2,1,Foreign and Commonwealth Office
+cheese,RJC ENTERPRISES LTD T/A THE TRUCKLE CHEESE CO,4,1267.2,1,UK Trade and Investment
+dinosaur,ROBOT DINOSAUR PRODUCTIONS LIMITED,1,2500.0,1,Bristol City Council
+dinosaur,ROTREX GROUP LTD,1,774.39,1,"Department for Environment, Food and Rural Affairs"
+jester,RUSS ERWYD T/AS CONWY JESTER,1,1950.0,1,Royal Borough of Greenwich
+toad_frog,Red Frog Hire Limited,1,162103.2,1,HM Revenue and Customs
+spider_org,Red Spider Ltd,1,63480.0,1,HM Revenue and Customs
+squirrel,Red Squirrel Survival Trust,1,80938.0,1,"Department for Environment, Food and Rural Affairs"
+pest,Rentokil Pest Control UK,1,895.51,1,South Gloucestershire Council
+rhubarb,Rhubarb Food Design Ltd,1,8175.82,1,Department for International Development
+rhubarb,Rhubarb Theatre,22,25292.9,1,Rushmoor Borough Council
+cheese,Rippon cheese Stores,1,3881.56,1,"Foreign, Commonwealth and Development Office (FCDO)"
+dinosaur,Robot Dinosaur Productions Limited,3,8000.0,1,Bristol City Council
+dinosaur,SAMTREX,1,657.64,1,Foreign and Commonwealth Office
+santa,SANTA FE,24,24314.3,1,Foreign and Commonwealth Office
+santa,SANTA FE REST,1,501.38,1,"Foreign, Commonwealth and Development Office (FCDO)"
+santa,SANTA LUZ,1,910.5,1,"Foreign, Commonwealth and Development Office (FCDO)"
+santa,SANTA MARIA PUBLICIDAD,8,11756.59,1,"Foreign, Commonwealth and Development Office (FCDO)"
+santa,SANTA MONICA DESIGNS LTD,3,500.0,1,UK Trade and Investment
+gull,SEAGULL FITTINGS LTD,1,1289.82,1,Natural History Museum
+swan,SELBY SWANS GYMNASTIC ACADEMY,3,2650.0,1,North Yorkshire Council
+swan,SELBY SWANS GYMNASTICS ACADEMY,1,2900.0,1,Former council of North Yorkshire
+sheep,SHEPHERD & WEDDERBURN,1,74930.72,1,HM Revenue and Customs
+sheep,SHEPHERD CONSTRUCTION LTD,22,5958770.47,2,Ministry of Justice
+sheep,SHEPHERD ENGINEERING SERVICES LIMITED,47,247846.35,1,Royal Borough of Greenwich
+sheep,SHEPHERD HARRIS LLP,2,62644.34,1,Ministry of Justice
+sheep,SHEPHERD REYNOLDS SOLICITORS LTD,5,159977.0,1,Ministry of Justice
+sheep,SHEPHERDS BUSH HOUSING,3,130850.0,1,"Ministry of Housing, Communities and Local Government"
+sheep,SHEPHERDS BUSH HOUSING ASSOC,2,125566.0,1,"Ministry of Housing, Communities and Local Government"
+sheep,SHEPHERDS INN & THE AUCTIONEER,1,2604.17,1,Eden District Council
+sheep,SHEPHERDS INN COMMUNITY PCs,3,1500.0,1,Eden District Council
+sheep,SHEPHERDSBO,1,118.3,1,Natural History Museum
+sheep,SHEPHERDSWELL INFANT SCHOOL,1,25000.0,1,Department for Education
+pest,SHIELD PEST CONTROL,1,447.8,1,Queen Elizabeth II Conference Centre
+knitting,SIMPLEX KNITTING CO LTD,3,3986.05,1,UK Trade and Investment
+snake,SNAKE AND DAGGER LTD,1,200.0,1,UK Trade and Investment
+wizard,SOLUTIONS WIZARD TECH,1,552.7,1,"Foreign, Commonwealth and Development Office (FCDO)"
+windmill,SPACE BASE OUT OF SCHOOL CLUB (WINDMILL NURSERY),1,500.0,1,Former council of North Yorkshire
+spider_org,SPIDER UK LTD,3,3987.9,2,Blaby District Council
+otter,SPOTTY OTTER LTD T/A LITTLE TREKKERS,4,1500.0,1,UK Trade and Investment
+squirrel,SQUIRREL MEDICAL,2,1074.0,1,Shropshire Community Health NHS Trust
+swan,ST SWAN & LION,1,666.09,1,"Foreign, Commonwealth and Development Office (FCDO)"
+unicorn,STALLION AND UNICORN LIMITED,2,1240000.0,1,"Foreign, Commonwealth and Development Office (FCDO)"
+swan,STAR SWAN PRIVATE HIRE,4,2624.0,1,Transport for Greater Manchester
+stilt,STILTZ LTD,3,33018.0,1,North Yorkshire Council
+pest,STRUCKUM PEST CONTROL,1,691.19,1,"Foreign, Commonwealth and Development Office (FCDO)"
+puppet,SWALLOW'S WINGS PUPPETRY CIC,1,756.0,1,North Yorkshire Council
+swan,SWAN,3,27216.0,2,"Ministry of Housing, Communities and Local Government"
+swan,SWAN (GRASMERE),1,1320.0,1,"Department for Environment, Food and Rural Affairs"
+swan,SWAN GOLF DESIGNS LTD,1,1000.0,1,UK Trade and Investment
+swan,SWAN HOUSING ASSOCIATION LIMITED,1,394147.75,1,"Ministry of Housing, Communities and Local Government"
+swan,SWAN LANE FIRST SCHOOL,1,25000.0,1,Department for Education
+swan,SWAN Netball Club,2,900.0,1,Uttlesford District Council
+swan,SWAN PETROLEUM           WHITTINGTON,4,2895.11,1,"Department for Environment, Food and Rural Affairs"
+swan,SWAN SURGERY,72,700586.15,1,NHS Norfolk and Suffolk ICB - 25k Expenditure Report
+swan,SWAN TEST & CALIBRATIO,3,3594.0,1,"Department for Environment, Food and Rural Affairs"
+swan,SWAN VALLEY COMMUNITY SCHOOL,1,600.0,1,Royal Borough of Greenwich
+swan,SWANS TRAVEL,38,586954.57,1,Transport for Greater Manchester
+swan,SWANS TRAVEL LTD,14,14253.75,2,Foreign and Commonwealth Office
+sword,SWORD CONSTRUCTION U.K. LIMITED,1,36525.0,1,Maidstone and Tunbridge Wells NHS Trust
+sword,SWORD CONSTRUCTION UK LTD,32,3173237.72,1,Maidstone and Tunbridge Wells NHS Trust
+sword,SWORD MEDICAL UK LTD,1,80550.43,1,East Sussex Healthcare NHS Trust
+lighthouse,SYNTRIOLIGHTHOUSEHOTLI,2,1414.6,1,"Foreign, Commonwealth and Development Office (FCDO)"
+dinosaur,Samtrex pty ltd,1,637.36,1,Department for International Development
+panto,Scenic Pantomimes,13,39578.32,1,Rushmoor Borough Council
+panto,Scenic Pantomimes Limited,16,54912.66,1,Rushmoor Borough Council
+sheep,Sheep Dip Lane Academy,31,2189158.49,1,Department for Education
+sheep,Shepherd & Wedderburn,4,312201.51,1,HM Revenue and Customs
+sheep,Shepherdswell Academy,158,3675498.74,1,Department for Education
+sheep,Shepherdswell School,54,756210.0,1,Department for Education
+donkey,South East Donkeys,2,650.0,1,Rushmoor Borough Council
+lighthouse,St Mary's CEVC Primary School (Lighthouse Schools Partnership),2,1300.0,1,Bristol City Council
+circus,Steamship Circus Ltd,8,7685.0,1,Rushmoor Borough Council
+stilt,Stilton C of E Primary Academy,41,2065482.73,1,Department for Education
+butterfly_farm,Stratford Butterfly Farm Ltd,40,25489.35,2,"Department for Digital, Culture, Media and Sport"
+hedgelay,Surrey Hedgelaying Group,1,962.0,1,Rushmoor Borough Council
+swan,Swan Advocacy,23,26898.4,1,Bristol City Council
+swan,Swan Family Centres Limited,6,196888.75,1,Children and Family Court Advisory and Support Service
+swan,Swan Family Centres Ltd,6,10794.0,1,Bristol City Council
+swan,Swan Films Ltd,3,2740.27,1,Bristol City Council
+swan,Swan Generators Ltd,3,77213.0,1,Coventry and Warwickshire Partnership NHS Trust
+swan,Swan Private Hire,2,1203.36,1,Equality and Human Rights Commission
+swan,Swans Travel Limited,2,10080.0,1,"Foreign, Commonwealth and Development Office (FCDO)"
+sword,Sword Charteris Ltd,2,5309.9,1,Plymouth City Council
+blacksmith,TAIT FARRIER GRAHAM,6,195500.0,1,Ministry of Justice
+puppet,TATWOOD PUPPETS LTD,1,846.4,1,North Yorkshire Council
+wizard,TEXT WIZARD COPYWRITING LTD,2,2532.44,1,UK Trade and Investment
+thatching,THATCHAM MEDICAL PRACTICE (K81073),57,609492.1,1,NHS Thames Valley ICB
+thatching,THATCHED HOUSE CARS,1,31.0,1,The National Archives
+thatching,THATCHED HOUSE HTL,1,120.0,1,Natural History Museum
+thatching,THATCHERS CIDER COMPANY LTD,1,1000.0,1,UK Trade and Investment
+swan,THE BEDFORD SWAN HOTEL,3,13031.43,1,UK Trade and Investment
+swan,THE BEDFORD SWAN HOTEL   BEDFORD,1,65.0,1,"Ministry of Housing, Communities and Local Government"
+bees,THE BEES KNEES LTD,1,1000.0,1,UK Trade and Investment
+brass_band,THE BOLLYWOOD BRASS BAND LLP,5,19590.0,1,Royal Borough of Greenwich
+sausage,THE BRITISH PREMIUM SAUSAGE COMPANY,1,219.39,1,UK Trade and Investment
+sheep,THE BRITISH TEXEL SHEEP SOCIETY LTD,2,2000.0,1,UK Trade and Investment
+circus,THE CIRCUS HOUSE CIC,2,3340.0,1,Transport for Greater Manchester
+lighthouse,THE COMMISSIONERS OF NORTHERN LIGHTHOUSES,1,98331.6,1,Ministry of Defence
+sausage,THE COSMIC SAUSAGES,3,4100.0,1,Royal Borough of Greenwich
+cuckoo,THE CUCKOO'S NEST LTD,1,3000.0,1,UK Trade and Investment
+dolphin,THE DOLPHIN SCHOOL,1,21277.0,1,Department for Education
+windmill,THE EDEN VALLEY WATERMILL SOCIETY LTD,1,3236.16,1,Eden District Council
+falconry,THE FALCON SCHOOL NICO,2,3032.18,1,"Foreign, Commonwealth and Development Office (FCDO)"
+archery,THE FOSES ARCHERY CLUB,1,540.0,1,Blaby District Council
+sheep,THE GOOD SHEPHERD CATHOLIC PRIMARY ARNOLD,1,8986.25,1,Department for Education
+sheep,THE GOOD SHEPHERD CATHOLIC PRIMARY SCHOOL,1,25000.0,1,Department for Education
+sheep,THE GOOD SHEPHERD CATHOLIC TRUST,3,732200.18,1,Department for Education
+sheep,THE GOOD SHEPHERD MULTI ACADEMY,9,545000.0,1,Department for Education
+sheep,THE GOOD SHEPHERD MULTI ACADEMY TRUST,1,25000.0,1,Department for Education
+sheep,THE GOOD SHEPHERD TRUST,22,1565033.12,1,Department for Education
+camel,THE GREEN CAMEL INVESTMENTS LTD,1,48243.53,1,Foreign and Commonwealth Office
+giraffe,THE LAUGHING GIRAFFE,6,22361.5,2,Former council of North Yorkshire
+lighthouse,THE LIGHTHOUSE,1,1403.23,1,Foreign and Commonwealth Office
+lighthouse,THE LIGHTHOUSE SPECIAL SCHOOL,2,61963.0,1,Department for Education
+cheese,THE MEADOW CHEESE COMPANY LIMITED,1,3000.0,1,UK Trade and Investment
+mermaid,THE MYTTON & MERMAID HOTEL,20,3388.9,1,Shropshire Community Health NHS Trust
+swan,THE ORCHESTRA OF THE SWAN,1,2102.25,1,UK Trade and Investment
+puppet,THE PUPPET COMPANY LTD,1,1000.0,1,UK Trade and Investment
+santa,THE REINDEER CENTRE,1,1680.0,1,Royal Borough of Greenwich
+sausage,THE SAUSAGE FACTORY,1,62.71,1,"Department for Digital, Culture, Media and Sport"
+coffin,THE SAWD PARTNERSHIP T/A ECOCOFFINS,1,1000.0,1,UK Trade and Investment
+sheep,THE SHEPHERDS,1,2145.0,1,Eden District Council
+ferret,THE STRAY FERRET LTD,1,3000.0,1,North Yorkshire Council
+swan,THE SWAN AT HAY,1,1161.0,1,"Department for Environment, Food and Rural Affairs"
+swan,THE SWAN AT HAY          HAY ON WYE HE,1,500.0,1,"Department for Environment, Food and Rural Affairs"
+swan,THE SWAN AT THE GLOBE,1,641.25,1,"Foreign, Commonwealth and Development Office (FCDO)"
+swan,THE SWAN HOTEL,1,130.0,1,The National Archives
+swan,THE SWAN INN,2,1006.3,1,Shropshire Community Health NHS Trust
+swan,THE SWAN NETWORK,10,133517.82,1,NHS Thames Valley ICB
+swan,THE SWAN PRACTICE (K82007),54,1572004.55,1,NHS Thames Valley ICB
+swan,THE WHITE SWAN COMMUNITY GROUP LTD,1,1000.0,1,North Yorkshire Council
+swan,THE WHITE SWAN HOTEL,3,214.9,1,The National Archives
+giraffe,THINKGIRAFFE CONSULTANCY LTD,1,1312.5,1,Royal Borough of Greenwich
+knitting,THIRSK YARNBOMBERS,1,628.0,1,North Yorkshire Council
+owl,TOENSMEIER ENTSORGUNG OWL GMBH & CO.KG,3,212954.28,1,Ministry of Defence
+toffee,TOFFEE HAMMER PRODUCTIONS LTD,1,19900.0,1,The National Archives
+toffee,TOFFEE MOON LTD,1,500.0,1,UK Trade and Investment
+santa,TOTAL GAS & POWER (PREV ELF BUSINESS ENERGY),11,594083.08,1,Royal United Hospital Bath NHS Foundation Trust
+santa,TOYOTA SANTA FE,1,561.48,1,Foreign and Commonwealth Office
+whelk,TWINKLE PARK TRUST,2,104313.0,1,Royal Borough of Greenwich
+allotment,TYLDESLEY ALLOTMENTS ASSOCIATION,1,10000.0,1,Transport for Greater Manchester
+thatching,Thatcher + Hallam LLP,1,315000.0,1,Bristol City Council
+toad_frog,The  Tall Frog,1,709.5,1,"Foreign, Commonwealth and Development Office (FCDO)"
+bees,The British Beekeepers Association,1,33534.9,1,"Department for Environment, Food and Rural Affairs"
+dolphin,The Dolphin Academy,131,1158658.06,1,Department for Education
+dolphin,The Dolphin School,111,6899103.0,2,Bristol City Council
+dolphin,The Dolphin School E-Act,12,79196.36,1,Bristol City Council
+falconry,The Falcon Hotel,3,3470.0,1,Rushmoor Borough Council
+dolphin,The Godolphin Junior School,185,5389556.73,1,Department for Education
+sheep,The Good Shepherd Catholic Primary School,58,5416197.22,1,Department for Education
+sheep,The Good Shepherd Primary Catholic V,126,3459820.68,1,Department for Education
+sheep,The Good Shepherd Trust,63,1252401.0,1,Department for Education
+goat,"The Grazing Goat, London",1,506.22,1,"Department for Science, Innovation and Technology"
+circus,The Invisible Circus C.I.C,11,91882.5,1,Bristol City Council
+jester,The Jester Exchange Ltd,1,3000.0,1,Bristol City Council
+lighthouse,The Lighthouse School Leeds,202,1052659.91,1,Department for Education
+owl,The Owl Centre Ltd,3,1883.3,1,Bristol City Council
+puppet,The Puppet Company ltd,1,450.95,1,Bristol City Council
+swan,The Swan School,44,3253503.06,1,Department for Education
+swan,The Swan Trust,1,25000.0,1,Department for Education
+ukulele,The Ukulele Orchestra Of Great Britain,6,35468.16,1,Rushmoor Borough Council
+swan,The White Swan,1,636.0,1,"Department for Environment, Food and Rural Affairs"
+toad_frog,Toad Hall Pre School,1,18838.52,1,Plymouth City Council
+pest,Total Pest Control,12,18519.0,1,Rushmoor Borough Council
+magician,UK HYPNOSIS ACADEMY LT,2,2000.0,1,"Foreign, Commonwealth and Development Office (FCDO)"
+unicorn,UNICORN FIRE & SAFETY SOLUTIONS LTD,186,61485.33,1,Shropshire Community Health NHS Trust
+unicorn,UNICORN HOUSE,2,9706.41,1,Royal Borough of Greenwich
+unicorn,UNICORN INN,4,111.64,1,The National Archives
+unicorn,UNICORN PRIMARY SCHOOL,1,25000.0,1,Department for Education
+unicorn,UNICORN PRODUCTS LTD,1,450.0,1,UK Trade and Investment
+unicorn,UNICORN TRAINING GROUP LTD,1,1000.0,1,UK Trade and Investment
+unicorn,"UNICORN,",1,3193.19,1,"Foreign, Commonwealth and Development Office (FCDO)"
+unicorn,Unicorn Primary School,62,7258914.54,1,Department for Education
+unicorn,Unicorn Training,2,64333.0,1,Cabinet Office
+steamengine,Universal Steam Engineering,3,6805.0,1,Bristol City Council
+pest,VERMINEX CO WLL,4,4947.37,1,"Foreign, Commonwealth and Development Office (FCDO)"
+fudge,VFI Fudge Love OY,2,1782.17,1,"Foreign, Commonwealth and Development Office (FCDO)"
+viking,VIKING,15,6434.86,5,Blaby District Council
+viking,VIKING ARMS LIMITED,23,2879219.87,1,Ministry of Defence
+viking,VIKING ARMS LTD,2,2897.85,1,"Foreign, Commonwealth and Development Office (FCDO)"
+viking,VIKING COACHES,68,314205.58,1,Transport for Greater Manchester
+viking,VIKING DE,6,6063.88,1,"Foreign, Commonwealth and Development Office (FCDO)"
+viking,VIKING DIRECT,937,12740.47,1,Shropshire Community Health NHS Trust
+viking,VIKING DIRECT LTD,4,429.45,2,"Department for Digital, Culture, Media and Sport"
+viking,VIKING DIREKT DEUTSCHL,1,697.57,1,Foreign and Commonwealth Office
+viking,VIKING IE,3,3288.03,1,"Foreign, Commonwealth and Development Office (FCDO)"
+viking,VIKING IND,1,22.18,1,Natural History Museum
+viking,VIKING INDUSTRIAL PRODUCTS LTD,1,2891.5,1,UK Trade and Investment
+viking,VIKING OFFICE UK LIMIT,7,6722.63,1,"Foreign, Commonwealth and Development Office (FCDO)"
+viking,VIKING OFFICE UK LIMITED,72,1409.44,1,Shropshire Community Health NHS Trust
+viking,VIKING OPTICAL,1,1571.72,1,"Department for Environment, Food and Rural Affairs"
+viking,VIKING OPTICAL           01986 875315,4,4069.54,1,"Department for Environment, Food and Rural Affairs"
+viking,VIKING RECRUITMENT LTD,1,1000.0,1,UK Trade and Investment
+viking,VIKING SIGNS LTD,4,47.45,1,Shropshire Community Health NHS Trust
+viking,VIKING UK,5,4878.66,1,"Foreign, Commonwealth and Development Office (FCDO)"
+bees,Vee Gee Bee,1,647.65,1,"Foreign, Commonwealth and Development Office (FCDO)"
+viking,Viking Arms Ltd,1,519.04,1,Department for International Development
+viking,Viking Direct,14,5357.53,2,"Department for Environment, Food and Rural Affairs"
+viking,Viking Direct Limited,2,904.21,1,South Gloucestershire Council
+viking,Viking Direct Ltd,1,660.91,1,London Borough of Richmond Upon Thames
+windmill,"Vokes Taxis Ltd t/a Vokes Taxis, Rainham Cabs & Windmill Taxis",2,795.0,1,Bristol City Council
+shortbread,WALKERS SHORTBREAD,5,4967.17,2,Foreign and Commonwealth Office
+pest,WASP BAR CODE TECH GBP,1,1143.9,1,Foreign and Commonwealth Office
+pest,WASP SOFTWARE LIMITED,1,34000.0,1,Maidstone and Tunbridge Wells NHS Trust
+pest,WASP SOFTWARE LTD,5,10920.0,1,"Ministry of Housing, Communities and Local Government"
+duck,WATER OFF A DUCK'S BACK LTD,1,1000.0,1,UK Trade and Investment
+allotment,"WATER PLUS - 0375009062 -  HAYDEN ROAD ALLOTMENTS, OLD GLOUCESTER ROAD, HAYDEN,  CHELTENHAM  - WATER  CHARGE - 07/07/2020-07/08/2020",1,19700.06,1,Cheltenham Borough Council
+allotment,"WATER PLUS 0375009062 - ALLOTMENTS, HATHERLEY ROAD, CHELTENHAM - WATER CHARGE - 07/08/2020-07/09/2020",1,546.44,1,Cheltenham Borough Council
+allotment,"WATER PLUS 0375009062 - HAYDEN ROAD ALLOTMENTS, OLD GLOUCESTER ROAD, HAYDEN, CHELTENHAM - WATER CHARGE - 07/08/2020-07/09/2020",1,3336.57,1,Cheltenham Borough Council
+windmill,WATERMILL WINES LTD (THIERRYS),4,3250.0,1,UK Trade and Investment
+windmill,WATERMILLOCK VILLAGE HALL,1,1773.6,1,Eden District Council
+windmill,WATERMILLS EVENTS LIMITED,1,31340.0,1,Ministry of Defence
+sausage,WESTAWAY SAUSAGES LTD,3,3000.0,1,UK Trade and Investment
+whale,WHALE HILL PRIMARY SCHOOL,1,25000.0,1,Department for Education
+whale,WHALE TANKERS LIMITED,1,3116.4,1,Royal Borough of Greenwich
+alpaca,WILDWOOD ALPACAS,1,165.0,1,Shropshire Community Health NHS Trust
+windmill,WINDMILL L E A D ACADEMY,1,50000.0,1,Department for Education
+windmill,WINDMILL LEAD ACADEMY,2,139076.88,1,Department for Education
+windmill,WINDMILL ORGANICS LTD,2,399.64,1,UK Trade and Investment
+windmill,WINDMILL PRIMARY SCHOOL,4,149166.0,1,Department for Education
+windmill,WINDMILL SURGERY,38,509890.39,1,NHS Norfolk and Suffolk ICB - 25k Expenditure Report
+cheese,WINDYRIDGE CHEESE LTD,2,1000.0,1,UK Trade and Investment
+wizard,WINSTANLEY WIZARDS TABLE TENNIS CLUB,5,2388.0,1,Blaby District Council
+owl,WISE OWL BUSINESS SOLU,2,1548.0,2,Department for Education
+owl,WISE OWL BUSINESS SOLUTI,1,714.0,1,Natural History Museum
+owl,WISE OWL BUSINESS SOLUTIONS LTD,10,7260.0,2,"Ministry of Housing, Communities and Local Government"
+wizard,WIZARD PAINT REPAIRS,1,545.59,1,Foreign and Commonwealth Office
+allotment,WOODLAND ALLOTMENTS TENANTS GROUP,1,800.0,1,Former council of North Yorkshire
+crier_misc,WP-WWW.OYEZFORMSLINK.C,1,9.69,1,Eden District Council
+dolphin,WWW.DOLPHINUK.CO.UK,1,856.8,1,"Department for Environment, Food and Rural Affairs"
+viking,WWW.VIKING-DIRECT.CO.U,7,3385.97,4,Eden District Council
+viking,WWW.VIKING.DE/,50,44645.15,1,Foreign and Commonwealth Office
+viking,WWW.VIKINGDIRECT.IE,3,2051.22,1,Foreign and Commonwealth Office
+viking,WWW.VIKINGDIRECT.NL/,8,6329.19,1,Foreign and Commonwealth Office
+windmill,Watermill School,42,5604178.93,1,Department for Education
+whale,Whale Hill Primary School,46,5993498.56,1,Department for Education
+whale,Whale Tankers Limited,7,5526.29,1,South Gloucestershire Council
+owl,Whitleigh Wise Owls Two,4,10870.0,1,Plymouth City Council
+windmill,Windmill Academy,10,52048.96,1,Department for Education
+windmill,Windmill Care Limited,23,16325.45,1,South Gloucestershire Council
+windmill,Windmill Hill Academy,125,4172043.27,1,Department for Education
+windmill,Windmill Hill City Farm Community Enterprise,21,15564.75,1,Bristol City Council
+windmill,Windmill Hill City Farm Ltd,594,2868707.33,1,Bristol City Council
+windmill,Windmill Hill Community Association,4,72616.0,1,Bristol City Council
+windmill,Windmill Hill Primary,45,4469791.8,1,Department for Education
+windmill,Windmill Hill School,10,322499.86,1,Department for Education
+windmill,Windmill House,56,81187.0,1,South Gloucestershire Council
+windmill,Windmill L.E.A.D. Academy,76,8759520.79,1,Department for Education
+windmill,Windmill Primary School,277,16987475.33,1,Department for Education
+lighthouse,Winford CoE Primary School (Lighthouse Schools Partnership),9,10958.71,1,Bristol City Council
+knight_medieval,Winterbourne Medieval Barn Trust,2,4241.98,1,South Gloucestershire Council
+owl,Wise Owl Business Solutions Ltd,1,625.0,1,Department for International Development
+viking,Www.Viking-Direct.Co.U,1,959.8,1,Plymouth City Council
+ye_olde,YE OLDE FRIARS OF KESW,1,531.0,1,Foreign and Commonwealth Office
+ye_olde,YE OLDE KINGS HEAD,1,11.94,1,Natural History Museum
+ye_olde,YE OLDE PUNCHBOWL INN,2,255.2,1,Shropshire Community Health NHS Trust
+thatching,YOCO    THATCHSCAPES,2,3031.89,1,"Foreign, Commonwealth and Development Office (FCDO)"
+falconry,YOREDALE BIRDS OF PREY LTD,20,16800.0,2,Former council of North Yorkshire
+pest,YORKSHIRE PEST CONTROL LTD & YORKSHIRE FLYSCREENS,1,675.0,1,Former council of North Yorkshire

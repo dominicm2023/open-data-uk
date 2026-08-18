@@ -1,0 +1,654 @@
+firm,supplier_raw,txns,gbp,n_publishers,publishers
+Deloitte,DELOITTE LLP,1323,254708545.41,23,"George Eliot Hospital NHS Trust,Department for Education,Transport for Greater Manchester,Shropshire Community Health NHS Trust,Portsmouth Hospital NHS Trust,Eden District Council,Royal Borough of Greenwich,Maidstone and Tunbridge Wells NHS Trust,East Sussex Healthcare NHS Trust,Milton Keynes Hospital NHS Foundation Trust,United Lincolnshire Hospitals NHS Trust,Cabinet Office,National Institute for Health and Care Excellence,Department for Work and Pensions,Foreign, Commonwealth and Development Office (FCDO),HM Revenue and Customs,Home Office,Ministry of Defence,Department of Health and Social Care,HM Treasury,Ministry of Housing, Communities and Local Government,Ministry of Justice,UK Trade and Investment"
+Deloitte,DELOITTE,371,207897350.3,9,"Department for Education,Former council of North Yorkshire,North Yorkshire Council,Salisbury NHS Foundation Trust,The Pennine Acute Hospitals NHS Trust,Department for Work and Pensions,Department of Health and Social Care,HM Revenue and Customs,Home Office"
+Deloitte,DELOITTE LLP (L),400,140218628.22,1,HM Revenue and Customs
+Deloitte,DELOITTE MCS LTD,249,27025390.91,11,"Cabinet Office,National Institute for Health and Care Excellence,Department for Education,Department for International Development,HM Revenue and Customs,Department for Work and Pensions,Home Office,Department of Health and Social Care,HM Treasury,Ministry of Housing, Communities and Local Government,National Offender Management Service"
+Deloitte,Deloitte LLP,201,18187961.85,12,"Animal and Plant Health Agency,UK Shared Business Services,Natural History Museum,Coventry and Warwickshire Partnership NHS Trust,Tate,Department for Digital, Culture, Media and Sport,Department for Energy Security and Net Zero,Department for Education,Department for International Development,Department for Science, Innovation and Technology,HM Revenue and Customs,Equality and Human Rights Commission"
+Deloitte,DELOITTE MCS LIMITED,83,13172233.66,5,"The National Archives,Department of Health and Social Care,Foreign, Commonwealth and Development Office (FCDO),Ministry of Defence,Home Office"
+Deloitte,DELOITTE TOUCHE TOHAMATSU INDIA PRIVATE LTD (DTTIPL),114,11576191.45,1,Department for International Development
+Deloitte,Deloitte MCS Ltd,80,7405028.66,1,Department for Education
+Deloitte,Deloitte Llp,46,6458144.09,4,"Pennine Care NHS Foundation Trust,Department for Energy Security and Net Zero,Department for Environment, Food and Rural Affairs,Department for Science, Innovation and Technology"
+Deloitte,Deloitte Consulting Pvt Ltd Co.,29,6350475.59,1,Department for International Development
+Deloitte,DELOITTE (UGANDA) LTD,3,6200000.0,1,Department for International Development
+Deloitte,Deloitte M C S Ltd,35,5985800.52,1,HM Revenue and Customs
+Deloitte,DRIVERS JONAS DELOITTE,123,4737639.1,6,"Transport for Greater Manchester,Cabinet Office,Foreign and Commonwealth Office,Home Office,Ministry of Justice,National Offender Management Service"
+Deloitte,DELOITTE AND TOUCHE LLP,38,4402558.76,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Deloitte,Deloitte Touche Tohmatsu India Private Limited,85,4088863.46,1,Department for International Development
+Deloitte,DELOITTE TOUCHE TOHMATSU INDIA PRIVA,160,3812580.23,1,Department for International Development
+Deloitte,DELOITTE TOUCHE TOHMATSU INDIA LLP,84,2515742.97,1,Department for International Development
+Deloitte,DELOITTE & TOUCHE LLP,13,2252786.4,1,Department for Work and Pensions
+Deloitte,DELOITTE (UGANDA) LIMITED,18,1629520.98,1,Department for International Development
+Deloitte,Deloitte & Touche,12,1518985.28,3,"Department for Environment, Food and Rural Affairs,Department for International Development,HM Revenue and Customs"
+Deloitte,DELOITTE MSC LTD,11,817507.89,1,Department for Education
+Deloitte,Deloitte,32,667367.07,5,"Whittington Hospital NHS Trust,Office of Rail and Road,The Pennine Acute Hospitals NHS Trust,Department for International Development,Home Office"
+Deloitte,Deloitte Touche Tohmatsu India LLP,32,490613.14,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+Deloitte,DELOITTE MCS,11,482249.67,1,Home Office
+Deloitte,Deloitte Kenya,12,399358.01,1,Department for International Development
+Deloitte,Deloitte MCS Limited,5,350166.4,3,"Department for International Development,HM Revenue and Customs,Ministry of Defence"
+Deloitte,DELOITTE CONSULTING LLP,5,301681.0,1,Foreign and Commonwealth Office
+Deloitte,Akintola Williams Deloitte Consultin,4,220716.46,1,Department for International Development
+Deloitte,DELOITTE CONSULTING (PTY) LTD,6,215711.95,1,Department for International Development
+Deloitte,DELOITTE & TOUCHE,4,197344.74,3,"Department for Work and Pensions,Home Office,Ministry of Housing, Communities and Local Government"
+Deloitte,Deloitte Touche Tohmatsu India Pvt. Ltd.,10,172334.1,1,Department for International Development
+Deloitte,Drivers Jonas Deloitte,79,159839.12,3,"Department for Digital, Culture, Media and Sport,Natural History Museum,Victoria & Albert Museum"
+Deloitte,Rank Group PLC c/o Deloittes,1,111892.0,1,HM Revenue and Customs
+Deloitte,Deloitte Mcs Ltd,2,104430.0,1,Bristol City Council
+Deloitte,Wm Morrisons Supermarkets PLC c/o Deloitte LLP,1,95000.0,1,HM Revenue and Customs
+Deloitte,DELOITTE CONSULTING LTD,1,84000.0,1,Cabinet Office
+Deloitte,Deloitte and Touche LLP~114191649,2,82381.6,1,"Department for Environment, Food and Rural Affairs"
+Deloitte,Deloitte MCS,3,75104.77,1,Victoria & Albert Museum
+Deloitte,Deloitte  Llp,2,69018.85,1,The Pennine Acute Hospitals NHS Trust
+Deloitte,Deloitte Real Estate (LLP No 3 a/c),2,64946.4,1,"Department for Digital, Culture, Media and Sport"
+Deloitte,Deloitte  LLP,1,51772.85,1,"Department for Environment, Food and Rural Affairs"
+Deloitte,Deloitte Limited,2,50719.12,1,Department for International Development
+Deloitte,DELOITTES LLP,1,48950.0,1,Milton Keynes Hospital NHS Foundation Trust
+Deloitte,WGIS c/o Deloitte Legal,1,40000.0,1,HM Revenue and Customs
+Deloitte,DELOITTE TOUCHE FINANCIAL ADVISORY SERVICES LIMITED,1,40000.0,1,Foreign and Commonwealth Office
+Deloitte,PT DELOITTE ADVIS INDONESIA,1,39988.56,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Deloitte,Deloitte Malawi Advisory Services,2,35900.39,1,Department for International Development
+Deloitte,Deloitte Touche LLP,1,34740.0,1,National Offender Management Service
+Deloitte,DELOITTE LLP NO 2 ACCOUNT,1,34050.0,1,National Offender Management Service
+Deloitte,Deloitte & Touche LLP,1,29375.0,1,"Department for Environment, Food and Rural Affairs"
+Deloitte,Drivers Jonas Deloitte LLP,1,26050.26,1,Tate
+Deloitte,DELOITTE  LLP,4,23757.91,1,"Ministry of Housing, Communities and Local Government"
+Deloitte,DRIVERS JONAS (DELOITTE LLP),13,23206.88,1,"Ministry of Housing, Communities and Local Government"
+Deloitte,Deloitte Yousuf Adil  Chartered Accountants,7,19984.11,1,Department for International Development
+Deloitte,Deloitte Malawi,3,19023.09,1,Department for International Development
+Deloitte,Deloitte & Touche (Mocambique)  Lda,4,18806.46,1,Department for International Development
+Deloitte,Deloitte & Touche Zambia,1,8226.87,1,Department for International Development
+Deloitte,DELOITTE KOSOVA SHPK,8,6598.69,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Deloitte,"Deloitte Yousuf Adil, Chartered Accountants",2,2930.45,1,Department for International Development
+PwC,PWC GEC Client Account,40,463013846.92,1,Department for International Development
+PwC,PRICEWATERHOUSECOOPERS,2181,380465610.82,7,"Royal Borough of Greenwich,Transport for Greater Manchester,Department for International Development,Department for Education,Foreign and Commonwealth Office,HM Treasury,Ministry of Housing, Communities and Local Government"
+PwC,PRICEWATERHOUSECOOPERS LLP,1249,193683245.88,18,"East Sussex Healthcare NHS Trust,Department for Education,Royal Borough of Greenwich,Cabinet Office,Maidstone and Tunbridge Wells NHS Trust,Eden District Council,The Pennine Acute Hospitals NHS Trust,Salisbury NHS Foundation Trust,Department for Energy Security and Net Zero,Department of Health and Social Care,Foreign, Commonwealth and Development Office (FCDO),HM Revenue and Customs,Ministry of Defence,Home Office,Ministry of Housing, Communities and Local Government,Ministry of Justice,National Offender Management Service,UK Trade and Investment"
+PwC,PWC Gec Client Account,18,166559488.0,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+PwC,Pricewaterhousecoopers,217,42554873.26,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+PwC,PRICEWATERHOUSE COOPERS LLP,214,30643517.25,8,"NHS Business Services Authority,Cabinet Office,Former council of North Yorkshire,East Sussex Healthcare NHS Trust,North Yorkshire Council,Department for Work and Pensions,Foreign and Commonwealth Office,Ministry of Justice"
+PwC,PricewaterhouseCoopers Pvt.Ltd,224,23868484.25,1,Department for International Development
+PwC,PRICE WATERHOUSE COOPERS LLP,130,14686346.81,4,"Blaby District Council,Department for Education,Department for Work and Pensions,Home Office"
+PwC,Pricewaterhousecoopers Llp,29,9158382.91,3,"Whittington Hospital NHS Trust,Department for Energy Security and Net Zero,Department for Science, Innovation and Technology"
+PwC,PricewaterhouseCoopers Limited (KENYA3),67,7922891.21,1,Department for International Development
+PwC,PRICE WATERHOUSE COOPER LLP,63,7420876.25,2,"Department for Work and Pensions,Department for Education"
+PwC,PRICEWATERHOUSE COOPERS,35,7060803.43,5,"Cabinet Office,Milton Keynes Hospital NHS Foundation Trust,Department for Education,Department for Work and Pensions,HM Treasury"
+PwC,Pricewaterhouse Coopers LLP,106,6781332.17,4,"UK Shared Business Services,Plymouth City Council,Cabinet Office,National Offender Management Service"
+PwC,PRICEWATERHOUSECOOPER LLP - SPF CLIENT MONEY,1,5390077.0,1,Department of Health and Social Care
+PwC,PRICEWATERHOUSECOOPERS PRIVATE LTD,54,4451584.3,1,Department for International Development
+PwC,PRICE WATERHOUSE COOPER,16,4193699.12,1,Department for Work and Pensions
+PwC,Pricewaterhousecoopers Pvt Ltd,34,4016727.0,1,Department for International Development
+PwC,PRICEWATERHOUSECOOPERS DEVELOPMENT,118,3864534.0,1,Department for International Development
+PwC,Price Waterhouse Coopers,44,3527995.08,2,"Department for Environment, Food and Rural Affairs,Home Office"
+PwC,Pricewaterhousecoopers Limited (Kenya3),19,3348418.21,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+PwC,PricewaterhouseCoopers Private Limited,30,1875521.5,1,"Foreign, Commonwealth and Development Office (FCDO)"
+PwC,Pricewaterhousecoopers (Global),10,1760426.71,1,"Foreign, Commonwealth and Development Office (FCDO)"
+PwC,PricewaterhouseCoopers LLP,23,1733143.96,3,"Uttlesford District Council,UK Sport,HM Revenue and Customs"
+PwC,PWC LLP (HMRC GRANTS),7,1672643.15,1,HM Revenue and Customs
+PwC,Pricewaterhousecoopers LLP,16,1348619.0,1,Bristol City Council
+PwC,PRICEWATERHOUSECOOPE,4,1114037.43,1,Department of Health and Social Care
+PwC,Phoenix Group Holdings Ltd c/o PWC,1,1100000.0,1,HM Revenue and Customs
+PwC,Pricewaterhouse Coopers,11,837348.72,2,"Department for Environment, Food and Rural Affairs,Government Legal Department"
+PwC,Price Waterhouse Coopers LLp,23,784968.65,1,South Gloucestershire Council
+PwC,Pricewaterhousecoopers Pvt. Ltd.,64,756457.29,1,Department for International Development
+PwC,"PRICEWATERHOUSECOOPERS, GHANA",18,631019.85,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+PwC,PricewaterhouseCoopers,12,595296.42,3,"Department for Digital, Culture, Media and Sport,Natural History Museum,Department for Education"
+PwC,PRICEWATERHOUSECOOPERS  GHANA,30,511428.68,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+PwC,PRICEWATERHOUSE,15,398682.5,1,"Ministry of Housing, Communities and Local Government"
+PwC,PwC UK,9,357382.16,1,Department for International Development
+PwC,PRICEWATERHOUSE COOPERS PRIVATE LIMITED,10,306203.0,2,"Foreign and Commonwealth Office,Foreign, Commonwealth and Development Office (FCDO)"
+PwC,PRICEWATERHOUSECOOPERS AFRICA,5,305568.0,1,Department for International Development
+PwC,St. George's University  c/o PWC,1,300000.0,1,HM Revenue and Customs
+PwC,Price Waterhouse Coopers LLP,7,285063.0,1,Coventry and Warwickshire Partnership NHS Trust
+PwC,PRICEWATERHOUSECOOPERS PVT LTD,6,280336.0,2,"Foreign, Commonwealth and Development Office (FCDO),Foreign and Commonwealth Office"
+PwC,RPM Ltd c/o PWC LLP,1,250000.0,1,HM Revenue and Customs
+PwC,Worldpay (UK) c/o PWC LLP,1,240989.8,1,HM Revenue and Customs
+PwC,PRICE WATERHOUSE COOPERS,5,238334.7,2,"Department for Environment, Food and Rural Affairs,Foreign and Commonwealth Office"
+PwC,PRICEWATERHOUSECOOPERS (KENYA),14,227489.3,1,Department for International Development
+PwC,PRICEWATERHOUSECOOPERS MANAGEMENT CONSULTING (SHANGHAI) LIMITED BEIJING BRANCH,4,221710.27,1,Foreign and Commonwealth Office
+PwC,PRICEWATERHOUSECOOPERS SERVICES,4,219351.48,1,Ministry of Justice
+PwC,PwC Rwanda Limited,15,182100.96,1,Department for International Development
+PwC,Baring Asset Management Ltd c/o PWC,1,130371.95,1,HM Revenue and Customs
+PwC,PricewaterhouseCoopers (SA),6,121818.81,1,Department for International Development
+PwC,PRICEWATERHOUSECOOPERS DRC SAS (PWC RDC SAS),4,119526.4,1,Department for International Development
+PwC,PricewaterhouseCoopers Incorporated,2,101545.0,1,"Foreign, Commonwealth and Development Office (FCDO)"
+PwC,"PRICEWATERHOUSECOOPERS CONSULTANTS (SHENZHEN) LIMITED, BEIJING BRANCH",1,95001.06,1,Foreign and Commonwealth Office
+PwC,PRICE WATERHOUSECOOPERS DUBAI BRANCH,1,87338.28,1,"Foreign, Commonwealth and Development Office (FCDO)"
+PwC,PricewaterhouseCoopers NGN,6,82395.55,1,Department for International Development
+PwC,PricewaterhouseCoopers Advisory Ltd,7,75338.5,1,Department for International Development
+PwC,Sojourn Hotels Ltd c/o PwC,1,75000.0,1,HM Revenue and Customs
+PwC,PRICEWATERHOUSE COOPERS ASSOCIATES AFRICA LTD,2,74682.72,1,Foreign and Commonwealth Office
+PwC,Price Waterhouse Coopers Llp,2,73437.5,1,Coventry and Warwickshire Partnership NHS Trust
+PwC,PricewaterhouseCoopers Inc.,2,73067.16,1,Department for International Development
+PwC,PRICEWATERHOUSECOOPERS PRIVATE LIMIT,2,70753.72,1,Department for International Development
+PwC,PriceWaterhouseCoopers,9,69138.45,2,"Department for Digital, Culture, Media and Sport,Department for International Development"
+PwC,Pricewaterhouse Coopers Llp,6,67945.7,2,"Milton Keynes Hospital NHS Foundation Trust,Rushmoor Borough Council"
+PwC,Hippodrome Casino Ltd c/o PWC,1,60000.0,1,HM Revenue and Customs
+PwC,PricewaterhouseCoopers (Ghana) Limited,5,55934.49,1,Department for International Development
+PwC,PWC,1,51839.0,1,Cabinet Office
+PwC,PRICEWATERHOUSE COOPERS PRIVATE LIMI,4,50386.16,1,Department for International Development
+PwC,Ã–hrlings PricewaterhouseCoopers AB,2,43486.59,1,Department for International Development
+PwC,PWC POLAND,1,36143.28,1,"Foreign, Commonwealth and Development Office (FCDO)"
+PwC,PWC UK,3,35551.76,1,Department for International Development
+PwC,PricewaterhouseCoopers LLP Total,1,34565.0,1,Ministry of Defence
+PwC,PriceWaterhouseCoopers Afrique,1,33204.24,1,Department for International Development
+PwC,PRICE WATERHOUSE COOPERS DOO BEOGRAD,1,31407.63,1,"Foreign, Commonwealth and Development Office (FCDO)"
+PwC,PRICEWATERHOUSECOOPERS LLP (PWC),2,28370.4,1,Ministry of Justice
+PwC,PRICEWATERHOUSECOOPERS CONSULTORES AUDITORES Y COMPANIA LIMITADA,1,28195.98,1,Foreign and Commonwealth Office
+PwC,PricewaterhouseCoopers (Tanzania) Limited,1,27843.73,1,Department for International Development
+PwC,PriceWaterhouseCooper,1,26150.0,1,National Offender Management Service
+PwC,PricewaterhouseCoopers Ltd,1,25267.73,1,Department for International Development
+PwC,PricewaterhouseCoopers Rwanda Limited,3,19669.63,1,Department for International Development
+PwC,Price Waterhouse Chartered Accountants LLP,1,18950.0,1,Department for International Development
+PwC,PriceWaterhouseCoopers (KENYA2),2,16898.95,1,Department for International Development
+PwC,PricewaterhouseCoopers Ltd.,2,12617.73,1,Department for International Development
+PwC,PriceWaterHouseCoopers,1,8354.24,1,Department for International Development
+PwC,Price Waterhouse,1,7902.0,1,Department for International Development
+PwC,PricewaterhouseCoopers inc,5,6461.8,1,Department for International Development
+PwC,PWC Vietnam,2,2747.86,1,Department for International Development
+PwC,PricewaterhouseCoopers Uganda,1,2209.91,1,Department for International Development
+PwC,Price Waterhouse Cooper,1,1394.03,1,Department for International Development
+PwC,PWC ACADEMY LLC 148520,1,1295.91,1,Foreign and Commonwealth Office
+PwC,PRICE WATERHOUSE COOPER V,1,616.45,1,"Department for Digital, Culture, Media and Sport"
+PwC,PRICEWATERHOUSE COOPER,1,594.0,1,HM Treasury
+EY,ERNST & YOUNG LLP,1427,262398850.33,21,"NHS Norfolk and Suffolk ICB - 25k Expenditure Report,Portsmouth Hospital NHS Trust,NHS Thames Valley ICB,Department for Education,East Sussex Healthcare NHS Trust,The Pennine Acute Hospitals NHS Trust,Shropshire Community Health NHS Trust,Cabinet Office,Blaby District Council,Milton Keynes Hospital NHS Foundation Trust,Isle of Wight NHS Trust,Department for Work and Pensions,HM Revenue and Customs,Ministry of Defence,Department of Health and Social Care,Foreign and Commonwealth Office,HM Treasury,Home Office,Ministry of Housing, Communities and Local Government,Ministry of Justice,UK Trade and Investment"
+EY,ERNST AND YOUNG LLP,683,78331291.81,5,"United Lincolnshire Hospitals NHS Trust,Department of Health and Social Care,Foreign, Commonwealth and Development Office (FCDO),Home Office,Foreign and Commonwealth Office"
+EY,ERNST & YOUNG,503,56600355.73,8,"Transport for Greater Manchester,Department for Education,North Yorkshire Council,Department for Work and Pensions,Department for International Development,Foreign, Commonwealth and Development Office (FCDO),HM Revenue and Customs,Ministry of Defence"
+EY,Ernst & Young LLP,182,22337408.27,9,"Department for Education,Uttlesford District Council,Cheltenham Borough Council,Office of Rail and Road,Bristol City Council,Department for Digital, Culture, Media and Sport,Department for International Development,Foreign, Commonwealth and Development Office (FCDO),HM Revenue and Customs"
+EY,ERNST &  YOUNG PRIVATE LTD,302,10666659.02,1,Department for International Development
+EY,Ernst And Young Llp,149,10198358.76,3,"Rushmoor Borough Council,Department for Energy Security and Net Zero,Department for Science, Innovation and Technology"
+EY,Ernst and Young LLP,20,6225258.47,3,"Department for Energy Security and Net Zero,Department for International Development,Department for Science, Innovation and Technology"
+EY,EY LLP,89,2275839.04,1,Department for International Development
+EY,Levitt Bernstein Associates Ltd,101,1327953.81,2,"Bristol City Council,Whittington Hospital NHS Trust"
+EY,ERNST AND YOUNG_001,5,1138906.81,1,Home Office
+EY,Ernst & Young,29,831201.46,5,"Department for Environment, Food and Rural Affairs,Cabinet Office,Department for International Development,The Pennine Acute Hospitals NHS Trust,HM Revenue and Customs"
+EY,Vale Europe Ltd c/o Ernst & Young LLP,1,485000.0,1,HM Revenue and Customs
+EY,ERNST&YOUNG LLP,2,483232.8,1,NHS Business Services Authority
+EY,ERNST AND YOUNG SAS,5,403891.64,2,"Foreign, Commonwealth and Development Office (FCDO),Foreign and Commonwealth Office"
+EY,Ernst And  Young,3,345584.22,1,United Lincolnshire Hospitals NHS Trust
+EY,Ernst & Young Llp,2,193445.22,1,Whittington Hospital NHS Trust
+EY,EY PROFESSIONAL SERVICES LIMITED,1,178575.0,1,Maidstone and Tunbridge Wells NHS Trust
+EY,Dolphin Drilling Ltd c/o Ernst & Young LLP,1,150000.0,1,HM Revenue and Customs
+EY,HOWARD BERNSTEIN SOLICITORS,2,132346.02,1,Ministry of Justice
+EY,Ernst & Young Ford Rhodes Sidat  Hyder,21,126963.9,1,Department for International Development
+EY,ERNST YOUNG KURUMSAL FINANSMAN DANISMANLIK AS,1,103792.98,1,Foreign and Commonwealth Office
+EY,ERNST & YOUNG KENYA,4,81795.08,1,Department for International Development
+EY,Ernst & Young  Limitada,6,74405.42,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+EY,ERNST & YOUNG (CHINA) ADVISORY LIMITED,1,73789.61,1,Foreign and Commonwealth Office
+EY,Ernst & Young Pvt Ltd,5,72537.07,1,Department for International Development
+EY,ERNST & YOUNG GLOBAL SERVICES LTD,2,61832.37,1,Foreign and Commonwealth Office
+EY,Ernst & Young ( Ghana),2,55686.29,1,Department for International Development
+EY,ERNST AND YOUNG ADVISORY SERVICES,1,54792.88,1,Foreign and Commonwealth Office
+EY,Ernst and Young,2,54660.08,1,Department for International Development
+EY,Ernst and  Young Nigeria,2,47862.45,1,Department for International Development
+EY,Ernst & Young Ford Rhodes Sidat Hyder,5,46533.18,1,Department for International Development
+EY,ERNST & YOUNG ADVISORY,4,44300.0,1,UK Trade and Investment
+EY,ERNST HEINE,1,43826.09,1,Ministry of Defence
+EY,HOWARD BERNSTEIN SOLICITORS [ADVOCATE],1,38963.41,1,Ministry of Justice
+EY,Ernst & Young Ford Rhodes,5,38847.86,1,Department for International Development
+EY,Ernst & Young (Local),1,37465.53,1,"Foreign, Commonwealth and Development Office (FCDO)"
+EY,ERNST YOUNG,1,37148.0,1,Ministry of Defence
+EY,EY Ford Rhodes,6,35360.0,1,Department for International Development
+EY,Ernst & Young Zambia (ZMW),1,23510.44,1,Department for International Development
+EY,ERNST  & YOUNG Limitada,4,22422.63,1,Department for International Development
+EY,Ernst & Young Vietnam Ltd,1,20123.15,1,Department for International Development
+EY,Ernst & Young South Sudan,1,10534.3,1,Department for International Development
+EY,Ernst & Young Certified Public Accountants,1,3375.0,1,Department for International Development
+EY,Ernst & Young India,1,2800.0,1,Department for International Development
+EY,BERNSTOCK SPEIRS,1,1000.0,1,UK Trade and Investment
+EY,SAL BEL EY L LASH P VI,1,748.62,1,"Foreign, Commonwealth and Development Office (FCDO)"
+EY,ERNST&YOUNG KAZAKHSTAN,1,707.96,1,"Foreign, Commonwealth and Development Office (FCDO)"
+KPMG,KPMG LLP,2263,329804927.63,37,"Royal United Hospital Bath NHS Foundation Trust,Department for Education,Portsmouth Hospital NHS Trust,NHS Thames Valley ICB,United Lincolnshire Hospitals NHS Trust,Royal Borough of Greenwich,The Pennine Acute Hospitals NHS Trust,Uttlesford District Council,Isle of Wight NHS Trust,UK Shared Business Services,South Gloucestershire Council,Maidstone and Tunbridge Wells NHS Trust,Cabinet Office,East Sussex Healthcare NHS Trust,UK Sport,Milton Keynes Hospital NHS Foundation Trust,NHS Business Services Authority,Salisbury NHS Foundation Trust,Coventry and Warwickshire Partnership NHS Trust,Shropshire Community Health NHS Trust,Department for Digital, Culture, Media and Sport,Department for Energy Security and Net Zero,Department for Environment, Food and Rural Affairs,Department for International Development,Department for Science, Innovation and Technology,Department for Work and Pensions,Department of Health and Social Care,Foreign and Commonwealth Office,Foreign, Commonwealth and Development Office (FCDO),Home Office,Ministry of Defence,Government Legal Department,HM Revenue and Customs,HM Treasury,Ministry of Housing, Communities and Local Government,National Offender Management Service,UK Trade and Investment"
+KPMG,KPMG East Africa Limited,48,106140528.0,1,Department for International Development
+KPMG,KPMG DEVELOPMENT SERVICE,100,83265581.03,1,Department for International Development
+KPMG,KPMG EAST AFRICA LTD,240,78916266.94,1,Department for International Development
+KPMG,KPMG,574,43820782.44,12,"Transport for Greater Manchester,Cabinet Office,Department for Energy Security and Net Zero,Department for International Development,Department for Work and Pensions,HM Revenue and Customs,HM Treasury,Home Office,Ministry of Defence,Ministry of Housing, Communities and Local Government,Ministry of Justice,National Offender Management Service"
+KPMG,CSL - KPMG LLP,1068,39073233.09,4,"The National Archives,Department for International Development,HM Revenue and Customs,Home Office"
+KPMG,KPMG Advisory Limited,110,18149388.19,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+KPMG,KPMG FIDUCIAIRE,163,17170286.38,2,"Foreign and Commonwealth Office,Foreign, Commonwealth and Development Office (FCDO)"
+KPMG,CSL KPMG LLP,192,9382735.39,2,"Department for Education,Department for Work and Pensions"
+KPMG,Kpmg Llp,46,5104764.05,4,"Whittington Hospital NHS Trust,Rushmoor Borough Council,Department for Energy Security and Net Zero,Department for Science, Innovation and Technology"
+KPMG,KPMG (Registered),122,4412456.0,1,Department for International Development
+KPMG,KPMG (KASPL),62,4112379.5,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+KPMG,KPMG CIO ADVISORY LTD,18,4108934.84,1,Department for Work and Pensions
+KPMG,KPMG Development Services,70,3412126.72,1,Department for International Development
+KPMG,KPMG Auditores e Consultores SA,43,3250157.79,1,Department for International Development
+KPMG,KPMG Advisory Limited - AcT2,17,3083570.31,1,Department for International Development
+KPMG,KPMG Assurance and Consulting Services LLP,14,1605879.0,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+KPMG,KPMG Uganda,12,1549408.4,1,Department for International Development
+KPMG,KPMG FEES ACCOUNT,4,817127.3,1,North Yorkshire Council
+KPMG,Hiscox PLC c/o KPMG LLP,2,550000.0,1,HM Revenue and Customs
+KPMG,KPMG Llp Fees Account,21,523507.09,1,Bristol City Council
+KPMG,KPMG ANGOLA & MOZAMBIQUE,14,410423.58,1,Department for International Development
+KPMG,WWW.KPMG.CO.UK,190,342199.54,4,"Department for Education,Department of Health and Social Care,Foreign, Commonwealth and Development Office (FCDO),Foreign and Commonwealth Office"
+KPMG,KPMG IDAS WA,14,305079.53,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+KPMG,KPMG IT ADVISORY LIMITED,4,298155.0,1,Ministry of Defence
+KPMG,Delinian Ltd c/o KPMG Law,2,296255.0,1,HM Revenue and Customs
+KPMG,CITY OF LONDON KPMG ACADEMY HACKNEY,5,251336.75,1,Department for Education
+KPMG,KPMG Kenya,20,222661.38,1,Department for International Development
+KPMG,Associated Newspapers Ltd c/o KPMG,1,207770.22,1,HM Revenue and Customs
+KPMG,KPMG LLP Fees Account,5,198290.06,1,HM Revenue and Customs
+KPMG,KPMG - CSL,4,191281.78,1,Office of Rail and Road
+KPMG,KPMG Rwanda,13,161687.97,1,Department for International Development
+KPMG,KPMG ADVISORY HONG KONG LIMITED,4,156073.58,1,Foreign and Commonwealth Office
+KPMG,KPMG Inc.,4,152895.48,1,Department for International Development
+KPMG,Poundland Ltd. c/o KPMG Law,1,130000.0,1,HM Revenue and Customs
+KPMG,HBOS PLC & Lloyds Bank c/o KPMG LLP,1,125000.0,1,HM Revenue and Customs
+KPMG,Delinian Ltd. c/o KPMG Law,1,114400.0,1,HM Revenue and Customs
+KPMG,KPMG GHANA LLP,5,106622.71,1,Department for International Development
+KPMG,KPMG LLP (CSL),66,101504.3,1,"Ministry of Housing, Communities and Local Government"
+KPMG,KPMG LLP FEES,1,100000.0,1,Department for Work and Pensions
+KPMG,KPMG.,14,93312.13,1,Department for International Development
+KPMG,KPMG Taseer Hadi and Co,11,62436.62,1,Department for International Development
+KPMG,KPMG LLP FEES ACCOUNT,2,60031.44,1,HM Revenue and Customs
+KPMG,KPMG MANAGEMENT CONSULTING,2,59298.17,1,"Department for Environment, Food and Rural Affairs"
+KPMG,KPMG CONSULTING,1,56470.97,1,National Offender Management Service
+KPMG,KPMG RDC,2,54810.69,1,"Foreign, Commonwealth and Development Office (FCDO)"
+KPMG,KPMG Advisory Services Private Limited,3,40793.88,1,Department for International Development
+KPMG,KPMG Sierra Leone,1,39263.06,1,Department for International Development
+KPMG,KPMG ADVISORY CHINA LIMITED,1,39102.42,1,Foreign and Commonwealth Office
+KPMG,KPMG FAS CO LTD,1,35459.98,1,Foreign and Commonwealth Office
+KPMG,KPMG (Regstd.),8,34579.1,1,Department for International Development
+KPMG,KPMG ADVISORY SERVICES PVT LTD,1,30000.0,1,Foreign and Commonwealth Office
+KPMG,KPMG Services (PTY) Limited,2,28132.8,1,Department for International Development
+KPMG,KPMG ADVISORY SERVICES,1,26534.47,1,Foreign and Commonwealth Office
+KPMG,KPMG Advisory Services Pvt Ltd ( India),5,20585.27,1,Department for International Development
+KPMG,KPMG Limited,1,18394.09,1,Department for International Development
+KPMG,KPMG Malawi,1,17619.05,1,Department for International Development
+KPMG,KPMG AUDITORES E CONSULTORES,2,14037.66,1,Department for International Development
+KPMG,KPMG GHANA,1,11615.0,1,Department for International Development
+KPMG,KPMG Advisory N.V.,1,11476.0,1,Department for International Development
+KPMG,KPMG YON. DANISMANLIGI,3,10284.0,1,"Foreign, Commonwealth and Development Office (FCDO)"
+KPMG,KPMG Zambia Limited,1,9094.69,1,Department for International Development
+KPMG,Kpmg Fees Account,1,1375.0,1,London Borough of Richmond Upon Thames
+KPMG,KPMG AUSTRALIA,1,885.08,1,Foreign and Commonwealth Office
+McKinsey,MCKINSEY & COMPANY INC  UNITED KINGDOM,66,64414806.15,1,Ministry of Defence
+McKinsey,MCKINSEY AND CO INC UK,66,46393757.5,1,Department of Health and Social Care
+McKinsey,McKinsey and Company Inc East Africa Pty Ltd,107,32647382.58,1,Department for International Development
+McKinsey,McKinsey Development Partners,26,31200748.36,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+McKinsey,McKinsey & Co  Inc UK,66,21654622.5,1,Department for International Development
+McKinsey,McKINSEY & COMPANY,49,19710065.93,1,HM Revenue and Customs
+McKinsey,Mckinsey And Company Inc East Africa Pty Ltd,25,11151929.8,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+McKinsey,Mckinsey Development Partners Limited,12,7098663.27,1,"Foreign, Commonwealth and Development Office (FCDO)"
+McKinsey,"McKinsey & Co, Inc UK",22,4577205.69,1,Department for International Development
+McKinsey,MCKINSEY & COMPANY INC,13,2624700.0,2,"United Lincolnshire Hospitals NHS Trust,Department for Work and Pensions"
+McKinsey,MCKINSEY & COMPANY,12,2519880.0,2,"The Pennine Acute Hospitals NHS Trust,Department for Education"
+McKinsey,MCKINSEY & CO INC,9,2114450.0,1,Cabinet Office
+McKinsey,Mckinsey&co,2,736563.0,1,Cabinet Office
+McKinsey,Mckinsey And Company Inc Uk,2,607750.0,1,"Department for Science, Innovation and Technology"
+McKinsey,MCKINSEY & CO INC. UNITED KINGDOM,4,475560.0,1,Ministry of Justice
+McKinsey,MCKINSEY & CO,2,419940.0,1,Home Office
+McKinsey,"McKinsey & Co, Inc. United Kingdom",1,258000.0,1,Pennine Care NHS Foundation Trust
+McKinsey,MCKINSEY AND COMPANY,2,140000.0,1,Foreign and Commonwealth Office
+McKinsey,McKinsey & Co  Inc. UK,1,134065.0,1,Department for International Development
+McKinsey,McKinsey & Company Inc Africa Pty Ltd,2,108136.01,1,Department for International Development
+McKinsey,McKinsey & Company - India,3,93141.95,1,Department for International Development
+McKinsey,McKinsey & Company,1,28500.0,1,Coventry and Warwickshire Partnership NHS Trust
+McKinsey,Mckinsey & Company,1,25000.0,1,Whittington Hospital NHS Trust
+Bain,MCBAINS LTD,229,23600669.45,1,Department for Work and Pensions
+Bain,BAIN & COMPANCY INC UNITED KINGDOM,29,23470312.15,1,HM Revenue and Customs
+Bain,Baines' Endowed Primary School & Children's Centre,77,8667639.48,1,Department for Education
+Bain,BAINES SIMMONS LIMITED,49,1370202.66,1,Ministry of Defence
+Bain,NORBAIN SD LTD (CO REG 06248590),20,1120955.09,1,Ministry of Defence
+Bain,NORBAIN SD LTD,10,714299.39,1,Ministry of Defence
+Bain,McBains Ltd,10,542751.77,1,Department for Education
+Bain,BAIN & COMPANY,2,392000.0,1,Cabinet Office
+Bain,COBAINS SOLICITORS,7,219405.96,1,Ministry of Justice
+Bain,Baines' Endowed Primary School,3,147576.0,1,Department for Education
+Bain,Baines School,2,136462.0,1,Department for Education
+Bain,Bell & Bain Ltd,1,124897.7,1,Ministry of Defence
+Bain,THE GOVERNORS OF BAINES SCHOOL GRANT ACCOUNT,2,110405.0,1,Department for Education
+Bain,BAINS SOLICITORS,3,90000.0,1,Ministry of Justice
+Bain,Bain & Company,2,80000.0,1,Cabinet Office
+Bain,THE GOVERNORS OF BAINES SCHOOL GRANT ACC,1,61431.8,1,Department for Education
+Bain,GILES D BAIN,1,57312.0,1,Ministry of Justice
+Bain,BAINBRIDGE BUILDING CONTRACT,1,42294.65,1,Ministry of Defence
+Bain,Bainbridge Building Contractors,1,28296.44,1,Ministry of Defence
+Bain,GILES BAIN,17,24204.0,1,Royal Borough of Greenwich
+Bain,BIRCH BAINBRIDGE BUILDING & INTERIORS,3,21558.81,1,Royal Borough of Greenwich
+Bain,BAINBRIDGE PARISH COUNCIL,4,10512.5,1,North Yorkshire Council
+Bain,MR GILES BAIN,7,8820.0,1,Royal Borough of Greenwich
+Bain,SDAD BILBAINA DE RECRE,1,4510.75,1,Foreign and Commonwealth Office
+Bain,NORBAIN DUNASFERN,5,4440.0,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Bain,BAINES WILSON,2,2261.71,1,Eden District Council
+Bain,S C BAINBRIDGE FUNERAL DIRECTORS,1,1745.0,1,North Yorkshire Council
+Bain,SOCIEDAD BILBAINA RECR,1,1733.3,1,Foreign and Commonwealth Office
+Bain,SQ  SEMIS URBAINS / UR,2,1543.32,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Bain,WILLIAM BAIN CO,1,1501.6,1,Foreign and Commonwealth Office
+Bain,PESAPAL-ALBAININSTIT,1,1259.48,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Bain,BAINBRIDGE VILLAGE HALL,1,1000.0,1,Former council of North Yorkshire
+Bain,BAINBRIDGE CHRISTMAS LIGHTS,1,1000.0,1,Former council of North Yorkshire
+Bain,SYMES BAINS BROOMER SOLICITORS,1,399.0,1,Former council of North Yorkshire
+Bain,C O H BAINES LTD,4,111.24,2,"Department for Digital, Culture, Media and Sport,Natural History Museum"
+BCG,THE BOSTON CONSULTING GROUP UK LLP,25,31211510.8,2,"Department of Health and Social Care,Ministry of Defence"
+BCG,The Boston Consulting Group UK LLP,41,9694077.31,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+BCG,THE BOSTON CONSULTING GROUP,7,2723503.0,3,"Salisbury NHS Foundation Trust,Department for Education,Department for Work and Pensions"
+BCG,THE BOSTON CONSULTING GROUP LLP,1,82660.0,1,"Foreign, Commonwealth and Development Office (FCDO)"
+BCG,BCG DIRECT LIMITED,56,2167.86,1,Shropshire Community Health NHS Trust
+BCG,MERPAGO ABCGARDEN,1,900.75,1,"Foreign, Commonwealth and Development Office (FCDO)"
+BCG,BCG OXFORD,1,119.13,1,Natural History Museum
+PA Consulting,PA CONSULTING GROUP LTD,1683,178459218.89,3,"Department for Work and Pensions,Department of Health and Social Care,UK Trade and Investment"
+PA Consulting,PA CONSULTING SERVICES LTD,1261,161838481.24,15,"Cabinet Office,East Sussex Healthcare NHS Trust,Former council of North Yorkshire,Department for Education,North Yorkshire Council,NHS East and North Hertfordshire CCG,Milton Keynes Hospital NHS Foundation Trust,Department for Work and Pensions,Department of Health and Social Care,Foreign, Commonwealth and Development Office (FCDO),Department for International Development,Home Office,Ministry of Defence,HM Treasury,Ministry of Justice"
+PA Consulting,PA CONSULTING GROUP,186,25645586.62,9,"Cabinet Office,Milton Keynes Hospital NHS Foundation Trust,Department for Education,Department for International Development,Foreign, Commonwealth and Development Office (FCDO),HM Revenue and Customs,Department for Work and Pensions,Foreign and Commonwealth Office,Ministry of Justice"
+PA Consulting,PA CONSULTING SERVICES LIMITED,36,13845453.43,2,"Transport for Greater Manchester,Ministry of Housing, Communities and Local Government"
+PA Consulting,PA Consulting Services Limited,46,10362135.39,2,"Office of Rail and Road,HM Revenue and Customs"
+PA Consulting,PA Consulting Services Ltd,45,5749473.01,5,"Bristol City Council,Department for Energy Security and Net Zero,Department for Science, Innovation and Technology,Government Legal Department,Home Office"
+PA Consulting,PA CONSULTING,20,3496942.91,2,"Department for Education,Home Office"
+PA Consulting,PA Consulting Group,22,2854026.55,2,"Department for Education,Home Office"
+PA Consulting,PA CONSULTING SERVICES LIMITED (T/AS,28,2571278.95,1,Ministry of Defence
+PA Consulting,Pa Consulting Services Ltd,34,2386889.0,3,"United Lincolnshire Hospitals NHS Trust,Department for Energy Security and Net Zero,Department for Science, Innovation and Technology"
+PA Consulting,PA CONSULTING SERVIC,13,2110244.76,1,Department of Health and Social Care
+PA Consulting,PA Consulting,20,1068378.44,1,Home Office
+PA Consulting,Pa Consulting,8,896544.0,1,Home Office
+PA Consulting,P A CONSULTING SERVICES LTD,10,496074.68,1,National Offender Management Service
+PA Consulting,P A Consulting Group,6,304982.55,1,Ministry of Defence
+PA Consulting,P A CONSULTING GROUP,12,209893.21,1,Royal Borough of Greenwich
+PA Consulting,PA CONSULTING GROUPS,3,174532.66,1,Ministry of Justice
+PA Consulting,*PA CONSULTING SERVICES LIMITED,4,92752.73,1,"Ministry of Housing, Communities and Local Government"
+PA Consulting,PA Consulting Services Ltd (UK1),1,29217.5,1,HM Revenue and Customs
+PA Consulting,FPA CONSULTING,4,7225.0,1,Transport for Greater Manchester
+PA Consulting,PPA CONSULTING LTD,1,3776.34,1,"Ministry of Housing, Communities and Local Government"
+Gartner,GARTNER UK LTD,107,14368152.11,7,"Department for Energy Security and Net Zero,HM Revenue and Customs,Department for Work and Pensions,Department of Health and Social Care,Ministry of Housing, Communities and Local Government,Ministry of Justice,UK Trade and Investment"
+Gartner,GARTNER,39,5102531.56,3,"Department for Work and Pensions,Foreign, Commonwealth and Development Office (FCDO),Ministry of Defence"
+Gartner,Gartner UK Ltd,19,897836.59,5,"Children and Family Court Advisory and Support Service,Natural History Museum,Department for Environment, Food and Rural Affairs,Ministry of Defence,Home Office"
+Gartner,GARTNER GROUP UK LTD,12,851583.33,5,"Former council of North Yorkshire,Cabinet Office,North Yorkshire Council,Department for Education,HM Treasury"
+Gartner,GARTNER UK LIMITED,19,641635.0,2,"Foreign, Commonwealth and Development Office (FCDO),Foreign and Commonwealth Office"
+Gartner,GARTNERGROUP UK LTD,10,585640.0,2,"Department for International Development,Foreign, Commonwealth and Development Office (FCDO)"
+Gartner,Gartner Uk Ltd,2,447000.0,2,"Department for Energy Security and Net Zero,Ministry of Defence"
+Gartner,GARTNER U.K. LTD,4,292094.2,1,Ministry of Defence
+Gartner,Gartner Uk Limited,3,287640.0,1,United Lincolnshire Hospitals NHS Trust
+Gartner,GARTNER U.K. LIMITED,1,185839.98,1,NHS Business Services Authority
+Gartner,GARTNER GROUP,3,152700.0,1,Home Office
+Gartner,Gartner UK Limited,3,148700.0,2,"Plymouth City Council,Department for Education"
+Gartner,AST Gartner UK Ltd,1,51344.3,1,Ministry of Defence
+Gartner,GARTNER GROUP UK LIMITED,1,49800.0,1,Ministry of Defence
+Gartner,GARTNER GROUP UK LTD~105026640,1,46935.38,1,"Department for Environment, Food and Rural Affairs"
+Gartner,Gartner U.K. Limited,1,31800.0,1,HM Revenue and Customs
+Gartner,ACT GARTNER EVENTS USD,2,3166.26,1,Foreign and Commonwealth Office
+Gartner,ACT GARTNER BUS PROC,1,1861.01,1,Department for Education
+Gartner,ACT GARTNER EVENTS EUR,1,1790.27,1,Foreign and Commonwealth Office
+Gartner,GARTNER CONF SEC22IV,1,615.63,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Hays,HAYS SPECIALIST RECRUITMENT LTD,4674,11543563.75,11,"Transport for Greater Manchester,Royal Borough of Greenwich,South Central Ambulance Service NHS Foundation Trust,Department for Education,Department of Health and Social Care,Foreign, Commonwealth and Development Office (FCDO),HM Revenue and Customs,Foreign and Commonwealth Office,Ministry of Housing, Communities and Local Government,UK Trade and Investment,Wales Office"
+Hays,Hays Specialist Recruitment Ltd,3458,10320880.34,5,"UK Shared Business Services,Uttlesford District Council,Plymouth City Council,Department for International Development,HM Revenue and Customs"
+Hays,HAYS SPECIALIST RECRUITMENT LIMITED,262,2063558.58,1,Ministry of Defence
+Hays,Hays Construction & Property,1837,1639987.13,2,"Department for Digital, Culture, Media and Sport,Natural History Museum"
+Hays,Hays,1129,1592934.82,1,Rushmoor Borough Council
+Hays,HAYS TRAVEL LIMITED,29,1000810.32,1,Department for Education
+Hays,HAYS PERSONNEL SERVICES,1,600244.84,1,"Ministry of Housing, Communities and Local Government"
+Hays,Hays Specialist Recruitment,639,472145.74,1,South Gloucestershire Council
+Hays,HAYS,32,214159.99,2,"United Lincolnshire Hospitals NHS Trust,Department for Education"
+Hays,HAYS ACCOUNTANCY & FINANCE,321,139002.25,1,Shropshire Community Health NHS Trust
+Hays,HAYS SPECIALIST RECRUITMENT,229,136033.26,2,"Blaby District Council,The National Archives"
+Hays,HAYS EXECUTIVE,3,108963.0,1,Department for Work and Pensions
+Hays,Hays Accountancy,1,34801.67,1,Home Office
+Hays,Hays Accountancy Personnel,47,32310.86,2,"Department for Digital, Culture, Media and Sport,Natural History Museum"
+Hays,HAYSFIELD GIRLS SCHOOL,1,25000.0,1,Department for Education
+Hays,Chaysestar Entertainment CIC,5,22101.16,1,Bristol City Council
+Hays,HAYS HEALTHCARE LIMITED,1,22037.2,1,Ministry of Defence
+Hays,HAYS PERSONNEL SERVICE,14,21281.81,1,"Department for Environment, Food and Rural Affairs"
+Hays,HAYS INFORMATATION TECHNOLOGY,13,20586.91,1,"Ministry of Housing, Communities and Local Government"
+Hays,HAYSAM ABOU-DOMA,5,10997.0,1,Royal Borough of Greenwich
+Hays,HAYS ACCOUNTANCY AND FINANCE,1,4700.0,1,Royal Borough of Greenwich
+Hays,HAYS ACCOUNTANCY PERSONNEL,3,4420.0,1,Department for International Development
+Hays,HAYS TRAVEL,9,4099.59,2,"Natural History Museum,Ministry of Housing, Communities and Local Government"
+Hays,Hays Office Support,3,1569.93,1,South Gloucestershire Council
+Hays,Hays Social Care Ltd,1,925.07,1,South Gloucestershire Council
+Hays,HAYSDEN TRAINING,1,625.0,1,Blaby District Council
+Hays,Hays Construction & Property DO NOT USE,1,608.0,1,South Gloucestershire Council
+Reed,REED IN PARTNERSHIP LTD,37874,667774508.84,2,"Cabinet Office,Department for Work and Pensions"
+Reed,Alec Reed Academy,159,42931663.06,1,Department for Education
+Reed,REED IN PARTNERSHIP HACKNEY LTD,102,29538826.08,1,Department for Work and Pensions
+Reed,REED IN PARTNERSHIP,554,23701173.93,1,Department for Work and Pensions
+Reed,The Alec Reed Academy,153,16012007.55,1,Department for Education
+Reed,REED SPECIALIST RECRUITMENT LTD,2605,10510794.34,7,"Royal Borough of Greenwich,Transport for Greater Manchester,Shropshire Community Health NHS Trust,Department of Health and Social Care,HM Treasury,Ministry of Defence,Ministry of Housing, Communities and Local Government"
+Reed,Reedswood E-ACT Academy,77,8549246.5,1,Department for Education
+Reed,Reed Solutions,98,5259700.48,1,National Offender Management Service
+Reed,Reedswood E-ACT Primary School,139,5164660.5,1,Department for Education
+Reed,REED EMPLOYMENT PLC,55,2702289.0,3,"Department for Education,Home Office,Ministry of Housing, Communities and Local Government"
+Reed,Reed in Partnership Limited,61,2688367.32,1,Department for Education
+Reed,Reed Business School Ltd,65,2669630.65,1,Department for Education
+Reed,REED,50,2541651.04,3,"Former council of North Yorkshire,Department for Education,Department for Work and Pensions"
+Reed,REED IN PARTNERSHIP LIMITED,25,1827421.85,1,Department for Education
+Reed,Freedom Group Of Companies Ltd,5,1330328.17,1,"Department for Environment, Food and Rural Affairs"
+Reed,Genus Breeding Ltd.,29,1213382.46,2,"Animal and Plant Health Agency,Department for Environment, Food and Rural Affairs"
+Reed,WOMENS INTERNATIONAL LEAGUE FOR PEACE AND FREEDOM,8,1179614.45,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Reed,REED EXHIBITIONS LTD,42,1168080.75,2,"Royal Borough of Greenwich,UK Trade and Investment"
+Reed,REED SPECIALIST RECRUITMENT LIMITED,19,1099551.28,1,Department for Education
+Reed,REED SPECIALIST,1161,1057867.72,1,"Department for Environment, Food and Rural Affairs"
+Reed,Breedon Southern Ltd,22,830112.68,1,Bristol City Council
+Reed,REED EMPLOYMENT,926,825885.48,1,"Department for Environment, Food and Rural Affairs"
+Reed,FREEDOM HOME CARE LTD,28,818259.55,2,"Former council of North Yorkshire,North Yorkshire Council"
+Reed,REEDS SOLICITORS LTD,15,793754.52,1,Ministry of Justice
+Reed,REED LEARNING LTD,28,694413.18,2,"Royal Borough of Greenwich,Department for Work and Pensions"
+Reed,STERNBERG REED SOLICITORS,14,607615.34,1,Ministry of Justice
+Reed,Reed Specialist Recruitment Ltd,59,404955.41,4,"UK Shared Business Services,Rushmoor Borough Council,Department for Energy Security and Net Zero,Bristol City Council"
+Reed,FREEDOM TAXIS HARROGATE LTD,126,379736.33,2,"Former council of North Yorkshire,North Yorkshire Council"
+Reed,REED LOCATION,568,375197.9,1,Royal Borough of Greenwich
+Reed,Reed Personnel Services Plc,213,361923.51,2,"South Gloucestershire Council,Home Office"
+Reed,REED EMPLOYMENT SERVICES,447,349016.29,1,"Ministry of Housing, Communities and Local Government"
+Reed,Creedy Court,27,297180.5,1,South Gloucestershire Council
+Reed,THE FREEDOM FUND (G),4,262775.0,1,Home Office
+Reed,The Freedom Fund,2,250000.0,1,Department for International Development
+Reed,REED TALENT SOLUTIONS LTD,7,235975.07,2,"Former council of North Yorkshire,North Yorkshire Council"
+Reed,FREEDOM TRANSPORT SOLUTIONS LTD,85,235625.94,1,North Yorkshire Council
+Reed,REED BUSINESS INFORMATION LTD,24,233726.22,7,"Royal Borough of Greenwich,Eden District Council,HM Revenue and Customs,Ministry of Defence,Ministry of Housing, Communities and Local Government,National Offender Management Service,UK Trade and Investment"
+Reed,Breedon Cement Ltd,2,220197.01,1,Department for Energy Security and Net Zero
+Reed,Reed Employment plc,256,212405.9,1,Home Office
+Reed,FREEDOM COMMUNICATIONS (UK) LTD,6,179223.53,3,"United Lincolnshire Hospitals NHS Trust,Department for Environment, Food and Rural Affairs,Department for Education"
+Reed,FREEDOM COMMUNICATIONS (IUK) LTD,6,174047.5,1,The National Archives
+Reed,REED TALENT SOLUTIONS T/A CONSULTAN,6,170651.65,1,Transport for Greater Manchester
+Reed,CREED LANE LAW GROUP,2,147047.44,1,Ministry of Justice
+Reed,REED BUSINESS INFORMATION,13,132501.49,5,"Blaby District Council,Royal Borough of Greenwich,East Sussex Healthcare NHS Trust,Department for Education,HM Treasury"
+Reed,REED BUSINESS INFORMATION (EAST GRIN,13,127062.0,1,Department for International Development
+Reed,Lexis Nexis Reed Elsevier (Uk) Ltd T/A,6,111864.0,1,Bristol City Council
+Reed,FREEDOM GROUP,3,109312.54,1,United Lincolnshire Hospitals NHS Trust
+Reed,Reed,84,106317.91,2,"Uttlesford District Council,Rushmoor Borough Council"
+Reed,REED EXHIBITIONS FZ-LLC,3,102063.23,1,UK Trade and Investment
+Reed,REED TECHNOLOGY,13,99052.14,1,"Ministry of Housing, Communities and Local Government"
+Reed,Reed Exhibitions Ltd,5,98746.44,2,"Natural History Museum,Department for Science, Innovation and Technology"
+Reed,MESSRS CREED LANE LAW GROUP#EC4V 5BR,2,91243.45,1,Ministry of Justice
+Reed,WOMENS INTERNATIONAL LEAGUE FOR PEACE + FREEDOM,2,85502.55,1,Foreign and Commonwealth Office
+Reed,Fourth Freedom Forum Inc.,3,76852.67,1,Department for International Development
+Reed,Reed Employment,50,73833.26,1,Equality and Human Rights Commission
+Reed,REED TALENT SOLUTIONS LIMITED TA CONSULTANCY PLUS,2,68571.0,1,Department of Health and Social Care
+Reed,REED SPECIALIST RECRUITMENT,8,61542.44,2,"Cabinet Office,North Yorkshire Council"
+Reed,Reed Talent Solutions t/a Consultancyplus,19,60411.45,1,Bristol City Council
+Reed,SABINA BOWLER-REED,2,57262.64,1,Ministry of Justice
+Reed,Rare Breeds Survival Trust,3,57000.0,2,"Department for Environment, Food and Rural Affairs,Bristol City Council"
+Reed,WILLIAM REED BUSINESS MEDIA LTD,12,52122.0,1,UK Trade and Investment
+Reed,Fiona Reed Associates Ltd,1,41400.0,1,Coventry and Warwickshire Partnership NHS Trust
+Reed,Freedom Fire  Security Maintenance Ltd,1,40440.0,1,United Lincolnshire Hospitals NHS Trust
+Reed,STERNBERG REED,1,40165.08,1,Ministry of Justice
+Reed,Reed Specialist Recruitment,1,38985.86,1,"Department for Environment, Food and Rural Affairs"
+Reed,Reed in Partnership Skills (UK) Ltd,1,34436.0,1,Department for Education
+Reed,STERNBERG REED SOLICITORS-ADVOCATE,1,34261.74,1,Ministry of Justice
+Reed,REED EXPOSITIONS FRANCE,2,33734.35,1,UK Trade and Investment
+Reed,MESSRS FREEDMAN SHARMAN & COMPANY#DX 45603,1,33199.01,1,Ministry of Justice
+Reed,CREED LANE LAW GROUP-ADVOCATE,1,31337.62,1,Ministry of Justice
+Reed,RARE BREEDS SURVIVAL TRUST,1,30000.0,1,Ministry of Defence
+Reed,Reed Business Information Ltd.,1,29375.0,1,"Department for Environment, Food and Rural Affairs"
+Reed,MICHAEL J REED LTD,1,28140.0,1,Ministry of Justice
+Reed,GISHA - Legal Centre For Freedom of Movement,1,27629.33,1,Foreign and Commonwealth Office
+Reed,SHREEDAR MOTORS LIMITED,1,27309.51,1,Foreign and Commonwealth Office
+Reed,GRAMPOUND-WITH-CREED COFE SCHOOL,1,25154.1,1,Department for Education
+Reed,Reed Elsevier (UK) Ltd,1,25030.17,1,HM Revenue and Customs
+Reed,GRAMPOUND WITH CREED C OF E PRIMARY SCHOOL,1,25000.0,1,Department for Education
+Reed,FREEDMAN&TURNER,9,21679.01,1,Foreign and Commonwealth Office
+Reed,Freedom Health Centre,1,17329.42,1,Plymouth City Council
+Reed,Freedom of Speech Ltd,14,16995.25,1,Department for International Development
+Reed,REED EXPO FRANCE,4,12036.52,2,"Foreign, Commonwealth and Development Office (FCDO),Foreign and Commonwealth Office"
+Reed,Reed Engineering Building Services L,3,11782.32,2,"Department for Digital, Culture, Media and Sport,Natural History Museum"
+Reed,H&H REEDS PRINTERS LTD,14,11708.0,1,Eden District Council
+Reed,Freedom Electronics,5,10867.29,1,Department for International Development
+Reed,REEDERJ VLAUN HOLDING B.V. /V&S CHARTERS,2,10000.0,1,Royal Borough of Greenwich
+Reed,REEDMAN SERVICES LTD,12,9876.85,1,"Department for Environment, Food and Rural Affairs"
+Reed,Reeds Solicitors LLP,5,9785.96,1,Bristol City Council
+Reed,Reed Business Informations Ltd,6,9383.23,2,"Department for Digital, Culture, Media and Sport,Natural History Museum"
+Reed,REEDLEARNING.CO.UK,12,8955.2,4,"Natural History Museum,Department for Environment, Food and Rural Affairs,Department of Health and Social Care,HM Treasury"
+Reed,REED CHILL CHEATER,10,8922.13,1,"Department for Environment, Food and Rural Affairs"
+Reed,REED LEARNING PLC,8,8790.31,3,"Department for International Development,Ministry of Housing, Communities and Local Government,Queen Elizabeth II Conference Centre"
+Reed,Reed Elsevier (UK) Ltd T/A LN,10,7967.92,1,Department for International Development
+Reed,REED ONLINE LIMITED,1,7829.38,1,Transport for Greater Manchester
+Reed,Reed Business Information,9,7661.65,1,Rushmoor Borough Council
+Reed,LEWIS REED (WAV) LTD,3,7250.0,1,UK Trade and Investment
+Reed,REED SMITH LLP,3,6574.39,1,Transport for Greater Manchester
+Reed,YOCO HARLEY REED SA,1,6446.35,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Reed,REED BUSINESS INFORM,6,6310.0,3,"Department for Digital, Culture, Media and Sport,Department for Environment, Food and Rural Affairs,Natural History Museum"
+Reed,GMF FREEDIO LTD,6,6212.84,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Reed,W Reed (Builders) Limited,2,5671.13,1,South Gloucestershire Council
+Reed,625600FREEDMAN&TURNER,2,5398.19,1,Foreign and Commonwealth Office
+Reed,fREEDMAN&TURNER,1,4667.22,1,Foreign and Commonwealth Office
+Reed,FREEDMAN & TURNER,1,4545.53,1,Foreign and Commonwealth Office
+Reed,Reed Business Information Ltd,4,4533.0,1,South Gloucestershire Council
+Reed,FREEDOM OF SPEECH LTD,5,4526.4,1,Royal Borough of Greenwich
+Reed,PERCY & REED PRODUCT LTD,2,4000.0,1,UK Trade and Investment
+Reed,WWW.REEDLEARNING.C,4,3910.6,3,"Natural History Museum,Foreign and Commonwealth Office,HM Treasury"
+Reed,REED-CHILL CHEATER LTD,4,3648.6,1,UK Trade and Investment
+Reed,FREEDOM AIR CONDITIONI,3,3437.72,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Reed,REED ONLINE LIMITED (E,3,3310.01,2,"Foreign and Commonwealth Office,HM Treasury"
+Reed,BREEDON NORTHERN LTD,1,3125.0,1,Eden District Council
+Reed,REEDMIDEM.COM,3,2957.95,1,Foreign and Commonwealth Office
+Reed,REED LEARNING,3,2811.78,1,Royal Borough of Greenwich
+Reed,KIERAN SCRAGG & NEIL REED T/A IKO,1,2633.22,1,UK Trade and Investment
+Reed,*REED BUSINESS INFORMATION LTD,1,2100.0,1,"Ministry of Housing, Communities and Local Government"
+Reed,FREEDOM OF SPEECH,3,2076.0,2,"Shropshire Community Health NHS Trust,Foreign, Commonwealth and Development Office (FCDO)"
+Reed,Freedom Of Speech,1,1944.0,1,Department for International Development
+Reed,SUBSCRIPTION/REED,1,1939.68,1,HM Treasury
+Reed,FREEDOM FURNITURE 82,1,1834.45,1,Foreign and Commonwealth Office
+Reed,REEDY SUPPLIES LTD,1,1790.06,1,UK Trade and Investment
+Reed,FREEDOM PROPERTIES,2,1716.94,1,Royal Borough of Greenwich
+Reed,Emma Reed,4,1650.0,1,Rushmoor Borough Council
+Reed,CAMPAIGN FOR FREEDOM OF INFORMATION,4,1540.0,1,"Ministry of Housing, Communities and Local Government"
+Reed,REED LEARNING BACS 22/2,2,1528.3,1,"Department for Environment, Food and Rural Affairs"
+Reed,REED CHILL CHEATER       BRAUNTON,3,1500.0,1,"Department for Environment, Food and Rural Affairs"
+Reed,REED BUSINESS SCHOOL,1,1473.6,1,"Department for Environment, Food and Rural Affairs"
+Reed,ALAN REED ART LTD,1,1344.1,1,UK Trade and Investment
+Reed,DR JUDITH FREEDMAN,1,1325.66,1,Royal Borough of Greenwich
+Reed,Creed Food Services  Ltd,4,1231.67,1,Bristol City Council
+Reed,REED EXHIBITIONS LT,2,1137.6,1,"Department for Environment, Food and Rural Affairs"
+Reed,REED HALL,1,1134.0,1,"Department for Environment, Food and Rural Affairs"
+Reed,REEDLEARNING,1,1128.0,1,HM Treasury
+Reed,Peter Creed,2,1100.0,1,South Gloucestershire Council
+Reed,REED TRAINING,4,1026.0,3,"Department for Environment, Food and Rural Affairs,Department of Health and Social Care,HM Treasury"
+Reed,BLONDE D'AQUITAINE BREEDERS SOCIETY OF GB LTD T/A BRITISH BLONDE SOCIETY,1,1000.0,1,UK Trade and Investment
+Reed,WHISPERING REEDS BOATS,1,978.62,1,"Department for Environment, Food and Rural Affairs"
+Reed,SUBSCRIPTION/REED        BUS.INFO,1,900.0,1,"Ministry of Housing, Communities and Local Government"
+Reed,Reed Learning PLC,1,899.0,1,South Gloucestershire Council
+Reed,FREEDOM LOGISTICS,1,876.89,1,UK Trade and Investment
+Reed,REED MIDEM,1,803.55,1,Foreign and Commonwealth Office
+Reed,REED BUSINESS INFORMATION LIMITED,1,775.0,1,Blaby District Council
+Reed,REED LEARNING BACS 21/12,1,760.0,1,"Department for Environment, Food and Rural Affairs"
+Reed,Reed Building Services,1,725.0,1,Rushmoor Borough Council
+Reed,FREEDOM GROUP OF COMPANIES,1,695.0,1,Transport for Greater Manchester
+Reed,Freedom Scientific Ltd,1,690.0,1,Department for International Development
+Reed,ALFAHMAWI FOR REED.,1,644.83,1,Foreign and Commonwealth Office
+Reed,ACRA SCREED LTD,1,600.0,1,UK Trade and Investment
+Reed,REED MIDEM LTD,1,590.0,1,"Ministry of Housing, Communities and Local Government"
+Reed,Reed Specialist Recruitment Limited,1,586.13,1,Cheltenham Borough Council
+Reed,REED EXHIBITIONS,1,552.65,1,Foreign and Commonwealth Office
+Reed,REED BUS INFORMATION,1,538.92,1,"Department for Environment, Food and Rural Affairs"
+Reed,WWW.REEDLEARNING.C       0207 5205100,1,537.3,1,"Ministry of Housing, Communities and Local Government"
+Reed,FREEDOM CONFECTIONERY LTD,1,500.0,1,UK Trade and Investment
+Reed,FREEDOM PROGRAMME,1,450.0,1,Shropshire Community Health NHS Trust
+Reed,DUNCAN REEDS LTD,2,450.0,1,UK Trade and Investment
+Reed,MARK REED,2,447.5,1,UK Trade and Investment
+Reed,FREED FOODS - MISTER FREED,1,347.35,1,UK Trade and Investment
+Reed,REED BUSINESS INFORMAT,2,284.0,1,Natural History Museum
+Reed,Reed Business,1,200.0,1,"Department for Digital, Culture, Media and Sport"
+Reed,FREEDOM FASHION LTD,1,200.0,1,UK Trade and Investment
+Michael Page,MICHAEL PAGE INTERNATIONAL PLC,606,3262004.13,1,Department of Health and Social Care
+Michael Page,MICHAEL PAGE INTERNATIONAL RECRUITMENT LTD,608,1784080.2,6,"Blaby District Council,Cabinet Office,The National Archives,Department for Education,Department for Work and Pensions,UK Trade and Investment"
+Michael Page,MICHAEL PAGE INTERNATIONAL RECRUITM,320,1099500.24,1,Transport for Greater Manchester
+Michael Page,Michael Page International Recruitment,276,850701.85,3,"Rushmoor Borough Council,Uttlesford District Council,Cabinet Office"
+Michael Page,MICHAEL PAGE INTERNATIONAL,249,842797.31,2,"South Central Ambulance Service NHS Foundation Trust,Ministry of Housing, Communities and Local Government"
+Michael Page,MICHAEL PAGE INTERNATIONAL RECRUITMENT LIMITED,374,683975.63,2,"Department for International Development,Ministry of Defence"
+Michael Page,PAGE GROUP ISRAEL LIMITED,17,629141.99,2,"Foreign and Commonwealth Office,Foreign, Commonwealth and Development Office (FCDO)"
+Michael Page,Michael Page Int. Recruitment Ltd,92,146989.56,1,Department for International Development
+Michael Page,Michael Page International Recruitment Ltd,24,131298.85,2,"Cabinet Office,The National Archives"
+Michael Page,Michael Page International Recruitment Limited T/A Page Personnel,17,126360.0,1,UK Shared Business Services
+Michael Page,Michael Page International,32,32836.0,1,South Gloucestershire Council
+Michael Page,Michael Page Ltd,1,32300.4,1,Home Office
+Michael Page,MICHAEL PAGE INTERNATIONAL RECRUIT. LTD,1,27300.0,1,East Sussex Healthcare NHS Trust
+Michael Page,Michael Page International Recruitme,1,25773.25,1,Cabinet Office
+Michael Page,Michael Page UK Ltd,37,15395.03,1,Natural History Museum
+Michael Page,MICHAEL PAGE INTERNATIONAL RECRUITMENT,1,4242.43,1,Transport for Greater Manchester
+Michael Page,MICHAEL PAGE **USE ACCOUNT 130114***,3,900.0,1,Blaby District Council
+Matrix SCM,MATRIX SCM LTD,218,13706724.0,3,"Former council of North Yorkshire,Royal Borough of Greenwich,North Yorkshire Council"
+Matrix SCM,MATRIX BOOKING LTD,12,1631525.87,2,"National Institute for Health and Care Excellence,HM Revenue and Customs"
+Matrix SCM,MATRIX RESEARCH & CONSULTANCY LTD,7,325798.18,1,"Ministry of Housing, Communities and Local Government"
+Matrix SCM,MATRIX DISPLAY SYSTEMS LTD,7,313741.0,1,Ministry of Defence
+Matrix SCM,Matrix SCM Ltd,163,282031.72,1,Uttlesford District Council
+Matrix SCM,Biomatrix Water Solutions Limited,4,280840.56,1,Bristol City Council
+Matrix SCM,MATRIX EVIDENCE LTD,14,268721.18,1,National Institute for Health and Care Excellence
+Matrix SCM,Matrix Moulding Systems Ltd,7,264274.12,1,Department for Energy Security and Net Zero
+Matrix SCM,MATRIX ACADEMY TRUST,3,232900.0,1,Department for Education
+Matrix SCM,Matrix Booking Ltd,3,228880.61,1,Department for Energy Security and Net Zero
+Matrix SCM,CASE MATRIX NETWORK,6,226555.75,1,Foreign and Commonwealth Office
+Matrix SCM,KMATRIX DATA SERVICES LTD,7,187000.0,1,UK Trade and Investment
+Matrix SCM,MATRIX BOOKING LIMITED,5,173656.08,2,"NHS Business Services Authority,Department of Health and Social Care"
+Matrix SCM,MATRIX INSIGHT,4,162352.86,1,Department for Education
+Matrix SCM,PURPLE MATRIX LTD,4,161952.86,4,"Portsmouth Hospital NHS Trust,East Sussex Healthcare NHS Trust,Isle of Wight NHS Trust,Maidstone and Tunbridge Wells NHS Trust"
+Matrix SCM,MATRIX CHAMBERS,5,145597.0,2,"Transport for Greater Manchester,Home Office"
+Matrix SCM,MATRIX SECURITY WATCHDOG,81,87615.44,1,Shropshire Community Health NHS Trust
+Matrix SCM,Matrix Academy Trust,1,80000.0,1,Department for Education
+Matrix SCM,MATRIX BOOKING LIMIT,2,79545.6,1,Department of Health and Social Care
+Matrix SCM,KNOWLEDGE MATRIX LTD,5,79000.0,1,UK Trade and Investment
+Matrix SCM,Matrix Development Consultants,2,73771.76,1,Department for International Development
+Matrix SCM,Matrix Evidence Ltd,2,73615.68,1,National Offender Management Service
+Matrix SCM,Matrix Control Solutions Limited,8,70225.8,2,"Rushmoor Borough Council,Home Office"
+Matrix SCM,MATRIX CHAMBERS LTD,2,65280.0,1,Home Office
+Matrix SCM,CAMBRIDGE MATRIX LIMITED,2,54988.0,1,Ministry of Defence
+Matrix SCM,MATRIX GLOBAL NETWORKS,22,37549.64,2,"Foreign, Commonwealth and Development Office (FCDO),Foreign and Commonwealth Office"
+Matrix SCM,Bellamatrix ICt Foundation,1,36706.0,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Matrix SCM,MATRIX RESEARCH AND CONSULTANCY LTD,1,35177.15,1,Home Office
+Matrix SCM,MATRIX LAW,1,33000.0,1,Department for Education
+Matrix SCM,MATRIX PRINT CONSULTANTS LIMITED,8,32225.0,1,Blaby District Council
+Matrix SCM,GEOMATRIX EARTH SCIENCE LIMITED,1,30898.8,1,Ministry of Defence
+Matrix SCM,MATRIX EVIDENCE LTD#RB30510167,1,29779.5,1,Ministry of Justice
+Matrix SCM,MATRIX INSIGHT LTD,1,28911.0,1,National Offender Management Service
+Matrix SCM,Enable Infomatrix Ltd,1,28860.94,1,"Department for Environment, Food and Rural Affairs"
+Matrix SCM,MATRIX TRAFFIC & TRANSPORT DATA LTD,39,28120.0,2,"Former council of North Yorkshire,North Yorkshire Council"
+Matrix SCM,Purple Matrix Ltd,3,20430.0,1,Bristol City Council
+Matrix SCM,STRATAMATRIX LTD,15,12755.26,1,Wales Office
+Matrix SCM,MATRIX PRINT CONSULTANTS,3,12045.0,1,Blaby District Council
+Matrix SCM,Matrix Vocational Associates Limited,13,11070.0,1,South Gloucestershire Council
+Matrix SCM,MATRIX CHAMBERS LIMITED,6,8982.0,1,Royal Borough of Greenwich
+Matrix SCM,MATRIX SPORTS LLP,5,6550.0,1,UK Trade and Investment
+Matrix SCM,MATRIX TRAINING ASSOCIATES LTD,5,5820.0,1,Royal Borough of Greenwich
+Matrix SCM,MEETING MATRIX GLOBAL SALES,2,5293.75,1,Queen Elizabeth II Conference Centre
+Matrix SCM,"""MATRIX"" MAGAZIN",5,4379.09,1,Foreign and Commonwealth Office
+Matrix SCM,Matrix BES ltd,5,4377.9,1,Bristol City Council
+Matrix SCM,Matrix Traffic and Transport Data Limited,2,3400.0,1,Bristol City Council
+Matrix SCM,Matrix Control Solutions Ltd,4,3169.32,1,Natural History Museum
+Matrix SCM,MATRIX RSS LTD,1,3000.0,1,UK Trade and Investment
+Matrix SCM,MATRIX ENTERPRISES LTD,2,3000.0,1,UK Trade and Investment
+Matrix SCM,MATRIX PARTNERSHIP LTD,2,1500.0,1,UK Trade and Investment
+Matrix SCM,COMPUTAMATRIX LTD,5,1385.29,1,UK Trade and Investment
+Matrix SCM,MATRIX MANAGEMENT SYSTEMS LTD,1,1000.0,1,UK Trade and Investment
+Matrix SCM,BIOMATRIX PHARMA LTD,1,1000.0,1,UK Trade and Investment
+Matrix SCM,MATRIX WAREHOUSE,1,881.96,1,Foreign and Commonwealth Office
+Matrix SCM,SUNNYVILE MATRIX VENTU,1,698.58,1,Foreign and Commonwealth Office
+Matrix SCM,MATRIX HOLDINGS LIMITE,1,636.13,1,Foreign and Commonwealth Office
+Matrix SCM,PHARMAMATRIX LTD,1,625.0,1,UK Trade and Investment
+Matrix SCM,MATRIXUA3,1,591.76,1,Foreign and Commonwealth Office
+Matrix SCM,MATRIX PRETORIA,1,518.68,1,Foreign and Commonwealth Office
+Matrix SCM,MATRIX TELEMATICS LTD,1,516.0,1,Transport for Greater Manchester
+Matrix SCM,MATRIX SOLUTIONS INTERNATIONAL Ltd (ANZ TRAINING),12,-20077.86,1,Department for Education
+Comensura,Comensura Ltd,227,35942311.67,1,Bristol City Council
+Comensura,COMENSURA LTD,100,568596.58,1,Transport for Greater Manchester
+Adecco,ADECCO UK LTD,1092,2532904.27,5,"Royal Borough of Greenwich,Blaby District Council,Department for International Development,Home Office,UK Trade and Investment"
+Adecco,ADECCO ALFRED MARKS,59,1696381.27,1,Home Office
+Adecco,ADECCO,5,763852.1,1,"Ministry of Housing, Communities and Local Government"
+Adecco,ADECCO UK LIMITED,9,296194.0,1,Maidstone and Tunbridge Wells NHS Trust
+Adecco,ADECCO RRHH,3,2574.26,1,"Foreign, Commonwealth and Development Office (FCDO)"
+Manpower,MANPOWER UK LTD,598,109841598.98,4,"Royal Borough of Greenwich,Department for Work and Pensions,HM Revenue and Customs,Ministry of Housing, Communities and Local Government"
+Manpower,MANPOWER UK LIMITED,49,4176975.7,2,"Home Office,HM Revenue and Customs"
+Manpower,MANPOWER GROUP SOLUTIONS SRL,15,1628625.69,1,UK Trade and Investment
+Manpower,Manpower Direct UK Ltd,24,1539177.04,1,HM Revenue and Customs
+Manpower,MANPOWER S R L,19,501300.9,1,UK Trade and Investment
+Manpower,MANPOWER DIRECT (UK) LTD,13,406575.16,1,Ministry of Defence
+Manpower,MANPOWER PLC,46,165538.55,1,Department for International Development
+Manpower,MANPOWER UK,1,95000.0,1,Department for Work and Pensions
+Manpower,Elan Computing Ltd (A Manpower Compa,18,88905.88,2,"Department for Digital, Culture, Media and Sport,Natural History Museum"
+Manpower,Quantum Manpower Services Limited,3,6417.0,1,Bristol City Council
+Manpower,Manpower UK Ltd,1,4647.0,1,Plymouth City Council
+Manpower,Manpower,1,735.0,1,Department for International Development
+Manpower,MANPOWER DEVELOPMENT INSTITUTE,1,597.86,1,Department for International Development
+Manpower,MANPOWER & MAINTENANCE,1,585.4,1,Foreign and Commonwealth Office
