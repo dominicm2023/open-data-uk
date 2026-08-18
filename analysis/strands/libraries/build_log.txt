@@ -1,0 +1,15 @@
+library rows loaded: 1371 (measures: ['gross', 'income', 'nce'])
+league LB: n=32 (clean n=31); net max 43.84 (Kensington & Chelsea), net min 3.35 (Barking & Dagenham), median 14.66
+league MD: n=36 (clean n=33); net max 23.74 (North Tyneside), net min 4.24 (Sunderland), median 11.96
+league UA: n=61 (clean n=59); net max 22.34 (Brighton & Hove UA), net min -1.42 (Blackpool UA), median 10.39
+league SC: n=21 (clean n=21); net max 15.64 (Nottinghamshire CC), net min 6.37 (Leicestershire CC), median 10.34
+callout: K&C net 43.84 vs B&D 3.35 -> 13.1x; gross 46.21 vs 4.04 -> 11.4x
+deflator factors recovered from substrate: {'2013-14': 1.3693, '2018-19': 1.2692, '2024-25': 1.0}
+arc LB: 27.24 -> 19.57 -> 16.29 (-40.2%)
+arc MD: 22.31 -> 15.76 -> 12.57 (-43.7%)
+arc UA: 18.62 -> 13.78 -> 10.67 (-42.7%)
+arc SC: 17.81 -> 12.94 -> 10.97 (-38.4%)
+census recomputed: n=139, fell=132, median change -42.4% (excluded: 3 -> ['Blackpool UA', 'Luton UA', 'Wigan MBC'])
+deepest cuts: Barking & Dagenham (LB) -86%; Enfield (LB) -79%; Slough UA (UA) -79%; Sunderland (MD) -77%; Cornwall UA (UA) -76%
+grew: Calderdale (MD) +3%; Brighton & Hove UA (UA) +8%; Essex CC (SC) +14%; Camden (LB) +15%; Salford (MD) +56%
+map rows: 152 across classes {'UA': 62, 'MD': 36, 'LB': 33, 'SC': 21}; negative values: ['Blackpool UA']

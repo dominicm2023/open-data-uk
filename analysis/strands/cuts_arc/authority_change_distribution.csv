@@ -1,0 +1,282 @@
+service,service_label,ons_code,name,cls,cls_label,real_per_head_2013_14,real_per_head_2024_25,change_pct
+libraries,Libraries,E09000002,Barking & Dagenham,LB,London borough,24.35,3.35,-86.3
+libraries,Libraries,E09000010,Enfield,LB,London borough,28.62,6.03,-78.9
+libraries,Libraries,E06000039,Slough UA,UA,Unitary,22.63,4.84,-78.6
+libraries,Libraries,E08000024,Sunderland,MD,Met district,18.68,4.24,-77.3
+libraries,Libraries,E06000052,Cornwall UA,UA,Unitary,15.9,3.75,-76.4
+libraries,Libraries,E06000012,North East Lincolnshire UA,UA,Unitary,29.46,8.72,-70.4
+libraries,Libraries,E06000003,Redcar & Cleveland UA,UA,Unitary,26.19,8.27,-68.4
+libraries,Libraries,E08000028,Sandwell,MD,Met district,22.07,7.11,-67.8
+libraries,Libraries,E08000002,Bury MBC,MD,Met district,22.24,7.49,-66.3
+libraries,Libraries,E06000021,Stoke-on-Trent UA,UA,Unitary,20.31,7.12,-64.9
+libraries,Libraries,E10000028,Staffordshire CC,SC,Shire county,21.43,7.73,-63.9
+libraries,Libraries,E06000040,Windsor & Maidenhead UA,UA,Unitary,23.96,8.98,-62.5
+libraries,Libraries,E08000032,Bradford,MD,Met district,22.23,8.47,-61.9
+libraries,Libraries,E09000022,Lambeth,LB,London borough,34.64,13.49,-61.1
+libraries,Libraries,E10000018,Leicestershire CC,SC,Shire county,16.15,6.37,-60.6
+libraries,Libraries,E09000029,Sutton,LB,London borough,27.17,10.71,-60.6
+libraries,Libraries,E06000007,Warrington UA,UA,Unitary,18.21,7.23,-60.3
+libraries,Libraries,E09000004,Bexley,LB,London borough,27.37,10.91,-60.1
+libraries,Libraries,E09000018,Hounslow,LB,London borough,30.96,12.38,-60.0
+libraries,Libraries,E10000019,Lincolnshire CC,SC,Shire county,19.86,7.99,-59.8
+libraries,Libraries,E06000051,Shropshire UA,UA,Unitary,19.73,7.96,-59.7
+libraries,Libraries,E06000041,Wokingham UA,UA,Unitary,16.62,6.73,-59.5
+libraries,Libraries,E06000042,Milton Keynes UA,UA,Unitary,14.66,5.95,-59.4
+libraries,Libraries,E08000037,Gateshead,MD,Met district,24.4,9.93,-59.3
+libraries,Libraries,E06000030,Swindon UA,UA,Unitary,23.2,9.43,-59.3
+libraries,Libraries,E10000007,Derbyshire CC,SC,Shire county,21.8,8.95,-58.9
+libraries,Libraries,E10000030,Surrey CC,SC,Shire county,20.8,8.73,-58.0
+libraries,Libraries,E06000016,Leicester City UA,UA,Unitary,15.21,6.44,-57.7
+libraries,Libraries,E09000023,Lewisham,LB,London borough,33.45,14.19,-57.6
+libraries,Libraries,E06000045,Southampton UA,UA,Unitary,28.47,12.33,-56.7
+libraries,Libraries,E08000012,Liverpool,MD,Met district,40.39,17.64,-56.3
+libraries,Libraries,E09000026,Redbridge,LB,London borough,23.0,10.15,-55.9
+libraries,Libraries,E06000057,Northumberland UA,UA,Unitary,18.47,8.17,-55.8
+libraries,Libraries,E06000015,Derby City UA,UA,Unitary,15.57,6.9,-55.7
+libraries,Libraries,E08000030,Walsall,MD,Met district,26.43,12.06,-54.4
+libraries,Libraries,E06000055,Bedford UA,UA,Unitary,19.02,8.85,-53.5
+libraries,Libraries,E09000016,Havering,LB,London borough,21.06,9.79,-53.5
+libraries,Libraries,E08000034,Kirklees,MD,Met district,26.34,12.32,-53.2
+libraries,Libraries,E09000009,Ealing,LB,London borough,18.9,8.87,-53.1
+libraries,Libraries,E08000026,Coventry,MD,Met district,21.68,10.3,-52.5
+libraries,Libraries,E08000025,Birmingham,MD,Met district,30.14,14.56,-51.7
+libraries,Libraries,E09000005,Brent,LB,London borough,20.91,10.14,-51.5
+libraries,Libraries,E08000009,Trafford,MD,Met district,22.36,10.86,-51.4
+libraries,Libraries,E10000034,Worcestershire CC,SC,Shire county,26.97,13.33,-50.6
+libraries,Libraries,E10000014,Hampshire CC,SC,Shire county,17.32,8.56,-50.6
+libraries,Libraries,E06000020,Telford & the Wrekin UA,UA,Unitary,15.05,7.43,-50.6
+libraries,Libraries,E06000027,Torbay UA,UA,Unitary,21.07,10.48,-50.2
+libraries,Libraries,E06000001,Hartlepool UA,UA,Unitary,22.34,11.17,-50.0
+libraries,Libraries,E10000008,Devon CC,SC,Shire county,15.93,8.01,-49.7
+libraries,Libraries,E08000005,Rochdale,MD,Met district,17.66,8.91,-49.6
+libraries,Libraries,E06000004,Stockton-on-Tees UA,UA,Unitary,21.94,11.07,-49.5
+libraries,Libraries,E08000013,St Helens MBC,MD,Met district,21.58,10.97,-49.2
+libraries,Libraries,E09000019,Islington,LB,London borough,42.39,21.79,-48.6
+libraries,Libraries,E09000017,Hillingdon,LB,London borough,28.83,14.91,-48.3
+libraries,Libraries,E08000021,Newcastle,MD,Met district,40.79,21.34,-47.7
+libraries,Libraries,E10000011,East Sussex CC,SC,Shire county,17.84,9.36,-47.5
+libraries,Libraries,E06000006,Halton UA,UA,Unitary,25.21,13.27,-47.3
+libraries,Libraries,E06000038,Reading UA,UA,Unitary,17.83,9.42,-47.2
+libraries,Libraries,E08000018,Rotherham,MD,Met district,23.98,12.9,-46.2
+libraries,Libraries,E10000003,Cambridgeshire CC,SC,Shire county,15.86,8.61,-45.7
+libraries,Libraries,E08000011,Knowsley,MD,Met district,19.26,10.52,-45.4
+libraries,Libraries,E08000007,Stockport MBC,MD,Met district,25.08,13.79,-45.0
+libraries,Libraries,E08000035,Leeds,MD,Met district,21.63,11.96,-44.7
+libraries,Libraries,E09000015,Harrow,LB,London borough,18.57,10.35,-44.2
+libraries,Libraries,E06000008,Blackburn with Darwen UA,UA,Unitary,20.91,11.68,-44.2
+libraries,Libraries,E06000013,North Lincolnshire UA,UA,Unitary,18.73,10.47,-44.1
+libraries,Libraries,E06000037,West Berkshire UA,UA,Unitary,14.68,8.29,-43.5
+libraries,Libraries,E09000003,Barnet,LB,London borough,23.82,13.54,-43.1
+libraries,Libraries,E06000025,South Gloucestershire UA,UA,Unitary,14.53,8.29,-43.0
+libraries,Libraries,E08000014,Sefton,MD,Met district,12.87,7.41,-42.4
+libraries,Libraries,E08000008,Tameside,MD,Met district,15.69,9.11,-41.9
+libraries,Libraries,E08000004,Oldham,MD,Met district,32.19,18.72,-41.9
+libraries,Libraries,E09000021,Kingston Upon Thames,LB,London borough,24.2,14.42,-40.4
+libraries,Libraries,E08000027,Dudley,MD,Met district,19.99,11.95,-40.2
+libraries,Libraries,E10000020,Norfolk CC,SC,Shire county,17.31,10.34,-40.2
+libraries,Libraries,E06000011,East Riding of Yorkshire UA,UA,Unitary,17.09,10.37,-39.3
+libraries,Libraries,E06000049,Cheshire East UA,UA,Unitary,19.49,11.84,-39.2
+libraries,Libraries,E06000018,Nottingham City UA,UA,Unitary,20.23,12.33,-39.1
+libraries,Libraries,E09000030,Tower Hamlets,LB,London borough,36.43,22.3,-38.8
+libraries,Libraries,E08000031,Wolverhampton,MD,Met district,18.58,11.41,-38.6
+libraries,Libraries,E10000025,Oxfordshire CC,SC,Shire county,21.3,13.18,-38.1
+libraries,Libraries,E08000019,Sheffield,MD,Met district,14.97,9.33,-37.7
+libraries,Libraries,E08000017,Doncaster,MD,Met district,17.49,10.95,-37.4
+libraries,Libraries,E10000016,Kent CC,SC,Shire county,18.96,12.04,-36.5
+libraries,Libraries,E08000023,South Tyneside,MD,Met district,28.11,17.89,-36.4
+libraries,Libraries,E06000024,North Somerset UA,UA,Unitary,16.22,10.39,-35.9
+libraries,Libraries,E08000029,Solihull,MD,Met district,23.07,15.18,-34.2
+libraries,Libraries,E08000001,Bolton,MD,Met district,18.77,12.42,-33.8
+libraries,Libraries,E06000022,Bath & North East Somerset UA,UA,Unitary,21.27,14.12,-33.6
+libraries,Libraries,E06000019,Herefordshire UA,UA,Unitary,11.2,7.49,-33.2
+libraries,Libraries,E06000036,Bracknell Forest UA,UA,Unitary,23.52,15.76,-33.0
+libraries,Libraries,E09000008,Croydon,LB,London borough,12.39,8.36,-32.5
+libraries,Libraries,E06000014,York UA,UA,Unitary,19.58,13.45,-31.3
+libraries,Libraries,E08000015,Wirral,MD,Met district,20.5,14.08,-31.3
+libraries,Libraries,E09000006,Bromley,LB,London borough,25.69,17.82,-30.6
+libraries,Libraries,E08000036,Wakefield,MD,Met district,20.09,13.93,-30.6
+libraries,Libraries,E09000012,Hackney,LB,London borough,36.16,25.65,-29.1
+libraries,Libraries,E10000031,Warwickshire CC,SC,Shire county,15.63,11.18,-28.5
+libraries,Libraries,E06000023,Bristol UA,UA,Unitary,19.57,14.08,-28.1
+libraries,Libraries,E06000044,Portsmouth UA,UA,Unitary,20.57,14.93,-27.4
+libraries,Libraries,E09000013,Hammersmith & Fulham,LB,London borough,22.57,16.45,-27.1
+libraries,Libraries,E06000002,Middlesbrough UA,UA,Unitary,18.06,13.18,-27.0
+libraries,Libraries,E10000017,Lancashire CC,SC,Shire county,17.17,12.71,-26.0
+libraries,Libraries,E06000056,Central Bedfordshire UA,UA,Unitary,13.26,9.82,-25.9
+libraries,Libraries,E09000031,Waltham Forest,LB,London borough,17.83,13.2,-25.9
+libraries,Libraries,E06000046,Isle of Wight UA,UA,Unitary,13.6,10.12,-25.6
+libraries,Libraries,E09000032,Wandsworth,LB,London borough,19.98,14.89,-25.4
+libraries,Libraries,E10000015,Hertfordshire CC,SC,Shire county,19.42,14.55,-25.1
+libraries,Libraries,E06000034,Thurrock UA,UA,Unitary,15.72,11.91,-24.2
+libraries,Libraries,E10000024,Nottinghamshire CC,SC,Shire county,20.56,15.64,-23.9
+libraries,Libraries,E09000014,Haringey,LB,London borough,22.67,17.39,-23.3
+libraries,Libraries,E10000029,Suffolk CC,SC,Shire county,13.47,10.34,-23.2
+libraries,Libraries,E09000027,Richmond upon Thames,LB,London borough,30.54,23.94,-21.6
+libraries,Libraries,E06000050,Cheshire West and Chester UA,UA,Unitary,19.3,15.19,-21.3
+libraries,Libraries,E09000033,Westminster,LB,London borough,45.73,36.16,-20.9
+libraries,Libraries,E06000033,Southend-on-Sea UA,UA,Unitary,25.0,20.0,-20.0
+libraries,Libraries,E06000047,Durham UA,UA,Unitary,14.6,11.92,-18.4
+libraries,Libraries,E10000032,West Sussex CC,SC,Shire county,12.87,10.53,-18.2
+libraries,Libraries,E06000010,Kingston-upon-Hull UA,UA,Unitary,26.89,22.03,-18.1
+libraries,Libraries,E06000017,Rutland UA,UA,Unitary,21.56,17.66,-18.1
+libraries,Libraries,E06000035,Medway Towns UA,UA,Unitary,19.53,16.09,-17.6
+libraries,Libraries,E09000024,Merton,LB,London borough,19.22,15.9,-17.3
+libraries,Libraries,E08000003,Manchester,MD,Met district,22.05,18.72,-15.1
+libraries,Libraries,E09000028,Southwark,LB,London borough,32.4,27.94,-13.8
+libraries,Libraries,E08000022,North Tyneside,MD,Met district,27.33,23.74,-13.2
+libraries,Libraries,E06000054,Wiltshire UA,UA,Unitary,13.75,12.29,-10.6
+libraries,Libraries,E06000005,Darlington UA,UA,Unitary,12.55,11.78,-6.1
+libraries,Libraries,E09000011,Greenwich,LB,London borough,18.15,17.24,-5.0
+libraries,Libraries,E09000020,Kensington & Chelsea,LB,London borough,45.9,43.84,-4.5
+libraries,Libraries,E06000031,Peterborough UA,UA,Unitary,8.4,8.15,-3.0
+libraries,Libraries,E06000026,Plymouth UA,UA,Unitary,15.17,14.8,-2.4
+libraries,Libraries,E09000025,Newham,LB,London borough,16.05,15.81,-1.5
+libraries,Libraries,E08000016,Barnsley,MD,Met district,14.71,15.02,2.1
+libraries,Libraries,E10000013,Gloucestershire CC,SC,Shire county,11.97,12.23,2.2
+libraries,Libraries,E08000033,Calderdale,MD,Met district,18.97,19.49,2.8
+libraries,Libraries,E06000043,Brighton & Hove UA,UA,Unitary,20.61,22.34,8.4
+libraries,Libraries,E10000012,Essex CC,SC,Shire county,13.39,15.21,13.6
+libraries,Libraries,E09000007,Camden,LB,London borough,27.18,31.13,14.6
+libraries,Libraries,E08000006,Salford,MD,Met district,4.07,6.36,56.2
+children_social_care,Children's social care,E09000028,Southwark,LB,London borough,353.54,330.1,-6.6
+children_social_care,Children's social care,E09000013,Hammersmith & Fulham,LB,London borough,328.66,309.99,-5.7
+children_social_care,Children's social care,E06000039,Slough UA,UA,Unitary,240.1,230.75,-3.9
+children_social_care,Children's social care,E09000014,Haringey,LB,London borough,306.13,307.07,0.3
+children_social_care,Children's social care,E09000011,Greenwich,LB,London borough,322.19,326.94,1.5
+children_social_care,Children's social care,E06000034,Thurrock UA,UA,Unitary,276.68,282.83,2.2
+children_social_care,Children's social care,E09000022,Lambeth,LB,London borough,368.29,383.88,4.2
+children_social_care,Children's social care,E06000043,Brighton & Hove UA,UA,Unitary,235.85,253.8,7.6
+children_social_care,Children's social care,E09000031,Waltham Forest,LB,London borough,237.4,257.75,8.6
+children_social_care,Children's social care,E06000055,Bedford UA,UA,Unitary,250.79,272.42,8.6
+children_social_care,Children's social care,E06000013,North Lincolnshire UA,UA,Unitary,185.65,205.68,10.8
+children_social_care,Children's social care,E09000012,Hackney,LB,London borough,325.61,361.15,10.9
+children_social_care,Children's social care,E08000006,Salford,MD,Met district,223.87,253.27,13.1
+children_social_care,Children's social care,E06000054,Wiltshire UA,UA,Unitary,155.95,178.31,14.3
+children_social_care,Children's social care,E08000030,Walsall,MD,Met district,298.48,341.79,14.5
+children_social_care,Children's social care,E06000008,Blackburn with Darwen UA,UA,Unitary,292.56,336.27,14.9
+children_social_care,Children's social care,E10000012,Essex CC,SC,Shire county,143.89,168.02,16.8
+children_social_care,Children's social care,E09000025,Newham,LB,London borough,255.92,299.8,17.1
+children_social_care,Children's social care,E08000031,Wolverhampton,MD,Met district,268.65,316.27,17.7
+children_social_care,Children's social care,E09000032,Wandsworth,LB,London borough,174.38,206.03,18.2
+children_social_care,Children's social care,E09000033,Westminster,LB,London borough,217.26,256.94,18.3
+children_social_care,Children's social care,E09000015,Harrow,LB,London borough,153.49,182.91,19.2
+children_social_care,Children's social care,E10000003,Cambridgeshire CC,SC,Shire county,143.01,171.3,19.8
+children_social_care,Children's social care,E09000009,Ealing,LB,London borough,194.29,233.7,20.3
+children_social_care,Children's social care,E06000020,Telford & the Wrekin UA,UA,Unitary,241.93,293.04,21.1
+children_social_care,Children's social care,E08000034,Kirklees,MD,Met district,177.83,217.62,22.4
+children_social_care,Children's social care,E09000030,Tower Hamlets,LB,London borough,229.16,284.32,24.1
+children_social_care,Children's social care,E08000021,Newcastle,MD,Met district,219.38,272.56,24.2
+children_social_care,Children's social care,E09000018,Hounslow,LB,London borough,205.02,255.03,24.4
+children_social_care,Children's social care,E08000005,Rochdale,MD,Met district,248.43,311.05,25.2
+children_social_care,Children's social care,E08000017,Doncaster,MD,Met district,244.42,307.44,25.8
+children_social_care,Children's social care,E06000010,Kingston-upon-Hull UA,UA,Unitary,293.41,369.82,26.0
+children_social_care,Children's social care,E06000018,Nottingham City UA,UA,Unitary,313.1,396.08,26.5
+children_social_care,Children's social care,E08000027,Dudley,MD,Met district,202.07,257.2,27.3
+children_social_care,Children's social care,E06000031,Peterborough UA,UA,Unitary,233.05,299.06,28.3
+children_social_care,Children's social care,E08000003,Manchester,MD,Met district,266.26,341.59,28.3
+children_social_care,Children's social care,E09000002,Barking & Dagenham,LB,London borough,265.98,342.88,28.9
+children_social_care,Children's social care,E09000008,Croydon,LB,London borough,263.18,340.67,29.4
+children_social_care,Children's social care,E09000029,Sutton,LB,London borough,222.67,289.37,30.0
+children_social_care,Children's social care,E10000015,Hertfordshire CC,SC,Shire county,152.77,200.07,31.0
+children_social_care,Children's social care,E06000014,York UA,UA,Unitary,124.25,163.6,31.7
+children_social_care,Children's social care,E08000025,Birmingham,MD,Met district,210.79,279.14,32.4
+children_social_care,Children's social care,E10000016,Kent CC,SC,Shire county,162.77,216.87,33.2
+children_social_care,Children's social care,E09000019,Islington,LB,London borough,313.93,419.83,33.7
+children_social_care,Children's social care,E06000056,Central Bedfordshire UA,UA,Unitary,159.74,214.87,34.5
+children_social_care,Children's social care,E09000004,Bexley,LB,London borough,184.28,248.19,34.7
+children_social_care,Children's social care,E08000028,Sandwell,MD,Met district,223.68,303.84,35.8
+children_social_care,Children's social care,E06000027,Torbay UA,UA,Unitary,291.34,396.72,36.2
+children_social_care,Children's social care,E09000017,Hillingdon,LB,London borough,162.78,221.73,36.2
+children_social_care,Children's social care,E09000003,Barnet,LB,London borough,181.52,247.79,36.5
+children_social_care,Children's social care,E08000035,Leeds,MD,Met district,222.07,304.5,37.1
+children_social_care,Children's social care,E08000026,Coventry,MD,Met district,241.62,332.87,37.8
+children_social_care,Children's social care,E06000045,Southampton UA,UA,Unitary,201.18,278.75,38.6
+children_social_care,Children's social care,E06000038,Reading UA,UA,Unitary,248.64,345.11,38.8
+children_social_care,Children's social care,E06000052,Cornwall UA,UA,Unitary,152.19,211.72,39.1
+children_social_care,Children's social care,E09000010,Enfield,LB,London borough,182.01,253.94,39.5
+children_social_care,Children's social care,E06000049,Cheshire East UA,UA,Unitary,152.98,214.34,40.1
+children_social_care,Children's social care,E06000046,Isle of Wight UA,UA,Unitary,212.08,298.36,40.7
+children_social_care,Children's social care,E09000005,Brent,LB,London borough,174.76,248.75,42.3
+children_social_care,Children's social care,E09000021,Kingston Upon Thames,LB,London borough,175.74,250.58,42.6
+children_social_care,Children's social care,E06000032,Luton UA,UA,Unitary,205.79,295.21,43.5
+children_social_care,Children's social care,E08000023,South Tyneside,MD,Met district,258.31,373.33,44.5
+children_social_care,Children's social care,E09000024,Merton,LB,London borough,160.71,232.95,44.9
+children_social_care,Children's social care,E06000016,Leicester City UA,UA,Unitary,184.79,268.07,45.1
+children_social_care,Children's social care,E09000020,Kensington & Chelsea,LB,London borough,235.0,341.27,45.2
+children_social_care,Children's social care,E06000037,West Berkshire UA,UA,Unitary,153.7,225.0,46.4
+children_social_care,Children's social care,E09000007,Camden,LB,London borough,281.61,418.06,48.5
+children_social_care,Children's social care,E10000020,Norfolk CC,SC,Shire county,157.28,237.75,51.2
+children_social_care,Children's social care,E10000024,Nottinghamshire CC,SC,Shire county,165.11,250.96,52.0
+children_social_care,Children's social care,E08000036,Wakefield,MD,Met district,174.24,265.66,52.5
+children_social_care,Children's social care,E06000042,Milton Keynes UA,UA,Unitary,172.97,264.3,52.8
+children_social_care,Children's social care,E10000030,Surrey CC,SC,Shire county,132.14,202.17,53.0
+children_social_care,Children's social care,E09000023,Lewisham,LB,London borough,260.74,399.48,53.2
+children_social_care,Children's social care,E08000018,Rotherham,MD,Met district,213.61,327.62,53.4
+children_social_care,Children's social care,E10000017,Lancashire CC,SC,Shire county,146.9,225.53,53.5
+children_social_care,Children's social care,E10000029,Suffolk CC,SC,Shire county,121.0,185.68,53.5
+children_social_care,Children's social care,E09000026,Redbridge,LB,London borough,144.13,223.1,54.8
+children_social_care,Children's social care,E06000005,Darlington UA,UA,Unitary,221.38,350.91,58.5
+children_social_care,Children's social care,E10000019,Lincolnshire CC,SC,Shire county,117.06,186.04,58.9
+children_social_care,Children's social care,E06000015,Derby City UA,UA,Unitary,211.35,336.3,59.1
+children_social_care,Children's social care,E06000057,Northumberland UA,UA,Unitary,149.35,238.18,59.5
+children_social_care,Children's social care,E06000050,Cheshire West and Chester UA,UA,Unitary,159.98,255.94,60.0
+children_social_care,Children's social care,E06000040,Windsor & Maidenhead UA,UA,Unitary,126.74,205.49,62.1
+children_social_care,Children's social care,E10000031,Warwickshire CC,SC,Shire county,145.71,237.2,62.8
+children_social_care,Children's social care,E08000015,Wirral,MD,Met district,197.92,322.6,63.0
+children_social_care,Children's social care,E08000009,Trafford,MD,Met district,143.15,233.36,63.0
+children_social_care,Children's social care,E06000041,Wokingham UA,UA,Unitary,122.59,200.17,63.3
+children_social_care,Children's social care,E06000004,Stockton-on-Tees UA,UA,Unitary,213.48,351.28,64.6
+children_social_care,Children's social care,E08000019,Sheffield,MD,Met district,162.25,270.09,66.5
+children_social_care,Children's social care,E08000037,Gateshead,MD,Met district,205.72,342.87,66.7
+children_social_care,Children's social care,E10000028,Staffordshire CC,SC,Shire county,146.51,244.98,67.2
+children_social_care,Children's social care,E10000008,Devon CC,SC,Shire county,148.36,249.28,68.0
+children_social_care,Children's social care,E06000017,Rutland UA,UA,Unitary,128.03,215.5,68.3
+children_social_care,Children's social care,E06000044,Portsmouth UA,UA,Unitary,184.95,312.53,69.0
+children_social_care,Children's social care,E08000024,Sunderland,MD,Met district,184.04,311.61,69.3
+children_social_care,Children's social care,E09000016,Havering,LB,London borough,150.14,254.36,69.4
+children_social_care,Children's social care,E08000002,Bury MBC,MD,Met district,168.78,288.83,71.1
+children_social_care,Children's social care,E08000033,Calderdale,MD,Met district,183.53,316.7,72.6
+children_social_care,Children's social care,E06000026,Plymouth UA,UA,Unitary,196.74,340.94,73.3
+children_social_care,Children's social care,E06000002,Middlesbrough UA,UA,Unitary,285.97,496.16,73.5
+children_social_care,Children's social care,E06000035,Medway Towns UA,UA,Unitary,184.26,321.05,74.2
+children_social_care,Children's social care,E06000036,Bracknell Forest UA,UA,Unitary,152.57,265.73,74.2
+children_social_care,Children's social care,E06000033,Southend-on-Sea UA,UA,Unitary,167.7,293.7,75.1
+children_social_care,Children's social care,E06000023,Bristol UA,UA,Unitary,176.37,310.34,76.0
+children_social_care,Children's social care,E06000030,Swindon UA,UA,Unitary,160.97,284.73,76.9
+children_social_care,Children's social care,E08000029,Solihull,MD,Met district,195.93,346.67,76.9
+children_social_care,Children's social care,E08000022,North Tyneside,MD,Met district,164.2,291.67,77.6
+children_social_care,Children's social care,E08000001,Bolton,MD,Met district,167.79,299.45,78.5
+children_social_care,Children's social care,E08000016,Barnsley,MD,Met district,179.98,326.96,81.7
+children_social_care,Children's social care,E06000007,Warrington UA,UA,Unitary,144.26,262.35,81.9
+children_social_care,Children's social care,E09000006,Bromley,LB,London borough,138.17,256.94,86.0
+children_social_care,Children's social care,E10000034,Worcestershire CC,SC,Shire county,122.96,229.94,87.0
+children_social_care,Children's social care,E08000010,Wigan MBC,MD,Met district,149.99,282.86,88.6
+children_social_care,Children's social care,E06000012,North East Lincolnshire UA,UA,Unitary,207.18,391.77,89.1
+children_social_care,Children's social care,E09000027,Richmond upon Thames,LB,London borough,139.21,263.41,89.2
+children_social_care,Children's social care,E10000014,Hampshire CC,SC,Shire county,114.6,217.66,89.9
+children_social_care,Children's social care,E06000011,East Riding of Yorkshire UA,UA,Unitary,114.06,216.67,90.0
+children_social_care,Children's social care,E08000007,Stockport MBC,MD,Met district,130.98,249.29,90.3
+children_social_care,Children's social care,E08000011,Knowsley,MD,Met district,194.61,373.94,92.1
+children_social_care,Children's social care,E06000006,Halton UA,UA,Unitary,249.6,481.93,93.1
+children_social_care,Children's social care,E10000032,West Sussex CC,SC,Shire county,123.03,240.14,95.2
+children_social_care,Children's social care,E08000012,Liverpool,MD,Met district,196.64,386.31,96.5
+children_social_care,Children's social care,E08000004,Oldham,MD,Met district,174.86,343.66,96.5
+children_social_care,Children's social care,E06000022,Bath & North East Somerset UA,UA,Unitary,118.05,236.51,100.3
+children_social_care,Children's social care,E10000007,Derbyshire CC,SC,Shire county,118.8,239.69,101.8
+children_social_care,Children's social care,E10000025,Oxfordshire CC,SC,Shire county,105.98,216.51,104.3
+children_social_care,Children's social care,E06000009,Blackpool UA,UA,Unitary,292.23,598.75,104.9
+children_social_care,Children's social care,E06000047,Durham UA,UA,Unitary,141.33,291.56,106.3
+children_social_care,Children's social care,E08000013,St Helens MBC,MD,Met district,187.85,388.65,106.9
+children_social_care,Children's social care,E06000051,Shropshire UA,UA,Unitary,116.19,243.97,110.0
+children_social_care,Children's social care,E10000011,East Sussex CC,SC,Shire county,130.77,278.77,113.2
+children_social_care,Children's social care,E06000024,North Somerset UA,UA,Unitary,123.24,263.53,113.8
+children_social_care,Children's social care,E10000018,Leicestershire CC,SC,Shire county,87.13,188.23,116.0
+children_social_care,Children's social care,E06000019,Herefordshire UA,UA,Unitary,164.05,355.79,116.9
+children_social_care,Children's social care,E06000021,Stoke-on-Trent UA,UA,Unitary,208.44,466.68,123.9
+children_social_care,Children's social care,E08000014,Sefton,MD,Met district,157.99,374.32,136.9
+children_social_care,Children's social care,E08000032,Bradford,MD,Met district,192.26,455.87,137.1
+children_social_care,Children's social care,E06000025,South Gloucestershire UA,UA,Unitary,85.32,205.42,140.8
+children_social_care,Children's social care,E06000003,Redcar & Cleveland UA,UA,Unitary,184.9,446.44,141.5
+children_social_care,Children's social care,E10000013,Gloucestershire CC,SC,Shire county,109.07,264.02,142.1
+children_social_care,Children's social care,E06000001,Hartlepool UA,UA,Unitary,203.53,502.7,147.0
+children_social_care,Children's social care,E08000008,Tameside,MD,Met district,173.26,452.65,161.3

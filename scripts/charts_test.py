@@ -251,6 +251,26 @@ def main() -> int:
     check(charts.render(broken_shape) == "",
           "a missing number yields no chart rather than an exception")
 
+    print("\n--- comparison forms with hostile data")
+    crowded = [(f"Authority {i}", 100 + i * 0.4, 90 + (i % 7) * 0.3)
+               for i in range(18)]
+    body, height = charts.slope(crowded, "2013-14", "2024-25",
+                                "eighteen near-identical values fight for "
+                                "label space", highlight={"Authority 3"})
+    check(bool(body), "slope draws 18 crowded pairs")
+    check_svg(f'<svg viewBox="0 0 720 {height}" '
+              f'xmlns="http://www.w3.org/2000/svg">{body}</svg>',
+              "slope/crowded")
+    spread_pts = [{"x": i % 5, "y": (i * 37) % 11,
+                   "label": f"Long Authority Name {i}" if i % 3 == 0 else None}
+                  for i in range(40)]
+    body, height = charts.scatter(spread_pts, "score", "per head",
+                                  "forty points, a third labelled", rho=-0.03)
+    check(bool(body), "scatter draws 40 points with labels")
+    check_svg(f'<svg viewBox="0 0 720 {height}" '
+              f'xmlns="http://www.w3.org/2000/svg">{body}</svg>',
+              "scatter/crowded")
+
     print("\n--- a signed Joined Up graphic")
     svg = charts.render(findings[0], byline="Dominic Matthews",
                         measured="17 August 2026")

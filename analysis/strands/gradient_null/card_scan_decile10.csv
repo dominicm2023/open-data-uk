@@ -1,0 +1,3286 @@
+lsoa_code,lsoa_name,local_authority,overflows_within_5km,spills_within_5km,hours_within_5km
+E01010946,Calderdale 023A,Calderdale,72,2161,8364.9
+E01014710,Bristol 015B,"Bristol, City of",141,2082,3367.8
+E01014717,Bristol 009C,"Bristol, City of",136,2077,3363.4
+E01014714,Bristol 015F,"Bristol, City of",138,2075,3362.9
+E01014715,Bristol 009A,"Bristol, City of",133,2071,3323.4
+E01010947,Calderdale 023B,Calderdale,64,2067,8321.9
+E01014616,Bristol 006A,"Bristol, City of",143,1967,3151.3
+E01014513,Bristol 016F,"Bristol, City of",156,1965,3174.7
+E01014711,Bristol 015C,"Bristol, City of",117,1954,3235.4
+E01014716,Bristol 009B,"Bristol, City of",124,1942,3204.6
+E01014615,Bristol 011A,"Bristol, City of",146,1935,3150.2
+E01013358,York 021B,York,68,1929,15792.7
+E01014666,Bristol 017C,"Bristol, City of",153,1927,3118.0
+E01014667,Bristol 017D,"Bristol, City of",151,1927,3118.0
+E01014620,Bristol 011D,"Bristol, City of",145,1915,3119.7
+E01013339,York 012E,York,68,1914,15697.6
+E01014617,Bristol 011B,"Bristol, City of",144,1910,3109.2
+E01013337,York 012C,York,67,1909,15672.4
+E01014618,Bristol 011C,"Bristol, City of",140,1903,3089.6
+E01013355,York 022C,York,62,1898,15708.3
+E01013417,York 017E,York,67,1896,15361.1
+E01013435,York 006E,York,68,1883,15152.1
+E01008237,Gateshead 016D,Gateshead,94,1863,5927.1
+E01006072,Tameside 015E,Tameside,74,1852,8197.3
+E01011088,Kirklees 050C,Kirklees,78,1844,9259.6
+E01013380,York 008B,York,66,1829,14745.9
+E01013433,York 007D,York,69,1827,13720.4
+E01014718,Bristol 009D,"Bristol, City of",106,1821,2695.8
+E01013379,York 008A,York,65,1819,14778.1
+E01013413,York 017D,York,66,1817,14610.9
+E01014380,Bath and North East Somerset 012A,Bath and North East Somerset,106,1812,4295.8
+E01014482,Bath and North East Somerset 012D,Bath and North East Somerset,107,1812,4295.8
+E01011454,Leeds 027B,Leeds,80,1808,6531.8
+E01014713,Bristol 015E,"Bristol, City of",123,1808,2805.9
+E01013360,York 019A,York,63,1793,14892.5
+E01013354,York 022B,York,55,1792,15466.7
+E01014388,Bath and North East Somerset 018B,Bath and North East Somerset,109,1792,4086.9
+E01013381,York 014A,York,64,1790,14545.9
+E01013361,York 019B,York,64,1788,14547.9
+E01013387,York 008D,York,62,1781,14710.9
+E01014381,Bath and North East Somerset 012B,Bath and North East Somerset,106,1780,3934.8
+E01014468,Bath and North East Somerset 006D,Bath and North East Somerset,106,1780,3934.8
+E01004792,Bolton 006F,Bolton,71,1776,5336.8
+E01008264,Gateshead 009C,Gateshead,94,1770,4750.9
+E01014479,Bath and North East Somerset 005C,Bath and North East Somerset,106,1764,4783.7
+E01014412,Bath and North East Somerset 007D,Bath and North East Somerset,104,1760,3856.1
+E01014389,Bath and North East Somerset 018C,Bath and North East Somerset,108,1744,3957.2
+E01011452,Leeds 027A,Leeds,76,1726,6155.0
+E01014415,Bath and North East Somerset 017A,Bath and North East Somerset,104,1722,3796.8
+E01014413,Bath and North East Somerset 007E,Bath and North East Somerset,103,1713,3896.2
+E01014377,Bath and North East Somerset 010E,Bath and North East Somerset,100,1704,3738.5
+E01014428,Bath and North East Somerset 008B,Bath and North East Somerset,103,1703,4472.5
+E01013378,York 023B,York,60,1702,14318.2
+E01013405,York 005A,York,63,1701,13133.3
+E01014417,Bath and North East Somerset 017C,Bath and North East Somerset,103,1700,3592.5
+E01014435,Bath and North East Somerset 014A,Bath and North East Somerset,103,1700,3592.5
+E01014473,Bath and North East Somerset 013A,Bath and North East Somerset,103,1700,3592.5
+E01013340,York 024A,York,54,1693,14900.6
+E01014477,Bath and North East Somerset 005A,Bath and North East Somerset,104,1692,4384.0
+E01008366,Newcastle upon Tyne 013A,Newcastle upon Tyne,90,1689,5530.6
+E01014410,Bath and North East Somerset 004B,Bath and North East Somerset,102,1684,3797.6
+E01014411,Bath and North East Somerset 004C,Bath and North East Somerset,102,1684,3797.6
+E01014476,Bath and North East Somerset 013D,Bath and North East Somerset,103,1684,3491.4
+E01013389,York 008F,York,56,1681,14534.4
+E01014429,Bath and North East Somerset 008C,Bath and North East Somerset,102,1680,4327.0
+E01014457,Bath and North East Somerset 015C,Bath and North East Somerset,103,1678,3488.5
+E01014434,Bath and North East Somerset 019D,Bath and North East Somerset,104,1672,3354.1
+E01011593,Leeds 039E,Leeds,73,1670,6102.0
+E01015131,Plymouth 030C,Plymouth,57,1662,7035.0
+E01013432,York 007C,York,64,1661,12318.0
+E01008319,Newcastle upon Tyne 007B,Newcastle upon Tyne,79,1651,5818.3
+E01014405,Bath and North East Somerset 009A,Bath and North East Somerset,102,1641,3473.2
+E01013388,York 008E,York,56,1640,14482.6
+E01008269,Gateshead 017B,Gateshead,85,1638,4997.3
+E01011461,Leeds 021D,Leeds,73,1634,6122.0
+E01013402,York 014B,York,53,1633,14173.8
+E01010906,Calderdale 011B,Calderdale,56,1621,5485.2
+E01008270,Gateshead 017C,Gateshead,87,1616,4913.6
+E01011516,Leeds 023E,Leeds,74,1595,6132.6
+E01004771,Bolton 003C,Bolton,70,1591,4335.0
+E01013411,York 005D,York,56,1589,12809.0
+E01013420,York 014D,York,51,1585,13759.2
+E01005741,Salford 014E,Salford,65,1569,5822.7
+E01032685,Salford 028E,Salford,104,1547,3323.4
+E01011455,Leeds 021A,Leeds,68,1532,6004.3
+E01005903,Stockport 010D,Stockport,63,1529,5908.7
+E01008271,Gateshead 017D,Gateshead,84,1503,4656.2
+E01011458,Leeds 027D,Leeds,64,1494,6079.9
+E01005811,Stockport 037D,Stockport,60,1473,5495.1
+E01011173,Kirklees 053E,Kirklees,66,1455,7801.6
+E01008069,Sheffield 028C,Sheffield,75,1453,4428.9
+E01008317,Newcastle upon Tyne 007A,Newcastle upon Tyne,65,1446,4702.7
+E01008371,Newcastle upon Tyne 013C,Newcastle upon Tyne,69,1395,4708.8
+E01004952,Bury 010D,Bury,56,1345,4288.5
+E01006096,Trafford 020C,Trafford,39,1336,5751.4
+E01005812,Stockport 037E,Stockport,54,1335,5040.5
+E01019176,Barrow-in-Furness 006B,Barrow-in-Furness,34,1332,7709.0
+E01011132,Kirklees 020A,Kirklees,58,1324,6125.8
+E01011580,Leeds 014D,Leeds,57,1309,5745.0
+E01006203,Trafford 010E,Trafford,52,1288,5035.1
+E01004949,Bury 010A,Bury,52,1282,4130.4
+E01005927,Stockport 032A,Stockport,55,1279,4445.2
+E01005814,Stockport 033C,Stockport,55,1268,4807.8
+E01010579,Bradford 010A,Bradford,53,1267,4784.4
+E01010586,Bradford 022A,Bradford,55,1263,5445.1
+E01004951,Bury 010C,Bury,48,1252,4028.9
+E01011213,Kirklees 026B,Kirklees,55,1251,5936.5
+E01005787,Stockport 034B,Stockport,49,1245,4820.6
+E01010936,Calderdale 003E,Calderdale,44,1243,4477.5
+E01011654,Leeds 024D,Leeds,58,1241,3715.1
+E01004950,Bury 010B,Bury,51,1240,4034.1
+E01019830,North East Derbyshire 010D,North East Derbyshire,48,1229,6251.2
+E01011382,Leeds 013D,Leeds,56,1211,4816.0
+E01007862,Sheffield 038C,Sheffield,63,1205,3772.7
+E01004844,Bolton 020D,Bolton,54,1202,3376.6
+E01005929,Stockport 032C,Stockport,52,1202,4034.2
+E01005796,Stockport 039E,Stockport,50,1200,4009.3
+E01007961,Sheffield 033D,Sheffield,61,1189,3778.7
+E01025464,South Ribble 004D,South Ribble,66,1184,3640.4
+E01025352,Ribble Valley 008F,Ribble Valley,37,1182,6743.9
+E01005789,Stockport 039A,Stockport,45,1180,4001.8
+E01008423,Newcastle upon Tyne 006G,Newcastle upon Tyne,61,1176,4520.8
+E01011270,Leeds 008B,Leeds,47,1176,5081.0
+E01025332,Ribble Valley 008C,Ribble Valley,24,1174,6772.9
+E01025337,Ribble Valley 008E,Ribble Valley,51,1170,3459.2
+E01006103,Trafford 020E,Trafford,36,1150,4789.3
+E01007954,Sheffield 033C,Sheffield,60,1147,3663.9
+E01008420,Newcastle upon Tyne 005D,Newcastle upon Tyne,55,1138,4238.0
+E01014767,North Somerset 004B,North Somerset,67,1125,2790.3
+E01020704,County Durham 033C,County Durham,66,1125,3904.7
+E01014376,Bath and North East Somerset 010D,Bath and North East Somerset,59,1119,3052.6
+E01008466,North Tyneside 021B,North Tyneside,47,1118,5354.5
+E01006152,Trafford 016C,Trafford,44,1114,4169.5
+E01020712,County Durham 033D,County Durham,63,1112,3832.9
+E01005717,Salford 013B,Salford,49,1106,5295.9
+E01008557,North Tyneside 013D,North Tyneside,56,1106,5577.0
+E01006093,Trafford 023A,Trafford,33,1103,4877.3
+E01006195,Trafford 021C,Trafford,36,1101,4557.8
+E01006147,Trafford 012A,Trafford,46,1100,4060.8
+E01011797,Wakefield 031A,Wakefield,49,1099,5180.0
+E01020719,County Durham 022D,County Durham,64,1095,4268.2
+E01005884,Stockport 020D,Stockport,46,1093,5453.9
+E01010580,Bradford 010B,Bradford,42,1090,4402.4
+E01010766,Bradford 010E,Bradford,43,1090,4402.4
+E01019087,Allerdale 007D,Allerdale,16,1084,8946.7
+E01019558,Chesterfield 008B,Chesterfield,48,1081,4850.5
+E01006124,Trafford 005C,Trafford,41,1078,4569.1
+E01024968,Chorley 005B,Chorley,40,1077,3305.5
+E01004808,Bolton 001E,Bolton,51,1071,3349.9
+E01006101,Trafford 021A,Trafford,43,1071,3935.5
+E01008422,Newcastle upon Tyne 005E,Newcastle upon Tyne,49,1070,3845.1
+E01006205,Trafford 023D,Trafford,33,1066,4814.6
+E01033195,County Durham 030E,County Durham,69,1066,4048.6
+E01020713,County Durham 033E,County Durham,60,1064,3908.5
+E01007952,Sheffield 033A,Sheffield,56,1062,3219.2
+E01006381,Wigan 028B,Wigan,51,1061,4906.0
+E01024970,Chorley 005D,Chorley,39,1050,3337.3
+E01006151,Trafford 016B,Trafford,41,1035,3796.7
+E01006097,Trafford 015A,Trafford,42,1030,5551.9
+E01006196,Trafford 021D,Trafford,36,1030,4154.0
+E01019412,Amber Valley 009C,Amber Valley,64,1030,4820.5
+E01019588,Chesterfield 011C,Chesterfield,45,1028,3843.0
+E01006190,Trafford 021B,Trafford,35,1025,4144.3
+E01007935,Sheffield 047C,Sheffield,57,1020,2946.4
+E01007934,Sheffield 047B,Sheffield,55,1013,2923.2
+E01007936,Sheffield 047D,Sheffield,55,1013,2923.2
+E01007937,Sheffield 047E,Sheffield,55,1013,2923.2
+E01007938,Sheffield 047F,Sheffield,53,1013,2923.2
+E01006098,Trafford 014A,Trafford,43,1011,5249.4
+E01005815,Stockport 033D,Stockport,46,1010,4288.2
+E01019831,North East Derbyshire 010E,North East Derbyshire,44,1008,4366.8
+E01019413,Amber Valley 009D,Amber Valley,60,1007,4785.7
+E01006173,Trafford 018B,Trafford,44,1005,5123.5
+E01020732,County Durham 041D,County Durham,67,1004,3618.5
+E01005808,Stockport 037A,Stockport,44,995,3080.0
+E01007861,Sheffield 038B,Sheffield,52,995,2891.2
+E01006193,Trafford 024D,Trafford,28,993,4613.6
+E01019592,Chesterfield 011E,Chesterfield,43,990,3615.8
+E01005839,Stockport 035C,Stockport,43,985,4601.1
+E01014919,South Gloucestershire 031D,South Gloucestershire,106,984,1779.4
+E01005792,Stockport 041A,Stockport,40,973,3454.9
+E01011386,Leeds 016D,Leeds,49,973,2978.3
+E01011947,Wakefield 033C,Wakefield,40,973,5017.8
+E01019473,Amber Valley 004C,Amber Valley,45,973,5266.2
+E01004805,Bolton 002C,Bolton,52,971,2664.1
+E01005716,Salford 013A,Salford,43,970,3819.2
+E01006191,Trafford 023B,Trafford,30,970,4360.6
+E01005739,Salford 013G,Salford,43,958,4243.0
+E01011376,Leeds 013A,Leeds,44,957,3914.7
+E01011948,Wakefield 033D,Wakefield,39,957,4966.8
+E01011932,Wakefield 035C,Wakefield,38,955,5487.0
+E01014934,South Gloucestershire 032E,South Gloucestershire,76,955,3001.3
+E01006153,Trafford 016D,Trafford,33,950,3590.8
+E01014897,South Gloucestershire 022A,South Gloucestershire,68,946,2524.3
+E01025466,South Ribble 001D,South Ribble,65,946,3380.6
+E01011266,Leeds 008A,Leeds,40,945,4750.8
+E01027660,Harrogate 017A,Harrogate,50,945,3193.5
+E01012223,Stockton-on-Tees 016D,Stockton-on-Tees,57,944,3545.7
+E01008044,Sheffield 046B,Sheffield,52,938,2873.9
+E01014979,South Gloucestershire 015A,South Gloucestershire,59,929,2426.6
+E01025424,South Ribble 001A,South Ribble,61,927,3090.3
+E01027663,Harrogate 017D,Harrogate,50,926,3138.0
+E01006079,Trafford 025D,Trafford,25,924,4076.3
+E01007254,Wirral 030D,Wirral,24,924,5721.1
+E01006300,Wigan 037D,Wigan,44,923,4657.6
+E01014932,South Gloucestershire 032C,South Gloucestershire,63,922,2975.5
+E01020242,Teignbridge 002C,Teignbridge,50,919,7708.6
+E01005883,Stockport 017C,Stockport,34,917,4137.9
+E01008321,Newcastle upon Tyne 007D,Newcastle upon Tyne,42,916,3402.3
+E01019593,Chesterfield 011F,Chesterfield,40,908,3232.8
+E01025426,South Ribble 001C,South Ribble,63,904,3282.4
+E01014935,South Gloucestershire 032F,South Gloucestershire,70,901,2910.7
+E01004901,Bolton 028E,Bolton,41,899,3293.8
+E01019610,Derbyshire Dales 004B,Derbyshire Dales,31,898,4733.1
+E01008418,Newcastle upon Tyne 005C,Newcastle upon Tyne,39,895,3434.7
+E01014940,South Gloucestershire 030D,South Gloucestershire,54,894,3923.8
+E01024950,Chorley 004C,Chorley,31,891,3133.7
+E01006372,Wigan 006B,Wigan,38,887,2853.6
+E01007939,Sheffield 055F,Sheffield,42,885,2756.7
+E01025403,South Ribble 004A,South Ribble,52,881,2934.8
+E01019756,High Peak 004D,High Peak,29,879,4489.9
+E01019727,High Peak 004A,High Peak,28,878,4487.5
+E01019758,High Peak 004F,High Peak,28,878,4487.5
+E01014866,South Gloucestershire 032A,South Gloucestershire,58,874,2804.4
+E01025258,Preston 003B,Preston,54,872,4535.6
+E01005881,Stockport 017B,Stockport,33,869,3900.2
+E01007958,Sheffield 041D,Sheffield,41,866,2698.4
+E01005930,Stockport 032D,Stockport,37,865,2799.6
+E01008421,Newcastle upon Tyne 006F,Newcastle upon Tyne,57,865,2413.3
+E01011280,Leeds 008D,Leeds,35,863,4515.2
+E01027638,Harrogate 010A,Harrogate,50,863,2855.5
+E01027639,Harrogate 010B,Harrogate,49,863,2855.5
+E01025350,Ribble Valley 007D,Ribble Valley,17,862,6531.9
+E01013574,Derby 003A,Derby,54,860,2602.4
+E01019828,North East Derbyshire 008C,North East Derbyshire,38,860,3206.8
+E01018694,Cheshire West and Chester 023C,Cheshire West and Chester,47,858,2580.0
+E01005805,Stockport 035A,Stockport,32,857,4208.4
+E01014937,South Gloucestershire 032G,South Gloucestershire,55,855,2786.9
+E01006237,Wigan 002D,Wigan,24,854,3087.2
+E01019749,High Peak 004B,High Peak,24,854,4440.9
+E01007955,Sheffield 041A,Sheffield,44,853,2351.9
+E01011380,Leeds 016A,Leeds,48,852,1920.8
+E01014944,South Gloucestershire 029B,South Gloucestershire,76,852,1875.7
+E01025410,South Ribble 003C,South Ribble,62,852,2976.2
+E01027662,Harrogate 017C,Harrogate,48,848,2614.5
+E01027733,Harrogate 017F,Harrogate,48,848,2614.5
+E01007929,Sheffield 055C,Sheffield,45,844,2737.7
+E01027732,Harrogate 019E,Harrogate,46,843,2612.0
+E01013427,York 011D,York,40,841,6197.4
+E01014903,South Gloucestershire 020C,South Gloucestershire,64,841,2111.9
+E01027555,Craven 008A,Craven,26,840,3635.5
+E01014902,South Gloucestershire 020B,South Gloucestershire,64,837,2144.2
+E01025454,South Ribble 010C,South Ribble,43,837,3703.6
+E01007931,Sheffield 047A,Sheffield,47,834,2679.4
+E01007824,Sheffield 066A,Sheffield,42,832,2944.2
+E01018700,Cheshire West and Chester 023D,Cheshire West and Chester,42,828,3010.0
+E01018702,Cheshire West and Chester 023E,Cheshire West and Chester,44,828,3010.0
+E01011562,Leeds 012B,Leeds,34,825,2003.8
+E01011649,Leeds 022B,Leeds,28,824,3056.6
+E01018683,Cheshire West and Chester 026D,Cheshire West and Chester,45,823,3035.3
+E01018693,Cheshire West and Chester 023B,Cheshire West and Chester,46,821,2384.5
+E01027674,Harrogate 007C,Harrogate,46,820,2768.0
+E01014901,South Gloucestershire 020A,South Gloucestershire,61,815,2133.1
+E01007927,Sheffield 055A,Sheffield,43,813,2656.7
+E01007928,Sheffield 055B,Sheffield,44,813,2656.7
+E01007930,Sheffield 055D,Sheffield,43,813,2656.7
+E01020253,Teignbridge 009C,Teignbridge,43,812,5563.6
+E01028952,Shropshire 023B,Shropshire,50,806,1751.3
+E01028964,Shropshire 023E,Shropshire,50,806,1751.3
+E01020001,Exeter 001E,Exeter,60,805,3930.8
+E01028972,Shropshire 019B,Shropshire,50,805,1750.5
+E01010773,Bradford 005C,Bradford,31,796,5064.2
+E01005807,Stockport 035B,Stockport,30,792,3832.8
+E01007932,Sheffield 055E,Sheffield,43,792,2658.8
+E01028974,Shropshire 023F,Shropshire,49,791,1621.9
+E01027641,Harrogate 008A,Harrogate,47,788,2545.8
+E01025434,South Ribble 016C,South Ribble,29,786,2054.3
+E01028963,Shropshire 023D,Shropshire,49,786,1607.3
+E01010768,Bradford 003B,Bradford,24,785,5922.3
+E01011888,Wakefield 014C,Wakefield,40,780,3133.0
+E01027654,Harrogate 020B,Harrogate,45,779,2651.5
+E01027655,Harrogate 015B,Harrogate,45,779,2651.5
+E01019640,Erewash 016C,Erewash,42,778,3053.0
+E01020194,Teignbridge 013B,Teignbridge,42,778,5008.7
+E01006395,Wigan 021C,Wigan,37,775,2374.8
+E01012973,East Riding of Yorkshire 032D,East Riding of Yorkshire,13,775,4035.1
+E01011526,Leeds 093C,Leeds,34,774,2234.2
+E01020026,Exeter 011A,Exeter,64,773,3059.4
+E01007826,Sheffield 066C,Sheffield,38,772,2831.4
+E01025259,Preston 003C,Preston,42,772,4040.5
+E01020336,West Devon 005E,West Devon,15,771,8202.6
+E01033495,East Riding of Yorkshire 032G,East Riding of Yorkshire,12,762,4009.8
+E01028949,Shropshire 021C,Shropshire,46,760,1417.5
+E01005794,Stockport 041B,Stockport,35,759,3333.2
+E01020166,South Hams 005F,South Hams,18,759,8391.8
+E01004967,Bury 005D,Bury,34,756,2354.1
+E01014850,North Somerset 006C,North Somerset,64,756,1112.7
+E01008563,North Tyneside 017D,North Tyneside,41,755,3917.8
+E01028942,Shropshire 020B,Shropshire,48,753,1497.4
+E01028953,Shropshire 020E,Shropshire,48,753,1497.4
+E01025341,Ribble Valley 005C,Ribble Valley,23,751,2153.9
+E01025355,Rossendale 001A,Rossendale,34,750,4286.7
+E01032614,Erewash 016E,Erewash,42,749,2956.7
+E01027697,Harrogate 017E,Harrogate,41,748,2341.2
+E01019078,Allerdale 007A,Allerdale,13,747,6557.4
+E01033479,Stockton-on-Tees 023I,Stockton-on-Tees,51,745,2843.0
+E01008132,Sheffield 023D,Sheffield,36,743,2165.7
+E01013468,Derby 002D,Derby,54,732,2542.7
+E01005795,Stockport 039D,Stockport,34,730,3299.6
+E01013577,Derby 003D,Derby,41,728,2341.4
+E01028384,Rushcliffe 004C,Rushcliffe,33,728,2173.5
+E01028196,Gedling 010D,Gedling,39,726,1291.5
+E01027698,Harrogate 020C,Harrogate,40,724,2298.5
+E01027718,Harrogate 020F,Harrogate,40,724,2298.5
+E01027730,Harrogate 019C,Harrogate,40,724,2298.5
+E01027731,Harrogate 019D,Harrogate,40,724,2298.5
+E01006382,Wigan 028C,Wigan,39,721,3261.8
+E01007146,Wirral 038C,Wirral,21,715,4183.5
+E01013984,Nottingham 030D,Nottingham,35,713,2673.9
+E01012517,Warrington 021E,Warrington,21,707,3658.2
+E01018590,Cheshire East 008C,Cheshire East,20,705,4670.5
+E01010772,Bradford 005B,Bradford,27,704,4909.5
+E01006301,Wigan 037E,Wigan,36,703,3525.9
+E01011564,Leeds 012D,Leeds,35,701,1607.3
+E01028385,Rushcliffe 004D,Rushcliffe,38,701,1530.7
+E01018671,Cheshire West and Chester 012A,Cheshire West and Chester,40,699,2201.8
+E01007896,Sheffield 004G,Sheffield,37,696,3289.8
+E01027717,Harrogate 020E,Harrogate,39,696,2165.2
+E01027719,Harrogate 020G,Harrogate,39,696,2165.2
+E01019986,Exeter 007A,Exeter,63,694,1658.3
+E01024977,Chorley 004D,Chorley,26,693,2613.7
+E01007959,Sheffield 041E,Sheffield,34,690,2060.2
+E01020605,County Durham 013E,County Durham,51,689,2777.0
+E01019462,Amber Valley 006E,Amber Valley,50,688,3687.3
+E01013576,Derby 003C,Derby,36,687,2295.4
+E01013092,East Riding of Yorkshire 032F,East Riding of Yorkshire,11,684,3212.8
+E01005923,Stockport 041C,Stockport,30,681,3155.0
+E01019909,East Devon 016B,East Devon,20,679,6257.8
+E01008126,Sheffield 008A,Sheffield,24,678,3116.2
+E01013527,Derby 005B,Derby,52,677,1807.4
+E01025534,West Lancashire 015A,West Lancashire,19,675,1912.6
+E01020682,County Durham 028A,County Durham,58,674,2704.7
+E01033496,East Riding of Yorkshire 032H,East Riding of Yorkshire,10,674,3584.0
+E01027716,Harrogate 020D,Harrogate,38,673,2128.8
+E01028089,Broxtowe 007C,Broxtowe,35,672,2608.0
+E01020024,Exeter 009C,Exeter,63,671,1441.7
+E01020603,County Durham 013D,County Durham,52,671,2700.0
+E01008419,Newcastle upon Tyne 006E,Newcastle upon Tyne,36,670,1853.2
+E01013985,Nottingham 030E,Nottingham,35,667,2208.1
+E01020165,South Hams 005E,South Hams,16,667,7593.3
+E01020167,South Hams 005G,South Hams,16,667,7593.3
+E01007957,Sheffield 041C,Sheffield,31,665,1963.9
+E01012461,Warrington 005B,Warrington,21,665,4060.3
+E01013090,East Riding of Yorkshire 035C,East Riding of Yorkshire,10,660,2874.3
+E01019425,Amber Valley 016A,Amber Valley,42,660,2544.4
+E01019999,Exeter 001D,Exeter,60,659,1403.6
+E01007933,Sheffield 068F,Sheffield,37,658,2238.0
+E01029606,Newcastle-under-Lyme 015F,Newcastle-under-Lyme,67,655,1160.0
+E01006081,Trafford 027B,Trafford,18,654,3158.9
+E01006082,Trafford 027C,Trafford,18,654,3158.9
+E01006083,Trafford 026A,Trafford,18,654,3158.9
+E01006084,Trafford 026B,Trafford,18,654,3158.9
+E01006085,Trafford 027D,Trafford,18,654,3158.9
+E01013461,Derby 001A,Derby,51,654,1755.0
+E01013578,Derby 003E,Derby,38,654,2138.6
+E01028091,Broxtowe 007E,Broxtowe,34,653,2440.2
+E01029589,Newcastle-under-Lyme 015B,Newcastle-under-Lyme,61,651,1445.2
+E01006137,Trafford 028D,Trafford,16,650,3448.4
+E01011190,Kirklees 051A,Kirklees,28,650,3299.6
+E01013463,Derby 001C,Derby,50,650,1777.1
+E01027721,Harrogate 011D,Harrogate,38,650,2699.8
+E01018675,Cheshire West and Chester 003A,Cheshire West and Chester,34,645,2037.2
+E01020203,Teignbridge 004A,Teignbridge,13,645,7648.6
+E01013467,Derby 002C,Derby,50,642,1807.9
+E01018320,Cheshire West and Chester 041A,Cheshire West and Chester,35,641,2145.4
+E01014980,South Gloucestershire 015B,South Gloucestershire,40,640,2255.8
+E01013599,Derby 010D,Derby,23,639,2053.8
+E01024963,Chorley 011C,Chorley,22,639,4350.6
+E01024965,Chorley 011D,Chorley,21,638,4342.6
+E01014967,South Gloucestershire 021C,South Gloucestershire,53,637,2344.7
+E01033233,Exeter 001F,Exeter,58,633,1383.2
+E01014849,North Somerset 006B,North Somerset,40,632,877.1
+E01019684,Erewash 009B,Erewash,25,632,2214.7
+E01020683,County Durham 028B,County Durham,56,632,2540.7
+E01006209,Trafford 023E,Trafford,19,631,2938.7
+E01014421,Bath and North East Somerset 025B,Bath and North East Somerset,30,631,1888.3
+E01018583,Cheshire East 005A,Cheshire East,24,630,3408.1
+E01018584,Cheshire East 005B,Cheshire East,24,630,3408.1
+E01019427,Amber Valley 016C,Amber Valley,47,630,2507.5
+E01006367,Wigan 018F,Wigan,27,628,1877.3
+E01027699,Harrogate 021A,Harrogate,33,628,1871.8
+E01004885,Bolton 014B,Bolton,33,627,1955.6
+E01028363,Rushcliffe 007A,Rushcliffe,32,627,1903.6
+E01028365,Rushcliffe 007C,Rushcliffe,32,627,1903.6
+E01008146,Sheffield 002C,Sheffield,13,625,4611.4
+E01008619,South Tyneside 022C,South Tyneside,39,624,1582.2
+E01013423,York 024D,York,23,622,4870.8
+E01010696,Bradford 002E,Bradford,20,621,4609.3
+E01027722,Harrogate 008D,Harrogate,37,621,2645.8
+E01014424,Bath and North East Somerset 027A,Bath and North East Somerset,29,620,2004.6
+E01014965,South Gloucestershire 020D,South Gloucestershire,56,615,1760.1
+E01028088,Broxtowe 007B,Broxtowe,33,615,2846.8
+E01006321,Wigan 003G,Wigan,17,614,1846.7
+E01014969,South Gloucestershire 021D,South Gloucestershire,53,614,2035.3
+E01028391,Rushcliffe 007D,Rushcliffe,30,614,1989.2
+E01012972,East Riding of Yorkshire 032C,East Riding of Yorkshire,11,612,3276.1
+E01028215,Gedling 009D,Gedling,39,607,1058.4
+E01019905,East Devon 015B,East Devon,18,606,5801.4
+E01010770,Bradford 005A,Bradford,20,605,4634.2
+E01010771,Bradford 003D,Bradford,20,605,4634.2
+E01028399,Rushcliffe 005C,Rushcliffe,30,605,1805.1
+E01028364,Rushcliffe 007B,Rushcliffe,29,604,1899.2
+E01014422,Bath and North East Somerset 025C,Bath and North East Somerset,29,603,1732.5
+E01019686,Erewash 009D,Erewash,23,599,1936.9
+E01025253,Preston 004A,Preston,41,599,3716.1
+E01018705,Cheshire West and Chester 017B,Cheshire West and Chester,26,598,1865.8
+E01013408,York 004C,York,25,594,4912.5
+E01018377,Cheshire West and Chester 028F,Cheshire West and Chester,32,593,1954.2
+E01028396,Rushcliffe 005A,Rushcliffe,29,592,1890.8
+E01028400,Rushcliffe 008D,Rushcliffe,29,592,1890.8
+E01011563,Leeds 012C,Leeds,29,588,1466.3
+E01018346,Cheshire West and Chester 032B,Cheshire West and Chester,33,588,1962.9
+E01018362,Cheshire West and Chester 028A,Cheshire West and Chester,34,588,1962.9
+E01013466,Derby 002B,Derby,45,585,2298.4
+E01027520,Northumberland 021C,Northumberland,37,585,2232.7
+E01011411,Leeds 073A,Leeds,27,584,3576.2
+E01027768,Richmondshire 002D,Richmondshire,16,582,3357.0
+E01014350,Stoke-on-Trent 034B,Stoke-on-Trent,58,581,1391.9
+E01011894,Wakefield 006C,Wakefield,29,579,2386.5
+E01027992,Ashfield 006F,Ashfield,39,579,3093.4
+E01028084,Broxtowe 009E,Broxtowe,31,578,2050.8
+E01018600,Cheshire East 006A,Cheshire East,19,577,3558.8
+E01028216,Gedling 009E,Gedling,35,577,1009.2
+E01018588,Cheshire East 008A,Cheshire East,18,574,3683.8
+E01018589,Cheshire East 008B,Cheshire East,18,574,3683.8
+E01018653,Cheshire East 008D,Cheshire East,18,574,3683.8
+E01025160,Lancaster 003E,Lancaster,23,572,3148.0
+E01004804,Bolton 001C,Bolton,32,571,2007.4
+E01015160,Plymouth 001C,Plymouth,23,571,3571.0
+E01013089,East Riding of Yorkshire 035B,East Riding of Yorkshire,8,570,2542.0
+E01027700,Harrogate 021B,Harrogate,31,570,1608.8
+E01027901,Selby 003D,Selby,15,569,5483.0
+E01006139,Trafford 026D,Trafford,16,568,2754.2
+E01014883,South Gloucestershire 012F,South Gloucestershire,29,568,2601.0
+E01018603,Cheshire East 010A,Cheshire East,12,567,3524.8
+E01018607,Cheshire East 010D,Cheshire East,12,567,3524.8
+E01019124,Allerdale 008E,Allerdale,10,567,3922.6
+E01033334,South Gloucestershire 021F,South Gloucestershire,45,567,1966.5
+E01018321,Cheshire West and Chester 041B,Cheshire West and Chester,33,566,1416.7
+E01018322,Cheshire West and Chester 041C,Cheshire West and Chester,33,566,1416.7
+E01005924,Stockport 042A,Stockport,28,564,2231.2
+E01025255,Preston 004C,Preston,43,563,2323.2
+E01012567,Warrington 009C,Warrington,30,561,3199.1
+E01018404,Cheshire East 029A,Cheshire East,21,561,2446.5
+E01018407,Cheshire East 029D,Cheshire East,21,561,2446.5
+E01013091,East Riding of Yorkshire 035D,East Riding of Yorkshire,8,557,2522.8
+E01005931,Stockport 041D,Stockport,27,555,2225.8
+E01007922,Sheffield 071D,Sheffield,26,555,2431.4
+E01019931,East Devon 003D,East Devon,15,554,5165.2
+E01013465,Derby 002A,Derby,44,553,2174.7
+E01008724,Sunderland 001C,Sunderland,40,552,1538.0
+E01010691,Bradford 002A,Bradford,15,552,4481.0
+E01018405,Cheshire East 029B,Cheshire East,20,552,2435.9
+E01018406,Cheshire East 029C,Cheshire East,20,552,2435.9
+E01018650,Cheshire East 007E,Cheshire East,11,552,4174.8
+E01006343,Wigan 039C,Wigan,39,551,2051.6
+E01011198,Kirklees 056C,Kirklees,27,549,4781.8
+E01025158,Lancaster 003C,Lancaster,22,549,3053.5
+E01018605,Cheshire East 009A,Cheshire East,12,547,3177.6
+E01020200,Teignbridge 011A,Teignbridge,35,547,2233.3
+E01008355,Newcastle upon Tyne 006B,Newcastle upon Tyne,34,546,1498.6
+E01013088,East Riding of Yorkshire 035A,East Riding of Yorkshire,7,546,2511.0
+E01014874,South Gloucestershire 009B,South Gloucestershire,36,546,2131.8
+E01012558,Warrington 023D,Warrington,29,543,2889.1
+E01028373,Rushcliffe 008B,Rushcliffe,33,543,1352.9
+E01014384,Bath and North East Somerset 021C,Bath and North East Somerset,12,542,4714.8
+E01014873,South Gloucestershire 012A,South Gloucestershire,35,542,2341.1
+E01028087,Broxtowe 007A,Broxtowe,26,542,2246.3
+E01031713,Mid Sussex 013E,Mid Sussex,21,542,4652.3
+E01014453,Bath and North East Somerset 016D,Bath and North East Somerset,25,541,3008.9
+E01025439,South Ribble 010A,South Ribble,30,541,3127.0
+E01031702,Mid Sussex 015A,Mid Sussex,19,540,4612.1
+E01031703,Mid Sussex 015B,Mid Sussex,19,540,4612.1
+E01005046,Bury 002C,Bury,20,538,1490.8
+E01027561,Craven 004B,Craven,14,538,3401.3
+E01032674,North Somerset 006F,North Somerset,28,538,1591.2
+E01032678,North Somerset 003E,North Somerset,27,536,1580.2
+E01033478,Stockton-on-Tees 023H,Stockton-on-Tees,38,536,1883.6
+E01027671,Harrogate 012B,Harrogate,24,532,2929.2
+E01014964,South Gloucestershire 021A,South Gloucestershire,49,531,1712.8
+E01033336,South Gloucestershire 021G,South Gloucestershire,50,531,1569.2
+E01031710,Mid Sussex 015C,Mid Sussex,18,530,4535.8
+E01018573,Cheshire East 012B,Cheshire East,17,529,3222.6
+E01019261,Copeland 003A,Copeland,19,529,2528.8
+E01020163,South Hams 005C,South Hams,16,529,5124.4
+E01014460,Bath and North East Somerset 016G,Bath and North East Somerset,28,527,2086.1
+E01007199,Wirral 013B,Wirral,27,526,2108.5
+E01005020,Bury 003A,Bury,19,525,2416.7
+E01024850,Tunbridge Wells 002E,Tunbridge Wells,28,524,2370.2
+E01025414,South Ribble 002B,South Ribble,24,523,2770.6
+E01006136,Trafford 028C,Trafford,15,522,2463.5
+E01006943,Sefton 022F,Sefton,17,522,1646.8
+E01012486,Warrington 022B,Warrington,26,522,2639.8
+E01013093,East Riding of Yorkshire 035E,East Riding of Yorkshire,7,521,2389.8
+E01018602,Cheshire East 006C,Cheshire East,18,521,3184.9
+E01019670,Erewash 004A,Erewash,35,519,2050.4
+E01027576,Craven 004C,Craven,15,519,2836.0
+E01019963,East Devon 013C,East Devon,8,515,5575.2
+E01011120,Kirklees 056B,Kirklees,22,512,4246.5
+E01010693,Bradford 002B,Bradford,13,511,4345.0
+E01010694,Bradford 002C,Bradford,13,511,4345.0
+E01010697,Bradford 002F,Bradford,13,511,4345.0
+E01012970,East Riding of Yorkshire 032A,East Riding of Yorkshire,8,511,2825.0
+E01019300,Copeland 007D,Copeland,19,510,4255.5
+E01027675,Harrogate 007D,Harrogate,23,510,2176.0
+E01005925,Stockport 042B,Stockport,26,509,2138.0
+E01024854,Tunbridge Wells 006E,Tunbridge Wells,28,509,2278.1
+E01006134,Trafford 028A,Trafford,14,507,2402.3
+E01006135,Trafford 028B,Trafford,14,507,2402.3
+E01007200,Wirral 014C,Wirral,26,507,1914.8
+E01014397,Bath and North East Somerset 003C,Bath and North East Somerset,25,507,2857.4
+E01018334,Cheshire West and Chester 043C,Cheshire West and Chester,30,507,1179.0
+E01028397,Rushcliffe 006E,Rushcliffe,29,507,1222.1
+E01025345,Ribble Valley 002C,Ribble Valley,10,506,4151.2
+E01031715,Mid Sussex 015D,Mid Sussex,17,502,4256.8
+E01031749,Mid Sussex 011C,Mid Sussex,21,501,3984.7
+E01025377,Rossendale 007A,Rossendale,17,500,2551.3
+E01014876,South Gloucestershire 009C,South Gloucestershire,25,498,4336.9
+E01011549,Leeds 108C,Leeds,32,493,1277.8
+E01013425,York 024F,York,20,493,4260.5
+E01020222,Teignbridge 004E,Teignbridge,8,493,5376.1
+E01031761,Mid Sussex 009C,Mid Sussex,25,493,3777.7
+E01014966,South Gloucestershire 021B,South Gloucestershire,40,492,1639.4
+E01012559,Warrington 023E,Warrington,28,491,2835.3
+E01014352,Stoke-on-Trent 034D,Stoke-on-Trent,49,490,1311.5
+E01007149,Wirral 041A,Wirral,18,489,2171.0
+E01007920,Sheffield 068A,Sheffield,29,489,2048.5
+E01027565,Craven 008C,Craven,20,489,1186.2
+E01005048,Bury 002D,Bury,19,487,1367.4
+E01005932,Stockport 042D,Stockport,24,486,2086.5
+E01031754,Mid Sussex 010C,Mid Sussex,24,481,3586.0
+E01015208,Torbay 019F,Torbay,28,479,1909.0
+E01018608,Cheshire East 010E,Cheshire East,10,478,3108.6
+E01027709,Harrogate 004E,Harrogate,23,478,1623.5
+E01021023,Lewes 002A,Lewes,21,477,3893.4
+E01011179,Kirklees 059A,Kirklees,26,476,4086.3
+E01012393,Halton 001B,Halton,18,476,1560.8
+E01020144,South Hams 001A,South Hams,17,476,3436.5
+E01028139,Broxtowe 015E,Broxtowe,27,475,1922.1
+E01012201,Stockton-on-Tees 021C,Stockton-on-Tees,32,474,1844.2
+E01018572,Cheshire East 012A,Cheshire East,16,473,2848.8
+E01018574,Cheshire East 012C,Cheshire East,16,473,2848.8
+E01025468,West Lancashire 009A,West Lancashire,13,472,1986.2
+E01012489,Warrington 022D,Warrington,20,468,2126.1
+E01012568,Warrington 009D,Warrington,27,468,3035.6
+E01014877,South Gloucestershire 009D,South Gloucestershire,23,468,4302.0
+E01018652,Cheshire East 006D,Cheshire East,17,468,2810.1
+E01012477,Warrington 001D,Warrington,26,465,2442.7
+E01019251,Carlisle 004F,Carlisle,25,462,1296.3
+E01027912,Selby 006D,Selby,12,462,3893.2
+E01031755,Mid Sussex 010D,Mid Sussex,22,461,3457.9
+E01031756,Mid Sussex 011E,Mid Sussex,22,461,3457.9
+E01031763,Mid Sussex 011F,Mid Sussex,23,461,3486.6
+E01032839,Mid Sussex 009G,Mid Sussex,23,461,3486.6
+E01028169,Gedling 012B,Gedling,22,457,1098.2
+E01019241,Carlisle 004D,Carlisle,24,456,1344.0
+E01019243,Carlisle 004E,Carlisle,24,456,1344.0
+E01024852,Tunbridge Wells 006C,Tunbridge Wells,21,454,1910.7
+E01024853,Tunbridge Wells 006D,Tunbridge Wells,22,454,1910.7
+E01028148,Gedling 008A,Gedling,18,454,1255.8
+E01028149,Gedling 008B,Gedling,18,454,1255.8
+E01031699,Mid Sussex 012A,Mid Sussex,17,452,3607.7
+E01031700,Mid Sussex 012B,Mid Sussex,17,452,3607.7
+E01028097,Broxtowe 013A,Broxtowe,24,450,1848.3
+E01025648,Blaby 009D,Blaby,49,448,2276.7
+E01027357,Northumberland 004B,Northumberland,16,447,1116.5
+E01014395,Bath and North East Somerset 003A,Bath and North East Somerset,21,446,2678.1
+E01027623,Hambleton 001D,Hambleton,18,446,2640.4
+E01027624,Hambleton 002C,Hambleton,18,446,2640.4
+E01029160,South Somerset 012A,South Somerset,20,446,3404.0
+E01027670,Harrogate 012A,Harrogate,22,445,1697.2
+E01010646,Bradford 001A,Bradford,13,443,2535.3
+E01020004,Exeter 003D,Exeter,42,442,1128.8
+E01005021,Bury 001F,Bury,17,440,1211.9
+E01029457,East Staffordshire 005D,East Staffordshire,29,440,2151.5
+E01019238,Carlisle 004B,Carlisle,21,438,1329.6
+E01028354,Rushcliffe 004A,Rushcliffe,25,436,1309.1
+E01028128,Broxtowe 010A,Broxtowe,24,435,2471.5
+E01028393,Rushcliffe 003A,Rushcliffe,18,434,1196.1
+E01012553,Warrington 014C,Warrington,22,432,1821.2
+E01014454,Bath and North East Somerset 016E,Bath and North East Somerset,18,431,2668.8
+E01016054,Medway 035E,Medway,52,431,505.6
+E01031760,Mid Sussex 008B,Mid Sussex,21,431,3497.3
+E01031774,Mid Sussex 008E,Mid Sussex,22,430,3383.7
+E01012487,Warrington 022C,Warrington,20,429,1781.6
+E01029418,East Staffordshire 012A,East Staffordshire,36,429,1903.2
+E01031758,Mid Sussex 008A,Mid Sussex,19,429,3333.9
+E01013520,Derby 031D,Derby,23,428,1512.6
+E01029443,East Staffordshire 004A,East Staffordshire,25,428,2202.2
+E01007430,Barnsley 024D,Barnsley,10,427,2751.9
+E01020062,Mid Devon 006C,Mid Devon,15,425,4263.3
+E01006347,Wigan 040E,Wigan,33,424,1677.6
+E01019957,East Devon 012B,East Devon,14,423,6495.0
+E01025615,Blaby 009A,Blaby,45,423,2087.2
+E01019635,Derbyshire Dales 007C,Derbyshire Dales,14,421,3617.7
+E01028137,Broxtowe 015C,Broxtowe,23,421,1751.9
+E01008495,North Tyneside 010A,North Tyneside,36,420,1120.1
+E01027786,Ryedale 008B,Ryedale,23,420,2423.4
+E01018663,Cheshire East 002C,Cheshire East,19,419,2028.0
+E01028395,Rushcliffe 003C,Rushcliffe,19,419,1305.2
+E01014880,South Gloucestershire 012D,South Gloucestershire,24,417,3419.5
+E01025440,South Ribble 011D,South Ribble,17,417,2738.5
+E01029454,East Staffordshire 005A,East Staffordshire,29,416,2084.4
+E01032675,North Somerset 001E,North Somerset,22,416,1469.9
+E01033531,South Derbyshire 012C,South Derbyshire,30,416,1662.8
+E01032676,North Somerset 001F,North Somerset,21,414,1458.8
+E01018324,Cheshire West and Chester 039B,Cheshire West and Chester,22,413,1056.2
+E01003780,Redbridge 014G,Redbridge,40,412,1150.4
+E01028414,Rushcliffe 003E,Rushcliffe,17,412,1059.3
+E01025336,Ribble Valley 008D,Ribble Valley,22,411,1145.0
+E01025641,Blaby 007A,Blaby,46,410,2284.3
+E01014393,Bath and North East Somerset 023A,Bath and North East Somerset,16,408,1836.3
+E01012452,Warrington 025D,Warrington,22,405,1939.2
+E01032061,Wiltshire 023D,Wiltshire,23,405,2652.9
+E01018325,Cheshire West and Chester 039C,Cheshire West and Chester,25,404,1642.7
+E01029576,Newcastle-under-Lyme 012A,Newcastle-under-Lyme,34,404,928.2
+E01018397,Cheshire East 028A,Cheshire East,17,403,1914.5
+E01029244,South Somerset 018D,South Somerset,19,403,2751.8
+E01031773,Mid Sussex 008D,Mid Sussex,22,400,3229.2
+E01007262,Wirral 028C,Wirral,24,399,1516.8
+E01031775,Mid Sussex 008F,Mid Sussex,21,399,3228.8
+E01033103,North West Leicestershire 011F,North West Leicestershire,26,399,2546.4
+E01011196,Kirklees 051C,Kirklees,19,398,1977.8
+E01018662,Cheshire East 002B,Cheshire East,20,396,1804.4
+E01024768,Tonbridge and Malling 012F,Tonbridge and Malling,21,396,2491.9
+E01011845,Wakefield 023A,Wakefield,12,395,2055.1
+E01028218,Gedling 009G,Gedling,26,395,431.3
+E01029770,Staffordshire Moorlands 002C,Staffordshire Moorlands,16,395,2079.5
+E01032504,Leeds 007F,Leeds,18,395,2013.0
+E01013059,East Riding of Yorkshire 009B,East Riding of Yorkshire,9,394,4691.8
+E01018505,Cheshire East 046D,Cheshire East,21,394,2322.2
+E01018506,Cheshire East 046E,Cheshire East,21,394,2322.2
+E01018507,Cheshire East 046F,Cheshire East,21,394,2322.2
+E01025438,South Ribble 011C,South Ribble,15,394,2665.4
+E01003759,Redbridge 009A,Redbridge,41,393,1064.8
+E01028356,Rushcliffe 006A,Rushcliffe,25,393,1270.3
+E01013544,Derby 021D,Derby,39,392,904.0
+E01025651,Blaby 006D,Blaby,40,392,2244.2
+E01028412,Rushcliffe 012B,Rushcliffe,21,392,1695.6
+E01018658,Cheshire East 003C,Cheshire East,20,391,1891.4
+E01025650,Blaby 007E,Blaby,40,391,2300.3
+E01013557,Derby 015B,Derby,38,390,1274.1
+E01027712,Harrogate 002A,Harrogate,21,390,1056.3
+E01027715,Harrogate 002D,Harrogate,21,390,1056.3
+E01025649,Blaby 007D,Blaby,40,388,2287.1
+E01015001,South Gloucestershire 016D,South Gloucestershire,27,386,1663.8
+E01031735,Mid Sussex 003E,Mid Sussex,14,386,4355.8
+E01011113,Kirklees 054B,Kirklees,16,384,2970.5
+E01014881,South Gloucestershire 009F,South Gloucestershire,26,384,2121.8
+E01018389,Cheshire East 040C,Cheshire East,21,384,2333.4
+E01028377,Rushcliffe 006D,Rushcliffe,25,384,1334.8
+E01033390,Mansfield 013H,Mansfield,31,384,1081.4
+E01013564,Derby 015E,Derby,36,383,1269.2
+E01018575,Cheshire East 013A,Cheshire East,15,383,898.1
+E01018576,Cheshire East 013B,Cheshire East,15,383,898.1
+E01018578,Cheshire East 013D,Cheshire East,15,383,898.1
+E01018641,Cheshire East 014A,Cheshire East,15,383,898.1
+E01018642,Cheshire East 014B,Cheshire East,15,383,898.1
+E01018643,Cheshire East 014C,Cheshire East,15,383,898.1
+E01018644,Cheshire East 014D,Cheshire East,15,383,898.1
+E01018666,Cheshire East 011A,Cheshire East,15,383,898.1
+E01018667,Cheshire East 011B,Cheshire East,15,383,898.1
+E01025441,South Ribble 011E,South Ribble,15,383,2673.8
+E01019712,High Peak 008A,High Peak,11,382,3882.6
+E01007956,Sheffield 041B,Sheffield,18,381,991.2
+E01028407,Rushcliffe 011D,Rushcliffe,20,380,1833.1
+E01013261,North Lincolnshire 018C,North Lincolnshire,16,379,1304.4
+E01003745,Redbridge 001B,Redbridge,34,376,981.8
+E01018656,Cheshire East 003B,Cheshire East,18,376,1868.0
+E01018659,Cheshire East 003D,Cheshire East,20,376,1868.0
+E01027400,Northumberland 027A,Northumberland,25,376,1563.0
+E01029455,East Staffordshire 005B,East Staffordshire,27,376,1948.5
+E01029908,Babergh 005D,Babergh,17,375,580.1
+E01018410,Cheshire East 028D,Cheshire East,15,374,1783.7
+E01024974,Chorley 007B,Chorley,9,373,3413.1
+E01025019,Fylde 002G,Fylde,12,373,1072.7
+E01028135,Broxtowe 015A,Broxtowe,23,373,2031.2
+E01027598,Hambleton 002A,Hambleton,16,372,2607.0
+E01019943,East Devon 008D,East Devon,14,371,2550.2
+E01018490,Cheshire East 046A,Cheshire East,20,370,2273.4
+E01028404,Rushcliffe 011A,Rushcliffe,17,370,1895.1
+E01031768,Mid Sussex 017F,Mid Sussex,13,370,3047.6
+E01021745,Epping Forest 015D,Epping Forest,32,369,977.5
+E01021746,Epping Forest 015E,Epping Forest,32,369,977.5
+E01021747,Epping Forest 015F,Epping Forest,32,369,977.5
+E01025126,Lancaster 013D,Lancaster,17,368,1410.6
+E01025665,Blaby 012E,Blaby,27,368,1590.3
+E01006993,Sefton 015C,Sefton,7,367,2027.2
+E01019785,North East Derbyshire 006C,North East Derbyshire,23,367,2479.7
+E01007915,Sheffield 071A,Sheffield,20,366,1724.2
+E01003671,Redbridge 007D,Redbridge,35,364,1041.3
+E01007281,Wirral 028D,Wirral,22,364,1338.6
+E01018569,Cheshire West and Chester 004B,Cheshire West and Chester,16,364,1595.3
+E01025661,Blaby 012A,Blaby,26,364,1546.5
+E01003746,Redbridge 001C,Redbridge,34,363,982.4
+E01013556,Derby 015A,Derby,31,363,1262.5
+E01027513,Northumberland 036D,Northumberland,25,362,814.9
+E01018392,Cheshire East 042C,Cheshire East,22,361,2141.0
+E01019788,North East Derbyshire 005C,North East Derbyshire,20,361,1967.9
+E01012490,Warrington 022E,Warrington,17,360,1387.9
+E01013560,Derby 019B,Derby,37,360,834.6
+E01018387,Cheshire East 040A,Cheshire East,21,360,2140.8
+E01014878,South Gloucestershire 012C,South Gloucestershire,18,359,3508.4
+E01003748,Redbridge 001E,Redbridge,33,357,927.2
+E01029172,South Somerset 022B,South Somerset,8,356,5092.3
+E01031759,Mid Sussex 009B,Mid Sussex,17,356,2859.6
+E01025787,Harborough 003F,Harborough,12,355,2850.3
+E01031736,Mid Sussex 004A,Mid Sussex,15,355,4091.4
+E01018456,Cheshire East 047D,Cheshire East,15,354,2378.2
+E01033169,Derby 030F,Derby,18,353,1913.6
+E01007191,Wirral 040F,Wirral,16,351,2120.8
+E01020525,West Dorset 010F,Dorset,14,351,4143.7
+E01027401,Northumberland 027B,Northumberland,28,351,1475.8
+E01019641,Erewash 011A,Erewash,24,350,1547.0
+E01025007,Fylde 002A,Fylde,11,345,1015.7
+E01025015,Fylde 003D,Fylde,13,344,1910.9
+E01012234,Stockton-on-Tees 023E,Stockton-on-Tees,27,343,1452.6
+E01025729,Charnwood 014D,Charnwood,27,342,1859.0
+E01028136,Broxtowe 015B,Broxtowe,22,342,1792.6
+E01019249,Carlisle 007D,Carlisle,18,341,1086.6
+E01031739,Mid Sussex 004D,Mid Sussex,14,341,4053.3
+E01019869,South Derbyshire 005C,South Derbyshire,14,340,2531.0
+E01019643,Erewash 013B,Erewash,22,338,1518.8
+E01024837,Tunbridge Wells 002A,Tunbridge Wells,18,338,1281.2
+E01012301,Stockton-on-Tees 024E,Stockton-on-Tees,24,336,1433.1
+E01027402,Northumberland 027C,Northumberland,25,336,1707.5
+E01012446,Warrington 025A,Warrington,16,335,1627.9
+E01018533,Cheshire West and Chester 006B,Cheshire West and Chester,14,335,1896.6
+E01019599,Derbyshire Dales 003A,Derbyshire Dales,13,335,2914.5
+E01010297,Walsall 008D,Walsall,33,334,649.9
+E01025530,West Lancashire 001D,West Lancashire,8,333,3055.7
+E01027355,Wellingborough 010F,Wellingborough,28,332,1778.1
+E01013706,Leicester 032C,Leicester,36,331,1005.3
+E01031737,Mid Sussex 004B,Mid Sussex,13,331,3939.7
+E01032045,Wiltshire 027A,Wiltshire,20,330,2411.6
+E01018475,Cheshire East 034D,Cheshire East,19,329,1370.5
+E01021751,Epping Forest 016C,Epping Forest,31,329,876.5
+E01030206,Suffolk Coastal 011E,East Suffolk,12,328,551.1
+E01018628,Cheshire East 016B,Cheshire East,14,327,524.2
+E01025734,Charnwood 012C,Charnwood,24,323,1489.5
+E01027880,Selby 007B,Selby,10,323,1872.2
+E01008497,North Tyneside 010C,North Tyneside,37,321,793.2
+E01008589,North Tyneside 006E,North Tyneside,36,321,793.2
+E01009897,Dudley 003B,Dudley,31,321,781.7
+E01013424,York 024E,York,15,321,3181.5
+E01018614,Cheshire East 015A,Cheshire East,10,321,840.0
+E01018632,Cheshire East 017D,Cheshire East,10,321,840.0
+E01020523,West Dorset 010D,Dorset,13,319,3683.7
+E01031111,Nuneaton and Bedworth 001B,Nuneaton and Bedworth,20,319,1377.6
+E01029030,Mendip 003A,Mendip,20,318,713.2
+E01024733,Tonbridge and Malling 012B,Tonbridge and Malling,20,317,2397.4
+E01029254,South Somerset 011D,South Somerset,19,317,1897.7
+E01030584,Reigate and Banstead 016A,Reigate and Banstead,10,317,4035.4
+E01030585,Reigate and Banstead 016B,Reigate and Banstead,10,317,4035.4
+E01031923,Wiltshire 014D,Wiltshire,21,317,1846.2
+E01026709,King's Lynn and West Norfolk 005D,King's Lynn and West Norfolk,19,316,694.4
+E01011702,Leeds 001D,Leeds,12,314,2782.9
+E01011703,Leeds 001E,Leeds,12,314,2782.9
+E01009853,Dudley 042B,Dudley,34,313,1091.2
+E01014999,South Gloucestershire 016B,South Gloucestershire,22,313,1538.4
+E01025776,Harborough 004E,Harborough,23,313,1624.5
+E01019702,Erewash 005B,Erewash,21,312,1227.1
+E01025680,Charnwood 019B,Charnwood,26,312,1430.5
+E01033168,Derby 030E,Derby,19,312,1237.3
+E01025798,Harborough 009A,Harborough,9,311,3334.8
+E01025800,Harborough 009C,Harborough,9,311,3334.8
+E01025803,Harborough 007E,Harborough,9,311,3334.8
+E01031741,Mid Sussex 001E,Mid Sussex,14,311,3607.4
+E01018676,Cheshire West and Chester 024A,Cheshire West and Chester,23,310,1237.2
+E01025713,Charnwood 010E,Charnwood,20,310,1482.2
+E01025714,Charnwood 010F,Charnwood,18,310,1386.2
+E01028408,Rushcliffe 014C,Rushcliffe,15,310,2975.7
+E01011696,Leeds 006B,Leeds,15,309,1679.0
+E01024731,Tonbridge and Malling 009B,Tonbridge and Malling,17,309,2371.6
+E01024748,Tonbridge and Malling 011B,Tonbridge and Malling,17,309,2371.6
+E01024751,Tonbridge and Malling 011E,Tonbridge and Malling,17,309,2371.6
+E01013371,York 003A,York,20,308,1993.0
+E01027494,Northumberland 035G,Northumberland,24,308,638.0
+E01019880,South Derbyshire 005D,South Derbyshire,14,307,2786.1
+E01009780,Dudley 009A,Dudley,31,306,821.6
+E01012449,Warrington 025C,Warrington,14,306,1563.7
+E01018468,Cheshire East 041B,Cheshire East,21,306,753.1
+E01013439,York 001C,York,7,305,2615.5
+E01019653,Erewash 011C,Erewash,21,305,1419.2
+E01025774,Harborough 004C,Harborough,21,305,1519.8
+E01019708,Erewash 011E,Erewash,21,304,1437.9
+E01021780,Epping Forest 014A,Epping Forest,22,303,945.6
+E01025624,Blaby 013C,Blaby,31,303,979.9
+E01032145,Bromsgrove 004C,Bromsgrove,17,303,386.5
+E01009723,Dudley 028B,Dudley,41,302,1050.7
+E01018408,Cheshire East 028B,Cheshire East,14,301,809.5
+E01026004,Oadby and Wigston 008C,Oadby and Wigston,29,301,2055.6
+E01024817,Tunbridge Wells 012B,Tunbridge Wells,17,300,848.4
+E01031734,Mid Sussex 001D,Mid Sussex,14,300,3580.1
+E01025103,Lancaster 017D,Lancaster,18,299,1525.7
+E01009720,Dudley 028A,Dudley,38,298,1049.5
+E01027015,Daventry 004B,Daventry,13,298,2224.4
+E01031744,Mid Sussex 017A,Mid Sussex,11,298,2229.7
+E01031745,Mid Sussex 017B,Mid Sussex,11,298,2229.7
+E01009859,Dudley 040D,Dudley,33,297,1066.3
+E01025678,Charnwood 020A,Charnwood,30,297,1328.4
+E01027855,Scarborough 005E,Scarborough,13,297,2160.4
+E01009902,Dudley 003E,Dudley,30,296,752.3
+E01012298,Stockton-on-Tees 024B,Stockton-on-Tees,19,296,1360.8
+E01027492,Northumberland 035E,Northumberland,19,296,594.1
+E01029665,South Staffordshire 010D,South Staffordshire,38,296,645.4
+E01030204,Suffolk Coastal 011C,East Suffolk,9,296,487.5
+E01030205,Suffolk Coastal 011D,East Suffolk,9,296,487.5
+E01009903,Dudley 029A,Dudley,30,295,478.0
+E01012299,Stockton-on-Tees 024C,Stockton-on-Tees,20,295,1410.8
+E01021210,Wealden 020E,Wealden,17,295,1277.1
+E01025859,Hinckley and Bosworth 009A,Hinckley and Bosworth,26,295,822.6
+E01009854,Dudley 040A,Dudley,31,294,1065.7
+E01013374,York 003C,York,19,294,1905.2
+E01016050,Medway 035A,Medway,29,294,335.5
+E01016085,Medway 030A,Medway,29,294,335.5
+E01029663,South Staffordshire 010C,South Staffordshire,37,294,631.7
+E01011699,Leeds 001B,Leeds,12,293,2614.9
+E01025711,Charnwood 010C,Charnwood,18,293,1346.6
+E01009852,Dudley 041D,Dudley,29,292,477.2
+E01024752,Tonbridge and Malling 010B,Tonbridge and Malling,17,292,2271.7
+E01025676,Charnwood 011C,Charnwood,21,292,1259.5
+E01031110,Nuneaton and Bedworth 001A,Nuneaton and Bedworth,19,292,1349.4
+E01033163,County Durham 016F,County Durham,25,291,876.6
+E01009784,Dudley 009B,Dudley,37,290,452.1
+E01013275,North Lincolnshire 013B,North Lincolnshire,20,290,1604.7
+E01016051,Medway 035B,Medway,26,290,334.0
+E01019833,South Derbyshire 004B,South Derbyshire,13,290,1366.6
+E01025737,Charnwood 014E,Charnwood,28,290,1406.8
+E01029662,South Staffordshire 011A,South Staffordshire,41,290,629.6
+E01013539,Derby 021A,Derby,33,288,637.9
+E01025772,Harborough 004A,Harborough,15,288,1371.9
+E01031122,Nuneaton and Bedworth 011C,Nuneaton and Bedworth,22,288,1521.7
+E01031123,Nuneaton and Bedworth 011D,Nuneaton and Bedworth,22,288,1521.7
+E01031903,Wiltshire 016D,Wiltshire,14,288,3677.0
+E01025510,West Lancashire 005A,West Lancashire,10,287,1202.0
+E01013012,East Riding of Yorkshire 036D,East Riding of Yorkshire,7,286,1500.9
+E01015889,Southend-on-Sea 016A,Southend-on-Sea,29,286,374.4
+E01012337,Darlington 011B,Darlington,33,285,796.2
+E01026811,Norwich 012B,Norwich,28,285,1009.1
+E01026812,Norwich 012C,Norwich,28,285,1009.1
+E01026813,Norwich 012D,Norwich,28,285,1009.1
+E01026815,Norwich 012F,Norwich,28,285,1009.1
+E01031948,Wiltshire 002C,Wiltshire,15,285,2391.2
+E01012302,Stockton-on-Tees 024F,Stockton-on-Tees,18,284,1341.8
+E01031924,Wiltshire 014E,Wiltshire,20,283,1694.7
+E01012303,Stockton-on-Tees 024G,Stockton-on-Tees,17,282,1340.5
+E01031121,Nuneaton and Bedworth 011B,Nuneaton and Bedworth,21,282,1507.3
+E01014793,North Somerset 002B,North Somerset,11,281,1184.5
+E01025832,Hinckley and Bosworth 014B,Hinckley and Bosworth,25,281,788.0
+E01025834,Hinckley and Bosworth 014D,Hinckley and Bosworth,25,281,788.0
+E01025835,Hinckley and Bosworth 014E,Hinckley and Bosworth,25,281,788.0
+E01012513,Warrington 021A,Warrington,12,280,1022.7
+E01015883,Southend-on-Sea 009A,Southend-on-Sea,27,279,369.4
+E01024824,Tunbridge Wells 009C,Tunbridge Wells,15,279,720.2
+E01026572,Broadland 015D,Broadland,27,279,1003.4
+E01027618,Hambleton 002B,Hambleton,8,279,1925.0
+E01026836,Norwich 009B,Norwich,26,278,999.6
+E01026838,Norwich 009D,Norwich,26,278,999.6
+E01032135,Bromsgrove 004B,Bromsgrove,15,278,816.0
+E01019783,North East Derbyshire 006A,North East Derbyshire,19,276,1221.4
+E01019793,North East Derbyshire 006D,North East Derbyshire,18,276,1221.4
+E01025146,Lancaster 017F,Lancaster,18,276,1493.3
+E01031101,Nuneaton and Bedworth 003B,Nuneaton and Bedworth,21,276,1423.8
+E01024818,Tunbridge Wells 012C,Tunbridge Wells,14,275,696.7
+E01025709,Charnwood 007D,Charnwood,15,275,1401.4
+E01031905,Wiltshire 010A,Wiltshire,18,275,1385.6
+E01031913,Wiltshire 011C,Wiltshire,18,275,1385.6
+E01031927,Wiltshire 010G,Wiltshire,18,275,1385.6
+E01025712,Charnwood 010D,Charnwood,16,274,1270.2
+E01025944,North West Leicestershire 002B,North West Leicestershire,14,273,2511.6
+E01029380,Cannock Chase 009A,Cannock Chase,23,273,486.5
+E01032486,Blackburn with Darwen 018F,Blackburn with Darwen,12,272,1202.0
+E01015890,Southend-on-Sea 016B,Southend-on-Sea,25,271,362.6
+E01013042,East Riding of Yorkshire 020D,East Riding of Yorkshire,15,270,1831.8
+E01013043,East Riding of Yorkshire 020E,East Riding of Yorkshire,15,270,1831.8
+E01026860,Norwich 010C,Norwich,27,270,957.5
+E01031124,Nuneaton and Bedworth 011E,Nuneaton and Bedworth,21,270,1490.5
+E01031921,Wiltshire 014B,Wiltshire,19,270,1546.4
+E01018471,Cheshire East 041E,Cheshire East,22,269,381.3
+E01018678,Cheshire West and Chester 024C,Cheshire West and Chester,21,269,950.0
+E01031907,Wiltshire 009A,Wiltshire,17,269,1364.4
+E01031919,Wiltshire 009E,Wiltshire,17,269,1364.4
+E01031747,Mid Sussex 017D,Mid Sussex,10,268,2073.3
+E01031748,Mid Sussex 017E,Mid Sussex,10,268,2073.3
+E01011701,Leeds 001C,Leeds,11,267,2591.1
+E01010648,Bradford 001C,Bradford,10,266,1248.5
+E01031738,Mid Sussex 004C,Mid Sussex,14,266,1947.0
+E01032097,Wiltshire 033B,Wiltshire,18,266,1938.0
+E01015885,Southend-on-Sea 009C,Southend-on-Sea,23,265,360.4
+E01025710,Charnwood 010B,Charnwood,16,265,1294.8
+E01029973,Ipswich 002A,Ipswich,15,265,273.4
+E01032300,Worcester 001E,Worcester,14,265,1827.7
+E01025773,Harborough 004B,Harborough,13,264,1316.5
+E01009803,Dudley 036C,Dudley,25,263,1052.6
+E01012361,Darlington 011E,Darlington,33,263,844.5
+E01014790,North Somerset 001B,North Somerset,12,263,1153.4
+E01025707,Charnwood 007C,Charnwood,14,263,1357.4
+E01025708,Charnwood 010A,Charnwood,14,263,1357.4
+E01007189,Wirral 040D,Wirral,14,262,1637.5
+E01007190,Wirral 040E,Wirral,15,262,1637.5
+E01014913,South Gloucestershire 013C,South Gloucestershire,14,261,1451.8
+E01014995,South Gloucestershire 019E,South Gloucestershire,14,261,1451.8
+E01015914,Southend-on-Sea 017A,Southend-on-Sea,22,261,358.9
+E01028626,South Oxfordshire 009B,South Oxfordshire,5,261,4188.7
+E01031696,Mid Sussex 003B,Mid Sussex,11,261,3342.3
+E01009845,Dudley 041A,Dudley,30,260,480.4
+E01014875,South Gloucestershire 012B,South Gloucestershire,17,260,3165.5
+E01014879,South Gloucestershire 009E,South Gloucestershire,17,260,3165.5
+E01021781,Epping Forest 014B,Epping Forest,20,260,842.6
+E01031720,Mid Sussex 002C,Mid Sussex,8,260,2516.0
+E01014798,North Somerset 002D,North Somerset,11,258,1142.1
+E01014911,South Gloucestershire 013A,South Gloucestershire,14,257,1458.1
+E01018502,Cheshire East 038D,Cheshire East,19,257,706.2
+E01014912,South Gloucestershire 013B,South Gloucestershire,13,256,1448.4
+E01008517,North Tyneside 005A,North Tyneside,31,255,619.9
+E01024800,Tunbridge Wells 007B,Tunbridge Wells,16,255,584.0
+E01024819,Tunbridge Wells 012D,Tunbridge Wells,16,255,584.0
+E01024820,Tunbridge Wells 012E,Tunbridge Wells,16,255,584.0
+E01024823,Tunbridge Wells 008C,Tunbridge Wells,16,255,584.0
+E01024832,Tunbridge Wells 009D,Tunbridge Wells,16,255,584.0
+E01024835,Tunbridge Wells 007C,Tunbridge Wells,16,255,584.0
+E01024838,Tunbridge Wells 007D,Tunbridge Wells,16,255,584.0
+E01009807,Dudley 043A,Dudley,28,254,1122.4
+E01010550,Wolverhampton 019B,Wolverhampton,37,254,355.1
+E01032032,Wiltshire 049B,Wiltshire,4,254,5097.8
+E01009821,Dudley 014D,Dudley,24,253,646.2
+E01009827,Dudley 019C,Dudley,27,253,646.2
+E01011706,Leeds 006C,Leeds,13,253,1388.5
+E01014090,Herefordshire 014A,"Herefordshire, County of",17,252,966.5
+E01014091,Herefordshire 014B,"Herefordshire, County of",17,252,966.5
+E01018619,Cheshire East 015C,Cheshire East,9,252,694.7
+E01018621,Cheshire East 015E,Cheshire East,9,252,694.7
+E01031485,Chichester 006B,Chichester,6,252,4652.8
+E01031486,Chichester 008C,Chichester,6,252,4652.8
+E01031949,Wiltshire 002D,Wiltshire,14,251,1842.2
+E01011576,Leeds 007C,Leeds,9,250,1561.0
+E01028222,Mansfield 013D,Mansfield,17,250,799.8
+E01031724,Mid Sussex 005C,Mid Sussex,12,250,1887.0
+E01008522,North Tyneside 005D,North Tyneside,34,248,462.3
+E01019703,Erewash 005C,Erewash,16,248,890.2
+E01029776,Staffordshire Moorlands 008C,Staffordshire Moorlands,10,248,1358.9
+E01031487,Chichester 006C,Chichester,5,248,4619.4
+E01018687,Cheshire West and Chester 002C,Cheshire West and Chester,10,247,2109.7
+E01021151,Wealden 006A,Wealden,12,247,1534.3
+E01021157,Wealden 003B,Wealden,12,247,1534.3
+E01022771,Fareham 001B,Fareham,15,246,2192.1
+E01025780,Harborough 005D,Harborough,12,246,2089.7
+E01025616,Blaby 011A,Blaby,35,245,1170.8
+E01014885,South Gloucestershire 003B,South Gloucestershire,9,244,1356.8
+E01031729,Mid Sussex 003C,Mid Sussex,11,243,3097.7
+E01007617,Doncaster 021C,Doncaster,25,242,1005.3
+E01014963,South Gloucestershire 004D,South Gloucestershire,9,242,3555.6
+E01018385,Cheshire West and Chester 039D,Cheshire West and Chester,12,242,773.0
+E01029265,Taunton Deane 011C,Somerset West and Taunton,20,242,2034.1
+E01029366,Cannock Chase 011D,Cannock Chase,23,242,384.1
+E01019614,Derbyshire Dales 001B,Derbyshire Dales,6,241,1775.5
+E01025970,Oadby and Wigston 003A,Oadby and Wigston,20,241,1884.5
+E01031695,Mid Sussex 003A,Mid Sussex,10,241,3109.3
+E01008550,North Tyneside 003D,North Tyneside,29,240,614.2
+E01018530,Cheshire West and Chester 009C,Cheshire West and Chester,11,240,942.7
+E01007619,Doncaster 021E,Doncaster,25,239,1377.9
+E01017732,Aylesbury Vale 007C,Aylesbury Vale,8,239,3691.2
+E01025632,Blaby 002B,Blaby,30,239,803.1
+E01025797,Harborough 007C,Harborough,9,239,1875.3
+E01027606,Hambleton 004B,Hambleton,12,239,778.0
+E01027614,Hambleton 005D,Hambleton,12,239,778.0
+E01027615,Hambleton 005E,Hambleton,13,239,778.0
+E01029747,Stafford 005E,Stafford,12,239,1037.6
+E01011401,Leeds 077C,Leeds,15,238,1698.2
+E01027014,Daventry 006E,Daventry,7,238,2095.5
+E01029629,South Staffordshire 009C,South Staffordshire,32,238,574.5
+E01032219,Malvern Hills 010E,Malvern Hills,11,238,1931.6
+E01013114,East Riding of Yorkshire 028C,East Riding of Yorkshire,6,237,1015.8
+E01013118,East Riding of Yorkshire 028E,East Riding of Yorkshire,6,237,1015.8
+E01009808,Dudley 043B,Dudley,25,236,1058.4
+E01022696,Eastleigh 012B,Eastleigh,17,235,1743.2
+E01022697,Eastleigh 012C,Eastleigh,18,235,1743.2
+E01022698,Eastleigh 012D,Eastleigh,17,235,1743.2
+E01022720,Fareham 004A,Fareham,25,235,1859.9
+E01027607,Hambleton 005C,Hambleton,11,235,767.2
+E01032298,Worcester 001C,Worcester,11,235,1794.2
+E01022772,Fareham 001C,Fareham,14,234,2160.6
+E01031680,Horsham 009C,Horsham,5,234,3090.4
+E01031681,Horsham 009D,Horsham,5,234,3090.4
+E01031682,Horsham 009E,Horsham,5,234,3090.4
+E01019794,North East Derbyshire 005D,North East Derbyshire,17,233,1111.9
+E01027460,Northumberland 018D,Northumberland,21,233,999.0
+E01032284,Worcester 013B,Worcester,13,233,1669.6
+E01011709,Leeds 005B,Leeds,10,232,1203.8
+E01012347,Darlington 011C,Darlington,31,232,547.2
+E01012348,Darlington 011D,Darlington,31,232,547.2
+E01013044,East Riding of Yorkshire 020F,East Riding of Yorkshire,14,232,1740.8
+E01026540,Broadland 009A,Broadland,23,232,832.4
+E01013060,East Riding of Yorkshire 009C,East Riding of Yorkshire,5,231,2991.8
+E01022725,Fareham 004B,Fareham,23,231,1841.6
+E01027163,Northampton 030B,Northampton,23,231,218.9
+E01022770,Fareham 010E,Fareham,31,230,647.0
+E01025638,Blaby 003B,Blaby,26,230,721.9
+E01020560,Weymouth and Portland 002D,Dorset,26,229,176.8
+E01021228,Wealden 012D,Wealden,12,229,2243.0
+E01031915,Wiltshire 009D,Wiltshire,16,229,1113.4
+E01032323,Worcester 014A,Worcester,13,229,1669.1
+E01032324,Worcester 014B,Worcester,13,229,1669.1
+E01032325,Worcester 014C,Worcester,12,229,1669.1
+E01032326,Worcester 014D,Worcester,13,229,1669.1
+E01012339,Darlington 015B,Darlington,25,228,742.6
+E01013793,Rutland 002A,Rutland,10,228,1590.4
+E01025928,North West Leicestershire 001E,North West Leicestershire,13,228,1530.7
+E01026574,Broadland 016A,Broadland,22,228,911.5
+E01029302,Taunton Deane 011D,Somerset West and Taunton,23,228,2248.7
+E01031639,Horsham 008A,Horsham,6,228,2973.7
+E01031640,Horsham 008B,Horsham,7,228,2973.7
+E01031654,Horsham 004A,Horsham,6,228,2973.7
+E01031672,Horsham 004E,Horsham,7,228,2973.7
+E01031691,Horsham 006F,Horsham,6,228,2973.7
+E01027203,Northampton 031A,Northampton,23,227,426.2
+E01022694,Eastleigh 010E,Eastleigh,16,226,2010.5
+E01027165,Northampton 030D,Northampton,22,225,213.9
+E01021710,Colchester 022C,Colchester,25,224,241.7
+E01027458,Northumberland 018C,Northumberland,20,224,996.3
+E01013066,East Riding of Yorkshire 016C,East Riding of Yorkshire,14,223,1660.5
+E01013067,East Riding of Yorkshire 016D,East Riding of Yorkshire,14,223,1660.5
+E01013068,East Riding of Yorkshire 016E,East Riding of Yorkshire,14,223,1660.5
+E01013070,East Riding of Yorkshire 016F,East Riding of Yorkshire,14,223,1660.5
+E01025799,Harborough 009B,Harborough,8,223,1786.5
+E01025802,Harborough 007D,Harborough,8,223,1786.5
+E01028345,Newark and Sherwood 008A,Newark and Sherwood,10,223,1105.4
+E01025880,Hinckley and Bosworth 003D,Hinckley and Bosworth,21,221,647.2
+E01009855,Dudley 042C,Dudley,26,220,345.3
+E01022691,Eastleigh 010B,Eastleigh,14,220,1963.4
+E01022693,Eastleigh 010D,Eastleigh,14,220,1963.4
+E01022714,Eastleigh 009B,Eastleigh,23,220,1706.4
+E01022742,Fareham 009C,Fareham,21,220,1744.2
+E01030581,Reigate and Banstead 017B,Reigate and Banstead,5,219,2770.9
+E01013063,East Riding of Yorkshire 019F,East Riding of Yorkshire,14,218,1652.0
+E01012315,Darlington 010A,Darlington,30,217,666.3
+E01019341,South Lakeland 011A,South Lakeland,8,217,1283.4
+E01022726,Fareham 004C,Fareham,20,217,1722.7
+E01013376,York 002D,York,11,216,1725.2
+E01013377,York 003D,York,11,216,1725.2
+E01033375,Cheshire East 049F,Cheshire East,8,216,1648.8
+E01033376,Cheshire East 049G,Cheshire East,8,216,1648.8
+E01025696,Charnwood 004B,Charnwood,11,215,1422.5
+E01025794,Harborough 007B,Harborough,7,215,1709.3
+E01028368,Rushcliffe 009C,Rushcliffe,12,215,1038.4
+E01015399,Poole 003E,"Bournemouth, Christchurch and Poole",23,214,875.8
+E01029308,Taunton Deane 011E,Somerset West and Taunton,18,213,1651.7
+E01027298,South Northamptonshire 005B,South Northamptonshire,12,212,1753.2
+E01027300,South Northamptonshire 004D,South Northamptonshire,13,212,1753.2
+E01027468,Northumberland 034B,Northumberland,10,212,1213.3
+E01027469,Northumberland 034C,Northumberland,10,212,1213.3
+E01004555,Wandsworth 017E,Wandsworth,43,211,449.8
+E01020559,Weymouth and Portland 002C,Dorset,22,211,167.1
+E01021217,Wealden 008D,Wealden,14,211,1214.5
+E01021218,Wealden 002D,Wealden,14,211,1214.5
+E01021757,Epping Forest 006B,Epping Forest,4,211,1951.8
+E01023273,Winchester 012F,Winchester,7,210,2529.1
+E01022729,Fareham 004E,Fareham,19,209,1704.8
+E01022731,Fareham 003B,Fareham,19,209,1704.8
+E01029674,South Staffordshire 013D,South Staffordshire,22,209,714.9
+E01019895,East Devon 017B,East Devon,11,208,466.2
+E01004556,Wandsworth 009B,Wandsworth,42,207,445.3
+E01015396,Poole 003B,"Bournemouth, Christchurch and Poole",27,207,838.9
+E01021039,Lewes 005A,Lewes,6,207,2679.7
+E01023272,Winchester 012E,Winchester,6,207,2521.4
+E01025782,Harborough 003B,Harborough,11,206,2076.1
+E01015398,Poole 003D,"Bournemouth, Christchurch and Poole",24,205,957.1
+E01018562,Cheshire West and Chester 009G,Cheshire West and Chester,9,205,834.3
+E01023043,New Forest 017E,New Forest,11,205,2072.0
+E01023044,New Forest 023A,New Forest,11,205,2072.0
+E01031718,Mid Sussex 002A,Mid Sussex,7,205,2099.9
+E01025695,Charnwood 004A,Charnwood,10,204,1382.5
+E01027403,Northumberland 027D,Northumberland,24,204,465.1
+E01004478,Wandsworth 017B,Wandsworth,41,203,441.6
+E01004558,Wandsworth 015C,Wandsworth,41,203,441.6
+E01007186,Wirral 040A,Wirral,14,203,1143.3
+E01007188,Wirral 040C,Wirral,14,203,1143.3
+E01008504,North Tyneside 002C,North Tyneside,26,203,521.9
+E01010155,Solihull 026E,Solihull,12,203,2228.8
+E01027324,Wellingborough 009C,Wellingborough,17,203,585.5
+E01029082,Mendip 008E,Mendip,14,203,1991.8
+E01029083,Mendip 005D,Mendip,14,203,1991.8
+E01010217,Solihull 023D,Solihull,16,202,274.1
+E01015400,Poole 003F,"Bournemouth, Christchurch and Poole",24,202,968.8
+E01017563,Central Bedfordshire 033C,Central Bedfordshire,23,202,3663.9
+E01025982,Oadby and Wigston 009G,Oadby and Wigston,14,202,1794.7
+E01027258,Northampton 020C,Northampton,23,202,425.6
+E01027683,Harrogate 016A,Harrogate,7,202,1107.0
+E01029303,Taunton Deane 010E,Somerset West and Taunton,21,202,1888.9
+E01033532,South Derbyshire 002F,South Derbyshire,13,202,993.5
+E01009815,Dudley 014B,Dudley,18,201,602.9
+E01012447,Warrington 025B,Warrington,11,201,945.0
+E01014985,South Gloucestershire 001A,South Gloucestershire,5,201,2813.2
+E01014988,South Gloucestershire 001D,South Gloucestershire,5,201,2813.2
+E01014992,South Gloucestershire 002C,South Gloucestershire,5,201,2813.2
+E01020387,East Dorset 012F,Dorset,24,201,962.4
+E01020829,County Durham 054C,County Durham,13,201,910.3
+E01022687,Eastleigh 008G,Eastleigh,12,201,1768.9
+E01028625,South Oxfordshire 009A,South Oxfordshire,3,201,3437.5
+E01028627,South Oxfordshire 009C,South Oxfordshire,3,201,3437.5
+E01028628,South Oxfordshire 009D,South Oxfordshire,3,201,3437.5
+E01031984,Wiltshire 051A,Wiltshire,7,201,3139.9
+E01032017,Wiltshire 051D,Wiltshire,7,201,3139.9
+E01032018,Wiltshire 053A,Wiltshire,7,201,3139.9
+E01004477,Wandsworth 017A,Wandsworth,40,200,405.5
+E01013064,East Riding of Yorkshire 016A,East Riding of Yorkshire,13,200,1605.5
+E01019881,South Derbyshire 003D,South Derbyshire,12,200,1413.7
+E01027125,Kettering 003C,Kettering,11,200,929.0
+E01019848,South Derbyshire 002D,South Derbyshire,12,199,983.7
+E01021067,Lewes 002D,Lewes,8,198,1969.8
+E01016311,West Berkshire 012B,West Berkshire,3,197,3752.2
+E01018633,Cheshire East 017E,Cheshire East,8,196,320.9
+E01019361,South Lakeland 006A,South Lakeland,4,196,1361.0
+E01019362,South Lakeland 005B,South Lakeland,4,196,1361.0
+E01019368,South Lakeland 006C,South Lakeland,4,196,1361.0
+E01021159,Wealden 004A,Wealden,10,196,1287.1
+E01021162,Wealden 004D,Wealden,10,196,1287.1
+E01022461,Tewkesbury 002F,Tewkesbury,7,196,2304.6
+E01027086,Kettering 010C,Kettering,16,196,463.9
+E01018554,Cheshire West and Chester 016C,Cheshire West and Chester,9,195,812.1
+E01013328,North Lincolnshire 021D,North Lincolnshire,6,194,1060.3
+E01029628,South Staffordshire 009B,South Staffordshire,23,194,484.2
+E01008479,North Tyneside 008D,North Tyneside,27,193,479.4
+E01012503,Warrington 024D,Warrington,10,193,934.5
+E01018366,Cheshire West and Chester 025B,Cheshire West and Chester,13,193,459.0
+E01020383,East Dorset 012B,Dorset,23,193,940.6
+E01022741,Fareham 009B,Fareham,23,193,1396.7
+E01027464,Northumberland 033A,Northumberland,11,193,1171.8
+E01031740,Mid Sussex 004E,Mid Sussex,12,193,1286.6
+E01032080,Wiltshire 030D,Wiltshire,18,193,1628.4
+E01033714,Northumberland 033F,Northumberland,10,193,1171.8
+E01013451,York 020C,York,6,192,2262.2
+E01021052,Lewes 001D,Lewes,10,192,1424.8
+E01022977,New Forest 006A,New Forest,10,192,1751.6
+E01010173,Solihull 014B,Solihull,26,191,269.2
+E01010176,Solihull 014C,Solihull,23,191,294.7
+E01029074,Mendip 012D,Mendip,16,191,1628.7
+E01029741,Stafford 004C,Stafford,11,191,419.4
+E01031638,Horsham 007C,Horsham,6,191,2262.1
+E01010108,Solihull 017A,Solihull,8,189,2050.0
+E01013061,East Riding of Yorkshire 009D,East Riding of Yorkshire,4,189,2653.2
+E01013351,York 020A,York,3,189,2653.2
+E01021194,Wealden 010E,Wealden,10,188,1095.4
+E01027205,Northampton 031C,Northampton,21,188,387.8
+E01012005,Hartlepool 014G,Hartlepool,20,187,1106.5
+E01021192,Wealden 010C,Wealden,9,187,1093.3
+E01027471,Northumberland 034D,Northumberland,7,187,1142.3
+E01031725,Mid Sussex 005D,Mid Sussex,9,187,1249.5
+E01033066,Hambleton 007E,Hambleton,11,187,933.5
+E01009470,Birmingham 010C,Birmingham,16,186,201.6
+E01029128,Sedgemoor 001D,Sedgemoor,10,186,1887.8
+E01022837,Gosport 009D,Gosport,25,185,851.3
+E01015021,South Gloucestershire 007C,South Gloucestershire,6,184,1771.9
+E01027206,Northampton 031D,Northampton,20,184,356.9
+E01027595,Hambleton 010B,Hambleton,7,184,637.5
+E01027455,Northumberland 018A,Northumberland,16,183,806.7
+E01013803,Rutland 003D,Rutland,7,182,1417.4
+E01018211,Huntingdonshire 005D,Huntingdonshire,7,182,1606.7
+E01019604,Derbyshire Dales 002B,Derbyshire Dales,5,182,1277.7
+E01025846,Hinckley and Bosworth 002A,Hinckley and Bosworth,18,182,567.0
+E01025847,Hinckley and Bosworth 002B,Hinckley and Bosworth,18,182,567.0
+E01025973,Oadby and Wigston 009A,Oadby and Wigston,24,181,459.8
+E01015397,Poole 003C,"Bournemouth, Christchurch and Poole",23,180,779.3
+E01027121,Kettering 010E,Kettering,15,180,678.5
+E01029862,Tamworth 009C,Tamworth,16,180,614.7
+E01013054,East Riding of Yorkshire 011C,East Riding of Yorkshire,9,179,1456.0
+E01020946,Eastbourne 006D,Eastbourne,11,179,836.3
+E01025741,Charnwood 006B,Charnwood,9,179,1716.5
+E01027291,South Northamptonshire 006A,South Northamptonshire,8,179,1165.4
+E01028786,West Oxfordshire 011B,West Oxfordshire,4,179,2872.5
+E01014132,Telford and Wrekin 002C,Telford and Wrekin,9,178,593.9
+E01027456,Northumberland 018B,Northumberland,17,178,589.3
+E01000263,Barnet 016C,Barnet,11,177,482.3
+E01012967,East Riding of Yorkshire 024C,East Riding of Yorkshire,5,177,1229.2
+E01018503,Cheshire East 050C,Cheshire East,5,177,1543.7
+E01018561,Cheshire West and Chester 009F,Cheshire West and Chester,8,177,677.5
+E01015401,Poole 003G,"Bournemouth, Christchurch and Poole",21,175,747.1
+E01020940,Eastbourne 006A,Eastbourne,10,175,811.2
+E01021234,Wealden 021C,Wealden,9,175,811.2
+E01016290,West Berkshire 021B,West Berkshire,5,174,2289.9
+E01016291,West Berkshire 021C,West Berkshire,5,174,2289.9
+E01016322,West Berkshire 021F,West Berkshire,5,174,2289.9
+E01022756,Fareham 006B,Fareham,16,174,1191.5
+E01025783,Harborough 003C,Harborough,9,174,1872.8
+E01028608,South Oxfordshire 012A,South Oxfordshire,4,174,3246.5
+E01028674,South Oxfordshire 012C,South Oxfordshire,4,174,3246.5
+E01010196,Solihull 019B,Solihull,17,173,256.1
+E01023691,St Albans 001B,St Albans,5,173,3673.0
+E01023694,St Albans 001E,St Albans,5,173,3673.0
+E01031641,Horsham 014B,Horsham,6,173,1392.5
+E01029104,Sedgemoor 011C,Sedgemoor,13,172,1083.0
+E01010181,Solihull 029B,Solihull,12,171,687.5
+E01013057,East Riding of Yorkshire 009A,East Riding of Yorkshire,5,171,2148.2
+E01013375,York 002C,York,7,171,1432.8
+E01019606,Derbyshire Dales 002C,Derbyshire Dales,6,171,1093.4
+E01022465,Tewkesbury 003D,Tewkesbury,7,171,1424.1
+E01032144,Bromsgrove 006C,Bromsgrove,13,171,467.1
+E01010205,Solihull 018E,Solihull,19,170,261.7
+E01021728,Colchester 003B,Colchester,18,169,286.4
+E01022417,Stroud 015D,Stroud,8,169,539.1
+E01022418,Stroud 015E,Stroud,8,169,539.1
+E01022749,Fareham 002A,Fareham,13,169,1136.9
+E01022750,Fareham 005A,Fareham,13,169,1136.9
+E01023047,New Forest 008C,New Forest,15,169,1214.5
+E01026393,West Lindsey 010A,West Lindsey,10,169,2251.6
+E01031644,Horsham 002A,Horsham,6,169,1954.8
+E01031645,Horsham 002B,Horsham,7,169,1954.8
+E01031649,Horsham 002E,Horsham,6,169,1954.8
+E01031650,Horsham 002F,Horsham,6,169,1954.8
+E01031668,Horsham 002H,Horsham,7,169,1954.8
+E01010172,Solihull 014A,Solihull,25,168,249.8
+E01022752,Fareham 005C,Fareham,13,168,1144.4
+E01031929,Wiltshire 017D,Wiltshire,6,168,718.5
+E01019855,South Derbyshire 006D,South Derbyshire,8,167,927.0
+E01028791,West Oxfordshire 006D,West Oxfordshire,3,167,2519.8
+E01009436,Birmingham 012B,Birmingham,14,166,796.4
+E01018253,South Cambridgeshire 014B,South Cambridgeshire,5,166,2239.0
+E01022350,Stroud 010A,Stroud,15,166,810.1
+E01022382,Stroud 010B,Stroud,12,166,810.1
+E01006583,Liverpool 047C,Liverpool,12,165,888.6
+E01018256,South Cambridgeshire 014D,South Cambridgeshire,4,165,2238.8
+E01026395,West Lindsey 010C,West Lindsey,8,165,2214.1
+E01028346,Newark and Sherwood 008B,Newark and Sherwood,9,165,466.3
+E01028347,Newark and Sherwood 008C,Newark and Sherwood,9,165,466.3
+E01022386,Stroud 013B,Stroud,8,164,808.9
+E01028745,Vale of White Horse 016A,Vale of White Horse,3,164,3013.2
+E01028746,Vale of White Horse 016B,Vale of White Horse,3,164,3013.2
+E01031635,Horsham 011D,Horsham,5,164,1394.6
+E01032638,Southwark 003G,Southwark,31,164,240.6
+E01003472,Merton 001A,Merton,35,163,338.6
+E01003473,Merton 001B,Merton,35,163,338.6
+E01014930,South Gloucestershire 003D,South Gloucestershire,4,163,1962.3
+E01022838,Gosport 009E,Gosport,23,163,826.4
+E01025845,Hinckley and Bosworth 003A,Hinckley and Bosworth,18,163,489.2
+E01028629,South Oxfordshire 009E,South Oxfordshire,2,163,3059.5
+E01032973,Kettering 011H,Kettering,6,163,1145.1
+E01029678,South Staffordshire 013G,South Staffordshire,13,162,553.0
+E01031287,Warwick 007E,Warwick,12,162,892.5
+E01032891,Rugby 001F,Rugby,12,162,1290.3
+E01000878,Camden 004A,Camden,20,161,373.8
+E01000884,Camden 004D,Camden,20,161,373.8
+E01010169,Solihull 025C,Solihull,6,161,1733.3
+E01010170,Solihull 025D,Solihull,6,161,1733.3
+E01020381,East Dorset 007D,Dorset,14,161,740.0
+E01027287,South Northamptonshire 001E,South Northamptonshire,15,161,476.3
+E01028390,Rushcliffe 015C,Rushcliffe,6,161,1520.7
+E01013440,York 001D,York,5,160,1388.0
+E01026301,South Kesteven 010C,South Kesteven,4,160,636.1
+E01003474,Merton 001C,Merton,33,159,321.5
+E01022688,Eastleigh 015A,Eastleigh,15,159,1003.4
+E01028315,Newark and Sherwood 004A,Newark and Sherwood,3,159,2279.9
+E01028617,South Oxfordshire 012B,South Oxfordshire,3,159,3125.5
+E01010199,Solihull 018A,Solihull,13,158,242.5
+E01027283,South Northamptonshire 001B,South Northamptonshire,13,158,421.2
+E01028711,Vale of White Horse 001D,Vale of White Horse,4,158,3083.6
+E01031678,Horsham 009B,Horsham,4,158,1838.6
+E01000278,Barnet 020B,Barnet,20,157,394.3
+E01022791,Fareham 006C,Fareham,13,157,1003.0
+E01022793,Fareham 006E,Fareham,15,157,1003.0
+E01027333,Wellingborough 002D,Wellingborough,23,157,338.4
+E01030627,Reigate and Banstead 009F,Reigate and Banstead,7,157,1887.5
+E01003457,Merton 006C,Merton,31,156,275.1
+E01004599,Wandsworth 025E,Wandsworth,34,156,331.6
+E01017696,Aylesbury Vale 003D,Aylesbury Vale,4,156,1552.7
+E01018439,Cheshire East 030D,Cheshire East,11,156,232.8
+E01021480,Castle Point 007A,Castle Point,23,156,729.2
+E01022747,Fareham 014D,Fareham,25,156,472.6
+E01022776,Fareham 013B,Fareham,25,156,472.6
+E01027410,Northumberland 031E,Northumberland,21,156,341.7
+E01032880,Gosport 006F,Gosport,28,156,589.8
+E01012183,Redcar and Cleveland 020D,Redcar and Cleveland,10,155,758.9
+E01022682,Eastleigh 008B,Eastleigh,7,155,1615.8
+E01023724,St Albans 006C,St Albans,1,155,3530.8
+E01031139,Rugby 002C,Rugby,12,155,1319.7
+E01032548,Redcar and Cleveland 019E,Redcar and Cleveland,10,155,758.9
+E01032634,Sedgemoor 011G,Sedgemoor,13,155,843.2
+E01032885,Solihull 029F,Solihull,10,155,678.0
+E01008523,North Tyneside 003B,North Tyneside,26,154,399.0
+E01018055,East Cambridgeshire 002D,East Cambridgeshire,12,154,1144.4
+E01020382,East Dorset 012A,Dorset,20,154,854.9
+E01025916,North West Leicestershire 003B,North West Leicestershire,12,154,958.1
+E01003401,Merton 004A,Merton,31,153,277.3
+E01003454,Merton 003B,Merton,31,153,277.3
+E01021805,Epping Forest 010D,Epping Forest,3,153,1292.4
+E01023052,New Forest 023C,New Forest,8,153,1616.7
+E01026413,West Lindsey 008C,West Lindsey,4,153,2154.1
+E01000002,City of London 001B,City of London,25,152,159.4
+E01003358,Merton 009C,Merton,29,152,254.6
+E01010189,Solihull 029E,Solihull,8,152,1742.5
+E01014853,North Somerset 013C,North Somerset,6,152,2150.4
+E01015433,Poole 001C,"Bournemouth, Christchurch and Poole",15,152,714.8
+E01015434,Poole 001D,"Bournemouth, Christchurch and Poole",16,152,714.8
+E01015521,Swindon 001C,Swindon,7,152,2475.2
+E01018690,Cheshire West and Chester 002F,Cheshire West and Chester,9,152,415.5
+E01031292,Warwick 009C,Warwick,11,152,566.7
+E01031295,Warwick 009F,Warwick,11,152,566.7
+E01031502,Chichester 001A,Chichester,6,152,1102.2
+E01032419,Wyre Forest 010B,Wyre Forest,18,152,453.5
+E01020407,East Dorset 009D,Dorset,17,151,712.7
+E01022790,Fareham 005E,Fareham,12,151,955.9
+E01031689,Horsham 003E,Horsham,5,151,1869.8
+E01031690,Horsham 007D,Horsham,5,151,1869.8
+E01003385,Merton 011C,Merton,28,150,241.1
+E01018436,Cheshire East 030A,Cheshire East,10,150,217.1
+E01018438,Cheshire East 030C,Cheshire East,10,150,217.1
+E01020463,North Dorset 001C,Dorset,5,150,1432.2
+E01030626,Reigate and Banstead 009E,Reigate and Banstead,6,150,1858.0
+E01022135,Cheltenham 011A,Cheltenham,10,149,1353.6
+E01025914,North West Leicestershire 006A,North West Leicestershire,12,149,936.8
+E01032149,Bromsgrove 006D,Bromsgrove,9,149,414.3
+E01032178,Bromsgrove 005D,Bromsgrove,8,149,657.5
+E01033244,East Northamptonshire 007E,East Northamptonshire,17,149,1093.1
+E01003424,Merton 015B,Merton,26,148,238.9
+E01003425,Merton 015C,Merton,26,148,238.9
+E01028736,Vale of White Horse 007B,Vale of White Horse,4,148,2763.4
+E01020377,East Dorset 007A,Dorset,15,147,703.1
+E01020378,East Dorset 009C,Dorset,16,147,703.1
+E01022686,Eastleigh 008F,Eastleigh,8,147,1344.3
+E01022784,Fareham 009E,Fareham,23,147,442.8
+E01023996,Ashford 006C,Ashford,21,147,794.1
+E01025769,Charnwood 008D,Charnwood,14,147,536.3
+E01030593,Reigate and Banstead 012A,Reigate and Banstead,6,147,1836.0
+E01030596,Reigate and Banstead 012B,Reigate and Banstead,6,147,1836.0
+E01030597,Reigate and Banstead 012C,Reigate and Banstead,7,147,1836.0
+E01030620,Reigate and Banstead 012D,Reigate and Banstead,6,147,1836.0
+E01030624,Reigate and Banstead 009C,Reigate and Banstead,6,147,1836.0
+E01003402,Merton 004B,Merton,29,146,270.3
+E01003461,Merton 004E,Merton,30,146,270.3
+E01007187,Wirral 040B,Wirral,12,146,998.3
+E01014067,Herefordshire 022G,"Herefordshire, County of",8,146,493.5
+E01016289,West Berkshire 021A,West Berkshire,4,146,1908.8
+E01017063,Portsmouth 003C,Portsmouth,19,146,335.2
+E01022368,Stroud 008C,Stroud,11,146,793.2
+E01022415,Stroud 015B,Stroud,9,146,404.7
+E01022499,Basingstoke and Deane 003C,Basingstoke and Deane,4,146,1908.8
+E01020380,East Dorset 007C,Dorset,13,145,666.6
+E01020426,East Dorset 010A,Dorset,13,145,666.6
+E01022106,Cheltenham 010A,Cheltenham,9,145,1333.1
+E01027037,East Northamptonshire 007D,East Northamptonshire,17,145,1076.6
+E01027596,Hambleton 010C,Hambleton,6,145,464.2
+E01025016,Fylde 005D,Fylde,7,144,341.8
+E01026356,South Kesteven 016D,South Kesteven,12,144,1008.9
+E01026357,South Kesteven 016E,South Kesteven,12,144,1008.9
+E01026358,South Kesteven 016F,South Kesteven,12,144,1008.9
+E01026359,South Kesteven 016G,South Kesteven,12,144,1008.9
+E01031296,Warwick 002A,Warwick,7,144,1499.6
+E01031299,Warwick 002D,Warwick,8,144,1499.6
+E01031300,Warwick 002E,Warwick,7,144,1499.6
+E01008579,North Tyneside 004B,North Tyneside,25,143,405.8
+E01009666,Coventry 041A,Coventry,13,143,1460.3
+E01028824,West Oxfordshire 004E,West Oxfordshire,4,143,1729.0
+E01032408,Wychavon 012D,Wychavon,8,143,866.9
+E01010231,Solihull 016E,Solihull,16,142,465.0
+E01022746,Fareham 014C,Fareham,20,142,442.5
+E01022748,Fareham 014E,Fareham,20,142,442.5
+E01031228,Stratford-on-Avon 009A,Stratford-on-Avon,13,142,695.4
+E01031646,Horsham 002C,Horsham,6,142,1686.6
+E01031666,Horsham 002G,Horsham,6,142,1686.6
+E01033425,East Cambridgeshire 004F,East Cambridgeshire,16,142,695.8
+E01003423,Merton 011E,Merton,25,141,231.9
+E01012182,Redcar and Cleveland 020C,Redcar and Cleveland,9,141,745.1
+E01015830,Southend-on-Sea 012D,Southend-on-Sea,36,141,118.9
+E01025872,Hinckley and Bosworth 005A,Hinckley and Bosworth,10,141,496.4
+E01029168,South Somerset 002C,South Somerset,8,141,1157.1
+E01003403,Merton 004C,Merton,27,140,234.1
+E01008564,North Tyneside 007B,North Tyneside,22,140,396.1
+E01017657,Aylesbury Vale 009C,Aylesbury Vale,5,140,1279.9
+E01025838,Hinckley and Bosworth 004D,Hinckley and Bosworth,9,140,793.2
+E01025902,Melton 002B,Melton,15,140,494.1
+E01028409,Rushcliffe 015D,Rushcliffe,8,140,1107.5
+E01022740,Fareham 009A,Fareham,23,139,358.0
+E01028789,West Oxfordshire 006B,West Oxfordshire,3,139,1681.8
+E01028790,West Oxfordshire 006C,West Oxfordshire,3,139,1681.8
+E01028823,West Oxfordshire 004D,West Oxfordshire,3,139,1681.8
+E01028825,West Oxfordshire 004F,West Oxfordshire,3,139,1681.8
+E01009563,Coventry 040D,Coventry,11,138,1452.6
+E01009670,Coventry 041D,Coventry,11,138,1452.6
+E01009672,Coventry 040E,Coventry,11,138,1452.6
+E01021219,Wealden 009A,Wealden,12,138,737.4
+E01028804,West Oxfordshire 004B,West Oxfordshire,4,138,1788.2
+E01009560,Coventry 040A,Coventry,10,137,1452.2
+E01030535,Mole Valley 010A,Mole Valley,8,137,1482.2
+E01031313,Warwick 008E,Warwick,10,137,476.8
+E01031314,Warwick 008F,Warwick,10,137,476.8
+E01017756,Chiltern 011C,Chiltern,3,136,2226.8
+E01018698,Cheshire West and Chester 015E,Cheshire West and Chester,5,136,491.2
+E01021483,Castle Point 004C,Castle Point,24,136,652.0
+E01027293,South Northamptonshire 006C,South Northamptonshire,8,136,930.9
+E01008547,North Tyneside 001A,North Tyneside,22,135,395.4
+E01008548,North Tyneside 001B,North Tyneside,22,135,395.4
+E01018724,Cheshire West and Chester 045C,Cheshire West and Chester,5,135,585.5
+E01029295,Taunton Deane 014C,Somerset West and Taunton,19,135,1053.2
+E01025904,Melton 002D,Melton,16,134,522.1
+E01010202,Solihull 022B,Solihull,13,133,221.7
+E01010229,Solihull 016C,Solihull,15,133,244.9
+E01012968,East Riding of Yorkshire 024D,East Riding of Yorkshire,4,133,1163.5
+E01022537,Basingstoke and Deane 002C,Basingstoke and Deane,5,133,1578.2
+E01022553,Basingstoke and Deane 001A,Basingstoke and Deane,5,133,1578.2
+E01022554,Basingstoke and Deane 001B,Basingstoke and Deane,5,133,1578.2
+E01022559,Basingstoke and Deane 002F,Basingstoke and Deane,5,133,1578.2
+E01012978,East Riding of Yorkshire 008A,East Riding of Yorkshire,5,132,1251.2
+E01022745,Fareham 014B,Fareham,17,132,388.6
+E01023072,New Forest 005A,New Forest,9,132,1103.3
+E01000186,Barnet 014A,Barnet,7,131,345.4
+E01025891,Melton 001E,Melton,7,131,1075.1
+E01030623,Reigate and Banstead 009B,Reigate and Banstead,5,131,1651.8
+E01031615,Horsham 010E,Horsham,4,131,1201.3
+E01032348,Wychavon 019B,Wychavon,7,131,1190.3
+E01032982,South Northamptonshire 003F,South Northamptonshire,16,131,300.8
+E01000874,Camden 005D,Camden,19,130,233.8
+E01008357,Newcastle upon Tyne 002D,Newcastle upon Tyne,26,130,399.5
+E01030870,Waverley 013A,Waverley,7,130,1845.0
+E01030871,Waverley 013B,Waverley,7,130,1845.0
+E01030873,Waverley 013D,Waverley,7,130,1845.0
+E01030874,Waverley 013E,Waverley,8,130,1845.0
+E01030876,Waverley 013G,Waverley,7,130,1845.0
+E01033428,East Cambridgeshire 004G,East Cambridgeshire,16,130,687.3
+E01025896,Melton 004A,Melton,16,129,510.3
+E01000276,Barnet 020A,Barnet,19,128,374.3
+E01017754,Chiltern 011A,Chiltern,3,128,2067.8
+E01017755,Chiltern 011B,Chiltern,3,128,2067.8
+E01031855,Wiltshire 026C,Wiltshire,12,128,1549.2
+E01010197,Solihull 019C,Solihull,15,127,216.2
+E01013436,York 001A,York,5,127,1019.0
+E01020386,East Dorset 012E,Dorset,12,127,676.4
+E01022219,Cotswold 011E,Cotswold,4,127,1647.7
+E01022220,Cotswold 011F,Cotswold,4,127,1647.7
+E01024426,Sevenoaks 014B,Sevenoaks,3,127,918.7
+E01032940,Tewkesbury 001H,Tewkesbury,5,127,1348.8
+E01014987,South Gloucestershire 001C,South Gloucestershire,4,126,1995.4
+E01014990,South Gloucestershire 002A,South Gloucestershire,4,126,1995.4
+E01019348,South Lakeland 010A,South Lakeland,4,126,740.8
+E01027067,East Northamptonshire 010B,East Northamptonshire,14,126,933.4
+E01028403,Rushcliffe 001B,Rushcliffe,7,126,867.7
+E01015846,Southend-on-Sea 011B,Southend-on-Sea,32,125,201.7
+E01022193,Cotswold 008C,Cotswold,1,125,2067.0
+E01022873,Hart 008D,Hart,5,125,1657.8
+E01024981,Fylde 008A,Fylde,8,125,457.7
+E01025906,Melton 002E,Melton,16,125,507.8
+E01026233,North Kesteven 011C,North Kesteven,7,125,921.3
+E01008311,Newcastle upon Tyne 001E,Newcastle upon Tyne,19,124,417.2
+E01016816,Milton Keynes 015D,Milton Keynes,7,124,1470.0
+E01022645,Eastleigh 008A,Eastleigh,10,124,1283.1
+E01022744,Fareham 014A,Fareham,18,124,330.7
+E01027068,East Northamptonshire 010C,East Northamptonshire,13,124,932.9
+E01031201,Stratford-on-Avon 005E,Stratford-on-Avon,5,124,1281.8
+E01010166,Solihull 025A,Solihull,5,123,1469.3
+E01015452,Poole 017A,"Bournemouth, Christchurch and Poole",21,123,297.9
+E01017757,Chiltern 011D,Chiltern,2,123,2059.8
+E01022684,Eastleigh 008D,Eastleigh,8,123,1284.6
+E01028379,Rushcliffe 012A,Rushcliffe,9,123,986.0
+E01031476,Chichester 009B,Chichester,8,123,1493.9
+E01033426,East Cambridgeshire 003F,East Cambridgeshire,14,123,632.8
+E01022646,Eastleigh 005C,Eastleigh,7,122,1282.9
+E01023073,New Forest 003A,New Forest,8,122,1098.5
+E01031232,Stratford-on-Avon 011A,Stratford-on-Avon,12,122,587.2
+E01031235,Stratford-on-Avon 011D,Stratford-on-Avon,12,122,587.2
+E01008309,Newcastle upon Tyne 002A,Newcastle upon Tyne,25,121,388.7
+E01013809,Rutland 002D,Rutland,6,121,1164.7
+E01015850,Southend-on-Sea 011F,Southend-on-Sea,33,121,176.5
+E01018414,Cheshire East 023B,Cheshire East,4,121,766.5
+E01021736,Colchester 017A,Colchester,17,121,172.9
+E01028764,West Oxfordshire 015A,West Oxfordshire,3,121,1514.8
+E01033550,Newcastle upon Tyne 002F,Newcastle upon Tyne,25,121,388.7
+E01010195,Solihull 016A,Solihull,14,120,203.7
+E01013806,Rutland 005D,Rutland,6,120,391.3
+E01016781,Milton Keynes 019C,Milton Keynes,5,120,1411.5
+E01022339,Gloucester 014A,Gloucester,11,120,696.8
+E01033551,Newcastle upon Tyne 002G,Newcastle upon Tyne,24,120,388.6
+E01018411,Cheshire East 022B,Cheshire East,4,119,1053.1
+E01025814,Harborough 011C,Harborough,6,119,645.5
+E01028357,Rushcliffe 002A,Rushcliffe,7,119,905.3
+E01028359,Rushcliffe 002C,Rushcliffe,7,119,905.3
+E01029523,Lichfield 011E,Lichfield,18,119,388.1
+E01030868,Waverley 015C,Waverley,6,119,1195.9
+E01030941,Waverley 012C,Waverley,6,119,1195.9
+E01031934,Wiltshire 001B,Wiltshire,3,119,1340.6
+E01010191,Solihull 022A,Solihull,12,118,178.8
+E01018116,Huntingdonshire 010D,Huntingdonshire,6,118,975.1
+E01021078,Lewes 012E,Lewes,7,118,297.1
+E01022433,Tewkesbury 005B,Tewkesbury,6,118,853.1
+E01022438,Tewkesbury 005F,Tewkesbury,7,118,853.1
+E01022439,Tewkesbury 005G,Tewkesbury,7,118,853.1
+E01030926,Waverley 017A,Waverley,5,118,779.6
+E01030930,Waverley 016A,Waverley,5,118,779.6
+E01030931,Waverley 016B,Waverley,5,118,779.6
+E01006985,Sefton 013A,Sefton,4,117,965.3
+E01007079,Sefton 014B,Sefton,4,117,965.3
+E01018118,Huntingdonshire 010F,Huntingdonshire,6,117,987.6
+E01021202,Wealden 005A,Wealden,8,117,518.3
+E01022366,Stroud 008A,Stroud,6,117,760.7
+E01028361,Rushcliffe 002E,Rushcliffe,5,117,900.4
+E01028381,Rushcliffe 013B,Rushcliffe,7,117,939.6
+E01028382,Rushcliffe 013C,Rushcliffe,7,117,939.6
+E01028383,Rushcliffe 013D,Rushcliffe,7,117,939.6
+E01029839,Tamworth 005D,Tamworth,14,117,230.0
+E01031675,Horsham 005D,Horsham,3,117,1532.1
+E01014168,Telford and Wrekin 004C,Telford and Wrekin,7,116,174.8
+E01014181,Telford and Wrekin 015A,Telford and Wrekin,7,116,174.8
+E01014182,Telford and Wrekin 015B,Telford and Wrekin,7,116,174.8
+E01014761,North Somerset 010C,North Somerset,7,116,1346.8
+E01020406,East Dorset 004D,Dorset,14,116,712.0
+E01022367,Stroud 008B,Stroud,5,116,759.5
+E01027046,East Northamptonshire 002C,East Northamptonshire,14,116,423.6
+E01031298,Warwick 002C,Warwick,6,116,1100.0
+E01031307,Warwick 003E,Warwick,6,116,1100.0
+E01010194,Solihull 024C,Solihull,13,115,1025.9
+E01013108,East Riding of Yorkshire 028A,East Riding of Yorkshire,4,115,346.5
+E01013804,Rutland 004D,Rutland,9,115,1072.9
+E01017675,Aylesbury Vale 022A,Aylesbury Vale,5,115,1691.2
+E01017677,Aylesbury Vale 022C,Aylesbury Vale,5,115,1691.2
+E01021026,Lewes 002B,Lewes,4,115,1257.7
+E01031619,Horsham 007A,Horsham,5,115,1010.3
+E01027899,Selby 009D,Selby,8,114,282.0
+E01031259,Warwick 014A,Warwick,9,114,421.6
+E01031317,Warwick 012C,Warwick,9,114,421.6
+E01031318,Warwick 012D,Warwick,9,114,421.6
+E01031383,Arun 018D,Arun,10,114,607.2
+E01006990,Sefton 013E,Sefton,2,113,959.3
+E01006991,Sefton 015A,Sefton,2,113,959.3
+E01008546,North Tyneside 003C,North Tyneside,21,113,334.1
+E01008549,North Tyneside 001C,North Tyneside,21,113,334.1
+E01020395,East Dorset 011A,Dorset,16,113,411.7
+E01022360,Stroud 011B,Stroud,5,113,1076.4
+E01022406,Stroud 009D,Stroud,14,113,966.7
+E01023220,Winchester 012A,Winchester,4,113,1086.3
+E01023222,Winchester 012C,Winchester,4,113,1086.3
+E01017146,Southampton 001C,Southampton,19,112,549.2
+E01027295,South Northamptonshire 007B,South Northamptonshire,5,112,937.1
+E01032549,Redcar and Cleveland 019F,Redcar and Cleveland,8,112,455.1
+E01033135,Wandsworth 010G,Wandsworth,33,112,270.4
+E01022143,Cheltenham 002A,Cheltenham,8,111,906.0
+E01031684,Horsham 016C,Horsham,7,111,723.9
+E01014102,Telford and Wrekin 007A,Telford and Wrekin,11,110,278.2
+E01031225,Stratford-on-Avon 010A,Stratford-on-Avon,10,110,531.5
+E01033252,Stratford-on-Avon 010F,Stratford-on-Avon,10,110,531.5
+E01015533,Swindon 024A,Swindon,4,109,1258.0
+E01027077,East Northamptonshire 003E,East Northamptonshire,11,108,1017.2
+E01013352,York 020B,York,3,107,1234.0
+E01015455,Poole 017D,"Bournemouth, Christchurch and Poole",20,107,263.1
+E01015458,Poole 013A,"Bournemouth, Christchurch and Poole",19,107,263.1
+E01021963,Rochford 008D,Rochford,21,107,618.2
+E01022119,Cheltenham 009C,Cheltenham,8,107,890.4
+E01022203,Cotswold 009B,Cotswold,2,107,2234.8
+E01027048,East Northamptonshire 002E,East Northamptonshire,13,107,413.7
+E01027049,East Northamptonshire 002F,East Northamptonshire,13,107,413.7
+E01030948,Woking 001C,Woking,6,106,1292.8
+E01004594,Wandsworth 020D,Wandsworth,30,105,249.7
+E01004690,Westminster 019D,Westminster,28,105,192.2
+E01017647,Aylesbury Vale 002D,Aylesbury Vale,9,105,1035.2
+E01017648,Aylesbury Vale 001A,Aylesbury Vale,9,105,1035.2
+E01021738,Colchester 017C,Colchester,18,105,162.9
+E01021739,Colchester 017D,Colchester,18,105,162.9
+E01024056,Canterbury 005A,Canterbury,9,105,440.2
+E01024115,Canterbury 005E,Canterbury,9,105,440.2
+E01024523,Shepway 008A,Folkestone and Hythe,4,105,556.8
+E01017651,Aylesbury Vale 009A,Aylesbury Vale,7,104,728.4
+E01017701,Aylesbury Vale 009E,Aylesbury Vale,7,104,728.4
+E01022849,Hart 009A,Hart,4,104,1357.5
+E01022850,Hart 009B,Hart,4,104,1357.5
+E01022851,Hart 009C,Hart,4,104,1357.5
+E01022853,Hart 009D,Hart,4,104,1357.5
+E01022854,Hart 010B,Hart,4,104,1357.5
+E01022861,Hart 007A,Hart,4,104,1357.5
+E01022863,Hart 007B,Hart,4,104,1357.5
+E01022865,Hart 007C,Hart,4,104,1357.5
+E01022872,Hart 008C,Hart,4,104,1357.5
+E01028831,Shropshire 031B,Shropshire,8,104,252.4
+E01012921,East Riding of Yorkshire 020B,East Riding of Yorkshire,7,103,503.2
+E01020366,Christchurch 002E,"Bournemouth, Christchurch and Poole",17,103,275.4
+E01028609,South Oxfordshire 007D,South Oxfordshire,3,102,1504.0
+E01028670,South Oxfordshire 003A,South Oxfordshire,6,102,1200.8
+E01015295,Bournemouth 020A,"Bournemouth, Christchurch and Poole",16,101,249.8
+E01020362,Christchurch 007D,"Bournemouth, Christchurch and Poole",16,101,249.8
+E01021653,Colchester 013C,Colchester,13,101,138.2
+E01024114,Canterbury 005D,Canterbury,8,101,435.9
+E01024116,Canterbury 007E,Canterbury,8,101,435.9
+E01025472,West Lancashire 012A,West Lancashire,5,101,355.8
+E01014759,North Somerset 005D,North Somerset,7,100,276.5
+E01020470,Purbeck 001C,Dorset,9,100,754.7
+E01023000,New Forest 015D,New Forest,3,100,1019.0
+E01030831,Tandridge 006A,Tandridge,3,100,666.3
+E01030837,Tandridge 006D,Tandridge,3,100,666.3
+E01030839,Tandridge 006F,Tandridge,3,100,666.3
+E01030841,Tandridge 007B,Tandridge,3,100,666.3
+E01030891,Waverley 002A,Waverley,5,100,1171.0
+E01030899,Waverley 002C,Waverley,5,100,1171.0
+E01031003,Woking 002D,Woking,5,100,1248.1
+E01010150,Solihull 028A,Solihull,10,99,989.9
+E01010152,Solihull 026B,Solihull,10,99,989.9
+E01010156,Solihull 026F,Solihull,10,99,989.9
+E01019762,High Peak 012D,High Peak,4,99,709.9
+E01028719,Vale of White Horse 009D,Vale of White Horse,2,99,213.2
+E01031972,Wiltshire 060C,Wiltshire,3,99,1618.0
+E01013798,Rutland 003A,Rutland,7,98,707.3
+E01014174,Telford and Wrekin 001D,Telford and Wrekin,7,98,424.5
+E01015315,Bournemouth 011B,"Bournemouth, Christchurch and Poole",17,98,243.4
+E01025476,West Lancashire 012D,West Lancashire,4,98,355.1
+E01025478,West Lancashire 012F,West Lancashire,4,98,355.1
+E01025501,West Lancashire 006B,West Lancashire,4,98,355.1
+E01025502,West Lancashire 006C,West Lancashire,4,98,355.1
+E01010153,Solihull 026C,Solihull,9,97,983.6
+E01010207,Solihull 024D,Solihull,12,97,785.4
+E01015014,South Gloucestershire 006A,South Gloucestershire,3,97,1270.5
+E01015016,South Gloucestershire 006C,South Gloucestershire,3,97,1270.5
+E01022370,Stroud 009A,Stroud,4,97,937.8
+E01027001,Daventry 002B,Daventry,8,97,810.0
+E01031864,Wiltshire 019D,Wiltshire,3,97,1557.5
+E01031970,Wiltshire 060A,Wiltshire,7,97,993.1
+E01003465,Merton 002D,Merton,24,96,222.4
+E01010212,Solihull 027A,Solihull,11,96,783.6
+E01021243,Basildon 003D,Basildon,12,96,497.9
+E01023440,East Hertfordshire 005C,East Hertfordshire,6,96,952.5
+E01026882,South Norfolk 002B,South Norfolk,11,96,107.6
+E01028669,South Oxfordshire 001D,South Oxfordshire,6,96,1376.8
+E01022167,Cheltenham 013A,Cheltenham,8,95,900.2
+E01022168,Cheltenham 013B,Cheltenham,7,95,900.2
+E01022389,Stroud 004F,Stroud,13,95,950.0
+E01022427,Tewkesbury 007C,Tewkesbury,7,95,1026.0
+E01022430,Tewkesbury 007F,Tewkesbury,6,95,1026.0
+E01027075,East Northamptonshire 003C,East Northamptonshire,10,95,953.0
+E01028705,Vale of White Horse 004D,Vale of White Horse,4,95,1086.5
+E01028707,Vale of White Horse 004F,Vale of White Horse,4,95,1086.5
+E01032626,Waverley 018F,Waverley,4,95,662.2
+E01003442,Merton 010A,Merton,18,94,266.2
+E01003444,Merton 010C,Merton,17,94,265.9
+E01013797,Rutland 004C,Rutland,5,94,216.5
+E01015342,Bournemouth 010C,"Bournemouth, Christchurch and Poole",16,94,196.2
+E01029710,Stafford 008B,Stafford,6,94,251.0
+E01017751,Chiltern 012A,Chiltern,2,93,1613.3
+E01017819,South Bucks 002B,South Bucks,2,93,1613.3
+E01017820,South Bucks 002C,South Bucks,2,93,1613.3
+E01017822,South Bucks 002E,South Bucks,2,93,1613.3
+E01018413,Cheshire East 023A,Cheshire East,3,93,698.5
+E01018416,Cheshire East 023D,Cheshire East,3,93,698.5
+E01021237,Basildon 001A,Basildon,10,93,488.6
+E01021244,Basildon 004A,Basildon,12,93,463.9
+E01021246,Basildon 002B,Basildon,12,93,463.9
+E01021253,Basildon 004B,Basildon,12,93,463.9
+E01025475,West Lancashire 012C,West Lancashire,5,93,424.7
+E01029572,Newcastle-under-Lyme 016D,Newcastle-under-Lyme,3,93,460.2
+E01003443,Merton 010B,Merton,16,92,264.0
+E01016776,Milton Keynes 015A,Milton Keynes,3,92,1273.0
+E01021239,Basildon 003A,Basildon,11,92,459.9
+E01021247,Basildon 003E,Basildon,11,92,459.9
+E01022857,Hart 010E,Hart,4,92,1102.0
+E01003466,Merton 020A,Merton,14,91,259.8
+E01015464,Poole 013F,"Bournemouth, Christchurch and Poole",15,91,218.0
+E01018155,Huntingdonshire 018D,Huntingdonshire,5,91,799.2
+E01013802,Rutland 003C,Rutland,6,89,637.4
+E01015459,Poole 017E,"Bournemouth, Christchurch and Poole",15,89,157.2
+E01016636,Wokingham 019B,Wokingham,5,89,888.2
+E01016638,Wokingham 019D,Wokingham,5,89,888.2
+E01016639,Wokingham 019E,Wokingham,5,89,888.2
+E01021248,Basildon 002C,Basildon,9,89,450.6
+E01021250,Basildon 001D,Basildon,9,89,450.6
+E01021252,Basildon 002E,Basildon,9,89,450.6
+E01028428,Cherwell 007C,Cherwell,5,89,821.9
+E01029477,Lichfield 002A,Lichfield,7,89,710.0
+E01032150,Bromsgrove 008B,Bromsgrove,6,89,114.1
+E01016640,Wokingham 019F,Wokingham,5,88,867.2
+E01018202,Huntingdonshire 016C,Huntingdonshire,11,88,253.8
+E01021345,Basildon 007E,Basildon,15,88,483.6
+E01027265,South Northamptonshire 009A,South Northamptonshire,6,88,574.3
+E01027266,South Northamptonshire 009B,South Northamptonshire,6,88,574.3
+E01028330,Newark and Sherwood 013A,Newark and Sherwood,5,88,433.4
+E01010214,Solihull 027B,Solihull,9,87,732.6
+E01010216,Solihull 027D,Solihull,9,87,732.6
+E01022172,Cheltenham 013F,Cheltenham,8,87,525.7
+E01032139,Bromsgrove 001B,Bromsgrove,14,87,71.5
+E01032151,Bromsgrove 008C,Bromsgrove,5,87,111.6
+E01000879,Camden 004B,Camden,16,86,134.2
+E01002137,Harrow 029D,Harrow,18,86,176.6
+E01015547,Swindon 008C,Swindon,3,86,970.3
+E01028810,West Oxfordshire 008A,West Oxfordshire,2,86,1503.2
+E01028815,West Oxfordshire 008F,West Oxfordshire,2,86,1503.2
+E01028816,West Oxfordshire 010C,West Oxfordshire,2,86,1503.2
+E01032948,West Oxfordshire 008H,West Oxfordshire,2,86,1503.2
+E01003380,Merton 011A,Merton,17,85,140.2
+E01010190,Solihull 024A,Solihull,12,85,700.9
+E01014742,North Somerset 024B,North Somerset,6,85,1109.1
+E01021242,Basildon 001C,Basildon,11,85,436.1
+E01004688,Westminster 019B,Westminster,32,84,257.9
+E01013452,York 020D,York,5,84,974.0
+E01014039,Herefordshire 019E,"Herefordshire, County of",3,83,196.1
+E01022989,New Forest 015A,New Forest,3,83,1029.6
+E01029459,East Staffordshire 003A,East Staffordshire,6,83,522.9
+E01030303,Elmbridge 018A,Elmbridge,5,83,1110.4
+E01030342,Elmbridge 018B,Elmbridge,5,83,1110.4
+E01030344,Elmbridge 018D,Elmbridge,5,83,1110.4
+E01030345,Elmbridge 018E,Elmbridge,5,83,1110.4
+E01000893,Camden 002A,Camden,14,82,129.6
+E01000896,Camden 002D,Camden,14,82,129.6
+E01000897,Camden 008D,Camden,14,82,129.6
+E01004276,Tower Hamlets 031C,Tower Hamlets,18,82,126.0
+E01014183,Telford and Wrekin 015C,Telford and Wrekin,7,82,64.5
+E01015909,Southend-on-Sea 008B,Southend-on-Sea,27,82,184.5
+E01018284,South Cambridgeshire 003C,South Cambridgeshire,8,82,571.4
+E01018285,South Cambridgeshire 003D,South Cambridgeshire,8,82,571.4
+E01021249,Basildon 002D,Basildon,10,82,419.6
+E01021673,Colchester 009A,Colchester,11,82,120.3
+E01022118,Cheltenham 014D,Cheltenham,7,82,500.1
+E01022128,Cheltenham 015A,Cheltenham,7,82,500.1
+E01022130,Cheltenham 015C,Cheltenham,7,82,500.1
+E01022138,Cheltenham 011D,Cheltenham,7,82,500.1
+E01022663,Eastleigh 003C,Eastleigh,13,82,586.8
+E01022878,Hart 004B,Hart,5,82,921.5
+E01023214,Test Valley 014E,Test Valley,13,82,586.8
+E01027275,South Northamptonshire 002C,South Northamptonshire,11,82,368.4
+E01028801,West Oxfordshire 015C,West Oxfordshire,1,82,926.0
+E01032367,Wychavon 004D,Wychavon,7,82,471.5
+E01010186,Solihull 028D,Solihull,9,81,749.4
+E01014749,North Somerset 024F,North Somerset,5,81,1133.2
+E01016294,West Berkshire 020A,West Berkshire,2,81,1117.2
+E01022624,East Hampshire 011D,East Hampshire,6,81,791.7
+E01015908,Southend-on-Sea 008A,Southend-on-Sea,27,80,187.3
+E01021251,Basildon 001E,Basildon,8,80,435.9
+E01021351,Braintree 007B,Braintree,12,80,301.2
+E01023035,New Forest 018E,New Forest,7,80,623.6
+E01028388,Rushcliffe 015A,Rushcliffe,4,80,709.2
+E01028389,Rushcliffe 015B,Rushcliffe,4,80,709.2
+E01030986,Woking 012D,Woking,4,80,861.5
+E01010188,Solihull 028F,Solihull,8,79,743.1
+E01015912,Southend-on-Sea 008E,Southend-on-Sea,26,79,183.3
+E01020401,East Dorset 011D,Dorset,14,79,318.4
+E01020402,East Dorset 011E,Dorset,14,79,318.4
+E01022070,Uttlesford 009C,Uttlesford,5,79,948.8
+E01028681,South Oxfordshire 004C,South Oxfordshire,2,79,1128.8
+E01028684,South Oxfordshire 004E,South Oxfordshire,2,79,1128.8
+E01016643,Wokingham 019G,Wokingham,4,78,752.7
+E01019393,South Lakeland 014E,South Lakeland,8,78,677.9
+E01028739,Vale of White Horse 003B,Vale of White Horse,4,78,911.8
+E01029507,Lichfield 003B,Lichfield,10,78,254.7
+E01029520,Lichfield 005E,Lichfield,15,78,360.8
+E01030349,Elmbridge 016D,Elmbridge,5,78,978.0
+E01010187,Solihull 028E,Solihull,8,77,712.8
+E01017560,Central Bedfordshire 018C,Central Bedfordshire,6,77,673.6
+E01022897,Hart 002D,Hart,4,77,949.0
+E01022898,Hart 002E,Hart,4,77,1008.8
+E01030314,Elmbridge 010B,Elmbridge,4,77,977.4
+E01030316,Elmbridge 014D,Elmbridge,4,77,977.4
+E01030616,Reigate and Banstead 010B,Reigate and Banstead,5,77,741.0
+E01032361,Wychavon 003C,Wychavon,6,77,426.8
+E01032363,Wychavon 005B,Wychavon,6,77,426.8
+E01032393,Wychavon 008B,Wychavon,4,77,610.0
+E01000882,Camden 008B,Camden,14,76,119.6
+E01012927,East Riding of Yorkshire 013D,East Riding of Yorkshire,10,76,400.5
+E01017397,Central Bedfordshire 007F,Central Bedfordshire,2,76,913.7
+E01017553,Bedford 020C,Bedford,3,76,913.7
+E01017682,Aylesbury Vale 023B,Aylesbury Vale,4,76,1045.8
+E01021364,Braintree 010A,Braintree,11,76,236.1
+E01021366,Braintree 010B,Braintree,11,76,236.1
+E01021384,Braintree 013C,Braintree,11,76,236.1
+E01021386,Braintree 013E,Braintree,10,76,236.1
+E01030525,Mole Valley 008B,Mole Valley,7,76,662.5
+E01030533,Mole Valley 009B,Mole Valley,7,76,662.5
+E01030695,Runnymede 010F,Runnymede,4,76,979.9
+E01030998,Woking 002B,Woking,4,76,979.9
+E01031002,Woking 002C,Woking,4,76,979.9
+E01010185,Solihull 028C,Solihull,7,75,706.5
+E01016761,Milton Keynes 002C,Milton Keynes,6,75,1022.6
+E01017737,Aylesbury Vale 005C,Aylesbury Vale,4,75,826.6
+E01027270,South Northamptonshire 009C,South Northamptonshire,6,75,663.5
+E01012925,East Riding of Yorkshire 013C,East Riding of Yorkshire,9,74,386.8
+E01013116,East Riding of Yorkshire 028D,East Riding of Yorkshire,4,74,256.8
+E01013117,East Riding of Yorkshire 027E,East Riding of Yorkshire,4,74,256.8
+E01016267,West Berkshire 015A,West Berkshire,2,74,1344.2
+E01016270,West Berkshire 015D,West Berkshire,2,74,1344.2
+E01013171,North East Lincolnshire 022C,North East Lincolnshire,7,73,400.0
+E01015910,Southend-on-Sea 008C,Southend-on-Sea,27,73,185.8
+E01018149,Huntingdonshire 012C,Huntingdonshire,7,73,404.3
+E01022662,Eastleigh 003B,Eastleigh,13,73,528.4
+E01027268,South Northamptonshire 010C,South Northamptonshire,5,73,451.8
+E01027272,South Northamptonshire 009E,South Northamptonshire,5,73,451.8
+E01028622,South Oxfordshire 010B,South Oxfordshire,2,73,978.0
+E01028624,South Oxfordshire 010D,South Oxfordshire,2,73,978.0
+E01028668,South Oxfordshire 001C,South Oxfordshire,5,73,1055.2
+E01031214,Stratford-on-Avon 015C,Stratford-on-Avon,2,73,871.7
+E01032895,Rugby 007H,Rugby,10,73,350.2
+E01023133,Rushmoor 005D,Rushmoor,7,72,821.2
+E01023276,Winchester 011C,Winchester,3,72,732.5
+E01025790,Harborough 010A,Harborough,3,72,461.1
+E01028845,Shropshire 027D,Shropshire,6,72,223.1
+E01029511,Lichfield 007B,Lichfield,13,72,292.2
+E01030338,Elmbridge 011A,Elmbridge,4,72,933.4
+E01030339,Elmbridge 011B,Elmbridge,4,72,933.4
+E01030341,Elmbridge 011D,Elmbridge,4,72,933.4
+E01030671,Runnymede 002A,Runnymede,3,72,889.8
+E01030672,Runnymede 002B,Runnymede,3,72,889.8
+E01033254,Warwick 011G,Warwick,4,72,343.2
+E01013215,North East Lincolnshire 023C,North East Lincolnshire,5,71,391.9
+E01023173,Test Valley 015D,Test Valley,8,71,611.0
+E01030366,Elmbridge 010C,Elmbridge,3,71,932.8
+E01030367,Elmbridge 010D,Elmbridge,3,71,932.8
+E01032140,Bromsgrove 001C,Bromsgrove,11,71,64.1
+E01032893,Rugby 007F,Rugby,9,71,335.5
+E01000120,Barnet 009D,Barnet,8,70,177.5
+E01000272,Barnet 008B,Barnet,10,70,177.5
+E01020420,East Dorset 002E,Dorset,5,70,577.2
+E01021958,Rochford 006D,Rochford,19,70,453.5
+E01022103,Cheltenham 012A,Cheltenham,5,70,482.3
+E01022146,Cheltenham 002D,Cheltenham,5,70,482.3
+E01022895,Hart 002B,Hart,3,70,939.5
+E01023045,New Forest 007C,New Forest,3,70,653.1
+E01026203,North Kesteven 001D,North Kesteven,9,70,762.3
+E01013113,East Riding of Yorkshire 028B,East Riding of Yorkshire,4,69,193.0
+E01021450,Brentwood 003C,Brentwood,7,69,377.6
+E01021452,Brentwood 003E,Brentwood,7,69,377.6
+E01028328,Newark and Sherwood 005D,Newark and Sherwood,9,69,317.7
+E01014190,Telford and Wrekin 006F,Telford and Wrekin,7,68,233.0
+E01014818,North Somerset 017E,North Somerset,4,68,1200.8
+E01015911,Southend-on-Sea 008D,Southend-on-Sea,25,68,180.3
+E01021458,Brentwood 002B,Brentwood,6,68,373.6
+E01021459,Brentwood 002C,Brentwood,7,68,373.6
+E01027027,Daventry 004E,Daventry,5,68,268.8
+E01012071,Middlesbrough 020D,Middlesbrough,12,67,293.6
+E01014822,North Somerset 015B,North Somerset,2,67,1200.6
+E01014823,North Somerset 015C,North Somerset,2,67,1200.6
+E01020417,East Dorset 002B,Dorset,5,67,278.6
+E01024632,Swale 012E,Swale,9,67,181.8
+E01028763,West Oxfordshire 003A,West Oxfordshire,1,67,1091.2
+E01030963,Woking 003A,Woking,3,67,841.2
+E01030990,Woking 006C,Woking,3,67,841.2
+E01032362,Wychavon 005A,Wychavon,5,67,391.2
+E01032364,Wychavon 005C,Wychavon,5,67,391.2
+E01032853,Hart 005F,Hart,4,67,834.5
+E01032854,Hart 005G,Hart,4,67,834.5
+E01033319,Mid Suffolk 010H,Mid Suffolk,10,67,258.3
+E01013152,North East Lincolnshire 017C,North East Lincolnshire,6,66,221.9
+E01022470,Basingstoke and Deane 008A,Basingstoke and Deane,3,66,802.0
+E01022496,Basingstoke and Deane 006B,Basingstoke and Deane,3,66,802.0
+E01022497,Basingstoke and Deane 006C,Basingstoke and Deane,3,66,802.0
+E01022498,Basingstoke and Deane 006D,Basingstoke and Deane,3,66,802.0
+E01023626,North Hertfordshire 015C,North Hertfordshire,5,66,426.4
+E01023657,North Hertfordshire 002D,North Hertfordshire,3,66,95.5
+E01024781,Tonbridge and Malling 007D,Tonbridge and Malling,4,66,497.8
+E01029439,East Staffordshire 015A,East Staffordshire,5,66,576.7
+E01029442,East Staffordshire 015D,East Staffordshire,5,66,576.7
+E01029483,Lichfield 005A,Lichfield,14,66,279.9
+E01029485,Lichfield 005C,Lichfield,14,66,279.9
+E01031531,Chichester 007C,Chichester,9,66,610.6
+E01031592,Crawley 008D,Crawley,3,66,561.8
+E01013111,East Riding of Yorkshire 027C,East Riding of Yorkshire,3,65,189.2
+E01013112,East Riding of Yorkshire 025D,East Riding of Yorkshire,3,65,189.2
+E01016767,Milton Keynes 005D,Milton Keynes,6,65,384.6
+E01016792,Milton Keynes 004B,Milton Keynes,6,65,384.6
+E01017885,Wycombe 002A,Wycombe,2,65,710.3
+E01017930,Wycombe 001B,Wycombe,2,65,710.3
+E01021517,Castle Point 005A,Castle Point,25,65,181.3
+E01021961,Rochford 005E,Rochford,17,65,420.2
+E01022852,Hart 010A,Hart,3,65,832.8
+E01022856,Hart 010D,Hart,3,65,832.8
+E01023101,Rushmoor 003B,Rushmoor,6,65,811.8
+E01024631,Swale 013E,Swale,8,65,173.8
+E01028615,South Oxfordshire 005D,South Oxfordshire,3,65,710.3
+E01030050,Mid Suffolk 004C,Mid Suffolk,3,65,554.6
+E01032983,South Northamptonshire 003G,South Northamptonshire,11,65,265.6
+E01000645,Bromley 007A,Bromley,2,64,181.8
+E01000697,Bromley 007F,Bromley,2,64,181.8
+E01000809,Bromley 022D,Bromley,2,64,181.8
+E01000810,Bromley 025B,Bromley,2,64,181.8
+E01000811,Bromley 025C,Bromley,2,64,181.8
+E01000815,Bromley 025E,Bromley,2,64,181.8
+E01016796,Milton Keynes 001A,Milton Keynes,5,64,252.8
+E01018167,Huntingdonshire 013B,Huntingdonshire,8,64,245.7
+E01022075,Uttlesford 001B,Uttlesford,6,64,35.5
+E01026204,North Kesteven 001E,North Kesteven,8,64,753.8
+E01026206,North Kesteven 001F,North Kesteven,7,64,753.8
+E01026320,South Kesteven 004A,South Kesteven,5,64,285.2
+E01026324,South Kesteven 004E,South Kesteven,5,64,285.2
+E01026352,South Kesteven 003E,South Kesteven,5,64,285.2
+E01027914,Selby 004B,Selby,7,64,254.2
+E01009431,Birmingham 003E,Birmingham,7,63,253.3
+E01016184,Bracknell Forest 002A,Bracknell Forest,6,63,636.5
+E01016185,Bracknell Forest 002B,Bracknell Forest,6,63,636.5
+E01016188,Bracknell Forest 002E,Bracknell Forest,6,63,636.5
+E01017606,Central Bedfordshire 020D,Central Bedfordshire,5,63,353.3
+E01017610,Central Bedfordshire 022D,Central Bedfordshire,5,63,353.3
+E01017611,Central Bedfordshire 023A,Central Bedfordshire,5,63,353.3
+E01020370,Christchurch 004B,"Bournemouth, Christchurch and Poole",11,63,202.1
+E01020413,East Dorset 003C,Dorset,4,63,540.4
+E01022896,Hart 002C,Hart,5,63,718.0
+E01022928,Havant 013E,Havant,9,63,591.6
+E01030508,Mole Valley 001B,Mole Valley,5,63,845.2
+E01016625,Wokingham 016A,Wokingham,4,62,563.5
+E01016628,Wokingham 010B,Wokingham,4,62,563.5
+E01016632,Wokingham 016C,Wokingham,4,62,563.5
+E01016633,Wokingham 019A,Wokingham,4,62,563.5
+E01016671,Wokingham 013B,Wokingham,5,62,563.5
+E01016699,Wokingham 016E,Wokingham,4,62,563.5
+E01022113,Cheltenham 014A,Cheltenham,6,62,253.7
+E01022114,Cheltenham 014B,Cheltenham,6,62,253.7
+E01022171,Cheltenham 013E,Cheltenham,8,62,483.1
+E01023003,New Forest 011A,New Forest,10,62,337.6
+E01023005,New Forest 011C,New Forest,10,62,337.6
+E01023092,Rushmoor 005A,Rushmoor,6,62,706.8
+E01023093,Rushmoor 005B,Rushmoor,6,62,706.8
+E01025813,Harborough 011B,Harborough,7,62,335.9
+E01030172,Suffolk Coastal 002B,East Suffolk,4,62,296.5
+E01015499,Swindon 018A,Swindon,4,61,603.8
+E01016637,Wokingham 019C,Wokingham,4,61,542.5
+E01016798,Milton Keynes 001C,Milton Keynes,4,61,252.5
+E01018121,Huntingdonshire 007A,Huntingdonshire,10,61,266.5
+E01018122,Huntingdonshire 007B,Huntingdonshire,10,61,266.5
+E01018130,Huntingdonshire 016B,Huntingdonshire,10,61,308.0
+E01021918,Rochford 005A,Rochford,16,61,418.0
+E01022425,Tewkesbury 007A,Tewkesbury,7,61,595.8
+E01022647,Eastleigh 005D,Eastleigh,11,61,585.8
+E01028540,Oxford 006F,Oxford,4,61,684.3
+E01028698,Vale of White Horse 006D,Vale of White Horse,3,61,752.6
+E01028734,Vale of White Horse 002B,Vale of White Horse,4,61,684.3
+E01031155,Rugby 008A,Rugby,7,61,453.7
+E01031179,Rugby 010D,Rugby,7,61,453.7
+E01032155,Bromsgrove 008E,Bromsgrove,5,61,123.6
+E01018134,Huntingdonshire 014D,Huntingdonshire,7,60,262.1
+E01028696,Vale of White Horse 006B,Vale of White Horse,2,60,751.2
+E01028714,Vale of White Horse 010A,Vale of White Horse,2,60,751.2
+E01030078,Mid Suffolk 010E,Mid Suffolk,9,60,215.1
+E01030517,Mole Valley 006B,Mole Valley,5,60,843.2
+E01000283,Barnet 012C,Barnet,12,59,155.6
+E01015471,Swindon 028A,Swindon,4,59,662.8
+E01015515,Swindon 004C,Swindon,3,59,662.8
+E01018141,Huntingdonshire 009C,Huntingdonshire,6,59,256.6
+E01018266,South Cambridgeshire 003B,South Cambridgeshire,6,59,490.4
+E01022395,Stroud 007C,Stroud,16,59,60.2
+E01030541,Mole Valley 005C,Mole Valley,4,59,842.2
+E01030542,Mole Valley 005D,Mole Valley,4,59,842.2
+E01030543,Mole Valley 005E,Mole Valley,4,59,842.2
+E01032700,Swindon 026B,Swindon,3,59,662.8
+E01022170,Cheltenham 013D,Cheltenham,7,58,462.5
+E01022426,Tewkesbury 007B,Tewkesbury,6,58,588.3
+E01022954,Havant 014B,Havant,12,58,409.0
+E01026303,South Kesteven 014A,South Kesteven,3,58,809.0
+E01026305,South Kesteven 014C,South Kesteven,3,58,809.0
+E01026307,South Kesteven 014E,South Kesteven,3,58,809.0
+E01018350,Cheshire West and Chester 030B,Cheshire West and Chester,2,57,322.3
+E01030183,Suffolk Coastal 009C,East Suffolk,4,57,33.8
+E01032956,Aylesbury Vale 016E,Aylesbury Vale,2,57,788.0
+E01032962,Aylesbury Vale 016G,Aylesbury Vale,2,57,788.0
+E01033055,Uttlesford 007E,Uttlesford,5,57,359.3
+E01009426,Birmingham 003C,Birmingham,6,56,245.8
+E01009429,Birmingham 003D,Birmingham,6,56,245.8
+E01010198,Solihull 019D,Solihull,12,56,369.7
+E01020355,Christchurch 007B,"Bournemouth, Christchurch and Poole",10,56,187.9
+E01020356,Christchurch 007C,"Bournemouth, Christchurch and Poole",10,56,187.9
+E01022877,Hart 003G,Hart,4,56,708.5
+E01022891,Hart 001B,Hart,4,56,708.5
+E01022892,Hart 001C,Hart,4,56,708.5
+E01022893,Hart 001D,Hart,3,56,708.5
+E01023501,East Hertfordshire 011C,East Hertfordshire,3,56,774.2
+E01023502,East Hertfordshire 011D,East Hertfordshire,3,56,774.2
+E01023503,East Hertfordshire 011E,East Hertfordshire,3,56,774.2
+E01023587,North Hertfordshire 004A,North Hertfordshire,6,56,504.0
+E01023591,North Hertfordshire 004E,North Hertfordshire,5,56,504.0
+E01023595,North Hertfordshire 015A,North Hertfordshire,3,56,336.8
+E01028455,Cherwell 013A,Cherwell,3,56,658.2
+E01028465,Cherwell 015C,Cherwell,3,56,658.2
+E01030475,Guildford 001D,Guildford,3,56,686.5
+E01030680,Runnymede 008D,Runnymede,3,56,898.6
+E01031621,Horsham 012A,Horsham,2,56,684.1
+E01031627,Horsham 012C,Horsham,2,56,684.1
+E01010388,Walsall 022E,Walsall,10,55,73.4
+E01022883,Hart 006C,Hart,4,55,484.0
+E01022884,Hart 006D,Hart,4,55,484.0
+E01023172,Test Valley 015C,Test Valley,10,55,398.3
+E01023441,East Hertfordshire 005D,East Hertfordshire,4,55,523.6
+E01023443,East Hertfordshire 007A,East Hertfordshire,4,55,523.6
+E01023444,East Hertfordshire 007B,East Hertfordshire,4,55,523.6
+E01023448,East Hertfordshire 007F,East Hertfordshire,4,55,523.6
+E01023449,East Hertfordshire 004A,East Hertfordshire,4,55,523.6
+E01023451,East Hertfordshire 004C,East Hertfordshire,4,55,523.6
+E01023452,East Hertfordshire 003A,East Hertfordshire,4,55,523.6
+E01023453,East Hertfordshire 003B,East Hertfordshire,4,55,523.6
+E01023454,East Hertfordshire 003C,East Hertfordshire,4,55,523.6
+E01023455,East Hertfordshire 003D,East Hertfordshire,4,55,523.6
+E01023457,East Hertfordshire 008B,East Hertfordshire,4,55,523.6
+E01023458,East Hertfordshire 008C,East Hertfordshire,4,55,523.6
+E01023460,East Hertfordshire 008E,East Hertfordshire,4,55,523.6
+E01024811,Tunbridge Wells 001B,Tunbridge Wells,5,55,346.5
+E01028777,West Oxfordshire 005A,West Oxfordshire,3,55,557.8
+E01029479,Lichfield 002C,Lichfield,13,55,219.1
+E01030468,Guildford 015C,Guildford,5,55,570.7
+E01030470,Guildford 012A,Guildford,5,55,570.7
+E01031966,Wiltshire 007G,Wiltshire,4,55,369.5
+E01022661,Eastleigh 003A,Eastleigh,11,54,517.4
+E01022675,Eastleigh 002C,Eastleigh,10,54,517.4
+E01023040,New Forest 009E,New Forest,10,54,326.0
+E01026294,South Kesteven 007C,South Kesteven,4,54,199.5
+E01030518,Mole Valley 006C,Mole Valley,4,54,798.5
+E01030522,Mole Valley 007C,Mole Valley,4,54,798.5
+E01030523,Mole Valley 007D,Mole Valley,4,54,798.5
+E01030999,Woking 010C,Woking,3,54,588.0
+E01031255,Warwick 001B,Warwick,4,54,273.9
+E01031256,Warwick 001C,Warwick,4,54,273.9
+E01000280,Barnet 007D,Barnet,11,53,145.6
+E01016187,Bracknell Forest 002D,Bracknell Forest,5,53,527.2
+E01016670,Wokingham 014A,Wokingham,5,53,527.2
+E01016672,Wokingham 014B,Wokingham,5,53,527.2
+E01018695,Cheshire West and Chester 015B,Cheshire West and Chester,6,53,144.8
+E01021609,Chelmsford 020E,Chelmsford,8,53,352.2
+E01023474,East Hertfordshire 014E,East Hertfordshire,2,53,527.8
+E01023482,East Hertfordshire 016A,East Hertfordshire,2,53,527.8
+E01023483,East Hertfordshire 016B,East Hertfordshire,2,53,527.8
+E01023489,East Hertfordshire 015C,East Hertfordshire,3,53,527.8
+E01030348,Elmbridge 016C,Elmbridge,3,53,694.9
+E01030374,Elmbridge 012D,Elmbridge,3,53,694.9
+E01030375,Elmbridge 012E,Elmbridge,3,53,694.9
+E01030376,Elmbridge 012F,Elmbridge,3,53,694.9
+E01030506,Mole Valley 001A,Mole Valley,3,53,793.8
+E01030507,Mole Valley 002B,Mole Valley,3,53,793.8
+E01030509,Mole Valley 001C,Mole Valley,3,53,793.8
+E01030510,Mole Valley 004A,Mole Valley,3,53,797.5
+E01030511,Mole Valley 002C,Mole Valley,3,53,797.5
+E01030512,Mole Valley 002D,Mole Valley,3,53,793.8
+E01030514,Mole Valley 001E,Mole Valley,3,53,793.8
+E01030540,Mole Valley 005B,Mole Valley,3,53,797.5
+E01032763,Wokingham 014E,Wokingham,5,53,527.2
+E01012926,East Riding of Yorkshire 014B,East Riding of Yorkshire,6,52,602.2
+E01016284,West Berkshire 007D,West Berkshire,3,52,608.5
+E01016329,West Berkshire 014A,West Berkshire,3,52,608.5
+E01016333,West Berkshire 017A,West Berkshire,3,52,608.5
+E01016335,West Berkshire 017B,West Berkshire,3,52,608.5
+E01016338,West Berkshire 017D,West Berkshire,3,52,608.5
+E01020374,East Dorset 001B,Dorset,2,52,242.7
+E01021466,Brentwood 005E,Brentwood,8,52,256.3
+E01021946,Rochford 009A,Rochford,18,52,101.8
+E01022704,Eastleigh 002E,Eastleigh,7,52,517.2
+E01022705,Eastleigh 001A,Eastleigh,7,52,517.2
+E01023020,New Forest 018C,New Forest,5,52,523.3
+E01023021,New Forest 001C,New Forest,2,52,242.7
+E01023024,New Forest 001F,New Forest,2,52,242.7
+E01028460,Cherwell 012B,Cherwell,3,52,595.0
+E01028461,Cherwell 012C,Cherwell,3,52,595.0
+E01028473,Cherwell 014F,Cherwell,3,52,595.0
+E01028706,Vale of White Horse 004E,Vale of White Horse,3,52,496.0
+E01029698,Stafford 005D,Stafford,3,52,621.7
+E01009421,Birmingham 004A,Birmingham,7,51,195.6
+E01016343,West Berkshire 014E,West Berkshire,2,51,602.2
+E01023231,Winchester 014B,Winchester,6,51,456.8
+E01023233,Winchester 014D,Winchester,7,51,456.8
+E01028594,Oxford 001A,Oxford,4,51,784.5
+E01028699,Vale of White Horse 005D,Vale of White Horse,2,51,490.0
+E01028735,Vale of White Horse 002C,Vale of White Horse,3,51,644.3
+E01030075,Mid Suffolk 009D,Mid Suffolk,8,51,222.4
+E01030195,Suffolk Coastal 005C,East Suffolk,5,51,131.5
+E01030203,Suffolk Coastal 008C,East Suffolk,5,51,131.5
+E01030284,Waveney 014C,East Suffolk,5,51,54.9
+E01031581,Crawley 008C,Crawley,3,51,300.0
+E01032554,Oxford 002F,Oxford,4,51,784.5
+E01015563,Swindon 011B,Swindon,2,50,609.2
+E01015564,Swindon 014B,Swindon,2,50,609.2
+E01027898,Selby 004A,Selby,5,50,238.8
+E01028779,West Oxfordshire 005C,West Oxfordshire,3,50,552.2
+E01031134,Rugby 011A,Rugby,8,50,358.8
+E01031135,Rugby 011B,Rugby,8,50,358.8
+E01031175,Rugby 011D,Rugby,8,50,358.8
+E01031305,Warwick 003C,Warwick,4,50,253.4
+E01031578,Crawley 008A,Crawley,3,50,483.4
+E01031962,Wiltshire 003D,Wiltshire,2,50,609.2
+E01000249,Barnet 001B,Barnet,7,49,140.1
+E01003857,Richmond upon Thames 003F,Richmond upon Thames,23,49,339.1
+E01010387,Walsall 028C,Walsall,10,49,66.9
+E01012958,East Riding of Yorkshire 022C,East Riding of Yorkshire,5,49,127.2
+E01013796,Rutland 001D,Rutland,4,49,186.7
+E01021447,Brentwood 005A,Brentwood,6,49,248.8
+E01021455,Brentwood 005C,Brentwood,6,49,248.8
+E01021465,Brentwood 005D,Brentwood,6,49,248.8
+E01021467,Brentwood 005F,Brentwood,6,49,248.8
+E01021919,Rochford 005B,Rochford,12,49,362.0
+E01022521,Basingstoke and Deane 004D,Basingstoke and Deane,1,49,852.0
+E01023228,Winchester 010C,Winchester,5,49,539.8
+E01023959,Welwyn Hatfield 003A,Welwyn Hatfield,3,49,298.8
+E01026300,South Kesteven 010B,South Kesteven,3,49,301.6
+E01026302,South Kesteven 010D,South Kesteven,3,49,301.6
+E01031157,Rugby 008C,Rugby,8,49,358.0
+E01016259,West Berkshire 006A,West Berkshire,2,48,925.8
+E01016260,West Berkshire 006B,West Berkshire,2,48,925.8
+E01016262,West Berkshire 006C,West Berkshire,2,48,925.8
+E01016546,Windsor and Maidenhead 015A,Windsor and Maidenhead,2,48,578.9
+E01016548,Windsor and Maidenhead 014A,Windsor and Maidenhead,2,48,578.9
+E01016550,Windsor and Maidenhead 012C,Windsor and Maidenhead,2,48,578.9
+E01016552,Windsor and Maidenhead 012D,Windsor and Maidenhead,3,48,578.9
+E01016596,Windsor and Maidenhead 015C,Windsor and Maidenhead,2,48,578.9
+E01017760,Chiltern 010B,Chiltern,2,48,621.5
+E01021965,Rochford 009E,Rochford,19,48,148.5
+E01023815,Three Rivers 005A,Three Rivers,2,48,621.5
+E01023816,Three Rivers 005B,Three Rivers,2,48,621.5
+E01023817,Three Rivers 005C,Three Rivers,2,48,621.5
+E01023818,Three Rivers 005D,Three Rivers,2,48,621.5
+E01024107,Canterbury 009C,Canterbury,6,48,56.6
+E01027271,South Northamptonshire 009D,South Northamptonshire,4,48,418.0
+E01030996,Woking 002A,Woking,3,48,553.9
+E01004707,Westminster 006C,Westminster,6,47,77.0
+E01007600,Doncaster 026B,Doncaster,5,47,209.6
+E01020415,East Dorset 003E,Dorset,4,47,202.3
+E01020418,East Dorset 002C,Dorset,4,47,202.3
+E01021615,Chelmsford 019E,Chelmsford,8,47,347.2
+E01022094,Uttlesford 001D,Uttlesford,5,47,25.5
+E01028573,Oxford 007D,Oxford,3,47,600.6
+E01030357,Elmbridge 007A,Elmbridge,2,47,664.5
+E01030425,Guildford 014D,Guildford,4,47,418.5
+E01030476,Guildford 001E,Guildford,2,47,553.2
+E01031338,Adur 002A,Adur,5,47,112.0
+E01031340,Adur 002C,Adur,5,47,112.0
+E01031367,Adur 002E,Adur,5,47,112.0
+E01010386,Walsall 028B,Walsall,8,46,66.6
+E01016612,Wokingham 015A,Wokingham,3,46,403.7
+E01016627,Wokingham 010A,Wokingham,3,46,403.7
+E01016629,Wokingham 015B,Wokingham,3,46,403.7
+E01016630,Wokingham 015C,Wokingham,3,46,403.7
+E01016635,Wokingham 015D,Wokingham,3,46,403.7
+E01016700,Wokingham 010D,Wokingham,3,46,403.7
+E01016701,Wokingham 009B,Wokingham,3,46,403.7
+E01017409,Central Bedfordshire 017C,Central Bedfordshire,6,46,229.8
+E01017442,Central Bedfordshire 013D,Central Bedfordshire,6,46,264.5
+E01022860,Hart 005A,Hart,3,46,534.2
+E01022867,Hart 005D,Hart,3,46,534.2
+E01022868,Hart 007D,Hart,3,46,534.2
+E01022869,Hart 009E,Hart,3,46,534.2
+E01022870,Hart 007E,Hart,3,46,534.2
+E01023193,Test Valley 012D,Test Valley,10,46,375.2
+E01023194,Test Valley 012E,Test Valley,10,46,375.2
+E01023476,East Hertfordshire 017B,East Hertfordshire,1,46,518.0
+E01030292,Waveney 011C,East Suffolk,4,46,110.7
+E01032857,Hart 005H,Hart,3,46,534.2
+E01009698,Coventry 025B,Coventry,11,45,266.7
+E01009704,Coventry 023C,Coventry,11,45,266.7
+E01009705,Coventry 023D,Coventry,11,45,266.7
+E01021935,Rochford 003C,Rochford,15,45,122.9
+E01022105,Cheltenham 012C,Cheltenham,4,45,92.1
+E01022109,Cheltenham 012D,Cheltenham,4,45,92.1
+E01022111,Cheltenham 012F,Cheltenham,5,45,92.1
+E01022112,Cheltenham 012G,Cheltenham,4,45,92.1
+E01022972,Havant 004C,Havant,8,45,355.1
+E01022974,Havant 004D,Havant,8,45,355.1
+E01030486,Guildford 009A,Guildford,4,45,427.7
+E01030487,Guildford 006B,Guildford,4,45,427.7
+E01030489,Guildford 006D,Guildford,4,45,427.7
+E01030495,Guildford 009C,Guildford,4,45,427.7
+E01030498,Guildford 009D,Guildford,4,45,427.7
+E01030499,Guildford 005A,Guildford,4,45,427.7
+E01030500,Guildford 005B,Guildford,4,45,427.7
+E01030504,Guildford 005F,Guildford,4,45,427.7
+E01031797,Worthing 004B,Worthing,10,45,185.3
+E01032826,Tonbridge and Malling 007F,Tonbridge and Malling,3,45,345.0
+E01032827,Tonbridge and Malling 007G,Tonbridge and Malling,3,45,345.0
+E01032984,South Northamptonshire 003H,South Northamptonshire,7,45,255.5
+E01017062,Portsmouth 026B,Portsmouth,11,44,140.7
+E01017436,Central Bedfordshire 001C,Central Bedfordshire,8,44,428.5
+E01030945,Woking 012B,Woking,2,44,463.0
+E01030959,Woking 005G,Woking,2,44,463.0
+E01030961,Woking 009B,Woking,2,44,463.0
+E01031800,Worthing 004C,Worthing,9,44,174.7
+E01031822,Worthing 002A,Worthing,9,44,174.7
+E01031824,Worthing 004E,Worthing,9,44,174.7
+E01003858,Richmond upon Thames 003G,Richmond upon Thames,19,43,327.2
+E01015404,Poole 018C,"Bournemouth, Christchurch and Poole",9,43,62.3
+E01022317,Gloucester 001D,Gloucester,9,43,216.1
+E01023628,North Hertfordshire 015E,North Hertfordshire,2,43,240.8
+E01023962,Welwyn Hatfield 003D,Welwyn Hatfield,2,43,240.8
+E01023965,Welwyn Hatfield 001A,Welwyn Hatfield,2,43,240.8
+E01023966,Welwyn Hatfield 001B,Welwyn Hatfield,2,43,240.8
+E01023971,Welwyn Hatfield 001D,Welwyn Hatfield,2,43,240.8
+E01027276,South Northamptonshire 008A,South Northamptonshire,7,43,209.0
+E01029115,Sedgemoor 002E,Sedgemoor,4,43,478.8
+E01030448,Guildford 016A,Guildford,5,43,437.7
+E01030454,Guildford 016C,Guildford,5,43,437.7
+E01030456,Guildford 016D,Guildford,5,43,437.7
+E01030935,Waverley 018E,Waverley,4,43,352.8
+E01003008,Kingston upon Thames 001C,Kingston upon Thames,11,42,353.2
+E01003846,Richmond upon Thames 002A,Richmond upon Thames,17,42,300.3
+E01009428,Birmingham 004D,Birmingham,5,42,199.8
+E01009444,Birmingham 006D,Birmingham,5,42,199.8
+E01016644,Wokingham 011A,Wokingham,4,42,419.2
+E01016645,Wokingham 011B,Wokingham,4,42,419.2
+E01016646,Wokingham 011C,Wokingham,3,42,419.2
+E01016648,Wokingham 011D,Wokingham,4,42,419.2
+E01016649,Wokingham 011E,Wokingham,4,42,419.2
+E01016651,Wokingham 012A,Wokingham,4,42,419.2
+E01016652,Wokingham 008B,Wokingham,4,42,419.2
+E01016653,Wokingham 008C,Wokingham,4,42,419.2
+E01016654,Wokingham 012B,Wokingham,4,42,419.2
+E01016655,Wokingham 012C,Wokingham,4,42,419.2
+E01016664,Wokingham 006D,Wokingham,4,42,419.2
+E01016665,Wokingham 008D,Wokingham,4,42,419.2
+E01016668,Wokingham 006E,Wokingham,4,42,419.2
+E01016669,Wokingham 006F,Wokingham,4,42,419.2
+E01017443,Central Bedfordshire 013E,Central Bedfordshire,8,42,141.9
+E01023117,Rushmoor 011D,Rushmoor,4,42,347.8
+E01023377,Dacorum 021E,Dacorum,2,42,267.5
+E01025278,Preston 001A,Preston,5,42,324.2
+E01030892,Waverley 002B,Waverley,4,42,347.8
+E01030894,Waverley 004D,Waverley,4,42,347.8
+E01030902,Waverley 001B,Waverley,4,42,347.8
+E01030903,Waverley 001C,Waverley,4,42,347.8
+E01032055,Wiltshire 039C,Wiltshire,5,42,315.5
+E01032230,Redditch 013C,Redditch,6,42,249.0
+E01032270,Redditch 008C,Redditch,5,42,266.4
+E01032759,Wokingham 012H,Wokingham,2,42,419.2
+E01032761,Wokingham 008G,Wokingham,4,42,419.2
+E01032828,Tonbridge and Malling 007H,Tonbridge and Malling,2,42,342.2
+E01003007,Kingston upon Thames 001B,Kingston upon Thames,10,41,352.7
+E01003835,Richmond upon Thames 022B,Richmond upon Thames,10,41,352.7
+E01017408,Central Bedfordshire 017B,Central Bedfordshire,5,41,196.2
+E01017621,Central Bedfordshire 019D,Central Bedfordshire,5,41,196.2
+E01030323,Elmbridge 006B,Elmbridge,6,41,393.9
+E01030324,Elmbridge 006C,Elmbridge,6,41,393.9
+E01032707,Swindon 021F,Swindon,3,41,435.8
+E01003851,Richmond upon Thames 002D,Richmond upon Thames,15,40,284.7
+E01016208,Bracknell Forest 012B,Bracknell Forest,5,40,361.0
+E01017438,Central Bedfordshire 011B,Central Bedfordshire,4,40,309.5
+E01021941,Rochford 003I,Rochford,13,40,133.8
+E01021960,Rochford 005D,Rochford,13,40,133.8
+E01022467,Basingstoke and Deane 017A,Basingstoke and Deane,2,40,397.0
+E01022471,Basingstoke and Deane 008B,Basingstoke and Deane,2,40,397.0
+E01023648,North Hertfordshire 008E,North Hertfordshire,8,40,148.6
+E01024718,Tonbridge and Malling 005B,Tonbridge and Malling,17,40,92.7
+E01027917,Selby 004E,Selby,4,40,164.5
+E01030828,Tandridge 004A,Tandridge,2,40,369.5
+E01031511,Chichester 004C,Chichester,3,40,387.8
+E01001375,Ealing 034A,Ealing,15,39,133.4
+E01003811,Richmond upon Thames 018A,Richmond upon Thames,7,39,349.9
+E01003881,Richmond upon Thames 016B,Richmond upon Thames,7,39,349.9
+E01003886,Richmond upon Thames 021A,Richmond upon Thames,7,39,349.9
+E01003887,Richmond upon Thames 021B,Richmond upon Thames,7,39,349.9
+E01003891,Richmond upon Thames 018D,Richmond upon Thames,7,39,349.9
+E01016702,Wokingham 009C,Wokingham,2,39,386.2
+E01018370,Cheshire West and Chester 030D,Cheshire West and Chester,2,39,195.7
+E01021939,Rochford 003G,Rochford,15,39,117.9
+E01022585,East Hampshire 009C,East Hampshire,3,39,344.6
+E01022921,Havant 020C,Havant,6,39,345.9
+E01022931,Havant 003B,Havant,6,39,345.9
+E01023464,East Hertfordshire 001B,East Hertfordshire,2,39,599.2
+E01023768,Stevenage 004B,Stevenage,1,39,461.2
+E01026926,South Norfolk 006C,South Norfolk,3,39,87.1
+E01028774,West Oxfordshire 014C,West Oxfordshire,2,39,588.8
+E01028775,West Oxfordshire 014D,West Oxfordshire,2,39,588.8
+E01029513,Lichfield 011A,Lichfield,8,39,132.6
+E01033024,North Hertfordshire 005H,North Hertfordshire,1,39,461.2
+E01033025,North Hertfordshire 005I,North Hertfordshire,1,39,461.2
+E01006926,Sefton 012D,Sefton,8,38,32.5
+E01022297,Gloucester 003C,Gloucester,8,38,190.5
+E01022318,Gloucester 001E,Gloucester,8,38,190.5
+E01022606,East Hampshire 014A,East Hampshire,3,38,344.8
+E01023617,North Hertfordshire 011A,North Hertfordshire,7,38,145.4
+E01023642,North Hertfordshire 009D,North Hertfordshire,7,38,146.1
+E01023647,North Hertfordshire 008D,North Hertfordshire,7,38,146.1
+E01030444,Guildford 003D,Guildford,2,38,429.2
+E01030689,Runnymede 005A,Runnymede,2,38,556.3
+E01030691,Runnymede 005C,Runnymede,2,38,556.3
+E01031969,Wiltshire 006D,Wiltshire,3,38,316.1
+E01032616,East Hampshire 016E,East Hampshire,4,38,344.8
+E01033189,Central Bedfordshire 014F,Central Bedfordshire,8,38,85.0
+E01033190,Central Bedfordshire 014G,Central Bedfordshire,8,38,85.0
+E01018267,South Cambridgeshire 018B,South Cambridgeshire,2,37,58.8
+E01021934,Rochford 003B,Rochford,15,37,96.6
+E01021938,Rochford 003F,Rochford,13,37,116.1
+E01028820,West Oxfordshire 009B,West Oxfordshire,1,37,576.0
+E01030319,Elmbridge 009A,Elmbridge,5,37,381.4
+E01030320,Elmbridge 009B,Elmbridge,5,37,381.4
+E01030326,Elmbridge 002A,Elmbridge,5,37,381.4
+E01030327,Elmbridge 002B,Elmbridge,5,37,381.4
+E01030328,Elmbridge 002C,Elmbridge,5,37,381.4
+E01030329,Elmbridge 002D,Elmbridge,5,37,381.4
+E01030350,Elmbridge 005A,Elmbridge,5,37,381.4
+E01030351,Elmbridge 005B,Elmbridge,5,37,381.4
+E01030352,Elmbridge 005C,Elmbridge,5,37,381.4
+E01030353,Elmbridge 005D,Elmbridge,5,37,381.4
+E01030370,Elmbridge 009E,Elmbridge,5,37,381.4
+E01030762,Surrey Heath 006B,Surrey Heath,2,37,424.0
+E01030779,Surrey Heath 003B,Surrey Heath,2,37,424.0
+E01030806,Surrey Heath 006C,Surrey Heath,2,37,424.0
+E01030807,Surrey Heath 006D,Surrey Heath,2,37,424.0
+E01030808,Surrey Heath 006E,Surrey Heath,2,37,424.0
+E01030811,Surrey Heath 001F,Surrey Heath,2,37,424.0
+E01010193,Solihull 024B,Solihull,10,36,129.0
+E01017887,Wycombe 002C,Wycombe,1,36,564.8
+E01017932,Wycombe 001D,Wycombe,1,36,564.8
+E01018232,South Cambridgeshire 010B,South Cambridgeshire,3,36,426.8
+E01022534,Basingstoke and Deane 022C,Basingstoke and Deane,1,36,211.1
+E01022563,Basingstoke and Deane 020B,Basingstoke and Deane,1,36,211.1
+E01024336,Maidstone 005B,Maidstone,18,36,52.8
+E01024337,Maidstone 005C,Maidstone,18,36,52.8
+E01024348,Maidstone 005D,Maidstone,18,36,52.8
+E01033062,Bromsgrove 014F,Bromsgrove,4,36,230.0
+E01000766,Bromley 027C,Bromley,2,35,124.0
+E01000827,Bromley 021B,Bromley,2,35,124.0
+E01000833,Bromley 021E,Bromley,2,35,124.0
+E01000834,Bromley 027E,Bromley,2,35,124.0
+E01000836,Bromley 030C,Bromley,2,35,124.0
+E01000838,Bromley 030E,Bromley,2,35,124.0
+E01002476,Hillingdon 001C,Hillingdon,1,35,454.5
+E01003804,Richmond upon Thames 005A,Richmond upon Thames,15,35,291.0
+E01003805,Richmond upon Thames 012A,Richmond upon Thames,15,35,291.0
+E01018245,South Cambridgeshire 013A,South Cambridgeshire,5,35,247.6
+E01023354,Dacorum 018B,Dacorum,1,35,209.8
+E01023355,Dacorum 006A,Dacorum,1,35,209.8
+E01023361,Dacorum 009A,Dacorum,2,35,209.8
+E01023362,Dacorum 009B,Dacorum,2,35,209.8
+E01023363,Dacorum 009C,Dacorum,2,35,209.8
+E01023364,Dacorum 009D,Dacorum,2,35,209.8
+E01023367,Dacorum 014C,Dacorum,1,35,209.8
+E01023368,Dacorum 014D,Dacorum,2,35,209.8
+E01023370,Dacorum 012B,Dacorum,2,35,209.8
+E01023371,Dacorum 012C,Dacorum,2,35,209.8
+E01023372,Dacorum 012D,Dacorum,2,35,209.8
+E01023374,Dacorum 021B,Dacorum,1,35,209.8
+E01023379,Dacorum 018C,Dacorum,1,35,209.8
+E01023381,Dacorum 018E,Dacorum,1,35,209.8
+E01023603,North Hertfordshire 010C,North Hertfordshire,7,35,122.9
+E01023812,Three Rivers 004A,Three Rivers,1,35,454.5
+E01023813,Three Rivers 004B,Three Rivers,1,35,454.5
+E01023814,Three Rivers 004C,Three Rivers,1,35,454.5
+E01023820,Three Rivers 006B,Three Rivers,1,35,454.5
+E01023822,Three Rivers 006D,Three Rivers,1,35,454.5
+E01023826,Three Rivers 006F,Three Rivers,1,35,454.5
+E01023841,Three Rivers 011C,Three Rivers,1,35,454.5
+E01023851,Three Rivers 004D,Three Rivers,1,35,454.5
+E01023852,Three Rivers 007D,Three Rivers,1,35,454.5
+E01023853,Three Rivers 007E,Three Rivers,1,35,454.5
+E01028151,Gedling 002B,Gedling,3,35,264.5
+E01000395,Bexley 018B,Bexley,6,34,62.4
+E01004640,Wandsworth 011D,Wandsworth,28,34,147.0
+E01016565,Windsor and Maidenhead 011B,Windsor and Maidenhead,1,34,333.4
+E01016575,Windsor and Maidenhead 016A,Windsor and Maidenhead,1,34,333.4
+E01016587,Windsor and Maidenhead 016C,Windsor and Maidenhead,1,34,333.4
+E01016589,Windsor and Maidenhead 016E,Windsor and Maidenhead,1,34,333.4
+E01024322,Maidstone 003C,Maidstone,18,34,43.2
+E01024324,Maidstone 003E,Maidstone,18,34,43.2
+E01024341,Maidstone 003F,Maidstone,19,34,43.2
+E01024722,Tonbridge and Malling 001D,Tonbridge and Malling,7,34,91.5
+E01025885,Melton 001A,Melton,6,34,209.1
+E01027280,South Northamptonshire 008B,South Northamptonshire,5,34,204.2
+E01027307,South Northamptonshire 008D,South Northamptonshire,6,34,204.2
+E01028457,Cherwell 013C,Cherwell,2,34,450.2
+E01028464,Cherwell 015B,Cherwell,2,34,450.2
+E01029474,East Staffordshire 006F,East Staffordshire,2,34,176.1
+E01030480,Guildford 017E,Guildford,5,34,304.5
+E01031686,Horsham 016E,Horsham,5,34,149.8
+E01000348,Bexley 020A,Bexley,1,33,62.3
+E01000423,Bexley 025C,Bexley,2,33,62.3
+E01000445,Bexley 024C,Bexley,1,33,62.3
+E01000448,Bexley 023D,Bexley,1,33,62.3
+E01000449,Bexley 023E,Bexley,3,33,62.3
+E01000458,Bexley 027E,Bexley,1,33,62.3
+E01000460,Bexley 022E,Bexley,1,33,62.3
+E01000463,Bexley 025E,Bexley,2,33,62.3
+E01016194,Bracknell Forest 014B,Bracknell Forest,4,33,343.5
+E01016206,Bracknell Forest 012A,Bracknell Forest,3,33,291.7
+E01016214,Bracknell Forest 009E,Bracknell Forest,4,33,286.5
+E01016227,Bracknell Forest 014D,Bracknell Forest,4,33,343.5
+E01016228,Bracknell Forest 014E,Bracknell Forest,4,33,343.5
+E01016229,Bracknell Forest 012C,Bracknell Forest,4,33,343.5
+E01016230,Bracknell Forest 012D,Bracknell Forest,3,33,291.7
+E01016235,Bracknell Forest 013C,Bracknell Forest,4,33,343.5
+E01016237,Bracknell Forest 013E,Bracknell Forest,4,33,343.5
+E01016706,Wokingham 020B,Wokingham,3,33,291.7
+E01016707,Wokingham 020C,Wokingham,3,33,291.7
+E01016708,Wokingham 020D,Wokingham,3,33,291.7
+E01016709,Wokingham 020E,Wokingham,3,33,291.7
+E01021611,Chelmsford 019A,Chelmsford,8,33,125.2
+E01021614,Chelmsford 019D,Chelmsford,8,33,125.2
+E01023607,North Hertfordshire 013B,North Hertfordshire,6,33,121.4
+E01023609,North Hertfordshire 013D,North Hertfordshire,6,33,121.4
+E01023610,North Hertfordshire 013E,North Hertfordshire,6,33,121.4
+E01024320,Maidstone 003A,Maidstone,17,33,38.7
+E01024321,Maidstone 003B,Maidstone,17,33,38.7
+E01024323,Maidstone 003D,Maidstone,17,33,38.7
+E01026915,South Norfolk 009C,South Norfolk,5,33,224.0
+E01027893,Selby 009C,Selby,4,33,160.5
+E01028599,South Oxfordshire 011A,South Oxfordshire,2,33,482.0
+E01028606,South Oxfordshire 007C,South Oxfordshire,2,33,482.0
+E01032006,Wiltshire 059B,Wiltshire,6,33,19.8
+E01032009,Wiltshire 058B,Wiltshire,6,33,19.8
+E01015512,Swindon 028C,Swindon,3,32,341.2
+E01015518,Swindon 028D,Swindon,3,32,341.2
+E01018292,South Cambridgeshire 012A,South Cambridgeshire,2,32,388.5
+E01018293,South Cambridgeshire 012B,South Cambridgeshire,2,32,388.5
+E01021402,Braintree 014E,Braintree,8,32,103.5
+E01021403,Braintree 014F,Braintree,8,32,103.5
+E01021545,Chelmsford 008B,Chelmsford,8,32,202.2
+E01021605,Chelmsford 020A,Chelmsford,8,32,115.8
+E01021612,Chelmsford 019B,Chelmsford,7,32,115.8
+E01022315,Gloucester 001B,Gloucester,7,32,195.9
+E01023038,New Forest 009C,New Forest,9,32,96.5
+E01023212,Test Valley 014C,Test Valley,11,32,139.6
+E01023213,Test Valley 014D,Test Valley,10,32,139.6
+E01024074,Canterbury 006B,Canterbury,4,32,173.0
+E01024325,Maidstone 014A,Maidstone,16,32,37.8
+E01026186,North Kesteven 001A,North Kesteven,4,32,248.5
+E01026187,North Kesteven 001B,North Kesteven,4,32,248.5
+E01000666,Bromley 033B,Bromley,1,31,119.5
+E01000670,Bromley 018A,Bromley,1,31,119.5
+E01000681,Bromley 035A,Bromley,1,31,119.5
+E01000682,Bromley 035B,Bromley,1,31,119.5
+E01000684,Bromley 035D,Bromley,1,31,119.5
+E01000688,Bromley 037E,Bromley,1,31,119.5
+E01000755,Bromley 031C,Bromley,1,31,119.5
+E01000756,Bromley 033D,Bromley,1,31,119.5
+E01000757,Bromley 031D,Bromley,1,31,119.5
+E01000758,Bromley 031E,Bromley,1,31,119.5
+E01000763,Bromley 027A,Bromley,1,31,119.5
+E01000767,Bromley 027D,Bromley,1,31,119.5
+E01000793,Bromley 032D,Bromley,1,31,119.5
+E01000794,Bromley 035E,Bromley,1,31,119.5
+E01000813,Bromley 025D,Bromley,1,31,119.5
+E01000814,Bromley 028E,Bromley,1,31,119.5
+E01003871,Richmond upon Thames 007C,Richmond upon Thames,8,31,224.0
+E01017985,Cambridge 007E,Cambridge,2,31,388.2
+E01017996,Cambridge 013E,Cambridge,2,31,388.2
+E01018124,Huntingdonshire 007D,Huntingdonshire,4,31,291.8
+E01021940,Rochford 003H,Rochford,11,31,111.1
+E01030437,Guildford 011B,Guildford,4,31,395.7
+E01030438,Guildford 013A,Guildford,4,31,395.7
+E01030467,Guildford 015B,Guildford,4,31,395.7
+E01030881,Waverley 004A,Waverley,2,31,301.8
+E01030882,Waverley 006A,Waverley,2,31,301.8
+E01030883,Waverley 004B,Waverley,2,31,301.8
+E01030887,Waverley 006B,Waverley,2,31,301.8
+E01030888,Waverley 004C,Waverley,2,31,301.8
+E01030897,Waverley 006E,Waverley,2,31,301.8
+E01030898,Waverley 009A,Waverley,2,31,301.8
+E01030906,Waverley 009C,Waverley,2,31,301.8
+E01030907,Waverley 009D,Waverley,2,31,301.8
+E01001456,Enfield 022A,Enfield,7,30,94.8
+E01003801,Richmond upon Thames 001E,Richmond upon Thames,20,30,139.0
+E01003802,Richmond upon Thames 001F,Richmond upon Thames,19,30,139.0
+E01017393,Central Bedfordshire 013C,Central Bedfordshire,4,30,238.5
+E01022085,Uttlesford 005E,Uttlesford,4,30,318.3
+E01022664,Eastleigh 003D,Eastleigh,8,30,139.4
+E01022707,Eastleigh 001C,Eastleigh,8,30,139.4
+E01023210,Test Valley 014A,Test Valley,8,30,139.4
+E01023211,Test Valley 014B,Test Valley,7,30,139.4
+E01028680,South Oxfordshire 008C,South Oxfordshire,1,30,137.0
+E01028721,Vale of White Horse 011A,Vale of White Horse,1,30,170.0
+E01028722,Vale of White Horse 011B,Vale of White Horse,1,30,170.0
+E01028755,Vale of White Horse 014A,Vale of White Horse,1,30,170.0
+E01028758,Vale of White Horse 014C,Vale of White Horse,1,30,170.0
+E01028761,Vale of White Horse 014F,Vale of White Horse,1,30,170.0
+E01030966,Woking 003D,Woking,2,30,413.0
+E01030967,Woking 003E,Woking,2,30,413.0
+E01030969,Woking 008B,Woking,2,30,413.0
+E01014855,North Somerset 012A,North Somerset,2,29,392.8
+E01016243,Bracknell Forest 003C,Bracknell Forest,3,29,323.8
+E01016245,Bracknell Forest 003D,Bracknell Forest,3,29,323.8
+E01016246,Bracknell Forest 003E,Bracknell Forest,3,29,323.8
+E01016253,Bracknell Forest 001D,Bracknell Forest,3,29,323.8
+E01021893,Maldon 005A,Maldon,7,29,209.3
+E01023654,North Hertfordshire 002A,North Hertfordshire,2,29,36.8
+E01023659,North Hertfordshire 002F,North Hertfordshire,2,29,36.8
+E01028198,Gedling 001B,Gedling,6,29,47.7
+E01028199,Gedling 001C,Gedling,6,29,47.7
+E01028201,Gedling 001E,Gedling,6,29,47.7
+E01028613,South Oxfordshire 005B,South Oxfordshire,2,29,145.6
+E01028616,South Oxfordshire 005E,South Oxfordshire,2,29,145.6
+E01029531,Lichfield 008D,Lichfield,10,29,23.4
+E01030372,Elmbridge 012B,Elmbridge,2,29,426.6
+E01030682,Runnymede 010B,Runnymede,2,29,426.6
+E01032727,Bracknell Forest 001E,Bracknell Forest,3,29,323.8
+E01009694,Coventry 022D,Coventry,11,28,36.6
+E01016282,West Berkshire 013D,West Berkshire,1,28,381.2
+E01016603,Windsor and Maidenhead 018A,Windsor and Maidenhead,2,28,220.3
+E01016604,Windsor and Maidenhead 018B,Windsor and Maidenhead,2,28,220.3
+E01016663,Wokingham 007B,Wokingham,3,28,250.8
+E01016666,Wokingham 008E,Wokingham,3,28,250.8
+E01018019,East Cambridgeshire 011B,East Cambridgeshire,4,28,115.0
+E01022084,Uttlesford 005D,Uttlesford,2,28,313.0
+E01028476,Cherwell 008D,Cherwell,1,28,348.8
+E01002917,Kingston upon Thames 014C,Kingston upon Thames,9,27,160.2
+E01021557,Chelmsford 015A,Chelmsford,10,27,261.0
+E01021558,Chelmsford 015B,Chelmsford,10,27,261.0
+E01021580,Chelmsford 012D,Chelmsford,12,27,261.0
+E01021584,Chelmsford 012E,Chelmsford,11,27,261.0
+E01021585,Chelmsford 015D,Chelmsford,12,27,261.0
+E01021586,Chelmsford 015E,Chelmsford,11,27,261.0
+E01021622,Chelmsford 007C,Chelmsford,10,27,261.0
+E01022632,East Hampshire 010E,East Hampshire,2,27,282.1
+E01023112,Rushmoor 004E,Rushmoor,5,27,218.5
+E01023175,Test Valley 010B,Test Valley,6,27,294.3
+E01023200,Test Valley 012F,Test Valley,6,27,294.3
+E01023207,Test Valley 010D,Test Valley,6,27,294.3
+E01023209,Test Valley 010F,Test Valley,6,27,294.3
+E01023456,East Hertfordshire 008A,East Hertfordshire,3,27,210.7
+E01023459,East Hertfordshire 008D,East Hertfordshire,3,27,210.7
+E01024046,Canterbury 016C,Canterbury,5,27,78.3
+E01024402,Maidstone 012C,Maidstone,16,27,37.4
+E01024404,Maidstone 012D,Maidstone,16,27,37.4
+E01024644,Thanet 009C,Thanet,8,27,59.6
+E01029412,East Staffordshire 006B,East Staffordshire,1,27,151.4
+E01030296,Elmbridge 015A,Elmbridge,4,27,255.0
+E01030726,Spelthorne 009A,Spelthorne,1,27,472.0
+E01030810,Surrey Heath 001E,Surrey Heath,2,27,245.2
+E01032433,Wyre Forest 001C,Wyre Forest,4,27,41.8
+E01032809,Canterbury 012F,Canterbury,5,27,78.3
+E01033114,South Cambridgeshire 020B,South Cambridgeshire,3,27,345.5
+E01003468,Merton 020C,Merton,10,26,159.9
+E01016200,Bracknell Forest 008A,Bracknell Forest,3,26,269.0
+E01016201,Bracknell Forest 008B,Bracknell Forest,3,26,269.0
+E01021431,Brentwood 004A,Brentwood,5,26,216.1
+E01021559,Chelmsford 017E,Chelmsford,9,26,260.5
+E01025327,Ribble Valley 004C,Ribble Valley,3,26,109.1
+E01025761,Charnwood 008B,Charnwood,3,26,103.4
+E01028637,South Oxfordshire 014D,South Oxfordshire,1,26,338.8
+E01002253,Havering 019A,Havering,4,25,235.2
+E01002254,Havering 019B,Havering,4,25,235.2
+E01002257,Havering 019C,Havering,4,25,235.2
+E01002920,Kingston upon Thames 014D,Kingston upon Thames,8,25,158.7
+E01002924,Kingston upon Thames 014E,Kingston upon Thames,8,25,158.7
+E01002934,Kingston upon Thames 004B,Kingston upon Thames,10,25,150.7
+E01002938,Kingston upon Thames 003B,Kingston upon Thames,10,25,150.7
+E01003010,Kingston upon Thames 001E,Kingston upon Thames,10,25,150.7
+E01003463,Merton 010E,Merton,16,25,154.2
+E01003813,Richmond upon Thames 019B,Richmond upon Thames,6,25,211.4
+E01003874,Richmond upon Thames 006B,Richmond upon Thames,9,25,225.8
+E01010385,Walsall 028A,Walsall,6,25,57.6
+E01010392,Walsall 028D,Walsall,7,25,57.6
+E01018189,Huntingdonshire 019C,Huntingdonshire,4,25,68.5
+E01018305,South Cambridgeshire 001B,South Cambridgeshire,4,25,213.5
+E01018306,South Cambridgeshire 001C,South Cambridgeshire,4,25,213.5
+E01023608,North Hertfordshire 013C,North Hertfordshire,5,25,107.6
+E01023614,North Hertfordshire 012D,North Hertfordshire,5,25,107.6
+E01027274,South Northamptonshire 002B,South Northamptonshire,4,25,230.8
+E01028752,Vale of White Horse 003G,Vale of White Horse,3,25,208.4
+E01029514,Lichfield 011B,Lichfield,5,25,57.6
+E01029684,Stafford 014A,Stafford,7,25,37.9
+E01029685,Stafford 014B,Stafford,6,25,37.9
+E01029731,Stafford 014D,Stafford,6,25,37.9
+E01030386,Epsom and Ewell 001A,Epsom and Ewell,7,25,158.3
+E01032949,West Oxfordshire 013E,West Oxfordshire,1,25,403.8
+E01033053,Uttlesford 008G,Uttlesford,4,25,122.9
+E01002571,Hounslow 007A,Hounslow,15,24,122.5
+E01002995,Kingston upon Thames 013D,Kingston upon Thames,7,24,158.2
+E01003821,Richmond upon Thames 008A,Richmond upon Thames,8,24,214.8
+E01003868,Richmond upon Thames 007B,Richmond upon Thames,8,24,214.8
+E01003879,Richmond upon Thames 008D,Richmond upon Thames,8,24,214.8
+E01003892,Richmond upon Thames 009A,Richmond upon Thames,8,24,214.8
+E01003894,Richmond upon Thames 009C,Richmond upon Thames,9,24,214.8
+E01017415,Central Bedfordshire 010F,Central Bedfordshire,5,24,114.5
+E01029730,Stafford 014C,Stafford,6,24,55.9
+E01030774,Surrey Heath 007A,Surrey Heath,3,24,205.2
+E01030775,Surrey Heath 007B,Surrey Heath,3,24,205.2
+E01030776,Surrey Heath 007C,Surrey Heath,3,24,205.2
+E01030777,Surrey Heath 007D,Surrey Heath,3,24,205.2
+E01030792,Surrey Heath 009D,Surrey Heath,3,24,205.2
+E01030796,Surrey Heath 005A,Surrey Heath,3,24,205.2
+E01030797,Surrey Heath 005B,Surrey Heath,3,24,205.2
+E01003822,Richmond upon Thames 023A,Richmond upon Thames,5,23,242.9
+E01003824,Richmond upon Thames 023C,Richmond upon Thames,5,23,242.9
+E01003884,Richmond upon Thames 016C,Richmond upon Thames,5,23,208.9
+E01004122,Sutton 008B,Sutton,6,23,155.8
+E01004190,Sutton 008C,Sutton,6,23,155.8
+E01004705,Westminster 007D,Westminster,14,23,40.1
+E01016658,Wokingham 004C,Wokingham,2,23,256.2
+E01016659,Wokingham 004D,Wokingham,4,23,256.2
+E01016660,Wokingham 004E,Wokingham,4,23,256.2
+E01016661,Wokingham 007A,Wokingham,4,23,256.2
+E01017459,Bedford 008A,Bedford,5,23,65.5
+E01017462,Bedford 008D,Bedford,5,23,65.5
+E01021896,Maldon 005D,Maldon,5,23,163.0
+E01023067,New Forest 010E,New Forest,1,23,324.1
+E01030321,Elmbridge 009C,Elmbridge,3,23,242.9
+E01030330,Elmbridge 001A,Elmbridge,4,23,242.9
+E01030369,Elmbridge 009D,Elmbridge,4,23,242.9
+E01030387,Epsom and Ewell 001B,Epsom and Ewell,6,23,155.8
+E01003889,Richmond upon Thames 021D,Richmond upon Thames,6,22,147.4
+E01017447,Central Bedfordshire 014B,Central Bedfordshire,6,22,59.0
+E01017544,Bedford 001C,Bedford,3,22,150.5
+E01024326,Maidstone 007A,Maidstone,16,22,25.8
+E01024330,Maidstone 005A,Maidstone,16,22,25.8
+E01030863,Waverley 008A,Waverley,3,22,185.0
+E01030866,Waverley 008C,Waverley,3,22,185.0
+E01030917,Waverley 007B,Waverley,2,22,185.0
+E01030919,Waverley 007D,Waverley,2,22,185.0
+E01030922,Waverley 007E,Waverley,3,22,185.0
+E01030923,Waverley 010C,Waverley,3,22,185.0
+E01030925,Waverley 010E,Waverley,2,22,185.0
+E01032138,Bromsgrove 001A,Bromsgrove,5,22,23.6
+E01002937,Kingston upon Thames 004D,Kingston upon Thames,9,21,146.2
+E01002951,Kingston upon Thames 003C,Kingston upon Thames,9,21,146.2
+E01002959,Kingston upon Thames 002E,Kingston upon Thames,10,21,146.2
+E01003866,Richmond upon Thames 007A,Richmond upon Thames,7,21,207.0
+E01003869,Richmond upon Thames 011B,Richmond upon Thames,6,21,207.0
+E01003870,Richmond upon Thames 011C,Richmond upon Thames,4,21,207.0
+E01003883,Richmond upon Thames 014B,Richmond upon Thames,4,21,207.0
+E01003899,Richmond upon Thames 015B,Richmond upon Thames,4,21,207.0
+E01003902,Richmond upon Thames 015E,Richmond upon Thames,5,21,207.0
+E01004117,Sutton 006A,Sutton,4,21,153.0
+E01016182,Bracknell Forest 005C,Bracknell Forest,2,21,193.6
+E01016183,Bracknell Forest 005D,Bracknell Forest,2,21,193.6
+E01016522,Windsor and Maidenhead 017A,Windsor and Maidenhead,2,21,193.6
+E01016523,Windsor and Maidenhead 017B,Windsor and Maidenhead,2,21,193.6
+E01016524,Windsor and Maidenhead 017C,Windsor and Maidenhead,2,21,193.6
+E01016606,Windsor and Maidenhead 018D,Windsor and Maidenhead,2,21,193.6
+E01016607,Windsor and Maidenhead 018E,Windsor and Maidenhead,2,21,193.6
+E01016608,Windsor and Maidenhead 018F,Windsor and Maidenhead,2,21,193.6
+E01017419,Central Bedfordshire 008C,Central Bedfordshire,5,21,82.7
+E01017664,Aylesbury Vale 011D,Aylesbury Vale,2,21,158.5
+E01017697,Aylesbury Vale 014A,Aylesbury Vale,2,21,158.5
+E01021438,Brentwood 006A,Brentwood,4,21,203.8
+E01021474,Brentwood 008E,Brentwood,4,21,203.8
+E01021475,Brentwood 007E,Brentwood,4,21,203.8
+E01021569,Chelmsford 016C,Chelmsford,5,21,84.2
+E01022706,Eastleigh 001B,Eastleigh,6,21,81.0
+E01022708,Eastleigh 001D,Eastleigh,7,21,81.0
+E01022709,Eastleigh 001E,Eastleigh,7,21,81.0
+E01028780,West Oxfordshire 001A,West Oxfordshire,1,21,277.0
+E01030297,Elmbridge 015B,Elmbridge,2,21,241.0
+E01030307,Elmbridge 013A,Elmbridge,2,21,241.0
+E01030377,Epsom and Ewell 003A,Epsom and Ewell,4,21,153.0
+E01030378,Epsom and Ewell 003B,Epsom and Ewell,4,21,153.0
+E01030394,Epsom and Ewell 002A,Epsom and Ewell,4,21,153.0
+E01030434,Guildford 008A,Guildford,3,21,252.7
+E01030435,Guildford 008B,Guildford,3,21,252.7
+E01030436,Guildford 011A,Guildford,3,21,252.7
+E01030439,Guildford 011C,Guildford,3,21,252.7
+E01030460,Guildford 011D,Guildford,3,21,252.7
+E01030461,Guildford 011E,Guildford,3,21,252.7
+E01030462,Guildford 008C,Guildford,3,21,252.7
+E01030463,Guildford 008D,Guildford,3,21,252.7
+E01031202,Stratford-on-Avon 002B,Stratford-on-Avon,2,21,148.4
+E01002967,Kingston upon Thames 009B,Kingston upon Thames,6,20,145.7
+E01017739,Chiltern 007A,Chiltern,2,20,224.8
+E01017742,Chiltern 006B,Chiltern,2,20,224.8
+E01017745,Chiltern 007D,Chiltern,2,20,224.8
+E01017746,Chiltern 007E,Chiltern,2,20,224.8
+E01017762,Chiltern 008A,Chiltern,2,20,224.8
+E01017763,Chiltern 006D,Chiltern,2,20,224.8
+E01017764,Chiltern 006E,Chiltern,2,20,224.8
+E01017765,Chiltern 006F,Chiltern,2,20,224.8
+E01017777,Chiltern 008D,Chiltern,2,20,224.8
+E01018175,Huntingdonshire 020D,Huntingdonshire,3,20,3.0
+E01018176,Huntingdonshire 020E,Huntingdonshire,3,20,3.0
+E01021929,Rochford 002D,Rochford,10,20,43.4
+E01023114,Rushmoor 007B,Rushmoor,3,20,149.2
+E01030427,Guildford 004B,Guildford,3,20,149.2
+E01030428,Guildford 004C,Guildford,3,20,149.2
+E01030430,Guildford 004E,Guildford,3,20,149.2
+E01030958,Woking 005F,Woking,1,20,288.0
+E01002153,Harrow 019A,Harrow,10,19,24.7
+E01003825,Richmond upon Thames 023D,Richmond upon Thames,1,19,238.5
+E01017413,Central Bedfordshire 010D,Central Bedfordshire,5,19,90.5
+E01018251,South Cambridgeshire 010C,South Cambridgeshire,3,19,237.5
+E01020358,Christchurch 003D,"Bournemouth, Christchurch and Poole",7,19,75.8
+E01030116,St Edmundsbury 013B,West Suffolk,4,19,163.9
+E01030308,Elmbridge 013B,Elmbridge,1,19,238.5
+E01030355,Elmbridge 008B,Elmbridge,1,19,238.5
+E01030365,Elmbridge 008D,Elmbridge,1,19,238.5
+E01030368,Elmbridge 008E,Elmbridge,1,19,238.5
+E01030753,Spelthorne 010A,Spelthorne,1,19,238.5
+E01030754,Spelthorne 010B,Spelthorne,1,19,238.5
+E01030756,Spelthorne 010D,Spelthorne,1,19,238.5
+E01032271,Redditch 008D,Redditch,5,19,41.2
+E01002189,Harrow 016B,Harrow,6,18,24.2
+E01002195,Harrow 022C,Harrow,6,18,24.2
+E01002208,Harrow 025A,Harrow,7,18,24.2
+E01017371,Central Bedfordshire 012A,Central Bedfordshire,4,18,72.7
+E01017401,Central Bedfordshire 015C,Central Bedfordshire,4,18,72.7
+E01017402,Central Bedfordshire 015D,Central Bedfordshire,4,18,72.7
+E01018193,Huntingdonshire 004C,Huntingdonshire,2,18,166.5
+E01021587,Chelmsford 002C,Chelmsford,9,18,142.0
+E01021591,Chelmsford 002E,Chelmsford,10,18,142.0
+E01021624,Chelmsford 004F,Chelmsford,9,18,142.0
+E01021625,Chelmsford 007D,Chelmsford,9,18,142.0
+E01024233,Dover 010C,Dover,5,18,20.5
+E01028563,Oxford 004D,Oxford,3,18,93.8
+E01028601,South Oxfordshire 011B,South Oxfordshire,1,18,361.0
+E01028602,South Oxfordshire 011C,South Oxfordshire,1,18,361.0
+E01028740,Vale of White Horse 002D,Vale of White Horse,4,18,93.8
+E01028751,Vale of White Horse 003F,Vale of White Horse,3,18,93.8
+E01002146,Harrow 004B,Harrow,5,17,21.5
+E01002188,Harrow 016A,Harrow,5,17,21.5
+E01002194,Harrow 022B,Harrow,5,17,21.5
+E01002196,Harrow 022D,Harrow,5,17,21.5
+E01002317,Havering 014C,Havering,1,17,192.2
+E01002354,Havering 012B,Havering,1,17,192.2
+E01016196,Bracknell Forest 015B,Bracknell Forest,3,17,183.8
+E01016198,Bracknell Forest 015D,Bracknell Forest,3,17,183.8
+E01016199,Bracknell Forest 015E,Bracknell Forest,3,17,183.8
+E01017392,Central Bedfordshire 013B,Central Bedfordshire,3,17,88.7
+E01021570,Chelmsford 016D,Chelmsford,2,17,73.5
+E01021883,Maldon 002B,Maldon,6,17,111.0
+E01021912,Maldon 002C,Maldon,6,17,111.0
+E01022847,Hart 003B,Hart,3,17,183.8
+E01022874,Hart 003D,Hart,3,17,183.8
+E01022876,Hart 003F,Hart,3,17,183.8
+E01023497,East Hertfordshire 009D,East Hertfordshire,3,17,127.8
+E01023588,North Hertfordshire 004B,North Hertfordshire,5,17,42.8
+E01024327,Maidstone 007B,Maidstone,15,17,20.4
+E01024329,Maidstone 007D,Maidstone,15,17,20.4
+E01024349,Maidstone 007E,Maidstone,15,17,20.4
+E01026184,North Kesteven 004A,North Kesteven,1,17,182.0
+E01028561,Oxford 004B,Oxford,2,17,87.8
+E01028565,Oxford 003A,Oxford,3,17,87.8
+E01028583,Oxford 003B,Oxford,3,17,87.8
+E01028591,Oxford 002C,Oxford,3,17,87.8
+E01028596,Oxford 001C,Oxford,3,17,87.8
+E01028709,Vale of White Horse 001B,Vale of White Horse,3,17,87.8
+E01028710,Vale of White Horse 001C,Vale of White Horse,2,17,87.8
+E01030778,Surrey Heath 003A,Surrey Heath,1,17,136.0
+E01030780,Surrey Heath 003C,Surrey Heath,1,17,136.0
+E01030799,Surrey Heath 005D,Surrey Heath,3,17,183.8
+E01030804,Surrey Heath 008E,Surrey Heath,3,17,183.8
+E01032993,North Kesteven 013D,North Kesteven,1,17,182.0
+E01033613,Thurrock 019D,Thurrock,5,17,94.7
+E01016676,Wokingham 001B,Wokingham,2,16,130.5
+E01016736,Milton Keynes 024C,Milton Keynes,1,16,181.2
+E01016826,Milton Keynes 024D,Milton Keynes,1,16,181.2
+E01017380,Central Bedfordshire 007B,Central Bedfordshire,1,16,181.2
+E01017528,Bedford 003E,Bedford,3,16,55.0
+E01021442,Brentwood 001B,Brentwood,4,16,74.1
+E01021543,Chelmsford 002B,Chelmsford,7,16,134.0
+E01021616,Chelmsford 004A,Chelmsford,6,16,134.0
+E01023096,Rushmoor 004A,Rushmoor,3,16,172.5
+E01023230,Winchester 010D,Winchester,5,16,30.8
+E01023685,St Albans 002A,St Albans,3,16,117.4
+E01023686,St Albans 002B,St Albans,3,16,117.4
+E01023689,St Albans 002E,St Albans,3,16,117.4
+E01023693,St Albans 001D,St Albans,3,16,117.4
+E01023702,St Albans 003D,St Albans,3,16,117.4
+E01023703,St Albans 003E,St Albans,3,16,117.4
+E01028654,South Oxfordshire 017B,South Oxfordshire,5,16,130.5
+E01028656,South Oxfordshire 017D,South Oxfordshire,5,16,130.5
+E01028661,South Oxfordshire 019C,South Oxfordshire,3,16,130.5
+E01030192,Suffolk Coastal 010E,East Suffolk,3,16,26.1
+E01030380,Epsom and Ewell 009B,Epsom and Ewell,4,16,65.5
+E01030606,Reigate and Banstead 003A,Reigate and Banstead,4,16,65.5
+E01030769,Surrey Heath 010D,Surrey Heath,3,16,172.5
+E01030770,Surrey Heath 011A,Surrey Heath,3,16,172.5
+E01030771,Surrey Heath 011B,Surrey Heath,3,16,172.5
+E01030773,Surrey Heath 011D,Surrey Heath,3,16,172.5
+E01030791,Surrey Heath 009C,Surrey Heath,3,16,172.5
+E01033447,Suffolk Coastal 010I,East Suffolk,3,16,26.1
+E01018263,South Cambridgeshire 016D,South Cambridgeshire,3,15,38.2
+E01018265,South Cambridgeshire 016F,South Cambridgeshire,3,15,38.2
+E01018288,South Cambridgeshire 017C,South Cambridgeshire,3,15,38.2
+E01020371,Christchurch 004C,"Bournemouth, Christchurch and Poole",6,15,62.4
+E01021379,Braintree 014C,Braintree,6,15,80.4
+E01022885,Hart 006E,Hart,3,15,87.0
+E01026189,North Kesteven 001C,North Kesteven,3,15,96.0
+E01033117,South Cambridgeshire 020D,South Cambridgeshire,2,15,180.0
+E01004196,Sutton 008F,Sutton,6,14,30.8
+E01016261,West Berkshire 005B,West Berkshire,1,14,270.8
+E01016315,West Berkshire 004A,West Berkshire,1,14,270.8
+E01016316,West Berkshire 004B,West Berkshire,1,14,270.8
+E01016318,West Berkshire 004D,West Berkshire,1,14,270.8
+E01016349,West Berkshire 005C,West Berkshire,1,14,270.8
+E01016350,West Berkshire 005D,West Berkshire,1,14,270.8
+E01016364,Reading 003A,Reading,4,14,168.5
+E01016384,Reading 005C,Reading,1,14,270.8
+E01016386,Reading 002A,Reading,4,14,168.5
+E01016424,Reading 015F,Reading,3,14,168.5
+E01016426,Reading 002D,Reading,4,14,168.5
+E01016427,Reading 003C,Reading,4,14,168.5
+E01016429,Reading 003E,Reading,4,14,168.5
+E01016539,Windsor and Maidenhead 009A,Windsor and Maidenhead,4,14,245.5
+E01016541,Windsor and Maidenhead 009C,Windsor and Maidenhead,4,14,245.5
+E01016551,Windsor and Maidenhead 013A,Windsor and Maidenhead,2,14,245.5
+E01016553,Windsor and Maidenhead 013B,Windsor and Maidenhead,2,14,245.5
+E01016583,Windsor and Maidenhead 004A,Windsor and Maidenhead,3,14,245.5
+E01016585,Windsor and Maidenhead 004B,Windsor and Maidenhead,3,14,245.5
+E01016591,Windsor and Maidenhead 004D,Windsor and Maidenhead,4,14,245.5
+E01016597,Windsor and Maidenhead 015D,Windsor and Maidenhead,2,14,245.5
+E01016618,Wokingham 006C,Wokingham,3,14,168.5
+E01017806,South Bucks 006B,South Bucks,3,14,245.5
+E01018339,Cheshire West and Chester 047A,Cheshire West and Chester,1,14,21.5
+E01021590,Chelmsford 002D,Chelmsford,6,14,133.2
+E01028693,Vale of White Horse 004A,Vale of White Horse,2,14,118.0
+E01028694,Vale of White Horse 004B,Vale of White Horse,2,14,118.0
+E01032158,Bromsgrove 012A,Bromsgrove,3,14,77.8
+E01032162,Bromsgrove 012B,Bromsgrove,3,14,77.8
+E01033061,Bromsgrove 012E,Bromsgrove,3,14,77.8
+E01017761,Chiltern 010C,Chiltern,1,13,167.0
+E01017794,Chiltern 010D,Chiltern,1,13,167.0
+E01021600,Chelmsford 003D,Chelmsford,5,13,132.8
+E01021633,Chelmsford 011C,Chelmsford,6,13,132.8
+E01022602,East Hampshire 017D,East Hampshire,4,13,106.5
+E01023240,Winchester 003A,Winchester,4,13,52.2
+E01023242,Winchester 009B,Winchester,5,13,52.2
+E01023243,Winchester 009C,Winchester,5,13,52.2
+E01023247,Winchester 005A,Winchester,4,13,52.2
+E01023248,Winchester 003C,Winchester,4,13,52.2
+E01023259,Winchester 009E,Winchester,5,13,52.2
+E01023268,Winchester 005D,Winchester,4,13,52.2
+E01023269,Winchester 005E,Winchester,4,13,52.2
+E01023270,Winchester 005F,Winchester,4,13,52.2
+E01023690,St Albans 001A,St Albans,2,13,96.5
+E01023699,St Albans 003A,St Albans,2,13,96.5
+E01023700,St Albans 003B,St Albans,2,13,96.5
+E01024755,Tonbridge and Malling 006E,Tonbridge and Malling,1,13,89.1
+E01024782,Tonbridge and Malling 003G,Tonbridge and Malling,3,13,56.7
+E01024785,Tonbridge and Malling 003H,Tonbridge and Malling,3,13,56.7
+E01028695,Vale of White Horse 005C,Vale of White Horse,1,13,112.0
+E01016410,Reading 001C,Reading,4,12,120.8
+E01016617,Wokingham 005C,Wokingham,3,12,120.8
+E01016619,Wokingham 002A,Wokingham,2,12,120.8
+E01016621,Wokingham 003A,Wokingham,3,12,120.8
+E01016622,Wokingham 004A,Wokingham,3,12,120.8
+E01016623,Wokingham 003B,Wokingham,3,12,120.8
+E01016624,Wokingham 003C,Wokingham,3,12,120.8
+E01016657,Wokingham 004B,Wokingham,1,12,120.8
+E01016684,Wokingham 003D,Wokingham,3,12,120.8
+E01016685,Wokingham 003E,Wokingham,3,12,120.8
+E01016687,Wokingham 007D,Wokingham,3,12,120.8
+E01016689,Wokingham 007F,Wokingham,3,12,120.8
+E01016692,Wokingham 002C,Wokingham,1,12,120.8
+E01016693,Wokingham 002D,Wokingham,1,12,120.8
+E01016694,Wokingham 002E,Wokingham,1,12,120.8
+E01016695,Wokingham 002F,Wokingham,1,12,120.8
+E01021284,Basildon 021E,Basildon,3,12,24.0
+E01030128,St Edmundsbury 005C,West Suffolk,4,12,36.8
+E01030129,St Edmundsbury 005D,West Suffolk,4,12,36.8
+E01030418,Epsom and Ewell 009E,Epsom and Ewell,3,12,53.0
+E01030607,Reigate and Banstead 001D,Reigate and Banstead,3,12,53.0
+E01030641,Reigate and Banstead 003B,Reigate and Banstead,3,12,53.0
+E01004095,Sutton 025C,Sutton,3,11,27.5
+E01004157,Sutton 016E,Sutton,3,11,27.5
+E01016605,Windsor and Maidenhead 018C,Windsor and Maidenhead,1,11,84.3
+E01022208,Cotswold 009D,Cotswold,1,11,161.2
+E01029757,Stafford 014E,Stafford,7,11,31.4
+E01029759,Stafford 014G,Stafford,7,11,31.4
+E01029760,Stafford 014H,Stafford,7,11,31.4
+E01030104,St Edmundsbury 004B,West Suffolk,3,11,36.2
+E01032154,Bromsgrove 010A,Bromsgrove,2,11,77.3
+E01033059,Bromsgrove 012D,Bromsgrove,2,11,77.3
+E01016222,Bracknell Forest 005E,Bracknell Forest,2,10,109.2
+E01023586,North Hertfordshire 005B,North Hertfordshire,1,10,5.6
+E01023695,St Albans 005A,St Albans,2,10,89.6
+E01023697,St Albans 005C,St Albans,2,10,89.6
+E01023698,St Albans 005D,St Albans,2,10,89.6
+E01023747,St Albans 004B,St Albans,2,10,89.6
+E01023749,St Albans 004D,St Albans,2,10,89.6
+E01024144,Dartford 007A,Dartford,3,10,84.4
+E01026945,South Norfolk 007D,South Norfolk,3,10,91.8
+E01030559,Reigate and Banstead 002A,Reigate and Banstead,2,10,51.5
+E01030637,Reigate and Banstead 006C,Reigate and Banstead,2,10,51.5
+E01030638,Reigate and Banstead 006D,Reigate and Banstead,2,10,51.5
+E01030924,Waverley 010D,Waverley,1,10,143.0
+E01032137,Bromsgrove 002B,Bromsgrove,2,10,22.4
+E01018272,South Cambridgeshire 007A,South Cambridgeshire,4,9,76.4
+E01022981,New Forest 022A,New Forest,4,9,15.8
+E01022987,New Forest 022D,New Forest,4,9,15.8
+E01023226,Winchester 010A,Winchester,4,9,20.4
+E01023244,Winchester 009D,Winchester,4,9,20.4
+E01023567,Hertsmere 002A,Hertsmere,2,9,24.6
+E01023568,Hertsmere 002B,Hertsmere,2,9,24.6
+E01023578,Hertsmere 001C,Hertsmere,2,9,24.6
+E01023908,Welwyn Hatfield 015A,Welwyn Hatfield,2,9,24.6
+E01023909,Welwyn Hatfield 015B,Welwyn Hatfield,2,9,24.6
+E01030179,Suffolk Coastal 009A,East Suffolk,2,9,1.8
+E01030180,Suffolk Coastal 009B,East Suffolk,2,9,1.8
+E01030443,Guildford 003C,Guildford,3,9,50.9
+E01033444,Suffolk Coastal 010H,East Suffolk,2,9,1.8
+E01002387,Havering 024B,Havering,3,8,42.9
+E01002388,Havering 024C,Havering,2,8,42.9
+E01017640,Aylesbury Vale 017F,Aylesbury Vale,1,8,23.2
+E01017700,Aylesbury Vale 014D,Aylesbury Vale,1,8,23.2
+E01018040,East Cambridgeshire 007C,East Cambridgeshire,3,8,9.2
+E01018249,South Cambridgeshire 009D,South Cambridgeshire,2,8,75.8
+E01028534,Oxford 006A,Oxford,2,8,53.8
+E01029700,Stafford 011B,Stafford,8,8,8.4
+E01029758,Stafford 014F,Stafford,7,8,8.4
+E01030070,Mid Suffolk 011E,Mid Suffolk,1,8,45.2
+E01004120,Sutton 016D,Sutton,3,7,14.5
+E01014869,South Gloucestershire 024B,South Gloucestershire,1,7,48.4
+E01017373,Central Bedfordshire 012C,Central Bedfordshire,3,7,43.2
+E01017399,Central Bedfordshire 015A,Central Bedfordshire,3,7,43.2
+E01017404,Central Bedfordshire 016B,Central Bedfordshire,3,7,43.2
+E01017405,Central Bedfordshire 016C,Central Bedfordshire,3,7,43.2
+E01017407,Central Bedfordshire 016E,Central Bedfordshire,3,7,43.2
+E01017483,Bedford 009B,Bedford,1,7,50.3
+E01017530,Bedford 006B,Bedford,1,7,50.3
+E01017532,Bedford 006D,Bedford,1,7,50.3
+E01017534,Bedford 006F,Bedford,1,7,50.3
+E01017749,Chiltern 002C,Chiltern,1,7,57.8
+E01017769,Chiltern 003A,Chiltern,1,7,57.8
+E01017771,Chiltern 003B,Chiltern,1,7,57.8
+E01017780,Chiltern 003C,Chiltern,1,7,57.8
+E01017847,Wycombe 021B,Wycombe,2,7,107.6
+E01017848,Wycombe 021C,Wycombe,2,7,107.6
+E01017864,Wycombe 018A,Wycombe,2,7,107.6
+E01017865,Wycombe 018B,Wycombe,2,7,107.6
+E01017866,Wycombe 020A,Wycombe,2,7,107.6
+E01017868,Wycombe 018D,Wycombe,2,7,107.6
+E01017876,Wycombe 020C,Wycombe,2,7,107.6
+E01017935,Wycombe 019B,Wycombe,2,7,107.6
+E01017936,Wycombe 019C,Wycombe,2,7,107.6
+E01018198,Huntingdonshire 006C,Huntingdonshire,1,7,82.8
+E01018301,South Cambridgeshire 004D,South Cambridgeshire,2,7,72.4
+E01022888,Hart 011B,Hart,1,7,12.6
+E01022994,New Forest 016A,New Forest,2,7,14.2
+E01022995,New Forest 016B,New Forest,2,7,14.2
+E01023471,East Hertfordshire 014B,East Hertfordshire,1,7,9.8
+E01023473,East Hertfordshire 014D,East Hertfordshire,1,7,9.8
+E01023510,East Hertfordshire 013A,East Hertfordshire,1,7,9.8
+E01023512,East Hertfordshire 012A,East Hertfordshire,1,7,9.8
+E01023515,East Hertfordshire 013C,East Hertfordshire,1,7,9.8
+E01023516,East Hertfordshire 013D,East Hertfordshire,1,7,9.8
+E01023520,East Hertfordshire 012F,East Hertfordshire,1,7,9.8
+E01023696,St Albans 005B,St Albans,1,7,68.8
+E01026907,South Norfolk 003C,South Norfolk,2,7,9.5
+E01026908,South Norfolk 003D,South Norfolk,2,7,9.5
+E01028572,Oxford 007C,Oxford,2,7,28.0
+E01030124,St Edmundsbury 007C,West Suffolk,3,7,20.0
+E01030407,Epsom and Ewell 003D,Epsom and Ewell,3,7,14.5
+E01030408,Epsom and Ewell 003E,Epsom and Ewell,3,7,14.5
+E01030789,Surrey Heath 009A,Surrey Heath,2,7,69.2
+E01030790,Surrey Heath 009B,Surrey Heath,2,7,69.2
+E01030798,Surrey Heath 005C,Surrey Heath,2,7,69.2
+E01033609,East Hertfordshire 010E,East Hertfordshire,1,7,9.8
+E01002149,Harrow 004D,Harrow,4,6,7.8
+E01004093,Sutton 025A,Sutton,2,6,14.0
+E01004094,Sutton 025B,Sutton,3,6,14.0
+E01004112,Sutton 016C,Sutton,2,6,14.0
+E01004114,Sutton 025D,Sutton,3,6,14.0
+E01018248,South Cambridgeshire 009C,South Cambridgeshire,2,6,71.8
+E01018250,South Cambridgeshire 009E,South Cambridgeshire,2,6,71.8
+E01018260,South Cambridgeshire 006D,South Cambridgeshire,3,6,43.9
+E01022571,East Hampshire 003A,East Hampshire,2,6,77.0
+E01022573,East Hampshire 003C,East Hampshire,2,6,77.0
+E01022605,East Hampshire 001D,East Hampshire,2,6,77.0
+E01023239,Winchester 002D,Winchester,2,6,38.5
+E01023919,Welwyn Hatfield 006D,Welwyn Hatfield,1,6,58.0
+E01023926,Welwyn Hatfield 011C,Welwyn Hatfield,3,6,58.0
+E01023953,Welwyn Hatfield 005D,Welwyn Hatfield,3,6,58.0
+E01029724,Stafford 011D,Stafford,6,6,7.0
+E01030379,Epsom and Ewell 009A,Epsom and Ewell,3,6,14.0
+E01030382,Epsom and Ewell 010A,Epsom and Ewell,3,6,14.0
+E01030392,Epsom and Ewell 010C,Epsom and Ewell,2,6,14.0
+E01030395,Epsom and Ewell 004A,Epsom and Ewell,2,6,14.0
+E01030396,Epsom and Ewell 010D,Epsom and Ewell,3,6,14.0
+E01030398,Epsom and Ewell 010E,Epsom and Ewell,2,6,14.0
+E01030404,Epsom and Ewell 007D,Epsom and Ewell,2,6,14.0
+E01030406,Epsom and Ewell 003C,Epsom and Ewell,2,6,14.0
+E01030415,Epsom and Ewell 004C,Epsom and Ewell,2,6,14.0
+E01030416,Epsom and Ewell 004D,Epsom and Ewell,2,6,14.0
+E01030417,Epsom and Ewell 009D,Epsom and Ewell,3,6,14.0
+E01030419,Epsom and Ewell 008D,Epsom and Ewell,3,6,14.0
+E01030603,Reigate and Banstead 001A,Reigate and Banstead,3,6,14.0
+E01030604,Reigate and Banstead 001B,Reigate and Banstead,3,6,14.0
+E01031803,Worthing 013B,Worthing,4,6,18.9
+E01031804,Worthing 013C,Worthing,8,6,18.9
+E01031828,Worthing 001D,Worthing,6,6,18.9
+E01032623,Sutton 025E,Sutton,2,6,14.0
+E01032624,Epsom and Ewell 010F,Epsom and Ewell,2,6,14.0
+E01033050,St Edmundsbury 005G,West Suffolk,2,6,17.0
+E01004082,Sutton 011G,Sutton,2,5,13.5
+E01004084,Sutton 024A,Sutton,2,5,13.5
+E01004087,Sutton 017A,Sutton,2,5,13.5
+E01004097,Sutton 015A,Sutton,2,5,13.5
+E01004101,Sutton 013A,Sutton,2,5,13.5
+E01004104,Sutton 020A,Sutton,2,5,13.5
+E01004105,Sutton 022C,Sutton,1,5,13.5
+E01004106,Sutton 022D,Sutton,1,5,13.5
+E01004154,Sutton 022E,Sutton,1,5,13.5
+E01004180,Sutton 020D,Sutton,2,5,13.5
+E01017782,Chiltern 013C,Chiltern,1,5,97.6
+E01017784,Chiltern 013E,Chiltern,1,5,97.6
+E01017797,South Bucks 001B,South Bucks,1,5,97.6
+E01017801,South Bucks 001F,South Bucks,1,5,97.6
+E01017815,South Bucks 004A,South Bucks,1,5,8.0
+E01017816,South Bucks 004B,South Bucks,1,5,8.0
+E01017831,South Bucks 005B,South Bucks,1,5,8.0
+E01017861,Wycombe 006E,Wycombe,1,5,97.6
+E01017862,Wycombe 006F,Wycombe,1,5,97.6
+E01017863,Wycombe 006G,Wycombe,1,5,97.6
+E01017873,Wycombe 003E,Wycombe,1,5,97.6
+E01017880,Wycombe 024A,Wycombe,1,5,97.6
+E01017881,Wycombe 024B,Wycombe,1,5,97.6
+E01017882,Wycombe 024C,Wycombe,1,5,97.6
+E01017883,Wycombe 024D,Wycombe,1,5,97.6
+E01017884,Wycombe 024E,Wycombe,1,5,97.6
+E01017924,Wycombe 008E,Wycombe,1,5,97.6
+E01017937,Wycombe 009A,Wycombe,1,5,97.6
+E01017938,Wycombe 009B,Wycombe,1,5,97.6
+E01017942,Wycombe 009D,Wycombe,1,5,97.6
+E01021469,Brentwood 001E,Brentwood,3,5,12.3
+E01021471,Brentwood 001G,Brentwood,3,5,12.3
+E01023468,East Hertfordshire 018A,East Hertfordshire,1,5,38.2
+E01023505,East Hertfordshire 018F,East Hertfordshire,1,5,38.2
+E01029657,South Staffordshire 001C,South Staffordshire,5,5,24.4
+E01030084,Mid Suffolk 004D,Mid Suffolk,2,5,16.5
+E01030447,Guildford 003G,Guildford,3,5,11.2
+E01031424,Arun 008D,Arun,4,5,18.6
+E01032610,Wycombe 024F,Wycombe,1,5,97.6
+E01000707,Bromley 041A,Bromley,1,4,4.5
+E01000771,Bromley 041C,Bromley,1,4,4.5
+E01000772,Bromley 012E,Bromley,1,4,4.5
+E01000826,Bromley 021A,Bromley,1,4,4.5
+E01000830,Bromley 021C,Bromley,1,4,4.5
+E01000839,Bromley 030F,Bromley,1,4,4.5
+E01000841,Bromley 030H,Bromley,1,4,4.5
+E01001129,Croydon 026D,Croydon,1,4,4.5
+E01017955,Cambridge 005A,Cambridge,2,4,39.9
+E01017957,Cambridge 005C,Cambridge,2,4,39.9
+E01017964,Cambridge 011F,Cambridge,3,4,39.9
+E01018007,Cambridge 004B,Cambridge,2,4,39.9
+E01023238,Winchester 002C,Winchester,1,4,31.8
+E01026552,Broadland 005D,Broadland,1,4,16.1
+E01026644,King's Lynn and West Norfolk 014C,King's Lynn and West Norfolk,1,4,28.7
+E01028652,South Oxfordshire 016C,South Oxfordshire,3,4,9.8
+E01028655,South Oxfordshire 017C,South Oxfordshire,3,4,9.8
+E01030910,Waverley 018C,Waverley,2,4,8.3
+E01030939,Waverley 011E,Waverley,2,4,37.2
+E01002390,Havering 024E,Havering,1,3,7.5
+E01017629,Aylesbury Vale 021C,Aylesbury Vale,3,3,9.2
+E01017632,Aylesbury Vale 021F,Aylesbury Vale,3,3,9.2
+E01018234,South Cambridgeshire 002B,South Cambridgeshire,2,3,8.8
+E01018235,South Cambridgeshire 002C,South Cambridgeshire,2,3,8.8
+E01018258,South Cambridgeshire 006B,South Cambridgeshire,2,3,8.8
+E01018262,South Cambridgeshire 006F,South Cambridgeshire,2,3,8.8
+E01021645,Colchester 019C,Colchester,1,3,14.7
+E01023420,Dacorum 003C,Dacorum,4,3,9.2
+E01023421,Dacorum 004B,Dacorum,4,3,9.2
+E01023422,Dacorum 004C,Dacorum,4,3,9.2
+E01023423,Dacorum 002A,Dacorum,4,3,9.2
+E01023425,Dacorum 002C,Dacorum,4,3,9.2
+E01023734,St Albans 007B,St Albans,1,3,20.9
+E01030442,Guildford 003B,Guildford,2,3,6.2
+E01030445,Guildford 003E,Guildford,2,3,6.2
+E01016532,Windsor and Maidenhead 002C,Windsor and Maidenhead,2,2,10.0
+E01016533,Windsor and Maidenhead 002D,Windsor and Maidenhead,2,2,10.0
+E01016570,Windsor and Maidenhead 001A,Windsor and Maidenhead,3,2,10.0
+E01016571,Windsor and Maidenhead 003A,Windsor and Maidenhead,4,2,10.0
+E01016586,Windsor and Maidenhead 004C,Windsor and Maidenhead,3,2,10.0
+E01017849,Wycombe 021D,Wycombe,1,2,10.0
+E01017890,Wycombe 022B,Wycombe,1,2,10.0
+E01017891,Wycombe 022C,Wycombe,1,2,10.0
+E01017892,Wycombe 022D,Wycombe,1,2,10.0
+E01017894,Wycombe 022F,Wycombe,1,2,10.0
+E01017896,Wycombe 023B,Wycombe,1,2,10.0
+E01017897,Wycombe 023C,Wycombe,1,2,10.0
+E01018015,East Cambridgeshire 008C,East Cambridgeshire,7,2,0.8
+E01018239,South Cambridgeshire 017B,South Cambridgeshire,2,2,0.8
+E01018282,South Cambridgeshire 015D,South Cambridgeshire,2,2,0.8
+E01023160,Test Valley 008A,Test Valley,3,2,14.1
+E01029709,Stafford 015E,Stafford,2,2,10.4
+E01029894,Babergh 004C,Babergh,2,2,13.5
+E01029895,Babergh 004D,Babergh,2,2,13.5
+E01030560,Reigate and Banstead 002B,Reigate and Banstead,2,2,1.5
+E01002286,Havering 025C,Havering,1,1,7.0
+E01014887,South Gloucestershire 008B,South Gloucestershire,1,1,1.1
+E01014888,South Gloucestershire 008C,South Gloucestershire,1,1,1.1
+E01017995,Cambridge 013D,Cambridge,3,1,0.2
+E01018014,East Cambridgeshire 008B,East Cambridgeshire,6,1,0.2
+E01018283,South Cambridgeshire 015E,South Cambridgeshire,1,1,0.2
+E01018295,South Cambridgeshire 012D,South Cambridgeshire,1,1,0.2
+E01022354,Stroud 002A,Stroud,3,1,0.0
+E01026510,Broadland 017C,Broadland,1,1,3.8
+E01031820,Worthing 001B,Worthing,6,1,0.3
+E01031997,Wiltshire 046C,Wiltshire,3,1,2.1
+E01000325,Bexley 014A,Bexley,2,0,0.0
+E01000353,Bexley 011A,Bexley,1,0,0.0
+E01000357,Bexley 009B,Bexley,0,0,0.0
+E01000436,Bexley 011E,Bexley,0,0,0.0
+E01001019,Croydon 044B,Croydon,0,0,0.0
+E01001032,Croydon 035A,Croydon,1,0,0.0
+E01001101,Croydon 035B,Croydon,0,0,0.0
+E01001104,Croydon 042D,Croydon,0,0,0.0
+E01001108,Croydon 035E,Croydon,0,0,0.0
+E01001124,Croydon 033D,Croydon,0,0,0.0
+E01002339,Havering 008D,Havering,0,0,0.0
+E01002389,Havering 024D,Havering,0,0,0.0
+E01002419,Hillingdon 006B,Hillingdon,3,0,0.0
+E01002431,Hillingdon 006C,Hillingdon,3,0,0.0
+E01002434,Hillingdon 007B,Hillingdon,3,0,0.0
+E01002435,Hillingdon 007C,Hillingdon,3,0,0.0
+E01002437,Hillingdon 006E,Hillingdon,3,0,0.0
+E01002459,Hillingdon 011B,Hillingdon,3,0,0.0
+E01002467,Hillingdon 009B,Hillingdon,3,0,0.0
+E01002480,Hillingdon 004D,Hillingdon,3,0,0.0
+E01002482,Hillingdon 001E,Hillingdon,2,0,0.0
+E01004091,Sutton 022A,Sutton,0,0,0.0
+E01014737,North Somerset 011A,North Somerset,0,0,0.0
+E01014775,North Somerset 009A,North Somerset,0,0,0.0
+E01014776,North Somerset 009B,North Somerset,0,0,0.0
+E01014777,North Somerset 009C,North Somerset,0,0,0.0
+E01014778,North Somerset 009D,North Somerset,0,0,0.0
+E01014782,North Somerset 008C,North Somerset,0,0,0.0
+E01016257,West Berkshire 003B,West Berkshire,0,0,0.0
+E01016387,Reading 002B,Reading,3,0,0.0
+E01016411,Reading 001D,Reading,3,0,0.0
+E01016425,Reading 002C,Reading,3,0,0.0
+E01016430,Reading 002E,Reading,3,0,0.0
+E01016525,Windsor and Maidenhead 005A,Windsor and Maidenhead,3,0,0.0
+E01016526,Windsor and Maidenhead 006A,Windsor and Maidenhead,3,0,0.0
+E01016527,Windsor and Maidenhead 006B,Windsor and Maidenhead,3,0,0.0
+E01016528,Windsor and Maidenhead 005B,Windsor and Maidenhead,3,0,0.0
+E01016534,Windsor and Maidenhead 006C,Windsor and Maidenhead,2,0,0.0
+E01016535,Windsor and Maidenhead 007A,Windsor and Maidenhead,3,0,0.0
+E01016538,Windsor and Maidenhead 007C,Windsor and Maidenhead,3,0,0.0
+E01016559,Windsor and Maidenhead 008A,Windsor and Maidenhead,3,0,0.0
+E01016561,Windsor and Maidenhead 008C,Windsor and Maidenhead,2,0,0.0
+E01016562,Windsor and Maidenhead 008D,Windsor and Maidenhead,3,0,0.0
+E01016563,Windsor and Maidenhead 008E,Windsor and Maidenhead,2,0,0.0
+E01016598,Windsor and Maidenhead 006D,Windsor and Maidenhead,2,0,0.0
+E01016601,Windsor and Maidenhead 006E,Windsor and Maidenhead,2,0,0.0
+E01016602,Windsor and Maidenhead 006F,Windsor and Maidenhead,2,0,0.0
+E01016930,Brighton and Hove 004B,Brighton and Hove,1,0,0.0
+E01016934,Brighton and Hove 010C,Brighton and Hove,2,0,0.0
+E01016939,Brighton and Hove 010D,Brighton and Hove,2,0,0.0
+E01016940,Brighton and Hove 010E,Brighton and Hove,2,0,0.0
+E01016982,Brighton and Hove 007B,Brighton and Hove,1,0,0.0
+E01016983,Brighton and Hove 007C,Brighton and Hove,1,0,0.0
+E01016984,Brighton and Hove 007D,Brighton and Hove,1,0,0.0
+E01016998,Brighton and Hove 003C,Brighton and Hove,1,0,0.0
+E01017001,Brighton and Hove 004C,Brighton and Hove,2,0,0.0
+E01017005,Brighton and Hove 011D,Brighton and Hove,2,0,0.0
+E01017625,Central Bedfordshire 031C,Central Bedfordshire,1,0,0.0
+E01017626,Central Bedfordshire 031D,Central Bedfordshire,1,0,0.0
+E01017630,Aylesbury Vale 021D,Aylesbury Vale,0,0,0.0
+E01017631,Aylesbury Vale 021E,Aylesbury Vale,0,0,0.0
+E01017636,Aylesbury Vale 017B,Aylesbury Vale,0,0,0.0
+E01017638,Aylesbury Vale 017D,Aylesbury Vale,0,0,0.0
+E01017639,Aylesbury Vale 017E,Aylesbury Vale,0,0,0.0
+E01017689,Aylesbury Vale 019C,Aylesbury Vale,0,0,0.0
+E01017691,Aylesbury Vale 019E,Aylesbury Vale,0,0,0.0
+E01017727,Aylesbury Vale 024B,Aylesbury Vale,0,0,0.0
+E01017728,Aylesbury Vale 024C,Aylesbury Vale,0,0,0.0
+E01017729,Aylesbury Vale 024D,Aylesbury Vale,0,0,0.0
+E01017768,Chiltern 005A,Chiltern,0,0,0.0
+E01017773,Chiltern 013A,Chiltern,0,0,0.0
+E01017774,Chiltern 013B,Chiltern,0,0,0.0
+E01017779,Chiltern 005B,Chiltern,0,0,0.0
+E01017785,Chiltern 005C,Chiltern,0,0,0.0
+E01017786,Chiltern 005D,Chiltern,0,0,0.0
+E01017787,Chiltern 005E,Chiltern,0,0,0.0
+E01017796,South Bucks 001A,South Bucks,0,0,0.0
+E01017798,South Bucks 001C,South Bucks,0,0,0.0
+E01017799,South Bucks 001D,South Bucks,0,0,0.0
+E01017869,Wycombe 003A,Wycombe,0,0,0.0
+E01017870,Wycombe 003B,Wycombe,0,0,0.0
+E01017871,Wycombe 003C,Wycombe,0,0,0.0
+E01017872,Wycombe 003D,Wycombe,0,0,0.0
+E01017874,Wycombe 003F,Wycombe,0,0,0.0
+E01017917,Wycombe 004C,Wycombe,0,0,0.0
+E01017959,Cambridge 011A,Cambridge,2,0,0.0
+E01018013,East Cambridgeshire 008A,East Cambridgeshire,5,0,0.0
+E01018244,South Cambridgeshire 011C,South Cambridgeshire,1,0,0.0
+E01021754,Epping Forest 004B,Epping Forest,0,0,0.0
+E01022062,Uttlesford 005A,Uttlesford,0,0,0.0
+E01022181,Cotswold 003B,Cotswold,0,0,0.0
+E01022196,Cotswold 006D,Cotswold,0,0,0.0
+E01022197,Cotswold 006E,Cotswold,0,0,0.0
+E01022476,Basingstoke and Deane 016B,Basingstoke and Deane,0,0,0.0
+E01022505,Basingstoke and Deane 016E,Basingstoke and Deane,0,0,0.0
+E01022509,Basingstoke and Deane 019E,Basingstoke and Deane,0,0,0.0
+E01022510,Basingstoke and Deane 021B,Basingstoke and Deane,0,0,0.0
+E01022511,Basingstoke and Deane 021C,Basingstoke and Deane,0,0,0.0
+E01022512,Basingstoke and Deane 021D,Basingstoke and Deane,0,0,0.0
+E01022516,Basingstoke and Deane 018B,Basingstoke and Deane,0,0,0.0
+E01022517,Basingstoke and Deane 018C,Basingstoke and Deane,0,0,0.0
+E01022518,Basingstoke and Deane 018D,Basingstoke and Deane,0,0,0.0
+E01022519,Basingstoke and Deane 018E,Basingstoke and Deane,0,0,0.0
+E01022528,Basingstoke and Deane 015A,Basingstoke and Deane,0,0,0.0
+E01022530,Basingstoke and Deane 015C,Basingstoke and Deane,0,0,0.0
+E01022581,East Hampshire 001A,East Hampshire,0,0,0.0
+E01022588,East Hampshire 013A,East Hampshire,0,0,0.0
+E01022590,East Hampshire 013C,East Hampshire,0,0,0.0
+E01022596,East Hampshire 007E,East Hampshire,0,0,0.0
+E01022608,East Hampshire 013E,East Hampshire,1,0,0.0
+E01022629,East Hampshire 016C,East Hampshire,2,0,0.0
+E01023169,Test Valley 001B,Test Valley,1,0,0.0
+E01023180,Test Valley 005B,Test Valley,1,0,0.0
+E01023187,Test Valley 006A,Test Valley,1,0,0.0
+E01023188,Test Valley 006B,Test Valley,1,0,0.0
+E01023189,Test Valley 005D,Test Valley,1,0,0.0
+E01023218,Test Valley 006E,Test Valley,1,0,0.0
+E01023278,Winchester 004B,Winchester,2,0,0.0
+E01023279,Winchester 004C,Winchester,2,0,0.0
+E01023287,Winchester 001B,Winchester,0,0,0.0
+E01023313,Broxbourne 007C,Broxbourne,0,0,0.0
+E01023408,Dacorum 022C,Dacorum,0,0,0.0
+E01023410,Dacorum 017B,Dacorum,0,0,0.0
+E01023412,Dacorum 017D,Dacorum,0,0,0.0
+E01023416,Dacorum 006C,Dacorum,1,0,0.0
+E01023523,Hertsmere 005A,Hertsmere,0,0,0.0
+E01023524,Hertsmere 005B,Hertsmere,1,0,0.0
+E01023526,Hertsmere 005D,Hertsmere,0,0,0.0
+E01023550,Hertsmere 013C,Hertsmere,1,0,0.0
+E01023551,Hertsmere 013D,Hertsmere,1,0,0.0
+E01023553,Hertsmere 008B,Hertsmere,1,0,0.0
+E01023558,Hertsmere 012A,Hertsmere,1,0,0.0
+E01023563,Hertsmere 012F,Hertsmere,1,0,0.0
+E01023581,Hertsmere 004A,Hertsmere,0,0,0.0
+E01023664,St Albans 013A,St Albans,0,0,0.0
+E01023667,St Albans 013C,St Albans,0,0,0.0
+E01023668,St Albans 013D,St Albans,0,0,0.0
+E01023673,St Albans 010A,St Albans,0,0,0.0
+E01023675,St Albans 011C,St Albans,0,0,0.0
+E01023710,St Albans 008B,St Albans,0,0,0.0
+E01023711,St Albans 008C,St Albans,0,0,0.0
+E01023714,St Albans 010B,St Albans,0,0,0.0
+E01023715,St Albans 010C,St Albans,0,0,0.0
+E01023716,St Albans 010D,St Albans,0,0,0.0
+E01023721,St Albans 019D,St Albans,0,0,0.0
+E01023728,St Albans 012C,St Albans,0,0,0.0
+E01023730,St Albans 020B,St Albans,0,0,0.0
+E01023733,St Albans 020E,St Albans,0,0,0.0
+E01023735,St Albans 007C,St Albans,0,0,0.0
+E01023741,St Albans 017E,St Albans,0,0,0.0
+E01023743,St Albans 014B,St Albans,0,0,0.0
+E01023744,St Albans 014C,St Albans,0,0,0.0
+E01023745,St Albans 014D,St Albans,0,0,0.0
+E01023802,Three Rivers 001A,Three Rivers,0,0,0.0
+E01023803,Three Rivers 001B,Three Rivers,0,0,0.0
+E01023810,Three Rivers 010C,Three Rivers,1,0,0.0
+E01023821,Three Rivers 006C,Three Rivers,0,0,0.0
+E01023824,Three Rivers 003B,Three Rivers,0,0,0.0
+E01023825,Three Rivers 006E,Three Rivers,0,0,0.0
+E01023839,Three Rivers 011A,Three Rivers,0,0,0.0
+E01023840,Three Rivers 011B,Three Rivers,0,0,0.0
+E01023878,Watford 007A,Watford,0,0,0.0
+E01023881,Watford 007D,Watford,0,0,0.0
+E01023885,Watford 012D,Watford,1,0,0.0
+E01023887,Watford 008B,Watford,0,0,0.0
+E01023889,Watford 008D,Watford,1,0,0.0
+E01023894,Watford 002E,Watford,0,0,0.0
+E01023898,Watford 005D,Watford,1,0,0.0
+E01023948,Welwyn Hatfield 016B,Welwyn Hatfield,0,0,0.0
+E01023949,Welwyn Hatfield 016C,Welwyn Hatfield,0,0,0.0
+E01024150,Dartford 010A,Dartford,2,0,0.0
+E01024151,Dartford 010B,Dartford,2,0,0.0
+E01024153,Dartford 010D,Dartford,2,0,0.0
+E01024270,Gravesham 012C,Gravesham,0,0,0.0
+E01024272,Gravesham 012E,Gravesham,0,0,0.0
+E01024418,Sevenoaks 011B,Sevenoaks,1,0,0.0
+E01024423,Sevenoaks 008B,Sevenoaks,1,0,0.0
+E01024424,Sevenoaks 011C,Sevenoaks,1,0,0.0
+E01024441,Sevenoaks 004A,Sevenoaks,0,0,0.0
+E01024443,Sevenoaks 004C,Sevenoaks,0,0,0.0
+E01024445,Sevenoaks 001A,Sevenoaks,1,0,0.0
+E01024446,Sevenoaks 001B,Sevenoaks,0,0,0.0
+E01024449,Sevenoaks 009B,Sevenoaks,1,0,0.0
+E01024453,Sevenoaks 009D,Sevenoaks,1,0,0.0
+E01024461,Sevenoaks 010C,Sevenoaks,1,0,0.0
+E01024463,Sevenoaks 011D,Sevenoaks,1,0,0.0
+E01024464,Sevenoaks 011E,Sevenoaks,1,0,0.0
+E01024467,Sevenoaks 011F,Sevenoaks,1,0,0.0
+E01024468,Sevenoaks 010F,Sevenoaks,1,0,0.0
+E01024469,Sevenoaks 012D,Sevenoaks,1,0,0.0
+E01024470,Sevenoaks 012E,Sevenoaks,1,0,0.0
+E01024471,Sevenoaks 012F,Sevenoaks,1,0,0.0
+E01024474,Sevenoaks 003C,Sevenoaks,0,0,0.0
+E01024725,Tonbridge and Malling 006C,Tonbridge and Malling,0,0,0.0
+E01026198,North Kesteven 008C,North Kesteven,0,0,0.0
+E01026362,South Kesteven 012C,South Kesteven,1,0,0.0
+E01026364,South Kesteven 012E,South Kesteven,0,0,0.0
+E01026506,Broadland 014C,Broadland,0,0,0.0
+E01026507,Broadland 014D,Broadland,0,0,0.0
+E01026521,Broadland 007D,Broadland,0,0,0.0
+E01026562,Broadland 006A,Broadland,0,0,0.0
+E01026567,Broadland 006F,Broadland,0,0,0.0
+E01026568,Broadland 006G,Broadland,0,0,0.0
+E01026906,South Norfolk 003B,South Norfolk,1,0,0.0
+E01026927,South Norfolk 006D,South Norfolk,0,0,0.0
+E01028644,South Oxfordshire 015C,South Oxfordshire,0,0,0.0
+E01028645,South Oxfordshire 018D,South Oxfordshire,0,0,0.0
+E01028662,South Oxfordshire 019D,South Oxfordshire,1,0,0.0
+E01028664,South Oxfordshire 020C,South Oxfordshire,1,0,0.0
+E01028665,South Oxfordshire 020D,South Oxfordshire,1,0,0.0
+E01028685,South Oxfordshire 018E,South Oxfordshire,0,0,0.0
+E01029903,Babergh 010E,Babergh,3,0,0.0
+E01029904,Babergh 010F,Babergh,3,0,0.0
+E01030166,Suffolk Coastal 013F,East Suffolk,0,0,0.0
+E01030561,Reigate and Banstead 002C,Reigate and Banstead,1,0,0.0
+E01030854,Tandridge 012C,Tandridge,0,0,0.0
+E01030855,Tandridge 002A,Tandridge,0,0,0.0
+E01030878,Waverley 011B,Waverley,0,0,0.0
+E01030937,Waverley 011C,Waverley,1,0,0.0
+E01031425,Arun 002C,Arun,0,0,0.0
+E01031874,Wiltshire 012D,Wiltshire,1,0,0.0
+E01032850,Basingstoke and Deane 021G,Basingstoke and Deane,0,0,0.0
+E01032856,Hart 011E,Hart,0,0,0.0
+E01032870,Test Valley 005F,Test Valley,1,0,0.0

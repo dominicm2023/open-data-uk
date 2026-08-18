@@ -1,0 +1,41 @@
+scope,rank,site_name,company,spills_2025,hours_2025,lon,lat,nearest_league_town,nearest_league_town_km
+england,1,SALCOMBE REGIS WWTW CSO,South West Water,235,5446.1,-3.208561,50.688933,East Devon,7.71
+england,2,#N/A,South West Water,243,4966.9,-4.520776,50.903672,Torridge,21.28
+england,3,TATWORTH WWTW,South West Water,189,4141.5,-2.942733,50.83887,East Devon,21.71
+england,4,BRAYFORD STW,South West Water,172,3762.9,-3.88057,51.093812,Torridge,31.38
+england,5,LAVANT WWTW,Southern Water,166,3582.9,-0.773805,50.863988,Arun,8.99
+england,6,CHACEWATER STW,South West Water,159,3542.4,-5.153865,50.253997,Cornwall,42.34
+england,7,MARKYATE WASTEWATER TREATMENT WORKS,Thames Water,155,3530.8,-0.441648,51.826982,Castle Point,76.86
+england,8,STAVELEY WWTW,United Utilities,167,3394.5,-2.797832,54.375047,Lancaster,34.11
+england,9,ALTARNUN STW (STORM TANK),South West Water,165,3294.5,-4.511148,50.605267,Cornwall,19.58
+england,10,CHURCH STRETTON STW,Severn Trent Water,162,3256.6,-2.825701,52.512388,Wirral,97.25
+england,11,GLEASTON CASTLE CSO,United Utilities,139,3206.0,-3.133121,54.13976,Lancaster,31.55
+england,12,PRAZE AN BEEBLE STW,South West Water,147,3153.0,-5.316768,50.175238,Cornwall,56.81
+england,13,TIVERTON STW,South West Water,160,3151.9,-3.48964,50.88272,East Devon,23.3
+england,14,HURDCOTT WASTEWATER TREATMENT WORKS,Wessex Water,167,3119.0,-1.760863,51.101373,New Forest,29.56
+england,15,STEWKLEY WASTEWATER TREATMENT WORKS,Thames Water,143,3069.2,-0.765867,51.915799,Castle Point,101.21
+england,16,PYWORTHY SEWAGE TREATMENT WORKS,South West Water,146,2919.5,-4.412925,50.803959,Torridge,17.91
+england,17,DELABOLE WASTEWATER TREATMENT WORKS,South West Water,148,2903.1,-4.725236,50.614304,Cornwall,19.16
+england,18,CHERITON FITZPAINE WWTW,South West Water,140,2808.0,-3.623333,50.843615,East Devon,29.68
+england,19,KINGS SOMBORNE WWTW,Southern Water,125,2800.5,-1.520098,51.057111,New Forest,22.77
+england,20,South Moreton,Thames Water,137,2720.8,-1.185814,51.59074,Havant,80.88
+seaside_league,1,SALCOMBE REGIS WWTW CSO,South West Water,235,5446.1,-3.208561,50.688933,East Devon,7.71
+seaside_league,2,LAVANT WWTW,Southern Water,166,3582.9,-0.773805,50.863988,Arun,8.99
+seaside_league,3,BLENNERHASSET WW PUMPING STATION,United Utilities,172,2508.4,-3.283134,54.761013,Cumberland,8.52
+seaside_league,4,HARBERTONFORD WWTW,South West Water,120,2494.4,-3.701385,50.391204,South Hams,8.68
+seaside_league,5,HAM LANE LEWES SETTLES STORM TANK,Southern Water,155,2485.2,0.020445,50.864632,Lewes,3.59
+seaside_league,6,GRATTON WASTEWATER TREATMENT WORKS,South West Water,143,2484.5,-4.082532,50.48151,Plymouth,8.79
+seaside_league,7,LIDSEY WWTW,Southern Water,157,2406.9,-0.660088,50.820651,Arun,2.61
+seaside_league,8,OVER KELLET WWTW,United Utilities,134,2402.0,-2.741466,54.125734,Lancaster,7.42
+seaside_league,9,STOKE HILL WWTW,South West Water,135,2367.6,-4.107698,50.486363,Plymouth,9.07
+seaside_league,10,COCKERMOUTH WWTW,United Utilities,133,2354.1,-3.393213,54.667317,Cumberland,5.84
+seaside_league,11,GRATTON CSO,South West Water,167,2123.8,-4.075894,50.484416,Plymouth,9.22
+seaside_league,12,PAYHEMBURY STW,South West Water,119,2058.2,-3.296666,50.803547,East Devon,7.25
+seaside_league,13,EMBLETON WWTW,United Utilities,113,2043.5,-3.273535,54.663152,Cumberland,3.36
+seaside_league,14,KINGSTON WWTW,South West Water,103,2042.6,-3.913399,50.310738,South Hams,9.5
+seaside_league,15,ST NEOT STW,South West Water,167,2031.2,-4.556553,50.478084,Cornwall,6.83
+seaside_league,16,LUTTON STW,South West Water,118,1953.7,-3.973648,50.415682,Plymouth,9.95
+seaside_league,17,PLUMBLAND WWTW,United Utilities,164,1927.8,-3.338572,54.750258,Cumberland,7.43
+seaside_league,18,RATTERY WWTW CSO,South West Water,107,1712.6,-3.77146,50.440613,South Hams,8.37
+seaside_league,19,HARBERTON WWTW,South West Water,116,1659.7,-3.722389,50.41176,South Hams,8.21
+seaside_league,20,NETHER KELLET WTW NETHK,United Utilities,102,1628.0,-2.76346,54.106902,Lancaster,7.41

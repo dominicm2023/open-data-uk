@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sewage spills don&#x27;t track deprivation. Half of them can&#x27;t even be assigned to a neighbourhood."><title>Sewage spills don&#x27;t track deprivation. Half of them can&#x27;t even be assigned to a neighbourhood.</title><desc>The null result, stated as the finding</desc><style>
+text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.t-label { font-size: 14px; fill: #61656d; }
+.t-value { font-size: 14px; fill: #16181c; font-weight: 600;
+           font-variant-numeric: tabular-nums; }
+.t-big   { font-size: 62px; fill: #0e6e63; font-weight: 700;
+           font-variant-numeric: tabular-nums; }
+.t-unit  { font-size: 15px; fill: #61656d; }
+.p-key   { font-size: 9.5px; fill: #61656d; font-weight: 600;
+           letter-spacing: .09em; }
+.p-val   { font-size: 12px; fill: #16181c; }
+.p-mono  { font-size: 11px; fill: #16181c;
+           font-family: ui-monospace, Menlo, Consolas, monospace; }
+
+.h-kicker { font-size: 15px; fill: #61656d; font-weight: 600;
+            letter-spacing: .11em; }
+.h-title  { font-size: 44px; fill: #16181c; font-weight: 700; }
+.h-title2 { font-size: 31px; fill: #16181c; font-weight: 700; }
+.h-sub    { font-size: 17px; fill: #61656d; }
+.h-huge   { font-size: 150px; fill: #0e6e63; font-weight: 700;
+            font-variant-numeric: tabular-nums; }
+.h-unit   { font-size: 22px; fill: #16181c; font-weight: 600; }
+.h-note   { font-size: 13px; fill: #61656d; }
+</style><rect width="1200" height="630" fill="#ffffff"/><rect x="0" y="0" width="6" height="630" fill="#0e6e63"/><text x="56" y="86" class="h-kicker">WE CHECKED, SO YOU DON&#x27;T HAVE TO</text><text x="56" y="124" class="h-title2">Sewage spills don&#x27;t track</text><text x="56" y="162" class="h-title2">deprivation. Half of them</text><text x="56" y="200" class="h-title2">can&#x27;t even be assigned to a</text><text x="56" y="238" class="h-title2">neighbourhood.</text><text x="56" y="390" class="h-huge">52%</text><text x="373" y="344" class="h-unit">of storm overflows sit on a statistical boundary</text><text x="56" y="452" class="h-sub">We joined all 14,180 monitored English overflows to the index of deprivation, both polygon resolutions,</text><text x="56" y="477" class="h-sub">urban and coastal controls, ambiguous points pushed to both sides. The gradient is not there: the band</text><text x="56" y="502" class="h-sub">straddles even in every stratum. What is there: sewers discharge to rivers, rivers are the boundary lines,</text><text x="56" y="527" class="h-sub">so the join every campaign does is a coin flip for half its points.</text><rect x="0" y="538" width="1200" height="76" fill="#e4f1ee"/><rect x="0" y="538" width="1200" height="2" fill="#0e6e63"/><text x="28" y="562" class="p-key">MEASURED FROM</text><text x="28" y="578" class="p-mono">analysis/sewage: EA EDM 2025 x IMD 2019, method comparison and band treatment in REPORT.md — deprived/affluent ratio band [0.58, 1.15]</text><text x="28" y="604" class="p-val">open-data.org.uk · measured 17 August 2026</text><text x="1172" y="562" class="p-key" text-anchor="end">ARGUMENT BY</text><text x="1172" y="579" class="p-val" text-anchor="end">Joined Up</text></svg>

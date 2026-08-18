@@ -1,0 +1,15 @@
+service,service_label,real_per_head_2013_14,real_per_head_2018_19,real_per_head_2024_25,change_pct_2013_2024,caveat
+libraries,Libraries,20.44,14.79,12.0,-41.3,
+cultural,Culture & heritage,68.86,48.36,43.27,-37.2,
+highways_transport,Highways & transport,69.01,43.26,39.24,-43.1,
+planning_development,Planning & development,32.09,23.32,29.69,-7.5,
+environmental_regulatory,Environmental & regulatory,117.71,103.73,102.89,-12.6,
+refuse_and_recycling,Refuse & recycling,36.58,34.28,35.82,-2.1,
+waste_disposal,Waste disposal,38.25,36.26,32.93,-13.9,
+housing_gfra,Housing (GFRA),50.93,37.22,53.38,4.8,
+central,Central services,66.57,60.57,67.49,1.4,
+public_health,Public health,63.75,74.22,70.26,10.2,public health grant was new in 2013-14 - base year is a ramp-up
+adult_social_care,Adult social care,370.28,364.51,429.38,16.0,
+children_social_care,Children's social care,175.78,212.58,264.62,50.5,
+education,Education,911.83,730.59,736.07,-19.3,"academisation moved schools off LA books over this period - NOT a cut, do not quote as one"
+total_service_expenditure,Total service expenditure,1940.19,1709.32,1850.82,-4.6,

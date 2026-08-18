@@ -1,0 +1,6 @@
+cls,service,high_authority,high_net_per_head,high_gross_per_head,high_imd_avg_score,low_authority,low_net_per_head,low_gross_per_head,low_imd_avg_score,net_ratio,gross_ratio,class_median_net,skipped_as_artefact
+UA,children_social_care,Blackpool,598.75,660.01,45.04,North Yorkshire,136.14,149.69,14.76,4.4,4.41,268.07,
+LB,children_social_care,Islington,419.83,513.72,27.54,Harrow,182.91,187.94,15.03,2.3,2.73,260.58,
+MD,children_social_care,Bradford,455.87,468.38,34.67,Kirklees,217.62,232.19,25.15,2.09,2.02,313.94,
+UA,adult_social_care,Isle of Wight,617.15,807.89,23.29,Slough,346.34,433.83,22.97,1.78,1.86,444.5,Thurrock; Derby City
+LB,libraries,Kensington & Chelsea,43.84,46.21,21.53,Barking & Dagenham,3.35,4.04,32.77,13.09,11.44,14.66,

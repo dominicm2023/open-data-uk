@@ -1,0 +1,13 @@
+cls,service,n,spearman_rho,p_value
+LB,children_social_care,32,0.569,0.00069
+LB,adult_social_care,32,0.281,0.11954
+LB,libraries,32,0.036,0.84368
+MD,children_social_care,36,0.442,0.00696
+MD,adult_social_care,36,0.093,0.59091
+MD,libraries,36,-0.05,0.77126
+UA,children_social_care,61,0.822,0.0
+UA,adult_social_care,61,0.111,0.39509
+UA,libraries,61,-0.018,0.89013
+SC,children_social_care,21,0.235,0.30503
+SC,adult_social_care,21,0.548,0.01011
+SC,libraries,21,0.158,0.49439

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="More than half of the spending in Britain&#x27;s transparency files is the state paying itself."><title>More than half of the spending in Britain&#x27;s transparency files is the state paying itself.</title><desc>The state paying itself, at headline scale</desc><style>
+text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.t-label { font-size: 14px; fill: #61656d; }
+.t-value { font-size: 14px; fill: #16181c; font-weight: 600;
+           font-variant-numeric: tabular-nums; }
+.t-big   { font-size: 62px; fill: #0e6e63; font-weight: 700;
+           font-variant-numeric: tabular-nums; }
+.t-unit  { font-size: 15px; fill: #61656d; }
+.p-key   { font-size: 9.5px; fill: #61656d; font-weight: 600;
+           letter-spacing: .09em; }
+.p-val   { font-size: 12px; fill: #16181c; }
+.p-mono  { font-size: 11px; fill: #16181c;
+           font-family: ui-monospace, Menlo, Consolas, monospace; }
+
+.h-kicker { font-size: 15px; fill: #61656d; font-weight: 600;
+            letter-spacing: .11em; }
+.h-title  { font-size: 44px; fill: #16181c; font-weight: 700; }
+.h-title2 { font-size: 31px; fill: #16181c; font-weight: 700; }
+.h-sub    { font-size: 17px; fill: #61656d; }
+.h-huge   { font-size: 150px; fill: #0e6e63; font-weight: 700;
+            font-variant-numeric: tabular-nums; }
+.h-unit   { font-size: 22px; fill: #16181c; font-weight: 600; }
+.h-note   { font-size: 13px; fill: #61656d; }
+</style><rect width="1200" height="630" fill="#ffffff"/><rect x="0" y="0" width="6" height="630" fill="#0e6e63"/><text x="56" y="86" class="h-kicker">WHERE THE MONEY ACTUALLY GOES</text><text x="56" y="124" class="h-title2">More than half of the</text><text x="56" y="162" class="h-title2">spending in Britain&#x27;s</text><text x="56" y="200" class="h-title2">transparency files is the</text><text x="56" y="238" class="h-title2">state paying itself.</text><text x="56" y="390" class="h-huge">£1.72tn</text><text x="769" y="344" class="h-unit">from public bodies to public</text><text x="769" y="372" class="h-unit">bodies</text><text x="56" y="452" class="h-sub">53% of the £3.27tn corpus: NHS block grants, pension transfers, department-to-Treasury flows. DHSC sends</text><text x="56" y="477" class="h-sub">91% of its published spend to other public bodies, and two of its single transfers each exceed the</text><text x="56" y="502" class="h-sub">combined 18-year spending of every council in the corpus. The transparency files exist to show us the</text><text x="56" y="527" class="h-sub">state&#x27;s suppliers; mostly they show the state&#x27;s plumbing.</text><rect x="0" y="538" width="1200" height="76" fill="#e4f1ee"/><rect x="0" y="538" width="1200" height="2" fill="#0e6e63"/><text x="28" y="562" class="p-key">MEASURED FROM</text><text x="28" y="578" class="p-mono">analysis/supplier/flows.csv — 9,523 publisher-to-body pairs, 4,919 public bodies, every name over £1M eyeballed</text><text x="28" y="604" class="p-val">open-data.org.uk · measured 17 August 2026</text><text x="1172" y="562" class="p-key" text-anchor="end">ARGUMENT BY</text><text x="1172" y="579" class="p-val" text-anchor="end">Joined Up</text></svg>

@@ -1,0 +1,13 @@
+cls,class_label,year,real_gbp_per_head,n_authorities,population_used
+LB,London borough,2013-14,27.24,33,8416543
+LB,London borough,2018-19,19.57,33,8908081
+LB,London borough,2024-25,16.29,33,9149646
+MD,Metropolitan district,2013-14,22.31,36,11608937
+MD,Metropolitan district,2018-19,15.76,36,12011595
+MD,Metropolitan district,2024-25,12.57,36,12528344
+UA,Unitary authority,2013-14,18.62,56,12281471
+UA,Unitary authority,2018-19,13.78,56,12708275
+UA,Unitary authority,2024-25,10.67,62,16671495
+SC,Shire county,2013-14,17.81,27,21558866
+SC,Shire county,2018-19,12.94,27,22349227
+SC,Shire county,2024-25,10.97,21,19977671

@@ -641,3 +641,259 @@ def treemap(items: list[tuple[str, int]], caption: str) -> tuple[str, int]:
         x += w
     cap, cap_h = _para(caption, PAD, h + 2, "t-label", 14, W - 2 * PAD, 19)
     return "".join(out) + cap, h + 2 + cap_h + 6
+
+
+# --- comparison forms ----------------------------------------------------
+#
+# Built for the strands work: scatter for relationships, slope for two-point
+# arcs, choropleth and hex cartogram for per-council values. The last two
+# read vendored geometry (lad_boundaries.json / lad_hex.json, fetched once
+# from ONS the way the coastline was) and degrade to nothing if it is
+# missing, so a chart is lost rather than a page.
+
+def scatter(points: list[dict], x_label: str, y_label: str, caption: str,
+            rho: float | None = None) -> tuple[str, int]:
+    """One dot per authority. A relationship is shown, never asserted: the
+    correlation is printed as a measured number, and a flat cloud is as
+    publishable as a steep one — the null scatters ship next to their steep
+    twins on purpose."""
+    if not points:
+        return "", PAD
+    h = 430
+    left, right, top_m, bot = PAD + 46, W - PAD - 10, PAD + 6, h - 46
+    xs = [p["x"] for p in points]
+    ys = [p["y"] for p in points]
+    x0, x1 = min(xs), max(xs)
+    y0, y1 = min(ys), max(ys)
+    xr = (x1 - x0) or 1
+    yr = (y1 - y0) or 1
+    out = []
+    for gy in range(5):
+        yy = top_m + (bot - top_m) * gy / 4
+        val = y1 - yr * gy / 4
+        out.append(f'<line x1="{left}" y1="{yy:.1f}" x2="{right}" y2="{yy:.1f}" '
+                   f'stroke="var(--chart-grid)" stroke-width="1"/>'
+                   f'<text x="{left - 8}" y="{yy + 4:.1f}" class="t-label" '
+                   f'text-anchor="end">{val:,.0f}</text>')
+    for p in points:
+        px = left + (p["x"] - x0) / xr * (right - left)
+        py = bot - (p["y"] - y0) / yr * (bot - top_m)
+        out.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4" '
+                   f'fill="{p.get("fill", "var(--cat-1)")}" opacity=".75"/>')
+        if p.get("label"):
+            # A label near the right edge flips to the left of its point;
+            # drawn rightward it leaves the frame, and SVG will not stop it.
+            text = _fit(p["label"], 14, 150, "t-label")
+            width = _w(text, 14, "t-label")
+            if px + 7 + width > W - PAD:
+                out.append(f'<text x="{px - 7:.1f}" y="{py + 4:.1f}" '
+                           f'class="t-label" text-anchor="end">{esc(text)}</text>')
+            else:
+                out.append(f'<text x="{px + 7:.1f}" y="{py + 4:.1f}" '
+                           f'class="t-label">{esc(text)}</text>')
+    out.append(f'<text x="{left}" y="{h - 26}" class="t-label">{esc(x_label)}</text>')
+    out.append(f'<text x="{left}" y="{PAD - 6}" class="t-label">{esc(y_label)}</text>')
+    if rho is not None:
+        out.append(f'<text x="{right}" y="{PAD - 6}" class="t-value" '
+                   f'text-anchor="end">Spearman rho = {rho:.2f}</text>')
+    cap, cap_h = _para(caption, PAD, h - 4, "t-label", 14, W - 2 * PAD, 19)
+    return "".join(out) + cap, h - 4 + cap_h + 6
+
+
+def slope(pairs: list[tuple[str, float, float]], left_label: str,
+          right_label: str, caption: str, unit: str = "",
+          highlight: set | None = None) -> tuple[str, int]:
+    """Two points and the line between them, one line per thing.
+
+    The form for 'what changed between two vintages': the slope carries the
+    story and crossings are visible, which a pair of bars hides. Labels sit
+    at the ends — right-aligned before the left point, left-aligned after
+    the right one — and are pushed apart vertically so lines never run
+    through their own names."""
+    if not pairs:
+        return "", PAD
+    # The frame grows with the label stack: n labels at 15px spacing need
+    # n*15 of vertical room whatever the value range says, or the spreader
+    # pushes the bottom labels through the caption and out of the frame —
+    # which is exactly what happened with eighteen near-identical values.
+    h = max(410, PAD + 24 + len(pairs) * 15 + 110)
+    left_x, right_x = 320, W - 320
+    vals = [v for _, a, b in pairs for v in (a, b)]
+    v0, v1 = min(vals), max(vals)
+    vr = (v1 - v0) or 1
+    top_m, bot = PAD + 24, h - 70
+
+    def ypos(v):
+        return bot - (v - v0) / vr * (bot - top_m)
+
+    def spread(items):
+        # Push down to open 15px gaps, then clamp the stack against the
+        # floor above the caption and push back up. One directional pass
+        # marched bottom-clustered labels straight out of the frame.
+        floor = bot + 12
+        items.sort(key=lambda t: t[1])
+        for i in range(1, len(items)):
+            if items[i][1] - items[i - 1][1] < 15:
+                items[i] = (items[i][0], items[i - 1][1] + 15, items[i][2])
+        for i in range(len(items) - 1, -1, -1):
+            limit = floor - (len(items) - 1 - i) * 15
+            if items[i][1] > limit:
+                items[i] = (items[i][0], limit, items[i][2])
+        for i in range(1, len(items)):
+            if items[i][1] - items[i - 1][1] < 15:
+                items[i] = (items[i][0], items[i - 1][1] + 15, items[i][2])
+        return items
+
+    out = [f'<text x="{left_x}" y="{PAD + 4}" class="t-label" '
+           f'text-anchor="middle">{esc(left_label)}</text>',
+           f'<text x="{right_x}" y="{PAD + 4}" class="t-label" '
+           f'text-anchor="middle">{esc(right_label)}</text>']
+    lefts, rights = [], []
+    for name, a, b in pairs:
+        ya, yb = ypos(a), ypos(b)
+        hot = bool(highlight and name in highlight)
+        colour = "var(--cat-4)" if hot else "var(--cat-1)"
+        out.append(f'<line x1="{left_x}" y1="{ya:.1f}" x2="{right_x}" '
+                   f'y2="{yb:.1f}" stroke="{colour}" '
+                   f'stroke-width="{2.4 if hot else 1.3}" '
+                   f'opacity="{1 if hot else .55}"/>')
+        out.append(f'<circle cx="{left_x}" cy="{ya:.1f}" r="3.5" fill="{colour}"/>'
+                   f'<circle cx="{right_x}" cy="{yb:.1f}" r="3.5" fill="{colour}"/>')
+        lefts.append((f"{name}  {a:,.0f}{unit}", ya, hot))
+        rights.append((f"{b:,.0f}{unit}", yb, hot))
+    for text, yy, hot in spread(lefts):
+        cls = "t-value" if hot else "t-label"
+        out.append(f'<text x="{left_x - 10}" y="{yy + 4:.1f}" class="{cls}" '
+                   f'text-anchor="end">{esc(_fit(text, 14, 290, cls))}</text>')
+    for text, yy, hot in spread(rights):
+        cls = "t-value" if hot else "t-label"
+        out.append(f'<text x="{right_x + 10}" y="{yy + 4:.1f}" class="{cls}">'
+                   f'{esc(_fit(text, 14, 290, cls))}</text>')
+    cap, cap_h = _para(caption, PAD, h - 40, "t-label", 14, W - 2 * PAD, 19)
+    return "".join(out) + cap, h - 40 + cap_h + 6
+
+
+def _lad_geometry(path_name: str):
+    import json as _json
+    from pathlib import Path as _Path
+
+    path = _Path(__file__).parent / path_name
+    if not path.exists():
+        return None
+    try:
+        return _json.loads(path.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return None
+
+
+def _quantile_bins(values: dict):
+    """Quantile binning plus a legend-threshold list.
+
+    Quantiles rather than a linear ramp, so the map shows ranking instead of
+    being flattened by one outlier — and the legend prints the real
+    thresholds so the binning is inspectable, not hidden."""
+    vals = sorted(values.values())
+
+    def bin_of(v):
+        for i in range(1, 5):
+            if v <= vals[min(len(vals) - 1, int(len(vals) * i / 5))]:
+                return i
+        return 5
+
+    thresholds = [vals[min(len(vals) - 1, int(len(vals) * i / 5))]
+                  for i in range(5)]
+    return bin_of, thresholds
+
+
+def _ramp_legend(thresholds, unit: str) -> str:
+    return "".join(
+        f'<rect x="{PAD}" y="{PAD + i * 22}" width="12" height="12" rx="2" '
+        f'fill="var(--seq-{i + 1})"/>'
+        f'<text x="{PAD + 18}" y="{PAD + 11 + i * 22}" class="t-label">'
+        f'{lo:,.0f}{unit}+</text>'
+        for i, lo in enumerate(thresholds))
+
+
+def choropleth(values: dict, caption: str, unit: str,
+               height: int = 700) -> tuple[str, int]:
+    """Councils coloured by value on their real boundaries.
+
+    Reddit's standing complaint about UK choropleths — rural acres shout,
+    urban people whisper — is real, which is why hexmap() exists alongside
+    this. Ship both: the choropleth for geographic truth, the hex for
+    population fairness. Authorities with no value (wrong tier, no return)
+    are drawn in --land, and the caption should say so."""
+    geo = _lad_geometry("lad_boundaries.json")
+    if not geo or not values:
+        return "", PAD
+    bin_of, thresholds = _quantile_bins(values)
+    out = []
+    for feat in geo.get("features", []):
+        paths = []
+        for ring in feat.get("rings", []):
+            pts = [f"{x:.1f},{y:.1f}" for x, y in
+                   (project(lon, lat, W, height, PAD) for lon, lat in ring)]
+            if len(pts) >= 3:
+                paths.append("M" + "L".join(pts) + "Z")
+        if not paths:
+            continue
+        code = feat.get("code")
+        fill = (f"var(--seq-{bin_of(values[code])})" if code in values
+                else "var(--land)")
+        out.append(f'<path d="{" ".join(paths)}" fill="{fill}" '
+                   f'stroke="var(--card)" stroke-width="0.5"/>')
+    out.append(_ramp_legend(thresholds, unit))
+    cap, cap_h = _para(caption, PAD, height + 4, "t-label", 14, W - 2 * PAD, 19)
+    return "".join(out) + cap, height + 4 + cap_h + 6
+
+
+def hexmap(values: dict, caption: str, unit: str,
+           height: int = 700) -> tuple[str, int]:
+    """One equal hex per council — the population-fair twin of choropleth().
+
+    Needs lad_hex.json mapping code -> {q, r, name} axial coordinates. Equal
+    areas mean London is visible and Highland does not dominate; the cost is
+    that geography is approximate, which the caption must say."""
+    import math as _m
+
+    geo = _lad_geometry("lad_hex.json")
+    if not geo or not values:
+        return "", PAD
+    raw = geo.get("hexes", geo)
+    # The vendored file stores hexes as a list of {code, name, q, r}; accept
+    # a code-keyed dict too, since that is the other obvious shape.
+    if isinstance(raw, list):
+        cells = {c["code"]: c for c in raw if "code" in c}
+    elif isinstance(raw, dict):
+        cells = raw
+    else:
+        cells = {}
+    if not cells:
+        return "", PAD
+    qs = [c["q"] for c in cells.values()]
+    rs = [c["r"] for c in cells.values()]
+    q0, q1, r0, r1 = min(qs), max(qs), min(rs), max(rs)
+    size = min((W - 2 * PAD) / ((q1 - q0 + 2) * _m.sqrt(3)),
+               (height - 2 * PAD) / ((r1 - r0 + 2) * 1.5))
+    bin_of, thresholds = _quantile_bins(values)
+
+    def hex_path(cx, cy):
+        pts = []
+        for k in range(6):
+            ang = _m.tau * (k + 0.5) / 6
+            pts.append(f"{cx + size * _m.sin(ang):.1f},"
+                       f"{cy + size * _m.cos(ang):.1f}")
+        return "M" + "L".join(pts) + "Z"
+
+    out = []
+    for code, cell in cells.items():
+        cx = PAD + (cell["q"] - q0 + 1 + 0.5 * ((cell["r"] - r0) % 2)) \
+            * size * _m.sqrt(3)
+        cy = PAD + (cell["r"] - r0 + 1) * size * 1.5
+        fill = (f"var(--seq-{bin_of(values[code])})" if code in values
+                else "var(--land)")
+        out.append(f'<path d="{hex_path(cx, cy)}" fill="{fill}" '
+                   f'stroke="var(--card)" stroke-width="0.8"/>')
+    out.append(_ramp_legend(thresholds, unit))
+    cap, cap_h = _para(caption, PAD, height + 4, "t-label", 14, W - 2 * PAD, 19)
+    return "".join(out) + cap, height + 4 + cap_h + 6

@@ -1,0 +1,3 @@
+service,authorities_2013_14,excluded_reorganised_or_no_return,excluded_by_data_guards,stable_n,fell_n,median_change_pct,p25_change_pct,p75_change_pct
+libraries,150,8,3,139,132,-42.4,-54.0,-25.9
+children_social_care,150,8,0,142,3,52.9,28.4,77.4
