@@ -1,0 +1,123 @@
+[
+  {
+    "year": "2024-25",
+    "form": "RS",
+    "file": "RS_2024-25.ods",
+    "title": "Revenue outturn summary (RS) 2024 to 2025",
+    "url": "https://assets.publishing.service.gov.uk/media/6a2aca48a3674dfd3eb50749/RS_LA_Data_2024-25_data_by_LA.ods",
+    "bytes": 394496,
+    "source_page": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2024-to-2025-individual-local-authority-data-outturn"
+  },
+  {
+    "year": "2024-25",
+    "form": "RSX",
+    "file": "RSX_2024-25.ods",
+    "title": "Revenue outturn service expenditure summary (RSX) 2024 to 2025",
+    "url": "https://assets.publishing.service.gov.uk/media/6a291b0fade52dc088221881/RSX_LA_Data_2024-25_data_by_LA.ods",
+    "bytes": 338701,
+    "source_page": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2024-to-2025-individual-local-authority-data-outturn"
+  },
+  {
+    "year": "2024-25",
+    "form": "RO5",
+    "file": "RO5_2024-25.ods",
+    "title": "Revenue outturn cultural, environmental, regulatory and planning services (RO5) 2024 to 2025",
+    "url": "https://assets.publishing.service.gov.uk/media/6a291b72db0592d809052b7b/RO5_LA_Data_2024-25_data_by_LA.ods",
+    "bytes": 849141,
+    "source_page": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2024-to-2025-individual-local-authority-data-outturn"
+  },
+  {
+    "year": "2018-19",
+    "form": "RS",
+    "file": "RS_2018-19.ods",
+    "title": "Revenue outturn summary (RS) 2018 to 2019",
+    "url": "https://assets.publishing.service.gov.uk/media/66573b51dc15efdddf1a8502/RS_2018-19_data_by_LA.ods",
+    "bytes": 456247,
+    "source_page": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2018-to-2019-individual-local-authority-data-outturn"
+  },
+  {
+    "year": "2018-19",
+    "form": "RSX",
+    "file": "RSX_2018-19.ods",
+    "title": "Revenue outturn service expenditure summary (RSX) 2018 to 2019",
+    "url": "https://assets.publishing.service.gov.uk/media/66573b5e7b792ffff71a84e2/RSX_2018-19_data_by_LA.ods",
+    "bytes": 426590,
+    "source_page": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2018-to-2019-individual-local-authority-data-outturn"
+  },
+  {
+    "year": "2018-19",
+    "form": "RO5",
+    "file": "RO5_2018-19.ods",
+    "title": "Revenue outturn cultural, environmental, regulatory and planning services (RO5) 2018 to 2019",
+    "url": "https://assets.publishing.service.gov.uk/media/66573babd470e3279dd33353/RO5_2018-19_data_by_LA.ods",
+    "bytes": 1018926,
+    "source_page": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2018-to-2019-individual-local-authority-data-outturn"
+  },
+  {
+    "year": "2013-14",
+    "form": "RS",
+    "file": "RS_2013-14.xls",
+    "title": "Revenue outturn summary (RS) 2013 to 2014 (revised)",
+    "url": "https://assets.publishing.service.gov.uk/media/5a75803440f0b6397f35eeb0/Revenue_Outturn_Summary__RS__data_2013-14_by_LA_-_Revised_28-Jan-2015.xls",
+    "bytes": 1804800,
+    "source_page": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2013-to-2014-individual-local-authority-data-outturn"
+  },
+  {
+    "year": "2013-14",
+    "form": "RSX",
+    "file": "RSX_2013-14.xls",
+    "title": "Revenue outturn service expenditure summary (RSX) 2013 to 2014",
+    "url": "https://assets.publishing.service.gov.uk/media/5a7e5134e5274a2e8ab473c3/Revenue_Outturn__RSX__data_2013-14_by_LA.xls",
+    "bytes": 1711104,
+    "source_page": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2013-to-2014-individual-local-authority-data-outturn"
+  },
+  {
+    "year": "2013-14",
+    "form": "RO5",
+    "file": "RO5_2013-14.xls",
+    "title": "Revenue outturn cultural, environmental, regulatory and planning services (RO5) 2013 to 2014",
+    "url": "https://assets.publishing.service.gov.uk/media/5a7e1d3fe5274a2e8ab45ee9/Revenue_Outturn__RO5__data_2013-14_by_LA.xls",
+    "bytes": 4242944,
+    "source_page": "https://www.gov.uk/government/statistics/local-authority-revenue-expenditure-and-financing-england-2013-to-2014-individual-local-authority-data-outturn"
+  },
+  {
+    "year": "2024",
+    "form": "population",
+    "file": "pop_upper_2024.csv",
+    "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2002_1.data.csv?geography=TYPE423&date=2024&gender=0&c_age=200&measures=20100&select=geography_code,geography_name,date,obs_value",
+    "bytes": 8975,
+    "source_page": "https://www.nomisweb.co.uk/ (ONS mid-year population estimates, NM_2002_1)"
+  },
+  {
+    "year": "2024",
+    "form": "population",
+    "file": "pop_lower_2024.csv",
+    "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2002_1.data.csv?geography=TYPE424&date=2024&gender=0&c_age=200&measures=20100&select=geography_code,geography_name,date,obs_value",
+    "bytes": 14614,
+    "source_page": "https://www.nomisweb.co.uk/ (ONS mid-year population estimates, NM_2002_1)"
+  },
+  {
+    "year": "2013",
+    "form": "population",
+    "file": "ukmye2013.zip",
+    "url": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland/mid2013/ukmye2013.zip",
+    "bytes": 767503,
+    "source_page": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland"
+  },
+  {
+    "year": "2018",
+    "form": "population",
+    "file": "ukmidyearestimates20182018ladcodes.xls",
+    "url": "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland/mid20182019laboundaries/ukmidyearestimates20182018ladcodes.xls",
+    "bytes": 1521152,
+    "source_page": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland"
+  },
+  {
+    "year": "1955-56 to 2025-26",
+    "form": "gdp_deflator",
+    "file": "gdp_deflator_jun2026.xlsx",
+    "url": "https://assets.publishing.service.gov.uk/media/6a43dbc7167a99cf0018d9a0/GDP_Deflators_Qtrly_National_Accounts_June_2026_update.xlsx",
+    "bytes": 38008,
+    "source_page": "https://www.gov.uk/government/statistics/gdp-deflators-at-market-prices-and-money-gdp-june-2026-quarterly-national-accounts"
+  }
+]

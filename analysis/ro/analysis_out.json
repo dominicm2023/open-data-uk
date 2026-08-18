@@ -1,0 +1,1922 @@
+{
+  "vintages": [
+    "2013-14",
+    "2018-19",
+    "2024-25"
+  ],
+  "deflator_2024_25_prices": {
+    "2013-14": 1.3693,
+    "2018-19": 1.2692,
+    "2024-25": 1.0
+  },
+  "within_class_2024_25_nce": {
+    "LB:cultural": {
+      "n": 32,
+      "median_per_head": 37.95,
+      "p10": 22.49,
+      "p90": 73.4,
+      "bottom": [
+        {
+          "name": "Havering",
+          "ons_code": "E09000016",
+          "gbp_thousand": 2067.0,
+          "population": 277042.0,
+          "gbp_per_head": 7.46
+        },
+        {
+          "name": "Ealing",
+          "ons_code": "E09000009",
+          "gbp_thousand": 6702.86,
+          "population": 387680.0,
+          "gbp_per_head": 17.29
+        },
+        {
+          "name": "Barking & Dagenham",
+          "ons_code": "E09000002",
+          "gbp_thousand": 4366.0,
+          "population": 234866.0,
+          "gbp_per_head": 18.59
+        },
+        {
+          "name": "Barnet",
+          "ons_code": "E09000003",
+          "gbp_thousand": 9120.8,
+          "population": 406198.0,
+          "gbp_per_head": 22.45
+        },
+        {
+          "name": "Harrow",
+          "ons_code": "E09000015",
+          "gbp_thousand": 6169.32,
+          "population": 270987.0,
+          "gbp_per_head": 22.77
+        }
+      ],
+      "top": [
+        {
+          "name": "Hackney",
+          "ons_code": "E09000012",
+          "gbp_thousand": 16998.0,
+          "population": 268651.0,
+          "gbp_per_head": 63.27
+        },
+        {
+          "name": "Richmond upon Thames",
+          "ons_code": "E09000027",
+          "gbp_thousand": 14680.0,
+          "population": 196975.0,
+          "gbp_per_head": 74.53
+        },
+        {
+          "name": "Southwark",
+          "ons_code": "E09000028",
+          "gbp_thousand": 24353.66,
+          "population": 317058.0,
+          "gbp_per_head": 76.81
+        },
+        {
+          "name": "Kensington & Chelsea",
+          "ons_code": "E09000020",
+          "gbp_thousand": 14576.0,
+          "population": 147255.0,
+          "gbp_per_head": 98.98
+        },
+        {
+          "name": "Greenwich",
+          "ons_code": "E09000011",
+          "gbp_thousand": 31423.5,
+          "population": 301259.0,
+          "gbp_per_head": 104.31
+        }
+      ]
+    },
+    "LB:libraries": {
+      "n": 32,
+      "median_per_head": 14.66,
+      "p10": 8.96,
+      "p90": 27.72,
+      "bottom": [
+        {
+          "name": "Barking & Dagenham",
+          "ons_code": "E09000002",
+          "gbp_thousand": 786.0,
+          "population": 234866.0,
+          "gbp_per_head": 3.35
+        },
+        {
+          "name": "Enfield",
+          "ons_code": "E09000010",
+          "gbp_thousand": 1997.0,
+          "population": 331421.0,
+          "gbp_per_head": 6.03
+        },
+        {
+          "name": "Croydon",
+          "ons_code": "E09000008",
+          "gbp_thousand": 3418.19,
+          "population": 408636.0,
+          "gbp_per_head": 8.36
+        },
+        {
+          "name": "Ealing",
+          "ons_code": "E09000009",
+          "gbp_thousand": 3439.1,
+          "population": 387680.0,
+          "gbp_per_head": 8.87
+        },
+        {
+          "name": "Havering",
+          "ons_code": "E09000016",
+          "gbp_thousand": 2713.0,
+          "population": 277042.0,
+          "gbp_per_head": 9.79
+        }
+      ],
+      "top": [
+        {
+          "name": "Hackney",
+          "ons_code": "E09000012",
+          "gbp_thousand": 6891.0,
+          "population": 268651.0,
+          "gbp_per_head": 25.65
+        },
+        {
+          "name": "Southwark",
+          "ons_code": "E09000028",
+          "gbp_thousand": 8860.06,
+          "population": 317058.0,
+          "gbp_per_head": 27.94
+        },
+        {
+          "name": "Camden",
+          "ons_code": "E09000007",
+          "gbp_thousand": 6867.0,
+          "population": 220558.0,
+          "gbp_per_head": 31.13
+        },
+        {
+          "name": "Westminster",
+          "ons_code": "E09000033",
+          "gbp_thousand": 7798.78,
+          "population": 215694.0,
+          "gbp_per_head": 36.16
+        },
+        {
+          "name": "Kensington & Chelsea",
+          "ons_code": "E09000020",
+          "gbp_thousand": 6456.0,
+          "population": 147255.0,
+          "gbp_per_head": 43.84
+        }
+      ]
+    },
+    "MD:libraries": {
+      "n": 36,
+      "median_per_head": 11.96,
+      "p10": 7.45,
+      "p90": 18.72,
+      "bottom": [
+        {
+          "name": "Sunderland",
+          "ons_code": "E08000024",
+          "gbp_thousand": 1217.0,
+          "population": 286696.0,
+          "gbp_per_head": 4.24
+        },
+        {
+          "name": "Salford",
+          "ons_code": "E08000006",
+          "gbp_thousand": 1867.0,
+          "population": 293508.0,
+          "gbp_per_head": 6.36
+        },
+        {
+          "name": "Sandwell",
+          "ons_code": "E08000028",
+          "gbp_thousand": 2511.0,
+          "population": 353270.0,
+          "gbp_per_head": 7.11
+        },
+        {
+          "name": "Sefton",
+          "ons_code": "E08000014",
+          "gbp_thousand": 2115.0,
+          "population": 285298.0,
+          "gbp_per_head": 7.41
+        },
+        {
+          "name": "Bury MBC",
+          "ons_code": "E08000002",
+          "gbp_thousand": 1485.0,
+          "population": 198136.0,
+          "gbp_per_head": 7.49
+        }
+      ],
+      "top": [
+        {
+          "name": "Manchester",
+          "ons_code": "E08000003",
+          "gbp_thousand": 11016.0,
+          "population": 588597.0,
+          "gbp_per_head": 18.72
+        },
+        {
+          "name": "Oldham",
+          "ons_code": "E08000004",
+          "gbp_thousand": 4693.0,
+          "population": 250725.0,
+          "gbp_per_head": 18.72
+        },
+        {
+          "name": "Calderdale",
+          "ons_code": "E08000033",
+          "gbp_thousand": 4090.0,
+          "population": 209828.0,
+          "gbp_per_head": 19.49
+        },
+        {
+          "name": "Newcastle",
+          "ons_code": "E08000021",
+          "gbp_thousand": 6804.0,
+          "population": 318852.0,
+          "gbp_per_head": 21.34
+        },
+        {
+          "name": "North Tyneside",
+          "ons_code": "E08000022",
+          "gbp_thousand": 5082.0,
+          "population": 214110.0,
+          "gbp_per_head": 23.74
+        }
+      ]
+    },
+    "MD:cultural": {
+      "n": 36,
+      "median_per_head": 49.61,
+      "p10": 30.77,
+      "p90": 69.88,
+      "bottom": [
+        {
+          "name": "Solihull",
+          "ons_code": "E08000029",
+          "gbp_thousand": 4973.0,
+          "population": 220299.0,
+          "gbp_per_head": 22.57
+        },
+        {
+          "name": "St Helens MBC",
+          "ons_code": "E08000013",
+          "gbp_thousand": 5632.76,
+          "population": 188397.0,
+          "gbp_per_head": 29.9
+        },
+        {
+          "name": "Bury MBC",
+          "ons_code": "E08000002",
+          "gbp_thousand": 5924.0,
+          "population": 198136.0,
+          "gbp_per_head": 29.9
+        },
+        {
+          "name": "Sandwell",
+          "ons_code": "E08000028",
+          "gbp_thousand": 10831.0,
+          "population": 353270.0,
+          "gbp_per_head": 30.66
+        },
+        {
+          "name": "Coventry",
+          "ons_code": "E08000026",
+          "gbp_thousand": 11385.0,
+          "population": 368707.0,
+          "gbp_per_head": 30.88
+        }
+      ],
+      "top": [
+        {
+          "name": "South Tyneside",
+          "ons_code": "E08000023",
+          "gbp_thousand": 10494.0,
+          "population": 150736.0,
+          "gbp_per_head": 69.62
+        },
+        {
+          "name": "Leeds",
+          "ons_code": "E08000035",
+          "gbp_thousand": 59116.0,
+          "population": 842884.0,
+          "gbp_per_head": 70.14
+        },
+        {
+          "name": "Gateshead",
+          "ons_code": "E08000037",
+          "gbp_thousand": 14976.0,
+          "population": 201422.0,
+          "gbp_per_head": 74.35
+        },
+        {
+          "name": "Wakefield",
+          "ons_code": "E08000036",
+          "gbp_thousand": 27713.0,
+          "population": 366925.0,
+          "gbp_per_head": 75.53
+        },
+        {
+          "name": "North Tyneside",
+          "ons_code": "E08000022",
+          "gbp_thousand": 16551.0,
+          "population": 214110.0,
+          "gbp_per_head": 77.3
+        }
+      ]
+    },
+    "UA:adult_social_care": {
+      "n": 61,
+      "median_per_head": 444.5,
+      "p10": 367.65,
+      "p90": 506.06,
+      "bottom": [
+        {
+          "name": "Thurrock UA",
+          "ons_code": "E06000034",
+          "gbp_thousand": 34144.0,
+          "population": 181287.0,
+          "gbp_per_head": 188.34
+        },
+        {
+          "name": "Derby City UA",
+          "ons_code": "E06000015",
+          "gbp_thousand": 92078.0,
+          "population": 273656.0,
+          "gbp_per_head": 336.47
+        },
+        {
+          "name": "Slough UA",
+          "ons_code": "E06000039",
+          "gbp_thousand": 57748.29,
+          "population": 166739.0,
+          "gbp_per_head": 346.34
+        },
+        {
+          "name": "Windsor & Maidenhead UA",
+          "ons_code": "E06000040",
+          "gbp_thousand": 55730.23,
+          "population": 158760.0,
+          "gbp_per_head": 351.03
+        },
+        {
+          "name": "Milton Keynes UA",
+          "ons_code": "E06000042",
+          "gbp_thousand": 112039.41,
+          "population": 305806.0,
+          "gbp_per_head": 366.37
+        }
+      ],
+      "top": [
+        {
+          "name": "Brighton & Hove UA",
+          "ons_code": "E06000043",
+          "gbp_thousand": 149802.0,
+          "population": 285063.0,
+          "gbp_per_head": 525.5
+        },
+        {
+          "name": "Blackpool UA",
+          "ons_code": "E06000009",
+          "gbp_thousand": 76650.0,
+          "population": 143353.0,
+          "gbp_per_head": 534.69
+        },
+        {
+          "name": "Cornwall UA",
+          "ons_code": "E06000052",
+          "gbp_thousand": 320430.0,
+          "population": 582205.0,
+          "gbp_per_head": 550.37
+        },
+        {
+          "name": "Halton UA",
+          "ons_code": "E06000006",
+          "gbp_thousand": 73957.0,
+          "population": 131247.0,
+          "gbp_per_head": 563.49
+        },
+        {
+          "name": "Isle of Wight UA",
+          "ons_code": "E06000046",
+          "gbp_thousand": 87238.53,
+          "population": 141356.0,
+          "gbp_per_head": 617.15
+        }
+      ]
+    },
+    "UA:children_social_care": {
+      "n": 61,
+      "median_per_head": 268.07,
+      "p10": 205.68,
+      "p90": 396.72,
+      "bottom": [
+        {
+          "name": "North Yorkshire",
+          "ons_code": "E06000065",
+          "gbp_thousand": 86270.0,
+          "population": 633692.0,
+          "gbp_per_head": 136.14
+        },
+        {
+          "name": "York UA",
+          "ons_code": "E06000014",
+          "gbp_thousand": 34068.0,
+          "population": 208237.0,
+          "gbp_per_head": 163.6
+        },
+        {
+          "name": "Wiltshire UA",
+          "ons_code": "E06000054",
+          "gbp_thousand": 93434.0,
+          "population": 524001.0,
+          "gbp_per_head": 178.31
+        },
+        {
+          "name": "Wokingham UA",
+          "ons_code": "E06000041",
+          "gbp_thousand": 37519.0,
+          "population": 187433.0,
+          "gbp_per_head": 200.17
+        },
+        {
+          "name": "South Gloucestershire UA",
+          "ons_code": "E06000025",
+          "gbp_thousand": 62809.0,
+          "population": 305766.0,
+          "gbp_per_head": 205.42
+        }
+      ],
+      "top": [
+        {
+          "name": "Stoke-on-Trent UA",
+          "ons_code": "E06000021",
+          "gbp_thousand": 126008.31,
+          "population": 270010.0,
+          "gbp_per_head": 466.68
+        },
+        {
+          "name": "Halton UA",
+          "ons_code": "E06000006",
+          "gbp_thousand": 63252.0,
+          "population": 131247.0,
+          "gbp_per_head": 481.93
+        },
+        {
+          "name": "Middlesbrough UA",
+          "ons_code": "E06000002",
+          "gbp_thousand": 76756.44,
+          "population": 154700.0,
+          "gbp_per_head": 496.16
+        },
+        {
+          "name": "Hartlepool UA",
+          "ons_code": "E06000001",
+          "gbp_thousand": 49198.0,
+          "population": 97868.0,
+          "gbp_per_head": 502.7
+        },
+        {
+          "name": "Blackpool UA",
+          "ons_code": "E06000009",
+          "gbp_thousand": 85832.0,
+          "population": 143353.0,
+          "gbp_per_head": 598.75
+        }
+      ]
+    },
+    "LB:children_social_care": {
+      "n": 32,
+      "median_per_head": 260.58,
+      "p10": 224.09,
+      "p90": 381.61,
+      "bottom": [
+        {
+          "name": "Harrow",
+          "ons_code": "E09000015",
+          "gbp_thousand": 49567.08,
+          "population": 270987.0,
+          "gbp_per_head": 182.91
+        },
+        {
+          "name": "Wandsworth",
+          "ons_code": "E09000032",
+          "gbp_thousand": 69994.0,
+          "population": 339727.0,
+          "gbp_per_head": 206.03
+        },
+        {
+          "name": "Hillingdon",
+          "ons_code": "E09000017",
+          "gbp_thousand": 72701.0,
+          "population": 327886.0,
+          "gbp_per_head": 221.73
+        },
+        {
+          "name": "Redbridge",
+          "ons_code": "E09000026",
+          "gbp_thousand": 72063.0,
+          "population": 323006.0,
+          "gbp_per_head": 223.1
+        },
+        {
+          "name": "Merton",
+          "ons_code": "E09000024",
+          "gbp_thousand": 51253.0,
+          "population": 220020.0,
+          "gbp_per_head": 232.95
+        }
+      ],
+      "top": [
+        {
+          "name": "Hackney",
+          "ons_code": "E09000012",
+          "gbp_thousand": 97024.0,
+          "population": 268651.0,
+          "gbp_per_head": 361.15
+        },
+        {
+          "name": "Lambeth",
+          "ons_code": "E09000022",
+          "gbp_thousand": 122404.77,
+          "population": 318864.0,
+          "gbp_per_head": 383.88
+        },
+        {
+          "name": "Lewisham",
+          "ons_code": "E09000023",
+          "gbp_thousand": 120816.0,
+          "population": 302432.0,
+          "gbp_per_head": 399.48
+        },
+        {
+          "name": "Camden",
+          "ons_code": "E09000007",
+          "gbp_thousand": 92206.0,
+          "population": 220558.0,
+          "gbp_per_head": 418.06
+        },
+        {
+          "name": "Islington",
+          "ons_code": "E09000019",
+          "gbp_thousand": 94958.51,
+          "population": 226183.0,
+          "gbp_per_head": 419.83
+        }
+      ]
+    },
+    "SC:highways_transport": {
+      "n": 21,
+      "median_per_head": 62.19,
+      "p10": 48.5,
+      "p90": 77.61,
+      "bottom": [
+        {
+          "name": "Cambridgeshire CC",
+          "ons_code": "E10000003",
+          "gbp_thousand": 32885.0,
+          "population": 713218.0,
+          "gbp_per_head": 46.11
+        },
+        {
+          "name": "Norfolk CC",
+          "ons_code": "E10000020",
+          "gbp_thousand": 45189.0,
+          "population": 940468.0,
+          "gbp_per_head": 48.05
+        },
+        {
+          "name": "Suffolk CC",
+          "ons_code": "E10000029",
+          "gbp_thousand": 38099.0,
+          "population": 785501.0,
+          "gbp_per_head": 48.5
+        },
+        {
+          "name": "Lancashire CC",
+          "ons_code": "E10000017",
+          "gbp_thousand": 68472.0,
+          "population": 1292439.0,
+          "gbp_per_head": 52.98
+        },
+        {
+          "name": "Hampshire CC",
+          "ons_code": "E10000014",
+          "gbp_thousand": 76768.0,
+          "population": 1445170.0,
+          "gbp_per_head": 53.12
+        }
+      ],
+      "top": [
+        {
+          "name": "Devon CC",
+          "ons_code": "E10000008",
+          "gbp_thousand": 61978.0,
+          "population": 842043.0,
+          "gbp_per_head": 73.6
+        },
+        {
+          "name": "East Sussex CC",
+          "ons_code": "E10000011",
+          "gbp_thousand": 42494.0,
+          "population": 560334.0,
+          "gbp_per_head": 75.84
+        },
+        {
+          "name": "Hertfordshire CC",
+          "ons_code": "E10000015",
+          "gbp_thousand": 95770.95,
+          "population": 1233983.0,
+          "gbp_per_head": 77.61
+        },
+        {
+          "name": "Lincolnshire CC",
+          "ons_code": "E10000019",
+          "gbp_thousand": 66734.0,
+          "population": 790533.0,
+          "gbp_per_head": 84.42
+        },
+        {
+          "name": "Gloucestershire CC",
+          "ons_code": "E10000013",
+          "gbp_thousand": 58888.0,
+          "population": 668109.0,
+          "gbp_per_head": 88.14
+        }
+      ]
+    },
+    "LB:housing_gfra": {
+      "n": 32,
+      "median_per_head": 126.52,
+      "p10": 67.49,
+      "p90": 223.44,
+      "bottom": [
+        {
+          "name": "Barnet",
+          "ons_code": "E09000003",
+          "gbp_thousand": 19913.84,
+          "population": 406198.0,
+          "gbp_per_head": 49.02
+        },
+        {
+          "name": "Bexley",
+          "ons_code": "E09000004",
+          "gbp_thousand": 15981.0,
+          "population": 256288.0,
+          "gbp_per_head": 62.36
+        },
+        {
+          "name": "Harrow",
+          "ons_code": "E09000015",
+          "gbp_thousand": 17802.69,
+          "population": 270987.0,
+          "gbp_per_head": 65.7
+        },
+        {
+          "name": "Barking & Dagenham",
+          "ons_code": "E09000002",
+          "gbp_thousand": 15713.25,
+          "population": 234866.0,
+          "gbp_per_head": 66.9
+        },
+        {
+          "name": "Hounslow",
+          "ons_code": "E09000018",
+          "gbp_thousand": 21848.0,
+          "population": 300047.0,
+          "gbp_per_head": 72.82
+        }
+      ],
+      "top": [
+        {
+          "name": "Camden",
+          "ons_code": "E09000007",
+          "gbp_thousand": 48972.0,
+          "population": 220558.0,
+          "gbp_per_head": 222.04
+        },
+        {
+          "name": "Newham",
+          "ons_code": "E09000025",
+          "gbp_thousand": 84848.0,
+          "population": 379479.0,
+          "gbp_per_head": 223.59
+        },
+        {
+          "name": "Lambeth",
+          "ons_code": "E09000022",
+          "gbp_thousand": 91087.12,
+          "population": 318864.0,
+          "gbp_per_head": 285.66
+        },
+        {
+          "name": "Kensington & Chelsea",
+          "ons_code": "E09000020",
+          "gbp_thousand": 44619.0,
+          "population": 147255.0,
+          "gbp_per_head": 303.0
+        },
+        {
+          "name": "Westminster",
+          "ons_code": "E09000033",
+          "gbp_thousand": 120401.44,
+          "population": 215694.0,
+          "gbp_per_head": 558.2
+        }
+      ]
+    },
+    "SD:housing_gfra": {
+      "n": 164,
+      "median_per_head": 20.79,
+      "p10": 8.93,
+      "p90": 48.23,
+      "bottom": [
+        {
+          "name": "North Devon",
+          "ons_code": "E07000043",
+          "gbp_thousand": -1565.0,
+          "population": 101035.0,
+          "gbp_per_head": -15.49
+        },
+        {
+          "name": "Eastleigh",
+          "ons_code": "E07000086",
+          "gbp_thousand": -1806.0,
+          "population": 142678.0,
+          "gbp_per_head": -12.66
+        },
+        {
+          "name": "Stevenage",
+          "ons_code": "E07000243",
+          "gbp_thousand": -962.64,
+          "population": 91234.0,
+          "gbp_per_head": -10.55
+        },
+        {
+          "name": "South Holland",
+          "ons_code": "E07000140",
+          "gbp_thousand": -218.0,
+          "population": 99638.0,
+          "gbp_per_head": -2.19
+        },
+        {
+          "name": "Nuneaton & Bedworth",
+          "ons_code": "E07000219",
+          "gbp_thousand": -84.0,
+          "population": 141554.0,
+          "gbp_per_head": -0.59
+        }
+      ],
+      "top": [
+        {
+          "name": "Worthing",
+          "ons_code": "E07000229",
+          "gbp_thousand": 7560.0,
+          "population": 113515.0,
+          "gbp_per_head": 66.6
+        },
+        {
+          "name": "Crawley",
+          "ons_code": "E07000226",
+          "gbp_thousand": 9557.0,
+          "population": 123758.0,
+          "gbp_per_head": 77.22
+        },
+        {
+          "name": "Oxford",
+          "ons_code": "E07000178",
+          "gbp_thousand": 17157.0,
+          "population": 167827.0,
+          "gbp_per_head": 102.23
+        },
+        {
+          "name": "Hastings",
+          "ons_code": "E07000062",
+          "gbp_thousand": 13575.0,
+          "population": 91017.0,
+          "gbp_per_head": 149.15
+        },
+        {
+          "name": "Spelthorne",
+          "ons_code": "E07000213",
+          "gbp_thousand": 17050.0,
+          "population": 106453.0,
+          "gbp_per_head": 160.16
+        }
+      ]
+    }
+  },
+  "within_class_2024_25_gross": {
+    "SD:refuse_and_recycling": {
+      "n": 164,
+      "median_per_head": 42.95,
+      "p10": 29.04,
+      "p90": 63.88,
+      "bottom": [
+        {
+          "name": "Oadby & Wigston",
+          "ons_code": "E07000135",
+          "gbp_thousand": 1123.0,
+          "population": 61293.0,
+          "gbp_per_head": 18.32
+        },
+        {
+          "name": "Cambridge",
+          "ons_code": "E07000008",
+          "gbp_thousand": 2921.0,
+          "population": 151666.0,
+          "gbp_per_head": 19.26
+        },
+        {
+          "name": "Watford",
+          "ons_code": "E07000103",
+          "gbp_thousand": 2414.0,
+          "population": 106799.0,
+          "gbp_per_head": 22.6
+        },
+        {
+          "name": "Bassetlaw",
+          "ons_code": "E07000171",
+          "gbp_thousand": 3052.0,
+          "population": 124742.0,
+          "gbp_per_head": 24.47
+        },
+        {
+          "name": "New Forest",
+          "ons_code": "E07000091",
+          "gbp_thousand": 4348.0,
+          "population": 175845.0,
+          "gbp_per_head": 24.73
+        }
+      ],
+      "top": [
+        {
+          "name": "Dover",
+          "ons_code": "E07000108",
+          "gbp_thousand": 10432.0,
+          "population": 119805.0,
+          "gbp_per_head": 87.07
+        },
+        {
+          "name": "Stratford-on-Avon",
+          "ons_code": "E07000221",
+          "gbp_thousand": 13726.0,
+          "population": 146196.0,
+          "gbp_per_head": 93.89
+        },
+        {
+          "name": "North Devon",
+          "ons_code": "E07000043",
+          "gbp_thousand": 9518.0,
+          "population": 101035.0,
+          "gbp_per_head": 94.2
+        },
+        {
+          "name": "Bromsgrove",
+          "ons_code": "E07000234",
+          "gbp_thousand": 9887.0,
+          "population": 101413.0,
+          "gbp_per_head": 97.49
+        },
+        {
+          "name": "Sevenoaks",
+          "ons_code": "E07000111",
+          "gbp_thousand": 13296.0,
+          "population": 122650.0,
+          "gbp_per_head": 108.41
+        }
+      ]
+    },
+    "SD:planning_development": {
+      "n": 164,
+      "median_per_head": 49.24,
+      "p10": 33.1,
+      "p90": 88.13,
+      "bottom": [
+        {
+          "name": "Nuneaton & Bedworth",
+          "ons_code": "E07000219",
+          "gbp_thousand": 2769.0,
+          "population": 141554.0,
+          "gbp_per_head": 19.56
+        },
+        {
+          "name": "Oadby & Wigston",
+          "ons_code": "E07000135",
+          "gbp_thousand": 1309.0,
+          "population": 61293.0,
+          "gbp_per_head": 21.36
+        },
+        {
+          "name": "Reigate and Banstead",
+          "ons_code": "E07000211",
+          "gbp_thousand": 3669.0,
+          "population": 158579.0,
+          "gbp_per_head": 23.14
+        },
+        {
+          "name": "Amber Valley",
+          "ons_code": "E07000032",
+          "gbp_thousand": 3313.0,
+          "population": 130238.0,
+          "gbp_per_head": 25.44
+        },
+        {
+          "name": "Ribble Valley",
+          "ons_code": "E07000124",
+          "gbp_thousand": 1769.3,
+          "population": 65761.0,
+          "gbp_per_head": 26.91
+        }
+      ],
+      "top": [
+        {
+          "name": "Spelthorne",
+          "ons_code": "E07000213",
+          "gbp_thousand": 10906.0,
+          "population": 106453.0,
+          "gbp_per_head": 102.45
+        },
+        {
+          "name": "Warwick",
+          "ons_code": "E07000222",
+          "gbp_thousand": 15946.0,
+          "population": 155541.0,
+          "gbp_per_head": 102.52
+        },
+        {
+          "name": "Burnley",
+          "ons_code": "E07000117",
+          "gbp_thousand": 11085.0,
+          "population": 99195.0,
+          "gbp_per_head": 111.75
+        },
+        {
+          "name": "South Ribble",
+          "ons_code": "E07000126",
+          "gbp_thousand": 13515.0,
+          "population": 115727.0,
+          "gbp_per_head": 116.78
+        },
+        {
+          "name": "Stevenage",
+          "ons_code": "E07000243",
+          "gbp_thousand": 11352.48,
+          "population": 91234.0,
+          "gbp_per_head": 124.43
+        }
+      ]
+    },
+    "LB:libraries": {
+      "n": 32,
+      "median_per_head": 15.54,
+      "p10": 10.22,
+      "p90": 28.98,
+      "bottom": [
+        {
+          "name": "Barking & Dagenham",
+          "ons_code": "E09000002",
+          "gbp_thousand": 950.0,
+          "population": 234866.0,
+          "gbp_per_head": 4.04
+        },
+        {
+          "name": "Croydon",
+          "ons_code": "E09000008",
+          "gbp_thousand": 3505.19,
+          "population": 408636.0,
+          "gbp_per_head": 8.58
+        },
+        {
+          "name": "Ealing",
+          "ons_code": "E09000009",
+          "gbp_thousand": 3745.67,
+          "population": 387680.0,
+          "gbp_per_head": 9.66
+        },
+        {
+          "name": "Redbridge",
+          "ons_code": "E09000026",
+          "gbp_thousand": 3280.0,
+          "population": 323006.0,
+          "gbp_per_head": 10.15
+        },
+        {
+          "name": "Brent",
+          "ons_code": "E09000005",
+          "gbp_thousand": 3838.0,
+          "population": 355398.0,
+          "gbp_per_head": 10.8
+        }
+      ],
+      "top": [
+        {
+          "name": "Hackney",
+          "ons_code": "E09000012",
+          "gbp_thousand": 7101.0,
+          "population": 268651.0,
+          "gbp_per_head": 26.43
+        },
+        {
+          "name": "Southwark",
+          "ons_code": "E09000028",
+          "gbp_thousand": 9278.76,
+          "population": 317058.0,
+          "gbp_per_head": 29.27
+        },
+        {
+          "name": "Westminster",
+          "ons_code": "E09000033",
+          "gbp_thousand": 8494.39,
+          "population": 215694.0,
+          "gbp_per_head": 39.38
+        },
+        {
+          "name": "Camden",
+          "ons_code": "E09000007",
+          "gbp_thousand": 9498.0,
+          "population": 220558.0,
+          "gbp_per_head": 43.06
+        },
+        {
+          "name": "Kensington & Chelsea",
+          "ons_code": "E09000020",
+          "gbp_thousand": 6804.0,
+          "population": 147255.0,
+          "gbp_per_head": 46.21
+        }
+      ]
+    },
+    "MD:libraries": {
+      "n": 36,
+      "median_per_head": 13.64,
+      "p10": 8.48,
+      "p90": 21.66,
+      "bottom": [
+        {
+          "name": "Sunderland",
+          "ons_code": "E08000024",
+          "gbp_thousand": 1228.0,
+          "population": 286696.0,
+          "gbp_per_head": 4.28
+        },
+        {
+          "name": "Salford",
+          "ons_code": "E08000006",
+          "gbp_thousand": 2287.0,
+          "population": 293508.0,
+          "gbp_per_head": 7.79
+        },
+        {
+          "name": "Sefton",
+          "ons_code": "E08000014",
+          "gbp_thousand": 2262.0,
+          "population": 285298.0,
+          "gbp_per_head": 7.93
+        },
+        {
+          "name": "Bury MBC",
+          "ons_code": "E08000002",
+          "gbp_thousand": 1663.0,
+          "population": 198136.0,
+          "gbp_per_head": 8.39
+        },
+        {
+          "name": "Wigan MBC",
+          "ons_code": "E08000010",
+          "gbp_thousand": 2949.0,
+          "population": 344245.0,
+          "gbp_per_head": 8.57
+        }
+      ],
+      "top": [
+        {
+          "name": "South Tyneside",
+          "ons_code": "E08000023",
+          "gbp_thousand": 3195.0,
+          "population": 150736.0,
+          "gbp_per_head": 21.2
+        },
+        {
+          "name": "Trafford",
+          "ons_code": "E08000009",
+          "gbp_thousand": 5303.0,
+          "population": 239618.0,
+          "gbp_per_head": 22.13
+        },
+        {
+          "name": "Manchester",
+          "ons_code": "E08000003",
+          "gbp_thousand": 13886.0,
+          "population": 588597.0,
+          "gbp_per_head": 23.59
+        },
+        {
+          "name": "Newcastle",
+          "ons_code": "E08000021",
+          "gbp_thousand": 7553.0,
+          "population": 318852.0,
+          "gbp_per_head": 23.69
+        },
+        {
+          "name": "North Tyneside",
+          "ons_code": "E08000022",
+          "gbp_thousand": 5653.0,
+          "population": 214110.0,
+          "gbp_per_head": 26.4
+        }
+      ]
+    }
+  },
+  "same_county_districts_2024_25_gross": {
+    "refuse_and_recycling": [
+      {
+        "service": "refuse_and_recycling",
+        "county": "Cambridgeshire CC",
+        "districts": 5,
+        "min_name": "Cambridge",
+        "min_per_head": 19.26,
+        "max_name": "South Cambridgeshire",
+        "max_per_head": 67.33,
+        "ratio": 3.5
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Kent CC",
+        "districts": 12,
+        "min_name": "Maidstone",
+        "min_per_head": 31.62,
+        "max_name": "Sevenoaks",
+        "max_per_head": 108.41,
+        "ratio": 3.43
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Worcestershire CC",
+        "districts": 6,
+        "min_name": "Worcester",
+        "min_per_head": 28.47,
+        "max_name": "Bromsgrove",
+        "max_per_head": 97.49,
+        "ratio": 3.42
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Lancashire CC",
+        "districts": 12,
+        "min_name": "Burnley",
+        "min_per_head": 25.41,
+        "max_name": "West Lancashire",
+        "max_per_head": 80.35,
+        "ratio": 3.16
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Leicestershire CC",
+        "districts": 7,
+        "min_name": "Oadby & Wigston",
+        "min_per_head": 18.32,
+        "max_name": "North West Leicestershire",
+        "max_per_head": 52.15,
+        "ratio": 2.85
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Gloucestershire CC",
+        "districts": 6,
+        "min_name": "Cotswold",
+        "min_per_head": 27.29,
+        "max_name": "Gloucester",
+        "max_per_head": 73.99,
+        "ratio": 2.71
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Essex CC",
+        "districts": 12,
+        "min_name": "Uttlesford",
+        "min_per_head": 27.99,
+        "max_name": "Epping Forest",
+        "max_per_head": 73.14,
+        "ratio": 2.61
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Hampshire CC",
+        "districts": 11,
+        "min_name": "New Forest",
+        "min_per_head": 24.73,
+        "max_name": "Havant",
+        "max_per_head": 63.91,
+        "ratio": 2.58
+      }
+    ],
+    "planning_development": [
+      {
+        "service": "planning_development",
+        "county": "Warwickshire CC",
+        "districts": 5,
+        "min_name": "Nuneaton & Bedworth",
+        "min_per_head": 19.56,
+        "max_name": "Warwick",
+        "max_per_head": 102.52,
+        "ratio": 5.24
+      },
+      {
+        "service": "planning_development",
+        "county": "Leicestershire CC",
+        "districts": 7,
+        "min_name": "Oadby & Wigston",
+        "min_per_head": 21.36,
+        "max_name": "North West Leicestershire",
+        "max_per_head": 98.54,
+        "ratio": 4.61
+      },
+      {
+        "service": "planning_development",
+        "county": "Surrey CC",
+        "districts": 11,
+        "min_name": "Reigate and Banstead",
+        "min_per_head": 23.14,
+        "max_name": "Spelthorne",
+        "max_per_head": 102.45,
+        "ratio": 4.43
+      },
+      {
+        "service": "planning_development",
+        "county": "Lancashire CC",
+        "districts": 12,
+        "min_name": "Ribble Valley",
+        "min_per_head": 26.91,
+        "max_name": "South Ribble",
+        "max_per_head": 116.78,
+        "ratio": 4.34
+      },
+      {
+        "service": "planning_development",
+        "county": "Hertfordshire CC",
+        "districts": 10,
+        "min_name": "North Hertfordshire",
+        "min_per_head": 31.53,
+        "max_name": "Stevenage",
+        "max_per_head": 124.43,
+        "ratio": 3.95
+      },
+      {
+        "service": "planning_development",
+        "county": "Cambridgeshire CC",
+        "districts": 5,
+        "min_name": "Huntingdonshire",
+        "min_per_head": 28.11,
+        "max_name": "South Cambridgeshire",
+        "max_per_head": 89.28,
+        "ratio": 3.18
+      },
+      {
+        "service": "planning_development",
+        "county": "Nottinghamshire CC",
+        "districts": 7,
+        "min_name": "Gedling",
+        "min_per_head": 31.52,
+        "max_name": "Bassetlaw",
+        "max_per_head": 90.78,
+        "ratio": 2.88
+      },
+      {
+        "service": "planning_development",
+        "county": "Suffolk CC",
+        "districts": 5,
+        "min_name": "Ipswich",
+        "min_per_head": 33.5,
+        "max_name": "Mid Suffolk",
+        "max_per_head": 92.74,
+        "ratio": 2.77
+      }
+    ],
+    "cultural": [
+      {
+        "service": "cultural",
+        "county": "East Sussex CC",
+        "districts": 5,
+        "min_name": "Wealden",
+        "min_per_head": 7.11,
+        "max_name": "Eastbourne",
+        "max_per_head": 134.34,
+        "ratio": 18.91
+      },
+      {
+        "service": "cultural",
+        "county": "Hampshire CC",
+        "districts": 11,
+        "min_name": "Havant",
+        "min_per_head": 3.27,
+        "max_name": "Basingstoke & Deane",
+        "max_per_head": 59.39,
+        "ratio": 18.19
+      },
+      {
+        "service": "cultural",
+        "county": "Cambridgeshire CC",
+        "districts": 5,
+        "min_name": "South Cambridgeshire",
+        "min_per_head": 4.64,
+        "max_name": "Cambridge",
+        "max_per_head": 84.01,
+        "ratio": 18.1
+      },
+      {
+        "service": "cultural",
+        "county": "Devon CC",
+        "districts": 8,
+        "min_name": "West Devon",
+        "min_per_head": 11.44,
+        "max_name": "Exeter",
+        "max_per_head": 143.88,
+        "ratio": 12.58
+      },
+      {
+        "service": "cultural",
+        "county": "Essex CC",
+        "districts": 12,
+        "min_name": "Braintree",
+        "min_per_head": 16.26,
+        "max_name": "Colchester",
+        "max_per_head": 150.2,
+        "ratio": 9.24
+      },
+      {
+        "service": "cultural",
+        "county": "Nottinghamshire CC",
+        "districts": 7,
+        "min_name": "Ashfield",
+        "min_per_head": 8.32,
+        "max_name": "Gedling",
+        "max_per_head": 72.85,
+        "ratio": 8.76
+      },
+      {
+        "service": "cultural",
+        "county": "Leicestershire CC",
+        "districts": 7,
+        "min_name": "Oadby & Wigston",
+        "min_per_head": 4.42,
+        "max_name": "Charnwood BC",
+        "max_per_head": 32.54,
+        "ratio": 7.36
+      },
+      {
+        "service": "cultural",
+        "county": "Norfolk CC",
+        "districts": 7,
+        "min_name": "Broadland",
+        "min_per_head": 7.3,
+        "max_name": "King's Lynn & West Norfolk",
+        "max_per_head": 51.92,
+        "ratio": 7.11
+      }
+    ],
+    "development_control": [
+      {
+        "service": "development_control",
+        "county": "Essex CC",
+        "districts": 12,
+        "min_name": "Colchester",
+        "min_per_head": 2.46,
+        "max_name": "Epping Forest",
+        "max_per_head": 31.47,
+        "ratio": 12.8
+      },
+      {
+        "service": "development_control",
+        "county": "Derbyshire CC",
+        "districts": 8,
+        "min_name": "North East Derbyshire",
+        "min_per_head": 2.15,
+        "max_name": "Derbyshire Dales",
+        "max_per_head": 22.33,
+        "ratio": 10.39
+      },
+      {
+        "service": "development_control",
+        "county": "Warwickshire CC",
+        "districts": 5,
+        "min_name": "Nuneaton & Bedworth",
+        "min_per_head": 3.28,
+        "max_name": "Stratford-on-Avon",
+        "max_per_head": 32.0,
+        "ratio": 9.76
+      },
+      {
+        "service": "development_control",
+        "county": "Cambridgeshire CC",
+        "districts": 5,
+        "min_name": "Cambridge",
+        "min_per_head": 6.86,
+        "max_name": "South Cambridgeshire",
+        "max_per_head": 42.13,
+        "ratio": 6.14
+      },
+      {
+        "service": "development_control",
+        "county": "Hertfordshire CC",
+        "districts": 10,
+        "min_name": "Stevenage",
+        "min_per_head": 5.34,
+        "max_name": "St Albans",
+        "max_per_head": 24.67,
+        "ratio": 4.62
+      },
+      {
+        "service": "development_control",
+        "county": "Lancashire CC",
+        "districts": 12,
+        "min_name": "Lancaster",
+        "min_per_head": 4.31,
+        "max_name": "South Ribble",
+        "max_per_head": 18.36,
+        "ratio": 4.26
+      },
+      {
+        "service": "development_control",
+        "county": "Hampshire CC",
+        "districts": 11,
+        "min_name": "Eastleigh",
+        "min_per_head": 7.36,
+        "max_name": "Test Valley",
+        "max_per_head": 30.75,
+        "ratio": 4.18
+      },
+      {
+        "service": "development_control",
+        "county": "Gloucestershire CC",
+        "districts": 6,
+        "min_name": "Gloucester",
+        "min_per_head": 7.77,
+        "max_name": "Cotswold",
+        "max_per_head": 29.79,
+        "ratio": 3.84
+      }
+    ]
+  },
+  "same_county_districts_2024_25_nce": {
+    "refuse_and_recycling": [
+      {
+        "service": "refuse_and_recycling",
+        "county": "Essex CC",
+        "districts": 12,
+        "min_name": "Uttlesford",
+        "min_per_head": 3.13,
+        "max_name": "Epping Forest",
+        "max_per_head": 51.57,
+        "ratio": 16.49
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Hampshire CC",
+        "districts": 11,
+        "min_name": "Hart DC",
+        "min_per_head": 11.42,
+        "max_name": "Havant",
+        "max_per_head": 45.17,
+        "ratio": 3.95
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Hertfordshire CC",
+        "districts": 10,
+        "min_name": "Watford",
+        "min_per_head": 9.61,
+        "max_name": "North Hertfordshire",
+        "max_per_head": 36.64,
+        "ratio": 3.81
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Leicestershire CC",
+        "districts": 7,
+        "min_name": "Blaby",
+        "min_per_head": 13.96,
+        "max_name": "North West Leicestershire",
+        "max_per_head": 42.31,
+        "ratio": 3.03
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Derbyshire CC",
+        "districts": 8,
+        "min_name": "Erewash",
+        "min_per_head": 16.51,
+        "max_name": "South Derbyshire",
+        "max_per_head": 46.81,
+        "ratio": 2.84
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "West Sussex CC",
+        "districts": 7,
+        "min_name": "Worthing",
+        "min_per_head": 11.83,
+        "max_name": "Chichester",
+        "max_per_head": 30.67,
+        "ratio": 2.59
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Lancashire CC",
+        "districts": 12,
+        "min_name": "Burnley",
+        "min_per_head": 17.86,
+        "max_name": "West Lancashire",
+        "max_per_head": 43.94,
+        "ratio": 2.46
+      },
+      {
+        "service": "refuse_and_recycling",
+        "county": "Devon CC",
+        "districts": 8,
+        "min_name": "Mid Devon",
+        "min_per_head": 27.48,
+        "max_name": "North Devon",
+        "max_per_head": 65.32,
+        "ratio": 2.38
+      }
+    ],
+    "housing_gfra": [
+      {
+        "service": "housing_gfra",
+        "county": "Oxfordshire CC",
+        "districts": 5,
+        "min_name": "West Oxfordshire",
+        "min_per_head": 4.57,
+        "max_name": "Oxford",
+        "max_per_head": 102.23,
+        "ratio": 22.38
+      },
+      {
+        "service": "housing_gfra",
+        "county": "Surrey CC",
+        "districts": 11,
+        "min_name": "Tandridge",
+        "min_per_head": 11.29,
+        "max_name": "Spelthorne",
+        "max_per_head": 160.16,
+        "ratio": 14.18
+      },
+      {
+        "service": "housing_gfra",
+        "county": "Essex CC",
+        "districts": 12,
+        "min_name": "Brentwood",
+        "min_per_head": 4.87,
+        "max_name": "Colchester",
+        "max_per_head": 64.37,
+        "ratio": 13.21
+      },
+      {
+        "service": "housing_gfra",
+        "county": "East Sussex CC",
+        "districts": 5,
+        "min_name": "Lewes",
+        "min_per_head": 14.26,
+        "max_name": "Hastings",
+        "max_per_head": 149.15,
+        "ratio": 10.46
+      },
+      {
+        "service": "housing_gfra",
+        "county": "Lancashire CC",
+        "districts": 12,
+        "min_name": "Ribble Valley",
+        "min_per_head": 3.79,
+        "max_name": "Burnley",
+        "max_per_head": 30.34,
+        "ratio": 8.01
+      },
+      {
+        "service": "housing_gfra",
+        "county": "Kent CC",
+        "districts": 12,
+        "min_name": "Sevenoaks",
+        "min_per_head": 9.25,
+        "max_name": "Dartford",
+        "max_per_head": 57.09,
+        "ratio": 6.17
+      },
+      {
+        "service": "housing_gfra",
+        "county": "West Sussex CC",
+        "districts": 7,
+        "min_name": "Horsham",
+        "min_per_head": 12.95,
+        "max_name": "Crawley",
+        "max_per_head": 77.22,
+        "ratio": 5.96
+      },
+      {
+        "service": "housing_gfra",
+        "county": "Leicestershire CC",
+        "districts": 7,
+        "min_name": "Oadby & Wigston",
+        "min_per_head": 6.09,
+        "max_name": "Melton",
+        "max_per_head": 33.62,
+        "ratio": 5.52
+      }
+    ]
+  },
+  "england_real_arc": [
+    {
+      "service": "education",
+      "real_per_head_2013-14": 911.83,
+      "real_per_head_2018-19": 730.59,
+      "real_per_head_2024-25": 736.07,
+      "real_per_head_change_pct_2013_2024": -19.3
+    },
+    {
+      "service": "highways_transport",
+      "real_per_head_2013-14": 69.01,
+      "real_per_head_2018-19": 43.26,
+      "real_per_head_2024-25": 39.24,
+      "real_per_head_change_pct_2013_2024": -43.1
+    },
+    {
+      "service": "children_social_care",
+      "real_per_head_2013-14": 175.78,
+      "real_per_head_2018-19": 212.58,
+      "real_per_head_2024-25": 264.62,
+      "real_per_head_change_pct_2013_2024": 50.5
+    },
+    {
+      "service": "adult_social_care",
+      "real_per_head_2013-14": 370.28,
+      "real_per_head_2018-19": 364.51,
+      "real_per_head_2024-25": 429.38,
+      "real_per_head_change_pct_2013_2024": 16.0
+    },
+    {
+      "service": "public_health",
+      "real_per_head_2013-14": 63.75,
+      "real_per_head_2018-19": 74.22,
+      "real_per_head_2024-25": 70.26,
+      "real_per_head_change_pct_2013_2024": 10.2
+    },
+    {
+      "service": "housing_gfra",
+      "real_per_head_2013-14": 50.93,
+      "real_per_head_2018-19": 37.22,
+      "real_per_head_2024-25": 53.38,
+      "real_per_head_change_pct_2013_2024": 4.8
+    },
+    {
+      "service": "cultural",
+      "real_per_head_2013-14": 68.86,
+      "real_per_head_2018-19": 48.36,
+      "real_per_head_2024-25": 43.27,
+      "real_per_head_change_pct_2013_2024": -37.2
+    },
+    {
+      "service": "environmental_regulatory",
+      "real_per_head_2013-14": 117.71,
+      "real_per_head_2018-19": 103.73,
+      "real_per_head_2024-25": 102.89,
+      "real_per_head_change_pct_2013_2024": -12.6
+    },
+    {
+      "service": "planning_development",
+      "real_per_head_2013-14": 32.09,
+      "real_per_head_2018-19": 23.32,
+      "real_per_head_2024-25": 29.69,
+      "real_per_head_change_pct_2013_2024": -7.5
+    },
+    {
+      "service": "central",
+      "real_per_head_2013-14": 66.57,
+      "real_per_head_2018-19": 60.57,
+      "real_per_head_2024-25": 67.49,
+      "real_per_head_change_pct_2013_2024": 1.4
+    },
+    {
+      "service": "libraries",
+      "real_per_head_2013-14": 20.44,
+      "real_per_head_2018-19": 14.79,
+      "real_per_head_2024-25": 12.0,
+      "real_per_head_change_pct_2013_2024": -41.3
+    },
+    {
+      "service": "refuse_and_recycling",
+      "real_per_head_2013-14": 36.58,
+      "real_per_head_2018-19": 34.28,
+      "real_per_head_2024-25": 35.82,
+      "real_per_head_change_pct_2013_2024": -2.1
+    },
+    {
+      "service": "waste_disposal",
+      "real_per_head_2013-14": 38.25,
+      "real_per_head_2018-19": 36.26,
+      "real_per_head_2024-25": 32.93,
+      "real_per_head_change_pct_2013_2024": -13.9
+    },
+    {
+      "service": "total_service_expenditure",
+      "real_per_head_2013-14": 1940.19,
+      "real_per_head_2018-19": 1709.32,
+      "real_per_head_2024-25": 1850.82,
+      "real_per_head_change_pct_2013_2024": -4.6
+    }
+  ],
+  "england_population_used": {
+    "2013-14": 53865817,
+    "2018-19": 55977178,
+    "2024-25": 58607170
+  },
+  "imd_2019_correlations_2024_25": [
+    {
+      "cls": "LB",
+      "service": "cultural",
+      "n": 32,
+      "spearman_rho_per_head_vs_imd": 0.093
+    },
+    {
+      "cls": "LB",
+      "service": "libraries",
+      "n": 32,
+      "spearman_rho_per_head_vs_imd": 0.036
+    },
+    {
+      "cls": "MD",
+      "service": "libraries",
+      "n": 36,
+      "spearman_rho_per_head_vs_imd": -0.051
+    },
+    {
+      "cls": "MD",
+      "service": "cultural",
+      "n": 36,
+      "spearman_rho_per_head_vs_imd": 0.08
+    },
+    {
+      "cls": "LB",
+      "service": "children_social_care",
+      "n": 32,
+      "spearman_rho_per_head_vs_imd": 0.567
+    },
+    {
+      "cls": "MD",
+      "service": "children_social_care",
+      "n": 36,
+      "spearman_rho_per_head_vs_imd": 0.442
+    },
+    {
+      "cls": "MD",
+      "service": "adult_social_care",
+      "n": 36,
+      "spearman_rho_per_head_vs_imd": 0.093
+    },
+    {
+      "cls": "SD",
+      "service": "refuse_and_recycling",
+      "n": 164,
+      "spearman_rho_per_head_vs_imd": -0.024
+    },
+    {
+      "cls": "SD",
+      "service": "planning_development",
+      "n": 164,
+      "spearman_rho_per_head_vs_imd": 0.02
+    }
+  ],
+  "reserves_and_council_tax": [
+    {
+      "year": "2013-14",
+      "n": 353,
+      "reserves_real_bn": 22.13,
+      "nre_real_bn": 57.66,
+      "council_tax_requirement_real_bn": 27.08,
+      "ctr_share_of_nre_pct": 47.0,
+      "reserves_pct_of_nre": 38.4
+    },
+    {
+      "year": "2018-19",
+      "n": 353,
+      "reserves_real_bn": 23.82,
+      "nre_real_bn": 51.57,
+      "council_tax_requirement_real_bn": 31.95,
+      "ctr_share_of_nre_pct": 62.0,
+      "reserves_pct_of_nre": 46.2
+    },
+    {
+      "year": "2024-25",
+      "n": 316,
+      "reserves_real_bn": 24.63,
+      "nre_real_bn": 54.27,
+      "council_tax_requirement_real_bn": 34.17,
+      "ctr_share_of_nre_pct": 63.0,
+      "reserves_pct_of_nre": 45.4
+    }
+  ],
+  "library_stable_authorities": {
+    "n": 139,
+    "median_change_pct": -42.4,
+    "fell_count": 132,
+    "deepest": [
+      {
+        "name": "Barking & Dagenham",
+        "cls": "LB",
+        "2013-14": 24.3,
+        "2024-25": 3.3,
+        "change_pct": -86.3
+      },
+      {
+        "name": "Enfield",
+        "cls": "LB",
+        "2013-14": 28.6,
+        "2024-25": 6.0,
+        "change_pct": -78.9
+      },
+      {
+        "name": "Slough UA",
+        "cls": "UA",
+        "2013-14": 22.6,
+        "2024-25": 4.8,
+        "change_pct": -78.6
+      },
+      {
+        "name": "Sunderland",
+        "cls": "MD",
+        "2013-14": 18.7,
+        "2024-25": 4.2,
+        "change_pct": -77.3
+      },
+      {
+        "name": "Cornwall UA",
+        "cls": "UA",
+        "2013-14": 15.9,
+        "2024-25": 3.8,
+        "change_pct": -76.4
+      },
+      {
+        "name": "North East Lincolnshire UA",
+        "cls": "UA",
+        "2013-14": 29.5,
+        "2024-25": 8.7,
+        "change_pct": -70.4
+      },
+      {
+        "name": "Redcar & Cleveland UA",
+        "cls": "UA",
+        "2013-14": 26.2,
+        "2024-25": 8.3,
+        "change_pct": -68.4
+      },
+      {
+        "name": "Sandwell",
+        "cls": "MD",
+        "2013-14": 22.1,
+        "2024-25": 7.1,
+        "change_pct": -67.8
+      }
+    ],
+    "grew": [
+      {
+        "name": "Calderdale",
+        "cls": "MD",
+        "2013-14": 19.0,
+        "2024-25": 19.5,
+        "change_pct": 2.8
+      },
+      {
+        "name": "Brighton & Hove UA",
+        "cls": "UA",
+        "2013-14": 20.6,
+        "2024-25": 22.3,
+        "change_pct": 8.4
+      },
+      {
+        "name": "Essex CC",
+        "cls": "SC",
+        "2013-14": 13.4,
+        "2024-25": 15.2,
+        "change_pct": 13.6
+      },
+      {
+        "name": "Camden",
+        "cls": "LB",
+        "2013-14": 27.2,
+        "2024-25": 31.1,
+        "change_pct": 14.6
+      },
+      {
+        "name": "Salford",
+        "cls": "MD",
+        "2013-14": 4.1,
+        "2024-25": 6.4,
+        "change_pct": 56.2
+      }
+    ]
+  }
+}

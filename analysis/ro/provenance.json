@@ -1,0 +1,1766 @@
+[
+  {
+    "year": "2024-25",
+    "service": "education",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 9,
+    "column_header": "Education services - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "education",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 12,
+    "column_header": "Education services - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "education",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 13,
+    "column_header": "Education services - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "highways_transport",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 16,
+    "column_header": "Highways and transport services - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "highways_transport",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 19,
+    "column_header": "Highways and transport services - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "highways_transport",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 20,
+    "column_header": "Highways and transport services - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "children_social_care",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 23,
+    "column_header": "Children Social Care - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "children_social_care",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 26,
+    "column_header": "Children Social Care - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "children_social_care",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 27,
+    "column_header": "Children Social Care - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "adult_social_care",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 30,
+    "column_header": "Adult Social Care - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "adult_social_care",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 33,
+    "column_header": "Adult Social Care - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "adult_social_care",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 34,
+    "column_header": "Adult Social Care - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "public_health",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 37,
+    "column_header": "Public Health - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "public_health",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 40,
+    "column_header": "Public Health - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "public_health",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 41,
+    "column_header": "Public Health - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "housing_gfra",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 44,
+    "column_header": "Housing services (GFRA only) - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "housing_gfra",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 47,
+    "column_header": "Housing services (GFRA only) - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "housing_gfra",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 48,
+    "column_header": "Housing services (GFRA only) - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "cultural",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 51,
+    "column_header": "Cultural and related services - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "cultural",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 54,
+    "column_header": "Cultural and related services - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "cultural",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 55,
+    "column_header": "Cultural and related services - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "environmental_regulatory",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 58,
+    "column_header": "Environmental and regulatory services - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "environmental_regulatory",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 61,
+    "column_header": "Environmental and regulatory services - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "environmental_regulatory",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 62,
+    "column_header": "Environmental and regulatory services - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "planning_development",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 65,
+    "column_header": "Planning and development services - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "planning_development",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 68,
+    "column_header": "Planning and development services - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "planning_development",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 69,
+    "column_header": "Planning and development services - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "police",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 72,
+    "column_header": "Police services - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "police",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 75,
+    "column_header": "Police services - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "police",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 76,
+    "column_header": "Police services - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "fire_rescue",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 79,
+    "column_header": "Fire and rescue services - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "fire_rescue",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 82,
+    "column_header": "Fire and rescue services - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "fire_rescue",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 83,
+    "column_header": "Fire and rescue services - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "central",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 86,
+    "column_header": "Central services - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "central",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 89,
+    "column_header": "Central services - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "central",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 90,
+    "column_header": "Central services - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "other",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 93,
+    "column_header": "Other services - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "other",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 96,
+    "column_header": "Other services - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "other",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 97,
+    "column_header": "Other services - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "total_service_expenditure",
+    "measure": "gross",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 100,
+    "column_header": "Total Service Expenditure - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "total_service_expenditure",
+    "measure": "income",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 103,
+    "column_header": "Total Service Expenditure - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "total_service_expenditure",
+    "measure": "nce",
+    "file": "RSX_2024-25.ods",
+    "sheet": "RSX_LA_Data_202425",
+    "column_index_0based": 104,
+    "column_header": "Total Service Expenditure - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "education",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 7,
+    "column_header": "Education services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "education",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 10,
+    "column_header": "Education services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "education",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 11,
+    "column_header": "Education services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "highways_transport",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 14,
+    "column_header": "Highways and transport services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "highways_transport",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 17,
+    "column_header": "Highways and transport services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "highways_transport",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 18,
+    "column_header": "Highways and transport services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "children_social_care",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 21,
+    "column_header": "Children Social Care | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "children_social_care",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 24,
+    "column_header": "Children Social Care | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "children_social_care",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 25,
+    "column_header": "Children Social Care | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "adult_social_care",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 28,
+    "column_header": "Adult Social Care | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "adult_social_care",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 31,
+    "column_header": "Adult Social Care | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "adult_social_care",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 32,
+    "column_header": "Adult Social Care | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "public_health",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 35,
+    "column_header": "Public Health | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "public_health",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 38,
+    "column_header": "Public Health | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "public_health",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 39,
+    "column_header": "Public Health | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "housing_gfra",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 42,
+    "column_header": "Housing services (GFRA only) | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "housing_gfra",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 45,
+    "column_header": "Housing services (GFRA only) | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "housing_gfra",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 46,
+    "column_header": "Housing services (GFRA only) | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "cultural",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 49,
+    "column_header": "Cultural and related services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "cultural",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 52,
+    "column_header": "Cultural and related services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "cultural",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 53,
+    "column_header": "Cultural and related services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "environmental_regulatory",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 56,
+    "column_header": "Environmental and regulatory services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "environmental_regulatory",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 59,
+    "column_header": "Environmental and regulatory services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "environmental_regulatory",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 60,
+    "column_header": "Environmental and regulatory services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "planning_development",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 63,
+    "column_header": "Planning and development services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "planning_development",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 66,
+    "column_header": "Planning and development services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "planning_development",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 67,
+    "column_header": "Planning and development services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "police",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 70,
+    "column_header": "Police services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "police",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 73,
+    "column_header": "Police services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "police",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 74,
+    "column_header": "Police services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "fire_rescue",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 77,
+    "column_header": "Fire and rescue services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "fire_rescue",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 80,
+    "column_header": "Fire and rescue services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "fire_rescue",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 81,
+    "column_header": "Fire and rescue services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "central",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 84,
+    "column_header": "Central services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "central",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 87,
+    "column_header": "Central services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "central",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 88,
+    "column_header": "Central services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "other",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 91,
+    "column_header": "Other services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "other",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 94,
+    "column_header": "Other services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "other",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 95,
+    "column_header": "Other services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "total_service_expenditure",
+    "measure": "gross",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 98,
+    "column_header": "Total Service Expenditure | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "total_service_expenditure",
+    "measure": "income",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 101,
+    "column_header": "Total Service Expenditure | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "total_service_expenditure",
+    "measure": "nce",
+    "file": "RSX_2018-19.ods",
+    "sheet": "RSX_LA_Data_2018-19",
+    "column_index_0based": 102,
+    "column_header": "Total Service Expenditure | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "education",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 7,
+    "column_header": "Education services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "education",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 10,
+    "column_header": "Education services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "education",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 11,
+    "column_header": "Education services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "highways_transport",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 17,
+    "column_header": "Highways and transport services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "highways_transport",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 20,
+    "column_header": "Highways and transport services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "highways_transport",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 21,
+    "column_header": "Highways and transport services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "children_social_care",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 27,
+    "column_header": "Children social care | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "children_social_care",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 30,
+    "column_header": "Children social care | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "children_social_care",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 31,
+    "column_header": "Children social care | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "adult_social_care",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 37,
+    "column_header": "Adult social care | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "adult_social_care",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 40,
+    "column_header": "Adult social care | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "adult_social_care",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 41,
+    "column_header": "Adult social care | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "public_health",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 47,
+    "column_header": "Public Health | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "public_health",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 50,
+    "column_header": "Public Health | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "public_health",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 51,
+    "column_header": "Public Health | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "housing_gfra",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 57,
+    "column_header": "Housing services (GFRA only) | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "housing_gfra",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 60,
+    "column_header": "Housing services (GFRA only) | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "housing_gfra",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 61,
+    "column_header": "Housing services (GFRA only) | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "cultural",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 67,
+    "column_header": "Cultural and related services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "cultural",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 70,
+    "column_header": "Cultural and related services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "cultural",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 71,
+    "column_header": "Cultural and related services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "environmental_regulatory",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 77,
+    "column_header": "Environmental and regulatory services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "environmental_regulatory",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 80,
+    "column_header": "Environmental and regulatory services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "environmental_regulatory",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 81,
+    "column_header": "Environmental and regulatory services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "planning_development",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 87,
+    "column_header": "Planning and development services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "planning_development",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 90,
+    "column_header": "Planning and development services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "planning_development",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 91,
+    "column_header": "Planning and development services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "police",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 97,
+    "column_header": "Police services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "police",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 100,
+    "column_header": "Police services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "police",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 101,
+    "column_header": "Police services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "fire_rescue",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 107,
+    "column_header": "Fire and rescue services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "fire_rescue",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 110,
+    "column_header": "Fire and rescue services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "fire_rescue",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 111,
+    "column_header": "Fire and rescue services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "central",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 117,
+    "column_header": "Central services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "central",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 120,
+    "column_header": "Central services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "central",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 121,
+    "column_header": "Central services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "other",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 127,
+    "column_header": "Other services | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "other",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 130,
+    "column_header": "Other services | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "other",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 131,
+    "column_header": "Other services | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "total_service_expenditure",
+    "measure": "gross",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 137,
+    "column_header": "TOTAL SERVICE EXPENDITURE | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "total_service_expenditure",
+    "measure": "income",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 140,
+    "column_header": "TOTAL SERVICE EXPENDITURE | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "total_service_expenditure",
+    "measure": "nce",
+    "file": "RSX_2013-14.xls",
+    "sheet": "RSX LA Data 2013-14",
+    "column_index_0based": 141,
+    "column_header": "TOTAL SERVICE EXPENDITURE | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "libraries",
+    "measure": "gross",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 93,
+    "column_header": "Library service - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "libraries",
+    "measure": "income",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 96,
+    "column_header": "Library service - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "libraries",
+    "measure": "nce",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 97,
+    "column_header": "Library service - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "street_cleansing",
+    "measure": "gross",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 255,
+    "column_header": "Street cleansing (not chargeable to Highways) - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "street_cleansing",
+    "measure": "income",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 258,
+    "column_header": "Street cleansing (not chargeable to Highways) - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "street_cleansing",
+    "measure": "nce",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 259,
+    "column_header": "Street cleansing (not chargeable to Highways) - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "waste_collection",
+    "measure": "gross",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 262,
+    "column_header": "Waste collection - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "waste_collection",
+    "measure": "income",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 265,
+    "column_header": "Waste collection - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "waste_collection",
+    "measure": "nce",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 266,
+    "column_header": "Waste collection - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "waste_disposal",
+    "measure": "gross",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 269,
+    "column_header": "Waste disposal - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "waste_disposal",
+    "measure": "income",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 272,
+    "column_header": "Waste disposal - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "waste_disposal",
+    "measure": "nce",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 273,
+    "column_header": "Waste disposal - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "recycling",
+    "measure": "gross",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 283,
+    "column_header": "Recycling - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "recycling",
+    "measure": "income",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 286,
+    "column_header": "Recycling - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "recycling",
+    "measure": "nce",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 287,
+    "column_header": "Recycling - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2024-25",
+    "service": "development_control",
+    "measure": "gross",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 319,
+    "column_header": "Development control - Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2024-25",
+    "service": "development_control",
+    "measure": "income",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 322,
+    "column_header": "Development control - Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2024-25",
+    "service": "development_control",
+    "measure": "nce",
+    "file": "RO5_2024-25.ods",
+    "sheet": "RO5_LA_Data_202425",
+    "column_index_0based": 323,
+    "column_header": "Development control - Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "libraries",
+    "measure": "gross",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 84,
+    "column_header": "Library service | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "libraries",
+    "measure": "income",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 87,
+    "column_header": "Library service | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "libraries",
+    "measure": "nce",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 88,
+    "column_header": "Library service | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "street_cleansing",
+    "measure": "gross",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 245,
+    "column_header": "Street cleansing (not chargeable to Highways) | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "street_cleansing",
+    "measure": "income",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 248,
+    "column_header": "Street cleansing (not chargeable to Highways) | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "street_cleansing",
+    "measure": "nce",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 249,
+    "column_header": "Street cleansing (not chargeable to Highways) | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "waste_collection",
+    "measure": "gross",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 252,
+    "column_header": "Waste collection | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "waste_collection",
+    "measure": "income",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 255,
+    "column_header": "Waste collection | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "waste_collection",
+    "measure": "nce",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 256,
+    "column_header": "Waste collection | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "waste_disposal",
+    "measure": "gross",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 259,
+    "column_header": "Waste disposal | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "waste_disposal",
+    "measure": "income",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 262,
+    "column_header": "Waste disposal | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "waste_disposal",
+    "measure": "nce",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 263,
+    "column_header": "Waste disposal | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "recycling",
+    "measure": "gross",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 273,
+    "column_header": "Recycling | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "recycling",
+    "measure": "income",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 276,
+    "column_header": "Recycling | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "recycling",
+    "measure": "nce",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 277,
+    "column_header": "Recycling | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2018-19",
+    "service": "development_control",
+    "measure": "gross",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 308,
+    "column_header": "Development control | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2018-19",
+    "service": "development_control",
+    "measure": "income",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 311,
+    "column_header": "Development control | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2018-19",
+    "service": "development_control",
+    "measure": "nce",
+    "file": "RO5_2018-19.ods",
+    "sheet": "RO5_LA_Data_2018-19",
+    "column_index_0based": 312,
+    "column_header": "Development control | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "libraries",
+    "measure": "gross",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (1)",
+    "column_index_0based": 51,
+    "column_header": "Library service | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "street_cleansing",
+    "measure": "gross",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (1)",
+    "column_index_0based": 143,
+    "column_header": "Street cleansing (not chargeable to Highways) | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "waste_collection",
+    "measure": "gross",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (1)",
+    "column_index_0based": 147,
+    "column_header": "Waste collection | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "waste_disposal",
+    "measure": "gross",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (1)",
+    "column_index_0based": 151,
+    "column_header": "Waste disposal | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "recycling",
+    "measure": "gross",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (1)",
+    "column_index_0based": 159,
+    "column_header": "Recycling | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "development_control",
+    "measure": "gross",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (1)",
+    "column_index_0based": 179,
+    "column_header": "Development control | Total Expenditure (C3 = C1 + C2)"
+  },
+  {
+    "year": "2013-14",
+    "service": "libraries",
+    "measure": "income",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (2)",
+    "column_index_0based": 51,
+    "column_header": "Library service | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "street_cleansing",
+    "measure": "income",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (2)",
+    "column_index_0based": 143,
+    "column_header": "Street cleansing (not chargeable to Highways) | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "waste_collection",
+    "measure": "income",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (2)",
+    "column_index_0based": 147,
+    "column_header": "Waste collection | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "waste_disposal",
+    "measure": "income",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (2)",
+    "column_index_0based": 151,
+    "column_header": "Waste disposal | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "recycling",
+    "measure": "income",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (2)",
+    "column_index_0based": 159,
+    "column_header": "Recycling | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "development_control",
+    "measure": "income",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (2)",
+    "column_index_0based": 179,
+    "column_header": "Development control | Total Income (C6 = C4 + C5)"
+  },
+  {
+    "year": "2013-14",
+    "service": "libraries",
+    "measure": "nce",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (3)",
+    "column_index_0based": 49,
+    "column_header": "Library service | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "street_cleansing",
+    "measure": "nce",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (3)",
+    "column_index_0based": 141,
+    "column_header": "Street cleansing (not chargeable to Highways) | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "waste_collection",
+    "measure": "nce",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (3)",
+    "column_index_0based": 145,
+    "column_header": "Waste collection | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "waste_disposal",
+    "measure": "nce",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (3)",
+    "column_index_0based": 149,
+    "column_header": "Waste disposal | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "recycling",
+    "measure": "nce",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (3)",
+    "column_index_0based": 157,
+    "column_header": "Recycling | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "development_control",
+    "measure": "nce",
+    "file": "RO5_2013-14.xls",
+    "sheet": "RO5 LA Data 2013-14 (3)",
+    "column_index_0based": 177,
+    "column_header": "Development control | Net Current Expenditure (C7 = C3 - C6)"
+  },
+  {
+    "year": "2013-14",
+    "service": "rs:net_revenue_expenditure",
+    "measure": "rs_line",
+    "file": "RS_2013-14.xls",
+    "sheet": "RS LA Data 2013-14 (1)",
+    "column_index_0based": 57,
+    "column_header": "NET REVENUE EXPENDITURE (TOTAL OF LINES 800 TO 804)"
+  },
+  {
+    "year": "2013-14",
+    "service": "rs:council_tax_requirement",
+    "measure": "rs_line",
+    "file": "RS_2013-14.xls",
+    "sheet": "RS LA Data 2013-14 (1)",
+    "column_index_0based": 67,
+    "column_header": "COUNCIL TAX REQUIREMENT (TOTAL OF LINES 805 TO 880)"
+  },
+  {
+    "year": "2013-14",
+    "service": "rs:reserves_other_earmarked",
+    "measure": "rs_line",
+    "file": "RS_2013-14.xls",
+    "sheet": "RS LA Data 2013-14 (1)",
+    "column_index_0based": 70,
+    "column_header": "Other earmarked financial reserves level"
+  },
+  {
+    "year": "2013-14",
+    "service": "rs:reserves_unallocated",
+    "measure": "rs_line",
+    "file": "RS_2013-14.xls",
+    "sheet": "RS LA Data 2013-14 (1)",
+    "column_index_0based": 71,
+    "column_header": "Unallocated financial reserves level"
+  },
+  {
+    "year": "2013-14",
+    "service": "rs:net_revenue_expenditure",
+    "measure": "rs_line",
+    "file": "RS_2013-14.xls",
+    "sheet": "RS LA Data 2013-14 (2)",
+    "column_index_0based": 57,
+    "column_header": "NET REVENUE EXPENDITURE (TOTAL OF LINES 800 TO 804)"
+  },
+  {
+    "year": "2013-14",
+    "service": "rs:council_tax_requirement",
+    "measure": "rs_line",
+    "file": "RS_2013-14.xls",
+    "sheet": "RS LA Data 2013-14 (2)",
+    "column_index_0based": 67,
+    "column_header": "COUNCIL TAX REQUIREMENT (TOTAL OF LINES 805 TO 880)"
+  },
+  {
+    "year": "2013-14",
+    "service": "rs:reserves_other_earmarked",
+    "measure": "rs_line",
+    "file": "RS_2013-14.xls",
+    "sheet": "RS LA Data 2013-14 (2)",
+    "column_index_0based": 70,
+    "column_header": "Other earmarked financial reserves level"
+  },
+  {
+    "year": "2013-14",
+    "service": "rs:reserves_unallocated",
+    "measure": "rs_line",
+    "file": "RS_2013-14.xls",
+    "sheet": "RS LA Data 2013-14 (2)",
+    "column_index_0based": 71,
+    "column_header": "Unallocated financial reserves level"
+  },
+  {
+    "year": "2024-25",
+    "service": "rs:net_revenue_expenditure",
+    "measure": "rs_line",
+    "file": "RS_2024-25.ods",
+    "sheet": "RS_LA_Data_202425",
+    "column_index_0based": 72,
+    "column_header": "Revenue Expenditure Financing - NET REVENUE EXPENDITURE"
+  },
+  {
+    "year": "2024-25",
+    "service": "rs:council_tax_requirement",
+    "measure": "rs_line",
+    "file": "RS_2024-25.ods",
+    "sheet": "RS_LA_Data_202425",
+    "column_index_0based": 84,
+    "column_header": "Revenue Expenditure Financing - COUNCIL TAX REQUIREMENT (total of lines 805 to 885)"
+  },
+  {
+    "year": "2024-25",
+    "service": "rs:reserves_other_earmarked",
+    "measure": "rs_line",
+    "file": "RS_2024-25.ods",
+    "sheet": "RS_LA_Data_202425",
+    "column_index_0based": 99,
+    "column_header": "Reserves at 31 March 2025 - Estimated other earmarked financial reserves level at 31 March"
+  },
+  {
+    "year": "2024-25",
+    "service": "rs:reserves_unallocated",
+    "measure": "rs_line",
+    "file": "RS_2024-25.ods",
+    "sheet": "RS_LA_Data_202425",
+    "column_index_0based": 106,
+    "column_header": "Reserves (continued) - Estimated unallocated financial reserves level at 31 March"
+  },
+  {
+    "year": "2018-19",
+    "service": "rs:net_revenue_expenditure",
+    "measure": "rs_line",
+    "file": "RS_2018-19.ods",
+    "sheet": "RS_LA_Data_2018-19",
+    "column_index_0based": 58,
+    "column_header": "NET REVENUE EXPENDITURE"
+  },
+  {
+    "year": "2018-19",
+    "service": "rs:council_tax_requirement",
+    "measure": "rs_line",
+    "file": "RS_2018-19.ods",
+    "sheet": "RS_LA_Data_2018-19",
+    "column_index_0based": 70,
+    "column_header": "COUNCIL TAX REQUIREMENT (total of lines 805 to 885)"
+  },
+  {
+    "year": "2018-19",
+    "service": "rs:reserves_other_earmarked",
+    "measure": "rs_line",
+    "file": "RS_2018-19.ods",
+    "sheet": "RS_LA_Data_2018-19",
+    "column_index_0based": 79,
+    "column_header": "Estimated other earmarked financial reserves level at 31 March"
+  },
+  {
+    "year": "2018-19",
+    "service": "rs:reserves_unallocated",
+    "measure": "rs_line",
+    "file": "RS_2018-19.ods",
+    "sheet": "RS_LA_Data_2018-19",
+    "column_index_0based": 80,
+    "column_header": "Estimated unallocated financial reserves level at 31 March"
+  }
+]

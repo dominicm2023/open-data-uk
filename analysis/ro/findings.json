@@ -1,0 +1,163 @@
+{
+  "substrate": "MHCLG Revenue Outturn (RO) statistics - every English council reports in the same statutory service categories",
+  "vintages": {
+    "2013-14": "XLS, revised",
+    "2018-19": "ODS",
+    "2024-25": "ODS, latest published (June 2026 era release)"
+  },
+  "parse_coverage": {
+    "authorities_all_classes": {
+      "2013-14": 444,
+      "2018-19": 444,
+      "2024-25": 410
+    },
+    "principal_councils": {
+      "2013-14": 353,
+      "2018-19": 353,
+      "2024-25": 317
+    },
+    "population_joined": "100% of principal councils in every vintage",
+    "non_submitters": [
+      "Cumberland 2024-25 (row blank, England total carries MHCLG's unpublished imputation, -485.2m on our reconciliation)"
+    ],
+    "reconciliation": "sum of authority rows vs each workbook's own England row for Total Service Expenditure: exact to the pound in 2013-14 and 2018-19; -485,196k in 2024-25 = the Cumberland imputation"
+  },
+  "tier_handling": "MHCLG's own Class column (SD/SC/UA/MD/LB); every comparison within one class; England arc sums the five principal classes and drops police+fire service lines (provision moved between principal councils and standalone authorities); class O never compared; City of London and Isles of Scilly excluded from distributions",
+  "claims": [
+    {
+      "claim": "Councils of the same type spend up to 13x differently per resident on the same service (libraries, London boroughs, 2024-25)",
+      "verdict": "PROVABLE NOW",
+      "numbers": {
+        "Kensington & Chelsea": {
+          "nce_per_head": 43.84,
+          "gross_per_head": 46.21
+        },
+        "Barking & Dagenham": {
+          "nce_per_head": 3.35,
+          "gross_per_head": 4.04
+        },
+        "ratio_nce": 13.1,
+        "ratio_gross": 11.4,
+        "class_median_nce": 14.66,
+        "class_p10_p90": [
+          8.96,
+          27.72
+        ]
+      },
+      "provenance": "RO5_2024-25.ods / RO5_LA_Data_202425 / col 97 (Library service - Net Current Expenditure (C7 = C3 - C6))",
+      "strongest_objection": "NCE nets off income, and outsourced-to-trust arrangements can move cost between lines. Answered here: the gap survives on gross expenditure (11.4x), both boroughs' income is small, and neither uses a trust for libraries. The same check KILLED other candidates: Hart's 0.67/head waste (cost booked under Recycling), Rugby's 4/head waste (garden-bin income nets off 78% of gross), Cambridge vs South Cambridgeshire (shared waste service hosted by one partner), Blackpool libraries (income exceeds spend, line is negative)."
+    },
+    {
+      "claim": "Same-county districts differ ~10x per resident in gross spend on development control (statutory planning)",
+      "verdict": "PROVABLE NOW, with mechanism stated",
+      "numbers": {
+        "service": "development_control",
+        "county": "Warwickshire CC",
+        "districts": 5,
+        "min_name": "Nuneaton & Bedworth",
+        "min_per_head": 3.28,
+        "max_name": "Stratford-on-Avon",
+        "max_per_head": 32.0,
+        "ratio": 9.76
+      },
+      "provenance": "RO5_2024-25.ods / RO5_LA_Data_202425 / col 319 (Development control - Total Expenditure (C3 = C1 + C2))",
+      "strongest_objection": "Development control workload is demand-driven: a growth district processes more and bigger applications and collects more fees (Stratford-on-Avon nets 2.7m after fees; Nuneaton & Bedworth's fee income exceeds its booked spend, its NET line is negative). Frame as 'districts run planning departments of very different size', not as efficiency."
+    },
+    {
+      "claim": "Libraries per head fell ~41% real since 2013-14 while children's social care rose ~50%",
+      "verdict": "PROVABLE NOW (direction well-documented by IFS/NAO - cite, don't claim novelty)",
+      "numbers": {
+        "libraries_real_per_head": {
+          "2013-14": 20.44,
+          "2018-19": 14.79,
+          "2024-25": 12.0
+        },
+        "libraries_change_pct": -41.3,
+        "children_social_care_change_pct": 50.5,
+        "adult_social_care_change_pct": 16.0,
+        "cultural_change_pct": -37.2,
+        "highways_change_pct": -43.1,
+        "total_service_expenditure_change_pct": -4.6,
+        "stable_authorities": {
+          "n": 139,
+          "fell": 132,
+          "median_change_pct": -42.4
+        }
+      },
+      "provenance": "RO5_2013-14.xls / RO5 LA Data 2013-14 (3) / col 49 (Library service | Net Current Expenditure (C7 = C3 - C6)) vs RO5_2024-25.ods / RO5_LA_Data_202425 / col 97 (Library service - Net Current Expenditure (C7 = C3 - C6)); HMT GDP deflator Jun-2026 QNA, 2024-25 prices; ONS mid-year population on period-correct boundaries",
+      "strongest_objection": "The GDP deflator is not an input-cost index for councils; care-wage inflation ran above it, so the social-care 'rise' overstates extra service volume. Direction reconciles with NAO 2018 (cultural -34.9%, 2010-11 to 2016-17) and IFS's documented acute-vs-amenity squeeze. Education (-19.3%) must NOT be quoted: academisation moved schools off LA books. Public health (+10.2%) started as a new grant in 2013-14."
+    },
+    {
+      "claim": "Children's social care spending tracks deprivation; library spending does not",
+      "verdict": "PROVABLE NOW (cross-sectional, within-class, 2024-25)",
+      "numbers": {
+        "csc_vs_imd_spearman": {
+          "LB": 0.567,
+          "MD": 0.442
+        },
+        "libraries_vs_imd_spearman": {
+          "LB": 0.036,
+          "MD": -0.051
+        },
+        "ua_csc_extremes": {
+          "Blackpool": 598.75,
+          "North Yorkshire": 136.14,
+          "ratio": 4.4,
+          "class_median": 268.07
+        }
+      },
+      "provenance": "IMD 2019 File 7 (LSOA scores, population-weighted to LAD2019) x RSX 2024-25 per-head NCE; stable-code councils only",
+      "strongest_objection": "IMD is 2019-vintage against 2024-25 spend, and rho~0 for libraries is absence of evidence of a gradient, not proof of fairness. 'Poor areas lost their libraries' is NOT SUPPORTED cross-sectionally within class - but this analysis does not test change-over-time against deprivation."
+    },
+    {
+      "claim": "Council tax now carries 63p of every pound of net revenue expenditure, up from 47p in 2013-14; reserves rose while spending fell",
+      "verdict": "PROVABLE NOW (as defined on the RS return lines)",
+      "numbers": {
+        "2013-14": {
+          "year": "2013-14",
+          "n": 353,
+          "reserves_real_bn": 22.13,
+          "nre_real_bn": 57.66,
+          "council_tax_requirement_real_bn": 27.08,
+          "ctr_share_of_nre_pct": 47.0,
+          "reserves_pct_of_nre": 38.4
+        },
+        "2018-19": {
+          "year": "2018-19",
+          "n": 353,
+          "reserves_real_bn": 23.82,
+          "nre_real_bn": 51.57,
+          "council_tax_requirement_real_bn": 31.95,
+          "ctr_share_of_nre_pct": 62.0,
+          "reserves_pct_of_nre": 46.2
+        },
+        "2024-25": {
+          "year": "2024-25",
+          "n": 316,
+          "reserves_real_bn": 24.63,
+          "nre_real_bn": 54.27,
+          "council_tax_requirement_real_bn": 34.17,
+          "ctr_share_of_nre_pct": 63.0,
+          "reserves_pct_of_nre": 45.4
+        }
+      },
+      "provenance": "RS_2013-14.xls / RS LA Data 2013-14 (1) / col 67 (COUNCIL TAX REQUIREMENT (TOTAL OF LINES 805 TO 880)); RS_2024-25.ods / RS_LA_Data_202425 / col 84 (Revenue Expenditure Financing - COUNCIL TAX REQUIREMENT (total of lines 805 to 885))",
+      "strongest_objection": "NRE's grant treatment changed over the period (rates retention 2013 onwards), so the ratio partly reflects definitional migration, not only the RSG phase-out. Reserves at 31 March 2025 include sums earmarked against known liabilities; 'councils are hoarding' does not follow."
+    },
+    {
+      "claim": "The councils spending least per head are [political party]-run",
+      "verdict": "NOT TESTED - skipped deliberately",
+      "numbers": {},
+      "provenance": "",
+      "strongest_objection": "No reliable open dataset of political control was fetched; joining scraped control data would not meet the project's provenance bar. Politics stays out."
+    }
+  ],
+  "hand_check_queue_killed": [
+    "Hart DC waste collection 0.67/head - gross only 69k, cost booked under Recycling (1.1m); combined refuse+recycling line used instead",
+    "Rugby waste 4.00/head net - charging income nets off 78% of 2.25m gross",
+    "Cambridge 19.26 vs South Cambridgeshire 67.33 gross refuse - Greater Cambridge shared waste service, hosting arrangement",
+    "Blackpool libraries 2024-25 - income 2,606k exceeds spend 2,402k, line negative; excluded",
+    "Enfield libraries 6.03 net - income is ~47% of gross, low net partly an income artefact; not named",
+    "Sunderland libraries 4.24 - culture delivered via trust; line may understate library share of trust grant; named only with that caveat"
+  ]
+}

@@ -1,0 +1,85 @@
+service,county,districts,min_name,min_per_head,max_name,max_per_head,ratio
+refuse_and_recycling,Cambridgeshire CC,5,Cambridge,19.26,South Cambridgeshire,67.33,3.5
+refuse_and_recycling,Derbyshire CC,8,Erewash,29.13,Derbyshire Dales,69.97,2.4
+refuse_and_recycling,Devon CC,8,South Hams,38.12,North Devon,94.2,2.47
+refuse_and_recycling,East Sussex CC,5,Wealden,44.71,Lewes,59.02,1.32
+refuse_and_recycling,Essex CC,12,Uttlesford,27.99,Epping Forest,73.14,2.61
+refuse_and_recycling,Gloucestershire CC,6,Cotswold,27.29,Gloucester,73.99,2.71
+refuse_and_recycling,Hampshire CC,11,New Forest,24.73,Havant,63.91,2.58
+refuse_and_recycling,Hertfordshire CC,10,Watford,22.6,Three Rivers,58.21,2.58
+refuse_and_recycling,Kent CC,12,Maidstone,31.62,Sevenoaks,108.41,3.43
+refuse_and_recycling,Lancashire CC,12,Burnley,25.41,West Lancashire,80.35,3.16
+refuse_and_recycling,Leicestershire CC,7,Oadby & Wigston,18.32,North West Leicestershire,52.15,2.85
+refuse_and_recycling,Lincolnshire CC,7,South Kesteven,35.36,South Holland,48.46,1.37
+refuse_and_recycling,Norfolk CC,7,North Norfolk,38.08,Norwich City,51.26,1.35
+refuse_and_recycling,Nottinghamshire CC,7,Bassetlaw,24.47,Ashfield,55.13,2.25
+refuse_and_recycling,Oxfordshire CC,5,Vale of White Horse DC,44.16,West Oxfordshire,64.27,1.46
+refuse_and_recycling,Staffordshire CC,8,Tamworth,31.57,Lichfield,76.29,2.42
+refuse_and_recycling,Suffolk CC,5,West Suffolk,30.9,East Suffolk,59.86,1.94
+refuse_and_recycling,Surrey CC,11,Runnymede,32.42,Surrey Heath,64.3,1.98
+refuse_and_recycling,Warwickshire CC,5,Nuneaton & Bedworth,43.43,Stratford-on-Avon,93.89,2.16
+refuse_and_recycling,West Sussex CC,7,Worthing,25.14,Chichester,45.93,1.83
+refuse_and_recycling,Worcestershire CC,6,Worcester,28.47,Bromsgrove,97.49,3.42
+planning_development,Cambridgeshire CC,5,Huntingdonshire,28.11,South Cambridgeshire,89.28,3.18
+planning_development,Derbyshire CC,8,Amber Valley,25.44,High Peak,61.13,2.4
+planning_development,Devon CC,8,Teignbridge,43.23,Exeter,86.1,1.99
+planning_development,East Sussex CC,5,Eastbourne,33.02,Hastings,56.33,1.71
+planning_development,Essex CC,12,Braintree,34.68,Colchester,95.94,2.77
+planning_development,Gloucestershire CC,6,Gloucester,32.27,Cotswold,62.75,1.94
+planning_development,Hampshire CC,11,New Forest,29.48,Test Valley,78.29,2.66
+planning_development,Hertfordshire CC,10,North Hertfordshire,31.53,Stevenage,124.43,3.95
+planning_development,Kent CC,12,Gravesham,38.81,Tunbridge Wells,97.24,2.51
+planning_development,Lancashire CC,12,Ribble Valley,26.91,South Ribble,116.78,4.34
+planning_development,Leicestershire CC,7,Oadby & Wigston,21.36,North West Leicestershire,98.54,4.61
+planning_development,Lincolnshire CC,7,Boston BC,44.49,South Holland,77.2,1.74
+planning_development,Norfolk CC,7,Norwich City,36.98,Great Yarmouth,56.85,1.54
+planning_development,Nottinghamshire CC,7,Gedling,31.52,Bassetlaw,90.78,2.88
+planning_development,Oxfordshire CC,5,West Oxfordshire,38.57,Oxford,101.96,2.64
+planning_development,Staffordshire CC,8,East Staffordshire,36.32,Newcastle-under-Lyme,91.49,2.52
+planning_development,Suffolk CC,5,Ipswich,33.5,Mid Suffolk,92.74,2.77
+planning_development,Surrey CC,11,Reigate and Banstead,23.14,Spelthorne,102.45,4.43
+planning_development,Warwickshire CC,5,Nuneaton & Bedworth,19.56,Warwick,102.52,5.24
+planning_development,West Sussex CC,7,Crawley,35.0,Chichester,84.4,2.41
+planning_development,Worcestershire CC,6,Redditch BC,42.15,Malvern Hills,89.01,2.11
+cultural,Cambridgeshire CC,5,South Cambridgeshire,4.64,Cambridge,84.01,18.1
+cultural,Derbyshire CC,8,Erewash,28.26,Chesterfield,88.03,3.11
+cultural,Devon CC,8,West Devon,11.44,Exeter,143.88,12.58
+cultural,East Sussex CC,5,Wealden,7.11,Eastbourne,134.34,18.91
+cultural,Essex CC,12,Braintree,16.26,Colchester,150.2,9.24
+cultural,Gloucestershire CC,6,Forest of Dean,9.48,Cheltenham,52.57,5.54
+cultural,Hampshire CC,11,Havant,3.27,Basingstoke & Deane,59.39,18.19
+cultural,Hertfordshire CC,10,Hertsmere,17.7,Stevenage,66.14,3.74
+cultural,Kent CC,12,Sevenoaks,18.78,Tunbridge Wells,86.17,4.59
+cultural,Lancashire CC,12,Rossendale,28.93,South Ribble,82.05,2.84
+cultural,Leicestershire CC,7,Oadby & Wigston,4.42,Charnwood BC,32.54,7.36
+cultural,Lincolnshire CC,7,West Lindsey,13.42,East Lindsey,68.23,5.08
+cultural,Norfolk CC,7,Broadland,7.3,King's Lynn & West Norfolk,51.92,7.11
+cultural,Nottinghamshire CC,7,Ashfield,8.32,Gedling,72.85,8.76
+cultural,Oxfordshire CC,5,West Oxfordshire,16.9,Oxford,45.99,2.72
+cultural,Staffordshire CC,8,Stafford BC,20.87,Tamworth,78.03,3.74
+cultural,Suffolk CC,5,East Suffolk,33.36,Ipswich,146.31,4.39
+cultural,Surrey CC,11,Tandridge,15.8,Epsom & Ewell,92.39,5.85
+cultural,Warwickshire CC,5,Stratford-on-Avon,13.0,Warwick,68.05,5.23
+cultural,West Sussex CC,7,Chichester,23.61,Crawley,105.16,4.46
+cultural,Worcestershire CC,6,Bromsgrove,6.89,Worcester,47.95,6.96
+development_control,Cambridgeshire CC,5,Cambridge,6.86,South Cambridgeshire,42.13,6.14
+development_control,Derbyshire CC,8,North East Derbyshire,2.15,Derbyshire Dales,22.33,10.39
+development_control,Devon CC,8,Exeter,15.93,Mid Devon,30.8,1.93
+development_control,East Sussex CC,5,Lewes,9.87,Wealden,25.74,2.61
+development_control,Essex CC,12,Colchester,2.46,Epping Forest,31.47,12.8
+development_control,Gloucestershire CC,6,Gloucester,7.77,Cotswold,29.79,3.84
+development_control,Hampshire CC,11,Eastleigh,7.36,Test Valley,30.75,4.18
+development_control,Hertfordshire CC,10,Stevenage,5.34,St Albans,24.67,4.62
+development_control,Kent CC,12,Canterbury,9.95,Swale,31.55,3.17
+development_control,Lancashire CC,12,Lancaster,4.31,South Ribble,18.36,4.26
+development_control,Leicestershire CC,7,Oadby & Wigston,7.91,Melton,24.42,3.09
+development_control,Lincolnshire CC,7,Lincoln City,9.07,North Kesteven,22.44,2.47
+development_control,Norfolk CC,7,Norwich City,7.5,North Norfolk,21.92,2.92
+development_control,Nottinghamshire CC,7,Mansfield,7.86,Newark & Sherwood ,21.75,2.77
+development_control,Oxfordshire CC,5,West Oxfordshire,16.38,Cherwell,28.1,1.72
+development_control,Staffordshire CC,8,Tamworth,6.58,South Staffordshire,20.33,3.09
+development_control,Suffolk CC,5,Ipswich,11.61,Mid Suffolk,21.55,1.86
+development_control,Surrey CC,11,Reigate and Banstead,9.82,Waverley,34.33,3.5
+development_control,Warwickshire CC,5,Nuneaton & Bedworth,3.28,Stratford-on-Avon,32.0,9.76
+development_control,West Sussex CC,7,Crawley,13.66,Chichester,34.45,2.52
+development_control,Worcestershire CC,6,Bromsgrove,0.0,Malvern Hills,29.7,

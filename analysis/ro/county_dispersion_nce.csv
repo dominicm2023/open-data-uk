@@ -1,0 +1,43 @@
+service,county,districts,min_name,min_per_head,max_name,max_per_head,ratio
+refuse_and_recycling,Cambridgeshire CC,5,Cambridge,19.19,East Cambridgeshire,42.77,2.23
+refuse_and_recycling,Derbyshire CC,8,Erewash,16.51,South Derbyshire,46.81,2.84
+refuse_and_recycling,Devon CC,8,Mid Devon,27.48,North Devon,65.32,2.38
+refuse_and_recycling,East Sussex CC,5,Wealden,29.84,Lewes,47.99,1.61
+refuse_and_recycling,Essex CC,12,Uttlesford,3.13,Epping Forest,51.57,16.49
+refuse_and_recycling,Gloucestershire CC,6,Cotswold,23.12,Gloucester,44.07,1.91
+refuse_and_recycling,Hampshire CC,11,Hart DC,11.42,Havant,45.17,3.95
+refuse_and_recycling,Hertfordshire CC,10,Watford,9.61,North Hertfordshire,36.64,3.81
+refuse_and_recycling,Kent CC,12,Tonbridge & Malling,15.5,Sevenoaks,34.98,2.26
+refuse_and_recycling,Lancashire CC,12,Burnley,17.86,West Lancashire,43.94,2.46
+refuse_and_recycling,Leicestershire CC,7,Blaby,13.96,North West Leicestershire,42.31,3.03
+refuse_and_recycling,Lincolnshire CC,7,West Lindsey,19.77,Lincoln City,31.04,1.57
+refuse_and_recycling,Norfolk CC,7,South Norfolk,15.41,Norwich City,33.61,2.18
+refuse_and_recycling,Nottinghamshire CC,7,Broxtowe,15.78,Gedling,31.47,1.99
+refuse_and_recycling,Oxfordshire CC,5,Vale of White Horse DC,31.78,West Oxfordshire,43.72,1.38
+refuse_and_recycling,Staffordshire CC,8,Stafford BC,16.33,Staffordshire Moorlands,35.76,2.19
+refuse_and_recycling,Suffolk CC,5,West Suffolk,19.16,East Suffolk,39.26,2.05
+refuse_and_recycling,Surrey CC,11,Elmbridge,21.47,Surrey Heath,48.86,2.28
+refuse_and_recycling,Warwickshire CC,5,Stratford-on-Avon,24.17,North Warwickshire,33.83,1.4
+refuse_and_recycling,West Sussex CC,7,Worthing,11.83,Chichester,30.67,2.59
+refuse_and_recycling,Worcestershire CC,6,Worcester,21.06,Bromsgrove,43.24,2.05
+housing_gfra,Cambridgeshire CC,5,Fenland,14.85,Cambridge,50.56,3.4
+housing_gfra,Derbyshire CC,8,Amber Valley,11.59,Derbyshire Dales,31.45,2.71
+housing_gfra,Devon CC,8,North Devon,-15.49,Exeter,54.24,
+housing_gfra,East Sussex CC,5,Lewes,14.26,Hastings,149.15,10.46
+housing_gfra,Essex CC,12,Brentwood,4.87,Colchester,64.37,13.21
+housing_gfra,Gloucestershire CC,6,Cheltenham,8.74,Tewkesbury,24.98,2.86
+housing_gfra,Hampshire CC,11,Eastleigh,-12.66,Havant,65.97,
+housing_gfra,Hertfordshire CC,10,Stevenage,-10.55,Watford,37.89,
+housing_gfra,Kent CC,12,Sevenoaks,9.25,Dartford,57.09,6.17
+housing_gfra,Lancashire CC,12,Ribble Valley,3.79,Burnley,30.34,8.01
+housing_gfra,Leicestershire CC,7,Oadby & Wigston,6.09,Melton,33.62,5.52
+housing_gfra,Lincolnshire CC,7,South Holland,-2.19,Lincoln City,43.29,
+housing_gfra,Norfolk CC,7,Broadland,13.19,Norwich City,30.19,2.29
+housing_gfra,Nottinghamshire CC,7,Mansfield,8.23,Ashfield,35.48,4.31
+housing_gfra,Oxfordshire CC,5,West Oxfordshire,4.57,Oxford,102.23,22.38
+housing_gfra,Staffordshire CC,8,Staffordshire Moorlands,10.49,Newcastle-under-Lyme,33.07,3.15
+housing_gfra,Suffolk CC,5,West Suffolk,22.61,Ipswich,47.52,2.1
+housing_gfra,Surrey CC,11,Tandridge,11.29,Spelthorne,160.16,14.18
+housing_gfra,Warwickshire CC,5,Nuneaton & Bedworth,-0.59,Rugby,25.71,
+housing_gfra,West Sussex CC,7,Horsham,12.95,Crawley,77.22,5.96
+housing_gfra,Worcestershire CC,6,Malvern Hills,6.65,Worcester,29.88,4.49
