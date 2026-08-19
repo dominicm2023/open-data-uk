@@ -590,9 +590,13 @@ def timeline(series: list[tuple[str, int]], caption: str,
                    f'width="{max(1.5, step - 3):.1f}" height="{bar_h:.1f}" '
                    f'fill="{fill}"/>')
         if len(series) <= 30 or i % max(1, len(series) // 12) == 0:
+            # A YYYY-MM label shows its year; slicing the last four characters
+            # displayed "2010-05" as "0-05", which reads as nothing at all.
+            text = str(label)
+            disp = text[:4] if len(text) == 7 and text[4] == "-" else text[-4:]
             out.append(f'<text x="{x + step / 2:.1f}" y="{h - 24}" '
                        f'class="t-label" text-anchor="middle">'
-                       f'{esc(str(label)[-4:])}</text>')
+                       f'{esc(disp)}</text>')
     out.append(f'<line x1="{left}" y1="{h - 40}" x2="{W - PAD}" y2="{h - 40}" '
                f'stroke="var(--chart-baseline)" stroke-width="1"/>')
     out.append(f'<text x="{PAD}" y="{PAD + 10}" class="t-value">{top:,}</text>')
