@@ -988,25 +988,33 @@ def sitemap_page(page: int) -> Response:
             for path, freq in (("/", "daily"), ("/about", "weekly")):
                 yield (f"<url><loc>{SITE_URL}{path}</loc>"
                        f"<changefreq>{freq}</changefreq></url>")
+        # The query is finished before the first byte streams. Handing a live
+        # cursor to StreamingResponse looked economical, but Starlette pulls
+        # successive chunks of a sync generator on whichever threadpool
+        # thread is free, and a SQLite connection may only be touched by the
+        # thread that created it — so the sitemap died intermittently with
+        # ProgrammingError whenever a crawler's fetch happened to span a
+        # thread switch. A chunk is at most SITEMAP_CHUNK key/date pairs,
+        # which is small enough to hold.
         conn = db_connect()
         try:
-            cur = conn.execute(
+            fetched = conn.execute(
                 f"SELECT d.key, d.modified {INDEXABLE} AND NOT ({NOTHING_TO_INDEX}) "
                 "ORDER BY d.key LIMIT ? OFFSET ?",
-                (SITEMAP_CHUNK, (page - 1) * SITEMAP_CHUNK))
-            for key, modified in cur:
-                loc = SITE_URL + pagerender.dataset_path(key)
-                # &key= is a literal ampersand; XML needs it escaped or the
-                # file is rejected wholesale, not just that one URL.
-                loc = loc.replace("&", "&amp;")
-                stamp = str(modified or "")[:10]
-                lastmod = (f"<lastmod>{stamp}</lastmod>"
-                           if len(stamp) == 10 and stamp[4] == stamp[7] == "-" else "")
-                yield f"<url><loc>{loc}</loc>{lastmod}</url>"
+                (SITEMAP_CHUNK, (page - 1) * SITEMAP_CHUNK)).fetchall()
         except sqlite3.Error:
-            pass          # a half-written sitemap beats a 500 mid-stream
+            fetched = []  # a short sitemap beats a 500 mid-stream
         finally:
             conn.close()
+        for key, modified in fetched:
+            loc = SITE_URL + pagerender.dataset_path(key)
+            # &key= is a literal ampersand; XML needs it escaped or the
+            # file is rejected wholesale, not just that one URL.
+            loc = loc.replace("&", "&amp;")
+            stamp = str(modified or "")[:10]
+            lastmod = (f"<lastmod>{stamp}</lastmod>"
+                       if len(stamp) == 10 and stamp[4] == stamp[7] == "-" else "")
+            yield f"<url><loc>{loc}</loc>{lastmod}</url>"
         yield "</urlset>"
 
     return StreamingResponse(rows(), media_type="application/xml",
