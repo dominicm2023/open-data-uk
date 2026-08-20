@@ -165,10 +165,16 @@ def main() -> int:
         conn.close()
         return 0
 
-    if len(to_send) > args.limit:
-        print(f"\n{len(to_send):,} changes exceeds the {args.limit:,} cap — "
+    # The hub pages ride along in the same request, so they spend part of
+    # the budget. Capping datasets at the full limit and appending the hubs
+    # afterwards sent 10,004 URLs the first time three nights of backlog
+    # accumulated, and IndexNow rejected the entire request — its 400 said,
+    # exactly: "You have added 4 more Urls."
+    cap = args.limit - len(HUB_PAGES)
+    if len(to_send) > cap:
+        print(f"\n{len(to_send):,} changes exceeds the {cap:,} cap — "
               "submitting the first batch, the rest go tomorrow")
-        to_send = to_send[:args.limit]
+        to_send = to_send[:cap]
 
     urls = [dataset_url(k) for k in to_send] + [SITE + p for p in HUB_PAGES]
     print(f"\nsubmitting {len(urls):,} URLs"
