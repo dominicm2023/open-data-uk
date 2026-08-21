@@ -8,7 +8,10 @@ Duplicate rule (deliberately conservative): identical normalised title AND
 the two records name the same organisation — either the publisher strings
 match outright, or one is the aggregator's copy of the other and the two
 publisher names agree on who published it once the administrative wrapper
-("City Council", "Metropolitan Borough of") is stripped.
+("City Council", "Metropolitan Borough of") is stripped. Where the
+aggregator names a platform instead of an organisation ("OpenDataNI") there
+is no name to agree with, and the portal it mirrors stands in — see
+_PLATFORM_SOURCES.
 
 Generic titles are the whole difficulty here. Councils publish dozens of
 identically-named datasets — "Council Spending", "Business Rates", "Fraud" —
@@ -17,8 +20,9 @@ Rochdale's data from search. When we can't confirm two records are the same
 organisation we keep both: a duplicate we failed to spot costs a reader one
 extra line of results, a wrong merge costs them the dataset entirely.
 
-Canonical election: prefer a source portal over the aggregator, then more
-resources, then most recently modified.
+Canonical election: prefer a copy that has resources at all, then a source
+portal over the aggregator, then more resources, then most recently
+modified.
 
 Also flags retired/superseded records (publishers leave them in place with a
 "this record has been retired" note) so search can exclude them.
@@ -72,6 +76,51 @@ def who(publisher: str | None) -> frozenset[str]:
     return frozenset(norm(publisher).split()) - _PUBLISHER_NOISE
 
 
+# Some of what data.gov.uk aggregates is filed under the name of the
+# *platform* it was mirrored from rather than the body that published it:
+# everything harvested from the Northern Ireland portal is "OpenDataNI",
+# everything syndicated by the marine metadata network is "MEDIN", and the
+# GLA re-publishes the whole London Datastore — the fire brigade's data and
+# TfL's included — under "Greater London Authority". who() cannot match
+# those against a real organisation, because there is no organisation there
+# to match: "OpenDataNI" and "NI Water" share no word at all. So both copies
+# survived and every count that rests on them was inflated.
+#
+# What identifies the publisher in these cases is the *portal*, not the
+# name, so the bridge is to a named set of sources. Listing them out is the
+# point rather than an inconvenience: a label allowed to match anything
+# would merge data.gov.uk's Northern Irish "Boundary" into Green Action
+# Trust's Scottish dataset of that name, which is the old wrong-merge bug
+# wearing a new hat.
+_PLATFORM_SOURCES: dict[str, frozenset[str]] = {
+    # The Northern Ireland portal, plus the council and agency hubs whose
+    # records that portal is itself carrying — verified by landing-URL
+    # slugs that match all the way through, e.g. data.gov.uk's
+    # /dataset/mid-ulster-council-public-toilets against Mid Ulster's own
+    # midulster::mid-ulster-council-public-toilets.
+    "opendatani": frozenset({
+        "opendatani", "daera_ni", "agol_daera_agol", "causeway_coast",
+        "mid_ulster",
+    }),
+    # MEDIN syndicates the Cefas Data Hub's marine catalogue.
+    "marine environmental data information network": frozenset({"cefas"}),
+    # data.gov.uk's copy of data.london.gov.uk. Note this reaches only the
+    # Datastore: a Leeds dataset on DataMill North stays untouched, which
+    # is what the entirely-generic-name test has always been guarding.
+    "greater london authority": frozenset({"london_datastore"}),
+}
+
+
+def platform_of(publisher: str | None) -> frozenset[str]:
+    """The portals this publisher name is a label for, if it is one at all."""
+    return _PLATFORM_SOURCES.get(norm(publisher), frozenset())
+
+
+def mirrors(a, b) -> bool:
+    """Is `a` a platform-labelled copy of something from `b`'s portal?"""
+    return b["source_id"] in platform_of(a["publisher"])
+
+
 def mergeable(a, b) -> bool:
     """May these two same-titled records be treated as one dataset?"""
     if norm(a["publisher"]) == norm(b["publisher"]):
@@ -84,6 +133,8 @@ def mergeable(a, b) -> bool:
     # same council).
     if (a["source_id"] == AGGREGATOR) == (b["source_id"] == AGGREGATOR):
         return False
+    if mirrors(a, b) or mirrors(b, a):
+        return True
     wa, wb = who(a["publisher"]), who(b["publisher"])
     return bool(wa) and bool(wb) and (wa <= wb or wb <= wa)
 
@@ -97,6 +148,16 @@ def cluster(candidates: list) -> list[list]:
     Calderdale's. Requiring agreement with the whole cluster stops the chain
     forming.
     """
+    # A platform label is the weaker kind of match: it agrees with anything
+    # on the portal it names, where a publisher's own name agrees only with
+    # itself. So the named records are placed first and the labelled ones
+    # fall in around them. Left in database order, data.gov.uk's "OpenDataNI"
+    # copy of a Belfast dataset would take the cluster first and lock out
+    # data.gov.uk's *own* copy filed under "Belfast City Council" — two
+    # aggregator records may never share a cluster — splitting a pair that
+    # had been merged correctly for as long as the rule has existed.
+    candidates = sorted(candidates, key=lambda r: bool(platform_of(r["publisher"])))
+
     clusters: list[list] = []
     for r in candidates:
         for cl in clusters:
@@ -109,9 +170,16 @@ def cluster(candidates: list) -> list[list]:
 
 
 def rank(r) -> tuple:
-    """Which copy of a duplicate group to keep as the canonical one."""
+    """Which copy of a duplicate group to keep as the canonical one.
+
+    A copy with no resources is a dead end — the reader follows it and finds
+    nothing to download — so one carrying files outranks one that doesn't,
+    the publisher's own copy included. 252 of data.gov.uk's Northern Ireland
+    mirrors are empty while their twins hold the files.
+    """
     return (
-        r["source_id"] != AGGREGATOR,      # prefer the source portal
+        bool(r["resource_count"]),         # prefer a copy that has files
+        r["source_id"] != AGGREGATOR,      # then the source portal
         r["resource_count"] or 0,
         r["modified"] or "",
     )
