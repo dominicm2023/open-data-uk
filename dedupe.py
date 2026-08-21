@@ -256,8 +256,8 @@ def main() -> None:
     )
 
     rows = conn.execute(
-        "SELECT key, source_id, title, publisher, description, "
-        "       resource_count, modified, tags FROM datasets"
+        "SELECT key, source_id, ckan_id, name, title, publisher, "
+        "       description, resource_count, modified, tags FROM datasets"
     ).fetchall()
 
     # --- tags -------------------------------------------------------------
@@ -281,18 +281,80 @@ def main() -> None:
         if t:
             by_title[t].append(r)
 
-    dup_rows: list[tuple[str, str]] = []
-    groups = 0
+    # Two independent signals feed one union-find: title clusters (the
+    # conservative pairwise-agreement rule), and a shared source UUID. The
+    # second exists because 1,107 data.gov.uk copies of OpenDataNI records
+    # carry the NI portal's own CKAN UUID yet file the publisher under a
+    # name who() can't confirm — the UUID says "same dataset" outright, and
+    # renamed copies ("Personal Insolvency" vs "Insolvency Statistics",
+    # same UUID) never even meet in a title group.
+    parent: dict[str, str] = {}
+
+    def find(k: str) -> str:
+        while parent.get(k, k) != k:
+            parent[k] = parent.get(parent[k], parent[k])
+            k = parent[k]
+        return k
+
+    def union(a: str, b: str) -> None:
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[ra] = rb
+        parent.setdefault(a, find(a))
+        parent.setdefault(b, find(b))
+
     for candidates in by_title.values():
         if len(candidates) < 2:
             continue
         for cl in cluster(candidates):
-            if len(cl) < 2:
-                continue
-            groups += 1
-            canonical = max(cl, key=lambda r: rank(r, retired_keys))
-            dup_rows += [(r["key"], canonical["key"])
-                         for r in cl if r["key"] != canonical["key"]]
+            for r in cl[1:]:
+                union(r["key"], cl[0]["key"])
+
+    # --- same-UUID cross-source merges ---------------------------------
+    uuid_re = re.compile(
+        r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}", re.I)
+    by_uuid: dict[str, list] = defaultdict(list)
+    for r in rows:
+        for field in (r["ckan_id"], r["name"], r["key"]):
+            m = uuid_re.search(field or "")
+            if m:
+                by_uuid[m.group(0).lower()].append(r)
+                break
+    uuid_links = 0
+    for members in by_uuid.values():
+        if len({r["source_id"] for r in members}) < 2:
+            continue
+        for i, a in enumerate(members):
+            for b in members[i + 1:]:
+                if a["source_id"] == b["source_id"]:
+                    continue
+                # The UUID plus one corroborating signal: the same title,
+                # the aggregator on one side (it harvests the portals whose
+                # UUIDs these are), or names that already agree. A bare
+                # UUID match in a slug could still be a reference to
+                # something rather than an identity.
+                if (norm(a["title"]) == norm(b["title"])
+                        or AGGREGATOR in (a["source_id"], b["source_id"])
+                        or mergeable(a, b)):
+                    union(a["key"], b["key"])
+                    uuid_links += 1
+
+    # --- elect one canonical per component ------------------------------
+    row_by_key = {r["key"]: r for r in rows}
+    components: dict[str, list[str]] = defaultdict(list)
+    for k in parent:
+        components[find(k)].append(k)
+
+    dup_rows: list[tuple[str, str]] = []
+    groups = 0
+    for members in components.values():
+        if len(members) < 2:
+            continue
+        groups += 1
+        recs = [row_by_key[k] for k in members]
+        canonical = max(recs, key=lambda r: rank(r, retired_keys))
+        dup_rows += [(r["key"], canonical["key"])
+                     for r in recs if r["key"] != canonical["key"]]
 
     conn.executemany("INSERT INTO duplicates VALUES (?, ?)", dup_rows)
     conn.commit()
@@ -301,6 +363,7 @@ def main() -> None:
     print(f"{total:,} datasets scanned")
     print(f"{len(retired):,} retired records flagged")
     print(f"{groups:,} duplicate groups; {len(dup_rows):,} non-canonical copies marked")
+    print(f"{uuid_links:,} cross-source links made on a shared UUID")
     print(f"{len(tag_rows):,} tag/dataset pairs indexed")
     conn.close()
 
