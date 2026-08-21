@@ -173,6 +173,18 @@ def check_canonical() -> int:
         bad += 1
     else:
         print("PASS  with both carrying files, the publisher's own copy still wins")
+
+    # Search drops a retired canonical AND everything filed as its duplicate,
+    # so electing a withdrawn record buries its live twins — 553 datasets
+    # were invisible behind exactly this.
+    withdrawn = rec("opendatani", "NI Water", "opendatani:z", resources=9)
+    live = rec(AGG, "OpenDataNI", "data_gov_uk:z", resources=1)
+    marked = frozenset({"opendatani:z"})
+    if max([withdrawn, live], key=lambda r: rank(r, marked)) is not live:
+        print("FAIL  elected a withdrawn record and buried its live twin")
+        bad += 1
+    else:
+        print("PASS  a live copy always beats a withdrawn one, whatever it carries")
     return bad
 
 

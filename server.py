@@ -12,6 +12,7 @@ from __future__ import annotations
 import functools
 import os
 import re
+import threading
 import time
 from collections import defaultdict, deque
 from contextlib import asynccontextmanager
@@ -539,6 +540,8 @@ def api_dataset(request: Request, response: Response,
 PER_PAGE = 100
 _AGG_TTL = 1800          # the index only changes on the nightly refresh
 _agg_cache: tuple[float, dict] = (0.0, {})
+_agg_lock = threading.Lock()
+_agg_refreshing = False
 
 # A subject earns a page when more than one organisation publishes on it and
 # there is a list worth reading. Below that it's one publisher's private
@@ -559,11 +562,47 @@ def _norm_title(text: str) -> str:
 def _aggregates() -> dict:
     """Publishers, subjects and shared dataset types — one scan, cached.
 
-    Each of these needs the whole findable set, and doing them separately
-    meant three full scans. One pass takes ~2 s and is held for half an hour
-    per worker; the result is a few hundred KB against a model that is
-    already resident.
+    Serve-stale: the 2.4 s scan used to run on whichever visitor's request
+    happened to expire the cache — and, unlocked, on every request that
+    arrived while it ran, multiplying the scan. Now an expired cache is
+    served as-is while exactly one background thread rebuilds it; only a
+    cold worker (first request after boot, and the lifespan warmer gets
+    there first) ever waits for the scan.
     """
+    global _agg_refreshing
+    now = time.time()
+    stamp, cached = _agg_cache
+    if cached and now - stamp < _AGG_TTL:
+        return cached
+    if cached:
+        with _agg_lock:
+            if not _agg_refreshing:
+                _agg_refreshing = True
+                threading.Thread(target=_refresh_aggregates,
+                                 daemon=True).start()
+        return cached
+    with _agg_lock:
+        stamp, cached = _agg_cache
+        if cached and time.time() - stamp < _AGG_TTL:
+            return cached
+        return _compute_aggregates()
+
+
+def _refresh_aggregates() -> None:
+    global _agg_refreshing
+    try:
+        _compute_aggregates()
+    except Exception as exc:  # noqa: BLE001 — stale data beats a 500
+        print(f"aggregate refresh failed, serving stale: "
+              f"{type(exc).__name__}: {exc}", flush=True)
+    finally:
+        with _agg_lock:
+            _agg_refreshing = False
+
+
+def _compute_aggregates() -> dict:
+    """The scan itself. One pass over the findable set takes ~2 s; the
+    result is a few hundred KB against a model that is already resident."""
     global _agg_cache
     import json as _json
     from collections import Counter, defaultdict
@@ -571,10 +610,6 @@ def _aggregates() -> dict:
     from paths import connect as db_connect
 
     now = time.time()
-    stamp, cached = _agg_cache
-    if cached and now - stamp < _AGG_TTL:
-        return cached
-
     conn = db_connect()
     try:
         rows = conn.execute(

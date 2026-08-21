@@ -169,15 +169,19 @@ def cluster(candidates: list) -> list[list]:
     return clusters
 
 
-def rank(r) -> tuple:
+def rank(r, retired: frozenset[str] = frozenset()) -> tuple:
     """Which copy of a duplicate group to keep as the canonical one.
 
-    A copy with no resources is a dead end — the reader follows it and finds
-    nothing to download — so one carrying files outranks one that doesn't,
-    the publisher's own copy included. 252 of data.gov.uk's Northern Ireland
+    A withdrawn record must never be the copy we keep: search drops retired
+    canonicals, and every live twin filed as its duplicate vanished with it —
+    553 datasets were invisible behind exactly this. Then: a copy with no
+    resources is a dead end — the reader follows it and finds nothing to
+    download — so one carrying files outranks one that doesn't, the
+    publisher's own copy included. 252 of data.gov.uk's Northern Ireland
     mirrors are empty while their twins hold the files.
     """
     return (
+        r["key"] not in retired,           # never elect a withdrawn record
         bool(r["resource_count"]),         # prefer a copy that has files
         r["source_id"] != AGGREGATOR,      # then the source portal
         r["resource_count"] or 0,
@@ -228,6 +232,7 @@ def main() -> None:
     retired = [(r["key"],) for r in rows
                if r["description"] and _RETIRED_RE.search(r["description"])]
     conn.executemany("INSERT INTO retired VALUES (?)", retired)
+    retired_keys = frozenset(k for (k,) in retired)
 
     # --- duplicates -----------------------------------------------------
     by_title: dict[str, list[sqlite3.Row]] = defaultdict(list)
@@ -245,7 +250,7 @@ def main() -> None:
             if len(cl) < 2:
                 continue
             groups += 1
-            canonical = max(cl, key=rank)
+            canonical = max(cl, key=lambda r: rank(r, retired_keys))
             dup_rows += [(r["key"], canonical["key"])
                          for r in cl if r["key"] != canonical["key"]]
 
