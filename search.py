@@ -56,6 +56,9 @@ NO_FILES_MULT = 0.95
 # (not a filter) because the semantic arm legitimately finds datasets that
 # never use the query's words — "kerbside collection tonnages" is recycling.
 PLACE_ONLY_MULT = 0.80
+# A dataset whose own bbox lies wholly on another continent, reached via the
+# research catalogues. Demoted, never hidden — see _dup_and_retired.
+FOREIGN_MULT = 0.50
 # bm25 column weights: key(unindexed), title, description, publisher, tags
 BM25_WEIGHTS = "0.0, 5.0, 1.0, 2.0, 3.0"
 # cosine similarity of the best semantic hit, used for the confidence signal
@@ -289,7 +292,7 @@ class SearchEngine:
                 out[key] = json.loads(cols)
         return out
 
-    def _dup_and_retired(self, conn: sqlite3.Connection) -> tuple[dict, set]:
+    def _dup_and_retired(self, conn: sqlite3.Connection) -> tuple[dict, set, set]:
         """Duplicate and retired keys, cached in memory.
 
         These tables only change when dedupe.py runs, but re-reading all
@@ -308,8 +311,24 @@ class SearchEngine:
                     "SELECT key, canonical_key FROM duplicates").fetchall())
                 retired = {r[0] for r in conn.execute("SELECT key FROM retired")}
             except sqlite3.OperationalError:  # dedupe.py not run yet
-                return {}, set()
-            self._dup_cache = (dups, retired)
+                return {}, set(), set()
+            # Records whose own bbox lies wholly on another continent:
+            # UK research institutions publish Panama, Uganda and Vietnam
+            # studies through the research catalogues on data.gov.uk, and
+            # they were outranking UK-scoped answers in a UK index. The box
+            # is deliberately generous — UK waters, the North Sea, the
+            # Arctic surveys all stay inside it — and the records are only
+            # demoted, never hidden: a search that genuinely wants the
+            # Vietnam land-cover study has nothing UK competing with it.
+            try:
+                foreign = {r[0] for r in conn.execute(
+                    "SELECT dataset_key FROM dataset_geo "
+                    "WHERE bbox_west IS NOT NULL "
+                    "  AND (bbox_east < -30.0 OR bbox_west > 15.0 "
+                    "       OR bbox_north < 40.0)")}
+            except sqlite3.OperationalError:
+                foreign = set()
+            self._dup_cache = (dups, retired, foreign)
             self._dup_mtime = mtime
         return self._dup_cache
 
@@ -387,7 +406,7 @@ class SearchEngine:
             rare_keys = self._rare_term_keys(query, conn)
             topic_keys = self._topic_match_keys(query, conn, place)
             pub_keys = self._publisher_match_keys(query, conn, topic_keys)
-            dups, retired = self._dup_and_retired(conn)
+            dups, retired, foreign = self._dup_and_retired(conn)
 
             fused: dict[str, float] = {}
             for ranked in (vec_keys, kw_keys, geo_keys):
@@ -424,6 +443,8 @@ class SearchEngine:
                     mult *= AVAILABILITY_MULT.get(verdict, 1.0)
                 elif n_res == 0:
                     mult *= NO_FILES_MULT
+                if key in foreign:
+                    mult *= FOREIGN_MULT
                 fused[key] *= mult
 
             # collapse duplicates onto their canonical copy, drop retired
