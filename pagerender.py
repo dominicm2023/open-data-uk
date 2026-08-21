@@ -161,7 +161,13 @@ def json_ld(rec: dict, page_url: str) -> str:
         "url": page_url,
         "identifier": rec.get("key"),
     }
-    if desc := plain_text(rec.get("description")):
+    # description is required for Google Dataset Search eligibility, and
+    # 2,915 sitemap-listed pages emitted none because the publisher wrote
+    # none. The generated snippet already exists for exactly that case and
+    # states facts we hold, so machines get the same honest fallback the
+    # search-result snippet does.
+    desc = plain_text(rec.get("description")) or meta_description(rec)
+    if desc:
         data["description"] = desc[:5000]
     if tags := [t for t in (rec.get("tags") or []) if t][:25]:
         data["keywords"] = tags
@@ -252,6 +258,7 @@ def head_tags(rec: dict, site_url: str) -> str:
         f'<meta property="og:description" content="{esc(desc)}">',
         f'<meta property="og:url" content="{esc(page_url)}">',
         f'<meta name="twitter:card" content="summary">',
+        f'<meta property="og:image" content="{site_url}/icon-512.png">',
         f'<script type="application/ld+json">{json_ld(rec, page_url)}</script>',
     ]
     return "\n".join(head)
@@ -413,6 +420,7 @@ def simple_head(title: str, description: str, path: str, site_url: str,
         f'<meta property="og:description" content="{esc(description)}">',
         f'<meta property="og:url" content="{esc(url)}">',
         '<meta name="twitter:card" content="summary">',
+        f'<meta property="og:image" content="{site_url}/icon-512.png">',
         extra,
     ]).strip()
 

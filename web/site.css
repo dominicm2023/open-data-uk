@@ -632,3 +632,19 @@ footer {
     --land-edge: #3c4048;
   }
 }
+
+/* A 1,132-character tag chip forced a 7,000px page. Chips wrap now; the
+   upstream fix (splitting comma-blob tags) can land at leisure. */
+.chip { overflow-wrap: anywhere; max-width: 100%; }
+
+/* Keyboard users get a way past the nav. Hidden until focused. */
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: .5rem 1rem;
+  z-index: 10;
+}
+.skip:focus { left: 0; }

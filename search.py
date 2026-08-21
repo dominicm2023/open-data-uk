@@ -94,7 +94,10 @@ class SearchEngine:
         mtime = EMB_PATH.stat().st_mtime
         if self._matrix is None or mtime > self._emb_mtime:
             try:
-                matrix = np.load(EMB_PATH)
+                # mmap: four workers each held a private ~158MB copy, and
+                # the nightly hot-reload doubled it transiently against a
+                # 3G MemoryMax — an OOM trajectory as the index grows.
+                matrix = np.load(EMB_PATH, mmap_mode="r")
                 keys = json.loads(KEYS_PATH.read_text(encoding="utf-8"))
             except Exception:
                 # embed_index.py may be mid-checkpoint; keep serving old vectors

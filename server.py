@@ -20,8 +20,8 @@ from pathlib import Path
 import yaml
 from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import (FileResponse, HTMLResponse, PlainTextResponse,
-                               StreamingResponse)
+from fastapi.responses import (FileResponse, HTMLResponse, JSONResponse,
+                               PlainTextResponse, StreamingResponse)
 
 import pagerender
 from querylog import log_query
@@ -78,12 +78,40 @@ app = FastAPI(
     version="0.1.0",
     lifespan=lifespan,
 )
+@app.middleware("http")
+async def head_as_get(request: Request, call_next):
+    """Answer HEAD everywhere GET works.
+
+    Only the static files carried HEAD; every page answered 405, which is
+    what link-preview fetchers and uptime monitors probe first. Serve the
+    GET, drain the body, send the headers.
+    """
+    if request.method != "HEAD":
+        return await call_next(request)
+    request.scope["method"] = "GET"
+    response = await call_next(request)
+    async for _ in response.body_iterator:
+        pass
+    return Response(status_code=response.status_code,
+                    headers=dict(response.headers))
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["GET"],
     allow_headers=["*"],
 )
+
+
+@app.exception_handler(404)
+async def not_found(request: Request, exc) -> Response:
+    """The HTML 404 already existed for unknown dataset keys; every other
+    unknown path got bare JSON. Humans get the page, the API keeps JSON."""
+    if request.url.path.startswith("/api/"):
+        return JSONResponse({"detail": "Not Found"}, status_code=404)
+    return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                        headers={"Cache-Control": "no-store"})
 
 
 def _client_ip(request: Request) -> str:
@@ -122,8 +150,13 @@ def _prune_hits(now: float) -> None:
         return
     _last_prune = now
     cutoff = now - RATE_WINDOW
-    for ip in [ip for ip, dq in _hits.items() if not dq or dq[-1] < cutoff]:
-        del _hits[ip]
+    # Snapshot before iterating: sync endpoints run on a threadpool, so
+    # another request can insert into _hits mid-sweep, and iterating a dict
+    # that changes size raises RuntimeError — reproduced at ten failures in
+    # a three-second concurrent run. The visitor whose request tripped it
+    # got a 500 for arriving during the once-a-minute prune.
+    for ip in [ip for ip, dq in list(_hits.items()) if not dq or dq[-1] < cutoff]:
+        _hits.pop(ip, None)
 
 
 def _rate_check(request: Request, response: Response) -> None:
@@ -347,7 +380,9 @@ def health(response: Response) -> dict:
 
 
 @app.get("/api/stats", summary="Index statistics")
-def api_stats() -> dict:
+def api_stats(request: Request, response: Response) -> dict:
+    _rate_check(request, response)
+    response.headers["Cache-Control"] = "public, max-age=3600"
     return engine.stats()
 
 
@@ -843,8 +878,12 @@ def who_publishes(name: str = Query(default="", max_length=300)) -> HTMLResponse
     if not rows:
         return HTMLResponse(pagerender.render_missing(None), status_code=404,
                             headers={"Cache-Control": "no-store"})
+    # Render under the canonical label, not the query's spelling: ?name=
+    # accepted any casing and self-canonicalised, so every variant was its
+    # own indexable page — unbounded duplicates of the same content.
+    canonical = agg["shared_label"].get(slug, name)
     return HTMLResponse(
-        pagerender.render_who(name, rows, SITE_URL),
+        pagerender.render_who(canonical, rows, SITE_URL),
         headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
 
 
@@ -870,13 +909,25 @@ INDEXABLE = ("FROM datasets d WHERE "
              "NOT EXISTS (SELECT 1 FROM retired r WHERE r.key = d.key)")
 
 
+_count_cache: tuple[float, int] | None = None
+
+
 def _indexable_count() -> int:
+    """Cached for an hour: the count moves once a night, and computing it is
+    a ~600ms table scan that was the slowest thing behind the fastest-looking
+    route — a 172-byte sitemap index."""
+    global _count_cache
+    now = time.time()
+    if _count_cache and now - _count_cache[0] < 3600:
+        return _count_cache[1]
     from paths import connect as db_connect
     conn = db_connect()
     try:
-        return conn.execute(
+        n = conn.execute(
             f"SELECT COUNT(*) {INDEXABLE} AND NOT ({NOTHING_TO_INDEX})"
         ).fetchone()[0]
+        _count_cache = (now, n)
+        return n
     finally:
         conn.close()
 
@@ -1021,10 +1072,20 @@ def sitemap_page(page: int) -> Response:
                              headers={"Cache-Control": "public, max-age=21600"})
 
 
-@app.get("/api/sources", summary="Harvested sources")
-def api_sources() -> dict:
+@functools.lru_cache(maxsize=1)
+def _sources_yaml() -> tuple:
+    """sources.yaml parsed once per process — 117 KB of YAML was being
+    re-parsed on every request, the cheapest unauthenticated CPU burn on
+    the box. The file only changes on deploy, which restarts the process."""
     with open(ROOT / "sources.yaml", encoding="utf-8") as fh:
-        sources = yaml.safe_load(fh)["sources"]
+        return tuple(yaml.safe_load(fh)["sources"])
+
+
+@app.get("/api/sources", summary="Harvested sources")
+def api_sources(request: Request, response: Response) -> dict:
+    _rate_check(request, response)
+    response.headers["Cache-Control"] = "public, max-age=3600"
+    sources = _sources_yaml()
     counts = engine.stats()["sources"]
     return {
         "sources": [

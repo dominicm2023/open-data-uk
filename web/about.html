@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — how the UK Open Data Index works — UK Open Data Index</title>
-<meta name="description" content="What we index, what the availability badges mean, and what we found about the state of UK open data: 37% of datasets state no licence, and only 37% of verified links give you machine-readable data.">
+<meta name="description" content="What we index, what the availability badges mean, and what we found about the state of UK open data: 38% of datasets state no licence, and only 37% of verified links give you machine-readable data.">
 <link rel="canonical" href="https://open-data.org.uk/about">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="UK Open Data Index">
 <meta property="og:title" content="About the UK Open Data Index">
 <meta property="og:description" content="How we collate UK open government data, verify every link, and stay honest about what we don't have.">
 <meta property="og:url" content="https://open-data.org.uk/about">
+<meta property="og:image" content="https://open-data.org.uk/icon-512.png">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="/site.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -20,6 +21,7 @@
 <meta name="theme-color" content="#14549c">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="bar">
     <a class="brand" href="/">
@@ -44,7 +46,7 @@
     </nav>
   </div>
 </header>
-<div class="wrap">
+<main id="main" class="wrap">
   <h1>About the UK Open Data Index</h1>
   <p>The UK's open government data is scattered across dozens of portals with
   inconsistent, often broken metadata — effectively invisible to both people
@@ -64,25 +66,25 @@
   <p>When we harvested the full catalogue, the metadata quality problem was
   worse than expected:</p>
   <div class="stat-row">
-    <div class="stat bad"><b>37%</b><span>state no licence — you can't legally know if you may reuse them</span></div>
-    <div class="stat bad"><b>42%</b><span>haven't been updated in over two years — though most were never meant to be</span></div>
-    <div class="stat bad"><b>19%</b><span>are duplicate copies of another catalogue's entry</span></div>
+    <div class="stat bad"><b>38%</b><span>state no licence — you can't legally know if you may reuse them</span></div>
+    <div class="stat bad"><b>46%</b><span>haven't been updated in over two years — though most were never meant to be</span></div>
+    <div class="stat bad"><b>23%</b><span>are duplicate copies of another catalogue's entry</span></div>
   </div>
-  <p>We've followed the links on 73% of the catalogue — the index grew by a
+  <p>We've followed the links on 76% of the catalogue — the index grew by a
   third recently and the checker works through a rolling slice each night, so
   it is still catching up. Of those checked, <strong>37% give you
-  machine-readable data</strong> — 13% a direct file, 24% an API you can
-  query. Another <strong>30% just lead to a webpage</strong>, where the hunt
-  continues. For <strong>15% the publisher lists no files at all</strong>, so
-  there is nothing for us to follow; 10% are genuinely broken, and 10% we
+  machine-readable data</strong> — 14% a direct file, 23% an API you can
+  query. Another <strong>27% just lead to a webpage</strong>, where the hunt
+  continues. For <strong>20% the publisher lists no files at all</strong>, so
+  there is nothing for us to follow; 6% are genuinely broken, and 10% we
   couldn't check because the publisher blocked us.</p>
   <p>We normalise what can be normalised — hundreds of spellings of file
-  formats and dozens of licence variants collapse to a consistent
+  formats and over a thousand licence spellings collapse to a consistent
   vocabulary — then collapse duplicates, flag retired records, and stay
   honest when a search has no good answer, including when we simply hold no
   data for the place you asked about.</p>
   <p>We try hard not to make publishers look worse than they are. Of the
-  "stale" datasets that declare an update schedule, <strong>70% say they
+  "stale" datasets that declare an update schedule, <strong>about half say they
   were never going to be updated again</strong> — a finished one-off
   publication isn't neglected, so we record the declared cadence rather than
   treating every quiet dataset as rot. The same care applies to licences
@@ -99,7 +101,7 @@
   <p>Those figures cover the <em>whole</em> harvested catalogue, including a
   long tail of obscure records almost nobody reaches. Among the 82,000-odd
   datasets you can actually find through search — excluding collapsed
-  duplicates and retired records — licensing is better (34% state none)
+  duplicates and retired records — licensing is better (32% state none)
   though the link quality is much the same. We quote the whole-catalogue
   numbers because they describe the real state of UK open data, not the
   flattering subset.</p>
@@ -140,7 +142,7 @@
   <h2>Browsing without searching</h2>
   <p>If you'd rather look around than search, there are three ways in:</p>
   <ul>
-    <li><a href="/publishers">By publisher</a> — 1,400-odd government bodies,
+    <li><a href="/publishers">By publisher</a> — 1,800-odd government bodies,
     councils, NHS organisations and agencies, and everything each publishes.</li>
     <li><a href="/topics">By subject</a> — the publishers' own tags, pooled
     across every portal, so one page covers air quality everywhere rather
@@ -188,7 +190,7 @@
   Government Licence and other licences as stated per dataset — check each
   dataset's licence before reuse. This index and its code will be released
   as open source.</p>
-</div>
+</main>
 
 <script>
 const $ = id => document.getElementById(id);
