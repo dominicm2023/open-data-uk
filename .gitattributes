@@ -1,3 +1,10 @@
-# Shell scripts must stay LF: refresh.sh deployed with CRLF from a Windows
-# edit and the nightly cron died at "set -euo pipefail" for three nights.
+* text=auto
 *.sh text eol=lf
+*.py text
+*.md text
+*.css text
+*.html text
+*.yaml text
+*.yml text
+*.json text
+*.svg text
