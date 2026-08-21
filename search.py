@@ -121,8 +121,19 @@ class SearchEngine:
         top = np.argsort(-sims)[:CANDIDATES]
         return [keys[i] for i in top], float(sims[top[0]]) if len(top) else 0.0
 
-    def keyword_ranks(self, query: str, conn: sqlite3.Connection) -> list[str]:
+    def keyword_ranks(self, query: str, conn: sqlite3.Connection,
+                      place: str | None = None) -> list[str]:
         terms = self._terms(query)
+        # A detected place's own words otherwise crowd out the topic: bm25
+        # over "air OR quality OR newcastle OR upon OR tyne" ranks anything
+        # the city publishes above actual air-quality data, because one
+        # publisher hit supplies three of the five terms. The geo and
+        # publisher arms carry the place; this arm carries the subject. A
+        # query that is only a place keeps its terms.
+        place_toks = set((place or "").split())
+        topic = [t for t in terms if t not in place_toks]
+        if topic:
+            terms = topic
         if not terms:
             return []
         match = " OR ".join(terms)
@@ -366,7 +377,11 @@ class SearchEngine:
             point = place_point(place)
 
             vec_keys, top_sim = self.vector_ranks(query)
-            kw_keys = self.keyword_ranks(query, conn)
+            # Only strip the place from the keyword arm when the geo arm is
+            # there to carry it: for a place without coordinates ("brighton"
+            # is not an LAD name), the keyword hit on the publisher is the
+            # only locality signal there is.
+            kw_keys = self.keyword_ranks(query, conn, place if point else None)
             geo_keys = (self.geo_ranks(query, conn, point, place)
                         if point and place else [])
             rare_keys = self._rare_term_keys(query, conn)
@@ -389,15 +404,20 @@ class SearchEngine:
                     mult *= RARE_TERM_BOOST
                 if key in pub_keys:
                     mult *= PUBLISHER_BOOST
-                # A geo match earns nothing when the links are dead: 1.45 ×
-                # 0.85 still beat clean results, and "air quality cardiff"
-                # led with a dead record from the wrong end of the country
-                # whose bbox happened to span the UK.
+                # A geo match earns nothing when the links are dead (1.45 ×
+                # 0.85 still beat clean results — "air quality cardiff" led
+                # with a dead record whose box spanned the UK), and nothing
+                # when the record missed the topic: boosted-then-demoted
+                # came to 1.45 × 0.80 = a net *lift* for matching the place
+                # alone, which put Newcastle's conservation areas above
+                # actual air quality data.
                 verdict_now, _ = availability.get(key, (None, 0))
-                if key in geo_set and verdict_now != "dead":
+                place_only = (place and topic_keys is not None
+                              and key not in topic_keys)
+                if key in geo_set and verdict_now != "dead" and not place_only:
                     mult *= GEO_BOOST
                 # matched the place but nothing of what was actually asked
-                if place and topic_keys is not None and key not in topic_keys:
+                if place_only:
                     mult *= PLACE_ONLY_MULT
                 verdict, n_res = availability.get(key, (None, 0))
                 if verdict:

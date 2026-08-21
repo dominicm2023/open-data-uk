@@ -28,13 +28,27 @@ def gazetteer() -> dict[str, tuple[float, float]]:
 
     Built by scripts/build_gazetteer.py. Absent gazetteer just means no
     coordinate-based search — everything else still works.
+
+    Keys are re-normalised through the same tokeniser queries go through:
+    "Armagh City, Banbridge and Craigavon" is unreachable as stored, because
+    no tokenised query ever contains a comma. Keys that begin with "of " are
+    dropped — name-stripping in the build left "of london" and "of
+    edinburgh" behind, and "mayor of london" queries were detecting a place
+    called "of london".
     """
     try:
         raw = json.loads(GAZETTEER_PATH.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return {}
-    return {k: (float(v[0]), float(v[1])) for k, v in raw.items()
-            if isinstance(v, list) and len(v) == 2}
+    out: dict[str, tuple[float, float]] = {}
+    for k, v in raw.items():
+        if not (isinstance(v, list) and len(v) == 2):
+            continue
+        key = " ".join(_tokens(k))
+        if not key or key.startswith("of "):
+            continue
+        out.setdefault(key, (float(v[0]), float(v[1])))
+    return out
 
 
 def place_point(place: str | None) -> tuple[float, float] | None:
@@ -69,6 +83,30 @@ MAJOR_PLACES = {
     "harrogate", "doncaster", "rotherham", "barnsley", "grimsby", "lincoln",
     "scunthorpe", "mansfield", "chesterfield", "loughborough", "rugby",
     "nuneaton", "redditch", "kidderminster", "stafford", "crewe", "macclesfield",
+    # Ceremonial counties not already covered above: people ask for
+    # "derbyshire school places", not for a district they can't name.
+    "northumberland", "cheshire", "derbyshire", "nottinghamshire",
+    "lincolnshire", "leicestershire", "rutland", "staffordshire",
+    "warwickshire", "northamptonshire", "buckinghamshire", "berkshire",
+    "oxfordshire", "wiltshire", "gloucestershire", "herefordshire",
+    "worcestershire", "shropshire", "hertfordshire", "bedfordshire",
+    "cambridgeshire", "tyne and wear", "county durham", "isle of wight",
+}
+
+# Welsh-language names, mapped to the English forms the index stores. Only
+# the names that differ are listed; "gwynedd" and "powys" are already their
+# own English names. Accented forms are listed as people type them without
+# the accent ("ynys mon"), because the tokeniser only keeps a-z.
+WELSH_ALIASES = {
+    "caerdydd": "cardiff", "abertawe": "swansea", "casnewydd": "newport",
+    "wrecsam": "wrexham", "ynys mon": "isle of anglesey",
+    "anglesey": "isle of anglesey", "sir fynwy": "monmouthshire",
+    "sir gaerfyrddin": "carmarthenshire", "sir ddinbych": "denbighshire",
+    "sir benfro": "pembrokeshire", "sir y fflint": "flintshire",
+    "bro morgannwg": "vale of glamorgan", "caerffili": "caerphilly",
+    "merthyr tudful": "merthyr tydfil",
+    "castell nedd port talbot": "neath port talbot",
+    "pen y bont ar ogwr": "bridgend",
 }
 
 # Words in publisher names that are organisational, not geographic
@@ -107,30 +145,33 @@ def build_place_vocab(conn: sqlite3.Connection) -> set[str]:
     mined set was redundant as well as harmful. (conn kept for call
     compatibility; no longer read.)
     """
-    return set(MAJOR_PLACES) | set(gazetteer())
+    return set(MAJOR_PLACES) | set(gazetteer()) | set(WELSH_ALIASES)
 
 
 def detect_place(query: str, vocab: set[str]) -> str | None:
     """Return the authoritative UK place named in the query, if any.
 
-    Two-word places ("milton keynes", "northern ireland") take precedence;
-    otherwise the last matching token wins, since the trailing place is
-    usually the constraint ("flood risk in brighton"). Only real places in
-    `vocab` match — a query that names a place we don't hold (or a foreign
-    city) returns None rather than a fabricated place, so the caller can be
-    honest about coverage instead of silently guessing.
+    Longer names take precedence — the two-word window used to be the
+    ceiling, which made all 62 three-plus-word authorities ("newcastle upon
+    tyne", "bath and north east somerset") undetectable even though the
+    gazetteer held them. Within a length, the last match wins, since the
+    trailing place is usually the constraint ("flood risk in brighton").
+    Only real places in `vocab` match — a query that names a place we don't
+    hold (or a foreign city) returns None rather than a fabricated place,
+    so the caller can be honest about coverage instead of silently
+    guessing. A Welsh-language name comes back as the English form the
+    index stores.
     """
     toks = _tokens(query)
-    found: str | None = None
-    for a, b in zip(toks, toks[1:]):
-        if f"{a} {b}" in vocab:
-            found = f"{a} {b}"
-    if found:
-        return found
-    for tok in toks:
-        if tok in vocab:
-            found = tok
-    return found
+    for size in range(min(6, len(toks)), 0, -1):
+        found: str | None = None
+        for i in range(len(toks) - size + 1):
+            gram = " ".join(toks[i:i + size])
+            if gram in vocab:
+                found = gram
+        if found:
+            return WELSH_ALIASES.get(found, found)
+    return None
 
 
 def place_coverage(place: str, conn: sqlite3.Connection) -> int:
