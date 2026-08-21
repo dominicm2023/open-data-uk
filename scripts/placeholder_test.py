@@ -65,7 +65,25 @@ check(norm_title("  Air Quality  "), "Air Quality", "a title is trimmed")
 check(norm_title(None), None, "an absent title stays absent")
 check(norm_title(""), None, "an empty title is no title")
 check(norm_title("   "), None, "a whitespace title is no title")
-check(norm_title(1234), "1234", "a numeric title is still a title")
+# Reversed 2026-08-21: a bare number is unfindable — nobody searches "1234",
+# and NBN's thirteen records titled "1" merged into one dataset. Titles need
+# at least one word.
+check(norm_title(1234), None, "a bare number is not a title")
+check(norm_title("1"), None, "nor is '1' — thirteen NBN records were")
+check(norm_title("xh"), None, "two characters of keyboard mash is not a title")
+check(norm_title("TPO"), "TPO", "a three-letter acronym is (just) a title")
+check(norm_title("GREEN_BELT_RELEASE_DEVELOPMENT_SITES"),
+      "Green Belt Release Development Sites",
+      "a machine slug is read out loud")
+check(norm_title("TDC_POLLING_STATIONS_2015"), "TDC Polling Stations 2015",
+      "short all-caps words survive as acronyms")
+check(norm_title("INSPIRE_WFS"), "Inspire WFS",
+      "long shouting is capitalised, short acronyms kept")
+check(norm_title("Air Quality (2024)"), "Air Quality (2024)",
+      "a real title with punctuation is untouched")
+check(norm_title("snake_case_but Has Spaces_too"),
+      "snake_case_but Has Spaces_too",
+      "underscores inside a real sentence are left alone")
 
 check(strip_html("{{description}}"), None, "a template description is blanked")
 check(strip_html("<p>{{description}}</p>"), None,

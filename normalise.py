@@ -31,15 +31,44 @@ def unrendered(text) -> bool:
 # --- Titles --------------------------------------------------------------
 
 
+_SLUGGY = re.compile(r"^[A-Za-z0-9_.]+$")
+_ACRONYM_MAX = 3    # TPO, CIL, WFS survive; BELT and OPEN are words
+
+
 def norm_title(raw) -> str | None:
     """A usable title, or None when the portal didn't render one.
 
     A dataset with no title has nothing to show in search results, on a
     publisher's listing or in the FTS index, so callers treat None as "not a
     record" and drop it rather than storing a row headed "{{name}}".
+
+    The same goes for titles that carry no words: NBN Atlas held records
+    titled "x", "kj" and "1" (thirteen of those, which the dedupe then
+    merged into one) — keyboard mash from test uploads, unfindable by
+    anyone. Two characters or fewer, or no letter at all, is not a title.
     """
     title = (str(raw).strip() if raw is not None else "")
-    return None if not title or unrendered(title) else title
+    if not title or unrendered(title):
+        return None
+    if len(title) <= 2 or not re.search(r"[A-Za-z]", title):
+        return None
+    # GREEN_BELT_RELEASE_DEVELOPMENT_SITES is a filename, not a title. When
+    # the whole string is one machine token with underscores, read it out
+    # loud: underscores to spaces, shouting to capitals, short all-caps
+    # words kept as the acronyms they are.
+    if "_" in title and _SLUGGY.match(title):
+        words = []
+        for w in re.split(r"[_.]+", title):
+            if not w:
+                continue
+            if w.isupper() and len(w) > _ACRONYM_MAX:
+                words.append(w.capitalize())
+            elif w.islower():
+                words.append(w.capitalize())
+            else:
+                words.append(w)
+        title = " ".join(words)
+    return title
 
 
 # --- Descriptions -------------------------------------------------------
