@@ -146,7 +146,12 @@ class DomainThrottle:
 def classify(url: str, status: int, ctype: str, fmt: str | None) -> str:
     if status in BLOCKED_STATUSES or status in REFUSED_STATUSES:
         return "blocked"
-    if status == 0 or status >= 400:
+    if status == 0:
+        # No response at all — DNS failure, timeout, connection refused.
+        # That is silence, not evidence the data is gone, and "dead" is only
+        # allowed to mean evidence. 2,182 dead verdicts were this.
+        return "unreachable"
+    if status >= 400:
         return "dead"
     base = ctype.split(";")[0].strip().lower()
     # What came back beats what the URL looks like: an ArcGIS-hosted URL that
@@ -259,7 +264,7 @@ def pick_urls(conn: sqlite3.Connection, limit: int, first_only: bool,
         q = """
             SELECT r.url, r.format_norm FROM resources r
             JOIN resource_checks c ON c.url = r.url
-            WHERE c.verdict = 'blocked'
+            WHERE c.verdict IN ('blocked', 'unreachable')
                OR (c.verdict = 'dead' AND c.status IN (401, 403, 429, 503))
             LIMIT ?
         """
@@ -280,7 +285,8 @@ def pick_urls(conn: sqlite3.Connection, limit: int, first_only: bool,
             SELECT DISTINCT r.url, r.format_norm FROM resources r
             LEFT JOIN resource_checks c ON c.url = r.url
             WHERE c.url IS NULL
-               OR (c.verdict = 'blocked' AND c.checked_at < datetime('now', '-3 days'))
+               OR (c.verdict IN ('blocked', 'unreachable')
+                   AND c.checked_at < datetime('now', '-3 days'))
                OR c.checked_at < datetime('now', '-30 days')
             LIMIT ?
         """
@@ -296,6 +302,10 @@ def aggregate_availability(conn: sqlite3.Connection) -> None:
     cols = {r[1] for r in conn.execute("PRAGMA table_info(datasets)")}
     if "availability" not in cols:
         conn.execute("ALTER TABLE datasets ADD COLUMN availability TEXT")
+    # 'dead' additionally demands full evidence: every stored resource
+    # checked and every one a confirmed failure. 34% of dead datasets had a
+    # never-checked resource — telling a reader "links dead" while holding
+    # an unopened envelope is a claim, not a finding.
     conn.execute("""
         UPDATE datasets SET availability = (
             SELECT CASE
@@ -303,7 +313,11 @@ def aggregate_availability(conn: sqlite3.Connection) -> None:
                 WHEN SUM(c.verdict = 'api') > 0 THEN 'api'
                 WHEN SUM(c.verdict = 'webpage') > 0 THEN 'webpage'
                 WHEN SUM(c.verdict = 'blocked') > 0 THEN 'blocked'
-                WHEN COUNT(c.url) > 0 THEN 'dead'
+                WHEN SUM(c.verdict = 'unreachable') > 0 THEN 'unreachable'
+                WHEN COUNT(c.url) > 0
+                     AND COUNT(c.url) = (SELECT COUNT(*) FROM resources r2
+                                         WHERE r2.dataset_key = datasets.key)
+                     THEN 'dead'
             END
             FROM resources r JOIN resource_checks c ON c.url = r.url
             WHERE r.dataset_key = datasets.key

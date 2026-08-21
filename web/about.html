@@ -70,13 +70,14 @@
     <div class="stat bad"><b>46%</b><span>haven't been updated in over two years — though most were never meant to be</span></div>
     <div class="stat bad"><b>23%</b><span>are duplicate copies of another catalogue's entry</span></div>
   </div>
-  <p>We've followed the links on 76% of the catalogue — the index grew by a
+  <p>We've followed the links on 74% of the catalogue — the index grew by a
   third recently and the checker works through a rolling slice each night, so
   it is still catching up. Of those checked, <strong>37% give you
   machine-readable data</strong> — 14% a direct file, 23% an API you can
   query. Another <strong>27% just lead to a webpage</strong>, where the hunt
   continues. For <strong>20% the publisher lists no files at all</strong>, so
-  there is nothing for us to follow; 6% are genuinely broken, and 10% we
+  there is nothing for us to follow; 2% are confirmed broken (every link
+  checked, every link failing), 3% sit on hosts that don't answer, and 10% we
   couldn't check because the publisher blocked us.</p>
   <p>We normalise what can be normalised — hundreds of spellings of file
   formats and over a thousand licence spellings collapse to a consistent
@@ -118,12 +119,13 @@
     than a download.</li>
     <li><strong>↪ webpage only</strong> — the link works, but it's an HTML
     page; you'll have more clicking to do.</li>
-    <li><strong>✗ links dead</strong> — genuinely broken (404, server error,
-    or won't connect).</li>
+    <li><strong>✗ links dead</strong> — genuinely broken: every link checked
+    and every one returned an error (404, server error). A host that simply
+    doesn't answer is not counted here.</li>
     <li><strong>? not verified</strong> — the publisher's server refused
-    <em>our</em> checker (bot protection, or it needs a login). This says
-    nothing about the data: it may well be perfectly fine. We show this
-    rather than guessing.</li>
+    <em>our</em> checker (bot protection, or it needs a login), or didn't
+    answer at all. This says nothing about the data: it may well be
+    perfectly fine. We show this rather than guessing.</li>
   </ul>
   <p>That last category matters. Checks run from a server, and a fair number
   of sites block automated requests on sight — so we deliberately never

@@ -94,7 +94,7 @@ def candidates(conn, minimum: int) -> dict[str, dict]:
         FROM resources rs
         JOIN resource_checks rc ON rc.url = rs.url
         JOIN datasets d ON d.key = rs.dataset_key
-        WHERE rc.verdict = 'dead' AND rc.status = 0""").fetchall()
+        WHERE rc.verdict IN ('dead', 'unreachable') AND rc.status = 0""").fetchall()
     hosts: dict[str, dict] = {}
     for url, pub, src in rows:
         host = urlparse(url).hostname

@@ -37,6 +37,7 @@ VERDICT = {
     "webpage": ("webpage", "↪ webpage — more clicking needed"),
     "dead": ("dead", "✗ link dead"),
     "blocked": ("unknown", "? couldn't verify — publisher blocked our check"),
+    "unreachable": ("unknown", "? host not answering — may be temporary"),
     "nofiles": ("unknown", "no files listed by the publisher"),
 }
 
