@@ -33,6 +33,7 @@ Re-runnable; recomputes from scratch each time.
 
 from __future__ import annotations
 
+import functools
 import re
 import sqlite3
 from collections import defaultdict
@@ -65,6 +66,13 @@ _PUBLISHER_NOISE = {
     "cyngor", "bwrdeistref", "sirol", "comhairle",
 }
 
+# The words a portal bolts onto an organisation's name, and nothing else:
+# "Nottingham City Council Open Data" and "Aberdeen City Council ArcGIS
+# Online" are the same bodies as their plain-named twins. Stripped so those
+# pairs come out equal, rather than relying on the subset rule below —
+# which is now too strict to catch them, deliberately.
+_PLATFORM_WORDS = {"open", "data", "arcgis", "online", "portal", "datastore"}
+
 
 def who(publisher: str | None) -> frozenset[str]:
     """The words that say *which* organisation this is.
@@ -73,7 +81,7 @@ def who(publisher: str | None) -> frozenset[str]:
     Borough Council" comes out as {rochdale} and so can never be confused
     with it.
     """
-    return frozenset(norm(publisher).split()) - _PUBLISHER_NOISE
+    return frozenset(norm(publisher).split()) - _PUBLISHER_NOISE - _PLATFORM_WORDS
 
 
 # Some of what data.gov.uk aggregates is filed under the name of the
@@ -116,6 +124,19 @@ def platform_of(publisher: str | None) -> frozenset[str]:
     return _PLATFORM_SOURCES.get(norm(publisher), frozenset())
 
 
+@functools.lru_cache(maxsize=1)
+def _source_labels() -> dict[str, str]:
+    """source_id -> the source's own name, normalised."""
+    import yaml
+    with open(ROOT / "sources.yaml", encoding="utf-8") as fh:
+        return {s["id"]: norm(s["name"])
+                for s in yaml.safe_load(fh)["sources"]}
+
+
+def _source_label(source_id: str) -> str | None:
+    return _source_labels().get(source_id)
+
+
 def mirrors(a, b) -> bool:
     """Is `a` a platform-labelled copy of something from `b`'s portal?"""
     return b["source_id"] in platform_of(a["publisher"])
@@ -124,6 +145,14 @@ def mirrors(a, b) -> bool:
 def mergeable(a, b) -> bool:
     """May these two same-titled records be treated as one dataset?"""
     if norm(a["publisher"]) == norm(b["publisher"]):
+        # Unless it's two records from the same portal whose "publisher" is
+        # just the portal's own name — the harvester's fallback when a
+        # record names nobody. That label identifies the shelf, not the
+        # author: NBN Atlas hosts hundreds of recording schemes, and
+        # thirteen of its records titled "1" had collapsed into one.
+        if (a["source_id"] == b["source_id"]
+                and norm(a["publisher"]) == _source_label(a["source_id"])):
+            return False
         return True
     # An aggregator copy of a portal's own dataset: same organisation, but
     # data.gov.uk may spell the name differently from the council's own
@@ -136,7 +165,18 @@ def mergeable(a, b) -> bool:
     if mirrors(a, b) or mirrors(b, a):
         return True
     wa, wb = who(a["publisher"]), who(b["publisher"])
-    return bool(wa) and bool(wb) and (wa <= wb or wb <= wa)
+    if not (wa and wb):
+        return False
+    if wa == wb:
+        return True
+    # One name being a fuller form of the other still counts — but a single
+    # shared word is not an identity. {transport} ⊂ {department, transport}
+    # merged the Department for Transport's national Cycle Routes into
+    # TfL's London layer, and {calderdale} ⊂ {citizens, advice, calderdale}
+    # merged the council into its local Citizens Advice. Two agreeing words
+    # make a name; one makes a word.
+    small, big = (wa, wb) if len(wa) <= len(wb) else (wb, wa)
+    return small < big and len(small) >= 2
 
 
 def cluster(candidates: list) -> list[list]:

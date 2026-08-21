@@ -82,6 +82,31 @@ PAIRS = [
     (False, rec("opendatani", "NI Water"), rec("causeway_coast",
                                                "Causeway Coast and Glens Borough Council"),
      "two NI portals with no aggregator between them are still not bridged"),
+
+    # --- one shared word is not an identity -------------------------------
+    (False, rec(AGG, "Department for Transport"), rec("tfl", "Transport for London"),
+     "DfT's national Cycle Routes are not TfL's London layer"),
+    (False, rec(AGG, "Calderdale Metropolitan Borough Council"),
+     rec("datamillnorth", "Citizens Advice Calderdale"),
+     "a council and its local Citizens Advice share a place, not an identity"),
+    (False, rec(AGG, "Plymouth City Council"), rec("plymouth", "Public Health Plymouth"),
+     "one shared word reaching into a longer different name"),
+    (True, rec(AGG, "London Borough of Camden"),
+     rec("agol_camden", "London Borough of Camden Open Data"),
+     "platform words stripped, the same borough remains"),
+    (True, rec(AGG, "Aberdeen City Council"),
+     rec("agol_aberdeen", "Aberdeen City Council ArcGIS Online"),
+     "ArcGIS Online is the shelf, not the publisher"),
+    (True, rec(AGG, "Natural England"), rec("agol_ne", "Natural England (Defra)"),
+     "a two-word name agreeing in full is still a fuller form"),
+
+    # --- a portal's own name is not a publisher ---------------------------
+    # nbn_atlas's name in sources.yaml is "NBN Atlas (UK biodiversity
+    # network)"; two same-titled records both carrying that fallback label
+    # share a shelf, not an author.
+    (False, rec("nbn_atlas", "NBN Atlas (UK biodiversity network)", key="nbn_atlas:a"),
+     rec("nbn_atlas", "NBN Atlas (UK biodiversity network)", key="nbn_atlas:b"),
+     "same-source records under the portal's own fallback label"),
 ]
 
 
