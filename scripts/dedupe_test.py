@@ -6,6 +6,11 @@ more. These cases are the ones that were actually wrong in production —
 Bristol's "Fraud" collapsed into Calderdale's, Rochdale's "Council Spending"
 into Leeds's — and a handful of the real merges that must keep working.
 
+The rule also fails the other way, quietly counting one dataset twice, and
+the platform-label cases below are that failure: they must merge, while the
+records a platform label must not reach stay next to them to prove the
+bridge is a bridge and not a hole.
+
 No database needed, so CI can run it on every push.
 
 Usage:  python scripts/dedupe_test.py
@@ -17,7 +22,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from dedupe import cluster, mergeable, who  # noqa: E402
+from dedupe import cluster, mergeable, rank, who  # noqa: E402
 
 AGG = "data_gov_uk"
 
@@ -38,7 +43,11 @@ PAIRS = [
      "two national bodies that differ only in a topical word"),
     (False, rec(AGG, "North Yorkshire Council"), rec("north_yorkshire", "North Somerset Council"),
      "sharing the word 'north' is not sharing an identity"),
-    (False, rec(AGG, "Greater London Authority"), rec("london_datastore", "Leeds City Council"),
+    # Leeds on DataMill North, not on the Datastore: "Greater London
+    # Authority" is now a platform label for data.london.gov.uk, and a Leeds
+    # dataset sitting *on* the Datastore would genuinely be the GLA's copy.
+    # What must never merge is the GLA's copy and Leeds's own portal.
+    (False, rec(AGG, "Greater London Authority"), rec("datamillnorth", "Leeds City Council"),
      "a publisher whose name is entirely generic can't be confirmed"),
 
     (True, rec(AGG, "Leeds City Council"), rec("datamillnorth", "Leeds City Council"),
@@ -48,6 +57,31 @@ PAIRS = [
      "same council, longer form of the same name"),
     (True, rec("bristol", "Bristol City Council"), rec("bristol", "Bristol City Council"),
      "same publisher, same portal"),
+
+    # --- platform labels --------------------------------------------------
+    # data.gov.uk files a whole portal's output under the portal's name, so
+    # there is no organisation in the string for who() to agree with. The
+    # portal itself has to stand in — but only for the portals that label
+    # actually mirrors.
+    (True, rec(AGG, "OpenDataNI"), rec("opendatani", "NI Water"),
+     "the aggregator's copy of the NI portal, whose publishers it doesn't name"),
+    (True, rec(AGG, "OpenDataNI"),
+     rec("causeway_coast", "Causeway Coast and Glens Borough Council"),
+     "the same mirror reaching the council hub the NI portal carries"),
+    (True, rec(AGG, "Marine Environmental Data & Information Network"),
+     rec("cefas", "Cefas Data Hub"),
+     "a syndication network's copy of the catalogue it syndicates"),
+    (True, rec(AGG, "Greater London Authority"),
+     rec("london_datastore", "London Fire Brigade"),
+     "the GLA re-publishes the whole Datastore under its own name"),
+
+    (False, rec(AGG, "OpenDataNI"), rec("agol_green_action_trust", "Green Action Trust"),
+     "a platform label does not reach a portal that platform never mirrors"),
+    (False, rec(AGG, "OpenDataNI"), rec("datamillnorth", "Leeds City Council"),
+     "nor does it reach a council on the other side of the Irish Sea"),
+    (False, rec("opendatani", "NI Water"), rec("causeway_coast",
+                                               "Causeway Coast and Glens Borough Council"),
+     "two NI portals with no aggregator between them are still not bridged"),
 ]
 
 
@@ -82,6 +116,66 @@ def check_no_chaining() -> int:
     return 0
 
 
+def check_platform_does_not_chain() -> int:
+    """A platform label bridges to a portal, not through it to a third party.
+
+    "OpenDataNI" matches any publisher on the NI portal, so two unrelated NI
+    bodies that happen to title a dataset the same way could be chained
+    through the aggregator's copy — the Bristol/Calderdale bug again, with
+    the platform label doing the chaining.
+    """
+    group = [rec("opendatani", "NI Water", "opendatani:consumption"),
+             rec(AGG, "OpenDataNI", "data_gov_uk:consumption"),
+             rec("opendatani", "Belfast City Council", "opendatani:consumption2")]
+    keys = {frozenset(r["key"] for r in cl) for cl in cluster(group)}
+    if any({"opendatani:consumption", "opendatani:consumption2"} <= k for k in keys):
+        print("FAIL  a platform label chained two NI publishers into one cluster")
+        return 1
+    print("PASS  a platform label does not chain two publishers on the portal it names")
+    return 0
+
+
+def check_platform_yields_to_a_name() -> int:
+    """A platform label must not evict the aggregator's own named copy.
+
+    data.gov.uk holds some datasets twice — once mirrored from the portal
+    and filed under the portal's name, once filed under the publisher's.
+    Only the named one can be confirmed against the publisher's own record,
+    and two aggregator copies can never share a cluster, so the labelled one
+    has to give way or it takes the cluster and leaves the pair unmerged.
+    """
+    group = [rec(AGG, "OpenDataNI", "data_gov_uk:jobs-mirrored"),
+             rec(AGG, "Belfast City Council", "data_gov_uk:jobs"),
+             rec("opendatani", "Belfast City Council", "opendatani:jobs")]
+    keys = {frozenset(r["key"] for r in cl) for cl in cluster(group)}
+    if not any({"data_gov_uk:jobs", "opendatani:jobs"} <= k for k in keys):
+        print("FAIL  a platform label displaced the aggregator's own named copy")
+        return 1
+    print("PASS  a platform label yields to the copy that names its publisher")
+    return 0
+
+
+def check_canonical() -> int:
+    """The copy a reader is sent to must be one that has the files."""
+    bad = 0
+    empty_native = rec("opendatani", "NI Water", "opendatani:x", resources=0)
+    full_agg = rec(AGG, "OpenDataNI", "data_gov_uk:x", resources=3)
+    if max([empty_native, full_agg], key=rank) is not full_agg:
+        print("FAIL  elected an empty copy over one carrying files")
+        bad += 1
+    else:
+        print("PASS  a copy with files wins over an empty one, aggregator or not")
+
+    full_native = rec("opendatani", "NI Water", "opendatani:y", resources=2)
+    fuller_agg = rec(AGG, "OpenDataNI", "data_gov_uk:y", resources=9)
+    if max([full_native, fuller_agg], key=rank) is not full_native:
+        print("FAIL  elected the aggregator over the publisher's own copy")
+        bad += 1
+    else:
+        print("PASS  with both carrying files, the publisher's own copy still wins")
+    return bad
+
+
 def check_who() -> int:
     bad = 0
     for name, expected in (("Leeds City Council", {"leeds"}),
@@ -99,7 +193,9 @@ def check_who() -> int:
 
 
 def main() -> int:
-    failures = check_who() + check_pairs() + check_no_chaining()
+    failures = (check_who() + check_pairs() + check_no_chaining()
+                + check_platform_does_not_chain()
+                + check_platform_yields_to_a_name() + check_canonical())
     print()
     print("all dedupe rules hold" if not failures else f"{failures} failure(s)")
     return 1 if failures else 0
