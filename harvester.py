@@ -1161,6 +1161,58 @@ def harvest_geonode(src: dict, conn: sqlite3.Connection, limit: int | None) -> N
           f"{len(geo_rows)} with a bounding box", flush=True)
 
 
+GHOST_GRACE_DAYS = 3     # unseen this many days before a record is reaped
+GHOST_MIN_COVERAGE = 0.7  # tonight's harvest must cover this share of stored
+
+
+def reap_ghosts(conn: sqlite3.Connection, sources: list[dict]) -> None:
+    """Remove records their portal no longer lists.
+
+    The harvester only ever upserts, so a dataset deleted at source lived
+    here forever — 2,112 ghosts were in search and the sitemap, data.gov.uk's
+    frozen at their last sighting. `harvested_at` moves on every upsert, so
+    "unseen since" is already recorded; what needs care is not turning a bad
+    night into a purge. A source is only reaped when its latest run finished
+    without errors and stored at least 70% of what we hold for it, and a
+    record must have been unseen for three days — one flaky page or one
+    partial outage must not delete anything.
+    """
+    import datetime as _dt
+
+    for src in sources:
+        sid = src["id"]
+        run = conn.execute(
+            "SELECT started_at, harvested, errors FROM harvest_runs "
+            "WHERE source_id = ? ORDER BY started_at DESC LIMIT 1",
+            (sid,)).fetchone()
+        if not run:
+            continue
+        started_at, harvested, errors = run
+        held = conn.execute("SELECT COUNT(*) FROM datasets WHERE source_id = ?",
+                            (sid,)).fetchone()[0]
+        if errors or not harvested or not held:
+            continue
+        if harvested < GHOST_MIN_COVERAGE * held:
+            print(f"[{sid}] ghost reap skipped: run stored {harvested} of "
+                  f"{held} held — too thin to trust", flush=True)
+            continue
+        cutoff = (_dt.datetime.strptime(started_at, "%Y-%m-%dT%H:%M:%SZ")
+                  - _dt.timedelta(days=GHOST_GRACE_DAYS)
+                  ).strftime("%Y-%m-%dT%H:%M:%SZ")
+        ghosts = [k for (k,) in conn.execute(
+            "SELECT key FROM datasets WHERE source_id = ? AND harvested_at < ?",
+            (sid, cutoff))]
+        if not ghosts:
+            continue
+        marks = [(k,) for k in ghosts]
+        conn.executemany("DELETE FROM resources WHERE dataset_key = ?", marks)
+        conn.executemany("DELETE FROM dataset_geo WHERE dataset_key = ?", marks)
+        conn.executemany("DELETE FROM datasets WHERE key = ?", marks)
+        conn.commit()
+        print(f"[{sid}] reaped {len(ghosts)} ghosts unseen since {cutoff}",
+              flush=True)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--limit", type=int, default=None,
@@ -1193,6 +1245,11 @@ def main() -> int:
             harvest_csw(src, conn, args.limit)
         else:
             print(f"[{src['id']}] skipped: no harvester for type {src.get('type')!r}")
+
+    # A --limit run is partial by design: everything past the cap would look
+    # unseen, so reaping only happens on full harvests.
+    if not args.limit:
+        reap_ghosts(conn, sources)
     conn.close()
     return 0
 
