@@ -178,6 +178,9 @@ h2 {
   font-weight: 640;
 }
 h3 { font-size: 1rem; margin: 0 0 .3rem; line-height: 1.35; font-weight: 620; }
+/* Result titles are h2 for the heading outline (h1 -> h3 was a jump a
+   screen-reader user has to wonder about) but keep the h3 visual size. */
+.result-title { font-size: 1rem; margin: 0 0 .3rem; line-height: 1.35; font-weight: 620; }
 p { margin: 0 0 .9rem; }
 .lede { font-size: 1.02rem; color: var(--muted); margin-bottom: 1.4rem; }
 .note { color: var(--muted); font-size: .875rem; }

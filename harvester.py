@@ -25,7 +25,7 @@ import requests
 import yaml
 
 from normalise import (bbox_from_extras, license_from_extras, norm_date,
-                       norm_formats, norm_license, norm_title,
+                       norm_formats, norm_license, norm_tags, norm_title,
                        reference_date_from_extras, strip_html, unrendered,
                        update_frequency_from_extras)
 
@@ -184,7 +184,7 @@ def normalise_package(pkg: dict, src: dict, now: str) -> tuple | None:
         norm_date(pkg.get("metadata_created")),
         norm_date(pkg.get("metadata_modified")),
         src["dataset_url"].format(name=name),
-        json.dumps(tags),
+        json.dumps(norm_tags(tags)),
         json.dumps([f for f in formats_raw if f]),
         json.dumps(formats_norm),
         len(resources),
@@ -370,7 +370,7 @@ def normalise_dcat_dataset(ds: dict, src: dict, now: str) -> tuple | None:
         norm_date(ds.get("issued")),
         norm_date(ds.get("modified")),
         landing,
-        json.dumps(keywords),
+        json.dumps(norm_tags(keywords)),
         json.dumps([f for f in formats_raw if f]),
         json.dumps(norm_formats(formats_raw)),
         len(distributions),
@@ -1020,7 +1020,7 @@ def _normalise_json_record(rec: dict, ident, cfg: dict, src: dict,
         norm_date(field("created")),
         norm_date(field("modified")),
         landing,
-        json.dumps(tags),
+        json.dumps(norm_tags(tags)),
         json.dumps([f for f in fmt_values if f]),
         json.dumps(norm_formats(fmt_values)),
         len(fmt_values),
@@ -1111,7 +1111,7 @@ def normalise_geonode_layer(rec: dict, src: dict, base: str, now: str) -> tuple 
         norm_date(rec.get("created")),
         norm_date(rec.get("last_updated") or rec.get("date")),
         rec.get("detail_url") or f"{base}/layers/{rec.get('alternate') or ident}",
-        json.dumps(keywords),
+        json.dumps(norm_tags(keywords)),
         json.dumps(formats),
         json.dumps(norm_formats(formats)),
         len(formats),
@@ -1319,6 +1319,18 @@ def main() -> int:
     # unseen, so reaping only happens on full harvests.
     if not args.limit:
         reap_ghosts(conn, sources)
+
+    # Sources that yield nothing, said out loud. enwl and spen sat at zero
+    # for their whole lives — three page errors each — and the only witness
+    # was a row in harvest_runs nobody reads. A source we harvest and get
+    # nothing from is either broken at their end or misconfigured at ours,
+    # and both deserve a line in the log the operator actually sees.
+    silent = [s["id"] for s in sources if not conn.execute(
+        "SELECT COUNT(*) FROM datasets WHERE source_id = ?",
+        (s["id"],)).fetchone()[0]]
+    if silent:
+        print(f"\nWARNING: {len(silent)} source(s) hold zero datasets: "
+              f"{', '.join(sorted(silent))}", flush=True)
     conn.close()
     return 0
 

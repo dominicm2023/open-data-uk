@@ -130,7 +130,9 @@ function render(payload) {
     if (geo.coverage === 0) {
       banner = `<p class="note banner">⚠ We don't have any datasets from ${esc(place)} ` +
                `publishers in the index yet — the results below are from elsewhere.` +
-               `${covers} Know a ${esc(place)} data source? Suggest it!</p>`;
+               `${covers} Know a ${esc(place)} data source? ` +
+               `<a href="https://github.com/dominicm2023/open-data-uk/issues" ` +
+               `target="_blank" rel="noopener">Suggest it</a>.</p>`;
     } else {
       banner = `<p class="note banner">⚠ ${esc(String(geo.coverage))} datasets mention ` +
                `${esc(place)}, but none matches this query — the results below are ` +
@@ -167,7 +169,7 @@ function render(payload) {
     const cols = r.columns && r.columns.length
       ? `<p class="cols">columns: ${esc(r.columns.slice(0, 8).join(", "))}${r.columns.length > 8 ? "…" : ""}</p>` : "";
     return `<div class="result">
-      <h3><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></h3>
+      <h2 class="result-title"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></h2>
       <div class="meta">
         <span class="chip src">${esc(SOURCE_NAMES[r.source] || r.source)}</span>
         ${av} ${geoChip} ${lic} ${fmts}

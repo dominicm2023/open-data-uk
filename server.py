@@ -150,7 +150,11 @@ def _client_ip(request: Request) -> str:
     not a security boundary.
     """
     peer = request.client.host if request.client else ""
-    if peer in ("127.0.0.1", "::1"):  # arrived via our own Caddy
+    # "::ffff:127.0.0.1" is loopback as an IPv6-bound socket reports it —
+    # not how uvicorn binds today, but a rebind shouldn't silently break
+    # per-IP limiting.
+    if peer in ("127.0.0.1", "::1", "::ffff:127.0.0.1"):
+        # arrived via our own Caddy
         cf = request.headers.get("cf-connecting-ip")
         if cf:
             return cf.strip()

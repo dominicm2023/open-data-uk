@@ -71,6 +71,29 @@ def norm_title(raw) -> str | None:
     return title
 
 
+def norm_tags(raws) -> list[str]:
+    """Tags as a list of short phrases, deduplicated, order kept.
+
+    Some portals hand over one "tag" holding their whole vocabulary as a
+    comma list ("education, schools, catchment areas, ..."), which rendered
+    as a single 7,000-pixel chip and matched no tag filter. A long tag with
+    commas in it is a list, not a phrase, and is split back into one.
+    """
+    out: list[str] = []
+    seen: set[str] = set()
+    for raw in raws or []:
+        s = str(raw).strip()
+        if not s:
+            continue
+        parts = ([p.strip() for p in s.split(",")]
+                 if "," in s and len(s) > 45 else [s])
+        for p in parts:
+            if p and p.lower() not in seen:
+                seen.add(p.lower())
+                out.append(p)
+    return out
+
+
 # --- Descriptions -------------------------------------------------------
 
 _TAG = re.compile(r"<[^>]+>")

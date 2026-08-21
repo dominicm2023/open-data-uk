@@ -319,7 +319,7 @@ def body_html(rec: dict) -> str:
                     f'{"…" if len(res["columns"]) > 12 else ""}</div>')
         label = res.get("name") or str(res.get("url") or "").rsplit("/", 1)[-1] or "resource"
         rows.append(
-            f'<tr><td><a href="{safe_url(res.get("url"))}" rel="noopener">'
+            f'<tr><td><a href="{safe_url(res.get("url"))}" target="_blank" rel="noopener">'
             f"{esc(label)}</a>{cols}</td>"
             f'<td>{esc(res.get("format_norm") or "?")}</td>'
             f"<td>{verdict}</td><td>{esc(_size(res.get('size_bytes')))}</td></tr>")
@@ -359,7 +359,7 @@ def body_html(rec: dict) -> str:
       {f'<span>· updated {esc(str(rec["modified"])[:10])}</span>' if rec.get("modified") else ""}
     </div>
     {"".join(notices)}
-    {f'<a class="cta" href="{safe_url(rec.get("landing_url"))}" rel="noopener">Open at publisher ↗</a>'
+    {f'<a class="cta" href="{safe_url(rec.get("landing_url"))}" target="_blank" rel="noopener">Open at publisher ↗</a>'
      if safe_url(rec.get("landing_url")) != "#" else ""}
     {f'<div class="desc">{esc(rec["description"])}</div>' if rec.get("description") else ""}
     <h2>Files &amp; links ({len(rec.get("resources") or [])})</h2>
@@ -399,6 +399,20 @@ def with_assets(html_text: str) -> str:
 def _template() -> str:
     return with_assets(
         (ROOT / "web" / "dataset.html").read_text(encoding="utf-8"))
+
+
+
+def _page(head: str, body: str, current: str | None = None) -> str:
+    """Assemble the shared template, marking the nav link for this section.
+
+    aria-current tells assistive tech which nav item is the page it is on —
+    the two static pages had it, the ~60k template pages did not.
+    """
+    page = _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+    if current:
+        page = page.replace(f'<a href="{current}">',
+                            f'<a href="{current}" aria-current="page">', 1)
+    return page
 
 
 def render_dataset(rec: dict, site_url: str) -> str:
@@ -471,7 +485,7 @@ def render_publishers(rows: list[tuple[str, int]], site_url: str) -> str:
         f"organisations and agencies publishing open data in the index, with "
         f"{total:,} datasets between them.",
         "/publishers", site_url)
-    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+    return _page(head, body, "/publishers")
 
 
 def _dataset_items(rows: list[dict], show_publisher: bool = False) -> str:
@@ -528,7 +542,7 @@ def render_publisher(name: str, rows: list[dict], page: int, pages: int,
         f"All {total:,} datasets published by {name} that we hold, each with "
         "the licence, formats and whether the link actually leads to data.",
         publisher_path(name, page), site_url, "\n".join(rel))
-    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+    return _page(head, body, "/publishers")
 
 
 def render_topic(tag: str, rows: list[dict], page: int, pages: int, total: int,
@@ -571,7 +585,7 @@ def render_topic(tag: str, rows: list[dict], page: int, pages: int, total: int,
         # that publisher's private vocabulary rather than a subject. The page
         # works and stays linked; it just isn't offered up for ranking.
         head = head.replace('content="index,follow"', 'content="noindex,follow"')
-    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+    return _page(head, body, "/topics")
 
 
 def render_topics(rows: list[tuple[str, int, int]], site_url: str) -> str:
@@ -602,7 +616,7 @@ def render_topics(rows: list[tuple[str, int, int]], site_url: str) -> str:
         f"{len(rows):,} subjects — from air quality to waste collection — each "
         "listing every UK government dataset on it, from every portal at once.",
         "/topics", site_url)
-    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+    return _page(head, body, "/topics")
 
 
 def render_who(title: str, rows: list[dict], site_url: str) -> str:
@@ -640,7 +654,7 @@ def render_who(title: str, rows: list[dict], site_url: str) -> str:
         f"{len(rows):,} UK councils and public bodies publish a dataset called "
         f"\"{title}\". Every one listed, with whether the link leads to real data.",
         who_path(title), site_url)
-    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+    return _page(head, body, "/who-publishes")
 
 
 def render_who_index(rows: list[tuple[str, int]], site_url: str) -> str:
@@ -662,7 +676,7 @@ def render_who_index(rows: list[tuple[str, int]], site_url: str) -> str:
         "orders, spending returns — each listing every UK organisation that "
         "publishes one.",
         "/who-publishes", site_url)
-    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+    return _page(head, body, "/who-publishes")
 
 
 def render_missing(key: str | None) -> str:
@@ -674,7 +688,7 @@ def render_missing(key: str | None) -> str:
     body = (f"<h1>Dataset not found</h1><p class=\"note\">{detail} It may have "
             "been withdrawn by its publisher, or the link may be mistyped.</p>"
             '<p><a class="cta" href="/">Search the index</a></p>')
-    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+    return _page(head, body)
 
 
 def render_findings(findings: list[dict], measured: str, site_url: str) -> str:
@@ -758,7 +772,7 @@ def render_findings(findings: list[dict], measured: str, site_url: str) -> str:
         "hosting, missing licences, councils publishing nothing, and data that "
         "outlived the councils that published it. Each with the query behind it.",
         "/findings", site_url)
-    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+    return _page(head, body, "/findings")
 
 
 LAB_BYLINE = os.environ.get("LAB_BYLINE", "Joined Up")
@@ -852,7 +866,7 @@ def render_lab(findings: list[dict], measured: str, site_url: str) -> str:
         '<meta name="robots" content="noindex,nofollow,noarchive">',
         '<meta name="referrer" content="no-referrer">',
     ])
-    return _template().replace("<!--HEAD-->", head).replace("<!--BODY-->", body)
+    return _page(head, body)
 
 
 VERDICT_CLASS = {
