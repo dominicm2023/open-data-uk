@@ -47,3 +47,4 @@ analysis/spending/manifest.json
 analysis/spending/selection.json
 strands.html
 rogues.html
+analysis/queries_prod.db
