@@ -94,8 +94,11 @@ if page1["available"] > 3:
 empty = engine.search(QUERY, k=10, filters={"format": {"definitely-not-a-format"}})
 check(empty["results"] == [] and empty["available"] == 0,
       "an unmatched filter returns nothing and says so")
-check(empty["confidence"] == base["confidence"],
-      "confidence describes the query, not the filter — it is unchanged")
+# Reversed 2026-08-21: "strong" heading zero results promised an answer the
+# page doesn't show. An empty page reports no match, whatever the query's
+# own similarity was.
+check(empty["confidence"] == "none",
+      "an empty filtered page cannot claim a match")
 
 print()
 print("all filter rules hold" if not failures else f"{len(failures)} failure(s)")

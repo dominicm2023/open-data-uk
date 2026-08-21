@@ -559,12 +559,23 @@ class SearchEngine:
                 })
 
             # Keyword OR-queries match almost anything, so confidence rests on
-            # semantic similarity alone
+            # semantic similarity — but "strong" additionally needs a word of
+            # corroboration: at least one of the top three results must
+            # contain a topic term. Embedding proximity alone called "east
+            # sussex SEND rates" strong while returning petitions and
+            # spending — the place matched, the topic didn't, and the label
+            # promised an answer we didn't have.
             if top_sim >= SIM_STRONG:
                 confidence = "strong"
+                if topic_keys is not None and not any(
+                        r["key"] in topic_keys for r in results[:3]):
+                    confidence = "weak"
             elif top_sim >= SIM_WEAK:
                 confidence = "weak"
             else:
+                confidence = "none"
+            # A filtered-out page has no business claiming any match at all.
+            if not results:
                 confidence = "none"
 
             # geography honesty: did the user name a place, do we hold data

@@ -91,6 +91,8 @@ MAJOR_PLACES = {
     "oxfordshire", "wiltshire", "gloucestershire", "herefordshire",
     "worcestershire", "shropshire", "hertfordshire", "bedfordshire",
     "cambridgeshire", "tyne and wear", "county durham", "isle of wight",
+    "east sussex", "west sussex", "north yorkshire", "south yorkshire",
+    "west yorkshire", "east riding",
 }
 
 # Welsh-language names, mapped to the English forms the index stores. Only
