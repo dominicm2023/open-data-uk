@@ -378,6 +378,50 @@ def normalise_dcat_dataset(ds: dict, src: dict, now: str) -> tuple | None:
     )
 
 
+def salt_key_collisions(pairs: list[tuple], src: dict) -> list[tuple]:
+    """Give colliding keys distinct suffixes instead of losing the loser.
+
+    Two records can compute the same ident — a shared landing URL, or the
+    sha1(publisher|title) fallback when a publisher reuses a title — and
+    INSERT OR REPLACE then silently kept whichever came last: opendata.scot's
+    feed listed 2,507 datasets and 2,467 survived, with harvest_runs
+    reporting the pre-collision count as if nothing happened. The salt is
+    the record's first distribution URL (the most stable thing that differs
+    between two same-titled records), falling back to the collision ordinal.
+    """
+    counts: dict[str, int] = {}
+    for _, row in pairs:
+        counts[row[0]] = counts.get(row[0], 0) + 1
+    colliding = {k for k, n in counts.items() if n > 1}
+    if not colliding:
+        return pairs
+    out, seen, used = [], {}, set()
+    for ds, row in pairs:
+        key = row[0]
+        if key in colliding:
+            nth = seen.get(key, 0)
+            seen[key] = nth + 1
+            if nth:                        # first occurrence keeps the key
+                dist = next((d.get("downloadURL") or d.get("accessURL")
+                             for d in (ds.get("distribution") or [])
+                             if d.get("downloadURL") or d.get("accessURL")),
+                            None)
+                salt = (hashlib.sha1(dist.encode("utf-8")).hexdigest()[:8]
+                        if dist else f"n{nth}")
+                ident = f"{row[2]}~{salt}"
+                # Twins sharing even their distribution URL fall back to
+                # the ordinal, so no key is ever emitted twice.
+                if f"{src['id']}:{ident}" in used:
+                    ident = f"{row[2]}~n{nth}"
+                row = (f"{src['id']}:{ident}", row[1], ident) + row[3:]
+        used.add(row[0])
+        out.append((ds, row))
+    lost = sum(n - 1 for k, n in counts.items() if n > 1)
+    print(f"[{src['id']}] {lost} key collision(s) salted — "
+          "records that previously overwrote each other", flush=True)
+    return out
+
+
 def harvest_dcat(src: dict, conn: sqlite3.Connection) -> None:
     """Harvest a DCAT-US feed (single JSON document listing all datasets)."""
     session = requests.Session()
@@ -404,6 +448,7 @@ def harvest_dcat(src: dict, conn: sqlite3.Connection) -> None:
     # to that mismatch.
     pairs = [(ds, r) for ds in datasets
              if (r := normalise_dcat_dataset(ds, src, now))]
+    pairs = salt_key_collisions(pairs, src)
     rows = [r for _, r in pairs]
     res_rows, keys = [], []
     for ds, row in pairs:
