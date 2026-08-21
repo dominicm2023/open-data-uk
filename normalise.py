@@ -173,6 +173,21 @@ _LICENSE_MAP = {
     "odc-odbl": "ODbL-1.0",
     "odc-pddl": "PDDL-1.0",
     "notspecified": None,
+    # Statements of absence are not licences. "No licence" as a chip looks
+    # like a licence called "No licence"; the truthful rendering is the
+    # same "no licence" state as an empty field.
+    "no licence": None,
+    "no license": None,
+    "none": None,
+    "unpublished": None,
+    "not specified": None,
+    "unspecified": None,
+    "licence not specified": None,
+    "license not specified": None,
+    # ArcGIS Hub sends the literal string "custom" when an org configures
+    # its own terms — there is no more information in the feed. Render it
+    # as words rather than leaking a config token as a chip.
+    "custom": "Custom licence",
     "other": "OTHER",
     "other-open": "OTHER-OPEN",
     "other-closed": "OTHER-CLOSED",
@@ -303,7 +318,22 @@ def _collapse_repeat(text: str) -> str:
 # rather than asserting an OGL id we haven't verified applies.
 _LICENSE_URL_LABELS = {
     "https://www.ons.gov.uk/methodology/geography/licences": "ONS Geography Licence",
+    "https://www.parliament.scot/about/copyright": "Scottish Parliament Copyright",
 }
+
+# The Ordnance Survey licence family arrives in 20+ spellings — with and
+# without the URL, with mojibake dashes, as bare PSMA references. Substring
+# rules rather than exact entries, because no two publishers paste it alike.
+_OS_FAMILY = (
+    ("OS INSPIRE EUL", ("public sector end user licence",
+                        "end user license - inspire",
+                        "inspire-licence", "inspire licence",
+                        "inspire license")),
+    ("OS PSMA Licence", ("psma",)),
+    ("OS OpenData Licence", ("os derived open data",
+                             "ordnance survey derived open data",
+                             "os opendata")),
+)
 
 
 # Creative Commons, written every way publishers write it. Exact-match
@@ -357,16 +387,24 @@ def norm_license(license_id: str | None, license_title: str | None = None) -> st
     for raw in (license_id, license_title):
         if not raw or not raw.strip():
             continue
-        raw = _collapse_repeat(" ".join(raw.split()))
+        raw = html.unescape(_collapse_repeat(" ".join(raw.split())))
         key = raw.strip().lower()
         if key.rstrip("/") in _LICENSE_URL_LABELS:
             return _LICENSE_URL_LABELS[key.rstrip("/")]
         if key in _LICENSE_MAP:
+            # A mapping to None is a statement of absence ("no licence",
+            # "notspecified") — fall through to the next field rather than
+            # letting an empty id shadow a real title.
+            if _LICENSE_MAP[key] is None:
+                continue
             return _LICENSE_MAP[key]
         if "open government licence" in key or "open government license" in key:
             return "OGL-UK-3.0"
         if cc := _creative_commons(key):
             return cc
+        for label, needles in _OS_FAMILY:
+            if any(n in key for n in needles):
+                return label
         if key.startswith("http"):
             if "open-government-licence" in key:
                 return "OGL-UK-3.0"
@@ -374,11 +412,14 @@ def norm_license(license_id: str | None, license_title: str | None = None) -> st
                 return "CC-BY-4.0"
             if "creativecommons.org/publicdomain" in key:
                 return "CC0-1.0"
-        # Unrecognised: keep it, but repair the encoding and keep it short
-        # enough to render as a chip. Publishers paste licence text out of
-        # Word, so a fair number arrive with a mangled copyright symbol.
+        # Unrecognised: repair the encoding, then decide whether it is a
+        # *name* or a *text*. A short string ("NSTA Open User Licence") is a
+        # licence's name and worth showing; a paragraph pasted out of Word
+        # is the publisher's own terms, and truncating it mid-word into a
+        # 60-character chip ("Data is freely available for resear...") told
+        # readers nothing — 458 distinct fragments across 4,684 datasets.
         text = (fix_mojibake(raw) or raw).strip()
-        return text if len(text) <= 60 else text[:57] + "..."
+        return text if len(text) <= 60 else "Custom licence"
     return None
 
 

@@ -140,6 +140,36 @@ check(strip_html("&lt;script&gt;alert(1)&lt;/script&gt;"),
 check(strip_html("plain text"), "plain text", "plain text is untouched")
 check(strip_html(None), None, "absent description stays absent")
 
+# --- round 2: families, absences, and texts-that-aren't-names -----------
+# Statements of absence are not licences.
+for absence in ("No licence", "no license", "none", "unpublished",
+                "Not specified", "unspecified"):
+    check(norm_license(absence), None, f"{absence!r} is an absence, not a licence")
+# An empty-meaning id must not shadow a real title.
+check(norm_license("none", "Open Government Licence"), "OGL-UK-3.0",
+      "an absence id falls through to the real title")
+# The OS family in its many spellings.
+for spelling in ("Public Sector End User Licence - INSPIRE",
+                 "Public Sector End User Licence ? INSPIRE; http://www.os.uk",
+                 "http://www.ordnancesurvey.co.uk/business-and-government/"
+                 "public-sector/mapping-agreements/inspire-licence.html"):
+    check(norm_license(spelling), "OS INSPIRE EUL",
+          f"{spelling[:45]!r} is the OS INSPIRE EUL")
+check(norm_license("Use subject to PSMA licensing. See http://www.os.uk/x"),
+      "OS PSMA Licence", "PSMA references collapse to one label")
+check(norm_license("OS derived Open Data. An acknowledgement is required"),
+      "OS OpenData Licence", "OS OpenData spellings collapse")
+# ArcGIS Hub's config token becomes words; real short names survive; pasted
+# paragraphs become one honest label instead of 458 truncated fragments.
+check(norm_license("custom"), "Custom licence", "'custom' renders as words")
+check(norm_license("NSTA Open User Licence"), "NSTA Open User Licence",
+      "a short real licence name is kept verbatim")
+check(norm_license("Data Licensing &nbsp; Data published by the Council at a "
+                   "URL beginning data.stirling.gov.uk is open to use"),
+      "Custom licence", "a pasted paragraph becomes 'Custom licence'")
+check(norm_license("https://www.parliament.scot/about/copyright"),
+      "Scottish Parliament Copyright", "known licence URL gets its label")
+
 print()
 print("all licence rules hold" if not failures
       else f"{len(failures)} failure(s): " + "; ".join(failures))
