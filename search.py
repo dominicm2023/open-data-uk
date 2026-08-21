@@ -389,7 +389,12 @@ class SearchEngine:
                     mult *= RARE_TERM_BOOST
                 if key in pub_keys:
                     mult *= PUBLISHER_BOOST
-                if key in geo_set:
+                # A geo match earns nothing when the links are dead: 1.45 ×
+                # 0.85 still beat clean results, and "air quality cardiff"
+                # led with a dead record from the wrong end of the country
+                # whose bbox happened to span the UK.
+                verdict_now, _ = availability.get(key, (None, 0))
+                if key in geo_set and verdict_now != "dead":
                     mult *= GEO_BOOST
                 # matched the place but nothing of what was actually asked
                 if place and topic_keys is not None and key not in topic_keys:

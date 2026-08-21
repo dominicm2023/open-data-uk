@@ -37,10 +37,34 @@ VALUES (?, ?, ?, ?, ?, ?, ?)
 """
 
 
+# A council's bounding box larger than any council. The largest local
+# authority by extent is Highland at roughly 3.9° of longitude and 2.0° of
+# latitude; a UK-spanning box is ~10° by ~11°. Anything a local authority
+# publishes past these limits is boilerplate metadata, not geography — and
+# it made "air quality cardiff" surface a Rushcliffe record, because a box
+# that covers the whole country covers Cardiff too.
+_LA_RE = re.compile(r"\bcouncil\b|\bborough\b", re.I)
+_LA_MAX_LON_SPAN = 5.0
+_LA_MAX_LAT_SPAN = 3.0
+
+
+def plausible_bbox(bbox: tuple | None, publisher: str | None) -> tuple | None:
+    if not bbox or not publisher or not _LA_RE.search(publisher):
+        return bbox
+    w, s, e, n = bbox
+    try:
+        if abs(e - w) > _LA_MAX_LON_SPAN or abs(n - s) > _LA_MAX_LAT_SPAN:
+            return None
+    except TypeError:
+        return None
+    return bbox
+
+
 def geo_row(key: str, pkg: dict) -> tuple | None:
     """Geography/cadence row for a CKAN package, or None if it has neither."""
     extras = pkg.get("extras")
-    bbox = bbox_from_extras(extras)
+    publisher = (pkg.get("organization") or {}).get("title")
+    bbox = plausible_bbox(bbox_from_extras(extras), publisher)
     freq = update_frequency_from_extras(extras)
     ref = reference_date_from_extras(extras)
     if not (bbox or freq or ref):
