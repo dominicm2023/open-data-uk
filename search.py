@@ -59,6 +59,22 @@ PLACE_ONLY_MULT = 0.80
 # A dataset whose own bbox lies wholly on another continent, reached via the
 # research catalogues. Demoted, never hidden — see _dup_and_retired.
 FOREIGN_MULT = 0.50
+
+# Edition markers: years, month names, quarter labels. Used to recognise
+# "Heritage at Risk Register 2022" and "... 2021" as one series — see
+# _collapse_editions.
+_YEAR_RE = re.compile(r"\b(?:19|20)\d{2}\b")
+_EDITION_RE = re.compile(
+    r"\b(?:19|20)\d{2}\b"
+    r"|\b(?:january|february|march|april|may|june|july|august|september"
+    r"|october|november|december"
+    r"|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)\b"
+    r"|\bq[1-4]\b"
+    # Version and document-format markers: "User Guide (V2)", "User Guide
+    # ODT" and "User Guide Version 2" are the same guide, not three series.
+    r"|\bv(?:ersion)?\.?\s*[0-9]+\b"
+    r"|\b(?:odt|pdf)\b",
+    re.I)
 # bm25 column weights: key(unindexed), title, description, publisher, tags
 BM25_WEIGHTS = "0.0, 5.0, 1.0, 2.0, 3.0"
 # cosine similarity of the best semantic hit, used for the confidence signal
@@ -333,6 +349,63 @@ class SearchEngine:
         return self._dup_cache
 
     @staticmethod
+    def _collapse_editions(conn: sqlite3.Connection, ranked: list[str],
+                           scores: dict[str, float], query: str) -> list[str]:
+        """One result per edition series, and it is the newest one.
+
+        "heritage at risk register" used to fill the top five with five
+        yearly editions, 2022 ranked first; ONSPD queries returned five
+        monthly User Guides. Two results are the same series when the same
+        publisher's titles are identical once years, month names and
+        quarter markers are stripped; the group keeps its best rank but the
+        record shown is the newest edition (year in the title, then
+        modified date). A query that names a year is a request for that
+        edition, so nothing is collapsed at all.
+        """
+        if not ranked or _YEAR_RE.search(query):
+            return ranked
+        marks = ",".join("?" * len(ranked))
+        rows = {r[0]: (r[1] or "", r[2] or "", r[3] or "") for r in conn.execute(
+            f"SELECT key, title, publisher, modified FROM datasets "
+            f"WHERE key IN ({marks})", ranked)}
+
+        def series(key: str) -> tuple[str, str] | None:
+            title, publisher, _ = rows.get(key, ("", "", ""))
+            stripped = _EDITION_RE.sub(" ", title.lower())
+            if stripped == title.lower():
+                return None                    # nothing edition-like in it
+            slug = re.sub(r"[^a-z0-9]+", " ", stripped).strip()
+            return (publisher.lower(), slug) if slug else None
+
+        def newest(keys: list[str]) -> str:
+            def edition(key: str) -> tuple:
+                title, _, modified = rows.get(key, ("", "", ""))
+                years = [int(y) for y in _YEAR_RE.findall(title)]
+                return (max(years) if years else 0, modified)
+            return max(keys, key=edition)
+
+        groups: dict[tuple, list[str]] = {}
+        for key in ranked:
+            s = series(key)
+            if s is not None:
+                groups.setdefault(s, []).append(key)
+
+        out, done = [], set()
+        for key in ranked:
+            if key in done:
+                continue
+            s = series(key)
+            if s is not None and len(groups[s]) > 1:
+                keep = newest(groups[s])
+                scores[keep] = max(scores[k] for k in groups[s])
+                done.update(groups[s])
+                out.append(keep)
+            else:
+                done.add(key)
+                out.append(key)
+        return out
+
+    @staticmethod
     def _filter_ranked(conn: sqlite3.Connection, ranked: list[str],
                        availability: dict, filters: dict) -> list[str]:
         """Drop candidates that don't match the requested constraints.
@@ -456,6 +529,7 @@ class SearchEngine:
                 collapsed[canon] = max(collapsed.get(canon, 0.0), score)
 
             ranked = sorted(collapsed, key=collapsed.get, reverse=True)
+            ranked = self._collapse_editions(conn, ranked, collapsed, query)
             ranked = self._filter_ranked(conn, ranked, availability, filters or {})
             total = len(ranked)
             top = ranked[offset:offset + k]
