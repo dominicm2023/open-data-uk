@@ -338,7 +338,12 @@ class SearchEngine:
                 lic = (row["license_norm"] or "").lower()
                 # "none" is a real answer to "what licence is this under?",
                 # and the one a third of the catalogue gives.
-                if not (lic in want_licence or (not lic and "none" in want_licence)):
+                # "ogl" means the whole family: stored values are always
+                # versioned (ogl-uk-3.0), and asking for the bare name used
+                # to return zero results silently.
+                if not (lic in want_licence
+                        or (not lic and "none" in want_licence)
+                        or ("ogl" in want_licence and lic.startswith("ogl-uk"))):
                     continue
             if want_format:
                 have = {f.lower() for f in json.loads(row["formats_norm"] or "[]")}

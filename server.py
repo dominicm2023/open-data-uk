@@ -79,6 +79,27 @@ app = FastAPI(
     lifespan=lifespan,
 )
 @app.middleware("http")
+async def strip_trailing_slash(request: Request, call_next):
+    """/about/ → /about in one https hop.
+
+    Starlette's own slash redirect builds the Location from the scheme it
+    sees, and TLS ends at the proxy, so it sent visitors to http:// and made
+    Cloudflare bounce them straight back — a two-hop chain on every mistyped
+    trailing slash. We can't turn on --proxy-headers to fix the scheme: that
+    rewrites request.client from X-Forwarded-For, which behind Cloudflare is
+    a different edge IP per request, and the per-IP rate limiter silently
+    dies. So redirect here, scheme pinned.
+    """
+    path = request.url.path
+    if len(path) > 1 and path.endswith("/"):
+        target = f"https://{request.url.netloc}{path.rstrip('/')}"
+        if request.url.query:
+            target += f"?{request.url.query}"
+        return Response(status_code=308, headers={"Location": target})
+    return await call_next(request)
+
+
+@app.middleware("http")
 async def head_as_get(request: Request, call_next):
     """Answer HEAD everywhere GET works.
 
@@ -205,14 +226,17 @@ def _hand_written_page(name: str) -> str:
 
 @app.get("/", include_in_schema=False)
 def home() -> HTMLResponse:
+    # Short-lived public cache: the page only changes on deploy (the CSS
+    # link inside is hash-busted), yet "no-cache" made every visit a full
+    # origin round trip on the site's busiest route.
     return HTMLResponse(_hand_written_page("index.html"),
-                        headers={"Cache-Control": "no-cache"})
+                        headers={"Cache-Control": "public, max-age=300"})
 
 
 @app.get("/about", include_in_schema=False)
 def about() -> HTMLResponse:
     return HTMLResponse(_hand_written_page("about.html"),
-                        headers={"Cache-Control": "no-cache"})
+                        headers={"Cache-Control": "public, max-age=300"})
 
 
 # Static assets: one stylesheet and the icons, all immutable in practice.

@@ -19,6 +19,9 @@
   --muted: #61656d;
   --line: #e3e3de;
   --line-strong: #cfd0ca;
+  /* Form-control borders must hit 3:1 against --card (WCAG 1.4.11);
+     --line-strong measures 1.55:1 there and stays decorative only. */
+  --line-input: #7f828b;
 
   /* One accent, civic blue, close to the GOV.UK link colour people already
      associate with government data. */
@@ -52,6 +55,7 @@
     --muted: #9a9ea7;
     --line: #2b2e34;
     --line-strong: #3c4048;
+    --line-input: #767a84;
     --accent: #7ab3ee;
     --accent-soft: #16283c;
     --on-accent: #0d1620;
@@ -202,12 +206,14 @@ input[type=search] {
   font: inherit;
   padding: .75rem .95rem;
   border-radius: var(--radius);
-  border: 1.5px solid var(--line-strong);
+  border: 1.5px solid var(--line-input);
   background: var(--card);
   color: var(--ink);
-  outline: none;
+  /* No outline:none here — it outranked the :focus-visible outline above
+     (equal specificity, later in the file) and keyboard users got nothing. */
 }
 input[type=search]:focus { border-color: var(--accent); }
+input[type=search]:focus:not(:focus-visible) { outline: none; }
 button {
   font: inherit;
   font-weight: 560;

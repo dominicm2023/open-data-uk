@@ -76,6 +76,19 @@ DATA_TYPES = (
 API_HINTS = ("wms", "wfs", "wmts", "arcgis", "geoserver", "/rest/", "ogc",
              "sparql", "service=", "/api/")
 
+# Content types that are unambiguously a file you download, never a service's
+# own response document. JSON and XML stay out on purpose: a WFS capabilities
+# doc or an ArcGIS service description is served as exactly those, so for them
+# the URL is still the better witness.
+FILE_TYPES = (
+    "text/csv", "application/csv", "application/geo+json",
+    "application/vnd.geo+json", "application/zip", "application/x-zip",
+    "application/gzip", "application/vnd.ms-excel", "application/parquet",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "application/vnd.oasis.opendocument.spreadsheet", "application/pdf",
+    "application/x-netcdf", "image/tiff",
+)
+
 # Refusals aimed at us, not evidence about the data
 BLOCKED_STATUSES = {401, 403, 429, 503}
 
@@ -135,10 +148,15 @@ def classify(url: str, status: int, ctype: str, fmt: str | None) -> str:
         return "blocked"
     if status == 0 or status >= 400:
         return "dead"
+    base = ctype.split(";")[0].strip().lower()
+    # What came back beats what the URL looks like: an ArcGIS-hosted URL that
+    # serves text/csv is a CSV, not an API. 1,563 checked URLs were mis-badged
+    # "api" on their path alone while handing over a data file.
+    if base.startswith(FILE_TYPES):
+        return "data"
     lower_url = url.lower()
     if any(h in lower_url for h in API_HINTS) or (fmt or "") in ("WMS", "WFS", "API", "SPARQL"):
         return "api"
-    base = ctype.split(";")[0].strip().lower()
     if base.startswith(DATA_TYPES):
         return "data"
     if base in ("text/html", "application/xhtml+xml", ""):

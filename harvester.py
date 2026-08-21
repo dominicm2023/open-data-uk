@@ -325,8 +325,10 @@ def normalise_dcat_dataset(ds: dict, src: dict, now: str) -> tuple | None:
         ident = "sha1:" + hashlib.sha1(seed).hexdigest()[:16]
     distributions = ds.get("distribution") or []
     formats_raw = [d.get("format") or d.get("mediaType") for d in distributions]
-    landing = landing or ident
-    name = landing.rstrip("/").rsplit("/", 1)[-1] or ident
+    # landing stays None when the feed offers no URL — 536 opendata.scot
+    # records used to carry a literal "sha1:…" here, which the dataset page
+    # dutifully rendered as a dead link.
+    name = (landing or ident).rstrip("/").rsplit("/", 1)[-1] or ident
     license_raw = strip_html(ds.get("license"))
     if license_raw:
         license_raw = license_raw[:150]
@@ -370,19 +372,18 @@ def harvest_dcat(src: dict, conn: sqlite3.Connection) -> None:
         return
 
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-    rows = [r for ds in datasets if (r := normalise_dcat_dataset(ds, src, now))]
-    # Only for the datasets that became rows: a record refused for having no
-    # usable title must not leave resource rows pointing at a dataset key
-    # that was never written.
-    stored_keys = {r[0] for r in rows}
+    # Keep each dataset paired with its normalised row: the row's key is the
+    # only truth about what got stored. Recomputing the ident here from
+    # identifier-or-landingPage disagreed with normalise_dcat_dataset's
+    # identifier-or-distribution-URL-or-sha1 whenever `identifier` was absent,
+    # and every one of opendata.scot's 2,467 datasets lost its resource rows
+    # to that mismatch.
+    pairs = [(ds, r) for ds in datasets
+             if (r := normalise_dcat_dataset(ds, src, now))]
+    rows = [r for _, r in pairs]
     res_rows, keys = [], []
-    for ds in datasets:
-        ident = ds.get("identifier") or ds.get("landingPage")
-        if not ident:
-            continue
-        key = f"{src['id']}:{ident}"
-        if key not in stored_keys:
-            continue
+    for ds, row in pairs:
+        key = row[0]
         keys.append((key,))
         res_rows += resource_rows(key, [
             (d.get("downloadURL") or d.get("accessURL"), d.get("title"),

@@ -358,7 +358,8 @@ def body_html(rec: dict) -> str:
       {f'<span>· updated {esc(str(rec["modified"])[:10])}</span>' if rec.get("modified") else ""}
     </div>
     {"".join(notices)}
-    <a class="cta" href="{safe_url(rec.get("landing_url"))}" rel="noopener">Open at publisher ↗</a>
+    {f'<a class="cta" href="{safe_url(rec.get("landing_url"))}" rel="noopener">Open at publisher ↗</a>'
+     if safe_url(rec.get("landing_url")) != "#" else ""}
     {f'<div class="desc">{esc(rec["description"])}</div>' if rec.get("description") else ""}
     <h2>Files &amp; links ({len(rec.get("resources") or [])})</h2>
     {files}

@@ -71,7 +71,10 @@
     <button id="go" type="submit">Search</button>
   </form>
 
-  <div id="out" aria-live="polite"></div>
+  <!-- Announce a one-line summary, not fifteen result cards: a live region
+       on #out read every innerHTML swap aloud in full. -->
+  <div id="sr" role="status" class="visually-hidden"></div>
+  <div id="out"></div>
   </main>
 
   <footer>
@@ -113,6 +116,7 @@ function render(payload) {
   const results = payload.results || [];
   if (!results.length) {
     $("out").innerHTML = '<p class="note">No results.</p>';
+    $("sr").textContent = "No results.";
     return;
   }
   let banner = "";
@@ -174,6 +178,8 @@ function render(payload) {
       ${cols}
     </div>`;
   }).join("");
+  const hint = {none: " — nothing matches well", weak: " — weak match"}[payload.confidence] || "";
+  $("sr").textContent = `${results.length} results${hint}.`;
 }
 
 let inflight = null;
@@ -194,8 +200,10 @@ async function search(push = true) {
                           {signal: inflight.signal});
     render(await r.json());
   } catch (e) {
-    if (e.name !== "AbortError")
+    if (e.name !== "AbortError") {
       $("out").innerHTML = '<p class="note">Search failed — is the server running?</p>';
+      $("sr").textContent = "Search failed.";
+    }
   }
 }
 

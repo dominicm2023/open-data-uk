@@ -486,7 +486,10 @@ def norm_format(raw: str | None) -> str | None:
     """Return a canonical format label, or None if it can't be recognised."""
     if not raw or not raw.strip():
         return None
-    fmt = _IANA_PREFIX.sub("", raw.strip()).strip()
+    # A leading dot is a file extension being offered as a format (".XLSX",
+    # ".PDF") — 2,194 resources carried one and fell through the alias table
+    # to become their own filter-invisible tokens.
+    fmt = _IANA_PREFIX.sub("", raw.strip()).strip().lstrip(".")
     lower = fmt.lower()
     if lower in _MEDIA_TYPE_MAP:
         return _MEDIA_TYPE_MAP[lower]
