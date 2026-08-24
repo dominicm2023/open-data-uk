@@ -238,10 +238,10 @@ TEMPLATE = """<!doctype html>
   .pane-title { font-weight: 620; margin: 0 0 .1rem; }
   .pane-unit { color: var(--muted, #61656d); font-size: .8rem; margin: 0 0 .8rem; }
   .bars { position: relative; }
-  .bar-row { position: absolute; left: 0; right: 0; height: 14px;
+  .bar-row { position: absolute; left: 0; right: 0;
              transition: transform .7s cubic-bezier(.4,0,.2,1); }
   .bar-name { position: absolute; left: 0; width: 7.2rem; font-size: .66rem;
-             line-height: 14px; white-space: nowrap; overflow: hidden;
+             white-space: nowrap; overflow: hidden;
              text-overflow: ellipsis; color: var(--muted, #61656d); }
   .bar-track { position: absolute; left: 7.6rem; right: 3.4rem; top: 2px; bottom: 2px; }
   .bar-fill { position: absolute; top: 0; bottom: 0; border-radius: 2px;
@@ -250,10 +250,24 @@ TEMPLATE = """<!doctype html>
                          background-color .4s; }
   .bar-fill.neg { background: var(--warn, #a4192b); }
   .bar-val { position: absolute; right: 0; width: 3.2rem; text-align: right;
-             font-size: .66rem; line-height: 14px;
+             font-size: .66rem;
              font-variant-numeric: tabular-nums; color: var(--ink, #16181c); }
   .baseline { position: absolute; top: 0; bottom: 0; width: 1px;
              background: var(--line-strong, #cfd0ca); transition: left .7s, opacity .4s; }
+  /* Compact mode: every bar still present, rows shrunk to fit the pane.
+     Per-row text can't survive 9px rows, so only the extremes are labelled
+     and a tap names any bar. Honesty by geometry, names on demand. */
+  .bars.compact .bar-name, .bars.compact .bar-val { display: none; }
+  .bars.compact .bar-track { left: 0; right: 0; }
+  .bars.compact .bar-row.notable .bar-name {
+             display: block; z-index: 1; width: auto; max-width: 8rem;
+             font-size: .62rem; background: var(--card, #fff);
+             padding: 0 .3rem 0 0; }
+  .bars.compact .bar-row.notable .bar-val {
+             display: block; z-index: 1; font-size: .62rem;
+             background: var(--card, #fff); padding-left: .3rem; }
+  .pane-tap { color: var(--muted, #61656d); font-size: .72rem;
+             margin: .5rem 0 0; min-height: 1em; }
   /* receipt */
   .receipt { font-family: ui-monospace, Menlo, Consolas, monospace;
              font-size: .78rem; line-height: 1.5; }
@@ -270,10 +284,11 @@ TEMPLATE = """<!doctype html>
              padding-top: 1rem; }
   @media (max-width: 52rem) {
     .scrolly { display: block; }
-    .sticky-pane { top: .5rem; max-height: 58vh; overflow: hidden; z-index: 2; }
+    .sticky-pane { top: .5rem; max-height: 62vh; overflow: hidden; z-index: 2; }
     .steps .step, .steps .rstep { min-height: 55vh; }
     .bar-name { width: 5.4rem; }
     .bar-track { left: 5.8rem; }
+    .receipt { font-size: .7rem; line-height: 1.4; }
   }
 </style>
 </head><body><div class="scrolly-wrap">
@@ -289,6 +304,7 @@ does the scroll add force, or just motion?</p>
     <p class="pane-title" id="bars-title"></p>
     <p class="pane-unit" id="bars-unit"></p>
     <div class="bars" id="bars"></div>
+    <p class="pane-tap" id="bars-tap"></p>
   </div>
 </section>
 
@@ -314,25 +330,58 @@ const BARS = __BARS_DATA__;
 const RCPT = __RECEIPT_DATA__;
 
 /* ---- test 1: morphing bars ---- */
-const ROW = 15, bars = document.getElementById('bars');
-bars.style.height = (BARS.councils.length * ROW) + 'px';
+const bars = document.getElementById('bars');
+const pane = bars.closest('.sticky-pane');
+let ROW = 15, compact = false, curStep = 0;
 const baseline = document.createElement('div');
 baseline.className = 'baseline'; baseline.style.opacity = '0';
 bars.appendChild(baseline);
 const rows = {};
 for (const name of BARS.councils) {
   const r = document.createElement('div'); r.className = 'bar-row';
+  r.dataset.name = name;
   r.innerHTML = '<span class="bar-name">' + name + '</span>' +
     '<span class="bar-track"><span class="bar-fill"></span></span>' +
     '<span class="bar-val"></span>';
   bars.appendChild(r); rows[name] = r;
 }
+/* Fit every bar into whatever height the pane actually has: rows shrink
+   before bars are allowed to clip. Below 12px a row can't carry its own
+   text, so compact mode labels only the extremes and taps do the rest. */
+function layout() {
+  const n = BARS.councils.length;
+  const chrome = bars.getBoundingClientRect().top - pane.getBoundingClientRect().top
+               + 18;  /* pane padding below the bars */
+  const maxPane = Math.min(window.innerHeight * 0.62, 640);
+  ROW = Math.max(8, Math.min(15, Math.floor((maxPane - chrome) / n)));
+  compact = ROW < 12;
+  bars.classList.toggle('compact', compact);
+  bars.style.height = (n * ROW) + 'px';
+  for (const name of BARS.councils) {
+    const r = rows[name];
+    r.style.height = (ROW - 1) + 'px';
+    r.querySelector('.bar-name').style.lineHeight = (ROW - 1) + 'px';
+    r.querySelector('.bar-val').style.lineHeight = (ROW - 1) + 'px';
+  }
+  baseline.style.left = compact ? '78%'
+    : 'calc(7.6rem + (100% - 11rem) * .78)';
+}
+bars.addEventListener('click', e => {
+  const r = e.target.closest('.bar-row');
+  if (!r) return;
+  const s = BARS.steps[curStep], v = s.values[r.dataset.name];
+  document.getElementById('bars-tap').textContent =
+    v == null ? r.dataset.name + ' — no figure reported'
+              : r.dataset.name + ' — ' + fmt(v, s.diverging) + ' per head';
+});
+window.addEventListener('resize', () => { layout(); showStep(curStep); });
 function fmt(v, diverging) {
   const a = Math.abs(v);
   const s = a >= 1000 ? (a/1000).toFixed(1) + 'k' : a >= 100 ? a.toFixed(0) : a.toFixed(0);
   return (diverging && v < 0 ? '−£' : '£') + s;
 }
 function showStep(i) {
+  curStep = i;
   const s = BARS.steps[i];
   document.getElementById('bars-title').textContent = s.title;
   document.getElementById('bars-unit').textContent = s.unit;
@@ -340,12 +389,14 @@ function showStep(i) {
     .map(n => ({n, v: s.values[n]}))
     .sort((a, b) => (b.v ?? -1e9) - (a.v ?? -1e9));
   const max = Math.max(...ranked.map(d => Math.abs(d.v ?? 0)), 1);
+  const withVals = ranked.filter(d => d.v != null);
+  const notable = new Set([withVals[0]?.n, withVals[withVals.length - 1]?.n]);
   baseline.style.opacity = s.diverging ? '1' : '0';
-  baseline.style.left = s.diverging ? 'calc(7.6rem + (100% - 11rem) * .78)' : '7.6rem';
   ranked.forEach((d, i2) => {
     const r = rows[d.n], fill = r.querySelector('.bar-fill'),
           val = r.querySelector('.bar-val');
     r.style.transform = 'translateY(' + (i2 * ROW) + 'px)';
+    r.classList.toggle('notable', notable.has(d.n));
     if (d.v == null) { fill.style.width = '0%'; val.textContent = '–'; return; }
     const w = Math.abs(d.v) / max * (s.diverging ? 78 : 100);
     fill.classList.toggle('neg', s.diverging && d.v < 0);
@@ -406,7 +457,9 @@ const io = new IntersectionObserver(entries => {
   }
 }, {rootMargin: '-40% 0px -40% 0px'});
 document.querySelectorAll('.step, .rstep').forEach(el => io.observe(el));
-showStep(0); showReceiptStep(0);
+layout(); showStep(0); showReceiptStep(0);
+if (compact) document.getElementById('bars-tap').textContent =
+  'tap any bar for its council';
 </script>
 </body></html>
 """
