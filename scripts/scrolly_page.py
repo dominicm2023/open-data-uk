@@ -237,20 +237,23 @@ TEMPLATE = """<!doctype html>
              padding: 1rem 1.1rem 1.2rem; }
   .pane-title { font-weight: 620; margin: 0 0 .1rem; }
   .pane-unit { color: var(--muted, #61656d); font-size: .8rem; margin: 0 0 .8rem; }
-  .bars { position: relative; }
+  .bars { position: relative; --namew: 7.2rem; --valw: 3.2rem;
+          --namefs: .66rem; }
   .bar-row { position: absolute; left: 0; right: 0;
              transition: transform .7s cubic-bezier(.4,0,.2,1); }
-  .bar-name { position: absolute; left: 0; width: 7.2rem; font-size: .66rem;
+  .bar-name { position: absolute; left: 0; width: var(--namew);
+             font-size: var(--namefs);
              white-space: nowrap; overflow: hidden;
              text-overflow: ellipsis; color: var(--muted, #61656d); }
-  .bar-track { position: absolute; left: 7.6rem; right: 3.4rem; top: 2px; bottom: 2px; }
+  .bar-track { position: absolute; left: calc(var(--namew) + .4rem);
+             right: calc(var(--valw) + .2rem); top: 2px; bottom: 2px; }
   .bar-fill { position: absolute; top: 0; bottom: 0; border-radius: 2px;
              background: var(--ju-accent, #0e6e63);
              transition: width .7s cubic-bezier(.4,0,.2,1), left .7s cubic-bezier(.4,0,.2,1),
                          background-color .4s; }
   .bar-fill.neg { background: var(--warn, #a4192b); }
-  .bar-val { position: absolute; right: 0; width: 3.2rem; text-align: right;
-             font-size: .66rem;
+  .bar-val { position: absolute; right: 0; width: var(--valw); text-align: right;
+             font-size: var(--namefs);
              font-variant-numeric: tabular-nums; color: var(--ink, #16181c); }
   .baseline { position: absolute; top: 0; bottom: 0; width: 1px;
              background: var(--line-strong, #cfd0ca); transition: left .7s, opacity .4s; }
@@ -284,10 +287,15 @@ TEMPLATE = """<!doctype html>
              padding-top: 1rem; }
   @media (max-width: 52rem) {
     .scrolly { display: block; }
-    .sticky-pane { top: .5rem; max-height: 62vh; overflow: hidden; z-index: 2; }
+    .sticky-pane { top: .5rem; max-height: 66vh; overflow: hidden; z-index: 2;
+             padding: .6rem .8rem .7rem; }
+    /* One header line, not three: on a phone every pixel of chrome is a
+       pixel taken from a bar. */
+    .pane-title { display: inline; font-size: .88rem; }
+    .pane-unit { display: inline; margin: 0 0 0 .45rem; font-size: .72rem; }
+    .bars { margin-top: .5rem; }
+    .pane-tap { margin: .3rem 0 0; font-size: .65rem; }
     .steps .step, .steps .rstep { min-height: 55vh; }
-    .bar-name { width: 5.4rem; }
-    .bar-track { left: 5.8rem; }
     .receipt { font-size: .7rem; line-height: 1.4; }
   }
 </style>
@@ -346,16 +354,27 @@ for (const name of BARS.councils) {
   bars.appendChild(r); rows[name] = r;
 }
 /* Fit every bar into whatever height the pane actually has: rows shrink
-   before bars are allowed to clip. Below 12px a row can't carry its own
-   text, so compact mode labels only the extremes and taps do the rest. */
+   before bars are allowed to clip, and the name column shrinks with them —
+   36 names at 8px beat 2 names at 11px, which is what the first phone test
+   taught us. Only below 9px rows does text genuinely stop working; then
+   the extremes keep their labels and a tap names the rest. */
 function layout() {
   const n = BARS.councils.length;
   const chrome = bars.getBoundingClientRect().top - pane.getBoundingClientRect().top
-               + 18;  /* pane padding below the bars */
-  const maxPane = Math.min(window.innerHeight * 0.62, 640);
+               + 34;  /* pane padding + the tap line under the bars */
+  const maxPane = Math.min(window.innerHeight * 0.66, 640);
   ROW = Math.max(8, Math.min(15, Math.floor((maxPane - chrome) / n)));
-  compact = ROW < 12;
+  compact = ROW < 9;
   bars.classList.toggle('compact', compact);
+  if (ROW >= 12) {
+    bars.style.setProperty('--namew', '7.2rem');
+    bars.style.setProperty('--valw', '3.2rem');
+    bars.style.setProperty('--namefs', '.66rem');
+  } else {
+    bars.style.setProperty('--namew', '4.9rem');
+    bars.style.setProperty('--valw', '2.3rem');
+    bars.style.setProperty('--namefs', Math.max(7, ROW - 2) + 'px');
+  }
   bars.style.height = (n * ROW) + 'px';
   for (const name of BARS.councils) {
     const r = rows[name];
@@ -364,7 +383,7 @@ function layout() {
     r.querySelector('.bar-val').style.lineHeight = (ROW - 1) + 'px';
   }
   baseline.style.left = compact ? '78%'
-    : 'calc(7.6rem + (100% - 11rem) * .78)';
+    : 'calc(var(--namew) + .4rem + (100% - var(--namew) - var(--valw) - .6rem) * .78)';
 }
 bars.addEventListener('click', e => {
   const r = e.target.closest('.bar-row');
