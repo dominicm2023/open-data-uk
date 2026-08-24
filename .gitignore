@@ -47,4 +47,5 @@ analysis/spending/manifest.json
 analysis/spending/selection.json
 strands.html
 rogues.html
+scrolly.html
 analysis/queries_prod.db
