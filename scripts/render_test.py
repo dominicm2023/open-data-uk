@@ -81,6 +81,21 @@ check(ld(page)["isBasedOn"] == "https://www.data.gov.uk/dataset/abc",
 check(ld(page)["license"].startswith("https://www.nationalarchives"),
       "a known licence id becomes its canonical URL")
 
+# --- licences in JSON-LD -------------------------------------------------
+# Google reads `license` best as a URL, so every id that pins one down gets
+# one; free text is passed through as the name; and where the publisher
+# stated nothing, the field is absent — an invented licence would be a claim.
+for lic, url in (("CC-BY-3.0", "https://creativecommons.org/licenses/by/3.0/"),
+                 ("CC-BY-NC-SA-2.5", "https://creativecommons.org/licenses/by-nc-sa/2.5/"),
+                 ("ODbL-1.0", "https://opendatacommons.org/licenses/odbl/1-0/")):
+    check(ld(pagerender.render_dataset(record(license=lic), SITE))["license"] == url,
+          f"{lic} resolves to its canonical URL")
+check(ld(pagerender.render_dataset(record(license="NSTA Open User Licence"),
+                                   SITE))["license"] == "NSTA Open User Licence",
+      "an unrecognised licence stays as its name — no URL is guessed")
+check("license" not in ld(pagerender.render_dataset(record(license=None), SITE)),
+      "no stated licence emits no license field: absence is not invented")
+
 # --- hostile publisher content -----------------------------------------
 nasty = pagerender.render_dataset(
     record(title=XSS, description=f"harmless {XSS}",

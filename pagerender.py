@@ -48,10 +48,26 @@ LICENSE_URLS = {
     "OGL-UK-3.0": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
     "OGL-UK-2.0": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/",
     "OGL-UK-1.0": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/1/",
-    "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
-    "CC-BY-SA-4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
     "CC0-1.0": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "ODC-BY-1.0": "https://opendatacommons.org/licenses/by/1-0/",
+    "ODbL-1.0": "https://opendatacommons.org/licenses/odbl/1-0/",
+    "PDDL-1.0": "https://opendatacommons.org/licenses/pddl/1-0/",
 }
+
+# The normaliser emits Creative Commons ids at every flavour and version it
+# recognises (CC-BY-3.0, CC-BY-NC-SA-2.5, …). The id itself names the regime,
+# and creativecommons.org URLs are deterministic from it — so derive the URL
+# rather than keep a dict that covered two of thirty combinations.
+_CC_ID = re.compile(r"^CC-(BY(?:-NC)?(?:-SA|-ND)?)-([1-4]\.[05])$")
+
+
+def license_url(lic: str) -> str | None:
+    """Canonical URL for a licence id, or None where only the name is safe."""
+    if url := LICENSE_URLS.get(lic):
+        return url
+    if m := _CC_ID.match(lic):
+        return f"https://creativecommons.org/licenses/{m.group(1).lower()}/{m.group(2)}/"
+    return None
 
 _TAGS = re.compile(r"<[^>]+>")
 _ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}")
@@ -175,8 +191,13 @@ def json_ld(rec: dict, page_url: str) -> str:
     if rec.get("publisher"):
         data["creator"] = {"@type": "Organization",
                            "name": plain_text(rec["publisher"])}
+    # A third of UK open data states no licence at all (FINDINGS.md, tier 1).
+    # Search Console reports those pages as non-critically "Missing field
+    # license" — and they stay that way: emitting a guess would assert a
+    # grant the publisher never made. Where a licence IS stated, machines
+    # get the canonical URL if the id pins one down, else the name as text.
     if lic := rec.get("license"):
-        data["license"] = LICENSE_URLS.get(lic, lic)
+        data["license"] = license_url(lic) or lic
     for field, key in (("dateModified", "modified"), ("dateCreated", "created")):
         if _ISO_DATE.match(str(rec.get(key) or "")):
             data[field] = str(rec[key])[:10]
