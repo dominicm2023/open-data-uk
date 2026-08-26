@@ -89,7 +89,11 @@ nasty = pagerender.render_dataset(
                        "format_norm": "CSV", "verdict": "data",
                        "size_bytes": None, "columns": [XSS]}]), SITE)
 check("<script>alert" not in nasty, "a script tag in the title cannot execute")
-check(nasty.count("<script") == 1, "only our own JSON-LD script element exists")
+# Counting to 1 broke the moment a second legitimate block (BreadcrumbList)
+# was added, which is the wrong thing to be counting: the property that
+# matters is that no script element exists which isn't ours.
+check(nasty.count("<script") == nasty.count('<script type="application/ld+json">'),
+      "every script element on the page is our own JSON-LD, none injected")
 check('href="#"' in nasty and "javascript:alert" not in nasty,
       "a javascript: resource URL is refused, not linked")
 check(' onmouseover="evil()' not in nasty,
@@ -325,6 +329,37 @@ check(_gl.get("isAccessibleForFree") is True,
 check("isAccessibleForFree" not in json.loads(
           pagerender.json_ld(dict(_geo_rec, license="Custom licence"), SITE)),
       "a bespoke licence makes no claim about free access")
+
+# --- breadcrumbs: the markup and the page must say the same thing ------
+# Google's structured-data guidelines forbid marking up what a reader can't
+# see, and the way that rule gets broken is by generating the two halves
+# apart and letting them drift. breadcrumbs() returns both from one call.
+_crumb_html = pagerender.render_dataset(record(), SITE)
+_crumb_ld = [json.loads(b) for b in
+             re.findall(r'<script type="application/ld\+json">(.*?)</script>',
+                        _crumb_html, re.S) if "BreadcrumbList" in b]
+check(len(_crumb_ld) == 1, "a dataset page carries exactly one BreadcrumbList")
+_items = _crumb_ld[0]["itemListElement"]
+check([i["position"] for i in _items] == list(range(1, len(_items) + 1)),
+      "breadcrumb positions run 1..n with no gaps")
+check("item" not in _items[-1],
+      "the last crumb is the current page, so carries no item URL")
+check(all("item" in i for i in _items[:-1]),
+      "every crumb above it links somewhere")
+_nav = re.search(r'<nav class="crumbs".*?</nav>', _crumb_html, re.S)
+check(_nav is not None, "and the trail is actually visible on the page")
+_seen = [v for v in re.findall(r'>([^<>]+)</(?:a|span)>', _nav.group(0)) if v != "/"]
+check(_seen == [i["name"] for i in _items],
+      "the visible trail and the structured data name the same steps")
+
+_no_pub = dict(record())
+_no_pub.pop("publisher", None)
+_np_ld = [json.loads(b) for b in
+          re.findall(r'<script type="application/ld\+json">(.*?)</script>',
+                     pagerender.render_dataset(_no_pub, SITE), re.S)
+          if "BreadcrumbList" in b][0]
+check(len(_np_ld["itemListElement"]) == 3,
+      "a dataset with no publisher skips that crumb rather than inventing one")
 
 print()
 print("all rendering rules hold" if not failures

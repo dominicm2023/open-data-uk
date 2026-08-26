@@ -98,6 +98,28 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .wrap.wide { max-width: var(--wide); }
 
+/* Breadcrumbs. A dataset page used to open on its title with nothing saying
+   where it sat; this is the visible half of the BreadcrumbList markup, and
+   the two are generated together so they can't drift apart. The last crumb
+   is the current page and can be long, so it truncates rather than wrapping
+   the trail onto three lines. */
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .4rem;
+  font-size: .82rem;
+  color: var(--muted);
+  margin: 0 0 .9rem;
+}
+.crumbs [aria-hidden] { color: var(--line-strong); }
+.crumbs [aria-current] {
+  max-width: 26rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @media (min-width: 40rem) {
   .wrap { padding: 2.25rem 1.5rem 5rem; }
 }

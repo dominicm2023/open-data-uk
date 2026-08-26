@@ -354,6 +354,36 @@ def is_thin(rec: dict) -> bool:
     )
 
 
+def breadcrumbs(trail: list[tuple[str, str | None]],
+                site_url: str) -> tuple[str, str]:
+    """A breadcrumb trail, as visible markup and as structured data.
+
+    Both come out of one call on purpose. Google's structured-data
+    guidelines say not to mark up what a reader can't see, and the way that
+    rule gets broken is by generating the two halves in separate places and
+    letting them drift. A crumb whose path is None is the current page: it
+    renders as plain text and, per schema.org, carries no `item`.
+    """
+    items = []
+    for position, (name, path) in enumerate(trail, start=1):
+        entry: dict[str, object] = {"@type": "ListItem", "position": position,
+                                    "name": plain_text(name)}
+        if path is not None:
+            entry["item"] = site_url + path
+        items.append(entry)
+    payload = json.dumps({"@context": "https://schema.org",
+                          "@type": "BreadcrumbList",
+                          "itemListElement": items},
+                         ensure_ascii=False).replace("<", "\\u003c")
+
+    links = [f'<a href="{esc(path)}">{esc(plain_text(name))}</a>' if path is not None
+             else f'<span aria-current="page">{esc(plain_text(name))}</span>'
+             for name, path in trail]
+    sep = '<span aria-hidden="true">/</span>'
+    nav = (f'<nav class="crumbs" aria-label="Breadcrumb">{sep.join(links)}</nav>')
+    return nav, f'<script type="application/ld+json">{payload}</script>'
+
+
 def head_tags(rec: dict, site_url: str) -> str:
     """Title, description, canonical, social preview and structured data."""
     title = plain_text(rec.get("title")) or "Dataset"
@@ -541,9 +571,15 @@ def _page(head: str, body: str, current: str | None = None) -> str:
 
 
 def render_dataset(rec: dict, site_url: str) -> str:
+    trail: list[tuple[str, str | None]] = [("Home", "/"),
+                                           ("Publishers", "/publishers")]
+    if rec.get("publisher"):
+        trail.append((rec["publisher"], publisher_path(rec["publisher"])))
+    trail.append((rec.get("title") or "Untitled dataset", None))
+    crumbs, crumb_ld = breadcrumbs(trail, site_url)
     return (_template()
-            .replace("<!--HEAD-->", head_tags(rec, site_url))
-            .replace("<!--BODY-->", body_html(rec)))
+            .replace("<!--HEAD-->", head_tags(rec, site_url) + "\n" + crumb_ld)
+            .replace("<!--BODY-->", crumbs + body_html(rec)))
 
 
 def simple_head(title: str, description: str, path: str, site_url: str,
@@ -644,7 +680,10 @@ def render_publisher(name: str, rows: list[dict], page: int, pages: int,
     if page < pages:
         nav.append(f'<a href="{esc(publisher_path(name, page + 1))}">next →</a>')
 
-    body = (f"<h1>{esc(name)}</h1>"
+    crumbs, crumb_ld = breadcrumbs(
+        [("Home", "/"), ("Publishers", "/publishers"), (name, None)], site_url)
+    body = (crumbs
+            + f"<h1>{esc(name)}</h1>"
             f'<p class="note">{total:,} dataset{"" if total == 1 else "s"} in '
             f"the index"
             + (f", showing {first:,}–{first + len(rows) - 1:,} "
@@ -666,7 +705,7 @@ def render_publisher(name: str, rows: list[dict], page: int, pages: int,
         f"{name} — open datasets" + (f" (page {page})" if page > 1 else ""),
         f"All {total:,} datasets published by {name} that we hold, each with "
         "the licence, formats and whether the link actually leads to data.",
-        publisher_path(name, page), site_url, "\n".join(rel))
+        publisher_path(name, page), site_url, "\n".join(rel + [crumb_ld]))
     return _page(head, body, "/publishers")
 
 
@@ -687,7 +726,10 @@ def render_topic(tag: str, rows: list[dict], page: int, pages: int, total: int,
             nav.append(f'<a href="{esc(topic_path(tag, target))}">{label}</a>')
             rel.append(f'<link rel="{kind}" href="{esc(site_url + topic_path(tag, target))}">')
 
-    body = (f"<h1>{esc(tag.title())}</h1>"
+    crumbs, crumb_ld = breadcrumbs(
+        [("Home", "/"), ("Subjects", "/topics"), (tag.title(), None)], site_url)
+    body = (crumbs
+            + f"<h1>{esc(tag.title())}</h1>"
             f'<p class="note">{total:,} dataset{"" if total == 1 else "s"} tagged '
             f'"{esc(tag)}", from {publishers:,} '
             f'organisation{"" if publishers == 1 else "s"}'
@@ -704,7 +746,7 @@ def render_topic(tag: str, rows: list[dict], page: int, pages: int, total: int,
         f"{total:,} UK government datasets tagged \"{tag}\", from {publishers:,} "
         "publishers across every portal we index — with the licence and "
         "whether each link really leads to data.",
-        topic_path(tag, page), site_url, "\n".join(rel))
+        topic_path(tag, page), site_url, "\n".join(rel + [crumb_ld]))
     if not indexable:
         # A tag only one publisher uses, or one with a handful of records, is
         # that publisher's private vocabulary rather than a subject. The page
@@ -765,7 +807,11 @@ def render_who(title: str, rows: list[dict], site_url: str) -> str:
             f'<br><span class="note">{esc(r.get("title") or "")}</span></li>')
 
     with_data = sum(1 for r in rows if r.get("availability") in ("data", "api"))
-    body = (f"<h1>Who publishes “{esc(title)}” data?</h1>"
+    crumbs, crumb_ld = breadcrumbs(
+        [("Home", "/"), ("Who publishes what", "/who-publishes"), (title, None)],
+        site_url)
+    body = (crumbs
+            + f"<h1>Who publishes “{esc(title)}” data?</h1>"
             f'<p class="note">{len(rows):,} UK organisations publish a dataset '
             f'of this name. {with_data:,} of them lead to a file or an API you '
             "can actually use; the rest lead to a webpage, are broken, or "
@@ -778,7 +824,7 @@ def render_who(title: str, rows: list[dict], site_url: str) -> str:
         f"Who publishes {title} data? {len(rows):,} UK organisations",
         f"{len(rows):,} UK councils and public bodies publish a dataset called "
         f"\"{title}\". Every one listed, with whether the link leads to real data.",
-        who_path(title), site_url)
+        who_path(title), site_url, crumb_ld)
     return _page(head, body, "/who-publishes")
 
 
