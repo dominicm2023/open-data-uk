@@ -294,6 +294,38 @@ _ld = json.loads(pagerender.json_ld(record(), SITE + "/dataset?key=x"))
 check(all("encodingFormat" in d for d in _ld.get("distribution", [])),
       "every emitted distribution carries an encodingFormat")
 
+# --- the evidence we hold but used not to publish ----------------------
+# A bounding box is what Dataset Search filters geographically on, and a
+# wrong box is worse than none: it is a confident false claim about where
+# the data applies.
+check(pagerender._geo_shape([-1.6, 52.4, -1.3, 52.6]) == "52.4 -1.6 52.6 -1.3",
+      "a bbox becomes a GeoShape box, lower corner first, lat before lon")
+check(pagerender._geo_shape([2.0, 52.0, -1.0, 51.0]) is None,
+      "an inverted bbox is harvesting rubbish and is not published")
+check(pagerender._geo_shape([-1.0, 52.0, 999.0, 53.0]) is None,
+      "nor is one that runs off the planet")
+check(pagerender._geo_shape(None) is None and pagerender._geo_shape([1, 2]) is None,
+      "a missing or malformed bbox says nothing")
+
+check(pagerender._content_size(2_450_000) == "2.5 MB"
+      and pagerender._content_size(900) == "900 B",
+      "a measured file size carries its unit, since '1200' is ambiguous")
+check(pagerender._content_size(0) is None and pagerender._content_size(None) is None,
+      "an unmeasured file size is not invented")
+
+_geo_rec = dict(record(), bbox=[-1.6, 52.4, -1.3, 52.6],
+                data_published="2011-06-01", license="OGL-UK-3.0")
+_gl = json.loads(pagerender.json_ld(_geo_rec, SITE + "/dataset?key=x"))
+check(_gl.get("spatialCoverage", {}).get("geo", {}).get("box"),
+      "a sound bbox reaches the page as spatialCoverage")
+check(_gl.get("datePublished") == "2011-06-01",
+      "the data's own publication date is distinct from the record's")
+check(_gl.get("isAccessibleForFree") is True,
+      "a known open licence says so outright")
+check("isAccessibleForFree" not in json.loads(
+          pagerender.json_ld(dict(_geo_rec, license="Custom licence"), SITE)),
+      "a bespoke licence makes no claim about free access")
+
 print()
 print("all rendering rules hold" if not failures
       else f"{len(failures)} failure(s): " + "; ".join(failures))

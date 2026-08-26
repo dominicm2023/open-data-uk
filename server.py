@@ -457,6 +457,17 @@ def _dataset_record(key: str) -> dict | None:
         except (IndexError, KeyError):
             pass
 
+        # Geography and the data's own publication date. Harvested into their
+        # own table, and until now read by nothing but search — yet a bounding
+        # box is exactly what Dataset Search filters on.
+        try:
+            geo = conn.execute(
+                "SELECT bbox_west, bbox_south, bbox_east, bbox_north, "
+                "       reference_date FROM dataset_geo WHERE dataset_key = ?",
+                (key,)).fetchone()
+        except sqlite3.OperationalError:
+            geo = None
+
         dup = conn.execute("SELECT canonical_key FROM duplicates WHERE key = ?",
                            (key,)).fetchone()
         retired = conn.execute("SELECT 1 FROM retired WHERE key = ?",
@@ -471,6 +482,10 @@ def _dataset_record(key: str) -> dict | None:
             "license_raw": row["license_raw"],
             "created": row["created"],
             "modified": row["modified"],
+            "bbox": ([geo["bbox_west"], geo["bbox_south"],
+                      geo["bbox_east"], geo["bbox_north"]]
+                     if geo and geo["bbox_west"] is not None else None),
+            "data_published": geo["reference_date"] if geo else None,
             "landing_url": row["landing_url"],
             "description": row["description"],
             "tags": _json.loads(row["tags"] or "[]"),

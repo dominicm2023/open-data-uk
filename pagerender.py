@@ -156,6 +156,79 @@ _URL_EXT_FORMATS = {
 }
 
 
+# Licences under which the data really is free to get and reuse. Only the
+# ones we can name: "isAccessibleForFree" on a bespoke corporate licence
+# would be us asserting a legal position we haven't read.
+OPEN_LICENSES = frozenset(LICENSE_URLS) | {
+    "OGL-UK-1.0", "OGL-UK-2.0", "OGL-UK-3.0", "CC-BY-4.0", "CC-BY-SA-4.0",
+    "CC0-1.0", "ODC-BY-1.0", "ODbL-1.0", "PDDL-1.0",
+}
+
+# UK-plausible bounds. A box outside these is a harvesting artefact rather
+# than a claim about the world, and publishing it would put a dataset on the
+# wrong continent in Dataset Search.
+_BOX_LIMITS = (-180.0, 180.0, -90.0, 90.0)
+
+
+def _geo_shape(bbox: object) -> str | None:
+    """schema.org GeoShape "box": lower corner then upper, lat before lon.
+
+    Emitted only when the numbers describe a real rectangle. 133 stored
+    boxes are inverted or out of range — harvested rubbish — and a wrong
+    box is worse than no box, because it is a confident false claim about
+    where the data applies.
+    """
+    if not isinstance(bbox, (list, tuple)) or len(bbox) != 4:
+        return None
+    try:
+        west, south, east, north = (float(v) for v in bbox)
+    except (TypeError, ValueError):
+        return None
+    lon_min, lon_max, lat_min, lat_max = _BOX_LIMITS
+    if not (lon_min <= west <= east <= lon_max
+            and lat_min <= south <= north <= lat_max):
+        return None
+    return f"{south} {west} {north} {east}"
+
+
+def _variables(rec: dict, limit: int = 40) -> list[str]:
+    """The column names the checker read from this dataset's own files.
+
+    Deduplicated case-insensitively — the same columns recur across a
+    publisher's monthly files — but reported in the spelling the file used.
+    """
+    out: list[str] = []
+    seen: set[str] = set()
+    for res in rec.get("resources") or []:
+        for col in res.get("columns") or []:
+            name = plain_text(col)[:80]
+            if name and name.lower() not in seen:
+                seen.add(name.lower())
+                out.append(name)
+                if len(out) >= limit:
+                    return out
+    return out
+
+
+def _content_size(size: object) -> str | None:
+    """File size with its unit, from the Content-Length we measured.
+
+    A bare number is ambiguous — schema.org's contentSize is text, and
+    readers and parsers both guess wrongly at "1200". Units are decimal
+    (kB = 1000 bytes), which is what Content-Length reporting implies.
+    """
+    try:
+        n = int(size)
+    except (TypeError, ValueError):
+        return None
+    if n <= 0:
+        return None
+    for unit, cut in (("GB", 10**9), ("MB", 10**6), ("kB", 10**3)):
+        if n >= cut:
+            return f"{n / cut:.1f} {unit}"
+    return f"{n} B"
+
+
 def distribution_format(res: dict) -> str | None:
     """The best evidence we hold for what a file actually is.
 
@@ -216,6 +289,22 @@ def json_ld(rec: dict, page_url: str) -> str:
             data[field] = str(rec[key])[:10]
     if rec.get("landing_url"):
         data["isBasedOn"] = rec["landing_url"]
+    # When the *data* was published, as distinct from when the catalogue
+    # record was last touched — a dataset can be "modified" yesterday and
+    # contain nothing newer than 2011.
+    if _ISO_DATE.match(str(rec.get("data_published") or "")):
+        data["datePublished"] = str(rec["data_published"])[:10]
+    if box := _geo_shape(rec.get("bbox")):
+        data["spatialCoverage"] = {
+            "@type": "Place",
+            "geo": {"@type": "GeoShape", "box": box},
+        }
+    # The columns the checker actually read out of the file. Nobody else
+    # holds these: they come from opening the CSV, not from the catalogue.
+    if variables := _variables(rec):
+        data["variableMeasured"] = variables
+    if (rec.get("license") or "") in OPEN_LICENSES:
+        data["isAccessibleForFree"] = True
 
     catalogues = [{"@type": "DataCatalog", "name": SITE_NAME}]
     if src.get("name"):
@@ -232,6 +321,8 @@ def json_ld(rec: dict, page_url: str) -> str:
         dist: dict[str, object] = {"@type": "DataDownload", "contentUrl": res["url"]}
         if fmt := distribution_format(res):
             dist["encodingFormat"] = fmt
+        if size := _content_size(res.get("size_bytes")):
+            dist["contentSize"] = size
         if res.get("name"):
             dist["name"] = plain_text(res["name"])
         dists.append(dist)
