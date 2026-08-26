@@ -268,6 +268,32 @@ check(len(pagerender.asset_version()) >= 6,
 check('href="/site.css?v=' in pagerender.render_dataset(record(), SITE),
       "and rendered pages link the hashed URL")
 
+# --- every distribution says what format it is -------------------------
+# Google Search Console flagged distributions with no encodingFormat. The
+# publisher's declaration is preferred, the checker's observed content type
+# is the fallback, and the URL extension is the last resort — but only from
+# an allowlist, so a ".aspx" page never becomes a data format.
+_df = pagerender.distribution_format
+check(_df({"format_norm": "CSV", "content_type": "text/html",
+           "url": "http://x/a"}) == "CSV",
+      "a declared format outranks the served content type")
+check(_df({"format_norm": None, "content_type": "text/csv; charset=utf-8",
+           "url": "http://x/a"}) == "CSV",
+      "an undeclared format falls back to what the server served")
+check(_df({"format_norm": None, "content_type": None,
+           "url": "http://x/data.csv?token=1"}) == "CSV",
+      "and last to the URL's extension, ignoring the query string")
+check(_df({"format_norm": None, "content_type": None,
+           "url": "http://x/page.aspx"}) is None,
+      "'.aspx' is a page, not a data format, so nothing is claimed")
+check(_df({"format_norm": None, "content_type": None,
+           "url": "http://x/download"}) is None,
+      "with no evidence at all we say nothing rather than guess")
+
+_ld = json.loads(pagerender.json_ld(record(), SITE + "/dataset?key=x"))
+check(all("encodingFormat" in d for d in _ld.get("distribution", [])),
+      "every emitted distribution carries an encodingFormat")
+
 print()
 print("all rendering rules hold" if not failures
       else f"{len(failures)} failure(s): " + "; ".join(failures))

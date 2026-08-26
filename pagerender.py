@@ -146,6 +146,40 @@ def meta_description(rec: dict) -> str:
     return summarise(lead, 200)
 
 
+# Extensions we are willing to read a format out of. An allowlist, not a
+# regex: a URL ending ".aspx" or ".php" would otherwise mint "ASPX" as a
+# data format, which is a guess dressed as a fact.
+_URL_EXT_FORMATS = {
+    "csv", "tsv", "json", "geojson", "xml", "rdf", "ttl", "xlsx", "xls",
+    "xlsm", "ods", "pdf", "zip", "gz", "kml", "kmz", "shp", "gpkg",
+    "parquet", "txt", "doc", "docx",
+}
+
+
+def distribution_format(res: dict) -> str | None:
+    """The best evidence we hold for what a file actually is.
+
+    Google Search Console flags a distribution carrying no encodingFormat,
+    and 18% of stored resources have no declared format at all — the
+    publisher simply never said. Three sources, in descending order of
+    confidence: what the publisher declared, what the server actually
+    returned when the checker fetched it, and last the extension on the
+    URL. All three go through norm_format, so a distribution reads "CSV"
+    however we came to know it.
+    """
+    from normalise import norm_format
+
+    if declared := res.get("format_norm"):
+        return declared
+    # The measured answer. Parameters are stripped: "text/csv; charset=utf-8"
+    # is a CSV, and the charset is not part of the format.
+    if served := norm_format((res.get("content_type") or "").split(";")[0].strip()):
+        return served
+    tail = urllib.parse.urlsplit(str(res.get("url") or "")).path.rsplit("/", 1)[-1]
+    ext = tail.rsplit(".", 1)[-1].lower() if "." in tail else ""
+    return norm_format(ext) if ext in _URL_EXT_FORMATS else None
+
+
 def json_ld(rec: dict, page_url: str) -> str:
     """schema.org/Dataset markup — how machines read this page.
 
@@ -196,8 +230,8 @@ def json_ld(rec: dict, page_url: str) -> str:
         if not str(res.get("url") or "").lower().startswith(("http://", "https://")):
             continue
         dist: dict[str, object] = {"@type": "DataDownload", "contentUrl": res["url"]}
-        if res.get("format_norm"):
-            dist["encodingFormat"] = res["format_norm"]
+        if fmt := distribution_format(res):
+            dist["encodingFormat"] = fmt
         if res.get("name"):
             dist["name"] = plain_text(res["name"])
         dists.append(dist)
