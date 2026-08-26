@@ -468,6 +468,18 @@ def _dataset_record(key: str) -> dict | None:
         except sqlite3.OperationalError:
             geo = None
 
+        # A licence this copy omits but a confirmed copy of the same dataset
+        # states. Kept distinct from license_norm all the way to the page, so
+        # a reader is told where the statement came from.
+        inherited = None
+        if not row["license_norm"]:
+            try:
+                inherited = conn.execute(
+                    "SELECT license_norm, from_key FROM license_inherited "
+                    "WHERE key = ?", (key,)).fetchone()
+            except sqlite3.OperationalError:
+                inherited = None
+
         dup = conn.execute("SELECT canonical_key FROM duplicates WHERE key = ?",
                            (key,)).fetchone()
         retired = conn.execute("SELECT 1 FROM retired WHERE key = ?",
@@ -480,6 +492,8 @@ def _dataset_record(key: str) -> dict | None:
             "source": row["source_id"],
             "license": row["license_norm"],
             "license_raw": row["license_raw"],
+            "license_inherited": inherited["license_norm"] if inherited else None,
+            "license_inherited_from": inherited["from_key"] if inherited else None,
             "created": row["created"],
             "modified": row["modified"],
             "bbox": ([geo["bbox_west"], geo["bbox_south"],

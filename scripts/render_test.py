@@ -361,6 +361,31 @@ _np_ld = [json.loads(b) for b in
 check(len(_np_ld["itemListElement"]) == 3,
       "a dataset with no publisher skips that crumb rather than inventing one")
 
+# --- a licence recovered from a merged twin ----------------------------
+# If we were confident enough to call two records one dataset, a licence one
+# copy states is a fact about that dataset. But a licence is a legal claim,
+# so the page has to say the statement came from elsewhere.
+_inh = dict(record(), license=None,
+            license_inherited="OGL-UK-3.0",
+            license_inherited_from="datamillnorth:abc")
+_inh_html = pagerender.render_dataset(_inh, SITE)
+check("OGL-UK-3.0" in _inh_html,
+      "an inherited licence is shown rather than withheld")
+check("another copy of this dataset" in _inh_html,
+      "and the page says the statement came from another copy")
+_inh_ld = json.loads(re.search(
+    r'<script type="application/ld\+json">(.*?)</script>', _inh_html, re.S).group(1))
+check(_inh_ld.get("license", "").endswith("/version/3/"),
+      "the structured data carries it too, as its canonical URL")
+check(_inh_ld.get("isAccessibleForFree") is True,
+      "and a known open licence still says so")
+check('class="chip nolic"' not in _inh_html,
+      "the record no longer claims no licence exists anywhere")
+
+_none = dict(record(), license=None, license_inherited=None)
+check('class="chip nolic"' in pagerender.render_dataset(_none, SITE),
+      "a dataset with no licence anywhere still says so plainly")
+
 print()
 print("all rendering rules hold" if not failures
       else f"{len(failures)} failure(s): " + "; ".join(failures))

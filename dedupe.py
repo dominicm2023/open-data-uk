@@ -252,12 +252,25 @@ def main() -> None:
             dataset_key TEXT NOT NULL,
             PRIMARY KEY (tag, dataset_key)
         );
+
+        -- A licence stated on one copy of a dataset but missing from
+        -- another. Deliberately its own table rather than a backfill of
+        -- datasets.license_norm: "the publisher stated nothing here" is a
+        -- finding we publish, and overwriting it would quietly delete the
+        -- evidence for one of the numbers on our own About page.
+        DROP TABLE IF EXISTS license_inherited;
+        CREATE TABLE license_inherited (
+            key          TEXT PRIMARY KEY,  -- the copy that states nothing
+            license_norm TEXT NOT NULL,
+            from_key     TEXT NOT NULL      -- the copy that states it
+        );
         """
     )
 
     rows = conn.execute(
         "SELECT key, source_id, ckan_id, name, title, publisher, "
-        "       description, resource_count, modified, tags FROM datasets"
+        "       description, resource_count, modified, tags, license_norm "
+        "FROM datasets"
     ).fetchall()
 
     # --- tags -------------------------------------------------------------
@@ -357,6 +370,32 @@ def main() -> None:
                      for r in recs if r["key"] != canonical["key"]]
 
     conn.executemany("INSERT INTO duplicates VALUES (?, ?)", dup_rows)
+
+    # --- licences recoverable from a merged twin -------------------------
+    # If we were confident enough to call two records the same dataset, then
+    # a licence one of them states is a fact about that dataset, and the
+    # copy that omits it is the aggregator having dropped it rather than the
+    # publisher having said nothing. Only where the whole group agrees:
+    # where two copies name different licences we know less than we thought,
+    # and guessing at a legal regime is the one mistake this field must
+    # never make.
+    license_of = {r["key"]: r["license_norm"] for r in rows}
+    inherited: list[tuple[str, str, str]] = []
+    disagreed = 0
+    for members in components.values():
+        if len(members) < 2:
+            continue
+        stated = {m: license_of.get(m) for m in members if license_of.get(m)}
+        silent = [m for m in members if not license_of.get(m)]
+        if not stated or not silent:
+            continue
+        if len(set(stated.values())) > 1:
+            disagreed += len(silent)
+            continue
+        value = next(iter(stated.values()))
+        donor = sorted(stated)[0]
+        inherited += [(m, value, donor) for m in silent]
+    conn.executemany("INSERT INTO license_inherited VALUES (?, ?, ?)", inherited)
     conn.commit()
 
     total = len(rows)
@@ -364,6 +403,8 @@ def main() -> None:
     print(f"{len(retired):,} retired records flagged")
     print(f"{groups:,} duplicate groups; {len(dup_rows):,} non-canonical copies marked")
     print(f"{uuid_links:,} cross-source links made on a shared UUID")
+    print(f"{len(inherited):,} licences recovered from a merged twin "
+          f"({disagreed:,} left alone, the copies disagree)")
     print(f"{len(tag_rows):,} tag/dataset pairs indexed")
     conn.close()
 

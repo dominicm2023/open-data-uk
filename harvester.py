@@ -302,14 +302,33 @@ def _dcat_publisher(ds: dict, src: dict) -> str:
     name would have filed all 2,507 datasets under one invented publisher and
     told the council tracker nothing.
     """
+    # Exact strings only, never patterns. A portal's own account handles
+    # ("GIS_SheffieldCC", "reillyl@southayrshire") are the organisation
+    # publishing under a staff or team login, but deciding that by rule
+    # would eventually rename a body that genuinely differs from its host
+    # portal — Stirling's feed carries four National Records of Scotland
+    # datasets, and they are not Stirling's. So each rename is listed and
+    # eyeballed, the same discipline the supplier matching uses.
+    aliases = {k.strip().lower(): v
+               for k, v in (src.get("publisher_aliases") or {}).items()}
+
     def usable(name: str | None) -> str | None:
         name = (name or "").strip()
         looks_like_host = ("." in name and " " not in name and name.islower())
         return None if (not name or unrendered(name) or looks_like_host) else name
 
-    return (usable((ds.get("publisher") or {}).get("name"))
+    # A configured publisher, for a portal that belongs to one organisation
+    # and whose feed doesn't say so. Camden's Socrata feed puts its own
+    # hostname in publisher.name and the *account holder* in contactPoint,
+    # so 646 datasets were filed under five members of staff — "Neil Storer"
+    # published 319 of them, "Ben91" another 22. It sits above contactPoint
+    # and below the feed's own publisher.name: a feed that names a real
+    # organisation is still believed over our configuration.
+    name = (usable((ds.get("publisher") or {}).get("name"))
+            or usable(src.get("publisher"))
             or usable((ds.get("contactPoint") or {}).get("fn"))
             or src["name"])
+    return aliases.get(name.strip().lower(), name)
 
 
 def _dcat_landing(ds: dict) -> str | None:

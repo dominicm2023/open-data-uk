@@ -49,6 +49,9 @@ sources:
     dataset_url: "unused-for-dcat"  # DCAT entries carry their own landingPage
 
   - id: ons_geography
+    # Account handles for this council's own logins.
+    publisher_aliases:
+      "Office For National Statistics": Office for National Statistics
     name: ONS Open Geography Portal
     type: dcat
     api: https://open-geography-portalx-ons.hub.arcgis.com/api/feed/dcat-us/1.1.json
@@ -91,6 +94,10 @@ sources:
     dataset_url: "unused-for-dcat"
 
   - id: glasgow
+    # Account handles for this council's own logins.
+    publisher_aliases:
+      "GlasgowGIS": Glasgow City Council
+      "Glasgow City Cuncil": Glasgow City Council
     name: Glasgow Open Data
     type: dcat
     api: https://data.glasgow.gov.uk/api/feed/dcat-us/1.1.json
@@ -135,6 +142,11 @@ sources:
     dataset_url: "unused-for-dcat"
 
   - id: sheffield
+    # Account handles for this council's own logins.
+    publisher_aliases:
+      "GIS_SheffieldCC": Sheffield City Council
+      "FOI_SheffieldCC": Sheffield City Council
+      "EIR_SheffieldCC": Sheffield City Council
     name: Sheffield City Council Open Data
     type: dcat
     api: https://sheffield-city-council-open-data-sheffieldcc.hub.arcgis.com/api/feed/dcat-us/1.1.json
@@ -163,6 +175,10 @@ sources:
     dataset_url: https://plymouth.thedata.place/dataset/{name}
 
   - id: south_ayrshire
+    # Account handles for this council's own logins.
+    publisher_aliases:
+      "reillyl@southayrshire": South Ayrshire Council
+      "Open.Data_southayrshire": South Ayrshire Council
     name: South Ayrshire Council
     type: dcat
     api: https://maps-southayrshire.opendata.arcgis.com/api/feed/dcat-us/1.1.json
@@ -191,6 +207,10 @@ sources:
     dataset_url: "unused-for-dcat"
 
   - id: perth_kinross
+    # Account handles for this council's own logins.
+    publisher_aliases:
+      "gispkc": Perth & Kinross Council
+      "Perth and Kinross Council": Perth & Kinross Council
     name: Perth and Kinross Council
     type: dcat
     api: https://open-data-perth-kinross.hub.arcgis.com/api/feed/dcat-us/1.1.json
@@ -212,6 +232,9 @@ sources:
     dataset_url: "unused-for-dcat"
 
   - id: aberdeen
+    # Account handles for this council's own logins.
+    publisher_aliases:
+      "Aberdeen City Council ArcGIS Online": Aberdeen City Council
     name: Aberdeen City Council
     type: dcat
     api: https://spatialdata-accabdn.opendata.arcgis.com/api/feed/dcat-us/1.1.json
@@ -297,6 +320,9 @@ sources:
     dataset_url: https://data.yorkopendata.org/dataset/{name}
 
   - id: nottingham
+    # Account handles for this council's own logins.
+    publisher_aliases:
+      "nccgisteam": Nottingham City Council
     name: Nottingham City Council Open Data
     type: dcat
     api: https://geoportal-nottmcitycouncil.opendata.arcgis.com/api/feed/dcat-us/1.1.json
@@ -306,6 +332,10 @@ sources:
   # Socrata portals expose DCAT-US at /data.json, so no Socrata-specific
   # harvester is needed — the existing DCAT one reads it directly.
   - id: camden
+    # Socrata puts the portal hostname in publisher.name and the
+    # account holder in contactPoint, so 646 datasets were filed
+    # under five members of staff.
+    publisher: London Borough of Camden
     name: London Borough of Camden Open Data
     type: dcat
     api: https://opendata.camden.gov.uk/data.json
@@ -322,6 +352,9 @@ sources:
   # Found by scripts/discover_sources.py --from-councils, which probes the ONS
   # council register rather than only the publishers we already hold.
   - id: stirling
+    # Account handles for this council's own logins.
+    publisher_aliases:
+      "Stirling Council - insights by location": Stirling Council
     name: Stirling Council Open Data
     type: dcat
     api: https://data.stirling.gov.uk/api/feed/dcat-us/1.1.json

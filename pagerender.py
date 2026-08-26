@@ -282,7 +282,10 @@ def json_ld(rec: dict, page_url: str) -> str:
     if rec.get("publisher"):
         data["creator"] = {"@type": "Organization",
                            "name": plain_text(rec["publisher"])}
-    if lic := rec.get("license"):
+    # The licence, whether this copy stated it or a confirmed copy of the
+    # same dataset did. Both are statements by the publisher about this
+    # dataset; only one of them reached this particular record.
+    if lic := (rec.get("license") or rec.get("license_inherited")):
         data["license"] = LICENSE_URLS.get(lic, lic)
     for field, key in (("dateModified", "modified"), ("dateCreated", "created")):
         if _ISO_DATE.match(str(rec.get(key) or "")):
@@ -303,7 +306,7 @@ def json_ld(rec: dict, page_url: str) -> str:
     # holds these: they come from opening the CSV, not from the catalogue.
     if variables := _variables(rec):
         data["variableMeasured"] = variables
-    if (rec.get("license") or "") in OPEN_LICENSES:
+    if (rec.get("license") or rec.get("license_inherited") or "") in OPEN_LICENSES:
         data["isAccessibleForFree"] = True
 
     catalogues = [{"@type": "DataCatalog", "name": SITE_NAME}]
@@ -438,8 +441,20 @@ def _size(n: object) -> str:
 def body_html(rec: dict) -> str:
     """The page itself. Same markup the client-side renderer produced."""
     src = source_names().get(rec.get("source") or "", {})
-    lic = (f'<span class="chip lic">{esc(rec["license"])}</span>' if rec.get("license")
-           else '<span class="chip nolic">no licence stated</span>')
+    if rec.get("license"):
+        lic = f'<span class="chip lic">{esc(rec["license"])}</span>'
+    elif rec.get("license_inherited"):
+        # Say where it came from. The publisher stated this licence on their
+        # own copy of the dataset and the aggregator dropped it, which is a
+        # different thing from the publisher having stated it here — and a
+        # licence is a legal claim, so the distinction is the reader's to
+        # make, not ours to smooth over.
+        lic = (f'<span class="chip lic">{esc(rec["license_inherited"])}</span>'
+               f'<span class="note">· stated on '
+               f'<a href="{esc(dataset_path(rec["license_inherited_from"]))}">'
+               f'another copy of this dataset</a>, not on this record</span>')
+    else:
+        lic = '<span class="chip nolic">no licence stated</span>' 
 
     notices = []
     # Dozens of councils publish a dataset of the same name, and until now
