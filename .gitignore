@@ -49,3 +49,5 @@ strands.html
 rogues.html
 scrolly.html
 analysis/queries_prod.db
+data/digest_state.json
+cron_digest.log

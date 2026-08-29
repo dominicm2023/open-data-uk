@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — how the UK Open Data Index works — UK Open Data Index</title>
-<meta name="description" content="What we index, what the availability badges mean, and what we found about the state of UK open data: 38% of datasets state no licence, and only 37% of verified links give you machine-readable data.">
+<meta name="description" content="What we index, what the availability badges mean, and what we found about the state of UK open data: 40% of datasets state no licence, and 44% of verified links give you machine-readable data.">
 <link rel="canonical" href="https://open-data.org.uk/about">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="UK Open Data Index">
@@ -66,24 +66,35 @@
   <p>When we harvested the full catalogue, the metadata quality problem was
   worse than expected:</p>
   <div class="stat-row">
-    <div class="stat bad"><b>38%</b><span>state no licence — you can't legally know if you may reuse them</span></div>
-    <div class="stat bad"><b>46%</b><span>haven't been updated in over two years — though most were never meant to be</span></div>
+    <div class="stat bad"><b>40%</b><span>state no licence on their own record — you can't legally know if you may reuse them</span></div>
+    <div class="stat bad"><b>40%</b><span>haven't been updated in over two years — though most were never meant to be</span></div>
     <div class="stat bad"><b>23%</b><span>are duplicate copies of another catalogue's entry</span></div>
   </div>
-  <p>We've followed the links on 74% of the catalogue — the index grew by a
-  third recently and the checker works through a rolling slice each night, so
-  it is still catching up. Of those checked, <strong>37% give you
-  machine-readable data</strong> — 14% a direct file, 23% an API you can
-  query. Another <strong>27% just lead to a webpage</strong>, where the hunt
-  continues. For <strong>20% the publisher lists no files at all</strong>, so
-  there is nothing for us to follow; 2% are confirmed broken (every link
-  checked, every link failing), 3% sit on hosts that don't answer, and 10% we
-  couldn't check because the publisher blocked us.</p>
+  <p>We've followed the links on 83% of the catalogue — the checker works
+  through a rolling slice each night, so the rest is a matter of time. Of
+  those checked, <strong>44% give you machine-readable data</strong> — 11% a
+  direct file, 33% an API you can query. Another <strong>23% just lead to a
+  webpage</strong>, where the hunt continues. For <strong>16% the publisher
+  lists no files at all</strong>, so there is nothing for us to follow; 3%
+  are confirmed broken (every link checked, every link failing), 3% sit on
+  hosts that don't answer, and 11% we couldn't check because the publisher
+  blocked us.</p>
+  <p>That licence figure is the one worth pausing on, because a good part
+  of it is not the publisher's fault. Where the same dataset appears on two
+  portals we can now check both: <strong>9,546 records state no licence
+  while a confirmed copy of the very same dataset states one</strong> — the
+  aggregator dropped it in transit. Counting those, the share with no
+  licence discoverable anywhere falls from 40% to <strong>31%</strong>. We
+  show the recovered licence on the page and say which copy it came from,
+  because a licence is a legal claim and you should know whose statement
+  you are relying on. Where two copies name <em>different</em> licences —
+  513 of them — we say nothing at all.</p>
+
   <p>We normalise what can be normalised — hundreds of spellings of file
-  formats and over a thousand licence spellings collapse to a consistent
-  vocabulary — then collapse duplicates, flag retired records, and stay
-  honest when a search has no good answer, including when we simply hold no
-  data for the place you asked about.</p>
+  formats, and 1,189 distinct licence spellings collapsed to 254 — then
+  collapse duplicates, flag retired records, and stay honest when a search
+  has no good answer, including when we simply hold no data for the place
+  you asked about.</p>
   <p>We try hard not to make publishers look worse than they are. Of the
   "stale" datasets that declare an update schedule, <strong>about half say they
   were never going to be updated again</strong> — a finished one-off
@@ -100,12 +111,11 @@
   spot costs you one extra line of results, rather than a wrong merge
   costing you the dataset entirely.</p>
   <p>Those figures cover the <em>whole</em> harvested catalogue, including a
-  long tail of obscure records almost nobody reaches. Among the 82,000-odd
+  long tail of obscure records almost nobody reaches. Among the 83,000-odd
   datasets you can actually find through search — excluding collapsed
-  duplicates and retired records — licensing is better (32% state none)
-  though the link quality is much the same. We quote the whole-catalogue
-  numbers because they describe the real state of UK open data, not the
-  flattering subset.</p>
+  duplicates and retired records — the picture is much the same. We quote the
+  whole-catalogue numbers because they describe the real state of UK open
+  data, not the flattering subset.</p>
   <p class="note">All figures are measured from the index and shift as we add
   sources.</p>
 
