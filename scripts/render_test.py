@@ -415,6 +415,35 @@ _bare = pagerender.search_snippet(dict(record(), description=None,
 check(len(_bare) > 60 and "Air Quality" in _bare,
       "a description-less record still gets a full snippet, not six words")
 
+# --- pagination is how deep pages earn a crawl -------------------------
+# With previous/next only, the last dataset a big publisher holds sat 54
+# clicks from its own first page: 53,915 of 83,370 dataset pages, 65% of
+# the site, reachable in practice only from the sitemap.
+_big = pagerender.render_publisher(AMP, rows(100), page=1, pages=54,
+                                   total=5360, site_url=SITE)
+_nav = re.search(r'<nav class="pager".*?</nav>', _big, re.S)
+check(_nav is not None, "a multi-page listing carries a numbered pager")
+check(len(re.findall(r'href="', _nav.group(0))) >= 53,
+      "every page of a 54-page listing is one click from the first")
+check('rel="next"' in _nav.group(0) and 'rel="prev"' not in _nav.group(0),
+      "page 1 declares next but has no previous")
+
+_mid = re.search(r'<nav class="pager".*?</nav>',
+                 pagerender.render_topic("england", rows(100), page=150,
+                                         pages=300, total=30000, publishers=40,
+                                         site_url=SITE), re.S).group(0)
+_seen = {int(n) for n in re.findall(r'page=(\d+)"', _mid)}
+check(300 in _seen and 299 in _seen,
+      "past the link budget it elides but still reaches the last page")
+check(149 in _seen and 151 in _seen, "and keeps a window around the current page")
+check('aria-current="page"' in _mid, "the current page is marked, not linked")
+check("/topic?tag=england\"" in _mid,
+      "page 1 is linked at its canonical URL, without a page parameter")
+
+check('class="pager"' not in pagerender.render_publisher(
+          "Tiny", rows(5), page=1, pages=1, total=5, site_url=SITE),
+      "a single-page listing shows no pager at all")
+
 print()
 print("all rendering rules hold" if not failures
       else f"{len(failures)} failure(s): " + "; ".join(failures))

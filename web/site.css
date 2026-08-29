@@ -369,7 +369,18 @@ ul.related li { margin-bottom: .25rem; }
 .letters a { padding: .1rem .45rem; border-radius: var(--radius-sm); }
 .letters a:hover { background: var(--accent-soft); text-decoration: none; }
 
-.pager { display: flex; gap: 1.1rem; margin-top: 1.4rem; flex-wrap: wrap; }
+/* Numbered pagination. Every number is an internal link, which is how a
+   deep page earns the right to be crawled — so the list is dense on
+   purpose, and wraps rather than scrolling. */
+.pager {
+  display: flex; flex-wrap: wrap; gap: .3rem .5rem;
+  margin-top: 1.4rem; align-items: baseline; font-size: .9rem;
+}
+.pager a, .pager span { padding: .15rem .35rem; border-radius: var(--radius-sm); }
+.pager a { text-decoration: none; }
+.pager a:hover { background: var(--accent-soft); text-decoration: none; }
+.pager [aria-current] { background: var(--accent); color: var(--on-accent); }
+.pager [aria-hidden] { color: var(--muted); padding: 0; }
 h2[id] { scroll-margin-top: 1rem; }
 
 .cols {                        /* CSV column names under a resource */
