@@ -253,6 +253,71 @@ def distribution_format(res: dict) -> str | None:
     return norm_format(ext) if ext in _URL_EXT_FORMATS else None
 
 
+# What the availability verdict is worth saying out loud in a search result.
+# "Blocked" and "unreachable" are absent deliberately: we don't know, and a
+# snippet is the wrong place to explain that.
+_SNIPPET_STATE = {
+    "data": "links checked and working",
+    "api": "live API endpoint, checked",
+    "webpage": "link works, leads to a webpage",
+    "dead": "links currently broken",
+}
+
+
+def search_snippet(rec: dict, limit: int = 158) -> str:
+    """The meta description, led by what only this index knows.
+
+    Google shows our result next to the publisher's own, and until now both
+    carried the same title and the same words — the publisher's description,
+    verbatim. There was no reason on the page to prefer us, and the click
+    data agreed: 443 impressions at positions 5-10 returned five clicks,
+    about a quarter of the going rate.
+
+    So lead with the facts we measured and nobody else displays: whether the
+    links actually work, what formats are really there, the licence, and how
+    many other UK bodies publish the same dataset. Then the publisher's own
+    words, in the space that remains. Every clause is measured; none of it
+    is padding.
+    """
+    facts: list[str] = []
+
+    formats = [f for f in (rec.get("formats") or []) if f][:3]
+    state = _SNIPPET_STATE.get(rec.get("availability") or "")
+    n_files = len([r for r in (rec.get("resources") or [])
+                   if str(r.get("url") or "").startswith("http")])
+    if formats and state:
+        facts.append(f"{', '.join(formats)} — {state}")
+    elif state:
+        # Not .capitalize(), which lowercases the rest and turns a live API
+        # endpoint into a live "api" one.
+        facts.append(state[:1].upper() + state[1:])
+    elif formats:
+        facts.append(", ".join(formats))
+    elif n_files:
+        facts.append(f"{n_files} file{'s' if n_files != 1 else ''} listed")
+
+    if lic := (rec.get("license") or rec.get("license_inherited")):
+        facts.append(str(lic))
+
+    # The line no single portal can write, and the one worth clicking for.
+    also = rec.get("also_published") or {}
+    if (n := also.get("count", 0)) > 1:
+        facts.append(f"also published by {n - 1:,} other UK bodies")
+
+    lead = ". ".join(f[:1].upper() + f[1:] for f in facts)
+    if lead:
+        lead += "."
+    # With no description of the publisher's to borrow, the generated
+    # summary carries the rest — a snippet of six words is worse than none.
+    body = plain_text(rec.get("description")) or meta_description(rec)
+    if not lead:
+        return summarise(body, limit)
+    room = limit - len(lead) - 1
+    # Below this there is no room for the publisher's own words, and a
+    # snippet of four words is worse than none.
+    return f"{lead} {summarise(body, room)}" if room >= 40 else summarise(lead, limit)
+
+
 def json_ld(rec: dict, page_url: str) -> str:
     """schema.org/Dataset markup — how machines read this page.
 
@@ -391,7 +456,7 @@ def head_tags(rec: dict, site_url: str) -> str:
     """Title, description, canonical, social preview and structured data."""
     title = plain_text(rec.get("title")) or "Dataset"
     page_url = site_url + dataset_path(rec["key"])
-    desc = meta_description(rec)
+    desc = search_snippet(rec)
     publisher = plain_text(rec.get("publisher"))
 
     # A duplicate is a real page — it just isn't the copy we want ranked, so

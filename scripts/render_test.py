@@ -386,6 +386,35 @@ _none = dict(record(), license=None, license_inherited=None)
 check('class="chip nolic"' in pagerender.render_dataset(_none, SITE),
       "a dataset with no licence anywhere still says so plainly")
 
+# --- the search snippet earns the click -------------------------------
+# Our result appears beside the publisher's own. Carrying the same words
+# gave no reason to prefer us: 443 impressions at positions 5-10 returned
+# five clicks. The snippet now leads with what only this index measured.
+_snip = pagerender.search_snippet(dict(
+    record(), availability="data", formats=["CSV"], license="OGL-UK-3.0",
+    also_published={"count": 227}))
+check(_snip.startswith("CSV"), "the snippet leads with the formats really there")
+check("checked and working" in _snip,
+      "and says the links were checked, which the publisher's page cannot")
+check("226 other UK bodies" in _snip,
+      "and the count no single portal could ever state")
+check("Hourly readings" in _snip,
+      "the publisher's own words still follow, in the space left")
+check(len(_snip) <= 160, f"it fits a search result ({len(_snip)} chars)")
+
+check("currently broken" in pagerender.search_snippet(
+          dict(record(), availability="dead", formats=["CSV"])),
+      "a dead dataset says so in the snippet rather than hiding it")
+check(pagerender.search_snippet(dict(record(), availability=None, formats=[],
+                                     resources=[], license=None,
+                                     license_inherited=None, also_published=None))
+      .startswith("Hourly readings"),
+      "with nothing measured to add, the publisher's words lead alone")
+_bare = pagerender.search_snippet(dict(record(), description=None,
+                                       availability="webpage", formats=["HTML"]))
+check(len(_bare) > 60 and "Air Quality" in _bare,
+      "a description-less record still gets a full snippet, not six words")
+
 print()
 print("all rendering rules hold" if not failures
       else f"{len(failures)} failure(s): " + "; ".join(failures))
