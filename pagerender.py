@@ -935,8 +935,11 @@ def render_who(title: str, rows: list[dict], site_url: str) -> str:
     crumbs, crumb_ld = breadcrumbs(
         [("Home", "/"), ("Who publishes what", "/who-publishes"), (title, None)],
         site_url)
+    # "councils" when councils dominate, which is the word people type.
+    councils = sum(1 for r in rows if "council" in (r.get("publisher") or "").lower())
+    noun = "councils" if councils >= len(rows) / 2 else "organisations"
     body = (crumbs
-            + f"<h1>Who publishes “{esc(title)}” data?</h1>"
+            + f"<h1>Which UK {noun} publish “{esc(title)}” data?</h1>"
             f'<p class="note">{len(rows):,} UK organisations publish a dataset '
             f'of this name. {with_data:,} of them lead to a file or an API you '
             "can actually use; the rest lead to a webpage, are broken, or "
@@ -946,26 +949,43 @@ def render_who(title: str, rows: list[dict], site_url: str) -> str:
             '<p class="note"><a href="/who-publishes">Other datasets many '
             'organisations publish</a></p>')
     head = simple_head(
-        f"Who publishes {title} data? {len(rows):,} UK organisations",
-        f"{len(rows):,} UK councils and public bodies publish a dataset called "
-        f"\"{title}\". Every one listed, with whether the link leads to real data.",
+        f"Which UK {noun} publish {title} data? All {len(rows):,} listed",
+        f"{len(rows):,} UK {noun} publish a dataset called \"{title}\" — "
+        f"{with_data:,} of them lead to a file or API that we checked and "
+        "found working. Every one listed, no portal can show you this.",
         who_path(title), site_url, crumb_ld)
     return _page(head, body, "/who-publishes")
 
 
 def render_who_index(rows: list[tuple[str, int]], site_url: str) -> str:
     """Index of dataset types that many organisations publish."""
-    items = "".join(
-        f'<li><a href="{esc(who_path(title))}">{esc(title)}</a>'
-        f' <span class="note">{n:,} organisations</span></li>'
-        for title, n in rows)
-    body = ("<h1>Datasets that many organisations publish</h1>"
-            f'<p class="note">{len(rows):,} kinds of dataset that three or more '
+    # Banded rather than one flat list of a thousand links: the bands are
+    # the story (a dataset 100 councils publish separately is a different
+    # thing from one three of them do), and they give a crawler headings to
+    # read instead of an undifferentiated wall.
+    bands = [(100, None, "Published separately by 100+ organisations"),
+             (50, 99, "By 50 to 99"), (20, 49, "By 20 to 49"),
+             (10, 19, "By 10 to 19"), (3, 9, "By 3 to 9")]
+    blocks = []
+    for lo, hi, heading in bands:
+        sel = [(ti, n) for ti, n in rows if n >= lo and (hi is None or n <= hi)]
+        if not sel:
+            continue
+        items = "".join(
+            f'<li><a href="{esc(who_path(ti))}">{esc(ti)}</a>'
+            f' <span class="note">{n:,} organisations</span></li>'
+            for ti, n in sel)
+        blocks.append(f'<h2>{esc(heading)}</h2>'
+                      f'<p class="note">{len(sel):,} kinds of dataset</p>'
+                      f'<ul class="datasets">{items}</ul>')
+    body = ("<h1>Datasets that many UK organisations publish</h1>"
+            f'<p class="lede">{len(rows):,} kinds of dataset that three or more '
             "UK organisations each publish separately — conservation areas, "
-            "spending returns, allotment registers. Each page lists every "
-            "organisation publishing it, which is a question no individual "
-            "portal can answer.</p>"
-            f'<ul class="datasets">{items}</ul>')
+            "tree preservation orders, spending returns. Each page lists every "
+            "organisation publishing one, and whether their link actually "
+            "works. No individual portal can answer that, because each one "
+            "only knows its own records.</p>"
+            + "".join(blocks))
     head = simple_head(
         "Datasets many UK organisations publish",
         f"{len(rows):,} kinds of dataset — conservation areas, tree preservation "
