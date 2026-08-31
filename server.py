@@ -1073,8 +1073,62 @@ def robots() -> PlainTextResponse:
         "Disallow: /lab\n"
         "Disallow: /docs\n"
         "Disallow: /redoc\n"
-        "Disallow: /openapi.json\n"
+        # The interactive API browsers are thin pages duplicating the
+        # spec. The spec itself is deliberately NOT blocked: it is the
+        # one file telling a machine how to talk to us, and hiding it
+        # on a site whose argument is machine accessibility was working
+        # against ourselves.
+        "Allow: /openapi.json\n"
+        "Allow: /llms.txt\n"
         f"\nSitemap: {SITE_URL}/sitemap.xml\n")
+    return PlainTextResponse(body, headers={"Cache-Control": "public, max-age=3600"})
+
+
+@app.get("/llms.txt", include_in_schema=False)
+def llms_txt() -> PlainTextResponse:
+    """What this site is, for an agent deciding whether to use it.
+
+    robots.txt says what a crawler may fetch; this says what is worth
+    fetching and how. Deliberately short and factual — an agent reading it
+    should be able to decide in one screen whether we can answer its
+    question, and reach the API without guessing.
+    """
+    st = engine.stats()
+    body = f"""# UK Open Data Index
+
+> One search across the UK's scattered open government data. We hold the
+> metadata of {st['datasets']:,} datasets from {len(st['sources'])} national,
+> devolved, regional, NHS and council portals — normalised into one
+> vocabulary, deduplicated, and with every link followed so we can say
+> whether it actually leads to data. We never copy the data itself: every
+> result links to the publisher's own page.
+
+## What we can answer that a single portal cannot
+
+- Which datasets across every UK portal match a plain-English question.
+- Whether a dataset's links actually work, because we followed them.
+- What columns are inside a CSV, without downloading it.
+- Which UK bodies publish the same kind of dataset — 109 councils publish
+  conservation areas, 227 publish an organogram — and whose links work.
+
+## API
+
+Open, no key, no signup. Fair-use limit 30 requests/minute per IP.
+
+- OpenAPI spec: {SITE_URL}/openapi.json
+- Search: {SITE_URL}/api/search?q=flood+risk&k=10
+- One dataset: {SITE_URL}/api/dataset?key=<key>
+- Index stats: {SITE_URL}/api/stats
+- Portals covered: {SITE_URL}/api/sources
+
+## Please
+
+Cite the publisher, not us — we are the index, they made the data.
+Read us live rather than training on a snapshot: availability verdicts and
+links change nightly, and a memorised copy will be wrong about them.
+
+{ATTRIBUTION}
+"""
     return PlainTextResponse(body, headers={"Cache-Control": "public, max-age=3600"})
 
 
