@@ -42,6 +42,14 @@ CANDIDATES = 100    # depth taken from each retriever before fusion
 # ordering: "brighton recycling rates" returned Brighton *brownfield land*
 # because the publisher boost outweighed the topic entirely.
 # Multiplying preserves the relevance ordering and lets signals modulate it.
+# The query IS this dataset's title. "North Yorkshire Article 4" is the exact
+# name of a North Yorkshire Council dataset, and it appeared nowhere in the
+# top ten — beaten by three copies of a JNCC habitats report, because nothing
+# in the ranking knew the difference between a title and a neighbourhood in
+# embedding space. Large enough to clear the field, because when someone
+# types a dataset's name they are asking for that dataset.
+TITLE_EXACT_BOOST = 3.0
+TITLE_COVERS_BOOST = 1.8    # every query word present in the title
 RARE_TERM_BOOST = 1.30
 PUBLISHER_BOOST = 1.35
 GEO_BOOST = 1.45
@@ -167,6 +175,37 @@ class SearchEngine:
     def _terms(query: str) -> list[str]:
         # Sanitise into bare terms so user text can't break FTS5 syntax
         return re.findall(r"[A-Za-z0-9]+", query.lower())
+
+    def _title_match_keys(self, query: str, conn: sqlite3.Connection,
+                          keys: list[str]) -> tuple[set[str], set[str]]:
+        """Candidates whose title is the query, or contains all of it.
+
+        Two tiers, because they are different claims. An exact match after
+        normalising means the reader typed the dataset's name. A covering
+        match means every word they typed is in the title, which is nearly
+        as strong and catches "North Yorkshire Article 4" against a title
+        written "Article 4 — North Yorkshire".
+        """
+        if not keys:
+            return set(), set()
+        terms = {t for t in self._terms(query) if len(t) > 1}
+        if not terms:
+            return set(), set()
+        marks = ",".join("?" * len(keys))
+        rows = conn.execute(
+            f"SELECT key, title FROM datasets WHERE key IN ({marks})", keys)
+        want = " ".join(sorted(terms))
+        exact, covers = set(), set()
+        for key, title in rows:
+            words = {w for w in re.findall(r"[a-z0-9]+", (title or "").lower())
+                     if len(w) > 1}
+            if not words:
+                continue
+            if " ".join(sorted(words)) == want:
+                exact.add(key)
+            elif terms <= words:
+                covers.add(key)
+        return exact, covers
 
     def _rare_term_keys(self, query: str, conn: sqlite3.Connection) -> set[str]:
         """Keys of datasets containing the rarest (most informative) query term.
@@ -490,8 +529,14 @@ class SearchEngine:
             # lacking a bbox: only ~35% of datasets publish one at all.
             geo_set = set(geo_keys)
             availability = self._availability(conn, list(fused))
+            exact_keys, covers_keys = self._title_match_keys(
+                query, conn, list(fused))
             for key in list(fused):
                 mult = 1.0
+                if key in exact_keys:
+                    mult *= TITLE_EXACT_BOOST
+                elif key in covers_keys:
+                    mult *= TITLE_COVERS_BOOST
                 if key in rare_keys:
                     mult *= RARE_TERM_BOOST
                 if key in pub_keys:

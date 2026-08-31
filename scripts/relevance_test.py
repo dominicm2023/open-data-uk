@@ -47,6 +47,13 @@ CASES = [
      "original smoke test"),
     ("heritage at risk register", 3, r"heritage at risk", None,
      "Historic England known-item"),
+    # A real visitor's query, 31 Aug 2026. The dataset of exactly this name
+    # existed, with a verified file, and sat outside the top ten - beaten by
+    # three copies of a JNCC habitats report, because nothing in the ranking
+    # distinguished a title from a neighbour in embedding space. They
+    # reformulated twice and left.
+    ("North Yorkshire Article 4", 1, r"north yorkshire article 4", None,
+     "typing a dataset's exact name must return that dataset first"),
 ]
 
 
