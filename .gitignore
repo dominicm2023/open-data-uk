@@ -51,3 +51,7 @@ scrolly.html
 analysis/queries_prod.db
 data/digest_state.json
 cron_digest.log
+analysis/organograms/raw/
+analysis/organograms/*.sqlite
+analysis/organograms/receipts.jsonl
+analysis/organograms/fetch.log
