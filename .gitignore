@@ -55,3 +55,4 @@ analysis/organograms/raw/
 analysis/organograms/*.sqlite
 analysis/organograms/receipts.jsonl
 analysis/organograms/fetch.log
+organograms.html
