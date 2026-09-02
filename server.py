@@ -810,6 +810,20 @@ def lab_page() -> HTMLResponse:
                  "X-Robots-Tag": "noindex, nofollow, noarchive"})
 
 
+@app.get("/lab/constellation", include_in_schema=False)
+def lab_constellation() -> HTMLResponse:
+    """The publisher co-publication graph. Under /lab, private by prefix."""
+    from pathlib import Path
+
+    path = Path(__file__).parent / "constellation.html"
+    if not path.exists():
+        return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    return HTMLResponse(path.read_text(encoding="utf-8"),
+                        headers={"Cache-Control": "no-store, private",
+                                 "X-Robots-Tag": "noindex, nofollow"})
+
+
 @app.get("/lab/organograms", include_in_schema=False)
 def lab_organograms() -> HTMLResponse:
     """The shape of the state. Under /lab, private by path prefix."""
