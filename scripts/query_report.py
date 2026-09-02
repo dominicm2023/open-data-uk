@@ -88,8 +88,8 @@ def main() -> int:
     # rate is over those, not over the health checks and test suites.
     human = [r for r in rows if r["k"] == 15]
     answered = {c["query"] for c in clicks}
-    print(f"
-{len(human):,} searches from the site's search box, "
+    print()
+    print(f"{len(human):,} searches from the site's search box, "
           f"{len(clicks):,} results opened; "
           f"{len({r['query'] for r in human} & answered)} of "
           f"{len({r['query'] for r in human})} distinct searches led somewhere")
