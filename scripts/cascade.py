@@ -39,6 +39,7 @@ DB = ROOT / "analysis" / "organograms" / "organograms.sqlite"
 OUT = ROOT / "cascade.html"
 RING = 108.0          # pixels between depth rings
 GAP = 0.012           # radians of breathing space between departments
+DROP = 132.0          # how far each ring falls, making a cone not a disc
 
 
 def load() -> tuple[list[dict], list[str]]:
@@ -50,11 +51,12 @@ def load() -> tuple[list[dict], list[str]]:
         "GROUP BY publisher").fetchall())
 
     nodes: list[dict] = [{"t": "The top of government", "g": "", "b": -1,
-                          "c": 0, "p": -1}]          # the synthetic centre
+                          "c": 0, "f": 0, "p": -1}]          # the synthetic centre
     bodies: list[str] = []
     for pub, ed in sorted(latest.items()):
         rows = conn.execute(
-            "SELECT post_ref, job_title, grade, reports_to, reports_salary_cost "
+            "SELECT post_ref, job_title, grade, reports_to, pay_floor, "
+            "       reports_salary_cost "
             "FROM senior WHERE publisher = ? AND edition = ?",
             (pub, ed)).fetchall()
         rows = [r for r in rows if r["post_ref"]]
@@ -75,6 +77,7 @@ def load() -> tuple[list[dict], list[str]]:
                 "g": (r["grade"] or "")[:26],
                 "b": body,
                 "c": r["reports_salary_cost"] or 0,
+                "f": r["pay_floor"] or 0,
                 "p": pid,
             })
     conn.close()
@@ -129,8 +132,11 @@ def radial(nodes: list[dict], bodies: list[str]) -> list[list[float]]:
     out = []
     for i, n in enumerate(nodes):
         r = depth[i] * RING
+        # z descends with depth, so the tree hangs as a cone rather than
+        # lying flat: the top of government is genuinely at the top.
         out.append([round(math.cos(angle[i]) * r, 1),
-                    round(math.sin(angle[i]) * r, 1), depth[i]])
+                    round(math.sin(angle[i]) * r, 1),
+                    round(-depth[i] * DROP, 1), depth[i]])
     return out
 
 
@@ -164,7 +170,11 @@ PAGE = """<!doctype html>
 <div class="ctl">
   <label>show <select id="pick">
     <option value="-1">every body</option>__OPTS__</select></label>
-  <span class="note">hover a post to trace it back to the centre</span>
+  <label>size by <select id="scale">
+    <option value="c">salary reporting to the post</option>
+    <option value="f">the post's own pay</option>
+    <option value="n">nothing</option></select></label>
+  <label><input type="checkbox" id="spin" checked> turn</label>
   <span class="note" id="stat"></span>
 </div>
 
@@ -186,56 +196,92 @@ let hover = -1, only = -1;
 const HUE = DATA.bodies.map((_, i) => (i * 137.508) % 360);
 const MAXC = Math.max(1, ...DATA.nodes.map(n => n.c));
 const CX = cv.width / 2, CY = cv.height / 2;
+let rx = 1.02, ry = 0.0, drag = null, scaleBy = 'c', spinning = true;
 
-// Fit the whole tree, whatever its deepest branch turns out to be.
+// The biggest figure under each scaling, so a size means the same thing
+// whichever measure is chosen.
+const MAX = {c: Math.max(1, ...DATA.nodes.map(n => n.c)),
+             f: Math.max(1, ...DATA.nodes.map(n => n.f)), n: 1};
 const REACH = Math.max(...DATA.pos.map(p => Math.hypot(p[0], p[1])));
-const S = (Math.min(cv.width, cv.height) / 2 - 30) / REACH;
-const at = i => [CX + DATA.pos[i][0] * S, CY + DATA.pos[i][1] * S];
+
+let P = [];
+function project() {
+  const cx = Math.cos(rx), sx = Math.sin(rx), cy = Math.cos(ry), sy = Math.sin(ry);
+  const s = (Math.min(cv.width, cv.height) / 2 - 40) / REACH;
+  P = DATA.pos.map(([x, y, z]) => {
+    let x1 = x * cy + z * sy, z1 = -x * sy + z * cy;
+    let y1 = y * cx - z1 * sx; z1 = y * sx + z1 * cx;
+    // Perspective, so the near side of the cone is larger and the far side
+    // recedes — without it a tilted disc just looks like a squashed one.
+    const k = 1 / (1.55 - (z1 / (REACH * 1.35)) * 0.85);
+    return [CX + x1 * s * k, CY + y1 * s * k, k];
+  });
+  return P;
+}
+const at = i => P[i];
+
+function nodeSize(n) {
+  if (scaleBy === 'n' || !n[scaleBy]) return 2.0;
+  return 2.0 + 9.0 * Math.sqrt(n[scaleBy] / MAX[scaleBy]);
+}
 
 function pathToRoot(i) {
-  const chain = [];
-  let guard = 0;
+  const chain = []; let guard = 0;
   while (i > 0 && guard++ < 40) { chain.push(i); i = DATA.nodes[i].p; }
   chain.push(0);
   return chain;
 }
 
 function draw() {
+  project();
   ctx.fillStyle = "#0b0e11";
   ctx.fillRect(0, 0, cv.width, cv.height);
   const lit = hover >= 0 ? new Set(pathToRoot(hover)) : null;
 
-  ctx.lineWidth = 0.7;
   for (let i = 1; i < DATA.nodes.length; i++) {
     const n = DATA.nodes[i];
     if (only >= 0 && n.b !== only) continue;
-    const [x, y] = at(i), [px, py] = at(n.p);
+    const a = at(i), b = at(n.p);
     const onPath = lit && lit.has(i);
     ctx.strokeStyle = onPath ? "#ffffff"
-      : `hsla(${HUE[n.b]},60%,60%,${lit ? 0.06 : 0.20})`;
-    ctx.lineWidth = onPath ? 1.8 : 0.7;
-    // Bend each link toward the centre: straight spokes read as a starburst,
-    // curves read as a tree, and the tree is the true shape.
+      : `hsla(${HUE[n.b]},60%,62%,${(lit ? 0.05 : 0.10 + a[2] * 0.16).toFixed(3)})`;
+    ctx.lineWidth = onPath ? 1.9 : 0.6;
     ctx.beginPath();
-    ctx.moveTo(px, py);
-    ctx.quadraticCurveTo((px + x) / 2 * 0.72 + CX * 0.28,
-                         (py + y) / 2 * 0.72 + CY * 0.28, x, y);
+    ctx.moveTo(b[0], b[1]);
+    ctx.quadraticCurveTo((b[0] + a[0]) / 2 * 0.78 + CX * 0.22,
+                         (b[1] + a[1]) / 2 * 0.78 + CY * 0.22, a[0], a[1]);
     ctx.stroke();
   }
 
-  for (let i = DATA.nodes.length - 1; i >= 0; i--) {
+  // Painter's algorithm: far side first, or the cone turns inside out.
+  const order = DATA.nodes.map((_, i) => i).sort((i, j) => P[i][2] - P[j][2]);
+  for (const i of order) {
     const n = DATA.nodes[i];
     if (i && only >= 0 && n.b !== only) continue;
-    const [x, y] = at(i);
+    const [x, y, k] = at(i);
     const onPath = lit && lit.has(i);
-    const r = i === 0 ? 7 : 1.4 + 5.0 * Math.sqrt(n.c / MAXC);
-    ctx.globalAlpha = lit ? (onPath ? 1 : 0.16) : 0.85;
-    ctx.fillStyle = i === 0 ? "#ffffff"
-      : `hsl(${HUE[n.b]},65%,${onPath ? 82 : 60}%)`;
-    ctx.beginPath(); ctx.arc(x, y, onPath ? r + 1.6 : r, 0, 6.284); ctx.fill();
+    const r = (i === 0 ? 9 : nodeSize(n)) * k;
+    ctx.globalAlpha = lit ? (onPath ? 1 : 0.14) : (0.35 + k * 0.6);
+    const known = scaleBy === 'n' || n[scaleBy] > 0;
+    if (i === 0) {
+      ctx.fillStyle = "#ffffff";
+      ctx.beginPath(); ctx.arc(x, y, r, 0, 6.284); ctx.fill();
+    } else if (known) {
+      ctx.fillStyle = `hsl(${HUE[n.b]},66%,${onPath ? 84 : 58}%)`;
+      ctx.beginPath(); ctx.arc(x, y, Math.max(r, 0.7), 0, 6.284); ctx.fill();
+    } else {
+      // No figure published. Drawn hollow rather than small, so an absence
+      // reads as an absence instead of as a modest salary.
+      ctx.strokeStyle = `hsla(${HUE[n.b]},45%,62%,.75)`;
+      ctx.lineWidth = 0.9;
+      ctx.beginPath(); ctx.arc(x, y, 2.1 * k, 0, 6.284); ctx.stroke();
+    }
   }
   ctx.globalAlpha = 1;
 }
+
+cv.addEventListener('pointerdown', e => { drag = [e.clientX, e.clientY]; });
+addEventListener('pointerup', () => { drag = null; });
 
 function pick(mx, my) {
   let best = -1, bestD = 13;
@@ -252,6 +298,11 @@ cv.addEventListener('pointermove', e => {
   const r = cv.getBoundingClientRect();
   const mx = (e.clientX - r.left) * cv.width / r.width;
   const my = (e.clientY - r.top) * cv.height / r.height;
+  if (drag) {
+    ry += (e.clientX - drag[0]) * 0.007;
+    rx = Math.max(0.15, Math.min(1.5, rx + (e.clientY - drag[1]) * 0.005));
+    drag = [e.clientX, e.clientY]; draw(); return;
+  }
   const i = pick(mx, my);
   if (i !== hover) { hover = i; draw(); }
   if (i >= 0) {
@@ -259,7 +310,9 @@ cv.addEventListener('pointermove', e => {
     tip.innerHTML = '<b>' + n.t + '</b><br>' + (n.g ? n.g + ' · ' : '') +
       DATA.bodies[n.b] + '<br>' + (chain.length - 2) +
       ' post(s) between this and the top of its department' +
-      (n.c ? '<br>£' + n.c.toLocaleString() + ' of salary reports to it' : '');
+      (n.f ? '<br>pay from £' + n.f.toLocaleString() : '') +
+      (n.c ? '<br>£' + n.c.toLocaleString() + ' of salary reports to it' : '') +
+      (!n.f && !n.c ? '<br><i>publishes no pay figure</i>' : '');
     tip.style.opacity = 1;
     tip.style.left = Math.min(e.clientX - r.left + 14, r.width - 250) + 'px';
     tip.style.top = (e.clientY - r.top + 14) + 'px';
@@ -269,11 +322,24 @@ cv.addEventListener('pointerleave', () => { hover = -1; tip.style.opacity = 0; d
 document.getElementById('pick').addEventListener('change', e => {
   only = +e.target.value; hover = -1; stat(); draw();
 });
+document.getElementById('scale').addEventListener('change', e => {
+  scaleBy = e.target.value; stat(); draw();
+});
+document.getElementById('spin').addEventListener('change',
+  e => spinning = e.target.checked);
 function stat() {
-  const n = only < 0 ? DATA.nodes.length - 1
-    : DATA.nodes.filter(x => x.b === only).length;
-  document.getElementById('stat').textContent = n.toLocaleString() + ' posts';
+  const sel = only < 0 ? DATA.nodes.slice(1)
+    : DATA.nodes.filter(x => x.b === only);
+  const known = scaleBy === 'n' ? sel.length
+    : sel.filter(x => x[scaleBy] > 0).length;
+  document.getElementById('stat').textContent =
+    sel.length.toLocaleString() + ' posts' + (scaleBy === 'n' ? '' :
+    ' · ' + known.toLocaleString() + ' publish a figure, the hollow ones do not');
 }
+(function tick() {
+  if (spinning && !drag) { ry += 0.0018; draw(); }
+  requestAnimationFrame(tick);
+})();
 stat(); draw();
 </script>
 </body></html>
@@ -283,13 +349,14 @@ stat(); draw();
 def main() -> int:
     nodes, bodies = load()
     pos = radial(nodes, bodies)
-    depth_max = max(p[2] for p in pos)
+    depth_max = max(p[3] for p in pos)   # p[2] is z now, p[3] the ring
     counts = collections.Counter(n["b"] for n in nodes if n["b"] >= 0)
-    deepest = max(range(len(nodes)), key=lambda i: pos[i][2])
+    deepest = max(range(len(nodes)), key=lambda i: pos[i][3])
 
-    data = {"nodes": [{k: n[k] for k in ("t", "g", "b", "c", "p")} for n in nodes],
+    data = {"nodes": [{k: n[k] for k in ("t", "g", "b", "c", "f", "p")}
+                      for n in nodes],
             "bodies": bodies,
-            "pos": [[p[0], p[1]] for p in pos]}
+            "pos": [[p[0], p[1], p[2]] for p in pos]}
     opts = "".join(f'<option value="{i}">{bodies[i]} ({counts[i]:,})</option>'
                    for i, _ in sorted(counts.items(), key=lambda kv: -kv[1]))
     lede = (
