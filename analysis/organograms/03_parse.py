@@ -172,7 +172,14 @@ def main() -> int:
             for r in rows:
                 sen_rows.append((
                     pub, ed, url, r.get("post_ref"), r.get("name"),
-                    r.get("grade"), r.get("job_title"), r.get("unit"),
+                    # "Job Title" appears in both halves' schemas, and the
+                    # header map resolves it to the junior spelling, so a
+                    # senior row's title arrives under the other name. Both
+                    # are read here rather than silently losing 50,040 job
+                    # titles and leaving the grade to stand in for them.
+                    r.get("grade"),
+                    r.get("job_title") or r.get("generic_job_title"),
+                    r.get("unit"),
                     r.get("organisation"), r.get("parent_department"),
                     r.get("reports_to"), r.get("prof_group"),
                     money(r.get("pay_floor")), money(r.get("pay_ceiling")),

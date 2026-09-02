@@ -810,6 +810,20 @@ def lab_page() -> HTMLResponse:
                  "X-Robots-Tag": "noindex, nofollow, noarchive"})
 
 
+@app.get("/lab/cascade", include_in_schema=False)
+def lab_cascade() -> HTMLResponse:
+    """The state as one tree from the top. Under /lab, private."""
+    from pathlib import Path
+
+    path = Path(__file__).parent / "cascade.html"
+    if not path.exists():
+        return HTMLResponse(pagerender.render_missing(None), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    return HTMLResponse(path.read_text(encoding="utf-8"),
+                        headers={"Cache-Control": "no-store, private",
+                                 "X-Robots-Tag": "noindex, nofollow"})
+
+
 @app.get("/lab/orgweb", include_in_schema=False)
 def lab_orgweb() -> HTMLResponse:
     """The senior civil service as one network. Under /lab, private."""
