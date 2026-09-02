@@ -10,6 +10,7 @@ embed_index.py checkpoints land. Public API: /api/search, /api/stats,
 from __future__ import annotations
 
 import functools
+import json
 import os
 import re
 import threading
@@ -25,7 +26,7 @@ from fastapi.responses import (FileResponse, HTMLResponse, JSONResponse,
                                PlainTextResponse, StreamingResponse)
 
 import pagerender
-from querylog import log_query
+from querylog import CLICK_KINDS, log_click, log_query
 from search import SearchEngine
 
 ROOT = Path(__file__).parent
@@ -41,6 +42,8 @@ ATTRIBUTION = ("Contains public sector information licensed under the Open "
 # not a security boundary)
 RATE_LIMIT = 30          # requests
 RATE_WINDOW = 60         # seconds
+# Click beacons get their own, looser budget: see _click_allowed.
+CLICK_LIMIT = 90         # beacons per IP per window
 _hits: dict[str, deque] = defaultdict(deque)
 _last_prune = 0.0
 
@@ -222,6 +225,25 @@ def _rate_check(request: Request, response: Response) -> None:
     dq.append(now)
 
 
+def _click_allowed(ip: str) -> bool:
+    """Fair-use cap for click beacons, deliberately off the search budget.
+
+    Measuring must not cost a visitor their searches: opening five results
+    would otherwise spend a sixth of the minute's allowance on our own
+    telemetry, and the person who used the site hardest would be the first
+    one throttled. Separate bucket, same window, and no exception raised —
+    a beacon has nobody to report a 429 to.
+    """
+    now = time.time()
+    dq = _hits["click:" + ip]
+    while dq and dq[0] < now - RATE_WINDOW:
+        dq.popleft()
+    if len(dq) >= CLICK_LIMIT:
+        return False
+    dq.append(now)
+    return True
+
+
 @functools.lru_cache(maxsize=4)
 def _hand_written_page(name: str) -> str:
     """A static page, with the stylesheet URL stamped with its content hash."""
@@ -360,6 +382,38 @@ def api_search(request: Request, response: Response,
     log_query(q, k, payload)   # anonymous; see querylog.py
     payload["attribution"] = ATTRIBUTION
     return payload
+
+
+@app.post("/api/click", include_in_schema=False)
+async def api_click(request: Request) -> Response:
+    """Record that a search result was opened. Anonymous, like the query log.
+
+    A result's title link leaves for the publisher's own site, so the one
+    moment worth knowing about — a search that actually answered somebody —
+    is the one moment the server never sees. This beacon closes that gap and
+    stores no more than /api/search already does: the search text and which
+    of its results was worth opening, with nothing tying two rows together.
+
+    Silent by construction. The caller is a fire-and-forget browser beacon
+    with no reader for an error, so a malformed, oversized or rate-limited
+    body is dropped and answered 204 exactly like a good one — and nothing
+    in here may raise into the request path.
+    """
+    if _click_allowed(_client_ip(request)):
+        try:
+            raw = await request.body()
+            body = json.loads(raw) if 0 < len(raw) <= 2048 else {}
+            query = str(body.get("q") or "")[:500]
+            key = str(body.get("key") or "")[:300]
+            kind = str(body.get("kind") or "")
+            rank = body.get("rank")
+            if not isinstance(rank, int) or not 1 <= rank <= 200:
+                rank = None
+            if query and key and kind in CLICK_KINDS:
+                log_click(query, key, rank, kind)
+        except Exception:  # noqa: BLE001 — a beacon must never 500
+            pass
+    return Response(status_code=204)
 
 
 @app.get("/health",

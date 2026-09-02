@@ -112,8 +112,11 @@ async function loadStats() {
   } catch { $("stats").textContent = ""; }
 }
 
+let shownQuery = "";
+
 function render(payload) {
   const results = payload.results || [];
+  shownQuery = payload.query || $("q").value.trim();
   if (!results.length) {
     $("out").innerHTML = '<p class="note">No results.</p>';
     $("sr").textContent = "No results.";
@@ -156,7 +159,7 @@ function render(payload) {
     unreachable: ["unknown", "? host not answering"],
     nofiles: ["unknown", "no files listed"],
   };
-  $("out").innerHTML = banner + results.map(r => {
+  $("out").innerHTML = banner + results.map((r, i) => {
     const lic = r.license
       ? `<span class="chip lic">${esc(r.license)}</span>`
       : '<span class="chip nolic">no licence</span>';
@@ -168,14 +171,14 @@ function render(payload) {
       ? '<span class="chip covers">covers this area</span>' : "";
     const cols = r.columns && r.columns.length
       ? `<p class="cols">columns: ${esc(r.columns.slice(0, 8).join(", "))}${r.columns.length > 8 ? "…" : ""}</p>` : "";
-    return `<div class="result">
-      <h2 class="result-title"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></h2>
+    return `<div class="result" data-key="${esc(r.key)}" data-rank="${i + 1}">
+      <h2 class="result-title"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener" data-role="outbound">${esc(r.title)}</a></h2>
       <div class="meta">
         <span class="chip src">${esc(SOURCE_NAMES[r.source] || r.source)}</span>
         ${av} ${geoChip} ${lic} ${fmts}
         <span>${esc(r.publisher || "unknown publisher")}</span>
         ${r.modified ? `<span>· updated ${esc(r.modified)}</span>` : ""}
-        <a class="details" href="/dataset?key=${encodeURIComponent(r.key)}">details →</a>
+        <a class="details" data-role="details" href="/dataset?key=${encodeURIComponent(r.key)}">details →</a>
       </div>
       <p class="desc">${esc(r.description)}</p>
       ${cols}
@@ -211,6 +214,29 @@ async function search(push = true) {
 }
 
 $("searchform").addEventListener("submit", e => { e.preventDefault(); search(); });
+
+// A result's title link leaves for the publisher's own site, so the moment a
+// search works is the one moment the server cannot see — we could count
+// searches but never whether any of them answered anybody. Tell it, in the
+// same terms the search log already uses: the query, the result, its rank.
+// Nothing about the person, and no cookie to link one click to the next.
+function recordClick(ev) {
+  if (ev.type === "auxclick" && ev.button !== 1) return;   // right-click is not a visit
+  if (!navigator.sendBeacon) return;
+  const a = ev.target.closest && ev.target.closest("a[data-role]");
+  const box = a && a.closest(".result");
+  if (!box) return;
+  try {
+    navigator.sendBeacon("/api/click", JSON.stringify({
+      q: shownQuery,
+      key: box.dataset.key,
+      rank: Number(box.dataset.rank),
+      kind: a.dataset.role,
+    }));
+  } catch (e) { /* measuring a click must never cost the click */ }
+}
+$("out").addEventListener("click", recordClick);
+$("out").addEventListener("auxclick", recordClick);
 
 function fromUrl() {
   const q = new URLSearchParams(location.search).get("q") || "";

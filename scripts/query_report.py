@@ -74,6 +74,30 @@ def main() -> int:
             Counter(r["top_key"] for r in rows
                     if r["confidence"] in ("weak", "none") and r["top_key"]
                     ).most_common(args.top))
+
+    # Whether a search worked is not in the queries table: the result title
+    # links off-site, so success used to leave no trace at all. Clicks are
+    # recorded from 2026-09-02 on; older windows will show none.
+    try:
+        clicks = conn.execute(
+            "SELECT query, key, rank, kind FROM clicks WHERE ts > datetime('now', ?)",
+            (since,)).fetchall()
+    except sqlite3.OperationalError:
+        clicks = []
+    # Only searches typed in the site's own box can produce a click, so the
+    # rate is over those, not over the health checks and test suites.
+    human = [r for r in rows if r["k"] == 15]
+    answered = {c["query"] for c in clicks}
+    print(f"
+{len(human):,} searches from the site's search box, "
+          f"{len(clicks):,} results opened; "
+          f"{len({r['query'] for r in human} & answered)} of "
+          f"{len({r['query'] for r in human})} distinct searches led somewhere")
+    section("Ranks people opened (1 means the top result was the answer)",
+            Counter(str(c["rank"]) for c in clicks).most_common(args.top))
+    section("Searched from the box, opened nothing — look at these first",
+            Counter(r["query"] for r in human
+                    if r["query"] not in answered).most_common(args.top))
     conn.close()
     return 0
 

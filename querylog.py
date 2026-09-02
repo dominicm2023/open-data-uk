@@ -15,6 +15,11 @@ PRIVACY, deliberately:
 
 The point is to answer questions like "which searches disappoint people?",
 not "what did this person search for".
+
+The clicks table is the other half of the same question. A result's title
+links straight out to the publisher, so a search that answered somebody and a
+search that wasted their time leave identical rows in `queries` — which is
+why we counted 68 searches and could not say whether one of them worked.
 """
 
 from __future__ import annotations
@@ -41,7 +46,19 @@ CREATE TABLE IF NOT EXISTS queries (
 );
 CREATE INDEX IF NOT EXISTS idx_queries_ts   ON queries (ts);
 CREATE INDEX IF NOT EXISTS idx_queries_conf ON queries (confidence);
+
+CREATE TABLE IF NOT EXISTS clicks (
+    ts    TEXT NOT NULL,
+    query TEXT NOT NULL,   -- the search this result came from
+    key   TEXT NOT NULL,   -- the dataset opened
+    rank  INTEGER,         -- where it sat in the results, 1-based
+    kind  TEXT             -- outbound (to the publisher) | details (our page)
+);
+CREATE INDEX IF NOT EXISTS idx_clicks_ts ON clicks (ts);
 """
+
+# What a click beacon is allowed to say it was.
+CLICK_KINDS = ("outbound", "details")
 
 _ready = False
 
@@ -75,6 +92,33 @@ def log_query(query: str, k: int, payload: dict) -> None:
                     geo.get("place"),
                     geo.get("bbox_matches"),
                     results[0]["key"] if results else None,
+                ),
+            )
+            conn.commit()
+        finally:
+            conn.close()
+    except Exception:  # noqa: BLE001 — logging is best-effort by design
+        pass
+
+
+def log_click(query: str, key: str, rank: int | None, kind: str) -> None:
+    """Record that a search result was opened. Never raises, as above.
+
+    Stores no more than log_query already does — the search text, and now
+    which of its results was worth opening. Still nothing that ties two rows
+    to one person.
+    """
+    try:
+        conn = _connect()
+        try:
+            conn.execute(
+                "INSERT INTO clicks VALUES (?, ?, ?, ?, ?)",
+                (
+                    time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                    (query or "")[:500],
+                    (key or "")[:300],
+                    rank,
+                    kind,
                 ),
             )
             conn.commit()

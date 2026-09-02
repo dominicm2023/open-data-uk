@@ -4,8 +4,26 @@
     {
       "name": "opendata-index",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "uvicorn", "server:app", "--port", "8321"],
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "server:app",
+        "--port",
+        "8321"
+      ],
       "port": 8321
+    },
+    {
+      "name": "opendata-click-test",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "server:app",
+        "--port",
+        "8322"
+      ],
+      "port": 8322
     }
   ]
 }
