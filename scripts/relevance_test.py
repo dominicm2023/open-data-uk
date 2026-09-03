@@ -33,6 +33,15 @@ CASES = [
      "council-specific retrieval"),
     ("flood risk in brighton", 3, r"flood", None,
      "geo bbox: national EA data covering Brighton"),
+    # FAILS on the live index as of 3 Sep 2026, and the cause is measured:
+    # the boost picks the decisive term by document frequency, and the index
+    # grew until 'waiting' (316) became RARER than 'allotment' (318). It now
+    # boosts the wrong half of the query. No dataset anywhere holds both
+    # words, so there is no right answer to rank first - but the distinctive
+    # half should still win over the generic one. Fixing it means finding a
+    # better notion of "decisive" than raw DF; a blanket demotion for records
+    # missing the rare term was tried and does nothing, because the term it
+    # selects is the wrong one to begin with.
     ("allotment waiting lists", 3, r"allotment", r"hospital|nhs",
      "rare-term boost must beat the common phrase 'waiting lists'"),
     ("winter gritting routes", 3, r"gritting", None,
@@ -56,6 +65,39 @@ CASES = [
      "typing a dataset's exact name must return that dataset first"),
 ]
 
+# What we *say* about a result list, which is a separate claim from what is
+# in it. A visitor searched "inequality" on 2 Sep 2026 and was told nothing
+# matched well, above ONS's Household Disposable Income and Inequality.
+CONFIDENCE_CASES = [
+    # (query, expected confidence, why it matters)
+    ("inequality", "strong",
+     "one abstract word embeds diffusely; the titles carry it plainly"),
+    ("Uprn", "strong", "an acronym the embedding cannot know, matched exactly"),
+    ("spend over 500", "strong", "the reader typed the datasets' own name"),
+    ("lyme", "weak",
+     "matches Newcastle-under-Lyme and Lyme Regis - a place fragment, not "
+     "the subject anyone means by it"),
+    ("data", "weak",
+     "in half the index: a title match on it is evidence of nothing"),
+    ("hello", "none", "not a subject; saying so is the whole point"),
+    ("east sussex SEND rates", "weak",
+     "the place matched and the topic did not - demotion must still bite"),
+]
+
+
+def run_confidence(engine) -> tuple[int, int]:
+    passed = failed = 0
+    for query, want, why in CONFIDENCE_CASES:
+        got = engine.search(query, 5)["confidence"]
+        ok = got == want
+        passed += ok
+        failed += not ok
+        print("%s  confidence(%r) == %s" % ("PASS" if ok else "FAIL", query, want))
+        if not ok:
+            print("       got %r; why it matters: %s" % (got, why))
+    return passed, failed
+
+
 
 def run() -> int:
     engine = SearchEngine()
@@ -77,6 +119,8 @@ def run() -> int:
             for i, r in enumerate(rows, 1):
                 mark = "  <-- unwanted" if avoid and re.search(avoid, blob[i - 1], re.I) else ""
                 print(f"         {i}. {r['title'][:58]}{mark}")
+    cp, cf = run_confidence(engine)
+    passed, failed = passed + cp, failed + cf
     print(f"\n{passed}/{passed + failed} passed")
     return 0 if not failed else 1
 

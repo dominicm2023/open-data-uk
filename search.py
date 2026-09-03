@@ -235,6 +235,26 @@ class SearchEngine:
         ).fetchall()
         return {r[0] for r in rows}
 
+    def _discriminating(self, query: str, conn: sqlite3.Connection,
+                        place: str | None) -> bool:
+        """Do the reader's words pick out a subject, or just any dataset?
+
+        A title match only counts as evidence when the words matched are
+        informative. "inequality" appears in 242 of 110,097 datasets and
+        says exactly what the reader wants; "data" appears in 49% of them
+        and says nothing. Same threshold the rare-term boost uses, so one
+        idea of an informative word governs both.
+        """
+        place_toks = set((place or "").split())
+        terms = [t for t in self._terms(query)
+                 if t not in place_toks and len(t) > 2]
+        if not terms:
+            return False
+        dfs = [conn.execute("SELECT COUNT(*) FROM fts WHERE fts MATCH ?",
+                            (t,)).fetchone()[0] for t in terms]
+        dfs = [d for d in dfs if d]
+        return bool(dfs) and min(dfs) <= RARE_TERM_MAX_DF
+
     def geo_ranks(self, query: str, conn: sqlite3.Connection,
                   point: tuple[float, float], place: str) -> list[str]:
         """Datasets whose published bounding box actually contains the place.
@@ -619,6 +639,35 @@ class SearchEngine:
                 confidence = "weak"
             else:
                 confidence = "none"
+            # ...and the same corroboration has to be able to rescue, not
+            # only to demote. A one-word query embeds diffusely — "inequality"
+            # scored 0.38 and was announced as "nothing matches this well"
+            # above ONS's Household Disposable Income and Inequality. When
+            # the top results carry the reader's own words in their titles we
+            # have found datasets on that subject, whatever the cosine says;
+            # that is the very claim "strong" makes. Gated on the words being
+            # informative, so "council data" cannot promote itself.
+            # ...but not when the word matched the publisher's own name. A
+            # search for "lyme" covers every title at Newcastle-under-Lyme,
+            # and that is a place the reader didn't ask for rather than a
+            # subject they did — the same distinction _publisher_match_keys
+            # already draws for ranking.
+            # Judged on the keys actually shown, not on the ranking
+            # candidates: collapsing editions substitutes a representative
+            # that was never title-scored, and "ONS UPRN Directory (October
+            # 2017)" arriving that way was enough to sink the whole test.
+            if confidence != "strong" and self._discriminating(query, conn, place):
+                head = results[:3]
+                ex_h, cov_h = self._title_match_keys(
+                    query, conn, [r["key"] for r in head])
+                titled = ex_h | cov_h
+                terms = {t for t in self._terms(query) if len(t) > 2}
+                if head and all(
+                        r["key"] in titled
+                        and not terms & set(re.findall(
+                            r"[a-z0-9]+", (r["publisher"] or "").lower()))
+                        for r in head):
+                    confidence = "strong"
             # A filtered-out page has no business claiming any match at all.
             if not results:
                 confidence = "none"
