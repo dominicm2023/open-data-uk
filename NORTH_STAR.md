@@ -24,7 +24,7 @@ until the gap is closed.
 |---|---|---|
 | **Coverage** — UK public bodies with attributable data | 353 of 361 councils; 8 leave no trace | Do we know where it all lives? |
 | **Certainty** — findable datasets with a verdict under 30 days old | 84% checked; 18,264 never | Can we say what is really there? |
-| **Findability** — searches ending at a publisher, ours and Google's | 1 click recorded; ~2k of 90k pages indexed | Do people reach it through us? |
+| **Findability** — searches ending at a publisher, ours and Google's | Google: 16 clicks/day, 1,395 impressions/day, avg position 17 (2 Sep); 8,746 indexed, 78,306 waiting | Do people reach it through us? |
 | **Guardrail** — verdicts that were wrong | 1,239 wrong for three weeks (launch-day 429s) | Are we still the people who know? |
 
 The guardrail is a reputation metric. Being wrong for three weeks is worse
@@ -85,9 +85,26 @@ A living list. Add freely; move to "Done" with the commit that did it.
 - **Google is the search box.** 70 searches in ours in three weeks; the
   Search Console shows the rest. The ~90k unindexed pages are the single
   largest gap. Internal linking depth, crawl budget, sitemap hygiene.
-- The 1,065 who-publishes pages are our best organic landing pages: one
-  page per thing many bodies publish. Extend the idea — per place, per
-  format, per licence.
+- **Search Console, 4 Sep (3 months):** dataset pages carry 73% of
+  impressions and 74% of clicks; publisher pages have the best CTR (1.2%);
+  topic pages rank badly (avg position 42); who-publishes pages have barely
+  surfaced (46 impressions in total) — so they are *not yet* our best
+  landing pages, whatever the theory says. 90% of clicks come from queries
+  Google hides as too rare: we win in the long tail. We lose on site-name
+  queries ("catchment data explorer": top 10, 55 impressions, 0 clicks) —
+  people want the publisher's own tool, and should.
+- Thin pages are spending crawl budget: 1,532 indexable datasets have no
+  files *and* under 50 characters of description. Google's "crawled -
+  currently not indexed" (2,013) is almost certainly these. Widen `is_thin`.
+- 78,306 pages "discovered - currently not indexed": the crawl-budget queue.
+  Levers are internal link depth (pagination fixed 22 Aug: 431 → 8,746
+  indexed), sitemap `lastmod` accuracy, and not wasting fetches on thin
+  pages.
+- Page-2 opportunities with real volume: "employment by occupation" (pos
+  15), "hospital episode statistics" (pos 20), "ons annual business survey"
+  (pos 21) — all ONS pages.
+- The pattern that wins: council-published *documents* with weak native
+  SEO — North Yorkshire pay scales and Article 4 took 5 of the 50 clicks.
 - Click-through is measured from 2 Sep. Watch it. A search that ends at a
   publisher is the only success we can see.
 - Spelling correction shipped 3 Sep; watch the log for the next class of
