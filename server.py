@@ -483,11 +483,71 @@ def health(response: Response) -> dict:
     return {"status": "ok" if ok else "degraded", **checks}
 
 
+
+# The catalogue-quality figures the About page quotes. They were hand-written
+# prose and needed correcting three times in a week as the index moved —
+# most recently when the re-check backlog cleared and every availability
+# figure shifted overnight. Measured here, on the same definitions the page
+# has always used, and cached: a dozen COUNTs over 110k rows take ~280 ms,
+# and the home page polls /api/stats every 30 seconds.
+_quality_cache: tuple[float, dict] = (0.0, {})
+_quality_lock = threading.Lock()
+QUALITY_TTL = 600
+
+
+def _quality_counts() -> dict:
+    global _quality_cache
+    stamp, cached = _quality_cache
+    if time.time() - stamp < QUALITY_TTL:
+        return cached
+    with _quality_lock:
+        stamp, cached = _quality_cache
+        if time.time() - stamp < QUALITY_TTL:
+            return cached
+        import sqlite3
+        from paths import connect as db_connect
+        conn = db_connect()
+        try:
+            def one(sql: str) -> int:
+                try:
+                    return int(conn.execute(sql).fetchone()[0])
+                except sqlite3.OperationalError:   # table not built yet
+                    return 0
+            out = {
+                "total": one("SELECT COUNT(*) FROM datasets"),
+                # On the publisher's own record, before any recovery.
+                "no_licence": one(
+                    "SELECT COUNT(*) FROM datasets WHERE license_norm IS NULL"),
+                # States nothing, while a confirmed copy of the same dataset
+                # states a licence — see dedupe.py.
+                "licence_inherited": one("SELECT COUNT(*) FROM license_inherited"),
+                "duplicates": one("SELECT COUNT(*) FROM duplicates"),
+                "retired": one("SELECT COUNT(*) FROM retired"),
+                # Same rule as report.py: a *known* date over two years old.
+                # A dataset with no date is not called stale.
+                "stale": one("SELECT COUNT(*) FROM datasets WHERE modified IS NOT "
+                             "NULL AND modified < date('now', '-2 years')"),
+                "availability": dict(conn.execute(
+                    "SELECT COALESCE(availability, 'unchecked'), COUNT(*) "
+                    "FROM datasets GROUP BY 1").fetchall()),
+                # Links still carrying the 429 we earned on launch day by
+                # fetching everything at once. Goes to zero, then stays.
+                "launch_429_left": one(
+                    "SELECT COUNT(*) FROM resource_checks WHERE status = 429 "
+                    "AND checked_at < '2026-09-01'"),
+                "measured_at": time.strftime("%Y-%m-%d", time.gmtime()),
+            }
+        finally:
+            conn.close()
+        out["findable"] = out["total"] - out["duplicates"] - out["retired"]
+        _quality_cache = (time.time(), out)
+        return out
+
 @app.get("/api/stats", summary="Index statistics")
 def api_stats(request: Request, response: Response) -> dict:
     _rate_check(request, response)
     response.headers["Cache-Control"] = "public, max-age=3600"
-    return engine.stats()
+    return {**engine.stats(), "catalogue": _quality_counts()}
 
 
 def _dataset_record(key: str) -> dict | None:
