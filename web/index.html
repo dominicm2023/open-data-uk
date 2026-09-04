@@ -57,12 +57,16 @@
   </div>
 </header>
 <div class="wrap wide">
-  <h1>Search UK open government data</h1>
-  <p class="lede">One search across every national, devolved, regional, NHS and
-  council data portal — ask in plain English.</p>
-  <p class="note" id="stats">Loading index…</p>
-
   <main>
+  <h1>Search UK open government data</h1>
+  <p class="lede">One search across the UK's national, devolved, regional, NHS
+  and council data portals — ask in plain English.</p>
+  <p class="note" id="stats">Loading index…</p>
+  <noscript><p class="note banner">Search needs JavaScript. Without it you can
+  still browse <a href="/publishers">by publisher</a>,
+  <a href="/topics">by subject</a>, or
+  <a href="/who-publishes">by what many councils publish</a>.</p></noscript>
+
   <form class="searchbar" id="searchform" role="search">
     <label for="q" class="visually-hidden">Search UK open datasets</label>
     <input id="q" type="search" aria-label="Search UK open datasets"
@@ -78,7 +82,7 @@
   </main>
 
   <footer>
-    Prototype. Metadata only — every result links to the publisher's own page.
+    Metadata only — every result links to the publisher's own page.
     Or browse by <a href="/publishers">publisher</a>,
     by <a href="/topics">subject</a>, or see
     <a href="/who-publishes">what many councils publish</a> — the same dataset
@@ -94,11 +98,6 @@ const esc = s => (s || "").replace(/[&<>"]/g,
 // esc() neutralises quotes but not the URL scheme — a javascript:/data: URL
 // from a publisher would still be a live link. Allow only http(s), else drop.
 const safeUrl = u => /^https?:\/\//i.test(u || "") ? esc(u) : "#";
-
-const SOURCE_NAMES = {
-  data_gov_uk: "data.gov.uk", london_datastore: "London Datastore",
-  nhsbsa: "NHSBSA", opendatani: "OpenDataNI", datamillnorth: "Data Mill North",
-};
 
 async function loadStats() {
   try {
@@ -184,7 +183,7 @@ function render(payload) {
     return `<div class="result" data-key="${esc(r.key)}" data-rank="${i + 1}">
       <h2 class="result-title"><a href="${safeUrl(r.url)}" target="_blank" rel="noopener" data-role="outbound">${esc(r.title)}</a></h2>
       <div class="meta">
-        <span class="chip src">${esc(SOURCE_NAMES[r.source] || r.source)}</span>
+        <span class="chip src">${esc(r.source_name || r.source)}</span>
         ${av} ${geoChip} ${lic} ${fmts}
         <span>${esc(r.publisher || "unknown publisher")}</span>
         ${r.modified ? `<span>· updated ${esc(r.modified)}</span>` : ""}

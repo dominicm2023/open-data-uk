@@ -57,7 +57,14 @@ RARE_TERM_MAX_DF = 5000   # if even the rarest term is commoner, skip the bonus
 PUBLISHER_MAX_DF = 1500   # ignore terms matching many publishers ("council", "city")
 # Verified availability nudges; "blocked" is absent on purpose (we know
 # nothing about it, so it must not move the result either way).
-AVAILABILITY_MULT = {"data": 1.15, "api": 1.05, "webpage": 0.97, "dead": 0.85}
+# "unreachable" was absent, so a host that never answered scored 1.0 and
+# outranked a working webpage at 0.97: "school catchment areas" led with
+# two Gateshead records whose server was silent, above Stirling's live API.
+# Silence is not evidence the data is gone, so it sits above "dead" — but
+# from the reader's side of the screen it is a worse click than a page that
+# loads, so it sits below that.
+AVAILABILITY_MULT = {"data": 1.15, "api": 1.05, "webpage": 0.97,
+                     "unreachable": 0.90, "dead": 0.85}
 NO_FILES_MULT = 0.95
 # "brighton recycling rates" shouldn't surface Brighton's supplier payments:
 # matching the place but nothing of the topic is weak evidence. Kept gentle
@@ -871,19 +878,24 @@ class SearchEngine:
             publishers = conn.execute(
                 "SELECT COUNT(DISTINCT publisher) FROM datasets"
             ).fetchone()[0]
+            live = {k for (k,) in conn.execute("SELECT key FROM datasets")}
             try:
                 dup_count = conn.execute("SELECT COUNT(*) FROM duplicates").fetchone()[0]
             except sqlite3.OperationalError:
                 dup_count = 0
         finally:
             conn.close()
-        matrix, _ = self._vectors()
+        matrix, keys = self._vectors()
+        # Only vectors for datasets that still exist. The matrix keeps rows
+        # for records that have since left the index, so its raw length
+        # once read "semantic index 103% built" on the home page.
+        embedded = 0 if matrix is None else len(live.intersection(keys))
         return {
             "datasets": total,
             "sources": by_source,
             "publishers": publishers,
             "duplicates_collapsed": dup_count,
-            "embedded": 0 if matrix is None else int(matrix.shape[0]),
+            "embedded": embedded,
         }
 
 

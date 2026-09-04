@@ -71,6 +71,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
+    # Swagger UI off: it loads from a CDN. /docs is rendered by us instead.
+    docs_url=None, redoc_url=None,
     title="UK Open Data Index API",
     description=(
         "One search across the UK's scattered open government data. "
@@ -135,8 +137,8 @@ async def not_found(request: Request, exc) -> Response:
     unknown path got bare JSON. Humans get the page, the API keeps JSON."""
     if request.url.path.startswith("/api/"):
         return JSONResponse({"detail": "Not Found"}, status_code=404)
-    return HTMLResponse(pagerender.render_missing(None), status_code=404,
-                        headers={"Cache-Control": "no-store"})
+    return HTMLResponse(pagerender.render_missing(None, what="page"),
+                        status_code=404, headers={"Cache-Control": "no-store"})
 
 
 def _client_ip(request: Request) -> str:
@@ -260,6 +262,19 @@ def home() -> HTMLResponse:
                         headers={"Cache-Control": "public, max-age=300"})
 
 
+
+@app.get("/docs", include_in_schema=False)
+def docs() -> HTMLResponse:
+    """The API reference, rendered here from the OpenAPI schema.
+
+    FastAPI's default page pulled Swagger UI from a CDN and a favicon from
+    the framework's own website — the only two third-party requests on a
+    site whose rule is that every page is self-contained. This is the same
+    schema as /openapi.json, laid out as a page, with nothing to load.
+    """
+    return HTMLResponse(pagerender.render_docs(app.openapi(), SITE_URL),
+                        headers={"Cache-Control": "public, max-age=300"})
+
 @app.get("/about", include_in_schema=False)
 def about() -> HTMLResponse:
     return HTMLResponse(_hand_written_page("about.html"),
@@ -380,6 +395,12 @@ def api_search(request: Request, response: Response,
                if raw.strip()}
     payload = engine.search(q, k, offset=offset, filters=filters or None)
     log_query(q, k, payload)   # anonymous; see querylog.py
+    # The portal's name alongside its id. The page used to map five ids to
+    # names and print the rest raw, so 36% of results wore a chip reading
+    # "agol_uttlesford" or "ons_geography".
+    names = pagerender.source_names()
+    for r in payload["results"]:
+        r["source_name"] = names.get(r["source"], {}).get("name") or r["source"]
     payload["attribution"] = ATTRIBUTION
     return payload
 
@@ -783,8 +804,8 @@ def publisher_page(name: str = Query(default="", max_length=300),
     from paths import connect as db_connect
 
     if not name:
-        return HTMLResponse(pagerender.render_missing(None), status_code=404,
-                            headers={"Cache-Control": "no-store"})
+        return HTMLResponse(pagerender.render_missing(None, what="publisher"),
+                            status_code=404, headers={"Cache-Control": "no-store"})
 
     conn = db_connect()
     conn.row_factory = sqlite3.Row

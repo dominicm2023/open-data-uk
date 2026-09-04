@@ -1033,7 +1033,12 @@ def _normalise_json_record(rec: dict, ident, cfg: dict, src: dict,
         str(field("name") or ident),
         title,
         strip_html(field("description")),
-        field("publisher") or src["name"],
+        # A configured publisher before the portal's own name, as the DCAT
+        # path already allows: an ArcGIS Hub site is named after the site,
+        # not the council, so Stirling appeared as a fourth publisher called
+        # "Stirling Council - insights by location" and answered every
+        # search three times.
+        field("publisher") or src.get("publisher") or src["name"],
         lic,
         norm_license(lic),
         norm_date(field("created")),

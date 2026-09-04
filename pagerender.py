@@ -69,8 +69,14 @@ def safe_url(url: object) -> str:
 
 
 @functools.lru_cache(maxsize=1)
+@functools.lru_cache(maxsize=1)
 def source_names() -> dict[str, dict[str, str]]:
-    """id -> {name, web}, from the same registry the harvester reads."""
+    """id -> {name, web}, from the same registry the harvester reads.
+
+    Cached: every search result now carries its portal's name, and reading
+    a 1,300-line YAML file fifteen times per query would be silly. The
+    registry changes on deploy, and a deploy restarts the process.
+    """
     with open(ROOT / "sources.yaml", encoding="utf-8") as fh:
         return {s["id"]: {"name": s["name"], "web": s.get("web", "")}
                 for s in yaml.safe_load(fh)["sources"]}
@@ -737,6 +743,38 @@ def _initial(name: str) -> str:
     return first if first.isalpha() else "#"
 
 
+def _filter_box(what: str) -> str:
+    """A type-to-filter box above a long alphabetical list.
+
+    The publishers page is 70 screens tall on a phone and the subjects page
+    82; finding one council meant thumbing through 1,800 names. This narrows
+    the list as you type and hides letters left empty. Plain script in the
+    page, no library, and without JavaScript the full list is simply there —
+    the box is a convenience layered on a page that already works.
+    """
+    return (
+        f'<p class="filterbar"><input type="search" class="filter" '
+        f'placeholder="Filter {esc(what)}…" aria-label="Filter {esc(what)}" '
+        f'autocomplete="off" data-filter></p>'
+        # The lists come *after* this script in the document, so they are
+        # gathered on the first keystroke rather than at load — at load
+        # there is nothing to gather, and the first version filtered
+        # nothing at all.
+        '<script>'
+        '(function(){var q=document.querySelector("[data-filter]");if(!q)return;'
+        'var items,heads,t;'
+        'q.addEventListener("input",function(){clearTimeout(t);'
+        't=setTimeout(function(){'
+        'items=items||[].slice.call(document.querySelectorAll("ul.cols li"));'
+        'heads=heads||[].slice.call(document.querySelectorAll("h2[id]"));'
+        'var v=q.value.trim().toLowerCase();'
+        'items.forEach(function(li){li.hidden=!!v&&li.textContent.toLowerCase().indexOf(v)<0;});'
+        'heads.forEach(function(h){var ul=h.nextElementSibling;'
+        'var any=!!ul&&[].some.call(ul.children,function(li){return !li.hidden;});'
+        'h.hidden=!any;if(ul)ul.hidden=!any;});},80);});})();'
+        '</script>')
+
+
 def render_publishers(rows: list[tuple[str, int]], site_url: str) -> str:
     """Every publisher, grouped by initial.
 
@@ -767,7 +805,8 @@ def render_publishers(rows: list[tuple[str, int]], site_url: str) -> str:
             f"{total:,} datasets you can find through this index. Counts "
             f"exclude duplicate copies of another portal's entry and records "
             f"the publisher has withdrawn.</p>"
-            f'<p class="letters">{nav}</p>' + "".join(blocks))
+            + _filter_box("publishers")
+            + f'<p class="letters">{nav}</p>' + "".join(blocks))
 
     head = simple_head(
         "Browse UK open data by publisher",
@@ -902,7 +941,8 @@ def render_topics(rows: list[tuple[str, int, int]], site_url: str) -> str:
             "organisation publishes data on. These are the publishers' own "
             "tags, normalised for case only — we don't invent categories, so "
             "the vocabulary is as consistent as UK open data actually is.</p>"
-            f'<p class="letters">{nav}</p>' + "".join(blocks))
+            + _filter_box("subjects")
+            + f'<p class="letters">{nav}</p>' + "".join(blocks))
     head = simple_head(
         "Browse UK open data by subject",
         f"{len(rows):,} subjects — from air quality to waste collection — each "
@@ -995,15 +1035,82 @@ def render_who_index(rows: list[tuple[str, int]], site_url: str) -> str:
     return _page(head, body, "/who-publishes")
 
 
-def render_missing(key: str | None) -> str:
-    """A 404 that is still a page, and is explicit about being a 404."""
-    detail = (f"We hold no dataset with the key <code>{esc(key)}</code>."
-              if key else "No dataset was named in the link you followed.")
-    head = (f"<title>Dataset not found — {SITE_NAME}</title>\n"
+def render_docs(schema: dict, site_url: str) -> str:
+    """The API reference, from the OpenAPI schema, as a page with no script.
+
+    One section per endpoint: what it does, its parameters as a table, and a
+    live example link. The schema is the same one at /openapi.json, so the
+    two cannot drift apart — this page is a rendering of it, not a copy.
+    """
+    info = schema.get("info", {})
+    sections = []
+    for path, methods in sorted(schema.get("paths", {}).items()):
+        for method, op in methods.items():
+            params = op.get("parameters") or []
+            rows = "".join(
+                f"<tr><td><code>{esc(p['name'])}</code></td>"
+                f"<td>{'yes' if p.get('required') else 'no'}</td>"
+                f"<td>{esc(str(p.get('schema', {}).get('default', '')))}</td>"
+                f"<td>{esc(p.get('description') or '')}</td></tr>"
+                for p in params)
+            table = (('<div class="table-wrap"><table><thead><tr><th>Parameter'
+                      '</th><th>Required</th><th>Default</th><th>Meaning</th>'
+                      f"</tr></thead><tbody>{rows}</tbody></table></div>")
+                     if rows else "")
+            example = path
+            first = next((p for p in params if p.get("required")), None)
+            if first and first["name"] == "q":
+                example = f"{path}?q=flood+risk"
+            sections.append(
+                f'<section class="endpoint"><h2><code>{esc(method.upper())} '
+                f"{esc(path)}</code></h2>"
+                f"<p>{esc(op.get('summary') or '')}</p>"
+                + (f'<p class="note">{esc(op.get("description") or "")}</p>'
+                   if op.get("description") else "")
+                + table
+                + f'<p class="note">Try it: <a href="{esc(example)}">'
+                  f"{esc(site_url)}{esc(example)}</a></p></section>")
+    body = (f"<h1>{esc(info.get('title', 'API'))}</h1>"
+            f'<p class="lede">{esc(info.get("description") or "")}</p>'
+            '<p class="note">Open, no key, no sign-up. Fair-use limit of 30 '
+            'requests a minute per address. The machine-readable schema is '
+            'at <a href="/openapi.json">/openapi.json</a>; this page is '
+            "rendered from it.</p>" + "".join(sections))
+    head = simple_head("API reference", "Every endpoint of the UK Open Data "
+                       "Index API, with parameters and live examples.",
+                       "/docs", site_url)
+    return _page(head, body, "/docs")
+
+
+def render_missing(key: str | None, what: str = "dataset") -> str:
+    """A 404 that is still a page, and is explicit about what it is a 404 for.
+
+    Three things can be missing and they need three sentences. The dataset
+    wording was reused for every unknown URL, so /nonexistent-page told the
+    reader that "no dataset was named in the link you followed" — true, and
+    beside the point.
+    """
+    if what == "page":
+        title = "Page not found"
+        detail = ("There is no page at this address. The link may be out of "
+                  "date, or mistyped.")
+    elif what == "publisher":
+        title = "Publisher not found"
+        detail = (f"We hold no publisher called <code>{esc(key)}</code>."
+                  if key else "No publisher was named in the link you followed.")
+        detail += " Names change when councils merge; try the full list."
+    else:
+        title = "Dataset not found"
+        detail = (f"We hold no dataset with the key <code>{esc(key)}</code>."
+                  if key else "No dataset was named in the link you followed.")
+        detail += (" It may have been withdrawn by its publisher, or the "
+                   "link may be mistyped.")
+    where = "/publishers" if what == "publisher" else "/"
+    label = "Every publisher" if what == "publisher" else "Search the index"
+    head = (f"<title>{title} — {SITE_NAME}</title>\n"
             '<meta name="robots" content="noindex,follow">')
-    body = (f"<h1>Dataset not found</h1><p class=\"note\">{detail} It may have "
-            "been withdrawn by its publisher, or the link may be mistyped.</p>"
-            '<p><a class="cta" href="/">Search the index</a></p>')
+    body = (f'<h1>{title}</h1><p class="note">{detail}</p>'
+            f'<p><a class="cta" href="{where}">{label}</a></p>')
     return _page(head, body)
 
 

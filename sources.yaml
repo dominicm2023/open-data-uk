@@ -995,6 +995,7 @@ sources:
       require_description: 40
   - id: agol_stirling_council_insights_by
     name: "Stirling Council - insights by location"                             # contain colons and ampersands
+    publisher: Stirling Council   # the Hub site's name is not the council's
     type: json
     api: https://hub.arcgis.com/api/v3/datasets
     web: https://hub.arcgis.com

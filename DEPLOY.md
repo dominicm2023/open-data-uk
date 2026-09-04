@@ -270,6 +270,23 @@ Caddy 2.11.4 already owns :80/:443. Append a block to `/etc/caddy/Caddyfile`
 ```caddy
 open-data.org.uk, www.open-data.org.uk {
 	encode gzip
+
+	# Security headers. Cloudflare adds none of these by default and the app
+	# does not either. One directive per line; a wrapped comment without a
+	# leading # on every line fails validation with "unrecognized directive".
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		# Enforced. Every page is self-contained by rule; this makes the rule
+		# hold. unsafe-inline because pages carry their own small scripts and
+		# the findings charts their own styles.
+		Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+		-Server
+	}
+
 	reverse_proxy 127.0.0.1:8010
 }
 ```

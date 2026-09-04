@@ -121,6 +121,20 @@ def main() -> None:
         if done_vecs.shape[0] != len(done_keys):  # corrupt/partial — start over
             done_keys, done_vecs = [], None
 
+    # Drop vectors for datasets that have left the index. Nothing removed
+    # them before, so the matrix only ever grew: 3,560 stale rows by
+    # September 2026, and a home page announcing the semantic index was
+    # 103% built. Pruned here so the file stays the size of the catalogue.
+    live = {r["key"] for r in rows}
+    keep = [i for i, k in enumerate(done_keys) if k in live]
+    pruned = len(done_keys) - len(keep)
+    if pruned:
+        done_keys = [done_keys[i] for i in keep]
+        done_vecs = done_vecs[keep]
+        np.save(EMB_PATH, done_vecs)
+        KEYS_PATH.write_text(json.dumps(done_keys), encoding="utf-8")
+        print(f"pruned {pruned:,} embeddings for datasets no longer indexed")
+
     done_set = set(done_keys)
     todo = [r for r in rows if r["key"] not in done_set]
     print(f"{len(todo):,} datasets to embed "
