@@ -62,6 +62,11 @@ MAX_COLUMNS = 40
 
 DOMAIN_INTERVAL = 1.5   # seconds between requests to the same host
 MAX_PER_DOMAIN = 250    # per run, so one big portal can't eat the whole slice
+
+# Share of a night's budget reserved for re-checking what we already have
+# an answer for, so that coverage of the never-checked backlog cannot
+# starve it. The rest goes to resources nobody has followed yet.
+RECHECK_SHARE = 0.3
 RETRY_AFTER_CAP = 10    # honour Retry-After only if it's this short
 
 DATA_TYPES = (
@@ -91,6 +96,14 @@ FILE_TYPES = (
 
 # Refusals aimed at us, not evidence about the data
 BLOCKED_STATUSES = {401, 403, 429, 503}
+
+# The request never reached the publisher's server at all: a gateway or proxy
+# in front of it said so. Cloudflare's 52x family means "the origin is down or
+# would not talk to me", and 502/504 mean the same thing in the standard
+# codes. None of that is evidence the data is gone, which is the only thing
+# "dead" is allowed to mean — it is the same silence as status 0, arriving
+# with a number attached. 57 resources were filed as dead on a 521.
+GATEWAY_STATUSES = {502, 504, 520, 521, 522, 523, 524, 525, 526}
 
 # The server answered and declined the request we made. That is not evidence
 # the data is gone, which is the only thing "dead" is allowed to mean.
@@ -146,10 +159,11 @@ class DomainThrottle:
 def classify(url: str, status: int, ctype: str, fmt: str | None) -> str:
     if status in BLOCKED_STATUSES or status in REFUSED_STATUSES:
         return "blocked"
-    if status == 0:
-        # No response at all — DNS failure, timeout, connection refused.
-        # That is silence, not evidence the data is gone, and "dead" is only
-        # allowed to mean evidence. 2,182 dead verdicts were this.
+    if status == 0 or status in GATEWAY_STATUSES:
+        # No response at all — DNS failure, timeout, connection refused — or
+        # a gateway telling us it could not reach the origin either. That is
+        # silence, not evidence the data is gone, and "dead" is only allowed
+        # to mean evidence. 2,182 dead verdicts were this.
         return "unreachable"
     if status >= 400:
         return "dead"
@@ -265,7 +279,10 @@ def pick_urls(conn: sqlite3.Connection, limit: int, first_only: bool,
             SELECT r.url, r.format_norm FROM resources r
             JOIN resource_checks c ON c.url = r.url
             WHERE c.verdict IN ('blocked', 'unreachable')
-               OR (c.verdict = 'dead' AND c.status IN (401, 403, 429, 503))
+               OR (c.verdict = 'dead'
+                   AND (c.status IN (401, 403, 429, 503)
+                        OR c.status IN (502, 504, 520, 521, 522, 523, 524,
+                                        525, 526)))
             LIMIT ?
         """
     elif first_only:
@@ -279,17 +296,43 @@ def pick_urls(conn: sqlite3.Connection, limit: int, first_only: bool,
             LIMIT ?
         """
     else:
-        # Unchecked first; blocked ones come round again sooner than settled
-        # verdicts, since "blocked" is an open question rather than an answer.
-        q = """
+        # Two queues, not one, because a single query starves whichever half
+        # loses the plan's ordering. There is no ORDER BY here historically,
+        # so SQLite emitted whatever it reached first: on 4 Sep 2026 every
+        # one of the 1,239 rate-limited resources still carried its
+        # launch-day check from 13 August, untouched for three weeks, while
+        # rows checked four days earlier came round again. Those 429s are
+        # the most retryable answer there is — we were told "not now", not
+        # "no" — and they are the reason a dataset reads "? not verified".
+        # The one outbound click the site has ever recorded went to one.
+        #
+        # So the night's budget is split, and both halves go oldest first.
+        # Coverage still gets the bulk of it: 255,301 resources have never
+        # been looked at once.
+        n_recheck = int(limit * RECHECK_SHARE)
+        due = """
+            SELECT DISTINCT r.url, r.format_norm FROM resources r
+            JOIN resource_checks c ON c.url = r.url
+            WHERE (c.verdict IN ('blocked', 'unreachable')
+                   AND c.checked_at < datetime('now', '-3 days'))
+               OR c.checked_at < datetime('now', '-30 days')
+            -- Oldest first, but a 429 first of all: it is the one answer
+            -- that was about our own manners rather than the resource. All
+            -- 1,239 of them date from launch day, when we fetched the whole
+            -- catalogue at once and London Datastore quite reasonably told
+            -- us to slow down. Everything else here ties on the same date.
+            ORDER BY c.status <> 429, c.checked_at
+            LIMIT ?
+        """
+        fresh = """
             SELECT DISTINCT r.url, r.format_norm FROM resources r
             LEFT JOIN resource_checks c ON c.url = r.url
             WHERE c.url IS NULL
-               OR (c.verdict IN ('blocked', 'unreachable')
-                   AND c.checked_at < datetime('now', '-3 days'))
-               OR c.checked_at < datetime('now', '-30 days')
             LIMIT ?
         """
+        rows = conn.execute(due, (n_recheck,)).fetchall()
+        rows += conn.execute(fresh, (limit - len(rows),)).fetchall()
+        return rows
     return conn.execute(q, (limit,)).fetchall()
 
 
