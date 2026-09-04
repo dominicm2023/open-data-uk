@@ -38,9 +38,12 @@ from data. That is *using* data, not finding it. From 4 September it lives
 in its own repository (`../Joined Up`) and uses this site through the public
 API like anyone else. Nothing under `/lab` is served from here any more.
 
-The Findings page stays, but only for findings that are evidence *about
-where data lives and whether it is there*: coverage, dead hosts, licence
-gaps, attribution. Findings about Britain belong to Joined Up.
+**The Findings page stays, and is measurements only.** Facts about the
+data: who publishes what, under which terms, whether the links work, which
+councils leave no trace. The generator's tier ladder stops at 3 (a
+measurement about a named body, checked by a person first). The two rungs
+above it — cross-source joins, and framing and argument — were removed on
+4 September and belong to Joined Up.
 
 ## Ideas and strategies
 
@@ -102,6 +105,8 @@ A living list. Add freely; move to "Done" with the commit that did it.
   launch-day 429s are the first entry.
 
 ### Done
+- 4 Sep — Findings page reduced to measurements: tier 4/5 prompts removed
+  from the generator; arguments are Joined Up's.
 - 4 Sep — audit fixes: portal names on results, 103% → 100%, three 404s,
   security headers + CSP, mobile filters, `/docs` self-hosted,
   `unreachable` ranked below a working page. (`7aabef6`)

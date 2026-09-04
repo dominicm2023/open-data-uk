@@ -12,8 +12,6 @@ goes anywhere:
   1  a fact about our own index          publish automatically
   2  a coverage or quality comparison    publish automatically
   3  a measurement about a named body    a human checks it first
-  4  a cross-source join                 a human checks the join, always
-  5  framing and argument                a human writes it
 
 Tier 3 was meant to auto-publish, on the reasoning that a measurement is not
 an accusation. Building this disproved that. Every single-publisher claim the
@@ -31,11 +29,12 @@ four is not a run of bad luck, it is the base rate: naming one organisation
 means implying a cause, and the cause lives outside our data. So tier 3 goes
 in the review queue with the rest.
 
-Nothing above tier 3 is generated here. A join across publishers can be
-wrong in ways that look right — mismatched geographies, different reporting
-periods — and a confident wrong claim about a named organisation is the one
-failure mode that matters. Tiers 4 and 5 get a prompt in the queue and a
-human, not a generator.
+Nothing above tier 3 exists here at all. There used to be two more rungs —
+cross-source joins, and framing and argument — and they left with Joined Up
+on 4 September 2026. This page is measurements about the data: who publishes
+what, under which terms, and whether the links work. What the numbers *mean*
+for Britain is an argument, and arguments are made elsewhere, by a person,
+in their own name.
 
 Each finding records the SQL that produced it so anyone, including someone
 who disagrees with the conclusion, can re-run it and check. That is the
@@ -455,32 +454,8 @@ def licence_disagreement(conn) -> list[dict]:
         f"duty, {lics} sets of rules. {SITE}/who-publishes")]
 
 
-# --- Tier 4/5: prompts for a human, never generated ---------------------
-
-def human_prompts(conn) -> list[dict]:
-    """Questions the index can pose but must not answer on its own."""
-    return [
-        {"tier": 4, "kind": "prompt",
-         "headline": "Storm overflow activity against deprivation",
-         "detail": "We hold water company discharge data (Stream) and council "
-                   "deprivation indices. Joining them would say something real "
-                   "about who lives with sewage — and the join is exactly the "
-                   "kind that goes wrong: different geography levels, different "
-                   "reporting periods, spill *events* not volumes. Needs someone "
-                   "who checks the join before a word is published.",
-         "numbers": {}, "sql": "", "post": "", "link": SITE},
-        {"tier": 5, "kind": "prompt",
-         "headline": "What the licence gap is actually for",
-         "detail": "A third of public data states no licence. That is a fact "
-                   "(tier 1). Whether it reflects neglect, caution, or a "
-                   "deliberate brake on reuse is an argument, and arguments "
-                   "need a person making them in their own name.",
-         "numbers": {}, "sql": "", "post": "", "link": SITE},
-    ]
-
-
 ANALYSES = [coverage_gaps, licence_gap, abolished_councils, dead_hosts,
-            link_rot, document_only, licence_disagreement, human_prompts]
+            link_rot, document_only, licence_disagreement]
 
 
 def main() -> int:
@@ -510,7 +485,7 @@ def main() -> int:
         "index. Every claim carries the query that produced it, so anyone — "
         "including someone who disagrees with it — can re-run it.", "",
         f"**{len(auto)} ready to publish** (tiers 1-2) · "
-        f"**{len(review)} need a person** (tiers 3-5)", "",
+        f"**{len(review)} need a person** (tier 3)", "",
         "Tier 1 is a fact about our own index. Tier 2 is a coverage or quality "
         "comparison — a claim about a pattern, not about one organisation. "
         "Tier 3 names a body, and every tier-3 claim this engine has produced "
