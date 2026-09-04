@@ -15,10 +15,12 @@ Run on the VPS, against the live index, importing the engine directly:
 from __future__ import annotations
 
 import re
+import sqlite3
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
+from paths import DB_PATH  # noqa: E402
 from search import SearchEngine  # noqa: E402
 
 CASES = [
@@ -85,6 +87,51 @@ CONFIDENCE_CASES = [
 ]
 
 
+# Spelling. Every "leave alone" here is a real thing somebody searched for or
+# a real UK place; the whole risk of this feature is mangling those, not
+# missing a typo.
+SPELLING_CASES = [
+    # (typed, expected suggestion or None, why it matters)
+    ("infaltion", "inflation", "logged three times on 2 Sep 2026, found nothing"),
+    ("brighton hosptials", "brighton hospitals", "logged 15 Aug 2026"),
+    ("councl spending", "council spending", "logged 21 Aug 2026"),
+    ("recyling rates", "recycling rates", None),
+    ("allotmnet", "allotment", None),
+    ("bicyle parking", "bicycle parking", None),
+    ("Infaltion", "Inflation", "a capital in must come back a capital out"),
+    # Left alone, and each for a different reason.
+    ("Ncea", None, "an acronym in 84 datasets; somebody came here for it"),
+    ("usrn", None, "a street reference, one edit from the property one"),
+    ("SEND rates", None, "capitals are a statement of intent, not a slip"),
+    ("gedling", None, "a Nottinghamshire borough, not a typo for 'felling'"),
+    ("sefton", None, "a Merseyside borough, not a typo for 'section'"),
+    ("battle", None, "an ordinary word, and a town in East Sussex"),
+    ("water meters", None, "not a misspelling of 'meter' - the stemmer knows"),
+    ("publisher", None, "not a misspelling of 'published'"),
+    ("power outages", None, "an ordinary word we happen to hold little of"),
+    ("polution", None, "misspelled by publishers too; the search already finds them"),
+    ("doogal", None, "a postcode site somebody named on purpose"),
+    ("flood risk", None, "the commonest search on the site must never be touched"),
+]
+
+
+def run_spelling(engine) -> tuple[int, int]:
+    conn = sqlite3.connect(f"file:{DB_PATH}?mode=ro", uri=True)
+    passed = failed = 0
+    try:
+        for typed, want, why in SPELLING_CASES:
+            got = engine.suggest(typed, conn)
+            ok = got == want
+            passed += ok
+            failed += not ok
+            print("%s  suggest(%r) -> %r" % ("PASS" if ok else "FAIL", typed, want))
+            if not ok:
+                print("       got %r%s" % (got, "; " + why if why else ""))
+    finally:
+        conn.close()
+    return passed, failed
+
+
 def run_confidence(engine) -> tuple[int, int]:
     passed = failed = 0
     for query, want, why in CONFIDENCE_CASES:
@@ -120,6 +167,8 @@ def run() -> int:
                 mark = "  <-- unwanted" if avoid and re.search(avoid, blob[i - 1], re.I) else ""
                 print(f"         {i}. {r['title'][:58]}{mark}")
     cp, cf = run_confidence(engine)
+    sp, sf = run_spelling(engine)
+    passed, failed = passed + sp, failed + sf
     passed, failed = passed + cp, failed + cf
     print(f"\n{passed}/{passed + failed} passed")
     return 0 if not failed else 1

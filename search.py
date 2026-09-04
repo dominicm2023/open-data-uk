@@ -89,6 +89,19 @@ BM25_WEIGHTS = "0.0, 5.0, 1.0, 2.0, 3.0"
 SIM_STRONG = 0.55
 SIM_WEAK = 0.40
 
+# Spelling correction. Only ever offered on a search that found nothing
+# worth having, and only for a word the catalogue does not know: correcting
+# a word that *is* in the index would second-guess the reader, and "Ncea" or
+# "Uprn" would be the first casualties.
+SPELL_MIN_LEN = 4         # below this, everything is within a typo of everything
+# A word the catalogue really uses is real, whatever it looks like, and is
+# never corrected: "Ncea" (84 datasets), "Uprn" (562) and "organogram" (359)
+# are all things somebody deliberately came here for. Below this line a word
+# is only a candidate for correction, not yet a correction — publishers
+# misspell too ("enviroment" sits in 10 datasets), so mere presence in the
+# index cannot be the test.
+SPELL_MIN_CAND_DF = 5     # what we suggest instead has to be well represented
+
 
 class SearchEngine:
     def __init__(self) -> None:
@@ -97,6 +110,7 @@ class SearchEngine:
         self._keys: list[str] = []
         self._emb_mtime = 0.0
         self._place_vocab: set[str] | None = None
+        self._spell_vocab: list[tuple[str, int]] | None = None
         self._dup_cache: tuple[dict, set] | None = None
         self._dup_mtime = 0.0
 
@@ -206,6 +220,131 @@ class SearchEngine:
             elif terms <= words:
                 covers.add(key)
         return exact, covers
+
+    @staticmethod
+    def _osa(a: str, b: str, cap: int) -> int:
+        """Damerau-Levenshtein (optimal string alignment), giving up past cap.
+
+        Transposition counts as one edit, not two, because it is the single
+        commonest typo there is — "infaltion" for "inflation" is one slip of
+        two fingers, and scoring it as two would rank it below genuinely
+        different words.
+        """
+        la, lb = len(a), len(b)
+        if abs(la - lb) > cap:
+            return cap + 1
+        prev2: list[int] = []
+        prev = list(range(lb + 1))
+        for i in range(1, la + 1):
+            cur = [i] + [0] * lb
+            lo, hi = max(1, i - cap), min(lb, i + cap)
+            if lo > 1:
+                cur[lo - 1] = cap + 1
+            for j in range(lo, hi + 1):
+                cost = 0 if a[i - 1] == b[j - 1] else 1
+                best = min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost)
+                if (i > 1 and j > 1
+                        and a[i - 1] == b[j - 2] and a[i - 2] == b[j - 1]):
+                    best = min(best, prev2[j - 2] + 1)
+                cur[j] = best
+            for j in range(hi + 1, lb + 1):
+                cur[j] = cap + 1
+            if min(cur[lo:hi + 1] or [cap + 1]) > cap:
+                return cap + 1
+            prev2, prev = prev, cur
+        return prev[lb]
+
+    def _vocab(self, conn: sqlite3.Connection) -> list[tuple[str, int]]:
+        """The spelling vocabulary, or empty if this index predates it."""
+        if self._spell_vocab is None:
+            try:
+                self._spell_vocab = conn.execute(
+                    "SELECT word, df FROM vocab").fetchall()
+            except sqlite3.OperationalError:
+                self._spell_vocab = []
+        return self._spell_vocab
+
+    @staticmethod
+    def _stem_df(word: str, conn: sqlite3.Connection) -> int:
+        """Does the catalogue use this word at all, stems included?
+
+        Stopping at the first hit: the question is whether the word exists
+        here, not how popular it is, and counting all 53,896 datasets that
+        say "data" to learn that the answer is yes would be work done for
+        nothing.
+        """
+        try:
+            return conn.execute(
+                "SELECT count(*) FROM (SELECT 1 FROM fts WHERE fts MATCH ? "
+                "LIMIT 1)", (word,)).fetchone()[0]
+        except sqlite3.OperationalError:   # unparseable as an FTS query
+            return 0
+
+    def suggest(self, query: str, conn: sqlite3.Connection) -> str | None:
+        """"Did you mean ...?" — or None, which is the usual answer.
+
+        A visitor typed "infaltion" three times on 2 September, got Infaunal
+        taxonomic analysis every time, and left. The index holds inflation
+        data and never said so.
+
+        Only words the catalogue has never seen in any form are corrected.
+        That single rule does the work of several: it spares every acronym
+        and place name somebody meant ("Ncea", "Uprn", "Gedling", "SEND"),
+        every ordinary word we happen to hold little of ("battle", "outages",
+        "shard"), and every morphological pair a stemmer already knows about
+        — "meters" is not a misspelling of "meter", nor "publisher" of
+        "published", and both were confidently offered before this was
+        measured through the FTS index rather than off raw title words.
+
+        Words the catalogue *does* use, however badly spelled, are left
+        alone: "polution" and "enviroment" each sit in real datasets, and a
+        search for either already finds them.
+        """
+        if self._place_vocab is None:
+            self._place_vocab = build_place_vocab(conn)
+        # Cheap pass first. Nearly every search is spelled fine, and an
+        # indexed count per word is far less work than reading the whole
+        # vocabulary to discover there was nothing to fix.
+        unknown = {}
+        for word in query.split():
+            lower = word.lower()
+            if (len(lower) < SPELL_MIN_LEN or not lower.isalpha()
+                    or word.isupper() or lower in self._place_vocab
+                    or lower in unknown
+                    or self._stem_df(lower, conn)):
+                continue
+            unknown[lower] = None
+        if not unknown:
+            return None
+
+        for lower in unknown:
+            cap = 1 if len(lower) < 6 else 2
+            best: tuple[int, int, str] | None = None
+            for cand, df in self._vocab(conn):
+                if df < SPELL_MIN_CAND_DF or abs(len(cand) - len(lower)) > cap:
+                    continue
+                d = self._osa(lower, cand, cap)
+                if d == 0 or d > cap:
+                    continue
+                # Nearer wins; among equals, the word more of the catalogue
+                # uses. Never silently prefer an obscure near-match.
+                if best is None or (d, -df) < (best[0], -best[1]):
+                    best = (d, df, cand)
+            unknown[lower] = best[2] if best else None
+
+        out, changed = [], False
+        for word in query.split():
+            fixed = unknown.get(word.lower())
+            if not fixed:
+                out.append(word)
+                continue
+            # Keep the shape the reader typed, so a corrected "Infaltion"
+            # comes back "Inflation" rather than shouting or whispering.
+            if word[:1].isupper():
+                fixed = fixed[:1].upper() + fixed[1:]
+            out.append(fixed)
+            changed = True
+        return " ".join(out) if changed else None
 
     def _rare_term_keys(self, query: str, conn: sqlite3.Connection) -> set[str]:
         """Keys of datasets containing the rarest (most informative) query term.
@@ -690,9 +829,20 @@ class SearchEngine:
                     "in_results": any(mentions_place(r, place) for r in results),
                 }
 
+            # Offered whatever the confidence, because a typo can still
+            # score well on the words around it: "hosptial waiting times"
+            # returns Diagnostic Waiting Times and calls itself strong,
+            # which is exactly when nobody would think to check the spelling.
+            # Cheap unless something really is unknown — see suggest().
+            suggestion = self.suggest(query, conn)
+
             return {
                 "query": query,
                 "confidence": confidence,
+                # A better spelling of what they typed, when we have one.
+                # Not applied automatically — being corrected against your
+                # will is worse than not being corrected at all.
+                "suggestion": suggestion,
                 "top_similarity": round(top_sim, 3),
                 "offset": offset,
                 # How many ranked candidates exist for this query. Not the

@@ -14,7 +14,9 @@ Also (re)builds the `fts` FTS5 table inside index.db.
 from __future__ import annotations
 
 import argparse
+import collections
 import json
+import re
 import sqlite3
 from pathlib import Path
 
@@ -67,6 +69,33 @@ def build_fts(conn: sqlite3.Connection) -> None:
     conn.commit()
 
 
+VOCAB_MIN_DF = 3      # a word we would put in someone's mouth must be real
+
+
+def build_vocab(conn: sqlite3.Connection) -> int:
+    """The words readers actually see, for correcting the ones they type.
+
+    Not fts5vocab: that table holds Porter stems, so offering "did you mean
+    inflat" would be worse than saying nothing. Titles and tags are the
+    human-facing vocabulary, counted per dataset so a word repeated inside
+    one title doesn't look popular.
+
+    Words appearing in fewer than VOCAB_MIN_DF datasets are dropped, because
+    a suggestion pointing at somebody else's typo is still a typo.
+    """
+    df: collections.Counter[str] = collections.Counter()
+    for title, tags in conn.execute(
+            "SELECT coalesce(title,''), coalesce(tags,'') FROM datasets"):
+        df.update(set(re.findall(r"[a-z]{3,}", (title + " " + tags).lower())))
+    conn.executescript(
+        "DROP TABLE IF EXISTS vocab;"
+        "CREATE TABLE vocab (word TEXT PRIMARY KEY, df INTEGER NOT NULL);")
+    conn.executemany("INSERT INTO vocab (word, df) VALUES (?, ?)",
+                     [(w, n) for w, n in df.items() if n >= VOCAB_MIN_DF])
+    conn.commit()
+    return conn.execute("SELECT count(*) FROM vocab").fetchone()[0]
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--rebuild", action="store_true",
@@ -80,6 +109,9 @@ def main() -> None:
 
     print("rebuilding FTS5 keyword index ...")
     build_fts(conn)
+    # Before the early return below: on a night with nothing new to embed
+    # the spelling vocabulary must still track the catalogue it describes.
+    print(f"spelling vocabulary: {build_vocab(conn):,} words")
 
     done_keys: list[str] = []
     done_vecs: np.ndarray | None = None

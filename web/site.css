@@ -315,6 +315,19 @@ button:hover { filter: brightness(1.08); }
   margin-bottom: .8rem;
 }
 .banner { border-left-color: var(--warn); color: var(--warn); }
+/* An offer, not a warning: this is the one line on a failed search that
+   leads somewhere, so it reads in the site's own accent rather than the
+   amber used to say something is wrong. */
+.didyou {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  background: var(--card);
+  border-radius: var(--radius-sm);
+  padding: .65rem .85rem;
+  font-size: .95rem;
+  margin-bottom: .8rem;
+}
+.didyou a { font-weight: 600; }
 
 /* ---------- Stats ----------------------------------------------------- */
 

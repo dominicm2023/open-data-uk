@@ -159,7 +159,17 @@ function render(payload) {
     unreachable: ["unknown", "? host not answering"],
     nofiles: ["unknown", "no files listed"],
   };
-  $("out").innerHTML = banner + results.map((r, i) => {
+  // "Did you mean ...?" goes above the banner, not below it: when we've
+  // just said nothing matches, the useful thing is the way out, not the
+  // apology. Never applied automatically — being corrected against your
+  // will is worse than not being corrected at all.
+  let didyou = "";
+  if (payload.suggestion) {
+    didyou = `<p class="note didyou">Did you mean ` +
+             `<a href="/?q=${encodeURIComponent(payload.suggestion)}" ` +
+             `data-role="suggest">${esc(payload.suggestion)}</a>?</p>`;
+  }
+  $("out").innerHTML = didyou + banner + results.map((r, i) => {
     const lic = r.license
       ? `<span class="chip lic">${esc(r.license)}</span>`
       : '<span class="chip nolic">no licence</span>';
@@ -185,7 +195,8 @@ function render(payload) {
     </div>`;
   }).join("");
   const hint = {none: " — nothing matches well", weak: " — weak match"}[payload.confidence] || "";
-  $("sr").textContent = `${results.length} results${hint}.`;
+  const said = payload.suggestion ? ` Did you mean ${payload.suggestion}?` : "";
+  $("sr").textContent = `${results.length} results${hint}.${said}`;
 }
 
 let inflight = null;
@@ -215,6 +226,16 @@ async function search(push = true) {
 
 $("searchform").addEventListener("submit", e => { e.preventDefault(); search(); });
 
+// Take the correction without a page load, and put it in the box so the
+// reader can see what was searched and edit it further.
+$("out").addEventListener("click", e => {
+  const a = e.target.closest && e.target.closest('a[data-role="suggest"]');
+  if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+  e.preventDefault();
+  $("q").value = new URLSearchParams(a.search).get("q") || "";
+  search();
+});
+
 // A result's title link leaves for the publisher's own site, so the moment a
 // search works is the one moment the server cannot see — we could count
 // searches but never whether any of them answered anybody. Tell it, in the
@@ -225,7 +246,7 @@ function recordClick(ev) {
   if (!navigator.sendBeacon) return;
   const a = ev.target.closest && ev.target.closest("a[data-role]");
   const box = a && a.closest(".result");
-  if (!box) return;
+  if (!box) return;   // the "did you mean" link sits outside any result
   try {
     navigator.sendBeacon("/api/click", JSON.stringify({
       q: shownQuery,
