@@ -1,6 +1,11 @@
 # UK Open Data Index
 
-**One search across 104,000+ UK datasets, from 193 portals.**
+> **Anyone looking for UK open data finds it here first — and knows,
+> before they click, whether it's really there.**
+
+That is the north star; [NORTH_STAR.md](NORTH_STAR.md) says what it
+means and what we measure. One search across 110,000+ UK datasets from
+194 portals.
 Live at **[open-data.org.uk](https://open-data.org.uk)** ·
 [open API](https://open-data.org.uk/docs) · no tracking, no sign-up.
 

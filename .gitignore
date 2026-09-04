@@ -35,27 +35,12 @@ scratch/
 
 local_fetch.json
 vps_fetch.json
-gallery.html
-posters.html
 
 # Fetched raw data for analysis: never committed, never served.
 # Derived aggregates and the code that made them are committed instead.
 analysis/*/raw/
 analysis/*/cache/
 analysis/**/*.db
-analysis/spending/manifest.json
-analysis/spending/selection.json
-strands.html
-rogues.html
-scrolly.html
 analysis/queries_prod.db
 data/digest_state.json
 cron_digest.log
-analysis/organograms/raw/
-analysis/organograms/*.sqlite
-analysis/organograms/receipts.jsonl
-analysis/organograms/fetch.log
-organograms.html
-constellation.html
-orgweb.html
-cascade.html
