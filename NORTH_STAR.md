@@ -93,9 +93,17 @@ A living list. Add freely; move to "Done" with the commit that did it.
   Google hides as too rare: we win in the long tail. We lose on site-name
   queries ("catchment data explorer": top 10, 55 impressions, 0 clicks) —
   people want the publisher's own tool, and should.
-- Thin pages are spending crawl budget: 1,532 indexable datasets have no
-  files *and* under 50 characters of description. Google's "crawled -
-  currently not indexed" (2,013) is almost certainly these. Widen `is_thin`.
+- **"Crawled - currently not indexed" (2,013) is not thin pages.** The URL
+  export (4 Sep, 1,000 of them) classified against the index: 90% are good
+  pages with real prose and files. What they have in common is the URL:
+  89% carry a dataset key that is itself a URL (`?key=source:https://www.
+  arcgis.com/...?id%3D...%26sublayer%3D18`), against 11% of the index —
+  7.8x over-represented. Sources with such keys lose 10-15% of their pages;
+  data.gov.uk, with UUID keys, loses 0.1%. Second cause: 26% are one
+  edition among many of the same title (34 ONS UPRN Directory pages), which
+  Google collapses; index-wide 11,710 pages sit in 1,719 such series.
+  Levers: short clean dataset URLs with a 301 from the old form; canonical
+  from older editions to the latest.
 - 78,306 pages "discovered - currently not indexed": the crawl-budget queue.
   Levers are internal link depth (pagination fixed 22 Aug: 431 → 8,746
   indexed), sitemap `lastmod` accuracy, and not wasting fetches on thin
