@@ -1102,7 +1102,6 @@ def robots() -> PlainTextResponse:
         # Behind HTTP auth anyway; listed so a crawler doesn't spend requests
         # collecting 401s, and so the exclusion survives if auth is ever
         # loosened for a while.
-        "Disallow: /lab\n"
         "Disallow: /docs\n"
         "Disallow: /redoc\n"
         # The interactive API browsers are thin pages duplicating the
