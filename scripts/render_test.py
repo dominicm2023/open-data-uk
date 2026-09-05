@@ -72,8 +72,8 @@ check("Air Quality Monitoring" in re.search(r"<title>(.*?)</title>", page).group
       "title element names the dataset")
 check("Leeds City Council" in page, "publisher appears in the rendered body")
 check("Hourly readings" in page, "description is in the HTML, not fetched later")
-check(f'<link rel="canonical" href="{SITE}/dataset?key=data_gov_uk%3Aabc-123">' in page,
-      "canonical URL is absolute and percent-encoded")
+check(f'<link rel="canonical" href="{SITE}/dataset/data_gov_uk/abc-123">' in page,
+      "canonical URL is absolute and by path")
 check('content="index,follow"' in page, "an ordinary record is indexable")
 check(ld(page)["@type"] == "Dataset", "JSON-LD parses and declares a Dataset")
 check(ld(page)["isBasedOn"] == "https://www.data.gov.uk/dataset/abc",
@@ -103,7 +103,7 @@ check("</script>" not in json.dumps(ld(nasty)["name"]) and ld(nasty),
 
 # --- records search doesn't return --------------------------------------
 dup = pagerender.render_dataset(record(duplicate_of="calderdale:e69o0"), SITE)
-check(f'canonical" href="{SITE}/dataset?key=calderdale%3Ae69o0"' in dup,
+check(f'canonical" href="{SITE}/dataset/calderdale/e69o0"' in dup,
       "a duplicate points its canonical tag at the copy we rank")
 check("Another portal publishes this same dataset" in dup,
       "a duplicate says so on the page, not just in a meta tag")
@@ -238,8 +238,24 @@ check("other UK organisation" not in solo,
       "a count of one is this dataset alone, so no notice")
 
 # --- URL construction ---------------------------------------------------
-check(pagerender.dataset_path("a:b c") == "/dataset?key=a%3Ab%20c",
-      "dataset paths percent-encode the whole key")
+# One path per dataset, by path not query string: see slugs.py. Each case
+# is a real key shape from the index; the rules were proven unique over all
+# 110,798 keys on 5 Sep 2026.
+_AGOL = "north_sea_transition:https://www.arcgis.com/home/item.html?id=bb8456bf30844433808afaddd888bf18&sublayer=18"
+_HUB = "stirling:https://data-stirling-council.hub.arcgis.com/datasets/stirling::community-councils"
+check(pagerender.dataset_path("data_gov_uk:abc-123") == "/dataset/data_gov_uk/abc-123",
+      "a key that is already an id keeps it")
+check(pagerender.dataset_path(_AGOL) == "/dataset/north_sea_transition/bb8456bf30844433808afaddd888bf18_18",
+      "an ArcGIS item URL becomes item id + sublayer")
+check(pagerender.dataset_path("camden:https://opendata.camden.gov.uk/api/views/jp6g-pt5r") == "/dataset/camden/jp6g-pt5r",
+      "a Socrata view URL becomes its four-four code")
+check(pagerender.dataset_path(_HUB) == "/dataset/stirling/stirling::community-councils",
+      "a Hub dataset URL becomes its slug")
+check(pagerender.dataset_path(_HUB + "/explore?layer=1") != pagerender.dataset_path(_HUB)
+      and pagerender.dataset_path(_HUB + "/explore?layer=1").startswith("/dataset/stirling/stirling::community-councils-"),
+      "a Hub URL with more after the slug cannot collide with the bare one")
+check("?" not in pagerender.dataset_path("a:b c") and pagerender.dataset_path("a:b c").startswith("/dataset/a/"),
+      "a key a path cannot carry plainly becomes a digest, never a query string")
 check("noindex" in pagerender.render_missing("nope:nope"),
       "a 404 page is never offered for indexing")
 

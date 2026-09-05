@@ -20,6 +20,8 @@ import re
 import sqlite3
 from pathlib import Path
 
+from slugs import slug_for
+
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
@@ -96,6 +98,28 @@ def build_vocab(conn: sqlite3.Connection) -> int:
     return conn.execute("SELECT count(*) FROM vocab").fetchone()[0]
 
 
+def build_slugs(conn: sqlite3.Connection) -> int:
+    """Path -> key, for the dataset routes. See slugs.py for why.
+
+    The path is a pure function of the key, so this table only exists to go
+    the other way. Uniqueness is checked here and failure is loud: two keys
+    sharing a path would mean one dataset's page silently showing another,
+    which is the one thing this must never do.
+    """
+    rows = [(slug_for(k), k) for (k,) in conn.execute("SELECT key FROM datasets")]
+    seen: dict[str, str] = {}
+    for slug, key in rows:
+        if seen.get(slug, key) != key:
+            raise SystemExit(f"slug clash: {slug!r} for {seen[slug]!r} and {key!r}")
+        seen[slug] = key
+    conn.executescript(
+        "DROP TABLE IF EXISTS slugs;"
+        "CREATE TABLE slugs (slug TEXT PRIMARY KEY, key TEXT NOT NULL UNIQUE);")
+    conn.executemany("INSERT INTO slugs (slug, key) VALUES (?, ?)", rows)
+    conn.commit()
+    return len(rows)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--rebuild", action="store_true",
@@ -112,6 +136,7 @@ def main() -> None:
     # Before the early return below: on a night with nothing new to embed
     # the spelling vocabulary must still track the catalogue it describes.
     print(f"spelling vocabulary: {build_vocab(conn):,} words")
+    print(f"dataset paths: {build_slugs(conn):,} slugs")
 
     done_keys: list[str] = []
     done_vecs: np.ndarray | None = None

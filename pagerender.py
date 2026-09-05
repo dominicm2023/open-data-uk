@@ -25,6 +25,8 @@ from pathlib import Path
 
 import yaml
 
+import slugs
+
 ROOT = Path(__file__).parent
 SITE_NAME = "UK Open Data Index"
 
@@ -89,7 +91,7 @@ def dataset_path(key: str) -> str:
     internal link agree character for character — two spellings of the same
     page is how a site ends up competing with itself in search results.
     """
-    return "/dataset?key=" + urllib.parse.quote(str(key), safe="")
+    return slugs.dataset_path(key)
 
 
 def publisher_path(name: str, page: int = 1) -> str:

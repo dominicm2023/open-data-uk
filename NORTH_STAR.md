@@ -130,6 +130,9 @@ A living list. Add freely; move to "Done" with the commit that did it.
   launch-day 429s are the first entry.
 
 ### Done
+- 5 Sep — every dataset page moved to `/dataset/<source>/<id>`; the old
+  `?key=` form 301s. Cause: URL-shaped keys were 7.8x over-represented in
+  "crawled, currently not indexed". Measure in the next Coverage export.
 - 4 Sep — Findings page reduced to measurements: tier 4/5 prompts removed
   from the generator; arguments are Joined Up's.
 - 4 Sep — audit fixes: portal names on results, 103% → 100%, three 404s,

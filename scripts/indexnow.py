@@ -34,6 +34,7 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from paths import connect as db_connect  # noqa: E402
+from slugs import dataset_path  # noqa: E402
 
 ROOT = Path(__file__).parent.parent
 SITE = "https://open-data.org.uk"
@@ -93,8 +94,7 @@ def fingerprint(row: sqlite3.Row) -> str:
 
 
 def dataset_url(key: str) -> str:
-    import urllib.parse
-    return f"{SITE}/dataset?key=" + urllib.parse.quote(key, safe="")
+    return SITE + dataset_path(key)
 
 
 def submit(urls: list[str], key: str, key_location: str, dry: bool) -> bool:

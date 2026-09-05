@@ -187,7 +187,7 @@ function render(payload) {
         ${av} ${geoChip} ${lic} ${fmts}
         <span>${esc(r.publisher || "unknown publisher")}</span>
         ${r.modified ? `<span>· updated ${esc(r.modified)}</span>` : ""}
-        <a class="details" data-role="details" href="/dataset?key=${encodeURIComponent(r.key)}">details →</a>
+        <a class="details" data-role="details" href="${esc(r.page) || '/dataset?key=' + encodeURIComponent(r.key)}">details →</a>
       </div>
       <p class="desc">${esc(r.description)}</p>
       ${cols}

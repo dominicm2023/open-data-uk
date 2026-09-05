@@ -23,7 +23,8 @@ import yaml
 from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import (FileResponse, HTMLResponse, JSONResponse,
-                               PlainTextResponse, StreamingResponse)
+                               PlainTextResponse, RedirectResponse,
+                               StreamingResponse)
 
 import pagerender
 from querylog import CLICK_KINDS, log_click, log_query
@@ -401,6 +402,7 @@ def api_search(request: Request, response: Response,
     names = pagerender.source_names()
     for r in payload["results"]:
         r["source_name"] = names.get(r["source"], {}).get("name") or r["source"]
+        r["page"] = pagerender.dataset_path(r["key"])
     payload["attribution"] = ATTRIBUTION
     return payload
 
@@ -653,18 +655,34 @@ def _dataset_record(key: str) -> dict | None:
         conn.close()
 
 
-@app.get("/dataset", include_in_schema=False)
-def dataset_page(key: str = Query(default="", max_length=500)) -> HTMLResponse:
-    """The dataset page, rendered here rather than in the browser.
+def _key_for_slug(slug: str) -> str | None:
+    """Path back to key, via the table embed_index builds nightly.
 
-    Not rate-limited, unlike /api/dataset: this is three indexed SQLite reads
-    with no model involved, and it's the page we *want* crawled — a limiter
-    here would turn a search engine indexing us into a wall of 429s.
+    Before that table exists (a fresh checkout, an index built by an older
+    embed_index) the only keys reachable are the ones whose path *is* the
+    key — UUIDs, codes — which is most of them.
     """
-    rec = _dataset_record(key) if key else None
+    import sqlite3
+    from paths import connect as db_connect
+    conn = db_connect()
+    try:
+        try:
+            row = conn.execute("SELECT key FROM slugs WHERE slug = ?", (slug,)).fetchone()
+            if row:
+                return row[0]
+        except sqlite3.OperationalError:
+            pass
+        guess = slug.replace("/", ":", 1)
+        row = conn.execute("SELECT key FROM datasets WHERE key = ?", (guess,)).fetchone()
+        return row[0] if row else None
+    finally:
+        conn.close()
+
+
+def _dataset_response(key: str) -> HTMLResponse | None:
+    rec = _dataset_record(key)
     if rec is None:
-        return HTMLResponse(pagerender.render_missing(key or None), status_code=404,
-                            headers={"Cache-Control": "no-store"})
+        return None
     try:
         agg = _aggregates()
         slug = _norm_title(rec.get("title") or "")
@@ -676,6 +694,41 @@ def dataset_page(key: str = Query(default="", max_length=500)) -> HTMLResponse:
     return HTMLResponse(
         pagerender.render_dataset(rec, SITE_URL),
         headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
+@app.get("/dataset/{source}/{ident}", include_in_schema=False)
+def dataset_page(source: str, ident: str) -> Response:
+    """The dataset page, rendered here rather than in the browser.
+
+    Not rate-limited, unlike /api/dataset: this is three indexed SQLite reads
+    with no model involved, and it's the page we *want* crawled — a limiter
+    here would turn a search engine indexing us into a wall of 429s.
+
+    Addressed by path since 5 September 2026 — see slugs.py for why the
+    query-string form was costing pages their place in the index.
+    """
+    slug = f"{source}/{ident}"
+    key = _key_for_slug(slug)
+    resp = _dataset_response(key) if key else None
+    if resp is None:
+        return HTMLResponse(pagerender.render_missing(slug), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    return resp
+
+
+@app.get("/dataset", include_in_schema=False)
+def dataset_page_legacy(key: str = Query(default="", max_length=500)) -> Response:
+    """The address every dataset page had until 5 September 2026.
+
+    A permanent redirect to the page's path, so every link, bookmark and
+    search-engine record from before that date still lands. Cached hard:
+    the mapping is a pure function of the key and will never change.
+    """
+    if key and _dataset_record(key) is not None:
+        return RedirectResponse(SITE_URL + pagerender.dataset_path(key), status_code=301,
+                                headers={"Cache-Control": "public, max-age=31536000"})
+    return HTMLResponse(pagerender.render_missing(key or None), status_code=404,
+                        headers={"Cache-Control": "no-store"})
 
 
 @app.get("/api/dataset",
@@ -695,6 +748,7 @@ def api_dataset(request: Request, response: Response,
     rec = _dataset_record(key)
     if rec is None:
         raise HTTPException(status_code=404, detail="Unknown dataset key")
+    rec["page"] = SITE_URL + pagerender.dataset_path(key)
     return rec
 
 
