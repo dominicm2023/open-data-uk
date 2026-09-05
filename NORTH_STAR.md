@@ -130,6 +130,9 @@ A living list. Add freely; move to "Done" with the commit that did it.
   launch-day 429s are the first entry.
 
 ### Done
+- 5 Sep — older editions of a series canonicalise to the latest when the
+  description matches: 4,231 pages in 1,144 series, out of the sitemap,
+  still served and searchable. (B of the not-indexed fix.)
 - 5 Sep — every dataset page moved to `/dataset/<source>/<id>`; the old
   `?key=` form 301s. Cause: URL-shaped keys were 7.8x over-represented in
   "crawled, currently not indexed". Measure in the next Coverage export.

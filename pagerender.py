@@ -475,6 +475,10 @@ def head_tags(rec: dict, site_url: str) -> str:
     robots = "index,follow"
     if rec.get("duplicate_of"):
         canonical = site_url + dataset_path(rec["duplicate_of"])
+    elif rec.get("edition_of"):
+        # An older edition whose latest says the same thing: the page stays,
+        # the search engine is told which one to keep. See dedupe.write_editions.
+        canonical = site_url + dataset_path(rec["edition_of"])
     if rec.get("retired") or is_thin(rec):
         robots = "noindex,follow"
 
@@ -551,6 +555,11 @@ def body_html(rec: dict) -> str:
             '<p class="notice">Another portal publishes this same dataset. We '
             f'treat <a href="{esc(dataset_path(rec["duplicate_of"]))}">that copy'
             "</a> as the main one, so it is what search returns.</p>")
+    elif rec.get("edition_of"):
+        notices.append(
+            '<p class="notice">This is an earlier edition. The publisher has '
+            f'since released <a href="{esc(dataset_path(rec["edition_of"]))}">'
+            "a newer one</a>, which is what search returns.</p>")
 
     rows = []
     for res in rec.get("resources") or []:

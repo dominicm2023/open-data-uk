@@ -621,6 +621,11 @@ def _dataset_record(key: str) -> dict | None:
                            (key,)).fetchone()
         retired = conn.execute("SELECT 1 FROM retired WHERE key = ?",
                                (key,)).fetchone() is not None
+        try:
+            edition = conn.execute("SELECT latest_key FROM editions WHERE key = ?",
+                                   (key,)).fetchone()
+        except sqlite3.OperationalError:      # index built before editions existed
+            edition = None
 
         return {
             "key": key,
@@ -647,6 +652,10 @@ def _dataset_record(key: str) -> dict | None:
             # with itself.
             "duplicate_of": dup["canonical_key"] if dup else None,
             "retired": retired,
+            # An older edition whose latest says the same thing. Still
+            # searchable and still served; its page's canonical tag names the
+            # latest. See dedupe.write_editions.
+            "edition_of": edition["latest_key"] if edition else None,
             "resources": resources,
             "related": related,
             "attribution": ATTRIBUTION,
@@ -741,7 +750,9 @@ def dataset_page_legacy(key: str = Query(default="", max_length=500)) -> Respons
                      "can fetch here may never appear in `/api/search`: "
                      "duplicates are collapsed onto the canonical copy whose "
                      "key is given, and records the publisher has withdrawn "
-                     "are excluded.")
+                     "are excluded. `edition_of` names the latest edition of "
+                     "a series this record is an older, near-identical "
+                     "edition of; search returns the latest.")
 def api_dataset(request: Request, response: Response,
                 key: str = Query(min_length=3, max_length=500)) -> dict:
     _rate_check(request, response)
@@ -1099,6 +1110,23 @@ NOTHING_TO_INDEX = ("LENGTH(TRIM(COALESCE(d.description,''))) < 40 "
 INDEXABLE = ("FROM datasets d WHERE "
              "NOT EXISTS (SELECT 1 FROM duplicates x WHERE x.key = d.key) AND "
              "NOT EXISTS (SELECT 1 FROM retired r WHERE r.key = d.key)")
+# Older editions whose canonical points at the latest. Kept out of the
+# sitemap only — not out of INDEXABLE, which also drives publisher and
+# subject counts, and an older edition is still a dataset the publisher
+# published. A sitemap, though, should list the URLs we want ranked.
+NOT_OLD_EDITION = "NOT EXISTS (SELECT 1 FROM editions e WHERE e.key = d.key)"
+_editions_known: bool | None = None
+
+
+def _sitemap_filter(conn) -> str:
+    """NOTHING_TO_INDEX, plus the editions clause once that table exists."""
+    global _editions_known
+    if _editions_known is None:
+        _editions_known = conn.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='editions'"
+        ).fetchone() is not None
+    return (f"NOT ({NOTHING_TO_INDEX})"
+            + (f" AND {NOT_OLD_EDITION}" if _editions_known else ""))
 
 
 _count_cache: tuple[float, int] | None = None
@@ -1116,7 +1144,7 @@ def _indexable_count() -> int:
     conn = db_connect()
     try:
         n = conn.execute(
-            f"SELECT COUNT(*) {INDEXABLE} AND NOT ({NOTHING_TO_INDEX})"
+            f"SELECT COUNT(*) {INDEXABLE} AND {_sitemap_filter(conn)}"
         ).fetchone()[0]
         _count_cache = (now, n)
         return n
@@ -1295,7 +1323,7 @@ def sitemap_page(page: int) -> Response:
         conn = db_connect()
         try:
             fetched = conn.execute(
-                f"SELECT d.key, d.modified {INDEXABLE} AND NOT ({NOTHING_TO_INDEX}) "
+                f"SELECT d.key, d.modified {INDEXABLE} AND {_sitemap_filter(conn)} "
                 "ORDER BY d.key LIMIT ? OFFSET ?",
                 (SITEMAP_CHUNK, (page - 1) * SITEMAP_CHUNK)).fetchall()
         except sqlite3.Error:

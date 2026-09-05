@@ -229,6 +229,67 @@ def rank(r, retired: frozenset[str] = frozenset()) -> tuple:
     )
 
 
+def write_editions(conn: sqlite3.Connection, retired_keys) -> int:
+    """Point older editions of a series at the latest, when they say the same.
+
+    Google's "crawled, currently not indexed" on 4 September 2026 was 26%
+    editions: 34 pages titled "ONS UPRN Directory (<month> <year>)", 31 of
+    its User Guide, each a near-copy of the last. A crawler indexes one and
+    drops the rest, and the budget spent finding that out was budget the
+    78,000 pages behind them were waiting for.
+
+    Not every edition is a copy. "Price Paid Data 2019" and "... 2020" share
+    a stem and are different data; a reader who wants 2019 must still find
+    it. So the rule is narrow and every part of it is load-bearing:
+
+      * same source and same publisher - never across portals;
+      * same stem after edition markers are stripped, and the title must
+        actually carry a marker;
+      * the description, with the same markers stripped, must match the
+        latest edition's opening - that is what makes a page a copy rather
+        than a sibling, and it is what the search engine judges on;
+      * neither a duplicate nor retired, which have their own handling.
+
+    Latest is by modified date, then by key, so the choice is deterministic.
+    """
+    from collections import defaultdict
+
+    from normalise import EDITION_RE, edition_stem
+
+    dups = {k for (k,) in conn.execute("SELECT key FROM duplicates")}
+    groups = defaultdict(list)
+    for r in conn.execute("SELECT key, source_id, publisher, title, description, "
+                          "modified FROM datasets"):
+        if r["key"] in dups or r["key"] in retired_keys or not r["publisher"]:
+            continue
+        stem = edition_stem(r["title"])
+        if stem:
+            groups[(r["source_id"], r["publisher"], stem)].append(r)
+
+    def opening(desc):
+        text = EDITION_RE.sub(" ", (desc or "").lower())
+        return re.sub(r"[^a-z0-9]+", " ", text).strip()[:300]
+
+    rows = []
+    series = 0
+    for members in groups.values():
+        if len(members) < 2:
+            continue
+        latest = max(members, key=lambda r: (r["modified"] or "", r["key"]))
+        want = opening(latest["description"])
+        if len(want) < 40:
+            continue                    # nothing to compare: leave them be
+        same = [r for r in members if r["key"] != latest["key"]
+                and opening(r["description"]) == want]
+        if same:
+            series += 1
+            rows += [(r["key"], latest["key"]) for r in same]
+    conn.executemany("INSERT INTO editions VALUES (?, ?)", rows)
+    print(f"editions: {len(rows):,} older editions in {series:,} series "
+          f"point their canonical at the latest")
+    return len(rows)
+
+
 def main() -> None:
     conn = db_connect()
     conn.row_factory = sqlite3.Row
@@ -241,6 +302,15 @@ def main() -> None:
         );
         DROP TABLE IF EXISTS retired;
         CREATE TABLE retired (key TEXT PRIMARY KEY);
+
+        -- An older edition of a series whose latest edition says the same
+        -- thing. Its page stays, linked and crawlable; its canonical tag
+        -- points at the latest. See write_editions() for the rule.
+        DROP TABLE IF EXISTS editions;
+        CREATE TABLE editions (
+            key        TEXT PRIMARY KEY,   -- the older edition
+            latest_key TEXT NOT NULL
+        );
 
         -- Tags live in a JSON array on the dataset row, which means the
         -- subject pages had to scan the whole table and filter in Python:
@@ -370,6 +440,7 @@ def main() -> None:
                      for r in recs if r["key"] != canonical["key"]]
 
     conn.executemany("INSERT INTO duplicates VALUES (?, ?)", dup_rows)
+    write_editions(conn, retired_keys)
 
     # --- licences recoverable from a merged twin -------------------------
     # If we were confident enough to call two records the same dataset, then

@@ -13,6 +13,38 @@ import json
 import re
 from datetime import datetime, timezone
 
+# Edition markers: years, month names, quarter labels, version and document-
+# format words. "Heritage at Risk Register 2022" and "... 2021" are one
+# series; "User Guide (V2)", "User Guide ODT" and "User Guide Version 2" are
+# one guide. Search collapses a series to one result; dedupe points the
+# older editions' canonical tag at the latest. Same regex for both, on
+# purpose, so the two never disagree about what a series is.
+EDITION_RE = re.compile(
+    r"\b(?:19|20)\d{2}\b"
+    r"|\b(?:january|february|march|april|may|june|july|august|september"
+    r"|october|november|december"
+    r"|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)\b"
+    r"|\bq[1-4]\b"
+    r"|\bv(?:ersion)?\.?\s*[0-9]+\b"
+    # ONS releases carry an epoch number: "(Epoch 112)" is an edition.
+    r"|\bepoch\s*[0-9]+\b"
+    r"|\b(?:odt|pdf)\b",
+    re.I)
+
+
+def edition_stem(title):
+    """The series a title belongs to, or None if it carries no edition marker.
+
+    Lower-cased, markers removed, punctuation collapsed. A title with no
+    marker is not an edition of anything, whatever else it resembles.
+    """
+    t = (title or "").lower()
+    stripped = EDITION_RE.sub(" ", t)
+    if stripped == t:
+        return None
+    stem = re.sub(r"[^a-z0-9]+", " ", stripped).strip()
+    return stem if len(stem) >= 8 else None
+
 # --- Unrendered templates -----------------------------------------------
 
 

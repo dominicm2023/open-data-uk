@@ -237,6 +237,11 @@ solo = pagerender.render_dataset(
 check("other UK organisation" not in solo,
       "a count of one is this dataset alone, so no notice")
 
+ed = pagerender.render_dataset(record(edition_of="data_gov_uk:newer-1"), SITE)
+check(f'canonical" href="{SITE}/dataset/data_gov_uk/newer-1"' in ed
+      and "earlier edition" in ed and 'content="index,follow"' in ed,
+      "an older edition points its canonical at the latest, says so, and stays indexable")
+
 # --- URL construction ---------------------------------------------------
 # One path per dataset, by path not query string: see slugs.py. Each case
 # is a real key shape from the index; the rules were proven unique over all

@@ -25,6 +25,7 @@ from pathlib import Path
 import numpy as np
 
 from embed_index import MODEL_NAME, QUERY_PREFIX
+from normalise import EDITION_RE
 from geo import (build_place_vocab, detect_place, mentions_place,
                  place_coverage, place_point)
 
@@ -79,17 +80,7 @@ FOREIGN_MULT = 0.50
 # "Heritage at Risk Register 2022" and "... 2021" as one series — see
 # _collapse_editions.
 _YEAR_RE = re.compile(r"\b(?:19|20)\d{2}\b")
-_EDITION_RE = re.compile(
-    r"\b(?:19|20)\d{2}\b"
-    r"|\b(?:january|february|march|april|may|june|july|august|september"
-    r"|october|november|december"
-    r"|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)\b"
-    r"|\bq[1-4]\b"
-    # Version and document-format markers: "User Guide (V2)", "User Guide
-    # ODT" and "User Guide Version 2" are the same guide, not three series.
-    r"|\bv(?:ersion)?\.?\s*[0-9]+\b"
-    r"|\b(?:odt|pdf)\b",
-    re.I)
+_EDITION_RE = EDITION_RE   # shared with dedupe; see normalise.py
 # bm25 column weights: key(unindexed), title, description, publisher, tags
 BM25_WEIGHTS = "0.0, 5.0, 1.0, 2.0, 3.0"
 # cosine similarity of the best semantic hit, used for the confidence signal
