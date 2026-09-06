@@ -59,7 +59,9 @@ STORE = DATA_DIR / "families"
 LIMITS = {
     "max_file_bytes": 25_000_000, "max_metadata_bytes": 2_000_000,
     "max_storage_bytes": 2_000_000_000, "min_free_bytes": 20_000_000_000,
-    "max_pages": 100, "max_rows": 50_000, "max_output_bytes": 20_000_000,
+    # A monitoring archive or a year of payments can run to six figures of
+    # rows; York's diffusion-tube file was refused at 50,000.
+    "max_pages": 100, "max_rows": 250_000, "max_output_bytes": 80_000_000,
     "job_timeout_seconds": 120, "host_spacing_seconds": 1.5, "host_retry_budget": 3,
 }
 SCHEMA = """

@@ -156,7 +156,10 @@ def build(family: str) -> dict:
                 # Some hosts refuse the REST query outright (Bristol answers
                 # 403) but serve the same layer through the Hub's export
                 # endpoint. Offer it as the next try, never the first.
-                hub = re.match(r"(https://[^/]+\.hub\.arcgis\.com|https://[^/]+\.opendata\.arcgis\.com)/datasets/(?:[a-z0-9-]+::)?([0-9a-f]{32})(?:_(\d+))?",
+                # Any Hub — including one on a council's own domain, which is
+                # where Bristol's lives — exposes the same download API under
+                # the same /datasets/<item id> landing-page shape.
+                hub = re.match(r"(https://[^/]+)/datasets/(?:[a-z0-9-]+::)?([0-9a-f]{32})(?:_(\d+))?",
                                d["landing_url"] or "")
                 if hub:
                     layer = hub.group(3) or "0"
