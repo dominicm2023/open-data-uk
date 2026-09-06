@@ -128,6 +128,7 @@
       "POSTCODE",
       "UPRN"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "18",
@@ -194,6 +195,7 @@
       "_lon",
       "_lat"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "26",
@@ -264,6 +266,7 @@
       "LONGITUDE",
       "LATITUDE"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "Ormeau Recycling Centre",
@@ -322,6 +325,7 @@
       "LONGITUDE",
       "LATITUDE"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "Agnes Street",
@@ -375,6 +379,7 @@
       "Comments",
       "GlobalID"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "683290.4971",
@@ -513,6 +518,7 @@
       "How satisfied or dissatisfied were you with the following? The site accessibility at Hazel Court HWRC",
       "If you had any difficulty booking an appointment to visit Hazel Court HWRC, or with access at the site please give us details below.For example: Digital literacy issuesLanguage support gapsScreen‑reader compatibilityCognitive accessibility (complex instructions, too much text)Need for alternative formats (phone, in‑person, easy‑read) please tell us about the issues."
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "119132378335",
@@ -672,6 +678,7 @@
       "_lon",
       "_lat"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "1",
@@ -838,6 +845,7 @@
       "Sunday",
       "Materials_Accepted"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "-7.362578034",
@@ -973,6 +981,7 @@
       "Longitude",
       "Latitude"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "Settle HWRC",
@@ -1069,6 +1078,7 @@
       "_lon",
       "_lat"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "1",
@@ -1175,6 +1185,7 @@
       "recyc_lat",
       "recyc_lng"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "1",
@@ -1285,6 +1296,7 @@
       "LV_URL",
       "WEBSITE"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "230614",
@@ -1423,6 +1435,7 @@
       "x",
       "y"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "1",
@@ -1643,6 +1656,7 @@
       "x",
       "y"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "1",
@@ -1747,6 +1761,7 @@
       "_lon",
       "_lat"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "1",

@@ -365,5 +365,115 @@
  "1f86fd6aeb612988d3c4ab00e2cb7b5cee82fe00f76e3dfea64b786255738b28": {
   "status": "rejected",
   "reject": "Site-location-only table: station name, pollutant monitored, location type, station ID/filename and Easting/Northing, with no concentration values or years at all."
+ },
+ "4a16b6746cb34aa116d59b07d829a01de2ebe5dc625732b8c8fc0f02b8998039": {
+  "status": "rejected",
+  "reject": "Site-location-only table: OBJECTID, SITE_NO, LOCATION are the only columns (60 rows), giving diffusion tube site codes and labels with no measurement, year, or concentration column of any kind. No annual mean to map."
+ },
+ "19ee3b1d56e7f934b1dfee7e2015911ac7c21b64a5ba69d1dcd1c1350e67db36": {
+  "status": "rejected",
+  "reject": "Same Aberdeen diffusion-tube site list as job 4a16b674... (OBJECTID, SITE_NO, LOCATION) with coordinates added, but still no measurement, pollutant, or year column - site-location-only, no annual mean to map."
+ },
+ "0df044972bfa105849e9528e4b74c69c094ab79b9a371ccc17c3584c3390afbd": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "SITE_ID",
+   "site_name": "SITE_NAME",
+   "site_type": "SITE_TYPE",
+   "easting": "X",
+   "northing": "Y"
+  },
+  "constants": {
+   "method": "diffusion_tube"
+  },
+  "unpivot": {
+   "year_columns": [
+    "F2013_MEAN",
+    "F2014_MEAN",
+    "F2015_MEAN",
+    "F2016_MEAN",
+    "F2017_MEAN",
+    "F2018_MEAN",
+    "F2019_MEAN"
+   ],
+   "key_to": "year",
+   "value_to": "annual_mean",
+   "id_columns": {}
+  },
+  "notes": "Neither pollutant nor unit is stated in this file's title (‘Diffusion Tube 2018 data’) or headers, so both are left unmapped for reviewer confirmation; UK council diffusion-tube programmes are conventionally NO2-only in µg/m³, but that is not stated here. X/Y sample values (~417982/434886) are British National Grid, so mapped to easting/northing; XOS/YOS repeat the same value as X in every sampled row (a source anomaly) and are not mapped. AQMA, RELEVANT_E, KERB, COLOCATED and HEIGHT are not part of this schema. Many F<year>_MEAN cells are 0 for years a tube was not yet in service or had stopped (e.g. Thornton Road: 45,0,0,0,0,0,0); the schema's zero_is_missing rule for annual_mean already drops these rather than publishing a false zero reading. Review 2026-09-06: held as proposed — nothing in the file, title or description names the pollutant, and this family does not guess.",
+  "version": "1"
+ },
+ "f638a9bd919a58af8a2195f342d3bebd6c0588ed44a7b4c373c30f84c8e3c751": {
+  "status": "rejected",
+  "reject": "Modelled emissions grid, not monitoring-site annual means: gridID/Shape__Area/Shape__Length identify raster grid cells, and sum_/sum_converted are modelled NOx emission totals per cell (title: ‘Urban vs Rural Air Quality - 2018 Annual NOx Emissions Data’ from a StoryMap), not a published site concentration."
+ },
+ "add2aa2901ef2b71ab62acff5f7a54c74a72ac267e38b97d9b3aaf8a0b4cc6df": {
+  "status": "rejected",
+  "reject": "This is National Highways' PCM (Pollution Climate Mapping) link-level compliance assessment, not a monitoring site's published annual mean: rows are road links (pcm_link_id/road_name/road_description), no2_conc is banded into compliance categories ('Above limit value', 'Between 36µg/m³-39.9µg/m³'), 'aer_based_on' shows the evidence behind each link's figure varies row to row between monitoring, 'previous modelling and/or projections', and 'distance correction', and annual_evaluation_report_year holds projected compliance dates like '>2030' - a modelled/forecast compliance dataset, not raw site measurements."
+ },
+ "f7b76803ee9fbf2cc5e29cea00ccaa6659cb8a026f6908ab4343416c7f344a3b": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "mon_site_i",
+   "method": "mon_type",
+   "year": "year",
+   "annual_mean": "annual_no2",
+   "data_capture_pct": "datacapture",
+   "lon": "_lon",
+   "lat": "_lat"
+  },
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³"
+  },
+  "notes": "Header column 'annual_no2' states the pollutant directly, so pollutant=NO2 is set as a constant; unit is not stated anywhere in the title ('National Highways Annual Evaluation Report Diffusion Tube Data') or headers, so it is left unmapped for reviewer confirmation rather than assumed to be µg/m³. mon_type is 'Diffusion Tube' in every sampled row and is mapped to method verbatim rather than set as a constant, since the column is per-row. dist_to_pcm and used_in_aer are not part of this schema. outSR=4326 so _lon/_lat are already WGS84. Review 2026-09-06: Unit: the file does not state one; every other source in this family reports annual means in µg/m³ (the LAQM reporting unit) and this one is read the same way, as a reviewer decision recorded here.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-06"
+ },
+ "060977afe6c0ae483e6ef94d5000bab4f3274d99f5b1b1add5cda7886a3ab8cf": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "siteid",
+   "annual_mean": "annual_mean2022",
+   "lon": "_lon",
+   "lat": "_lat"
+  },
+  "constants": {
+   "year": 2022,
+   "unit": "µg/m³",
+   "pollutant": "NO2"
+  },
+  "notes": "Single year's report (title: 'National Air Quality Monitoring Network Report 2022'), with one annual_mean2022 column rather than a wide multi-year table, so year=2022 is set as a constant instead of using unpivot. Neither the title nor the headers state which pollutant this network measures or in what unit, so both are left unmapped for reviewer confirmation (the companion job 8ac2fcea... for a later year of the same network gives separate NO2/PM10/PM2.5 columns, suggesting this earlier single-column report may be NO2-only, but that is not stated here). siteid values (e.g. '01_M1_J34-35SB_N') are motorway-network monitoring site codes. outSR=4326 so _lon/_lat are WGS84. Review 2026-09-06: Unit: the file does not state one; every other source in this family reports annual means in µg/m³ (the LAQM reporting unit) and this one is read the same way, as a reviewer decision recorded here. Pollutant: the dataset description says 'nitrogen dioxide monitoring results'.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-06"
+ },
+ "8ac2fcea0582644e6888c019e3362d810f15f056aa04fd566fb0bd02152a38a6": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "siteid",
+   "year": "year",
+   "annual_mean": "annual_no2",
+   "data_capture_pct": "datacaptur",
+   "lon": "_lon",
+   "lat": "_lat"
+  },
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³"
+  },
+  "notes": "This file carries three pollutants as separate columns per site/year - annual_no2/datacaptur, annual_pm10/datacapt_1, and annual_pm2/datacapt_2 (PM2.5, field name truncated) - but this family's one-mapping-per-source-column format can only carry a single pollutant into 'annual_mean' at a time, and the unpivot mechanism only unpivots year-wide columns, not pollutant-wide ones. Only the NO2 column is mapped here (pollutant=NO2 taken directly from the 'annual_no2' header name); the PM10 and PM2.5 columns are left unmapped and this source's ~130 rows of PM10/PM2.5 readings are lost unless a reviewer adds a second mechanism (e.g. per-pollutant unpivot support) to capture them. x_coord/y_coord (British National Grid) are not mapped since _lon/_lat are already given directly (outSR=4326); included_in_aer23 is not part of this schema. Unit is not stated in the title or headers so is left unmapped. Review 2026-09-06: Unit: the file does not state one; every other source in this family reports annual means in µg/m³ (the LAQM reporting unit) and this one is read the same way, as a reviewer decision recorded here.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-06"
  }
 }

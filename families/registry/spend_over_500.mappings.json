@@ -146,10 +146,17 @@
    "threshold_gbp": 500,
    "body": "Royal Borough of Greenwich"
   },
-  "notes": "Minimal 3-column table (Supplier, Payment Date, Amount only); no expense_area/expense_type/reference/description/period available. Review: preview inspected; dates, suppliers and amounts read as published.",
+  "notes": "Minimal 3-column table (Supplier, Payment Date, Amount only); no expense_area/expense_type/reference/description/period available. Review: preview inspected; dates, suppliers and amounts read as published. Layouts: 2 added: main 'Supplier/Payment Date/Amount' layout (12 files) already covered by existing columns; underscored 'Supplier/Payment_Date/Amount' layout (2 files, Oct-2011) added.",
   "version": "1",
   "reviewer": "Claude, for Dominic Matthews",
-  "reviewed_at": "2026-09-06"
+  "reviewed_at": "2026-09-06",
+  "alt_columns": [
+   {
+    "payment_date": "Payment_Date",
+    "supplier": "Supplier",
+    "amount_gbp": "Amount"
+   }
+  ]
  },
  "f7364e529c276bf35e6c9b19cda7baba4f8448fd78df2ec1996ca3e64a134534": {
   "status": "reviewed",
@@ -164,10 +171,26 @@
    "threshold_gbp": 500,
    "body": "Royal Borough of Greenwich"
   },
-  "notes": "Minimal 3-column table (Supplier, Payment Date, Amount only), same shape as the other Greenwich source in this family; no expense_area/expense_type/reference/description/period available. Review: preview inspected; dates, suppliers and amounts read as published.",
+  "notes": "Minimal 3-column table (Supplier, Payment Date, Amount only), same shape as the other Greenwich source in this family; no expense_area/expense_type/reference/description/period available. Review: preview inspected; dates, suppliers and amounts read as published. Layouts: 4 added: 'Supplier/Payment Date/Amount' layout (10 files) already covered; 'Supplier/Amount/Payment Date' reordered layout (18 files) already covered by the same column names; 'Creditor Name/Invoice Line Amount/Payment Date/LA Department/Expenditure Category' layout (10 files, mid-2014) added; underscored 'Creditor_Name /Invoice Line Amount/Payment_Date' variant of that layout (2 files, early 2015) added.",
   "version": "1",
   "reviewer": "Claude, for Dominic Matthews",
-  "reviewed_at": "2026-09-06"
+  "reviewed_at": "2026-09-06",
+  "alt_columns": [
+   {
+    "payment_date": "Payment Date",
+    "supplier": "Creditor Name",
+    "amount_gbp": "Invoice Line Amount",
+    "expense_area": "LA Department",
+    "expense_type": "Expenditure Category/Description"
+   },
+   {
+    "payment_date": "Payment_Date",
+    "supplier": "Creditor_Name ",
+    "amount_gbp": "Invoice Line Amount",
+    "expense_area": "LA Department",
+    "expense_type": "Expenditure Category/Description"
+   }
+  ]
  },
  "adf25f9f31269c417f96ee00c75c837896bdbbdb05154e0c485f66143b12ca4a": {
   "status": "reviewed",
@@ -186,10 +209,66 @@
    "threshold_gbp": 500,
    "body": "Wales Office"
   },
-  "notes": "File starts with a title line ('Wales Office spend over £500', 'May-10' ...) at row 0, a blank row at row 1, then the real header (ENTITY, EXPENSE_AREA, PAYMENT_DATE, PAYMENT_NUMBER, SUPPLIER_NAME, INVOICE_AMOUNT, NAC_DESCRIPTION, Service provided) at row 2 — header_row set to 2 accordingly. Reviewer should confirm the blank-row count is consistent for other months' files in this same series if more get added later. Review: 17 of 23 rows have no date in the source; kept with payment_date null.",
+  "notes": "File starts with a title line ('Wales Office spend over £500', 'May-10' ...) at row 0, a blank row at row 1, then the real header (ENTITY, EXPENSE_AREA, PAYMENT_DATE, PAYMENT_NUMBER, SUPPLIER_NAME, INVOICE_AMOUNT, NAC_DESCRIPTION, Service provided) at row 2 — header_row set to 2 accordingly. Reviewer should confirm the blank-row count is consistent for other months' files in this same series if more get added later. Review: 17 of 23 rows have no date in the source; kept with payment_date null. Layouts: 8 added: Oct-2012 'Payment Date/Supplier Name/ Amount /NAC Description/Service Supplied' layout added; Sep-2012 'Date/Supplier/Amount/Payment No/Service Description' layout added; Aug-2012 'PAYMENT DATE/SUPPLIER NAME/INVOICE AMOUNT/EXPENSE_AREA_1' layout added, also covering the same-shaped Jul-2012 layout (extra PO/invoice-value columns) and the Jun-2012 layout (16 files); Feb-2011 underscored 'PAYMENT_DATE/SUPPLIER_NAME/INVOICE_AMOUNT' layout (2 files) added separately since its description column reads 'SERVICE SUPPLIED' rather than 'Service provided'; Dec-2010 11-column layout added, using 'EXPENSE_TYPE_6' over the sibling 'EXPENSE_TYPE_3'/'NAC_LEVEL_6' fields for expense_type (reviewer should check which is preferred); Nov-2010 title-row file (real header two rows down, per the brief's title-row rule) added with its own single 'EXPENSE_TYPE' column. Review 2026-09-06: the June and July 2011 files carry amounts formatted with a dollar sign ('$1,145.00'), a spreadsheet formatting artefact; the figure is read as pounds, which is what the return states.",
   "version": "1",
   "reviewer": "Claude, for Dominic Matthews",
-  "reviewed_at": "2026-09-06"
+  "reviewed_at": "2026-09-06",
+  "alt_columns": [
+   {
+    "payment_date": "Payment Date",
+    "supplier": "Supplier Name",
+    "amount_gbp": " Amount ",
+    "expense_area": "Expense Area",
+    "expense_type": "NAC Description",
+    "reference": "Payment Number",
+    "description": "Service Supplied"
+   },
+   {
+    "payment_date": "Date",
+    "supplier": "Supplier",
+    "amount_gbp": "Amount",
+    "expense_area": "Expense Area",
+    "expense_type": "Expense Type",
+    "reference": "Payment No",
+    "description": "Service Description"
+   },
+   {
+    "payment_date": "PAYMENT DATE",
+    "supplier": "SUPPLIER NAME",
+    "amount_gbp": "INVOICE AMOUNT",
+    "expense_area": "EXPENSE_AREA_1",
+    "expense_type": "NAC DESCRIPTION",
+    "reference": "PAYMENT NUMBER",
+    "description": "SERVICE SUPPLIED"
+   },
+   {
+    "payment_date": "PAYMENT_DATE",
+    "supplier": "SUPPLIER_NAME",
+    "amount_gbp": "INVOICE_AMOUNT",
+    "expense_area": "EXPENSE_AREA",
+    "expense_type": "NAC_DESCRIPTION",
+    "reference": "PAYMENT_NUMBER",
+    "description": "SERVICE SUPPLIED"
+   },
+   {
+    "payment_date": "DATE",
+    "supplier": "SUPPLIER",
+    "amount_gbp": "AMOUNT",
+    "expense_area": "EXPENSE_AREA_1",
+    "expense_type": "EXPENSE_TYPE_6",
+    "reference": "TRANSACTION_NUMBER",
+    "description": "SERVICE PROVIDED"
+   },
+   {
+    "payment_date": "DATE",
+    "supplier": "SUPPLIER",
+    "amount_gbp": "AMOUNT",
+    "expense_area": "EXPENSE_AREA_1",
+    "expense_type": "EXPENSE_TYPE",
+    "reference": "TRANSACTION_NUMBER",
+    "description": "SERVICE PROVIDED"
+   }
+  ]
  },
  "096c8c488b60488acea2a888e215be9ea43aff19de0bb1c12fbd674a14487b8c": {
   "status": "reviewed",
@@ -208,10 +287,29 @@
    "threshold_gbp": 500,
    "body": "Wirral Metropolitan Borough Council"
   },
-  "notes": "File starts with a title line ('Payments for Publishing for Invoices paid between 01-SEP-2022 and 30-SEP-2022') at row 0, real header at row 1 — header_row set to 1 accordingly. Note the exact header text for payment_date and expense_area carries a leading space (' Paid Date', ' Department') in the source. 'Cost Centre' holds a code (e.g. 'D2510'), not a text description, but it is the only expense-type-like field available; reviewer should sanity-check this choice. 'Irrecoverable VAT' is present but not mapped to amount_gbp, per the rule against folding VAT into the payment amount. Review: expense_type is the council's cost-centre code, as published.",
+  "notes": "File starts with a title line ('Payments for Publishing for Invoices paid between 01-SEP-2022 and 30-SEP-2022') at row 0, real header at row 1 — header_row set to 1 accordingly. Note the exact header text for payment_date and expense_area carries a leading space (' Paid Date', ' Department') in the source. 'Cost Centre' holds a code (e.g. 'D2510'), not a text description, but it is the only expense-type-like field available; reviewer should sanity-check this choice. 'Irrecoverable VAT' is present but not mapped to amount_gbp, per the rule against folding VAT into the payment amount. Review: expense_type is the council's cost-centre code, as published. Review 2026-09-06: the November 2023 and May 2024 returns use 'Payment Number', 'Line Amount' and 'Subjective Desc' (second layout). The December 2025 return's header lists a Paid Date column but its rows do not carry one, so every value sits one column left of its label; the third layout reads that file by its contents and those rows have no payment date.",
   "version": "1",
   "reviewer": "Claude, for Dominic Matthews",
-  "reviewed_at": "2026-09-06"
+  "reviewed_at": "2026-09-06",
+  "alt_columns": [
+   {
+    "payment_date": "Paid Date",
+    "supplier": "Supplier Name",
+    "amount_gbp": "Line Amount",
+    "expense_area": "Department",
+    "expense_type": "Cost Centre",
+    "reference": "Payment Number",
+    "description": "Subjective Desc"
+   },
+   {
+    "supplier": "Supplier Name",
+    "reference": "Transaction Number",
+    "amount_gbp": "Paid Date",
+    "expense_area": "Paid Amount",
+    "expense_type": "Department",
+    "description": "Cost Centre"
+   }
+  ]
  },
  "a670f04716a86dd5b4cbe201b65dd7c85880766a6032288638361952d82be95c": {
   "status": "reviewed",
@@ -314,10 +412,35 @@
    "threshold_gbp": 500,
    "body": "UK Commission for Employment and Skills"
   },
-  "notes": "Threshold 500 taken from the title ('Spend over £500 in the UK Commission for Employment and Skills'). 'Date' includes a literal time component in the sample ('10/01/2014 00:00') — always midnight in samples shown, so date extraction should be safe, but reviewer should confirm. No expense_area-equivalent column exists (only department-level 'Department Family'/'Entity'), so left unmapped. Table also carries 'Year' and 'Period' columns, but sample values ('C', '12') don't read as a clean, publishable period label, so 'period' was left unmapped — reviewer should check what these encode before adding. 'Supplier' values carry an embedded supplier code prefix (e.g. 'ASP002 - Aspero Limited') — kept exactly as published, not split apart. Not mapped, no schema slot: Supplier postcode, Supplier type, HOME_CREDIT, HOME_DEBIT, Contract Number, Project Code, Expenditure type. Review: no dates or expense area in the source; Year/Period columns opaque and left unmapped.",
+  "notes": "Threshold 500 taken from the title ('Spend over £500 in the UK Commission for Employment and Skills'). 'Date' includes a literal time component in the sample ('10/01/2014 00:00') — always midnight in samples shown, so date extraction should be safe, but reviewer should confirm. No expense_area-equivalent column exists (only department-level 'Department Family'/'Entity'), so left unmapped. Table also carries 'Year' and 'Period' columns, but sample values ('C', '12') don't read as a clean, publishable period label, so 'period' was left unmapped — reviewer should check what these encode before adding. 'Supplier' values carry an embedded supplier code prefix (e.g. 'ASP002 - Aspero Limited') — kept exactly as published, not split apart. Not mapped, no schema slot: Supplier postcode, Supplier type, HOME_CREDIT, HOME_DEBIT, Contract Number, Project Code, Expenditure type. Review: no dates or expense area in the source; Year/Period columns opaque and left unmapped. Layouts: 7 added: Oct-2011 'Pay Period/Pay Date/Pay Value/Supplier' layout (7 files) has an apparently mislabeled header — the sample data shows the 'Pay Period' column holding the payment date and the 'Pay Date' column holding the numeric amount, with 'Pay Value' a constant 'PAY' marker; mapped by data position rather than label, reviewer should double-check; Nov-2011 same-shape layout (5 files) covered by that same mapping; Jan-2014 detailed BIS layout already covered by the existing columns; Apr-Dec-2013 detailed BIS layout (space-padded ' Amount ', 4 files) already covered; Nov-2012 layout (1 file) with correctly labelled 'Pay Date'/'Pay Value' columns added; one 2013 BIS layout (1 file) using 'Transaction Number' in place of 'tran_ref' added; skipped one 'Supplier'/'Gross Value' totals-only layout (64 rows, per-supplier totals not per-payment lines). Review 2026-09-06: the 2011-12 monthly files carry mislabelled headers: the date sits under 'Pay Period', the amount under 'Pay Date' and a literal 'PAY' under 'Pay Value' (sample row ' 20-Oct-11', '527.11', 'PAY', supplier); the second alternate layout maps them by content. The May 2012 file has only Supplier and Gross Value, so those 64 rows carry no date or period.",
   "version": "1",
   "reviewer": "Claude, for Dominic Matthews",
-  "reviewed_at": "2026-09-06"
+  "reviewed_at": "2026-09-06",
+  "alt_columns": [
+   {
+    "payment_date": "Pay Period",
+    "amount_gbp": "Pay Date",
+    "supplier": "Supplier"
+   },
+   {
+    "payment_date": "Pay Date",
+    "amount_gbp": "Pay Value",
+    "supplier": "Supplier"
+   },
+   {
+    "payment_date": "Date",
+    "supplier": "Supplier",
+    "amount_gbp": "Amount",
+    "expense_area": "Expense Area",
+    "expense_type": "Expense Type",
+    "reference": "Transaction Number",
+    "description": "Description"
+   },
+   {
+    "supplier": "Supplier",
+    "amount_gbp": "Gross Value"
+   }
+  ]
  },
  "cf8fc911f167104ad7bf020b78493813d2ad0eb8cbd1841c52995fa581986abe": {
   "status": "reviewed",

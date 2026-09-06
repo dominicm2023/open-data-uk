@@ -132,5 +132,75 @@
  "c81b2dd7ae37d2a3ecf2d396fc01c46ee873a294ca4bee24b3efbec5a80050f5": {
   "status": "rejected",
   "reject": "This is a bring-bank / recycling-point dataset (containers at schools, churches and car parks, e.g. 'Croft Nursery School', 'Windmill Car Park'), with per-material Y/N flags (Clear_Glass, Green_Glass, Brown_Glass, Mixed, Cans_Tins, Textiles, Oil, Plastic, Litter, Carton_Tetrapak, Books, Paper, Shoes) rather than a household waste recycling centre / civic amenity site."
+ },
+ "ee58fabba742650a72fa00927889fe54ea4f387e95e9a8910cfe3727baca88f5": {
+  "status": "rejected",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "SITE",
+   "postcode": "POSTCODE"
+  },
+  "constants": {},
+  "notes": "6-column table (OBJECTID, SITE, ROADNAME, LOCALITY, POSTCODE, UPRN), one row per recycling centre. SITE is the site name; ROADNAME and LOCALITY are separate columns and are not combined into 'address' since address must be a single existing column, not a concatenation, so both are left unmapped. No coordinates (lon/lat or easting/northing), operator, opening_hours, materials, status, or as_of are published, so those stay null. UPRN and OBJECTID are identifiers outside this schema.",
+  "version": "1",
+  "reject": "The same four Aberdeen sites as the council's ArcGIS layer (postcodes match, e.g. AB12 3BG), under older names; the ArcGIS layer is the maintained one and is published instead.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-06"
+ },
+ "84ff9dadf7c6d87f7024435a5b3f5d002991048a7a608d9f2e1349af9f7a6d1a": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "SITE",
+   "postcode": "POSTCODE",
+   "lon": "_lon",
+   "lat": "_lat"
+  },
+  "constants": {},
+  "notes": "Same Aberdeen City Council recycling-centres layer as job ee58fabb..., served here through the council's ArcGIS Online FeatureServer instead of the CKAN CSV export, with coordinates added (outSR=4326, so _lon/_lat are WGS84 degrees, not BNG). ROADNAME and LOCALITY are again separate columns and left unmapped rather than concatenated into 'address'. Likely a near-duplicate of ee58fabb...'s rows; a reviewer may want to dedupe or pick one of the two at build time, as was flagged for the Belfast/civic-amenity pair already in this file. Review 2026-09-06: the FeatureServer returned no geometry for this layer, so the rows carry postcodes only.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-06"
+ },
+ "d98fd61240a0a0f4e2f5c1ef8e52afb3424d524c7db155340a58d97e9fd5f4cd": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "BUILDING",
+   "address": "ADDRESS",
+   "easting": "X",
+   "northing": "Y",
+   "opening_hours": "OPENING_HOURS",
+   "materials": "FACILITIES"
+  },
+  "constants": {},
+  "notes": "North Ayrshire's council-buildings open-data layer filtered to SECTION_ = 'Recycling Centres' in every sampled row; BUILDING carries the site name (e.g. 'Bartonholm Recycling Centre'), ADDRESS is a single free-text column that already includes the postcode inline, so no separate postcode column is mapped. X/Y sample values (~230614/641176) sit squarely in the Ayrshire British National Grid range, so mapped to easting/northing rather than lon/lat. SERVICE_GROUP, SERVICE, SECTION_ are category labels, not a site status; CONTACT_*, LV_URL, WEBSITE, IMAGE, ANNOUNCEMENTS and the OBJECTID/UPRN identifiers are not part of this schema and are left unmapped. Review 2026-09-06: the address column already carries the postcode; coordinates converted from BNG.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-06"
+ },
+ "d2e2ae0ec502e502909e723314ddf4f31dc2fd6135729ccebec147a3fa50a3e5": {
+  "status": "rejected",
+  "reject": "Title 'Recycling Centres and Points' matches the file: a TYPE column mixes true household waste recycling centres (TYPE='CENTRE') with small bring-bank recycling points and single-material collection points (TYPE='POINT'/'MINI-GLASS' with narrow MATERIALS lists like just 'Glass'); of 6 sampled rows only 1 was a CENTRE. This mapping format has no way to filter rows by column value, so the whole 143-row table would publish bring banks as recycling centres if mapped, which the family excludes; held out entirely rather than mis-scope it."
+ },
+ "99a3391a1a2cf121ffaaa73df673beb3fe4a6c843efe58692eb6fc74465a53ae": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "address": "ADDRESS",
+   "lon": "_lon",
+   "lat": "_lat"
+  },
+  "constants": {
+   "site_name": "North Farm Waste and Recycling Centre"
+  },
+  "notes": "Single-row layer for one named site (the dataset title is 'North Farm Waste and Recycling Centre Map Image Layer'); there is no site-name column, so site_name is supplied as a constant from the title, as done elsewhere in this family for single-site sources. ADDRESS is one free-text column (it embeds carriage returns from the source but is still a single column) and is mapped verbatim; outSR=4326 so _lon/_lat are WGS84 degrees. GLASS, CANS, CARDBOARD, PAPER, BOOKS, TEXTILES and PLASTIC_BO are separate per-material Y/N flag columns, not a single verbatim materials list, so 'materials' is left unmapped rather than synthesised from them. Review 2026-09-06: one site, named from the dataset title; the address cell's line breaks are collapsed to spaces.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-06"
  }
 }

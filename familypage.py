@@ -14,6 +14,7 @@ publishers' files; the page says so and links each one.
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from pagerender import _page, breadcrumbs, esc, simple_head, dataset_path
@@ -77,8 +78,23 @@ def render_family(family: str, site_url: str) -> str | None:
         [("Home", "/"), ("Who publishes what", "/who-publishes"), (s["label"], None)], site_url)
 
     # who is in, and who is not yet, with the reason
+    def _review_note(notes: str) -> str:
+        # The reviewer's own sentences, if any, ahead of the proposer's description.
+        parts = re.findall(r"Review \d{4}-\d{2}-\d{2}:.*?(?=Review \d{4}-\d{2}-\d{2}:|$)", notes, flags=re.S)
+        text = " ".join(x.strip() for x in parts) if parts else notes
+        return text[:480] + ("…" if len(text) > 480 else "")
+
+    # What the reviewer recorded about a source travels with it: a publisher
+    # whose header labels are mislabelled, a threshold read from the title,
+    # a file layout that changed one year.
+    notes_by_pub: dict[str, list[str]] = {}
+    for e in s.get("sources", []):
+        if e.get("ladder") == "published" and e.get("notes"):
+            notes_by_pub.setdefault(e["publisher"], []).append(e["notes"])
     contributing = "".join(
-        f'<li>{esc(pub)} <span class="note">{n:,} rows</span></li>'
+        f'<li>{esc(pub)} <span class="note">{n:,} rows</span>'
+        + (f'<br><span class="note">{esc(_review_note(" ".join(notes_by_pub[pub])))}</span>' if pub in notes_by_pub else "")
+        + "</li>"
         for pub, n in sorted(by_pub.items(), key=lambda kv: (-kv[1], kv[0])))
     pending = []
     for e in s["sources"]:

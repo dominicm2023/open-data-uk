@@ -30,13 +30,24 @@ SAMPLE_ROWS = 6
 MAX_COLS = 60
 
 
+def _header_row(rows: list) -> int:
+    """The first row that looks like a header: three or more filled cells
+    within the first few rows. Wirral's returns open with a one-cell title
+    line naming the month; that line is not the layout."""
+    for i, r in enumerate(rows[:6]):
+        if sum(1 for x in r if x not in (None, "") and str(x).strip()) >= 3:
+            return i
+    return 0
+
+
 def _preview(table: dict) -> dict:
     rows = table["rows"]
-    header = [str(h) if h is not None else "" for h in (rows[0] if rows else [])][:MAX_COLS]
-    body = [[("" if v is None else str(v))[:80] for v in r[:MAX_COLS]] for r in rows[1:1 + SAMPLE_ROWS]]
+    hr = _header_row(rows)
+    header = [str(h) if h is not None else "" for h in (rows[hr] if rows else [])][:MAX_COLS]
+    body = [[("" if v is None else str(v))[:80] for v in r[:MAX_COLS]] for r in rows[hr + 1:hr + 1 + SAMPLE_ROWS]]
     where = {k: v for k, v in table.items() if k != "rows"}
-    return {"where": where, "header": header, "sample_rows": body, "row_count": max(len(rows) - 1, 0),
-            "column_count": max((len(r) for r in rows), default=0)}
+    return {"where": where, "header": header, "header_row": hr, "sample_rows": body,
+            "row_count": max(len(rows) - hr - 1, 0), "column_count": max((len(r) for r in rows), default=0)}
 
 
 def build(family: str) -> dict:
@@ -60,7 +71,7 @@ def build(family: str) -> dict:
                 t0 = d["tables"][0] if d["tables"] else None
                 if not t0 or not t0["rows"]:
                     continue
-                key = tuple(str(x).strip().lower() for x in t0["rows"][0][:MAX_COLS])
+                key = tuple(str(x).strip().lower() for x in t0["rows"][_header_row(t0["rows"])][:MAX_COLS])
                 if key in seen:
                     seen[key]["files"] += 1
                     continue

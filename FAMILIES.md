@@ -162,9 +162,14 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 
 | family | registry | extracted | reviewed & published |
 |---|---|---|---|
-| recycling_centres | 30 sources | 10 | 7 sources, 75 rows, 6 bodies |
-| air_quality_annual | 51 | 28 | 13 sources, 13,479 rows, 3 bodies |
-| spend_over_500 | 60 | 20 | 15 sources, 114,003 rows, 13 bodies (series fetch of every monthly file in progress) |
+| recycling_centres | 30 sources | 15 | 10 sources, 84 rows, 9 bodies |
+| air_quality_annual | 51 | 36 | 16 sources, 14,412 rows, 4 bodies |
+| spend_over_500 | 60 | 16 | 15 sources, 825,841 rows, 13 bodies (262 monthly files across the series) |
+
+Held in review, not published: Bradford's diffusion tubes (nothing in the
+file, title or description names the pollutant); Perth & Kinross (mixes
+recycling centres with bring banks and the mapping cannot filter rows);
+National Highways' NAQMN PM10/PM2.5 columns (one pollutant per mapping).
 
 Things the first day taught, now rules in the code: Northern Ireland bodies
 publish on the Irish Grid or Irish Transverse Mercator, never BNG, and the
@@ -175,6 +180,17 @@ published annual mean of exactly 0 is a placeholder; concatenated monthly
 returns repeat their header and drop one-cell dividers; data.gov.uk
 resources marked CSV are often HTML pages, so the intake tries ranked
 candidates; and a source's last good snapshot outlives a failed re-fetch.
+
+Second-day rules, now in the code: a series file's header chooses its
+layout by names, and only when that layout holds most of the file's rows do
+the other fitting layouts get a turn (Wirral's December 2025 return lists a
+date column its rows do not carry; the rows that result say so in
+`quality_note`). A number is a number only when nothing but a unit follows
+it (`08-MAY-2024` is not 8). Currency prefixes (`$1,145.00`, an Excel
+artefact in Wales Office files) are formatting. Line breaks inside a cell
+are collapsed. The brief finds the real header row past a title line, so
+the checker knows every layout of a series. Reviewer decisions live in the
+mapping's `notes` after "Review <date>:" and show on the family page.
 
 ## The loop from here
 

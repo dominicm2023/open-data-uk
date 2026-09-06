@@ -212,12 +212,13 @@ def itm_to_wgs84(E: float, N: float) -> tuple[float, float]:
 def _num(v):
     if v is None:
         return None
-    s = str(v).strip().replace(",", "").replace("£", "")
+    s = str(v).strip().replace(",", "").lstrip("£$€ ").replace("£", "")
     if s in ("", "-", "n/a", "N/A", "NA", "null", "None"):
         return None
     m = re.fullmatch(r"-?\d+(?:\.\d+)?", s)
     if not m:
-        m2 = re.match(r"(<|>)?\s*(-?\d+(?:\.\d+)?)", s)
+        # "<0.5" or "12 µg/m3" carry a number; "08-MAY-2024" does not
+        m2 = re.fullmatch(r"(<|>)?\s*(-?\d+(?:\.\d+)?)(?:(?:\s+|[^\w\s.-]).*)?", s)
         return float(m2.group(2)) if m2 else None
     return float(s)
 
@@ -302,33 +303,63 @@ def map_source(job: dict, spec: dict, schema: dict) -> tuple[list[dict], list[di
     return out, bad
 
 
+def _norm(x) -> str:
+    return re.sub(r"\s+", " ", str(x)).strip().lower()
+
+
+def _fits(rows: list, candidates: list, h: int) -> list[tuple[int, int, dict]]:
+    """Every (hits, header_row, layout) whose names the header carries well
+    enough, best first. Names are compared stripped and case-folded, because
+    publishers' trailing spaces are not information."""
+    fits = []
+    for hr in range(0, min(max(h, 0) + 4, len(rows))):     # a sibling file may lack the title row
+        lowered = [_norm(c) for c in rows[hr]]
+        for order, lay in enumerate(candidates):
+            names = [_norm(v) for v in lay.values()]
+            hits = sum(1 for n in names if n in lowered)
+            if lay and hits >= max(2, int(0.6 * len(lay))):
+                fits.append((hits, hr, order, lay))
+    fits.sort(key=lambda t: (-t[0], t[2], t[1]))
+    return [(hits, hr, lay) for hits, hr, order, lay in fits]
+
+
 def _map_file(job: dict, f: dict, spec: dict, schema: dict) -> tuple[list[dict], list[dict]]:
     rows = _load_table(f["extraction_sha"], spec.get("table", 1))
     h = spec.get("header_row", 0)
     # A series' files do not all share a layout: Greenwich's returns gained
     # a "Payment Date" column one year. The mapping's own columns and its
     # alt_columns are each a layout; the header row of this file chooses
-    # between them by how many of a layout's names it carries. Names are
-    # compared stripped and case-folded, because publishers' trailing
-    # spaces are not information.
-    def _norm(x) -> str:
-        return re.sub(r"\s+", " ", str(x)).strip().lower()
-
+    # between them by how many of a layout's names it carries. The header
+    # may also sit on a later row than declared when a file has a title
+    # line the first one did not.
     candidates = [spec.get("columns", {})] + list(spec.get("alt_columns", []))
-    # the header may sit on a later row than declared when a file has a
-    # title line the first one did not: look at the declared row and the
-    # few after it, and take the best (layout, row) pair
-    best, best_hits, best_row = None, 0, h
-    for hr in range(h, min(h + 4, len(rows))):
-        lowered = [_norm(c) for c in rows[hr]]
-        for lay in candidates:
-            names = [_norm(v) for v in lay.values()]
-            hits = sum(1 for n in names if n in lowered)
-            if hits > best_hits:
-                best, best_hits, best_row = lay, hits, hr
-    if best is None or best_hits < max(2, int(0.6 * len(best))):
+    fits = _fits(rows, candidates, h)
+    if not fits:
         raise KeyError(f"no known layout fits the header {[str(x)[:18] for x in rows[h][:8]]}")
-    h = best_row
+    hits, hr, lay = fits[0]
+    out, bad = _map_rows(job, f, spec, schema, rows, lay, hr)
+    held = sum(1 for b in bad if b.get("source_row") is not None)
+    if held > len(out) and len(fits) > 1:
+        # The header named a layout the cells do not follow (Wirral's
+        # December 2025 return lists a date column its rows do not carry).
+        # Only then do the other fitting layouts get a turn, and the one
+        # that publishes the most rows wins; its rows say how they were read.
+        for _, hr2, lay2 in fits[1:]:
+            if lay2 is lay and hr2 == hr:
+                continue
+            try:
+                o2, b2 = _map_rows(job, f, spec, schema, rows, lay2, hr2)
+            except (KeyError, IndexError, ValueError):
+                continue
+            if len(o2) > len(out):
+                note = "layout chosen by cell contents: the header labels do not match the values beneath them"
+                for r in o2:
+                    r["quality_note"] = (r["quality_note"] + "; " + note) if r.get("quality_note") else note
+                out, bad = o2, b2
+    return out, bad
+
+
+def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: dict, h: int) -> tuple[list[dict], list[dict]]:
     header = [str(x).strip() if x is not None else "" for x in rows[h]]
     # Every header cell by position — an unpivot names year columns directly
     # — with the layout's names laid over it case-insensitively.
@@ -406,7 +437,7 @@ def _map_file(job: dict, f: dict, spec: dict, schema: dict) -> tuple[list[dict],
             elif typ == "boolean":
                 base[name] = str(val).strip().lower() in ("true", "yes", "y", "1")
             else:
-                base[name] = str(val).strip() or None
+                base[name] = re.sub(r"\s+", " ", str(val)).strip() or None
         quality = []
         if "postcode" in types:
             raw_pc = base.get("postcode")
@@ -438,9 +469,6 @@ def _map_file(job: dict, f: dict, spec: dict, schema: dict) -> tuple[list[dict],
     # names of any known layout is a header: switch to that layout and
     # carry on. One-cell dividers ("Apr-12") are skipped and counted.
     layouts = [cols] + [{k: str(v).strip() for k, v in alt.items()} for alt in spec.get("alt_columns", [])]
-
-    def _norm(x: str) -> str:
-        return re.sub(r"\s+", " ", str(x)).strip().lower()
 
     for rno, r in enumerate(rows[h + 1:], start=h + 2):
         cells = [str(x).strip() if x is not None else "" for x in r]
@@ -527,7 +555,17 @@ def build(family: str, include_proposed: bool = False) -> dict:
             entry["ladder"] = "mapping failed"; entry["why"] = str(err)[:200]; summary.append(entry); continue
         entry["rows"] = len(ok); entry["rows_failed_validation"] = len(bad)
         entry["files"] = len(job.get("files") or [])
+        # The reviewer's first question about held rows is "which files, and
+        # why": tally reasons per file, not the first five in file order.
+        tally: dict = {}
+        for b in bad:
+            if b["why"].startswith("skipped "):
+                continue
+            k = (b.get("source_file") or b.get("source_url") or "", b["why"][:80])
+            tally[k] = tally.get(k, 0) + 1
         entry["failures_sample"] = [b["why"] for b in bad[:5]]
+        entry["held_by_file"] = [{"file": (k[0] or "")[-60:], "why": k[1], "rows": n}
+                                 for k, n in sorted(tally.items(), key=lambda kv: -kv[1])[:8]]
         entry["notes"] = spec.get("notes")
         if spec.get("status") == "reviewed":
             entry["ladder"] = "published"; published += ok

@@ -35,7 +35,7 @@ until the gap is closed.
 | **Certainty** — findable datasets with a verdict under 30 days old | 84% checked; 18,264 never | Can we say what is really there? |
 | **Findability** — searches ending at a publisher, ours and Google's | Google: 16 clicks/day, 1,395 impressions/day, avg position 17 (2 Sep); 8,746 indexed, 78,306 waiting | Do people reach it through us? |
 | **Guardrail** — verdicts that were wrong | 1,239 wrong for three weeks (launch-day 429s) | Are we still the people who know? |
-| **Usability** — who-publishes families with a reviewed, published combined table | 3 published (6 Sep): recycling centres 75 rows/6 bodies; air quality annual means 13,479 rows/3 bodies; spend over £500 114,003 rows/13 bodies — of 30, 51 and 60 bodies in each registry | Can a person use it without doing the extraction themselves? |
+| **Usability** — who-publishes families with a reviewed, published combined table | 3 published (6 Sep): recycling centres 84 rows/9 bodies; air quality annual means 14,412 rows/4 bodies; spend over £500 825,841 rows/13 bodies (262 monthly files) — of 30, 51 and 60 bodies in each registry | Can a person use it without doing the extraction themselves? |
 
 The guardrail is a reputation metric. Being wrong for three weeks is worse
 than saying "not verified" for three weeks.
@@ -164,6 +164,9 @@ A living list. Add freely; move to "Done" with the commit that did it.
   mapping proposals delegated to Sonnet agents and reviewed.
 - 6 Sep — third promise adopted: digest per family, publish only reviewed.
   Site wording changed; `FAMILIES.md` written as the brief for Codex.
+- 6 Sep (later) — series layouts per file, content-chosen layouts when a
+  header lies, Irish grids, per-file held-row tallies for reviewers; spend
+  over £500 grew from 114k to 826k rows, 13 new recycling/air sources reviewed.
 - 5 Sep — older editions of a series canonicalise to the latest when the
   description matches: 4,231 pages in 1,144 series, out of the sitemap,
   still served and searchable. (B of the not-indexed fix.)

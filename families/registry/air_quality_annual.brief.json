@@ -148,6 +148,7 @@
       "SITE_NO",
       "LOCATION"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "2252",
@@ -209,6 +210,7 @@
       "_lon",
       "_lat"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "2312",
@@ -284,6 +286,7 @@
       "Location type",
       "Diffusion analysis lab"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "Belfast Centre AURN site Lombard Street",
@@ -376,6 +379,7 @@
       "Easting",
       "Northing"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "Bath Road",
@@ -466,6 +470,7 @@
       "DIST_TO_KERB_OF_NEAREST_ROAD",
       "INLET_HEIGHT"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "406061.175",
@@ -589,6 +594,7 @@
       "F2018_MEAN",
       "F2019_MEAN"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "417982",
@@ -778,6 +784,7 @@
       "F2024_Mean",
       "F2025_Mean"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "462040",
@@ -1015,6 +1022,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN027b",
@@ -1108,6 +1116,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN027c",
@@ -1201,6 +1210,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN027e",
@@ -1294,6 +1304,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN027f",
@@ -1387,6 +1398,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN027d",
@@ -1480,6 +1492,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN027a",
@@ -1573,6 +1586,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN027g",
@@ -1666,6 +1680,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN027",
@@ -1769,6 +1784,7 @@
       "BiasCorrectedAv(ug/m3)",
       ""
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "5",
@@ -1922,6 +1938,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN038",
@@ -2015,6 +2032,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN028b",
@@ -2108,6 +2126,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN028c",
@@ -2201,6 +2220,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN028e",
@@ -2294,6 +2314,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN028f",
@@ -2387,6 +2408,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN028d",
@@ -2480,6 +2502,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN028a",
@@ -2573,6 +2596,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN028g",
@@ -2666,6 +2690,7 @@
       "EndDate",
       "CollectionFrequency"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAN028",
@@ -2757,6 +2782,7 @@
       "DESCRIPTIO",
       "TUBE_TYPE"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "461294",
@@ -2837,6 +2863,7 @@
       "data_capture",
       "target_mean"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "Abbey Lane",
@@ -2924,6 +2951,7 @@
       "in_total",
       "data_capture"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "Abbey Lane",
@@ -3018,6 +3046,7 @@
       "total",
       "data_capture"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "Abbey Lane",
@@ -3117,6 +3146,7 @@
       "data_capture",
       "target"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "Abbey Lane",
@@ -3234,6 +3264,7 @@
       "Location",
       "Last Uploaded"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "CAM1",
@@ -3478,6 +3509,7 @@
       "_lon",
       "_lat"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "1",
@@ -3618,6 +3650,7 @@
       "_lon",
       "_lat"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "1",
@@ -3775,6 +3808,7 @@
       "_lon",
       "_lat"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "1088",
@@ -3885,6 +3919,7 @@
       "_lon",
       "_lat"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "1",
@@ -3974,6 +4009,7 @@
       "_lon",
       "_lat"
      ],
+     "header_row": 0,
      "sample_rows": [
       [
        "1",

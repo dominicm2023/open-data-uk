@@ -33,7 +33,7 @@ def check(family: str) -> int:
     required = {c["name"] for c in schema["columns"] if c["required"]}
     names = {c["name"] for c in schema["columns"]} | EXTRA_COLS
     sources = {s["job_id"]: s for s in brief["sources"]}
-    problems, mapped, rejected = [], 0, 0
+    problems, mapped, rejected, notes = [], 0, 0, []
     for jid, spec in mappings.items():
         src = sources.get(jid)
         tag = f"{(src or {}).get('publisher', '?')[:30]} [{jid[:8]}]"
@@ -62,12 +62,28 @@ def check(family: str) -> int:
             else:
                 problems.append(f"{tag}: header_row {hr} beyond the sampled rows; cannot check"); continue
         cols = {k: str(v).strip() for k, v in spec.get("columns", {}).items()}
-        for target, source_col in cols.items():
-            if target not in names:
-                problems.append(f"{tag}: unknown schema column {target!r}")
-            if source_col not in header:
-                near = [h for h in header if h.strip().lower() == str(source_col).strip().lower()]
-                problems.append(f"{tag}: header {source_col!r} not found" + (f" (did you mean {near[0]!r}?)" if near else ""))
+        # A series carries several layouts; a name is fine if any layout in
+        # the brief (its header, or a row just under a title line) has it.
+        known = {h.strip().lower() for h in header}
+        for lay in src.get("layouts") or []:
+            known |= {str(h).strip().lower() for h in lay.get("header", [])}
+            for r in lay.get("sample_rows", [])[:3]:
+                known |= {str(h).strip().lower() for h in r}
+        for t in src["tables"]:
+            for r in t.get("sample_rows", [])[:3]:
+                known |= {str(h).strip().lower() for h in r}
+        layouts = [cols] + [{k: str(v).strip() for k, v in alt.items()} for alt in spec.get("alt_columns", [])]
+        for n, lay in enumerate(layouts):
+            for target, source_col in lay.items():
+                if target not in names:
+                    problems.append(f"{tag}: unknown schema column {target!r}")
+                if source_col.lower() not in known:
+                    if n and not src.get("layouts"):
+                        # an alternate layout for a block *inside* one file: the
+                        # brief cannot show it, so this is a note, not a fault
+                        notes.append(f"{tag}: alt layout names {source_col!r}, unseen in the brief (in-file block?)")
+                    else:
+                        problems.append(f"{tag}: header {source_col!r} not found in any layout")
         supplied = set(cols) | set(spec.get("constants", {}))
         up = spec.get("unpivot")
         if up:
@@ -86,6 +102,8 @@ def check(family: str) -> int:
     print(f"{family}: {mapped} mapped, {rejected} rejected, {len(unmapped)} sources without a proposal, {len(problems)} problems")
     for p in problems:
         print("  !", p)
+    for n in notes[:6]:
+        print("  ~", n)
     for jid in list(unmapped)[:10]:
         print("  ? no proposal:", sources[jid]["publisher"][:40], "-", sources[jid]["title"][:40])
     return 1 if problems else 0
