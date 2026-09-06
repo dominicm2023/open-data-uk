@@ -491,6 +491,13 @@ def build(family: str, include_proposed: bool = False) -> dict:
               "publishers_published": sorted({r["publisher"] for r in published}),
               "licences": sorted({r["licence_id"] for r in published}), "sources": summary}
     (out_dir / "summary.json").write_text(json.dumps(report, indent=1, ensure_ascii=False), encoding="utf-8")
+    # The API payload, written once here so the server streams a file
+    # rather than re-serialising a 12 MB table on every request.
+    api = {"family": family, "label": schema["label"], "built_at": report["built_at"],
+           "rows": published, "sources": summary,
+           "attribution": "Contains public sector information licensed under the Open Government Licence v3.0 "
+                          "and other licences as stated per row. Combined by the UK Open Data Index."}
+    (out_dir / f"{family}.api.json").write_text(json.dumps(api, ensure_ascii=False), encoding="utf-8")
     return report
 
 

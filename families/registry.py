@@ -152,6 +152,16 @@ def build(family: str) -> dict:
         for r in cands[:(spec.get("max_files") if spec.get("series") else CANDIDATES)]:
             u, f = _resource_url(r["url"], r["format_norm"].upper())
             ranked.append({"url": u, "name": r["name"] or "", "format": f})
+            if f == "ESRI":
+                # Some hosts refuse the REST query outright (Bristol answers
+                # 403) but serve the same layer through the Hub's export
+                # endpoint. Offer it as the next try, never the first.
+                hub = re.match(r"(https://[^/]+\.hub\.arcgis\.com|https://[^/]+\.opendata\.arcgis\.com)/datasets/(?:[a-z0-9-]+::)?([0-9a-f]{32})(?:_(\d+))?",
+                               d["landing_url"] or "")
+                if hub:
+                    layer = hub.group(3) or "0"
+                    ranked.append({"url": f"{hub.group(1)}/api/download/v1/items/{hub.group(2)}/csv?layers={layer}",
+                                   "name": (r["name"] or "") + " (Hub CSV export)", "format": "CSV"})
         src = srcs.get(d["source_id"], {})
         kind, meta = _metadata_url(dict(d), src)
         admitted.append({

@@ -1019,10 +1019,14 @@ def api_family(request: Request, response: Response, name: str) -> Response:
         return FileResponse(out / f"{fam}.published.csv", media_type="text/csv; charset=utf-8",
                             filename=f"{fam}.csv",
                             headers={"Cache-Control": "public, max-age=3600"})
-    summary = familypage.load(fam)
-    return JSONResponse({"family": fam, "label": summary["label"], "built_at": summary["built_at"],
-                         "rows": familypage.published_rows(fam), "sources": summary["sources"],
-                         "attribution": ATTRIBUTION},
+    api = out / f"{fam}.api.json"
+    if not api.exists():                       # a build from before the file existed
+        summary = familypage.load(fam)
+        return JSONResponse({"family": fam, "label": summary["label"], "built_at": summary["built_at"],
+                             "rows": familypage.published_rows(fam), "sources": summary["sources"],
+                             "attribution": ATTRIBUTION},
+                            headers={"Cache-Control": "public, max-age=3600"})
+    return FileResponse(api, media_type="application/json; charset=utf-8",
                         headers={"Cache-Control": "public, max-age=3600"})
 
 @app.get("/topics", include_in_schema=False)
