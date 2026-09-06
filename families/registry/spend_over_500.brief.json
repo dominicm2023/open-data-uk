@@ -81,7 +81,7 @@
   ],
   "validation": {
    "amount_abs_min": 0,
-   "amount_abs_max": 100000000,
+   "amount_abs_max": 5000000000,
    "date_range": [
     "2010-01-01",
     "2026-12-31"
@@ -106,6 +106,7 @@
    "licence": "OGL-UK",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -203,8 +204,1206 @@
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/639156/decc-spending-june-2017.csv",
    "licence": "OGL-UK",
-   "files_extracted": 1,
-   "note": null,
+   "files_extracted": 6,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "sheet": "Transaction data_DECC Jan_2016"
+     },
+     "header": [
+      "Department",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-01-20 00:00:00",
+       "Accommodation Service Charges",
+       "Corporate Services",
+       "A M A S Ltd",
+       "DECC/SM/2743/1401",
+       "9732.17",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-01-20 00:00:00",
+       "Accommodation Service Charges",
+       "Corporate Services",
+       "A M A S Ltd",
+       "DECC/SM/2743/1401",
+       "8233.44",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-01-08 00:00:00",
+       "Advertising non-recruitment",
+       "Consumers and Households",
+       "Group M UK Ltd",
+       "DECC/SM/2380/1205",
+       "5633.7",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-01-08 00:00:00",
+       "Advertising non-recruitment",
+       "Consumers and Households",
+       "Group M UK Ltd",
+       "DECC/SM/2478/2907",
+       "10641.61",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-01-08 00:00:00",
+       "Advertising non-recruitment",
+       "Consumers and Households",
+       "Group M UK Ltd",
+       "DECC/SM/2478/2907",
+       "3614.27",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-01-18 00:00:00",
+       "Agency temps - clerical",
+       "Consumers and Households",
+       "Adecco UK Ltd",
+       "DECC/SM/2696/1512",
+       "821.59",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "row_count": 534,
+     "column_count": 37,
+     "example_file": "t_data/file/511451/Transparency_data_-_January_2016_PUB.xlsx",
+     "files": 1
+    },
+    {
+     "where": {
+      "sheet": "Transaction data_DECC Feb_2016"
+     },
+     "header": [
+      "Department",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-02-09 00:00:00",
+       "Capital Grants to Companies UK",
+       "Consumers and Households",
+       "Capita Business Services Ltd",
+       "DECC/SM/2777/0302",
+       "107992.8",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-02-09 00:00:00",
+       "Capital Grants to Companies UK",
+       "Consumers and Households",
+       "Capita Business Services Ltd",
+       "DECC/SM/2777/0302",
+       "46330.8",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-02-09 00:00:00",
+       "Capital Grants to Companies UK",
+       "Consumers and Households",
+       "Capita Business Services Ltd",
+       "DECC/SM/2777/0302",
+       "8500.8",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-02-01 00:00:00",
+       "Outsourced Technical Support (Programme)",
+       "Consumers and Households",
+       "Energy Saving Trust Ltd",
+       "DECC/SM/2751/1901",
+       "237198.17",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-02-01 00:00:00",
+       "Outsourced Programme Management Services",
+       "Consumers and Households",
+       "Office Of Gas & Elect Markets",
+       "DECC/SM/2766/2801",
+       "236801",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-02-01 00:00:00",
+       "Outsourced Programme Management Services",
+       "Consumers and Households",
+       "Office Of Gas & Elect Markets",
+       "DECC/SM/2766/2801",
+       "40000",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "row_count": 617,
+     "column_count": 45,
+     "example_file": "_data/file/519560/Transparency_data_-_February_2016_PUB.xlsx",
+     "files": 1
+    },
+    {
+     "where": {
+      "sheet": "Transaction data_DECC Apr_2016"
+     },
+     "header": [
+      "Department",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-04-07 00:00:00",
+       "Advertising non-recruitment",
+       "Corporate Services",
+       "Carat",
+       "DECC/SM/2865/2203",
+       "28759.19",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-04-07 00:00:00",
+       "Advertising non-recruitment",
+       "Corporate Services",
+       "Carat",
+       "DECC/SM/2865/2203",
+       "34967.92",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-04-07 00:00:00",
+       "Advertising non-recruitment",
+       "Corporate Services",
+       "Carat",
+       "DECC/SM/2888/0104",
+       "4936.3",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-04-07 00:00:00",
+       "Advertising non-recruitment",
+       "Corporate Services",
+       "Carat",
+       "DECC/SM/2888/0104",
+       "18347.46",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-04-07 00:00:00",
+       "Advertising non-recruitment",
+       "Corporate Services",
+       "Carat",
+       "DECC/SM/2888/0104",
+       "43280.34",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-04-07 00:00:00",
+       "Advertising non-recruitment",
+       "Corporate Services",
+       "Carat",
+       "DECC/SM/2888/0104",
+       "13316.85",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "row_count": 684,
+     "column_count": 49,
+     "example_file": "ent_data/file/529221/Transparency_data_-_April_2016-PUB.xlsx",
+     "files": 1
+    },
+    {
+     "where": {
+      "sheet": "Transaction data_DECC Mar_2016"
+     },
+     "header": [
+      "Department",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-03-24 00:00:00",
+       "Outsourced Programme Management Services",
+       "Energy Efficiency & Heat",
+       "Gemserv Ltd",
+       "DECC/SM/2860/2103",
+       "41523.6",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-03-04 00:00:00",
+       "Outsourced Programme Management Services",
+       "Energy Efficiency & Heat",
+       "Gemserv Ltd",
+       "DECC/SM/2818/0103",
+       "43794",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-03-04 00:00:00",
+       "Outsourced Programme Management Services",
+       "Energy Efficiency & Heat",
+       "Gemserv Ltd",
+       "DECC/SM/2818/0103",
+       "35348.4",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-03-04 00:00:00",
+       "Outsourced Technical Support (Programme)",
+       "Energy Efficiency & Heat",
+       "Energy Saving Trust Ltd",
+       "DECC/SM/2819/0103",
+       "241675.68",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-03-24 00:00:00",
+       "Outsourced Technical Support (Programme)",
+       "Energy Efficiency & Heat",
+       "Energy Saving Trust Ltd",
+       "DECC/SM/2862/2103",
+       "239032.98",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department of Energy and Climate Change",
+       "Department of Energy and Climate Change",
+       "2016-03-08 00:00:00",
+       "Outsourced Programme Management Services",
+       "Energy Efficiency & Heat",
+       "Crown Commercial Service",
+       "DECC/SM/2821/0203",
+       "5253.6",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "row_count": 806,
+     "column_count": 14,
+     "example_file": "ent_data/file/529226/Transparency_data_-_March_2016_PUB.xlsx",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount"
+     ],
+     "sample_rows": [
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "PURCHASE OF GOODS/SERVICES - OTHER - REFUND OF OVERPAYMENTS - PETROL LICENSES",
+       "Energy Transformation",
+       "KIWA LTD",
+       "AG26052016A",
+       "153103.29"
+      ],
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "SHORT-TERM CONTRACT & AGENCY STAFF - FULL COST",
+       "Energy Transformation",
+       "HAYS SPECIALIST RECRUITMENT LTD",
+       "AG26052016A",
+       "970.54"
+      ],
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "SHORT-TERM CONTRACT & AGENCY STAFF - FULL COST",
+       "Energy Transformation",
+       "HAYS SPECIALIST RECRUITMENT LTD",
+       "AG26052016A",
+       "937.3"
+      ],
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "PURCHASE OF GOODS/SERVICES - ACCOMM &BLDNG MNGMT - FM PROJECTS NON CAPITAL",
+       "Finance & Corporate Services",
+       "INTERSERVE (FACILITIES MNGMNT) LTD",
+       "PH260516/09",
+       "80000"
+      ],
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "PURCHASE OF GOODS/SERVICES - OTHER PROF SERV - OUTSOURCED PROGRAMME MANAGEMENT S",
+       "Energy Transformation",
+       "BSRIA LIMITED",
+       "AG26052016A",
+       "3000"
+      ],
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "PURCHASE OF GOODS/SERVICES - OTHER PROF SERV - OUTSOURCED PROGRAMME MANAGEMENT S",
+       "Energy Transformation",
+       "EQUION CONSULTING LTD",
+       "AG26052016A",
+       "8000"
+      ]
+     ],
+     "row_count": 577,
+     "column_count": 8,
+     "example_file": "oads/attachment_data/file/639156/decc-spending-june-2017.csv",
+     "files": 2
+    }
+   ],
    "tables": [
     {
      "where": {
@@ -295,8 +1494,179 @@
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/85357/ehrc-spend-june11.csv",
    "licence": "OGL-UK-3.0",
-   "files_extracted": 1,
-   "note": null,
+   "files_extracted": 6,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department Family",
+      "Entity",
+      "Allocation Date",
+      "Expense type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount in Sterling"
+     ],
+     "sample_rows": [
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "02/08/2011",
+       "Accommodation",
+       "Scotland - Directorate",
+       "Expotel",
+       "201108010",
+       "£1,949.90"
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "02/08/2011",
+       "Accommodation",
+       "Corporate Management - People",
+       "Expotel",
+       "201108011",
+       "£954.42"
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "02/08/2011",
+       "Accommodation",
+       "Legal - Legal Policy",
+       "Expotel",
+       "201108012",
+       "£843.98"
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "02/08/2011",
+       "Accommodation",
+       "Regulation - Policy and Ops - Public",
+       "Expotel",
+       "201108013",
+       "£774.58"
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "02/08/2011",
+       "Accommodation",
+       "Regulation - Disability Programme",
+       "Expotel",
+       "201108014",
+       "£658.34"
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "02/08/2011",
+       "Accommodation",
+       "Legal - Group Directorate",
+       "Expotel",
+       "201108015",
+       "£542.89"
+      ]
+     ],
+     "row_count": 333,
+     "column_count": 8,
+     "example_file": "stem/uploads/attachment_data/file/85346/ehrc-spend-aug11.csv",
+     "files": 5
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department family",
+      "Entity",
+      "Allocation Date",
+      "Expense type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount in Sterling",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "05/10/2011",
+       "Accommodation",
+       "Regulation - Policy and Ops - Public",
+       "Expotel",
+       "201210021",
+       "564.52",
+       ""
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "05/10/2011",
+       "Accommodation",
+       "Scotland - Directorate",
+       "Expotel",
+       "201210022",
+       "578.36",
+       ""
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "05/10/2011",
+       "Accommodation",
+       "Corporate Management - Finance",
+       "Expotel",
+       "201210023",
+       "616.58",
+       ""
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "05/10/2011",
+       "Accommodation",
+       "Legal - Legal Policy",
+       "Expotel",
+       "201210024",
+       "1183.63",
+       ""
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "05/10/2011",
+       "Accommodation",
+       "Corporate Management - People",
+       "Expotel",
+       "201210025",
+       "2012.06",
+       ""
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "25/10/2011",
+       "Agency Staff",
+       "Corporate Management - ICT",
+       "Badenoch & Clark",
+       "iPOS Invoice 42614",
+       "1095.41",
+       ""
+      ]
+     ],
+     "row_count": 255,
+     "column_count": 9,
+     "example_file": "stem/uploads/attachment_data/file/85364/ehrc-spend-oct11.csv",
+     "files": 1
+    }
+   ],
    "tables": [
     {
      "where": {
@@ -389,6 +1759,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -486,8 +1857,98 @@
    "format": "CSV",
    "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2026/exports/csv",
    "licence": "OGL-UK-3.0",
-   "files_extracted": 1,
-   "note": null,
+   "files_extracted": 2,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "unique_id",
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "sample_rows": [
+      [
+       "39231",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "aql",
+       "Communication Equipment Lease / Rental",
+       "1960.0",
+       "392.0",
+       "",
+       "Communications Equipment Lease / Rental"
+      ],
+      [
+       "39234",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "Redacted",
+       "LCC External Barristers Fees",
+       "850.0",
+       "170.0",
+       "",
+       "Legal Fees & Charges"
+      ],
+      [
+       "39235",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "Redacted",
+       "LCC External Barristers Fees",
+       "1000.0",
+       "200.0",
+       "",
+       "Legal Fees & Charges"
+      ],
+      [
+       "39236",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "Redacted",
+       "LCC External Barristers Fees",
+       "1200.0",
+       "240.0",
+       "",
+       "Legal Fees & Charges"
+      ],
+      [
+       "39237",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "Redacted",
+       "LCC External Barristers Fees",
+       "601.29",
+       "0.0",
+       "",
+       "Legal Fees & Charges"
+      ],
+      [
+       "39240",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "Redacted",
+       "Translation/Interpretation Fees",
+       "956.0",
+       "0.0",
+       "",
+       "Management & Business & Administrative Services"
+      ]
+     ],
+     "row_count": 44224,
+     "column_count": 9,
+     "example_file": "atalog/datasets/expenditure-exceeding-ps500-2026/exports/csv",
+     "files": 2
+    }
+   ],
    "tables": [
     {
      "where": {
@@ -585,8 +2046,91 @@
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/5730/1773306.csv",
    "licence": "OGL-UK",
-   "files_extracted": 1,
-   "note": null,
+   "files_extracted": 8,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department Family",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction number",
+      "Amount in Sterling"
+     ],
+     "sample_rows": [
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "01/06/2010",
+       "Agency Staff",
+       "Housing and Planning",
+       "REED SPECIALIST RECRUITMENT LTD",
+       "5106136079",
+       "697.07"
+      ],
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "01/06/2010",
+       "Agency Staff",
+       "Housing and Planning",
+       "REED SPECIALIST RECRUITMENT LTD",
+       "5106135961",
+       "571.05"
+      ],
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "01/06/2010",
+       "Agency Staff",
+       "Finance and Corporate Services",
+       "VENN GROUP",
+       "5106135431",
+       "-1,414.70"
+      ],
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "01/06/2010",
+       "Agency Staff",
+       "Finance and Corporate Services",
+       "VENN GROUP",
+       "5106135875",
+       "1,098.53"
+      ],
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "01/06/2010",
+       "Agency Staff",
+       "Finance and Corporate Services",
+       "VENN GROUP",
+       "5106135876",
+       "1,426.45"
+      ],
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "01/06/2010",
+       "Agency Staff",
+       "Finance and Corporate Services",
+       "VENN GROUP",
+       "5106135890",
+       "1,968.13"
+      ]
+     ],
+     "row_count": 2572,
+     "column_count": 8,
+     "example_file": "uploads/system/uploads/attachment_data/file/5728/1773309.csv",
+     "files": 8
+    }
+   ],
    "tables": [
     {
      "where": {
@@ -677,8 +2221,91 @@
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/5746/1773618113.csv",
    "licence": "OGL-UK",
-   "files_extracted": 1,
-   "note": null,
+   "files_extracted": 4,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department Family",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction number",
+      "Amount in Sterling"
+     ],
+     "sample_rows": [
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Agency Staff",
+       "GORCU Admin DEL Votd",
+       "CENTRAL OFFICE OF INFORMATION",
+       "5106142526",
+       "17,861.18"
+      ],
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Agency Staff",
+       "GORCU Admin DEL Votd",
+       "REED SPECIALIST RECRUITMENT LTD",
+       "5106142521",
+       "703.64"
+      ],
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Agency Staff",
+       "GORCU Admin DEL Votd",
+       "REED SPECIALIST RECRUITMENT LTD",
+       "5106142522",
+       "879.55"
+      ],
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Conferences",
+       "GOSE",
+       "HMPS SHARED SERVICE CENTRE",
+       "5106142535",
+       "804.50"
+      ],
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Furniture, Fittings and carpets",
+       "RCU - PAM - Property Asset Management",
+       "WAGSTAFF BROS LTD",
+       "2100183377",
+       "1,099.80"
+      ],
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Storage",
+       "GONE",
+       "CROWN RECORDS MANAGEMENT LTD",
+       "5106142525",
+       "828.28"
+      ]
+     ],
+     "row_count": 250,
+     "column_count": 8,
+     "example_file": "oads/system/uploads/attachment_data/file/5746/1773618113.csv",
+     "files": 4
+    }
+   ],
    "tables": [
     {
      "where": {
@@ -769,8 +2396,119 @@
    "format": "CSV",
    "resource_url": "https://plymouth.thedata.place/dataset/9e9b0128-9095-4bde-b24b-d04e60789016/resource/4e120b86-ffc2-4a87-a9f3-5d70c7faf923/download/spend500march2015.csv",
    "licence": "OGL-UK-3.0",
-   "files_extracted": 1,
-   "note": null,
+   "files_extracted": 4,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Body Name",
+      "Body",
+      "Service label",
+      "Organisational unit",
+      "Expenditure category",
+      "Detailed Expenses type",
+      "Date",
+      "Transaction Number",
+      "Amount",
+      "Capital/\nRevenue",
+      "Supplier Name",
+      "Supplier ID"
+     ],
+     "sample_rows": [
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Core Assets",
+       "Transformation and Change",
+       "Supplies and Services",
+       "Purchase Of Materials",
+       "03/03/2015",
+       "Various",
+       "561.00",
+       "Revenue",
+       "Antalis Limited",
+       "32150"
+      ],
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Children`s & Educational Servi",
+       "People Directorate",
+       "Supplies and Services",
+       "Legal Agents",
+       "03/03/2015",
+       "PLY076356",
+       "720.00",
+       "Revenue",
+       "William Higginson",
+       "72189"
+      ],
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Adult Social Care",
+       "People Directorate",
+       "Third Party Payments",
+       "Nursing Respite Care  Private Contractor",
+       "03/03/2015",
+       "981035446",
+       "6,340.20",
+       "Revenue",
+       "St Annes Residential Home",
+       "75197"
+      ],
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Adult Social Care",
+       "People Directorate",
+       "Third Party Payments",
+       "Nursing Respite Care  Private Contractor",
+       "03/03/2015",
+       "981035454",
+       "3,414.00",
+       "Revenue",
+       "St Annes Residential Home",
+       "75197"
+      ],
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Capital",
+       "Place Directorate",
+       "Capital Expenditure",
+       "Advances  Loan",
+       "03/03/2015",
+       "PLY078378",
+       "25,670.00",
+       "Capital",
+       "Real Ideas Trading Ltd",
+       "115999"
+      ],
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Central Services",
+       "Executive Office",
+       "Supplies and Services",
+       "Grants To Other Bodies",
+       "03/03/2015",
+       "PLY078125",
+       "4,000.00",
+       "Revenue",
+       "Elburton Village Hall",
+       "63758"
+      ]
+     ],
+     "row_count": 5409,
+     "column_count": 12,
+     "example_file": "6-ffc2-4a87-a9f3-5d70c7faf923/download/spend500march2015.csv",
+     "files": 4
+    }
+   ],
    "tables": [
     {
      "where": {
@@ -889,8 +2627,91 @@
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/6209/175179416.csv",
    "licence": "OGL-UK",
-   "files_extracted": 1,
-   "note": null,
+   "files_extracted": 6,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department family",
+      "Entity",
+      "Entered On",
+      "Expense Type",
+      "Expense Area",
+      "Supplier Name",
+      "Voucher",
+      "SumOfAmount"
+     ],
+     "sample_rows": [
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "Travel",
+       "Interface",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "344.68"
+      ],
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "IT Equipment Maintenance",
+       "ITC Department",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "4189.48"
+      ],
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "Marketing",
+       "Commercial",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "-45"
+      ],
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "Internet & Telecomms",
+       "ITC Department",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "61.33"
+      ],
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "Travel",
+       "ITC Department",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "32"
+      ],
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "Maintenance",
+       "Operations",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "300.95"
+      ]
+     ],
+     "row_count": 74,
+     "column_count": 8,
+     "example_file": "loads/system/uploads/attachment_data/file/6209/175179416.csv",
+     "files": 6
+    }
+   ],
    "tables": [
     {
      "where": {
@@ -979,11 +2800,11 @@
    "title": "Royal Borough of Greenwich payments over £500 (Dec 2010 to Dec 2011)",
    "portal": "data_gov_uk",
    "format": "CSV",
-   "resource_url": "http://www.royalgreenwich.gov.uk/download/downloads/id/842/december_2010_payments_over_500_csv.csv",
+   "resource_url": "http://www.royalgreenwich.gov.uk/download/downloads/id/1161/february_2012_payments_over_500_csv.csv",
    "licence": "OGL-UK-3.0",
-   "files_extracted": 1,
-   "note": null,
-   "tables": [
+   "files_extracted": 14,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
     {
      "where": {
       "table": 1
@@ -995,51 +2816,88 @@
      ],
      "sample_rows": [
       [
-       "1ST ACE SECURITY LTD",
-       "15/12/2010",
-       "2115"
+       "4CHILDREN",
+       "15/12/2011",
+       "576"
       ],
       [
        "4CHILDREN",
-       "14/12/2010",
-       "15750"
-      ],
-      [
-       "4CHILDREN",
-       "14/12/2010",
-       "18750"
-      ],
-      [
-       "4CHILDREN",
-       "29/12/2010",
+       "15/12/2011",
        "720"
       ],
       [
        "A & B GLASS",
-       "14/12/2010",
-       "140999.28"
+       "21/12/2011",
+       "3705.37"
       ],
       [
-       "A G CARE LIMITED",
-       "03/12/2010",
-       "621.68"
+       "A & B GLASS",
+       "30/12/2011",
+       "5199.35"
+      ],
+      [
+       "A & H PEST CONTROL SERVICES",
+       "23/12/2011",
+       "708"
+      ],
+      [
+       "A & K PRINTING LIMITED",
+       "29/12/2011",
+       "508.36"
       ]
      ],
-     "row_count": 3449,
-     "column_count": 3
+     "row_count": 3398,
+     "column_count": 3,
+     "example_file": "ad/downloads/id/1072/december_2011_payments_over_500_csv.csv",
+     "files": 12
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Supplier",
+      "Payment_Date",
+      "Amount"
+     ],
+     "sample_rows": [
+      [
+       "15BILLION",
+       "14/10/11",
+       "650.00 "
+      ],
+      [
+       "15BILLION",
+       "27/10/11",
+       "15780.00 "
+      ],
+      [
+       "4CHILDREN",
+       "11/10/11",
+       "600.00 "
+      ],
+      [
+       "4CHILDREN",
+       "17/10/11",
+       "720.00 "
+      ],
+      [
+       "A & B GLASS",
+       "10/10/11",
+       "2713.75 "
+      ],
+      [
+       "A & B GLASS",
+       "26/10/11",
+       "2667.41 "
+      ]
+     ],
+     "row_count": 3175,
+     "column_count": 3,
+     "example_file": "load/downloads/id/832/october_2011_payments_over_500_csv.csv",
+     "files": 2
     }
-   ]
-  },
-  {
-   "job_id": "f7364e529c276bf35e6c9b19cda7baba4f8448fd78df2ec1996ca3e64a134534",
-   "publisher": "Royal Borough of Greenwich",
-   "title": "Royal Borough of Greenwich spending over £500",
-   "portal": "data_gov_uk",
-   "format": "CSV",
-   "resource_url": "http://www.royalgreenwich.gov.uk/download/downloads/id/1161/february_2012_payments_over_and_pound500_csv.csv",
-   "licence": "OGL-UK-3.0",
-   "files_extracted": 1,
-   "note": null,
+   ],
    "tables": [
     {
      "where": {
@@ -1088,6 +2946,277 @@
    ]
   },
   {
+   "job_id": "f7364e529c276bf35e6c9b19cda7baba4f8448fd78df2ec1996ca3e64a134534",
+   "publisher": "Royal Borough of Greenwich",
+   "title": "Royal Borough of Greenwich spending over £500",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "http://www.royalgreenwich.gov.uk/download/downloads/id/2047/february_2014_payments_over_500_csv.csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 40,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Supplier",
+      "Payment Date",
+      "Amount"
+     ],
+     "sample_rows": [
+      [
+       "1ST CALL ENVIRONMENTAL SERVICES LTD",
+       "03/02/2012",
+       "720.00"
+      ],
+      [
+       "1ST CONTAINERS (UK) LTD",
+       "29/02/2012",
+       "3285.00"
+      ],
+      [
+       "4CHILDREN",
+       "14/02/2012",
+       "11913.00"
+      ],
+      [
+       "A & B GLASS",
+       "13/02/2012",
+       "924.82"
+      ],
+      [
+       "A & B GLASS",
+       "13/02/2012",
+       "25186.58"
+      ],
+      [
+       "ABBLITTS SOLICITORS",
+       "29/02/2012",
+       "154021.20"
+      ]
+     ],
+     "row_count": 3061,
+     "column_count": 3,
+     "example_file": "ads/id/1161/february_2012_payments_over_and_pound500_csv.csv",
+     "files": 10
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Supplier",
+      "Amount",
+      "Payment Date"
+     ],
+     "sample_rows": [
+      [
+       "15BILLION",
+       "11250",
+       "02/01/2013"
+      ],
+      [
+       "4CHILDREN",
+       "1805",
+       "17/01/2013"
+      ],
+      [
+       "4CHILDREN",
+       "12274",
+       "18/01/2013"
+      ],
+      [
+       "A1 CARPET GUARD",
+       "660",
+       "22/01/2013"
+      ],
+      [
+       "ABBEY WOOD COMMUNITY GROUP",
+       "11250",
+       "07/01/2013"
+      ],
+      [
+       "ABN AMRO COMMERCIAL FINANCE PLC",
+       "2922.42",
+       "16/01/2013"
+      ]
+     ],
+     "row_count": 3196,
+     "column_count": 3,
+     "example_file": "oads/id/1612/january_2013_payments_over_and_pound500_csv.csv",
+     "files": 18
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Creditor Name",
+      "Invoice Line Amount",
+      "Payment Date",
+      "LA Department",
+      "Expenditure Category/Description"
+     ],
+     "sample_rows": [
+      [
+       "100% OPEN LIMITED",
+       "2570.00",
+       "18/07/2014",
+       "Regeneration Enterprise Skills",
+       "Services Private Contractor"
+      ],
+      [
+       "12 KINGS BENCH WALK CHAMBERS",
+       "500.00",
+       "10/07/2014",
+       "Chief Executives",
+       "Professional Fees"
+      ],
+      [
+       "15BILLION",
+       "500.00",
+       "03/09/2014",
+       "Childrens Services",
+       "Computer Software"
+      ],
+      [
+       "1ST ACE SECURITY LTD",
+       "435.00",
+       "20/08/2014",
+       "Childrens Services",
+       "R and M Day To Day"
+      ],
+      [
+       "24 HR CENTRAL CAR HIRE LTD",
+       "640.21",
+       "14/07/2014",
+       "Adult and Older People",
+       "Vehicle Hire"
+      ],
+      [
+       "24 HR CENTRAL CAR HIRE LTD",
+       "591.73",
+       "14/07/2014",
+       "Adult and Older People",
+       "Vehicle Hire"
+      ]
+     ],
+     "row_count": 17336,
+     "column_count": 5,
+     "example_file": "ads/id/2461/july_to_september_2014_payments_over_500_csv.csv",
+     "files": 10
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Creditor_Name ",
+      "Invoice Line Amount",
+      "Payment_Date",
+      "LA Department",
+      "Expenditure Category/Description"
+     ],
+     "sample_rows": [
+      [
+       "FLEET TUTORS",
+       "933.76",
+       " 30/03/2015",
+       "Childrens Services",
+       "Children Looked After - Tuition"
+      ],
+      [
+       "REDACTED PERSONAL INFORMATION",
+       "1,928.23",
+       " 12/01/2015",
+       "Adult and Older People",
+       "Community Care Direct Payments"
+      ],
+      [
+       "VEOLIA ES (UK) LTD",
+       "64,514.30",
+       " 02/02/2015",
+       "Comm Safety and Environment",
+       "MRF Gate Fees"
+      ],
+      [
+       "LONDON BOROUGH OF MERTON",
+       "1,545.60",
+       " 08/01/2015",
+       "Childrens Services",
+       "Vehicle Hire External Hired"
+      ],
+      [
+       "SOUTH LONDON HEALTHCARE NHS TRUST",
+       "18,628.36",
+       " 08/01/2015",
+       "Adult and Older People",
+       "QE Extended Project"
+      ],
+      [
+       "SOUTH LONDON HEALTHCARE NHS TRUST",
+       "8,461.37",
+       " 08/01/2015",
+       "Adult and Older People",
+       "QEH Costs"
+      ]
+     ],
+     "row_count": 19091,
+     "column_count": 5,
+     "example_file": "oads/id/2763/january_to_march_2015_payments_over_500_csv.csv",
+     "files": 2
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Supplier",
+      "Amount",
+      "Payment Date"
+     ],
+     "sample_rows": [
+      [
+       "1ST CHOICE CARE HOMES",
+       "2214.33",
+       "07/02/2014"
+      ],
+      [
+       "1ST CHOICE CARE HOMES",
+       "2142.9",
+       "07/02/2014"
+      ],
+      [
+       "1ST CHOICE CARE HOMES",
+       "2214.33",
+       "07/02/2014"
+      ],
+      [
+       "1ST CHOICE CARE HOMES",
+       "2214.33",
+       "07/02/2014"
+      ],
+      [
+       "1ST CHOICE CARE HOMES",
+       "2000.04",
+       "25/02/2014"
+      ],
+      [
+       "24 HR CENTRAL CAR HIRE LTD",
+       "647.22",
+       "19/02/2014"
+      ]
+     ],
+     "row_count": 3414,
+     "column_count": 3
+    }
+   ]
+  },
+  {
    "job_id": "45e5c4b154f37f9657e1533c3cea960c4d928d92b24a8dfc1a4f06cbd58bb3a9",
    "publisher": "Stockport Metropolitan Borough Council",
    "title": "Expenditure over £500",
@@ -1097,6 +3226,7 @@
    "licence": "OGL-UK",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1173,8 +3303,696 @@
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/315318/March_2014_transactions_over_500.csv",
    "licence": "OGL-UK",
-   "files_extracted": 1,
-   "note": null,
+   "files_extracted": 20,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Pay Period",
+      "Pay Date",
+      "Pay Value",
+      "Supplier"
+     ],
+     "sample_rows": [
+      [
+       " 20-Oct-11",
+       "527.11",
+       "PAY",
+       "The London Plant Company"
+      ],
+      [
+       " 7-Oct-11",
+       "534",
+       "PAY",
+       "Govnet Communications"
+      ],
+      [
+       " 20-Oct-11",
+       "555.02",
+       "PAY",
+       "Total Digital Solutions Ltd"
+      ],
+      [
+       " 20-Oct-11",
+       "600",
+       "PAY",
+       "Bamford Jones Partnership"
+      ],
+      [
+       " 12-Oct-11",
+       "668",
+       "PAY",
+       "Dr Deirdre Hughes"
+      ],
+      [
+       " 20-Oct-11",
+       "700",
+       "PAY",
+       "TSC (Tom Schuller)"
+      ]
+     ],
+     "row_count": 86,
+     "column_count": 4,
+     "example_file": "/uploads/attachment_data/file/306057/500-payments-11-oct.csv",
+     "files": 7
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Pay Period",
+      "Pay Date",
+      "Pay Value",
+      "Supplier",
+      "Line Description",
+      "Dept"
+     ],
+     "sample_rows": [
+      [
+       " 18-Nov-11",
+       "503.46",
+       "PAY",
+       "OfficeXpress Europe Ltd",
+       "8",
+       ""
+      ],
+      [
+       " 4-Nov-11",
+       "522.88",
+       "PAY",
+       "Govnet Communications",
+       "8",
+       ""
+      ],
+      [
+       " 4-Nov-11",
+       "540",
+       "PAY",
+       "Birketts LLP",
+       "8",
+       ""
+      ],
+      [
+       " 29-Nov-11",
+       "566.64",
+       "PAY",
+       "Dr Deirdre Hughes",
+       "8",
+       ""
+      ],
+      [
+       " 14-Nov-11",
+       "599.99",
+       "PAY",
+       "Professional Images (UK) Ltd",
+       "8",
+       ""
+      ],
+      [
+       " 18-Nov-11",
+       "600",
+       "PAY",
+       "Suzy Brian England",
+       "8",
+       ""
+      ]
+     ],
+     "row_count": 88,
+     "column_count": 6,
+     "example_file": "/uploads/attachment_data/file/306058/500-payments-11-nov.csv",
+     "files": 5
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department Family",
+      "Date",
+      "Expense type",
+      "Supplier",
+      "tran_ref",
+      "Amount",
+      "Description",
+      "Supplier postcode",
+      "Supplier type",
+      "HOME_CREDIT",
+      "HOME_DEBIT",
+      "Contract Number",
+      "Project Code",
+      "Expenditure type",
+      "Year",
+      "Period",
+      "Type"
+     ],
+     "sample_rows": [
+      [
+       "BIS",
+       "02/12/2013 00:00",
+       "337410 - Estates Consultancy and Professional Services (Pro",
+       "BEL007 - Bellcom Worldwide Limited",
+       "2777",
+       "1500",
+       "* Call charges to redirect calls to centres - Nov 2013",
+       "G2 7DA",
+       "SMALL - PVT LTD BY SHARES",
+       "0",
+       "1500",
+       "PR:14680",
+       "P3D-B49-17",
+       "Running Cost",
+       "C",
+       "10",
+       "INV"
+      ],
+      [
+       "BIS",
+       "12/12/2013 00:00",
+       "315110 - Non Grant-in-Aid Funding of Bodies (Departmental a",
+       "FAI001 - Fair Train",
+       "PR14030",
+       "30000",
+       "* Investment Stage 3 - \r\n3/1 Employer engagement and marketing inc. Roadshows an",
+       "CV1 2NE",
+       "SMALL - LTD BY G'TEE CHARITY",
+       "0",
+       "30000",
+       "PR:14030",
+       "P3C-S35-21",
+       "SSC",
+       "C",
+       "10",
+       "INV"
+      ],
+      [
+       "BIS",
+       "19/12/2013 00:00",
+       "211130 - Salaries - Casuals (Admin)",
+       "HAY002 - Hays",
+       "1003846201",
+       "1580",
+       "*Temp 6/12",
+       "KT3 4JQ",
+       "",
+       "0",
+       "1580",
+       "PR:13723",
+       "",
+       "Running Cost",
+       "C",
+       "10",
+       "INV"
+      ],
+      [
+       "BIS",
+       "19/12/2013 00:00",
+       "337810 - Economic Consultancy and Research (Programme)",
+       "WOR008 - Work Foundation Alliance Ltd",
+       "420049589",
+       "2200",
+       "*Principal Partnership June 2013-May 2014",
+       "SW1H 0AD",
+       "SMALL - LTD BY G'TEE CHARITY",
+       "0",
+       "2200",
+       "PR:15249",
+       "P1A-B35-01",
+       "Programme",
+       "C",
+       "10",
+       "INV"
+      ],
+      [
+       "BIS",
+       "20/12/2013 00:00",
+       "371110 - Publications (Programme)",
+       "STR004 - Stranger Collective",
+       "00204_IIP003",
+       "1600",
+       "*Research, interviewing, writing and editing 6 x cases studies",
+       "TR10 8LR",
+       "SMALL - LTD LIAB PARTNER",
+       "0",
+       "1600",
+       "PR:14934",
+       "P3D-B47-17",
+       "Programme",
+       "C",
+       "10",
+       "INV"
+      ],
+      [
+       "BIS",
+       "20/12/2013 00:00",
+       "371110 - Publications (Programme)",
+       "STR004 - Stranger Collective",
+       "0201_IIP002",
+       "1200",
+       "*Uploading, Editing and proofing content for interactive before go live.",
+       "TR10 8LR",
+       "SMALL - LTD LIAB PARTNER",
+       "0",
+       "1200",
+       "PR:14934",
+       "P3D-B47-17",
+       "Programme",
+       "C",
+       "10",
+       "INV"
+      ]
+     ],
+     "row_count": 141,
+     "column_count": 17,
+     "example_file": "s/attachment_data/file/306062/Jan14Transactions_over_500.csv",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department Family",
+      "Entity",
+      "Date",
+      "Expense type",
+      "Supplier",
+      "tran_ref",
+      " Amount ",
+      "Description",
+      "Supplier postcode",
+      "Supplier type",
+      "HOME_CREDIT",
+      " HOME_DEBIT ",
+      "Contract Number",
+      "Project Code",
+      "Expenditure type",
+      "Year",
+      "Period",
+      "Type"
+     ],
+     "sample_rows": [
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "02/04/2013 00:00",
+       "337510 - IT Systems Development (Programme)",
+       "AGI001 - Agile Spider Ltd",
+       "INV-01158-J1J3H3",
+       "£1,950.00",
+       "Perform IIP System Audit",
+       "BL8 1SW",
+       "SMALL - PVT LTD BY SHARES",
+       "0",
+       "£1,950.00",
+       "PR:14059",
+       "P3D-B47-17",
+       "Programme",
+       "C",
+       "1",
+       "INV"
+      ],
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "02/04/2013 00:00",
+       "337510 - IT Systems Development (Programme)",
+       "AGI001 - Agile Spider Ltd",
+       "INV-01158-J1J3H3",
+       "£2,600.00",
+       "Document System and Report Findings",
+       "BL8 1SW",
+       "SMALL - PVT LTD BY SHARES",
+       "0",
+       "£2,600.00",
+       "PR:14059",
+       "P3D-B47-17",
+       "Programme",
+       "C",
+       "1",
+       "INV"
+      ],
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "02/04/2013 00:00",
+       "337520 - IT Maintenance and Management Services (Programme)",
+       "AGI001 - Agile Spider Ltd",
+       "INV-01159-P0W3D4",
+       "£1,500.00",
+       "MI and CRM work 50%",
+       "BL8 1SW",
+       "SMALL - PVT LTD BY SHARES",
+       "0",
+       "£1,500.00",
+       "PR:13858",
+       "P3D-B50-17",
+       "Running Cost",
+       "C",
+       "1",
+       "INV"
+      ],
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "02/04/2013 00:00",
+       "337810 - Economic Consultancy and Research (Programme)",
+       "WAR003 - The University of Warwick",
+       "90665596",
+       "£3,300.00",
+       "Data interrogation / computing services in support of production of qualificatio",
+       "CV4 8UW",
+       "LARGE - UNIVERSITY",
+       "0",
+       "£3,300.00",
+       "PR:14110",
+       "P1A-B39-01",
+       "Programme",
+       "C",
+       "1",
+       "INV"
+      ],
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "02/04/2013 00:00",
+       "337610 - Public Relations & Marketing Advice & Services (Pr",
+       "CHA009 - Chartered Management Institute",
+       "INV002147079",
+       "£30,833.33",
+       "Partnership arrangement between Chartered Management Institute and UK Commission",
+       "WC2R 0EZ",
+       "MEDIUM - LTD BY G'TEE CHARITY",
+       "0",
+       "£30,833.33",
+       "PR:14178",
+       "E1A-B80-01",
+       "Programme",
+       "C",
+       "1",
+       "INV"
+      ],
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "02/04/2013 00:00",
+       "337720 - Technical Services (Programme)",
+       "INM001 - Inman Consulting Limited",
+       "IC530",
+       "£1,900.00",
+       "Associates - e learning - Tom Bale",
+       "SS3 9JR",
+       "SMALL - PVT LTD BY SHARES",
+       "0",
+       "£1,900.00",
+       "PR:14155",
+       "P3D-B50-17",
+       "Programme",
+       "C",
+       "1",
+       "INV"
+      ]
+     ],
+     "row_count": 1671,
+     "column_count": 20,
+     "example_file": "ment_data/file/306066/Transactions_over_500_apr_dec_2013.csv",
+     "files": 4
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Pay Date",
+      "Pay Value",
+      "Type",
+      "Supplier",
+      "Line Description",
+      "Dept"
+     ],
+     "sample_rows": [
+      [
+       " 9-Nov-12",
+       "541,798.00",
+       "PAY",
+       "e-skills UK",
+       "8",
+       ""
+      ],
+      [
+       " 23-Nov-12",
+       "445,433.00",
+       "PAY",
+       "SEMTA",
+       "8",
+       ""
+      ],
+      [
+       " 23-Nov-12",
+       "383,084.00",
+       "PAY",
+       "People 1st",
+       "8",
+       ""
+      ],
+      [
+       " 23-Nov-12",
+       "270,331.00",
+       "PAY",
+       "Skillset",
+       "8",
+       ""
+      ],
+      [
+       " 23-Nov-12",
+       "222,333.00",
+       "PAY",
+       "Skills for Justice",
+       "8",
+       ""
+      ],
+      [
+       " 23-Nov-12",
+       "210,684.00",
+       "PAY",
+       "Cogent",
+       "8",
+       ""
+      ]
+     ],
+     "row_count": 101,
+     "column_count": 6,
+     "example_file": "/uploads/attachment_data/file/306071/500-payments-12-nov.csv",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department Family",
+      "Entity",
+      "Date",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount",
+      "Description",
+      "Supplier Postcode",
+      "Supplier type",
+      "Contract Number",
+      "Project Code",
+      "Expenditure type",
+      "Year",
+      "Period",
+      "type",
+      "Value ",
+      "Value correct signage",
+      "GPS framework?"
+     ],
+     "sample_rows": [
+      [
+       "BIS",
+       "UK Commission for Employment and Skills",
+       "15/03/2013",
+       "201060 - Research",
+       "Research - Fellow/Events/Studentship",
+       "Bostock Marketing Group",
+       "188180",
+       "323577",
+       "ESS 12-14 Lot 2 - Wave 1 Fieldwork",
+       "B7 4AX",
+       "PUB LTD COMPANY",
+       "PR:13882",
+       "P1A-B36-01",
+       "Programme",
+       "C",
+       "12",
+       "INV",
+       "323577",
+       "323577",
+       ""
+      ],
+      [
+       "BIS",
+       "UK Commission for Employment and Skills",
+       "22/03/2013",
+       "201060 - Research",
+       "Research - Fellow/Events/Studentship",
+       "IFF Research",
+       "188626",
+       "317852.02",
+       "ESS Lot 2, Wave 1 Fieldwork- 50% act 1; 40% act 2; 30% act 3",
+       "N1 6DD",
+       "PUB LTD COMPANY",
+       "PR:13883",
+       "P1A-B36-01",
+       "Programme",
+       "C",
+       "12",
+       "INV",
+       "317852.02",
+       "317852.02",
+       ""
+      ],
+      [
+       "BIS",
+       "UK Commission for Employment and Skills",
+       "15/03/2013",
+       "201060 - Research",
+       "Research - Fellow/Events/Studentship",
+       "MORI (Market & Opinion Research Institut",
+       "188181",
+       "264038.76",
+       "ESS 12-14 Lot 2, Wave 1 Fieldwork - Act 1-60%; Act 2-40%; act 3-30%",
+       "SE1 1FY",
+       "",
+       "PR:13888",
+       "P1A-B36-01",
+       "Programme",
+       "C",
+       "12",
+       "INV",
+       "264038.76",
+       "264038.76",
+       ""
+      ],
+      [
+       "BIS",
+       "UK Commission for Employment and Skills",
+       "23/07/2012",
+       "201060 - Research",
+       "Research - LMI",
+       "IFF Research",
+       "155062",
+       "188590",
+       "1/3 meeting costs, 1/3 project man costs and 50% fieldword costs (Lines 1,2 and ",
+       "N1 6DD",
+       "PUB LTD COMPANY",
+       "PR:12642",
+       "P1B-B08-01",
+       "Programme",
+       "C",
+       "4",
+       "INV",
+       "188590",
+       "188590",
+       ""
+      ],
+      [
+       "BIS",
+       "UK Commission for Employment and Skills",
+       "22/10/2012",
+       "201060 - Research",
+       "Research - LMI",
+       "IFF Research",
+       "167751",
+       "183540",
+       "Remaining 50% fieldwork costs Line 8",
+       "N1 6DD",
+       "PUB LTD COMPANY",
+       "PR:12642",
+       "P1B-B08-01",
+       "Programme",
+       "C",
+       "7",
+       "INV",
+       "183540",
+       "183540",
+       ""
+      ],
+      [
+       "BIS",
+       "UK Commission for Employment and Skills",
+       "21/03/2013",
+       "201060 - Research",
+       "Research - Fellow/Events/Studentship",
+       "The University of Warwick",
+       "188371",
+       "166265",
+       "A2-Review & assess of data sources. O*Net data. A3-Data development; A4a-Develop",
+       "CV4 8UW",
+       "LARGE - UNIVERSITY",
+       "PR:13693",
+       "P1A-B02-01",
+       "Programme",
+       "C",
+       "12",
+       "INV",
+       "166265",
+       "166265",
+       ""
+      ]
+     ],
+     "row_count": 863,
+     "column_count": 20,
+     "example_file": "loads/attachment_data/file/306079/500-payments-all-12-13.csv",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Supplier",
+      "Gross Value "
+     ],
+     "sample_rows": [
+      [
+       "People 1st",
+       " 762,516 "
+      ],
+      [
+       "ConstructionSkills",
+       " 553,324 "
+      ],
+      [
+       "Skillset",
+       " 450,193 "
+      ],
+      [
+       "e-skills UK",
+       " 393,392 "
+      ],
+      [
+       "SEMTA",
+       " 266,667 "
+      ],
+      [
+       "Skills for Justice",
+       " 221,476 "
+      ]
+     ],
+     "row_count": 64,
+     "column_count": 2,
+     "example_file": "/uploads/attachment_data/file/306083/500-payments-12-May.csv",
+     "files": 1
+    }
+   ],
    "tables": [
     {
      "where": {
@@ -1335,8 +4153,270 @@
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/435690/UKTI__Admin__January_2015__published_.csv",
    "licence": "OGL-UK",
-   "files_extracted": 1,
-   "note": null,
+   "files_extracted": 38,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount",
+      "Description",
+      "Supplier Post Code",
+      "Supplier Type",
+      "Contract Number",
+      "Project Code",
+      "Expenditure Type"
+     ],
+     "sample_rows": [
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2013",
+       "Mobile Phones",
+       "UK Trade & Investment - Defence and Security Organisation",
+       "VODAFONE LTD",
+       "1073229",
+       "0.5",
+       "",
+       "RG14 5FF",
+       "",
+       "",
+       "",
+       "Administration"
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2013",
+       "Mobile Line Rental",
+       "UK Trade & Investment - Trade Development",
+       "VODAFONE LTD",
+       "1073180",
+       "1.51",
+       "",
+       "RG14 5FF",
+       "",
+       "",
+       "",
+       "Administration"
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2013",
+       "Mobile Call Charges",
+       "UK Trade & Investment - Trade Development",
+       "VODAFONE LTD",
+       "1073132",
+       "6.6",
+       "",
+       "RG14 5FF",
+       "",
+       "",
+       "",
+       "Administration"
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2013",
+       "Mobile Call Charges",
+       "UK Trade & Investment - Investment Development",
+       "VODAFONE LTD",
+       "1073172",
+       "6.6",
+       "",
+       "RG14 5FF",
+       "",
+       "",
+       "",
+       "Administration"
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2013",
+       "Mobile Line Rental",
+       "UK Trade & Investment - Trade Development",
+       "VODAFONE LTD",
+       "1073180",
+       "6.6",
+       "",
+       "RG14 5FF",
+       "",
+       "",
+       "",
+       "Administration"
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2013",
+       "Mobile Call Charges",
+       "UK Trade & Investment - Marketing & Communications",
+       "VODAFONE LTD",
+       "1073187",
+       "6.6",
+       "",
+       "RG14 5FF",
+       "",
+       "",
+       "",
+       "Administration"
+      ]
+     ],
+     "row_count": 824,
+     "column_count": 14,
+     "example_file": "oads/attachment_data/file/160701/UKTI_ADMIN_JANUARY_2013.csv",
+     "files": 36
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount",
+      "Description",
+      "Supplier Post Code",
+      "Supplier Type",
+      "Contract Number",
+      "Project Code",
+      "Expenditure Type",
+      " ",
+      " "
+     ],
+     "sample_rows": [
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "03/08/2015",
+       "Subsistence Overseas - UKTI (BIS) Devolved Admin",
+       "Managing Director, Policy and Network Development - Managing Director, Policy an",
+       "Personal Expense, Name Witheld",
+       "107887",
+       " 1.24 ",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration",
+       " ",
+       " "
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "03/08/2015",
+       "Other Travel - UKTI (BIS) Devolved Admin",
+       "Managing Director, Policy and Network Development - Managing Director, Policy an",
+       "Personal Expense, Name Witheld",
+       "107887",
+       " 2.20 ",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration",
+       " ",
+       ""
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "03/08/2015",
+       "Subsistence Overseas - UKTI (BIS) Devolved Admin",
+       "Managing Director, Policy and Network Development - Managing Director, Policy an",
+       "Personal Expense, Name Witheld",
+       "107887",
+       " 13.22 ",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration",
+       " ",
+       ""
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "03/08/2015",
+       "Subsistence Overseas - UKTI (BIS) Devolved Admin",
+       "Managing Director, Policy and Network Development - Managing Director, Policy an",
+       "Personal Expense, Name Witheld",
+       "107887",
+       " 20.00 ",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration",
+       " ",
+       ""
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "03/08/2015",
+       "Subsistence Overseas - UKTI (BIS) Devolved Admin",
+       "Managing Director, Policy and Network Development - Managing Director, Policy an",
+       "Personal Expense, Name Witheld",
+       "107887",
+       " 21.50 ",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration",
+       " ",
+       ""
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "03/08/2015",
+       "Subsistence Overseas - UKTI (BIS) Devolved Admin",
+       "Managing Director, Policy and Network Development - Managing Director, Policy an",
+       "Personal Expense, Name Witheld",
+       "107887",
+       " 23.00 ",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration",
+       " ",
+       ""
+      ]
+     ],
+     "row_count": 543,
+     "column_count": 16,
+     "example_file": "ile/476602/UKTI__Administration__August_2015__published_.csv",
+     "files": 2
+    }
+   ],
    "tables": [
     {
      "where": {
@@ -1467,11 +4547,702 @@
    "title": "Spend over £500 in the Wales Office",
    "portal": "data_gov_uk",
    "format": "CSV",
-   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/214673/Wales-Office-spend-over-500-May-2010.csv",
+   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/214654/Wales-Office-spend-over-500-December-2011-06-01-2012.csv",
    "licence": "OGL-UK-3.0",
-   "files_extracted": 1,
-   "note": null,
-   "tables": [
+   "files_extracted": 30,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Entity",
+      "Expense Area",
+      "Payment Date",
+      "Payment Number",
+      "Supplier Name",
+      " Amount ",
+      "NAC Description",
+      "Service Supplied"
+     ],
+     "sample_rows": [
+      [
+       "Wales Office",
+       "Wales Office",
+       "18/Oct/2012 ",
+       "1001649",
+       "BRITISH GAS BUSINESS",
+       " 637.93 ",
+       "261000-Fuel and Utilities",
+       "London Electricity Costs"
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "18/Oct/2012 ",
+       "1001649",
+       "BRITISH GAS BUSINESS",
+       " 664.92 ",
+       "261000-Fuel and Utilities",
+       "London Electricity Costs"
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "23/Oct/2012 ",
+       "1001658",
+       "BRITISH GAS BUSINESS",
+       " 1,073.39 ",
+       "261000-Fuel and Utilities",
+       "London Electricity Costs"
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "23/Oct/2012 ",
+       "1001656",
+       "CARDIFF COUNTY COUNCIL",
+       " 4,317.00 ",
+       "221000-Property Rent and Rates",
+       "Cardiff Rates"
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "12/Oct/2012 ",
+       "1001618",
+       "CITEC ELECTRIC LTD",
+       " 877.31 ",
+       "222002-Other Property Costs",
+       "TV  installation London"
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "26/Oct/2012 ",
+       "1001661",
+       "CIVIC MAINTENANCE SERVICES LTD",
+       " 626.40 ",
+       "222002-Other Property Costs",
+       "Cleaning Cardiff Office"
+      ]
+     ],
+     "row_count": 29,
+     "column_count": 8,
+     "example_file": "le/214644/Wales-Office-spend-over-_C2_A3500-October-2012.csv",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Entity",
+      "Date",
+      "Expense Area",
+      "Expense Type",
+      "Supplier",
+      "Payment No",
+      "Amount",
+      "Service Description"
+     ],
+     "sample_rows": [
+      [],
+      [
+       "Wales Office",
+       "17-Sep-12",
+       "WA100-Wales Private Office",
+       "223000-Other Expenditure",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "1069",
+       "7,070.66",
+       "Ministerial Car service  for July 2012"
+      ],
+      [
+       "Wales Office",
+       "17-Sep-12",
+       "WA100-Wales Private Office",
+       "223000-Other Expenditure",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "1070",
+       "726.50",
+       "Ministerial Car Service"
+      ],
+      [
+       "Wales Office",
+       "17-Sep-12",
+       "WA100-Wales Private Office",
+       "223000-Other Expenditure",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "1071",
+       "7,077.66",
+       "Ministerial Car Service  for August 2012"
+      ],
+      [
+       "Wales Office",
+       "11-Sep-12",
+       "WA105-Wales Policy Office",
+       "222001-Maintenance",
+       "MITIE TECHNICAL FACILITIES MANAGEMENT LTD",
+       "1001524",
+       "7,584.50",
+       "Design and fitting works "
+      ],
+      [
+       "Wales Office",
+       "11-Sep-12",
+       "WA105-Wales Policy Office",
+       "222001-Maintenance",
+       "MITIE TECHNICAL FACILITIES MANAGEMENT LTD",
+       "1001524",
+       "247,037.92",
+       "Design and fitting works "
+      ]
+     ],
+     "row_count": 21,
+     "column_count": 8,
+     "example_file": "e/214645/September-2012Wales-Office-spend-over-_C2_A3500.csv",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "ENTITY",
+      "EXPENSE_AREA_1",
+      "PAYMENT DATE",
+      "PAYMENT NUMBER",
+      "SUPPLIER NAME",
+      "INVOICE AMOUNT",
+      "NAC DESCRIPTION",
+      "SERVICE SUPPLIED",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Wales Office",
+       "Wales Office",
+       "31/Aug/2012 ",
+       "1001499",
+       "ATOS IT SERVICES UK LTD",
+       "1,344.00",
+       "265000-IT & Telecommunications",
+       "Standard Power Down Request for DISC connected site with on site engineer assist",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Wales Office",
+       "COMMISSION ON DEVOLUTION",
+       "15/Aug/2012 ",
+       "1001455",
+       "CALDER CONFERENCES LTD",
+       "682.67",
+       "223000-Other Expenditure",
+       "Events Facilities for Commission",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "07/Aug/2012 ",
+       "1001427",
+       "CARDA BUSINESS TRAVEL",
+       "823.50",
+       "223000-Other Expenditure",
+       "Transport for Wales Office Ministers whilst in Cardiff.",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "07/Aug/2012 ",
+       "1001427",
+       "CARDA BUSINESS TRAVEL",
+       "903.50",
+       "223000-Other Expenditure",
+       "Transport for Wales Office Ministers whilst in Cardiff.",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "15/Aug/2012 ",
+       "1001456",
+       "CARDA BUSINESS TRAVEL",
+       "1,262.00",
+       "223000-Other Expenditure",
+       "Transport for Wales Office Ministers whilst in Cardiff.",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "23/Aug/2012 ",
+       "1001477",
+       "CARDIFF COUNTY COUNCIL",
+       "4,317.00",
+       "221000-Property Rent and Rates",
+       "Rates Cardiff",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "row_count": 33,
+     "column_count": 16,
+     "example_file": "46/Wales-Office-August-Spend-over-_C2_A3500-August-20121.csv",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "ENTITY",
+      "EXPENSE_AREA_1",
+      "PAYMENT DATE",
+      "PAYMENT NUMBER",
+      "SUPPLIER NAME",
+      "INVOICE AMOUNT",
+      "NAC DESCRIPTION",
+      "SERVICE SUPPLIED",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Total Invoice Value",
+      "Invoice Type",
+      "PO Number"
+     ],
+     "sample_rows": [
+      [
+       "Wales Office",
+       "Commission on Devolution",
+       "6-Jul-12",
+       "1001332",
+       "BROOK STREET (UK) LTD",
+       "604.5",
+       "212001-Agency staff",
+       "Agency staff costs",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "$725.40",
+       "PO Invoice",
+       "40000000329"
+      ],
+      [
+       "Wales Office",
+       "Commission on Devolution",
+       "2-Jul-12",
+       "1001301",
+       "BROOK STREET (UK) LTD",
+       "628.68",
+       "212001-Agency staff",
+       "Agency staff costs",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "$754.42",
+       "PO Invoice",
+       "40000000329"
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "16-Jul-12",
+       "1001360",
+       "CARDA BUSINESS TRAVEL",
+       "1,298.50",
+       "223000-Other Expenditure",
+       "Transport for Wales Office Ministers whilst in Cardiff.",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "$1,558.20",
+       "PO Invoice",
+       "40000000364"
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "23-Jul-12",
+       "1001388",
+       "CARDIFF COUNTY COUNCIL",
+       "4,317.00",
+       "221000-Property Rent and Rates",
+       "Rates for Cardiff office",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "$4,317.00",
+       "RATES",
+       ""
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "3-Jul-12",
+       "1001308",
+       "CIVIC MAINTENANCE SERVICES LTD",
+       "595.48",
+       "222002-Other Property Costs",
+       "Cleaning Services",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "$714.58",
+       "PO Invoice",
+       "40000000432"
+      ],
+      [
+       "Wales Office",
+       "Commission on Devolution",
+       "3-Jul-12",
+       "1001310",
+       "CYMEN CYFYNGEDIG",
+       "1,828.20",
+       "223000-Other Expenditure",
+       "Welsh Translation services for the Commission on Devolution in Wales",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "$2,193.84",
+       "PO Invoice",
+       "40000000324"
+      ]
+     ],
+     "row_count": 23,
+     "column_count": 16,
+     "example_file": "t_data/file/214647/Wales-Office-July-2012-Spend-over-500.csv",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "ENTITY",
+      "EXPENSE_AREA_1",
+      "PAYMENT DATE",
+      "PAYMENT NUMBER",
+      "SUPPLIER NAME",
+      "INVOICE AMOUNT",
+      "NAC DESCRIPTION",
+      "SERVICE SUPPLIED"
+     ],
+     "sample_rows": [
+      [
+       "Wales Office",
+       "WALES OFFICE",
+       "11-Jun-12",
+       "1001225",
+       "ATOS IT SERVICES UK LTD",
+       "2,615.00",
+       "223725-ICT Network Services (VAT Rec)",
+       "MOJ shared service provider costs"
+      ],
+      [
+       "Wales Office",
+       "COMMISSION ON DEVOLUTION",
+       "11-Jun-12",
+       "1001226",
+       "BAY TV LTD",
+       "1,920.00",
+       "223540-Events & Conferences",
+       "Support at public events"
+      ],
+      [
+       "Wales Office",
+       "COMMISSION ON DEVOLUTION",
+       "11-Jun-12",
+       "1001226",
+       "BAY TV LTD",
+       "2,750.00",
+       "223540-Events & Conferences",
+       "Support at public events"
+      ],
+      [
+       "Wales Office",
+       "COMMISSION ON DEVOLUTION",
+       "15-Jun-12",
+       "1001252",
+       "BROOK STREET (UK) LTD",
+       "548.08",
+       "212602-Agency Staff - Secretarial",
+       "Agency staff costs"
+      ],
+      [
+       "Wales Office",
+       "COMMISSION ON DEVOLUTION",
+       "26-Jun-12",
+       "1001291",
+       "BROOK STREET (UK) LTD",
+       "596.44",
+       "212602-Agency Staff - Secretarial",
+       "Agency staff costs"
+      ],
+      [
+       "Wales Office",
+       "COMMISSION ON DEVOLUTION",
+       "26-Jun-12",
+       "1001291",
+       "BROOK STREET (UK) LTD",
+       "604.5",
+       "212602-Agency Staff - Secretarial",
+       "Agency staff costs"
+      ]
+     ],
+     "row_count": 34,
+     "column_count": 8,
+     "example_file": "t_data/file/214648/Wales-Office-June-2012-Spend-over-500.csv",
+     "files": 16
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "ENTITY",
+      "EXPENSE_AREA",
+      "PAYMENT_DATE",
+      "PAYMENT_NUMBER",
+      "SUPPLIER_NAME",
+      "INVOICE_AMOUNT",
+      "NAC_DESCRIPTION",
+      "SERVICE SUPPLIED"
+     ],
+     "sample_rows": [
+      [
+       "Wales Office",
+       "WZ900-Wales",
+       "4-Feb-11",
+       "1001280",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "826.17",
+       "221410-Official Cars - Hire Charges",
+       "Ministerial car hire charges"
+      ],
+      [
+       "Wales Office",
+       "WZ900-Wales",
+       "9-Feb-11",
+       "1001295",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "841.18",
+       "221410-Official Cars - Hire Charges",
+       "Ministerial car hire charges"
+      ],
+      [
+       "Wales Office",
+       "WZ900-Wales",
+       "21-Feb-11",
+       "1001322",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "1006.7",
+       "221410-Official Cars - Hire Charges",
+       "Ministerial car hire charges"
+      ],
+      [
+       "Wales Office",
+       "WZ900-Wales",
+       "25-Feb-11",
+       "1001333",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "7050.26",
+       "221410-Official Cars - Hire Charges",
+       "Ministerial car hire charges"
+      ],
+      [
+       "Wales Office",
+       "WZ900-Wales",
+       "23-Feb-11",
+       "1001330",
+       "BRITISH GAS BUSINESS",
+       "2839.61",
+       "222142-Utility - Electricity",
+       "Electricity supplied to London office"
+      ],
+      [
+       "Wales Office",
+       "WZ900-Wales",
+       "7-Feb-11",
+       "1001286",
+       "CARLISLE SECURITY SERVICES LTD",
+       "10565.46",
+       "222151-Security",
+       "24 hour Security for London office"
+      ]
+     ],
+     "row_count": 17,
+     "column_count": 8,
+     "example_file": "ta/file/214664/Wales-Office-spend-over-500-February-2011.csv",
+     "files": 2
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "ENTITY",
+      "DATE",
+      "BE_LEVEL_7",
+      "EXPENSE_AREA_1",
+      "EXPENSE_TYPE_3",
+      "EXPENSE_TYPE_6",
+      "NAC_LEVEL_6",
+      "SUPPLIER",
+      "TRANSACTION_NUMBER",
+      "AMOUNT",
+      "SERVICE PROVIDED"
+     ],
+     "sample_rows": [
+      [
+       "Wales Office",
+       "12/29/2010",
+       "WA105",
+       "WZ900-Wales",
+       "212001-Agency staff",
+       "212601-Agency Staff - admin",
+       "212601",
+       "BROOK STREET (UK) LTD",
+       "1001188",
+       "587.97",
+       "Agency staff costs"
+      ],
+      [
+       "Wales Office",
+       "12/31/2010",
+       "WA105",
+       "WZ900-Wales",
+       "212001-Agency staff",
+       "212601-Agency Staff - admin",
+       "212601",
+       "BROOK STREET (UK) LTD",
+       "1001192",
+       "587.97",
+       "Agency staff costs"
+      ],
+      [
+       "Wales Office",
+       "12/29/2010",
+       "WA105",
+       "WZ900-Wales",
+       "221000-Property Rent and Rates",
+       "221112-Property Rents - Passing Rent",
+       "221112",
+       "KNIGHT FRANK LLP",
+       "1001191",
+       "44136.94",
+       "Rent and service charges for Cardiff office"
+      ],
+      [
+       "Wales Office",
+       "12/15/2010",
+       "WA100",
+       "WZ900-Wales",
+       "223000-Other Expenditure",
+       "221410-Official Cars - Hire Charges",
+       "221410",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "1001171",
+       "6903.38",
+       "Ministerial car hire charges"
+      ],
+      [
+       "Wales Office",
+       "12/15/2010",
+       "WA100",
+       "WZ900-Wales",
+       "223000-Other Expenditure",
+       "221410-Official Cars - Hire Charges",
+       "221410",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "1001171",
+       "1533.38",
+       "Ministerial car hire charges"
+      ],
+      [
+       "Wales Office",
+       "12/20/2010",
+       "WA100",
+       "WZ900-Wales",
+       "223000-Other Expenditure",
+       "221410-Official Cars - Hire Charges",
+       "221410",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "1001176",
+       "696.19",
+       "Ministerial car hire charges"
+      ]
+     ],
+     "row_count": 20,
+     "column_count": 11,
+     "example_file": "ta/file/214666/Wales-Office-spend-over-500-December-2010.csv",
+     "files": 1
+    },
     {
      "where": {
       "table": 1
@@ -1479,7 +5250,8 @@
      "header": [
       "Wales Office spend over £500",
       "",
-      "May-10",
+      "",
+      "Nov-10",
       "",
       "",
       "",
@@ -1490,56 +5262,144 @@
       [],
       [
        "ENTITY",
-       "EXPENSE_AREA",
-       "PAYMENT_DATE",
-       "PAYMENT_NUMBER",
-       "SUPPLIER_NAME",
-       "INVOICE_AMOUNT",
-       "NAC_DESCRIPTION",
-       "Service provided"
+       "DATE",
+       "BE_LEVEL_7",
+       "EXPENSE_AREA_1",
+       "EXPENSE_TYPE",
+       "SUPPLIER",
+       "TRANSACTION_NUMBER",
+       "AMOUNT",
+       "SERVICE PROVIDED"
       ],
       [
        "Wales Office",
+       "1/11/2010",
+       "WA100",
        "Wales Office",
-       "4/5/2010",
-       "1000575",
-       "NATWEST ",
-       "1339.75",
-       "T&S (Claim Forms Only)",
-       "Wales Office corporate credit card charges "
-      ],
-      [
-       "Wales Office",
-       "Wales Office",
-       "6/5/2010",
-       "10026",
-       "ART WORKS",
-       "799",
-       "Porterage Costs",
-       "Transport of art works to London office"
-      ],
-      [
-       "Wales Office",
-       "Wales Office",
-       "11/5/2010",
-       "1000591",
+       "221410-Official Cars - Hire Charges",
        "GOVERNMENT CAR & DESPATCH AGENCY",
-       "689.47",
-       "Official Cars - Hire Charges",
+       "1001049",
+       "1198.5",
        "Ministerial car hire charges"
       ],
       [
        "Wales Office",
+       "1/11/2010",
+       "WA105",
        "Wales Office",
-       "11/5/2010",
-       "1000591",
-       "GOVERNMENT CAR & DESPATCH AGENCY",
-       "614.82",
-       "Official Cars - Hire Charges",
-       "Ministerial car hire charges"
+       "222152-Cleaning (excl Waste Collctn)",
+       "CIVIC MAINTENANCE SERVICES LTD",
+       "1001048",
+       "852.44",
+       "Cleaning services for Cardiff office"
+      ],
+      [
+       "Wales Office",
+       "4/11/2010",
+       "WA105",
+       "Wales Office",
+       "223536-IT Services incl Web Hosting",
+       "EDUSERV TECHNOLOGIES LTD",
+       "1001056",
+       "679.15",
+       "Web hosting for Wales Office websites"
+      ],
+      [
+       "Wales Office",
+       "5/11/2010",
+       "WA105",
+       "Wales Office",
+       "223541-Telecomms - Charges/Rental-non mobile",
+       "BUYING SOLUTIONS",
+       "1001059",
+       "12150.95",
+       "Central government contract for phone charges for land lines"
       ]
      ],
-     "row_count": 25,
+     "row_count": 23,
+     "column_count": 9,
+     "example_file": "ta/file/214667/Wales-Office-spend-over-500-November-2010.csv",
+     "files": 1
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "ENTITY",
+      "EXPENSE_AREA_1",
+      "PAYMENT DATE",
+      "PAYMENT NUMBER",
+      "SUPPLIER NAME",
+      "INVOICE AMOUNT",
+      "NAC DESCRIPTION",
+      "SERVICE SUPPLIED"
+     ],
+     "sample_rows": [
+      [
+       "Wales Office",
+       "Wales Policy Office",
+       "15-Dec-11",
+       "1000707",
+       "PRECISE MEDIA MONITORING LTD",
+       "958.33",
+       "223563-Press Cuttings Service",
+       "Press cuttings"
+      ],
+      [
+       "Wales Office",
+       "Wales Policy Office",
+       "21-Dec-11",
+       "1000726",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "6,730.34",
+       "221410-Official Cars - Hire Charges",
+       "Ministerial car hire charges"
+      ],
+      [
+       "Wales Office",
+       "Wales Policy Office",
+       "23-Dec-11",
+       "1000734",
+       "KNIGHT FRANK LLP",
+       "37,583.74",
+       "221112-Property Rents - Passing Rent",
+       "Rent and service charges for Cardiff office"
+      ],
+      [
+       "Wales Office",
+       "Wales Policy Office",
+       "6-Dec-11",
+       "1000669",
+       "CARLISLE SECURITY SERVICES LTD",
+       "8,352.00",
+       "222151-Security",
+       "24 hour Security for London office"
+      ],
+      [
+       "Wales Office",
+       "Wales Policy Office",
+       "22-Dec-11",
+       "1000730",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "804",
+       "223517-IDS",
+       "Government internal mail service"
+      ],
+      [
+       "Wales Office",
+       "Wales Policy Office",
+       "14-Dec-11",
+       "1000702",
+       "WYG MANAGEMENT SERVICES LTD",
+       "550",
+       "222181-Managing Agents Fees",
+       "Preliminary report on proposed works"
+      ]
+     ],
+     "row_count": 21,
      "column_count": 8
     }
    ]
@@ -1550,11 +5410,11 @@
    "title": "Wirral Expenditure Exceeding £500",
    "portal": "data_gov_uk",
    "format": "CSV",
-   "resource_url": "https://www.wirral.gov.uk/media/14064/download?inline",
+   "resource_url": "https://www.wirral.gov.uk/files/over-ps500-spend-march-2026.csv",
    "licence": "OGL-UK-3.0",
-   "files_extracted": 1,
-   "note": null,
-   "tables": [
+   "files_extracted": 43,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
     {
      "where": {
       "table": 1
@@ -1632,6 +5492,677 @@
       ]
      ],
      "row_count": 8031,
+     "column_count": 8,
+     "example_file": "https://www.wirral.gov.uk/media/14064/download?inline",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Payments for Publishing for Invoices paid between 01-APR-2023 and 30-APR-2023",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Supplier Name",
+       "Transaction Number",
+       "Paid Date",
+       "Paid Amount",
+       "Department ",
+       "Cost Centre",
+       "Description",
+       "Irrecoverable VAT"
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "101599",
+       "14-APR-2023",
+       "4,175.85",
+       "Neighbourhood Services",
+       "H2910",
+       "Cleaning & Domestic Supplies",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "102907",
+       "24-APR-2023",
+       "801.20",
+       "Covid-19",
+       "H4115",
+       "Cleaning & Domestic Supplies",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "102907",
+       "24-APR-2023",
+       "487.90",
+       "Covid-19",
+       "H4115",
+       "Cleaning & Domestic Supplies",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "102907",
+       "24-APR-2023",
+       "1,755.55",
+       "Regeneration & Place",
+       "L3970",
+       "Repairs, alterations and maintenance",
+       ""
+      ],
+      [
+       "1ST AFFINITY FOSTERING SERVICE LIMITED",
+       "101982",
+       "18-APR-2023",
+       "3,587.01",
+       "Children, Families & Education",
+       "E7080",
+       "Care Provision",
+       ""
+      ]
+     ],
+     "row_count": 6244,
+     "column_count": 8,
+     "example_file": "Expenditure Exceeding £500 April 2023",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Payments for Publishing for Invoices paid between 01-APR-2024 and 30-APR-2024",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Supplier Name",
+       "Transaction Number",
+       "Paid Date",
+       "Paid Amount",
+       "Department ",
+       "Cost Centre",
+       "Description",
+       "Irrecoverable VAT"
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "203113",
+       "30-APR-2024",
+       "650.00",
+       "Regeneration & Place",
+       "D2180",
+       "Repairs, alterations and maintenance",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "195637",
+       "02-APR-2024",
+       "1,755.55",
+       "Regeneration & Place",
+       "D2020",
+       "Repairs, alterations and maintenance",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "195637",
+       "02-APR-2024",
+       "9,865.50",
+       "Regeneration & Place",
+       "D2020",
+       "Repairs, alterations and maintenance",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "195637",
+       "02-APR-2024",
+       "8,352.21",
+       "Regeneration & Place",
+       "D2020",
+       "Repairs, alterations and maintenance",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "198477",
+       "12-APR-2024",
+       "801.20",
+       "Neighbourhood Services",
+       "D3512",
+       "Cleaning & Domestic Supplies",
+       ""
+      ]
+     ],
+     "row_count": 7424,
+     "column_count": 8,
+     "example_file": "Expenditure Exceeding £500 April 2024",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Payments for Publishing for invoices paid between 01 April  2025 and 30 April 2025",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Supplier Name",
+       "Transaction Number",
+       "Paid Date",
+       "Paid Amount",
+       "Department",
+       "Cost Centre",
+       "Description ",
+       "Irrecoverable VAT"
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "291670",
+       "04-Apr-25",
+       "1790.88",
+       "Regeneration & Place",
+       "H2910",
+       "Office Cleaning",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "291670",
+       "04-Apr-25",
+       "2889.6",
+       "Regeneration & Place",
+       "H2910",
+       "Office Cleaning",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "291670",
+       "04-Apr-25",
+       "2109.6",
+       "Regeneration & Place",
+       "H2910",
+       "Office Cleaning",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "291426",
+       "03-Apr-25",
+       "2505.6",
+       "Regeneration & Place",
+       "H2910",
+       "Office Cleaning",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "291670",
+       "04-Apr-25",
+       "2520",
+       "Regeneration & Place",
+       "H2910",
+       "Office Cleaning",
+       ""
+      ]
+     ],
+     "row_count": 6358,
+     "column_count": 8,
+     "example_file": "Expenditure Exceeding £500 April 2025",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Payments for Publishing for invoices paid between 01 April  2026 and 30 April 2026",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Supplier Name",
+       "Transaction Number",
+       "Paid Date",
+       "Paid Amount",
+       "Department ",
+       "Cost Centre",
+       "Description",
+       "Irrecoverable VAT"
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "383308",
+       "07-APR-2026",
+       "4380",
+       "Regeneration & Place",
+       "D2510",
+       "Property Management",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "383308",
+       "07-APR-2026",
+       "7548",
+       "Regeneration & Place",
+       "D8014",
+       "Property Management",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "383308",
+       "07-APR-2026",
+       "4830",
+       "Regeneration & Place",
+       "D8014",
+       "Property Management",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "383308",
+       "07-APR-2026",
+       "2833.92",
+       "Regeneration & Place",
+       "L3970",
+       "Property Management",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "383308",
+       "07-APR-2026",
+       "2316",
+       "Regeneration & Place",
+       "D2021",
+       "Property Management",
+       ""
+      ]
+     ],
+     "row_count": 6742,
+     "column_count": 8,
+     "example_file": "Expenditure Exceeding £500 April 2026",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "",
+      "Payments for Publishing for Invoices paid between 01-AUG-2023 and 31-AUG-2023",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Supplier Name",
+       "Transaction Number",
+       "Paid Date",
+       "Paid Amount",
+       "Department ",
+       "Cost Centre",
+       "Description",
+       "Irrecoverable VAT"
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "130441",
+       "01-AUG-2023",
+       "10,600.00",
+       "Regeneration & Place",
+       "D2510",
+       "Hired or Contracted services",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "130441",
+       "01-AUG-2023",
+       "350.00",
+       "Regeneration & Place",
+       "D2510",
+       "Repairs, alterations and maintenance",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "130441",
+       "01-AUG-2023",
+       "24,900.00",
+       "Capital",
+       "C0391",
+       "Contractors - Main",
+       ""
+      ],
+      [
+       "1SPATIAL GROUP LIMITED",
+       "133448",
+       "15-AUG-2023",
+       "680.00",
+       "Resources",
+       "F4412",
+       "Communications & Computing",
+       ""
+      ],
+      [
+       "1ST AFFINITY FOSTERING SERVICE LIMITED",
+       "132422",
+       "08-AUG-2023",
+       "3,808.66",
+       "Children, Families & Education",
+       "E7080",
+       "Care Provision",
+       ""
+      ]
+     ],
+     "row_count": 7602,
+     "column_count": 8,
+     "example_file": "Expenditure Exceeding £500 August 2023",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Payments for Publishing for Invoices paid between 01-AUGUST-2024 and 31-AUGUST-2024",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Supplier Name",
+       "Transaction Number",
+       "Paid Date",
+       "Paid Amount",
+       "Department ",
+       "Cost Centre",
+       "Description",
+       "Irrecoverable VAT"
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "231033",
+       "13-AUG-2024",
+       "10,600.00",
+       "Regeneration & Place",
+       "D2510",
+       "Hired or Contracted services",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "231033",
+       "13-AUG-2024",
+       "10,600.00",
+       "Regeneration & Place",
+       "D2510",
+       "Hired or Contracted services",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "231033",
+       "13-AUG-2024",
+       "575.00",
+       "Regeneration & Place",
+       "D8014",
+       "Repairs, alterations and maintenance",
+       ""
+      ],
+      [
+       "1ST AFFINITY FOSTERING SERVICE LIMITED",
+       "234502",
+       "29-AUG-2024",
+       "3,808.66",
+       "Children, Families & Education",
+       "E7080",
+       "Care Provision",
+       ""
+      ],
+      [
+       "1ST ENABLE LIMITED",
+       "230242",
+       "07-AUG-2024",
+       "14,233.24",
+       "Adults Care and Health and Strategic Commissioning",
+       "S6005",
+       "Care Provision",
+       ""
+      ]
+     ],
+     "row_count": 6050,
+     "column_count": 8,
+     "example_file": "Expenditure Exceeding £500 August 2024",
+     "files": 1
+    },
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Payments for Publishing for invoices paid between 01 August  2025 and 31 August 2025",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Supplier Name",
+       "Transaction Number",
+       "Paid Date",
+       "Paid Amount",
+       "Department ",
+       "Cost Centre",
+       "Description",
+       "Irrecoverable VAT",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "323462",
+       "11-AUG-2025",
+       "13142.4",
+       "Children, Families & Education",
+       "E9160",
+       "Property Management",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "325098",
+       "15-AUG-2025",
+       "2106.66",
+       "Regeneration & Place",
+       "L3970",
+       "Property Management",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "325098",
+       "15-AUG-2025",
+       "2106.66",
+       "Regeneration & Place",
+       "L3970",
+       "Property Management",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "325098",
+       "15-AUG-2025",
+       "2106.66",
+       "Regeneration & Place",
+       "L3970",
+       "Property Management",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "325098",
+       "15-AUG-2025",
+       "2106.66",
+       "Regeneration & Place",
+       "L3970",
+       "Property Management",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "row_count": 4212,
+     "column_count": 11,
+     "example_file": "Expenditure Exceeding £500 August 2025",
+     "files": 1
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Payments for Publishing for invoices paid between 01 March  2026 and 31 March 2026",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Supplier Name",
+       "Transaction Number",
+       "Paid Date",
+       "Paid Amount",
+       "Department ",
+       "Cost Centre",
+       "Description",
+       "Irrecoverable VAT"
+      ],
+      [
+       "1ST AFFINITY FOSTERING SERVICE LIMITED",
+       "377609",
+       "11-MAR-2026",
+       "3508.79",
+       "Children, Families & Education",
+       "E7080",
+       "Care Provision",
+       ""
+      ],
+      [
+       "1ST AFFINITY FOSTERING SERVICE LIMITED",
+       "377609",
+       "11-MAR-2026",
+       "3955.98",
+       "Children, Families & Education",
+       "E7080",
+       "Care Provision",
+       ""
+      ],
+      [
+       "1ST AFFINITY FOSTERING SERVICE LIMITED",
+       "377609",
+       "11-MAR-2026",
+       "3916",
+       "Children, Families & Education",
+       "E7080",
+       "Care Provision",
+       ""
+      ],
+      [
+       "1ST AFFINITY FOSTERING SERVICE LIMITED",
+       "377609",
+       "11-MAR-2026",
+       "7796.28",
+       "Children, Families & Education",
+       "E7080",
+       "Care Provision",
+       ""
+      ],
+      [
+       "1ST AFFINITY FOSTERING SERVICE LIMITED",
+       "377609",
+       "11-MAR-2026",
+       "5797.99",
+       "Children, Families & Education",
+       "E7080",
+       "Care Provision",
+       ""
+      ]
+     ],
+     "row_count": 5719,
      "column_count": 8
     }
    ]

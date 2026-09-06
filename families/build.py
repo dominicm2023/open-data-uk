@@ -51,6 +51,7 @@ from paths import DATA_DIR  # noqa: E402
 HERE = Path(__file__).resolve().parent
 STORE = DATA_DIR / "families"
 ADAPTER = "columns-v1"
+API_ROWS = 50_000
 
 
 # --- British National Grid -> WGS84 ------------------------------------------
@@ -288,7 +289,14 @@ def map_source(job: dict, spec: dict, schema: dict) -> tuple[list[dict], list[di
     files = job.get("files") or [{"extraction_sha": job["extraction_sha"], "blob_sha": job["blob_sha"],
                                   "url": job["resource_url"], "name": ""}]
     for f in files:
-        o, b = _map_file(job, f, spec, schema)
+        try:
+            o, b = _map_file(job, f, spec, schema)
+        except (KeyError, IndexError, ValueError) as err:
+            # One file of a series in a layout the mapping does not know is
+            # held, with its reason; the other files still publish.
+            bad.append({"why": f"file {f.get('name') or f['url'][-50:]}: {str(err)[:120]}", "source_row": None,
+                        "source_url": f["url"]})
+            continue
         out += o
         bad += b
     return out, bad
@@ -297,15 +305,41 @@ def map_source(job: dict, spec: dict, schema: dict) -> tuple[list[dict], list[di
 def _map_file(job: dict, f: dict, spec: dict, schema: dict) -> tuple[list[dict], list[dict]]:
     rows = _load_table(f["extraction_sha"], spec.get("table", 1))
     h = spec.get("header_row", 0)
+    # A series' files do not all share a layout: Greenwich's returns gained
+    # a "Payment Date" column one year. The mapping's own columns and its
+    # alt_columns are each a layout; the header row of this file chooses
+    # between them by how many of a layout's names it carries. Names are
+    # compared stripped and case-folded, because publishers' trailing
+    # spaces are not information.
+    def _norm(x) -> str:
+        return re.sub(r"\s+", " ", str(x)).strip().lower()
+
+    candidates = [spec.get("columns", {})] + list(spec.get("alt_columns", []))
+    # the header may sit on a later row than declared when a file has a
+    # title line the first one did not: look at the declared row and the
+    # few after it, and take the best (layout, row) pair
+    best, best_hits, best_row = None, 0, h
+    for hr in range(h, min(h + 4, len(rows))):
+        lowered = [_norm(c) for c in rows[hr]]
+        for lay in candidates:
+            names = [_norm(v) for v in lay.values()]
+            hits = sum(1 for n in names if n in lowered)
+            if hits > best_hits:
+                best, best_hits, best_row = lay, hits, hr
+    if best is None or best_hits < max(2, int(0.6 * len(best))):
+        raise KeyError(f"no known layout fits the header {[str(x)[:18] for x in rows[h][:8]]}")
+    h = best_row
     header = [str(x).strip() if x is not None else "" for x in rows[h]]
-    idx = {name: i for i, name in enumerate(header)}
-    # Mappings quote headers exactly as the brief showed them, which may
-    # carry a publisher's trailing space; the table's headers are stripped
-    # above. Meet in the middle.
-    cols = {k: str(v).strip() for k, v in spec.get("columns", {}).items()}
+    # Every header cell by position — an unpivot names year columns directly
+    # — with the layout's names laid over it case-insensitively.
+    idx = {name: i for i, name in enumerate(header) if name}
+    lowered = [_norm(c) for c in header]
+    cols = {k: str(v).strip() for k, v in best.items()}
     for src in cols.values():
-        if src not in idx:
+        pos = next((i for i, c in enumerate(lowered) if c == _norm(src)), None)
+        if pos is None:
             raise KeyError(f"source column {src!r} not in header")
+        idx[src] = pos
     licence = json.loads(job["licence_json"])
     receipts = {
         "publisher": job["publisher"], "dataset_key": job["dataset_key"], "source_url": f["url"],
@@ -504,24 +538,45 @@ def build(family: str, include_proposed: bool = False) -> dict:
         summary.append(entry)
     out_dir = STORE / "out" / family
     out_dir.mkdir(parents=True, exist_ok=True)
+    # A build that publishes far fewer rows than the last one is more likely
+    # a bug than a fact — one such drop hid behind a green "0 preview rows"
+    # line on 6 Sep — so it is said out loud and recorded, never silent.
+    prev_path = out_dir / "summary.json"
+    prev_rows = None
+    if prev_path.exists():
+        try:
+            prev_rows = json.loads(prev_path.read_text(encoding="utf-8")).get("published_rows")
+        except (ValueError, OSError):
+            prev_rows = None
+    regression = None
+    if prev_rows and len(published) < 0.8 * prev_rows:
+        regression = f"published rows fell from {prev_rows:,} to {len(published):,}"
+        print(f"WARNING {family}: {regression}", file=sys.stderr, flush=True)
     cols = [c["name"] for c in schema["columns"]] + schema["provenance"] + ["source_file", "source_row", "quality_note"]
     for name, rows in (("published", published), ("preview", preview)):
         with (out_dir / f"{family}.{name}.csv").open("w", newline="", encoding="utf-8") as fh:
             w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
             w.writeheader(); w.writerows(rows)
-        (out_dir / f"{family}.{name}.json").write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
+        # The complete table lives in the CSV. The JSON twin is capped: a
+        # 588,000-row family made a 584 MB file that nothing read whole.
+        (out_dir / f"{family}.{name}.json").write_text(json.dumps(rows[:API_ROWS], ensure_ascii=False), encoding="utf-8")
     ladder = {}
     for e in summary:
         ladder[e["ladder"]] = ladder.get(e["ladder"], 0) + 1
     report = {"family": family, "label": schema["label"], "built_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
               "published_rows": len(published), "preview_rows": len(preview), "ladder": ladder,
+              "previous_published_rows": prev_rows, "regression": regression,
               "publishers_published": sorted({r["publisher"] for r in published}),
               "licences": sorted({r["licence_id"] for r in published}), "sources": summary}
     (out_dir / "summary.json").write_text(json.dumps(report, indent=1, ensure_ascii=False), encoding="utf-8")
     # The API payload, written once here so the server streams a file
     # rather than re-serialising a 12 MB table on every request.
+    # JSON carries the first API_ROWS rows; a family can run to half a
+    # million lines, and the complete table is the CSV.
     api = {"family": family, "label": schema["label"], "built_at": report["built_at"],
-           "rows": published, "sources": summary,
+           "rows_total": len(published), "rows_in_this_response": min(len(published), API_ROWS),
+           "complete_table_csv": f"/api/family/{family}.csv",
+           "rows": published[:API_ROWS], "sources": summary,
            "attribution": "Contains public sector information licensed under the Open Government Licence v3.0 "
                           "and other licences as stated per row. Combined by the UK Open Data Index."}
     (out_dir / f"{family}.api.json").write_text(json.dumps(api, ensure_ascii=False), encoding="utf-8")

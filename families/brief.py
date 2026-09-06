@@ -46,16 +46,39 @@ def build(family: str) -> dict:
     entries = []
     for j in c.execute("SELECT * FROM jobs WHERE family=? AND state='needs_review' ORDER BY publisher", (family,)):
         doc = json.loads((STORE / "tables" / j["extraction_sha"]).read_text(encoding="utf-8"))
+        layouts = []
         try:
-            n_files = c.execute("SELECT COUNT(*) FROM files WHERE job_id=? AND state='extracted'", (j["id"],)).fetchone()[0]
+            files = c.execute("SELECT url, name, extraction_sha FROM files WHERE job_id=? AND state='extracted' "
+                              "ORDER BY name, url", (j["id"],)).fetchall()
+            n_files = len(files)
+            # Every distinct header across the dataset's files, with a
+            # sample from the first file that carries it: a series proposer
+            # needs to see each layout, not just the first.
+            seen = {}
+            for fr in files:
+                d = json.loads((STORE / "tables" / fr["extraction_sha"]).read_text(encoding="utf-8"))
+                t0 = d["tables"][0] if d["tables"] else None
+                if not t0 or not t0["rows"]:
+                    continue
+                key = tuple(str(x).strip().lower() for x in t0["rows"][0][:MAX_COLS])
+                if key in seen:
+                    seen[key]["files"] += 1
+                    continue
+                pv = _preview(t0)
+                pv["example_file"] = fr["name"] or fr["url"][-60:]
+                pv["files"] = 1
+                seen[key] = pv
+            layouts = list(seen.values())[:8]
         except sqlite3.OperationalError:
             n_files = 1
         entries.append({
             "job_id": j["id"], "publisher": j["publisher"], "title": j["title"], "portal": j["portal"],
             "format": j["format"], "resource_url": j["resource_url"], "licence": json.loads(j["licence_json"])["id"],
             "files_extracted": n_files,
-            "note": ("This dataset has several files; the tables shown are from the first. One mapping "
-                     "applies to all of them.") if n_files > 1 else None,
+            "note": ("This dataset has several files. 'layouts' lists every distinct header found across "
+                     "them with a sample and how many files carry it; the first is 'columns', each further "
+                     "one needs an entry in 'alt_columns'.") if n_files > 1 else None,
+            "layouts": layouts if n_files > 1 else [],
             "tables": [_preview(t) for t in doc["tables"][:8]],
         })
     c.close()

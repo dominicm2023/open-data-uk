@@ -128,6 +128,137 @@
  },
  "sources": [
   {
+   "job_id": "4a16b6746cb34aa116d59b07d829a01de2ebe5dc625732b8c8fc0f02b8998039",
+   "publisher": "Aberdeen City Council",
+   "title": "Air Quality - Diffusion Tubes",
+   "portal": "aberdeen",
+   "format": "CSV",
+   "resource_url": "https://spatialdata-accabdn.opendata.arcgis.com/api/download/v1/items/9438be57aadf45468732a016558d95fb/csv?layers=9",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "OBJECTID",
+      "SITE_NO",
+      "LOCATION"
+     ],
+     "sample_rows": [
+      [
+       "2252",
+       "5",
+       "DT5"
+      ],
+      [
+       "2253",
+       "7",
+       "DT7"
+      ],
+      [
+       "2254",
+       "13",
+       "DT13"
+      ],
+      [
+       "2255",
+       "11",
+       "DT11"
+      ],
+      [
+       "2256",
+       "20",
+       "DT20"
+      ],
+      [
+       "2257",
+       "14",
+       "DT14"
+      ]
+     ],
+     "row_count": 60,
+     "column_count": 3
+    }
+   ]
+  },
+  {
+   "job_id": "19ee3b1d56e7f934b1dfee7e2015911ac7c21b64a5ba69d1dcd1c1350e67db36",
+   "publisher": "Aberdeen City Council ArcGIS Online",
+   "title": "Air Quality - Diffusion Tubes",
+   "portal": "agol_aberdeen_city_council_arcgis",
+   "format": "ESRI",
+   "resource_url": "https://services5.arcgis.com/0sktPVp3t1LvXc9z/arcgis/rest/services/Air_Quality___Diffusion_Tubes/FeatureServer/9/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1,
+      "exceeded": false
+     },
+     "header": [
+      "OBJECTID",
+      "SITE_NO",
+      "LOCATION",
+      "_lon",
+      "_lat"
+     ],
+     "sample_rows": [
+      [
+       "2312",
+       "5",
+       "DT5",
+       "",
+       ""
+      ],
+      [
+       "2313",
+       "7",
+       "DT7",
+       "",
+       ""
+      ],
+      [
+       "2314",
+       "13",
+       "DT13",
+       "",
+       ""
+      ],
+      [
+       "2315",
+       "11",
+       "DT11",
+       "",
+       ""
+      ],
+      [
+       "2316",
+       "20",
+       "DT20",
+       "",
+       ""
+      ],
+      [
+       "2317",
+       "14",
+       "DT14",
+       "",
+       ""
+      ]
+     ],
+     "row_count": 54,
+     "column_count": 5
+    }
+   ]
+  },
+  {
    "job_id": "085ed886343b446aa6a3073712fa376b70d42390bab5374e48baf689d3a1971e",
    "publisher": "Belfast City Council",
    "title": "Belfast Air Quality Monitoring Stations",
@@ -137,6 +268,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -229,6 +361,7 @@
    "licence": "OGL-UK",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -314,6 +447,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -418,6 +552,183 @@
    ]
   },
   {
+   "job_id": "0df044972bfa105849e9528e4b74c69c094ab79b9a371ccc17c3584c3390afbd",
+   "publisher": "City of Bradford Metropolitan District Council",
+   "title": "Diffusion Tube 2018 data",
+   "portal": "bradford",
+   "format": "CSV",
+   "resource_url": "https://spatialdata-cbmdc.hub.arcgis.com/api/download/v1/items/ebd179869eaa4964938001691fd529a5/csv?layers=1",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "X",
+      "Y",
+      "OBJECTID",
+      "SITE_ID",
+      "SITE_NAME",
+      "SITE_TYPE",
+      "XOS",
+      "YOS",
+      "AQMA",
+      "RELEVANT_E",
+      "KERB",
+      "COLOCATED",
+      "HEIGHT",
+      "F2013_MEAN",
+      "F2014_MEAN",
+      "F2015_MEAN",
+      "F2016_MEAN",
+      "F2017_MEAN",
+      "F2018_MEAN",
+      "F2019_MEAN"
+     ],
+     "sample_rows": [
+      [
+       "417982",
+       "434886",
+       "1",
+       "DT5",
+       "Harrogate Road (furthest from crossroads)",
+       "kerbside",
+       "417982",
+       "417982",
+       "no",
+       "0",
+       "1",
+       "No",
+       "2.5 - 2.6",
+       "43",
+       "42",
+       "40",
+       "39",
+       "35",
+       "29",
+       "0"
+      ],
+      [
+       "415883",
+       "433051",
+       "2",
+       "DT38",
+       "102 Thornton Road",
+       "roadside",
+       "415883",
+       "415883",
+       "yes",
+       "0",
+       "2",
+       "No",
+       "2.5 - 2.6",
+       "45",
+       "0",
+       "0",
+       "0",
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "417927",
+       "434799",
+       "3",
+       "DT39",
+       "Harrogate Road (nearest crossroads)",
+       "roadside",
+       "417927",
+       "417927",
+       "no",
+       "2",
+       "2",
+       "No",
+       "2.5 - 2.6",
+       "36",
+       "46",
+       "37",
+       "39",
+       "34",
+       "35",
+       "0"
+      ],
+      [
+       "417886",
+       "434827",
+       "4",
+       "DT40",
+       "Dudley Hill Road",
+       "roadside",
+       "417886",
+       "417886",
+       "no",
+       "0",
+       "1.5",
+       "No",
+       "2.5-2.6",
+       "28",
+       "35",
+       "26",
+       "25",
+       "24",
+       "0",
+       "0"
+      ],
+      [
+       "417850",
+       "434796",
+       "5",
+       "DT41",
+       "Summerset Close",
+       "background",
+       "417850",
+       "417850",
+       "no",
+       "0",
+       "0",
+       "No",
+       "2.5 - 2.6",
+       "29",
+       "36",
+       "20",
+       "0",
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "417902",
+       "434751",
+       "6",
+       "DT42",
+       "Killinghall",
+       "kerbside",
+       "417902",
+       "417902",
+       "no",
+       "1.3",
+       "1",
+       "No",
+       "2.5 - 2.6",
+       "57",
+       "57",
+       "45",
+       "43",
+       "44",
+       "43",
+       "0"
+      ]
+     ],
+     "row_count": 92,
+     "column_count": 20
+    }
+   ]
+  },
+  {
    "job_id": "bfad56034a185df5ce8ccefd1a1fd1892911e6757fa5efafdb3ed81e6ea6d988",
    "publisher": "City of York Council",
    "title": "Air Quality Diffusion Tubes",
@@ -427,6 +738,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -687,6 +999,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -779,6 +1092,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -871,6 +1185,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -963,6 +1278,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1055,6 +1371,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1147,6 +1464,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1239,6 +1557,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1331,6 +1650,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1423,6 +1743,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1585,6 +1906,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1677,6 +1999,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1769,6 +2092,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1861,6 +2185,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1953,6 +2278,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -2045,6 +2371,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -2137,6 +2464,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -2229,6 +2557,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -2321,6 +2650,7 @@
    "licence": "OGL-UK-2.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -2413,6 +2743,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -2491,6 +2822,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -2576,6 +2908,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -2668,6 +3001,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -2767,6 +3101,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -2859,6 +3194,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -3106,6 +3442,644 @@
      ],
      "row_count": 399,
      "column_count": 32
+    }
+   ]
+  },
+  {
+   "job_id": "f638a9bd919a58af8a2195f342d3bebd6c0588ed44a7b4c373c30f84c8e3c751",
+   "publisher": "Met Office",
+   "title": "StoryMap - Urban vs Rural Air Quality - 2018 Annual NOₓ Emissions Data",
+   "portal": "agol_met_office",
+   "format": "ESRI",
+   "resource_url": "https://services.arcgis.com/Lq3V5RFuTBC9I7kv/arcgis/rest/services/NOx_ems_2018_join_converted/FeatureServer/108/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1,
+      "exceeded": true
+     },
+     "header": [
+      "OBJECTID2",
+      "OBJECTID1",
+      "latitude",
+      "longitude",
+      "gridID",
+      "join_latitude",
+      "join_longitude",
+      "join_stdTime",
+      "sum_",
+      "sum_converted",
+      "Shape__Area",
+      "Shape__Length",
+      "_lon",
+      "_lat"
+     ],
+     "sample_rows": [
+      [
+       "1",
+       "1",
+       "54.875",
+       "-4.15",
+       "15864",
+       "54.875",
+       "-4.15",
+       "",
+       "9.328235e-12",
+       "0.2941752263035946",
+       "0.0049999999999954525",
+       "0.29999999999984084",
+       "",
+       ""
+      ],
+      [
+       "2",
+       "2",
+       "50.425",
+       "-3.85",
+       "3852",
+       "50.425",
+       "-3.85",
+       "",
+       "2.613294e-11",
+       "0.8241284914500824",
+       "0.005000000000023874",
+       "0.3000000000000682",
+       "",
+       ""
+      ],
+      [
+       "3",
+       "3",
+       "57.425",
+       "-4.25",
+       "22748",
+       "57.425",
+       "-4.25",
+       "",
+       "1.767445e-11",
+       "0.5573813051107379",
+       "0.0049999999999954525",
+       "0.3000000000000682",
+       "",
+       ""
+      ],
+      [
+       "4",
+       "4",
+       "55.875",
+       "1.95",
+       "18625",
+       "55.875",
+       "1.95",
+       "",
+       "1.446382e-12",
+       "0.04561311542534974",
+       "0.005000000000009663",
+       "0.2999999999999545",
+       "",
+       ""
+      ],
+      [
+       "5",
+       "5",
+       "60.975",
+       "-2.45",
+       "32351",
+       "60.975",
+       "-2.45",
+       "",
+       "3.872579e-13",
+       "0.012212566208313902",
+       "0.0049999999999954525",
+       "0.2999999999999545",
+       "",
+       ""
+      ],
+      [
+       "6",
+       "6",
+       "51.875",
+       "-6.45",
+       "7741",
+       "51.875",
+       "-6.45",
+       "",
+       "1.197034e-12",
+       "0.03774965764979932",
+       "0.0049999999999954525",
+       "0.29999999999984084",
+       "",
+       ""
+      ]
+     ],
+     "row_count": 2000,
+     "column_count": 14
+    }
+   ]
+  },
+  {
+   "job_id": "add2aa2901ef2b71ab62acff5f7a54c74a72ac267e38b97d9b3aaf8a0b4cc6df",
+   "publisher": "National Highways",
+   "title": "National Highways Air Quality Annual Evaluation Report",
+   "portal": "national_highways",
+   "format": "ESRI",
+   "resource_url": "https://services-eu1.arcgis.com/mZXeBXkkZpekxjXT/arcgis/rest/services/AERFeatureClassv3/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1,
+      "exceeded": false
+     },
+     "header": [
+      "objectid",
+      "pcm_link_id",
+      "road_name",
+      "road_description",
+      "qf_within_",
+      "no2_conc_µg_m_",
+      "annual_evaluation_report_cat",
+      "annual_evaluation_report_year",
+      "local_no2_plans",
+      "datasets_reviewed",
+      "aer_based_on",
+      "commentary",
+      "view_technical_reports",
+      "year",
+      "globalid",
+      "Shape__Length",
+      "_lon",
+      "_lat"
+     ],
+     "sample_rows": [
+      [
+       "1",
+       "57767",
+       "A38",
+       "Kedleston Road / A38 Jn to A38 / A5111 Jn",
+       "Yes, qualifying feature 1m from SRN PCM link",
+       "69",
+       "Above limit value",
+       ">2030",
+       "N/A",
+       "A number of different datasets have been reviewed to inform AER 2023 (see append",
+       "Previous assessment supported by monitoring (NH tube)",
+       "A review of the monitoring data for 2023 alongside this SRN PCM link recorded a ",
+       "Analysis and PCM Link Summary (see Appendix A); Air Quality Monitoring (see Appe",
+       "2023",
+       "c0cdc41a-abc6-4bb5-9271-04fcc828728f",
+       "1682.0595112613541",
+       "",
+       ""
+      ],
+      [
+       "2",
+       "99631",
+       "A27",
+       "A27 / A3(M) interchange to A27 / A3023 Jn",
+       "Yes, qualifying feature 1m from SRN PCM link",
+       "37",
+       "Between 36µg/m³ – 39.9µg/m³",
+       "2022",
+       "N/A",
+       "A number of different datasets have been reviewed to inform AER 2023 (see append",
+       "Previous modelling and / or projections",
+       "A review of the monitoring data for 2023 has indicated that there no new additio",
+       "Analysis and PCM Link Summary (see Appendix A); Air Quality Monitoring (see Appe",
+       "2023",
+       "691c7c8d-1a85-4df0-a741-519a3d12663e",
+       "3170.6049297752897",
+       "",
+       ""
+      ],
+      [
+       "3",
+       "77419",
+       "A45",
+       "Jn3-5",
+       "Yes, qualifying feature 10m from SRN PCM link",
+       "39",
+       "Between 36µg/m³ – 39.9µg/m³",
+       "2023",
+       "N/A",
+       "A number of different datasets have been reviewed to inform AER 2023 (see append",
+       "Previous assessment supported by monitoring (NH tube)",
+       "A review of the monitoring data for 2023 alongside this SRN PCM link recorded a ",
+       "Analysis and PCM Link Summary (see Appendix A); Air Quality Monitoring (see Appe",
+       "2023",
+       "8870112a-953a-4b2d-a15a-e35842d9f40b",
+       "2196.812882739946",
+       "",
+       ""
+      ],
+      [
+       "4",
+       "6053",
+       "M60",
+       "Bury: Jn17 –  Jn18",
+       "Yes, qualifying feature 8m from SRN PCM link",
+       "38",
+       "Between 36µg/m³ – 39.9µg/m³",
+       "2022",
+       "N/A",
+       "A number of different datasets have been reviewed to inform AER 2023 (see append",
+       "Previous assessment supported by monitoring (NH tube)",
+       "A review of the monitoring data for 2023 alongside this SRN PCM link recorded a ",
+       "Analysis and PCM Link Summary (see Appendix A); Air Quality Monitoring (see Appe",
+       "2023",
+       "dcb1747e-8367-4510-b9ae-80f1166c1447",
+       "3747.7279694507038",
+       "",
+       ""
+      ],
+      [
+       "5",
+       "99337",
+       "A50",
+       "Meir Tunnel to A50 Jn with Lysander Road",
+       "Yes, qualifying feature 2m from SRN PCM link",
+       "39",
+       "Between 36µg/m³ – 39.9µg/m³",
+       "2023",
+       "N/A",
+       "A number of different datasets have been reviewed to inform AER 2023 (see append",
+       "Distance correction (NH tube)",
+       "A review of the monitoring data for 2023 alongside this SRN PCM link recorded a ",
+       "Analysis and PCM Link Summary (see Appendix A); Air Quality Monitoring (see Appe",
+       "2023",
+       "1695cb6f-6fb3-4b0f-983a-51210dc603ce",
+       "3001.247461364666",
+       "",
+       ""
+      ],
+      [
+       "6",
+       "81374",
+       "A38",
+       "A38 / A374 Jn to A38/B3414 Jn",
+       "Yes, qualifying feature 2m from SRN PCM link",
+       "32",
+       "Less than 36µg/m³",
+       "2020",
+       "N/A",
+       "A number of different datasets have been reviewed to inform AER 2023 (see append",
+       "Distance correction (NH tube)",
+       "A review of the monitoring data for 2023 alongside this SRN PCM link recorded a ",
+       "Analysis and PCM Link Summary (see Appendix A); Air Quality Monitoring (see Appe",
+       "2023",
+       "9a508f81-b890-4344-92f3-637ac34ef306",
+       "2808.7209268805736",
+       "",
+       ""
+      ]
+     ],
+     "row_count": 540,
+     "column_count": 18
+    }
+   ]
+  },
+  {
+   "job_id": "f7b76803ee9fbf2cc5e29cea00ccaa6659cb8a026f6908ab4343416c7f344a3b",
+   "publisher": "National Highways",
+   "title": "National Highways Annual Evaluation Report Diffusion Tube Data",
+   "portal": "national_highways",
+   "format": "ESRI",
+   "resource_url": "https://services-eu1.arcgis.com/mZXeBXkkZpekxjXT/arcgis/rest/services/DiffusionFeatureClass/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1,
+      "exceeded": false
+     },
+     "header": [
+      "objectid",
+      "mon_site_i",
+      "annual_no2",
+      "datacapture",
+      "dist_to_pcm",
+      "mon_type",
+      "used_in_aer",
+      "year",
+      "globalid",
+      "_lon",
+      "_lat"
+     ],
+     "sample_rows": [
+      [
+       "1088",
+       "6013_1",
+       "42.29999924",
+       "100",
+       "18",
+       "Diffusion Tube",
+       "Yes",
+       "2023",
+       "99d83299-701c-4024-a836-dffcd826ed29",
+       "-0.4411867756524986",
+       "51.49489888485562"
+      ],
+      [
+       "1089",
+       "6013_2",
+       "29.5",
+       "100",
+       "12",
+       "Diffusion Tube",
+       "Yes",
+       "2023",
+       "d8b1930f-c0c2-4b8a-92c3-2e3afb328522",
+       "-0.43321719581762985",
+       "51.4937314741625"
+      ],
+      [
+       "1090",
+       "6013_3",
+       "30.5",
+       "83",
+       "29",
+       "Diffusion Tube",
+       "Yes",
+       "2023",
+       "ebe495db-16d2-4e24-af0b-fce5abe3c8ea",
+       "-0.4605039846732477",
+       "51.49620629124036"
+      ],
+      [
+       "1091",
+       "6013_4",
+       "28.10000038",
+       "100",
+       "39",
+       "Diffusion Tube",
+       "Yes",
+       "2023",
+       "a235076b-9c10-4c90-9e5f-983ff53eba31",
+       "-0.42271665321937285",
+       "51.49369841066463"
+      ],
+      [
+       "1092",
+       "6013_5 ",
+       "26",
+       "92",
+       "9",
+       "Diffusion Tube",
+       "Yes",
+       "2023",
+       "1f7b1700-1fea-4a16-b04a-b889e1444a7f",
+       "-0.43029965091275385",
+       "51.493953180887374"
+      ],
+      [
+       "1093",
+       "6053_1",
+       "32.29999924",
+       "90",
+       "93",
+       "Diffusion Tube",
+       "No",
+       "2023",
+       "d13548ea-affc-49de-a1ac-69831939b028",
+       "-2.284261133466314",
+       "53.54275965207511"
+      ]
+     ],
+     "row_count": 742,
+     "column_count": 11
+    }
+   ]
+  },
+  {
+   "job_id": "060977afe6c0ae483e6ef94d5000bab4f3274d99f5b1b1add5cda7886a3ab8cf",
+   "publisher": "National Highways",
+   "title": "National Highways National Air Quality Monitoring Network Report 2022",
+   "portal": "national_highways",
+   "format": "ESRI",
+   "resource_url": "https://services-eu1.arcgis.com/mZXeBXkkZpekxjXT/arcgis/rest/services/National_Air_Quality_Monitoring_Network__NAQMN__20221/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1,
+      "exceeded": false
+     },
+     "header": [
+      "objectid",
+      "siteid",
+      "annual_mean2022",
+      "globalid",
+      "_lon",
+      "_lat"
+     ],
+     "sample_rows": [
+      [
+       "1",
+       "01_M1_J34-35SB_N",
+       "31.4",
+       "a16c13f7-6a77-4c21-bb35-4bd6bfdf2e8f",
+       "-1.4243461344187551",
+       "53.43313401073923"
+      ],
+      [
+       "2",
+       "02_M1_J33-34SB_N",
+       "56.4",
+       "4901c5de-2918-4515-aa32-05486de4101a",
+       "-1.3993116913503525",
+       "53.41202207393042"
+      ],
+      [
+       "3",
+       "03_M1_J33-34SB_N",
+       "31.2",
+       "da7669fb-09bb-4b5d-82df-e4ee913ed432",
+       "-1.377464594242361",
+       "53.39985631481192"
+      ],
+      [
+       "4",
+       "04_M1_J30-31NB_N",
+       "22.3",
+       "e152e8d2-1813-45e3-bfe7-c5877ecc9318",
+       "-1.282130297249125",
+       "53.316438557896696"
+      ],
+      [
+       "5",
+       "05_M1_J30-31SB_N",
+       "38.3",
+       "78cf1003-7d44-46de-8c20-f8409ed5e68a",
+       "-1.2820544227556983",
+       "53.31469430003925"
+      ],
+      [
+       "6",
+       "06_M1_J28-29SB_N",
+       "31.3",
+       "19108eeb-12ea-458b-86da-dddf9777e5a7",
+       "-1.325507785576364",
+       "53.10380315295306"
+      ]
+     ],
+     "row_count": 64,
+     "column_count": 6
+    }
+   ]
+  },
+  {
+   "job_id": "8ac2fcea0582644e6888c019e3362d810f15f056aa04fd566fb0bd02152a38a6",
+   "publisher": "National Highways",
+   "title": "National Highways National Air Quality Monitoring Network Report Data",
+   "portal": "national_highways",
+   "format": "ESRI",
+   "resource_url": "https://services-eu1.arcgis.com/mZXeBXkkZpekxjXT/arcgis/rest/services/NAQMNv4/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1,
+      "exceeded": false
+     },
+     "header": [
+      "objectid",
+      "siteid",
+      "x_coord",
+      "y_coord",
+      "year",
+      "included_in_aer23",
+      "annual_no2",
+      "datacaptur",
+      "annual_pm10",
+      "datacapt_1",
+      "annual_pm2",
+      "datacapt_2",
+      "globalid",
+      "_lon",
+      "_lat"
+     ],
+     "sample_rows": [
+      [
+       "1",
+       "01_M1_J34-35SB_N",
+       "438354",
+       "393077",
+       "2023",
+       "No",
+       "27.8",
+       "99",
+       "27.3",
+       "99.3",
+       "9.8",
+       "99.3",
+       "3d0e592b-903e-4930-b8e0-0a29d41cd20e",
+       "-1.4241809459215078",
+       "53.43310625089733"
+      ],
+      [
+       "2",
+       "02_M1_J33-34SB_N",
+       "440026",
+       "390745",
+       "2023",
+       "Yes",
+       "49.6",
+       "97.4",
+       "20.7",
+       "98.9",
+       "7.6",
+       "98.9",
+       "a2423494-d1f5-4737-ac6b-cf80556556aa",
+       "-1.3993116928672797",
+       "53.41202207303915"
+      ],
+      [
+       "3",
+       "03_M1_J33-34SB_N",
+       "441490",
+       "389404",
+       "2023",
+       "No",
+       "28.1",
+       "97.3",
+       "19.2",
+       "99.2",
+       "7.5",
+       "99.3",
+       "4bea5098-0cd3-4788-9ae1-ecaec8cc19cd",
+       "-1.3774645957593055",
+       "53.39985631392091"
+      ],
+      [
+       "4",
+       "04_M1_J30-31NB_N",
+       "447921",
+       "380180",
+       "2023",
+       "No",
+       "20.7",
+       "99.2",
+       "9.7",
+       "98.9",
+       "7.1",
+       "98.9",
+       "afc91596-1a6d-4b5c-967e-4f4baf577641",
+       "-1.2821457595696637",
+       "53.316411683938995"
+      ],
+      [
+       "5",
+       "05_M1_J30-31SB_N",
+       "447932",
+       "379991",
+       "2023",
+       "No",
+       "35.4",
+       "98.9",
+       "9",
+       "78.4",
+       "7.6",
+       "79.7",
+       "811a316f-8aa8-49b1-8a3f-2c1984173ce2",
+       "-1.2820090968773399",
+       "53.314712004021544"
+      ],
+      [
+       "6",
+       "06_M1_J28-29SB_N",
+       "445257",
+       "356505",
+       "2023",
+       "No",
+       "26.5",
+       "98",
+       "15.5",
+       "99.1",
+       "7.4",
+       "99.1",
+       "2406aef7-f25c-412c-a1c5-baf5c422dabe",
+       "-1.3254772142336406",
+       "53.10384792479776"
+      ]
+     ],
+     "row_count": 130,
+     "column_count": 15
     }
    ]
   }

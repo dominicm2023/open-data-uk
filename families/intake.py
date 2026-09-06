@@ -273,7 +273,10 @@ def fetch(url: str, limit: int, headers: dict | None = None) -> tuple[bytes | No
 # --- storage ----------------------------------------------------------------
 
 def _used() -> int:
-    return sum(p.stat().st_size for p in STORE.rglob("*") if p.is_file())
+    """Evidence, originals and extractions count against the budget; the
+    built tables under out/ are derived and rebuilt nightly, so they do not."""
+    return sum(p.stat().st_size for p in STORE.rglob("*")
+               if p.is_file() and "out" not in p.relative_to(STORE).parts[:1])
 
 
 def capacity(reserve: int = 0) -> None:

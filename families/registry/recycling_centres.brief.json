@@ -105,6 +105,143 @@
  },
  "sources": [
   {
+   "job_id": "ee58fabba742650a72fa00927889fe54ea4f387e95e9a8910cfe3727baca88f5",
+   "publisher": "Aberdeen City Council",
+   "title": "Recycling Centres",
+   "portal": "aberdeen",
+   "format": "CSV",
+   "resource_url": "https://spatialdata-accabdn.opendata.arcgis.com/api/download/v1/items/5dbd92e1aba9467b8de058d0347a5b04/csv?layers=21",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "OBJECTID",
+      "SITE",
+      "ROADNAME",
+      "LOCALITY",
+      "POSTCODE",
+      "UPRN"
+     ],
+     "sample_rows": [
+      [
+       "18",
+       "GREENBANK CRESCENT",
+       "Greenbank Crescent",
+       "East Tullos",
+       "AB12 3BG",
+       "009051314244"
+      ],
+      [
+       "19",
+       "Perwinnes Moss",
+       "Scotstown Road",
+       "Bridge of Don",
+       " ",
+       "009051314425"
+      ],
+      [
+       "20",
+       "SCLATTIE DISPOSAL WORKS",
+       "Bankhead Avenue",
+       "Bucksburn",
+       "AB21 9EG",
+       "009051124213"
+      ],
+      [
+       "21",
+       "Grove Nursery",
+       "Hazlehead Avenue",
+       "Hazlehead",
+       "AB15 8BJ",
+       "009051146561"
+      ]
+     ],
+     "row_count": 4,
+     "column_count": 6
+    }
+   ]
+  },
+  {
+   "job_id": "84ff9dadf7c6d87f7024435a5b3f5d002991048a7a608d9f2e1349af9f7a6d1a",
+   "publisher": "Aberdeen City Council ArcGIS Online",
+   "title": "Recycling Centres",
+   "portal": "agol_aberdeen_city_council_arcgis",
+   "format": "ESRI",
+   "resource_url": "https://services5.arcgis.com/0sktPVp3t1LvXc9z/arcgis/rest/services/Recycling_Centres/FeatureServer/21/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1,
+      "exceeded": false
+     },
+     "header": [
+      "OBJECTID",
+      "SITE",
+      "ROADNAME",
+      "LOCALITY",
+      "POSTCODE",
+      "UPRN",
+      "_lon",
+      "_lat"
+     ],
+     "sample_rows": [
+      [
+       "26",
+       "Tullos Recycling Centre",
+       "Greenbank Crescent",
+       "Tullos",
+       "AB12 3BG",
+       "9051314244",
+       "",
+       ""
+      ],
+      [
+       "27",
+       "Bucksburn Recycling Centre",
+       "Bankhead Avenue",
+       "Bucksburn",
+       "AB21 9ET",
+       "9051124213",
+       "",
+       ""
+      ],
+      [
+       "28",
+       "Hazlehead Recycling Centre",
+       "Hazlehead Avenue",
+       "Hazlehead",
+       "AB15 8BJ",
+       "9051146561",
+       "",
+       ""
+      ],
+      [
+       "29",
+       "Bridge of Don Recycling Centre",
+       "Claymore Drive",
+       "Bridge of Don",
+       "AB23 8TU",
+       "9051160522",
+       "",
+       ""
+      ]
+     ],
+     "row_count": 4,
+     "column_count": 8
+    }
+   ]
+  },
+  {
    "job_id": "c11f48695414349ea0bf19d2e3d7e597296c1df5553c72f745622ac56b2fa1b7",
    "publisher": "Belfast City Council",
    "title": "Belfast City Council Recycling Centres",
@@ -114,6 +251,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -171,6 +309,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -214,6 +353,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -348,6 +488,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -503,6 +644,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -673,6 +815,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -814,6 +957,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -906,6 +1050,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1013,6 +1158,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1103,6 +1249,134 @@
    ]
   },
   {
+   "job_id": "d98fd61240a0a0f4e2f5c1ef8e52afb3424d524c7db155340a58d97e9fd5f4cd",
+   "publisher": "North Ayrshire Council",
+   "title": "Recycling Centres",
+   "portal": "north_ayrshire",
+   "format": "CSV",
+   "resource_url": "https://maps-north-ayrshire.opendata.arcgis.com/api/download/v1/items/cf2a62be1d31495d98b95c4e6ead2fdd/csv?layers=3",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "X",
+      "Y",
+      "OBJECTID",
+      "SERVICE_GROUP",
+      "SERVICE",
+      "SECTION_",
+      "BUILDING",
+      "ADDRESS",
+      "CONTACT_NAME",
+      "OPENING_HOURS",
+      "ANNOUNCEMENTS",
+      "IMAGE",
+      "UPRN",
+      "CONTACT_PHONE",
+      "CONTACT_FAX",
+      "CONTACT_EMAIL",
+      "FACILITIES",
+      "LV_URL",
+      "WEBSITE"
+     ],
+     "sample_rows": [
+      [
+       "230614",
+       "641176",
+       "165",
+       "Place",
+       "Waste Resources",
+       "Recycling Centres",
+       "Bartonholm Recycling Centre",
+       "Bartonholm Recycling Centre, Sandy Road, Irvine, Ayrshire, KA12 8SN ",
+       "",
+       "Daily: 10am to 4.30pm (last entry, 4.15pm) (7 days a week)",
+       "",
+       "Image not available at present",
+       "000126069012",
+       "01294 310000",
+       "",
+       "",
+       "Recycle facilities for: bicycles, books, CDs & DVDs, car batteries, cardboard (l",
+       "https://www.maps.north-ayrshire.gov.uk/Sites/Council_Buildings/?query=Council_Bu",
+       "https://www.north-ayrshire.gov.uk/bins-litter-and-recycling/recycling/recycling-"
+      ],
+      [
+       "231953",
+       "654323",
+       "246",
+       "Place",
+       "Waste Resources",
+       "Recycling Centres",
+       "Kilbirnie Recycling Centre",
+       "Kilbirnie Recycling Centre, Paddockholm Road, Kilbirnie, Ayrshire, KA25 7JW ",
+       "",
+       "Daily: 10am to 4.30pm (last entry, 4.15pm) (7 days a week)",
+       "",
+       "Image not available at present",
+       "000126075176",
+       "01294 310000",
+       "",
+       "",
+       "Recycle facilities for: bicycles, books, CDs & DVDs, car batteries, cardboard (l",
+       "https://www.maps.north-ayrshire.gov.uk/Sites/Council_Buildings/?query=Council_Bu",
+       "https://www.north-ayrshire.gov.uk/bins-litter-and-recycling/recycling/recycling-"
+      ],
+      [
+       "202869",
+       "635754",
+       "281",
+       "Place",
+       "Waste Resources",
+       "Recycling Centres",
+       "Brodick Recycling Centre",
+       "Brodick Recycling Centre, Market Road, Brodick, Isle Of Arran, KA27 8AU ",
+       "",
+       "Monday to Friday: 9am to 3pm, Saturday: 9am to 12 noon, Sundays: closed, Last en",
+       "",
+       "Image not available at present",
+       "000126072181",
+       "01294 310000",
+       "",
+       "",
+       "Residents can now deposit the following at Arran's new household waste recycling",
+       "https://www.maps.north-ayrshire.gov.uk/Sites/Council_Buildings/?query=Council_Bu",
+       "https://www.north-ayrshire.gov.uk/bins-litter-and-recycling/recycling/recycling-"
+      ],
+      [
+       "222932",
+       "657325",
+       "338",
+       "Place",
+       "Waste Resources",
+       "Recycling Centres",
+       "Largs Recycling Centre",
+       "Largs Recycling Centre, Haylie Brae, Largs, Ayrshire, KA24 5LE ",
+       "",
+       "Daily: 10am to 4.30pm (last entry, 4.15pm) (7 days a week)",
+       "\r\n",
+       "Image not available at present",
+       "000126075174",
+       "01294 310000",
+       "",
+       "",
+       "Recycle facilities for: bicycles, books, CDs & DVDs, car batteries, cardboard (l",
+       "https://www.maps.north-ayrshire.gov.uk/Sites/Council_Buildings/?query=Council_Bu",
+       "https://www.north-ayrshire.gov.uk/bins-litter-and-recycling/recycling/recycling-"
+      ]
+     ],
+     "row_count": 4,
+     "column_count": 19
+    }
+   ]
+  },
+  {
    "job_id": "c81b2dd7ae37d2a3ecf2d396fc01c46ee873a294ca4bee24b3efbec5a80050f5",
    "publisher": "Nottingham City Council",
    "title": "Recycling Centres",
@@ -1112,6 +1386,7 @@
    "licence": "OGL-UK-3.0",
    "files_extracted": 1,
    "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -1338,6 +1613,158 @@
      ],
      "row_count": 122,
      "column_count": 29
+    }
+   ]
+  },
+  {
+   "job_id": "d2e2ae0ec502e502909e723314ddf4f31dc2fd6135729ccebec147a3fa50a3e5",
+   "publisher": "Perth & Kinross Council",
+   "title": "Recycling Centres and Points (open data)",
+   "portal": "perth_kinross",
+   "format": "CSV",
+   "resource_url": "https://open-data-perth-kinross.hub.arcgis.com/api/download/v1/items/8e321cc321104d108679de7d19a43a65/csv?layers=29",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "MI_PRINX",
+      "UPRN",
+      "RECYCLING_CENTRE_POINT",
+      "TYPE",
+      "MATERIALS",
+      "MAPURL",
+      "WEBSITE",
+      "x",
+      "y"
+     ],
+     "sample_rows": [
+      [
+       "1",
+       "124078432",
+       "Aberfeldy - Industrial Estate, Breadalbane",
+       "CENTRE",
+       "Aerosols, Aluminium Foil, Bicycles, Books, Bras, Bulky Goods, Car Batteries, Car",
+       "https://perth-kinross.maps.arcgis.com/apps/mapviewer/index.html?webmap=58543dcb1",
+       "https://www.pkc.gov.uk/article/14815/Aberfeldy-recycling-centre",
+       "285903",
+       "749421"
+      ],
+      [
+       "2",
+       "124082342",
+       "Aberfeldy - Moness Terrace Car Park",
+       "POINT",
+       "Cardboard, Glass, Paper, Shoes, Textiles",
+       "https://perth-kinross.maps.arcgis.com/apps/mapviewer/index.html?webmap=58543dcb1",
+       "",
+       "285812",
+       "749084"
+      ],
+      [
+       "3",
+       "124082861",
+       "Abernethy - Jamesfield Organic Farm",
+       "POINT",
+       "Cardboard, Glass, Paper, Shoes, Textiles",
+       "https://perth-kinross.maps.arcgis.com/apps/mapviewer/index.html?webmap=58543dcb1",
+       "",
+       "320074",
+       "717292"
+      ],
+      [
+       "4",
+       "124082390",
+       "Abernyte - Antique Centre",
+       "MINI-GLASS",
+       "Glass",
+       "https://perth-kinross.maps.arcgis.com/apps/mapviewer/index.html?webmap=58543dcb1",
+       "",
+       "326777",
+       "730841"
+      ],
+      [
+       "5",
+       "124082343",
+       "Alyth - Mill Street",
+       "POINT",
+       "Cardboard, Glass, Paper, Shoes, Textiles",
+       "https://perth-kinross.maps.arcgis.com/apps/mapviewer/index.html?webmap=58543dcb1",
+       "",
+       "324802",
+       "748509"
+      ],
+      [
+       "6",
+       "124083043",
+       "Auchterarder - Auchterarder Park",
+       "POINT",
+       "Cardboard, Glass, Paper, Books, Electrical & Electronic Equipment",
+       "https://perth-kinross.maps.arcgis.com/apps/mapviewer/index.html?webmap=58543dcb1",
+       "",
+       "293907",
+       "712363"
+      ]
+     ],
+     "row_count": 143,
+     "column_count": 9
+    }
+   ]
+  },
+  {
+   "job_id": "99a3391a1a2cf121ffaaa73df673beb3fe4a6c843efe58692eb6fc74465a53ae",
+   "publisher": "Tunbridge Wells Borough Council",
+   "title": "North Farm Waste and Recycling Centre Map Image Layer",
+   "portal": "agol_tunbridge_wells_borough_coun",
+   "format": "ESRI",
+   "resource_url": "https://utility.arcgis.com/usrsvcs/servers/fc0bd6ccccab45f09dc9cdf9626df2b5/rest/services/Internet/NorthFarmTip/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1,
+      "exceeded": false
+     },
+     "header": [
+      "OBJECTID_1",
+      "UPRN",
+      "ADDRESS",
+      "GLASS",
+      "CANS",
+      "CARDBOARD",
+      "PAPER",
+      "BOOKS",
+      "TEXTILES",
+      "PLASTIC_BO",
+      "_lon",
+      "_lat"
+     ],
+     "sample_rows": [
+      [
+       "1",
+       "010000065273",
+       "Kent County Council, \rHousehold Waste Recycling Centre, \rNorth Farm Lane, \rRoyal",
+       " ",
+       " ",
+       " ",
+       " ",
+       " ",
+       " ",
+       "No",
+       "0.28650363928209843",
+       "51.15779729606066"
+      ]
+     ],
+     "row_count": 1,
+     "column_count": 12
     }
    ]
   }
