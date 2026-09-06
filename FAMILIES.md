@@ -153,7 +153,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 |---|---|---|---|
 | recycling_centres | 30 sources | 10 | 7 sources, 75 rows, 6 bodies |
 | air_quality_annual | 51 | 28 | 13 sources, 13,479 rows, 3 bodies |
-| spend_over_500 | 60 | in progress | 9 proposed, awaiting review |
+| spend_over_500 | 60 | 8 so far (intake still running) | 6 sources, 26,359 rows, 5 bodies |
 
 Things the first day taught, now rules in the code: Northern Ireland bodies
 publish on the Irish Grid or Irish Transverse Mercator, never BNG, and the
@@ -164,3 +164,21 @@ published annual mean of exactly 0 is a placeholder; concatenated monthly
 returns repeat their header and drop one-cell dividers; data.gov.uk
 resources marked CSV are often HTML pages, so the intake tries ranked
 candidates; and a source's last good snapshot outlives a failed re-fetch.
+
+## The loop from here
+
+Nightly, `refresh.sh` rebuilds each registry from the index, re-fetches
+politely (a source's last good snapshot survives a failed attempt), and
+rebuilds the tables from reviewed mappings. New sources arrive as
+`extracted` and appear on the family page as "not in the table yet". To
+bring them in: `brief.py <family>` → propose mappings (a model can; the
+brief is headers and sample rows) → `check_mappings.py` → build with
+`--include-proposed`, look at the preview → set `"status": "reviewed"` in
+`families/registry/<family>.mappings.json`. That last edit is the publish
+switch, and it is a person's.
+
+Known gaps worth doing next: one file per dataset is fetched, so a spend
+return is one month of one body — fetching every monthly file makes it a
+series; DFID-style files that change header layout mid-file need a second
+mapping per block; ArcGIS hosts that refuse the REST query (Bristol) need
+the export endpoint instead.
