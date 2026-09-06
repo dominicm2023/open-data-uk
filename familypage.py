@@ -62,10 +62,14 @@ def render_family(family: str, site_url: str) -> str | None:
     if s is None:
         return None
     schema = json.loads((Path(__file__).parent / "families" / "schema" / f"{family}.json").read_text(encoding="utf-8"))
-    rows = published_rows(family)
+    rows = published_rows(family)          # capped at 50,000: enough to show 200
+    total = s.get("published_rows", len(rows))
+    # Counts come from the build summary, never from the capped JSON: spend
+    # over £500 is 588,006 rows and the page said 50,000 for an hour.
     by_pub: dict[str, int] = {}
-    for r in rows:
-        by_pub[r["publisher"]] = by_pub.get(r["publisher"], 0) + 1
+    for e in s.get("sources", []):
+        if e.get("ladder") == "published" and e.get("rows"):
+            by_pub[e["publisher"]] = by_pub.get(e["publisher"], 0) + e["rows"]
     ladder = s.get("ladder", {})
     n_sources = sum(ladder.values())
 
@@ -96,8 +100,8 @@ def render_family(family: str, site_url: str) -> str | None:
                     f'<td><a href="{esc(r["source_url"])}" rel="noopener">row {r["source_row"]}</a></td></tr>')
     table = (f'<div class="table-wrap"><table><thead><tr>{head}</tr></thead>'
              f'<tbody>{"".join(body)}</tbody></table></div>'
-             + (f'<p class="note">Showing 200 of {len(rows):,} rows; the download has all of them.</p>'
-                if len(rows) > 200 else ""))
+             + (f'<p class="note">Showing 200 of {total:,} rows; the CSV download has all of them.</p>'
+                if total > 200 else ""))
 
     columns_doc = "".join(
         f'<li><code>{esc(c["name"])}</code> — {esc(c["meaning"])}</li>' for c in schema["columns"])
@@ -107,7 +111,7 @@ def render_family(family: str, site_url: str) -> str | None:
     body_html = (
         crumb_html
         + f"<h1>{esc(s['label'])}: one table</h1>"
-        + f'<p class="lede">{len(rows):,} rows from {len(by_pub)} public bodies, combined from their own published files '
+        + f'<p class="lede">{total:,} rows from {len(by_pub)} public bodies, combined from their own published files '
           f'into one schema. Every row keeps its receipt: the publisher, the file, its hash, the row it came from, and the licence.</p>'
         + '<p class="note">The original files come first — each contributing body is linked below, and the table is a '
           'convenience built on them, published only where the licence explicitly allows it and a person has reviewed how '
@@ -127,7 +131,7 @@ def render_family(family: str, site_url: str) -> str | None:
     )
     head_html = simple_head(
         f"{s['label']} — one table from {len(by_pub)} UK public bodies",
-        f"{len(rows):,} rows of {s['label'].lower()} combined from {len(by_pub)} publishers' own open data, "
+        f"{total:,} rows of {s['label'].lower()} combined from {len(by_pub)} publishers' own open data, "
         "with the source, licence and row of every entry.",
         f"/family/{family}", site_url, crumb_ld)
     return _page(head_html, body_html, "/who-publishes")
