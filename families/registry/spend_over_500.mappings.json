@@ -188,5 +188,133 @@
   "version": "1",
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
+ },
+ "a670f04716a86dd5b4cbe201b65dd7c85880766a6032288638361952d82be95c": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction Number"
+  },
+  "constants": {
+   "threshold_gbp": 500,
+   "body": "Department of Energy and Climate Change"
+  },
+  "notes": "Threshold 500 taken from the title ('Spend over £500 in the Department of Energy and Climate Change'). Clean single-header table, no title/divider rows in the sample. No period or description column present. Review: a £289m line is real central-government spend; the family's amount cap was raised to £5bn.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "3ef6586edd03fb6c63b21861f171ee3ec7a681d4c558291df2776ec3f724e6de": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Payment Date",
+   "supplier": "Supplier Name",
+   "amount_gbp": "Amount (£)",
+   "expense_area": "Expense Area",
+   "expense_type": "Account Description",
+   "reference": "Transaction Number",
+   "description": "Expense Description"
+  },
+  "constants": {
+   "threshold_gbp": 500,
+   "body": "Government Equalities Office"
+  },
+  "notes": "Threshold 500 taken from the title ('Spend over £500 in Government Equalities Office'). Small file (16 rows in sample count), clean single header. One sample row is a large grant-in-aid payment to another body (EHRC) rather than a commercial supplier — kept as published per the rule that supplier names are published text. Review: 16 rows, no dates in the source.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "cad03d565abbb431d95bde21a877f6716a06d94bc45e8b9eb96fa7782f8146b1": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount in Sterling",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction number"
+  },
+  "constants": {
+   "threshold_gbp": 500,
+   "body": "Ministry of Housing, Communities and Local Government"
+  },
+  "notes": "Threshold 500 taken from the title ('Spend over £500 in the Government Offices for the Regions'). Same column shape and same publisher string as the DCLG source already mapped in this file (job d010... no, job ffd3fc6d...); body taken from this source entry's own 'publisher' field, which is the modern successor department, not 'Government Offices for the Regions' itself. Clean single header, no issues. Review: Government Offices for the Regions return, published under the successor department's name.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "45e5c4b154f37f9657e1533c3cea960c4d928d92b24a8dfc1a4f06cbd58bb3a9": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "invoice_date",
+   "supplier": "Supplier",
+   "amount_gbp": "net_amount",
+   "expense_area": "Service",
+   "expense_type": "Merchant Category",
+   "description": "Summary of Purpose of Expenditure"
+  },
+  "constants": {
+   "threshold_gbp": 500,
+   "body": "Stockport Metropolitan Borough Council"
+  },
+  "notes": "Threshold 500 taken from the title ('Expenditure over £500'). Only 'invoice_date' is available — there is no separate payment-date column, so payment_date is mapped to invoice date; reviewer should confirm this is acceptable given the schema's stated preference for payment over invoice date. Column is named 'net_amount' but no VAT column appears anywhere in this table's header, so it is mapped as the published amount as-is (not adjusted); reviewer should double check whether 'net' implies VAT was stripped out elsewhere. Many sample suppliers are '*Redact - Personal Information' — kept as published (redaction is the publisher's own text, not something applied here). Negative amounts (credits) appear in samples and are kept with sign preserved. Review: only an invoice date exists; payment_date carries it. net_amount as published, no VAT column.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "e26bf628169d3aecf4e1052362a421c16a630da8f8cb10ae69f474f1caf7f101": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount",
+   "expense_type": "Expense type",
+   "reference": "tran_ref",
+   "description": "Description"
+  },
+  "constants": {
+   "threshold_gbp": 500,
+   "body": "UK Commission for Employment and Skills"
+  },
+  "notes": "Threshold 500 taken from the title ('Spend over £500 in the UK Commission for Employment and Skills'). 'Date' includes a literal time component in the sample ('10/01/2014 00:00') — always midnight in samples shown, so date extraction should be safe, but reviewer should confirm. No expense_area-equivalent column exists (only department-level 'Department Family'/'Entity'), so left unmapped. Table also carries 'Year' and 'Period' columns, but sample values ('C', '12') don't read as a clean, publishable period label, so 'period' was left unmapped — reviewer should check what these encode before adding. 'Supplier' values carry an embedded supplier code prefix (e.g. 'ASP002 - Aspero Limited') — kept exactly as published, not split apart. Not mapped, no schema slot: Supplier postcode, Supplier type, HOME_CREDIT, HOME_DEBIT, Contract Number, Project Code, Expenditure type. Review: no dates or expense area in the source; Year/Period columns opaque and left unmapped.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "cf8fc911f167104ad7bf020b78493813d2ad0eb8cbd1841c52995fa581986abe": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction Number",
+   "description": "Description"
+  },
+  "constants": {
+   "threshold_gbp": 500,
+   "body": "UK Trade and Investment"
+  },
+  "notes": "Threshold 500 taken from the title ('Administrative spend over £500 in UK Trade and Investment'); note the title scopes this file to administrative spend only, not the department's full spend-over-£500 return — reviewer should check whether a separate 'programme spend' file exists for the same body/period that would need its own mapping. 'Description' is empty in every sample row, likely sparse throughout. Sample suppliers include 'Personal Expense, Name Witheld' (employee expense claims) — kept as published per the rule on personal names published under the transparency code. Review: administrative spend only; lines below £500 kept as published.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
  }
 }

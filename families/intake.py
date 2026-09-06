@@ -197,8 +197,16 @@ def _validate(url: str) -> None:
         raise Refused("DNS failure")
 
 
+def _ascii_url(url: str) -> str:
+    """Publishers put pounds signs and spaces in file names. urllib refuses a
+    non-ASCII URL outright, so percent-encode what needs it and nothing else."""
+    from urllib.parse import quote
+    return quote(url, safe=":/?&=%+,;@#~$!*'()[]-._")
+
+
 def fetch(url: str, limit: int, headers: dict | None = None) -> tuple[bytes | None, dict, str]:
     """One request, spaced per host, redirects followed by hand, size-capped."""
+    url = _ascii_url(url)
     ctx = ssl.create_default_context()
     try:
         import certifi
@@ -398,7 +406,9 @@ def process(c: sqlite3.Connection, job_id: str) -> None:
                           (job_id, cand["url"], cand["format"], cand.get("name") or "", blob, extraction, VERSION,
                            rh.get("ETag"), rh.get("Last-Modified"), detail, now()))
                 got.append((cand, blob, extraction, rh, downloaded, detail))
-                if not series:
+                if series:
+                    print(f"    file {len(got):>3}  {downloaded:>9,} B  {cand['url'][-50:]}", flush=True)
+                else:
                     break
             except Refused as err:
                 errors.append(f"{cand['format']} {cand['url'][-60:]}: {str(err)[-120:]}")

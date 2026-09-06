@@ -153,7 +153,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 |---|---|---|---|
 | recycling_centres | 30 sources | 10 | 7 sources, 75 rows, 6 bodies |
 | air_quality_annual | 51 | 28 | 13 sources, 13,479 rows, 3 bodies |
-| spend_over_500 | 60 | 8 so far (intake still running) | 6 sources, 26,359 rows, 5 bodies |
+| spend_over_500 | 60 | 20 | 15 sources, 98,884 rows, 13 bodies (series fetch of every monthly file in progress) |
 
 Things the first day taught, now rules in the code: Northern Ireland bodies
 publish on the Irish Grid or Irish Transverse Mercator, never BNG, and the
