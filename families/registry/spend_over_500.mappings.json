@@ -15,10 +15,34 @@
    "threshold_gbp": 500,
    "body": "Department for International Development"
   },
-  "notes": "Used the recorded row-0 header, which gives clean full column names. But sample_rows show, right after it, a month-label line ('Apr-12', mostly blank) and then a second, messier repeated header line ('Supplier Name\\n', 'Amount ', 'Expenses Type \\n' appearing twice, trailing newlines) before real data resumes at 'DFID, DFID, 11/04/2012...'. This looks like a file made by concatenating monthly export blocks, each carrying its own divider/header lines as literal rows. A naive header_row=0 read will pull in these divider and repeated-header rows as fake data throughout the file (this pattern likely repeats every month) — reviewer/build step must filter out embedded label and header-repeat rows before loading. 'description' is only populated for admin spend above £25,000, so it will be sparse/mostly empty. Review: April-September 2012 blocks map cleanly (11,472 rows); later blocks in the same file change header layout and are held (10,624 rows), reported on the page. A second mapping for those blocks is future work.",
+  "notes": "Used the recorded row-0 header, which gives clean full column names. But sample_rows show, right after it, a month-label line ('Apr-12', mostly blank) and then a second, messier repeated header line ('Supplier Name\\n', 'Amount ', 'Expenses Type \\n' appearing twice, trailing newlines) before real data resumes at 'DFID, DFID, 11/04/2012...'. This looks like a file made by concatenating monthly export blocks, each carrying its own divider/header lines as literal rows. A naive header_row=0 read will pull in these divider and repeated-header rows as fake data throughout the file (this pattern likely repeats every month) — reviewer/build step must filter out embedded label and header-repeat rows before loading. 'description' is only populated for admin spend above £25,000, so it will be sparse/mostly empty. Review: April-September 2012 blocks map cleanly (11,472 rows); later blocks in the same file change header layout and are held (10,624 rows), reported on the page. A second mapping for those blocks is future work. Review: three block layouts in one file (Apr-Nov 'Supplier Name/Amount/Expenses…', then Dec onward reordered 'Date/Expense Type/Expense Area/Supplier/Transaction Number/Amount'); alt_columns covers them.",
   "version": "1",
   "reviewer": "Claude, for Dominic Matthews",
-  "reviewed_at": "2026-09-06"
+  "reviewed_at": "2026-09-06",
+  "alt_columns": [
+   {
+    "payment_date": "Transaction Date",
+    "supplier": "Supplier Name",
+    "amount_gbp": "Amount",
+    "expense_type": "Expenses Type",
+    "expense_area": "Expenses Area"
+   },
+   {
+    "payment_date": "Transaction Date",
+    "supplier": "Supplier Name",
+    "amount_gbp": "Amount",
+    "expense_type": "Expense Type",
+    "expense_area": "Expense Area"
+   },
+   {
+    "payment_date": "Date",
+    "supplier": "Supplier",
+    "amount_gbp": "Amount",
+    "expense_type": "Expense Type",
+    "expense_area": "Expense Area",
+    "reference": "Transaction Number"
+   }
+  ]
  },
  "861e2c9c6d8bb61f42705e951014e843ddc72569d7388cb992c0ef4aa27841c3": {
   "status": "reviewed",

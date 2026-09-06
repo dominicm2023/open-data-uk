@@ -321,7 +321,7 @@ def _map_file(job: dict, f: dict, spec: dict, schema: dict) -> tuple[list[dict],
     unpivot = spec.get("unpivot")
 
     def cell(r, name):
-        if name not in cols:
+        if name not in cols or cols[name] not in idx:
             return None
         i = idx[cols[name]]
         return r[i] if i < len(r) else None
@@ -395,18 +395,45 @@ def _map_file(job: dict, f: dict, spec: dict, schema: dict) -> tuple[list[dict],
         (bad if why else out).append({**rec, "why": why} if why else rec)
 
     header_set = [x.strip().lower() for x in header]
+    # A file made by concatenating monthly returns repeats its header
+    # between blocks — and a block may use a *different* layout: DFID's
+    # 2012 return switches from (date, supplier, amount, type, area) to
+    # (date, type, area, supplier, reference, amount) in December, under a
+    # header with different names. A mapping may therefore list
+    # "alt_columns": further column dicts. A row that carries most of the
+    # names of any known layout is a header: switch to that layout and
+    # carry on. One-cell dividers ("Apr-12") are skipped and counted.
+    layouts = [cols] + [{k: str(v).strip() for k, v in alt.items()} for alt in spec.get("alt_columns", [])]
+
+    def _norm(x: str) -> str:
+        return re.sub(r"\s+", " ", str(x)).strip().lower()
+
     for rno, r in enumerate(rows[h + 1:], start=h + 2):
         cells = [str(x).strip() if x is not None else "" for x in r]
         if not any(cells):
             continue
-        # A file made by concatenating monthly returns repeats its header
-        # between blocks and drops a one-cell divider ("Apr-12") before
-        # each. Neither is a payment; both are skipped, and counted.
-        if [c.lower() for c in cells[:len(header_set)]] == header_set:
+        lowered = [_norm(c) for c in cells]
+        best, best_hits = None, 0
+        for lay in layouts:
+            names = {_norm(v) for v in lay.values()}
+            hits = sum(1 for n in names if n in lowered)
+            if hits > best_hits:
+                best, best_hits = lay, hits
+        if best is not None and best_hits >= max(2, int(0.6 * len(best))):
+            cols = dict(best)
+            idx = {}
+            for target, src_col in cols.items():
+                pos = next((i for i, c in enumerate(lowered) if c == _norm(src_col)), None)
+                if pos is not None:
+                    idx[src_col] = pos
             skipped_headers[0] += 1
             continue
         if sum(1 for c in cells if c) == 1 and len(header_set) > 3:
             skipped_headers[1] += 1
+            continue
+        # a line with nothing in any mapped column is padding, not a row
+        if all(not (idx.get(src_col) is not None and idx[src_col] < len(cells) and cells[idx[src_col]])
+               for src_col in cols.values()):
             continue
         if unpivot:
             base_ids = {k: cell(r, k) if k in cols else (r[idx[v]] if v in idx else None)

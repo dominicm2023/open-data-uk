@@ -164,7 +164,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 |---|---|---|---|
 | recycling_centres | 30 sources | 10 | 7 sources, 75 rows, 6 bodies |
 | air_quality_annual | 51 | 28 | 13 sources, 13,479 rows, 3 bodies |
-| spend_over_500 | 60 | 20 | 15 sources, 98,884 rows, 13 bodies (series fetch of every monthly file in progress) |
+| spend_over_500 | 60 | 20 | 15 sources, 114,003 rows, 13 bodies (series fetch of every monthly file in progress) |
 
 Things the first day taught, now rules in the code: Northern Ireland bodies
 publish on the Irish Grid or Irish Transverse Mercator, never BNG, and the
@@ -187,6 +187,11 @@ brief is headers and sample rows) → `check_mappings.py` → build with
 `--include-proposed`, look at the preview → set `"status": "reviewed"` in
 `families/registry/<family>.mappings.json`. That last edit is the publish
 switch, and it is a person's.
+
+A file that changes column layout between blocks (DFID's 2012 return has
+three) takes `"alt_columns"`: further column dicts; a row carrying most of
+a layout's names switches the build to it. A row with nothing in any
+mapped column is padding and is skipped.
 
 Known gaps worth doing next: one file per dataset is fetched, so a spend
 return is one month of one body — fetching every monthly file makes it a
