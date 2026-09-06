@@ -7,9 +7,12 @@ Agency's 260 flood datasets are zip archives whose contents we cannot see,
 regardless of what the page really offers, and 37.9% of the index states no
 format at all.
 
-The constraint that shapes everything here: **we never copy the data.** The
-site promises that, every result links to the publisher rather than to us,
-and a module that quietly mirrored a few gigabytes would make it a lie. So
+The constraint that shapes everything here: **this module never copies the
+data.** It fetches what the index needs to describe a dataset - headers, a
+peek at CSV columns - and nothing more. Digestion into combined family
+tables is a separate, licence-gated path (see FAMILIES.md), not a side
+effect of checking links; a checker that quietly mirrored a few gigabytes
+would make the provenance rules there meaningless. So
 this reads structure and discards payload — column names, sheet names, what
 is inside an archive — and stores only the description.
 

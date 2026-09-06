@@ -35,8 +35,12 @@ Four things make it different from searching a catalogue directly:
   list them together — see
   [who publishes what](https://open-data.org.uk/who-publishes).
 
-**Metadata only.** We never rehost anyone's data — every result links to the
-publisher's own page, under the publisher's own licence.
+**The original link is always there, first.** Every result links to the
+publisher's own page, under the publisher's own licence. For the things many
+bodies publish separately we are adding one combined, attributed table beside
+those links — only where the licence explicitly allows it, only after a person
+has reviewed the join, every row traceable to its source file and line. See
+[FAMILIES.md](FAMILIES.md).
 
 ### What we found building it
 
@@ -261,9 +265,9 @@ The **code** in this repository is MIT licensed — see [LICENSE](LICENSE).
 
 The **data it indexes is not ours to license.** Each dataset stays under
 whatever licence its publisher set, most commonly the Open Government
-Licence v3.0, and around a third state no licence at all. We only ever hold
-metadata and link out to the publisher, so check the licence shown on a
-dataset (and on the publisher's own page) before reusing it. API responses
+Licence v3.0, and around a third state no licence at all. Every dataset page links out to the publisher, so check the licence shown on a
+dataset (and on the publisher's own page) before reusing it; a combined family
+table states its own licence and attribution. API responses
 carry an `attribution` field for this reason; please keep it.
 
 ## Roadmap

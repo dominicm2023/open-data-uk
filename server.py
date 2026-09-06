@@ -78,8 +78,9 @@ app = FastAPI(
     description=(
         "One search across the UK's scattered open government data. "
         "Hybrid semantic + keyword search over the collated, normalised "
-        "metadata of every dataset in the indexed portals. Metadata only — "
-        "results link to the publisher's own pages.\n\n"
+        "metadata of every dataset in the indexed portals. Results always "
+        "link to the publisher's own pages; combined tables for datasets "
+        "many bodies publish are being added under explicit open licences.\n\n"
         f"{ATTRIBUTION}"
     ),
     version="0.1.0",
@@ -1213,8 +1214,10 @@ def llms_txt() -> PlainTextResponse:
 > metadata of {st['datasets']:,} datasets from {len(st['sources'])} national,
 > devolved, regional, NHS and council portals — normalised into one
 > vocabulary, deduplicated, and with every link followed so we can say
-> whether it actually leads to data. We never copy the data itself: every
-> result links to the publisher's own page.
+> whether it actually leads to data. Every result links to the publisher's
+> own page. For datasets many bodies publish separately we are beginning to
+> offer one combined, attributed table beside those links, under explicit
+> open licences only, with every row traceable to its source.
 
 ## What we can answer that a single portal cannot
 

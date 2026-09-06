@@ -14,6 +14,15 @@ anything else, whether they arrive by our search box or by Google.
 can tell you it is a data file, an API, a webpage, a dead end, or that we
 could not tell — and we say which, before you click.
 
+**Really there has a third level (added 6 September):** can a person use
+what is behind the link? A four-page PDF of senior salaries is really there
+by the first two tests and useless by any practical one. So, for the things
+many bodies publish, we also offer **one combined, attributed table beside
+every original link** — digested per family, published only when a person
+has reviewed the mapping, every row traceable to its source file and line.
+`FAMILIES.md` is the brief. The index finds, verifies and digests; Joined
+Up reads and argues.
+
 The star is what we are for. The site says only what we have done: the
 front page says "194 portals", not "every portal", and it stays that way
 until the gap is closed.
@@ -26,6 +35,7 @@ until the gap is closed.
 | **Certainty** — findable datasets with a verdict under 30 days old | 84% checked; 18,264 never | Can we say what is really there? |
 | **Findability** — searches ending at a publisher, ours and Google's | Google: 16 clicks/day, 1,395 impressions/day, avg position 17 (2 Sep); 8,746 indexed, 78,306 waiting | Do people reach it through us? |
 | **Guardrail** — verdicts that were wrong | 1,239 wrong for three weeks (launch-day 429s) | Are we still the people who know? |
+| **Usability** — who-publishes families with a reviewed, published combined table | 0 published; 3 mapped in trial (recycling centres, air quality, NI dwellings) | Can a person use it without doing the extraction themselves? |
 
 The guardrail is a reputation metric. Being wrong for three weeks is worse
 than saying "not verified" for three weeks.
@@ -33,10 +43,12 @@ than saying "not verified" for three weeks.
 ## Not this
 
 **Joined Up is separate.** The campaigning arm — the organogram cascades,
-Pen's Parade, the sewage and spending joins, the posters — makes arguments
-from data. That is *using* data, not finding it. From 4 September it lives
-in its own repository (`../Joined Up`) and uses this site through the public
-API like anyone else. Nothing under `/lab` is served from here any more.
+Pen's Parade, the posters — makes arguments from data. From 4 September it
+lives in its own repository (`../Joined Up`) and uses this site through the
+public API like anyone else. Nothing under `/lab` is served from here.
+Refined 6 September: the *extraction* Joined Up used to do for itself is
+the index's job now (the family tables); the *messages and stories* drawn
+from them remain Joined Up's, entirely.
 
 **The Findings page stays, and is measurements only.** Facts about the
 data: who publishes what, under which terms, whether the links work, which
@@ -123,6 +135,22 @@ A living list. Add freely; move to "Done" with the commit that did it.
 - Home page stats poll every 30 s and `/api/stats` now runs a full key
   scan per call; cheap today, worth caching when traffic is real.
 
+### Usability — one table for the things many bodies publish
+- The brief is `FAMILIES.md`. First three families, in order: household
+  waste recycling centres (two portals already unified), air quality annual
+  means (Leicester mapped, 184 site-years), spend over £500 (Joined Up's
+  supplier work depends on it). Each proves what the next needs.
+- Only the top rung of the ladder publishes: fetched → extracted →
+  shape-checked → mapped → reviewed → published. Below that is private
+  evidence, kept by hash.
+- Licence: explicit OGL v1–3 only. Personal data is a separate decision
+  from licence; salaries and organograms wait on it.
+- Politeness before scale: 1.5 s per host, `Retry-After`, a retry budget.
+  The pilot hit Brent at four requests a second and was told 429.
+- The site's promise changes with this: originals always linked, and a
+  combined table only where the licence explicitly allows it. About,
+  README, `llms.txt` and the API description say so from 6 September.
+
 ### Guardrail — stay right
 - Nightly digest already reports service health; add **verdict health**:
   how many verdicts are older than 30 days, how many flipped on recheck.
@@ -130,6 +158,8 @@ A living list. Add freely; move to "Done" with the commit that did it.
   launch-day 429s are the first entry.
 
 ### Done
+- 6 Sep — third promise adopted: digest per family, publish only reviewed.
+  Site wording changed; `FAMILIES.md` written as the brief for Codex.
 - 5 Sep — older editions of a series canonicalise to the latest when the
   description matches: 4,231 pages in 1,144 series, out of the sitemap,
   still served and searchable. (B of the not-indexed fix.)
