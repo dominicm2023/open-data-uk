@@ -93,60 +93,66 @@ def sha(body: bytes) -> str:
 
 # --- licence --------------------------------------------------------------
 
-_NEUTRAL = {"uk-ogl", "uk open government licence (ogl)", "open government licence", ""}
+_OGL_URL = re.compile(r"nationalarchives\.gov\.uk/doc/open-government-licence(?:/version/([123]))?", re.I)
+_OGL_NAME = re.compile(r"open\s+government\s+licen[cs]e(?:\s*\(?\s*(?:ogl)?\s*v?(?:ersion)?\s*([123])(?:\.0)?\s*\)?)?", re.I)
+# Words that mean a licence other than the OGL is in force, or that reuse is
+# restricted. Ordnance Survey *attribution* ("Contains OS data © Crown
+# copyright") is not on this list: it is a condition the OGL itself allows.
+_RESTRICTED = re.compile(r"inspire\s+end\s+user|end\s+user\s+licen[cs]e|public\s+sector\s+end\s+user|psma|pseul|"
+                         r"derived\s+data\s+exemption|non.?commercial|no.?derivatives|all\s+rights\s+reserved|"
+                         r"notspecified|not\s+specified|restricted|cc.?by.?nc|creative\s+commons", re.I)
+_NEUTRAL = {"uk-ogl", "uk_ogl", "ogl", "ogl-uk", "uk open government licence (ogl)", "open government license", "",
+            "http://reference.data.gov.uk/id/open-government-licence",
+            "https://reference.data.gov.uk/id/open-government-licence"}
 
 
 def licence(fields) -> dict:
     """An Open Government Licence, stated unambiguously, or refuse.
 
-    Codex's rule required an explicit version. On the first full run that
-    refused 32 of 60 spend-over-£500 returns on data.gov.uk's own identifier
-    (license_id "uk-ogl", url reference.data.gov.uk/id/open-government-
-    licence), which names the OGL and no version. The National Archives
-    states that material licensed under any earlier OGL version may be used
-    under the v3 terms — the versions are compatible by design — so a
-    versionless OGL is not an unknown licence, it is the OGL. What admission
-    has to establish is that the statement *is* the OGL rather than a custom
-    or restrictive licence; that test is unchanged. The exact statement is
-    kept as evidence and the version recorded as stated, or "unstated" with
-    v3 terms applied.
+    Every value — a CKAN id, a URL, an ArcGIS licenseInfo paragraph — is read
+    the same way. Text that names a restricted licence (INSPIRE end-user
+    terms, OS PSMA, "derived data exemption", non-commercial) refuses, even
+    if the OGL is mentioned beside it: mixed terms need a person. Otherwise
+    the value must name the OGL, by URL or by name; a generic identifier
+    such as data.gov.uk's "uk-ogl" counts as naming it, because the National
+    Archives holds all OGL versions compatible and v3 terms apply. OS
+    attribution wording is not a restriction: 4 of the first refused
+    councils were refused for saying "Contains OS data © Crown copyright"
+    in front of an OGL link. The exact statement is kept as evidence.
     """
-    versions = set()
+    versions: set[str] = set()
     named = False
     for value in fields:
         if not value:
             continue
-        value = html.unescape(str(value)).strip().lower()
-        if value == "uk_oglv3.0":
-            value = "open government licence v3.0"
-        if value in ("uk-ogl", "uk_ogl", "ogl", "ogl-uk", "open government licence",
-                     "uk open government licence (ogl)", "open government license",
-                     "http://reference.data.gov.uk/id/open-government-licence",
-                     "https://reference.data.gov.uk/id/open-government-licence"):
-            named = True
-            continue
-        m = re.fullmatch(r"ogl-uk-([123])\.0", value)
+        raw = html.unescape(str(value))
+        text = re.sub(r"<[^>]+>", " ", raw)
+        text = re.sub(r"\s+", " ", text).strip()
+        low = text.lower()
+        links = re.findall(r"href=[\"']([^\"']+)", raw)
+        if low == "uk_oglv3.0":
+            low = "open government licence v3.0"
+        m_id = re.fullmatch(r"ogl-uk-([123])\.0", low)
+        if m_id:
+            versions.add(m_id.group(1)); named = True; continue
+        if low in _NEUTRAL:
+            named = True; continue
+        if _RESTRICTED.search(low) or any(_RESTRICTED.search(l) for l in links):
+            raise Refused("Licence text names a restricted or non-OGL licence: " + text[:120])
+        hit = False
+        for m in list(_OGL_URL.finditer(low)) + [_OGL_URL.search(l) for l in links if _OGL_URL.search(l)]:
+            hit = True
+            if m and m.group(1):
+                versions.add(m.group(1))
+        m = _OGL_NAME.search(low)
         if m:
-            value = "open government licence v" + m.group(1) + ".0"
-        if re.search(r"non.?commercial|no.?derivatives|all rights reserved|notspecified|not specified|restricted", value):
-            raise Refused("Restricted or unspecified licence declaration")
-        if "<" in value:                                  # ArcGIS licenseInfo is HTML
-            links = re.findall(r"href=[\"']([^\"']+)", value)
-            label = re.sub("<[^>]+>", "", value).strip()
-            if label not in _NEUTRAL and not re.search(r"open government licence", label):
-                raise Refused("Custom licence text needs review")
-            if len(links) != 1:
-                raise Refused("Licence text without a single terms link")
-            value = links[0]
-        m = re.fullmatch(r"https?://(?:www\.)?nationalarchives\.gov\.uk(?::443)?/doc/open-government-licence/(?:version/([123])/?)?", value)
-        if not m:
-            m = re.fullmatch(r"(?:uk )?open government licence\s*(?:\(ogl\s*)?v?(?:ersion\s*)?([123])(?:\.0)?\)?(?: \(united kingdom\))?", value)
-        if m:
-            named = True
+            hit = True
             if m.group(1):
                 versions.add(m.group(1))
-        elif value not in _NEUTRAL:
-            raise Refused("Unrecognised licence statement: " + value[:160])
+        if hit:
+            named = True
+        else:
+            raise Refused("Unrecognised licence statement: " + text[:160])
     if not named:
         raise Refused("No licence stated")
     if len(versions) > 1:
@@ -322,13 +328,18 @@ def admit(c: sqlite3.Connection, family: str, src: dict) -> str | None:
             evidence_sha = store("evidence", body)
             evidence_url, kind = src["landing_url"], "index"
     except (Refused, ValueError, KeyError, json.JSONDecodeError) as err:
+        # A refusal keeps its evidence too: the statement we refused on is
+        # the thing a reviewer needs to see, and the thing that proves we
+        # were right — or lets the gate be widened on real wording.
+        refused_sha = locals().get("evidence_sha")
         c.execute("""INSERT INTO jobs(id,family,dataset_key,publisher,portal,title,resource_url,format,
-                     licence_kind,evidence_url,state,detail,checked_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)
+                     licence_kind,evidence_url,evidence_sha,state,detail,checked_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                      ON CONFLICT(id) DO UPDATE SET state=excluded.state, detail=excluded.detail,
+                     evidence_sha=COALESCE(excluded.evidence_sha, jobs.evidence_sha),
                      checked_at=excluded.checked_at""",
                   (job_id, family, src["dataset_key"], src["publisher"], src["portal"], src["title"],
                    src["resource"]["url"], src["resource"]["format"], src["licence_kind"],
-                   src.get("metadata_url") or src["landing_url"], "not_admitted", str(err)[:400], checked))
+                   src.get("metadata_url") or src["landing_url"], refused_sha, "not_admitted", str(err)[:400], checked))
         c.commit()
         print(f"  refused  {src['publisher'][:34]:34} {str(err)[:80]}", flush=True)
         return None

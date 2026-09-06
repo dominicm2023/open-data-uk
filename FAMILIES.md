@@ -55,6 +55,17 @@ statement *is* the OGL rather than a custom or restrictive licence. That
 test is unchanged. The exact statement is kept as evidence and the version
 recorded as stated, or "unstated (v3 terms apply)".
 
+**The gate reads prose (changed later on 6 September).** ArcGIS `licenseInfo`
+is a paragraph, not an identifier, and the first gate refused thirteen
+councils for saying "Contains OS data © Crown copyright" or "supplied under
+the Open Government License v3.0" in front of an OGL link. The rule now: a
+statement that names a restricted or non-OGL licence (INSPIRE end-user
+terms, OS PSMA/PSEUL, "derived data exemption", non-commercial, Creative
+Commons) refuses, even with the OGL beside it — mixed terms need a person.
+Otherwise it must name the OGL by URL or by name. OS attribution wording is
+a condition the OGL allows, not a restriction. Every refusal now keeps its
+evidence by hash, so the next widening can be argued from wording too.
+
 **Personal data is a separate decision from licence.** OGL excludes it.
 Senior-salary returns name people by statute; republishing those names in a
 combined table is a choice for Dominic, not a consequence of the licence.
