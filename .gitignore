@@ -44,3 +44,8 @@ analysis/**/*.db
 analysis/queries_prod.db
 data/digest_state.json
 cron_digest.log
+
+# Pilot outputs (Codex, Sep 2026): derived from publisher files, include named
+# individuals from published salary tables. Private until a field-scope review.
+outputs/
+pilot/data/
