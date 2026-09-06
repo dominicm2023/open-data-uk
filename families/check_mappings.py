@@ -52,7 +52,7 @@ def check(family: str) -> int:
         table = next((t for t in src["tables"] if which in (t["where"].get("table"), t["where"].get("sheet"))), None)
         if table is None:
             problems.append(f"{tag}: table {which!r} not in brief"); continue
-        header = table["header"]
+        header = [str(h).strip() for h in table["header"]]
         # A header on a later row: the brief's sample rows show it, and the
         # build reads it from there. Compare against the same row.
         hr = int(spec.get("header_row", 0) or 0)

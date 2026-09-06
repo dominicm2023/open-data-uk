@@ -97,13 +97,15 @@
  },
  "sources": [
   {
-   "job_id": "e7e4bb2c53fa19137a9bf142a3c2a65bbcb46bbbaf41b9569e3a43ba5bdf2420",
+   "job_id": "d010ad1b3aa96922fec0834183b8824882bd2c97c2768f416c9b8e189145d4eb",
    "publisher": "Department for International Development",
    "title": "DFID aggregated monthly expenditure over £500 from April 2012",
    "portal": "data_gov_uk",
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/204000/aggregated-spend-500-2012.csv",
    "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -194,13 +196,107 @@
    ]
   },
   {
-   "job_id": "420e4dfec39b7560c4f8c1bda2106b2403f53bbb97b2c40f9bb6020ca5e8d1e4",
+   "job_id": "a670f04716a86dd5b4cbe201b65dd7c85880766a6032288638361952d82be95c",
+   "publisher": "Department of Energy and Climate Change",
+   "title": "Spend over £500 in the Department of Energy and Climate Change",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/639156/decc-spending-june-2017.csv",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount"
+     ],
+     "sample_rows": [
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "PURCHASE OF GOODS/SERVICES - OTHER - REFUND OF OVERPAYMENTS - PETROL LICENSES",
+       "Energy Transformation",
+       "KIWA LTD",
+       "AG26052016A",
+       "153103.29"
+      ],
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "SHORT-TERM CONTRACT & AGENCY STAFF - FULL COST",
+       "Energy Transformation",
+       "HAYS SPECIALIST RECRUITMENT LTD",
+       "AG26052016A",
+       "970.54"
+      ],
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "SHORT-TERM CONTRACT & AGENCY STAFF - FULL COST",
+       "Energy Transformation",
+       "HAYS SPECIALIST RECRUITMENT LTD",
+       "AG26052016A",
+       "937.3"
+      ],
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "PURCHASE OF GOODS/SERVICES - ACCOMM &BLDNG MNGMT - FM PROJECTS NON CAPITAL",
+       "Finance & Corporate Services",
+       "INTERSERVE (FACILITIES MNGMNT) LTD",
+       "PH260516/09",
+       "80000"
+      ],
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "PURCHASE OF GOODS/SERVICES - OTHER PROF SERV - OUTSOURCED PROGRAMME MANAGEMENT S",
+       "Energy Transformation",
+       "BSRIA LIMITED",
+       "AG26052016A",
+       "3000"
+      ],
+      [
+       "DECC",
+       "Department of Energy and Climate Change",
+       "01/06/2016",
+       "PURCHASE OF GOODS/SERVICES - OTHER PROF SERV - OUTSOURCED PROGRAMME MANAGEMENT S",
+       "Energy Transformation",
+       "EQUION CONSULTING LTD",
+       "AG26052016A",
+       "8000"
+      ]
+     ],
+     "row_count": 577,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "861e2c9c6d8bb61f42705e951014e843ddc72569d7388cb992c0ef4aa27841c3",
    "publisher": "Equality and Human Rights Commission",
    "title": "Spend over £500 in Equality and Human Rights Commission",
    "portal": "data_gov_uk",
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/85357/ehrc-spend-june11.csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -284,13 +380,114 @@
    ]
   },
   {
-   "job_id": "61082d3b945a710929a8afb45534c638cbedc5bd5b0da7da086d76b0d2e08d89",
+   "job_id": "3ef6586edd03fb6c63b21861f171ee3ec7a681d4c558291df2776ec3f724e6de",
+   "publisher": "Government Equalities Office",
+   "title": "Spend over £500 in Government Equalities Office",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/85442/geo-spend-apr12.csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department Family",
+      "Entity",
+      "Payment Date",
+      "Account Description",
+      "Expense Area",
+      "Supplier Name",
+      "Transaction Number",
+      "Amount (£)",
+      "Expense Description"
+     ],
+     "sample_rows": [
+      [
+       "Home Office",
+       "GEO",
+       "24-Apr-12",
+       "Training",
+       "DG & Central",
+       "LEARNLAB LTD",
+       "1001247063",
+       "661.1",
+       "Staff Training"
+      ],
+      [
+       "Home Office",
+       "GEO",
+       "19-Apr-12",
+       "Grant in Aid",
+       "DG & Central",
+       "EQUALITY AND HUMAN RIGHTS COMMISSION (G)",
+       "3000044688",
+       "4,258,000.00",
+       "GIA – EHRC"
+      ],
+      [
+       "Home Office",
+       "GEO",
+       "23-Apr-12",
+       "Fees - Other",
+       "Gender Equality & LGBT",
+       "DEPARTMENT FOR BUSINESS, INNOVATION & SKILLS",
+       "3000044695",
+       "350,000.00",
+       "Fees - Grant Contribution"
+      ],
+      [
+       "Home Office",
+       "GEO",
+       "03-Apr-12",
+       "Research",
+       "Gender Equality & LGBT",
+       "COI COMMUNICATIONS",
+       "3000044618",
+       "3,750.00",
+       "Research"
+      ],
+      [
+       "Home Office",
+       "GEO",
+       "03-Apr-12",
+       "Research",
+       "Gender Equality & LGBT",
+       "COI COMMUNICATIONS",
+       "3000044618",
+       "1,250.00",
+       "Research"
+      ],
+      [
+       "Home Office",
+       "GEO",
+       "23-Apr-12",
+       "Fees - Legal Represent",
+       "GEO Legal Services",
+       "TREASURY SOLICITORS OFFICE",
+       "3000044702",
+       "43.2",
+       "Professional Legal Services"
+      ]
+     ],
+     "row_count": 16,
+     "column_count": 9
+    }
+   ]
+  },
+  {
+   "job_id": "efcc2066e9e9bccd5a9090f2a29258f78438e51eacbfa743bad92dc8ed07556f",
    "publisher": "Leicester City",
    "title": "Expenditure exceeding £500 - 2026",
    "portal": "leicester",
    "format": "CSV",
    "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2026/exports/csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -381,13 +578,15 @@
    ]
   },
   {
-   "job_id": "950a0eb554e268731a52bd54a0522851c484878c05e4b44272b46e070a8b7f54",
+   "job_id": "ffd3fc6de9870257e508be06f0df0e321d25bd2c5c5616841636caad43d3a251",
    "publisher": "Ministry of Housing, Communities and Local Government",
    "title": "Spend over £500 in the Department for Communities and Local Government",
    "portal": "data_gov_uk",
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/5730/1773306.csv",
    "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -471,13 +670,107 @@
    ]
   },
   {
-   "job_id": "1ba80a36fb5ae80e4ffccb4eed076ccc6823c56e6f1b2efd8604dff69adf450c",
+   "job_id": "cad03d565abbb431d95bde21a877f6716a06d94bc45e8b9eb96fa7782f8146b1",
+   "publisher": "Ministry of Housing, Communities and Local Government",
+   "title": "Spend over £500 in the Government Offices for the Regions",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/5746/1773618113.csv",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department Family",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction number",
+      "Amount in Sterling"
+     ],
+     "sample_rows": [
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Agency Staff",
+       "GORCU Admin DEL Votd",
+       "CENTRAL OFFICE OF INFORMATION",
+       "5106142526",
+       "17,861.18"
+      ],
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Agency Staff",
+       "GORCU Admin DEL Votd",
+       "REED SPECIALIST RECRUITMENT LTD",
+       "5106142521",
+       "703.64"
+      ],
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Agency Staff",
+       "GORCU Admin DEL Votd",
+       "REED SPECIALIST RECRUITMENT LTD",
+       "5106142522",
+       "879.55"
+      ],
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Conferences",
+       "GOSE",
+       "HMPS SHARED SERVICE CENTRE",
+       "5106142535",
+       "804.50"
+      ],
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Furniture, Fittings and carpets",
+       "RCU - PAM - Property Asset Management",
+       "WAGSTAFF BROS LTD",
+       "2100183377",
+       "1,099.80"
+      ],
+      [
+       "Communities & Local Government",
+       "GO",
+       "02/08/2010",
+       "Storage",
+       "GONE",
+       "CROWN RECORDS MANAGEMENT LTD",
+       "5106142525",
+       "828.28"
+      ]
+     ],
+     "row_count": 250,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "46021c3a321f8028f71c5fec241aa007db9218e962b75395909a9832d3aecf2e",
    "publisher": "Plymouth City Council",
    "title": "Council spend over £500",
    "portal": "plymouth",
    "format": "CSV",
    "resource_url": "https://plymouth.thedata.place/dataset/9e9b0128-9095-4bde-b24b-d04e60789016/resource/4e120b86-ffc2-4a87-a9f3-5d70c7faf923/download/spend500march2015.csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -589,13 +882,15 @@
    ]
   },
   {
-   "job_id": "c6c424dd880387e6be0a6acb0d0d1019472f080bd6d80aaf8b4d2882d47f9fe2",
+   "job_id": "1290aae1e6a8cbfa60bc8d47c56780709231061ecd864d85793bbbacff6e4ba4",
    "publisher": "Queen Elizabeth II Conference Centre",
    "title": "Spend over £500 at the Queen Elizabeth II Conference Centre",
    "portal": "data_gov_uk",
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/6209/175179416.csv",
    "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -679,13 +974,15 @@
    ]
   },
   {
-   "job_id": "72175dccca39317a7c9c1ffc062126da64e95bfa8be0e9ae282f425b7c3eb11e",
+   "job_id": "fd8703927e1188f4c68987c641e496ca9df08f8553b7ce8ff1ba69fbb096c961",
    "publisher": "Royal Borough of Greenwich",
    "title": "Royal Borough of Greenwich payments over £500 (Dec 2010 to Dec 2011)",
    "portal": "data_gov_uk",
    "format": "CSV",
    "resource_url": "http://www.royalgreenwich.gov.uk/download/downloads/id/842/december_2010_payments_over_500_csv.csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -734,13 +1031,15 @@
    ]
   },
   {
-   "job_id": "aaaccba426aa5dc5457beb961c1450997e9e8d4283ebb208cd0a656d44e08e67",
+   "job_id": "f7364e529c276bf35e6c9b19cda7baba4f8448fd78df2ec1996ca3e64a134534",
    "publisher": "Royal Borough of Greenwich",
    "title": "Royal Borough of Greenwich spending over £500",
    "portal": "data_gov_uk",
    "format": "CSV",
    "resource_url": "http://www.royalgreenwich.gov.uk/download/downloads/id/1161/february_2012_payments_over_and_pound500_csv.csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -789,13 +1088,389 @@
    ]
   },
   {
-   "job_id": "96b0ed3d29dc9c851645931d1c19da57798a8c23405ed80a0fddba0bab71cc70",
+   "job_id": "45e5c4b154f37f9657e1533c3cea960c4d928d92b24a8dfc1a4f06cbd58bb3a9",
+   "publisher": "Stockport Metropolitan Borough Council",
+   "title": "Expenditure over £500",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://live-iag-static-assets.s3-eu-west-1.amazonaws.com/pdf/Transparency/spendOver500/Over+%C2%A3500+Spend+January+2021.csv",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Merchant Category",
+      "Supplier",
+      "Service",
+      "Summary of Purpose of Expenditure",
+      "invoice_date",
+      "net_amount"
+     ],
+     "sample_rows": [
+      [
+       "Client/Customer (Non-Trade)",
+       "*Redact - Personal Information",
+       "Services to People",
+       "Care Payments",
+       "21/12/2020",
+       "-337.64"
+      ],
+      [
+       "Client/Customer (Non-Trade)",
+       "*Redact - Personal Information",
+       "Services to People",
+       "Care Payments",
+       "21/12/2020",
+       "993"
+      ],
+      [
+       "Client/Customer (Non-Trade)",
+       "*Redact - Personal Information",
+       "Services to People",
+       "Care Payments",
+       "30/12/2020",
+       "346.8"
+      ],
+      [
+       "Client/Customer (Non-Trade)",
+       "*Redact - Personal Information",
+       "Services to People",
+       "Care Payments",
+       "30/12/2020",
+       "346.8"
+      ],
+      [
+       "Client/Customer (Non-Trade)",
+       "*Redact - Personal Information",
+       "Services to People",
+       "Care Payments",
+       "30/12/2020",
+       "-20"
+      ],
+      [
+       "Client/Customer (Non-Trade)",
+       "*Redact - Personal Information",
+       "Services to People",
+       "Care Payments",
+       "30/12/2020",
+       "-20"
+      ]
+     ],
+     "row_count": 19644,
+     "column_count": 6
+    }
+   ]
+  },
+  {
+   "job_id": "e26bf628169d3aecf4e1052362a421c16a630da8f8cb10ae69f474f1caf7f101",
+   "publisher": "UK Commission for Employment and Skills",
+   "title": "Spend over £500 in the UK Commission for Employment and Skills",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/315318/March_2014_transactions_over_500.csv",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department Family",
+      "Entity",
+      "Date",
+      "Expense type",
+      "Supplier",
+      "tran_ref",
+      "Amount",
+      "Description",
+      "Supplier postcode",
+      "Supplier type",
+      "HOME_CREDIT",
+      "HOME_DEBIT",
+      "Contract Number",
+      "Project Code",
+      "Expenditure type",
+      "Year",
+      "Period",
+      "Type"
+     ],
+     "sample_rows": [
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "10/01/2014 00:00",
+       "378300 - Other Programme expenditure (Programme)",
+       "ASP002 - Aspero Limited",
+       "8",
+       "2700",
+       "* - 2 prep meetings, preparation for & facilitation of the R&T awayday on 22/10/",
+       "W4 1NJ",
+       "SMALL - PVT LTD BY SHARES",
+       "0",
+       "2700",
+       "PR:14428",
+       "P1B-B12-01",
+       "Running Cost",
+       "C",
+       "12",
+       "INV"
+      ],
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "10/01/2014 00:00",
+       "378300 - Other Programme expenditure (Programme)",
+       "ASP002 - Aspero Limited",
+       "8",
+       "540",
+       "* - 2 prep meetings, preparation for & facilitation of the R&T awayday on 22/10/",
+       "W4 1NJ",
+       "SMALL - PVT LTD BY SHARES",
+       "0",
+       "540",
+       "PR:14428",
+       "P1B-B12-01",
+       "Running Cost",
+       "C",
+       "12",
+       "INV"
+      ],
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "06/02/2014 00:00",
+       "231236 - ICT Maintenance & Upkeep (Admin)",
+       "ACT002 - ActiveIS Limited",
+       "5308",
+       "3150",
+       "** - Jan 2014 - up to 5.25 days",
+       "TW11 8DH",
+       "SMALL - PUB LTD COMPANY",
+       "0",
+       "3150",
+       "PR:13320",
+       "",
+       "Running Cost",
+       "C",
+       "12",
+       "INV"
+      ],
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "06/02/2014 00:00",
+       "231236 - ICT Maintenance & Upkeep (Admin)",
+       "ACT002 - ActiveIS Limited",
+       "5308",
+       "630",
+       "** - Jan 2014 - up to 5.25 days",
+       "TW11 8DH",
+       "SMALL - PUB LTD COMPANY",
+       "0",
+       "630",
+       "PR:13320",
+       "",
+       "Running Cost",
+       "C",
+       "12",
+       "INV"
+      ],
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "17/02/2014 00:00",
+       "337810 - Economic Consultancy and Research (Programme)",
+       "SHI002 - Janice Shiner Limited - VAT registered",
+       "JSL179",
+       "7000",
+       "** - Report challenging current business model of colleges for AoC workshop\r\nWor",
+       "SE13 6DE",
+       "SMALL - PVT LTD BY SHARES",
+       "0",
+       "7000",
+       "PR:14534",
+       "P4E-B67-01",
+       "Programme",
+       "C",
+       "12",
+       "INV"
+      ],
+      [
+       "BIS",
+       "The UK Commission for Employment and Skills",
+       "17/02/2014 00:00",
+       "337810 - Economic Consultancy and Research (Programme)",
+       "SHI002 - Janice Shiner Limited - VAT registered",
+       "JSL179",
+       "1400",
+       "** - REport challenging current business model of colleges for AoC workshop\r\nWor",
+       "SE13 6DE",
+       "SMALL - PVT LTD BY SHARES",
+       "0",
+       "1400",
+       "PR:14534",
+       "P4E-B67-01",
+       "Programme",
+       "C",
+       "12",
+       "INV"
+      ]
+     ],
+     "row_count": 144,
+     "column_count": 18
+    }
+   ]
+  },
+  {
+   "job_id": "cf8fc911f167104ad7bf020b78493813d2ad0eb8cbd1841c52995fa581986abe",
+   "publisher": "UK Trade and Investment",
+   "title": "Administrative spend over £500 in UK Trade and Investment",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/435690/UKTI__Admin__January_2015__published_.csv",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount",
+      "Description",
+      "Supplier Post Code",
+      "Supplier Type",
+      "Contract Number",
+      "Project Code",
+      "Expenditure Type"
+     ],
+     "sample_rows": [
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2015",
+       "Subsistence Overseas-UKTI (BIS) Devolved Admin",
+       "Trade Group - Consumer and Retail",
+       "Personal Expense, Name Witheld",
+       "74883",
+       "21.32",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration"
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2015",
+       "Subsistence Overseas-UKTI (BIS) Devolved Admin",
+       "Trade Group - Consumer and Retail",
+       "Personal Expense, Name Witheld",
+       "74883",
+       "34",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration"
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2015",
+       "Subsistence Overseas-UKTI (BIS) Devolved Admin",
+       "Trade Group - Consumer and Retail",
+       "Personal Expense, Name Witheld",
+       "74883",
+       "50",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration"
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2015",
+       "Subsistence Overseas-UKTI (BIS) Devolved Admin",
+       "Trade Group - Consumer and Retail",
+       "Personal Expense, Name Witheld",
+       "74883",
+       "93",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration"
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2015",
+       "Subsistence Overseas-UKTI (BIS) Devolved Admin",
+       "Trade Group - Consumer and Retail",
+       "Personal Expense, Name Witheld",
+       "74883",
+       "126.48",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration"
+      ],
+      [
+       "Department for Business, Innovation and Skills",
+       "UK Trade and Investment Administration",
+       "02/01/2015",
+       "Hotel & Accommodation Overseas-UKTI (BIS) Devolved Admin",
+       "Trade Group - Consumer and Retail",
+       "Personal Expense, Name Witheld",
+       "74883",
+       "487.74",
+       "",
+       "",
+       "EMPLOYEE",
+       "",
+       "",
+       "Administration"
+      ]
+     ],
+     "row_count": 357,
+     "column_count": 14
+    }
+   ]
+  },
+  {
+   "job_id": "adf25f9f31269c417f96ee00c75c837896bdbbdb05154e0c485f66143b12ca4a",
    "publisher": "Wales Office",
    "title": "Spend over £500 in the Wales Office",
    "portal": "data_gov_uk",
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/214673/Wales-Office-spend-over-500-May-2010.csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -870,13 +1545,15 @@
    ]
   },
   {
-   "job_id": "bb1de01354561410818f817c8def9bf5889d336502fcc46b37daf231b7162f74",
+   "job_id": "096c8c488b60488acea2a888e215be9ea43aff19de0bb1c12fbd674a14487b8c",
    "publisher": "Wirral Metropolitan Borough Council",
    "title": "Wirral Expenditure Exceeding £500",
    "portal": "data_gov_uk",
    "format": "CSV",
    "resource_url": "https://www.wirral.gov.uk/media/14064/download?inline",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {

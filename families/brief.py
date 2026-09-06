@@ -46,9 +46,16 @@ def build(family: str) -> dict:
     entries = []
     for j in c.execute("SELECT * FROM jobs WHERE family=? AND state='needs_review' ORDER BY publisher", (family,)):
         doc = json.loads((STORE / "tables" / j["extraction_sha"]).read_text(encoding="utf-8"))
+        try:
+            n_files = c.execute("SELECT COUNT(*) FROM files WHERE job_id=? AND state='extracted'", (j["id"],)).fetchone()[0]
+        except sqlite3.OperationalError:
+            n_files = 1
         entries.append({
             "job_id": j["id"], "publisher": j["publisher"], "title": j["title"], "portal": j["portal"],
             "format": j["format"], "resource_url": j["resource_url"], "licence": json.loads(j["licence_json"])["id"],
+            "files_extracted": n_files,
+            "note": ("This dataset has several files; the tables shown are from the first. One mapping "
+                     "applies to all of them.") if n_files > 1 else None,
             "tables": [_preview(t) for t in doc["tables"][:8]],
         })
     c.close()

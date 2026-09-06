@@ -56,6 +56,9 @@ FAMILIES: dict[str, dict] = {
         "label": "Spend over £500",
         "include": r"(spend|spending|expenditure|payments?|transactions?|invoices?)\s+(over|above|exceeding|greater\s+than|>)\s*£?\s*(500|250)\b",
         "exclude": r"\bgpc\b|procurement\s+card|credit\s+card",
+        # A return is one file a month; the family is the series, so every
+        # file of a dataset is fetched and mapped, not the newest one.
+        "series": True, "max_files": 72,
     },
 }
 
@@ -146,7 +149,7 @@ def build(family: str) -> dict:
         best = cands[0]
         url, fmt = _resource_url(best["url"], best["format_norm"].upper())
         ranked = []
-        for r in cands[:CANDIDATES]:
+        for r in cands[:(spec.get("max_files") if spec.get("series") else CANDIDATES)]:
             u, f = _resource_url(r["url"], r["format_norm"].upper())
             ranked.append({"url": u, "name": r["name"] or "", "format": f})
         src = srcs.get(d["source_id"], {})
@@ -159,6 +162,7 @@ def build(family: str) -> dict:
             "index_harvested_at": d["harvested_at"],
             "resource": {"url": url, "name": best["name"] or "", "format": fmt},
             "candidates": ranked,
+            "series": bool(spec.get("series")),
             "other_resources": len(res),
         })
     conn.close()

@@ -1,5 +1,5 @@
 {
- "e7e4bb2c53fa19137a9bf142a3c2a65bbcb46bbbaf41b9569e3a43ba5bdf2420": {
+ "d010ad1b3aa96922fec0834183b8824882bd2c97c2768f416c9b8e189145d4eb": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -20,7 +20,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "420e4dfec39b7560c4f8c1bda2106b2403f53bbb97b2c40f9bb6020ca5e8d1e4": {
+ "861e2c9c6d8bb61f42705e951014e843ddc72569d7388cb992c0ef4aa27841c3": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -41,7 +41,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "61082d3b945a710929a8afb45534c638cbedc5bd5b0da7da086d76b0d2e08d89": {
+ "efcc2066e9e9bccd5a9090f2a29258f78438e51eacbfa743bad92dc8ed07556f": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -63,7 +63,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "950a0eb554e268731a52bd54a0522851c484878c05e4b44272b46e070a8b7f54": {
+ "ffd3fc6de9870257e508be06f0df0e321d25bd2c5c5616841636caad43d3a251": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -84,7 +84,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "1ba80a36fb5ae80e4ffccb4eed076ccc6823c56e6f1b2efd8604dff69adf450c": {
+ "46021c3a321f8028f71c5fec241aa007db9218e962b75395909a9832d3aecf2e": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -105,11 +105,11 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "c6c424dd880387e6be0a6acb0d0d1019472f080bd6d80aaf8b4d2882d47f9fe2": {
+ "1290aae1e6a8cbfa60bc8d47c56780709231061ecd864d85793bbbacff6e4ba4": {
   "status": "rejected",
   "reject": "Every sample row has 'Supplier Name' populated as 'BARCLAYCARD PROCUREMENT CARD' with the same 'Voucher' number, split across many small (including negative) amounts by expense type/area — this is a procurement-card (GPC) statement broken out by spend category, not supplier-level payment lines."
  },
- "72175dccca39317a7c9c1ffc062126da64e95bfa8be0e9ae282f425b7c3eb11e": {
+ "fd8703927e1188f4c68987c641e496ca9df08f8553b7ce8ff1ba69fbb096c961": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -127,7 +127,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "aaaccba426aa5dc5457beb961c1450997e9e8d4283ebb208cd0a656d44e08e67": {
+ "f7364e529c276bf35e6c9b19cda7baba4f8448fd78df2ec1996ca3e64a134534": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -145,7 +145,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "96b0ed3d29dc9c851645931d1c19da57798a8c23405ed80a0fddba0bab71cc70": {
+ "adf25f9f31269c417f96ee00c75c837896bdbbdb05154e0c485f66143b12ca4a": {
   "status": "reviewed",
   "table": 1,
   "header_row": 2,
@@ -167,7 +167,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "bb1de01354561410818f817c8def9bf5889d336502fcc46b37daf231b7162f74": {
+ "096c8c488b60488acea2a888e215be9ea43aff19de0bb1c12fbd674a14487b8c": {
   "status": "reviewed",
   "table": 1,
   "header_row": 1,

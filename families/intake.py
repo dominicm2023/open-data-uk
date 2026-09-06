@@ -68,7 +68,11 @@ CREATE TABLE IF NOT EXISTS jobs(
     title TEXT, resource_url TEXT, format TEXT, licence_kind TEXT, evidence_url TEXT,
     evidence_sha TEXT, licence_json TEXT, state TEXT, detail TEXT, blob_sha TEXT,
     extraction_sha TEXT, extractor TEXT, checked_at TEXT, etag TEXT, last_modified TEXT,
-    candidates TEXT);
+    candidates TEXT, series INTEGER DEFAULT 0);
+CREATE TABLE IF NOT EXISTS files(
+    job_id TEXT, url TEXT, format TEXT, name TEXT, blob_sha TEXT, extraction_sha TEXT,
+    extractor TEXT, etag TEXT, last_modified TEXT, state TEXT, detail TEXT, fetched_at TEXT,
+    PRIMARY KEY (job_id, url));
 CREATE TABLE IF NOT EXISTS attempts(
     id INTEGER PRIMARY KEY, job_id TEXT, started_at TEXT, seconds REAL, state TEXT,
     downloaded_bytes INTEGER, blob_sha TEXT, detail TEXT);
@@ -281,9 +285,12 @@ def connect() -> sqlite3.Connection:
     c.row_factory = sqlite3.Row
     c.executescript(SCHEMA)
     # A database from before candidates existed gets the column added.
-    if "candidates" not in {r[1] for r in c.execute("PRAGMA table_info(jobs)")}:
+    have = {r[1] for r in c.execute("PRAGMA table_info(jobs)")}
+    if "candidates" not in have:
         c.execute("ALTER TABLE jobs ADD COLUMN candidates TEXT")
-        c.commit()
+    if "series" not in have:
+        c.execute("ALTER TABLE jobs ADD COLUMN series INTEGER DEFAULT 0")
+    c.commit()
     return c
 
 
@@ -292,7 +299,7 @@ def connect() -> sqlite3.Connection:
 def admit(c: sqlite3.Connection, family: str, src: dict) -> str | None:
     """Establish licence evidence for one source; queue its job or refuse."""
     checked = now()
-    job_id = sha((family + "\n" + src["dataset_key"] + "\n" + src["resource"]["url"]).encode())
+    job_id = sha((family + "\n" + src["dataset_key"]).encode())   # a job is a dataset
     try:
         if src["licence_kind"] in ("ckan", "arcgis") and src["metadata_url"]:
             body, _, _ = fetch(src["metadata_url"], LIMITS["max_metadata_bytes"])
@@ -317,17 +324,20 @@ def admit(c: sqlite3.Connection, family: str, src: dict) -> str | None:
         c.commit()
         print(f"  refused  {src['publisher'][:34]:34} {str(err)[:80]}", flush=True)
         return None
+    c.execute("DELETE FROM jobs WHERE family=? AND dataset_key=? AND id<>?",
+              (family, src["dataset_key"], job_id))          # a file-keyed job from before
     c.execute("""INSERT INTO jobs(id,family,dataset_key,publisher,portal,title,resource_url,format,
-                 licence_kind,evidence_url,evidence_sha,licence_json,state,checked_at,candidates)
-                 VALUES(?,?,?,?,?,?,?,?,?,?,?,?,'queued',?,?)
+                 licence_kind,evidence_url,evidence_sha,licence_json,state,checked_at,candidates,series)
+                 VALUES(?,?,?,?,?,?,?,?,?,?,?,?,'queued',?,?,?)
                  ON CONFLICT(id) DO UPDATE SET evidence_sha=excluded.evidence_sha,
                  licence_json=excluded.licence_json, licence_kind=excluded.licence_kind,
                  evidence_url=excluded.evidence_url,
                  state=CASE WHEN jobs.state='needs_review' THEN 'needs_review' ELSE 'queued' END,
-                 checked_at=excluded.checked_at, candidates=excluded.candidates""",
+                 checked_at=excluded.checked_at, candidates=excluded.candidates, series=excluded.series""",
               (job_id, family, src["dataset_key"], src["publisher"], src["portal"], src["title"],
                src["resource"]["url"], src["resource"]["format"], kind, evidence_url, evidence_sha,
-               json.dumps(approval), checked, json.dumps(src.get("candidates") or [src["resource"]])))
+               json.dumps(approval), checked, json.dumps(src.get("candidates") or [src["resource"]]),
+               1 if src.get("series") else 0))
     c.commit()
     return job_id
 
@@ -366,28 +376,56 @@ def process(c: sqlite3.Connection, job_id: str) -> None:
     out = tmp / f"{job_id}.json"
     started, t0, downloaded, blob = now(), time.monotonic(), 0, None
     cands = json.loads(job.get("candidates") or "[]") or [{"url": job["resource_url"], "format": job["format"]}]
-    errors = []
+    series = bool(job.get("series"))
+    errors, got = [], []
     try:
         capacity(LIMITS["max_file_bytes"] + LIMITS["max_output_bytes"])
-        done = None
         for cand in cands:
+            prev = c.execute("SELECT * FROM files WHERE job_id=? AND url=?", (job_id, cand["url"])).fetchone()
+            probe = dict(job)
+            if prev:                      # let the conditional fetch see this file's own state
+                probe.update(resource_url=cand["url"], blob_sha=prev["blob_sha"], extraction_sha=prev["extraction_sha"],
+                             extractor=prev["extractor"], etag=prev["etag"], last_modified=prev["last_modified"])
+            else:
+                probe.update(resource_url=cand["url"], blob_sha=None, extraction_sha=None, etag=None, last_modified=None)
             try:
-                blob, extraction, rh, downloaded, detail = _try_one(job, cand, out)
-                done = cand
-                break
+                blob, extraction, rh, downloaded, detail = _try_one(probe, cand, out)
+                c.execute("""INSERT INTO files(job_id,url,format,name,blob_sha,extraction_sha,extractor,etag,last_modified,state,detail,fetched_at)
+                             VALUES(?,?,?,?,?,?,?,?,?,'extracted',?,?)
+                             ON CONFLICT(job_id,url) DO UPDATE SET blob_sha=excluded.blob_sha, extraction_sha=excluded.extraction_sha,
+                             extractor=excluded.extractor, etag=excluded.etag, last_modified=excluded.last_modified,
+                             state='extracted', detail=excluded.detail, fetched_at=excluded.fetched_at""",
+                          (job_id, cand["url"], cand["format"], cand.get("name") or "", blob, extraction, VERSION,
+                           rh.get("ETag"), rh.get("Last-Modified"), detail, now()))
+                got.append((cand, blob, extraction, rh, downloaded, detail))
+                if not series:
+                    break
             except Refused as err:
                 errors.append(f"{cand['format']} {cand['url'][-60:]}: {str(err)[-120:]}")
+                if prev and prev["extraction_sha"] and (STORE / "tables" / prev["extraction_sha"]).is_file():
+                    c.execute("UPDATE files SET detail=? WHERE job_id=? AND url=?",
+                              (f"latest attempt failed ({str(err)[-120:]}); previous snapshot kept", job_id, cand["url"]))
+                    got.append((cand, prev["blob_sha"], prev["extraction_sha"], {}, 0, "previous snapshot kept"))
+                    if not series:
+                        break
+                else:
+                    c.execute("""INSERT INTO files(job_id,url,format,name,state,detail,fetched_at) VALUES(?,?,?,?,'failed',?,?)
+                                 ON CONFLICT(job_id,url) DO UPDATE SET state='failed', detail=excluded.detail, fetched_at=excluded.fetched_at""",
+                              (job_id, cand["url"], cand["format"], cand.get("name") or "", str(err)[-300:], now()))
                 if "parked" in str(err):
                     break                      # the host said stop; the rest are on it too
-        if not done:
+        if not got:
             raise Refused(" | ".join(errors)[-400:])
+        first = got[0]
+        blob, extraction, rh, downloaded, detail = first[1], first[2], first[3], sum(g[4] for g in got), first[5]
+        n_ok, n_all = len(got), len(cands)
+        summary = (f"{n_ok} of {n_all} files extracted" if series else detail
+                   + (f" (candidate {cands.index(first[0]) + 1} of {n_all})" if n_all > 1 else ""))
         c.execute("""UPDATE jobs SET state='needs_review', detail=?, blob_sha=?, extraction_sha=?,
                      extractor=?, etag=?, last_modified=?, resource_url=?, format=? WHERE id=?""",
-                  (detail + (f" (candidate {cands.index(done) + 1} of {len(cands)})" if len(cands) > 1 else ""),
-                   blob, extraction, VERSION, rh.get("ETag"), rh.get("Last-Modified"),
-                   done["url"], done["format"], job_id))
-        print(f"  ok       {job['publisher'][:34]:34} {done['format']:7} {downloaded:>9,} B"
-              + (f"  (try {cands.index(done) + 1})" if cands.index(done) else ""), flush=True)
+                  (summary, blob, extraction, VERSION, rh.get("ETag"), rh.get("Last-Modified"),
+                   first[0]["url"], first[0]["format"], job_id))
+        print(f"  ok       {job['publisher'][:34]:34} {first[0]['format']:7} {downloaded:>9,} B  {summary}", flush=True)
     except Exception as err:  # noqa: BLE001 - recorded, never fatal to the run
         if job["extraction_sha"] and (STORE / "tables" / job["extraction_sha"]).is_file():
             # The last successful snapshot stays what we serve; the latest

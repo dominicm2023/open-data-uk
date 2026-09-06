@@ -1,13 +1,13 @@
 {
- "4ae3e5ffa454aef50fb67f65c404dbe5967514d92f50b5cf33adc3d80de4ee6e": {
+ "085ed886343b446aa6a3073712fa376b70d42390bab5374e48baf689d3a1971e": {
   "status": "rejected",
   "reject": "Site locations and pollutant lists only, no concentration figures of any kind."
  },
- "a34632ffbb21701ff127d7c27f90ee9241511e7ae40e7ec2bfaf8aeb6dfab58d": {
+ "a7db62c5da0f82fc9c13a378f1c95d6641d67d10b9fc59bc45edbb454f4c018b": {
   "status": "rejected",
   "reject": "Site locations only (coordinates, pollutants monitored, technique) - no concentration figures."
  },
- "8d63ca77b53985fba9c2f923fd942589e38a08a00673bf4cec3a11272819ec89": {
+ "bfad56034a185df5ce8ccefd1a1fd1892911e6757fa5efafdb3ed81e6ea6d988": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -57,7 +57,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "ad97d7f13f0c8ca69fb953c8e49d69d64d6787fafb1ee9198ef4a7fa05d49242": {
+ "43b8dd0d84e14e4a6c100c959f25c1c6621c153ff1babaf462dbd276da64bbaf": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -76,7 +76,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "935977b3fde0ef08f3ce7b96cd46cf7e436affb3372c2d561ba8345af8757075": {
+ "ab152aa1c6629104ca2c4ce37e5b8144fa53579caeeb3644e89f950c73520113": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -95,7 +95,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "917b7a42defe22a1b0f58fe715cea376ea89c158f615508b715ee1223151f9ac": {
+ "d6f8b92e0126154256af62a9662643c2db25c887cf7ae197206288703f5e7c2b": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -114,7 +114,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "e681410c304ea39dfd9afc69871d32de7d73182bfb53bc996ea772e06129e006": {
+ "14f102a6306bfccad498cb6b5783399ec5f198037c203fb309ecd7b8de8e03df": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -133,7 +133,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "1919c50eaa3ac04dfa5891528363a305eca459f7f46b9a5c36901a7d0da41935": {
+ "295f314f67aa15cce24ac93caf97bf77306ede74f88bad4c8c642f1dc523b746": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -152,7 +152,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "1bca1dc0e2b9a18e86cf3c678cf6479f8ef30cf3568a68767d5dc22b236c757d": {
+ "c4b014dc88f20dc15da948af99500cd00bb2756880ec0a20d7156b520a417124": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -171,7 +171,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "850e22a5dff0f455d613511fca3981cee35608a0b259ccce32d237461b5efd8c": {
+ "fb8ddeafb88f4118d4354c35ca9c1d581b765956ed070a7639fd5861e7c7c150": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -190,7 +190,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "855a16beb64230a9ba15169d9bd042254ad33237bb9ea769e7db47dcd428e115": {
+ "20a396d4b00b708ef6ca734cc5c2bdbc63c464b7852693b6a11956575751d13f": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -209,7 +209,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "2576f0551c3b0d488640115440f3fd33586704b98bd047cc61b4ccef52b09936": {
+ "95f24121cf0488241ba424d50153a3742e86ceb68b2364bf1221efa53c896aaf": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -230,47 +230,47 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "f262b6c8ed407c844f76258660c8186c7d78cb8bf749c03c212f146a25c00f39": {
+ "faf6387792c902289b7ed1754c785cb244724025db47af26e80ddd89f23ff8d0": {
   "status": "rejected",
   "reject": "This is an aggregate policy KPI (the average of the maximum annual mean recorded across three separate areas of technical breach), not the annual mean concentration of a single monitoring site."
  },
- "e7cbebe1cd50b4a644ff73939ae2cf39f7de88652370f38316009a54c1b49315": {
+ "262675d5f85888e14ff765327ae72cae4e1144f6a1311ac31d573e2803b71d87": {
   "status": "rejected",
   "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
  },
- "a4c45dc71a683f76a8cfb5bcce67b33287d8042b10c0ba0b2cd94128f5b047d2": {
+ "796c03777cc5018c63e17105372ead900d4e58787010f3fb4e1a0471a7e4d91a": {
   "status": "rejected",
   "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
  },
- "beb31ff89cd8411cb447f5e059214e065fea96b646c66ef73b41934afaa3df17": {
+ "daf83e7dde76d24d1ea830987914e6631e9898d8c08e1788b4b9f376c5772ee5": {
   "status": "rejected",
   "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
  },
- "436a6f72b0c2686c9673abf5ccdde00993e9f98e14e807772734e3b38a626616": {
+ "356e592733f674fe612fa5eac857c69d460caeb76c81076fedd6ab3754d42854": {
   "status": "rejected",
   "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
  },
- "ef97a0caa7df8fa0adcb3387a18b280a6e62dcce9c9ba0d892679191ffa05d32": {
+ "4c7717742021f6304390470710d3694355b1b91bba1df46102144f703d9ea00b": {
   "status": "rejected",
   "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
  },
- "755750a254eef46468bbbe52a685af03ffd644e451f3ba5b5c034558059f1ce6": {
+ "3c4508b3bd6d95d405e10feaf9199965244a866172732a06f9e5069d1b8ed2d5": {
   "status": "rejected",
   "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
  },
- "e19b6e425ee2ac0402fec7f86504e00e1fbdcf3bd809262c28e4a8578b4be2ba": {
+ "8a564d9d43326ba41b2ee987b61daf960acf081d95c7838549c4555d5a388c55": {
   "status": "rejected",
   "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
  },
- "e5f74907ec06ad6ecd4228792e556e74414d856f28c45b57964406e5fbfcb183": {
+ "c0a4f6665041e3ed1e8848dd9ad83604b0c54e303a10fa89ec80e9405bcfd276": {
   "status": "rejected",
   "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
  },
- "d15fc1100854c7826209a4f10cc128b973f8ca46be4d5a37cebcf4cc3e6e08b9": {
+ "0500dbe9e218459ebec1cc6735f668b910147e844091a57cac9b584f9ea79d11": {
   "status": "rejected",
   "reject": "Site locations and tube type only, no concentration figures."
  },
- "c239ba0e7253004f6a4f6015aeaf84faa12e915f689b05d64008449a1f51444c": {
+ "6176566b4a991334c68d67114d3b1c6f51bd6aa04ab4dee9a3d1779b6705f870": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -289,15 +289,15 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "8d27f0a9af10427d12b42d2eff54cc8441e3848484a0549431352b32148cf50a": {
+ "1fc55c69fceb42fb044a729487b7f65d4c44dc502fdf06934d6339edf7f2130f": {
   "status": "rejected",
   "reject": "Hourly readings (maximum_hour_ug_m3), not annual means."
  },
- "cc550c795ebab8b484443009f1e70f559c928b5fd1bf6bdbbba8eb0f22bc2ec8": {
+ "738a118d7cbafbce76dbb4dd5ff19e26c37023c233e5476e68779b24f10e1ef6": {
   "status": "rejected",
   "reject": "24-hour readings (maximum_24_hour_mean_ug_m3), not annual means."
  },
- "d7c8000e158b1c6f078eb7b2cfe4c6c90cadf0ceeab8bcc7edfb33d2c959c4ae": {
+ "a410e1ad5a0dc7dd886f74ff80352cc931c3c8a2e02ed980244af4b5cb1e25fb": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -316,7 +316,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "74cc1e577311db18a76505e0d1f744fe6f6d10a13198c6b403dd47768aa2e317": {
+ "6feab8f5516e4de2b7a7f105d85e147d7378e5cbb7834133322f4abf1cdeb9b8": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -362,7 +362,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "505f12b5a0359588f77361802240e63b4a537d5678c7c88fe587835eaab61ad4": {
+ "1f86fd6aeb612988d3c4ab00e2cb7b5cee82fe00f76e3dfea64b786255738b28": {
   "status": "rejected",
   "reject": "Site-location-only table: station name, pollutant monitored, location type, station ID/filename and Easting/Northing, with no concentration values or years at all."
  }

@@ -128,13 +128,15 @@
  },
  "sources": [
   {
-   "job_id": "4ae3e5ffa454aef50fb67f65c404dbe5967514d92f50b5cf33adc3d80de4ee6e",
+   "job_id": "085ed886343b446aa6a3073712fa376b70d42390bab5374e48baf689d3a1971e",
    "publisher": "Belfast City Council",
    "title": "Belfast Air Quality Monitoring Stations",
    "portal": "opendatani",
    "format": "CSV",
    "resource_url": "https://www.belfastcity.gov.uk/getmedia/83536e8e-3750-446e-9288-acc09cf0eabe/BCCAQMonitoring.csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -218,13 +220,15 @@
    ]
   },
   {
-   "job_id": "505f12b5a0359588f77361802240e63b4a537d5678c7c88fe587835eaab61ad4",
+   "job_id": "1f86fd6aeb612988d3c4ab00e2cb7b5cee82fe00f76e3dfea64b786255738b28",
    "publisher": "Bristol City Council",
    "title": "Bristol Air Quality Monitoring Station Information",
    "portal": "data_gov_uk",
    "format": "CSV",
    "resource_url": "http://www.bristol.gov.uk/413/1/",
    "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -301,13 +305,15 @@
    ]
   },
   {
-   "job_id": "a34632ffbb21701ff127d7c27f90ee9241511e7ae40e7ec2bfaf8aeb6dfab58d",
+   "job_id": "a7db62c5da0f82fc9c13a378f1c95d6641d67d10b9fc59bc45edbb454f4c018b",
    "publisher": "City of Bradford Metropolitan District Council",
    "title": "Air Quality Monitoring Auto Stations",
    "portal": "bradford",
    "format": "CSV",
    "resource_url": "https://spatialdata-cbmdc.hub.arcgis.com/api/download/v1/items/df34a59d9f0446b5b107edb0a8e13ab8/csv?layers=0",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -412,13 +418,15 @@
    ]
   },
   {
-   "job_id": "8d63ca77b53985fba9c2f923fd942589e38a08a00673bf4cec3a11272819ec89",
+   "job_id": "bfad56034a185df5ce8ccefd1a1fd1892911e6757fa5efafdb3ed81e6ea6d988",
    "publisher": "City of York Council",
    "title": "Air Quality Diffusion Tubes",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://opendata.arcgis.com/datasets/d30396f5dba34f48a7205bb4db765c07_20.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -670,13 +678,15 @@
    ]
   },
   {
-   "job_id": "ad97d7f13f0c8ca69fb953c8e49d69d64d6787fafb1ee9198ef4a7fa05d49242",
+   "job_id": "43b8dd0d84e14e4a6c100c959f25c1c6621c153ff1babaf462dbd276da64bbaf",
    "publisher": "City of York Council",
    "title": "Average Annual Mean Nitrogen Dioxide concentration in Blossom St/Holgate (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/219ba7ef-2abe-4e13-8ec8-06018a15f826/resource/819d1f20-7606-45f6-8453-8648765fadd2/download/kpi-can027b.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -760,13 +770,15 @@
    ]
   },
   {
-   "job_id": "935977b3fde0ef08f3ce7b96cd46cf7e436affb3372c2d561ba8345af8757075",
+   "job_id": "ab152aa1c6629104ca2c4ce37e5b8144fa53579caeeb3644e89f950c73520113",
    "publisher": "City of York Council",
    "title": "Average Annual Mean Nitrogen Dioxide concentration in Fishergate/Paragon (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/a0b6dd0b-37f3-4d2a-adcb-fa1cbe650bbb/resource/6ed446fb-1cfc-446f-8880-9986f021bc18/download/kpi-can027c.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -850,13 +862,15 @@
    ]
   },
   {
-   "job_id": "917b7a42defe22a1b0f58fe715cea376ea89c158f615508b715ee1223151f9ac",
+   "job_id": "d6f8b92e0126154256af62a9662643c2db25c887cf7ae197206288703f5e7c2b",
    "publisher": "City of York Council",
    "title": "Average Annual Mean Nitrogen Dioxide concentration in Fulford (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/a7348fa3-4476-437e-89be-b2135548aebf/resource/30c1e422-1183-4f56-8e36-38ede8d22966/download/kpi-can027e.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -940,13 +954,15 @@
    ]
   },
   {
-   "job_id": "e681410c304ea39dfd9afc69871d32de7d73182bfb53bc996ea772e06129e006",
+   "job_id": "14f102a6306bfccad498cb6b5783399ec5f198037c203fb309ecd7b8de8e03df",
    "publisher": "City of York Council",
    "title": "Average Annual Mean Nitrogen Dioxide concentration in Gillygate / LMW (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/44daf5ab-50dc-4f70-b21d-b8b8123ae116/resource/402c25a1-d74b-4a74-8542-e459c7f471c7/download/kpi-can027f.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -1030,13 +1046,15 @@
    ]
   },
   {
-   "job_id": "1919c50eaa3ac04dfa5891528363a305eca459f7f46b9a5c36901a7d0da41935",
+   "job_id": "295f314f67aa15cce24ac93caf97bf77306ede74f88bad4c8c642f1dc523b746",
    "publisher": "City of York Council",
    "title": "Average Annual Mean Nitrogen Dioxide concentration in Lawrence St (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/b8c7d03d-5cfc-43d0-98c0-5e71ead2b767/resource/41eb85db-0379-4e41-b184-d2334018e199/download/kpi-can027d.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -1120,13 +1138,15 @@
    ]
   },
   {
-   "job_id": "1bca1dc0e2b9a18e86cf3c678cf6479f8ef30cf3568a68767d5dc22b236c757d",
+   "job_id": "c4b014dc88f20dc15da948af99500cd00bb2756880ec0a20d7156b520a417124",
    "publisher": "City of York Council",
    "title": "Average Annual Mean Nitrogen Dioxide concentration in Prices/Nunnery Lane (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/cdfd3d20-27a5-40df-83ef-230844c190e8/resource/3ebce570-e8c8-4f20-9eda-be25e5dcffef/download/kpi-can027a.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -1210,13 +1230,15 @@
    ]
   },
   {
-   "job_id": "850e22a5dff0f455d613511fca3981cee35608a0b259ccce32d237461b5efd8c",
+   "job_id": "fb8ddeafb88f4118d4354c35ca9c1d581b765956ed070a7639fd5861e7c7c150",
    "publisher": "City of York Council",
    "title": "Average Annual Mean Nitrogen Dioxide concentration in Rougier St/GHS (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/73902d9b-fd57-404e-b8f2-fbc096e13056/resource/a9d30f85-3aa8-47bb-ace4-888305e95531/download/kpi-can027g.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -1300,13 +1322,15 @@
    ]
   },
   {
-   "job_id": "855a16beb64230a9ba15169d9bd042254ad33237bb9ea769e7db47dcd428e115",
+   "job_id": "20a396d4b00b708ef6ca734cc5c2bdbc63c464b7852693b6a11956575751d13f",
    "publisher": "City of York Council",
    "title": "Average Annual Mean Nitrogen Dioxide concentration in Salisbury Terrace (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/2e7a0d7c-ffe9-428a-97e6-73ce2b4a139d/resource/f2289e1d-0601-4ff5-966c-1ec2bc551300/download/kpi-can027.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -1390,13 +1414,15 @@
    ]
   },
   {
-   "job_id": "2576f0551c3b0d488640115440f3fd33586704b98bd047cc61b4ccef52b09936",
+   "job_id": "95f24121cf0488241ba424d50153a3742e86ceb68b2364bf1221efa53c896aaf",
    "publisher": "City of York Council",
    "title": "Diffusion Tubes Data",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/45e3f391-9519-4e85-9b38-ce26a71eac71/resource/70bfcee5-c8df-4602-9318-5f277c699efa/download/tubesreadings.csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -1550,13 +1576,15 @@
    ]
   },
   {
-   "job_id": "f262b6c8ed407c844f76258660c8186c7d78cb8bf749c03c212f146a25c00f39",
+   "job_id": "faf6387792c902289b7ed1754c785cb244724025db47af26e80ddd89f23ff8d0",
    "publisher": "City of York Council",
    "title": "The average of maximum annual mean Nitrogen Dioxide concentration recorded across three areas of technical breach (at points of relevant public exposure) (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/a38c0809-1d93-4875-ae15-9e6a96df78a3/resource/5f84f6a4-07d0-4bc5-adf6-f292a1413379/download/kpi-can038.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -1640,13 +1668,15 @@
    ]
   },
   {
-   "job_id": "e7cbebe1cd50b4a644ff73939ae2cf39f7de88652370f38316009a54c1b49315",
+   "job_id": "262675d5f85888e14ff765327ae72cae4e1144f6a1311ac31d573e2803b71d87",
    "publisher": "City of York Council",
    "title": "The maximum Nitrogen Dioxide concentration in Blossom St/Holgate (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/088fb251-78dd-4509-aec7-9ea8ad015905/resource/f65f3e0b-0d78-43ca-a968-69d099487418/download/kpi-can028b.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -1730,13 +1760,15 @@
    ]
   },
   {
-   "job_id": "a4c45dc71a683f76a8cfb5bcce67b33287d8042b10c0ba0b2cd94128f5b047d2",
+   "job_id": "796c03777cc5018c63e17105372ead900d4e58787010f3fb4e1a0471a7e4d91a",
    "publisher": "City of York Council",
    "title": "The maximum Nitrogen Dioxide concentration in Fishergate/Paragon (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/b79c1b6d-5acd-4017-8c69-c355f40ca8f5/resource/c85fe15b-1939-4f31-aacd-e4781e3ac2c4/download/kpi-can028c.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -1820,13 +1852,15 @@
    ]
   },
   {
-   "job_id": "beb31ff89cd8411cb447f5e059214e065fea96b646c66ef73b41934afaa3df17",
+   "job_id": "daf83e7dde76d24d1ea830987914e6631e9898d8c08e1788b4b9f376c5772ee5",
    "publisher": "City of York Council",
    "title": "The maximum Nitrogen Dioxide concentration in Fulford (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/f8bb1052-66b6-49ed-a628-214b1c4a8b18/resource/8c8c00bd-04f0-48cb-88ea-f2b5cd4904b5/download/kpi-can028e.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -1910,13 +1944,15 @@
    ]
   },
   {
-   "job_id": "436a6f72b0c2686c9673abf5ccdde00993e9f98e14e807772734e3b38a626616",
+   "job_id": "356e592733f674fe612fa5eac857c69d460caeb76c81076fedd6ab3754d42854",
    "publisher": "City of York Council",
    "title": "The maximum Nitrogen Dioxide concentration in Gillygate / LMW (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/a1160df6-9662-4968-8d79-ed4a313d5035/resource/54ca9f0e-9696-4379-ab32-7ca8fa5325aa/download/kpi-can028f.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -2000,13 +2036,15 @@
    ]
   },
   {
-   "job_id": "ef97a0caa7df8fa0adcb3387a18b280a6e62dcce9c9ba0d892679191ffa05d32",
+   "job_id": "4c7717742021f6304390470710d3694355b1b91bba1df46102144f703d9ea00b",
    "publisher": "City of York Council",
    "title": "The maximum Nitrogen Dioxide concentration in Lawrence St (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/75202f45-622f-4fb7-90f8-d5ed9f6549ec/resource/53385cf8-ab74-4bf1-b12d-2484dda5926d/download/kpi-can028d.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -2090,13 +2128,15 @@
    ]
   },
   {
-   "job_id": "755750a254eef46468bbbe52a685af03ffd644e451f3ba5b5c034558059f1ce6",
+   "job_id": "3c4508b3bd6d95d405e10feaf9199965244a866172732a06f9e5069d1b8ed2d5",
    "publisher": "City of York Council",
    "title": "The maximum Nitrogen Dioxide concentration in Prices/Nunnery Lane (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/916f6b4e-9408-483c-a705-e3b7e276e94e/resource/2d9cf8f2-6a48-4c83-8ed7-5527cdafd802/download/kpi-can028a.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -2180,13 +2220,15 @@
    ]
   },
   {
-   "job_id": "e19b6e425ee2ac0402fec7f86504e00e1fbdcf3bd809262c28e4a8578b4be2ba",
+   "job_id": "8a564d9d43326ba41b2ee987b61daf960acf081d95c7838549c4555d5a388c55",
    "publisher": "City of York Council",
    "title": "The maximum Nitrogen Dioxide concentration in Rougier St/GHS (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/aa86f093-e1ce-48ba-94ff-366b5f31babf/resource/2f45ab7f-4650-445b-8bbe-23c527471cb5/download/kpi-can028g.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -2270,13 +2312,15 @@
    ]
   },
   {
-   "job_id": "e5f74907ec06ad6ecd4228792e556e74414d856f28c45b57964406e5fbfcb183",
+   "job_id": "c0a4f6665041e3ed1e8848dd9ad83604b0c54e303a10fa89ec80e9405bcfd276",
    "publisher": "City of York Council",
    "title": "The maximum Nitrogen Dioxide concentration in Salisbury Terrace (ug/m3) (Calendar Year)",
    "portal": "york",
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/99ea7efb-f490-42ab-840f-2f50cd5da967/resource/410fe24a-495b-403f-be64-5a4572acca6f/download/kpi-can028.csv",
    "licence": "OGL-UK-2.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -2360,13 +2404,15 @@
    ]
   },
   {
-   "job_id": "d15fc1100854c7826209a4f10cc128b973f8ca46be4d5a37cebcf4cc3e6e08b9",
+   "job_id": "0500dbe9e218459ebec1cc6735f668b910147e844091a57cac9b584f9ea79d11",
    "publisher": "Gedling Borough Council",
    "title": "Air Quality Monitoring Points",
    "portal": "gedling",
    "format": "CSV",
    "resource_url": "https://open-data-portal-gedling.hub.arcgis.com/api/download/v1/items/464af7a6e8614b1bb85663fe7fd2be0c/csv?layers=0",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -2436,13 +2482,15 @@
    ]
   },
   {
-   "job_id": "c239ba0e7253004f6a4f6015aeaf84faa12e915f689b05d64008449a1f51444c",
+   "job_id": "6176566b4a991334c68d67114d3b1c6f51bd6aa04ab4dee9a3d1779b6705f870",
    "publisher": "Leicester City Council",
    "title": "Air Quality - Nitrogen Dioxide - Annual Mean",
    "portal": "leicester",
    "format": "CSV",
    "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/air-quality-nitrogen-dioxide-annual-mean/exports/csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -2519,13 +2567,15 @@
    ]
   },
   {
-   "job_id": "8d27f0a9af10427d12b42d2eff54cc8441e3848484a0549431352b32148cf50a",
+   "job_id": "1fc55c69fceb42fb044a729487b7f65d4c44dc502fdf06934d6339edf7f2130f",
    "publisher": "Leicester City Council",
    "title": "Air Quality - Nitrogen Dioxide - Hourly Mean",
    "portal": "leicester",
    "format": "CSV",
    "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/air-quality-nitrogen-dioxide-hourly-mean/exports/csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -2609,13 +2659,15 @@
    ]
   },
   {
-   "job_id": "cc550c795ebab8b484443009f1e70f559c928b5fd1bf6bdbbba8eb0f22bc2ec8",
+   "job_id": "738a118d7cbafbce76dbb4dd5ff19e26c37023c233e5476e68779b24f10e1ef6",
    "publisher": "Leicester City Council",
    "title": "Air Quality - PM10 - 24 hour Mean",
    "portal": "leicester",
    "format": "CSV",
    "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/air-quality-pm10-24-hour-mean/exports/csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -2706,13 +2758,15 @@
    ]
   },
   {
-   "job_id": "d7c8000e158b1c6f078eb7b2cfe4c6c90cadf0ceeab8bcc7edfb33d2c959c4ae",
+   "job_id": "a410e1ad5a0dc7dd886f74ff80352cc931c3c8a2e02ed980244af4b5cb1e25fb",
    "publisher": "Leicester City Council",
    "title": "Air Quality - PM10 - Annual Mean",
    "portal": "leicester",
    "format": "CSV",
    "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/air-quality-pm10-annual-mean/exports/csv",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {
@@ -2796,13 +2850,15 @@
    ]
   },
   {
-   "job_id": "74cc1e577311db18a76505e0d1f744fe6f6d10a13198c6b403dd47768aa2e317",
+   "job_id": "6feab8f5516e4de2b7a7f105d85e147d7378e5cbb7834133322f4abf1cdeb9b8",
    "publisher": "London Borough of Camden",
    "title": "Camden Air Quality Diffusion Tubes",
    "portal": "camden",
    "format": "CSV",
    "resource_url": "https://opendata.camden.gov.uk/api/v3/views/jzqb-f3xy/export.csv?accessType=DOWNLOAD",
    "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
    "tables": [
     {
      "where": {

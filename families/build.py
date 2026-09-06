@@ -283,7 +283,19 @@ def _validate(row: dict, schema: dict) -> str | None:
 # --- the mapping ----------------------------------------------------------------
 
 def map_source(job: dict, spec: dict, schema: dict) -> tuple[list[dict], list[dict]]:
-    rows = _load_table(job["extraction_sha"], spec.get("table", 1))
+    """Every extracted file of the job, through the same mapping."""
+    out, bad = [], []
+    files = job.get("files") or [{"extraction_sha": job["extraction_sha"], "blob_sha": job["blob_sha"],
+                                  "url": job["resource_url"], "name": ""}]
+    for f in files:
+        o, b = _map_file(job, f, spec, schema)
+        out += o
+        bad += b
+    return out, bad
+
+
+def _map_file(job: dict, f: dict, spec: dict, schema: dict) -> tuple[list[dict], list[dict]]:
+    rows = _load_table(f["extraction_sha"], spec.get("table", 1))
     h = spec.get("header_row", 0)
     header = [str(x).strip() if x is not None else "" for x in rows[h]]
     idx = {name: i for i, name in enumerate(header)}
@@ -296,8 +308,9 @@ def map_source(job: dict, spec: dict, schema: dict) -> tuple[list[dict], list[di
             raise KeyError(f"source column {src!r} not in header")
     licence = json.loads(job["licence_json"])
     receipts = {
-        "publisher": job["publisher"], "dataset_key": job["dataset_key"], "source_url": job["resource_url"],
-        "source_sha256": job["blob_sha"], "source_table": str(spec.get("table", 1)),
+        "publisher": job["publisher"], "dataset_key": job["dataset_key"], "source_url": f["url"],
+        "source_sha256": f["blob_sha"], "source_table": str(spec.get("table", 1)),
+        "source_file": f.get("name") or "",
         "licence_id": licence["id"], "licence_url": licence["url"],
         "licence_evidence_sha256": job["evidence_sha"], "licence_evidence_kind": job["licence_kind"],
         "adapter_version": ADAPTER + ":" + (spec.get("version") or "1"),
@@ -425,6 +438,12 @@ def build(family: str, include_proposed: bool = False) -> dict:
     c = sqlite3.connect(f"file:{STORE / 'families.db'}?mode=ro", uri=True)
     c.row_factory = sqlite3.Row
     jobs = {j["id"]: dict(j) for j in c.execute("SELECT * FROM jobs WHERE family=?", (family,))}
+    try:
+        for f in c.execute("SELECT * FROM files WHERE state='extracted' ORDER BY name, url"):
+            if f["job_id"] in jobs:
+                jobs[f["job_id"]].setdefault("files", []).append(dict(f))
+    except sqlite3.OperationalError:
+        pass
     c.close()
     published, preview, summary = [], [], []
     for jid, job in sorted(jobs.items(), key=lambda kv: (kv[1]["publisher"] or "", kv[0])):
@@ -446,6 +465,7 @@ def build(family: str, include_proposed: bool = False) -> dict:
         except (KeyError, IndexError, ValueError) as err:
             entry["ladder"] = "mapping failed"; entry["why"] = str(err)[:200]; summary.append(entry); continue
         entry["rows"] = len(ok); entry["rows_failed_validation"] = len(bad)
+        entry["files"] = len(job.get("files") or [])
         entry["failures_sample"] = [b["why"] for b in bad[:5]]
         entry["notes"] = spec.get("notes")
         if spec.get("status") == "reviewed":
@@ -457,7 +477,7 @@ def build(family: str, include_proposed: bool = False) -> dict:
         summary.append(entry)
     out_dir = STORE / "out" / family
     out_dir.mkdir(parents=True, exist_ok=True)
-    cols = [c["name"] for c in schema["columns"]] + schema["provenance"] + ["source_row", "quality_note"]
+    cols = [c["name"] for c in schema["columns"]] + schema["provenance"] + ["source_file", "source_row", "quality_note"]
     for name, rows in (("published", published), ("preview", preview)):
         with (out_dir / f"{family}.{name}.csv").open("w", newline="", encoding="utf-8") as fh:
             w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")

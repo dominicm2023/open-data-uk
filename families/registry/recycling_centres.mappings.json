@@ -1,5 +1,5 @@
 {
- "a3ec62935a7162ea83b5ed15456380f130e5b73a4058df6d852f27511679215b": {
+ "c11f48695414349ea0bf19d2e3d7e597296c1df5553c72f745622ac56b2fa1b7": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -16,7 +16,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "f39eda6553ca25f206edbf9470ab1b18efaf53f8472ad2ccb6cd3b80920a7ec7": {
+ "b4fe1fdd298bdc29fe1e6d3ceb806c1ceb84f6478fb7be65a291c2cf43cf2db2": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -33,7 +33,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "056681438e9e1e1d7fe61708dfe9d4c7f509ede20a68403b390256ee3d118ff8": {
+ "5c4a6629e6fcbb8a24067042a41e241c96d3d994e11a222a6bf65dddd508c31c": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -52,11 +52,11 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "8612b2ff722df8b554c5b0910eba767e9b6775f654a50d9fb0163cb5e0511f8e": {
+ "8637567ec88be684ea3a005eb44359ee4f9d03e44444866f2ebe218126f486b9": {
   "status": "rejected",
   "reject": "This is a customer satisfaction survey about the HWRC booking/visit experience (one row per survey respondent, columns are satisfaction ratings, booking method, and free-text feedback), not a list of recycling centre sites."
  },
- "a5c15151a60c2b1131930625af4704b4d362a1fc749aa7cc927302a592524d64": {
+ "cb684ba6295232a35f401cc1e546338b4050e1ef23e84533eed01bc759b23608": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -74,7 +74,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "08e25346fbe5900645d47f9de9f7eb2b3e880ca30fe5b18c7ba4605d7700ed25": {
+ "0ba65b5092bcc0acdb65cbfecc6ba28be18e455aa6415d890d18e14d53c2af12": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -91,7 +91,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "ca1885c9fd3dde7834677d6d32097fba9a81b45216860e6ccc69b8825012fe9e": {
+ "7b43aa35e9e5db2485743554f3f029bcd3ac85f757ffb0e70d3ede0abf633f05": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -109,11 +109,11 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "d70a5e7a3fc937e91d370d9da4869854a8ca6029fbcf9d666817a5ee2c7fc6b7": {
+ "32a6068c7caa584b109e4977bbae9ae54cfa6b5b59ee8043889dcd617528a525": {
   "status": "rejected",
   "reject": "This is a bring-bank / recycling-point dataset (small container sites at supermarkets, car parks and foreshores, e.g. 'Cleator Moor Co-Op', 'Gosforth Main Car Park', 'Haverigg Foreshore'), with per-material Y/N flags (GLASS, CANS, PAPER, CARDBOARD, PLASTIC_BOTTLES) rather than a household waste recycling centre / civic amenity site."
  },
- "a917d66d966aca9e861dd918d5093eedea7d48c1bf0085a83dabc05cb41baf28": {
+ "34cf4237b7bb656a7db0dd92d2ae5cccde19a3acebf75f444356a0f85cc66217": {
   "status": "reviewed",
   "table": 1,
   "header_row": 0,
@@ -129,7 +129,7 @@
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
  },
- "46515cdf8cfbd28e9426d7e6eab11634bc85ac15d4bffff1197eb95c68e1e4df": {
+ "c81b2dd7ae37d2a3ecf2d396fc01c46ee873a294ca4bee24b3efbec5a80050f5": {
   "status": "rejected",
   "reject": "This is a bring-bank / recycling-point dataset (containers at schools, churches and car parks, e.g. 'Croft Nursery School', 'Windmill Car Park'), with per-material Y/N flags (Clear_Glass, Green_Glass, Brown_Glass, Mixed, Cans_Tins, Textiles, Oil, Plastic, Litter, Carton_Tetrapak, Books, Paper, Shoes) rather than a household waste recycling centre / civic amenity site."
  }
