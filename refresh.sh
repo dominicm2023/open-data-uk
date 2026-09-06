@@ -25,6 +25,16 @@ echo "=====REFRESH-RUN===== $(date -Is)"
 "$PY" scripts/dead_hosts.py --repair || true
 "$PY" scripts/findings.py || true
 
+# Dataset families: one table for a thing many bodies publish. Registry from
+# tonight's index, a polite licence-gated fetch, then the build — which
+# publishes only mappings a person has marked reviewed. Each step is allowed
+# to fail without stopping the rest of the night.
+for fam in recycling_centres air_quality_annual spend_over_500; do
+  "$PY" families/registry.py "$fam" || true
+  "$PY" families/intake.py "$fam" || true
+  "$PY" families/build.py "$fam" || true
+done
+
 # Tell the engines which pages actually changed tonight. Runs last, after the
 # checker, so a link that died today is announced today. Never fatal: a
 # search-engine ping failing is not a reason for the refresh to have failed,

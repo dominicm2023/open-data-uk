@@ -1,0 +1,1455 @@
+{
+ "family": "air_quality_annual",
+ "label": "Air quality: annual mean concentrations",
+ "rule": {
+  "label": "Air quality: annual mean concentrations",
+  "include": "(air\\s+quality.*(annual|mean|monitor|no2|nitrogen|diffusion)|nitrogen\\s+dioxide|diffusion\\s+tube|no2\\b.*(annual|mean|monitor|tube))",
+  "exclude": "management\\s+area|aqma\\b|boundar|\\bsites?\\s+location|monitoring\\s+sites?\\s*$|monitors\\s*$|action\\s+plan"
+ },
+ "sources": [
+  {
+   "dataset_key": "aberdeen:https://www.arcgis.com/home/item.html?id=9438be57aadf45468732a016558d95fb&sublayer=9",
+   "title": "Air Quality - Diffusion Tubes",
+   "publisher": "Aberdeen City Council",
+   "portal": "aberdeen",
+   "landing_url": "https://spatialdata-accabdn.opendata.arcgis.com/datasets/accabdn::air-quality-diffusion-tubes-1",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/9438be57aadf45468732a016558d95fb?f=json",
+   "index_licence_raw": "This information is supplied under the Open Government License v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/). The ",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:48Z",
+   "resource": {
+    "url": "https://spatialdata-accabdn.opendata.arcgis.com/api/download/v1/items/9438be57aadf45468732a016558d95fb/csv?layers=9",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 6
+  },
+  {
+   "dataset_key": "agol_aberdeen_city_council_arcgis:9438be57aadf45468732a016558d95fb_9",
+   "title": "Air Quality - Diffusion Tubes",
+   "publisher": "Aberdeen City Council ArcGIS Online",
+   "portal": "agol_aberdeen_city_council_arcgis",
+   "landing_url": "https://hub.arcgis.com/datasets/9438be57aadf45468732a016558d95fb_9",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:45:57Z",
+   "resource": {
+    "url": "https://services5.arcgis.com/0sktPVp3t1LvXc9z/arcgis/rest/services/Air_Quality___Diffusion_Tubes/FeatureServer/9/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "opendatani:afa61c30-dff6-4678-98e4-ca5d55909f53",
+   "title": "Belfast Air Quality Monitoring Stations",
+   "publisher": "Belfast City Council",
+   "portal": "opendatani",
+   "landing_url": "https://admin.opendatani.gov.uk/dataset/air-quality-monitoring-stations",
+   "licence_kind": "ckan",
+   "metadata_url": "https://admin.opendatani.gov.uk/api/3/action/package_show?id=afa61c30-dff6-4678-98e4-ca5d55909f53",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:08Z",
+   "resource": {
+    "url": "https://www.belfastcity.gov.uk/getmedia/83536e8e-3750-446e-9288-acc09cf0eabe/BCCAQMonitoring.csv",
+    "name": "Air Quality Monitoring Stations",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "bristol:https://www.arcgis.com/home/item.html?id=88c522b0507d452da29fcfc2c725a193&sublayer=0",
+   "title": "Air Quality (NO2 diffusion tube) data",
+   "publisher": "Bristol City Council",
+   "portal": "bristol",
+   "landing_url": "https://opendata.bristol.gov.uk/datasets/bcc::air-quality-no2-diffusion-tube-data",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/88c522b0507d452da29fcfc2c725a193?f=json",
+   "index_licence_raw": "",
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:22:27Z",
+   "resource": {
+    "url": "https://opendata.bristol.gov.uk/api/download/v1/items/88c522b0507d452da29fcfc2c725a193/csv?layers=0",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 11
+  },
+  {
+   "dataset_key": "bristol:https://www.arcgis.com/home/item.html?id=925cadfd3a034df3beea8f0088a942d0&sublayer=8",
+   "title": "Air quality monitors with annual mean NO2 measurements",
+   "publisher": "Bristol City Council",
+   "portal": "bristol",
+   "landing_url": "https://opendata.bristol.gov.uk/datasets/bcc::air-quality-monitors-with-annual-mean-no2-measurements",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/925cadfd3a034df3beea8f0088a942d0?f=json",
+   "index_licence_raw": "Copyright : © Crown Copyright and database rights [insert year of supply] Ordnance Survey 100023406.",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:22:27Z",
+   "resource": {
+    "url": "https://opendata.bristol.gov.uk/api/download/v1/items/925cadfd3a034df3beea8f0088a942d0/csv?layers=8",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 7
+  },
+  {
+   "dataset_key": "data_gov_uk:e4d652ae-7445-4074-aa69-6195456635af",
+   "title": "Bristol Air Quality Monitoring Station Information",
+   "publisher": "Bristol City Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/bristol-air-quality-monitoring-station-information",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=e4d652ae-7445-4074-aa69-6195456635af",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:51Z",
+   "resource": {
+    "url": "http://www.bristol.gov.uk/413/1/",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "bradford:https://www.arcgis.com/home/item.html?id=df34a59d9f0446b5b107edb0a8e13ab8&sublayer=0",
+   "title": "Air Quality Monitoring Auto Stations",
+   "publisher": "City of Bradford Metropolitan District Council",
+   "portal": "bradford",
+   "landing_url": "https://spatialdata-cbmdc.hub.arcgis.com/datasets/CBMDC::air-quality-monitoring-auto-stations",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/df34a59d9f0446b5b107edb0a8e13ab8?f=json",
+   "index_licence_raw": "Open Government Licence",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:46Z",
+   "resource": {
+    "url": "https://spatialdata-cbmdc.hub.arcgis.com/api/download/v1/items/df34a59d9f0446b5b107edb0a8e13ab8/csv?layers=0",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 6
+  },
+  {
+   "dataset_key": "bradford:https://www.arcgis.com/home/item.html?id=ebd179869eaa4964938001691fd529a5&sublayer=1",
+   "title": "Diffusion Tube 2018 data",
+   "publisher": "City of Bradford Metropolitan District Council",
+   "portal": "bradford",
+   "landing_url": "https://spatialdata-cbmdc.hub.arcgis.com/datasets/CBMDC::diffusion-tube-2018-data",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/ebd179869eaa4964938001691fd529a5?f=json",
+   "index_licence_raw": "Open Government Licence",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:46Z",
+   "resource": {
+    "url": "https://spatialdata-cbmdc.hub.arcgis.com/api/download/v1/items/ebd179869eaa4964938001691fd529a5/csv?layers=1",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 6
+  },
+  {
+   "dataset_key": "york:4df3b8c1-0873-4ef0-a800-45112f3aea30",
+   "title": "Air Quality Diffusion Tubes",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/diffusion-tubes-locations",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=4df3b8c1-0873-4ef0-a800-45112f3aea30",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://opendata.arcgis.com/datasets/d30396f5dba34f48a7205bb4db765c07_20.csv",
+    "name": "Air Quality Diffusion Tubes",
+    "format": "CSV"
+   },
+   "other_resources": 4
+  },
+  {
+   "dataset_key": "york:8cf55dd4-60aa-4e33-8d97-b49c23d0adbe",
+   "title": "Air Quality Monitoring Stations Data",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/air-quality-monitoring-stations-data",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=8cf55dd4-60aa-4e33-8d97-b49c23d0adbe",
+   "index_licence_raw": "OGL-UK-3.0",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/8cf55dd4-60aa-4e33-8d97-b49c23d0adbe/resource/85504bf3-bd97-4f71-9085-1df6d803c171/download/allsites2017.csv",
+    "name": "AQ Monitoring Stations Data - 2017",
+    "format": "CSV"
+   },
+   "other_resources": 3
+  },
+  {
+   "dataset_key": "york:219ba7ef-2abe-4e13-8ec8-06018a15f826",
+   "title": "Average Annual Mean Nitrogen Dioxide concentration in Blossom St/Holgate (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can027b",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=219ba7ef-2abe-4e13-8ec8-06018a15f826",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/219ba7ef-2abe-4e13-8ec8-06018a15f826/resource/819d1f20-7606-45f6-8453-8648765fadd2/download/kpi-can027b.csv",
+    "name": "Performance Indicator : CAN027b",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:a0b6dd0b-37f3-4d2a-adcb-fa1cbe650bbb",
+   "title": "Average Annual Mean Nitrogen Dioxide concentration in Fishergate/Paragon (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can027c",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=a0b6dd0b-37f3-4d2a-adcb-fa1cbe650bbb",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/a0b6dd0b-37f3-4d2a-adcb-fa1cbe650bbb/resource/6ed446fb-1cfc-446f-8880-9986f021bc18/download/kpi-can027c.csv",
+    "name": "Performance Indicator : CAN027c",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:a7348fa3-4476-437e-89be-b2135548aebf",
+   "title": "Average Annual Mean Nitrogen Dioxide concentration in Fulford (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can027e",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=a7348fa3-4476-437e-89be-b2135548aebf",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/a7348fa3-4476-437e-89be-b2135548aebf/resource/30c1e422-1183-4f56-8e36-38ede8d22966/download/kpi-can027e.csv",
+    "name": "Performance Indicator : CAN027e",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:44daf5ab-50dc-4f70-b21d-b8b8123ae116",
+   "title": "Average Annual Mean Nitrogen Dioxide concentration in Gillygate / LMW (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can027f",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=44daf5ab-50dc-4f70-b21d-b8b8123ae116",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/44daf5ab-50dc-4f70-b21d-b8b8123ae116/resource/402c25a1-d74b-4a74-8542-e459c7f471c7/download/kpi-can027f.csv",
+    "name": "Performance Indicator : CAN027f",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:b8c7d03d-5cfc-43d0-98c0-5e71ead2b767",
+   "title": "Average Annual Mean Nitrogen Dioxide concentration in Lawrence St (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can027d",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=b8c7d03d-5cfc-43d0-98c0-5e71ead2b767",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/b8c7d03d-5cfc-43d0-98c0-5e71ead2b767/resource/41eb85db-0379-4e41-b184-d2334018e199/download/kpi-can027d.csv",
+    "name": "Performance Indicator : CAN027d",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:cdfd3d20-27a5-40df-83ef-230844c190e8",
+   "title": "Average Annual Mean Nitrogen Dioxide concentration in Prices/Nunnery Lane (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can027a",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=cdfd3d20-27a5-40df-83ef-230844c190e8",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/cdfd3d20-27a5-40df-83ef-230844c190e8/resource/3ebce570-e8c8-4f20-9eda-be25e5dcffef/download/kpi-can027a.csv",
+    "name": "Performance Indicator : CAN027a",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:73902d9b-fd57-404e-b8f2-fbc096e13056",
+   "title": "Average Annual Mean Nitrogen Dioxide concentration in Rougier St/GHS (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can027g",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=73902d9b-fd57-404e-b8f2-fbc096e13056",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/73902d9b-fd57-404e-b8f2-fbc096e13056/resource/a9d30f85-3aa8-47bb-ace4-888305e95531/download/kpi-can027g.csv",
+    "name": "Performance Indicator : CAN027g",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:2e7a0d7c-ffe9-428a-97e6-73ce2b4a139d",
+   "title": "Average Annual Mean Nitrogen Dioxide concentration in Salisbury Terrace (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can027",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=2e7a0d7c-ffe9-428a-97e6-73ce2b4a139d",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/2e7a0d7c-ffe9-428a-97e6-73ce2b4a139d/resource/f2289e1d-0601-4ff5-966c-1ec2bc551300/download/kpi-can027.csv",
+    "name": "Performance Indicator : CAN027",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:45e3f391-9519-4e85-9b38-ce26a71eac71",
+   "title": "Diffusion Tubes Data",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/diffusion-tubes-data",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=45e3f391-9519-4e85-9b38-ce26a71eac71",
+   "index_licence_raw": "OGL-UK-3.0",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/45e3f391-9519-4e85-9b38-ce26a71eac71/resource/70bfcee5-c8df-4602-9318-5f277c699efa/download/tubesreadings.csv",
+    "name": "Readings - NO2",
+    "format": "CSV"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "york_cyc:https://www.arcgis.com/home/item.html?id=fdbe3526db3d4b69babd705b5b801455&sublayer=39",
+   "title": "Local air quality monitoring stations",
+   "publisher": "City of York Council",
+   "portal": "york_cyc",
+   "landing_url": "https://data-cyc.opendata.arcgis.com/datasets/CYC::local-air-quality-monitoring-stations",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/fdbe3526db3d4b69babd705b5b801455?f=json",
+   "index_licence_raw": "© Crown copyright and database rights 2017 Ordnance Survey 100020818. This data is published under the Public Sector End User Licence - INSPIRE and re",
+   "index_licence_norm": "OS INSPIRE EUL",
+   "index_harvested_at": "2026-09-06T14:39:05Z",
+   "resource": {
+    "url": "https://data-cyc.opendata.arcgis.com/api/download/v1/items/fdbe3526db3d4b69babd705b5b801455/csv?layers=39",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 7
+  },
+  {
+   "dataset_key": "york:a38c0809-1d93-4875-ae15-9e6a96df78a3",
+   "title": "The average of maximum annual mean Nitrogen Dioxide concentration recorded across three areas of technical breach (at points of relevant public exposure) (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can038",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=a38c0809-1d93-4875-ae15-9e6a96df78a3",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/a38c0809-1d93-4875-ae15-9e6a96df78a3/resource/5f84f6a4-07d0-4bc5-adf6-f292a1413379/download/kpi-can038.csv",
+    "name": "Performance Indicator : CAN038",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:088fb251-78dd-4509-aec7-9ea8ad015905",
+   "title": "The maximum Nitrogen Dioxide concentration in Blossom St/Holgate (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can028b",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=088fb251-78dd-4509-aec7-9ea8ad015905",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/088fb251-78dd-4509-aec7-9ea8ad015905/resource/f65f3e0b-0d78-43ca-a968-69d099487418/download/kpi-can028b.csv",
+    "name": "Performance Indicator : CAN028b",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:b79c1b6d-5acd-4017-8c69-c355f40ca8f5",
+   "title": "The maximum Nitrogen Dioxide concentration in Fishergate/Paragon (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can028c",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=b79c1b6d-5acd-4017-8c69-c355f40ca8f5",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/b79c1b6d-5acd-4017-8c69-c355f40ca8f5/resource/c85fe15b-1939-4f31-aacd-e4781e3ac2c4/download/kpi-can028c.csv",
+    "name": "Performance Indicator : CAN028c",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:f8bb1052-66b6-49ed-a628-214b1c4a8b18",
+   "title": "The maximum Nitrogen Dioxide concentration in Fulford (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can028e",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=f8bb1052-66b6-49ed-a628-214b1c4a8b18",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/f8bb1052-66b6-49ed-a628-214b1c4a8b18/resource/8c8c00bd-04f0-48cb-88ea-f2b5cd4904b5/download/kpi-can028e.csv",
+    "name": "Performance Indicator : CAN028e",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:a1160df6-9662-4968-8d79-ed4a313d5035",
+   "title": "The maximum Nitrogen Dioxide concentration in Gillygate / LMW (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can028f",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=a1160df6-9662-4968-8d79-ed4a313d5035",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/a1160df6-9662-4968-8d79-ed4a313d5035/resource/54ca9f0e-9696-4379-ab32-7ca8fa5325aa/download/kpi-can028f.csv",
+    "name": "Performance Indicator : CAN028f",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:75202f45-622f-4fb7-90f8-d5ed9f6549ec",
+   "title": "The maximum Nitrogen Dioxide concentration in Lawrence St (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can028d",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=75202f45-622f-4fb7-90f8-d5ed9f6549ec",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/75202f45-622f-4fb7-90f8-d5ed9f6549ec/resource/53385cf8-ab74-4bf1-b12d-2484dda5926d/download/kpi-can028d.csv",
+    "name": "Performance Indicator : CAN028d",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:916f6b4e-9408-483c-a705-e3b7e276e94e",
+   "title": "The maximum Nitrogen Dioxide concentration in Prices/Nunnery Lane (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can028a",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=916f6b4e-9408-483c-a705-e3b7e276e94e",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/916f6b4e-9408-483c-a705-e3b7e276e94e/resource/2d9cf8f2-6a48-4c83-8ed7-5527cdafd802/download/kpi-can028a.csv",
+    "name": "Performance Indicator : CAN028a",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:aa86f093-e1ce-48ba-94ff-366b5f31babf",
+   "title": "The maximum Nitrogen Dioxide concentration in Rougier St/GHS (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can028g",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=aa86f093-e1ce-48ba-94ff-366b5f31babf",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/aa86f093-e1ce-48ba-94ff-366b5f31babf/resource/2f45ab7f-4650-445b-8bbe-23c527471cb5/download/kpi-can028g.csv",
+    "name": "Performance Indicator : CAN028g",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "york:99ea7efb-f490-42ab-840f-2f50cd5da967",
+   "title": "The maximum Nitrogen Dioxide concentration in Salisbury Terrace (ug/m3) (Calendar Year)",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/kpi-can028",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=99ea7efb-f490-42ab-840f-2f50cd5da967",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/99ea7efb-f490-42ab-840f-2f50cd5da967/resource/410fe24a-495b-403f-be64-5a4572acca6f/download/kpi-can028.csv",
+    "name": "Performance Indicator : CAN028",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "datamap_wales:6777548f-2653-4721-b6ea-45e46786bf66",
+   "title": "Air Quality data - NO2 (2021)",
+   "publisher": "DataMap Wales",
+   "portal": "datamap_wales",
+   "landing_url": "https://datamap.gov.wales/layers/geonode:wales_no2_2021",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:26:48Z",
+   "resource": {
+    "url": "https://datamap.gov.wales/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=geonode:wales_no2_2021&outputFormat=csv",
+    "name": "CSV (WFS)",
+    "format": "CSV"
+   },
+   "other_resources": 4
+  },
+  {
+   "dataset_key": "data_gov_uk:ed3b0b8a-39c0-4a6e-8704-ec5ede77f659",
+   "title": "Concentrations of benzene and 1,3-butadiene and exceedances against the Air Quality Strategy criteria at national monitoring network sites: 2006",
+   "publisher": "Department for Environment, Food and Rural Affairs",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/concentrations-of-benzene-3",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=ed3b0b8a-39c0-4a6e-8704-ec5ede77f659",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:48Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/20110710105658/http://archive.defra.gov.uk/evidence/statistics/environment/airqual/index.htm",
+    "name": "",
+    "format": "XLS"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "agol_east_riding_of_yorkshire_cou:2cd47837a1e34b8da43424f5071ea55c",
+   "title": "Air quality monitoring in East Riding of Yorkshire",
+   "publisher": "East Riding of Yorkshire Council",
+   "portal": "agol_east_riding_of_yorkshire_cou",
+   "landing_url": "https://hub.arcgis.com/datasets/2cd47837a1e34b8da43424f5071ea55c",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:40:40Z",
+   "resource": {
+    "url": "https://eastriding.maps.arcgis.com/apps/webappviewer/index.html?id=2cd47837a1e34b8da43424f5071ea55c/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "agol_fife_council:b71bac0378294339b9272cdf7148e80f_0",
+   "title": "Air Quality Diffusion Tubes",
+   "publisher": "Fife Council",
+   "portal": "agol_fife_council",
+   "landing_url": "https://hub.arcgis.com/datasets/b71bac0378294339b9272cdf7148e80f_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:43:27Z",
+   "resource": {
+    "url": "https://services-eu1.arcgis.com/PDjKizfiWWTgpUeI/arcgis/rest/services/Pollution_ver1/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "agol_fife_council:f1a6c2932cfb49c39d0ab70102caf2ed_0",
+   "title": "Air Quality Diffusion Tubes",
+   "publisher": "Fife Council",
+   "portal": "agol_fife_council",
+   "landing_url": "https://hub.arcgis.com/datasets/f1a6c2932cfb49c39d0ab70102caf2ed_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:43:27Z",
+   "resource": {
+    "url": "https://services-eu1.arcgis.com/PDjKizfiWWTgpUeI/arcgis/rest/services/Pollution/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "agol_fife_council_arcgis_online:e790e1ba609949ff84c2a7ace985fa79_0",
+   "title": "Air Quality Diffusion Tubes",
+   "publisher": "Fife Council (ArcGIS Online)",
+   "portal": "agol_fife_council_arcgis_online",
+   "landing_url": "https://hub.arcgis.com/datasets/e790e1ba609949ff84c2a7ace985fa79_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:44:35Z",
+   "resource": {
+    "url": "https://services1.arcgis.com/e4yMLodVNRqGnlnG/arcgis/rest/services/Pollution1/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "gedling:https://www.arcgis.com/home/item.html?id=464af7a6e8614b1bb85663fe7fd2be0c&sublayer=0",
+   "title": "Air Quality Monitoring Points",
+   "publisher": "Gedling Borough Council",
+   "portal": "gedling",
+   "landing_url": "https://open-data-portal-gedling.hub.arcgis.com/datasets/gedling::air-quality-monitoring-points",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/464af7a6e8614b1bb85663fe7fd2be0c?f=json",
+   "index_licence_raw": "Licensed under Open Government Licence",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:49Z",
+   "resource": {
+    "url": "https://open-data-portal-gedling.hub.arcgis.com/api/download/v1/items/464af7a6e8614b1bb85663fe7fd2be0c/csv?layers=0",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 7
+  },
+  {
+   "dataset_key": "leicester:air-quality-nitrogen-dioxide-annual-mean",
+   "title": "Air Quality - Nitrogen Dioxide - Annual Mean",
+   "publisher": "Leicester City Council",
+   "portal": "leicester",
+   "landing_url": "https://data.leicester.gov.uk/explore/dataset/air-quality-nitrogen-dioxide-annual-mean/",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "Open Government Licence v3.0",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:23:03Z",
+   "resource": {
+    "url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/air-quality-nitrogen-dioxide-annual-mean/exports/csv",
+    "name": "air-quality-nitrogen-dioxide-annual-mean.csv",
+    "format": "CSV"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "leicester:air-quality-nitrogen-dioxide-hourly-mean",
+   "title": "Air Quality - Nitrogen Dioxide - Hourly Mean",
+   "publisher": "Leicester City Council",
+   "portal": "leicester",
+   "landing_url": "https://data.leicester.gov.uk/explore/dataset/air-quality-nitrogen-dioxide-hourly-mean/",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "Open Government Licence v3.0",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:23:04Z",
+   "resource": {
+    "url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/air-quality-nitrogen-dioxide-hourly-mean/exports/csv",
+    "name": "air-quality-nitrogen-dioxide-hourly-mean.csv",
+    "format": "CSV"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "leicester:air-quality-pm10-24-hour-mean",
+   "title": "Air Quality - PM10 - 24 hour Mean",
+   "publisher": "Leicester City Council",
+   "portal": "leicester",
+   "landing_url": "https://data.leicester.gov.uk/explore/dataset/air-quality-pm10-24-hour-mean/",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "Open Government Licence v3.0",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:23:03Z",
+   "resource": {
+    "url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/air-quality-pm10-24-hour-mean/exports/csv",
+    "name": "air-quality-pm10-24-hour-mean.csv",
+    "format": "CSV"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "leicester:air-quality-pm10-annual-mean",
+   "title": "Air Quality - PM10 - Annual Mean",
+   "publisher": "Leicester City Council",
+   "portal": "leicester",
+   "landing_url": "https://data.leicester.gov.uk/explore/dataset/air-quality-pm10-annual-mean/",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "Open Government Licence v3.0",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:23:03Z",
+   "resource": {
+    "url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/air-quality-pm10-annual-mean/exports/csv",
+    "name": "air-quality-pm10-annual-mean.csv",
+    "format": "CSV"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "camden:https://opendata.camden.gov.uk/api/views/jzqb-f3xy",
+   "title": "Camden Air Quality Diffusion Tubes",
+   "publisher": "London Borough of Camden",
+   "portal": "camden",
+   "landing_url": "https://opendata.camden.gov.uk/d/jzqb-f3xy",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:23:01Z",
+   "resource": {
+    "url": "https://opendata.camden.gov.uk/api/v3/views/jzqb-f3xy/export.csv?accessType=DOWNLOAD",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 6
+  },
+  {
+   "dataset_key": "agol_met_office:6f88d83b230040558da847f59026c28e_108",
+   "title": "StoryMap - Urban vs Rural Air Quality - 2018 Annual NOₓ Emissions Data",
+   "publisher": "Met Office",
+   "portal": "agol_met_office",
+   "landing_url": "https://hub.arcgis.com/datasets/6f88d83b230040558da847f59026c28e_108",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:48:21Z",
+   "resource": {
+    "url": "https://services.arcgis.com/Lq3V5RFuTBC9I7kv/arcgis/rest/services/NOx_ems_2018_join_converted/FeatureServer/108/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "national_highways:e0444975ad874f939b0b49b49af4d037_0",
+   "title": "National Highways Air Quality Annual Evaluation Report",
+   "publisher": "National Highways",
+   "portal": "national_highways",
+   "landing_url": "https://hub.arcgis.com/datasets/e0444975ad874f939b0b49b49af4d037_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:39:04Z",
+   "resource": {
+    "url": "https://services-eu1.arcgis.com/mZXeBXkkZpekxjXT/arcgis/rest/services/AERFeatureClassv3/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "national_highways:f4394ac77da9452085936bfb4514732f_0",
+   "title": "National Highways Annual Evaluation Report Diffusion Tube Data",
+   "publisher": "National Highways",
+   "portal": "national_highways",
+   "landing_url": "https://hub.arcgis.com/datasets/f4394ac77da9452085936bfb4514732f_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:39:04Z",
+   "resource": {
+    "url": "https://services-eu1.arcgis.com/mZXeBXkkZpekxjXT/arcgis/rest/services/DiffusionFeatureClass/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "national_highways:bf855d614e854ab89b988b54746dc147_0",
+   "title": "National Highways National Air Quality Monitoring Network Report 2022",
+   "publisher": "National Highways",
+   "portal": "national_highways",
+   "landing_url": "https://hub.arcgis.com/datasets/bf855d614e854ab89b988b54746dc147_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:39:04Z",
+   "resource": {
+    "url": "https://services-eu1.arcgis.com/mZXeBXkkZpekxjXT/arcgis/rest/services/National_Air_Quality_Monitoring_Network__NAQMN__20221/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "national_highways:5991bfc8c34f4d5db5b0384ad371e500_0",
+   "title": "National Highways National Air Quality Monitoring Network Report Data",
+   "publisher": "National Highways",
+   "portal": "national_highways",
+   "landing_url": "https://hub.arcgis.com/datasets/5991bfc8c34f4d5db5b0384ad371e500_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:39:04Z",
+   "resource": {
+    "url": "https://services-eu1.arcgis.com/mZXeBXkkZpekxjXT/arcgis/rest/services/NAQMNv4/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "sheffield:https://www.arcgis.com/home/item.html?id=56a292d1d6de438c954044b2ea063118&sublayer=1",
+   "title": "Air Quality Diffusion Tubes",
+   "publisher": "Sheffield City Council",
+   "portal": "sheffield",
+   "landing_url": "https://sheffield-city-council-open-data-sheffieldcc.hub.arcgis.com/datasets/56a292d1d6de438c954044b2ea063118_1",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/56a292d1d6de438c954044b2ea063118?f=json",
+   "index_licence_raw": "SCC Environmental data released under the European Directive INSPIRE. By downloading this data you agree to be bound by the terms of the INSPIRE End U",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:22:36Z",
+   "resource": {
+    "url": "https://sheffield-city-council-open-data-sheffieldcc.hub.arcgis.com/api/download/v1/items/56a292d1d6de438c954044b2ea063118/csv?layers=1",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 7
+  },
+  {
+   "dataset_key": "data_gov_uk:8da223bc-ee23-4a51-974b-436e856799d2",
+   "title": "Sheffield Diffusion Tubes",
+   "publisher": "Sheffield City Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/sheffield-diffusion-tubes",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=8da223bc-ee23-4a51-974b-436e856799d2",
+   "index_licence_raw": "PSMA License Terms Apply. http://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/psma-licensing.html.",
+   "index_licence_norm": "OS PSMA Licence",
+   "index_harvested_at": "2026-09-06T14:21:01Z",
+   "resource": {
+    "url": "https://sheffieldcitycouncil.cloud.esriuk.com/server/rest/services/AGOL/INSPIRE/FeatureServer/1/query?outFields=*&where=1%3D1&f=geojson",
+    "name": "Diffusion Tubes GeoJSON",
+    "format": "GEOJSON"
+   },
+   "other_resources": 3
+  },
+  {
+   "dataset_key": "agol_transport_for_west_midlands:750bd4ca1e3b41f8b47020d9045e7c61_28",
+   "title": "Air Quality Monitors Hourly Measures",
+   "publisher": "Transport for West Midlands",
+   "portal": "agol_transport_for_west_midlands",
+   "landing_url": "https://hub.arcgis.com/datasets/750bd4ca1e3b41f8b47020d9045e7c61_28",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:42:35Z",
+   "resource": {
+    "url": "https://services8.arcgis.com/pyZO1twqdVI0YIld/arcgis/rest/services/Air_Quality_Monitors_Hourly_Measures/FeatureServer/28/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "datamap_wales:767a8f53-0aa1-4f57-8202-ca808047b1aa",
+   "title": "Air Quality data - NO2 (2016)",
+   "publisher": "Welsh Government",
+   "portal": "datamap_wales",
+   "landing_url": "https://datamap.gov.wales/layers/inspire-wg:aq_mapno22016g_grid",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:26:48Z",
+   "resource": {
+    "url": "https://datamap.gov.wales/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=inspire-wg:aq_mapno22016g_grid&outputFormat=csv",
+    "name": "CSV (WFS)",
+    "format": "CSV"
+   },
+   "other_resources": 4
+  },
+  {
+   "dataset_key": "wiltshire:https://www.arcgis.com/home/item.html?id=57179bd9fed144b3a8d1d5fb9b5df81d&sublayer=8",
+   "title": "NOx Diffusion Tubes",
+   "publisher": "Wiltshire Council",
+   "portal": "wiltshire",
+   "landing_url": "https://wiltshire-council-open-data-hub-wiltscouncil.hub.arcgis.com/datasets/WiltsCouncil::nox-diffusion-tubes",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/57179bd9fed144b3a8d1d5fb9b5df81d?f=json",
+   "index_licence_raw": "EU INSPIRE End User Licence | OS Licensing | OS Open Government Licence",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:51Z",
+   "resource": {
+    "url": "https://wiltshire-council-open-data-hub-wiltscouncil.hub.arcgis.com/api/download/v1/items/57179bd9fed144b3a8d1d5fb9b5df81d/csv?layers=8",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 6
+  }
+ ],
+ "skipped": [
+  {
+   "key": "data_gov_uk:56afd793-cf3f-4dac-aaa8-ae4c86194263",
+   "title": "Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:4bcb7055-75f9-480a-8892-e618b033f90f",
+   "title": "Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?",
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:de8c83b2-5bb4-4e4b-9941-ed0fe0b0e352",
+   "title": "BCKLWN Local Air Quality Monitoring",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "bristol:https://www.arcgis.com/home/item.html?id=3fbadb9fb78d48e0bd9d895324dd7e05&sublayer=0",
+   "title": "Air quality monitors",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:42b02dde-921c-42c2-a59f-0f2e6c9b1ebc",
+   "title": "Air Quality Monitoring",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?",
+    "HTML",
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:3d5d2a0f-5863-4997-be1a-d01b5d65a902",
+   "title": "NO2 Tube Locations and Data",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:137fb6f9-7579-4d76-963d-7c3d961d5b98",
+   "title": "Air Quality Continuous Assessment No2",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?",
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:d3c26cea-e817-4176-bb89-d18b041f6c73",
+   "title": "Local Air Quality Monitoring - Continuous Assessment",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:a9b91cc7-6045-466f-9153-85b2effb3a7b",
+   "title": "Local Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "datamillnorth:v8gl3",
+   "title": "Air Quality Monitors",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "datamillnorth:vdm8m",
+   "title": "Nitrogen Dioxide Diffusion Tube Network",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:ce0b0270-2509-47e4-825e-b350afd6aa86",
+   "title": "Air Quality Monitoring",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:88721875-659d-475f-b525-c6eba8149cb4",
+   "title": "East Riding of Yorkshire Local Air Quality Monitoring Stationsv1",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:b9148746-5c33-4684-b185-76a66e304bd2",
+   "title": "Local Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:adab085e-a8b7-40e9-90ac-2f0261bfd5bb",
+   "title": "Elmbridge Borough Council Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WFS",
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:79afd93f-3c9e-4bbe-a21e-4ca64cb0fa7d",
+   "title": "Modelled surface nitrogen dioxide (NO2) for the grassland growing season in the UK and USA in 2018",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?",
+    "ZIP"
+   ]
+  },
+  {
+   "key": "data_gov_uk:f985e3b4-2347-4d00-9dc4-78e97c7e4003",
+   "title": "Air Quality Monitoring Sites",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:fd82e721-7998-4569-8ad7-813c5ebcd25c",
+   "title": "Air Quality Monitoring Locations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "london_datastore:e66gp",
+   "title": "Air Quality Monitoring - Diffusion Tube Results",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:fa7d0771-7f70-48ca-b3e0-84c78b849c37",
+   "title": "Local Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "london_datastore:23n41",
+   "title": "Air Quality Monitoring Sites",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:ed4da4b2-28fb-4068-a738-24ce8f449541",
+   "title": "Harrogate District Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:55979e1d-1a59-41f1-9dee-3f139cc4f1b3",
+   "title": "Kirklees Local air quality monitoring stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WFS",
+    "WMS"
+   ]
+  },
+  {
+   "key": "agol_lancaster_city_council:b681f320f980420696c95c85310c98c3",
+   "title": "Air Quality Monitors 2023",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "datamillnorth:epxwd",
+   "title": "Air Quality Monitoring Sites",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "datamillnorth:e1dok",
+   "title": "Air quality - nitrogen dioxide",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "datamillnorth:2lxkx",
+   "title": "Leeds annual nitrogen dioxide diffusion tube data",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "datamillnorth:2rl0m",
+   "title": "Ratified air quality - nitrogen dioxide",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:7bbc578c-f2a3-4c53-beb4-5f7f6917fcb3",
+   "title": "Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:58682f1e-076b-468c-80ad-b134792c2984",
+   "title": "Air Quality Monitoring Diffusion Tube",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "camden:https://opendata.camden.gov.uk/api/views/bmrm-k7pv",
+   "title": "Camden Air Quality Monitoring",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:fc298da6-6462-42b0-b8fd-0f3f89168faf",
+   "title": "Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:ad3cfc84-4cf4-4113-a6a5-968f45f19f1a",
+   "title": "Air Quality Monitoring Zone",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "XML"
+   ]
+  },
+  {
+   "key": "data_gov_uk:7d8e1bfc-ba2f-4b0d-93bb-36a211f2aed7",
+   "title": "Air Quality Monitoring",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?",
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:22aedbec-6fa7-45a7-bfa1-39c565c98c2a",
+   "title": "Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:0220652a-d3de-464a-9dbf-453f548a072b",
+   "title": "Diffusion Tube Sites 2012",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:af1a51de-be6c-4d89-99f7-ead536661654",
+   "title": "Air Quality Monitors",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:3c140a0f-97ec-4448-96bf-655096b802b9",
+   "title": "North Lincolnshire Council Air monitoring - Diffusion Tubes",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:2deaa250-5856-42e4-871e-8077b575c146",
+   "title": "Air Quality Monitoring Sites",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:8ee2fe32-6f07-4029-9746-7990c56f5a05",
+   "title": "Air Quality Monitors",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:66351fd8-f960-4f11-91f7-6bc5bfd34cd4",
+   "title": "Air quality - nitrogen dioxide",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:aa1b95d0-69e5-4ef9-a282-ba89b68e68fb",
+   "title": "Leeds annual nitrogen dioxide diffusion tube data",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:a103698d-74ed-4e7b-9561-ab5712e0cdac",
+   "title": "Nitrogen Dioxide Diffusion Tube Network",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:26357d93-c0e5-44ca-b314-1c10bb39dda0",
+   "title": "Ratified air quality - nitrogen dioxide",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:097f0839-b7f6-418f-8067-4192da7d94ed",
+   "title": "Local Air Quality monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "agol_port_of_london_authority:7edef3d1876848fa8b8d51f06cd71a6c_0",
+   "title": "Air Quality Monitoring Sites",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:9c31ee7c-23b5-41b4-acfd-15cabbda9267",
+   "title": "Air Quality Monitoring Sites",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:15e22b84-a640-4487-8ed8-e46adc753e75",
+   "title": "Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:94452046-4935-4b32-9348-f0c8389d0bd3",
+   "title": "Nitrogen Dioxide Diffusion Tube Sites",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:46a297da-be97-4c83-9c8f-6b48c35d6fd6",
+   "title": "Sandwell MBC Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:41875668-35ea-4e6b-8a73-593797a66c6f",
+   "title": "Sandwell MBC Continuous Air Quality Assessment -Annual Mean Pollutant Concentrations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:8df1030a-73bf-4ce4-a804-d9208ed702df",
+   "title": "Diffusion Tubes",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "sheffield:https://www.arcgis.com/home/item.html?id=262b6ba6659c420a8e0d59ae699c8c22&sublayer=8",
+   "title": "Air Quality Real-Time Monitors",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:52f90759-17ea-4fc1-ba26-033c0b5595e0",
+   "title": "Shepway District Council Local Air Quality Monitoring Sites",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:c0f92b97-4986-445f-9d3a-ed2562e21d63",
+   "title": "Air Quality Monitoring Area",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:393d0fdd-b1a3-4a0e-9747-948ecb8832ae",
+   "title": "Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WFS",
+    "WMS"
+   ]
+  },
+  {
+   "key": "spatialdata_scot:46855370-93F6-42DB-87DB-339052CF7068",
+   "title": "Aberdeen Air Quality - NO2 Diffusion Tubes",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:51da5eee-b231-4650-b792-14a7983a4a61",
+   "title": "Air Quality Monitoring Sites",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:75eca84f-fc02-4282-8031-0df3d203b762",
+   "title": "Air Quality Monitors",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:cc697c2e-6d63-49a1-913f-eaf239797250",
+   "title": "Air quality - nitrogen dioxide",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:523ff42a-ac6a-4b70-af73-98437aae0fe0",
+   "title": "Leeds annual nitrogen dioxide diffusion tube data",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:43d04eef-5b3c-4a84-b8e6-8f0589b45bd7",
+   "title": "Nitrogen Dioxide Diffusion Tube Network",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:33900c5e-dd4f-4f56-9450-afd4227f6a4a",
+   "title": "Ratified air quality - nitrogen dioxide",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:e802cd8a-d750-4f9a-8830-ca3e05714a02",
+   "title": "Air Quality Monitors",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:d415671e-5ae7-4c57-8634-22b94c2f957d",
+   "title": "NOx Air Quality Monitoring Tubes",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:c3064198-6259-489a-a7e3-82760e3b9ace",
+   "title": "Air Quality Monitoring Sites",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:f1fe1f60-84d1-4fc8-ba56-7bd2b9d6121d",
+   "title": "Air Quality Monitors",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:ba84d788-b5e8-4b05-bc95-160341caa630",
+   "title": "Air quality - nitrogen dioxide",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:cb50f181-94cd-4742-a5a8-15d925be63b3",
+   "title": "Leeds annual nitrogen dioxide diffusion tube data",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:7ec4d8f9-41e8-4668-a8f3-be78ca3507da",
+   "title": "Nitrogen Dioxide Diffusion Tube Network",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:fe2749de-cc5c-471d-8b60-4a5361d191f3",
+   "title": "Ratified air quality - nitrogen dioxide",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:bb187a95-fb40-4c65-8405-2a500f68c9b7",
+   "title": "Local Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:d62a11bb-8ecf-430f-bab0-cce63c6d0755",
+   "title": "Wiltshire Council - NOx Diffusion Tubes",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "MULTIPLE"
+   ]
+  },
+  {
+   "key": "data_gov_uk:3a4ff75c-5567-482f-88b5-bacda1a5d1d6",
+   "title": "Current Air Quality Monitoring Stations",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS",
+    "XML"
+   ]
+  },
+  {
+   "key": "lambeth:https://www.arcgis.com/home/item.html?id=261ac4c0d4874f3d8eab6a7f3336d7da&sublayer=0",
+   "title": "Air Quality Monitoring Sites",
+   "why": "title matches exclusion"
+  }
+ ]
+}

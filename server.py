@@ -983,6 +983,48 @@ def findings_page() -> HTMLResponse:
         headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
 
 
+
+# --- Dataset families: one table for a thing many bodies publish ---------------
+
+FAMILY_NAMES = {"recycling_centres", "air_quality_annual", "spend_over_500"}
+
+
+@app.get("/family/{name}", include_in_schema=False)
+def family_page(name: str) -> Response:
+    """A combined table, built nightly by families/build.py from reviewed
+    mappings only. Rendered from the build's own summary, so the page can
+    never claim a row the build did not produce."""
+    import familypage
+    html_out = familypage.render_family(name, SITE_URL) if name in FAMILY_NAMES else None
+    if html_out is None:
+        return HTMLResponse(pagerender.render_missing(name, what="page"), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    return HTMLResponse(html_out, headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
+@app.get("/api/family/{name}", summary="A dataset family as one table",
+         description="Every published row of a family table with its receipts: publisher, "
+                     "source URL and SHA-256, source row, licence id and URL, licence evidence "
+                     "hash. Append .csv for CSV. Families: recycling_centres, "
+                     "air_quality_annual, spend_over_500.")
+def api_family(request: Request, response: Response, name: str) -> Response:
+    _rate_check(request, response)
+    import familypage
+    want_csv = name.endswith(".csv")
+    fam = name[:-4] if want_csv else name
+    if fam not in FAMILY_NAMES or familypage.load(fam) is None:
+        raise HTTPException(status_code=404, detail="Unknown family")
+    out = familypage.STORE / fam
+    if want_csv:
+        return FileResponse(out / f"{fam}.published.csv", media_type="text/csv; charset=utf-8",
+                            filename=f"{fam}.csv",
+                            headers={"Cache-Control": "public, max-age=3600"})
+    summary = familypage.load(fam)
+    return JSONResponse({"family": fam, "label": summary["label"], "built_at": summary["built_at"],
+                         "rows": familypage.published_rows(fam), "sources": summary["sources"],
+                         "attribution": ATTRIBUTION},
+                        headers={"Cache-Control": "public, max-age=3600"})
+
 @app.get("/topics", include_in_schema=False)
 def topics_page() -> HTMLResponse:
     return HTMLResponse(
@@ -1086,8 +1128,10 @@ def who_publishes(name: str = Query(default="", max_length=300)) -> HTMLResponse
     # accepted any casing and self-canonicalised, so every variant was its
     # own indexable page — unbounded duplicates of the same content.
     canonical = agg["shared_label"].get(slug, name)
+    import familypage
     return HTMLResponse(
-        pagerender.render_who(canonical, rows, SITE_URL),
+        pagerender.render_who(canonical, rows, SITE_URL,
+                              family=familypage.family_for_title(canonical)),
         headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
 
 

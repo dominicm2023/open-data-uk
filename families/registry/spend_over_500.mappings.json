@@ -1,0 +1,174 @@
+{
+  "e7e4bb2c53fa19137a9bf142a3c2a65bbcb46bbbaf41b9569e3a43ba5bdf2420": {
+    "status": "proposed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "payment_date": "Transaction Date",
+      "supplier": "Supplier Name Published",
+      "amount_gbp": "Amount Published",
+      "expense_area": "Expense Area Published",
+      "expense_type": "Expense Type Published",
+      "description": "Expense Description published for admin spend above £25,000 only"
+    },
+    "constants": {
+      "threshold_gbp": 500,
+      "body": "Department for International Development"
+    },
+    "notes": "Used the recorded row-0 header, which gives clean full column names. But sample_rows show, right after it, a month-label line ('Apr-12', mostly blank) and then a second, messier repeated header line ('Supplier Name\\n', 'Amount ', 'Expenses Type \\n' appearing twice, trailing newlines) before real data resumes at 'DFID, DFID, 11/04/2012...'. This looks like a file made by concatenating monthly export blocks, each carrying its own divider/header lines as literal rows. A naive header_row=0 read will pull in these divider and repeated-header rows as fake data throughout the file (this pattern likely repeats every month) — reviewer/build step must filter out embedded label and header-repeat rows before loading. 'description' is only populated for admin spend above £25,000, so it will be sparse/mostly empty.",
+    "version": "1"
+  },
+  "420e4dfec39b7560c4f8c1bda2106b2403f53bbb97b2c40f9bb6020ca5e8d1e4": {
+    "status": "proposed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "payment_date": "Allocation Date",
+      "supplier": "Supplier",
+      "amount_gbp": "Amount in Sterling",
+      "expense_area": "Expense Area",
+      "expense_type": "Expense type",
+      "reference": "Transaction Number"
+    },
+    "constants": {
+      "threshold_gbp": 500,
+      "body": "Equality and Human Rights Commission"
+    },
+    "notes": "'Allocation Date' is the only date column available; mapped to payment_date but it may represent an allocation/posting date rather than the actual payment date — reviewer should confirm.",
+    "version": "1"
+  },
+  "61082d3b945a710929a8afb45534c638cbedc5bd5b0da7da086d76b0d2e08d89": {
+    "status": "proposed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "payment_date": "payment_date",
+      "supplier": "beneficiary",
+      "amount_gbp": "amount",
+      "expense_area": "department",
+      "expense_type": "merchant_category",
+      "reference": "unique_id",
+      "description": "purpose_of_expenditure"
+    },
+    "constants": {
+      "threshold_gbp": 500,
+      "body": "Leicester City"
+    },
+    "notes": "'amount' appears to be the net (pre-VAT) figure — sample rows show a separate 'vat' column at ~20% of 'amount' (e.g. amount 1960.0, vat 392.0). 'vat' and 'vat_code' are not mapped, per the rule against folding VAT into amount_gbp. 'beneficiary' is sometimes 'Redacted' in the sample rows; kept as published.",
+    "version": "1"
+  },
+  "950a0eb554e268731a52bd54a0522851c484878c05e4b44272b46e070a8b7f54": {
+    "status": "proposed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "payment_date": "Date of Payment",
+      "supplier": "Supplier",
+      "amount_gbp": "Amount in Sterling",
+      "expense_area": "Expense Area",
+      "expense_type": "Expense Type",
+      "reference": "Transaction number"
+    },
+    "constants": {
+      "threshold_gbp": 500,
+      "body": "Ministry of Housing, Communities and Local Government"
+    },
+    "notes": "Clean, single-header table; no issues noted.",
+    "version": "1"
+  },
+  "1ba80a36fb5ae80e4ffccb4eed076ccc6823c56e6f1b2efd8604dff69adf450c": {
+    "status": "proposed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "payment_date": "Date",
+      "supplier": "Supplier Name",
+      "amount_gbp": "Amount",
+      "expense_area": "Service label",
+      "expense_type": "Detailed Expenses type",
+      "reference": "Transaction Number"
+    },
+    "constants": {
+      "threshold_gbp": 500,
+      "body": "Plymouth City Council"
+    },
+    "notes": "Table also carries 'Organisational unit' (a directorate-level field, e.g. 'People Directorate') and 'Expenditure category' (a broader category than 'Detailed Expenses type', e.g. 'Supplies and Services') — only one column each is allowed for expense_area/expense_type, so these two were left unmapped; reviewer should check whether they'd be preferred over 'Service label'/'Detailed Expenses type'. 'Capital/\\nRevenue' and 'Supplier ID' also unmapped, no schema slot for them.",
+    "version": "1"
+  },
+  "c6c424dd880387e6be0a6acb0d0d1019472f080bd6d80aaf8b4d2882d47f9fe2": {
+    "status": "rejected",
+    "reject": "Every sample row has 'Supplier Name' populated as 'BARCLAYCARD PROCUREMENT CARD' with the same 'Voucher' number, split across many small (including negative) amounts by expense type/area — this is a procurement-card (GPC) statement broken out by spend category, not supplier-level payment lines."
+  },
+  "72175dccca39317a7c9c1ffc062126da64e95bfa8be0e9ae282f425b7c3eb11e": {
+    "status": "proposed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "payment_date": "Payment Date",
+      "supplier": "Supplier",
+      "amount_gbp": "Amount"
+    },
+    "constants": {
+      "threshold_gbp": 500,
+      "body": "Royal Borough of Greenwich"
+    },
+    "notes": "Minimal 3-column table (Supplier, Payment Date, Amount only); no expense_area/expense_type/reference/description/period available.",
+    "version": "1"
+  },
+  "aaaccba426aa5dc5457beb961c1450997e9e8d4283ebb208cd0a656d44e08e67": {
+    "status": "proposed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "payment_date": "Payment Date",
+      "supplier": "Supplier",
+      "amount_gbp": "Amount"
+    },
+    "constants": {
+      "threshold_gbp": 500,
+      "body": "Royal Borough of Greenwich"
+    },
+    "notes": "Minimal 3-column table (Supplier, Payment Date, Amount only), same shape as the other Greenwich source in this family; no expense_area/expense_type/reference/description/period available.",
+    "version": "1"
+  },
+  "96b0ed3d29dc9c851645931d1c19da57798a8c23405ed80a0fddba0bab71cc70": {
+    "status": "proposed",
+    "table": 1,
+    "header_row": 2,
+    "columns": {
+      "payment_date": "PAYMENT_DATE",
+      "supplier": "SUPPLIER_NAME",
+      "amount_gbp": "INVOICE_AMOUNT",
+      "expense_area": "EXPENSE_AREA",
+      "expense_type": "NAC_DESCRIPTION",
+      "reference": "PAYMENT_NUMBER",
+      "description": "Service provided"
+    },
+    "constants": {
+      "threshold_gbp": 500,
+      "body": "Wales Office"
+    },
+    "notes": "File starts with a title line ('Wales Office spend over £500', 'May-10' ...) at row 0, a blank row at row 1, then the real header (ENTITY, EXPENSE_AREA, PAYMENT_DATE, PAYMENT_NUMBER, SUPPLIER_NAME, INVOICE_AMOUNT, NAC_DESCRIPTION, Service provided) at row 2 — header_row set to 2 accordingly. Reviewer should confirm the blank-row count is consistent for other months' files in this same series if more get added later.",
+    "version": "1"
+  },
+  "bb1de01354561410818f817c8def9bf5889d336502fcc46b37daf231b7162f74": {
+    "status": "proposed",
+    "table": 1,
+    "header_row": 1,
+    "columns": {
+      "payment_date": " Paid Date",
+      "supplier": "Supplier Name",
+      "amount_gbp": "Paid Amount",
+      "expense_area": " Department",
+      "expense_type": "Cost Centre",
+      "reference": "Transaction Number",
+      "description": "Description"
+    },
+    "constants": {
+      "threshold_gbp": 500,
+      "body": "Wirral Metropolitan Borough Council"
+    },
+    "notes": "File starts with a title line ('Payments for Publishing for Invoices paid between 01-SEP-2022 and 30-SEP-2022') at row 0, real header at row 1 — header_row set to 1 accordingly. Note the exact header text for payment_date and expense_area carries a leading space (' Paid Date', ' Department') in the source. 'Cost Centre' holds a code (e.g. 'D2510'), not a text description, but it is the only expense-type-like field available; reviewer should sanity-check this choice. 'Irrecoverable VAT' is present but not mapped to amount_gbp, per the rule against folding VAT into the payment amount.",
+    "version": "1"
+  }
+}

@@ -36,12 +36,24 @@ preserved.
 
 ## Licence: explicit or nothing
 
-Admit a source only on an explicit Open Government Licence v1–3 stated on
-the record or resource. Generic `uk-ogl`, unknown, custom, conflicting or
-missing terms do not pass. Resource-level restrictions override dataset-
-level permission. Save the licence evidence by hash at fetch time. The
-combined table carries the attribution line OGL requires, naming every
-contributing publisher.
+Admit a source only on an Open Government Licence stated unambiguously on
+the record or resource. Custom, restrictive, unknown, conflicting or missing
+terms do not pass. Resource-level restrictions override dataset-level
+permission. Save the licence evidence by hash at fetch time. The combined
+table carries the attribution line OGL requires, naming every contributing
+publisher.
+
+**Why "unambiguously" and not "with a version" (changed 6 September, first
+full run).** The first rule required an explicit version and refused 32 of
+60 spend-over-£500 returns on data.gov.uk's own identifier — `license_id`
+`uk-ogl`, url `reference.data.gov.uk/id/open-government-licence` — which
+names the OGL and no version. The National Archives states that material
+licensed under any earlier OGL version may be used under the v3 terms; the
+versions are compatible by design. So a versionless OGL is not an unknown
+licence, it is the OGL, and the thing admission must establish is that the
+statement *is* the OGL rather than a custom or restrictive licence. That
+test is unchanged. The exact statement is kept as evidence and the version
+recorded as stated, or "unstated (v3 terms apply)".
 
 **Personal data is a separate decision from licence.** OGL excludes it.
 Senior-salary returns name people by statute; republishing those names in a
@@ -130,3 +142,25 @@ Every claim ships with its query. Nulls are published as findings. Named
 companies require eyeballed variant matches. Nothing is published outward
 without Dominic's approval per item. Pages are self-contained. And the
 original link is always there, first.
+
+## Status, 6 September 2026
+
+Built and live. `families/registry.py` → `intake.py` → `brief.py` → (proposals)
+→ `check_mappings.py` → `build.py`; served by `familypage.py` at
+`/family/<name>` and `/api/family/<name>[.csv]`; nightly in `refresh.sh`.
+
+| family | registry | extracted | reviewed & published |
+|---|---|---|---|
+| recycling_centres | 30 sources | 10 | 7 sources, 75 rows, 6 bodies |
+| air_quality_annual | 51 | 28 | 13 sources, 13,479 rows, 3 bodies |
+| spend_over_500 | 60 | in progress | 9 proposed, awaiting review |
+
+Things the first day taught, now rules in the code: Northern Ireland bodies
+publish on the Irish Grid or Irish Transverse Mercator, never BNG, and the
+easting tells the two apart; a publisher's malformed postcode is nulled with
+a note rather than costing the row; a year column can hold a reporting
+period ("2010/2011") and is kept as the first year with a qualifier; a
+published annual mean of exactly 0 is a placeholder; concatenated monthly
+returns repeat their header and drop one-cell dividers; data.gov.uk
+resources marked CSV are often HTML pages, so the intake tries ranked
+candidates; and a source's last good snapshot outlives a failed re-fetch.

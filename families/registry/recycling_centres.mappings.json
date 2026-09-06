@@ -1,0 +1,136 @@
+{
+ "a3ec62935a7162ea83b5ed15456380f130e5b73a4058df6d852f27511679215b": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "NAME",
+   "address": "ADDRESS",
+   "postcode": "POSTCODE",
+   "lon": "LONGITUDE",
+   "lat": "LATITUDE"
+  },
+  "constants": {},
+  "notes": "Clean 5-column table, one row per recycling centre. No operator, opening_hours, materials, status, or as_of published, so those are left out. Review: Preview of all 7 sources inspected: 75 rows, coordinates land in the right places (Tadcaster LS24 9SG, Portrush BT56 8AD via ITM, Fermanagh WGS84), one malformed Moray postcode nulled with a note.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "f39eda6553ca25f206edbf9470ab1b18efaf53f8472ad2ccb6cd3b80920a7ec7": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "NAME",
+   "address": "ADDRESS",
+   "postcode": "POSTCODE",
+   "lon": "LONGITUDE",
+   "lat": "LATITUDE"
+  },
+  "constants": {},
+  "notes": "Civic amenity sites are explicitly within this family's scope. Same 5-column layout as Belfast's separate recycling-centres dataset (job a3ec6293...); no overlap check was done between the two, a reviewer may want to dedupe at build time. Review: Preview of all 7 sources inspected: 75 rows, coordinates land in the right places (Tadcaster LS24 9SG, Portrush BT56 8AD via ITM, Fermanagh WGS84), one malformed Moray postcode nulled with a note.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "056681438e9e1e1d7fe61708dfe9d4c7f509ede20a68403b390256ee3d118ff8": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "Name",
+   "address": "Address",
+   "postcode": "Postcode",
+   "easting": "X",
+   "northing": "Y",
+   "materials": "Materials"
+  },
+  "constants": {},
+  "notes": "X/Y sample values (e.g. 683290.5, 916659.4) are British National Grid eastings/northings despite the generic header names, so mapped to easting/northing, not lon/lat. 'Type_' (values like 'Recycling Site'/'Recycling Centre') is a facility-type label, not an open/closed/temporary status, so left unmapped; 'Town', 'Image_', 'Link', 'Comments', and the OBJECTID columns are also left unmapped as they have no clear schema slot. Reviewer: X/Y are Irish Grid (Northern Ireland), not BNG; converted as such. Review: Preview of all 7 sources inspected: 75 rows, coordinates land in the right places (Tadcaster LS24 9SG, Portrush BT56 8AD via ITM, Fermanagh WGS84), one malformed Moray postcode nulled with a note.",
+  "version": "1",
+  "grid": "irish",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "8612b2ff722df8b554c5b0910eba767e9b6775f654a50d9fb0163cb5e0511f8e": {
+  "status": "rejected",
+  "reject": "This is a customer satisfaction survey about the HWRC booking/visit experience (one row per survey respondent, columns are satisfaction ratings, booking method, and free-text feedback), not a list of recycling centre sites."
+ },
+ "a5c15151a60c2b1131930625af4704b4d362a1fc749aa7cc927302a592524d64": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "Site_Name",
+   "address": "Address",
+   "postcode": "Postcode ",
+   "lon": "X",
+   "lat": "Y",
+   "materials": "Materials_Accepted"
+  },
+  "constants": {},
+  "notes": "Despite being named X/Y, sample values (e.g. -7.36, 54.18) are decimal-degree longitude/latitude within UK/NI range, not BNG, so mapped to lon/lat rather than easting/northing. The 'Postcode' header has a trailing space in the source ('Postcode ') and that exact text is used. 'Address 2' is left unmapped since address must be a single column and cannot be concatenated. Opening hours are split across seven separate day-of-week columns (Monday..Sunday) with no single opening_hours column, so opening_hours is left unmapped; a reviewer may want a bespoke step to combine these. Review: Preview of all 7 sources inspected: 75 rows, coordinates land in the right places (Tadcaster LS24 9SG, Portrush BT56 8AD via ITM, Fermanagh WGS84), one malformed Moray postcode nulled with a note.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "08e25346fbe5900645d47f9de9f7eb2b3e880ca30fe5b18c7ba4605d7700ed25": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "HWRC Site",
+   "address": "Address",
+   "postcode": "Postcode",
+   "lon": "Longitude",
+   "lat": "Latitude"
+  },
+  "constants": {},
+  "notes": "'Address 2', 'Town', and 'County' are left unmapped since address must be a single column and cannot be concatenated. Review: Preview of all 7 sources inspected: 75 rows, coordinates land in the right places (Tadcaster LS24 9SG, Portrush BT56 8AD via ITM, Fermanagh WGS84), one malformed Moray postcode nulled with a note.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "ca1885c9fd3dde7834677d6d32097fba9a81b45216860e6ccc69b8825012fe9e": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "recyc_name",
+   "address": "recyc_road",
+   "postcode": "recyc_post",
+   "lon": "recyc_lng",
+   "lat": "recyc_lat",
+   "opening_hours": "recyc_times"
+  },
+  "constants": {},
+  "notes": "'recyc_road' is street/road name only (e.g. 'Barhill Road'); the town is in a separate 'recyc_town' column, left unmapped since address must be a single column and cannot be concatenated. 'recyc_tele' (phone number) and 'recyc_id' have no schema slot and are left unmapped. Review: Preview of all 7 sources inspected: 75 rows, coordinates land in the right places (Tadcaster LS24 9SG, Portrush BT56 8AD via ITM, Fermanagh WGS84), one malformed Moray postcode nulled with a note.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "d70a5e7a3fc937e91d370d9da4869854a8ca6029fbcf9d666817a5ee2c7fc6b7": {
+  "status": "rejected",
+  "reject": "This is a bring-bank / recycling-point dataset (small container sites at supermarkets, car parks and foreshores, e.g. 'Cleator Moor Co-Op', 'Gosforth Main Car Park', 'Haverigg Foreshore'), with per-material Y/N flags (GLASS, CANS, PAPER, CARDBOARD, PLASTIC_BOTTLES) rather than a household waste recycling centre / civic amenity site."
+ },
+ "a917d66d966aca9e861dd918d5093eedea7d48c1bf0085a83dabc05cb41baf28": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "NAME",
+   "address": "ROADNAME",
+   "lon": "_lon",
+   "lat": "_lat"
+  },
+  "constants": {},
+  "notes": "Title confirms this is household waste recycling centres. The source gives both BNG EAST/NORTH and already-converted decimal-degree '_lon'/'_lat'; '_lon'/'_lat' are mapped directly to lon/lat to avoid a redundant conversion, and EAST/NORTH are left unmapped. 'LABEL' (e.g. 'Altham HWRC') duplicates NAME with an added HWRC suffix and 'URL' is a website link; neither has a schema slot so both are left unmapped. No postcode, operator, opening_hours, materials, status, or as_of is published. Review: Preview of all 7 sources inspected: 75 rows, coordinates land in the right places (Tadcaster LS24 9SG, Portrush BT56 8AD via ITM, Fermanagh WGS84), one malformed Moray postcode nulled with a note.",
+  "version": "1",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "46515cdf8cfbd28e9426d7e6eab11634bc85ac15d4bffff1197eb95c68e1e4df": {
+  "status": "rejected",
+  "reject": "This is a bring-bank / recycling-point dataset (containers at schools, churches and car parks, e.g. 'Croft Nursery School', 'Windmill Car Park'), with per-material Y/N flags (Clear_Glass, Green_Glass, Brown_Glass, Mixed, Cans_Tins, Textiles, Oil, Plastic, Litter, Carton_Tetrapak, Books, Paper, Shoes) rather than a household waste recycling centre / civic amenity site."
+ }
+}

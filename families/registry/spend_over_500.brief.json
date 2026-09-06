@@ -1,0 +1,964 @@
+{
+ "family": "spend_over_500",
+ "schema": {
+  "family": "spend_over_500",
+  "label": "Spend over £500",
+  "one_row_is": "one payment line as published in a body's transparency return",
+  "columns": [
+   {
+    "name": "body",
+    "type": "text",
+    "required": true,
+    "meaning": "the paying body, as the index names the publisher"
+   },
+   {
+    "name": "threshold_gbp",
+    "type": "integer",
+    "required": true,
+    "meaning": "the return's stated threshold: 500 or 250. Carried on every row because thresholds differ between bodies and a combined table must not imply one"
+   },
+   {
+    "name": "payment_date",
+    "type": "date",
+    "required": false,
+    "meaning": "ISO date; null if the source gives only a period"
+   },
+   {
+    "name": "period",
+    "type": "text",
+    "required": false,
+    "meaning": "the return's period label (e.g. '2024-25 Q1', 'April 2024') as published"
+   },
+   {
+    "name": "supplier",
+    "type": "text",
+    "required": true,
+    "meaning": "supplier name exactly as published — never normalised, never matched to another body's spelling by this family"
+   },
+   {
+    "name": "amount_gbp",
+    "type": "number",
+    "required": true,
+    "meaning": "the published amount; sign preserved (credits are negative if published so)"
+   },
+   {
+    "name": "expense_area",
+    "type": "text",
+    "required": false,
+    "meaning": "service/department as published"
+   },
+   {
+    "name": "expense_type",
+    "type": "text",
+    "required": false,
+    "meaning": "expense category as published"
+   },
+   {
+    "name": "reference",
+    "type": "text",
+    "required": false,
+    "meaning": "transaction/invoice reference as published"
+   },
+   {
+    "name": "description",
+    "type": "text",
+    "required": false,
+    "meaning": "free-text purpose as published"
+   }
+  ],
+  "provenance": [
+   "publisher",
+   "dataset_key",
+   "source_url",
+   "source_sha256",
+   "source_table",
+   "source_row",
+   "licence_id",
+   "licence_url",
+   "licence_evidence_sha256",
+   "licence_evidence_kind",
+   "adapter_version"
+  ],
+  "validation": {
+   "amount_abs_min": 0,
+   "amount_abs_max": 100000000,
+   "date_range": [
+    "2010-01-01",
+    "2026-12-31"
+   ]
+  },
+  "rules": [
+   "Supplier names are published text. Grouping two spellings as one supplier is an eyeballed decision made elsewhere, never here.",
+   "The threshold is read from the dataset title or the return's own header, and stored per row.",
+   "Amounts below the stated threshold are kept if the source published them; the threshold describes the return, not a filter we apply.",
+   "A VAT column, where present, is kept as published in 'description' context, not added to or subtracted from the amount.",
+   "Personal names appearing as suppliers are kept as published: the body published them under the transparency code."
+  ]
+ },
+ "sources": [
+  {
+   "job_id": "e7e4bb2c53fa19137a9bf142a3c2a65bbcb46bbbaf41b9569e3a43ba5bdf2420",
+   "publisher": "Department for International Development",
+   "title": "DFID aggregated monthly expenditure over £500 from April 2012",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/204000/aggregated-spend-500-2012.csv",
+   "licence": "OGL-UK",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department",
+      "Entity",
+      "Transaction Date",
+      "Supplier Name Published",
+      "Amount Published",
+      "Expense Type Published",
+      "Expense Area Published",
+      "Expense Description published for admin spend above £25,000 only",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Apr-12",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Department",
+       "Entity",
+       "Transaction Date",
+       "Supplier Name\n",
+       "Amount ",
+       "Expenses Type \n",
+       "Expenses Area\n",
+       "Expenses Type \n",
+       ""
+      ],
+      [
+       "DFID",
+       "DFID",
+       "11/04/2012",
+       "LONDON SCHOOL OF HYGIENE AND TR",
+       "£10,004",
+       "Aid Programme - Accountable Grant Payments",
+       "Asia, Caribbean and Overseas Territories",
+       "Aid Programme - Accountable Grant Payments",
+       ""
+      ],
+      [
+       "DFID",
+       "DFID",
+       "16/04/2012",
+       "THE ASHDEN AWARDS.",
+       "£10,000",
+       "Aid Programme - Accountable Grant Payments",
+       "Asia, Caribbean and Overseas Territories",
+       "Aid Programme - Accountable Grant Payments",
+       ""
+      ],
+      [
+       "DFID",
+       "DFID",
+       "19/04/2012",
+       "ACCESS HEALTH INTERNATIONAL",
+       "£13,939",
+       "Aid Programme - Accountable Grant Payments",
+       "Asia, Caribbean and Overseas Territories",
+       "Aid Programme - Accountable Grant Payments",
+       ""
+      ],
+      [
+       "DFID",
+       "DFID",
+       "23/04/2012",
+       "UNIVERSITY OF OXFORD",
+       "£1,313",
+       "Aid Programme - Accountable Grant Payments",
+       "Asia, Caribbean and Overseas Territories",
+       "Aid Programme - Accountable Grant Payments",
+       ""
+      ]
+     ],
+     "row_count": 22118,
+     "column_count": 9
+    }
+   ]
+  },
+  {
+   "job_id": "420e4dfec39b7560c4f8c1bda2106b2403f53bbb97b2c40f9bb6020ca5e8d1e4",
+   "publisher": "Equality and Human Rights Commission",
+   "title": "Spend over £500 in Equality and Human Rights Commission",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/85357/ehrc-spend-june11.csv",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department family",
+      "Entity",
+      "Allocation Date",
+      "Expense type",
+      "Expense Area",
+      "Supplier",
+      "Transaction Number",
+      "Amount in Sterling"
+     ],
+     "sample_rows": [
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "01/06/2011",
+       "Accommodation",
+       "Scotland - Directorate",
+       "Expotel",
+       "201106009",
+       "708.4"
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "01/06/2011",
+       "Accommodation",
+       "Wales Directorate",
+       "Expotel",
+       "201106010",
+       "808.99"
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "01/06/2011",
+       "Accommodation",
+       "Corporate Management - People",
+       "Expotel",
+       "201106011",
+       "976.43"
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "01/06/2011",
+       "Agency Staff",
+       "Corporate Management - Finance",
+       "Badenoch & Clark",
+       "iPOS Invoice 40256",
+       "785.05"
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "01/06/2011",
+       "Agency Staff",
+       "Corporate Management - Finance",
+       "Badenoch & Clark",
+       "iPOS Invoice 40257",
+       "1,046.74"
+      ],
+      [
+       "Government Equalities Office",
+       "Equality and Human Rights Commission",
+       "01/06/2011",
+       "Agency Staff",
+       "Corporate Management - Finance",
+       "Badenoch & Clark",
+       "iPOS Invoice 40258",
+       "1,308.42"
+      ]
+     ],
+     "row_count": 324,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "61082d3b945a710929a8afb45534c638cbedc5bd5b0da7da086d76b0d2e08d89",
+   "publisher": "Leicester City",
+   "title": "Expenditure exceeding £500 - 2026",
+   "portal": "leicester",
+   "format": "CSV",
+   "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2026/exports/csv",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "unique_id",
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "sample_rows": [
+      [
+       "39231",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "aql",
+       "Communication Equipment Lease / Rental",
+       "1960.0",
+       "392.0",
+       "",
+       "Communications Equipment Lease / Rental"
+      ],
+      [
+       "39234",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "Redacted",
+       "LCC External Barristers Fees",
+       "850.0",
+       "170.0",
+       "",
+       "Legal Fees & Charges"
+      ],
+      [
+       "39235",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "Redacted",
+       "LCC External Barristers Fees",
+       "1000.0",
+       "200.0",
+       "",
+       "Legal Fees & Charges"
+      ],
+      [
+       "39236",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "Redacted",
+       "LCC External Barristers Fees",
+       "1200.0",
+       "240.0",
+       "",
+       "Legal Fees & Charges"
+      ],
+      [
+       "39237",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "Redacted",
+       "LCC External Barristers Fees",
+       "601.29",
+       "0.0",
+       "",
+       "Legal Fees & Charges"
+      ],
+      [
+       "39240",
+       "2026-07-31",
+       "Corporate Resources & Support",
+       "Redacted",
+       "Translation/Interpretation Fees",
+       "956.0",
+       "0.0",
+       "",
+       "Management & Business & Administrative Services"
+      ]
+     ],
+     "row_count": 44224,
+     "column_count": 9
+    }
+   ]
+  },
+  {
+   "job_id": "950a0eb554e268731a52bd54a0522851c484878c05e4b44272b46e070a8b7f54",
+   "publisher": "Ministry of Housing, Communities and Local Government",
+   "title": "Spend over £500 in the Department for Communities and Local Government",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/5730/1773306.csv",
+   "licence": "OGL-UK",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department Family",
+      "Entity",
+      "Date of Payment",
+      "Expense Type",
+      "Expense Area",
+      "Supplier",
+      "Transaction number",
+      "Amount in Sterling"
+     ],
+     "sample_rows": [
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "12/05/2010",
+       "Advertising",
+       "Communities Group",
+       "G W S LTD",
+       "5106133651",
+       "975.25"
+      ],
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "12/05/2010",
+       "Agency Staff",
+       "Housing and Planning",
+       "REED SPECIALIST RECRUITMENT LTD",
+       "5106133344",
+       "1,439.38"
+      ],
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "12/05/2010",
+       "Agency Staff",
+       "Housing and Planning",
+       "REED SPECIALIST RECRUITMENT LTD",
+       "5106133537",
+       "846.39"
+      ],
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "12/05/2010",
+       "Agency Staff",
+       "Housing and Planning",
+       "REED SPECIALIST RECRUITMENT LTD",
+       "5106133659",
+       "914.73"
+      ],
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "12/05/2010",
+       "Agency Staff",
+       "Housing and Planning",
+       "REED SPECIALIST RECRUITMENT LTD",
+       "5106133673",
+       "697.07"
+      ],
+      [
+       "Communities & Local Government",
+       "DCLG",
+       "12/05/2010",
+       "Agency Staff",
+       "Housing and Planning",
+       "REED SPECIALIST RECRUITMENT LTD",
+       "5106133675",
+       "697.07"
+      ]
+     ],
+     "row_count": 1910,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "1ba80a36fb5ae80e4ffccb4eed076ccc6823c56e6f1b2efd8604dff69adf450c",
+   "publisher": "Plymouth City Council",
+   "title": "Council spend over £500",
+   "portal": "plymouth",
+   "format": "CSV",
+   "resource_url": "https://plymouth.thedata.place/dataset/9e9b0128-9095-4bde-b24b-d04e60789016/resource/4e120b86-ffc2-4a87-a9f3-5d70c7faf923/download/spend500march2015.csv",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Body Name",
+      "Body",
+      "Service label",
+      "Organisational unit",
+      "Expenditure category",
+      "Detailed Expenses type",
+      "Date",
+      "Transaction Number",
+      "Amount",
+      "Capital/\nRevenue",
+      "Supplier Name",
+      "Supplier ID"
+     ],
+     "sample_rows": [
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Core Assets",
+       "Transformation and Change",
+       "Supplies and Services",
+       "Purchase Of Materials",
+       "03/03/2015",
+       "Various",
+       "561.00",
+       "Revenue",
+       "Antalis Limited",
+       "32150"
+      ],
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Children`s & Educational Servi",
+       "People Directorate",
+       "Supplies and Services",
+       "Legal Agents",
+       "03/03/2015",
+       "PLY076356",
+       "720.00",
+       "Revenue",
+       "William Higginson",
+       "72189"
+      ],
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Adult Social Care",
+       "People Directorate",
+       "Third Party Payments",
+       "Nursing Respite Care  Private Contractor",
+       "03/03/2015",
+       "981035446",
+       "6,340.20",
+       "Revenue",
+       "St Annes Residential Home",
+       "75197"
+      ],
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Adult Social Care",
+       "People Directorate",
+       "Third Party Payments",
+       "Nursing Respite Care  Private Contractor",
+       "03/03/2015",
+       "981035454",
+       "3,414.00",
+       "Revenue",
+       "St Annes Residential Home",
+       "75197"
+      ],
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Capital",
+       "Place Directorate",
+       "Capital Expenditure",
+       "Advances  Loan",
+       "03/03/2015",
+       "PLY078378",
+       "25,670.00",
+       "Capital",
+       "Real Ideas Trading Ltd",
+       "115999"
+      ],
+      [
+       "Plymouth City Council",
+       "http://statistics.data.gov.uk/id/local-authority/00HG",
+       "Central Services",
+       "Executive Office",
+       "Supplies and Services",
+       "Grants To Other Bodies",
+       "03/03/2015",
+       "PLY078125",
+       "4,000.00",
+       "Revenue",
+       "Elburton Village Hall",
+       "63758"
+      ]
+     ],
+     "row_count": 5409,
+     "column_count": 12
+    }
+   ]
+  },
+  {
+   "job_id": "c6c424dd880387e6be0a6acb0d0d1019472f080bd6d80aaf8b4d2882d47f9fe2",
+   "publisher": "Queen Elizabeth II Conference Centre",
+   "title": "Spend over £500 at the Queen Elizabeth II Conference Centre",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/6209/175179416.csv",
+   "licence": "OGL-UK",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Department family",
+      "Entity",
+      "Entered On",
+      "Expense Type",
+      "Expense Area",
+      "Supplier Name",
+      "Voucher",
+      "SumOfAmount"
+     ],
+     "sample_rows": [
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "Travel",
+       "Interface",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "344.68"
+      ],
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "IT Equipment Maintenance",
+       "ITC Department",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "4189.48"
+      ],
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "Marketing",
+       "Commercial",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "-45"
+      ],
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "Internet & Telecomms",
+       "ITC Department",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "61.33"
+      ],
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "Travel",
+       "ITC Department",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "32"
+      ],
+      [
+       "Communities And Local Government",
+       "Queen Elizabeth II Conference Centre",
+       "13/04/2010",
+       "Maintenance",
+       "Operations",
+       "BARCLAYCARD PROCUREMENT CARD",
+       "11109",
+       "300.95"
+      ]
+     ],
+     "row_count": 74,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "72175dccca39317a7c9c1ffc062126da64e95bfa8be0e9ae282f425b7c3eb11e",
+   "publisher": "Royal Borough of Greenwich",
+   "title": "Royal Borough of Greenwich payments over £500 (Dec 2010 to Dec 2011)",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "http://www.royalgreenwich.gov.uk/download/downloads/id/842/december_2010_payments_over_500_csv.csv",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Supplier",
+      "Payment Date",
+      "Amount"
+     ],
+     "sample_rows": [
+      [
+       "1ST ACE SECURITY LTD",
+       "15/12/2010",
+       "2115"
+      ],
+      [
+       "4CHILDREN",
+       "14/12/2010",
+       "15750"
+      ],
+      [
+       "4CHILDREN",
+       "14/12/2010",
+       "18750"
+      ],
+      [
+       "4CHILDREN",
+       "29/12/2010",
+       "720"
+      ],
+      [
+       "A & B GLASS",
+       "14/12/2010",
+       "140999.28"
+      ],
+      [
+       "A G CARE LIMITED",
+       "03/12/2010",
+       "621.68"
+      ]
+     ],
+     "row_count": 3449,
+     "column_count": 3
+    }
+   ]
+  },
+  {
+   "job_id": "aaaccba426aa5dc5457beb961c1450997e9e8d4283ebb208cd0a656d44e08e67",
+   "publisher": "Royal Borough of Greenwich",
+   "title": "Royal Borough of Greenwich spending over £500",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "http://www.royalgreenwich.gov.uk/download/downloads/id/1161/february_2012_payments_over_and_pound500_csv.csv",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Supplier",
+      "Payment Date",
+      "Amount"
+     ],
+     "sample_rows": [
+      [
+       "1ST CALL ENVIRONMENTAL SERVICES LTD",
+       "03/02/2012",
+       "720.00"
+      ],
+      [
+       "1ST CONTAINERS (UK) LTD",
+       "29/02/2012",
+       "3285.00"
+      ],
+      [
+       "4CHILDREN",
+       "14/02/2012",
+       "11913.00"
+      ],
+      [
+       "A & B GLASS",
+       "13/02/2012",
+       "924.82"
+      ],
+      [
+       "A & B GLASS",
+       "13/02/2012",
+       "25186.58"
+      ],
+      [
+       "ABBLITTS SOLICITORS",
+       "29/02/2012",
+       "154021.20"
+      ]
+     ],
+     "row_count": 3061,
+     "column_count": 3
+    }
+   ]
+  },
+  {
+   "job_id": "96b0ed3d29dc9c851645931d1c19da57798a8c23405ed80a0fddba0bab71cc70",
+   "publisher": "Wales Office",
+   "title": "Spend over £500 in the Wales Office",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/214673/Wales-Office-spend-over-500-May-2010.csv",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Wales Office spend over £500",
+      "",
+      "May-10",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [],
+      [
+       "ENTITY",
+       "EXPENSE_AREA",
+       "PAYMENT_DATE",
+       "PAYMENT_NUMBER",
+       "SUPPLIER_NAME",
+       "INVOICE_AMOUNT",
+       "NAC_DESCRIPTION",
+       "Service provided"
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "4/5/2010",
+       "1000575",
+       "NATWEST ",
+       "1339.75",
+       "T&S (Claim Forms Only)",
+       "Wales Office corporate credit card charges "
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "6/5/2010",
+       "10026",
+       "ART WORKS",
+       "799",
+       "Porterage Costs",
+       "Transport of art works to London office"
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "11/5/2010",
+       "1000591",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "689.47",
+       "Official Cars - Hire Charges",
+       "Ministerial car hire charges"
+      ],
+      [
+       "Wales Office",
+       "Wales Office",
+       "11/5/2010",
+       "1000591",
+       "GOVERNMENT CAR & DESPATCH AGENCY",
+       "614.82",
+       "Official Cars - Hire Charges",
+       "Ministerial car hire charges"
+      ]
+     ],
+     "row_count": 25,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "bb1de01354561410818f817c8def9bf5889d336502fcc46b37daf231b7162f74",
+   "publisher": "Wirral Metropolitan Borough Council",
+   "title": "Wirral Expenditure Exceeding £500",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://www.wirral.gov.uk/media/14064/download?inline",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Payments for Publishing for Invoices paid between 01-SEP-2022 and 30-SEP-2022",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "sample_rows": [
+      [
+       "Supplier Name",
+       "Transaction Number",
+       " Paid Date",
+       "Paid Amount",
+       " Department",
+       "Cost Centre",
+       "Description",
+       "Irrecoverable VAT"
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "2198270",
+       "21/09/2022",
+       "1,285.06",
+       "Regeneration & Place",
+       "D2510",
+       "Hired or Contracted services",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "2198270",
+       "21/09/2022",
+       "9,495.65",
+       "Regeneration & Place",
+       "D2510",
+       "Hired or Contracted services",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "2194840",
+       "07/09/2022",
+       "9,736.55",
+       "Regeneration & Place",
+       "D4040",
+       "Cleaning & Domestic Supplies",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "2194840",
+       "07/09/2022",
+       "9,736.55",
+       "Regeneration & Place",
+       "D4040",
+       "Cleaning & Domestic Supplies",
+       ""
+      ],
+      [
+       "1 CALL BUSINESS SOLUTIONS LIMITED",
+       "2194840",
+       "07/09/2022",
+       "9,786.55",
+       "Regeneration & Place",
+       "D4040",
+       "Cleaning & Domestic Supplies",
+       ""
+      ]
+     ],
+     "row_count": 8031,
+     "column_count": 8
+    }
+   ]
+  }
+ ],
+ "instructions": "For each source, propose which source column supplies each schema column. Use the exact header text. Leave a schema column out if the source has nothing for it — never guess. If coordinates are eastings/northings, map them to 'easting' and 'northing' and build.py will convert. If a wide table has one column per year, give 'unpivot'. If the table is not this family at all (a different subject, a summary, a lookup), say so in 'reject' with a reason. Note anything a reviewer must check in 'notes'."
+}

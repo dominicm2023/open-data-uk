@@ -1,0 +1,30 @@
+{
+  "family": "spend_over_500",
+  "label": "Spend over £500",
+  "one_row_is": "one payment line as published in a body's transparency return",
+  "columns": [
+    {"name": "body", "type": "text", "required": true, "meaning": "the paying body, as the index names the publisher"},
+    {"name": "threshold_gbp", "type": "integer", "required": true, "meaning": "the return's stated threshold: 500 or 250. Carried on every row because thresholds differ between bodies and a combined table must not imply one"},
+    {"name": "payment_date", "type": "date", "required": false, "meaning": "ISO date; null if the source gives only a period"},
+    {"name": "period", "type": "text", "required": false, "meaning": "the return's period label (e.g. '2024-25 Q1', 'April 2024') as published"},
+    {"name": "supplier", "type": "text", "required": true, "meaning": "supplier name exactly as published — never normalised, never matched to another body's spelling by this family"},
+    {"name": "amount_gbp", "type": "number", "required": true, "meaning": "the published amount; sign preserved (credits are negative if published so)"},
+    {"name": "expense_area", "type": "text", "required": false, "meaning": "service/department as published"},
+    {"name": "expense_type", "type": "text", "required": false, "meaning": "expense category as published"},
+    {"name": "reference", "type": "text", "required": false, "meaning": "transaction/invoice reference as published"},
+    {"name": "description", "type": "text", "required": false, "meaning": "free-text purpose as published"}
+  ],
+  "provenance": ["publisher", "dataset_key", "source_url", "source_sha256", "source_table", "source_row", "licence_id", "licence_url", "licence_evidence_sha256", "licence_evidence_kind", "adapter_version"],
+  "validation": {
+    "amount_abs_min": 0,
+    "amount_abs_max": 100000000,
+    "date_range": ["2010-01-01", "2026-12-31"]
+  },
+  "rules": [
+    "Supplier names are published text. Grouping two spellings as one supplier is an eyeballed decision made elsewhere, never here.",
+    "The threshold is read from the dataset title or the return's own header, and stored per row.",
+    "Amounts below the stated threshold are kept if the source published them; the threshold describes the return, not a filter we apply.",
+    "A VAT column, where present, is kept as published in 'description' context, not added to or subtracted from the amount.",
+    "Personal names appearing as suppliers are kept as published: the body published them under the transparency code."
+  ]
+}

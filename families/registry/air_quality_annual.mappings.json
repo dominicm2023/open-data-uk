@@ -1,0 +1,369 @@
+{
+ "4ae3e5ffa454aef50fb67f65c404dbe5967514d92f50b5cf33adc3d80de4ee6e": {
+  "status": "rejected",
+  "reject": "Site locations and pollutant lists only, no concentration figures of any kind."
+ },
+ "a34632ffbb21701ff127d7c27f90ee9241511e7ae40e7ec2bfaf8aeb6dfab58d": {
+  "status": "rejected",
+  "reject": "Site locations only (coordinates, pollutants monitored, technique) - no concentration figures."
+ },
+ "8d63ca77b53985fba9c2f923fd942589e38a08a00673bf4cec3a11272819ec89": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "Site_ID",
+   "site_name": "Site_Name",
+   "site_type": "Site_Type",
+   "easting": "X",
+   "northing": "Y"
+  },
+  "version": "1",
+  "constants": {
+   "method": "diffusion_tube",
+   "pollutant": "NO2",
+   "unit": "µg/m³",
+   "bias_adjusted": true
+  },
+  "unpivot": {
+   "year_columns": [
+    "F2015_Mean",
+    "F2016_Mean",
+    "F2017_Mean",
+    "F2018_Mean",
+    "F2019_Mean",
+    "F2005_Mean",
+    "F2006_Mean",
+    "F2007_Mean",
+    "F2008_Mean",
+    "F2009_Mean",
+    "F2010_Mean",
+    "F2011_Mean",
+    "F2012_Mean",
+    "F2013_Mean",
+    "F2014_Mean",
+    "F2020_Mean",
+    "F2021_Mean",
+    "F2022_Mean",
+    "F2023_Mean",
+    "F2024_Mean",
+    "F2025_Mean"
+   ],
+   "key_to": "year",
+   "value_to": "annual_mean",
+   "id_columns": {}
+  },
+  "notes": "Neither pollutant nor unit is stated in this file's title or headers, so both are left unmapped for review. Values in the F<year>_Mean columns numerically match the BiasCorrectedAv(ug/m3) figures in the companion long-format table 'Diffusion Tubes Data' (job 2576f0551c3b0d488640115440f3fd33586704b98bd047cc61b4ccef52b09936) for the same SiteId/year, so these are almost certainly bias-corrected NO2 annual means in ug/m3 - reviewer should confirm and add pollutant=NO2, unit=ug/m3. XOS/YOS duplicate X/Y and are not mapped; AQMA, Relevant_E and Kerb are not part of this schema. Reviewer: Publisher description: 'Locations of diffusion tubes for monitoring NO2 levels in York, along with their latest available bias corrected annual mean values.' Unit: the F<year>_Mean values equal the long table's BiasCorrectedAv(ug/m3) for the same site/year (cross-checked). Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "ad97d7f13f0c8ca69fb953c8e49d69d64d6787fafb1ee9198ef4a7fa05d49242": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "KpiId",
+   "year": "Period",
+   "annual_mean": "Value"
+  },
+  "version": "1",
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³",
+   "site_name": "Blossom St/Holgate"
+  },
+  "notes": "This file is a single-site KPI series so KpiId (constant per file) is used as site_id and site_name is supplied as a constant from the title. 'Value' carries a trailing ' Number' suffix (e.g. '52.07 Number') that must be stripped before parsing as a number. 'Period' is a split year 'YYYY/YYYY' (e.g. 2010/2011); StartDate/EndDate show it runs 1 April to 31 March, i.e. a UK financial year, even though the dataset title says '(Calendar Year)' - the calendar year this annual mean should be attributed to is ambiguous and needs a reviewer decision on how to parse Period into a single year. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "935977b3fde0ef08f3ce7b96cd46cf7e436affb3372c2d561ba8345af8757075": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "KpiId",
+   "year": "Period",
+   "annual_mean": "Value"
+  },
+  "version": "1",
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³",
+   "site_name": "Fishergate/Paragon"
+  },
+  "notes": "This file is a single-site KPI series so KpiId (constant per file) is used as site_id and site_name is supplied as a constant from the title. 'Value' carries a trailing ' Number' suffix (e.g. '52.07 Number') that must be stripped before parsing as a number. 'Period' is a split year 'YYYY/YYYY' (e.g. 2010/2011); StartDate/EndDate show it runs 1 April to 31 March, i.e. a UK financial year, even though the dataset title says '(Calendar Year)' - the calendar year this annual mean should be attributed to is ambiguous and needs a reviewer decision on how to parse Period into a single year. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "917b7a42defe22a1b0f58fe715cea376ea89c158f615508b715ee1223151f9ac": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "KpiId",
+   "year": "Period",
+   "annual_mean": "Value"
+  },
+  "version": "1",
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³",
+   "site_name": "Fulford"
+  },
+  "notes": "This file is a single-site KPI series so KpiId (constant per file) is used as site_id and site_name is supplied as a constant from the title. 'Value' carries a trailing ' Number' suffix (e.g. '52.07 Number') that must be stripped before parsing as a number. 'Period' is a split year 'YYYY/YYYY' (e.g. 2010/2011); StartDate/EndDate show it runs 1 April to 31 March, i.e. a UK financial year, even though the dataset title says '(Calendar Year)' - the calendar year this annual mean should be attributed to is ambiguous and needs a reviewer decision on how to parse Period into a single year. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "e681410c304ea39dfd9afc69871d32de7d73182bfb53bc996ea772e06129e006": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "KpiId",
+   "year": "Period",
+   "annual_mean": "Value"
+  },
+  "version": "1",
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³",
+   "site_name": "Gillygate / LMW"
+  },
+  "notes": "This file is a single-site KPI series so KpiId (constant per file) is used as site_id and site_name is supplied as a constant from the title. 'Value' carries a trailing ' Number' suffix (e.g. '52.07 Number') that must be stripped before parsing as a number. 'Period' is a split year 'YYYY/YYYY' (e.g. 2010/2011); StartDate/EndDate show it runs 1 April to 31 March, i.e. a UK financial year, even though the dataset title says '(Calendar Year)' - the calendar year this annual mean should be attributed to is ambiguous and needs a reviewer decision on how to parse Period into a single year. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "1919c50eaa3ac04dfa5891528363a305eca459f7f46b9a5c36901a7d0da41935": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "KpiId",
+   "year": "Period",
+   "annual_mean": "Value"
+  },
+  "version": "1",
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³",
+   "site_name": "Lawrence St"
+  },
+  "notes": "This file is a single-site KPI series so KpiId (constant per file) is used as site_id and site_name is supplied as a constant from the title. 'Value' carries a trailing ' Number' suffix (e.g. '52.07 Number') that must be stripped before parsing as a number. 'Period' is a split year 'YYYY/YYYY' (e.g. 2010/2011); StartDate/EndDate show it runs 1 April to 31 March, i.e. a UK financial year, even though the dataset title says '(Calendar Year)' - the calendar year this annual mean should be attributed to is ambiguous and needs a reviewer decision on how to parse Period into a single year. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "1bca1dc0e2b9a18e86cf3c678cf6479f8ef30cf3568a68767d5dc22b236c757d": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "KpiId",
+   "year": "Period",
+   "annual_mean": "Value"
+  },
+  "version": "1",
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³",
+   "site_name": "Prices/Nunnery Lane"
+  },
+  "notes": "This file is a single-site KPI series so KpiId (constant per file) is used as site_id and site_name is supplied as a constant from the title. 'Value' carries a trailing ' Number' suffix (e.g. '52.07 Number') that must be stripped before parsing as a number. 'Period' is a split year 'YYYY/YYYY' (e.g. 2010/2011); StartDate/EndDate show it runs 1 April to 31 March, i.e. a UK financial year, even though the dataset title says '(Calendar Year)' - the calendar year this annual mean should be attributed to is ambiguous and needs a reviewer decision on how to parse Period into a single year. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "850e22a5dff0f455d613511fca3981cee35608a0b259ccce32d237461b5efd8c": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "KpiId",
+   "year": "Period",
+   "annual_mean": "Value"
+  },
+  "version": "1",
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³",
+   "site_name": "Rougier St/GHS"
+  },
+  "notes": "This file is a single-site KPI series so KpiId (constant per file) is used as site_id and site_name is supplied as a constant from the title. 'Value' carries a trailing ' Number' suffix (e.g. '52.07 Number') that must be stripped before parsing as a number. 'Period' is a split year 'YYYY/YYYY' (e.g. 2010/2011); StartDate/EndDate show it runs 1 April to 31 March, i.e. a UK financial year, even though the dataset title says '(Calendar Year)' - the calendar year this annual mean should be attributed to is ambiguous and needs a reviewer decision on how to parse Period into a single year. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "855a16beb64230a9ba15169d9bd042254ad33237bb9ea769e7db47dcd428e115": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "KpiId",
+   "year": "Period",
+   "annual_mean": "Value"
+  },
+  "version": "1",
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³",
+   "site_name": "Salisbury Terrace"
+  },
+  "notes": "This file is a single-site KPI series so KpiId (constant per file) is used as site_id and site_name is supplied as a constant from the title. 'Value' carries a trailing ' Number' suffix (e.g. '52.07 Number') that must be stripped before parsing as a number. 'Period' is a split year 'YYYY/YYYY' (e.g. 2010/2011); StartDate/EndDate show it runs 1 April to 31 March, i.e. a UK financial year, even though the dataset title says '(Calendar Year)' - the calendar year this annual mean should be attributed to is ambiguous and needs a reviewer decision on how to parse Period into a single year. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "2576f0551c3b0d488640115440f3fd33586704b98bd047cc61b4ccef52b09936": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "SiteId",
+   "site_name": "SiteName",
+   "year": "CalendarYear",
+   "annual_mean": "BiasCorrectedAv(ug/m3)"
+  },
+  "version": "1",
+  "constants": {
+   "unit": "µg/m³",
+   "bias_adjusted": true,
+   "method": "diffusion_tube",
+   "pollutant": "NO2"
+  },
+  "notes": "Table also carries Jan-Dec raw monthly readings and a BiasCorrectedAv(ppb) column; only the bias-corrected ug/m3 annual figure is mapped to annual_mean, and bias_adjusted=true follows directly from choosing that column. Pollutant is not explicitly named anywhere in this file - the ppb/ug/m3 bias-corrected columns and the borough's sibling NO2 diffusion-tube KPI datasets (CAN027 series) strongly suggest NO2, but it is left unmapped for reviewer confirmation. Header has a trailing unnamed empty column with no data. Reviewer: Publisher description: 'Nitrogen dioxide (NO2) diffusion tube data ... bias-corrected annual averages ... in both ppb and ug/m3'. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "f262b6c8ed407c844f76258660c8186c7d78cb8bf749c03c212f146a25c00f39": {
+  "status": "rejected",
+  "reject": "This is an aggregate policy KPI (the average of the maximum annual mean recorded across three separate areas of technical breach), not the annual mean concentration of a single monitoring site."
+ },
+ "e7cbebe1cd50b4a644ff73939ae2cf39f7de88652370f38316009a54c1b49315": {
+  "status": "rejected",
+  "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
+ },
+ "a4c45dc71a683f76a8cfb5bcce67b33287d8042b10c0ba0b2cd94128f5b047d2": {
+  "status": "rejected",
+  "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
+ },
+ "beb31ff89cd8411cb447f5e059214e065fea96b646c66ef73b41934afaa3df17": {
+  "status": "rejected",
+  "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
+ },
+ "436a6f72b0c2686c9673abf5ccdde00993e9f98e14e807772734e3b38a626616": {
+  "status": "rejected",
+  "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
+ },
+ "ef97a0caa7df8fa0adcb3387a18b280a6e62dcce9c9ba0d892679191ffa05d32": {
+  "status": "rejected",
+  "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
+ },
+ "755750a254eef46468bbbe52a685af03ffd644e451f3ba5b5c034558059f1ce6": {
+  "status": "rejected",
+  "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
+ },
+ "e19b6e425ee2ac0402fec7f86504e00e1fbdcf3bd809262c28e4a8578b4be2ba": {
+  "status": "rejected",
+  "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
+ },
+ "e5f74907ec06ad6ecd4228792e556e74414d856f28c45b57964406e5fbfcb183": {
+  "status": "rejected",
+  "reject": "Reports the maximum recorded Nitrogen Dioxide concentration for the period, not the annual mean."
+ },
+ "d15fc1100854c7826209a4f10cc128b973f8ca46be4d5a37cebcf4cc3e6e08b9": {
+  "status": "rejected",
+  "reject": "Site locations and tube type only, no concentration figures."
+ },
+ "c239ba0e7253004f6a4f6015aeaf84faa12e915f689b05d64008449a1f51444c": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "site",
+   "year": "year",
+   "annual_mean": "annual_mean_ug_m3",
+   "data_capture_pct": "data_capture"
+  },
+  "version": "1",
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³"
+  },
+  "notes": "'months' column is blank in the sample rows and not mapped. '99_8th_percentile' and 'target_mean' are not part of this schema and are left out. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "8d27f0a9af10427d12b42d2eff54cc8441e3848484a0549431352b32148cf50a": {
+  "status": "rejected",
+  "reject": "Hourly readings (maximum_hour_ug_m3), not annual means."
+ },
+ "cc550c795ebab8b484443009f1e70f559c928b5fd1bf6bdbbba8eb0f22bc2ec8": {
+  "status": "rejected",
+  "reject": "24-hour readings (maximum_24_hour_mean_ug_m3), not annual means."
+ },
+ "d7c8000e158b1c6f078eb7b2cfe4c6c90cadf0ceeab8bcc7edfb33d2c959c4ae": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "site",
+   "year": "year",
+   "annual_mean": "annual_mean_ug_m3",
+   "data_capture_pct": "data_capture"
+  },
+  "version": "1",
+  "constants": {
+   "pollutant": "PM10",
+   "unit": "µg/m³"
+  },
+  "notes": "'type' column (e.g. 'TEOM x 1.3', 'BAM', 'VCM') names the monitoring instrument, which is automatic monitoring, but its values don't match the method enum (diffusion_tube | automatic | unknown) so it is left unmapped rather than guessed. 'months' is blank in the sample rows; '90th_percentile' and 'target' are not part of this schema. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "74cc1e577311db18a76505e0d1f744fe6f6d10a13198c6b403dd47768aa2e317": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "Site Identifier",
+   "site_name": "Site Name",
+   "lon": "Longitude",
+   "lat": "Latitude"
+  },
+  "version": "1",
+  "constants": {
+   "method": "diffusion_tube",
+   "pollutant": "NO2",
+   "unit": "µg/m³"
+  },
+  "unpivot": {
+   "year_columns": [
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026",
+    "2027",
+    "2028",
+    "2029",
+    "2030",
+    "2031",
+    "2032",
+    "2033",
+    "2034"
+   ],
+   "key_to": "year",
+   "value_to": "annual_mean",
+   "id_columns": {}
+  },
+  "notes": "Neither pollutant nor unit is stated in this file's title or headers, so both are left unmapped for review; UK borough diffusion-tube programmes are conventionally NO2-only in ug/m3, but that is not stated here. Year columns run from 2016 to 2034; many from ~2026 onward are '0.00' placeholders for years not yet measured (today is 2026-09-06) - these should be treated as missing, not real zero readings; the adapter's blank/non-numeric-only missing-value rule won't catch a literal 0.00, so a reviewer should add a cutoff. Easting/Northing are also present but not mapped since Longitude/Latitude are given directly. 'Location' (WKT point) duplicates Longitude/Latitude and is not mapped; Group, Status, Ward Code, Ward Name, Spatial Accuracy and Last Uploaded are not part of this schema. Reviewer: Publisher description: 'annual NO2 measurements across the borough of Camden'. Unit taken as micrograms per cubic metre from value magnitudes and LAQM practice; flagged for the reviewer. Review: Preview of all 13 sources inspected: 13,479 rows 1994-2025, NO2/PM10 in expected ranges; York financial-year periods carried as qualifiers; Camden/York zero placeholders dropped.",
+  "reviewer": "Claude, for Dominic Matthews",
+  "reviewed_at": "2026-09-06"
+ },
+ "505f12b5a0359588f77361802240e63b4a537d5678c7c88fe587835eaab61ad4": {
+  "status": "rejected",
+  "reject": "Site-location-only table: station name, pollutant monitored, location type, station ID/filename and Easting/Northing, with no concentration values or years at all."
+ }
+}

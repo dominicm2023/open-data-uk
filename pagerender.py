@@ -962,7 +962,8 @@ def render_topics(rows: list[tuple[str, int, int]], site_url: str) -> str:
     return _page(head, body, "/topics")
 
 
-def render_who(title: str, rows: list[dict], site_url: str) -> str:
+def render_who(title: str, rows: list[dict], site_url: str,
+               family: str | None = None) -> str:
     """Which organisations publish this same kind of dataset.
 
     Genuinely unanswerable anywhere else: 91 councils publish a dataset
@@ -991,7 +992,10 @@ def render_who(title: str, rows: list[dict], site_url: str) -> str:
     noun = "councils" if councils >= len(rows) / 2 else "organisations"
     body = (crumbs
             + f"<h1>Which UK {noun} publish “{esc(title)}” data?</h1>"
-            f'<p class="note">{len(rows):,} UK organisations publish a dataset '
+            + (f'<p class="notice">The files these bodies publish are also combined into '
+               f'<a href="/family/{esc(family)}">one table</a>, with the source and '
+               "licence of every row.</p>" if family else "")
+            + f'<p class="note">{len(rows):,} UK organisations publish a dataset '
             f'of this name. {with_data:,} of them lead to a file or an API you '
             "can actually use; the rest lead to a webpage, are broken, or "
             "refused our checker. No single portal can show you this list, "

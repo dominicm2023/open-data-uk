@@ -1,0 +1,1326 @@
+{
+ "family": "recycling_centres",
+ "schema": {
+  "family": "recycling_centres",
+  "label": "Household waste recycling centres",
+  "one_row_is": "one recycling centre (household waste recycling centre / civic amenity site) as published by the body responsible for it",
+  "columns": [
+   {
+    "name": "site_name",
+    "type": "text",
+    "required": true,
+    "meaning": "the site's name as published"
+   },
+   {
+    "name": "address",
+    "type": "text",
+    "required": false,
+    "meaning": "street address as published, one line; null if the publisher gave none"
+   },
+   {
+    "name": "postcode",
+    "type": "text",
+    "required": false,
+    "meaning": "UK postcode as published, upper-cased, single space; null if absent"
+   },
+   {
+    "name": "lon",
+    "type": "number",
+    "required": false,
+    "meaning": "WGS84 longitude; converted from British National Grid if the source gave eastings/northings; null if no location"
+   },
+   {
+    "name": "lat",
+    "type": "number",
+    "required": false,
+    "meaning": "WGS84 latitude"
+   },
+   {
+    "name": "coords_source",
+    "type": "text",
+    "required": false,
+    "meaning": "wgs84 | bng_converted | none — how lon/lat were obtained"
+   },
+   {
+    "name": "operator",
+    "type": "text",
+    "required": false,
+    "meaning": "operating body or contractor if published"
+   },
+   {
+    "name": "opening_hours",
+    "type": "text",
+    "required": false,
+    "meaning": "opening hours as published, verbatim; never normalised"
+   },
+   {
+    "name": "materials",
+    "type": "text",
+    "required": false,
+    "meaning": "accepted materials as published, verbatim; null if not published"
+   },
+   {
+    "name": "status",
+    "type": "text",
+    "required": false,
+    "meaning": "open/closed/temporary as published; null if not published"
+   },
+   {
+    "name": "as_of",
+    "type": "date",
+    "required": false,
+    "meaning": "the date the source says the record is current to; null if the source states none (do not use the download date)"
+   }
+  ],
+  "provenance": [
+   "publisher",
+   "dataset_key",
+   "source_url",
+   "source_sha256",
+   "source_table",
+   "source_row",
+   "licence_id",
+   "licence_url",
+   "licence_evidence_sha256",
+   "licence_evidence_kind",
+   "adapter_version"
+  ],
+  "validation": {
+   "postcode_regex": "^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$",
+   "lat_range": [
+    49.8,
+    61.0
+   ],
+   "lon_range": [
+    -8.7,
+    2.0
+   ]
+  },
+  "rules": [
+   "Never invent coordinates: if the source has neither lon/lat nor eastings/northings, both stay null and coords_source is 'none'.",
+   "Never geocode a postcode.",
+   "Opening hours and materials are verbatim text; they are not parsed into a structure by this family.",
+   "A row is one site; if a source lists one site per material or per opening day, the adapter must say so and the source is held at 'mapped' for review."
+  ]
+ },
+ "sources": [
+  {
+   "job_id": "a3ec62935a7162ea83b5ed15456380f130e5b73a4058df6d852f27511679215b",
+   "publisher": "Belfast City Council",
+   "title": "Belfast City Council Recycling Centres",
+   "portal": "opendatani",
+   "format": "CSV",
+   "resource_url": "https://www.belfastcity.gov.uk/getmedia/3bbf6874-dfe0-474e-8e24-3b43006918aa/recyclingcentresdata.csv",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "NAME",
+      "ADDRESS",
+      "POSTCODE",
+      "LONGITUDE",
+      "LATITUDE"
+     ],
+     "sample_rows": [
+      [
+       "Ormeau Recycling Centre",
+       "6 Park Road",
+       "BT7 2FX",
+       "-5.918294066805599",
+       "54.58012682117855"
+      ],
+      [
+       "Alexandra Park Recycling Centre",
+       "180 Alexandra Park Avenue",
+       "BT15 3GJ",
+       "-5.933237821937097",
+       "54.61949452357782"
+      ],
+      [
+       "Blackstaff Way Recycling Centre",
+       "1 Blackstaff Way",
+       "BT11 9DT",
+       "-5.974918146907231",
+       "54.578024012493266"
+      ],
+      [
+       "Palmerston Road Recycling Centre",
+       "2-4 Palmerston Road",
+       "BT4 1QA",
+       "-5.8762265319830655",
+       "54.60379917069977"
+      ]
+     ],
+     "row_count": 4,
+     "column_count": 5
+    }
+   ]
+  },
+  {
+   "job_id": "f39eda6553ca25f206edbf9470ab1b18efaf53f8472ad2ccb6cd3b80920a7ec7",
+   "publisher": "Belfast City Council",
+   "title": "Belfasts Civic Amenity Sites",
+   "portal": "opendatani",
+   "format": "CSV",
+   "resource_url": "https://www.belfastcity.gov.uk/getmedia/bf8dad1f-705b-49e5-b119-b8d141c49624/civicamenitysitesdata.csv",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "NAME",
+      "ADDRESS",
+      "POSTCODE",
+      "LONGITUDE",
+      "LATITUDE"
+     ],
+     "sample_rows": [
+      [
+       "Agnes Street",
+       "135 Agnes Street",
+       "BT13 1GG",
+       "-5.947451864614277",
+       "54.604649023386166"
+      ],
+      [
+       "Springfield Avenue",
+       "7-11 Springfield Avenue",
+       "BT12 7BA",
+       "-5.959974323420361",
+       "54.59833159268318"
+      ]
+     ],
+     "row_count": 2,
+     "column_count": 5
+    }
+   ]
+  },
+  {
+   "job_id": "056681438e9e1e1d7fe61708dfe9d4c7f509ede20a68403b390256ee3d118ff8",
+   "publisher": "Causeway Coast and Glens Borough Council",
+   "title": "Recycling Centres CCGBC",
+   "portal": "opendatani",
+   "format": "CSV",
+   "resource_url": "https://ccgbcodni-cbcni.opendata.arcgis.com/api/download/v1/items/4d4bdab1ce5b4d1c93a5e951bc465cbe/csv?layers=0",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "X",
+      "Y",
+      "OBJECTID",
+      "OBJECTID_1",
+      "Name",
+      "Address",
+      "Postcode",
+      "Town",
+      "Type_",
+      "Materials",
+      "Image_",
+      "Link",
+      "Comments",
+      "GlobalID"
+     ],
+     "sample_rows": [
+      [
+       "683290.4971",
+       "916659.3904",
+       "1",
+       "1",
+       "Garavagh Recycing Site",
+       "Limavady Road, Garvagh, County Londonderry",
+       "BT51 5EB",
+       "Garvagh",
+       "Recycling Site",
+       "Batteries (household and car), cans and tins, cardboard, cartons, cooking oil, f",
+       " ",
+       " ",
+       " ",
+       "70ae682c-a58d-4e27-ae11-121f554716dc"
+      ],
+      [
+       "676771.6158",
+       "935592.5043",
+       "2",
+       "2",
+       "Castlerock Recycling Centre",
+       "Freehall Road, Castlerock, County Londonderry",
+       "BT51 4TR",
+       "Castlerock",
+       "Recycling Site",
+       "Batteries (household and car), cans and tins, cardboard, cartons, cooking oil, f",
+       " ",
+       " ",
+       " ",
+       "35d991c9-1892-40b7-991a-b52cbb932836"
+      ],
+      [
+       "683683.461",
+       "937677.399",
+       "3",
+       "3",
+       "Portstewart Recycling Centre",
+       "Roselick Road, Portstewart, County Londonderry",
+       "BT55 7PP",
+       "Portstewart",
+       "Recycling Site",
+       "Batteries (household and car), cans and tins, cardboard, cooking oil, fluorescen",
+       " ",
+       " ",
+       " ",
+       "326ed502-efac-4c32-a394-ec143ede0978"
+      ],
+      [
+       "686093.3911",
+       "940187.8346",
+       "4",
+       "4",
+       "Portrush Recycling Centre",
+       "Causeway Street, Portrush, County Londonderry",
+       "BT56 8AD",
+       "Portrush",
+       "Recycling Centre",
+       "Batteries (household and car), cans and tins, cardboard, cartons, cooking oil, f",
+       " ",
+       " ",
+       " ",
+       "46b795b5-64ae-401d-aa7b-fd5f9d59ec47"
+      ],
+      [
+       "685890.9142",
+       "934279.476500001",
+       "5",
+       "5",
+       "Coleraine Recycling Centre",
+       "Gateside Road, Coleraine, County Londonderry",
+       "BT52 2NR",
+       "Coleraine",
+       "Recycling Site",
+       "Batteries (household and car), cans and tins, cardboard, cartons, cooking oil, D",
+       " ",
+       " ",
+       " ",
+       "915c0a85-1105-4885-97be-e2c557331009"
+      ],
+      [
+       "692931.0271",
+       "911620.669399999",
+       "6",
+       "6",
+       "Kilrea Recycling Centre",
+       "Lisnagrot Road, Kilrea, County Londonderry",
+       "BT51 5SG",
+       "Kilrea",
+       "Recycling Site",
+       "Batteries (household and car), cans and tins, cardboard, cartons, cooking oil, f",
+       " ",
+       " ",
+       " ",
+       "b7af595a-edf3-4202-8f4a-3db7436159ef"
+      ]
+     ],
+     "row_count": 11,
+     "column_count": 14
+    }
+   ]
+  },
+  {
+   "job_id": "8612b2ff722df8b554c5b0910eba767e9b6775f654a50d9fb0163cb5e0511f8e",
+   "publisher": "City of York Council",
+   "title": "Hazel Court Household Waste Recycling Centre (HWRC) Data - June 2026",
+   "portal": "york",
+   "format": "XLSX",
+   "resource_url": "https://data.yorkopendata.org/dataset/b0b4b6a3-3d4f-45a6-b107-0f8366209afb/resource/edffb43d-4359-487f-a7aa-f99548dbc8a6/download/hwrc-bookings-process-feedback-raw-data-june-2026.xlsx",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "sheet": "DATA"
+     },
+     "header": [
+      "Respondent ID",
+      "Collector ID",
+      "Start Date",
+      "End Date",
+      "Do you confirm that you have read and understood the privacy notice? You must select ‘Yes’ in order to take the survey.",
+      "How satisfied or dissatisfied were you with the overall booking experience?",
+      "How satisfied or dissatisfied were you with your appointment at Hazel Court HWRC?",
+      "How did you book your appointment?",
+      "Were you able to book a suitable date and time for your visit to Hazel Court HWRC?",
+      "Since we introduced booking, how does the wait time to enter Hazel Court HWRC compare to previous visits?",
+      "Did you pre‑sort your waste before arriving?",
+      "Did you bring waste for a neighbour or friend to maximise your visit?",
+      "Did you have enough time within your booked appointment to unload your waste?",
+      "Were staff able to answer your questions during your visit?",
+      "How satisfied or dissatisfied were you with the following? Accessibility of the booking experience",
+      "How satisfied or dissatisfied were you with the following? The site accessibility at Hazel Court HWRC",
+      "If you had any difficulty booking an appointment to visit Hazel Court HWRC, or with access at the site please give us details below.For example: Digital literacy issuesLanguage support gapsScreen‑reader compatibilityCognitive accessibility (complex instructions, too much text)Need for alternative formats (phone, in‑person, easy‑read) please tell us about the issues."
+     ],
+     "sample_rows": [
+      [
+       "119132378335",
+       "463708557",
+       "2026-06-02 23:47:44",
+       "2026-06-03 00:04:34",
+       "Yes",
+       "Very satisfied",
+       "Very satisfied",
+       "Online",
+       "Yes",
+       "About the same time waiting to enter",
+       "Yes",
+       "No",
+       "Yes",
+       "Yes",
+       "Very satisfied",
+       "Very satisfied",
+       "Only issue is not being able to book at short notice as no spaces available"
+      ],
+      [
+       "119132346740",
+       "463708557",
+       "2026-06-02 22:57:25",
+       "2026-06-02 22:59:08",
+       "Yes",
+       "Very satisfied",
+       "Very satisfied",
+       "Online",
+       "Yes",
+       "Less time waiting to enter",
+       "Yes",
+       "No",
+       "Yes",
+       "Yes",
+       "Very satisfied",
+       "Very satisfied",
+       ""
+      ],
+      [
+       "119132247343",
+       "463708557",
+       "2026-06-02 20:37:49",
+       "2026-06-02 20:39:37",
+       "Yes",
+       "Very satisfied",
+       "Very satisfied",
+       "Online",
+       "Yes",
+       "Less time waiting to enter",
+       "Yes",
+       "No",
+       "Yes",
+       "Yes",
+       "Very satisfied",
+       "Very satisfied",
+       ""
+      ],
+      [
+       "119132231378",
+       "463708557",
+       "2026-06-02 20:18:19",
+       "2026-06-02 20:20:03",
+       "Yes",
+       "Very satisfied",
+       "Very satisfied",
+       "Online",
+       "Yes",
+       "Less time waiting to enter",
+       "Yes",
+       "No",
+       "Yes",
+       "Yes",
+       "Very satisfied",
+       "Very satisfied",
+       "No"
+      ],
+      [
+       "119132177610",
+       "463708557",
+       "2026-06-02 19:16:29",
+       "2026-06-02 19:20:49",
+       "Yes",
+       "Fairly satisfied",
+       "Fairly satisfied",
+       "Online",
+       "Yes",
+       "Less time waiting to enter",
+       "Yes",
+       "No",
+       "Yes",
+       "Didn't ask / not applicable",
+       "Fairly satisfied",
+       "Fairly satisfied",
+       ""
+      ],
+      [
+       "119132173181",
+       "463708557",
+       "2026-06-02 19:10:58",
+       "2026-06-02 19:13:54",
+       "Yes",
+       "Very satisfied",
+       "Very satisfied",
+       "Online",
+       "Yes",
+       "Less time waiting to enter",
+       "Yes",
+       "No",
+       "Yes",
+       "Didn't ask / not applicable",
+       "Very satisfied",
+       "Very satisfied",
+       ""
+      ]
+     ],
+     "row_count": 391,
+     "column_count": 17
+    }
+   ]
+  },
+  {
+   "job_id": "d70a5e7a3fc937e91d370d9da4869854a8ca6029fbcf9d666817a5ee2c7fc6b7",
+   "publisher": "Copeland Borough Council",
+   "title": "Recycling Sites",
+   "portal": "agol_copeland_borough_council",
+   "format": "ESRI",
+   "resource_url": "https://services8.arcgis.com/FOeNsIAoVWzxh1TN/arcgis/rest/services/Recycling_Sites/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1,
+      "exceeded": false
+     },
+     "header": [
+      "OBJECTID",
+      "SITE",
+      "CONTAINER_SIZE",
+      "TYPE_OF_SITE",
+      "GLASS",
+      "CANS",
+      "PAPER",
+      "CARDBOARD",
+      "PLASTIC_BOTTLES",
+      "EASTING",
+      "NORTHING",
+      "WEBLINK",
+      "GlobalID",
+      "CreationDate",
+      "Creator",
+      "EditDate",
+      "Editor",
+      "_lon",
+      "_lat"
+     ],
+     "sample_rows": [
+      [
+       "1",
+       "Cleator Moor Co-Op, Leconfield Street, Cleator Moor, CA25 5QA",
+       "L",
+       "P",
+       "Y",
+       "Y",
+       "Y",
+       "Y",
+       "Y",
+       "301396",
+       "515279",
+       "http://www.copeland.gov.uk/faq/what-and-where-can-i-recycle",
+       "3ca7d9b1-124c-4b88-a231-d6454302c5a6",
+       "1564584526295",
+       "copelandbc_gis",
+       "1564584526310",
+       "copelandbc_gis",
+       "-3.524961301688156",
+       "54.523177560847536"
+      ],
+      [
+       "3",
+       "Gosforth Main Car Park, Gosforth, Seascale, CA20 1AH",
+       "L",
+       "P",
+       "Y",
+       "Y",
+       "Y",
+       "N",
+       "N",
+       "306754",
+       "503593",
+       "http://www.copeland.gov.uk/faq/what-and-where-can-i-recycle",
+       "ad82f006-2d86-483e-ab6d-4de70c88f459",
+       "1564584526295",
+       "copelandbc_gis",
+       "1564584526310",
+       "copelandbc_gis",
+       "-3.4385264767725787",
+       "54.41920376847671"
+      ],
+      [
+       "4",
+       "Haverigg Foreshore, Bankend, Haverigg",
+       "L",
+       "P",
+       "Y",
+       "Y",
+       "Y",
+       "Y",
+       "Y",
+       "316047",
+       "478505",
+       "http://www.copeland.gov.uk/faq/what-and-where-can-i-recycle",
+       "d3bfb868-fb50-4d86-a382-a3b7db9c2bff",
+       "1564584526295",
+       "copelandbc_gis",
+       "1564584526310",
+       "copelandbc_gis",
+       "-3.2882861157273",
+       "54.19541217588008"
+      ],
+      [
+       "5",
+       "Morrsions Supermarket, Flatt Walks, Whitehaven, CA28 7RW",
+       "L",
+       "P",
+       "Y",
+       "Y",
+       "Y",
+       "N",
+       "Y",
+       "297580",
+       "517881",
+       "http://www.copeland.gov.uk/faq/what-and-where-can-i-recycle",
+       "40ad9527-b17b-4fed-b9de-e5b438c67508",
+       "1564584526295",
+       "copelandbc_gis",
+       "1564584526310",
+       "copelandbc_gis",
+       "-3.5847909845834804",
+       "54.545790650858756"
+      ],
+      [
+       "6",
+       "Seascale Foreshore, South Parade, Seascale, CA20 1PZ",
+       "L",
+       "P",
+       "Y",
+       "Y",
+       "Y",
+       "Y",
+       "Y",
+       "303702",
+       "500999",
+       "http://www.copeland.gov.uk/faq/what-and-where-can-i-recycle",
+       "45efbeb1-02c5-4dc0-9bd3-fc0ecc3794cd",
+       "1564584526295",
+       "copelandbc_gis",
+       "1564584526310",
+       "copelandbc_gis",
+       "-3.484697466950942",
+       "54.39533642879421"
+      ],
+      [
+       "7",
+       "St Bees Foreshore, Seacote Park, St Bees",
+       "L",
+       "P",
+       "Y",
+       "Y",
+       "Y",
+       "Y",
+       "Y",
+       "296117",
+       "511901",
+       "http://www.copeland.gov.uk/faq/what-and-where-can-i-recycle",
+       "d1aa734c-d03b-404f-a9dc-932aa887c645",
+       "1564584526295",
+       "copelandbc_gis",
+       "1564584526310",
+       "copelandbc_gis",
+       "-3.6052932274065554",
+       "54.49178149021357"
+      ]
+     ],
+     "row_count": 15,
+     "column_count": 19
+    }
+   ]
+  },
+  {
+   "job_id": "a5c15151a60c2b1131930625af4704b4d362a1fc749aa7cc927302a592524d64",
+   "publisher": "Fermanagh and Omagh District Council",
+   "title": "FODC Recycling Centres",
+   "portal": "opendatani",
+   "format": "CSV",
+   "resource_url": "https://admin.opendatani.gov.uk/dataset/5838dd4b-11a5-42f8-98d8-990ac6abff27/resource/8d147145-6e12-463a-b67e-ff8ec62cf9a7/download/recycling-centres.csv",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "X",
+      "Y",
+      "OBJECT ID",
+      "Site_Name",
+      "Address",
+      "Address 2",
+      "Postcode ",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+      "Materials_Accepted"
+     ],
+     "sample_rows": [
+      [
+       "-7.362578034",
+       "54.18147237",
+       "1",
+       "Newtownbutler Recycling Centre",
+       "Crom Road",
+       "Newtownbutler",
+       "BT92 8FL",
+       "10:00am to 6:00pm",
+       "10:00am to 6:00pm",
+       "10:00am to 6:00pm",
+       "Closed",
+       "10:00am to 6:00pm",
+       "10:00am to 5:30pm",
+       "Closed",
+       "Non-recyclable household waste, oil filters, paint, fridges, electrical goods, f"
+      ],
+      [
+       "-7.450241912",
+       "54.25371475",
+       "2",
+       "Lisnaskea Recycling Centre",
+       "Killypaddy Road",
+       "Lisnaskea",
+       "BT92 0EX",
+       "10:00am to 6:00pm",
+       "Closed",
+       "10:00am to 6:00pm",
+       "10:00am to 6:00pm",
+       "10:00am to 6:00pm",
+       "10:00am to 5:30pm",
+       "Closed",
+       "Non-recyclable household waste, glass, cans, green waste, wood waste, scrap meta"
+      ],
+      [
+       "-7.533628898",
+       "54.31791152",
+       "3",
+       "Lisbellaw Recycling Centre",
+       "Station Road",
+       "Lisbellaw ",
+       "BT94 5AE",
+       "10:00am to 6:00pm",
+       "10:00am to 6:00pm",
+       "10:00am to 6:00pm",
+       "Closed",
+       "10:00am to 6:00pm",
+       "10:00am to 5:30pm",
+       "Closed",
+       "Non-recyclable household waste, oil filters, paint, fridges, electrical goods, f"
+      ],
+      [
+       "-7.680760666",
+       "54.35284824",
+       "4",
+       "Drumee Waste Managment Facility",
+       "Derrygonnelly Road ",
+       "Enniskillen ",
+       "BT74 5JX ",
+       "09:00am to 6:00pm ",
+       "09:00am to 6:00pm ",
+       "09:00am to 6:00pm ",
+       "09:00am to 6:00pm ",
+       "09:00am to 6:00pm ",
+       "09:00am to 4:00pm",
+       "Closed",
+       "Non-recyclable household waste, glass, cans, green waste, wood waste, scrap meta"
+      ],
+      [
+       "-7.454809463",
+       "54.37421505",
+       "5",
+       "Tempo Recycling Centre",
+       "Tullyreagh Road",
+       "Tempo ",
+       "BT94 3LW ",
+       "10:00am to 6:00pm",
+       "Closed",
+       "10:00am to 6:00pm",
+       "10:00am to 6:00pm",
+       "10:00am to 6:00pm",
+       "10:00am to 5:30pm",
+       "Closed",
+       "Non-recyclable household waste, glass, cans, green waste, wood waste, scrap meta"
+      ],
+      [
+       "-8.079739338",
+       "54.40124907",
+       "6",
+       "Garrison Recycling Centre",
+       "Lattone Road",
+       "Garrison ",
+       "BT93 4ER ",
+       "Closed",
+       "10:00am to 6:00pm",
+       "Closed",
+       "10:00am to 6:00pm",
+       "Closed",
+       "3.30pm to 5.30pm ",
+       "Closed",
+       "Non-recyclable household waste, glass, cans, textiles, scrap metal, fridges, car"
+      ]
+     ],
+     "row_count": 15,
+     "column_count": 15
+    }
+   ]
+  },
+  {
+   "job_id": "08e25346fbe5900645d47f9de9f7eb2b3e880ca30fe5b18c7ba4605d7700ed25",
+   "publisher": "Former council of North Yorkshire",
+   "title": "Household Waste Recycling Centres",
+   "portal": "north_yorkshire",
+   "format": "CSV",
+   "resource_url": "https://hub.datanorthyorkshire.org/dataset/e3c7ffd4-4187-46fd-a590-99e2af539058/resource/1b582059-39b8-4b16-b37c-3f2d24610e9f/download/household-waste-recycling-centres.csv",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "HWRC Site",
+      "Address",
+      "Address 2",
+      "Town",
+      "County",
+      "Postcode",
+      "Longitude",
+      "Latitude"
+     ],
+     "sample_rows": [
+      [
+       "Settle HWRC",
+       "Sowarth Field Industrial Estate",
+       "",
+       "Settle",
+       "North Yorkshire",
+       "BD24 9AB",
+       "-2.28347",
+       "54.066"
+      ],
+      [
+       "Harrogate (Stonefall) HWRC",
+       "Wetherby Road",
+       "",
+       "Harrogate",
+       "North Yorkshire",
+       "HG3 1DE",
+       "-1.49552",
+       "53.9861"
+      ],
+      [
+       "Tadcaster HWRC",
+       "Station Road Industrial Estate",
+       "",
+       "Tadcaster",
+       "North Yorkshire",
+       "LS24 9SG",
+       "-1.26739",
+       "53.8828"
+      ],
+      [
+       "Tholthorpe HWRC",
+       "Flawith Lane",
+       "Tholthorpe",
+       "Easingwold",
+       "North Yorkshire",
+       "YO62 7RR",
+       "-1.27193",
+       "54.0896"
+      ],
+      [
+       "Ripon HWRC",
+       "Dallamires Crescent",
+       "Dallamires Lane",
+       "Ripon",
+       "North Yorkshire",
+       "HG4 1TT",
+       "-1.51155",
+       "54.1283"
+      ],
+      [
+       "Sowerby HWRC",
+       "Ox Moor Plantation Lane",
+       "Sowerby",
+       "Thirsk",
+       "North Yorkshire",
+       "YO7 1FA",
+       "-1.33531",
+       "54.2151"
+      ]
+     ],
+     "row_count": 18,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "a917d66d966aca9e861dd918d5093eedea7d48c1bf0085a83dabc05cb41baf28",
+   "publisher": "Lancashire County Council",
+   "title": "Household Waste Recycling Centres",
+   "portal": "agol_lancashire_county_council",
+   "format": "ESRI",
+   "resource_url": "https://services-eu1.arcgis.com/9MmxkLJT84uEwsJx/arcgis/rest/services/Household_Waste_Recycling_Centres/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1,
+      "exceeded": false
+     },
+     "header": [
+      "OBJECTID_1",
+      "NAME",
+      "ROADNAME",
+      "EAST",
+      "NORTH",
+      "URL",
+      "LABEL",
+      "OBJECTID",
+      "_lon",
+      "_lat"
+     ],
+     "sample_rows": [
+      [
+       "1",
+       "Altham (Whinney Hill)",
+       "Whinney Hill Road",
+       "376170",
+       "430372",
+       "https://www.lancashire.gov.uk/waste-and-recycling/recycling-centres/altham-whinn",
+       "Altham HWRC",
+       "0",
+       "-2.3630141888677074",
+       "53.76915580908473"
+      ],
+      [
+       "2",
+       "Barnoldswick",
+       "West Close Road",
+       "387875",
+       "447278",
+       "https://www.lancashire.gov.uk/waste-and-recycling/recycling-centres/barnoldswick",
+       "Barnoldswick HWRC",
+       "0",
+       "-2.18611086284125",
+       "53.92150992878687"
+      ],
+      [
+       "3",
+       "Burnley",
+       "Balderstone Lane",
+       "386235",
+       "434474",
+       "https://www.lancashire.gov.uk/waste-and-recycling/recycling-centres/burnley.aspx",
+       "Burnley HWRC",
+       "0",
+       "-2.2105016144734124",
+       "53.80638906258187"
+      ],
+      [
+       "4",
+       "Burscough",
+       "Abbey Lane",
+       "343152",
+       "410303",
+       "https://www.lancashire.gov.uk/waste-and-recycling/recycling-centres/burscough.as",
+       "Burscough HWRC",
+       "0",
+       "-2.8602141597507904",
+       "53.5862303295228"
+      ],
+      [
+       "5",
+       "Carnforth",
+       "Scotland Road",
+       "350650",
+       "471735",
+       "https://www.lancashire.gov.uk/waste-and-recycling/recycling-centres/carnforth.as",
+       "Carnforth HWRC",
+       "0",
+       "-2.756864424247274",
+       "54.139080250701326"
+      ],
+      [
+       "6",
+       "Chorley",
+       "Coppull Road",
+       "357218",
+       "415574",
+       "https://www.lancashire.gov.uk/waste-and-recycling/recycling-centres/chorley.aspx",
+       "Chorley HWRC",
+       "0",
+       "-2.648475771612724",
+       "53.63494429836679"
+      ]
+     ],
+     "row_count": 16,
+     "column_count": 10
+    }
+   ]
+  },
+  {
+   "job_id": "ca1885c9fd3dde7834677d6d32097fba9a81b45216860e6ccc69b8825012fe9e",
+   "publisher": "Moray Council",
+   "title": "Recycling Centres",
+   "portal": "opendata_scot",
+   "format": "CSV",
+   "resource_url": "https://www.moray.gov.uk/media/ji4pqhp1/recyclingcentres.csv",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "recyc_id",
+      "recyc_name",
+      "recyc_road",
+      "recyc_town",
+      "recyc_post",
+      "recyc_tele",
+      "recyc_times",
+      "recyc_lat",
+      "recyc_lng"
+     ],
+     "sample_rows": [
+      [
+       "1",
+       "Gollachy Recycling Centre",
+       "Barhill Road",
+       "Buckie",
+       "AB56 5BE",
+       "01343 557041",
+       "Monday - Saturday 8am - 4pm Sunday 10am - 3pm",
+       "57.66400",
+       "-3.00156"
+      ],
+      [
+       "2",
+       "Portlong Lane Recycling Centre",
+       "Portlong Lane",
+       "Cullen",
+       "AB56 A4G",
+       "01343 543451",
+       "Monday - Saturday 8am - 4pm",
+       "57.693958",
+       "-2.820670"
+      ],
+      [
+       "3",
+       "Spey Bay Recycling Centre",
+       "Spey Bay",
+       "Dallachy",
+       "IV32 7PL",
+       "01343 543451",
+       "Monday - Saturday 8am - 4pm",
+       "57.662070",
+       "-3.062385"
+      ],
+      [
+       "4",
+       "Balvenie Street Recycling Centre",
+       "Balvenie Street",
+       "Dufftown",
+       "AB55 4FS",
+       "",
+       "Monday - Saturday 8am - 4pm",
+       "57.449132",
+       "-3.132337"
+      ],
+      [
+       "5",
+       "Chanonry Recycling Centre",
+       "Chanonry Road South",
+       "Elgin",
+       "IV30 1XE",
+       "",
+       "Monday - Saturday 8am - 4pm Sunday 10am - 3pm",
+       "57.648171",
+       "-3.291854"
+      ],
+      [
+       "6",
+       "Waterford Recycling Centre",
+       "Waterford Road",
+       "Forres",
+       "IV36 3TN",
+       "",
+       "Monday - Saturday 8am - 4pm Sunday 10am - 3pm",
+       "57.61753",
+       "-3.63085"
+      ]
+     ],
+     "row_count": 9,
+     "column_count": 9
+    }
+   ]
+  },
+  {
+   "job_id": "46515cdf8cfbd28e9426d7e6eab11634bc85ac15d4bffff1197eb95c68e1e4df",
+   "publisher": "Nottingham City Council",
+   "title": "Recycling Centres",
+   "portal": "nottingham",
+   "format": "CSV",
+   "resource_url": "https://geoportal-nottmcitycouncil.opendata.arcgis.com/api/download/v1/items/00f6729cbd904e5880d3a01892d3e5a8/csv?layers=67",
+   "licence": "OGL-UK-3.0",
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "OBJECTID",
+      "Name",
+      "Location",
+      "Bank_Type",
+      "Clear_Glass",
+      "Green_Glass",
+      "Brown_Glass",
+      "Mixed",
+      "Cans_Tins",
+      "Textiles",
+      "Oil",
+      "Plastic",
+      "Litter",
+      "Carton_Tetrapak",
+      "Books",
+      "Paper",
+      "Shoes",
+      "Website",
+      "Originator",
+      "OrganisationURI",
+      "District_Code",
+      "District_Name",
+      "Easting",
+      "Northing",
+      "Lat",
+      "Long",
+      "Created_Date",
+      "x",
+      "y"
+     ],
+     "sample_rows": [
+      [
+       "1",
+       "Croft Nursery School",
+       "Leen Place, St Peters Street, Radford",
+       "MRC",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "https://www.nottinghamcity.gov.uk/information-for-residents/bin-and-rubbish-coll",
+       "Nottingham City Council",
+       "http://opendatacommunities.org/id/unitary-authority/nottingham",
+       "E06000018",
+       "City of Nottingham",
+       "455097.64997166",
+       "340404.860037759",
+       "-1.18125158351121",
+       "52.958214371308",
+       "9/1/2026 12:00:00 AM",
+       "455097.649971531",
+       "340404.860037119"
+      ],
+      [
+       "2",
+       "Morely Junior School",
+       "The Wells Road, St Anns",
+       "MRC",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "https://www.nottinghamcity.gov.uk/information-for-residents/bin-and-rubbish-coll",
+       "Nottingham City Council",
+       "http://opendatacommunities.org/id/unitary-authority/nottingham",
+       "E06000018",
+       "City of Nottingham",
+       "458772.3800462",
+       "341590.569994077",
+       "-1.12634199081132",
+       "52.9684823492838",
+       "9/1/2026 12:00:00 AM",
+       "458772.380046177",
+       "341590.569993648"
+      ],
+      [
+       "3",
+       "Windmill Car Park",
+       "Windmill Lane, Sneinton",
+       "Node",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "Yes",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "https://www.nottinghamcity.gov.uk/information-for-residents/bin-and-rubbish-coll",
+       "Nottingham City Council",
+       "http://opendatacommunities.org/id/unitary-authority/nottingham",
+       "E06000018",
+       "City of Nottingham",
+       "458475.410032094",
+       "339743.410006342",
+       "-1.13109587249053",
+       "52.9519122083478",
+       "9/1/2026 12:00:00 AM",
+       "458475.410032052",
+       "339743.410006025"
+      ],
+      [
+       "4",
+       "St Judes Church",
+       "Woodborough Road",
+       "MRC",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "Yes",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "https://www.nottinghamcity.gov.uk/information-for-residents/bin-and-rubbish-coll",
+       "Nottingham City Council",
+       "http://opendatacommunities.org/id/unitary-authority/nottingham",
+       "E06000018",
+       "City of Nottingham",
+       "458098.990014216",
+       "342421.320033535",
+       "-1.13621871299668",
+       "52.9760224138842",
+       "9/1/2026 12:00:00 AM",
+       "458098.990014192",
+       "342421.320033109"
+      ],
+      [
+       "5",
+       "Ken Martin's Baths",
+       "Sandhurst Road, Bulwell East",
+       "MRC",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "https://www.nottinghamcity.gov.uk/information-for-residents/bin-and-rubbish-coll",
+       "Nottingham City Council",
+       "http://opendatacommunities.org/id/unitary-authority/nottingham",
+       "E06000018",
+       "City of Nottingham",
+       "454310.490034272",
+       "346007.890003888",
+       "-1.19202962758156",
+       "53.0086552108473",
+       "9/1/2026 12:00:00 AM",
+       "454310.49003431",
+       "346007.890003475"
+      ],
+      [
+       "6",
+       "St Edwards Rc Primary School",
+       "Gordon Road, St Anns",
+       "MRC",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "Yes",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "https://www.nottinghamcity.gov.uk/information-for-residents/bin-and-rubbish-coll",
+       "Nottingham City Council",
+       "http://opendatacommunities.org/id/unitary-authority/nottingham",
+       "E06000018",
+       "City of Nottingham",
+       "458677.910041713",
+       "341040.179967934",
+       "-1.12784797063062",
+       "52.9635457305613",
+       "9/1/2026 12:00:00 AM",
+       "458677.91004169",
+       "341040.179967508"
+      ]
+     ],
+     "row_count": 122,
+     "column_count": 29
+    }
+   ]
+  }
+ ],
+ "instructions": "For each source, propose which source column supplies each schema column. Use the exact header text. Leave a schema column out if the source has nothing for it — never guess. If coordinates are eastings/northings, map them to 'easting' and 'northing' and build.py will convert. If a wide table has one column per year, give 'unpivot'. If the table is not this family at all (a different subject, a summary, a lookup), say so in 'reject' with a reason. Note anything a reviewer must check in 'notes'."
+}

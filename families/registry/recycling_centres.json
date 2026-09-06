@@ -1,0 +1,756 @@
+{
+ "family": "recycling_centres",
+ "label": "Household waste recycling centres",
+ "rule": {
+  "label": "Household waste recycling centres",
+  "include": "(household\\s+waste\\s+recycling|recycling\\s+cent|hwrc|civic\\s+amenity|waste\\s+recycling\\s+cent|recycling\\s+sites?\\b)",
+  "exclude": "\\brates?\\b|tonnage|performance|collected|composition|survey"
+ },
+ "sources": [
+  {
+   "dataset_key": "aberdeen:https://www.arcgis.com/home/item.html?id=5dbd92e1aba9467b8de058d0347a5b04&sublayer=21",
+   "title": "Recycling Centres",
+   "publisher": "Aberdeen City Council",
+   "portal": "aberdeen",
+   "landing_url": "https://spatialdata-accabdn.opendata.arcgis.com/datasets/accabdn::recycling-centres-2",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/5dbd92e1aba9467b8de058d0347a5b04?f=json",
+   "index_licence_raw": "This information is supplied under the Open Government License v3.0 ( https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/ ). Th",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:48Z",
+   "resource": {
+    "url": "https://spatialdata-accabdn.opendata.arcgis.com/api/download/v1/items/5dbd92e1aba9467b8de058d0347a5b04/csv?layers=21",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 6
+  },
+  {
+   "dataset_key": "agol_aberdeen_city_council_arcgis:5dbd92e1aba9467b8de058d0347a5b04_21",
+   "title": "Recycling Centres",
+   "publisher": "Aberdeen City Council ArcGIS Online",
+   "portal": "agol_aberdeen_city_council_arcgis",
+   "landing_url": "https://hub.arcgis.com/datasets/5dbd92e1aba9467b8de058d0347a5b04_21",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:45:57Z",
+   "resource": {
+    "url": "https://services5.arcgis.com/0sktPVp3t1LvXc9z/arcgis/rest/services/Recycling_Centres/FeatureServer/21/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "opendatani:84e6e28b-5df2-4507-8464-b36310613a9d",
+   "title": "Belfast City Council Recycling Centres",
+   "publisher": "Belfast City Council",
+   "portal": "opendatani",
+   "landing_url": "https://admin.opendatani.gov.uk/dataset/recycling-centres",
+   "licence_kind": "ckan",
+   "metadata_url": "https://admin.opendatani.gov.uk/api/3/action/package_show?id=84e6e28b-5df2-4507-8464-b36310613a9d",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:08Z",
+   "resource": {
+    "url": "https://www.belfastcity.gov.uk/getmedia/3bbf6874-dfe0-474e-8e24-3b43006918aa/recyclingcentresdata.csv",
+    "name": "Recycling Centres",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "opendatani:f88fe33a-7186-4bde-8e94-6030d3064902",
+   "title": "Belfasts Civic Amenity Sites",
+   "publisher": "Belfast City Council",
+   "portal": "opendatani",
+   "landing_url": "https://admin.opendatani.gov.uk/dataset/civic-amenity-sites",
+   "licence_kind": "ckan",
+   "metadata_url": "https://admin.opendatani.gov.uk/api/3/action/package_show?id=f88fe33a-7186-4bde-8e94-6030d3064902",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:08Z",
+   "resource": {
+    "url": "https://www.belfastcity.gov.uk/getmedia/bf8dad1f-705b-49e5-b119-b8d141c49624/civicamenitysitesdata.csv",
+    "name": "Civic Amenity Sites",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "bristol:https://www.arcgis.com/home/item.html?id=d00bc5535df64a96aaa79a1aad0f6524&sublayer=1",
+   "title": "Household waste recycling centres",
+   "publisher": "Bristol City Council",
+   "portal": "bristol",
+   "landing_url": "https://opendata.bristol.gov.uk/datasets/bcc::household-waste-recycling-centres",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/d00bc5535df64a96aaa79a1aad0f6524?f=json",
+   "index_licence_raw": "Copyright : © Local Government Information House Limited copyright and database rights [year of supply] 100023406",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:22:27Z",
+   "resource": {
+    "url": "https://opendata.bristol.gov.uk/api/download/v1/items/d00bc5535df64a96aaa79a1aad0f6524/csv?layers=1",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 7
+  },
+  {
+   "dataset_key": "opendatani:2a821294-0e9c-42fb-b825-93bac05a3aab",
+   "title": "Recycling Centres CCGBC",
+   "publisher": "Causeway Coast and Glens Borough Council",
+   "portal": "opendatani",
+   "landing_url": "https://admin.opendatani.gov.uk/dataset/recycling-centres-ccgbc1",
+   "licence_kind": "ckan",
+   "metadata_url": "https://admin.opendatani.gov.uk/api/3/action/package_show?id=2a821294-0e9c-42fb-b825-93bac05a3aab",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:08Z",
+   "resource": {
+    "url": "https://ccgbcodni-cbcni.opendata.arcgis.com/api/download/v1/items/4d4bdab1ce5b4d1c93a5e951bc465cbe/csv?layers=0",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 6
+  },
+  {
+   "dataset_key": "york:b0b4b6a3-3d4f-45a6-b107-0f8366209afb",
+   "title": "Hazel Court Household Waste Recycling Centre (HWRC) Data - June 2026",
+   "publisher": "City of York Council",
+   "portal": "york",
+   "landing_url": "https://data.yorkopendata.org/dataset/hazel-court-household-waste-recycling-centre-hwrc-data-june-2026",
+   "licence_kind": "ckan",
+   "metadata_url": "https://data.yorkopendata.org/api/3/action/package_show?id=b0b4b6a3-3d4f-45a6-b107-0f8366209afb",
+   "index_licence_raw": "OGL-UK-3.0",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:58Z",
+   "resource": {
+    "url": "https://data.yorkopendata.org/dataset/b0b4b6a3-3d4f-45a6-b107-0f8366209afb/resource/edffb43d-4359-487f-a7aa-f99548dbc8a6/download/hwrc-bookings-process-feedback-raw-data-june-2026.xlsx",
+    "name": "Booking Process Feedback - Raw Data",
+    "format": "XLSX"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "york_cyc:https://www.arcgis.com/home/item.html?id=d1ea6921e9c0477f8ac40359edc02b00&sublayer=12",
+   "title": "Household Waste Recycling Centres",
+   "publisher": "City of York Council",
+   "portal": "york_cyc",
+   "landing_url": "https://data-cyc.opendata.arcgis.com/datasets/CYC::household-waste-recycling-centres",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/d1ea6921e9c0477f8ac40359edc02b00?f=json",
+   "index_licence_raw": "© Crown copyright and database rights 2015 Ordnance Survey 100020818 The licensing for this dataset is listed as Derived data exemption - streamlined ",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:39:05Z",
+   "resource": {
+    "url": "https://data-cyc.opendata.arcgis.com/api/download/v1/items/d1ea6921e9c0477f8ac40359edc02b00/csv?layers=12",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 6
+  },
+  {
+   "dataset_key": "agol_copeland_borough_council:e5503bbd8bb24046a09b5fdf5da3423e_0",
+   "title": "Recycling Sites",
+   "publisher": "Copeland Borough Council",
+   "portal": "agol_copeland_borough_council",
+   "landing_url": "https://hub.arcgis.com/datasets/e5503bbd8bb24046a09b5fdf5da3423e_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:45:17Z",
+   "resource": {
+    "url": "https://services8.arcgis.com/FOeNsIAoVWzxh1TN/arcgis/rest/services/Recycling_Sites/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "opendatani:5838dd4b-11a5-42f8-98d8-990ac6abff27",
+   "title": "FODC Recycling Centres",
+   "publisher": "Fermanagh and Omagh District Council",
+   "portal": "opendatani",
+   "landing_url": "https://admin.opendatani.gov.uk/dataset/fodc-recycling-centres",
+   "licence_kind": "ckan",
+   "metadata_url": "https://admin.opendatani.gov.uk/api/3/action/package_show?id=5838dd4b-11a5-42f8-98d8-990ac6abff27",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:09Z",
+   "resource": {
+    "url": "https://admin.opendatani.gov.uk/dataset/5838dd4b-11a5-42f8-98d8-990ac6abff27/resource/8d147145-6e12-463a-b67e-ff8ec62cf9a7/download/recycling-centres.csv",
+    "name": "Recycling Centres ",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "north_yorkshire:e3c7ffd4-4187-46fd-a590-99e2af539058",
+   "title": "Household Waste Recycling Centres",
+   "publisher": "Former council of North Yorkshire",
+   "portal": "north_yorkshire",
+   "landing_url": "https://hub.datanorthyorkshire.org/dataset/household-waste-recycling-centres",
+   "licence_kind": "ckan",
+   "metadata_url": "https://hub.datanorthyorkshire.org/api/3/action/package_show?id=e3c7ffd4-4187-46fd-a590-99e2af539058",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:33Z",
+   "resource": {
+    "url": "https://hub.datanorthyorkshire.org/dataset/e3c7ffd4-4187-46fd-a590-99e2af539058/resource/1b582059-39b8-4b16-b37c-3f2d24610e9f/download/household-waste-recycling-centres.csv",
+    "name": "Household Waste Recyling Centres",
+    "format": "CSV"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "agol_lancashire_county_council:be8e189691f74e29958d99335a3759a1_0",
+   "title": "Household Waste Recycling Centres",
+   "publisher": "Lancashire County Council",
+   "portal": "agol_lancashire_county_council",
+   "landing_url": "https://hub.arcgis.com/datasets/be8e189691f74e29958d99335a3759a1_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:44:48Z",
+   "resource": {
+    "url": "https://services-eu1.arcgis.com/9MmxkLJT84uEwsJx/arcgis/rest/services/Household_Waste_Recycling_Centres/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "agol_lancashire_county_council:02731d3f3629427f9fe4f44baf5369c7",
+   "title": "Household Waste Recycling Centres",
+   "publisher": "Lancashire County Council",
+   "portal": "agol_lancashire_county_council",
+   "landing_url": "https://hub.arcgis.com/datasets/02731d3f3629427f9fe4f44baf5369c7",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:44:48Z",
+   "resource": {
+    "url": "https://dservices-eu1.arcgis.com/9MmxkLJT84uEwsJx/arcgis/services/Household_Waste_Recycling_Centres/WFSServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "data_gov_uk:447b138d-49c2-4083-ba41-784fed829f07",
+   "title": "Recycling centres in the London Borough of Sutton",
+   "publisher": "London Borough of Sutton",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/recycling-centres-london-borough-sutton",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=447b138d-49c2-4083-ba41-784fed829f07",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:49Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.sutton.gov.uk/CHttpHandler.ashx?id=11208&p=0",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "agol_mid_east_antrim_borough_coun:4024a11fc7414946932de356cc530017_0",
+   "title": "Household Recycling Centre Locations",
+   "publisher": "Mid & East Antrim Borough Council",
+   "portal": "agol_mid_east_antrim_borough_coun",
+   "landing_url": "https://hub.arcgis.com/datasets/4024a11fc7414946932de356cc530017_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:45:33Z",
+   "resource": {
+    "url": "https://services5.arcgis.com/65ux41b9DoQZACr1/arcgis/rest/services/HRC/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "agol_mid_east_antrim_borough_coun:5c07d0ea047949759af07375b00cbfba",
+   "title": "Household Recycling Centre Site Locations",
+   "publisher": "Mid & East Antrim Borough Council",
+   "portal": "agol_mid_east_antrim_borough_coun",
+   "landing_url": "https://hub.arcgis.com/datasets/5c07d0ea047949759af07375b00cbfba",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:45:33Z",
+   "resource": {
+    "url": "https://meabc.maps.arcgis.com/apps/webappviewer/index.html?id=5c07d0ea047949759af07375b00cbfba/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "agol_mid_east_antrim_borough_coun:3f798ac1fa514f68b712c98c2c6c765a_0",
+   "title": "Household Recycling Centre Site Locations",
+   "publisher": "Mid & East Antrim Borough Council",
+   "portal": "agol_mid_east_antrim_borough_coun",
+   "landing_url": "https://hub.arcgis.com/datasets/3f798ac1fa514f68b712c98c2c6c765a_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:45:33Z",
+   "resource": {
+    "url": "https://services5.arcgis.com/65ux41b9DoQZACr1/arcgis/rest/services/HRC_2020/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "opendata_scot:https://www.moray.gov.uk/media/ji4pqhp1/recyclingcentres.csv",
+   "title": "Recycling Centres",
+   "publisher": "Moray Council",
+   "portal": "opendata_scot",
+   "landing_url": "https://www.moray.gov.uk/media/ji4pqhp1/recyclingcentres.csv",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:38:59Z",
+   "resource": {
+    "url": "https://www.moray.gov.uk/media/ji4pqhp1/recyclingcentres.csv",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "north_ayrshire:https://www.arcgis.com/home/item.html?id=cf2a62be1d31495d98b95c4e6ead2fdd&sublayer=3",
+   "title": "Recycling Centres",
+   "publisher": "North Ayrshire Council",
+   "portal": "north_ayrshire",
+   "landing_url": "https://maps-north-ayrshire.opendata.arcgis.com/datasets/north-ayrshire::recycling-centres",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/cf2a62be1d31495d98b95c4e6ead2fdd?f=json",
+   "index_licence_raw": "Contains OS data © Crown copyright and database right 2017. This dataset is made available under the Open Government Licence (OGLv3.0): http://www.nat",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:39:06Z",
+   "resource": {
+    "url": "https://maps-north-ayrshire.opendata.arcgis.com/api/download/v1/items/cf2a62be1d31495d98b95c4e6ead2fdd/csv?layers=3",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 8
+  },
+  {
+   "dataset_key": "nottingham:https://www.arcgis.com/home/item.html?id=00f6729cbd904e5880d3a01892d3e5a8&sublayer=67",
+   "title": "Recycling Centres",
+   "publisher": "Nottingham City Council",
+   "portal": "nottingham",
+   "landing_url": "https://geoportal-nottmcitycouncil.opendata.arcgis.com/datasets/00f6729cbd904e5880d3a01892d3e5a8_67",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/00f6729cbd904e5880d3a01892d3e5a8?f=json",
+   "index_licence_raw": "Data is released under the terms of the Open Government Licence (OGL) https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/ Notti",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:23:00Z",
+   "resource": {
+    "url": "https://geoportal-nottmcitycouncil.opendata.arcgis.com/api/download/v1/items/00f6729cbd904e5880d3a01892d3e5a8/csv?layers=67",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 10
+  },
+  {
+   "dataset_key": "perth_kinross:https://www.arcgis.com/home/item.html?id=8e321cc321104d108679de7d19a43a65&sublayer=29",
+   "title": "Recycling Centres and Points (open data)",
+   "publisher": "Perth & Kinross Council",
+   "portal": "perth_kinross",
+   "landing_url": "https://open-data-perth-kinross.hub.arcgis.com/datasets/perth-kinross::recycling-centres-and-points-open-data",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/8e321cc321104d108679de7d19a43a65?f=json",
+   "index_licence_raw": "Ordnance Survey derived Open Data. An acknowledgement of the source is required. See Licence at https://www.nationalarchives.gov.uk/doc/open-governmen",
+   "index_licence_norm": "OS OpenData Licence",
+   "index_harvested_at": "2026-09-06T14:22:45Z",
+   "resource": {
+    "url": "https://open-data-perth-kinross.hub.arcgis.com/api/download/v1/items/8e321cc321104d108679de7d19a43a65/csv?layers=29",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 11
+  },
+  {
+   "dataset_key": "agol_kensington_and_chelsea:a3fbb817d91746c19a35dc3113288cf2",
+   "title": "Mini Recycling Centres",
+   "publisher": "Royal Borough of Kensington and Chelsea",
+   "portal": "agol_kensington_and_chelsea",
+   "landing_url": "https://hub.arcgis.com/datasets/a3fbb817d91746c19a35dc3113288cf2",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:47:18Z",
+   "resource": {
+    "url": "https://rbkc.maps.arcgis.com/apps/instant/nearby/index.html?appid=a3fbb817d91746c19a35dc3113288cf2/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "data_gov_uk:07c1e816-22b4-49b9-911c-06838d2eeba1",
+   "title": "Recycling Centres",
+   "publisher": "Salford City Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/recycling-centres3",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=07c1e816-22b4-49b9-911c-06838d2eeba1",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:42Z",
+   "resource": {
+    "url": "http://map.salford.gov.uk/geoserver/OpenData/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=OpenData:recycling_centres&outputFormat=csv",
+    "name": "CSV format",
+    "format": "CSV"
+   },
+   "other_resources": 4
+  },
+  {
+   "dataset_key": "sheffield:https://www.arcgis.com/home/item.html?id=a15d7ca7f381474d9afefe30319e9937&sublayer=11",
+   "title": "Bring Recycling Sites",
+   "publisher": "Sheffield City Council",
+   "portal": "sheffield",
+   "landing_url": "https://sheffield-city-council-open-data-sheffieldcc.hub.arcgis.com/datasets/a15d7ca7f381474d9afefe30319e9937_11",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/a15d7ca7f381474d9afefe30319e9937?f=json",
+   "index_licence_raw": "SCC Environmental data released under the European Directive INSPIRE. By downloading this data you agree to be bound by the terms of the INSPIRE End U",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:22:36Z",
+   "resource": {
+    "url": "https://sheffield-city-council-open-data-sheffieldcc.hub.arcgis.com/api/download/v1/items/a15d7ca7f381474d9afefe30319e9937/csv?layers=11",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 8
+  },
+  {
+   "dataset_key": "sheffield:https://www.arcgis.com/home/item.html?id=c32f2828520544c38c8d79017af0a044&sublayer=10",
+   "title": "Household Waste Recycling Centres",
+   "publisher": "Sheffield City Council",
+   "portal": "sheffield",
+   "landing_url": "https://sheffield-city-council-open-data-sheffieldcc.hub.arcgis.com/datasets/c32f2828520544c38c8d79017af0a044_10",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/c32f2828520544c38c8d79017af0a044?f=json",
+   "index_licence_raw": "SCC Environmental data released under the European Directive INSPIRE. By downloading this data you agree to be bound by the terms of the INSPIRE End U",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:22:36Z",
+   "resource": {
+    "url": "https://sheffield-city-council-open-data-sheffieldcc.hub.arcgis.com/api/download/v1/items/c32f2828520544c38c8d79017af0a044/csv?layers=10",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 8
+  },
+  {
+   "dataset_key": "data_gov_uk:39c7a204-fbd6-4d57-9ec5-e755282ad3d0",
+   "title": "Sheffield Household Waste Recycling Sites",
+   "publisher": "Sheffield City Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/sheffield-household-waste-recycling-sites",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=39c7a204-fbd6-4d57-9ec5-e755282ad3d0",
+   "index_licence_raw": "PSMA License Terms Apply. http://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/psma-licensing.html.",
+   "index_licence_norm": "OS PSMA Licence",
+   "index_harvested_at": "2026-09-06T14:21:31Z",
+   "resource": {
+    "url": "https://opendata.arcgis.com/datasets/c32f2828520544c38c8d79017af0a044_10.geojson",
+    "name": "Household Waste Recycling Sites GeoJSON",
+    "format": "GEOJSON"
+   },
+   "other_resources": 4
+  },
+  {
+   "dataset_key": "stirling:https://www.arcgis.com/home/item.html?id=23e10a6cff5446fea084817bf1d9e9c9&sublayer=1",
+   "title": "recycling centres (stirling council) waste services - open data",
+   "publisher": "Stirling Council",
+   "portal": "stirling",
+   "landing_url": "https://data.stirling.gov.uk/datasets/stirling-council::recycling-centres-stirling-council-waste-services-open-data",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/23e10a6cff5446fea084817bf1d9e9c9?f=json",
+   "index_licence_raw": "Data Licensing Data published by the Council at a URL beginning data.stirling.gov.uk is open to use, you do not have to apply or ask for permission, b",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:23:06Z",
+   "resource": {
+    "url": "https://data.stirling.gov.uk/api/download/v1/items/23e10a6cff5446fea084817bf1d9e9c9/csv?layers=1",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 11
+  },
+  {
+   "dataset_key": "agol_three_rivers_district_counci:dfd283d1925b415999caafea9ae2ab77_86",
+   "title": "Water Recycling Sites in TRDC",
+   "publisher": "Three Rivers District Council",
+   "portal": "agol_three_rivers_district_counci",
+   "landing_url": "https://hub.arcgis.com/datasets/dfd283d1925b415999caafea9ae2ab77_86",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:40:43Z",
+   "resource": {
+    "url": "https://services-eu1.arcgis.com/3aiaJoeXJBzdduyI/arcgis/rest/services/Water_Recycling_Sites_TRDC_view/FeatureServer/86/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "agol_tunbridge_wells_borough_coun:fc0bd6ccccab45f09dc9cdf9626df2b5_0",
+   "title": "North Farm Waste and Recycling Centre Map Image Layer",
+   "publisher": "Tunbridge Wells Borough Council",
+   "portal": "agol_tunbridge_wells_borough_coun",
+   "landing_url": "https://hub.arcgis.com/datasets/fc0bd6ccccab45f09dc9cdf9626df2b5_0",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-06T14:46:25Z",
+   "resource": {
+    "url": "https://utility.arcgis.com/usrsvcs/servers/fc0bd6ccccab45f09dc9cdf9626df2b5/rest/services/Internet/NorthFarmTip/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "data_gov_uk:79dcb891-b401-4bef-840a-27e4b6c2da6c",
+   "title": "Household Waste Recycling Centre Data",
+   "publisher": "Warwickshire County Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/warwickshire-household-waste-recycling-centre-data",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=79dcb891-b401-4bef-840a-27e4b6c2da6c",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:53Z",
+   "resource": {
+    "url": "http://opendata.s3.amazonaws.com/wastedata/HWRC-Report-09-10.xls",
+    "name": "",
+    "format": "XLS"
+   },
+   "other_resources": 6
+  }
+ ],
+ "skipped": [
+  {
+   "key": "data_gov_uk:bec1a2c8-aac7-4eea-b30a-57a77a65e2f9",
+   "title": "Allerdale Recycling Site Data",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "HTML"
+   ]
+  },
+  {
+   "key": "data_gov_uk:5521df7b-f7e2-423d-80b9-3839afd8e9db",
+   "title": "Recycling Centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?",
+    "HTML",
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:c30b373e-03a1-412f-9452-875ae5feb63c",
+   "title": "Civic Amenity Sites",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WFS",
+    "WMS"
+   ]
+  },
+  {
+   "key": "agol_city_of_york_council:6e7ba530ea8a47e8a96195880463355b",
+   "title": "Household Waste Recycling Centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:752a29e9-acbd-4fac-aa9a-d7b439983891",
+   "title": "Household Waste Recycling Centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "HTML",
+    "WFS"
+   ]
+  },
+  {
+   "key": "london_datastore:vd67o",
+   "title": "Household Waste Recycling Rates, Borough",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "opendatani:ced5f020-7861-4009-9ced-3dfb263e9476",
+   "title": "Materials collected for preparation for reuse and recycling including composting at NI civic amenity sites - Time Series Data",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "datamillnorth:exkxd",
+   "title": "Household waste recycling centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:e31f717d-69a0-4e69-b45d-838503750e0c",
+   "title": "East Staffordshire Recycling Centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "XML"
+   ]
+  },
+  {
+   "key": "data_gov_uk:d2687a99-5fee-486e-91f6-551b13b9be4b",
+   "title": "Waste and recycling sites in East Sussex",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "XML"
+   ]
+  },
+  {
+   "key": "data_gov_uk:9f0630e1-2cb6-4fa9-8249-ad1c0e97c356",
+   "title": "Halton Household Waste Recycling Centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "agol_kent_county_council:ec4e5fc0de88408aa0244253845b5145",
+   "title": "KCC Waste- HWRC Catchment Areas 2021",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:fa887a22-f0b4-4ccc-8d76-f63b2b6543c7",
+   "title": "North London Household Waste Recycling Centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:74f20d14-c831-4a47-9e48-435652baa9b5",
+   "title": "Recycling Centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:e5032614-bba0-4d99-a768-100cd6ac9ecf",
+   "title": "Household waste recycling centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "agol_northumberland_county_counci:078513288998490fb8780d332584b8db",
+   "title": "Glass Recycling Sites",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:fb8f026b-0099-4bd1-8372-8116ad7f8deb",
+   "title": "Recycling Sites",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?",
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:c81d9a89-8ed5-4bb3-bb99-0d7989d49762",
+   "title": "Recycling Centre & Recycling Points - Aberdeenshire",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:ea2d065e-3a62-4068-82b9-38bf28d60191",
+   "title": "Recycling Centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "data_gov_uk:c777a3d0-f50f-4133-873e-7a62e0d36d79",
+   "title": "Southend Recycling Centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "WMS"
+   ]
+  },
+  {
+   "key": "spatialdata_scot:DAFFDB70-2A17-4A99-B093-4B1B4EAE92AD",
+   "title": "Aberdeen Recycling Centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "spatialdata_scot:7681a5f7-b353-485c-86d1-5d94b9968e70",
+   "title": "Recycling Centres - North Ayrshire",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:2bd733b7-58e1-4f5f-a6f5-ed9de3c1aa99",
+   "title": "Household waste recycling centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:01640a48-0dfa-4309-8a66-a033ed1f23ad",
+   "title": "Sunderland Recycling Sites",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "XML"
+   ]
+  },
+  {
+   "key": "data_gov_uk:6a0e70a5-a038-4bdf-9399-f4d4c899ac13",
+   "title": "Thurrock Civic Amenity Site",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "XML"
+   ]
+  },
+  {
+   "key": "agol_tunbridge_wells_borough_coun:ec9ab21632a24809b36b4e95ab18f706",
+   "title": "North Farm Waste Recycling Centre Web Map",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:1407f83c-a8ab-4241-b66b-6ba37401f476",
+   "title": "Household waste recycling centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:1104512b-c75a-43d4-a1ff-7d69798eb45d",
+   "title": "Recycling Centres",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  }
+ ]
+}

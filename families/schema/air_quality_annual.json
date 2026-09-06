@@ -1,0 +1,126 @@
+{
+  "family": "air_quality_annual",
+  "label": "Air quality: annual mean concentrations",
+  "one_row_is": "one monitoring site, one pollutant, one calendar year: the published annual mean",
+  "columns": [
+    {
+      "name": "site_id",
+      "type": "text",
+      "required": true,
+      "meaning": "the publisher's site identifier or name"
+    },
+    {
+      "name": "site_name",
+      "type": "text",
+      "required": false,
+      "meaning": "descriptive site name/location as published"
+    },
+    {
+      "name": "site_type",
+      "type": "text",
+      "required": false,
+      "meaning": "as published (roadside, urban background, kerbside...); verbatim"
+    },
+    {
+      "name": "method",
+      "type": "text",
+      "required": false,
+      "meaning": "diffusion_tube | automatic | unknown, from the source's own description"
+    },
+    {
+      "name": "pollutant",
+      "type": "text",
+      "required": true,
+      "meaning": "NO2 | PM10 | PM2.5 | SO2 | O3 — as published, mapped to these codes only when the source is unambiguous"
+    },
+    {
+      "name": "year",
+      "type": "integer",
+      "required": true,
+      "meaning": "calendar year of the annual mean"
+    },
+    {
+      "name": "annual_mean",
+      "type": "number",
+      "required": true,
+      "meaning": "the published annual mean; null rows are dropped, not zeroed"
+    },
+    {
+      "name": "unit",
+      "type": "text",
+      "required": true,
+      "meaning": "as published, normally µg/m³"
+    },
+    {
+      "name": "bias_adjusted",
+      "type": "boolean",
+      "required": false,
+      "meaning": "true if the source says the figure is bias-adjusted; null if it does not say"
+    },
+    {
+      "name": "data_capture_pct",
+      "type": "number",
+      "required": false,
+      "meaning": "data capture percentage if published"
+    },
+    {
+      "name": "lon",
+      "type": "number",
+      "required": false,
+      "meaning": "WGS84; converted from BNG if given as eastings/northings; null otherwise"
+    },
+    {
+      "name": "lat",
+      "type": "number",
+      "required": false,
+      "meaning": "WGS84"
+    },
+    {
+      "name": "qualifier",
+      "type": "text",
+      "required": false,
+      "meaning": "any published qualifier on the figure (e.g. '<75% capture', 'annualised'), verbatim"
+    }
+  ],
+  "provenance": [
+    "publisher",
+    "dataset_key",
+    "source_url",
+    "source_sha256",
+    "source_table",
+    "source_row",
+    "licence_id",
+    "licence_url",
+    "licence_evidence_sha256",
+    "licence_evidence_kind",
+    "adapter_version"
+  ],
+  "validation": {
+    "year_range": [
+      1990,
+      2026
+    ],
+    "annual_mean_range": [
+      0,
+      500
+    ],
+    "lat_range": [
+      49.8,
+      61.0
+    ],
+    "lon_range": [
+      -8.7,
+      2.0
+    ],
+    "zero_is_missing": [
+      "annual_mean"
+    ]
+  },
+  "rules": [
+    "A monthly or daily value is never averaged into an annual mean by this family; only a figure the source itself calls annual is admitted.",
+    "Wide tables (one column per year) are unpivoted by the adapter, one row per year; the adapter records which columns were years.",
+    "A blank or non-numeric cell is a missing observation and produces no row.",
+    "Bias adjustment is recorded as stated, never inferred from magnitude.",
+    "Sites without a stated year for their figure are held at 'mapped' for review."
+  ]
+}

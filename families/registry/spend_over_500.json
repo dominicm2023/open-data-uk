@@ -1,0 +1,1751 @@
+{
+ "family": "spend_over_500",
+ "label": "Spend over £500",
+ "rule": {
+  "label": "Spend over £500",
+  "include": "(spend|spending|expenditure|payments?|transactions?|invoices?)\\s+(over|above|exceeding|greater\\s+than|>)\\s*£?\\s*(500|250)\\b",
+  "exclude": "\\bgpc\\b|procurement\\s+card|credit\\s+card"
+ },
+ "sources": [
+  {
+   "dataset_key": "data_gov_uk:146f2bf2-27de-49c7-9a6c-a0ea32a73449",
+   "title": "Acas Spending over £500 & Prompt Payment statistics Financial Year 2016-2017",
+   "publisher": "Advisory, Conciliation and Arbitration Service",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/acas-spending-over-f500-prompt-payment-statistics-financial-year-2016-2017",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=146f2bf2-27de-49c7-9a6c-a0ea32a73449",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:31Z",
+   "resource": {
+    "url": "https://webarchive.nationalarchives.gov.uk/20200802192959/https://archive.acas.org.uk/media/4829/Acas-public-spending---April-2016/file/Transparency_data_April_2016.csv",
+    "name": "April 2016 Expenditure Data",
+    "format": "CSV"
+   },
+   "other_resources": 24
+  },
+  {
+   "dataset_key": "data_gov_uk:7b933655-6214-4e25-8009-0542679d4bb9",
+   "title": "Spend over £250 in Audit Commission",
+   "publisher": "Audit Commission",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/spend-over-250-in-audit-commission",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=7b933655-6214-4e25-8009-0542679d4bb9",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:47Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.audit-commission.gov.uk/SiteCollectionDocuments/April%20Spend.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 48
+  },
+  {
+   "dataset_key": "bristol:https://www.arcgis.com/home/item.html?id=4fe3d883ad074bb191863e09f2c01734",
+   "title": "Expenditure exceeding 500",
+   "publisher": "Bristol City Council",
+   "portal": "bristol",
+   "landing_url": "https://opendata.bristol.gov.uk/documents/bcc::expenditure-exceeding-500",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/4fe3d883ad074bb191863e09f2c01734?f=json",
+   "index_licence_raw": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:27Z",
+   "resource": {
+    "url": "https://www.bristol.gov.uk/council-and-mayor/council-spending-and-performance/spending-over-500/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "ArcGIS GeoService",
+    "format": "ESRI"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "data_gov_uk:ad098feb-8d3b-48cc-841d-2bc19c188695",
+   "title": "Cambridgeshire County Council Expenditure over £500",
+   "publisher": "Cambridgeshire Insight",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/cambridgeshire-county-council-expenditure-over-5001",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=ad098feb-8d3b-48cc-841d-2bc19c188695",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:20:59Z",
+   "resource": {
+    "url": "https://data.cambridgeshireinsight.org.uk/sites/default/files/CambsPayments2026-04.csv",
+    "name": "Cambridgeshire County Council Expenditure April 2026",
+    "format": "CSV"
+   },
+   "other_resources": 133
+  },
+  {
+   "dataset_key": "data_gov_uk:c847b606-f9a7-45ec-878b-fb7cc2db5b33",
+   "title": "Peterborough Payments Over £500 to Suppliers",
+   "publisher": "Cambridgeshire Insight",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/peterborough-payments-over-500-to-suppliers",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=c847b606-f9a7-45ec-878b-fb7cc2db5b33",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:20:59Z",
+   "resource": {
+    "url": "https://data.cambridgeshireinsight.org.uk/sites/default/files/Transparency%20code%20payments%20over%20500%20Quarter%204%20%28Jan%20Feb%20Mar%2026%29%20for%20Publication.xlsx",
+    "name": "Peterborough Payments Over £500 Q4(Jan Feb Mar 26)",
+    "format": "CSV"
+   },
+   "other_resources": 45
+  },
+  {
+   "dataset_key": "data_gov_uk:4e03bc85-ed83-4969-af1b-08be19fc46c0",
+   "title": "Peterborough Transparency Code - Payments over £500",
+   "publisher": "Cambridgeshire Insight",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/peterborough-transparency-code-payments-over-500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=4e03bc85-ed83-4969-af1b-08be19fc46c0",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:36Z",
+   "resource": {
+    "url": "http://opendata.cambridgeshireinsight.org.uk/files/ci_opendata/transparency-code-payments-over-500-july.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 88
+  },
+  {
+   "dataset_key": "data_gov_uk:f47bda4b-dbde-4f30-ac43-db3f61915e8b",
+   "title": "Spend over £500 in Christchurch Borough Council",
+   "publisher": "Christchurch Borough Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/cbc01",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=f47bda4b-dbde-4f30-ac43-db3f61915e8b",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:53Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.dorsetforyou.com/media.jsp?mediaid=162952&filetype=doc",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 16
+  },
+  {
+   "dataset_key": "data_gov_uk:4c3d07dc-1355-4a99-bdb7-cd739d68af6c",
+   "title": "Spend over £500 in the Department for Business, Innovation and Skills",
+   "publisher": "Department for Business, Innovation and Skills",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-bis",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=4c3d07dc-1355-4a99-bdb7-cd739d68af6c",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:41Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.bis.gov.uk/assets/biscore/data/spending-data-may-2010.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 8
+  },
+  {
+   "dataset_key": "data_gov_uk:bf177c6a-d63d-4f0d-a28c-2419ce714271",
+   "title": "Spend over £500 in the Department for Culture, Media and Sport April 2010 to June 2011",
+   "publisher": "Department for Digital, Culture, Media and Sport",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/dcms-financial-transactions-over-500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=bf177c6a-d63d-4f0d-a28c-2419ce714271",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:53Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.transparency.culture.gov.uk/wp-content/uploads/2011/02/DCMS-spend-data-Transactions-over-500-pounds-April-2010.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 16
+  },
+  {
+   "dataset_key": "data_gov_uk:5fd1ddaf-5760-4936-a9dc-701e473025d3",
+   "title": "DFID aggregated monthly expenditure over £500 from April 2012",
+   "publisher": "Department for International Development",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/dfid-aggregated-monthly-expenditure-over-500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=5fd1ddaf-5760-4936-a9dc-701e473025d3",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:53Z",
+   "resource": {
+    "url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/204000/aggregated-spend-500-2012.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "data_gov_uk:92112463-5a9f-4b66-9b65-486b394afddc",
+   "title": "Department of Energy and Climate Change spend over £500",
+   "publisher": "Department of Energy and Climate Change",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/decc_spend_over_500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=92112463-5a9f-4b66-9b65-486b394afddc",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:41Z",
+   "resource": {
+    "url": "https://www.gov.uk/government/organisations/department-of-energy-climate-change/series/departmental-spend-over-500",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "data_gov_uk:57a93e4a-62dd-4222-9634-993e92a502e4",
+   "title": "Spend over £500 in the Department of Energy and Climate Change",
+   "publisher": "Department of Energy and Climate Change",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-decc",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=57a93e4a-62dd-4222-9634-993e92a502e4",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:40Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/20121025080026/http://decc.gov.uk/assets/decc/accesstoinformation/1277-departmental-spend-over-500-apr-2010.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 48
+  },
+  {
+   "dataset_key": "data_gov_uk:03f9f076-0889-4f93-9530-2eff82bda945",
+   "title": "East Devon Spend over £500",
+   "publisher": "East Devon District Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/east-devon-spend-over-500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=03f9f076-0889-4f93-9530-2eff82bda945",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:21:22Z",
+   "resource": {
+    "url": "https://eastdevon.gov.uk/transparency/finance/Payments/EastDevonPaymentsOver500YTD.csv",
+    "name": "East Devon spend over £500 for Current Financial Year To Date - full months only.",
+    "format": "CSV"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "data_gov_uk:b69dcd4a-5805-4dc2-81f6-d9816a0edef9",
+   "title": "East Devon Spend over £500  - Complete financial years",
+   "publisher": "East Devon District Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/east-devon-spend-over-500-complete-financial-years",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=b69dcd4a-5805-4dc2-81f6-d9816a0edef9",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:21:24Z",
+   "resource": {
+    "url": "https://eastdevon.gov.uk/transparency/finance/payments/EastDevonPaymentsOver500_2023-24.csv",
+    "name": "East Devon spend over £500 for 2023-24",
+    "format": "CSV"
+   },
+   "other_resources": 12
+  },
+  {
+   "dataset_key": "data_gov_uk:3a231dbc-234a-4654-a5e2-e0f4fdc756f1",
+   "title": "Payments Over £500 to East Devon District Council",
+   "publisher": "East Devon District Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/payments-over-500-to-east-devon-district-council",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=3a231dbc-234a-4654-a5e2-e0f4fdc756f1",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:49Z",
+   "resource": {
+    "url": "http://www.eastdevon.gov.uk/eddc_over500_11_2012_v1.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 9
+  },
+  {
+   "dataset_key": "data_gov_uk:36cf574e-c3ae-4aad-ab38-aa9cca1f9ebe",
+   "title": "Spending over £500 by East Sussex County Council",
+   "publisher": "East Sussex County Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/east-sussex-county-council-spending",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=36cf574e-c3ae-4aad-ab38-aa9cca1f9ebe",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:17Z",
+   "resource": {
+    "url": "https://www.eastsussex.gov.uk/your-council/finance/spend/payments-to-suppliers-over-500",
+    "name": "Payments to suppliers over £500",
+    "format": "XLS"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "data_gov_uk:89865a4d-5ae4-4033-81a3-e34c5b113929",
+   "title": "Spend over £500 in Equality and Human Rights Commission",
+   "publisher": "Equality and Human Rights Commission",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-geo-ehrc",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=89865a4d-5ae4-4033-81a3-e34c5b113929",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:47Z",
+   "resource": {
+    "url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/85357/ehrc-spend-june11.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 12
+  },
+  {
+   "dataset_key": "data_gov_uk:140941f0-0833-4839-a8d3-aa33baa85533",
+   "title": "Spend over £500 at the Fire Service College",
+   "publisher": "Fire Service College",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-fsc",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=140941f0-0833-4839-a8d3-aa33baa85533",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:54Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.fireservicecollege.ac.uk/media/24616/apr%20-%20sep%202010%20transparency%20data.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "data_gov_uk:bf6f9bfc-fb76-4fea-8832-b54cd4e2fd79",
+   "title": "Spend over £500 in Government Equalities Office",
+   "publisher": "Government Equalities Office",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-geo",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=bf6f9bfc-fb76-4fea-8832-b54cd4e2fd79",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:48Z",
+   "resource": {
+    "url": "https://www.gov.uk/government/publications/government-equalities-office-spend-data-april-2011-csv-format",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 14
+  },
+  {
+   "dataset_key": "data_gov_uk:e5adc410-8f80-472a-ac40-59c06de2346c",
+   "title": "Spend over £500 in Guys and St Thomas NHS Foundation Trust",
+   "publisher": "Guys and St Thomas NHS Foundation Trust",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-guys-and-st-thomas-nhs-foundation-trust",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=e5adc410-8f80-472a-ac40-59c06de2346c",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:50Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.guysandstthomas.nhs.uk/resources/about_us/foi/expenditure/2010/gstt-spend-May-2010.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 6
+  },
+  {
+   "dataset_key": "data_gov_uk:eaad0067-01ed-4fb0-811e-abb041b7bb62",
+   "title": "Spend over £500 in Homes and Communities Agency",
+   "publisher": "Homes England",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/homes-and-communities-agency-spending-data",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=eaad0067-01ed-4fb0-811e-abb041b7bb62",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:48Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.homesandcommunities.co.uk/public/documents/hca-expenditure-feb11.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 11
+  },
+  {
+   "dataset_key": "data_gov_uk:e7768134-8169-4bdc-9287-6bc0532ad93a",
+   "title": "Payments over £500",
+   "publisher": "Horsham District Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/payments-over-500-hdc",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=e7768134-8169-4bdc-9287-6bc0532ad93a",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:45Z",
+   "resource": {
+    "url": "http://data.horsham.gov.uk/download/finance/payments-over-500/june-2014/CSV?version=06/03/2016",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 129
+  },
+  {
+   "dataset_key": "data_gov_uk:507a5158-c071-4ae8-ae68-ff4cf73854c2",
+   "title": "Spend over £500 Leasehold Advisory Service",
+   "publisher": "Leasehold Advisory Service",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/spend-over-500-leasehold-advisory-service",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=507a5158-c071-4ae8-ae68-ff4cf73854c2",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:46Z",
+   "resource": {
+    "url": "http://www.lease-advice.org/upload/file/leasehold advisory service procurement spend February 2015.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 5
+  },
+  {
+   "dataset_key": "leicester:expenditure-exceeding-ps500-2026",
+   "title": "Expenditure exceeding £500 - 2026",
+   "publisher": "Leicester City",
+   "portal": "leicester",
+   "landing_url": "https://data.leicester.gov.uk/explore/dataset/expenditure-exceeding-ps500-2026/",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "Open Government Licence v3.0",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:23:04Z",
+   "resource": {
+    "url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2026/exports/csv",
+    "name": "expenditure-exceeding-ps500-2026.csv",
+    "format": "CSV"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "leicester:expenditure-exceeding-ps500-2022",
+   "title": "Expenditure exceeding £500 - 2022",
+   "publisher": "Leicester City Council",
+   "portal": "leicester",
+   "landing_url": "https://data.leicester.gov.uk/explore/dataset/expenditure-exceeding-ps500-2022/",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "Open Government Licence v3.0",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:23:03Z",
+   "resource": {
+    "url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2022/exports/csv",
+    "name": "expenditure-exceeding-ps500-2022.csv",
+    "format": "CSV"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "data_gov_uk:9c4d63a8-79e5-4a85-a7ea-8fc03391b82e",
+   "title": "Spend over £500 in cla",
+   "publisher": "Local Government Ombudsman",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-clg-may",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=9c4d63a8-79e5-4a85-a7ea-8fc03391b82e",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:53Z",
+   "resource": {
+    "url": "http://\"http://www.lgo.org.uk/about-us/governance/payments-suppliers/May2011.csv",
+    "name": "",
+    "format": "XLS"
+   },
+   "other_resources": 8
+  },
+  {
+   "dataset_key": "camden:https://opendata.camden.gov.uk/api/views/3ixw-qvb8",
+   "title": "Camden Council Spend Over 500 GBP",
+   "publisher": "London Borough of Camden",
+   "portal": "camden",
+   "landing_url": "https://opendata.camden.gov.uk/d/3ixw-qvb8",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:23:01Z",
+   "resource": {
+    "url": "https://opendata.camden.gov.uk/api/v3/views/3ixw-qvb8/export.csv?accessType=DOWNLOAD",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 3
+  },
+  {
+   "dataset_key": "data_gov_uk:f713ba22-28ee-4be6-8a9a-3b15042a1f69",
+   "title": "Council spending over £500",
+   "publisher": "London Borough of Hounslow",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/council-spending-over-f5001",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=f713ba22-28ee-4be6-8a9a-3b15042a1f69",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:00Z",
+   "resource": {
+    "url": "https://data.hounslow.gov.uk/@london-borough-of-hounslow/council-spending-over-500/r/e920e407-9292-41e0-af9f-5d018951af3f",
+    "name": "council_spending_over_500_september_2010_to_march_2011",
+    "format": "CSV"
+   },
+   "other_resources": 138
+  },
+  {
+   "dataset_key": "data_gov_uk:9bbf738e-82cb-4a53-a5dc-b7d8d09e376e",
+   "title": "Spend over £500 in Manchester Mental Health and Social Care Trust",
+   "publisher": "Manchester Mental Health and Social Care Trust",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-manchester-mental-health-and-social-care-trust",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=9bbf738e-82cb-4a53-a5dc-b7d8d09e376e",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:49Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.mhsc.nhs.uk/pages/About%20the%20Trust/Departments/Finance/Expenditure/APRIL%202010%20-%20for%20publication.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 7
+  },
+  {
+   "dataset_key": "data_gov_uk:caf7d07b-568c-4eba-9f42-9d3c2d1ccb2e",
+   "title": "Spend over £500 in the Department for Communities and Local Government",
+   "publisher": "Ministry of Housing, Communities and Local Government",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-clg",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=caf7d07b-568c-4eba-9f42-9d3c2d1ccb2e",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:54Z",
+   "resource": {
+    "url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/5730/1773306.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 8
+  },
+  {
+   "dataset_key": "data_gov_uk:ea639e00-f6af-4f7f-926b-9c7530350015",
+   "title": "Spend over £500 in the Government Offices for the Regions",
+   "publisher": "Ministry of Housing, Communities and Local Government",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-gos",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=ea639e00-f6af-4f7f-926b-9c7530350015",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:53Z",
+   "resource": {
+    "url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/5735/1773618.xls",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 8
+  },
+  {
+   "dataset_key": "data_gov_uk:c36bb5eb-7150-40f8-888f-17a03de40cc0",
+   "title": "Spend over £500 in The NHS Information Centre",
+   "publisher": "NHS Digital",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/spend-over-500-in-the-nhs-information-centre",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=c36bb5eb-7150-40f8-888f-17a03de40cc0",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:47Z",
+   "resource": {
+    "url": "http://www.ic.nhs.uk/CHttpHandler.ashx",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 30
+  },
+  {
+   "dataset_key": "data_gov_uk:d89365e5-d23a-428f-a2ee-ccdc21aebc65",
+   "title": "Northern Ireland Office (NIO): Spending over £500 - July to September 2021",
+   "publisher": "Northern Ireland Office",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/northern-ireland-office-nio-spending-over-f500-july-to-september-2021",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=d89365e5-d23a-428f-a2ee-ccdc21aebc65",
+   "index_licence_raw": "cc-by",
+   "index_licence_norm": "CC-BY-4.0",
+   "index_harvested_at": "2026-09-06T14:21:29Z",
+   "resource": {
+    "url": "https://draft-assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1039924/GPC_returns_July-_Sept__1_.xlsx",
+    "name": "Northern Ireland Office (NIO) GPC Spending over £500 for July to September ",
+    "format": "CSV"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "data_gov_uk:01d9974a-15f3-4d0d-a6d0-ecb08b4b4234",
+   "title": "Norwich City Council Expenditure Exceeding £500",
+   "publisher": "Norwich City Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/norwich_expenditure_exceeding_500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=01d9974a-15f3-4d0d-a6d0-ecb08b4b4234",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:48Z",
+   "resource": {
+    "url": "http://compliancyview.s3.amazonaws.com/98-1416404132453",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 9
+  },
+  {
+   "dataset_key": "data_gov_uk:3061d52e-23c8-45fc-8912-8d96f73b2158",
+   "title": "Oxford City Council spending over £500",
+   "publisher": "Oxford City Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/oxford-city-council-spending-over-500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=3061d52e-23c8-45fc-8912-8d96f73b2158",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:40Z",
+   "resource": {
+    "url": "https://www2.oxopendata.uk/api/views/6xkh-sw97/rows.csv?accessType=DOWNLOAD",
+    "name": "Download",
+    "format": "CSV"
+   },
+   "other_resources": 5
+  },
+  {
+   "dataset_key": "data_gov_uk:b5f46f62-872f-4d92-9cb7-f7f1570b914a",
+   "title": "Peterborough City Council - Payments over £500",
+   "publisher": "Peterborough City Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/peterborough-city-council-payments-over-500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=b5f46f62-872f-4d92-9cb7-f7f1570b914a",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:49Z",
+   "resource": {
+    "url": "http://data.peterborough.gov.uk/View/commercial-activities/payments-over-500#",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "data_gov_uk:a3af6580-2c8c-498f-a528-89fac84d59dd",
+   "title": "Transparency Code - Payments over £500",
+   "publisher": "Peterborough City Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/transparency-code-payments-over-500-pcc",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=a3af6580-2c8c-498f-a528-89fac84d59dd",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:41Z",
+   "resource": {
+    "url": "http://data.peterborough.gov.uk/download/commercial-activities/transparency-code-payments-over-500/payments-over-500-january-2014/CSV?version=21/03/2017",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 253
+  },
+  {
+   "dataset_key": "data_gov_uk:6e09ea28-c27e-45aa-bdbb-3df3ccd742ad",
+   "title": "Spend over £500 at the Planning Inspectorate",
+   "publisher": "Planning Inspectorate",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-planning-inspectorate",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=6e09ea28-c27e-45aa-bdbb-3df3ccd742ad",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:57Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.communities.gov.uk/documents/corporate/xls/17517941.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 27
+  },
+  {
+   "dataset_key": "plymouth:9e9b0128-9095-4bde-b24b-d04e60789016",
+   "title": "Council spend over £500",
+   "publisher": "Plymouth City Council",
+   "portal": "plymouth",
+   "landing_url": "https://plymouth.thedata.place/dataset/plymouth-spend-over-f500-2015",
+   "licence_kind": "ckan",
+   "metadata_url": "https://plymouth.thedata.place/api/3/action/package_show?id=9e9b0128-9095-4bde-b24b-d04e60789016",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:39Z",
+   "resource": {
+    "url": "https://plymouth.thedata.place/dataset/9e9b0128-9095-4bde-b24b-d04e60789016/resource/4e120b86-ffc2-4a87-a9f3-5d70c7faf923/download/spend500march2015.csv",
+    "name": "PCC Spend over £500 - March 2015",
+    "format": "CSV"
+   },
+   "other_resources": 4
+  },
+  {
+   "dataset_key": "data_gov_uk:649619b2-8817-465f-9378-4b5fd60d5337",
+   "title": "Spend over £500 at the Queen Elizabeth II Conference Centre",
+   "publisher": "Queen Elizabeth II Conference Centre",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-qeii",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=649619b2-8817-465f-9378-4b5fd60d5337",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:49Z",
+   "resource": {
+    "url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/6209/175179416.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 10
+  },
+  {
+   "dataset_key": "data_gov_uk:77af265f-80d0-436b-806a-c48e3385f1ff",
+   "title": "Royal Borough of Greenwich payments over £500 (Dec 2010 to Dec 2011)",
+   "publisher": "Royal Borough of Greenwich",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/local-authority-spend-over-500-royal-borough-of-greenwich",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=77af265f-80d0-436b-806a-c48e3385f1ff",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:52Z",
+   "resource": {
+    "url": "http://www.royalgreenwich.gov.uk/download/downloads/id/842/december_2010_payments_over_500_csv.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 16
+  },
+  {
+   "dataset_key": "data_gov_uk:f2b384b5-6d41-4367-bdcd-5bffbb61f850",
+   "title": "Royal Borough of Greenwich spending over £500",
+   "publisher": "Royal Borough of Greenwich",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/royal-borough-of-greenwich-spending-over-500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=f2b384b5-6d41-4367-bdcd-5bffbb61f850",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:48Z",
+   "resource": {
+    "url": "http://www.royalgreenwich.gov.uk/download/downloads/id/1161/february_2012_payments_over_and_pound500_csv.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 45
+  },
+  {
+   "dataset_key": "data_gov_uk:cb01d404-1bce-47e8-ba0b-e80dd9017a2a",
+   "title": "Council spend above £500",
+   "publisher": "Royal Borough of Kensington and Chelsea",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/council-spend-above-500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=cb01d404-1bce-47e8-ba0b-e80dd9017a2a",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:53Z",
+   "resource": {
+    "url": "http://www.rbkc.gov.uk/files/Schedule%20of%20payments%2001042012-31032013.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "data_gov_uk:5b1742f9-3192-472a-bbc2-c74802254e59",
+   "title": "Scarborough Borough Council Spend Over £500",
+   "publisher": "Scarborough Borough Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/scarborough-borough-council-spend-over-500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=5b1742f9-3192-472a-bbc2-c74802254e59",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:28Z",
+   "resource": {
+    "url": "http://uploads.scarborough.gov.uk/500-spends/Council-Spend-March-2019.csv",
+    "name": "Spend Over £500 - March 2019",
+    "format": "CSV"
+   },
+   "other_resources": 283
+  },
+  {
+   "dataset_key": "data_gov_uk:43f592b8-b5e1-4895-bd2c-8f13d7920381",
+   "title": "Spend over £500 in the Science and Technology Facilities Council",
+   "publisher": "Science and Technology Facilities Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-science-and-technology-facilities-council",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=43f592b8-b5e1-4895-bd2c-8f13d7920381",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:48Z",
+   "resource": {
+    "url": "http://www.stfc.ac.uk/Resources/Excel/TFD052010.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 53
+  },
+  {
+   "dataset_key": "data_gov_uk:07f89c8e-11f3-4586-a5f6-ae06d4a09fdf",
+   "title": "Spend over £500 in Standards for England",
+   "publisher": "Standards Board for England",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/standards-for-england-supplier-expenditure",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=07f89c8e-11f3-4586-a5f6-ae06d4a09fdf",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:48Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/20120202153716/http://www.standardsforengland.gov.uk/media/April%202010.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 21
+  },
+  {
+   "dataset_key": "data_gov_uk:b731aec2-caa9-4c07-866b-9cdf58eafd00",
+   "title": "Expenditure over £500",
+   "publisher": "Stockport Metropolitan Borough Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/purchases-over-500-sepetember-2016",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=b731aec2-caa9-4c07-866b-9cdf58eafd00",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:31Z",
+   "resource": {
+    "url": "http://old.stockport.gov.uk/transparency-code/500spend/csv/500spend-jan2017.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 18
+  },
+  {
+   "dataset_key": "data_gov_uk:63e7194a-4157-42b1-969d-b6f82cc76ae8",
+   "title": "Spend over £500 in Pensions Advisory Service",
+   "publisher": "The Pensions Advisory Service",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-pensions-advisory-service",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=63e7194a-4157-42b1-969d-b6f82cc76ae8",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:53Z",
+   "resource": {
+    "url": "http://www.pensionsadvisoryservice.org.uk/media/451665/spend%20over%2025k%20apr10.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 26
+  },
+  {
+   "dataset_key": "data_gov_uk:10ab017c-09fd-4bdf-97bc-24a6032f1e64",
+   "title": "Spend over £500 in Thurrock Thames Gateway Development Corporation",
+   "publisher": "Thurrock Thames Gateway Development Corporation",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-ttgdc",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=10ab017c-09fd-4bdf-97bc-24a6032f1e64",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:49Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.thurrocktgdc.org.uk/idoc.ashx?docid=5d8cb806-dbdc-468c-9961-a1575b1c5a8b&version=-1",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 5
+  },
+  {
+   "dataset_key": "data_gov_uk:e32c1ade-5608-4952-b36c-58e5b73eba2a",
+   "title": "Trafford Council - Expenditure exceeding 500 GBP (Supplier Spend)",
+   "publisher": "Trafford Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/expenditure-exceeding-500-gbp-supplier-spend",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=e32c1ade-5608-4952-b36c-58e5b73eba2a",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:26Z",
+   "resource": {
+    "url": "https://www.trafford.gov.uk/sites/default/files/2026-05/trafford-supplier-spend-metadata.csv",
+    "name": "Trafford supplier spend metadata",
+    "format": "CSV"
+   },
+   "other_resources": 4
+  },
+  {
+   "dataset_key": "data_gov_uk:04684038-f9a9-46be-a9fb-86f1455084ed",
+   "title": "TfGM Spending Over £500",
+   "publisher": "Transport for Greater Manchester",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/tfgm-spending-over-500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=04684038-f9a9-46be-a9fb-86f1455084ed",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:36Z",
+   "resource": {
+    "url": "https://odata.tfgm.com/opendata/downloads/£500/1112Qtr1Payments.csv",
+    "name": "1st Quarter 2011/12",
+    "format": "CSV"
+   },
+   "other_resources": 122
+  },
+  {
+   "dataset_key": "tunbridge_wells:https://www.arcgis.com/home/item.html?id=0611f62e114245c8989f5d793f21fd4f&sublayer=0",
+   "title": "Tunbridge Wells Open Data - Spend Over 250 - Financial Year 2024 to 2025",
+   "publisher": "Tunbridge Wells Borough Council",
+   "portal": "tunbridge_wells",
+   "landing_url": "https://opendatanew-tunbridgewells.opendata.arcgis.com/datasets/tunbridgewells::tunbridge-wells-open-data-spend-over-250-financial-year-2024-to-2025",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/0611f62e114245c8989f5d793f21fd4f?f=json",
+   "index_licence_raw": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:22:24Z",
+   "resource": {
+    "url": "https://opendatanew-tunbridgewells.opendata.arcgis.com/api/download/v1/items/0611f62e114245c8989f5d793f21fd4f/csv?layers=0",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 6
+  },
+  {
+   "dataset_key": "data_gov_uk:002445de-71a7-4517-b1dd-9893bacedea7",
+   "title": "Tunbridge Wells Open Data - Spend Over £250  - Financial year 2010 to 2011",
+   "publisher": "Tunbridge Wells Borough Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/tunbridge-wells-open-data-spend-over-250-financial-year-2010-to-2011",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=002445de-71a7-4517-b1dd-9893bacedea7",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-06T14:20:48Z",
+   "resource": {
+    "url": "http://opendatanew-tunbridgewells.opendata.arcgis.com/datasets/8694b5622420475488ccd289ad707aa6_0.csv",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "other_resources": 3
+  },
+  {
+   "dataset_key": "data_gov_uk:1f630d0c-4e43-4299-9e51-c17372ceff1f",
+   "title": "Spend over £500 in the UK Commission for Employment and Skills",
+   "publisher": "UK Commission for Employment and Skills",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-over-500-uk-commission-for-employment-and-skills",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=1f630d0c-4e43-4299-9e51-c17372ceff1f",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:45Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/20140108090250/http://www.ukces.org.uk/assets/bispartners/ukces/docs/data/500-payments-11-april.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 46
+  },
+  {
+   "dataset_key": "data_gov_uk:a5a8aeec-7c85-4908-8915-6daeaf0d30f1",
+   "title": "Administrative spend over £500 in UK Trade and Investment",
+   "publisher": "UK Trade and Investment",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/administrative-spend-over-500-in-uk-trade-and-investment",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=a5a8aeec-7c85-4908-8915-6daeaf0d30f1",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:41Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/20120716091800/http://www.bis.gov.uk/assets/biscore/data/ukti-admin-spend-may-2010.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 68
+  },
+  {
+   "dataset_key": "data_gov_uk:31b96dea-5b99-410b-a14c-feaa29abec47",
+   "title": "Spend over £500 in the Wales Office",
+   "publisher": "Wales Office",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/financial-transactions-data-wo",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=31b96dea-5b99-410b-a14c-feaa29abec47",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:52Z",
+   "resource": {
+    "url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/214673/Wales-Office-spend-over-500-May-2010.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 32
+  },
+  {
+   "dataset_key": "data_gov_uk:e0cd8e89-bcde-4d7c-b7f1-f11421440066",
+   "title": "Warrington Borough Council expenditure over £500",
+   "publisher": "Warrington Borough Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/warrington-borough-council-expenditure-over-500",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=e0cd8e89-bcde-4d7c-b7f1-f11421440066",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:48Z",
+   "resource": {
+    "url": "http://www.warrington.gov.uk/download/downloads/id/2137/final_spend_data_apr-dec_2010",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 63
+  },
+  {
+   "dataset_key": "data_gov_uk:198145b4-2777-4d1a-9a28-bc212e680dd3",
+   "title": "Spend over £500 in West Northamptonshire Development Corporation",
+   "publisher": "West Northamptonshire Development Corporation",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/spend-over-500-in-west-northamptonshire-development-corporation",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=198145b4-2777-4d1a-9a28-bc212e680dd3",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:21:50Z",
+   "resource": {
+    "url": "http://webarchive.nationalarchives.gov.uk/+/http://www.wndc.org.uk/wp-content/uploads/2010/10/WNDC-Spend-over-£500-April-2010.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 45
+  },
+  {
+   "dataset_key": "data_gov_uk:cd60f6d6-56bd-4511-90d0-31e012430f6c",
+   "title": "Wirral Expenditure Exceeding £500",
+   "publisher": "Wirral Metropolitan Borough Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/https-www-wirral-gov-uk-about-council-budgets-and-spending-payments-suppliers-and-agents",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=cd60f6d6-56bd-4511-90d0-31e012430f6c",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:25Z",
+   "resource": {
+    "url": "https://www.wirral.gov.uk/media/14064/download?inline",
+    "name": "Expenditure Exceeding £500 September 2022",
+    "format": "CSV"
+   },
+   "other_resources": 50
+  },
+  {
+   "dataset_key": "data_gov_uk:aa26e625-4048-44d6-8151-cad0d6833830",
+   "title": "Expenditure over £500 - Wyre Council",
+   "publisher": "Wyre Borough Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/expenditure-over-500--wyre-council",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=aa26e625-4048-44d6-8151-cad0d6833830",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-06T14:20:46Z",
+   "resource": {
+    "url": "http://www.wyrebc.gov.uk/Docs/Open_Data/December_10_Spend_500.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "other_resources": 8
+  }
+ ],
+ "skipped": [
+  {
+   "key": "data_gov_uk:24e3f10e-1159-4b3e-a643-1b99df0df43b",
+   "title": "Acas Spending over £250 & Prompt Payment statistics Financial Year 2020-2021",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:e8b68136-0f51-4673-8dda-3d4bb3581597",
+   "title": "Acas Spending over £250 & Prompt Payment statistics Financial Year 2023-2023",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?",
+    "HTML"
+   ]
+  },
+  {
+   "key": "data_gov_uk:31a88841-8439-4048-8cc4-ad7ae7908446",
+   "title": "Acas Spending over £250 & Prompt Payment statistics Financial Year 2023-2024",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:f00d7e97-29f7-456d-8eb2-c36aa8217829",
+   "title": "Expenditure over £500 | Architects Registration Board, UK",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:3886ffc5-1820-4c64-b0ca-babace9b6903",
+   "title": "Spend over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:0892b31b-5ec5-4eee-9de1-86ce3469c657",
+   "title": "Barrow Borough Council Spending over £500 2013-2014",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:9cd07684-e76e-4eda-b72e-8540d57ccfde",
+   "title": "Payments over £500 -  Boston Borough Council",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "PDF"
+   ]
+  },
+  {
+   "key": "data_gov_uk:1a4c67e7-cc89-4948-82a7-c2ede666535c",
+   "title": "Purchase Card spend over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "HTML"
+   ]
+  },
+  {
+   "key": "data_gov_uk:2d6c7585-c281-4285-ad35-44db26215c95",
+   "title": "Procurement card spend over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:1273a148-90f2-4ce4-8701-f59b0e296962",
+   "title": "Government Procurement Card spend over £500 from the Care Quality Commission",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:0072fff0-3c53-476c-903e-372e52f053b8",
+   "title": "Government Procurement Card spend over £500 for The Charity Commission",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:03cadc20-b570-44f7-a70c-bd6c35cdf376",
+   "title": "Expenditure exceeding £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?",
+    "HTML"
+   ]
+  },
+  {
+   "key": "data_gov_uk:5bdb5eae-e758-4d2b-b5cd-a942c61ff4b8",
+   "title": "Spend over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:5818b4c1-180a-49f8-ba37-29c96d468073",
+   "title": "Crown Prosecution Service Information on GPC card expenditure over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:b6e1afac-1a7a-4c31-ae99-6550b198963a",
+   "title": "BEIS spending over £500 - also known as ePCS (electronic purchasing card solution or GPC (government payment card)",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:40f2ee98-6a35-4644-b0d0-22f92ac43af6",
+   "title": "BIS Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:0631fa4b-2f34-4941-8bb5-fb7b5d0ea6c4",
+   "title": "DCMS Government Procurement Card Spend – Transactions over £500 or above: 1 April 2010 to 31 March 2011",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:4dd8c0b5-caa7-4f04-8615-28e9827ebc7f",
+   "title": "DCMS Government Procurement Card Spend –Transactions over £500, 1 April 2011 - October 2011",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:c2029f78-837e-43ef-b56c-738a825e4e69",
+   "title": "DCMS Government Procurement Card spend: transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:4bb47f73-6bbf-4d0a-ab21-96721795ed35",
+   "title": "Spend over £500 with Government Procurement Cards (GPC) and Electronic Purchasing Card Solution (ePCS) in the Department for Education",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:1a7347c5-8758-427b-825b-31e0ff417784",
+   "title": "DESNZ spending over £500 - also known as ePCS or GPC",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:d3e1e8d8-65d4-4d13-a335-4eab9116c5e6",
+   "title": "Animal Health and Veterinary Laboratories Agency (AHVLA) Government Procurement Card spend transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:1f820d1b-9f49-4349-88b4-64246f2996f4",
+   "title": "Centre for Environment, Fisheries and Aquaculture Science (Cefas) Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:e2d77c8a-bced-4e87-af6a-a6c8a954d008",
+   "title": "Consumer Council for Water (CCW) Government Procurement Card spend transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:710cd410-0724-4aac-b891-e48e9ec50d66",
+   "title": "Defra Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:7a43ab2b-183a-4918-b4d8-24a56cf9efb6",
+   "title": "Environment Agency (EA) Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:6909655d-1c42-40f3-8db7-add8bc9ccd7e",
+   "title": "Food and Environment Research Agency (Fera) Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:ffa56420-2d4c-4f5b-bdbd-b2a84d1ed35b",
+   "title": "Gangmasters Licensing Authority (GLA) Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:0ddce98e-7f49-4414-98a0-e27da8de73c0",
+   "title": "Joint Nature Conservation Committee (JNCC) Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:ccca8ab2-b329-4c8c-b47d-634cd0cd97a5",
+   "title": "Marine Management Organisation (MMO) Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:11d20b15-db87-4b15-af3e-8160489052ed",
+   "title": "Natural England (NE) Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:acd6dab8-4fba-4fd9-b459-55fb7adda898",
+   "title": "Royal Botanic Gardens (Kew) Government Procurement Card spend transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:383bd87c-dece-497f-8f80-7addba57f255",
+   "title": "Rural Payments Agency (RPA) Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:3832bca2-c230-41b2-b029-7fcaeb137bfb",
+   "title": "Veterinary Medicines Directorate Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:98b8c692-2352-4d7a-bc9c-032022188061",
+   "title": "Government Procurement Card spend above £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:1f6d291e-fd0a-4651-9b1c-a67734cce90d",
+   "title": "DSIT spending over £500 - also known as ePCS or GPC",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:a144a8ff-5381-40c0-b3cb-704644d0d191",
+   "title": "Department of Health Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:5e2b9d40-e8b1-48ea-8fc3-acb11b2a62b7",
+   "title": "Expenditure Exceeding £500 and Government Procurement Card Transactions",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:270cbf8a-3667-4627-8b3a-e5568c31e359",
+   "title": "Spend over £500 in East Sussex Hospitals NHS Trust",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:e20e96a7-d397-4582-aa55-bd4349ff4793",
+   "title": "Government Procurement Card (GPC) Expenditure above £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:386a63b1-8036-4951-957f-e96cf719f6fd",
+   "title": "Government Procurement Card spend over £500 in FCO Services",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:b0bb8fd7-26e2-4a4b-b1e5-7e9bbf4932bc",
+   "title": "Government Procurement Card spend over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:00948609-245c-4852-9b8f-3197983b7c7a",
+   "title": "Foreign, Commonwealth and Development Office: Government procurement card spending over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:921627b6-bbec-4dbd-beae-e16022e6abc7",
+   "title": "Forestry Commission GPC spend over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:6890f53f-88db-4a3c-a8d5-2ac433a0073a",
+   "title": "Government Procurement Card Transactions over £500 in Treasury Solicitors Department",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "london_datastore:vq8w7",
+   "title": "GLA Expenditure over £250",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "london_datastore:vdjdm",
+   "title": "OPDC Expenditure over £250",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:2f810039-1d93-48e7-bea0-465857c0deed",
+   "title": "HM Treasury Government Procurement Card spend greater than £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:66390471-c8e7-4d58-b157-161f0ca37f1a",
+   "title": "GPC Spend over £500 in the Health and Safety Executive",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:dbb61705-22e5-41ff-ae81-0f1636e666c8",
+   "title": "Spend over £250",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:60795a70-f0a8-40bb-a5da-edd827e42f06",
+   "title": "Spending over £500 - Ipswich Borough Council",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:227936d4-1726-4dbf-ba48-c7ea26babb34",
+   "title": "Spend over £500 in Lewisham PCT",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:2361c92f-1b51-4e90-a7e9-8b0611a43829",
+   "title": "Expenditure Exceeding £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "HTML"
+   ]
+  },
+  {
+   "key": "data_gov_uk:84ff7d2e-754e-489d-b98c-ed6dfa0c4baa",
+   "title": "Spend over £250 in CLA",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:94d8742a-c1df-4437-8c6d-1812052b3e60",
+   "title": "Spend over £500 in the Local Government Ombudsman",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:96d19af7-88fc-4c38-a9e8-04fa8679f1b4",
+   "title": "Spend Over 500 GBP",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:a6c19304-2db2-46e6-bbbb-2c4f24682bef",
+   "title": "Spend Over 500 GBP 2015",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:ae22d6dd-0fdd-451d-9e47-e491ad3da371",
+   "title": "Spend Over 500 GBP Current Year",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "london_datastore:2gqxr",
+   "title": "LFB Payments over £250",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "london_datastore:246o6",
+   "title": "LFB Payments over £250 - 2023/24",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "london_datastore:e766x",
+   "title": "LFB Payments over £250 - 2024/25",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "london_datastore:e6wqp",
+   "title": "LLDC Expenditure over £250",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:41c3ebbc-ded5-4dbd-8a79-5f91bcd7e410",
+   "title": "Spend over £500 in London Thames Gateway Development Corporation",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:b006dc83-ceb9-4e0b-a591-e274e69d6c29",
+   "title": "Expenditure over 500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?",
+    "PDF"
+   ]
+  },
+  {
+   "key": "agol_middlesbrough_council:3fd9978476d54e43911f430f78efd1ab",
+   "title": "Spend Over 500 - February 2022",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "agol_middlesbrough_council:a10af93a883d4a869c481748c1406297",
+   "title": "Spending over 500 - April - June 2024",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "agol_middlesbrough_council:e1cf6a854d594071acae242ef76e1702",
+   "title": "Spending over 500 - December 2022",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "agol_middlesbrough_council:7215842a13c34eabb7902d52e86b9f6e",
+   "title": "Spending over 500 - July - September 2024",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:10ed9d00-28de-4f6a-a89e-d4b5eae04ecf",
+   "title": "North Yorkshire County Council Transparency Figures - Expenditure over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:3e166aeb-23bd-40a0-afc3-4ad597f46a70",
+   "title": "St.Helens Council Transparency Figures Expenditure over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:d38fd4c5-30d6-4f6a-90eb-56dd920a3eb5",
+   "title": "VTS spend over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:326818d5-48bc-4f12-b618-3ec65319fc26",
+   "title": "Expenditure Exceeding £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "HTML",
+    "SHAREPOINT"
+   ]
+  },
+  {
+   "key": "data_gov_uk:945e97b4-9e4e-4e3a-bb15-0e163fdf6919",
+   "title": "Monitor Government Procurement Card (GPC) Transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:3352b74f-6943-4b85-8a03-f16be190c0de",
+   "title": "GPC Spend over £500 in NHS Blood and Transplant",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:efc0dfbe-5c8c-4112-9e3a-190db766b52d",
+   "title": "Government Procurement Card (GPC) Transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:f36700df-21ca-474d-93ad-094742b2ce35",
+   "title": "NICE Corporate credit card expenditure over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:4a2e4d09-cec2-4f80-8715-341586e45aca",
+   "title": "Spend over £500 in National Lottery Commission",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:70242c42-65fe-40ec-9678-042a73249bd6",
+   "title": "Natural History Museum Government Procurement Card spend over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:fdd1dba4-a12d-4809-80fa-38341a8de819",
+   "title": "NSDC Payments over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "datamillnorth:vq6j7",
+   "title": "Payments over £250 made by Newcastle City Council",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:cb53c496-bed3-4706-9b2b-c886e5fa45c2",
+   "title": "North Somerset Council spend over £250",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "DASHBOARD"
+   ]
+  },
+  {
+   "key": "data_gov_uk:90d334d7-2360-45ba-b20c-a97995273a86",
+   "title": "Council spend over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:0d76ff48-bee9-4d6e-9081-8574a9b3b6ea",
+   "title": "Payments over £250 made by Newcastle City Council",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "datamillnorth:2nq4m",
+   "title": "Council spend over £250",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:a413396b-fdf6-4478-9dd6-53ce80a3fa98",
+   "title": "North Yorkshire County Council Transparency Figures - Expenditure over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:0a532db6-d1ea-4750-b536-c02194d2826d",
+   "title": "Northern Ireland Office (NIO): GPC spending over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:83698b8b-815d-4fdf-902a-338210a999bc",
+   "title": "Northern Ireland Office (NIO): GPC spending over £500 - June 2021",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:6bef8ca5-2f1c-4554-aaf8-ad17a5323f9a",
+   "title": "Northern Ireland Office (NIO): GPC spending over £500 – August 2021",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:16112405-4ed8-4724-b682-686593af4860",
+   "title": "Northern Ireland Office (NIO): GPC spending over £500 – July 2021",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:3676a291-0984-412b-8dd1-f72b2902d153",
+   "title": "Northern Ireland Office (NIO): GPC spending over £500 – Sept 2021",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:fce717cf-f365-43c3-9246-5a9e7e3885cb",
+   "title": "Northern Ireland Office (NIO): GPC spending over £500 –October 2021",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:c9cfb9e5-ba6e-4fc7-b699-22891d52f1d3",
+   "title": "GPC spend over £500 in the Parliamentary and Health Service Ombudsman",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:8c19bc4a-f5f5-478e-b606-1127ce43a309",
+   "title": "GPC Spend over £250 at the Planning Inspectorate",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:4025e060-611d-4a8a-9b98-77ed33dd5dda",
+   "title": "GPC spend over £500 at the Planning Inspectorate",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:91f5e4f4-d7eb-40ff-9ef1-4a08cccdadbb",
+   "title": "Spend over £250 at the Planning Inspectorate",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:36d9cc3f-8caa-43c4-b0ba-10a95db26b9d",
+   "title": "Spending over £500 by Preston City Council",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:d8df0358-99ef-420d-b937-06826b3601bf",
+   "title": "Council spend above £250",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "ASHX"
+   ]
+  },
+  {
+   "key": "data_gov_uk:4b5beac1-5ead-471b-8edf-68c7c04ebe14",
+   "title": "Salford City Council expenditure over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "HTML"
+   ]
+  },
+  {
+   "key": "data_gov_uk:2f70b337-8c0b-418c-81ea-e64c495118bc",
+   "title": "Government Procurement Card transactions over £500 from Science and Technology Facilities Council",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:c0dd8183-352d-4e01-a420-2d187d341e12",
+   "title": "Scotland Office Government Procurement Card spend over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "datamillnorth:emd0m",
+   "title": "Council spend over £250",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:8cd1ae1d-f18e-4e17-8b77-950721bc5e7c",
+   "title": "St Austell Town Council Payments over £500 between Nov 2011 to March 2013",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:c6c0dc7e-390d-4e62-87cd-42e8202ebca5",
+   "title": "Council spend over £250",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "datamillnorth:2y1z8",
+   "title": "Council spend over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:af2dcd7d-b189-42d8-adfa-637a240b72ea",
+   "title": "Payments over £250 made by Newcastle City Council",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:79722fb4-2681-4352-9486-20efed61b123",
+   "title": "Government Procurement Card spend over £500 for the UK Commission for Employment and Skills",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:c55ad68a-271c-4b87-84b4-def1151b9485",
+   "title": "UKSBS Spending Over £500 on a GPC",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:c1504ccf-745a-4bcd-8495-3be2d1fde8d7",
+   "title": "UKTI Government Procurement Card spend - transactions over £500",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:644c616c-e44c-4eb9-8548-4ed1acd02b8e",
+   "title": "Council spend over £250",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:fd70479e-f728-4881-af3e-20f85b14508e",
+   "title": "Council spend over £500",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:c5cb3927-a838-4252-8251-e0fa98e32aeb",
+   "title": "Payments over £250 made by Newcastle City Council",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:1151799c-5730-4e7e-9492-484a4bcbbc95",
+   "title": "Government Procurement Card (GPC) spend - transactions over £500",
+   "why": "title matches exclusion"
+  }
+ ]
+}

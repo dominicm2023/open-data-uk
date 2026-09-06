@@ -1,0 +1,30 @@
+{
+  "family": "recycling_centres",
+  "label": "Household waste recycling centres",
+  "one_row_is": "one recycling centre (household waste recycling centre / civic amenity site) as published by the body responsible for it",
+  "columns": [
+    {"name": "site_name", "type": "text", "required": true, "meaning": "the site's name as published"},
+    {"name": "address", "type": "text", "required": false, "meaning": "street address as published, one line; null if the publisher gave none"},
+    {"name": "postcode", "type": "text", "required": false, "meaning": "UK postcode as published, upper-cased, single space; null if absent"},
+    {"name": "lon", "type": "number", "required": false, "meaning": "WGS84 longitude; converted from British National Grid if the source gave eastings/northings; null if no location"},
+    {"name": "lat", "type": "number", "required": false, "meaning": "WGS84 latitude"},
+    {"name": "coords_source", "type": "text", "required": false, "meaning": "wgs84 | bng_converted | none — how lon/lat were obtained"},
+    {"name": "operator", "type": "text", "required": false, "meaning": "operating body or contractor if published"},
+    {"name": "opening_hours", "type": "text", "required": false, "meaning": "opening hours as published, verbatim; never normalised"},
+    {"name": "materials", "type": "text", "required": false, "meaning": "accepted materials as published, verbatim; null if not published"},
+    {"name": "status", "type": "text", "required": false, "meaning": "open/closed/temporary as published; null if not published"},
+    {"name": "as_of", "type": "date", "required": false, "meaning": "the date the source says the record is current to; null if the source states none (do not use the download date)"}
+  ],
+  "provenance": ["publisher", "dataset_key", "source_url", "source_sha256", "source_table", "source_row", "licence_id", "licence_url", "licence_evidence_sha256", "licence_evidence_kind", "adapter_version"],
+  "validation": {
+    "postcode_regex": "^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$",
+    "lat_range": [49.8, 61.0],
+    "lon_range": [-8.7, 2.0]
+  },
+  "rules": [
+    "Never invent coordinates: if the source has neither lon/lat nor eastings/northings, both stay null and coords_source is 'none'.",
+    "Never geocode a postcode.",
+    "Opening hours and materials are verbatim text; they are not parsed into a structure by this family.",
+    "A row is one site; if a source lists one site per material or per opening day, the adapter must say so and the source is held at 'mapped' for review."
+  ]
+}
