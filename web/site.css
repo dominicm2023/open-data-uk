@@ -404,6 +404,39 @@ ul.bodies li b { font-weight: 600; font-variant-numeric: tabular-nums; margin-le
 .fold ul.notes { padding-left: 1.15rem; }
 .fold ul.notes li { margin-bottom: .55rem; font-size: .92rem; }
 .fold h3 { margin-top: 1rem; }
+/* The family page's picture and its answers: an inline SVG map or a
+   body-by-year grid beside the questions the table can answer. */
+.viz { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 1.6rem 2rem; align-items: start; margin: .4rem 0 1.6rem; }
+.viz h2 { margin-top: 0; }
+@media (max-width: 720px) { .viz { grid-template-columns: 1fr; } }
+figure.map, figure.strip { margin: 0; }
+figure.map svg { width: 100%; max-width: 360px; height: auto; display: block; margin: 0 auto; }
+figure.map .ie { fill: var(--line); stroke: none; opacity: .55; }
+figure.map .uk { fill: var(--accent-soft); stroke: var(--line-strong); stroke-width: .6; stroke-linejoin: round; }
+figure.map .dots circle { fill: var(--accent); fill-opacity: .72; stroke: var(--card); stroke-width: .35; }
+figure.map .dots circle:hover { fill-opacity: 1; }
+figure.map figcaption, figure.strip figcaption { margin-top: .5rem; }
+figure.strip svg { display: block; min-width: 560px; width: 100%; height: auto; font-size: 10px; }
+figure.strip .yr, figure.strip .bd { fill: var(--muted); font-size: 10px; }
+figure.strip rect { fill: var(--accent); }
+figure.strip rect.empty { fill: none; stroke: var(--line); stroke-width: 1; }
+dl.qa { margin: 0 0 .6rem; }
+dl.qa dt { font-weight: 620; margin: .9rem 0 .25rem; }
+dl.qa dt:first-child { margin-top: 0; }
+dl.qa dd { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.5; }
+ul.fill { list-style: none; padding: 0; margin: .4rem 0 .5rem; max-width: 40rem; }
+ul.fill li { display: grid; grid-template-columns: 9rem minmax(0, 1fr) 3rem; align-items: center; gap: .6rem; margin-bottom: .3rem; font-size: .875rem; }
+ul.fill .bar { display: block; height: .55rem; background: var(--line); border-radius: 999px; overflow: hidden; }
+ul.fill .bar i { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+ul.fill .pct { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* The family filters: a body, a year, a word; the form itself is the
+   filtered download, the script makes it a live preview. */
+form.filters { display: flex; flex-wrap: wrap; gap: .6rem .9rem; align-items: flex-end; margin: .2rem 0 .8rem; padding: .9rem 1rem; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+form.filters label { display: flex; flex-direction: column; gap: .25rem; font-size: .78rem; color: var(--muted); font-weight: 600; }
+form.filters select, form.filters input { font: inherit; font-size: .9rem; color: var(--ink); background: var(--bg); border: 1px solid var(--line-input); border-radius: var(--radius-sm); padding: .4rem .55rem; min-width: 9rem; max-width: 18rem; }
+form.filters input[type="search"] { min-width: 14rem; }
+form.filters button { padding: .45rem .9rem; }
+@media (max-width: 720px) { form.filters label { flex: 1 1 100%; } form.filters select, form.filters input { max-width: none; } }
 ul.related { padding-left: 1.15rem; margin: .5rem 0; }
 ul.related li { margin-bottom: .25rem; }
 

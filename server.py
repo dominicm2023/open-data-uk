@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import functools
 import json
+from urllib.parse import quote
 import os
 import re
 import threading
@@ -1010,12 +1011,44 @@ def family_page(name: str) -> Response:
     return HTMLResponse(html_out, headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
 
 
+FAMILY_FILTER_COLS = ("body", "publisher", "pollutant")
+
+
+def _family_filter(fam: str, body: str | None, year: str | None, pollutant: str | None,
+                   q: str | None) -> tuple[str, list]:
+    """WHERE clause and parameters for the filters a family API accepts.
+    Column names come from a fixed list, values are always parameters, and
+    a free-text search is a LIKE over the schema's text columns."""
+    import familypage
+    where, params = [], []
+    if body:
+        where.append('("body" = ? OR "publisher" = ?)'); params += [body, body]
+    if year:
+        if not year.isdigit():
+            raise HTTPException(status_code=400, detail="year must be a four-digit year")
+        where.append('"yr" = ?'); params.append(int(year))
+    if pollutant:
+        where.append('"pollutant" = ?'); params.append(pollutant)
+    if q:
+        text_cols = [c["name"] for c in familypage._schema(fam)["columns"] if c["type"] == "text"]
+        like = "%" + q.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"
+        where.append("(" + " OR ".join(f'"{c}" LIKE ? ESCAPE \'\\\'' for c in text_cols) + ")")
+        params += [like] * len(text_cols)
+    return (" WHERE " + " AND ".join(where)) if where else "", params
+
+
 @app.get("/api/family/{name}", summary="A dataset family as one table",
          description="Every published row of a family table with its receipts: publisher, "
                      "source URL and SHA-256, source row, licence id and URL, licence evidence "
-                     "hash. Append .csv for CSV. Families: recycling_centres, "
-                     "air_quality_annual, spend_over_500.")
-def api_family(request: Request, response: Response, name: str) -> Response:
+                     "hash. Append .csv for CSV. Filter with body=, year=, pollutant= and q= "
+                     "(a word in any text column); a filtered JSON response carries up to "
+                     "`limit` rows (default 50, max 1000) from `offset`, a filtered CSV every "
+                     "matching row. Families: recycling_centres, air_quality_annual, "
+                     "spend_over_500.")
+def api_family(request: Request, response: Response, name: str,
+               body: str | None = None, year: str | None = None, pollutant: str | None = None,
+               q: str | None = None, limit: int = Query(50, ge=1, le=1000),
+               offset: int = Query(0, ge=0)) -> Response:
     _rate_check(request, response)
     import familypage
     want_csv = name.endswith(".csv")
@@ -1023,6 +1056,46 @@ def api_family(request: Request, response: Response, name: str) -> Response:
     if fam not in FAMILY_NAMES or familypage.load(fam) is None:
         raise HTTPException(status_code=404, detail="Unknown family")
     out = familypage.STORE / fam
+    filtered = any(v for v in (body, year, pollutant, q)) or "limit" in request.query_params
+    db = out / f"{fam}.sqlite"
+    if filtered and db.exists():
+        import csv as _csv
+        import io as _io
+        import sqlite3 as _sq
+        where, params = _family_filter(fam, body, year, pollutant, q)
+        conn = _sq.connect(f"file:{db}?mode=ro", uri=True)
+        conn.row_factory = _sq.Row
+        cols = [r[1] for r in conn.execute("PRAGMA table_info(rows)") if r[1] != "yr"]
+        col_sql = ", ".join(f'"{c}"' for c in cols)
+        if want_csv:
+            def stream():
+                buf = _io.StringIO()
+                w = _csv.writer(buf)
+                w.writerow(cols)
+                yield buf.getvalue(); buf.seek(0); buf.truncate()
+                n = 0
+                for row in conn.execute(f"SELECT {col_sql} FROM rows{where}", params):
+                    w.writerow(tuple(row))
+                    n += 1
+                    if n % 2000 == 0:
+                        yield buf.getvalue(); buf.seek(0); buf.truncate()
+                yield buf.getvalue()
+                conn.close()
+            return StreamingResponse(stream(), media_type="text/csv; charset=utf-8",
+                                     headers={"Content-Disposition": f'attachment; filename="{fam}-filtered.csv"',
+                                              "Cache-Control": "public, max-age=3600"})
+        total = conn.execute(f"SELECT COUNT(*) FROM rows{where}", params).fetchone()[0]
+        rows = [dict(r) for r in conn.execute(f"SELECT {col_sql} FROM rows{where} LIMIT ? OFFSET ?",
+                                              params + [limit, offset])]
+        conn.close()
+        summary = familypage.load(fam)
+        qs = "&".join(f"{k}={quote(v)}" for k, v in (("body", body), ("year", year), ("pollutant", pollutant), ("q", q)) if v)
+        return JSONResponse({"family": fam, "label": summary["label"], "built_at": summary["built_at"],
+                             "filters": {k: v for k, v in (("body", body), ("year", year), ("pollutant", pollutant), ("q", q)) if v},
+                             "rows_matching": total, "rows_in_this_response": len(rows), "offset": offset,
+                             "download_csv": f"/api/family/{fam}.csv" + (f"?{qs}" if qs else ""),
+                             "rows": rows, "attribution": ATTRIBUTION},
+                            headers={"Cache-Control": "public, max-age=3600"})
     if want_csv:
         return FileResponse(out / f"{fam}.published.csv", media_type="text/csv; charset=utf-8",
                             filename=f"{fam}.csv",

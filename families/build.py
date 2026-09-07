@@ -37,6 +37,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import math
 import re
 import sqlite3
@@ -223,19 +224,53 @@ def _num(v):
     return float(s)
 
 
-def _date(v):
+_DATE_FORMATS = ("%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M",
+                 "%d/%m/%Y %H:%M", "%d/%m/%Y %H:%M:%S", "%d/%m/%y", "%d/%m/%y %H:%M", "%d %B %Y", "%d %b %Y",
+                 "%d-%b-%Y", "%d-%b-%y", "%d/%b/%Y", "%d/%b/%y", "%d-%B-%Y", "%d.%m.%Y", "%Y%m%d")
+_US_FORMATS = ("%m/%d/%Y", "%m/%d/%y", "%m/%d/%Y %H:%M", "%m-%d-%Y")
+
+
+def _date(v, us: bool = False):
+    """An ISO date from what a body wrote: '15-Dec-11', '11-MAR-2026',
+    '10/01/2014 00:00', an Excel serial number. Day comes before month
+    unless the file as a whole says otherwise (see _us_dates)."""
     if v is None:
         return None
-    s = str(v).strip()
+    if isinstance(v, (int, float)) and 20000 <= v <= 70000:
+        # an Excel serial: days since 1899-12-30
+        from datetime import date, timedelta
+        return (date(1899, 12, 30) + timedelta(days=int(v))).isoformat()
+    s = re.sub(r"\s+", " ", str(v)).strip()
     if not s:
         return None
-    for fmt in ("%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d %H:%M:%S", "%d/%m/%y", "%d %B %Y", "%d %b %Y", "%Y%m%d"):
+    if re.fullmatch(r"\d{5}", s) and 20000 <= int(s) <= 70000:
+        from datetime import date, timedelta
+        return (date(1899, 12, 30) + timedelta(days=int(s))).isoformat()
+    for fmt in (_US_FORMATS + _DATE_FORMATS) if us else _DATE_FORMATS:
         try:
             return datetime.strptime(s[:len(fmt) + 6 if "%B" in fmt else len(s)], fmt).date().isoformat()
         except ValueError:
             continue
     m = re.match(r"(\d{4})-(\d{2})-(\d{2})", s)
-    return f"{m.group(1)}-{m.group(2)}-{m.group(3)} " .strip() if m else None
+    return f"{m.group(1)}-{m.group(2)}-{m.group(3)}" if m else None
+
+
+def _us_dates(values) -> bool:
+    """Does this file write month before day? Only a value like 3/13/2013
+    can say so; a file with any of those, and none the other way round,
+    is read month-first throughout — including its ambiguous 3/4/2013s,
+    which the row-by-row parser would otherwise get silently wrong."""
+    first_big = second_big = 0
+    for v in values:
+        m = re.match(r"\s*(\d{1,2})[/-](\d{1,2})[/-](\d{2,4})", str(v or ""))
+        if not m:
+            continue
+        a, b = int(m.group(1)), int(m.group(2))
+        if a > 12:
+            first_big += 1
+        if b > 12:
+            second_big += 1
+    return second_big > 0 and first_big == 0
 
 
 def _postcode(v):
@@ -381,6 +416,9 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
         "adapter_version": ADAPTER + ":" + (spec.get("version") or "1"),
     }
     types = {c["name"]: c["type"] for c in schema["columns"]}
+    date_cols = [cols[n] for n, t in types.items() if t == "date" and n in cols and cols[n] in idx]
+    us = bool(date_cols) and _us_dates(
+        r[idx[dc]] for r in rows[h + 1:] for dc in date_cols if idx[dc] < len(r))
     out, bad = [], []
     skipped_headers = [0, 0]           # repeated header rows, one-cell dividers
     unpivot = spec.get("unpivot")
@@ -433,12 +471,14 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
                 nv = _num(val)
                 base[name] = int(nv) if nv is not None else None
             elif typ == "date":
-                base[name] = _date(val)
+                base[name] = _date(val, us)
             elif typ == "boolean":
                 base[name] = str(val).strip().lower() in ("true", "yes", "y", "1")
             else:
                 base[name] = re.sub(r"\s+", " ", str(val)).strip() or None
         quality = []
+        if us and any(base.get(n) for n, t in types.items() if t == "date"):
+            quality.append("dates read month-first: the file's own unambiguous dates are written that way")
         if "postcode" in types:
             raw_pc = base.get("postcode")
             base["postcode"] = _postcode(raw_pc)
@@ -520,6 +560,92 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
     return out, bad
 
 
+def _facets(rows: list[dict], schema: dict) -> dict:
+    """What the page draws and answers with, computed once over every
+    published row: years covered per body, the distinct sites with
+    coordinates, how filled each column is, and the largest values. All of
+    it is a fact about this table, never about the world."""
+    types = {c["name"]: c["type"] for c in schema["columns"]}
+    year_col = next((c for c in ("year", "payment_date", "as_of") if c in types), None)
+    years: dict = {}
+    body_years: dict = {}
+    filled = {c: 0 for c in types}
+    sites: dict = {}
+    amount = {"total": 0.0, "max": None, "negative": 0} if "amount_gbp" in types else None
+    means: dict = {}
+    for r in rows:
+        for c in types:
+            if r.get(c) not in (None, ""):
+                filled[c] += 1
+        y = r.get(year_col) if year_col else None
+        y = str(y)[:4] if y else None
+        if y and y.isdigit() and 1990 <= int(y) <= 2030:
+            years[y] = years.get(y, 0) + 1
+            body_years.setdefault(r.get("body") or r.get("publisher"), {})[y] =                 body_years.get(r.get("body") or r.get("publisher"), {}).get(y, 0) + 1
+        if r.get("lon") is not None and r.get("lat") is not None:
+            k = (round(r["lon"], 4), round(r["lat"], 4))
+            if k not in sites:
+                sites[k] = {"name": r.get("site_name") or r.get("site_id") or "", "body": r.get("publisher"),
+                            "lon": k[0], "lat": k[1], "n": 0}
+            sites[k]["n"] += 1
+        if amount is not None and r.get("amount_gbp") is not None:
+            a = r["amount_gbp"]
+            amount["total"] += a
+            if a < 0:
+                amount["negative"] += 1
+            if amount["max"] is None or a > amount["max"]["amount_gbp"]:
+                amount["max"] = {k: r.get(k) for k in ("body", "supplier", "amount_gbp", "payment_date", "period", "description")}
+        if "annual_mean" in types and r.get("annual_mean") is not None:
+            pol = r.get("pollutant") or "?"
+            m = means.setdefault(pol, {"n": 0, "max": None, "min": None, "sites": set(), "unit": r.get("unit")})
+            m["n"] += 1
+            m["sites"].add(r.get("site_id") or r.get("site_name") or (r.get("lon"), r.get("lat")))
+            for key, better in (("max", lambda a, b: a > b), ("min", lambda a, b: a < b)):
+                if m[key] is None or better(r["annual_mean"], m[key]["annual_mean"]):
+                    m[key] = {k: r.get(k) for k in ("site_name", "site_id", "publisher", "year", "annual_mean", "unit")}
+    for m in means.values():
+        m["sites"] = len(m["sites"])
+    site_list = sorted(sites.values(), key=lambda x: -x["n"])
+    return {"year_col": year_col, "years": dict(sorted(years.items())), "body_years": body_years,
+            "sites": site_list[:2500], "sites_total": len(site_list), "filled": filled,
+            "amount": amount, "annual_mean": means or None}
+
+
+def _write_sqlite(path: Path, schema: dict, cols: list[str], rows: list[dict]) -> None:
+    """The published table as one SQLite file, so the API can answer a
+    filter — this body, that year, a word in the supplier — without
+    scanning a 150 MB CSV. `yr` is the year of whichever column dates the
+    row, so every family filters by year the same way. Written beside the
+    old file and swapped in whole: a reader never sees a half-built table."""
+    sql_type = {"integer": "INTEGER", "number": "REAL", "boolean": "INTEGER"}
+    types = {c["name"]: c["type"] for c in schema["columns"]}
+    year_col = next((c for c in ("year", "payment_date", "as_of") if c in types), None)
+    tmp = path.with_suffix(".sqlite.tmp")
+    if tmp.exists():
+        tmp.unlink()
+    c = sqlite3.connect(tmp)
+    defs = ", ".join(f'"{col}" {sql_type.get(types.get(col, "text"), "TEXT")}' for col in cols)
+    c.execute(f'CREATE TABLE rows ({defs}, "yr" INTEGER)')
+
+    def rec(r):
+        y = r.get(year_col) if year_col else None
+        y = str(y)[:4] if y else None
+        vals = []
+        for col in cols:
+            v = r.get(col)
+            vals.append(v if v is None or isinstance(v, (int, float, str)) else str(v))
+        vals.append(int(y) if y and y.isdigit() else None)
+        return vals
+
+    c.executemany(f'INSERT INTO rows VALUES ({",".join("?" * (len(cols) + 1))})', (rec(r) for r in rows))
+    for col in ("body", "publisher", "yr", "pollutant"):
+        if col in cols or col == "yr":
+            c.execute(f'CREATE INDEX ix_{col} ON rows("{col}")')
+    c.commit()
+    c.close()
+    os.replace(tmp, path)
+
+
 def build(family: str, include_proposed: bool = False) -> dict:
     schema = json.loads((HERE / "schema" / f"{family}.json").read_text(encoding="utf-8"))
     mp = HERE / "registry" / f"{family}.mappings.json"
@@ -590,7 +716,8 @@ def build(family: str, include_proposed: bool = False) -> dict:
     if prev_rows and len(published) < 0.8 * prev_rows:
         regression = f"published rows fell from {prev_rows:,} to {len(published):,}"
         print(f"WARNING {family}: {regression}", file=sys.stderr, flush=True)
-    cols = [c["name"] for c in schema["columns"]] + schema["provenance"] + ["source_file", "source_row", "quality_note"]
+    cols = list(dict.fromkeys(
+        [c["name"] for c in schema["columns"]] + schema["provenance"] + ["source_file", "source_row", "quality_note"]))
     for name, rows in (("published", published), ("preview", preview)):
         with (out_dir / f"{family}.{name}.csv").open("w", newline="", encoding="utf-8") as fh:
             w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
@@ -598,6 +725,7 @@ def build(family: str, include_proposed: bool = False) -> dict:
         # The complete table lives in the CSV. The JSON twin is capped: a
         # 588,000-row family made a 584 MB file that nothing read whole.
         (out_dir / f"{family}.{name}.json").write_text(json.dumps(rows[:API_ROWS], ensure_ascii=False), encoding="utf-8")
+    _write_sqlite(out_dir / f"{family}.sqlite", schema, cols, published)
     ladder = {}
     for e in summary:
         ladder[e["ladder"]] = ladder.get(e["ladder"], 0) + 1
@@ -605,7 +733,8 @@ def build(family: str, include_proposed: bool = False) -> dict:
               "published_rows": len(published), "preview_rows": len(preview), "ladder": ladder,
               "previous_published_rows": prev_rows, "regression": regression,
               "publishers_published": sorted({r["publisher"] for r in published}),
-              "licences": sorted({r["licence_id"] for r in published}), "sources": summary}
+              "licences": sorted({r["licence_id"] for r in published}), "sources": summary,
+              "facets": _facets(published, schema)}
     (out_dir / "summary.json").write_text(json.dumps(report, indent=1, ensure_ascii=False), encoding="utf-8")
     # The API payload, written once here so the server streams a file
     # rather than re-serialising a 12 MB table on every request.
