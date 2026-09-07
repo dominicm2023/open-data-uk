@@ -75,13 +75,23 @@ NETWORKS = {
                     "attribution": "Contains public sector information licensed under the Open Government Licence v3.0; source airqualityni.co.uk",
                     "read": "airqualityni.co.uk's footer: 'All content is available under the Open Government Licence v3.0, except where otherwise stated' (read 7 September 2026)"},
     },
+    "waqn": {
+        "publisher": "Welsh Government (Air Quality Wales)",
+        "title": "Welsh network annual statistics",
+        "base": "https://airquality.gov.wales/sites/default/files/openair/R_data/", "abbr": "WAQ", "meta": "WAQ_metadata.RData",
+        "years": range(1990, THIS_YEAR + 1),
+        # Not a named open licence: the site's own terms, read and accepted
+        # by Dominic on 7 September 2026, with the acknowledgement they ask for.
+        "licence": {"id": "AQW-terms", "url": "https://airquality.gov.wales/terms-and-conditions",
+                    "evidence_url": "https://airquality.gov.wales/terms-and-conditions",
+                    "attribution": "Data from Air Quality Wales (airquality.gov.wales), which makes it freely available for public use with acknowledgement of the website as the source",
+                    "read": "airquality.gov.wales/terms-and-conditions: 'Any data downloaded from these pages are freely available for public use, with acknowledgement of this web site as the source.' Not a named licence; accepted as permissive terms by decision DM 2026-09-07, the acknowledgement carried on every row"},
+    },
 }
 # Networks whose sites state no licence a person could accept: listed, not fetched.
 PARKED = {
     "saqn": ("Scottish Air Quality Network (scottishairquality.scot)",
-             "the site's data pages state no licence; nothing to accept until they do or SEPA confirms one"),
-    "waqn": ("Air Quality Wales (airquality.gov.wales)",
-             "terms say 'freely available for public use, with acknowledgement of this web site as the source' — permissive but not a named open licence; a person's decision"),
+             "the site's data pages state no licence; asked by email on 7 September 2026"),
     "aqe": ("Air Quality England (airqualityengland.co.uk, Ricardo for local authorities)",
             "no terms page found; the sites belong to individual councils, so the licence would be theirs to state"),
 }
