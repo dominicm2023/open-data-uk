@@ -180,8 +180,9 @@ A living list. Add freely; move to "Done" with the commit that did it.
   grew to 3.58M rows / 27 bodies after a 35-source review round.
 - 7 Sep (night) — the national monitoring networks (AURN, LMAM, Northern
   Ireland) read from their openair annual summary files: air quality
-  annual means 16k → 47k rows, 1990-2026. Scotland, Wales, Air Quality
-  England parked on licence wording — a decision for Dominic.
+  annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
+  and Scotland on its About page's OGL statement. Air Quality England
+  parked (no terms).
 - 7 Sep — first publisher outreach: 15 councils holding INSPIRE-licensed
   recycling/air datasets asked (by email, DM's approval, from the
   groundwatercast address) to re-release under OGL via the derived-data

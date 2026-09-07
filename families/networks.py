@@ -87,11 +87,19 @@ NETWORKS = {
                     "attribution": "Data from Air Quality Wales (airquality.gov.wales), which makes it freely available for public use with acknowledgement of the website as the source",
                     "read": "airquality.gov.wales/terms-and-conditions: 'Any data downloaded from these pages are freely available for public use, with acknowledgement of this web site as the source.' Not a named licence; accepted as permissive terms by decision DM 2026-09-07, the acknowledgement carried on every row"},
     },
+    "saqn": {
+        "publisher": "Scottish Government (Scottish Air Quality database)",
+        "title": "Scottish network annual statistics",
+        "base": "https://www.scottishairquality.scot/openair/R_data/", "abbr": "SCOT", "meta": "SCOT_metadata.RData",
+        "years": range(1990, THIS_YEAR + 1),
+        "licence": {"id": "OGL-UK", "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+                    "evidence_url": "https://www.scottishairquality.scot/about",
+                    "attribution": "Contains public sector information licensed under the Open Government Licence; source: Scottish Air Quality database (scottishairquality.scot), Crown copyright",
+                    "read": "scottishairquality.scot/about: 'use and re-use the information featured on this website free of charge in any format or medium, under the terms of the Open Government Licence' (version unstated; v3 terms apply; read 7 September 2026)"},
+    },
 }
 # Networks whose sites state no licence a person could accept: listed, not fetched.
 PARKED = {
-    "saqn": ("Scottish Air Quality Network (scottishairquality.scot)",
-             "the site's data pages state no licence; asked by email on 7 September 2026"),
     "aqe": ("Air Quality England (airqualityengland.co.uk, Ricardo for local authorities)",
             "no terms page found; the sites belong to individual councils, so the licence would be theirs to state"),
 }
