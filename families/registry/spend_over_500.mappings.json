@@ -80,9 +80,9 @@
   },
   "constants": {
    "threshold_gbp": 500,
-   "body": "Leicester City"
+   "body": "Leicester City Council"
   },
-  "notes": "'amount' appears to be the net (pre-VAT) figure — sample rows show a separate 'vat' column at ~20% of 'amount' (e.g. amount 1960.0, vat 392.0). 'vat' and 'vat_code' are not mapped, per the rule against folding VAT into amount_gbp. 'beneficiary' is sometimes 'Redacted' in the sample rows; kept as published. Review: preview inspected; dates, suppliers and amounts read as published.",
+  "notes": "'amount' appears to be the net (pre-VAT) figure — sample rows show a separate 'vat' column at ~20% of 'amount' (e.g. amount 1960.0, vat 392.0). 'vat' and 'vat_code' are not mapped, per the rule against folding VAT into amount_gbp. 'beneficiary' is sometimes 'Redacted' in the sample rows; kept as published. Review: preview inspected; dates, suppliers and amounts read as published. Review 2026-09-07: body written as 'Leicester City Council' so the council's two datasets (2022 and current) sit under one name in the combined table.",
   "version": "1",
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
@@ -463,5 +463,81 @@
   "version": "1",
   "reviewer": "Claude, for Dominic Matthews",
   "reviewed_at": "2026-09-06"
+ },
+ "ad249d35bc190e882a9a4faa7fbb81a139ae86f4a9d08ee0ecd55d3a5c605d5f": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "payment_date",
+   "supplier": "beneficiary",
+   "amount_gbp": "amount",
+   "expense_area": "department",
+   "expense_type": "merchant_category",
+   "reference": "unique_id",
+   "description": "purpose_of_expenditure"
+  },
+  "constants": {
+   "body": "Leicester City Council",
+   "threshold_gbp": 500
+  },
+  "notes": "Single layout across both files (unique_id, payment_date, department, beneficiary, purpose_of_expenditure, amount, vat, vat_code, merchant_category). 'vat' and 'vat_code' are present but not mapped: the family rule keeps VAT separate from amount_gbp and there is no dedicated VAT schema column, so both are left out (amount samples read e.g. '1010.0' with vat '0.0', consistent with 'amount' already being net/gross as published). 'merchant_category' (e.g. 'Legal Fees & Charges', 'Home Care') is used for expense_type as the closest categorical field; 'department' (e.g. 'Adults', 'City Developments and Neighbourhood') is used for expense_area. Review 2026-09-07: body written as 'Leicester City Council' so the council's two datasets (2022 and current) sit under one name in the combined table. Review 2026-09-07: 159,670 lines May-December 2022 across two files; merchant_category stands in for expense_type as the only categorical column.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "c9177a5a76909e19b03b336a53a1627b643be0b189fd3f1a57246f5b6ad2cc72": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Invoice Payment Date",
+   "supplier": "Supplier Name",
+   "amount_gbp": "Net Amount",
+   "expense_area": "Service Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction Number"
+  },
+  "constants": {
+   "body": "Transport for Greater Manchester",
+   "threshold_gbp": 500
+  },
+  "alt_columns": [
+   {
+    "payment_date": "Date",
+    "supplier": "Supplier Name",
+    "amount_gbp": "Net Amount",
+    "expense_area": "Service Label",
+    "expense_type": "Expense Category",
+    "reference": "Transaction Number"
+   }
+  ],
+  "notes": "The brief lists 8 layout entries for the 60 files, but only 2 distinct header-naming schemes among them; the other 6 are the same two schemes with a varying number of extra, empty-header trailing columns (column_count 19/21/29/30/40 vs 7), evidently trailing commas in some quarterly exports rather than real extra fields — none of them carry any header text, so nothing is lost by leaving them unmapped. 'columns' covers the 'Service Area'/'Expense Type'/'Invoice Payment Date' naming (45 files: the 36-file primary layout plus the three same-named padded layouts, 3+3+3 files); 'alt_columns' covers the 'Service Label'/'Expense Category'/'Date' naming (15 files: 11 plus the three same-named padded layouts, 2+1+1 files). 'Body Name' is always literally 'TfGM' in the sample rows and is not mapped; constants.body uses the brief's full publisher name instead, matching the convention in the other reviewed entries. No description/period source column is available in either layout. Review 2026-09-07: 60 quarterly files, April 2011 to March 2026, two header schemes. Credits are published in accounting brackets, '(2,586.20)', and are read as negative amounts; five rows with a blank amount are held.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "486018dd852f32dded2fa96788e960b215d0c74c64d78fbf8d1c1b5a69f45dcb": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date_Paid",
+   "supplier": "Customer_Supplier_Description",
+   "amount_gbp": "Net_Amount_in_Sterling",
+   "expense_area": "Service_Label",
+   "expense_type": "Expenditure_Category",
+   "reference": "Reference",
+   "description": "Activity_Description"
+  },
+  "constants": {
+   "body": "Tunbridge Wells Borough Council",
+   "threshold_gbp": 250,
+   "period": "2024/25 financial year"
+  },
+  "notes": "Two layouts in the brief differ only by three trailing columns present in one (ObjectId, _lon, _lat) and absent in the other; every column used here has identical header text in both, so no alt_columns entry is needed. 'Date_Paid' and 'Date_Received' are both blank in every sampled row — payment_date will likely be null for most/all rows; kept as the semantically closer field to 'payment_date' (schema payment_date is not required). 'Customer_Supplier_Description' holds the actual supplier/contractor name (e.g. 'Urbaser Ltd', 'Tivoli Group Limited') despite its generic-sounding header, and is mapped to supplier. 'Service_Label' (e.g. 'Environmental and regulatory services', 'Planning Services') is used for expense_area over the more granular 'Division_Description' (e.g. 'Client Services (Depot)', 'Planning'); reviewer should check which is the better fit. 'Capital_Revenue' (Revenue/Capital flag) and the various *_Code/ObjectId/_lon/_lat columns have no matching schema column and are left unmapped. Title states 'Spend Over 250', so threshold_gbp is 250, not the family default of 500. Review 2026-09-07: Date_Paid and Date_Received are blank in every row, so payment_date is null and the period is taken from the title (financial year 2024 to 2025). The layer was fetched in three formats; one is kept.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
  }
 }

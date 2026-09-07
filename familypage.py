@@ -72,7 +72,8 @@ def _headline(s: dict) -> dict:
     by_pub: dict[str, int] = {}
     for e in s.get("sources", []):
         if e.get("ladder") == "published" and e.get("rows"):
-            by_pub[e["publisher"]] = by_pub.get(e["publisher"], 0) + e["rows"]
+            b = e.get("body") or e["publisher"]
+            by_pub[b] = by_pub.get(b, 0) + e["rows"]
     ladder = s.get("ladder", {})
     return {"total": s.get("published_rows", 0), "by_pub": by_pub, "bodies": len(by_pub),
             "sources": sum(ladder.values()), "built": (s.get("built_at") or "")[:10]}
@@ -336,13 +337,14 @@ def render_family(family: str, site_url: str) -> str | None:
     for e in s.get("sources", []):
         if e.get("ladder") != "published":
             continue
+        who = e.get("body") or e["publisher"]
         if e.get("notes"):
-            notes_by_pub.setdefault(e["publisher"], []).append(e["notes"])
+            notes_by_pub.setdefault(who, []).append(e["notes"])
         if e.get("licence_note") or e.get("os_acknowledgement"):
             lic = "Review licence: " + (e.get("licence_note") or "")
             if e.get("os_acknowledgement"):
                 lic += f" Carries the acknowledgement: {e['os_acknowledgement']}."
-            notes_by_pub.setdefault(e["publisher"], []).append(lic)
+            notes_by_pub.setdefault(who, []).append(lic)
     bodies = "".join(
         f'<li>{esc(pub)} <b>{n:,}</b></li>'
         for pub, n in sorted(by_pub.items(), key=lambda kv: (-kv[1], kv[0])))

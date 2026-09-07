@@ -13,12 +13,13 @@ Usage:  python families/check_mappings.py recycling_centres
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ALLOWED = {"status", "reject", "table", "header_row", "columns", "constants", "unpivot",
-           "notes", "version", "reviewer", "reviewed_at", "grid", "alt_columns"}
+           "notes", "version", "reviewer", "reviewed_at", "grid", "alt_columns", "filter"}
 EXTRA_COLS = {"easting", "northing"}
 
 
@@ -72,6 +73,17 @@ def check(family: str) -> int:
         for t in src["tables"]:
             for r in t.get("sample_rows", [])[:3]:
                 known |= {str(h).strip().lower() for h in r}
+        flt = spec.get("filter")
+        if flt:
+            if not isinstance(flt, dict) or not flt.get("column") or not flt.get("match"):
+                problems.append(f"{tag}: filter needs 'column' and 'match'")
+            elif str(flt["column"]).strip().lower() not in known:
+                problems.append(f"{tag}: filter column {flt['column']!r} not found in any layout")
+            else:
+                try:
+                    re.compile(flt["match"])
+                except re.error as err:
+                    problems.append(f"{tag}: filter pattern does not compile: {err}")
         layouts = [cols] + [{k: str(v).strip() for k, v in alt.items()} for alt in spec.get("alt_columns", [])]
         for n, lay in enumerate(layouts):
             for target, source_col in lay.items():

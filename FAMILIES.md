@@ -183,9 +183,9 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 
 | family | registry | extracted | reviewed & published |
 |---|---|---|---|
-| recycling_centres | 30 sources | 15 | 10 sources, 84 rows, 9 bodies |
-| air_quality_annual | 51 | 36 | 16 sources, 14,412 rows, 4 bodies |
-| spend_over_500 | 60 | 16 | 15 sources, 825,841 rows, 13 bodies (262 monthly files across the series) |
+| recycling_centres | 30 sources | 18 | 13 sources, 98 rows, 12 bodies |
+| air_quality_annual | 51 | 39 | 17 sources, 16,427 rows, 5 bodies |
+| spend_over_500 | 60 | 19 | 18 sources, 1,165,302 rows, 15 bodies (325 files across the series) |
 
 Held in review, not published: Bradford's diffusion tubes (nothing in the
 file, title or description names the pollutant); Perth & Kinross (mixes
@@ -224,6 +224,15 @@ every matching row. Dates: `_date` reads `15-Dec-11`, `11-MAR-2026`,
 `10/01/2014 00:00` and Excel serials; a file whose unambiguous dates are
 month-first is read month-first throughout and its rows say so in
 `quality_note`.
+
+Mappings can now `filter` rows: `{"column": "Type", "match": "<regex>"}`
+keeps only rows whose cell matches (York's two waste sites among 51 bring
+banks; Perth & Kinross's CENTRE rows among POINTs); the count skipped is
+said on the page. A series fetches every *file* of a dataset, not every
+*format* of one file (ArcGIS item ids are deduplicated). An ArcGIS Hub
+export that answers "being generated, check back later" is retried,
+politely, and never mistaken for a table. Accounting brackets,
+"(2,586.20)", are credits and read as negative.
 
 ## The loop from here
 

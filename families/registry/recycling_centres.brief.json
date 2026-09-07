@@ -348,6 +348,86 @@
    ]
   },
   {
+   "job_id": "396a5fa6157063d349b73c950767d98701cb4feab38eac618e7b6a8ab799e76b",
+   "publisher": "Bristol City Council",
+   "title": "Household waste recycling centres",
+   "portal": "bristol",
+   "format": "CSV",
+   "resource_url": "https://opendata.bristol.gov.uk/api/download/v1/items/d00bc5535df64a96aaa79a1aad0f6524/csv?layers=1",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "X",
+      "Y",
+      "OBJECTID",
+      "SITE_NAME",
+      "SAO",
+      "PAO",
+      "STREET",
+      "LOCALITY",
+      "TOWN",
+      "POSTCODE",
+      "UPRN",
+      "URL"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "353286",
+       "179876",
+       "1",
+       "Avonmouth Household Waste Recycling Centre",
+       "",
+       "Avonmouth Refuse Transfer Station",
+       "Kings Weston Lane",
+       "Lawrence Weston",
+       "Bristol",
+       "BS11 0YS",
+       "000000000096",
+       "https://www.bristol.gov.uk/residents/bins-and-recycling/tips-and-recycling-centr"
+      ],
+      [
+       "360365",
+       "173099",
+       "2",
+       "St Philips Household Waste Recycling Centre",
+       "",
+       "Refuse Transfer Station",
+       "George Jones Road",
+       "St Philips",
+       "Bristol",
+       "BS2 0QS",
+       "000000108236",
+       "https://www.bristol.gov.uk/residents/bins-and-recycling/tips-and-recycling-centr"
+      ],
+      [
+       "358146.173125",
+       "169749.436875001",
+       "3",
+       "South Bristol Reuse And Recycling Centre",
+       "",
+       "South Bristol Reuse And Recycling Centre",
+       "83 Hartcliffe Way",
+       "Filwood",
+       "Bristol",
+       "BS3 5RN",
+       "000000143947",
+       "https://www.bristol.gov.uk/residents/bins-and-recycling/tips-and-recycling-centr"
+      ]
+     ],
+     "row_count": 3,
+     "column_count": 12
+    }
+   ]
+  },
+  {
    "job_id": "5c4a6629e6fcbb8a24067042a41e241c96d3d994e11a222a6bf65dddd508c31c",
    "publisher": "Causeway Coast and Glens Borough Council",
    "title": "Recycling Centres CCGBC",
@@ -637,6 +717,184 @@
      ],
      "row_count": 391,
      "column_count": 17
+    }
+   ]
+  },
+  {
+   "job_id": "93b0f01b3c3d298cfd4c47e72c2785c939c24dacae8fa7e03095820930b7182b",
+   "publisher": "City of York Council",
+   "title": "Household Waste Recycling Centres",
+   "portal": "york_cyc",
+   "format": "CSV",
+   "resource_url": "https://data-cyc.opendata.arcgis.com/api/download/v1/items/d1ea6921e9c0477f8ac40359edc02b00/csv?layers=12",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "X",
+      "Y",
+      "OBJECTID",
+      "Site_Name_",
+      "Ward",
+      "CharityBanks",
+      "BooksMusic",
+      "CansFoil",
+      "CansPlasticBottles",
+      "PlasticBottles",
+      "Textiles",
+      "WEEE",
+      "Glass",
+      "Shoes",
+      "Cartons",
+      "Books",
+      "Cardboard",
+      "Paper",
+      "Type",
+      "Address"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "459092.6043",
+       "455539.067",
+       "1",
+       "Dunelm Mill Shop",
+       "Rawcliffe and Clifton Without",
+       " ",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "Yes",
+       "No",
+       "No",
+       "Recycling Banks",
+       "Dunelm Mill Shop"
+      ],
+      [
+       "459375.6012",
+       "452007.0188",
+       "2",
+       "National Railway Museum",
+       "Holgate",
+       " ",
+       "No",
+       "Yes",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "Yes",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "Recycling Banks",
+       "National Railway Museum"
+      ],
+      [
+       "457788.6014",
+       "452335.0359",
+       "3",
+       "Ainsty Car Park, Carr Lane",
+       "Holgate",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Recycling Banks",
+       "Ainsty Car Park, Carr Lane"
+      ],
+      [
+       "460955.5972",
+       "452247.0067",
+       "4",
+       "Asda, Layerthorpe",
+       "Guildhall",
+       "Yes",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "Yes",
+       "No",
+       "Yes",
+       "Recycling Banks",
+       "Asda, Layerthorpe"
+      ],
+      [
+       "462819.6075",
+       "454913.0568",
+       "5",
+       "Asda, Monks Cross",
+       "Huntington and New Earswick",
+       "Yes",
+       "Yes",
+       "Yes",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "Yes",
+       "Yes",
+       "Yes",
+       "No",
+       "Yes",
+       "Recycling Banks",
+       "Asda, Monks Cross"
+      ],
+      [
+       "455167.4752",
+       "447492.0428",
+       "6",
+       "Askham Bryan College",
+       "Rural West York",
+       "Yes",
+       "No",
+       "No",
+       "Yes",
+       "No",
+       "Yes",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "No",
+       "Yes",
+       "Recycling Banks",
+       "Askham Bryan College"
+      ]
+     ],
+     "row_count": 54,
+     "column_count": 20
     }
    ]
   },
@@ -1727,6 +1985,46 @@
      ],
      "row_count": 143,
      "column_count": 9
+    }
+   ]
+  },
+  {
+   "job_id": "c542df5313ec0ccfa3cc1906035fb8c9c5c3f0b6b0cabac06b137dc263175c39",
+   "publisher": "Stirling Council",
+   "title": "recycling centres (stirling council) waste services - open data",
+   "portal": "stirling",
+   "format": "CSV",
+   "resource_url": "https://data.stirling.gov.uk/api/download/v1/items/23e10a6cff5446fea084817bf1d9e9c9/csv?layers=1",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "OBJECTID",
+      "postcode"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2",
+       "G63 0TE"
+      ],
+      [
+       "10",
+       "FK178LD"
+      ],
+      [
+       "16",
+       "FK7 7LU"
+      ]
+     ],
+     "row_count": 3,
+     "column_count": 2
     }
    ]
   },

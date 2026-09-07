@@ -35,7 +35,7 @@ until the gap is closed.
 | **Certainty** — findable datasets with a verdict under 30 days old | 84% checked; 18,264 never | Can we say what is really there? |
 | **Findability** — searches ending at a publisher, ours and Google's | Google: 16 clicks/day, 1,395 impressions/day, avg position 17 (2 Sep); 8,746 indexed, 78,306 waiting | Do people reach it through us? |
 | **Guardrail** — verdicts that were wrong | 1,239 wrong for three weeks (launch-day 429s) | Are we still the people who know? |
-| **Usability** — who-publishes families with a reviewed, published combined table | 3 published (6 Sep): recycling centres 84 rows/9 bodies; air quality annual means 14,412 rows/4 bodies; spend over £500 825,841 rows/13 bodies (262 monthly files) — of 30, 51 and 60 bodies in each registry | Can a person use it without doing the extraction themselves? |
+| **Usability** — who-publishes families with a reviewed, published combined table | 3 published (7 Sep): recycling centres 98 rows/12 bodies; air quality annual means 16,427 rows/5 bodies; spend over £500 1,165,302 rows/15 bodies (325 files) — of 30, 51 and 60 bodies in each registry | Can a person use it without doing the extraction themselves? |
 
 The guardrail is a reputation metric. Being wrong for three weeks is worse
 than saying "not verified" for three weeks.

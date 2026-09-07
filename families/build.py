@@ -216,6 +216,10 @@ def _num(v):
     s = str(v).strip().replace(",", "").lstrip("£$€ ").replace("£", "")
     if s in ("", "-", "n/a", "N/A", "NA", "null", "None"):
         return None
+    # accounting style: "(2,586.20)" is a credit of 2,586.20 (TfGM's returns)
+    m_paren = re.fullmatch(r"\((\s*-?\d+(?:\.\d+)?)\s*\)", s)
+    if m_paren:
+        return -abs(float(m_paren.group(1)))
     m = re.fullmatch(r"-?\d+(?:\.\d+)?", s)
     if not m:
         # "<0.5" or "12 µg/m3" carry a number; "08-MAY-2024" does not
@@ -420,8 +424,20 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
     us = bool(date_cols) and _us_dates(
         r[idx[dc]] for r in rows[h + 1:] for dc in date_cols if idx[dc] < len(r))
     out, bad = [], []
-    skipped_headers = [0, 0]           # repeated header rows, one-cell dividers
+    skipped_headers = [0, 0, 0]        # repeated header rows, one-cell dividers, rows outside the filter
     unpivot = spec.get("unpivot")
+    # A source that mixes this family with something else — York's 2 waste
+    # sites among 51 bring banks, Perth's centres among points — keeps only
+    # the rows whose cell in one column matches the mapping's pattern. The
+    # column and pattern are the reviewer's, and the count skipped is said.
+    flt = spec.get("filter")
+    flt_idx = flt_re = None
+    if flt:
+        flt_col = str(flt["column"]).strip()
+        flt_idx = next((i for i, c in enumerate(lowered) if c == _norm(flt_col)), None)
+        if flt_idx is None:
+            raise KeyError(f"filter column {flt_col!r} not in header")
+        flt_re = re.compile(flt["match"], re.I)
 
     def cell(r, name):
         if name not in cols or cols[name] not in idx:
@@ -537,6 +553,9 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
         if all(not (idx.get(src_col) is not None and idx[src_col] < len(cells) and cells[idx[src_col]])
                for src_col in cols.values()):
             continue
+        if flt_re is not None and not flt_re.search(str(cells[flt_idx]) if flt_idx < len(cells) else ""):
+            skipped_headers[2] += 1
+            continue
         if unpivot:
             base_ids = {k: cell(r, k) if k in cols else (r[idx[v]] if v in idx else None)
                         for k, v in unpivot.get("id_columns", {}).items()}
@@ -556,6 +575,9 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
             finish(base, r, rno)
     if skipped_headers[0] or skipped_headers[1]:
         bad.append({"why": f"skipped {skipped_headers[0]} repeated header rows and {skipped_headers[1]} divider rows (not payments)",
+                    "source_row": None})
+    if skipped_headers[2]:
+        bad.append({"why": f"{skipped_headers[2]} rows outside the filter {flt['column']!r} ~ /{flt['match']}/ (not this family)",
                     "source_row": None})
     return out, bad
 
@@ -693,6 +715,9 @@ def build(family: str, include_proposed: bool = False) -> dict:
         entry["held_by_file"] = [{"file": (k[0] or "")[-60:], "why": k[1], "rows": n}
                                  for k, n in sorted(tally.items(), key=lambda kv: -kv[1])[:8]]
         entry["notes"] = spec.get("notes")
+        # the body as the table names it: two of a council's datasets can
+        # arrive under two publisher spellings and must count as one body
+        entry["body"] = (spec.get("constants") or {}).get("body") or job["publisher"]
         lic = json.loads(job["licence_json"]) if job["licence_json"] else {}
         if lic.get("mixed") or lic.get("basis"):
             # what the licence statement said besides the OGL, and what a

@@ -182,10 +182,6 @@
   "reviewer": "Dominic Matthews via Claude",
   "reviewed_at": "2026-09-06"
  },
- "d2e2ae0ec502e502909e723314ddf4f31dc2fd6135729ccebec147a3fa50a3e5": {
-  "status": "rejected",
-  "reject": "Title 'Recycling Centres and Points' matches the file: a TYPE column mixes true household waste recycling centres (TYPE='CENTRE') with small bring-bank recycling points and single-material collection points (TYPE='POINT'/'MINI-GLASS' with narrow MATERIALS lists like just 'Glass'); of 6 sampled rows only 1 was a CENTRE. This mapping format has no way to filter rows by column value, so the whole 143-row table would publish bring banks as recycling centres if mapped, which the family excludes; held out entirely rather than mis-scope it."
- },
  "99a3391a1a2cf121ffaaa73df673beb3fe4a6c843efe58692eb6fc74465a53ae": {
   "status": "reviewed",
   "table": 1,
@@ -202,5 +198,68 @@
   "version": "1",
   "reviewer": "Dominic Matthews via Claude",
   "reviewed_at": "2026-09-06"
+ },
+ "396a5fa6157063d349b73c950767d98701cb4feab38eac618e7b6a8ab799e76b": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "SITE_NAME",
+   "address": "STREET",
+   "postcode": "POSTCODE",
+   "easting": "X",
+   "northing": "Y"
+  },
+  "constants": {},
+  "notes": "X/Y sample values (e.g. 353286/179876, 360365/173099) sit in the Bristol British National Grid range despite the generic header names, so mapped to easting/northing rather than lon/lat. Address is split across SAO (blank in samples), PAO (e.g. 'Avonmouth Refuse Transfer Station', a building/operational name distinct from SITE_NAME), STREET, LOCALITY and TOWN; only STREET is mapped to 'address' as the single best-matching column, following the precedent set for road-name-only sources elsewhere in this family — SAO/PAO/LOCALITY/TOWN are left unmapped since address must be one existing column, not a concatenation. A reviewer should check whether STREET alone (no locality/town) is an acceptable address line, and whether PAO's building name is worth surfacing separately. UPRN and URL have no schema slot and are left unmapped. No operator, opening_hours, materials, status, or as_of is published. Review 2026-09-07: address carries the street only; the postcode and coordinates locate the site. Licence: an acknowledgement-only field on Bristol's portal, accepted by portal decision (see FAMILIES.md).",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "93b0f01b3c3d298cfd4c47e72c2785c939c24dacae8fa7e03095820930b7182b": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "Site_Name_",
+   "easting": "X",
+   "northing": "Y"
+  },
+  "constants": {},
+  "filter": {
+   "column": "Type",
+   "match": "household waste recycling"
+  },
+  "notes": "Review 2026-09-07: the layer mixes 51 recycling banks with York's two household waste sites (Towthorpe Civic Amenity Site, Hazel Court Household Waste Site); the filter on 'Type' keeps only rows typed 'Household Waste Recycling Centres'. X/Y are British National Grid (459092/455539). The per-material Yes/No columns describe bring banks and are not mapped.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "d2e2ae0ec502e502909e723314ddf4f31dc2fd6135729ccebec147a3fa50a3e5": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_name": "RECYCLING_CENTRE_POINT",
+   "materials": "MATERIALS",
+   "easting": "x",
+   "northing": "y"
+  },
+  "constants": {},
+  "filter": {
+   "column": "TYPE",
+   "match": "^\\s*CENTRE\\s*$"
+  },
+  "notes": "Review 2026-09-07: the layer lists recycling centres and bring points together (TYPE = CENTRE / POINT / MINI-GLASS); the filter keeps CENTRE rows only. x/y are British National Grid. MATERIALS is the council's comma-separated list, kept as published.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "c542df5313ec0ccfa3cc1906035fb8c9c5c3f0b6b0cabac06b137dc263175c39": {
+  "status": "rejected",
+  "reject": "Review 2026-09-07: the open layer carries three rows of OBJECTID and postcode only — no site name, address or coordinates — so there is nothing to publish as a recycling centre. Admitted under the OGL (the portal's terms name it); nothing to map until the council publishes more than a postcode.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
  }
 }

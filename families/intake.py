@@ -427,6 +427,18 @@ def _try_one(job: dict, cand: dict, out: Path) -> tuple[str, str, dict, int, str
         elif job["last_modified"]:
             headers["If-Modified-Since"] = job["last_modified"]
     body, rh, _ = fetch(cand["url"], LIMITS["max_file_bytes"], headers)
+    # An ArcGIS Hub export answers the first request with a "being
+    # generated, check back later" note, not the file. Two of the first
+    # eighteen recycling sources were "extracted" from that note. Wait,
+    # politely, and ask again; give up as a fetch failure, never a table.
+    for _ in range(3):
+        if not (body and len(body) < 400 and b'"status":"Pending"' in body.replace(b" ", b"")):
+            break
+        time.sleep(8)
+        body, rh, _ = fetch(cand["url"], LIMITS["max_file_bytes"], {})
+    else:
+        if body and b'"status":"Pending"' in body.replace(b" ", b""):
+            raise Refused("Hub export still being generated; try next run")
     downloaded = len(body) if body is not None else 0
     blob = store("blobs", body) if body is not None else job["blob_sha"]
     if not blob:
@@ -452,9 +464,16 @@ def process(c: sqlite3.Connection, job_id: str) -> None:
     cands = json.loads(job.get("candidates") or "[]") or [{"url": job["resource_url"], "format": job["format"]}]
     series = bool(job.get("series"))
     errors, got = [], []
+    seen_items: set[str] = set()
     try:
         capacity(LIMITS["max_file_bytes"] + LIMITS["max_output_bytes"])
         for cand in cands:
+            # A series wants every file of the dataset, not every format of
+            # one file: Tunbridge Wells's one layer arrived three times
+            # (GeoService, GeoJSON, CSV) and was published three times over.
+            item = re.search(r"[0-9a-f]{32}", cand["url"])
+            if series and item and item.group(0) in seen_items:
+                continue
             prev = c.execute("SELECT * FROM files WHERE job_id=? AND url=?", (job_id, cand["url"])).fetchone()
             probe = dict(job)
             if prev:                      # let the conditional fetch see this file's own state
@@ -472,6 +491,8 @@ def process(c: sqlite3.Connection, job_id: str) -> None:
                           (job_id, cand["url"], cand["format"], cand.get("name") or "", blob, extraction, VERSION,
                            rh.get("ETag"), rh.get("Last-Modified"), detail, now()))
                 got.append((cand, blob, extraction, rh, downloaded, detail))
+                if item:
+                    seen_items.add(item.group(0))
                 if series:
                     print(f"    file {len(got):>3}  {downloaded:>9,} B  {cand['url'][-50:]}", flush=True)
                 else:

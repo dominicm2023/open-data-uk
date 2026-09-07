@@ -475,5 +475,54 @@
   "version": "1",
   "reviewer": "Dominic Matthews via Claude",
   "reviewed_at": "2026-09-06"
+ },
+ "2c869109026a6cf543f6428406b0652c576409cd522cb55c29e4cbaa9487019b": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_id": "SITEID",
+   "site_name": "LOCATION",
+   "easting": "X",
+   "northing": "Y"
+  },
+  "constants": {
+   "pollutant": "NO2",
+   "unit": "µg/m³"
+  },
+  "unpivot": {
+   "year_columns": [
+    "UGM3_2010",
+    "UGM3_2011",
+    "UGM3_2012",
+    "UGM3_2013",
+    "UGM3_2014",
+    "UGM3_2015",
+    "UGM3_2016",
+    "UGM3_2017",
+    "UGM3_2018",
+    "UGM3_2019",
+    "UGM3_2020",
+    "UGM3_2021",
+    "UGM3_2022",
+    "UGM3_2023",
+    "UGM3_2024"
+   ],
+   "key_to": "year",
+   "value_to": "annual_mean",
+   "id_columns": {}
+  },
+  "notes": "Title ('Air quality monitors with annual mean NO2 measurements') gives pollutant=NO2; the UGM3_<year> column prefix states the unit directly, so unit=µg/m³. Coordinates: X/Y are populated in every sampled row and fall in Bristol's British National Grid range (e.g. X=359713, Y=173971), so mapped to easting/northing; the file also has separate EASTING/NORTHING headers but they are blank in all 6 sampled rows - a reviewer should check whether EASTING/NORTHING is populated and authoritative for some rows instead of X/Y. COUNT_<year> (a raw count, max seen is 12 - presumably valid months of the year) is not a stated percentage, so it is left unmapped rather than treated as data_capture_pct; method is not stated anywhere in the title or headers so is left out rather than guessed as diffusion_tube; CURRENT_ (Yes/No) is a 'site currently monitored' flag, not a published qualifier on a figure, and is not part of this schema. Review 2026-09-07: 2,015 site-years 2010-2024, means 11-103 µg/m³, coordinates from X/Y (BNG). Licence: an acknowledgement-only field on Bristol's portal, accepted by portal decision (see FAMILIES.md).",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "23ace17428d87c2cd425be1a9d9dd674037290c76653a551a8f82b64add49ac5": {
+  "status": "rejected",
+  "reject": "Site-location-only table: X/Y (British National Grid coordinates), SITE_NAME and INLET__M_ (inlet height in metres) are the only columns (9 rows) - no pollutant, year or concentration figure of any kind."
+ },
+ "8b2c6a92c8b781acbde8ab213a1cfa9135b7f8c465c819ccc044187f7bfe68dc": {
+  "status": "rejected",
+  "reject": "Not a per-year annual-mean series despite superficially year-like column suffixes. Uncor/Local/Natio are a raw reading and two bias-adjustment factors (Local≈0.68, Natio≈0.77 in row 1, i.e. within the normal 0-1 range for a diffusion-tube bias-adjustment factor), and the columns that follow are simple products of those on the SAME row, not later years' data: loc_1 = Uncor×Local = 78×0.68 = 53.04, Nat_1 = Uncor×Natio = 78×0.77 = 60.06, and Nat_12 = Uncor_1×Natio_1 = 76.1×0.87 = 66.207 (all exact matches on row 1 of the sample). The loc_/Nat_/Uncor_/Local_/Natio_ columns, with cryptic and sometimes-collided ArcGIS-truncated suffixes (_1, _12, _12_13, _12_13_14, _12_13_14_15, with 'Natio_12_13_14' appearing twice and a stray 'Loc_2'), are successive raw readings and bias-adjustment factors from a diffusion-tube QA/calibration exercise, not one column per calendar year. F1..F1_12_13_14 pick the chosen adjusted figure from each of those periods, and Number_not/sum_/average, alongside Worst_Case/In_AQMA_/Com_Act_Ar, compute a rolling multi-period average feeding an AQMA compliance screening decision - a derived compliance metric, not the source's own published annual mean for a single year. No column can be reliably assigned to one calendar year from the header text alone, so nothing here can be mapped without guessing."
  }
 }
