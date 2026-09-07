@@ -102,14 +102,14 @@
     ],
     "annual_mean_range": [
       0,
-      500
+      1000
     ],
     "lat_range": [
       49.8,
       61.0
     ],
     "lon_range": [
-      -8.7,
+      -10.5,
       2.0
     ],
     "zero_is_missing": [
@@ -121,6 +121,7 @@
     "Wide tables (one column per year) are unpivoted by the adapter, one row per year; the adapter records which columns were years.",
     "A blank or non-numeric cell is a missing observation and produces no row.",
     "Bias adjustment is recorded as stated, never inferred from magnitude.",
-    "Sites without a stated year for their figure are held at 'mapped' for review."
+    "Sites without a stated year for their figure are held at 'mapped' for review.",
+    "The national networks' rows (AURN, LMAM, Northern Ireland) are read from the networks' own annual summary files; a row past the site's ratified date, or under 75% data capture, says so in 'qualifier'."
   ]
 }
