@@ -175,6 +175,12 @@ A living list. Add freely; move to "Done" with the commit that did it.
   INSPIRE / portal-catalogue words is the OGL (York, Wiltshire, Stirling);
   CC BY accepted; Bristol's acknowledgement-only fields accepted by portal
   decision. PSMA-only, INSPIRE-only and OSNI-only stay refused.
+- 7 Sep — first publisher outreach: 15 councils holding INSPIRE-licensed
+  recycling/air datasets asked (by email, DM's approval, from the
+  groundwatercast address) to re-release under OGL via the derived-data
+  exemption. Record: `data/inspire_outreach_2026-09-07.json` on the box.
+  Open: Sheffield (no contact address anywhere); an open-data.org.uk
+  mailbox for future outreach; watch for replies and bounces on the cc.
 - 5 Sep — older editions of a series canonicalise to the latest when the
   description matches: 4,231 pages in 1,144 series, out of the sitemap,
   still served and searchable. (B of the not-indexed fix.)
