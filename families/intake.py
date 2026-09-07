@@ -57,7 +57,9 @@ from paths import DATA_DIR  # noqa: E402
 HERE = Path(__file__).resolve().parent
 STORE = DATA_DIR / "families"
 LIMITS = {
-    "max_file_bytes": 25_000_000, "max_metadata_bytes": 2_000_000,
+    # 25 MB lost Camden's whole spend history (one Socrata export); a single
+    # file of a big council's return runs to 60 MB
+    "max_file_bytes": 80_000_000, "max_metadata_bytes": 2_000_000,
     "max_storage_bytes": 2_000_000_000, "min_free_bytes": 20_000_000_000,
     # A monitoring archive or a year of payments can run to six figures of
     # rows; York's diffusion-tube file was refused at 50,000.
@@ -473,6 +475,10 @@ def process(c: sqlite3.Connection, job_id: str) -> None:
             # (GeoService, GeoJSON, CSV) and was published three times over.
             item = re.search(r"[0-9a-f]{32}", cand["url"])
             if series and item and item.group(0) in seen_items:
+                continue
+            # A layer's GeoService query is the same layer as its CSV export,
+            # capped at 1,000 rows: in a series it is never a second file.
+            if series and cand["format"] == "ESRI" and any(g[0]["format"] != "ESRI" for g in got):
                 continue
             prev = c.execute("SELECT * FROM files WHERE job_id=? AND url=?", (job_id, cand["url"])).fetchone()
             probe = dict(job)

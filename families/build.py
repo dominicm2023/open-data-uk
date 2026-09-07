@@ -240,6 +240,13 @@ def _date(v, us: bool = False):
     unless the file as a whole says otherwise (see _us_dates)."""
     if v is None:
         return None
+    if isinstance(v, (int, float)) and v > 10**11:
+        # an ArcGIS epoch in milliseconds
+        from datetime import datetime as _dt, timezone as _tz
+        try:
+            return _dt.fromtimestamp(v / 1000, tz=_tz.utc).date().isoformat()
+        except (ValueError, OverflowError, OSError):
+            return None
     if isinstance(v, (int, float)) and 20000 <= v <= 70000:
         # an Excel serial: days since 1899-12-30
         from datetime import date, timedelta
@@ -255,8 +262,12 @@ def _date(v, us: bool = False):
             return datetime.strptime(s[:len(fmt) + 6 if "%B" in fmt else len(s)], fmt).date().isoformat()
         except ValueError:
             continue
-    m = re.match(r"(\d{4})-(\d{2})-(\d{2})", s)
-    return f"{m.group(1)}-{m.group(2)}-{m.group(3)}" if m else None
+    m = re.match(r"(\d{4})[-/](\d{2})[-/](\d{2})", s)      # "2023/04/05 00:00:00+00" and the like
+    if m:
+        return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+    if re.fullmatch(r"\d{12,13}", s):
+        return _date(int(s))
+    return None
 
 
 def _us_dates(values) -> bool:

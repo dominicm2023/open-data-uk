@@ -539,5 +539,703 @@
   "version": "1",
   "reviewer": "Dominic Matthews via Claude",
   "reviewed_at": "2026-09-07"
+ },
+ "f4126100244a52bc11a197db7028af2a511d7689fe50a979f5641bcd0b36b125": {
+  "status": "rejected",
+  "reject": "a £25,000 transparency return, a different series from spend over £500"
+ },
+ "1bafbb12d6339296abd6135e902405dfac6849e92ec6966893ca7628070b7e45": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 6,
+  "columns": {
+   "payment_date": "POST. DATE",
+   "supplier": "SUPPLIER NAME",
+   "amount_gbp": "AMOUNT",
+   "expense_area": "PORTFOLIO",
+   "expense_type": "EXPENDITURE CLASS",
+   "reference": "REF."
+  },
+  "constants": {
+   "body": "Blaby District Council",
+   "threshold_gbp": 250
+  },
+  "alt_columns": [
+   {
+    "payment_date": "POST. DATE",
+    "supplier": "SUPPLIER NAME",
+    "amount_gbp": "AMOUNT",
+    "expense_area": "PORTFOLIO",
+    "expense_type": "EXPENDITURE CLASS",
+    "reference": "PROCLASS REF."
+   },
+   {
+    "payment_date": "POST. DATE",
+    "supplier": "SUPPLIER NAME",
+    "amount_gbp": "AMOUNT",
+    "expense_area": "PORTFOLIO",
+    "expense_type": "EXPENDITURE CLASS",
+    "reference": "REF."
+   }
+  ],
+  "notes": "Threshold 250 taken from the return's own title row embedded as data in most files: 'SUPPLIER PAYMENTS WHERE CHARGE TO SPECIFIC COST CENTRES IS OVER +/- £250 (inc. VAT)'. 71 files, 6 header layouts by the brief's count, but only 3 distinct header-name schemes: 'columns' covers the April-2013-style (SUPPLIER NAME, blank col, PORTFOLIO, COST CENTRE, EXPENDITURE CLASS, POST. DATE, AMOUNT, REF., blank col; 5 files) and the April-2014-style (same names, no blank cols; 17 files) = 22 files. First alt_columns entry covers the April-2015-style naming (adds IRRECOVERABLE VAT, uses PROCLASS REF.; 10 files) and is also used by two title-row layouts whose header text is identical once you skip past the embedded title lines: the April-2017-style layout (31 files) and the August-2015-style layout with 'BLABY DISTRICT COUNCIL' on the title row (4 files) -- both have a blank/title row 0 with the real header six rows further down ('SUPPLIER NAME, PORTFOLIO, COST CENTRE, EXPENDITURE CLASS, POST. DATE, AMOUNT, IRRECOVERABLE  VAT, PROCLASS REF.'); the brief mislabels their header_row as 0 -- reviewer/build should read these 35 files from row 6, not row 0. So the first alt_columns entry covers 10+31+4 = 45 files. Second alt_columns entry covers the December-2014 layout (4 files, header_row 1 per the brief, uses 'REF.' rather than 'PROCLASS REF.'). 22 + 45 + 4 = 71, matching files_extracted. COST CENTRE (a mid-level cost-centre field between PORTFOLIO and EXPENDITURE CLASS) has no schema slot and is left unmapped in every layout; IRRECOVERABLE VAT is never folded into amount_gbp, per the family rule. Review 2026-09-07: header_row 6 so the file-by-file header search (rows 0-9) finds the header under the title block in 35 files and on row 0 in the rest.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "7176851ed784e350bbfb14a51dc871e5ea8f05f9a678c55363dcd8880ce959d9": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Pay Date",
+   "supplier": "Name",
+   "amount_gbp": "Amount",
+   "expense_type": "Description 1",
+   "description": "Description 2",
+   "reference": "Transaction Number"
+  },
+  "constants": {
+   "body": "Bristol City Council",
+   "threshold_gbp": 500
+  },
+  "notes": "Threshold 500 taken from the dataset title ('Payments to suppliers with a value over £500 from Bristol City Council'). All 61 files (59+1+1 per the brief's layout count) share the same header names -- 'Body', 'Body Name', 'Name', 'Amount', 'Pay Date', 'Transaction Number', 'Description 1', 'Description 2', 'Description 3' -- the two minority layouts only reorder 'Amount'/'Pay Date'/'Transaction Number' or add one blank trailing column, so no alt_columns entry is needed. 'Body' is always literally 'Bristol City council' and 'Body Name' is always an ordnance-survey doc URI in the samples; neither is mapped, constants.body is used instead. Three free-text description columns exist but the schema has only two slots (expense_type/expense_area and description): 'Description 1' reads as a broad category (e.g. 'Catering', 'Contract Cleaning', 'Acquisition of Buildings') and is mapped to expense_type; 'Description 2' reads as a more specific programme/purpose (e.g. 'Outdoor Education -Dean Fields', 'Capital - Temporary Accommodation (ITS) – GF Acquisitions Programme') and is mapped to description; reviewer should check whether Description 2 would suit expense_area better instead. 'Description 3' is blank or a single space in every sample row and is left unmapped. No expense_area source column is available under this reading. A separate 'tables' preview in the brief shows the same file with lowercase 'amount' and trailing-space description headers -- same columns, cosmetic case/spacing difference only, already covered by the mapping above.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "1c32cca186ecbf2dbe371eb2225a99f8f550aa79e0516e2a9a6341794440d99c": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Payment Date",
+   "supplier": "Beneficiary Name",
+   "amount_gbp": "Amount",
+   "expense_area": "Organisation Unit",
+   "expense_type": "Expense Type",
+   "reference": "TransactionNumber",
+   "description": "Purpose"
+  },
+  "constants": {
+   "body": "Cheltenham Borough Council",
+   "threshold_gbp": 500
+  },
+  "alt_columns": [
+   {
+    "payment_date": "Payment Date",
+    "supplier": "Vendor Name",
+    "amount_gbp": "Amount",
+    "reference": "Transaction No",
+    "description": "Expense Type"
+   }
+  ],
+  "notes": "Threshold 500 taken from the dataset title ('Payments to suppliers with a value over £500 from Cheltenham Borough Council'). 'columns' covers the April-2020-style layout (10 files) and its same-named variant with one extra numbered trailing column (1 file, August 2020) = 11 files. 'Invoice Ref.' (a separate supplier invoice number alongside the council's own 'TransactionNumber') has no second reference slot and is left unmapped. The May-2020 file (1 file) has a mislabelled header: its 'Expense Type' column actually holds free-text purpose ('R & M of Build Fire Systems') -- the same content that sits under 'Purpose' in the main layout -- while the true expense-type code (matching the main layout's 'Expense Type' values like 'R4445-HRA110') sits in a column with no header text at all; that blank-header code column and the equally unlabelled Organisation-Unit-equivalent column are left unmapped for this one file since they cannot be referenced by header text, so expense_area and expense_type are absent from the alt_columns entry -- reviewer should check whether the source file can be re-inspected for real column names. 11 + 1 = 12, matching files_extracted.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "64990c73bdf6580c6bf8c8ebd66c2b7230b72f57de2d68a45eb0d767c9b81ec9": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Payment_Date",
+   "supplier": "Creditor_Name",
+   "amount_gbp": "Net_Amount",
+   "expense_area": "Department",
+   "expense_type": "Subjective_Detail",
+   "reference": "Transaction_No"
+  },
+  "constants": {
+   "body": "City of York Council",
+   "threshold_gbp": 250
+  },
+  "alt_columns": [
+   {
+    "payment_date": "PaymentDate",
+    "supplier": "Supplier_Beneficiary",
+    "amount_gbp": "NetAmount_ExcVAT",
+    "expense_area": "Department",
+    "expense_type": "ExpenseCategory",
+    "reference": "TransactionReference"
+   },
+   {
+    "payment_date": "Date",
+    "supplier": "SupplierName",
+    "amount_gbp": "Amount",
+    "expense_area": "OrganisationUnit",
+    "expense_type": "ExpenseCategory",
+    "reference": "TransactionNumber"
+   }
+  ],
+  "notes": "Title is 'All Payments to Suppliers' with no threshold stated, but the resource filename itself is 'over250payments2026.csv' -- read as the return's own £250 threshold (York's standard transparency threshold), not a genuinely unfiltered export. 'columns' covers the 2020/2021-style layout (3 files) and the 2022/2023-style layout, which only reorders 'Card_Transaction'/'Transaction_No' (5 files), and the 2018/2019-style layout, which only adds an extra 'GL_Date' column before 'Payment_Date' (1 file) = 9 files, all sharing identical column names for the fields used here. First alt_columns entry covers the 2016/2017-style layout (3 files). Second alt_columns entry covers the 2011/2012-style layout (3 files). 9+3+3=15, matching files_extracted. 'Directorate' (broader than Department) and 'Service_Plan'/'ExpenditureCode' (more specific than the mapped expense_area/expense_type fields) have no second slot and are left unmapped in every layout; reviewer should check whether Department vs Directorate, or Subjective_Detail vs Subjective_Group, is the better fit. 'Irrecoverable_VAT' is present in two layouts and is never folded into amount_gbp, per the family rule.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "bd68abcda6ba39a5ab4a70e29ea99a38ac88dd37d5ecd258694393a9ab0b9f15": {
+  "status": "rejected",
+  "reject": "an aggregate retail-footfall/sales study by shopping area and month (sales, transactions, customers, average transaction value, average revenue per customer) -- a shopping-district study, not a supplier payment-line return"
+ },
+ "0ebbe942de10abbdb2cc9c627e45db5919b3c7b0abce8135d5c229abbbd373d4": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date                   ",
+   "supplier": "Supplier                                          ",
+   "amount_gbp": "Amount               ",
+   "expense_area": "Expense Area                                      ",
+   "expense_type": "Expense Type                                      ",
+   "reference": "Transaction Number                                "
+  },
+  "constants": {
+   "body": "Natural History Museum",
+   "threshold_gbp": 0
+  },
+  "notes": "Threshold: no 'over £500'/'over £250' wording appears anywhere in the title ('NHM Spend Data P0{n}') or the column headers, and this file's own sample rows include a payment of £440.00 -- below even the £500 threshold -- with no VAT-split or line-item-of-a-larger-invoice explanation visible in the brief. Since neither the title nor the header states 500 or 250, this is treated as a dataset of ALL payments with no stated threshold, per the family rule; threshold_gbp is 0 and reviewer should check the source page (nhm.ac.uk/transparency/finance) for any stated threshold before a build. Header text carries heavy fixed-width padding baked into the column names themselves (this is a plain-text/fixed-width export saved as CSV) -- mapped using the exact padded strings from the brief. The first sample row in every file is a literal dashed divider line ('--------...') repeating the fixed-width rule under the header -- not a real payment row -- reviewer/build should drop it (and any other divider/blank rows) before loading; this may recur elsewhere in the same file. 'Department Family' and 'Entity' hold constant 'DCMS'/'NHM' text in every row and are not mapped, constants.body is used instead (set to the brief's publisher name, the parent department, since the file's own 'Entity' value 'NHM' is not itself a government body name in the index's terms -- reviewer should check whether 'Natural History Museum' would be a better constants.body given every one of these five sources is NHM's own return). 'VAT Registration Number' is present (blank in every sample row) and is not an amount column, so it is left unmapped regardless. Review 2026-09-07: body is the Natural History Museum, the paying body; DCMS is the publisher of record on the row.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "6e5072d26e8c2fce82e803dcd4bd4f6aef40e9fbedb00ab4c248727a6da30415": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date                   ",
+   "supplier": "Supplier                                          ",
+   "amount_gbp": "Amount               ",
+   "expense_area": "Expense Area                                      ",
+   "expense_type": "Expense Type                                      ",
+   "reference": "Transaction Number                                "
+  },
+  "constants": {
+   "body": "Natural History Museum",
+   "threshold_gbp": 0
+  },
+  "notes": "Threshold: no 'over £500'/'over £250' wording appears anywhere in the title ('NHM Spend Data P0{n}') or the column headers, and this file's own sample rows include a payment of £440.00 -- below even the £500 threshold -- with no VAT-split or line-item-of-a-larger-invoice explanation visible in the brief. Since neither the title nor the header states 500 or 250, this is treated as a dataset of ALL payments with no stated threshold, per the family rule; threshold_gbp is 0 and reviewer should check the source page (nhm.ac.uk/transparency/finance) for any stated threshold before a build. Header text carries heavy fixed-width padding baked into the column names themselves (this is a plain-text/fixed-width export saved as CSV) -- mapped using the exact padded strings from the brief. The first sample row in every file is a literal dashed divider line ('--------...') repeating the fixed-width rule under the header -- not a real payment row -- reviewer/build should drop it (and any other divider/blank rows) before loading; this may recur elsewhere in the same file. 'Department Family' and 'Entity' hold constant 'DCMS'/'NHM' text in every row and are not mapped, constants.body is used instead (set to the brief's publisher name, the parent department, since the file's own 'Entity' value 'NHM' is not itself a government body name in the index's terms -- reviewer should check whether 'Natural History Museum' would be a better constants.body given every one of these five sources is NHM's own return). 'VAT Registration Number' is present (blank in every sample row) and is not an amount column, so it is left unmapped regardless. Review 2026-09-07: body is the Natural History Museum, the paying body; DCMS is the publisher of record on the row.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "3731cb50780a7958341edfe8561d874fb742245a4f5d34f677b6a06888adf9f7": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date                   ",
+   "supplier": "Supplier                                          ",
+   "amount_gbp": "Amount               ",
+   "expense_area": "Expense Area                                      ",
+   "expense_type": "Expense Type                                      ",
+   "reference": "Transaction Number                                "
+  },
+  "constants": {
+   "body": "Natural History Museum",
+   "threshold_gbp": 0
+  },
+  "notes": "Threshold: no 'over £500'/'over £250' wording appears anywhere in the title ('NHM Spend Data P0{n}') or the column headers, and this file's own sample rows include a payment of £440.00 -- below even the £500 threshold -- with no VAT-split or line-item-of-a-larger-invoice explanation visible in the brief. Since neither the title nor the header states 500 or 250, this is treated as a dataset of ALL payments with no stated threshold, per the family rule; threshold_gbp is 0 and reviewer should check the source page (nhm.ac.uk/transparency/finance) for any stated threshold before a build. Header text carries heavy fixed-width padding baked into the column names themselves (this is a plain-text/fixed-width export saved as CSV) -- mapped using the exact padded strings from the brief. The first sample row in every file is a literal dashed divider line ('--------...') repeating the fixed-width rule under the header -- not a real payment row -- reviewer/build should drop it (and any other divider/blank rows) before loading; this may recur elsewhere in the same file. 'Department Family' and 'Entity' hold constant 'DCMS'/'NHM' text in every row and are not mapped, constants.body is used instead (set to the brief's publisher name, the parent department, since the file's own 'Entity' value 'NHM' is not itself a government body name in the index's terms -- reviewer should check whether 'Natural History Museum' would be a better constants.body given every one of these five sources is NHM's own return). 'VAT Registration Number' is present (blank in every sample row) and is not an amount column, so it is left unmapped regardless. Review 2026-09-07: body is the Natural History Museum, the paying body; DCMS is the publisher of record on the row.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "4724b520253c18bc52950b7e0661aec7de5ab88e3b7cc523a42f61f6fee3eb20": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date                   ",
+   "supplier": "Supplier                                          ",
+   "amount_gbp": "Amount               ",
+   "expense_area": "Expense Area                                      ",
+   "expense_type": "Expense Type                                      ",
+   "reference": "Transaction Number                                "
+  },
+  "constants": {
+   "body": "Natural History Museum",
+   "threshold_gbp": 0
+  },
+  "notes": "Threshold: no 'over £500'/'over £250' wording appears anywhere in the title ('NHM Spend Data P0{n}') or the column headers, and this file's own sample rows include a payment of £440.00 -- below even the £500 threshold -- with no VAT-split or line-item-of-a-larger-invoice explanation visible in the brief. Since neither the title nor the header states 500 or 250, this is treated as a dataset of ALL payments with no stated threshold, per the family rule; threshold_gbp is 0 and reviewer should check the source page (nhm.ac.uk/transparency/finance) for any stated threshold before a build. Header text carries heavy fixed-width padding baked into the column names themselves (this is a plain-text/fixed-width export saved as CSV) -- mapped using the exact padded strings from the brief. The first sample row in every file is a literal dashed divider line ('--------...') repeating the fixed-width rule under the header -- not a real payment row -- reviewer/build should drop it (and any other divider/blank rows) before loading; this may recur elsewhere in the same file. 'Department Family' and 'Entity' hold constant 'DCMS'/'NHM' text in every row and are not mapped, constants.body is used instead (set to the brief's publisher name, the parent department, since the file's own 'Entity' value 'NHM' is not itself a government body name in the index's terms -- reviewer should check whether 'Natural History Museum' would be a better constants.body given every one of these five sources is NHM's own return). 'VAT Registration Number' is present (blank in every sample row) and is not an amount column, so it is left unmapped regardless. Review 2026-09-07: body is the Natural History Museum, the paying body; DCMS is the publisher of record on the row.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "8522cf83943a130dde952c28e396b0b6aca01c00473695262eb42f3277412686": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date                   ",
+   "supplier": "Supplier                                          ",
+   "amount_gbp": "Amount               ",
+   "expense_area": "Expense Area                                      ",
+   "expense_type": "Expense Type                                      ",
+   "reference": "Transaction Number                                "
+  },
+  "constants": {
+   "body": "Natural History Museum",
+   "threshold_gbp": 0
+  },
+  "notes": "Threshold: no 'over £500'/'over £250' wording appears anywhere in the title ('NHM Spend Data P0{n}') or the column headers, and this file's own sample rows include a payment of £440.00 -- below even the £500 threshold -- with no VAT-split or line-item-of-a-larger-invoice explanation visible in the brief. Since neither the title nor the header states 500 or 250, this is treated as a dataset of ALL payments with no stated threshold, per the family rule; threshold_gbp is 0 and reviewer should check the source page (nhm.ac.uk/transparency/finance) for any stated threshold before a build. Header text carries heavy fixed-width padding baked into the column names themselves (this is a plain-text/fixed-width export saved as CSV) -- mapped using the exact padded strings from the brief. The first sample row in every file is a literal dashed divider line ('--------...') repeating the fixed-width rule under the header -- not a real payment row -- reviewer/build should drop it (and any other divider/blank rows) before loading; this may recur elsewhere in the same file. 'Department Family' and 'Entity' hold constant 'DCMS'/'NHM' text in every row and are not mapped, constants.body is used instead (set to the brief's publisher name, the parent department, since the file's own 'Entity' value 'NHM' is not itself a government body name in the index's terms -- reviewer should check whether 'Natural History Museum' would be a better constants.body given every one of these five sources is NHM's own return). 'VAT Registration Number' is present (blank in every sample row) and is not an amount column, so it is left unmapped regardless. Review 2026-09-07: body is the Natural History Museum, the paying body; DCMS is the publisher of record on the row.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "b94b9dc9b27903a7de2e6d82ae53b58f32779e4568b56330baed5da56febd9d4": {
+  "status": "reviewed",
+  "columns": {
+   "payment_date": "Date",
+   "supplier": "Supplier Name",
+   "amount_gbp": "Amount",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction Number",
+   "description": "Extended Description"
+  },
+  "constants": {
+   "body": "Eden District Council",
+   "threshold_gbp": 500
+  },
+  "alt_columns": [
+   {
+    "payment_date": "Payment Date",
+    "supplier": "Supplier Name",
+    "amount_gbp": "Nett Amount",
+    "expense_area": "Responsible Unit Desc",
+    "expense_type": "Detailed Expenses Desc",
+    "reference": "Invoice No",
+    "description": "Goods Description"
+   },
+   {
+    "payment_date": "Payment Date",
+    "supplier": "Supplier Name",
+    "amount_gbp": "Amount (£)",
+    "expense_area": "Organisational Unit",
+    "expense_type": "Procurement Category",
+    "reference": "Transaction Number",
+    "description": "Purpose"
+   },
+   {
+    "payment_date": "Payment Date",
+    "supplier": "Supplier Name",
+    "amount_gbp": "Amount (£)",
+    "expense_area": "Organisational Unit",
+    "expense_type": "Procurement Catergory",
+    "reference": "Transaction Number",
+    "description": "Purpose"
+   },
+   {
+    "payment_date": "Payment Date",
+    "supplier": "Supplier Name",
+    "amount_gbp": "Amount (£)",
+    "expense_area": "Organisational Unit",
+    "expense_type": "Service Category URI",
+    "reference": "Transaction Number",
+    "description": "Purpose"
+   }
+  ],
+  "version": "1",
+  "notes": "Threshold 500 from the title ('Payments to suppliers with a value over £500') and the resource filenames ('council-spending-over-500-...'). 68 files, 7 layouts in the brief, reduced to 5 distinct layouts for the columns actually used: 'columns' covers the 50-file 'Body/Body Name/Date/Transaction Number/Amount/Supplier Name/.../Expense Area/Expense Type/.../Extended Description' layout, which also silently covers 2 further 1-file layouts in the brief ('Organisation' instead of 'Body', 'Body Name ' with a trailing space, and Expense Code/Expense Type swapped in order) because every header this mapping actually reads from them (Date, Transaction Number, Amount, Supplier Name, Expense Area, Expense Type, Extended Description) is spelled identically -- no alt_columns entry needed for those two. alt_columns[0] is the single 2014 file with a wholly different 'Organisation/Company Name/Payment Date/Invoice No/Nett Amount/.../Responsible Unit Desc/Detailed Expenses Desc/.../Goods Description' naming. alt_columns[1]/[2] are the two later 'Organisation Name/.../Organisational Unit/.../Procurement Category (or Category)/.../Payment Date/Transaction Number/Amount (£)/Purpose' layouts (8 and 4 files); they differ only by a typo in the header used for expense_type ('Procurement Category' vs 'Procurement Catergory'), which is why both are kept as separate entries rather than merged. alt_columns[3] (3 files, e.g. media/4999) is plainly mislabelled: its 'Service Category URI' column holds short category text ('GM External Contractors', 'Adhoc Works For Burials') identical in style to what the other layouts call Expense Type/Procurement Category, not a URI, so expense_type is mapped from it by content, not by its label -- reviewer should double-check this reading. No period column in any layout. Reviewer should also confirm the DD/MM/YYYY date format is consistent across all 68 files, and that credits/negative amounts (seen in the Purpose-column layout, e.g. '-797.77') are genuine published credits.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "3729b068e1be533026778ca2209a810dedfac0179fb7f810ad6780a5627d958f": {
+  "status": "rejected",
+  "reject": "Both extracted files hold the same 5-column table (financial_year, date, percentage_paid_on_time, percentage_paid_between_31_60_days, percentage_paid_more_than_60_days): one row per month giving the percentage of invoices paid on time / 31-60 days / 60+ days. This is an aggregate payment-performance statistic, not a payment-line return -- no supplier, no individual amount, no per-payment date. Despite the CKAN title 'Accounts Payable - Supplier payments', the actual table is not this family."
+ },
+ "ecf59df165e9194ee7eb8208b3853c5b4246531ae0d85e0c1dd76f39c7a623cc": {
+  "status": "reviewed",
+  "columns": {
+   "supplier": "Supplier",
+   "amount_gbp": "£",
+   "expense_area": "Directorate",
+   "expense_type": "Type of Expenditure"
+  },
+  "constants": {
+   "body": "London Borough of Richmond Upon Thames",
+   "threshold_gbp": 500
+  },
+  "version": "1",
+  "notes": "Threshold 500 from the title ('Payments to suppliers with a value over £500 from the London Borough of Richmond-upon-Thames'); single file, single layout, no alt_columns needed. The amount column's header is literally the currency sign ('£', U+00A3) with no other text -- mapped as-is. No payment_date, period, reference or description column is published; only Directorate, Type of Expenditure, Supplier and the amount. Reviewer should check whether the 1,953 rows are one financial year or several years combined, since there is no date/period field to distinguish them. Review 2026-09-07: the file carries no date and the title no year; rows publish undated, which the page's completeness bars show.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "425b7f4146e05b83577f39daa7ad902c25dddebee77a31e9e9759a2da141c2c1": {
+  "status": "reviewed",
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount in Sterling",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction number"
+  },
+  "constants": {
+   "body": "Ministry of Housing, Communities and Local Government",
+   "threshold_gbp": 0
+  },
+  "version": "1",
+  "notes": "Threshold: this MHCLG series bundles two kinds of file under one dataset -- 'TP' transparency-payment exports (Date of Payment/Amount in Sterling, sometimes with Voluntary & Community Sector/SME Class/Sole Trader/Narrative columns) and 'GPC' government procurement card exports (Clearing/Amount, Doc Nbr, sometimes Item Text/Merchant category). One 2012/2013 file name literally says 'DCLG_expenditure_over__250' (over £250), but sample rows across both TP and GPC layouts in this and other years include payments well under £250 (e.g. £105.33, £117.48, £251) and GPC card purchases down to a few pounds (£7.18, £14.78, £17.80, £20.00) -- the release is not consistently filtered at any single floor. Treated as threshold_gbp 0 (all payments, no threshold), per the family convention for unthresholded returns. Reviewer should check whether the named-£250 file is actually threshold-filtered and, if so, whether it is worth separating out. 'columns'/'alt_columns' cover only the payment-line (TP) and card-transaction (GPC) layouts. Both families keep identical header text for the columns used here across every extra column seen in the brief (Voluntary & Community Sector, SME Class, Sole Trader, D-U-N-S Number, Postal Code, PSPES Level 2, Item, Purchasing Item Text, Profit Center, GPC Cardholder, Reference No/Ref No/Ref, and assorted trailing empty columns are all unmapped, no schema slot and/or not reliable) -- so those variants collapse into the same mapping rather than needing their own alt_columns entry. 'reference' always comes from 'Transaction number' (TP) or 'Doc Nbr' (GPC), not from the extra 'Reference No'/'Ref No'/'Ref' columns some later files carry, since those hold a small sequential index (e.g. '2'), not a real payment reference. expense_type is always the 'Expense Type' column (present in both families); 'Merchant category' (GPC only) is not mapped anywhere, since Expense Type already fills that role. description prefers 'Item Text' (GPC) or 'Narrative' (TP) where present; where neither exists, description is left unmapped rather than substituting 'Merchant category'. 2 of 5 files' layouts mapped. Of the dataset's 5 files, 3 are left unmapped and excluded from this proposal: 1 file ('Introduction' sheet) is a text cover page with no table at all; 2 files ('ALB/Supplier/Net Amount' and 'ALB Code/Public Sector Procurement Expenditure Survey Category/Supplier/Net Amount') are annual per-supplier expenditure totals -- one row per supplier for the whole year, not per-payment lines -- so they are aggregates, not this family, and were skipped rather than mapped.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "dabd77b9411715da9296e7f47fc86887aee5e5559711e22271e2847cf9b62a8b": {
+  "status": "reviewed",
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount in Sterling",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction number"
+  },
+  "constants": {
+   "body": "Ministry of Housing, Communities and Local Government",
+   "threshold_gbp": 0
+  },
+  "alt_columns": [
+   {
+    "payment_date": "Date of Payment",
+    "supplier": "Supplier",
+    "amount_gbp": "Amount in Sterling",
+    "expense_area": "Expense Area",
+    "expense_type": "Expense Type",
+    "reference": "Transaction number",
+    "description": "Narrative"
+   }
+  ],
+  "version": "1",
+  "notes": "Threshold: this MHCLG series bundles two kinds of file under one dataset -- 'TP' transparency-payment exports (Date of Payment/Amount in Sterling, sometimes with Voluntary & Community Sector/SME Class/Sole Trader/Narrative columns) and 'GPC' government procurement card exports (Clearing/Amount, Doc Nbr, sometimes Item Text/Merchant category). One 2012/2013 file name literally says 'DCLG_expenditure_over__250' (over £250), but sample rows across both TP and GPC layouts in this and other years include payments well under £250 (e.g. £105.33, £117.48, £251) and GPC card purchases down to a few pounds (£7.18, £14.78, £17.80, £20.00) -- the release is not consistently filtered at any single floor. Treated as threshold_gbp 0 (all payments, no threshold), per the family convention for unthresholded returns. Reviewer should check whether the named-£250 file is actually threshold-filtered and, if so, whether it is worth separating out. 'columns'/'alt_columns' cover only the payment-line (TP) and card-transaction (GPC) layouts. Both families keep identical header text for the columns used here across every extra column seen in the brief (Voluntary & Community Sector, SME Class, Sole Trader, D-U-N-S Number, Postal Code, PSPES Level 2, Item, Purchasing Item Text, Profit Center, GPC Cardholder, Reference No/Ref No/Ref, and assorted trailing empty columns are all unmapped, no schema slot and/or not reliable) -- so those variants collapse into the same mapping rather than needing their own alt_columns entry. 'reference' always comes from 'Transaction number' (TP) or 'Doc Nbr' (GPC), not from the extra 'Reference No'/'Ref No'/'Ref' columns some later files carry, since those hold a small sequential index (e.g. '2'), not a real payment reference. expense_type is always the 'Expense Type' column (present in both families); 'Merchant category' (GPC only) is not mapped anywhere, since Expense Type already fills that role. description prefers 'Item Text' (GPC) or 'Narrative' (TP) where present; where neither exists, description is left unmapped rather than substituting 'Merchant category'. 39 of 42 files' layouts mapped. Review 2026-09-07: the GPC (procurement card) layouts — 'Clearing', 'Doc Nbr', 'Item Text', 'Merchant category' — are removed: card transactions are a different return and this family excludes them by rule, so those files are held with 'no known layout'.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "1e821d0f18f724b78602c143f8d91f62b768939dd670aad9072ea34d8cc284ef": {
+  "status": "reviewed",
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount in Sterling",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction number",
+   "description": "Narrative"
+  },
+  "constants": {
+   "body": "Ministry of Housing, Communities and Local Government",
+   "threshold_gbp": 0
+  },
+  "alt_columns": [],
+  "version": "1",
+  "notes": "Threshold: this MHCLG series bundles two kinds of file under one dataset -- 'TP' transparency-payment exports (Date of Payment/Amount in Sterling, sometimes with Voluntary & Community Sector/SME Class/Sole Trader/Narrative columns) and 'GPC' government procurement card exports (Clearing/Amount, Doc Nbr, sometimes Item Text/Merchant category). One 2012/2013 file name literally says 'DCLG_expenditure_over__250' (over £250), but sample rows across both TP and GPC layouts in this and other years include payments well under £250 (e.g. £105.33, £117.48, £251) and GPC card purchases down to a few pounds (£7.18, £14.78, £17.80, £20.00) -- the release is not consistently filtered at any single floor. Treated as threshold_gbp 0 (all payments, no threshold), per the family convention for unthresholded returns. Reviewer should check whether the named-£250 file is actually threshold-filtered and, if so, whether it is worth separating out. 'columns'/'alt_columns' cover only the payment-line (TP) and card-transaction (GPC) layouts. Both families keep identical header text for the columns used here across every extra column seen in the brief (Voluntary & Community Sector, SME Class, Sole Trader, D-U-N-S Number, Postal Code, PSPES Level 2, Item, Purchasing Item Text, Profit Center, GPC Cardholder, Reference No/Ref No/Ref, and assorted trailing empty columns are all unmapped, no schema slot and/or not reliable) -- so those variants collapse into the same mapping rather than needing their own alt_columns entry. 'reference' always comes from 'Transaction number' (TP) or 'Doc Nbr' (GPC), not from the extra 'Reference No'/'Ref No'/'Ref' columns some later files carry, since those hold a small sequential index (e.g. '2'), not a real payment reference. expense_type is always the 'Expense Type' column (present in both families); 'Merchant category' (GPC only) is not mapped anywhere, since Expense Type already fills that role. description prefers 'Item Text' (GPC) or 'Narrative' (TP) where present; where neither exists, description is left unmapped rather than substituting 'Merchant category'. All 45 files' layouts mapped. This is the dataset carrying the file explicitly named 'DCLG_expenditure_over__250_September_2012' (22 of its files use that exact TP layout) -- see the threshold note above. Review 2026-09-07: the GPC (procurement card) layouts — 'Clearing', 'Doc Nbr', 'Item Text', 'Merchant category' — are removed: card transactions are a different return and this family excludes them by rule, so those files are held with 'no known layout'.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "ef29831ceb2076cd4b764e85c792e8b3dc3b933a0ac25d2a56b7fe672c9f77cf": {
+  "status": "reviewed",
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount in Sterling",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction number",
+   "description": "Narrative"
+  },
+  "constants": {
+   "body": "Ministry of Housing, Communities and Local Government",
+   "threshold_gbp": 0
+  },
+  "alt_columns": [],
+  "version": "1",
+  "notes": "Threshold: this MHCLG series bundles two kinds of file under one dataset -- 'TP' transparency-payment exports (Date of Payment/Amount in Sterling, sometimes with Voluntary & Community Sector/SME Class/Sole Trader/Narrative columns) and 'GPC' government procurement card exports (Clearing/Amount, Doc Nbr, sometimes Item Text/Merchant category). One 2012/2013 file name literally says 'DCLG_expenditure_over__250' (over £250), but sample rows across both TP and GPC layouts in this and other years include payments well under £250 (e.g. £105.33, £117.48, £251) and GPC card purchases down to a few pounds (£7.18, £14.78, £17.80, £20.00) -- the release is not consistently filtered at any single floor. Treated as threshold_gbp 0 (all payments, no threshold), per the family convention for unthresholded returns. Reviewer should check whether the named-£250 file is actually threshold-filtered and, if so, whether it is worth separating out. 'columns'/'alt_columns' cover only the payment-line (TP) and card-transaction (GPC) layouts. Both families keep identical header text for the columns used here across every extra column seen in the brief (Voluntary & Community Sector, SME Class, Sole Trader, D-U-N-S Number, Postal Code, PSPES Level 2, Item, Purchasing Item Text, Profit Center, GPC Cardholder, Reference No/Ref No/Ref, and assorted trailing empty columns are all unmapped, no schema slot and/or not reliable) -- so those variants collapse into the same mapping rather than needing their own alt_columns entry. 'reference' always comes from 'Transaction number' (TP) or 'Doc Nbr' (GPC), not from the extra 'Reference No'/'Ref No'/'Ref' columns some later files carry, since those hold a small sequential index (e.g. '2'), not a real payment reference. expense_type is always the 'Expense Type' column (present in both families); 'Merchant category' (GPC only) is not mapped anywhere, since Expense Type already fills that role. description prefers 'Item Text' (GPC) or 'Narrative' (TP) where present; where neither exists, description is left unmapped rather than substituting 'Merchant category'. 38 of 43 files' layouts mapped. Review 2026-09-07: the GPC (procurement card) layouts — 'Clearing', 'Doc Nbr', 'Item Text', 'Merchant category' — are removed: card transactions are a different return and this family excludes them by rule, so those files are held with 'no known layout'.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "4c368b61676960a885cedfe307692a6004393117370ab45d043de86a6471ee77": {
+  "status": "reviewed",
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount in Sterling",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction number",
+   "description": "Narrative"
+  },
+  "constants": {
+   "body": "Ministry of Housing, Communities and Local Government",
+   "threshold_gbp": 0
+  },
+  "alt_columns": [],
+  "version": "1",
+  "notes": "Threshold: this MHCLG series bundles two kinds of file under one dataset -- 'TP' transparency-payment exports (Date of Payment/Amount in Sterling, sometimes with Voluntary & Community Sector/SME Class/Sole Trader/Narrative columns) and 'GPC' government procurement card exports (Clearing/Amount, Doc Nbr, sometimes Item Text/Merchant category). One 2012/2013 file name literally says 'DCLG_expenditure_over__250' (over £250), but sample rows across both TP and GPC layouts in this and other years include payments well under £250 (e.g. £105.33, £117.48, £251) and GPC card purchases down to a few pounds (£7.18, £14.78, £17.80, £20.00) -- the release is not consistently filtered at any single floor. Treated as threshold_gbp 0 (all payments, no threshold), per the family convention for unthresholded returns. Reviewer should check whether the named-£250 file is actually threshold-filtered and, if so, whether it is worth separating out. 'columns'/'alt_columns' cover only the payment-line (TP) and card-transaction (GPC) layouts. Both families keep identical header text for the columns used here across every extra column seen in the brief (Voluntary & Community Sector, SME Class, Sole Trader, D-U-N-S Number, Postal Code, PSPES Level 2, Item, Purchasing Item Text, Profit Center, GPC Cardholder, Reference No/Ref No/Ref, and assorted trailing empty columns are all unmapped, no schema slot and/or not reliable) -- so those variants collapse into the same mapping rather than needing their own alt_columns entry. 'reference' always comes from 'Transaction number' (TP) or 'Doc Nbr' (GPC), not from the extra 'Reference No'/'Ref No'/'Ref' columns some later files carry, since those hold a small sequential index (e.g. '2'), not a real payment reference. expense_type is always the 'Expense Type' column (present in both families); 'Merchant category' (GPC only) is not mapped anywhere, since Expense Type already fills that role. description prefers 'Item Text' (GPC) or 'Narrative' (TP) where present; where neither exists, description is left unmapped rather than substituting 'Merchant category'. All 25 files' layouts mapped. Review 2026-09-07: the GPC (procurement card) layouts — 'Clearing', 'Doc Nbr', 'Item Text', 'Merchant category' — are removed: card transactions are a different return and this family excludes them by rule, so those files are held with 'no known layout'.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "e0d6e5f4dd6a2d16ff9af0b745d8cca6f5f55a80a64807411e41ba461448d27c": {
+  "status": "reviewed",
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount in Sterling",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction number",
+   "description": "Narrative"
+  },
+  "constants": {
+   "body": "Ministry of Housing, Communities and Local Government",
+   "threshold_gbp": 0
+  },
+  "alt_columns": [],
+  "version": "1",
+  "notes": "Threshold: this MHCLG series bundles two kinds of file under one dataset -- 'TP' transparency-payment exports (Date of Payment/Amount in Sterling, sometimes with Voluntary & Community Sector/SME Class/Sole Trader/Narrative columns) and 'GPC' government procurement card exports (Clearing/Amount, Doc Nbr, sometimes Item Text/Merchant category). One 2012/2013 file name literally says 'DCLG_expenditure_over__250' (over £250), but sample rows across both TP and GPC layouts in this and other years include payments well under £250 (e.g. £105.33, £117.48, £251) and GPC card purchases down to a few pounds (£7.18, £14.78, £17.80, £20.00) -- the release is not consistently filtered at any single floor. Treated as threshold_gbp 0 (all payments, no threshold), per the family convention for unthresholded returns. Reviewer should check whether the named-£250 file is actually threshold-filtered and, if so, whether it is worth separating out. 'columns'/'alt_columns' cover only the payment-line (TP) and card-transaction (GPC) layouts. Both families keep identical header text for the columns used here across every extra column seen in the brief (Voluntary & Community Sector, SME Class, Sole Trader, D-U-N-S Number, Postal Code, PSPES Level 2, Item, Purchasing Item Text, Profit Center, GPC Cardholder, Reference No/Ref No/Ref, and assorted trailing empty columns are all unmapped, no schema slot and/or not reliable) -- so those variants collapse into the same mapping rather than needing their own alt_columns entry. 'reference' always comes from 'Transaction number' (TP) or 'Doc Nbr' (GPC), not from the extra 'Reference No'/'Ref No'/'Ref' columns some later files carry, since those hold a small sequential index (e.g. '2'), not a real payment reference. expense_type is always the 'Expense Type' column (present in both families); 'Merchant category' (GPC only) is not mapped anywhere, since Expense Type already fills that role. description prefers 'Item Text' (GPC) or 'Narrative' (TP) where present; where neither exists, description is left unmapped rather than substituting 'Merchant category'. All 24 files' layouts mapped. Review 2026-09-07: the GPC (procurement card) layouts — 'Clearing', 'Doc Nbr', 'Item Text', 'Merchant category' — are removed: card transactions are a different return and this family excludes them by rule, so those files are held with 'no known layout'.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "0cd7cb67dcea81531437750f9cf3161068d2e486833e70649471a9135a258833": {
+  "status": "reviewed",
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount in Sterling",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction number",
+   "description": "Narrative"
+  },
+  "constants": {
+   "body": "Ministry of Housing, Communities and Local Government",
+   "threshold_gbp": 0
+  },
+  "alt_columns": [],
+  "version": "1",
+  "notes": "Threshold: this MHCLG series bundles two kinds of file under one dataset -- 'TP' transparency-payment exports (Date of Payment/Amount in Sterling, sometimes with Voluntary & Community Sector/SME Class/Sole Trader/Narrative columns) and 'GPC' government procurement card exports (Clearing/Amount, Doc Nbr, sometimes Item Text/Merchant category). One 2012/2013 file name literally says 'DCLG_expenditure_over__250' (over £250), but sample rows across both TP and GPC layouts in this and other years include payments well under £250 (e.g. £105.33, £117.48, £251) and GPC card purchases down to a few pounds (£7.18, £14.78, £17.80, £20.00) -- the release is not consistently filtered at any single floor. Treated as threshold_gbp 0 (all payments, no threshold), per the family convention for unthresholded returns. Reviewer should check whether the named-£250 file is actually threshold-filtered and, if so, whether it is worth separating out. 'columns'/'alt_columns' cover only the payment-line (TP) and card-transaction (GPC) layouts. Both families keep identical header text for the columns used here across every extra column seen in the brief (Voluntary & Community Sector, SME Class, Sole Trader, D-U-N-S Number, Postal Code, PSPES Level 2, Item, Purchasing Item Text, Profit Center, GPC Cardholder, Reference No/Ref No/Ref, and assorted trailing empty columns are all unmapped, no schema slot and/or not reliable) -- so those variants collapse into the same mapping rather than needing their own alt_columns entry. 'reference' always comes from 'Transaction number' (TP) or 'Doc Nbr' (GPC), not from the extra 'Reference No'/'Ref No'/'Ref' columns some later files carry, since those hold a small sequential index (e.g. '2'), not a real payment reference. expense_type is always the 'Expense Type' column (present in both families); 'Merchant category' (GPC only) is not mapped anywhere, since Expense Type already fills that role. description prefers 'Item Text' (GPC) or 'Narrative' (TP) where present; where neither exists, description is left unmapped rather than substituting 'Merchant category'. All 24 files' layouts mapped. Review 2026-09-07: the GPC (procurement card) layouts — 'Clearing', 'Doc Nbr', 'Item Text', 'Merchant category' — are removed: card transactions are a different return and this family excludes them by rule, so those files are held with 'no known layout'.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "2c063159235d84fcdc42a6b0e4e8f4dffdfc67ae7c0d135cd08d5501c7dd6284": {
+  "status": "reviewed",
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount in Sterling",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction number",
+   "description": "Narrative"
+  },
+  "constants": {
+   "body": "Ministry of Housing, Communities and Local Government",
+   "threshold_gbp": 0
+  },
+  "alt_columns": [],
+  "version": "1",
+  "notes": "Threshold: this MHCLG series bundles two kinds of file under one dataset -- 'TP' transparency-payment exports (Date of Payment/Amount in Sterling, sometimes with Voluntary & Community Sector/SME Class/Sole Trader/Narrative columns) and 'GPC' government procurement card exports (Clearing/Amount, Doc Nbr, sometimes Item Text/Merchant category). One 2012/2013 file name literally says 'DCLG_expenditure_over__250' (over £250), but sample rows across both TP and GPC layouts in this and other years include payments well under £250 (e.g. £105.33, £117.48, £251) and GPC card purchases down to a few pounds (£7.18, £14.78, £17.80, £20.00) -- the release is not consistently filtered at any single floor. Treated as threshold_gbp 0 (all payments, no threshold), per the family convention for unthresholded returns. Reviewer should check whether the named-£250 file is actually threshold-filtered and, if so, whether it is worth separating out. 'columns'/'alt_columns' cover only the payment-line (TP) and card-transaction (GPC) layouts. Both families keep identical header text for the columns used here across every extra column seen in the brief (Voluntary & Community Sector, SME Class, Sole Trader, D-U-N-S Number, Postal Code, PSPES Level 2, Item, Purchasing Item Text, Profit Center, GPC Cardholder, Reference No/Ref No/Ref, and assorted trailing empty columns are all unmapped, no schema slot and/or not reliable) -- so those variants collapse into the same mapping rather than needing their own alt_columns entry. 'reference' always comes from 'Transaction number' (TP) or 'Doc Nbr' (GPC), not from the extra 'Reference No'/'Ref No'/'Ref' columns some later files carry, since those hold a small sequential index (e.g. '2'), not a real payment reference. expense_type is always the 'Expense Type' column (present in both families); 'Merchant category' (GPC only) is not mapped anywhere, since Expense Type already fills that role. description prefers 'Item Text' (GPC) or 'Narrative' (TP) where present; where neither exists, description is left unmapped rather than substituting 'Merchant category'. All 16 files' layouts mapped. Review 2026-09-07: the GPC (procurement card) layouts — 'Clearing', 'Doc Nbr', 'Item Text', 'Merchant category' — are removed: card transactions are a different return and this family excludes them by rule, so those files are held with 'no known layout'.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "b0f3c7c68c607f93c77ca74a85a0fddc122707b687045011cbfca38626468f57": {
+  "status": "reviewed",
+  "columns": {
+   "payment_date": "Date of Payment",
+   "supplier": "Supplier",
+   "amount_gbp": "Amount in Sterling",
+   "expense_area": "Expense Area",
+   "expense_type": "Expense Type",
+   "reference": "Transaction number"
+  },
+  "constants": {
+   "body": "Ministry of Housing, Communities and Local Government",
+   "threshold_gbp": 0
+  },
+  "version": "1",
+  "notes": "Threshold: this MHCLG series bundles two kinds of file under one dataset -- 'TP' transparency-payment exports (Date of Payment/Amount in Sterling, sometimes with Voluntary & Community Sector/SME Class/Sole Trader/Narrative columns) and 'GPC' government procurement card exports (Clearing/Amount, Doc Nbr, sometimes Item Text/Merchant category). One 2012/2013 file name literally says 'DCLG_expenditure_over__250' (over £250), but sample rows across both TP and GPC layouts in this and other years include payments well under £250 (e.g. £105.33, £117.48, £251) and GPC card purchases down to a few pounds (£7.18, £14.78, £17.80, £20.00) -- the release is not consistently filtered at any single floor. Treated as threshold_gbp 0 (all payments, no threshold), per the family convention for unthresholded returns. Reviewer should check whether the named-£250 file is actually threshold-filtered and, if so, whether it is worth separating out. 'columns'/'alt_columns' cover only the payment-line (TP) and card-transaction (GPC) layouts. Both families keep identical header text for the columns used here across every extra column seen in the brief (Voluntary & Community Sector, SME Class, Sole Trader, D-U-N-S Number, Postal Code, PSPES Level 2, Item, Purchasing Item Text, Profit Center, GPC Cardholder, Reference No/Ref No/Ref, and assorted trailing empty columns are all unmapped, no schema slot and/or not reliable) -- so those variants collapse into the same mapping rather than needing their own alt_columns entry. 'reference' always comes from 'Transaction number' (TP) or 'Doc Nbr' (GPC), not from the extra 'Reference No'/'Ref No'/'Ref' columns some later files carry, since those hold a small sequential index (e.g. '2'), not a real payment reference. expense_type is always the 'Expense Type' column (present in both families); 'Merchant category' (GPC only) is not mapped anywhere, since Expense Type already fills that role. description prefers 'Item Text' (GPC) or 'Narrative' (TP) where present; where neither exists, description is left unmapped rather than substituting 'Merchant category'. All 18 files' layouts mapped.",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "eb7238984b4cab8b5dbbed9d55567bb252af381647778489014635f758fe6e7a": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 2,
+  "columns": {
+   "payment_date": "Payment Date",
+   "supplier": "Supplier Name",
+   "amount_gbp": "Amount",
+   "expense_area": "Service Area Categorisation",
+   "expense_type": "Detailed Expenses Type",
+   "reference": "Transaction Number",
+   "description": "Narrative"
+  },
+  "constants": {
+   "body": "Monmouthshire County Council",
+   "threshold_gbp": 0
+  },
+  "notes": "No stated threshold in the title ('Payments to suppliers from Monmouthshire County Council'); sample amounts run as low as £18-£85, consistent with an unfiltered full payments export, so threshold_gbp is 0 per the family rule for a return with no stated threshold. Of the 19 files, 5 share this same 15-column header ('Service Area Categorisation' ... 'Customer ID') just at different row offsets (header_row 0, 1 or 2, plus varying counts of empty trailing columns) -- header_row is set to 2 and build.py's own row-search (0..header_row+3) finds the right row per file, so no alt_columns entries were needed for those. 13 of the 19 files (the single largest layout by file count) carry a corrupted header that leaked a raw SQL SELECT statement across the header row and, in every one of the brief's sampled rows below it, further JOIN-clause text -- not real data or a recognisable header -- so the true header/data start could not be determined and is left unmapped; those files will be held by the build with a 'no known layout fits' reason until someone opens one directly. One further file (5,879 rows) shows the 'Supplier Name' column holding the literal code '3663' for two consecutive sample rows before reverting to real names ('Aid-Call Ltd', 'Alexandra Workwear PLC', ...) -- this reads as the publisher's own data-quality noise (a supplier without a name on file), not a header/label mismatch, so it is kept as published rather than remapped. 'Narrative' is blank in every sampled row but is the file's only free-text field, so description will likely be sparse. Not mapped, no schema slot: Service Division Categorisation, Responsible Unit, Expense Code, Order ID, Capital/Revenue, Supplier ID, Customer ID.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "e77fd05a12fb3fde1236a10a2e19856b8cdcab891fe982f4df54738ea9ebba4a": {
+  "status": "rejected",
+  "reject": "a £25,000 transparency return ('NHS Norfolk and Suffolk ICB - 25k Expenditure Report'), a different series from spend over £500"
+ },
+ "fe0f24ae537424a01077820f688c32f5edc7d8eeafe213c9bb0710b7047b31a8": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "F_DATE",
+   "supplier": "VENDOR",
+   "amount_gbp": "PAYMENT"
+  },
+  "constants": {
+   "body": "North Ayrshire Council",
+   "threshold_gbp": 0
+  },
+  "notes": "No stated threshold in the title ('Payments to Suppliers - 2022 to 2023'); threshold_gbp is 0 per the family rule for a return with no stated threshold -- reviewer should check whether North Ayrshire's own transparency policy states a floor elsewhere, since Scottish councils typically publish this series under a stated threshold that this particular title does not repeat. Only OBJECTID, F_DATE, VENDOR, PAYMENT and a numeric QUARTER (1-4, no year) exist -- no expense_area/expense_type/reference/description, and QUARTER is left unmapped as an opaque period marker (no year attached). The layer was fetched in two file formats: the full CSV (1675 rows, F_DATE written 'YYYY/MM/DD HH:MM:SS+00') and an ArcGIS GeoService export capped at the 1000-row page limit ('exceeded': true, F_DATE as an epoch-millisecond integer, plus always-empty _lon/_lat columns). Both share the same column names, so both will be read by this mapping; the capped file duplicates roughly its share of the full file's rows, and its epoch-millisecond F_DATE will not parse under any of the build's date formats (comes through as null) -- reviewer should consider excluding the capped file from extraction. Separately, the full CSV's own 'YYYY/MM/DD HH:MM:SS+00' date format is not matched by any of the build's date patterns either (they expect '/' as day/month/year or ISO with dashes) -- payment_date may come through null for every row here too; reviewer should check the date parser against this exact format before relying on payment_date for this source.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "ae30bcb7ab11cb3a9ba93f627e9c88c9f2f36a7d14a6c55399377607ee8167dd": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "F_DATE",
+   "supplier": "VENDOR",
+   "amount_gbp": "PAYMENT"
+  },
+  "constants": {
+   "body": "North Ayrshire Council",
+   "threshold_gbp": 0
+  },
+  "notes": "No stated threshold in the title ('Payments to Suppliers - 2023 to 2024'); threshold_gbp is 0 per the family rule for a return with no stated threshold -- reviewer should check whether North Ayrshire's own transparency policy states a floor elsewhere, since Scottish councils typically publish this series under a stated threshold that this particular title does not repeat. Only OBJECTID, F_DATE, VENDOR, PAYMENT and a numeric QUARTER (1-4, no year) exist -- no expense_area/expense_type/reference/description, and QUARTER is left unmapped as an opaque period marker (no year attached). The layer was fetched in two file formats: the full CSV (3696 rows, F_DATE written 'YYYY/MM/DD HH:MM:SS+00') and an ArcGIS GeoService export capped at the 1000-row page limit ('exceeded': true, F_DATE as an epoch-millisecond integer, plus always-empty _lon/_lat columns). Both share the same column names, so both will be read by this mapping; the capped file duplicates roughly its share of the full file's rows, and its epoch-millisecond F_DATE will not parse under any of the build's date formats (comes through as null) -- reviewer should consider excluding the capped file from extraction. Separately, the full CSV's own 'YYYY/MM/DD HH:MM:SS+00' date format is not matched by any of the build's date patterns either (they expect '/' as day/month/year or ISO with dashes) -- payment_date may come through null for every row here too; reviewer should check the date parser against this exact format before relying on payment_date for this source. Review 2026-09-07: the council's export lists every payment twice — 1,848 rows with amounts, then the same 1,848 (OBJECTID 1849 on) with the amount blank; the blank copies are held, the dated, valued rows publish.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "fe11c9f58dd18da767fcc65740509a7ebed8ee856ad4e05c94eb52444172acd4": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "F_DATE",
+   "supplier": "VENDOR",
+   "amount_gbp": "PAYMENT"
+  },
+  "constants": {
+   "body": "North Ayrshire Council",
+   "threshold_gbp": 0
+  },
+  "notes": "No stated threshold in the title ('Payments to Suppliers - 2024 to 2025'); threshold_gbp is 0 per the family rule for a return with no stated threshold -- reviewer should check whether North Ayrshire's own transparency policy states a floor elsewhere, since Scottish councils typically publish this series under a stated threshold that this particular title does not repeat. Only OBJECTID, F_DATE, VENDOR, PAYMENT and a numeric QUARTER (1-4, no year) exist -- no expense_area/expense_type/reference/description, and QUARTER is left unmapped as an opaque period marker (no year attached). The layer was fetched in two file formats: the full CSV (1568 rows, F_DATE written 'YYYY/MM/DD HH:MM:SS+00') and an ArcGIS GeoService export capped at the 1000-row page limit ('exceeded': true, F_DATE as an epoch-millisecond integer, plus always-empty _lon/_lat columns). Both share the same column names, so both will be read by this mapping; the capped file duplicates roughly its share of the full file's rows, and its epoch-millisecond F_DATE will not parse under any of the build's date formats (comes through as null) -- reviewer should consider excluding the capped file from extraction. Separately, the full CSV's own 'YYYY/MM/DD HH:MM:SS+00' date format is not matched by any of the build's date patterns either (they expect '/' as day/month/year or ISO with dashes) -- payment_date may come through null for every row here too; reviewer should check the date parser against this exact format before relying on payment_date for this source.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "284e0433eb916e0e88b93f768ff540651fcaef1cb3a237aac7449173477a14e4": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "CLEARANCE_DATE",
+   "supplier": "VENDOR_NAME",
+   "amount_gbp": "PAYMENT_AMOUNT"
+  },
+  "constants": {
+   "body": "North Ayrshire Council",
+   "threshold_gbp": 0
+  },
+  "notes": "No stated threshold in the title ('Payments to Suppliers - 2025 to 2026'); threshold_gbp is 0 per the family rule for a return with no stated threshold, matching the other three North Ayrshire financial years in this family. This year's file uses different column names from those other three (CLEARANCE_DATE/VENDOR_NAME/PAYMENT_AMOUNT here vs F_DATE/VENDOR/PAYMENT there), so it gets its own 'columns' rather than sharing theirs. CLEARANCE_DATE is written 'D Month YYYY' (e.g. '15 May 2025'), which the build's date parser handles directly -- unlike the other three years' F_DATE format. The layer was again fetched in two file formats: the full CSV (1,492 rows) and an ArcGIS GeoService export capped at the 1,000-row page limit ('exceeded': true, plus always-empty _lon/_lat columns); this time both formats give the same clean date text, so the capped file's rows will parse fine but still duplicate part of the full file -- reviewer should consider excluding it. Only OBJECTID, CLEARANCE_DATE, VENDOR_NAME, PAYMENT_AMOUNT and a numeric QUARTER (1-4, no year) exist; QUARTER left unmapped as before.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "cac25a912c44dc4679ddf650754738c4f2aceeac927676b92862dffd12b474f3": {
+  "status": "rejected",
+  "reject": "a £25,000 transparency return ('Transactions over £25,000 - Ofsted spend data'), a different series from spend over £500"
+ },
+ "13de0d71dd113a44bbef96f686d8a27b4d492ae2c26007535fc23f6367b39d26": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "PaymentDate",
+   "supplier": "Supplier",
+   "amount_gbp": "NetAmount",
+   "expense_area": "Directorate/ServiceWhereExpenditureIncurred",
+   "expense_type": "ProcurementClassification:ProclassLabel",
+   "reference": "TransactionNumber",
+   "description": "PurposeOfSpend"
+  },
+  "alt_columns": [
+   {
+    "payment_date": "Date",
+    "supplier": "Supplier Name",
+    "amount_gbp": "Amount",
+    "expense_area": "Expense Area",
+    "expense_type": "Expense Type",
+    "reference": "Transaction No."
+   }
+  ],
+  "constants": {
+   "body": "South Lakeland District Council",
+   "threshold_gbp": 250
+  },
+  "notes": "Threshold 250 taken from the title ('Payments to suppliers over £250'). Three layouts across 70 files: the main opendatacommunities-style layout ('OrganisationNameLabel', 'Directorate/Service..', 'ServiceCategoryLabel', 'Supplier', 'PaymentDate', 'NetAmount', 'ProcurementClassification:ProclassLabel' etc, 62 files) and a near-identical 17-column variant (5 files) that adds a duplicated 'PurposeOfSpend' column and a stray 'Procurement (Me' column ahead of the classification fields -- every column this mapping uses has identical header text in both, so no separate alt_columns entry was needed for the 5-file variant. A third, older 9-column layout (3 files, header on row 1) uses completely different names ('Body Name', 'Date', 'Transaction No.', 'Amount', 'Supplier Name', 'Expense Area', 'Expense Type', 'Expense Code', 'Service Area') and is covered by alt_columns; header_row is left at 0 since build.py's row-search (0..header_row+3) reaches row 1 anyway. In both layouts the broader 'ServiceCategoryLabel'/'Service Area' field (e.g. 'Cultural Environmental Regulatory & Planning Services') was NOT used for expense_area -- 'Directorate/ServiceWhereExpenditureIncurred'/'Expense Area' (e.g. 'Social Enterprise Admin') was preferred as the closer match to 'service/department', with 'ProcurementClassification:ProclassLabel'/'Expense Type' (e.g. 'Fuel', 'Room Hire', 'HR Temporary & Agency Staff') used for expense_type instead; reviewer should check these two choices, since the unmapped broader category field overlaps in meaning with both. NetAmount/Amount are net of VAT; 'IrrecoverableVAT' is present in the main layout and is not folded in, per the VAT rule (no VAT column is visible in the older 9-column layout). OrganisationURI, ServiceCategoryURI, 'SupplierRegisteredCompany Number', EffectiveDate, 'ProcrementClassification:ProClassCode' (sic, published spelling) and Expense Code have no schema slot and are left unmapped.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "59042ec948b4c4a6ff62e7d48fbf84764d03264cc4de6d37c2fa1c9ded1c7f2a": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "supplier": "Supplier_Name",
+   "amount_gbp": "Net_Value",
+   "expense_area": "Cost_Centre_Name",
+   "reference": "Transaction_Reference"
+  },
+  "constants": {
+   "body": "Stirling Council",
+   "threshold_gbp": 0,
+   "period": "2023/24 financial year"
+  },
+  "notes": "No stated threshold in the title ('payments to suppliers (1 April 2023 to 31 March 2024) - open data'); threshold_gbp is 0 per the family rule for a return with no stated threshold. No date column exists -- only 'Financial_Year_Ending' (e.g. '2024'), 'Period' and 'Quarter' codes, none of which read as a clean date or period label on their own, so payment_date and period are both left unmapped (as with the similarly opaque Year/Period fields already left unmapped elsewhere in this file). 'Gross_Value' (VAT-inclusive) is used for amount_gbp; 'Net_Value' and 'VAT' are both present and left unmapped/not folded in, per the VAT rule. 'Transaction_Type' (e.g. 'Invoice') and 'SubLedger' (e.g. 'Trade Creditors') are payment-mechanism fields, not expense categories, so expense_type is left unmapped. The layer was fetched in two file formats: the full CSV (25,298 rows) and an ArcGIS GeoService export capped at the 2,000-row page limit ('exceeded': true, plus always-empty _lon/_lat columns) with identical column names, so the capped file will duplicate part of the full file's rows; reviewer should consider excluding it. A sibling dataset from the same council ('payments to suppliers (top 100 by value...)') is a separate, aggregated per-supplier-totals return and is rejected separately in this file. Review 2026-09-07: amount is Net_Value, the figure before VAT, as every other body in this table publishes; Gross_Value and VAT stay unmapped. No date column: the period is the financial year in the title.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "8935a7a02e6168592a89e46bb8a1d2f20bcdb74c2f66a3828c38d7814f2bb2bd": {
+  "status": "rejected",
+  "reject": "a 'top 100 by value' subset of aggregated per-supplier totals (Count/Net_Value/Gross_Value summed per supplier over the year, including a lump 'Invoices Processed Under 500 GBP' catch-all row), not per-payment lines"
+ },
+ "622f7a8fecb917401403558ac79e5f71428ba10e55f360f493a24b963c6a0ffc": {
+  "status": "rejected",
+  "reject": "an aggregate monthly spend-by-account-category summary (rows are accounting categories like 'PPE - IT (OWNED) - COST - ADD', columns are calendar months in £000s plus a forecast and a total column), not a payment-line return -- no supplier column at all"
+ },
+ "8499b494ba777ca53488c8e7b1f49b83875a8c6a49d7d62588460dd2671c4974": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Clearing Date",
+   "supplier": "Vendor Name",
+   "amount_gbp": "Amount (£)",
+   "expense_type": "Expenditure Account ",
+   "reference": "Document Number"
+  },
+  "constants": {
+   "body": "Transport for London",
+   "threshold_gbp": 250
+  },
+  "notes": "Threshold 250 taken from the title ('Payments to suppliers with a value over £250 from Transport for London') and confirmed by the file's own header line in the other layouts ('Report of all payments made by TfL for value equal to or greater than £250.00 Excl. VAT') -- the £250 threshold is stated exclusive of VAT; 'Amount (£)' is most likely the net figure but no separate VAT column is visible in this layout to confirm. 'Entity' (e.g. 'TRANSPORT TRADING LTD', 'LONDON BUS SERVICES LTD') is TfL's own group subsidiary that made the payment, not a service/department, so it is left unmapped, matching the precedent elsewhere in this file for similar group/entity columns. 'Merchant Category' is blank in every sampled row and is left unmapped. 'Expenditure Account ' (note the published trailing space in the header) holds a category like 'Bus Contract Payments' or 'Franchise/Concession Fixed Fee' and is used for expense_type. This mapping covers only 1 of 4 header layouts in the brief -- 6 of 18 files, but the large majority of rows (198,668). The other 3 layouts (12 files) open with several metadata lines ('Reporting Period:', 'Start Date:', 'End Date:', 'Financial Year:') before their real header, and the brief's sampled rows for those layouts show only those metadata lines -- the actual column header text was never captured, so it cannot be mapped without guessing; those 12 files will be held by the build ('no known layout fits') until someone opens one directly and an alt_columns entry is added for it.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
  }
 }

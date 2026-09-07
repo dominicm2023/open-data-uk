@@ -185,7 +185,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 |---|---|---|---|
 | recycling_centres | 30 sources | 18 | 13 sources, 98 rows, 12 bodies |
 | air_quality_annual | 51 | 39 | 17 sources, 16,427 rows, 5 bodies |
-| spend_over_500 | 60 | 19 | 18 sources, 1,165,302 rows, 15 bodies (325 files across the series) |
+| spend_over_500 | 187 | 54 | 46 sources, 3,579,846 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
 
 Held in review, not published: Bradford's diffusion tubes (nothing in the
 file, title or description names the pollutant); Perth & Kinross (mixes
@@ -233,6 +233,20 @@ said on the page. A series fetches every *file* of a dataset, not every
 export that answers "being generated, check back later" is retried,
 politely, and never mistaken for a table. Accounting brackets,
 "(2,586.20)", are credits and read as negative.
+
+Widening the registry (7 September, evening): the title pattern now finds
+"Payments to suppliers with a value over £500 from …" (the LGA's own
+title), "Expenditure report", "Payments to Suppliers"; 187 sources where
+there were 60. Of the 127 new, 54 extracted, 9 had no licence, and most of
+the rest are departmental records from 2010-16 whose files are gone. The
+extractor reads .xls (xlrd) and falls back to latin-1 for a CSV cp1252
+cannot decode; the file cap is 80 MB (25 MB dropped Camden's export).
+Reviewer decisions of note: £25,000 returns (ICBs, Ofsted) are a different
+series and are rejected; a return of *all* payments carries
+threshold_gbp 0; procurement-card (GPC) layouts inside MHCLG's bundles are
+removed so those files hold; a layer's GeoService twin is never a second
+file of a series; North Ayrshire's 2023-24 export lists every payment
+twice, once without an amount.
 
 ## The loop from here
 

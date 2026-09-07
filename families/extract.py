@@ -61,7 +61,13 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
         try:
             text = data.decode("utf-8-sig")
         except UnicodeDecodeError:
-            text = data.decode("cp1252")
+            # cp1252 leaves five bytes undefined (0x81, 0x8d, 0x8f, 0x90,
+            # 0x9d); a council's export can carry them. Latin-1 maps every
+            # byte, so nothing is lost but the odd accented character.
+            try:
+                text = data.decode("cp1252")
+            except UnicodeDecodeError:
+                text = data.decode("latin-1")
         if text.lstrip().lower().startswith(("<!doctype", "<html")):
             raise ValueError("HTML response, not CSV")
         try:

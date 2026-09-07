@@ -79,6 +79,20 @@ def _headline(s: dict) -> dict:
             "sources": sum(ladder.values()), "built": (s.get("built_at") or "")[:10]}
 
 
+def _size_note(family: str) -> str:
+    """", 2.1 GB" when the whole table is a download worth warning about."""
+    p = STORE / family / f"{family}.published.csv"
+    try:
+        n = p.stat().st_size
+    except OSError:
+        return ""
+    if n >= 1e9:
+        return f", {n / 1e9:.1f} GB"
+    if n >= 50e6:
+        return f", {n / 1e6:.0f} MB"
+    return ""
+
+
 def _nice_date(iso: str) -> str:
     try:
         from datetime import date
@@ -395,7 +409,7 @@ def render_family(family: str, site_url: str) -> str | None:
                f'{len(schema["columns"])} columns. The download has every column, with a receipt on each row: '
                'the publisher, the file and its hash, the source row, and the licence.</p>'
                f'<div class="table-wrap"><table><thead><tr>{head}</tr></thead><tbody id="frows">{"".join(body)}</tbody></table></div>'
-               f'<p class="dl-row"><a class="cta" id="fdl" href="/api/family/{esc(family)}.csv">Download all {total:,} rows (CSV)</a>'
+               f'<p class="dl-row"><a class="cta" id="fdl" href="/api/family/{esc(family)}.csv">Download all {total:,} rows (CSV{_size_note(family)})</a>'
                '<span class="note" id="fmore"></span></p>'
                + _FILTER_SCRIPT.replace("__FAM__", family))
 
