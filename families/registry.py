@@ -48,14 +48,19 @@ FAMILIES: dict[str, dict] = {
     },
     "air_quality_annual": {
         "label": "Air quality: annual mean concentrations",
-        "include": r"(air\s+quality.*(annual|mean|monitor|no2|nitrogen|diffusion)|nitrogen\s+dioxide|diffusion\s+tube|no2\b.*(annual|mean|monitor|tube))",
+        "include": r"(air\s+quality.*(annual|mean|monitor|no2|nitrogen|diffusion|results|tube|pm10|pm2\.?5)|nitrogen\s+dioxide|diffusion\s+tube|no2\b.*(annual|mean|monitor|tube)|nox\b.*tube|ratified\s+air\s+quality|pm(10|2\.?5)\b.*annual)",
         # Site *locations* and management-area boundaries are a different family.
-        "exclude": r"management\s+area|aqma\b|boundar|\bsites?\s+location|monitoring\s+sites?\s*$|monitors\s*$|action\s+plan",
+        "exclude": r"management\s+area|aqma\b|boundar|\bsites?\s+location|monitoring\s+sites?\s*$|monitors\s*$|action\s+plan|hourly|daily|emissions?\s+inventory|laei\b|24\s*hour|modell?ed|forecast",
     },
     "spend_over_500": {
         "label": "Spend over £500",
-        "include": r"(spend|spending|expenditure|payments?|transactions?|invoices?)\s+(over|above|exceeding|greater\s+than|>)\s*£?\s*(500|250)\b",
-        "exclude": r"\bgpc\b|procurement\s+card|credit\s+card",
+        # The LGA's own title is "Payments to suppliers with a value over
+        # £500 from <council>"; "Expenditure report" and "Payments to
+        # Suppliers" are common too. The first pattern found 60 of the
+        # 300-odd bodies that publish this.
+        "include": r"((spend|spending|expenditure|payments?|transactions?|invoices?)\s+(over|above|exceeding|greater\s+than|in\s+excess\s+of|>|with\s+a\s+value\s+(over|above|of\s+£?\s*\d))\s*£?\s*(500|250|1,?000)\b"
+                   r"|payments?\s+to\s+suppliers|supplier\s+payments|expenditure\s+(report|data|£)|spend(ing)?\s+(data|report)\b|transparency\s+(spend|payments|expenditure))",
+        "exclude": r"\bgpc\b|procurement\s+card|credit\s+card|purchase\s+card|prompt\s+payment|social\s+housing|contracts?\b|tenders?\b|grants?\b|salar|senior|organogram|pay\s+multiple|trade\s+union|budget\b|summary\b|capital\s+programme",
         # A return is one file a month; the family is the series, so every
         # file of a dataset is fetched and mapped, not the newest one.
         "series": True, "max_files": 72,

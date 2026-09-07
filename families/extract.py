@@ -121,6 +121,33 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
                 if rows:
                     add(rows, sheet=sheet.title)
             book.close()
+    elif fmt == "XLS":
+        # Old-format Excel, still what several councils upload. xlrd 2 reads
+        # only .xls; dates arrive as serial numbers and are turned into ISO
+        # dates here, so a mapping sees the same thing an XLSX would give.
+        import xlrd
+        book = xlrd.open_workbook(file_contents=data, on_demand=True)
+        for sheet in book.sheets():
+            if sheet.ncols > 100:
+                raise ValueError("Column limit exceeded")
+            rows = []
+            for i in range(sheet.nrows):
+                if len(rows) + total >= limits["max_rows"]:
+                    raise ValueError("Row limit exceeded")
+                out_row = []
+                for cell in sheet.row(i):
+                    if cell.ctype == xlrd.XL_CELL_DATE:
+                        try:
+                            out_row.append(xlrd.xldate_as_datetime(cell.value, book.datemode).date().isoformat())
+                        except (ValueError, OverflowError):
+                            out_row.append(cell.value)
+                    elif cell.ctype == xlrd.XL_CELL_EMPTY:
+                        out_row.append("")
+                    else:
+                        out_row.append(cell.value)
+                rows.append(out_row)
+            if rows:
+                add(rows, sheet=sheet.name)
     elif fmt == "PDF":
         import pdfplumber
         if data[:5] != b"%PDF-":
