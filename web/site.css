@@ -383,6 +383,27 @@ ul.datasets { list-style: none; padding: 0; margin: .6rem 0 0; }
 ul.datasets li { padding: .55rem 0; border-bottom: 1px solid var(--line); }
 ul.datasets li:last-child { border-bottom: 0; }
 
+/* Combined data: the hub's cards, a family page's downloads, its bodies,
+   and the folds that keep the checking material off the first screen. */
+.fam-grid { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); margin: 1.2rem 0 1.6rem; }
+.fam-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; }
+.fam-card h2 { margin: 0 0 .35rem; font-size: 1.1rem; }
+.fam-card .stats { color: var(--muted); font-size: .875rem; margin: 0 0 .5rem; }
+.fam-card .stats b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.fam-card p:last-child { margin-bottom: 0; }
+.dl-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.1rem; margin: .2rem 0 1.4rem; }
+.dl-row .cta { margin: 0; }
+ul.bodies { list-style: none; padding: 0; margin: .5rem 0 1.2rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+ul.bodies li { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: .28rem .75rem; font-size: .875rem; }
+ul.bodies li b { font-weight: 600; font-variant-numeric: tabular-nums; margin-left: .3rem; }
+.fold { border-top: 1px solid var(--line); padding: .55rem 0; }
+.fold:last-of-type { border-bottom: 1px solid var(--line); margin-bottom: 1.2rem; }
+.fold summary { cursor: pointer; font-weight: 620; padding: .35rem 0; }
+.fold summary:hover { color: var(--accent); }
+.fold[open] summary { margin-bottom: .5rem; }
+.fold ul.notes { padding-left: 1.15rem; }
+.fold ul.notes li { margin-bottom: .55rem; font-size: .92rem; }
+.fold h3 { margin-top: 1rem; }
 ul.related { padding-left: 1.15rem; margin: .5rem 0; }
 ul.related li { margin-bottom: .25rem; }
 

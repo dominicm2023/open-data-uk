@@ -989,6 +989,14 @@ def findings_page() -> HTMLResponse:
 FAMILY_NAMES = {"recycling_centres", "air_quality_annual", "spend_over_500"}
 
 
+@app.get("/combined", include_in_schema=False)
+def combined_page() -> Response:
+    """The hub for the family tables: every built family with its numbers."""
+    import familypage
+    return HTMLResponse(familypage.render_combined(SITE_URL),
+                        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
 @app.get("/family/{name}", include_in_schema=False)
 def family_page(name: str) -> Response:
     """A combined table, built nightly by families/build.py from reviewed
@@ -1334,6 +1342,10 @@ def sitemap_browse() -> Response:
     for title, _n in agg["shared"]:
         loc = (SITE_URL + pagerender.who_path(title)).replace("&", "&amp;")
         urls.append(f"<url><loc>{loc}</loc></url>")
+    # The combined tables: rebuilt nightly, so they change as often as findings.
+    urls.append(f"<url><loc>{SITE_URL}/combined</loc><changefreq>daily</changefreq></url>")
+    for fam in sorted(FAMILY_NAMES):
+        urls.append(f"<url><loc>{SITE_URL}/family/{fam}</loc><changefreq>daily</changefreq></url>")
     xml = ('<?xml version="1.0" encoding="UTF-8"?>'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
            f'{"".join(urls)}</urlset>')
