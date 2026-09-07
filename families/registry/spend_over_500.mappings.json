@@ -1366,5 +1366,353 @@
   "version": "1",
   "reviewer": "Dominic Matthews via Claude",
   "reviewed_at": "2026-09-07"
+ },
+ "312bd1e9d7f74fd301323212f34d6946d142defbb6ed3a1239b43f7b50a91f14": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "payment_date",
+   "supplier": "beneficiary",
+   "amount_gbp": "amount",
+   "expense_area": "department",
+   "expense_type": "merchant_category",
+   "description": "purpose_of_expenditure"
+  },
+  "constants": {
+   "body": "Leicester City Council",
+   "threshold_gbp": 500
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Expenditure exceeding £500 - 2015' (0c183e83): its headers are all present in this edition's files. Sibling notes: Cloned from the reviewed 2022 mapping (ad249d35) less 'reference': the 2015 files carry no unique_id column. Same body name, threshold 500 from the title. Review 2026-09-07: same layout and body as the reviewed 2022 year; dates and amounts in range on preview. Period/threshold read from this edition's own title: 'Expenditure exceeding £500 - 2018'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "5a6864fd4a4977623c3075b5e6c281e04aed4305d2edae429169a1a61d3ff254": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "payment_date",
+   "supplier": "beneficiary",
+   "amount_gbp": "amount",
+   "expense_area": "department",
+   "expense_type": "merchant_category",
+   "description": "purpose_of_expenditure"
+  },
+  "constants": {
+   "body": "Leicester City Council",
+   "threshold_gbp": 500
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Expenditure exceeding £500 - 2015' (0c183e83): its headers are all present in this edition's files. Sibling notes: Cloned from the reviewed 2022 mapping (ad249d35) less 'reference': the 2015 files carry no unique_id column. Same body name, threshold 500 from the title. Review 2026-09-07: same layout and body as the reviewed 2022 year; dates and amounts in range on preview. Period/threshold read from this edition's own title: 'Expenditure exceeding £500 - 2019'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "f4fc8695234803d3827817fa443563944d1460b117920a96fe287755a5992b5f": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "payment_date",
+   "supplier": "beneficiary",
+   "amount_gbp": "amount",
+   "expense_area": "department",
+   "expense_type": "merchant_category",
+   "description": "purpose_of_expenditure"
+  },
+  "constants": {
+   "body": "Leicester City Council",
+   "threshold_gbp": 500
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Expenditure exceeding £500 - 2015' (0c183e83): its headers are all present in this edition's files. Sibling notes: Cloned from the reviewed 2022 mapping (ad249d35) less 'reference': the 2015 files carry no unique_id column. Same body name, threshold 500 from the title. Review 2026-09-07: same layout and body as the reviewed 2022 year; dates and amounts in range on preview. Period/threshold read from this edition's own title: 'Expenditure exceeding £500 - 2020'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "0c8279f607a622ece91fb7615ad9365d2ef8cbfcfcf7e94bd68846064204e2c4": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "payment_date",
+   "supplier": "beneficiary",
+   "amount_gbp": "amount",
+   "expense_area": "department",
+   "expense_type": "merchant_category",
+   "reference": "unique_id",
+   "description": "purpose_of_expenditure"
+  },
+  "constants": {
+   "body": "Leicester City Council",
+   "threshold_gbp": 500
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Expenditure exceeding £500 - 2022' (ad249d35): its headers are all present in this edition's files. Sibling notes: Single layout across both files (unique_id, payment_date, department, beneficiary, purpose_of_expenditure, amount, vat, vat_code, merchant_category). 'vat' and 'vat_code' are present but not mapped: the family rule keeps VAT separate from amount_gbp and there is no dedicated VAT schema column, so bo Period/threshold read from this edition's own title: 'Expenditure exceeding £500 - 2021'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "4fda6c7bf5217be790ec75c3f46d244f1fc6d35dc82aafa194fb6fa27f40e6ca": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "supplier": "Supplier_Name",
+   "amount_gbp": "Net_Value",
+   "expense_area": "Cost_Centre_Name",
+   "reference": "Transaction_Reference"
+  },
+  "constants": {
+   "body": "Stirling Council",
+   "threshold_gbp": 0,
+   "period": "2019/20 financial year"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'payments to suppliers (1 April 2023 to 31 March 2024) - open' (59042ec9): its headers are all present in this edition's files. Sibling notes: No stated threshold in the title ('payments to suppliers (1 April 2023 to 31 March 2024) - open data'); threshold_gbp is 0 per the family rule for a return with no stated threshold. No date column exists -- only 'Financial_Year_Ending' (e.g. '2024'), 'Period' and 'Quarter' codes, none of which read  Period/threshold read from this edition's own title: 'payments to suppliers (1 April 2019 to 31 March 2020) - open data'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "d5d0a57c53c3f37b017b6c544fb80e66899dd6998342813b00ccff3960ae4d40": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "supplier": "Supplier_Name",
+   "amount_gbp": "Net_Value",
+   "expense_area": "Cost_Centre_Name",
+   "reference": "Transaction_Reference"
+  },
+  "constants": {
+   "body": "Stirling Council",
+   "threshold_gbp": 0,
+   "period": "2020/21 financial year"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'payments to suppliers (1 April 2023 to 31 March 2024) - open' (59042ec9): its headers are all present in this edition's files. Sibling notes: No stated threshold in the title ('payments to suppliers (1 April 2023 to 31 March 2024) - open data'); threshold_gbp is 0 per the family rule for a return with no stated threshold. No date column exists -- only 'Financial_Year_Ending' (e.g. '2024'), 'Period' and 'Quarter' codes, none of which read  Period/threshold read from this edition's own title: 'payments to suppliers (1 April 2020 to 31 March 2021) - open data'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "66617202d5872af970c6f603a6d3b981197a63d60901f1b31de673576f4f258e": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "supplier": "Supplier_Name",
+   "amount_gbp": "Net_Value",
+   "expense_area": "Cost_Centre_Name",
+   "reference": "Transaction_Reference"
+  },
+  "constants": {
+   "body": "Stirling Council",
+   "threshold_gbp": 0,
+   "period": "2021/22 financial year"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'payments to suppliers (1 April 2023 to 31 March 2024) - open' (59042ec9): its headers are all present in this edition's files. Sibling notes: No stated threshold in the title ('payments to suppliers (1 April 2023 to 31 March 2024) - open data'); threshold_gbp is 0 per the family rule for a return with no stated threshold. No date column exists -- only 'Financial_Year_Ending' (e.g. '2024'), 'Period' and 'Quarter' codes, none of which read  Period/threshold read from this edition's own title: 'payments to suppliers (1 April 2021 to 31 March 2022) - open data'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "4bd925133fe6b09d0716ade8d1e4b1545a90e3ac7de364060d440ffd01bb17c8": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "supplier": "Supplier_Name",
+   "amount_gbp": "Net_Value",
+   "expense_area": "Cost_Centre_Name",
+   "reference": "Transaction_Reference"
+  },
+  "constants": {
+   "body": "Stirling Council",
+   "threshold_gbp": 0,
+   "period": "2022/23 financial year"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'payments to suppliers (1 April 2023 to 31 March 2024) - open' (59042ec9): its headers are all present in this edition's files. Sibling notes: No stated threshold in the title ('payments to suppliers (1 April 2023 to 31 March 2024) - open data'); threshold_gbp is 0 per the family rule for a return with no stated threshold. No date column exists -- only 'Financial_Year_Ending' (e.g. '2024'), 'Period' and 'Quarter' codes, none of which read  Period/threshold read from this edition's own title: 'payments to suppliers (1 April 2022 to 31 March 2023) - open data'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "5cedfba5a2a3c74f9506761c6fed0a03da3ea668905bff8481e4f8872e6972ab": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date_Paid",
+   "supplier": "Customer_Supplier_Description",
+   "amount_gbp": "Net_Amount_in_Sterling",
+   "expense_area": "Service_Label",
+   "expense_type": "Expenditure_Category",
+   "reference": "Reference",
+   "description": "Activity_Description"
+  },
+  "constants": {
+   "body": "Tunbridge Wells Borough Council",
+   "threshold_gbp": 250,
+   "period": "2019/20 financial year"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Tunbridge Wells Open Data - Spend Over 250 - Financial Year ' (486018dd): its headers are all present in this edition's files. Sibling notes: Two layouts in the brief differ only by three trailing columns present in one (ObjectId, _lon, _lat) and absent in the other; every column used here has identical header text in both, so no alt_columns entry is needed. 'Date_Paid' and 'Date_Received' are both blank in every sampled row — payment_dat Period/threshold read from this edition's own title: 'Tunbridge Wells Open Data - Spend Over 250 - Financial Year 2019 to 20'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "2dbdb9487765362f140a818ecddad1d9fd20ef781fde4518ed8a9183ba611143": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date_Paid",
+   "supplier": "Customer_Supplier_Description",
+   "amount_gbp": "Net_Amount_in_Sterling",
+   "expense_area": "Service_Label",
+   "expense_type": "Expenditure_Category",
+   "reference": "Reference",
+   "description": "Activity_Description"
+  },
+  "constants": {
+   "body": "Tunbridge Wells Borough Council",
+   "threshold_gbp": 250,
+   "period": "2022/23 financial year"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Tunbridge Wells Open Data - Spend Over 250 - Financial Year ' (486018dd): its headers are all present in this edition's files. Sibling notes: Two layouts in the brief differ only by three trailing columns present in one (ObjectId, _lon, _lat) and absent in the other; every column used here has identical header text in both, so no alt_columns entry is needed. 'Date_Paid' and 'Date_Received' are both blank in every sampled row — payment_dat Period/threshold read from this edition's own title: 'Tunbridge Wells Open Data - Spend Over 250 - Financial Year 2022 to 20'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "06af5b07a48b60551d9864e05dfdbab45bf55c4dba152aefae559be27b9eba96": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date_Paid",
+   "supplier": "Customer_Supplier_Description",
+   "amount_gbp": "Net_Amount_in_Sterling",
+   "expense_area": "Service_Label",
+   "expense_type": "Expenditure_Category",
+   "reference": "Reference",
+   "description": "Activity_Description"
+  },
+  "constants": {
+   "body": "Tunbridge Wells Borough Council",
+   "threshold_gbp": 250,
+   "period": "2015/16 financial year"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Tunbridge Wells Open Data - Spend Over 250 - Financial Year ' (486018dd): its headers are all present in this edition's files. Sibling notes: Two layouts in the brief differ only by three trailing columns present in one (ObjectId, _lon, _lat) and absent in the other; every column used here has identical header text in both, so no alt_columns entry is needed. 'Date_Paid' and 'Date_Received' are both blank in every sampled row — payment_dat Period/threshold read from this edition's own title: 'Tunbridge Wells Open Data - Spend Over £250 - Financial Year 2015 to 2'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "7bd1d07950ff7b0a4eed040a8b3d5f1c14dbede92a16b851157d4a95a93546c5": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date_Paid",
+   "supplier": "Customer_Supplier_Description",
+   "amount_gbp": "Net_Amount_in_Sterling",
+   "expense_area": "Service_Label",
+   "expense_type": "Expenditure_Category",
+   "reference": "Reference",
+   "description": "Activity_Description"
+  },
+  "constants": {
+   "body": "Tunbridge Wells Borough Council",
+   "threshold_gbp": 250,
+   "period": "2016/17 financial year"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Tunbridge Wells Open Data - Spend Over 250 - Financial Year ' (486018dd): its headers are all present in this edition's files. Sibling notes: Two layouts in the brief differ only by three trailing columns present in one (ObjectId, _lon, _lat) and absent in the other; every column used here has identical header text in both, so no alt_columns entry is needed. 'Date_Paid' and 'Date_Received' are both blank in every sampled row — payment_dat Period/threshold read from this edition's own title: 'Tunbridge Wells Open Data - Spend Over £250 - Financial Year 2016 to 2'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "54c786fc612fa1d66e417c56517389ac2e93263dfe77b6fb1eba10d7e7f3b112": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date_Paid",
+   "supplier": "Customer_Supplier_Description",
+   "amount_gbp": "Net_Amount_in_Sterling",
+   "expense_area": "Service_Label",
+   "expense_type": "Expenditure_Category",
+   "reference": "Reference",
+   "description": "Activity_Description"
+  },
+  "constants": {
+   "body": "Tunbridge Wells Borough Council",
+   "threshold_gbp": 250,
+   "period": "2017/18 financial year"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Tunbridge Wells Open Data - Spend Over 250 - Financial Year ' (486018dd): its headers are all present in this edition's files. Sibling notes: Two layouts in the brief differ only by three trailing columns present in one (ObjectId, _lon, _lat) and absent in the other; every column used here has identical header text in both, so no alt_columns entry is needed. 'Date_Paid' and 'Date_Received' are both blank in every sampled row — payment_dat Period/threshold read from this edition's own title: 'Tunbridge Wells Open Data - Spend Over £250 - Financial Year 2017 to 2'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "d67836494e95a89aca36f6a4ea1ad0632c0141b7a613e2879c338ec6818323b5": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date Paid",
+   "supplier": "Customer Supplier Description",
+   "amount_gbp": "Net Amount in Sterling",
+   "expense_area": "Service Label",
+   "expense_type": "Expenditure Category",
+   "reference": "Reference",
+   "description": "Activity Description"
+  },
+  "constants": {
+   "body": "Tunbridge Wells Borough Council",
+   "threshold_gbp": 250,
+   "period": "2021/22 financial year"
+  },
+  "notes": "Same return as the reviewed 2024/25 edition (486018dd) with this year's header spelling (spaces or underscores; 'Customer/Supplier Description' in 2018/19). Threshold 250 and period from the title 'd Over 250 - Financial Year 2021 to 2022'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "a2c317b9cc85165c842f488d8be0731bc4ecefb0de30a327f580c6c3dfcd22cc": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date Paid",
+   "supplier": "Customer/Supplier Description",
+   "amount_gbp": "Net Amount in Sterling",
+   "expense_area": "Service Label",
+   "expense_type": "Expenditure Category",
+   "reference": "Reference",
+   "description": "Activity Description"
+  },
+  "constants": {
+   "body": "Tunbridge Wells Borough Council",
+   "threshold_gbp": 250,
+   "period": "2018/19 financial year"
+  },
+  "notes": "Same return as the reviewed 2024/25 edition (486018dd) with this year's header spelling (spaces or underscores; 'Customer/Supplier Description' in 2018/19). Threshold 250 and period from the title ' Over £250 - Financial Year 2018 to 2019'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "d0adbfa840aadeafbbabf41fad4175c38001cd6651f27447cbe5c39860f5db18": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "Date_Paid",
+   "supplier": "Customer_Supplier_Description",
+   "amount_gbp": "Net_Amount_in_Sterling",
+   "expense_area": "Service_Label",
+   "expense_type": "Expenditure_Category",
+   "reference": "Reference"
+  },
+  "constants": {
+   "body": "Tunbridge Wells Borough Council",
+   "threshold_gbp": 250,
+   "period": "2014/15 financial year"
+  },
+  "notes": "Same return as the reviewed 2024/25 edition (486018dd) with this year's header spelling (spaces or underscores; 'Customer/Supplier Description' in 2018/19). Threshold 250 and period from the title ' Over £250 - Financial Year 2014 to 2015'. Review 2026-09-08: an earlier edition of a reviewed return; rows, amounts and (where the file dates them) dates in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
  }
 }

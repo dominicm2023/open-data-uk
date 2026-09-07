@@ -420,6 +420,22 @@ def admit(c: sqlite3.Connection, family: str, src: dict) -> str | None:
     return job_id
 
 
+def _file_stem(url: str) -> str:
+    """What names the file, without its format: 'spend-2018' for
+    spend-2018.csv and spend-2018.json alike, and for Opendatasoft's
+    .../datasets/spend-2018/exports/csv and .../exports/json."""
+    path = url.split("?", 1)[0].split("#", 1)[0].rstrip("/").lower()
+    parts = [p for p in path.split("/") if p]
+    if not parts:
+        return ""
+    last = re.sub(r"\.(csv|json|xlsx?|geojson|zip)$", "", parts[-1])
+    if last in ("csv", "json", "xlsx", "xls", "geojson", "zip") and len(parts) >= 3 and parts[-2] in ("exports", "export", "download", "downloads"):
+        return parts[-3]
+    if last in ("csv", "json", "xlsx", "xls", "geojson", "zip") and len(parts) >= 2:
+        return parts[-2]
+    return last
+
+
 def _try_one(job: dict, cand: dict, out: Path) -> tuple[str, str, dict, int, str]:
     """Fetch and extract one candidate. Returns (blob, extraction, headers, bytes, detail)."""
     from extract import VERSION
@@ -484,7 +500,7 @@ def process(c: sqlite3.Connection, job_id: str) -> None:
                 continue
             # Nor is the same file in a second format: Leicester lists every
             # year as .csv and .json and each year was published twice.
-            stem = re.sub(r"\.(csv|json|xlsx?|geojson|zip)$", "", cand["url"].rsplit("/", 1)[-1].lower())
+            stem = _file_stem(cand["url"])
             if series and stem and stem in seen_items:
                 continue
             prev = c.execute("SELECT * FROM files WHERE job_id=? AND url=?", (job_id, cand["url"])).fetchone()

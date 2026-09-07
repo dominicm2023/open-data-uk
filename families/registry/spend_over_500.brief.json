@@ -104,7 +104,7 @@
    "format": "XLSX",
    "resource_url": "https://gbr01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.birminghamsolihull.icb.nhs.uk%2Fdownload_file%2F8872%2F0&data=05%7C02%7Cshushma.sanehi%40nhs.net%7C0161e038a9274dbb9c5808de658e687b%7C37c354b285b047f5b22207b48d774ee3%7C0%7C0%7C639059859467176935%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=CO2BOYfHbPYa5DJ8Z5Di3P7gkWW8IrJ7olo9WygoQeE%3D&reserved=0",
    "licence": "CC-BY-4.0",
-   "files_extracted": 37,
+   "files_extracted": 20,
    "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
    "layouts": [
     {
@@ -429,109 +429,6 @@
     },
     {
      "where": {
-      "sheet": ">25k Expenditure"
-     },
-     "header": [
-      "Department family",
-      "Entity",
-      "Date",
-      "Expense Type",
-      "Expense area",
-      "Supplier",
-      "Transaction number",
-      "AP Amount (£)",
-      "Description",
-      "Supplier Postcode",
-      "Purchase Invoice Number"
-     ],
-     "header_row": 1,
-     "sample_rows": [
-      [
-       "Department of Health",
-       "QHL000 NHS Birmingham and Solihull ICB",
-       "2026-04-30 00:00:00",
-       "Voids And Subsidies",
-       "QHL - Estates Voids",
-       "COMMUNITY HEALTH PARTNERSHIPS LTD",
-       "1184932",
-       "27953.56",
-       "",
-       "M1 3LD",
-       "64041931"
-      ],
-      [
-       "Department of Health",
-       "QHL000 NHS Birmingham and Solihull ICB",
-       "2026-04-30 00:00:00",
-       "Voids And Subsidies",
-       "QHL - Estates Voids",
-       "COMMUNITY HEALTH PARTNERSHIPS LTD",
-       "1184937",
-       "41871.56",
-       "",
-       "M1 3LD",
-       "64041915"
-      ],
-      [
-       "Department of Health",
-       "QHL000 NHS Birmingham and Solihull ICB",
-       "2026-04-30 00:00:00",
-       "Voids And Subsidies",
-       "QHL - Estates Voids",
-       "COMMUNITY HEALTH PARTNERSHIPS LTD",
-       "1184945",
-       "29670.89",
-       "",
-       "M1 3LD",
-       "64041958"
-      ],
-      [
-       "Department of Health",
-       "QHL000 NHS Birmingham and Solihull ICB",
-       "2026-04-30 00:00:00",
-       "Healthcare Independent Sector",
-       "QHL - Mental Health Other",
-       "HARROW HEALTH CIC",
-       "1193633",
-       "26735.2",
-       "",
-       "HA6 1BX",
-       "2065"
-      ],
-      [
-       "Department of Health",
-       "QHL000 NHS Birmingham and Solihull ICB",
-       "2026-04-30 00:00:00",
-       "Healthcare Independent Sector",
-       "QHL - Mental Health Other",
-       "HARROW HEALTH CIC",
-       "1512002",
-       "31575.51",
-       "",
-       "HA6 1BX",
-       "2142"
-      ],
-      [
-       "Department of Health",
-       "QHL000 NHS Birmingham and Solihull ICB",
-       "2026-04-30 00:00:00",
-       "Healthcare Independent Sector",
-       "QHL - Mental Health Other",
-       "CENTRE FOR ADHD RESEARCH AND EXCELLENCE (THE)",
-       "1534175",
-       "81574.66",
-       "",
-       "LE2 2FL",
-       "INV3424"
-      ]
-     ],
-     "row_count": 2426,
-     "column_count": 11,
-     "example_file": "Birmingham & Solihull ICB April 2026",
-     "files": 7
-    },
-    {
-     "where": {
       "sheet": ">25 Reporting"
      },
      "header": [
@@ -663,7 +560,7 @@
     },
     {
      "where": {
-      "sheet": ">25k Expenditure"
+      "sheet": ">25k Reporting"
      },
      "header": [
       "Department family",
@@ -680,248 +577,103 @@
       "Purchase Invoice Number",
       ""
      ],
-     "header_row": 1,
+     "header_row": 2,
      "sample_rows": [
       [
        "Department of Health",
        "NHS Birmingham And Solihull ICB",
-       "2024-08-31 00:00:00",
-       "Hcare Srv Rec Fdtn Trust-Contract Baseline",
-       "ACUTE",
-       "BIRMINGHAM COMMUNITY HEALTHCARE NHS FOUNDATION TRUST",
-       "50918100",
-       "1046951.33",
-       "SPEC COMM BIRMINGHAM COMMUNITY HEALTHCARE NHS FOUNDATION TRUST",
-       "BB3 0FG",
-       "GB654440387",
-       "SPEC01M05",
-       ""
-      ],
-      [
-       "Department of Health",
-       "NHS Birmingham And Solihull ICB",
-       "2024-08-31 00:00:00",
-       "Hcare Srv Rec Fdtn Trust-Contract Baseline",
-       "ACUTE",
-       "BIRMINGHAM WOMENS AND CHILDRENS NHS FOUNDATION TRUST",
-       "50918107",
-       "6673136.08",
-       "SPEC COMM BIRMINGHAM WOMEN'S AND CHILDREN'S NHS FOUNDATION TRUST",
-       "LS11 1HP",
-       "654964300",
-       "SPEC02M05",
-       ""
-      ],
-      [
-       "Department of Health",
-       "NHS Birmingham And Solihull ICB",
-       "2024-08-31 00:00:00",
-       "Hcare Srv Rec NHS Trust-Contract Baseline",
-       "ACUTE",
-       "SANDWELL AND WEST BIRMINGHAM HOSPITALS NHS TRUST",
-       "50918113",
-       "1096084.92",
-       "SPEC COMM SANDWELL AND WEST BIRMINGHAM HOSPITALS NHS TRUST",
-       "B71 4HJ",
-       "GB654916216",
-       "SPEC04M05",
-       ""
-      ],
-      [
-       "Department of Health",
-       "NHS Birmingham And Solihull ICB",
-       "2024-08-31 00:00:00",
-       "Hcare Srv Rec Fdtn Trust-Contract Baseline",
-       "ACUTE",
-       "SOUTH WARWICKSHIRE NHS FOUNDATION TRUST",
-       "50918128",
-       "67433.5",
-       "SPEC COMM SOUTH WARWICKSHIRE NHS FOUNDATION TRUST",
-       "CV34 5BW",
-       "654942118",
-       "SPEC06M05",
-       ""
-      ],
-      [
-       "Department of Health",
-       "NHS Birmingham And Solihull ICB",
-       "2024-08-31 00:00:00",
-       "Hcare Srv Rec Fdtn Trust-Contract Baseline",
-       "ACUTE",
-       "DUDLEY GROUP HOSPITALS NHS FOUNDATION TRUST",
-       "50918137",
-       "279824.75",
-       "SPEC COMM THE DUDLEY GROUP NHS FOUNDATION TRUST",
-       "DY1 2HQ",
-       "654919109",
-       "SPEC07M05",
-       ""
-      ],
-      [
-       "Department of Health",
-       "NHS Birmingham And Solihull ICB",
-       "2024-08-31 00:00:00",
-       "Hcare Srv Rec Fdtn Trust-Contract Baseline",
-       "ACUTE",
-       "ROYAL ORTHOPAEDIC HOSPITAL NHS FOUNDATION TRUST",
-       "50918144",
-       "577699.5",
-       "SPEC COMM THE ROYAL ORTHOPAEDIC HOSPITAL NHS FOUNDATION TRUST",
-       "B31 2AQ",
-       "654965296",
-       "SPEC08M05",
-       ""
-      ]
-     ],
-     "row_count": 2451,
-     "column_count": 13,
-     "example_file": "Birmingham & Solihull ICB August 2024",
-     "files": 19
-    },
-    {
-     "where": {
-      "sheet": ">25k Expenditure"
-     },
-     "header": [
-      "Department family",
-      "Entity",
-      "Date",
-      "Expense Type",
-      "Expense area",
-      "Supplier",
-      "Transaction number",
-      "AP Amount (£)",
-      "Description",
-      "Supplier Postcode",
-      "VAT Registration Number",
-      "Purchase Invoice Number",
-      "",
-      "",
-      "",
-      "",
-      ""
-     ],
-     "header_row": 1,
-     "sample_rows": [
-      [
-       "Department of Health",
-       "NHS Birmingham And Solihull ICB",
-       "2024-12-31 00:00:00",
+       "2022-12-31 00:00:00",
        "Computer Software/License",
-       "PRIMARY CARE IT",
+       "GP INVESTMENT",
        "ACCURX LTD",
-       "52293829",
-       "99987.86",
-       "Call off PO for PLUS invoices - License fees Nov 24 to Mar 25",
+       "43470650",
+       "66025.02",
+       "Call Off PO - AccuRx Plus License Fee, AccuRx Plus SMS Costs, AccuBook SMS Costs",
        "EC2A 3LT",
        "249470482",
-       "PLUS22596",
-       "",
-       "",
-       "",
-       "",
+       "PLUS068951",
        ""
       ],
       [
        "Department of Health",
        "NHS Birmingham And Solihull ICB",
-       "2024-12-31 00:00:00",
-       "C&M-GP PRACTICE REVENUE - PCTF",
-       "PRIMARY CARE TRANSFORMATION",
+       "2022-12-31 00:00:00",
+       "Computer Software/License",
+       "GP INVESTMENT",
        "ACCURX LTD",
-       "52293828",
-       "84576.28",
-       "Call off PO for SMS invoices - Batch messaging fees, booking costs, SMS costs an",
+       "43271623",
+       "32215.78",
+       "SMS costs for Accurx Plus modules for Birmingham and Solihull for October 2022",
        "EC2A 3LT",
        "249470482",
-       "SMS17363",
-       "",
-       "",
-       "",
-       "",
+       "SMS009564",
        ""
       ],
       [
        "Department of Health",
        "NHS Birmingham And Solihull ICB",
-       "2024-12-31 00:00:00",
-       "C&M-GMS DES Learn Dsblty Hlth Chk",
-       "DELEGATED GP",
-       "ACOCKS GREEN MEDICAL CENTRE (THE)",
-       "52525633",
-       "140",
-       "C&M-GMS DES Learn Dsblty Hlth Chk",
-       "B27 6QJ",
-       "",
-       "G04000237852",
-       "",
-       "",
-       "",
-       "",
+       "2022-12-31 00:00:00",
+       "Computer Software/License",
+       "GP INVESTMENT",
+       "ACCURX LTD",
+       "43470646",
+       "36411.57",
+       "Call Off PO - AccuRx Plus License Fee, AccuRx Plus SMS Costs, AccuBook SMS Costs",
+       "EC2A 3LT",
+       "249470482",
+       "SMS010001",
        ""
       ],
       [
        "Department of Health",
        "NHS Birmingham And Solihull ICB",
-       "2024-12-31 00:00:00",
+       "2022-12-31 00:00:00",
        "C&M-GMS Global Sum",
        "DELEGATED GP",
        "ACOCKS GREEN MEDICAL CENTRE (THE)",
-       "52525633",
-       "42650.08",
+       "43609286",
+       "42318.85",
        "C&M-GMS Global Sum",
        "B27 6QJ",
        "",
-       "G04000237852",
-       "",
-       "",
-       "",
-       "",
+       "G04000113730",
        ""
       ],
       [
        "Department of Health",
        "NHS Birmingham And Solihull ICB",
-       "2024-12-31 00:00:00",
+       "2022-12-31 00:00:00",
        "C&M-GMS PCN DES Participation",
        "DELEGATED GP",
        "ACOCKS GREEN MEDICAL CENTRE (THE)",
-       "52525633",
-       "752.43",
+       "43609286",
+       "751.45",
        "C&M-GMS PCN DES Participation",
        "B27 6QJ",
        "",
-       "G04000237852",
-       "",
-       "",
-       "",
-       "",
+       "G04000113730",
        ""
       ],
       [
        "Department of Health",
        "NHS Birmingham And Solihull ICB",
-       "2024-12-31 00:00:00",
-       "C&M-GMS PCO Locum Adop/Pat/Mat",
+       "2022-12-31 00:00:00",
+       "C&M-GMS Prem Notional Rent",
        "DELEGATED GP",
        "ACOCKS GREEN MEDICAL CENTRE (THE)",
-       "52525633",
-       "1155.99",
-       "C&M-GMS PCO Locum Adop/Pat/Mat",
+       "43609286",
+       "1617.92",
+       "C&M-GMS Prem Notional Rent",
        "B27 6QJ",
        "",
-       "G04000237852",
-       "",
-       "",
-       "",
-       "",
+       "G04000113730",
        ""
       ]
      ],
-     "row_count": 1856,
-     "column_count": 17,
-     "example_file": "Birmingham & Solihull ICB December 2024",
-     "files": 1
+     "row_count": 1728,
+     "column_count": 13,
+     "example_file": "Birmingham & Solihull ICB December 2022",
+     "files": 10
     },
     {
      "where": {
@@ -1095,6 +847,109 @@
      "column_count": 21,
      "example_file": "Birmingham & Solihull ICB February 2023",
      "files": 1
+    },
+    {
+     "where": {
+      "sheet": ">25k Expenditure"
+     },
+     "header": [
+      "Department family",
+      "Entity",
+      "Date",
+      "Expense Type",
+      "Expense area",
+      "Supplier",
+      "Transaction number",
+      "AP Amount (£)",
+      "Description",
+      "Supplier Postcode",
+      "Purchase Invoice Number"
+     ],
+     "header_row": 1,
+     "sample_rows": [
+      [
+       "Department of Health",
+       "QHL000 NHS Birmingham and Solihull ICB",
+       "2026-02-28 00:00:00",
+       "Healthcare From NHS FT",
+       "QHL - Acute Reserves",
+       "DUDLEY GROUP HOSPITALS NHS FOUNDATION TRUST",
+       "1074188",
+       "43937",
+       "",
+       "DY1 2HQ",
+       "1000038689"
+      ],
+      [
+       "Department of Health",
+       "QHL000 NHS Birmingham and Solihull ICB",
+       "2026-02-28 00:00:00",
+       "Healthcare Independent Sector",
+       "QHL - Mental Health Other",
+       "HEALTH HARMONIE LTD",
+       "1080846",
+       "71765",
+       "",
+       "B15 3DP",
+       "SI07047"
+      ],
+      [
+       "Department of Health",
+       "QHL000 NHS Birmingham and Solihull ICB",
+       "2026-02-28 00:00:00",
+       "Healthcare Independent Sector",
+       "QHL - Mental Health Other",
+       "CENTRE FOR ADHD RESEARCH AND EXCELLENCE (THE)",
+       "1088819",
+       "36594.24",
+       "",
+       "LE2 2FL",
+       "INV2937"
+      ],
+      [
+       "Department of Health",
+       "QHL000 NHS Birmingham and Solihull ICB",
+       "2026-02-28 00:00:00",
+       "Continuing Care; Children",
+       "QHL - CHC NHS",
+       "BIRMINGHAM CHILDRENS TRUST",
+       "1173068",
+       "171600",
+       "",
+       "B6 9EZ",
+       "920001841"
+      ],
+      [
+       "Department of Health",
+       "QHL000 NHS Birmingham and Solihull ICB",
+       "2026-02-28 00:00:00",
+       "Voids And Subsidies",
+       "QHL - Estates Voids",
+       "NHS PROPERTY SERVICES LTD",
+       "1180314",
+       "-66685.66",
+       "",
+       "SK4 1BS",
+       "931992A"
+      ],
+      [
+       "Department of Health",
+       "QHL000 NHS Birmingham and Solihull ICB",
+       "2026-02-28 00:00:00",
+       "Voids And Subsidies",
+       "QHL - Estates Voids",
+       "NHS PROPERTY SERVICES LTD",
+       "1180316",
+       "63928.98",
+       "",
+       "SK4 1BS",
+       "933062A"
+      ]
+     ],
+     "row_count": 329,
+     "column_count": 11,
+     "example_file": "Birmingham & Solihull ICB February 2026",
+     "files": 4
     },
     {
      "where": {
@@ -1342,7 +1197,7 @@
      "row_count": 2422,
      "column_count": 12,
      "example_file": "Birmingham & Solihull ICB May 2024",
-     "files": 4
+     "files": 1
     }
    ],
    "tables": [
@@ -5545,7 +5400,7 @@
    "format": "CSV",
    "resource_url": "https://www.eden.gov.uk/media/3671/council-spending-over-500-january-2017.csv",
    "licence": "OGL-UK-3.0",
-   "files_extracted": 68,
+   "files_extracted": 66,
    "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
    "layouts": [
     {
@@ -5677,7 +5532,7 @@
      "row_count": 185,
      "column_count": 15,
      "example_file": "https://www.eden.gov.uk/media/2286/period7_2016.csv",
-     "files": 50
+     "files": 48
     },
     {
      "where": {
@@ -8503,6 +8358,728 @@
    ]
   },
   {
+   "job_id": "312bd1e9d7f74fd301323212f34d6946d142defbb6ed3a1239b43f7b50a91f14",
+   "publisher": "Leicester City Council",
+   "title": "Expenditure exceeding £500 - 2018",
+   "portal": "leicester",
+   "format": "CSV",
+   "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2018/exports/csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 2,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2018-12-28",
+       "City Developments and Neighbourhood",
+       "Kabalous Hotel Leicester",
+       "Accommodation Expenses",
+       "826.0",
+       "0.0",
+       "",
+       "Accommodation Expenses"
+      ],
+      [
+       "2018-12-28",
+       "Corporate Resources & Support",
+       "Premier Safety Training Ltd",
+       "Education and Training Services",
+       "1200.0",
+       "0.0",
+       "",
+       "Education & Training Services"
+      ],
+      [
+       "2018-12-28",
+       "Education & Childrens Services",
+       "Jay Fostering Ltd",
+       "Independent Foster Agencies",
+       "3265.85",
+       "0.0",
+       "",
+       "Other Agencies"
+      ],
+      [
+       "2018-12-28",
+       "Adults & Housing Department",
+       "Affinity Trust FA SL&FSB",
+       "Day Support Hours",
+       "6111.0",
+       "0.0",
+       "",
+       "Supported Living"
+      ],
+      [
+       "2018-12-28",
+       "City Developments and Neighbourhood",
+       "Profile Security Services Limited",
+       "Security & Safety Services",
+       "3938.42",
+       "787.68",
+       "",
+       "Public Order & Security Services"
+      ],
+      [
+       "2018-12-28",
+       "Adults & Housing Department",
+       "Westminster Homecare Ltd )",
+       "Personal Care / Generic",
+       "658.82",
+       "0.0",
+       "",
+       "Home Care"
+      ]
+     ],
+     "row_count": 62674,
+     "column_count": 8,
+     "example_file": "expenditure-exceeding-ps500-2018.csv",
+     "files": 2
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2018-12-28",
+       "City Developments and Neighbourhood",
+       "Kabalous Hotel Leicester",
+       "Accommodation Expenses",
+       "826.0",
+       "0.0",
+       "",
+       "Accommodation Expenses"
+      ],
+      [
+       "2018-12-28",
+       "Corporate Resources & Support",
+       "Premier Safety Training Ltd",
+       "Education and Training Services",
+       "1200.0",
+       "0.0",
+       "",
+       "Education & Training Services"
+      ],
+      [
+       "2018-12-28",
+       "Education & Childrens Services",
+       "Jay Fostering Ltd",
+       "Independent Foster Agencies",
+       "3265.85",
+       "0.0",
+       "",
+       "Other Agencies"
+      ],
+      [
+       "2018-12-28",
+       "Adults & Housing Department",
+       "Affinity Trust FA SL&FSB",
+       "Day Support Hours",
+       "6111.0",
+       "0.0",
+       "",
+       "Supported Living"
+      ],
+      [
+       "2018-12-28",
+       "City Developments and Neighbourhood",
+       "Profile Security Services Limited",
+       "Security & Safety Services",
+       "3938.42",
+       "787.68",
+       "",
+       "Public Order & Security Services"
+      ],
+      [
+       "2018-12-28",
+       "Adults & Housing Department",
+       "Westminster Homecare Ltd )",
+       "Personal Care / Generic",
+       "658.82",
+       "0.0",
+       "",
+       "Home Care"
+      ]
+     ],
+     "row_count": 62674,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "5a6864fd4a4977623c3075b5e6c281e04aed4305d2edae429169a1a61d3ff254",
+   "publisher": "Leicester City Council",
+   "title": "Expenditure exceeding £500 - 2019",
+   "portal": "leicester",
+   "format": "CSV",
+   "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2019/exports/csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 2,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "Direct Health UK Ltd",
+       "Personal Care / Generic",
+       "2777.45",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "Direct Health UK Ltd",
+       "Personal Care / Generic",
+       "973.45",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "Direct Health UK Ltd",
+       "Personal Care / Generic",
+       "674.24",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "MiLife Homecare",
+       "Personal Care / Generic",
+       "1148.49",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "Accredo Support & Development Ltd FA SL&FSB",
+       "Sleeping In Night Support",
+       "2504.88",
+       "0.0",
+       "",
+       "Supported Living"
+      ],
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "Accredo Support & Development Ltd FA SL&FSB",
+       "Sleeping In Night Support",
+       "2504.88",
+       "0.0",
+       "",
+       "Supported Living"
+      ]
+     ],
+     "row_count": 60947,
+     "column_count": 8,
+     "example_file": "expenditure-exceeding-ps500-2019.csv",
+     "files": 2
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "Direct Health UK Ltd",
+       "Personal Care / Generic",
+       "2777.45",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "Direct Health UK Ltd",
+       "Personal Care / Generic",
+       "973.45",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "Direct Health UK Ltd",
+       "Personal Care / Generic",
+       "674.24",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "MiLife Homecare",
+       "Personal Care / Generic",
+       "1148.49",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "Accredo Support & Development Ltd FA SL&FSB",
+       "Sleeping In Night Support",
+       "2504.88",
+       "0.0",
+       "",
+       "Supported Living"
+      ],
+      [
+       "2019-12-31",
+       "Adults & Housing Department",
+       "Accredo Support & Development Ltd FA SL&FSB",
+       "Sleeping In Night Support",
+       "2504.88",
+       "0.0",
+       "",
+       "Supported Living"
+      ]
+     ],
+     "row_count": 60947,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "f4fc8695234803d3827817fa443563944d1460b117920a96fe287755a5992b5f",
+   "publisher": "Leicester City Council",
+   "title": "Expenditure exceeding £500 - 2020",
+   "portal": "leicester",
+   "format": "CSV",
+   "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2020/exports/csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 2,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2020-12-31",
+       "Corporate Resources & Support",
+       "Paypoint payment Services Ltd",
+       "Grant Payments",
+       "24000.0",
+       "0.0",
+       "",
+       "Grant Payments"
+      ],
+      [
+       "2020-12-30",
+       "Education & Childrens Services",
+       "Little Stars (Leicester) Ltd",
+       "Neg Pvt Vol & Ind Providers - Extended Offer",
+       "3027.65",
+       "0.0",
+       "",
+       "Voluntary Organisations"
+      ],
+      [
+       "2020-12-30",
+       "Education & Childrens Services",
+       "Parkview Day Nursery",
+       "Neg Pvt Vol & Ind Providers - Extended Offer",
+       "3587.22",
+       "0.0",
+       "",
+       "Voluntary Organisations"
+      ],
+      [
+       "2020-12-30",
+       "Education & Childrens Services",
+       "Play Days Nursery Ltd",
+       "Neg Pvt Vol & Ind Providers - Extended Offer",
+       "7262.44",
+       "0.0",
+       "",
+       "Voluntary Organisations"
+      ],
+      [
+       "2020-12-30",
+       "Adults & Housing Department",
+       "Accredo Support & Development Ltd FA SL&FSB",
+       "Day Support Hours",
+       "665.7",
+       "0.0",
+       "",
+       "Supported Living"
+      ],
+      [
+       "2020-12-30",
+       "Adults & Housing Department",
+       "Accredo Support & Development Ltd FA SL&FSB",
+       "Day Support Hours",
+       "3645.37",
+       "0.0",
+       "",
+       "Supported Living"
+      ]
+     ],
+     "row_count": 70104,
+     "column_count": 8,
+     "example_file": "expenditure-exceeding-ps500-2020.csv",
+     "files": 2
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2020-12-31",
+       "Corporate Resources & Support",
+       "Paypoint payment Services Ltd",
+       "Grant Payments",
+       "24000.0",
+       "0.0",
+       "",
+       "Grant Payments"
+      ],
+      [
+       "2020-12-30",
+       "Education & Childrens Services",
+       "Little Stars (Leicester) Ltd",
+       "Neg Pvt Vol & Ind Providers - Extended Offer",
+       "3027.65",
+       "0.0",
+       "",
+       "Voluntary Organisations"
+      ],
+      [
+       "2020-12-30",
+       "Education & Childrens Services",
+       "Parkview Day Nursery",
+       "Neg Pvt Vol & Ind Providers - Extended Offer",
+       "3587.22",
+       "0.0",
+       "",
+       "Voluntary Organisations"
+      ],
+      [
+       "2020-12-30",
+       "Education & Childrens Services",
+       "Play Days Nursery Ltd",
+       "Neg Pvt Vol & Ind Providers - Extended Offer",
+       "7262.44",
+       "0.0",
+       "",
+       "Voluntary Organisations"
+      ],
+      [
+       "2020-12-30",
+       "Adults & Housing Department",
+       "Accredo Support & Development Ltd FA SL&FSB",
+       "Day Support Hours",
+       "665.7",
+       "0.0",
+       "",
+       "Supported Living"
+      ],
+      [
+       "2020-12-30",
+       "Adults & Housing Department",
+       "Accredo Support & Development Ltd FA SL&FSB",
+       "Day Support Hours",
+       "3645.37",
+       "0.0",
+       "",
+       "Supported Living"
+      ]
+     ],
+     "row_count": 70104,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "0c8279f607a622ece91fb7615ad9365d2ef8cbfcfcf7e94bd68846064204e2c4",
+   "publisher": "Leicester City Council",
+   "title": "Expenditure exceeding £500 - 2021",
+   "portal": "leicester",
+   "format": "CSV",
+   "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2021/exports/csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 2,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "unique_id",
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "74130",
+       "2021-12-31",
+       "Adults",
+       "Evolving Care Limited FA SL&SFB",
+       "Personal Care / Generic",
+       "928.96",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74139",
+       "2021-12-31",
+       "Adults",
+       "Bluewood Healthcare",
+       "Personal Care / Generic",
+       "2488.38",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74140",
+       "2021-12-31",
+       "Adults",
+       "Bluewood Healthcare",
+       "Personal Care / Generic",
+       "2619.77",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74142",
+       "2021-12-31",
+       "Adults",
+       "Bluewood Healthcare",
+       "Personal Care / Generic",
+       "1008.26",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74149",
+       "2021-12-31",
+       "Adults",
+       "Bluewood Healthcare",
+       "Personal Care / Generic",
+       "849.78",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74150",
+       "2021-12-31",
+       "Adults",
+       "Bluewood Healthcare",
+       "Personal Care / Generic",
+       "852.7",
+       "0.0",
+       "",
+       "Home Care"
+      ]
+     ],
+     "row_count": 74366,
+     "column_count": 9,
+     "example_file": "expenditure-exceeding-ps500-2021.csv",
+     "files": 2
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "unique_id",
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "74130",
+       "2021-12-31",
+       "Adults",
+       "Evolving Care Limited FA SL&SFB",
+       "Personal Care / Generic",
+       "928.96",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74139",
+       "2021-12-31",
+       "Adults",
+       "Bluewood Healthcare",
+       "Personal Care / Generic",
+       "2488.38",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74140",
+       "2021-12-31",
+       "Adults",
+       "Bluewood Healthcare",
+       "Personal Care / Generic",
+       "2619.77",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74142",
+       "2021-12-31",
+       "Adults",
+       "Bluewood Healthcare",
+       "Personal Care / Generic",
+       "1008.26",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74149",
+       "2021-12-31",
+       "Adults",
+       "Bluewood Healthcare",
+       "Personal Care / Generic",
+       "849.78",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74150",
+       "2021-12-31",
+       "Adults",
+       "Bluewood Healthcare",
+       "Personal Care / Generic",
+       "852.7",
+       "0.0",
+       "",
+       "Home Care"
+      ]
+     ],
+     "row_count": 74366,
+     "column_count": 9
+    }
+   ]
+  },
+  {
    "job_id": "ecf59df165e9194ee7eb8208b3853c5b4246531ae0d85e0c1dd76f39c7a623cc",
    "publisher": "London Borough of Richmond Upon Thames",
    "title": "Payments to suppliers with a value over £500 from the London Borough of Richmond-upon-Thames",
@@ -10090,7 +10667,7 @@
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/49892/TP_DCLG_November_2012_for_publication_15Jan2013.csv",
    "licence": "OGL-UK",
-   "files_extracted": 45,
+   "files_extracted": 33,
    "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
    "layouts": [
     {
@@ -10215,7 +10792,7 @@
      "row_count": 2932,
      "column_count": 14,
      "example_file": "/DCLG_expenditure_over__250_September_2012__.csv_format_.csv",
-     "files": 22
+     "files": 17
     },
     {
      "where": {
@@ -10304,11 +10881,11 @@
      "row_count": 16,
      "column_count": 9,
      "example_file": "/11101/DCLG_GPC_expenditure_September_2012__.csv_format_.csv",
-     "files": 21
+     "files": 15
     },
     {
      "where": {
-      "sheet": "All DCLG"
+      "table": 1
      },
      "header": [
       "Department Family",
@@ -10345,7 +10922,7 @@
        "Extension of HR B'Partner",
        "Extension of HR B'Partner",
        "SL6 1DP",
-       "2305.8",
+       "2,305.80",
        ""
       ],
       [
@@ -10363,7 +10940,7 @@
        "Extension of HR B'Partner",
        "Extension of HR B'Partner",
        "SL6 1DP",
-       "2305.8",
+       "2,305.80",
        ""
       ],
       [
@@ -10381,7 +10958,7 @@
        "Extension of HR B'Partner",
        "Extension of HR B'Partner",
        "SL6 1DP",
-       "6917.4",
+       "6,917.40",
        ""
       ],
       [
@@ -10399,7 +10976,7 @@
        "Temp Staff Feb 2013",
        "Temp Staff Feb 2013",
        "B46 1HQ",
-       "2946.24",
+       "2,946.24",
        ""
       ],
       [
@@ -10417,7 +10994,7 @@
        "Interim contractor",
        "Interim contractor",
        "SL1 3SA",
-       "1929.48",
+       "1,929.48",
        ""
       ],
       [
@@ -10435,14 +11012,14 @@
        "Interim contractor",
        "Interim contractor",
        "SL1 3SA",
-       "1929.48",
+       "1,929.48",
        ""
       ]
      ],
      "row_count": 4417,
      "column_count": 16,
-     "example_file": "ment_data/file/193312/TP_DCLG_March_2013_for_publication.xls",
-     "files": 2
+     "example_file": "ment_data/file/199213/TP_DCLG_March_2013_for_publication.csv",
+     "files": 1
     }
    ],
    "tables": [
@@ -10578,12 +11155,12 @@
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/295020/TP_DCLG_Jan_2014_for_Publication.csv",
    "licence": "OGL-UK",
-   "files_extracted": 43,
+   "files_extracted": 25,
    "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
    "layouts": [
     {
      "where": {
-      "sheet": "All DCLG"
+      "table": 1
      },
      "header": [
       "Department Family",
@@ -10616,7 +11193,7 @@
        "2100228218",
        "Near Neighbours Initiative Grant Payment",
        "SW1P 3AZ",
-       "634944.0",
+       "634,944.00",
        "Yes"
       ],
       [
@@ -10632,7 +11209,7 @@
        "2100228958",
        "Weekly HCA Grant in Aid Claim",
        "NE11 0NA",
-       "60000000.0",
+       "60,000,000.00",
        "Yes"
       ],
       [
@@ -10648,7 +11225,7 @@
        "5000222694",
        "Grant Payable by Exchequer",
        "BN43 6PR",
-       "444838.0",
+       "444,838.00",
        "Yes"
       ],
       [
@@ -10664,7 +11241,7 @@
        "5000222696",
        "Grant Payable by Exchequer",
        "CA14 3YJ",
-       "759880.0",
+       "759,880.00",
        "Yes"
       ],
       [
@@ -10680,7 +11257,7 @@
        "5000222698",
        "Grant Payable by Exchequer",
        "DE5 3WZ",
-       "740482.0",
+       "740,482.00",
        "Yes"
       ],
       [
@@ -10696,18 +11273,18 @@
        "5000222700",
        "Grant Payable by Exchequer",
        "BN17 5LF",
-       "923503.0",
+       "923,503.00",
        "Yes"
       ]
      ],
      "row_count": 4705,
      "column_count": 14,
-     "example_file": "ment_data/file/204080/TP_DCLG_April_2013_for_publication.xls",
-     "files": 8
+     "example_file": "ment_data/file/204081/TP_DCLG_April_2013_for_publication.csv",
+     "files": 3
     },
     {
      "where": {
-      "sheet": "Sheet1"
+      "table": 1
      },
      "header": [
       "Department Family",
@@ -10731,7 +11308,7 @@
        "CIPFA                    LONDON  WC2N",
        "1000003783",
        "MISC. SPECIALITY RETAIL",
-       "300.0"
+       "300.00"
       ],
       [
        "Communities & Local Government",
@@ -10742,17 +11319,17 @@
        "WWW.KEYTOOLS.CO.UK       HUNGERFORD",
        "1000003785",
        "PROGRAMMING, DATA PROC & SYSTEM DESIGN",
-       "396.0"
+       "396.00"
       ]
      ],
      "row_count": 2,
      "column_count": 9,
-     "example_file": "ent_data/file/204082/GPC_DCLG_April_2013_for_publication.xls",
-     "files": 8
+     "example_file": "ent_data/file/204083/GPC_DCLG_April_2013_for_publication.csv",
+     "files": 4
     },
     {
      "where": {
-      "sheet": "All DCLG"
+      "table": 1
      },
      "header": [
       "Department Family",
@@ -10789,7 +11366,7 @@
        "Rivergate Bristol Q3 & Q4 ServChg 2011/2",
        "Rivergate Bristol Q3 & Q4 ServChg 2011/2",
        "",
-       "397.2",
+       "397.20",
        ""
       ],
       [
@@ -10825,7 +11402,7 @@
        "Temp for L&D team til March 13",
        "Temp for L&D team til March 13",
        "UB8 1AB",
-       "851.9",
+       "851.90",
        ""
       ],
       [
@@ -10843,7 +11420,7 @@
        "Temp for L&D team til March 13",
        "Temp for L&D team til March 13",
        "UB8 1AB",
-       "818.5",
+       "818.50",
        ""
       ],
       [
@@ -10879,18 +11456,18 @@
        "Interim",
        "Interim",
        "HA9 0NU",
-       "2160.0",
+       "2,160.00",
        ""
       ]
      ],
      "row_count": 2314,
      "column_count": 16,
-     "example_file": "hment_data/file/236267/TP_DCLG_July_2013_for_publication.xls",
-     "files": 2
+     "example_file": "hment_data/file/236268/TP_DCLG_July_2013_for_publication.csv",
+     "files": 1
     },
     {
      "where": {
-      "sheet": "All DCLG"
+      "table": 1
      },
      "header": [
       "Department Family",
@@ -10925,7 +11502,7 @@
        "Contingent Labour",
        "Temporary Staff June 2013",
        "B46 1HQ",
-       "2946.24",
+       "2,946.24",
        ""
       ],
       [
@@ -10942,7 +11519,7 @@
        "Contingent Labour",
        "Extension of Support- Rate Adjustment",
        "SW20 0BA",
-       "1603.36",
+       "1,603.36",
        ""
       ],
       [
@@ -11010,18 +11587,18 @@
        "Contingent Labour",
        "Policy support",
        "SW20 0BA",
-       "1090.3",
+       "1,090.30",
        ""
       ]
      ],
      "row_count": 2378,
      "column_count": 15,
-     "example_file": "ent_data/file/245298/TP_DCLG_August_2013_for_publication.xls",
-     "files": 2
+     "example_file": "ent_data/file/245303/TP_DCLG_August_2013_for_publication.csv",
+     "files": 1
     },
     {
      "where": {
-      "sheet": "GPC"
+      "table": 1
      },
      "header": [
       "Department Family",
@@ -11083,7 +11660,7 @@
        "1000003854",
        "AT289 - Dragon NS V10 - Assist tech",
        "BOOK STORES",
-       "73.3"
+       "73.30"
       ],
       [
        "Communities & Local Government",
@@ -11112,12 +11689,12 @@
      ],
      "row_count": 15,
      "column_count": 10,
-     "example_file": "nt_data/file/245304/GPC_DCLG_August_2013_for_publication.xls",
-     "files": 11
+     "example_file": "nt_data/file/245305/GPC_DCLG_August_2013_for_publication.csv",
+     "files": 7
     },
     {
      "where": {
-      "sheet": "All DCLG"
+      "table": 1
      },
      "header": [
       "Department Family",
@@ -11156,7 +11733,7 @@
        "ERDF SWC LDU Valuation Service to Dec 13",
        "ERDF SWC LDU Valuation Service to Dec 13",
        "B1 2JB",
-       "3480.0",
+       "3,480.00",
        ""
       ],
       [
@@ -11194,7 +11771,7 @@
        "Eland House Mail 13-14",
        "Eland House Mail 13-14",
        "BS32 4NH",
-       "7886.12",
+       "7,886.12",
        ""
       ],
       [
@@ -11213,7 +11790,7 @@
        "Rivergate Mail 13-14",
        "Rivergate Mail 13-14",
        "BS32 4NH",
-       "1519.43",
+       "1,519.43",
        ""
       ],
       [
@@ -11232,7 +11809,7 @@
        "Eland House Cleaning 13-14",
        "Eland House Cleaning 13-14",
        "BS32 4NH",
-       "27469.95",
+       "27,469.95",
        ""
       ],
       [
@@ -11251,18 +11828,18 @@
        "TQH Cleaning 13-14",
        "TQH Cleaning 13-14",
        "BS32 4NH",
-       "9032.52",
+       "9,032.52",
        ""
       ]
      ],
      "row_count": 2511,
      "column_count": 17,
-     "example_file": "_data/file/254351/TP_DCLG_September_2013_for_Publication.xls",
-     "files": 2
+     "example_file": "_data/file/254353/TP_DCLG_September_2013_for_Publication.csv",
+     "files": 1
     },
     {
      "where": {
-      "sheet": "All DCLG"
+      "table": 1
      },
      "header": [
       "Department Family",
@@ -11377,7 +11954,7 @@
        "",
        "Consolidated monthly catering April 2013",
        "BS32 4NH",
-       "1511.76",
+       "1,511.76",
        ""
       ],
       [
@@ -11402,12 +11979,12 @@
      ],
      "row_count": 2351,
      "column_count": 17,
-     "example_file": "nt_data/file/276649/TP_DCLG_October_2013_for_Publication.xls",
-     "files": 2
+     "example_file": "nt_data/file/276650/TP_DCLG_October_2013_for_Publication.csv",
+     "files": 1
     },
     {
      "where": {
-      "sheet": "All DCLG"
+      "table": 1
      },
      "header": [
       "Department Family",
@@ -11442,7 +12019,7 @@
        "5106197857",
        "interim Manager",
        "EC2A 2AD",
-       "2858.82",
+       "2,858.82",
        ""
       ],
       [
@@ -11459,7 +12036,7 @@
        "5106198353",
        "interim Manager",
        "EC2A 2AD",
-       "2858.82",
+       "2,858.82",
        ""
       ],
       [
@@ -11476,7 +12053,7 @@
        "2100235464",
        "CFOA CNR Assurance Work Grant 2013/14 2nd half",
        "GL56 0RH",
-       "1757114.0",
+       "1,757,114.00",
        "Yes"
       ],
       [
@@ -11493,7 +12070,7 @@
        "2100235723",
        "Grant for organising the LEP Network",
        "B60 4AL",
-       "63613.0",
+       "63,613.00",
        "Yes"
       ],
       [
@@ -11510,7 +12087,7 @@
        "5106198349",
        "Rivergate Electricity 2013-14",
        "PL3 5XQ",
-       "10217.15",
+       "10,217.15",
        ""
       ],
       [
@@ -11527,14 +12104,14 @@
        "5106198349",
        "Rivergate Electricity 2013-14(0%)",
        "PL3 5XQ",
-       "8.1",
+       "8.10",
        ""
       ]
      ],
      "row_count": 2470,
      "column_count": 15,
-     "example_file": "t_data/file/276661/TP_DCLG_November_2013_for_Publication.xls",
-     "files": 3
+     "example_file": "t_data/file/276662/TP_DCLG_November_2013_for_Publication.csv",
+     "files": 2
     }
    ],
    "tables": [
@@ -11677,7 +12254,7 @@
    "format": "CSV",
    "resource_url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/418751/TP_DCLG_Jan_2015_for_publication_270315.csv",
    "licence": "OGL-UK",
-   "files_extracted": 25,
+   "files_extracted": 24,
    "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
    "layouts": [
     {
@@ -11919,7 +12496,7 @@
      "row_count": 18,
      "column_count": 10,
      "example_file": "ent_data/file/315901/GPC_DCLG_April_2014_for_Publication.csv",
-     "files": 9
+     "files": 8
     },
     {
      "where": {
@@ -21049,6 +21626,522 @@
    ]
   },
   {
+   "job_id": "4fda6c7bf5217be790ec75c3f46d244f1fc6d35dc82aafa194fb6fa27f40e6ca",
+   "publisher": "Stirling Council",
+   "title": "payments to suppliers (1 April 2019 to 31 March 2020) - open data",
+   "portal": "stirling",
+   "format": "CSV",
+   "resource_url": "https://data.stirling.gov.uk/api/download/v1/items/6d7d284a629844bca899c8180ac2a574/csv?layers=0",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Cost_Centre_Name",
+      "Supplier_Name",
+      "Transaction_Type",
+      "Net_Value",
+      "VAT",
+      "Gross_Value",
+      "SubLedger",
+      "Transaction_Reference",
+      "Batch_Number",
+      "Financial_Year_Ending",
+      "Period",
+      "Quarter",
+      "OBJECTID"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "1140 Entitled Hours Support",
+       "Assistive Hearing Devices Ltd",
+       "Invoice",
+       "2448.00",
+       "489.60",
+       "2937.60",
+       "Trade Creditors",
+       "2559884",
+       "B000201907",
+       "2020",
+       "1",
+       "1",
+       "1"
+      ],
+      [
+       "Accounting Services",
+       "Capita Business Services Ltd",
+       "Invoice",
+       "10694.59",
+       "2138.92",
+       "12833.51",
+       "Trade Creditors",
+       "2559860",
+       "B000201898",
+       "2020",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Active Stirling Costs",
+       "Active Stirling Ltd",
+       "Invoice",
+       "25977.18",
+       "4811.45",
+       "30788.63",
+       "Trade Creditors",
+       "2559927",
+       "B000201909",
+       "2020",
+       "1",
+       "1",
+       "3"
+      ],
+      [
+       "Active Stirling Costs",
+       "Active Stirling Ltd",
+       "Invoice",
+       "18596.93",
+       "3719.37",
+       "22316.30",
+       "Trade Creditors",
+       "2559935",
+       "B000201909",
+       "2020",
+       "1",
+       "1",
+       "4"
+      ],
+      [
+       "Active Stirling Costs",
+       "Active Stirling Ltd",
+       "Invoice",
+       "2180.00",
+       "198.00",
+       "2378.00",
+       "Trade Creditors",
+       "2559931",
+       "B000201909",
+       "2020",
+       "1",
+       "1",
+       "5"
+      ],
+      [
+       "Adult Assessment Management",
+       "Azzurro Ltd",
+       "Invoice",
+       "880.00",
+       "176.00",
+       "1056.00",
+       "Trade Creditors",
+       "2559769",
+       "P069135987",
+       "2020",
+       "1",
+       "1",
+       "6"
+      ]
+     ],
+     "row_count": 14535,
+     "column_count": 13
+    }
+   ]
+  },
+  {
+   "job_id": "d5d0a57c53c3f37b017b6c544fb80e66899dd6998342813b00ccff3960ae4d40",
+   "publisher": "Stirling Council",
+   "title": "payments to suppliers (1 April 2020 to 31 March 2021) - open data",
+   "portal": "stirling",
+   "format": "CSV",
+   "resource_url": "https://data.stirling.gov.uk/api/download/v1/items/e427ad0d852349ba8df8f44630e5591a/csv?layers=0",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Cost_Centre_Name",
+      "Supplier_Name",
+      "Transaction_Type",
+      "Net_Value",
+      "VAT",
+      "Gross_Value",
+      "SubLedger",
+      "Transaction_Reference",
+      "Batch_Number",
+      "Financial_Year_Ending",
+      "Period",
+      "Quarter",
+      "OBJECTID"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "1140 Entitled Hours Support",
+       "Scottish Childminding Association",
+       "Invoice",
+       "15331.93",
+       "0.00",
+       "15331.93",
+       "",
+       "2673659",
+       "P070146868",
+       "2021",
+       "1",
+       "1",
+       "1"
+      ],
+      [
+       "1140 Entitled Hours Support",
+       "Scottish Childminding Association",
+       "Invoice",
+       "10577.66",
+       "0.00",
+       "10577.66",
+       "",
+       "2673658",
+       "P070146868",
+       "2021",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Accounting Services",
+       "PricewaterhouseCoopers LLP",
+       "Invoice",
+       "1500.00",
+       "300.00",
+       "1800.00",
+       "",
+       "2673788",
+       "B000205509",
+       "2021",
+       "1",
+       "1",
+       "3"
+      ],
+      [
+       "Active Primary Schools Project",
+       "Active Stirling Ltd",
+       "Invoice",
+       "3847.05",
+       "0.00",
+       "3847.05",
+       "",
+       "2672311",
+       "B000205441",
+       "2021",
+       "1",
+       "1",
+       "4"
+      ],
+      [
+       "Active Stirling Costs",
+       "Active Stirling Ltd",
+       "Invoice",
+       "283833.33",
+       "56766.67",
+       "340600.00",
+       "",
+       "2672612",
+       "B000205458",
+       "2021",
+       "1",
+       "1",
+       "5"
+      ],
+      [
+       "Advice Services (C/S)",
+       "Alliance Disposables",
+       "Invoice",
+       "1072.80",
+       "214.56",
+       "1287.36",
+       "",
+       "2674680",
+       "P060146985",
+       "2021",
+       "1",
+       "1",
+       "6"
+      ]
+     ],
+     "row_count": 18556,
+     "column_count": 13
+    }
+   ]
+  },
+  {
+   "job_id": "66617202d5872af970c6f603a6d3b981197a63d60901f1b31de673576f4f258e",
+   "publisher": "Stirling Council",
+   "title": "payments to suppliers (1 April 2021 to 31 March 2022) - open data",
+   "portal": "stirling",
+   "format": "CSV",
+   "resource_url": "https://data.stirling.gov.uk/api/download/v1/items/ac06606da95e4c789cb3ce8df1204ad1/csv?layers=0",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Cost_Centre_Name",
+      "Supplier_Name",
+      "Transaction_Type",
+      "Net_Value",
+      "VAT",
+      "Gross_Value",
+      "SubLedger",
+      "Transaction_Reference",
+      "Batch_Number",
+      "Financial_Year_Ending",
+      "Period",
+      "Quarter",
+      "OBJECTID"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "1140 Entitled Hours Support",
+       "Avmi Kinly Ltd",
+       "Invoice",
+       "2906.00",
+       "581.20",
+       "3487.20",
+       "Trade Creditors",
+       "2759696",
+       "P061156792",
+       "2022",
+       "1",
+       "1",
+       "1"
+      ],
+      [
+       "Aberfoyle Primary School",
+       "Avmi Kinly Ltd",
+       "Invoice",
+       "2878.00",
+       "575.60",
+       "3453.60",
+       "Trade Creditors",
+       "2762005",
+       "P051157059",
+       "2022",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Aberfoyle Primary School",
+       "Yorkshire Purchasing Organisation",
+       "Invoice",
+       "3682.14",
+       "736.43",
+       "4418.57",
+       "Trade Creditors",
+       "2762254",
+       "P061157092",
+       "2022",
+       "1",
+       "1",
+       "3"
+      ],
+      [
+       "Aberfoyle Rural Nursery",
+       "Yorkshire Purchasing Organisation",
+       "Invoice",
+       "497.73",
+       "99.55",
+       "597.28",
+       "Trade Creditors",
+       "2761717",
+       "P081157013",
+       "2022",
+       "1",
+       "1",
+       "4"
+      ],
+      [
+       "Accounting Services",
+       "First Data Global Services Ltd",
+       "Invoice",
+       "750.00",
+       "0.00",
+       "750.00",
+       "Trade Creditors",
+       "2759706",
+       "P061156792",
+       "2022",
+       "1",
+       "1",
+       "5"
+      ],
+      [
+       "Accounting Services",
+       "Pertemps Recruitment Partnership Ltd",
+       "Invoice",
+       "532.70",
+       "106.54",
+       "639.24",
+       "Trade Creditors",
+       "2764690",
+       "P081157338",
+       "2022",
+       "1",
+       "1",
+       "6"
+      ]
+     ],
+     "row_count": 22151,
+     "column_count": 13
+    }
+   ]
+  },
+  {
+   "job_id": "4bd925133fe6b09d0716ade8d1e4b1545a90e3ac7de364060d440ffd01bb17c8",
+   "publisher": "Stirling Council",
+   "title": "payments to suppliers (1 April 2022 to 31 March 2023) - open data",
+   "portal": "stirling",
+   "format": "CSV",
+   "resource_url": "https://data.stirling.gov.uk/api/download/v1/items/75321c392a214d3284ed463c8a703326/csv?layers=0",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Cost_Centre_Name",
+      "Supplier_Name",
+      "Transaction_Type",
+      "Net_Value",
+      "VAT",
+      "Gross_Value",
+      "SubLedger",
+      "Transaction_Reference",
+      "Batch_Number",
+      "Financial_Year_Ending",
+      "Period",
+      "Quarter",
+      "OBJECTID"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "1140 Entitled Hours Support",
+       "Portakabin (Scotland) Ltd",
+       "Invoice",
+       "9787.80",
+       "1957.56",
+       "11745.36",
+       "Trade Creditors",
+       "2877753",
+       "P062167460",
+       "2023",
+       "1",
+       "1",
+       "1"
+      ],
+      [
+       "24/7 Mecs",
+       "TEC Quality Limited",
+       "Invoice",
+       "1940.00",
+       "388.00",
+       "2328.00",
+       "Trade Creditors",
+       "2875836",
+       "B000210958",
+       "2023",
+       "1",
+       "1",
+       "2"
+      ],
+      [
+       "Aberfoyle Primary School",
+       "Yorkshire Purchasing Organisation",
+       "Invoice",
+       "715.00",
+       "143.00",
+       "858.00",
+       "Trade Creditors",
+       "2877432",
+       "P052167432",
+       "2023",
+       "1",
+       "1",
+       "3"
+      ],
+      [
+       "Accounting Services",
+       "CIPFA",
+       "Invoice",
+       "857.91",
+       "171.58",
+       "1029.49",
+       "Trade Creditors",
+       "2878542",
+       "B000211031",
+       "2023",
+       "1",
+       "1",
+       "4"
+      ],
+      [
+       "Accounting Services",
+       "CIPFA",
+       "Invoice",
+       "761.00",
+       "152.20",
+       "913.20",
+       "Trade Creditors",
+       "2878517",
+       "B000211029",
+       "2023",
+       "1",
+       "1",
+       "5"
+      ],
+      [
+       "Active Stirling Costs",
+       "Active Stirling Ltd",
+       "Invoice",
+       "211166.67",
+       "42233.33",
+       "253400.00",
+       "Trade Creditors",
+       "2877861",
+       "P062167460",
+       "2023",
+       "1",
+       "1",
+       "6"
+      ]
+     ],
+     "row_count": 25095,
+     "column_count": 13
+    }
+   ]
+  },
+  {
    "job_id": "45e5c4b154f37f9657e1533c3cea960c4d928d92b24a8dfc1a4f06cbd58bb3a9",
    "publisher": "Stockport Metropolitan Borough Council",
    "title": "Expenditure over £500",
@@ -23422,6 +24515,1318 @@
    ]
   },
   {
+   "job_id": "5cedfba5a2a3c74f9506761c6fed0a03da3ea668905bff8481e4f8872e6972ab",
+   "publisher": "Tunbridge Wells Borough Council",
+   "title": "Tunbridge Wells Open Data - Spend Over 250 - Financial Year 2019 to 2020",
+   "portal": "tunbridge_wells",
+   "format": "CSV",
+   "resource_url": "https://opendatanew-tunbridgewells.opendata.arcgis.com/api/download/v1/items/bf6d8bbedbce4355ab738b749e731977/csv?layers=0",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Body_Name",
+      "Service_Label",
+      "Service_Code",
+      "Division_Code",
+      "Division_Description",
+      "Organisational_Unit",
+      "Expenditure_Category",
+      "Expenditure_Category_Code",
+      "Activity_Description",
+      "Activity_Code",
+      "Date_Received",
+      "Date_Paid",
+      "Reference",
+      "Net_Amount_in_Sterling",
+      "Capital_Revenue",
+      "Customer_Supplier_Description",
+      "ObjectId"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "Tunbridge Wells Borough Council",
+       "Housing Services",
+       "108",
+       "HO",
+       "HOUSING",
+       "PROPERTIES ON LOAN",
+       "RENTS/HIRE OF PREMISES",
+       "2200",
+       "-",
+       "-",
+       "01/04/2019",
+       "01/05/2019",
+       "187884",
+       "8826.44",
+       "Revenue",
+       "Town and Country Housing Group",
+       "1"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Housing Services",
+       "108",
+       "HO",
+       "HOUSING",
+       "HOUSING NEEDS SERVICE",
+       "EXTERNAL TRAINING",
+       "204",
+       "-",
+       "-",
+       "03/04/2019",
+       "03/04/2019",
+       "187027",
+       "250",
+       "Revenue",
+       "Tavistock & Portman NHS FT",
+       "2"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Central Services",
+       "102",
+       "HR",
+       "HUMAN RESOURCES",
+       "HUMAN RESOURCES",
+       "IN HOUSE TRAINING",
+       "201",
+       "-",
+       "-",
+       "26/04/2019",
+       "01/05/2019",
+       "187872",
+       "6950",
+       "Revenue",
+       "FranklinCovey Europe Ltd",
+       "3"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Cultural and Related Services",
+       "104",
+       "PK",
+       "PARKS",
+       "PARKS & GROUNDS",
+       "Horticulture",
+       "2061",
+       "BRITAIN IN BLOOM",
+       "PL0395",
+       "08/04/2019",
+       "10/04/2019",
+       "186647",
+       "250",
+       "Revenue",
+       "JAMI Q'S (WREXHAM) LTD",
+       "4"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Cultural and Related Services",
+       "104",
+       "PK",
+       "PARKS",
+       "PARKS & GROUNDS",
+       "ELECTRICITY",
+       "2140",
+       "-",
+       "-",
+       "16/04/2019",
+       "16/04/2019",
+       "187529",
+       "261.26",
+       "Revenue",
+       "Kent County Council (KCS)",
+       "5"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Housing Services",
+       "108",
+       "DS",
+       "Sundry Customer",
+       "HOUSING NEEDS SERVICE",
+       "HOMELESSNESS EXPENSES",
+       "3912",
+       "-",
+       "-",
+       "01/04/2019",
+       "01/05/2019",
+       "187768",
+       "5070",
+       "Revenue",
+       "This data has been redacted under the Data Protection Act",
+       "6"
+      ]
+     ],
+     "row_count": 3827,
+     "column_count": 17
+    }
+   ]
+  },
+  {
+   "job_id": "d67836494e95a89aca36f6a4ea1ad0632c0141b7a613e2879c338ec6818323b5",
+   "publisher": "Tunbridge Wells Borough Council",
+   "title": "Tunbridge Wells Open Data - Spend Over 250 - Financial Year 2021 to 2022",
+   "portal": "tunbridge_wells",
+   "format": "CSV",
+   "resource_url": "https://opendatanew-tunbridgewells.opendata.arcgis.com/api/download/v1/items/53e6f927a8b44adcab9c96c48678ca02/csv?layers=0",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Body Name",
+      "Service Label",
+      "Service Code",
+      "Division Code",
+      "Division Description",
+      "Organisational Unit",
+      "Expenditure Category",
+      "Expenditure Category Code",
+      "Activity Description",
+      "Activity Code",
+      "Date Received",
+      "Date Paid",
+      "Reference",
+      "Net Amount in Sterling",
+      "Capital Revenue",
+      "Customer Supplier Description",
+      "Month",
+      "FID"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "Tunbridge Wells Borough Council",
+       "Cultural And Related Services",
+       "104",
+       "AH",
+       "Assembly Hall",
+       "A-Hall Council Shows",
+       "Show Fees",
+       "3380",
+       "211205 Adam Kay",
+       "A21M02",
+       "1/27/2022 12:00:00 AM",
+       "2/2/2022 12:00:00 AM",
+       "217279",
+       "20136.86",
+       "Revenue",
+       "Seabright Productions Ltd",
+       "2/1/2022 12:00:00 AM",
+       "1"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental And Regulatory Services ",
+       "105",
+       "FM",
+       "Facilities Management",
+       "North Farm Depot",
+       "Contract Cleaning",
+       "2510",
+       "Property Cleaning Contract",
+       "PH0590",
+       "1/31/2022 12:00:00 AM",
+       "2/2/2022 12:00:00 AM",
+       "216965",
+       "20084.34",
+       "Revenue",
+       "Churchill Contract Services Limited",
+       "2/1/2022 12:00:00 AM",
+       "2"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental And Regulatory Services ",
+       "105",
+       "FM",
+       "Facilities Management",
+       "North Farm Depot",
+       "Contract Cleaning",
+       "2510",
+       "Property Cleaning Contract",
+       "PH0590",
+       "1/31/2022 12:00:00 AM",
+       "2/2/2022 12:00:00 AM",
+       "216966",
+       "20084.34",
+       "Revenue",
+       "Churchill Contract Services Limited",
+       "2/1/2022 12:00:00 AM",
+       "3"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental And Regulatory Services ",
+       "105",
+       "FM",
+       "Facilities Management",
+       "North Farm Depot",
+       "Contract Cleaning",
+       "2510",
+       "Property Cleaning Contract",
+       "PH0590",
+       "1/31/2022 12:00:00 AM",
+       "2/2/2022 12:00:00 AM",
+       "216967",
+       "20084.34",
+       "Revenue",
+       "Churchill Contract Services Limited",
+       "2/1/2022 12:00:00 AM",
+       "4"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Cultural And Related Services",
+       "104",
+       "HR",
+       "Human Resources",
+       "Cultural Hub",
+       "Recruitment Costs",
+       "235",
+       "-",
+       "-",
+       "1/31/2022 12:00:00 AM",
+       "2/2/2022 12:00:00 AM",
+       "217385",
+       "5632.9",
+       "Revenue",
+       "Recruitment Solutions",
+       "2/1/2022 12:00:00 AM",
+       "5"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental And Regulatory Services ",
+       "105",
+       "HR",
+       "Human Resources",
+       "Contracts Management",
+       "Recruitment Costs",
+       "235",
+       "-",
+       "-",
+       "1/31/2022 12:00:00 AM",
+       "2/2/2022 12:00:00 AM",
+       "217386",
+       "2972.62",
+       "Revenue",
+       "Recruitment Solutions",
+       "2/1/2022 12:00:00 AM",
+       "6"
+      ]
+     ],
+     "row_count": 3302,
+     "column_count": 18
+    }
+   ]
+  },
+  {
+   "job_id": "2dbdb9487765362f140a818ecddad1d9fd20ef781fde4518ed8a9183ba611143",
+   "publisher": "Tunbridge Wells Borough Council",
+   "title": "Tunbridge Wells Open Data - Spend Over 250 - Financial Year 2022 to 2023",
+   "portal": "tunbridge_wells",
+   "format": "CSV",
+   "resource_url": "https://opendatanew-tunbridgewells.opendata.arcgis.com/api/download/v1/items/5c8ccafd1e2a4332befb4c3db1c9e37e/csv?layers=0",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Body_Name",
+      "Service_Label",
+      "Service_Code",
+      "Division_Code",
+      "Division_Description",
+      "Organisational_Unit",
+      "Expenditure_Category",
+      "Expenditure_Category_Code",
+      "Activity_Description",
+      "Activity_Code",
+      "Date_Received",
+      "Date_Paid",
+      "Reference",
+      "Net_Amount_in_Sterling",
+      "Capital_Revenue",
+      "Customer_Supplier_Description",
+      "FID"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "Tunbridge Wells Borough Council",
+       "Housing Services",
+       "108",
+       "HO",
+       "Housing",
+       "Properties On Loan",
+       "Rents/Hire Of Premises",
+       "2200",
+       "-",
+       "-",
+       "2022/04/12 00:00:00+00",
+       "2022/04/12 00:00:00+00",
+       "219561",
+       "2475",
+       "Revenue",
+       "Premier Kent Properties Ltd  T/A Kings",
+       "1"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Cultural and related services",
+       "104",
+       "MU",
+       "Museum",
+       "Culture & Learning Hub",
+       "Capital Fees External",
+       "8315",
+       "-",
+       "-",
+       "2022/04/12 00:00:00+00",
+       "2022/04/12 00:00:00+00",
+       "219481",
+       "2225",
+       "Capital",
+       "Dauphin Acrylic Design Ltd",
+       "2"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental and regulatory services ",
+       "105",
+       "FI",
+       "Finance",
+       "Refuse Collection Services",
+       "It Software",
+       "3590",
+       "-",
+       "-",
+       "2022/04/12 00:00:00+00",
+       "2022/04/12 00:00:00+00",
+       "219551",
+       "2220",
+       "Revenue",
+       "Civica Uk Ltd",
+       "3"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Housing Services",
+       "108",
+       "HO",
+       "Housing",
+       "Housing Needs Service",
+       "Projects & Initiatives",
+       "3910",
+       "Covid-19 Comf Housing",
+       "EV0530",
+       "2022/04/12 00:00:00+00",
+       "2022/04/12 00:00:00+00",
+       "219564",
+       "2153",
+       "Revenue",
+       "Martin And Co",
+       "4"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Central Services",
+       "102",
+       "CE",
+       "Chief Executive",
+       "Chief Executive",
+       "Subscriptions S E Employers",
+       "3732",
+       "-",
+       "-",
+       "2022/04/07 00:00:00+00",
+       "2022/04/12 00:00:00+00",
+       "219382",
+       "1791.63",
+       "Revenue",
+       "South East England Councils (Seec)",
+       "5"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Housing Services",
+       "108",
+       "DS",
+       "Sundry Customer",
+       "Housing Needs Service",
+       "Projects & Initiatives",
+       "3910",
+       "Covid-19 Comf Housing",
+       "EV0530",
+       "2022/04/11 00:00:00+00",
+       "2022/04/12 00:00:00+00",
+       "219519",
+       "1761",
+       "Revenue",
+       "Bulb Energy Revenue Account",
+       "6"
+      ]
+     ],
+     "row_count": 2344,
+     "column_count": 17
+    }
+   ]
+  },
+  {
+   "job_id": "d0adbfa840aadeafbbabf41fad4175c38001cd6651f27447cbe5c39860f5db18",
+   "publisher": "Tunbridge Wells Borough Council",
+   "title": "Tunbridge Wells Open Data - Spend Over £250 - Financial Year 2014 to 2015",
+   "portal": "tunbridge_wells",
+   "format": "CSV",
+   "resource_url": "https://opendatanew-tunbridgewells.opendata.arcgis.com/api/download/v1/items/1bfb249fe9b14b4a82ea5774b6456122/csv?layers=0",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Body_Name",
+      "Service_Label",
+      "Service_Code",
+      "Division_Code",
+      "Division_Description",
+      "Organisational_Unit",
+      "Expenditure_Category",
+      "Expenditure_Category_Code",
+      "Date_Paid",
+      "Reference",
+      "Net_Amount_in_Sterling",
+      "Capital_Revenue",
+      "Customer_Supplier_Description",
+      "Month",
+      "Year",
+      "FID"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "Tunbridge Wells Borough Council",
+       "Highways and Transport Services",
+       "107",
+       "EN",
+       "ENVIRONMENT & STREET SCENE",
+       "PARKING ADMIN & ENFORCEMENT",
+       "SIGNING & LINING WORKS",
+       "3920",
+       "4/1/2014 11:00:00 PM",
+       "114196",
+       "360",
+       "Revenue",
+       "Local World Limited",
+       "April",
+       "2014",
+       "1"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Central Services",
+       "102",
+       "BU",
+       "BUSINESS TRANSFORMATION & DELIVERY",
+       "I T SERVICE",
+       "COMPUTER HARDWARE",
+       "3580",
+       "4/1/2014 11:00:00 PM",
+       "114202",
+       "367.709991455078",
+       "Revenue",
+       "Insight Direct (UK) Ltd",
+       "April",
+       "2014",
+       "2"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Housing Services",
+       "108",
+       "FI",
+       "FINANCE & LOCAL GOVERNANCE",
+       "TEMPORARY ACCOMMODATION",
+       "RESPONSIVE REPAIRS BUILDINGS",
+       "2020",
+       "4/1/2014 11:00:00 PM",
+       "114275",
+       "7538.22021484375",
+       "Revenue",
+       "G M Monk Ltd",
+       "April",
+       "2014",
+       "3"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Central Services",
+       "102",
+       "HR",
+       "HUMAN RESOURCES",
+       "HUMAN RESOURCES",
+       "IN HOUSE TRAINING",
+       "201",
+       "4/1/2014 11:00:00 PM",
+       "114476",
+       "574.059997558594",
+       "Revenue",
+       "Swale Borough Council",
+       "April",
+       "2014",
+       "4"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Cultural and Related Services",
+       "104",
+       "LE",
+       "LEISURE & WELL-BEING",
+       "A-HALL COUNCIL SHOWS",
+       "PROMOTION",
+       "3450",
+       "4/1/2014 11:00:00 PM",
+       "114478",
+       "300",
+       "Revenue",
+       "Dewynters Ltd",
+       "April",
+       "2014",
+       "5"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Central Services",
+       "102",
+       "FI",
+       "FINANCE & LOCAL GOVERNANCE",
+       "TOWN HALL",
+       "RESPONSIVE REPAIRS BUILDINGS",
+       "2020",
+       "4/1/2014 11:00:00 PM",
+       "114481",
+       "259.480010986328",
+       "Revenue",
+       "Newey & Eyre Ltd",
+       "April",
+       "2014",
+       "6"
+      ]
+     ],
+     "row_count": 4168,
+     "column_count": 16
+    }
+   ]
+  },
+  {
+   "job_id": "06af5b07a48b60551d9864e05dfdbab45bf55c4dba152aefae559be27b9eba96",
+   "publisher": "Tunbridge Wells Borough Council",
+   "title": "Tunbridge Wells Open Data - Spend Over £250 - Financial Year 2015 to 2016",
+   "portal": "tunbridge_wells",
+   "format": "CSV",
+   "resource_url": "https://opendatanew-tunbridgewells.opendata.arcgis.com/api/download/v1/items/4b991ab54bcb4ee4b57c0f7f358f9a6c/csv?layers=0",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Body_Name",
+      "Service_Label",
+      "Service_Code",
+      "Division_Code",
+      "Division_Description",
+      "Organisational_Unit",
+      "Expenditure_Category",
+      "Expenditure_Category_Code",
+      "Activity_Description",
+      "Activity_Code",
+      "Date_Received",
+      "Date_Paid",
+      "Reference",
+      "Net_Amount_in_Sterling",
+      "Capital_Revenue",
+      "Customer_Supplier_Description",
+      "Month",
+      "Year",
+      "FID"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental and regulatory services ",
+       "105",
+       "CO",
+       "COMMUNITY & CORPORATE PLANNING",
+       "COMMUNITY SAFETY",
+       "PROJECTS & INITIATIVES",
+       "3910",
+       "-",
+       "-",
+       "4/14/2015 11:00:00 PM",
+       "4/14/2015 11:00:00 PM",
+       "117151",
+       "10000",
+       "Revenue",
+       "Domestic Abuse Volunteer Support Services",
+       "April",
+       "2015",
+       "1"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental and regulatory services ",
+       "105",
+       "EN",
+       "ENVIRONMENT & STREET SCENE",
+       "CREMATORIUM",
+       "CLEANING SUPPLIES",
+       "2500",
+       "-",
+       "-",
+       "3/24/2015 12:00:00 AM",
+       "4/28/2015 11:00:00 PM",
+       "121755",
+       "5949.509765625",
+       "Revenue",
+       "PHS Group plc",
+       "April",
+       "2015",
+       "2"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental and regulatory services ",
+       "105",
+       "EN",
+       "ENVIRONMENT & STREET SCENE",
+       "CREMATORIUM",
+       "CLEANING SUPPLIES",
+       "2500",
+       "-",
+       "-",
+       "3/24/2015 12:00:00 AM",
+       "4/28/2015 11:00:00 PM",
+       "125252",
+       "2974.76000976563",
+       "Revenue",
+       "PHS Group plc",
+       "April",
+       "2015",
+       "3"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental and regulatory services ",
+       "105",
+       "CU",
+       "CUSTOMER ACCESS",
+       "CLEANER BOROUGH",
+       "FUEL & OIL",
+       "1010",
+       "-",
+       "-",
+       "4/21/2015 11:00:00 PM",
+       "4/21/2015 11:00:00 PM",
+       "126257",
+       "1452.38000488281",
+       "Revenue",
+       "Kent County Council (KCS)",
+       "April",
+       "2015",
+       "4"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental and regulatory services ",
+       "105",
+       "EN",
+       "ENVIRONMENT & STREET SCENE",
+       "PUBLIC REALM IMPROVEMENTS",
+       "CONSTRUCTION, RENOVATION, ETC",
+       "8311",
+       "PHASE 1: PUBLIC REALM IMPROV",
+       "PE0759",
+       "4/28/2015 11:00:00 PM",
+       "4/28/2015 11:00:00 PM",
+       "127138",
+       "64761",
+       "Capital",
+       "Kent County Council",
+       "April",
+       "2015",
+       "5"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental and regulatory services ",
+       "105",
+       "EN",
+       "ENVIRONMENT & STREET SCENE",
+       "CREMATORIUM",
+       "CLEANING SUPPLIES",
+       "2500",
+       "-",
+       "-",
+       "3/18/2015 12:00:00 AM",
+       "4/28/2015 11:00:00 PM",
+       "128020",
+       "693.010009765625",
+       "Revenue",
+       "PHS Group plc",
+       "April",
+       "2015",
+       "6"
+      ]
+     ],
+     "row_count": 4697,
+     "column_count": 19
+    }
+   ]
+  },
+  {
+   "job_id": "7bd1d07950ff7b0a4eed040a8b3d5f1c14dbede92a16b851157d4a95a93546c5",
+   "publisher": "Tunbridge Wells Borough Council",
+   "title": "Tunbridge Wells Open Data - Spend Over £250 - Financial Year 2016 to 2017",
+   "portal": "tunbridge_wells",
+   "format": "CSV",
+   "resource_url": "https://opendatanew-tunbridgewells.opendata.arcgis.com/api/download/v1/items/9868c6dd06eb4578bdf7f95b1e25dd46/csv?layers=0",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Body_Name",
+      "Service_Label",
+      "Service_Code",
+      "Division_Code",
+      "Division_Description",
+      "Organisational_Unit",
+      "Expenditure_Category",
+      "Expenditure_Category_Code",
+      "Activity_Description",
+      "Activity_Code",
+      "Date_Received",
+      "Date_Paid",
+      "Reference",
+      "Net_Amount_in_Sterling",
+      "Capital_Revenue",
+      "Customer_Supplier_Description",
+      "Month",
+      "Year",
+      "FID"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "Tunbridge Wells Borough Council",
+       "Highways and Transport Services",
+       "107",
+       "PA",
+       "PARKING",
+       "PARKING ADMIN & ENFORCEMENT",
+       "PCN DEBT REGISTRATION",
+       "3335",
+       "-",
+       "-",
+       "4/19/2016 11:00:00 PM",
+       "4/19/2016 11:00:00 PM",
+       "144851",
+       "10000",
+       "Revenue",
+       "THE TRAFFIC ENFORCEMENT CENTRE",
+       "April",
+       "2016",
+       "1"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Planning Services",
+       "110",
+       "PS",
+       "PROPERTY SERVICES",
+       "JOHN STREET CAR PARK",
+       "CONSTRUCTION, RENOVATION, ETC",
+       "8311",
+       "-",
+       "-",
+       "4/19/2016 11:00:00 PM",
+       "4/19/2016 11:00:00 PM",
+       "145143",
+       "9730.3203125",
+       "Capital",
+       "Atkins Limited",
+       "April",
+       "2016",
+       "2"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Planning Services",
+       "110",
+       "ED",
+       "ECONOMIC DEVELOPMENT",
+       "ECONOMIC DEVELOPMENT",
+       "PROJECTS & INITIATIVES",
+       "3910",
+       "RETAILERS CHRISTMAS CAMPAIGN",
+       "EV0250",
+       "4/19/2016 11:00:00 PM",
+       "4/19/2016 11:00:00 PM",
+       "145612",
+       "9374.9404296875",
+       "Revenue",
+       "This data has been redacted under the Data Protection Act",
+       "April",
+       "2016",
+       "3"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Planning Services",
+       "110",
+       "MU",
+       "MUSEUM",
+       "DEVELOPMENT PROGRAMME",
+       "PROPERTY CONSULTANTS",
+       "3290",
+       "CULTURAL & LEARNING HUB",
+       "PH0702",
+       "4/19/2016 11:00:00 PM",
+       "4/19/2016 11:00:00 PM",
+       "145206",
+       "7666",
+       "Revenue",
+       "DCA CONSULTANCY LTD",
+       "April",
+       "2016",
+       "4"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Cultural and Related Services",
+       "104",
+       "AH",
+       "ASSEMBLY HALL",
+       "A-HALL COUNCIL SHOWS",
+       "SHOW FEES",
+       "3380",
+       "160317 RUMOURS OF FLEETWOOD MA",
+       "A16C05",
+       "4/19/2016 11:00:00 PM",
+       "4/19/2016 11:00:00 PM",
+       "144718",
+       "7553.83984375",
+       "Revenue",
+       "Cole Music Productions (UK) Ltd",
+       "April",
+       "2016",
+       "5"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Cultural and Related Services",
+       "104",
+       "AH",
+       "ASSEMBLY HALL",
+       "A-HALL COUNCIL SHOWS",
+       "SHOW FEES",
+       "3380",
+       "160501 ERIC BIBB",
+       "A16E06",
+       "4/19/2016 11:00:00 PM",
+       "4/19/2016 11:00:00 PM",
+       "145443",
+       "6000",
+       "Revenue",
+       "Asgard Promotions Ltd Clients Account",
+       "April",
+       "2016",
+       "6"
+      ]
+     ],
+     "row_count": 4719,
+     "column_count": 19
+    }
+   ]
+  },
+  {
+   "job_id": "54c786fc612fa1d66e417c56517389ac2e93263dfe77b6fb1eba10d7e7f3b112",
+   "publisher": "Tunbridge Wells Borough Council",
+   "title": "Tunbridge Wells Open Data - Spend Over £250 - Financial Year 2017 to 2018",
+   "portal": "tunbridge_wells",
+   "format": "CSV",
+   "resource_url": "https://opendatanew-tunbridgewells.opendata.arcgis.com/api/download/v1/items/94203b9b1b3a4ec0b65d8ebf2b2b309d/csv?layers=0",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Body_Name",
+      "Service_Label",
+      "Service_Code",
+      "Division_Code",
+      "Division_Description",
+      "Organisational_Unit",
+      "Expenditure_Category",
+      "Expenditure_Category_Code",
+      "Activity_Description",
+      "Activity_Code",
+      "Date_Received",
+      "Date_Paid",
+      "Reference",
+      "Net_Amount_in_Sterling",
+      "Capital_Revenue",
+      "Customer_Supplier_Description",
+      "Month",
+      "Year",
+      "FID"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "Tunbridge Wells Borough Council",
+       "Central Services",
+       "102",
+       "FI",
+       "FINANCE",
+       "SALARY SACRIFICES",
+       "LOANS - UNSECURED",
+       "8530",
+       "COMPUTER SALARY SACRIFICE",
+       "CSS000",
+       "2017/03/27 23:00:00+00",
+       "2017/04/17 23:00:00+00",
+       "159102",
+       "456.399993896484",
+       "Revenue",
+       "CDW & Associates Ltd",
+       "April",
+       "2017",
+       "1"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Planning Services",
+       "110",
+       "ED",
+       "ECONOMIC DEVELOPMENT",
+       "ECONOMIC DEVELOPMENT",
+       "COURIER SERVICE",
+       "3540",
+       "-",
+       "-",
+       "2017/03/10 00:00:00+00",
+       "2017/04/18 23:00:00+00",
+       "158491",
+       "6974",
+       "Revenue",
+       "Take One Media Ltd",
+       "April",
+       "2017",
+       "2"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Central Services",
+       "102",
+       "TR",
+       "TRANSFORMATION AND DELIVERY",
+       "I T SERVICE",
+       "IT SOFTWARE",
+       "3590",
+       "SOFTWARE MAINTENANCE",
+       "EV0328",
+       "2017/03/15 00:00:00+00",
+       "2017/04/18 23:00:00+00",
+       "158554",
+       "809",
+       "Revenue",
+       "Improvement and Development Agency",
+       "April",
+       "2017",
+       "3"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Central Services",
+       "102",
+       "IT",
+       "INFORMATION & COMMUNICATIONS TECHNOLOGY",
+       "I T SERVICE",
+       "IT SOFTWARE",
+       "3590",
+       "SOFTWARE MAINTENANCE",
+       "EV0328",
+       "2017/03/28 23:00:00+00",
+       "2017/04/18 23:00:00+00",
+       "158737",
+       "809",
+       "Revenue",
+       "Improvement and Development Agency",
+       "April",
+       "2017",
+       "4"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Cultural and Related Services",
+       "104",
+       "PS",
+       "PROPERTY SERVICES",
+       "PARKS & GROUNDS",
+       "PLANNED MAINTENANCE BUILDINGS",
+       "2000",
+       "PROPERTY CONTRACTS",
+       "PH0600",
+       "2017/04/04 23:00:00+00",
+       "2017/04/04 23:00:00+00",
+       "159562",
+       "44193.171875",
+       "Revenue",
+       "DCB (Kent) Ltd",
+       "April",
+       "2017",
+       "5"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Central Services",
+       "102",
+       "TR",
+       "TRANSFORMATION AND DELIVERY",
+       "TELEPHONY MKIP PROJECT",
+       "COMPUTER SOFTWARE",
+       "8341",
+       "-",
+       "-",
+       "2017/04/03 23:00:00+00",
+       "2017/04/04 23:00:00+00",
+       "159292",
+       "25976",
+       "Capital",
+       "3C TECHNOLOGY LTD",
+       "April",
+       "2017",
+       "6"
+      ]
+     ],
+     "row_count": 4269,
+     "column_count": 19
+    }
+   ]
+  },
+  {
+   "job_id": "a2c317b9cc85165c842f488d8be0731bc4ecefb0de30a327f580c6c3dfcd22cc",
+   "publisher": "Tunbridge Wells Borough Council",
+   "title": "Tunbridge Wells Open Data - Spend Over £250 - Financial Year 2018 to 2019",
+   "portal": "tunbridge_wells",
+   "format": "CSV",
+   "resource_url": "https://opendatanew-tunbridgewells.opendata.arcgis.com/api/download/v1/items/b5b0942e7b10499d8668d259a093991b/csv?layers=0",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Body Name",
+      "Service Label",
+      "Service Code",
+      "Division Code",
+      "Division Description",
+      "Organisational Unit",
+      "Expenditure Category",
+      "Expenditure Category Code",
+      "Activity Description",
+      "Activity Code",
+      "Date Received",
+      "Date Paid",
+      "Reference",
+      "Net Amount in Sterling",
+      "Capital/Revenue",
+      "Customer/Supplier Description",
+      "Month",
+      "Year",
+      "FID"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "Tunbridge Wells Borough Council",
+       "Central Services",
+       "102",
+       "FI",
+       "FINANCE",
+       "REVS & BENS PARTNERSHIP",
+       "PARTNERSHIP AGREEMENT",
+       "202",
+       "-",
+       "-",
+       "4/3/2018 11:00:00 PM",
+       "4/4/2018 12:00:00 AM",
+       "173384",
+       "205000",
+       "Revenue",
+       "Maidstone Borough Council",
+       "April",
+       "2018",
+       "1"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental and regulatory services ",
+       "105",
+       "PK",
+       "PARKS",
+       "CREMATORIUM",
+       "Grounds Maint. Sodexo Contract",
+       "2054",
+       "-",
+       "-",
+       "4/3/2018 11:00:00 PM",
+       "4/4/2018 12:00:00 AM",
+       "173357",
+       "72576.3671875",
+       "Revenue",
+       "Sodexo Ltd",
+       "April",
+       "2018",
+       "2"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Housing Services",
+       "108",
+       "FI",
+       "FINANCE",
+       "RENT DEPOSIT SCHEME",
+       "DEBTORS",
+       "8510",
+       "-",
+       "-",
+       "4/3/2018 11:00:00 PM",
+       "4/4/2018 12:00:00 AM",
+       "173601",
+       "9570",
+       "Revenue",
+       "This data has been redacted under the Data Protection Act",
+       "April",
+       "2018",
+       "3"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Housing Services",
+       "108",
+       "FI",
+       "FINANCE",
+       "RENT DEPOSIT SCHEME",
+       "DEBTORS",
+       "8510",
+       "-",
+       "-",
+       "4/3/2018 11:00:00 PM",
+       "4/4/2018 12:00:00 AM",
+       "173589",
+       "5060",
+       "Revenue",
+       "Martin and Co",
+       "April",
+       "2018",
+       "4"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Housing Services",
+       "108",
+       "FI",
+       "FINANCE",
+       "RENT DEPOSIT SCHEME",
+       "DEBTORS",
+       "8510",
+       "-",
+       "-",
+       "4/3/2018 11:00:00 PM",
+       "4/4/2018 12:00:00 AM",
+       "173588",
+       "4950",
+       "Revenue",
+       "This data has been redacted under the Data Protection Act",
+       "April",
+       "2018",
+       "5"
+      ],
+      [
+       "Tunbridge Wells Borough Council",
+       "Environmental and regulatory services ",
+       "105",
+       "FM",
+       "FACILITIES MANAGEMENT",
+       "CREMATORIUM",
+       "HYGIENE SUPPLIES",
+       "2530",
+       "-",
+       "-",
+       "4/3/2018 11:00:00 PM",
+       "4/4/2018 12:00:00 AM",
+       "173298",
+       "4122.31005859375",
+       "Revenue",
+       "PHS Group plc",
+       "April",
+       "2018",
+       "6"
+      ]
+     ],
+     "row_count": 800,
+     "column_count": 19
+    }
+   ]
+  },
+  {
    "job_id": "e26bf628169d3aecf4e1052362a421c16a630da8f8cb10ae69f474f1caf7f101",
    "publisher": "UK Commission for Employment and Skills",
    "title": "Spend over £500 in the UK Commission for Employment and Skills",
@@ -25568,7 +27973,7 @@
    "format": "CSV",
    "resource_url": "https://www.wirral.gov.uk/files/over-ps500-spend-march-2026.csv",
    "licence": "OGL-UK-3.0",
-   "files_extracted": 43,
+   "files_extracted": 39,
    "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
    "layouts": [
     {
@@ -25651,7 +28056,7 @@
      "row_count": 8030,
      "column_count": 8,
      "example_file": "https://www.wirral.gov.uk/media/14064/download?inline",
-     "files": 34
+     "files": 30
     },
     {
      "where": {

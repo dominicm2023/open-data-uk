@@ -42,7 +42,7 @@ import math
 import re
 import sqlite3
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -229,9 +229,9 @@ def _num(v):
 
 
 _DATE_FORMATS = ("%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M",
-                 "%d/%m/%Y %H:%M", "%d/%m/%Y %H:%M:%S", "%d/%m/%y", "%d/%m/%y %H:%M", "%d %B %Y", "%d %b %Y",
+                 "%d/%m/%Y %H:%M", "%d/%m/%Y %H:%M:%S", "%d/%m/%Y %I:%M:%S %p", "%d/%m/%y", "%d/%m/%y %H:%M", "%d %B %Y", "%d %b %Y",
                  "%d-%b-%Y", "%d-%b-%y", "%d/%b/%Y", "%d/%b/%y", "%d-%B-%Y", "%d.%m.%Y", "%Y%m%d")
-_US_FORMATS = ("%m/%d/%Y", "%m/%d/%y", "%m/%d/%Y %H:%M", "%m-%d-%Y")
+_US_FORMATS = ("%m/%d/%Y", "%m/%d/%y", "%m/%d/%Y %H:%M", "%m/%d/%Y %I:%M:%S %p", "%m/%d/%Y %H:%M:%S", "%m-%d-%Y")
 
 
 def _date(v, us: bool = False):
@@ -267,6 +267,20 @@ def _date(v, us: bool = False):
         return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
     if re.fullmatch(r"\d{12,13}", s):
         return _date(int(s))
+    # A value that can only be one way round — 3/27/2020, or 27/3/2020 in
+    # a month-first file — is read that way: Tunbridge Wells mixes both
+    # spellings in one file.
+    m = re.match(r"(\d{1,2})[/-](\d{1,2})[/-](\d{4})", s)
+    if m:
+        from datetime import date as _d
+        a, b, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
+        try:
+            if a > 12 >= b:
+                return _d(y, b, a).isoformat()
+            if b > 12 >= a:
+                return _d(y, a, b).isoformat()
+        except ValueError:
+            return None
     return None
 
 
