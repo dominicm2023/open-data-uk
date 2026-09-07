@@ -192,6 +192,18 @@ are collapsed. The brief finds the real header row past a title line, so
 the checker knows every layout of a series. Reviewer decisions live in the
 mapping's `notes` after "Review <date>:" and show on the family page.
 
+The page (7 September): `/combined` is the hub; each family page draws
+itself from `summary.json` → `facets` (computed by `build.py` over every
+published row): a dot map on the embedded UK outline (`families/ukmap.py`,
+Natural Earth, no tiles), a body-by-year grid, a computed Q&A, and a
+filled-bar per column. Filters (body, year, pollutant, a word) go to
+`/api/family/<name>[.csv]?body=&year=&q=`, answered from
+`<family>.sqlite`, written at build beside the CSV; a filtered CSV streams
+every matching row. Dates: `_date` reads `15-Dec-11`, `11-MAR-2026`,
+`10/01/2014 00:00` and Excel serials; a file whose unambiguous dates are
+month-first is read month-first throughout and its rows say so in
+`quality_note`.
+
 ## The loop from here
 
 Nightly, `refresh.sh` rebuilds each registry from the index, re-fetches

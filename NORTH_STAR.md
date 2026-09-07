@@ -167,6 +167,10 @@ A living list. Add freely; move to "Done" with the commit that did it.
 - 6 Sep (later) — series layouts per file, content-chosen layouts when a
   header lies, Irish grids, per-file held-row tallies for reviewers; spend
   over £500 grew from 114k to 826k rows, 13 new recycling/air sources reviewed.
+- 7 Sep — Combined data section (`/combined`, nav); family pages redrawn:
+  map or years grid, computed Q&A, column fill, filters with filtered CSV
+  download from a SQLite twin of each table. Date parser widened (28% of
+  spend rows had lost their date); month-first files detected per file.
 - 5 Sep — older editions of a series canonicalise to the latest when the
   description matches: 4,231 pages in 1,144 series, out of the sitemap,
   still served and searchable. (B of the not-indexed fix.)
