@@ -370,8 +370,10 @@ def render_family(family: str, site_url: str) -> str | None:
         if e["ladder"] == "published":
             continue
         why = e.get("why") or e.get("intake_detail") or ""
+        # a national network is not an index record: link its own site
+        href = e.get("landing_url") if str(e.get("dataset_key", "")).startswith("network:") else dataset_path(e["dataset_key"])
         pending.append(
-            f'<li><a href="{esc(dataset_path(e["dataset_key"]))}">{esc(e["publisher"] or "")}</a> '
+            f'<li><a href="{esc(href or "#")}">{esc(e["publisher"] or "")}</a> '
             f'<span class="note">— {esc(LADDER_TEXT.get(e["ladder"], e["ladder"]))}'
             f'{(": " + esc(why[:120])) if why and e["ladder"] in ("not admitted", "fetch failed", "mapping failed", "rejected") else ""}</span></li>')
 

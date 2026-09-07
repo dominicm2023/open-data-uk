@@ -32,6 +32,8 @@ echo "=====REFRESH-RUN===== $(date -Is)"
 for fam in recycling_centres air_quality_annual spend_over_500; do
   "$PY" families/registry.py "$fam" || true
   "$PY" families/intake.py "$fam" || true
+  # the national networks' annual statistics feed the air family
+  [ "$fam" = air_quality_annual ] && { "$PY" families/networks.py || true; }
   "$PY" families/build.py "$fam" || true
 done
 

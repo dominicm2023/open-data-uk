@@ -35,7 +35,7 @@ until the gap is closed.
 | **Certainty** — findable datasets with a verdict under 30 days old | 84% checked; 18,264 never | Can we say what is really there? |
 | **Findability** — searches ending at a publisher, ours and Google's | Google: 16 clicks/day, 1,395 impressions/day, avg position 17 (2 Sep); 8,746 indexed, 78,306 waiting | Do people reach it through us? |
 | **Guardrail** — verdicts that were wrong | 1,239 wrong for three weeks (launch-day 429s) | Are we still the people who know? |
-| **Usability** — who-publishes families with a reviewed, published combined table | 3 published (7 Sep): recycling centres 98 rows/12 bodies; air quality annual means 16,427 rows/5 bodies; spend over £500 3,579,846 rows/27 bodies (46 sources, ~1,000 files) — of 30, 51 and 187 sources in each registry | Can a person use it without doing the extraction themselves? |
+| **Usability** — who-publishes families with a reviewed, published combined table | 3 published (7 Sep): recycling centres 98 rows/12 bodies; air quality annual means 47,294 rows/8 bodies (incl. AURN, LMAM, NI networks 1990-2026); spend over £500 3,579,846 rows/27 bodies (46 sources, ~1,000 files) — of 30, 51 and 187 sources in each registry | Can a person use it without doing the extraction themselves? |
 
 The guardrail is a reputation metric. Being wrong for three weeks is worse
 than saying "not verified" for three weeks.
@@ -178,6 +178,10 @@ A living list. Add freely; move to "Done" with the commit that did it.
 - 7 Sep (evening) — registry recall: spend title pattern widened to the
   names bodies actually use (60 → 187 sources); .xls read; spend over £500
   grew to 3.58M rows / 27 bodies after a 35-source review round.
+- 7 Sep (night) — the national monitoring networks (AURN, LMAM, Northern
+  Ireland) read from their openair annual summary files: air quality
+  annual means 16k → 47k rows, 1990-2026. Scotland, Wales, Air Quality
+  England parked on licence wording — a decision for Dominic.
 - 7 Sep — first publisher outreach: 15 councils holding INSPIRE-licensed
   recycling/air datasets asked (by email, DM's approval, from the
   groundwatercast address) to re-release under OGL via the derived-data

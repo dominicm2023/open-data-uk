@@ -135,7 +135,12 @@ def build(family: str) -> dict:
     conn = sqlite3.connect(f"file:{DB_PATH}?mode=ro", uri=True)
     conn.row_factory = sqlite3.Row
     admitted, skipped = [], []
-    for d in conn.execute(f"SELECT d.* {INDEXABLE} ORDER BY d.publisher, d.title"):
+    # A series family wants every year, so a dataset's older editions —
+    # which the index folds under the newest one — are sources too:
+    # Leicester's seven earlier "Expenditure exceeding £500 - <year>".
+    indexable = INDEXABLE if not spec.get("series") else INDEXABLE.replace(
+        " AND NOT EXISTS (SELECT 1 FROM editions e WHERE e.key = d.key)", "")
+    for d in conn.execute(f"SELECT d.* {indexable} ORDER BY d.publisher, d.title"):
         title = d["title"] or ""
         if not inc.search(title):
             continue

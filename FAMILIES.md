@@ -184,7 +184,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 | family | registry | extracted | reviewed & published |
 |---|---|---|---|
 | recycling_centres | 30 sources | 18 | 13 sources, 98 rows, 12 bodies |
-| air_quality_annual | 51 | 39 | 17 sources, 16,427 rows, 5 bodies |
+| air_quality_annual | 56 + 3 national networks | 39 | 20 sources, 47,294 rows, 8 bodies (AURN 1990-2026, LMAM 2008-2026, Northern Ireland 1990-2026) |
 | spend_over_500 | 187 | 54 | 46 sources, 3,579,846 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
 
 Held in review, not published: Bradford's diffusion tubes (nothing in the
@@ -247,6 +247,25 @@ threshold_gbp 0; procurement-card (GPC) layouts inside MHCLG's bundles are
 removed so those files hold; a layer's GeoService twin is never a second
 file of a series; North Ayrshire's 2023-24 export lists every payment
 twice, once without an amount.
+
+**The national networks (7 September, night).** The annual means that
+matter most are not in any catalogue: the AURN, the local-authority
+network sites Defra hosts (LMAM), and the Scottish, Welsh and Northern
+Irish networks publish them on their own sites as the files openair reads
+(`summary_annual_<NET>_<year>.rds`, one per year, a row per site with
+`<POLLUTANT>.mean` and `.capture`; a metadata file with coordinates, site
+type and how far each site is ratified). `families/networks.py` fetches
+them politely, keeps them by hash, unpivots them into the schema and
+build.py appends them with the same receipts. Admitted: AURN and LMAM
+(uk-air.defra.gov.uk states the OGL and the attribution line "© Crown
+copyright Defra via uk-air.defra.gov.uk…", carried on every row) and
+Northern Ireland (OGL v3 in the site footer). Parked with the reason on
+the page: Scotland (no licence stated), Wales ("freely available for
+public use, with acknowledgement" — permissive, not a named licence; a
+person's call), Air Quality England (no terms found; the sites are
+councils'). Rows past a site's ratified date, or under 75% data capture,
+say so in `qualifier`. Pollutants: NO2, NO, NOx, O3, SO2, CO (mg/m³),
+PM10, PM2.5 (gravimetric marked); hydrocarbons not taken.
 
 ## The loop from here
 

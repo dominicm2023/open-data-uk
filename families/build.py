@@ -747,6 +747,26 @@ def build(family: str, include_proposed: bool = False) -> dict:
         summary.append(entry)
     out_dir = STORE / "out" / family
     out_dir.mkdir(parents=True, exist_ok=True)
+    # The national networks' annual statistics (families/networks.py) are
+    # sources like any other: their rows pass the same validation and carry
+    # the same receipts, and each network is an entry on the ladder.
+    net_rows_path, net_sum_path = out_dir / "networks.rows.json", out_dir / "networks.summary.json"
+    if net_rows_path.exists() and net_sum_path.exists():
+        net_rows = json.loads(net_rows_path.read_text(encoding="utf-8"))
+        held_by_net: dict[str, int] = {}
+        for r in net_rows:
+            why = _validate(r, schema)
+            if why:
+                held_by_net[r["dataset_key"]] = held_by_net.get(r["dataset_key"], 0) + 1
+                continue
+            published.append(r)
+        for e in json.loads(net_sum_path.read_text(encoding="utf-8")):
+            key = f"network:{e['network']}"
+            summary.append({**e, "dataset_key": key, "body": e["publisher"], "portal": "network", "format": "RDS",
+                            "licence_kind": "network-terms", "intake_state": e["ladder"],
+                            "rows": (e.get("rows") or 0) - held_by_net.get(key, 0),
+                            "rows_failed_validation": held_by_net.get(key, 0),
+                            "resource_url": e.get("licence_evidence_url"), "landing_url": e.get("licence_evidence_url")})
     # A build that publishes far fewer rows than the last one is more likely
     # a bug than a fact — one such drop hid behind a green "0 preview rows"
     # line on 6 Sep — so it is said out loud and recorded, never silent.
