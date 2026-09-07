@@ -60,7 +60,9 @@ LIMITS = {
     # 25 MB lost Camden's whole spend history (one Socrata export); a single
     # file of a big council's return runs to 60 MB
     "max_file_bytes": 80_000_000, "max_metadata_bytes": 2_000_000,
-    "max_storage_bytes": 2_000_000_000, "min_free_bytes": 20_000_000_000,
+    # 2 GB was reached on 7 September with 212 spend sources and every
+    # edition of each: fetches failed and jobs served stale snapshots.
+    "max_storage_bytes": 10_000_000_000, "min_free_bytes": 20_000_000_000,
     # A monitoring archive or a year of payments can run to six figures of
     # rows; York's diffusion-tube file was refused at 50,000.
     "max_pages": 100, "max_rows": 250_000, "max_output_bytes": 80_000_000,
@@ -480,6 +482,11 @@ def process(c: sqlite3.Connection, job_id: str) -> None:
             # capped at 1,000 rows: in a series it is never a second file.
             if series and cand["format"] == "ESRI" and any(g[0]["format"] != "ESRI" for g in got):
                 continue
+            # Nor is the same file in a second format: Leicester lists every
+            # year as .csv and .json and each year was published twice.
+            stem = re.sub(r"\.(csv|json|xlsx?|geojson|zip)$", "", cand["url"].rsplit("/", 1)[-1].lower())
+            if series and stem and stem in seen_items:
+                continue
             prev = c.execute("SELECT * FROM files WHERE job_id=? AND url=?", (job_id, cand["url"])).fetchone()
             probe = dict(job)
             if prev:                      # let the conditional fetch see this file's own state
@@ -499,6 +506,8 @@ def process(c: sqlite3.Connection, job_id: str) -> None:
                 got.append((cand, blob, extraction, rh, downloaded, detail))
                 if item:
                     seen_items.add(item.group(0))
+                if stem:
+                    seen_items.add(stem)
                 if series:
                     print(f"    file {len(got):>3}  {downloaded:>9,} B  {cand['url'][-50:]}", flush=True)
                 else:

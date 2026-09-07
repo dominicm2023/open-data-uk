@@ -2824,7 +2824,7 @@
    "format": "CSV",
    "resource_url": "https://data.yorkopendata.org/dataset/27bc1dc6-d62f-4b93-a326-13989f5bfb56/resource/cfaf0a6e-96e2-4d5d-bc80-da51b212e82a/download/over250payments2026.csv",
    "licence": "OGL-UK-2.0",
-   "files_extracted": 15,
+   "files_extracted": 16,
    "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
    "layouts": [
     {
@@ -3113,7 +3113,7 @@
      "row_count": 37522,
      "column_count": 8,
      "example_file": "Payments to Suppliers - 2011/2012",
-     "files": 3
+     "files": 4
     },
     {
      "where": {
@@ -7073,6 +7073,579 @@
    ]
   },
   {
+   "job_id": "aa8cf97de64400c59d6f0c082976dad0070043a67c89344794d4b3b44c65044e",
+   "publisher": "Leicester City",
+   "title": "Expenditure exceeding £500 - 2023",
+   "portal": "leicester",
+   "format": "CSV",
+   "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-gbp500-2023/exports/csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 2,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "unique_id",
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "74837",
+       "2023-12-29",
+       "Education & Childrens Services",
+       "Nexus Fostering",
+       "Independent Foster Agencies",
+       "3873.45",
+       "0.0",
+       "",
+       "Other Agencies"
+      ],
+      [
+       "74849",
+       "2023-12-29",
+       "",
+       "DeterTech UK Limited",
+       "Building Works - Alterations",
+       "1603.24",
+       "320.65",
+       "",
+       "Building Works - Alterations"
+      ],
+      [
+       "74870",
+       "2023-12-29",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "1019.4",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74875",
+       "2023-12-29",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "1346.24",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74884",
+       "2023-12-29",
+       "Adults",
+       "Aspire UK",
+       "Personal Care / Generic",
+       "2492.56",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74910",
+       "2023-12-29",
+       "Corporate Resources & Support",
+       "Leicestershire Citizens Advice Bureau",
+       "Voluntary Sector - Other",
+       "26570.61",
+       "0.0",
+       "",
+       "Voluntary Organisations"
+      ]
+     ],
+     "row_count": 76194,
+     "column_count": 9,
+     "example_file": "expenditure-exceeding-gbp500-2023.csv",
+     "files": 2
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "unique_id",
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "74837",
+       "2023-12-29",
+       "Education & Childrens Services",
+       "Nexus Fostering",
+       "Independent Foster Agencies",
+       "3873.45",
+       "0.0",
+       "",
+       "Other Agencies"
+      ],
+      [
+       "74849",
+       "2023-12-29",
+       "",
+       "DeterTech UK Limited",
+       "Building Works - Alterations",
+       "1603.24",
+       "320.65",
+       "",
+       "Building Works - Alterations"
+      ],
+      [
+       "74870",
+       "2023-12-29",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "1019.4",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74875",
+       "2023-12-29",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "1346.24",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74884",
+       "2023-12-29",
+       "Adults",
+       "Aspire UK",
+       "Personal Care / Generic",
+       "2492.56",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "74910",
+       "2023-12-29",
+       "Corporate Resources & Support",
+       "Leicestershire Citizens Advice Bureau",
+       "Voluntary Sector - Other",
+       "26570.61",
+       "0.0",
+       "",
+       "Voluntary Organisations"
+      ]
+     ],
+     "row_count": 76194,
+     "column_count": 9
+    }
+   ]
+  },
+  {
+   "job_id": "a826fa89cc6cf95f707a581b4e61138a8c8a0dc087a60a1b260cfd35c3ee4b8a",
+   "publisher": "Leicester City",
+   "title": "Expenditure exceeding £500 - 2024",
+   "portal": "leicester",
+   "format": "CSV",
+   "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2024/exports/csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 2,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "unique_id",
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "81602",
+       "2024-12-31",
+       "City Developments and Neighbourhood",
+       "Redacted",
+       "Transcription Fees",
+       "672.1",
+       "134.42",
+       "",
+       "Management & Business & Administrative Services"
+      ],
+      [
+       "81612",
+       "2024-12-31",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "3881.4",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "81624",
+       "2024-12-31",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "2661.62",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "81626",
+       "2024-12-31",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "1439.2",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "81630",
+       "2024-12-31",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "2045.68",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "81664",
+       "2024-12-31",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "1022.84",
+       "0.0",
+       "",
+       "Home Care"
+      ]
+     ],
+     "row_count": 81891,
+     "column_count": 9,
+     "example_file": "expenditure-exceeding-ps500-2024.csv",
+     "files": 2
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "unique_id",
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "81602",
+       "2024-12-31",
+       "City Developments and Neighbourhood",
+       "Redacted",
+       "Transcription Fees",
+       "672.1",
+       "134.42",
+       "",
+       "Management & Business & Administrative Services"
+      ],
+      [
+       "81612",
+       "2024-12-31",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "3881.4",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "81624",
+       "2024-12-31",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "2661.62",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "81626",
+       "2024-12-31",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "1439.2",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "81630",
+       "2024-12-31",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "2045.68",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "81664",
+       "2024-12-31",
+       "Adults",
+       "NDH CARE LTD",
+       "Personal Care / Generic",
+       "1022.84",
+       "0.0",
+       "",
+       "Home Care"
+      ]
+     ],
+     "row_count": 81891,
+     "column_count": 9
+    }
+   ]
+  },
+  {
+   "job_id": "d76fb81df1704f8463594e9ab0dfef5bbf906c2634ff849f1e881a675618f9ba",
+   "publisher": "Leicester City",
+   "title": "Expenditure exceeding £500 - 2025",
+   "portal": "leicester",
+   "format": "CSV",
+   "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2025/exports/csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 2,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "unique_id",
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "76341",
+       "2025-12-31",
+       "Education & Childrens Services",
+       "28 Days Activity Ltd",
+       "Residential Placements",
+       "33002.86",
+       "0.0",
+       "",
+       "Other Agencies"
+      ],
+      [
+       "76345",
+       "2025-12-31",
+       "Education & Childrens Services",
+       "A Zoom Ltd",
+       "Taxi (Clients) Expenses",
+       "2155.2",
+       "431.04",
+       "",
+       "Taxi Travel Expense"
+      ],
+      [
+       "76348",
+       "2025-12-31",
+       "Corporate Resources & Support",
+       "Alfred Willday & Son Ltd",
+       "Printing",
+       "700.0",
+       "140.0",
+       "",
+       "Printing & Copying"
+      ],
+      [
+       "76350",
+       "2025-12-31",
+       "Corporate Resources & Support",
+       "Anthony Collins Solicitors Llp",
+       "LCC Ext Solicitors Costs",
+       "4281.0",
+       "856.2",
+       "",
+       "Legal Fees & Charges"
+      ],
+      [
+       "76351",
+       "2025-12-31",
+       "Housing HRA",
+       "Arcadis LLP",
+       "Consultant Fees",
+       "10237.44",
+       "2047.49",
+       "",
+       "Consultant Fees"
+      ],
+      [
+       "76353",
+       "2025-12-31",
+       "City Developments and Neighbourhood",
+       "Ari Apartments Ltd (trading as Lyter Living)",
+       "Accommodation Expenses",
+       "1260.0",
+       "0.0",
+       "",
+       "Accommodation Expenses"
+      ]
+     ],
+     "row_count": 76639,
+     "column_count": 9,
+     "example_file": "expenditure-exceeding-ps500-2025.csv",
+     "files": 2
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "unique_id",
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "76341",
+       "2025-12-31",
+       "Education & Childrens Services",
+       "28 Days Activity Ltd",
+       "Residential Placements",
+       "33002.86",
+       "0.0",
+       "",
+       "Other Agencies"
+      ],
+      [
+       "76345",
+       "2025-12-31",
+       "Education & Childrens Services",
+       "A Zoom Ltd",
+       "Taxi (Clients) Expenses",
+       "2155.2",
+       "431.04",
+       "",
+       "Taxi Travel Expense"
+      ],
+      [
+       "76348",
+       "2025-12-31",
+       "Corporate Resources & Support",
+       "Alfred Willday & Son Ltd",
+       "Printing",
+       "700.0",
+       "140.0",
+       "",
+       "Printing & Copying"
+      ],
+      [
+       "76350",
+       "2025-12-31",
+       "Corporate Resources & Support",
+       "Anthony Collins Solicitors Llp",
+       "LCC Ext Solicitors Costs",
+       "4281.0",
+       "856.2",
+       "",
+       "Legal Fees & Charges"
+      ],
+      [
+       "76351",
+       "2025-12-31",
+       "Housing HRA",
+       "Arcadis LLP",
+       "Consultant Fees",
+       "10237.44",
+       "2047.49",
+       "",
+       "Consultant Fees"
+      ],
+      [
+       "76353",
+       "2025-12-31",
+       "City Developments and Neighbourhood",
+       "Ari Apartments Ltd (trading as Lyter Living)",
+       "Accommodation Expenses",
+       "1260.0",
+       "0.0",
+       "",
+       "Accommodation Expenses"
+      ]
+     ],
+     "row_count": 76639,
+     "column_count": 9
+    }
+   ]
+  },
+  {
    "job_id": "ad249d35bc190e882a9a4faa7fbb81a139ae86f4a9d08ee0ecd55d3a5c605d5f",
    "publisher": "Leicester City Council",
    "title": "Expenditure exceeding £500 - 2022",
@@ -7395,6 +7968,537 @@
      ],
      "row_count": 84,
      "column_count": 5
+    }
+   ]
+  },
+  {
+   "job_id": "0c183e835321f5c4125f1af90ec9e3668f0cdc6108efaa4e43a4b673ab7d88c2",
+   "publisher": "Leicester City Council",
+   "title": "Expenditure exceeding £500 - 2015",
+   "portal": "leicester",
+   "format": "CSV",
+   "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2015/exports/csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 2,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2015-12-31",
+       "City Developments and Neighbourhood",
+       "HMS Decorative Surfacing Ltd",
+       "Materials Purchase",
+       "2730.64",
+       "",
+       "",
+       "Landscape Services Citywide"
+      ],
+      [
+       "2015-12-31",
+       "City Developments and Neighbourhood",
+       "AB Adcock",
+       "Building Works & Repairs/Maintenance/Alterations",
+       "4203.0",
+       "",
+       "",
+       "Allotments"
+      ],
+      [
+       "2015-12-31",
+       "Education & Childrens Services",
+       "BFS Group Ltd t/a Bidvest Foodservices",
+       "Catering Provisions / Food & Drink",
+       "2062.6",
+       "",
+       "",
+       "Catering - School Meals O/H Acc"
+      ],
+      [
+       "2015-12-31",
+       "City Developments and Neighbourhood",
+       "Coordination Group Publications Ltd",
+       "Printed & Electronic Media",
+       "1674.06",
+       "",
+       "",
+       "Reader Development Services"
+      ],
+      [
+       "2015-12-31",
+       "",
+       "Energy Saving Lighting (UK) Ltd",
+       "Fixtures & Fittings",
+       "9108.1",
+       "",
+       "",
+       "Resources and Support"
+      ],
+      [
+       "2015-12-31",
+       "",
+       "Faithful+Gould Ltd",
+       "Consultant Fees",
+       "2049.92",
+       "",
+       "",
+       "City Developments and Neighbourhood"
+      ]
+     ],
+     "row_count": 24662,
+     "column_count": 8,
+     "example_file": "expenditure-exceeding-ps500-2015.csv",
+     "files": 2
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2015-12-31",
+       "City Developments and Neighbourhood",
+       "HMS Decorative Surfacing Ltd",
+       "Materials Purchase",
+       "2730.64",
+       "",
+       "",
+       "Landscape Services Citywide"
+      ],
+      [
+       "2015-12-31",
+       "City Developments and Neighbourhood",
+       "AB Adcock",
+       "Building Works & Repairs/Maintenance/Alterations",
+       "4203.0",
+       "",
+       "",
+       "Allotments"
+      ],
+      [
+       "2015-12-31",
+       "Education & Childrens Services",
+       "BFS Group Ltd t/a Bidvest Foodservices",
+       "Catering Provisions / Food & Drink",
+       "2062.6",
+       "",
+       "",
+       "Catering - School Meals O/H Acc"
+      ],
+      [
+       "2015-12-31",
+       "City Developments and Neighbourhood",
+       "Coordination Group Publications Ltd",
+       "Printed & Electronic Media",
+       "1674.06",
+       "",
+       "",
+       "Reader Development Services"
+      ],
+      [
+       "2015-12-31",
+       "",
+       "Energy Saving Lighting (UK) Ltd",
+       "Fixtures & Fittings",
+       "9108.1",
+       "",
+       "",
+       "Resources and Support"
+      ],
+      [
+       "2015-12-31",
+       "",
+       "Faithful+Gould Ltd",
+       "Consultant Fees",
+       "2049.92",
+       "",
+       "",
+       "City Developments and Neighbourhood"
+      ]
+     ],
+     "row_count": 24662,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "197b6b699c751750e334e058a9d1be5269a91bb06e8d5e59c496263be77cc7c3",
+   "publisher": "Leicester City Council",
+   "title": "Expenditure exceeding £500 - 2016",
+   "portal": "leicester",
+   "format": "CSV",
+   "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500-2016/exports/csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 2,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2017-01-06",
+       "Adults & Housing Department",
+       "Help At Home",
+       "Personal Care / Generic",
+       "741.61",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2017-01-06",
+       "Adults & Housing Department",
+       "Help At Home",
+       "Personal Care / Generic",
+       "631.95",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2017-01-06",
+       "Adults & Housing Department",
+       "Help At Home",
+       "Personal Care / Generic",
+       "1557.98",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2017-01-06",
+       "Adults & Housing Department",
+       "Care Uk Homecare",
+       "Home Care - Extra Care",
+       "708.02",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2017-01-06",
+       "Adults & Housing Department",
+       "Care Uk Homecare",
+       "Home Care - Extra Care",
+       "746.77",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2017-01-06",
+       "Education & Childrens Services",
+       "Warwickshire  County Council",
+       "Employee Taxi Travel Expense",
+       "3700.0",
+       "0.0",
+       "",
+       "Taxi Travel Expense"
+      ]
+     ],
+     "row_count": 34317,
+     "column_count": 8,
+     "example_file": "expenditure-exceeding-ps500-2016.csv",
+     "files": 2
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2017-01-06",
+       "Adults & Housing Department",
+       "Help At Home",
+       "Personal Care / Generic",
+       "741.61",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2017-01-06",
+       "Adults & Housing Department",
+       "Help At Home",
+       "Personal Care / Generic",
+       "631.95",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2017-01-06",
+       "Adults & Housing Department",
+       "Help At Home",
+       "Personal Care / Generic",
+       "1557.98",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2017-01-06",
+       "Adults & Housing Department",
+       "Care Uk Homecare",
+       "Home Care - Extra Care",
+       "708.02",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2017-01-06",
+       "Adults & Housing Department",
+       "Care Uk Homecare",
+       "Home Care - Extra Care",
+       "746.77",
+       "0.0",
+       "",
+       "Home Care"
+      ],
+      [
+       "2017-01-06",
+       "Education & Childrens Services",
+       "Warwickshire  County Council",
+       "Employee Taxi Travel Expense",
+       "3700.0",
+       "0.0",
+       "",
+       "Taxi Travel Expense"
+      ]
+     ],
+     "row_count": 34317,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "8d195e0603f1d973c864302ba0fa0d90dbfd4b8834a160301d60a89c8fba1f89",
+   "publisher": "Leicester City Council",
+   "title": "Expenditure exceeding £500 - 2017",
+   "portal": "leicester",
+   "format": "CSV",
+   "resource_url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/expenditure-exceeding-ps500/exports/csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 2,
+   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
+   "layouts": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2017-06-30",
+       "City Developments and Neighbourhood",
+       "Lowe Electrical",
+       "Responsive",
+       "505.69",
+       "101.14",
+       "",
+       "Building Services / Repairs & Maintenance  Fixtures & Fittings"
+      ],
+      [
+       "2017-06-23",
+       "Adults & Housing Department",
+       "Community Integrated Care FA SL&FSB",
+       "DAY SUPPORT",
+       "1029.43",
+       "0.0",
+       "",
+       "LD Supported Living"
+      ],
+      [
+       "2017-10-11",
+       "Adults & Housing Department",
+       "Pine View Care Homes Ltd T/a Silver Birches",
+       "",
+       "1738.08",
+       "0.0",
+       "",
+       "Residential Care"
+      ],
+      [
+       "2017-06-02",
+       "Adults & Housing Department",
+       "Croft Hotel",
+       "Accommodation Expenses",
+       "840.0",
+       "168.0",
+       "",
+       "Accommodation Expenses"
+      ],
+      [
+       "2017-05-31",
+       "Education & Childrens Services",
+       "Guardian Protection Services Ltd",
+       "Security & Safety Services",
+       "588.0",
+       "117.6",
+       "",
+       "Public Order & Security Services"
+      ],
+      [
+       "2017-06-21",
+       "Adults & Housing Department",
+       "Abbey Healthcare T/a Aaron Court",
+       "Residential Permanent",
+       "1428.0",
+       "0.0",
+       "",
+       "Residential Care"
+      ]
+     ],
+     "row_count": 60483,
+     "column_count": 8,
+     "example_file": "expenditure-exceeding-ps500.csv",
+     "files": 2
+    }
+   ],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "payment_date",
+      "department",
+      "beneficiary",
+      "purpose_of_expenditure",
+      "amount",
+      "vat",
+      "vat_code",
+      "merchant_category"
+     ],
+     "header_row": 0,
+     "sample_rows": [
+      [
+       "2017-06-30",
+       "City Developments and Neighbourhood",
+       "Lowe Electrical",
+       "Responsive",
+       "505.69",
+       "101.14",
+       "",
+       "Building Services / Repairs & Maintenance  Fixtures & Fittings"
+      ],
+      [
+       "2017-06-23",
+       "Adults & Housing Department",
+       "Community Integrated Care FA SL&FSB",
+       "DAY SUPPORT",
+       "1029.43",
+       "0.0",
+       "",
+       "LD Supported Living"
+      ],
+      [
+       "2017-10-11",
+       "Adults & Housing Department",
+       "Pine View Care Homes Ltd T/a Silver Birches",
+       "",
+       "1738.08",
+       "0.0",
+       "",
+       "Residential Care"
+      ],
+      [
+       "2017-06-02",
+       "Adults & Housing Department",
+       "Croft Hotel",
+       "Accommodation Expenses",
+       "840.0",
+       "168.0",
+       "",
+       "Accommodation Expenses"
+      ],
+      [
+       "2017-05-31",
+       "Education & Childrens Services",
+       "Guardian Protection Services Ltd",
+       "Security & Safety Services",
+       "588.0",
+       "117.6",
+       "",
+       "Public Order & Security Services"
+      ],
+      [
+       "2017-06-21",
+       "Adults & Housing Department",
+       "Abbey Healthcare T/a Aaron Court",
+       "Residential Permanent",
+       "1428.0",
+       "0.0",
+       "",
+       "Residential Care"
+      ]
+     ],
+     "row_count": 60483,
+     "column_count": 8
     }
    ]
   },
@@ -17169,147 +18273,9 @@
    "format": "CSV",
    "resource_url": "https://maps-north-ayrshire.opendata.arcgis.com/api/download/v1/items/9813963ca69b468dbe0a4481b8879b55/csv?layers=10",
    "licence": "OGL-UK",
-   "files_extracted": 2,
-   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
-   "layouts": [
-    {
-     "where": {
-      "table": 1,
-      "exceeded": true
-     },
-     "header": [
-      "OBJECTID",
-      "F_DATE",
-      "VENDOR",
-      "PAYMENT",
-      "QUARTER",
-      "_lon",
-      "_lat"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "1",
-       "1649376000000",
-       "1st Homecare Limited",
-       "86498.87",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "2",
-       "1652918400000",
-       "1st Homecare Limited",
-       "82691.75",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "3",
-       "1649721600000",
-       "Abbeyfield Irvine & Dist Soc",
-       "27695.7",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "4",
-       "1652140800000",
-       "Abbeyfield Irvine & Dist Soc",
-       "67092.64",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "5",
-       "1654646400000",
-       "Abbeyfield Irvine & Dist Soc",
-       "42316.22",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "6",
-       "1651017600000",
-       "Abbeyfield Irvine & Dist Soc",
-       "30334.0",
-       "1.0",
-       "",
-       ""
-      ]
-     ],
-     "row_count": 1000,
-     "column_count": 7,
-     "example_file": "ArcGIS GeoService",
-     "files": 1
-    },
-    {
-     "where": {
-      "table": 1
-     },
-     "header": [
-      "OBJECTID",
-      "F_DATE",
-      "VENDOR",
-      "PAYMENT",
-      "QUARTER"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "1",
-       "2022/04/08 00:00:00+00",
-       "1st Homecare Limited",
-       "86498.87",
-       "1"
-      ],
-      [
-       "2",
-       "2022/05/19 00:00:00+00",
-       "1st Homecare Limited",
-       "82691.75",
-       "1"
-      ],
-      [
-       "3",
-       "2022/04/12 00:00:00+00",
-       "Abbeyfield Irvine & Dist Soc",
-       "27695.7",
-       "1"
-      ],
-      [
-       "4",
-       "2022/05/10 00:00:00+00",
-       "Abbeyfield Irvine & Dist Soc",
-       "67092.64",
-       "1"
-      ],
-      [
-       "5",
-       "2022/06/08 00:00:00+00",
-       "Abbeyfield Irvine & Dist Soc",
-       "42316.22",
-       "1"
-      ],
-      [
-       "6",
-       "2022/04/27 00:00:00+00",
-       "Abbeyfield Irvine & Dist Soc",
-       "30334",
-       "1"
-      ]
-     ],
-     "row_count": 1675,
-     "column_count": 5,
-     "example_file": "CSV",
-     "files": 1
-    }
-   ],
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -17380,147 +18346,9 @@
    "format": "CSV",
    "resource_url": "https://maps-north-ayrshire.opendata.arcgis.com/api/download/v1/items/dd1cf84b02f740b98466e7e0002da36d/csv?layers=11",
    "licence": "OGL-UK",
-   "files_extracted": 2,
-   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
-   "layouts": [
-    {
-     "where": {
-      "table": 1,
-      "exceeded": true
-     },
-     "header": [
-      "OBJECTID",
-      "F_DATE",
-      "VENDOR",
-      "PAYMENT",
-      "QUARTER",
-      "_lon",
-      "_lat"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "1",
-       "1680652800000",
-       "1st Alliance Credit Union Ltd",
-       "25000.0",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "2",
-       "1681344000000",
-       "1st Homecare Limited",
-       "80593.54",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "3",
-       "1684454400000",
-       "1st Homecare Limited",
-       "83770.0",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "4",
-       "1681344000000",
-       "1st Homecare Limited",
-       "84077.51",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "5",
-       "1686873600000",
-       "ADM 2010 Ltd",
-       "90676.2",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "6",
-       "1686009600000",
-       "Abbeyfield Irvine & Dist Soc",
-       "51805.07",
-       "1.0",
-       "",
-       ""
-      ]
-     ],
-     "row_count": 1000,
-     "column_count": 7,
-     "example_file": "ArcGIS GeoService",
-     "files": 1
-    },
-    {
-     "where": {
-      "table": 1
-     },
-     "header": [
-      "OBJECTID",
-      "F_DATE",
-      "VENDOR",
-      "PAYMENT",
-      "QUARTER"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "1",
-       "2023/04/05 00:00:00+00",
-       "1st Alliance Credit Union Ltd",
-       "25000",
-       "1"
-      ],
-      [
-       "2",
-       "2023/04/13 00:00:00+00",
-       "1st Homecare Limited",
-       "80593.54",
-       "1"
-      ],
-      [
-       "3",
-       "2023/05/19 00:00:00+00",
-       "1st Homecare Limited",
-       "83770",
-       "1"
-      ],
-      [
-       "4",
-       "2023/04/13 00:00:00+00",
-       "1st Homecare Limited",
-       "84077.51",
-       "1"
-      ],
-      [
-       "5",
-       "2023/06/16 00:00:00+00",
-       "ADM 2010 Ltd",
-       "90676.2",
-       "1"
-      ],
-      [
-       "6",
-       "2023/06/06 00:00:00+00",
-       "Abbeyfield Irvine & Dist Soc",
-       "51805.07",
-       "1"
-      ]
-     ],
-     "row_count": 3696,
-     "column_count": 5,
-     "example_file": "CSV",
-     "files": 1
-    }
-   ],
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -17591,147 +18419,9 @@
    "format": "CSV",
    "resource_url": "https://maps-north-ayrshire.opendata.arcgis.com/api/download/v1/items/de1c4128814744c0832f0aae1b6be62c/csv?layers=12",
    "licence": "OGL-UK",
-   "files_extracted": 2,
-   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
-   "layouts": [
-    {
-     "where": {
-      "table": 1,
-      "exceeded": true
-     },
-     "header": [
-      "OBJECTID",
-      "F_DATE",
-      "VENDOR",
-      "PAYMENT",
-      "QUARTER",
-      "_lon",
-      "_lat"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "1",
-       "1714089600000",
-       "1st Homecare Limited",
-       "92765.0",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "2",
-       "1716940800000",
-       "1st Homecare Limited",
-       "89135.0",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "3",
-       "1716249600000",
-       "1st Homecare Limited",
-       "85775.0",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "4",
-       "1718928000000",
-       "Abbeyfield Irvine & Dist Soc",
-       "58546.53",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "5",
-       "1713744000000",
-       "Abbeyfield Irvine & Dist Soc",
-       "54766.46",
-       "1.0",
-       "",
-       ""
-      ],
-      [
-       "6",
-       "1716163200000",
-       "Abbeyfield Irvine & Dist Soc",
-       "53884.82",
-       "1.0",
-       "",
-       ""
-      ]
-     ],
-     "row_count": 1000,
-     "column_count": 7,
-     "example_file": "ArcGIS GeoService",
-     "files": 1
-    },
-    {
-     "where": {
-      "table": 1
-     },
-     "header": [
-      "OBJECTID",
-      "F_DATE",
-      "VENDOR",
-      "PAYMENT",
-      "QUARTER"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "1",
-       "2024/04/26 00:00:00+00",
-       "1st Homecare Limited",
-       "92765",
-       "1"
-      ],
-      [
-       "2",
-       "2024/05/29 00:00:00+00",
-       "1st Homecare Limited",
-       "89135",
-       "1"
-      ],
-      [
-       "3",
-       "2024/05/21 00:00:00+00",
-       "1st Homecare Limited",
-       "85775",
-       "1"
-      ],
-      [
-       "4",
-       "2024/06/21 00:00:00+00",
-       "Abbeyfield Irvine & Dist Soc",
-       "58546.53",
-       "1"
-      ],
-      [
-       "5",
-       "2024/04/22 00:00:00+00",
-       "Abbeyfield Irvine & Dist Soc",
-       "54766.46",
-       "1"
-      ],
-      [
-       "6",
-       "2024/05/20 00:00:00+00",
-       "Abbeyfield Irvine & Dist Soc",
-       "53884.82",
-       "1"
-      ]
-     ],
-     "row_count": 1568,
-     "column_count": 5,
-     "example_file": "CSV",
-     "files": 1
-    }
-   ],
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -17802,147 +18492,9 @@
    "format": "CSV",
    "resource_url": "https://maps-north-ayrshire.opendata.arcgis.com/api/download/v1/items/3e465f22e81f4e8c848da1d927bae656/csv?layers=13",
    "licence": "OGL-UK",
-   "files_extracted": 2,
-   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
-   "layouts": [
-    {
-     "where": {
-      "table": 1,
-      "exceeded": true
-     },
-     "header": [
-      "OBJECTID",
-      "CLEARANCE_DATE",
-      "VENDOR_NAME",
-      "PAYMENT_AMOUNT",
-      "QUARTER",
-      "_lon",
-      "_lat"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "1",
-       "15 May 2025",
-       "D Mclaughlin & Sons                     ",
-       "91359.41",
-       "1",
-       "",
-       ""
-      ],
-      [
-       "2",
-       "02 June 2025",
-       "D Mclaughlin & Sons                     ",
-       "88786.22",
-       "1",
-       "",
-       ""
-      ],
-      [
-       "3",
-       "08 May 2025",
-       "North Lanarkshire Council               ",
-       "63321.6",
-       "1",
-       "",
-       ""
-      ],
-      [
-       "4",
-       "14 April 2025",
-       "North Lanarkshire Council               ",
-       "274035.52",
-       "1",
-       "",
-       ""
-      ],
-      [
-       "5",
-       "15 May 2025",
-       "North Lanarkshire Council               ",
-       "461681.65",
-       "1",
-       "",
-       ""
-      ],
-      [
-       "6",
-       "12 June 2025",
-       "North Lanarkshire Council               ",
-       "475645.1",
-       "1",
-       "",
-       ""
-      ]
-     ],
-     "row_count": 1000,
-     "column_count": 7,
-     "example_file": "ArcGIS GeoService",
-     "files": 1
-    },
-    {
-     "where": {
-      "table": 1
-     },
-     "header": [
-      "OBJECTID",
-      "CLEARANCE_DATE",
-      "VENDOR_NAME",
-      "PAYMENT_AMOUNT",
-      "QUARTER"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "1",
-       "15 May 2025",
-       "D Mclaughlin & Sons                     ",
-       "91359.41",
-       "1"
-      ],
-      [
-       "2",
-       "02 June 2025",
-       "D Mclaughlin & Sons                     ",
-       "88786.22",
-       "1"
-      ],
-      [
-       "3",
-       "08 May 2025",
-       "North Lanarkshire Council               ",
-       "63321.6",
-       "1"
-      ],
-      [
-       "4",
-       "14 April 2025",
-       "North Lanarkshire Council               ",
-       "274035.52",
-       "1"
-      ],
-      [
-       "5",
-       "15 May 2025",
-       "North Lanarkshire Council               ",
-       "461681.65",
-       "1"
-      ],
-      [
-       "6",
-       "12 June 2025",
-       "North Lanarkshire Council               ",
-       "475645.1",
-       "1"
-      ]
-     ],
-     "row_count": 1492,
-     "column_count": 5,
-     "example_file": "CSV",
-     "files": 1
-    }
-   ],
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -20302,259 +20854,9 @@
    "format": "CSV",
    "resource_url": "https://data.stirling.gov.uk/api/download/v1/items/5ec062bb89e04946aba5543c4b439c14/csv?layers=0",
    "licence": "OGL-UK",
-   "files_extracted": 2,
-   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
-   "layouts": [
-    {
-     "where": {
-      "table": 1,
-      "exceeded": true
-     },
-     "header": [
-      "Cost_Centre_Name",
-      "Supplier_Name",
-      "Transaction_Type",
-      "Net_Value",
-      "VAT",
-      "Gross_Value",
-      "SubLedger",
-      "Transaction_Reference",
-      "Batch_Number",
-      "Financial_Year_Ending",
-      "Period",
-      "Quarter",
-      "OBJECTID",
-      "_lon",
-      "_lat"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       " Enforcement Team",
-       "Imperial Commercials Ltd",
-       "Invoice",
-       "2868.45",
-       "573.69",
-       "3442.14",
-       "Trade Creditors",
-       "3007067",
-       "P083178143",
-       "2024",
-       "1",
-       "1",
-       "1",
-       "",
-       ""
-      ],
-      [
-       "1140 Entitled Hours Support",
-       "Portakabin (Scotland) Ltd",
-       "Invoice",
-       "25961.12",
-       "5192.22",
-       "31153.34",
-       "Trade Creditors",
-       "3005908",
-       "P063178062",
-       "2024",
-       "1",
-       "1",
-       "2",
-       "",
-       ""
-      ],
-      [
-       "1140 Entitled Hours Support",
-       "Portakabin (Scotland) Ltd",
-       "Invoice",
-       "11745.37",
-       "2349.07",
-       "14094.44",
-       "Trade Creditors",
-       "3006451",
-       "P073178096",
-       "2024",
-       "1",
-       "1",
-       "3",
-       "",
-       ""
-      ],
-      [
-       "24/7 Mecs",
-       "TEC Quality Limited",
-       "Invoice",
-       "2040.00",
-       "408.00",
-       "2448.00",
-       "Trade Creditors",
-       "3007625",
-       "B000214303",
-       "2024",
-       "1",
-       "1",
-       "4",
-       "",
-       ""
-      ],
-      [
-       "Aberfoyle Primary School",
-       "Skanska UK Plc",
-       "Invoice",
-       "450.00",
-       "90.00",
-       "540.00",
-       "Trade Creditors",
-       "3006406",
-       "B000214284",
-       "2024",
-       "1",
-       "1",
-       "5",
-       "",
-       ""
-      ],
-      [
-       "Active Primary Schools Project",
-       "Active Stirling Ltd",
-       "Invoice",
-       "5376.15",
-       "0.00",
-       "5376.15",
-       "Trade Creditors",
-       "3004379",
-       "B000214235",
-       "2024",
-       "1",
-       "1",
-       "6",
-       "",
-       ""
-      ]
-     ],
-     "row_count": 2000,
-     "column_count": 15,
-     "example_file": "ArcGIS GeoService",
-     "files": 1
-    },
-    {
-     "where": {
-      "table": 1
-     },
-     "header": [
-      "Cost_Centre_Name",
-      "Supplier_Name",
-      "Transaction_Type",
-      "Net_Value",
-      "VAT",
-      "Gross_Value",
-      "SubLedger",
-      "Transaction_Reference",
-      "Batch_Number",
-      "Financial_Year_Ending",
-      "Period",
-      "Quarter",
-      "OBJECTID"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       " Enforcement Team",
-       "Imperial Commercials Ltd",
-       "Invoice",
-       "2868.45",
-       "573.69",
-       "3442.14",
-       "Trade Creditors",
-       "3007067",
-       "P083178143",
-       "2024",
-       "1",
-       "1",
-       "1"
-      ],
-      [
-       "1140 Entitled Hours Support",
-       "Portakabin (Scotland) Ltd",
-       "Invoice",
-       "25961.12",
-       "5192.22",
-       "31153.34",
-       "Trade Creditors",
-       "3005908",
-       "P063178062",
-       "2024",
-       "1",
-       "1",
-       "2"
-      ],
-      [
-       "1140 Entitled Hours Support",
-       "Portakabin (Scotland) Ltd",
-       "Invoice",
-       "11745.37",
-       "2349.07",
-       "14094.44",
-       "Trade Creditors",
-       "3006451",
-       "P073178096",
-       "2024",
-       "1",
-       "1",
-       "3"
-      ],
-      [
-       "24/7 Mecs",
-       "TEC Quality Limited",
-       "Invoice",
-       "2040.00",
-       "408.00",
-       "2448.00",
-       "Trade Creditors",
-       "3007625",
-       "B000214303",
-       "2024",
-       "1",
-       "1",
-       "4"
-      ],
-      [
-       "Aberfoyle Primary School",
-       "Skanska UK Plc",
-       "Invoice",
-       "450.00",
-       "90.00",
-       "540.00",
-       "Trade Creditors",
-       "3006406",
-       "B000214284",
-       "2024",
-       "1",
-       "1",
-       "5"
-      ],
-      [
-       "Active Primary Schools Project",
-       "Active Stirling Ltd",
-       "Invoice",
-       "5376.15",
-       "0.00",
-       "5376.15",
-       "Trade Creditors",
-       "3004379",
-       "B000214235",
-       "2024",
-       "1",
-       "1",
-       "6"
-      ]
-     ],
-     "row_count": 25298,
-     "column_count": 13,
-     "example_file": "CSV",
-     "files": 1
-    }
-   ],
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -20681,147 +20983,9 @@
    "format": "CSV",
    "resource_url": "https://data.stirling.gov.uk/api/download/v1/items/2c5eebd38b4742e288492e1f8aa12945/csv?layers=0",
    "licence": "OGL-UK",
-   "files_extracted": 2,
-   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
-   "layouts": [
-    {
-     "where": {
-      "table": 1,
-      "exceeded": false
-     },
-     "header": [
-      "Supplier_Name",
-      "Count_",
-      "Net_Value",
-      "Gross_Value",
-      "OBJECTID",
-      "_lon",
-      "_lat"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "Stirling Gateway Ltd",
-       "120",
-       "16218843.16",
-       "19462610",
-       "1",
-       "",
-       ""
-      ],
-      [
-       "Invoices Processed Under 500 GBP",
-       "3",
-       "6279391.71",
-       "7044280",
-       "2",
-       "",
-       ""
-      ],
-      [
-       "Falkirk Council",
-       "116",
-       "5696150.96",
-       "5834417",
-       "3",
-       "",
-       ""
-      ],
-      [
-       "Balfron School Services Ltd",
-       "78",
-       "4181132.71",
-       "5134966",
-       "4",
-       "",
-       ""
-      ],
-      [
-       "University Of Stirling",
-       "37",
-       "4367948.69",
-       "4378878",
-       "5",
-       "",
-       ""
-      ],
-      [
-       "Hillhouse Quarry Group Limited",
-       "14",
-       "2700511.21",
-       "3240614",
-       "6",
-       "",
-       ""
-      ]
-     ],
-     "row_count": 100,
-     "column_count": 7,
-     "example_file": "ArcGIS GeoService",
-     "files": 1
-    },
-    {
-     "where": {
-      "table": 1
-     },
-     "header": [
-      "Supplier_Name",
-      "Count",
-      "Net_Value",
-      "Gross_Value",
-      "OBJECTID"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "Stirling Gateway Ltd",
-       "120",
-       "16218843.16",
-       "1.946261E+07",
-       "1"
-      ],
-      [
-       "Invoices Processed Under 500 GBP",
-       "3",
-       "6279391.71",
-       "7044280",
-       "2"
-      ],
-      [
-       "Falkirk Council",
-       "116",
-       "5696150.96",
-       "5834417",
-       "3"
-      ],
-      [
-       "Balfron School Services Ltd",
-       "78",
-       "4181132.71",
-       "5134966",
-       "4"
-      ],
-      [
-       "University Of Stirling",
-       "37",
-       "4367948.69",
-       "4378878",
-       "5"
-      ],
-      [
-       "Hillhouse Quarry Group Limited",
-       "14",
-       "2700511.21",
-       "3240614",
-       "6"
-      ]
-     ],
-     "row_count": 100,
-     "column_count": 5,
-     "example_file": "CSV",
-     "files": 1
-    }
-   ],
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {
@@ -23108,315 +23272,9 @@
    "format": "CSV",
    "resource_url": "https://opendatanew-tunbridgewells.opendata.arcgis.com/api/download/v1/items/0611f62e114245c8989f5d793f21fd4f/csv?layers=0",
    "licence": "OGL-UK-3.0",
-   "files_extracted": 2,
-   "note": "This dataset has several files. 'layouts' lists every distinct header found across them with a sample and how many files carry it; the first is 'columns', each further one needs an entry in 'alt_columns'.",
-   "layouts": [
-    {
-     "where": {
-      "table": 1,
-      "exceeded": false
-     },
-     "header": [
-      "Body_Name",
-      "Service_Label",
-      "Service_Code",
-      "Division_Code",
-      "Division_Description",
-      "Organisational_Unit",
-      "Expenditure_Category",
-      "Expenditure_Category_Code",
-      "Activity_Description",
-      "Activity_Code",
-      "Date_Received",
-      "Date_Paid",
-      "Reference",
-      "Net_Amount_in_Sterling",
-      "Capital_Revenue",
-      "Customer_Supplier_Description",
-      "ObjectId",
-      "_lon",
-      "_lat"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "Tunbridge Wells Borough Council",
-       "Environmental and regulatory services ",
-       "105",
-       "CS",
-       "Client Services (Depot)",
-       "",
-       "External Contract Payments",
-       "3220",
-       "-",
-       "-",
-       "",
-       "",
-       "240668",
-       "324287.05",
-       "Revenue",
-       "Urbaser Ltd",
-       "1",
-       "",
-       ""
-      ],
-      [
-       "Tunbridge Wells Borough Council",
-       "Central Services",
-       "102",
-       "CO",
-       "Communications",
-       "",
-       "Local Magazine",
-       "3155",
-       "-",
-       "-",
-       "",
-       "",
-       "240953",
-       "7882.61",
-       "Revenue",
-       "William Gibbons & Sons Limited",
-       "2",
-       "",
-       ""
-      ],
-      [
-       "Tunbridge Wells Borough Council",
-       "Planning Services",
-       "110",
-       "PL",
-       "Planning",
-       "",
-       "Planning Consultant Fees",
-       "3270",
-       "New Local Plan",
-       "EV0589",
-       "",
-       "",
-       "241008",
-       "4000",
-       "Revenue",
-       "Rrr Consultancy Ltd",
-       "3",
-       "",
-       ""
-      ],
-      [
-       "Tunbridge Wells Borough Council",
-       "Central Services",
-       "102",
-       "PS",
-       "Property Services",
-       "",
-       "Property Consultants",
-       "3290",
-       "-",
-       "-",
-       "",
-       "",
-       "241004",
-       "3382.5",
-       "Revenue",
-       "Spider Project Management Ltd",
-       "4",
-       "",
-       ""
-      ],
-      [
-       "Tunbridge Wells Borough Council",
-       "Environmental and regulatory services ",
-       "105",
-       "PK",
-       "Parks",
-       "",
-       "Grounds Maint Contracts",
-       "2050",
-       "-",
-       "-",
-       "",
-       "",
-       "240244",
-       "2177",
-       "Revenue",
-       "Tivoli Group Limited",
-       "5",
-       "",
-       ""
-      ],
-      [
-       "Tunbridge Wells Borough Council",
-       "Planning Services",
-       "110",
-       "PL",
-       "Planning",
-       "",
-       "Planning Consultant Fees",
-       "3270",
-       "Planning Viability Reviews",
-       "RV0549",
-       "",
-       "",
-       "241020",
-       "2000",
-       "Revenue",
-       "Dixon Searle Partnership Ltd",
-       "6",
-       "",
-       ""
-      ]
-     ],
-     "row_count": 280,
-     "column_count": 19,
-     "example_file": "ArcGIS GeoService",
-     "files": 1
-    },
-    {
-     "where": {
-      "table": 1
-     },
-     "header": [
-      "Body_Name",
-      "Service_Label",
-      "Service_Code",
-      "Division_Code",
-      "Division_Description",
-      "Organisational_Unit",
-      "Expenditure_Category",
-      "Expenditure_Category_Code",
-      "Activity_Description",
-      "Activity_Code",
-      "Date_Received",
-      "Date_Paid",
-      "Reference",
-      "Net_Amount_in_Sterling",
-      "Capital_Revenue",
-      "Customer_Supplier_Description",
-      "ObjectId"
-     ],
-     "header_row": 0,
-     "sample_rows": [
-      [
-       "Tunbridge Wells Borough Council",
-       "Environmental and regulatory services ",
-       "105",
-       "CS",
-       "Client Services (Depot)",
-       "",
-       "External Contract Payments",
-       "3220",
-       "-",
-       "-",
-       "",
-       "",
-       "240668",
-       "324287.05",
-       "Revenue",
-       "Urbaser Ltd",
-       "1"
-      ],
-      [
-       "Tunbridge Wells Borough Council",
-       "Central Services",
-       "102",
-       "CO",
-       "Communications",
-       "",
-       "Local Magazine",
-       "3155",
-       "-",
-       "-",
-       "",
-       "",
-       "240953",
-       "7882.61",
-       "Revenue",
-       "William Gibbons & Sons Limited",
-       "2"
-      ],
-      [
-       "Tunbridge Wells Borough Council",
-       "Planning Services",
-       "110",
-       "PL",
-       "Planning",
-       "",
-       "Planning Consultant Fees",
-       "3270",
-       "New Local Plan",
-       "EV0589",
-       "",
-       "",
-       "241008",
-       "4000",
-       "Revenue",
-       "Rrr Consultancy Ltd",
-       "3"
-      ],
-      [
-       "Tunbridge Wells Borough Council",
-       "Central Services",
-       "102",
-       "PS",
-       "Property Services",
-       "",
-       "Property Consultants",
-       "3290",
-       "-",
-       "-",
-       "",
-       "",
-       "241004",
-       "3382.5",
-       "Revenue",
-       "Spider Project Management Ltd",
-       "4"
-      ],
-      [
-       "Tunbridge Wells Borough Council",
-       "Environmental and regulatory services ",
-       "105",
-       "PK",
-       "Parks",
-       "",
-       "Grounds Maint Contracts",
-       "2050",
-       "-",
-       "-",
-       "",
-       "",
-       "240244",
-       "2177",
-       "Revenue",
-       "Tivoli Group Limited",
-       "5"
-      ],
-      [
-       "Tunbridge Wells Borough Council",
-       "Planning Services",
-       "110",
-       "PL",
-       "Planning",
-       "",
-       "Planning Consultant Fees",
-       "3270",
-       "Planning Viability Reviews",
-       "RV0549",
-       "",
-       "",
-       "241020",
-       "2000",
-       "Revenue",
-       "Dixon Searle Partnership Ltd",
-       "6"
-      ]
-     ],
-     "row_count": 280,
-     "column_count": 17,
-     "example_file": "CSV",
-     "files": 1
-    }
-   ],
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
    "tables": [
     {
      "where": {

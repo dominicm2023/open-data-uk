@@ -1237,5 +1237,134 @@
   "version": "1",
   "reviewer": "Dominic Matthews via Claude",
   "reviewed_at": "2026-09-07"
+ },
+ "aa8cf97de64400c59d6f0c082976dad0070043a67c89344794d4b3b44c65044e": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "payment_date",
+   "supplier": "beneficiary",
+   "amount_gbp": "amount",
+   "expense_area": "department",
+   "expense_type": "merchant_category",
+   "reference": "unique_id",
+   "description": "purpose_of_expenditure"
+  },
+  "constants": {
+   "threshold_gbp": 500,
+   "body": "Leicester City Council"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Expenditure exceeding £500 - 2026' (efcc2066): its headers are all present in this edition's files. Sibling notes: 'amount' appears to be the net (pre-VAT) figure — sample rows show a separate 'vat' column at ~20% of 'amount' (e.g. amount 1960.0, vat 392.0). 'vat' and 'vat_code' are not mapped, per the rule against folding VAT into amount_gbp. 'beneficiary' is sometimes 'Redacted' in the sample rows; kept as pub Review 2026-09-07: same layout and body as the reviewed 2022 year; dates and amounts in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "a826fa89cc6cf95f707a581b4e61138a8c8a0dc087a60a1b260cfd35c3ee4b8a": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "payment_date",
+   "supplier": "beneficiary",
+   "amount_gbp": "amount",
+   "expense_area": "department",
+   "expense_type": "merchant_category",
+   "reference": "unique_id",
+   "description": "purpose_of_expenditure"
+  },
+  "constants": {
+   "threshold_gbp": 500,
+   "body": "Leicester City Council"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Expenditure exceeding £500 - 2026' (efcc2066): its headers are all present in this edition's files. Sibling notes: 'amount' appears to be the net (pre-VAT) figure — sample rows show a separate 'vat' column at ~20% of 'amount' (e.g. amount 1960.0, vat 392.0). 'vat' and 'vat_code' are not mapped, per the rule against folding VAT into amount_gbp. 'beneficiary' is sometimes 'Redacted' in the sample rows; kept as pub Review 2026-09-07: same layout and body as the reviewed 2022 year; dates and amounts in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "d76fb81df1704f8463594e9ab0dfef5bbf906c2634ff849f1e881a675618f9ba": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "payment_date",
+   "supplier": "beneficiary",
+   "amount_gbp": "amount",
+   "expense_area": "department",
+   "expense_type": "merchant_category",
+   "reference": "unique_id",
+   "description": "purpose_of_expenditure"
+  },
+  "constants": {
+   "threshold_gbp": 500,
+   "body": "Leicester City Council"
+  },
+  "notes": "Cloned from the reviewed mapping of the sibling edition 'Expenditure exceeding £500 - 2026' (efcc2066): its headers are all present in this edition's files. Sibling notes: 'amount' appears to be the net (pre-VAT) figure — sample rows show a separate 'vat' column at ~20% of 'amount' (e.g. amount 1960.0, vat 392.0). 'vat' and 'vat_code' are not mapped, per the rule against folding VAT into amount_gbp. 'beneficiary' is sometimes 'Redacted' in the sample rows; kept as pub Review 2026-09-07: same layout and body as the reviewed 2022 year; dates and amounts in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "0c183e835321f5c4125f1af90ec9e3668f0cdc6108efaa4e43a4b673ab7d88c2": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "payment_date",
+   "supplier": "beneficiary",
+   "amount_gbp": "amount",
+   "expense_area": "department",
+   "expense_type": "merchant_category",
+   "description": "purpose_of_expenditure"
+  },
+  "constants": {
+   "body": "Leicester City Council",
+   "threshold_gbp": 500
+  },
+  "notes": "Cloned from the reviewed 2022 mapping (ad249d35) less 'reference': the 2015 files carry no unique_id column. Same body name, threshold 500 from the title. Review 2026-09-07: same layout and body as the reviewed 2022 year; dates and amounts in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "197b6b699c751750e334e058a9d1be5269a91bb06e8d5e59c496263be77cc7c3": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "payment_date",
+   "supplier": "beneficiary",
+   "amount_gbp": "amount",
+   "expense_area": "department",
+   "expense_type": "merchant_category",
+   "description": "purpose_of_expenditure"
+  },
+  "constants": {
+   "body": "Leicester City Council",
+   "threshold_gbp": 500
+  },
+  "notes": "Cloned from the reviewed 2022 mapping (ad249d35) less 'reference': the 2016 files carry no unique_id column. Same body name, threshold 500 from the title. Review 2026-09-07: same layout and body as the reviewed 2022 year; dates and amounts in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
+ },
+ "8d195e0603f1d973c864302ba0fa0d90dbfd4b8834a160301d60a89c8fba1f89": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "payment_date": "payment_date",
+   "supplier": "beneficiary",
+   "amount_gbp": "amount",
+   "expense_area": "department",
+   "expense_type": "merchant_category",
+   "description": "purpose_of_expenditure"
+  },
+  "constants": {
+   "body": "Leicester City Council",
+   "threshold_gbp": 500
+  },
+  "notes": "Cloned from the reviewed 2022 mapping (ad249d35) less 'reference': the 2017 files carry no unique_id column. Same body name, threshold 500 from the title. Review 2026-09-07: same layout and body as the reviewed 2022 year; dates and amounts in range on preview.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-07"
  }
 }
