@@ -66,6 +66,27 @@ Otherwise it must name the OGL by URL or by name. OS attribution wording is
 a condition the OGL allows, not a restriction. Every refusal now keeps its
 evidence by hash, so the next widening can be argued from wording too.
 
+**Mixed statements, read by a person (7 September).** Dominic read the
+refused statements and decided: a statement that *names the OGL* is the
+OGL even when it also mentions the Ordnance Survey mapping the data was
+derived from ("derived data exemption", "Presumption to Publish", PSEUL,
+INSPIRE end-user terms, "OS Licensing") or a portal's catalogue of every
+licence it uses (Stirling's page, which also lists the Non-Commercial
+Government Licence). Those words are recorded as `mixed` on the licence
+and shown beside the body on the family page; the OS acknowledgement line
+is kept verbatim and travels in the attribution. CC BY (plain) is open and
+OGL-compatible and is accepted as itself (Northern Ireland Office). A
+dataset-level field that is only an OS/LGIH acknowledgement is accepted for
+a portal listed in `PORTAL_LICENCE` with the reason (Bristol: its datasets
+harvested to data.gov.uk are `uk-ogl`). Still refused whatever else is
+said: no derivatives, all rights reserved, CC NC/ND/SA. Still refused
+without an OGL beside them: PSMA-only terms (Sheffield on data.gov.uk — the
+PSMA licenses the council, not the public; only a derived-data release
+under the OGL reaches us), INSPIRE end-user licences on their own
+(Sheffield's hub), OSNI basemap copyright with no licence (Mid & East
+Antrim), "no restrictions on public access" (an INSPIRE access constraint,
+not a licence — Transport for West Midlands, left for now).
+
 **Personal data is a separate decision from licence.** OGL excludes it.
 Senior-salary returns name people by statute; republishing those names in a
 combined table is a choice for Dominic, not a consequence of the licence.

@@ -693,6 +693,15 @@ def build(family: str, include_proposed: bool = False) -> dict:
         entry["held_by_file"] = [{"file": (k[0] or "")[-60:], "why": k[1], "rows": n}
                                  for k, n in sorted(tally.items(), key=lambda kv: -kv[1])[:8]]
         entry["notes"] = spec.get("notes")
+        lic = json.loads(job["licence_json"]) if job["licence_json"] else {}
+        if lic.get("mixed") or lic.get("basis"):
+            # what the licence statement said besides the OGL, and what a
+            # portal-level decision rests on: on the page, beside the body
+            entry["licence_note"] = ((f"the statement also mentions {', '.join(lic['mixed'])}" if lic.get("mixed") else "")
+                                     + ("; " if lic.get("mixed") and lic.get("basis") else "")
+                                     + (lic.get("basis") or ""))
+        if lic.get("os_acknowledgement"):
+            entry["os_acknowledgement"] = lic["os_acknowledgement"]
         if spec.get("status") == "reviewed":
             entry["ladder"] = "published"; published += ok
         else:

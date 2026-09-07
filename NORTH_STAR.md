@@ -171,6 +171,10 @@ A living list. Add freely; move to "Done" with the commit that did it.
   map or years grid, computed Q&A, column fill, filters with filtered CSV
   download from a SQLite twin of each table. Date parser widened (28% of
   spend rows had lost their date); month-first files detected per file.
+- 7 Sep — licence gate widened on read wording: OGL named beside OS /
+  INSPIRE / portal-catalogue words is the OGL (York, Wiltshire, Stirling);
+  CC BY accepted; Bristol's acknowledgement-only fields accepted by portal
+  decision. PSMA-only, INSPIRE-only and OSNI-only stay refused.
 - 5 Sep — older editions of a series canonicalise to the latest when the
   description matches: 4,231 pages in 1,144 series, out of the sitemap,
   still served and searchable. (B of the not-indexed fix.)

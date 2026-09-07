@@ -97,33 +97,55 @@ def sha(body: bytes) -> str:
 
 _OGL_URL = re.compile(r"nationalarchives\.gov\.uk/doc/open-government-licence(?:/version/([123]))?", re.I)
 _OGL_NAME = re.compile(r"open\s+government\s+licen[cs]e(?:\s*\(?\s*(?:ogl)?\s*v?(?:ersion)?\s*([123])(?:\.0)?\s*\)?)?", re.I)
-# Words that mean a licence other than the OGL is in force, or that reuse is
-# restricted. Ordnance Survey *attribution* ("Contains OS data © Crown
-# copyright") is not on this list: it is a condition the OGL itself allows.
-_RESTRICTED = re.compile(r"inspire\s+end\s+user|end\s+user\s+licen[cs]e|public\s+sector\s+end\s+user|psma|pseul|"
-                         r"derived\s+data\s+exemption|non.?commercial|no.?derivatives|all\s+rights\s+reserved|"
-                         r"notspecified|not\s+specified|restricted|cc.?by.?nc|creative\s+commons", re.I)
+_CCBY = re.compile(r"creativecommons\.org/licenses/by/([0-9.]+)|\bcc[- ]by(?:[- ]([0-9.]+))?\b(?![- ](?:nc|nd|sa))|"
+                   r"creative\s+commons\s+attribution(?:\s+([0-9.]+))?(?!\s*[-–]?\s*(?:non|no|share))", re.I)
+# Words that end the matter whatever else the statement says.
+_HARD = re.compile(r"no.?derivatives|all\s+rights\s+reserved|cc.?by.?(?:nc|nd|sa)|share.?alike|"
+                   r"notspecified|not\s+specified", re.I)
+# Words that describe other terms in play — OS mapping the data was derived
+# from, INSPIRE end-user terms, a portal's list of every licence it uses.
+# Beside a named OGL they are noted, not refused: a person read York's,
+# Wiltshire's and Stirling's on 7 September 2026 and decided the OGL is the
+# operative licence when the statement names it. Without an OGL they refuse.
+_MIXED = re.compile(r"inspire\s+end\s+user|end\s+user\s+licen[cs]e|public\s+sector\s+end\s+user|psma|pseul|"
+                    r"derived\s+data\s+exemption|presumption\s+to\s+publish|non.?commercial|restricted|"
+                    r"os\s+licensing|ordnance\s+survey", re.I)
+# The acknowledgement a derived-data release must carry, kept verbatim.
+_OS_ACK = re.compile(r"©?\s*(?:crown\s+copyright\s+and\s+database\s+rights?|local\s+government\s+information\s+house[^.]{0,60}?"
+                     r"copyright\s+and\s+database\s+rights?)\s*(?:\[[^\]]*\]|\d{4})?\s*(?:ordnance\s+survey)?\s*\d{6,9}", re.I)
 _NEUTRAL = {"uk-ogl", "uk_ogl", "ogl", "ogl-uk", "uk open government licence (ogl)", "open government license", "",
             "http://reference.data.gov.uk/id/open-government-licence",
             "https://reference.data.gov.uk/id/open-government-licence"}
+# A portal whose dataset-level field carries only an OS acknowledgement,
+# while the portal itself publishes under the OGL. Each entry is a person's
+# decision with what it rests on; nothing is inferred for portals not here.
+PORTAL_LICENCE = {
+    "bristol": ("3", "Bristol's dataset fields carry only an Ordnance Survey / LGIH acknowledgement; the council's "
+                     "datasets harvested to data.gov.uk are licensed uk-ogl. Decision DM 2026-09-07."),
+}
 
 
-def licence(fields) -> dict:
-    """An Open Government Licence, stated unambiguously, or refuse.
+def licence(fields, portal: str | None = None) -> dict:
+    """An open licence, stated, or refuse.
 
     Every value — a CKAN id, a URL, an ArcGIS licenseInfo paragraph — is read
-    the same way. Text that names a restricted licence (INSPIRE end-user
-    terms, OS PSMA, "derived data exemption", non-commercial) refuses, even
-    if the OGL is mentioned beside it: mixed terms need a person. Otherwise
-    the value must name the OGL, by URL or by name; a generic identifier
-    such as data.gov.uk's "uk-ogl" counts as naming it, because the National
-    Archives holds all OGL versions compatible and v3 terms apply. OS
-    attribution wording is not a restriction: 4 of the first refused
-    councils were refused for saying "Contains OS data © Crown copyright"
-    in front of an OGL link. The exact statement is kept as evidence.
+    the same way. The OGL named (by URL, by name, or by a generic identifier
+    such as data.gov.uk's "uk-ogl") is the licence, even beside words about
+    the OS mapping it was derived from or a portal's catalogue of licences;
+    those words are recorded as `mixed` so a reader can see them. CC BY is
+    open and OGL-compatible and is accepted as itself. A statement that is
+    only an OS acknowledgement is accepted for a portal a person has listed
+    in PORTAL_LICENCE. Words that mean the data is not open (no derivatives,
+    all rights reserved, CC NC/ND/SA) refuse whatever else is said. The exact
+    statement is kept as evidence; the OS acknowledgement, where there is
+    one, travels in the attribution.
     """
     versions: set[str] = set()
     named = False
+    ccby: str | None = None
+    mixed: set[str] = set()
+    acks: list[str] = []
+    saw_text = False
     for value in fields:
         if not value:
             continue
@@ -139,8 +161,14 @@ def licence(fields) -> dict:
             versions.add(m_id.group(1)); named = True; continue
         if low in _NEUTRAL:
             named = True; continue
-        if _RESTRICTED.search(low) or any(_RESTRICTED.search(l) for l in links):
-            raise Refused("Licence text names a restricted or non-OGL licence: " + text[:120])
+        saw_text = True
+        for src in [low] + [l.lower() for l in links]:
+            if _HARD.search(src):
+                raise Refused("Licence text names a non-open licence: " + text[:120])
+        for m in _MIXED.finditer(low):
+            mixed.add(m.group(0).lower())
+        for m in _OS_ACK.finditer(text):
+            acks.append(re.sub(r"\s+", " ", m.group(0)).strip())
         hit = False
         for m in list(_OGL_URL.finditer(low)) + [_OGL_URL.search(l) for l in links if _OGL_URL.search(l)]:
             hit = True
@@ -153,30 +181,52 @@ def licence(fields) -> dict:
                 versions.add(m.group(1))
         if hit:
             named = True
-        else:
+            continue
+        m = _CCBY.search(low) or next((_CCBY.search(l.lower()) for l in links if _CCBY.search(l.lower())), None)
+        if m:
+            ccby = next((g for g in m.groups() if g), None) or "4.0"
+            continue
+    if not named and not ccby:
+        if saw_text and acks and portal in PORTAL_LICENCE and not mixed - {"ordnance survey"}:
+            v, basis = PORTAL_LICENCE[portal]
+            return {"id": f"OGL-UK-{v}.0", "version": f"{v}.0",
+                    "url": f"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/{v}/",
+                    "attribution": f"Contains public sector information licensed under the Open Government Licence v{v}.0. "
+                                   + " ".join(dict.fromkeys(acks)),
+                    "mixed": [], "os_acknowledgement": " | ".join(dict.fromkeys(acks)), "basis": basis}
+        if saw_text and mixed:
+            raise Refused("Licence text names other terms and no open licence: " + ", ".join(sorted(mixed))[:120])
+        if saw_text:
             raise Refused("Unrecognised licence statement: " + text[:160])
-    if not named:
         raise Refused("No licence stated")
-    if len(versions) > 1:
-        raise Refused("Conflicting OGL versions stated")
-    v = versions.pop() if versions else None
-    return {"id": f"OGL-UK-{v}.0" if v else "OGL-UK",
-            "version": f"{v}.0" if v else "unstated (v3 terms apply)",
-            "url": f"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/{v or 3}/",
-            "attribution": ("Contains public sector information licensed under the Open Government Licence"
-                            + (f" v{v}.0." if v else " (version unstated; v3 terms apply)."))}
+    if named:
+        if len(versions) > 1:
+            raise Refused("Conflicting OGL versions stated")
+        v = versions.pop() if versions else None
+        ack = " ".join(dict.fromkeys(acks))
+        return {"id": f"OGL-UK-{v}.0" if v else "OGL-UK",
+                "version": f"{v}.0" if v else "unstated (v3 terms apply)",
+                "url": f"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/{v or 3}/",
+                "attribution": ("Contains public sector information licensed under the Open Government Licence"
+                                + (f" v{v}.0." if v else " (version unstated; v3 terms apply).")
+                                + (" " + ack if ack else "")),
+                "mixed": sorted(mixed), "os_acknowledgement": " | ".join(dict.fromkeys(acks)) or None}
+    return {"id": f"CC-BY-{ccby}", "version": ccby,
+            "url": f"https://creativecommons.org/licenses/by/{ccby}/",
+            "attribution": f"Licensed under Creative Commons Attribution {ccby} (CC BY {ccby}).",
+            "mixed": sorted(mixed), "os_acknowledgement": None}
 
 
-def licence_from_metadata(kind: str, doc: dict) -> dict:
+def licence_from_metadata(kind: str, doc: dict, portal: str | None = None) -> dict:
     if kind == "ckan":
         if doc.get("success") is not True:
             raise Refused("Unsuccessful CKAN response")
         p = doc["result"]
-        return licence([p.get(k) for k in ("license_id", "license_title", "license_url")])
+        return licence([p.get(k) for k in ("license_id", "license_title", "license_url")], portal)
     if kind == "arcgis":
         if doc.get("error"):
             raise Refused("ArcGIS item error")
-        return licence([doc.get("licenseInfo")])
+        return licence([doc.get("licenseInfo")], portal)
     raise Refused("Unknown metadata kind " + kind)
 
 
@@ -323,11 +373,11 @@ def admit(c: sqlite3.Connection, family: str, src: dict) -> str | None:
         if src["licence_kind"] in ("ckan", "arcgis") and src["metadata_url"]:
             body, _, _ = fetch(src["metadata_url"], LIMITS["max_metadata_bytes"])
             evidence_sha = store("evidence", body)
-            approval = licence_from_metadata(src["licence_kind"], json.loads(body))
+            approval = licence_from_metadata(src["licence_kind"], json.loads(body), src.get("portal"))
             evidence_url, kind = src["metadata_url"], src["licence_kind"]
         else:
             raw = src.get("index_licence_raw") or ""
-            approval = licence([raw])
+            approval = licence([raw], src.get("portal"))
             body = json.dumps({"index_licence_raw": raw, "harvested_at": src["index_harvested_at"],
                                "dataset_key": src["dataset_key"]}).encode()
             evidence_sha = store("evidence", body)

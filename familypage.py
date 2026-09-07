@@ -325,7 +325,7 @@ def render_family(family: str, site_url: str) -> str | None:
 
     def _review_note(notes: str) -> str:
         # The reviewer's own sentences, if any, ahead of the proposer's description.
-        parts = re.findall(r"Review \d{4}-\d{2}-\d{2}:.*?(?=Review \d{4}-\d{2}-\d{2}:|$)", notes, flags=re.S)
+        parts = re.findall(r"Review (?:\d{4}-\d{2}-\d{2}|licence):.*?(?=Review (?:\d{4}-\d{2}-\d{2}|licence):|$)", notes, flags=re.S)
         text = " ".join(x.strip() for x in parts) if parts else notes
         return text[:480] + ("…" if len(text) > 480 else "")
 
@@ -334,8 +334,15 @@ def render_family(family: str, site_url: str) -> str | None:
     # a file layout that changed one year.
     notes_by_pub: dict[str, list[str]] = {}
     for e in s.get("sources", []):
-        if e.get("ladder") == "published" and e.get("notes"):
+        if e.get("ladder") != "published":
+            continue
+        if e.get("notes"):
             notes_by_pub.setdefault(e["publisher"], []).append(e["notes"])
+        if e.get("licence_note") or e.get("os_acknowledgement"):
+            lic = "Review licence: " + (e.get("licence_note") or "")
+            if e.get("os_acknowledgement"):
+                lic += f" Carries the acknowledgement: {e['os_acknowledgement']}."
+            notes_by_pub.setdefault(e["publisher"], []).append(lic)
     bodies = "".join(
         f'<li>{esc(pub)} <b>{n:,}</b></li>'
         for pub, n in sorted(by_pub.items(), key=lambda kv: (-kv[1], kv[0])))
