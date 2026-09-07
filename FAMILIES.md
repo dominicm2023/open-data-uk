@@ -185,7 +185,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 |---|---|---|---|
 | recycling_centres | 30 sources | 18 | 13 sources, 98 rows, 12 bodies |
 | air_quality_annual | 56 + 5 national networks | 39 | 22 sources, ~55,000 rows, 10 bodies (AURN, LMAM, Scotland, Wales, Northern Ireland; 1990-2026) |
-| spend_over_500 | 187 | 54 | 46 sources, 3,579,846 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
+| spend_over_500 | 212 (every edition) | 76 | 68 sources, 4,259,913 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
 
 Held in review, not published: Bradford's diffusion tubes (nothing in the
 file, title or description names the pollutant); Perth & Kinross (mixes
@@ -269,6 +269,18 @@ reason on the page: Air Quality England (no terms found; the sites are
 councils'). Rows past a site's ratified date, or under 75% data capture,
 say so in `qualifier`. Pollutants: NO2, NO, NOx, O3, SO2, CO (mg/m³),
 PM10, PM2.5 (gravimetric marked); hydrocarbons not taken.
+
+**Editions and twins (8 September).** A series family's registry now
+takes every edition of a dataset (Leicester's 2015-2021, Stirling's
+2019-2023, Tunbridge Wells' 2014-2023: sixteen years, mapped by cloning
+the reviewed sibling's mapping where the headers match). The same run
+showed that a file fetched in two formats had been two files — Leicester
+lists every year as `.csv` and `.json`, MHCLG every month as `.csv` and
+`.xls`, Opendatasoft names both `…/exports/csv` and `…/exports/json` —
+and 104 such twins had doubled those bodies' rows. A series keeps one copy
+of each file, named by the path segment that names it. The storage budget
+is 10 GB (2 GB was reached and fetches failed silently as "previous
+snapshot kept").
 
 ## The loop from here
 
