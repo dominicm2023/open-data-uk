@@ -3404,3 +3404,24 @@ sources:
     api: https://content.explore-education-statistics.service.gov.uk/api
     web: https://explore-education-statistics.service.gov.uk
     dataset_url: https://explore-education-statistics.service.gov.uk/find-statistics/{name}
+
+  - id: nhs_scotland
+    name: Scottish Health and Social Care Open Data (Public Health Scotland)
+    type: ckan
+    api: https://www.opendata.nhs.scot/api/3/action
+    web: https://www.opendata.nhs.scot
+    dataset_url: https://www.opendata.nhs.scot/dataset/{name}
+
+  # GOV.UK research and statistics: every department's official statistics
+  # releases (national/official statistics and statistical data sets), with
+  # their spreadsheet attachments. ~42,600 releases; attachments are fetched
+  # a budgeted number per run (harvest_national.harvest_govuk).
+  - id: govuk_statistics
+    name: GOV.UK research and statistics
+    type: govuk
+    api: https://www.gov.uk/api/search.json
+    web: https://www.gov.uk
+    dataset_url: "https://www.gov.uk{name}"
+    govuk:
+      document_types: [national_statistics, official_statistics, statistical_data_set]
+      attachments_per_run: 3000

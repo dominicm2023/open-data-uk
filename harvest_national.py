@@ -145,7 +145,7 @@ def harvest_ons(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
         if key in known and known[key] == release and release:
             unchanged += 1
             n_res = conn.execute("SELECT count(*) FROM resources WHERE dataset_key = ?", (key,)).fetchone()[0]
-            formats = [r[0] for r in conn.execute("SELECT format FROM resources WHERE dataset_key = ?", (key,)) if r[0]]
+            formats = [r[0] for r in conn.execute("SELECT format_norm FROM resources WHERE dataset_key = ?", (key,)) if r[0]]
         else:
             res = []
             try:
@@ -217,7 +217,7 @@ def harvest_ees(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
         if key in known and known[key] == modified and modified:
             unchanged += 1
             n_res = conn.execute("SELECT count(*) FROM resources WHERE dataset_key = ?", (key,)).fetchone()[0]
-            formats = [r[0] for r in conn.execute("SELECT format FROM resources WHERE dataset_key = ?", (key,)) if r[0]]
+            formats = [r[0] for r in conn.execute("SELECT format_norm FROM resources WHERE dataset_key = ?", (key,)) if r[0]]
         else:
             res = []
             try:
@@ -251,3 +251,126 @@ def harvest_ees(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
         if i % 50 == 0:
             print(f"[{src['id']}]   {i}/{len(pubs)} ({c.requests} requests)", flush=True)
     _finish(conn, src, started, rows, res_by_key, len(pubs), errors, unchanged)
+
+
+# --- GOV.UK research and statistics -----------------------------------------
+
+GOVUK_SEARCH = "https://www.gov.uk/api/search.json"
+GOVUK_CONTENT = "https://www.gov.uk/api/content"
+GOVUK_WEB = "https://www.gov.uk"
+GOVUK_PAGE = 1500
+_CT_FORMAT = {"text/csv": "csv", "spreadsheetml": "xlsx", "ms-excel": "xls", "opendocument.spreadsheet": "ods",
+              "application/pdf": "pdf", "zip": "zip", "json": "json", "xml": "xml", "text/plain": "txt",
+              "wordprocessingml": "docx", "msword": "doc", "opendocument.text": "odt"}
+
+
+def _ct_format(content_type: str | None, url: str = "") -> str:
+    ct = (content_type or "").lower()
+    for needle, fmt in _CT_FORMAT.items():
+        if needle in ct:
+            return fmt
+    return _ext(url)
+
+
+def harvest_govuk(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
+    """Every statistics release on GOV.UK, in two passes. The search API
+    lists them all in a minute (title, description, department, date); the
+    content API gives each one's attachments, one request per release, so
+    attachments are fetched newest-first within a budget per run and the
+    rest wait for the next night. A release whose public timestamp has not
+    moved since its attachments were fetched is not fetched again.
+    GOV.UK: 'All content is available under the Open Government Licence
+    v3.0, except where otherwise stated.'"""
+    cfg = src.get("govuk") or {}
+    c = _Client()
+    started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    now = started
+    state_path = Path(conn.execute("PRAGMA database_list").fetchone()[2]).parent / "govuk_attachments.json"
+    fetched = json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else {}
+    print(f"[{src['id']}] listing GOV.UK statistics ...", flush=True)
+    items, errors = [], 0
+    for doc_type in cfg.get("document_types") or ["national_statistics", "official_statistics", "statistical_data_set"]:
+        start, total = 0, None
+        while True:
+            try:
+                d = c.json(GOVUK_SEARCH, params={
+                    "filter_content_store_document_type": doc_type, "count": GOVUK_PAGE, "start": start,
+                    "fields": "title,description,link,public_timestamp,organisations,format,display_type",
+                    "order": "-public_timestamp"})
+            except Exception as exc:  # noqa: BLE001
+                errors += 1
+                print(f"[{src['id']}]   {doc_type} at start={start} failed: {exc}", flush=True)
+                break
+            total = d.get("total", total)
+            got = d.get("results") or []
+            items += got
+            start += len(got)
+            if not got or start >= (total or 0) or (limit and len(items) >= limit):
+                break
+        if limit and len(items) >= limit:
+            break
+    if limit:
+        items = items[:limit]
+    seen: set[str] = set()
+    rows, keys_by_link = [], {}
+    for it in items:
+        link = (it.get("link") or "").strip()
+        if not link.startswith("/") or link in seen:
+            continue
+        seen.add(link)
+        key = f"{src['id']}:{link}"
+        keys_by_link[link] = key
+        orgs = [o.get("title") for o in (it.get("organisations") or []) if isinstance(o, dict) and o.get("title")]
+        publisher = orgs[0] if orgs else "GOV.UK"
+        tags = [it.get("display_type") or it.get("format") or ""] + [o.get("acronym") for o in (it.get("organisations") or []) if isinstance(o, dict) and o.get("acronym")]
+        formats = [r[0] for r in conn.execute("SELECT format_norm FROM resources WHERE dataset_key = ?", (key,)) if r[0]]
+        n_res = len(formats)
+        row = _row(src["id"], link, it.get("title"), it.get("description"), publisher, "Open Government Licence v3.0",
+                   None, it.get("public_timestamp"), f"{GOVUK_WEB}{link}", tags, formats, n_res, now)
+        if row:
+            rows.append(row)
+    conn.executemany(UPSERT, rows)
+    conn.commit()
+    print(f"[{src['id']}] listed {len(rows)} releases; fetching attachments ...", flush=True)
+    # attachments: newest first, within the budget, only where the release moved
+    budget = int(cfg.get("attachments_per_run", 3000))
+    if limit:
+        budget = min(budget, limit)
+    todo = [it for it in items if it.get("link") in keys_by_link
+            and fetched.get(it["link"]) != it.get("public_timestamp")]
+    todo.sort(key=lambda it: it.get("public_timestamp") or "", reverse=True)
+    done_att, n_files = 0, 0
+    for it in todo[:budget]:
+        link, key = it["link"], keys_by_link[it["link"]]
+        try:
+            doc = c.json(f"{GOVUK_CONTENT}{link}")
+        except Exception as exc:  # noqa: BLE001
+            errors += 1
+            if errors <= 5:
+                print(f"[{src['id']}]   content {link[-50:]}: {exc}", flush=True)
+            continue
+        det = doc.get("details") or {}
+        res = []
+        for a in (det.get("attachments") or []):
+            url = a.get("url") or ""
+            if url.startswith("http"):
+                res.append((key, url, (a.get("title") or "")[:200], _ct_format(a.get("content_type"), url)))
+        conn.execute("DELETE FROM resources WHERE dataset_key = ?", (key,))
+        conn.executemany("INSERT OR REPLACE INTO resources VALUES (?, ?, ?, ?)", res)
+        fmts = [r[3] for r in res]
+        conn.execute("UPDATE datasets SET formats_raw = ?, formats_norm = ?, resource_count = ?, created = COALESCE(created, ?) WHERE key = ?",
+                     (json.dumps(fmts), json.dumps(norm_formats(fmts)), len(res), norm_date(doc.get("first_published_at")), key))
+        fetched[link] = it.get("public_timestamp")
+        done_att += 1
+        n_files += len(res)
+        if done_att % 200 == 0:
+            conn.commit()
+            state_path.write_text(json.dumps(fetched), encoding="utf-8")
+            print(f"[{src['id']}]   attachments {done_att}/{min(len(todo), budget)} ({n_files} files)", flush=True)
+    state_path.write_text(json.dumps(fetched), encoding="utf-8")
+    finished = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    conn.execute("INSERT INTO harvest_runs VALUES (?, ?, ?, ?, ?, ?)",
+                 (src["id"], started, finished, len(items), len(rows), errors))
+    conn.commit()
+    print(f"[{src['id']}] done: {len(rows)} releases stored; attachments fetched for {done_att} "
+          f"({n_files} files), {len(todo) - done_att} still waiting; {errors} errors", flush=True)
