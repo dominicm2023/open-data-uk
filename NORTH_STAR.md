@@ -186,6 +186,8 @@ A living list. Add freely; move to "Done" with the commit that did it.
 - 8 Sep — every edition of a series dataset taken (16 earlier years
   published); 104 same-file-other-format twins found and removed, which
   had doubled Leicester's and MHCLG's rows. Spend: 4.26M rows, 27 bodies.
+- 8 Sep — fourth family, brownfield land registers: 176 datasets found,
+  62 extracted, 53 mapped by the 2017 data standard's own column names.
 - 7 Sep — first publisher outreach: 15 councils holding INSPIRE-licensed
   recycling/air datasets asked (by email, DM's approval, from the
   groundwatercast address) to re-release under OGL via the derived-data

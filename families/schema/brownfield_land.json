@@ -1,0 +1,39 @@
+{
+  "family": "brownfield_land",
+  "label": "Brownfield land registers",
+  "one_row_is": "one site on a local planning authority's brownfield land register, as last published",
+  "columns": [
+    {"name": "body", "type": "text", "required": true, "meaning": "the local planning authority that keeps the register, as the index names the publisher"},
+    {"name": "site_reference", "type": "text", "required": true, "meaning": "the authority's own reference for the site (SiteReference in the 2017 standard)"},
+    {"name": "site_name_address", "type": "text", "required": true, "meaning": "the site's name and address as published (SiteNameAddress)"},
+    {"name": "hectares", "type": "number", "required": false, "meaning": "site area in hectares as published"},
+    {"name": "ownership_status", "type": "text", "required": false, "meaning": "'owned by a public authority', 'not owned by a public authority', 'mixed ownership' or 'unknown ownership', as published"},
+    {"name": "planning_status", "type": "text", "required": false, "meaning": "'permissioned', 'not permissioned' or 'pending decision', as published"},
+    {"name": "permission_type", "type": "text", "required": false, "meaning": "full planning permission, outline, reserved matters, permission in principle, etc., as published"},
+    {"name": "permission_date", "type": "date", "required": false, "meaning": "date of the most recent permission, as published"},
+    {"name": "min_net_dwellings", "type": "integer", "required": false, "meaning": "minimum net dwellings the authority estimates the site could support (MinNetDwellings)"},
+    {"name": "max_net_dwellings", "type": "integer", "required": false, "meaning": "upper end of the authority's range (NetDwellingsRangeTo), where given"},
+    {"name": "deliverable", "type": "boolean", "required": false, "meaning": "whether the authority considers the site deliverable within five years, as published"},
+    {"name": "hazardous_substances", "type": "boolean", "required": false, "meaning": "whether hazardous-substances consent applies, as published"},
+    {"name": "site_plan_url", "type": "text", "required": false, "meaning": "link to the authority's site plan, as published"},
+    {"name": "first_added_date", "type": "date", "required": false, "meaning": "date the site first entered the register"},
+    {"name": "last_updated_date", "type": "date", "required": false, "meaning": "date the entry was last updated"},
+    {"name": "lon", "type": "number", "required": false, "meaning": "longitude (WGS84): given by the file, or converted from its eastings/northings"},
+    {"name": "lat", "type": "number", "required": false, "meaning": "latitude (WGS84)"},
+    {"name": "coords_source", "type": "text", "required": false, "meaning": "'wgs84' as given, 'bng_converted', or 'none'"},
+    {"name": "notes", "type": "text", "required": false, "meaning": "the authority's notes or development description, as published"}
+  ],
+  "provenance": ["publisher", "dataset_key", "source_url", "source_sha256", "source_table", "source_row", "licence_id", "licence_url", "licence_evidence_sha256", "licence_evidence_kind", "adapter_version"],
+  "validation": {
+    "hectares_range": [0, 5000],
+    "lat_range": [49.8, 61.0],
+    "lon_range": [-8.7, 2.0]
+  },
+  "rules": [
+    "A register is a snapshot: the family takes each authority's register as last published, one row per site, never merging years.",
+    "Columns follow the 2017 Brownfield Land Register data standard (Part 1 and Part 2 of the register); a file that uses its own headings is mapped to them by a person.",
+    "Hectares and dwelling estimates are the authority's own figures, kept as published; nothing is recomputed.",
+    "A site's coordinates are taken as the file states its coordinate reference system: British National Grid eastings/northings converted, WGS84 kept.",
+    "Where an authority publishes several years' registers as separate datasets, the newest is the family's source; older ones stay findable in the index."
+  ]
+}

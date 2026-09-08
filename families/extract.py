@@ -18,7 +18,7 @@ import sys
 import zipfile
 from pathlib import Path
 
-VERSION = "tables-v2"
+VERSION = "tables-v3"
 
 
 def _features_to_rows(features: list[dict], props_key: str, limits: dict) -> list[list]:
@@ -70,12 +70,21 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
                 text = data.decode("latin-1")
         if text.lstrip().lower().startswith(("<!doctype", "<html")):
             raise ValueError("HTML response, not CSV")
+        # The sniffer is trusted for the delimiter only. Its guesses at
+        # quoting (doublequote off, for one) broke every brownfield register
+        # whose addresses carry commas inside quotes — Hinckley, Rotherham,
+        # Cheltenham: fields split and every later column shifted. Excel
+        # quoting is what the files use.
         try:
-            dialect = csv.Sniffer().sniff(text[:8192], delimiters=",;\t|")
+            delimiter = csv.Sniffer().sniff(text[:8192], delimiters=",;\t|").delimiter
         except csv.Error:
-            dialect = csv.excel
+            delimiter = ","
+
+        class _Dialect(csv.excel):
+            pass
+        _Dialect.delimiter = delimiter
         rows = []
-        for row in csv.reader(io.StringIO(text), dialect):
+        for row in csv.reader(io.StringIO(text), _Dialect):
             if len(rows) >= limits["max_rows"]:
                 raise ValueError("Row limit exceeded")
             rows.append(row)

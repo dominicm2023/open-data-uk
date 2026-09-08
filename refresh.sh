@@ -29,7 +29,7 @@ echo "=====REFRESH-RUN===== $(date -Is)"
 # tonight's index, a polite licence-gated fetch, then the build — which
 # publishes only mappings a person has marked reviewed. Each step is allowed
 # to fail without stopping the rest of the night.
-for fam in recycling_centres air_quality_annual spend_over_500; do
+for fam in recycling_centres air_quality_annual spend_over_500 brownfield_land; do
   "$PY" families/registry.py "$fam" || true
   "$PY" families/intake.py "$fam" || true
   # the national networks' annual statistics feed the air family

@@ -987,7 +987,7 @@ def findings_page() -> HTMLResponse:
 
 # --- Dataset families: one table for a thing many bodies publish ---------------
 
-FAMILY_NAMES = {"recycling_centres", "air_quality_annual", "spend_over_500"}
+FAMILY_NAMES = {"recycling_centres", "air_quality_annual", "spend_over_500", "brownfield_land"}
 
 
 @app.get("/combined", include_in_schema=False)

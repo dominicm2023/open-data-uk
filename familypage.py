@@ -58,7 +58,7 @@ def published_rows(family: str) -> list[dict]:
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
 
 
-FAMILY_ORDER = ["recycling_centres", "air_quality_annual", "spend_over_500"]
+FAMILY_ORDER = ["recycling_centres", "air_quality_annual", "spend_over_500", "brownfield_land"]
 PREVIEW_ROWS = 8
 PREVIEW_COLS = 6
 

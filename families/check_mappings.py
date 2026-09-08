@@ -51,6 +51,8 @@ def check(family: str) -> int:
         mapped += 1
         which = spec.get("table", 1)
         table = next((t for t in src["tables"] if which in (t["where"].get("table"), t["where"].get("sheet"))), None)
+        if table is None and isinstance(which, int) and 0 < which <= len(src["tables"]):
+            table = src["tables"][which - 1]          # the build reads an XLSX's nth sheet the same way
         if table is None:
             problems.append(f"{tag}: table {which!r} not in brief"); continue
         header = [str(h).strip() for h in table["header"]]

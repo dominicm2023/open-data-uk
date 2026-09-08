@@ -1,0 +1,1560 @@
+{
+ "5ab9a4b61fb67c5ba07bcd955af5eb1a047a833e597f5b9a379ebe5280dbb753": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Amber Valley Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Amber Valley Brownfield Land Register'.",
+  "version": "1"
+ },
+ "d122721d6061359fd427609ccdf6e6edeb42c27a1a9ba5095686526b28f80319": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Bassetlaw District Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Bassetlaw District Council Brownfield Land Register'.",
+  "version": "1"
+ },
+ "6b7da819b1287912680f22c5c50f49b217ba3272846421aa76f8eee8d9fad132": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Borough Council of King's Lynn and West Norfolk"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (16 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'West Norfolk Brownfield register'.",
+  "version": "1"
+ },
+ "9016a45217bdd2e50a5564c53cc530c069440382d567da6767c2c3ff3017cb80": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "HECTARES",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Bristol City Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Land Register'.",
+  "version": "1"
+ },
+ "a91392e85cb81acd0ea2bd3130464f09afdc7717ebb3b42123d90205cd85f004": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "Site Reference",
+   "site_name_address": "Site Name Address",
+   "hectares": "Hectares",
+   "ownership_status": "Ownership Status",
+   "planning_status": "Planning Status",
+   "permission_type": "Permission Type",
+   "permission_date": "Permission Date",
+   "min_net_dwellings": "Min Net Dwellings",
+   "deliverable": "Deliverable",
+   "site_plan_url": "Site Plan URL",
+   "first_added_date": "First Added Date",
+   "last_updated_date": "Last Updated Date",
+   "easting": "Easting",
+   "northing": "Northing",
+   "notes": "Development Description"
+  },
+  "constants": {
+   "body": "Broadland District Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (15 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Broadland District Council's Brownfield Sites'.",
+  "version": "1"
+ },
+ "4f07bfa7ac9ddc47ba91a6645b4645c8b70382270500f63b29e7412450f290cb": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SitePlanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Broads Authority"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Register'.",
+  "version": "1"
+ },
+ "76755d87425cd69e7b8bbf609586a21c5063edeb53edbc732faa7a42f91f837e": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SitePlanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Broxtowe Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Land Register'.",
+  "version": "1"
+ },
+ "c5192c1e10738c42cc60ce501876cc996e141ab220b933951d8678e2e25c94de": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Burnley Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Burnley Brownfield Land'.",
+  "version": "1"
+ },
+ "aa11a41c9093fd27cef2d827921c8613a6128c25bfc96d1bc87f01d85d4b22df": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Bury Metropolitan Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Bury brownfield land register'.",
+  "version": "1"
+ },
+ "0b4e1303da714c1fbebb5e71be276d56bb1ee72d84888faad9b1e55bae9699bb": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "sitereference",
+   "site_name_address": "sitenameaddress",
+   "hectares": "hectares",
+   "ownership_status": "ownershipstatus",
+   "planning_status": "planningstatus",
+   "permission_type": "permissiontype",
+   "permission_date": "permissiondate",
+   "min_net_dwellings": "netdwellingsrangefrom",
+   "max_net_dwellings": "netdwellingsrangeto",
+   "deliverable": "deliverable",
+   "hazardous_substances": "hazardoussubstances",
+   "site_plan_url": "siteplanurl",
+   "first_added_date": "firstaddeddate",
+   "last_updated_date": "lastupdateddate",
+   "easting": "geox",
+   "northing": "geoy",
+   "notes": "notes"
+  },
+  "constants": {
+   "body": "Cannock Chase District Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'CCC Brownfield Register'.",
+  "version": "1"
+ },
+ "58ed33c51ce1d424805b344245f8bb4e550f699faed2cb27ed24a426564a85c7": {
+  "status": "rejected",
+  "reject": "Review 2026-09-08: the same 67-row register as 'Brownfield Register' (57bb9205), listed twice on data.gov.uk",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "57bb92053a4eca82186bfa42f4fc59cf4007e364aa53309a102b906eaa282fa1": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Cheltenham Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Register'.",
+  "version": "1"
+ },
+ "919c53b8d09782ae6ef88ae7d8f86a71ae0ee4b8591e326bec990ceab46cf017": {
+  "status": "rejected",
+  "reject": "Review 2026-09-08: the ArcGIS copy of York's register with 61 rows; the council portal's 119-row file (f1310bc8) is the source",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "f1310bc839c60a9925f40b139ed3ff942c43999014e86d33f8061fbed066830a": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "City of York Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Land Register'.",
+  "version": "1"
+ },
+ "1400bb6e89a52e9688fd914d5d4223927069b99f9c18da6c9f3968aa64d7bd00": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "deliverable": "Deliverable",
+   "site_plan_url": "SiteplanURL",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "DevelopmentDescription"
+  },
+  "constants": {
+   "body": "Copeland Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (13 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Land Register vw'.",
+  "version": "1"
+ },
+ "571b5f297dd9d1a0c28e2a2048f36989e654ed968ff37eb7ddeac8ec49356b17": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Cornwall Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (16 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Cornwall Council Brownfield Register'.",
+  "version": "1"
+ },
+ "69fd76d473fc56ba0c88e4ba89ddbd0853b3b75c3cfd7d70cc1638108395d00e": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Derbyshire Dales District Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'dddc brownfield sites'.",
+  "version": "1"
+ },
+ "d10035e4cf2450912d15821580e7c27d6d54e00fe30219e8b19b3d5f8be7a833": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Doncaster Metropolitan Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Doncaster Brownfield Land Register'.",
+  "version": "1"
+ },
+ "3ea02e9425a89ee4bc4bc71d1574e6fef7411acd2ce8b2525ddde3ab678d7a3a": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "East Staffordshire Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'East Staffordshire Borough Council - Brownfield Register'.",
+  "version": "1"
+ },
+ "581a5ee56868050160b1699a6691481cf83277ef8dabe22b8c8604440fb85ff6": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Former district of Hambleton"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Land for Hambleton District Council'.",
+  "version": "1"
+ },
+ "862d75464789e25f71cffa1a05729a7d4b739567d2bed2c8db3153a727d13ed1": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Gosport Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Gosport Brownfield Register 2024'.",
+  "version": "1"
+ },
+ "8212d49cc838ef68ac1f66fecf464f179955882755971e9b1bdfb5139b30b643": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Guildford Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Guildford Brownfield Land Register'.",
+  "version": "1"
+ },
+ "1d1e7be52ee95b6fbd15f3dcb893c7cb26c8a07a3717588f546f58b31aa6656f": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Hastings Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Hastings Borough Council Brownfield Register'.",
+  "version": "1"
+ },
+ "4eb08228424cfa745f1ffbb6b6303f7254886dae9f922367d65b8cda7620e0e2": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "High Peak Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'High Peak Brownfield Register'.",
+  "version": "1"
+ },
+ "6d73dcb5e32f41b9119bdf864aea79ca2738cd73db3ba9e0dd200addb0b0876c": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Hinckley and Bosworth Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Register Hinckley and Bosworth Borough Council'.",
+  "version": "1"
+ },
+ "e1435170e8d0535d71d6aa2616a488d83208a098d6ad9b964c979397f43a0b4a": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Lancaster City Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Register Lancaster City Council 2019'.",
+  "version": "1"
+ },
+ "4dd8d44b8d9bc1b20d140c4057c02fece40cc9b1ff556acf2b0e636e44c9b501": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "sitereference",
+   "site_name_address": "sitenameaddress",
+   "hectares": "hectares",
+   "ownership_status": "ownershipstatus",
+   "planning_status": "planningstatus",
+   "permission_type": "permissiontype",
+   "permission_date": "permissiondate",
+   "min_net_dwellings": "netdwellingsrangefrom",
+   "max_net_dwellings": "netdwellingsrangeto",
+   "deliverable": "deliverable",
+   "hazardous_substances": "hazardoussubstances",
+   "site_plan_url": "siteplanurl",
+   "first_added_date": "firstaddeddate",
+   "last_updated_date": "lastupdateddate",
+   "easting": "geox",
+   "northing": "geoy",
+   "notes": "notes"
+  },
+  "constants": {
+   "body": "Leicester City Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Register'.",
+  "version": "1"
+ },
+ "c219c393bccee07245d859d0cb89eae68e94943a3557d364395b39dde93faf71": {
+  "status": "rejected",
+  "reject": "Review 2026-09-08: the same 176-row register as Leicester's own portal copy (4dd8d44b), harvested under a second publisher name",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "2349f50b0071c7a756194f4b740ed8f624ddfe6467144ca8a89dc132c0fd8694": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "London Borough of Camden"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Land Register'.",
+  "version": "1"
+ },
+ "77dee37f18accebd3a5d6f4848ce41fd467151d5541eef4fb05b485624b96b08": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "London Borough of Ealing"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Ealing Brownfield Land Register'.",
+  "version": "1"
+ },
+ "a2ea95145ccd3c507b4f4449c0ad61c6383dae62019e65710b42124b1aad0dbd": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "London Borough of Tower Hamlets"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Tower Hamlets Brownfield Land Register 2018'.",
+  "version": "1"
+ },
+ "aee88ff9f4b5d43491baf5e93c6c593b7c2dce20addbc55c9ea6ade10ba60970": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "London Borough of Waltham Forest"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Waltham Forest Brownfield Land Register'.",
+  "version": "1"
+ },
+ "e615ce7a7dc7b7f71239da39fc270d6018b1fa7375d2569bc17e9cea809784a9": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "deliverable": "Deliverable",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Middlesbrough Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (14 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Middlesbrough Brownfield Land Register'.",
+  "version": "1"
+ },
+ "0d303b2e3527178d168ceb9429161323f4b64058a92d2465822e4e1f32f9a6fa": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "North Lincolnshire Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'North Lincolnshire Council Brownfield Register'.",
+  "version": "1"
+ },
+ "62ce156cc7b89c621f629b1f4256fccef19e8ee8837be492ffbe6bad456224f9": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "North Norfolk District Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'North Norfolk Brownfield Land Register'.",
+  "version": "1"
+ },
+ "01ce677683d9a2a238b051d1af148d7277fe28862d47eb8a8988b7aed1fe86fc": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Northumberland County Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Land Register'.",
+  "version": "1"
+ },
+ "2029d11f789b2720298b242abd29c58a7728feebb0e822072e239b2c0b505683": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Nottingham City Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Land Register'.",
+  "version": "1"
+ },
+ "c0a35c4e7cb4fc8fae775282ced74e3b6b4956a0a23a9b8fa080f9165a22872a": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Peak District National Park Authority"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Land Register'.",
+  "version": "1"
+ },
+ "49d251073269aa63eee00fb4cf89d1556eba6b8d3b9eb01eddaa1054b04bf839": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "Site Reference",
+   "site_name_address": "Site Name Address",
+   "hectares": "Hectares",
+   "ownership_status": "Ownership Status",
+   "planning_status": "Planning Status",
+   "permission_type": "Permission Type",
+   "permission_date": "Permission Date",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "Net Dwellings Range To",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "Hazardous Substances",
+   "site_plan_url": "Site Plan URL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Plymouth City Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Land Register'.",
+  "version": "1"
+ },
+ "cb9135985b86857808a338f0a4e04ef36dcb0629016133c56f4ed489d5ae41b7": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Rossendale Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Rossendale Borough Council - Brownfield Register'.",
+  "version": "1"
+ },
+ "ae63c03d2f2754e0ab1d76fcb9469b9330b4929c0cdc165b730bb812b9501439": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Rother District Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Rother District Council - Brownfield Land Register'.",
+  "version": "1"
+ },
+ "11ac96746886aa2064f403a655ac96dfffa711266fdcc6b970d834bfbdc054f8": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Rotherham Metropolitan District Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Rotherham Brownfield Land Register'.",
+  "version": "1"
+ },
+ "3f8b3a172c2989bb96b4c938b3cb7e1f3c6c1d923a65207ab84aaa647d699b33": {
+  "status": "rejected",
+  "reject": "Review 2026-09-08: the WGS84 export of the same 114-row register as aba2487a; one copy is enough",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "aba2487a1bb6bc52e1391c7e918bee4e6a099d7f74ed81795c1e252bf59210d9": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Sevenoaks District Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Site Register (SDC) (Public)'.",
+  "version": "1"
+ },
+ "c04ff150840add8450a5a9656f33c42fc925739ee1933f8a635c7f1629b6a66d": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "South Lakeland District Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'South Lakeland Brownfield Land Register'.",
+  "version": "1"
+ },
+ "c20be1234f82d969bc0f36d412d0e21e14955b677e6a0d81e7b34e3231fcfb63": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Stafford Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Register'.",
+  "version": "1"
+ },
+ "5f20332b872440eb0f27cfbe7cf2952cb4f4d96e8eacaf72f09a6d5fdcb7749c": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Stockport Metropolitan Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Stockport Brownfield Land Register'.",
+  "version": "1"
+ },
+ "88086d847b57835e598220a65da2e714ce7e3f9ab3c24514f7a02b3269387893": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Stoke-on-Trent City Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (16 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Stoke-on-Trent Brownfield Register'.",
+  "version": "1"
+ },
+ "4995a49d658489188e83ceea2116b61c563b717823ab367ed919f41dadd8fce6": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SitePlanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Tandridge District Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Tandridge Brownfield Register'.",
+  "version": "1"
+ },
+ "b5840b36f958bb7583b3a8f9ec2fd79de667e576ca22a5dfa61a4081646ab47d": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Tendring District Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Tendring DC Brownfield Land Register'.",
+  "version": "1"
+ },
+ "cd27bd2ef42b8a381e06343b289c586eca56f535ba213f2ed187acfcdc5693b2": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "MinNetDwellings",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "last_updated_date": "LastUpdatedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Tunbridge Wells Borough Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (17 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'TWBC Open Data - Brownfield Register'.",
+  "version": "1"
+ },
+ "b72134db6f0c014a4b8b9b08c8159cd2f4544561b9973cac1265f8265575a921": {
+  "status": "rejected",
+  "reject": "Review 2026-09-08: the map-image-layer export of the same 37-row register as the CSV (cd27bd2e)",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-08"
+ },
+ "15e25f6d17c2ccec8f01245ff536cb28ee554446c335d3057be02a8dbc576453": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteReference",
+   "site_name_address": "SiteNameAddress",
+   "hectares": "Hectares",
+   "ownership_status": "OwnershipStatus",
+   "planning_status": "PlanningStatus",
+   "permission_type": "PermissionType",
+   "permission_date": "PermissionDate",
+   "min_net_dwellings": "NetDwellingsRangeFrom",
+   "max_net_dwellings": "NetDwellingsRangeTo",
+   "deliverable": "Deliverable",
+   "hazardous_substances": "HazardousSubstances",
+   "site_plan_url": "SiteplanURL",
+   "first_added_date": "FirstAddedDate",
+   "easting": "GeoX",
+   "northing": "GeoY",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Wigan Council"
+  },
+  "notes": "Mapped by the 2017 Brownfield Land Register standard: the file's headers are the standard's names (16 columns matched). GeoX/GeoY as eastings/northings; the build reads degrees as WGS84 where the file uses them. Body from the index's publisher name. Title: 'Brownfield Land Register'.",
+  "version": "1"
+ },
+ "8d4dbe6777465c46633f8b5396845f11a5f2b93047451c255c6155c11cd29ff4": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SITEREF",
+   "site_name_address": "SITENAMEAD",
+   "hectares": "HECTARES",
+   "ownership_status": "OWNERSHIPS",
+   "planning_status": "PLANNINGST",
+   "permission_type": "PERMISSION",
+   "permission_date": "PERMISSI0",
+   "min_net_dwellings": "NETDWELLIN",
+   "max_net_dwellings": "NETDWELL0",
+   "deliverable": "DELIVERABL",
+   "hazardous_substances": "HAZARDOUSS",
+   "site_plan_url": "SITEPLANUR",
+   "first_added_date": "FIRSTADDED",
+   "last_updated_date": "LASTUPDATE",
+   "easting": "GEOX",
+   "northing": "GEOY",
+   "notes": "NOTES"
+  },
+  "constants": {
+   "body": "Buckinghamshire Council"
+  },
+  "notes": "Shapefile-export headers, the 2017 standard's field names truncated to 10 characters with a shortened+digit suffix on collisions (PERMISSION/PERMISSI0 for PermissionType/PermissionDate; NETDWELLIN/NETDWELL0 for NetDwellingsRangeFrom/NetDwellingsRangeTo). COORDINATE says the row's CRS ('ETRS89' throughout the sample) and GEOX/GEOY hold plain decimal degrees (longitude, latitude) rather than BNG metres in the samples seen; mapped to easting/northing regardless since the build reads values in that range as WGS84 automatically. PLANNINGHI (planning history), ENDDATE, LOCATION, Action, ORGANISAT2 (organisation URI) and STATUS have no home in the schema and are left out; body taken from the index's publisher name.",
+  "version": "1"
+ },
+ "00dd294dc620bdb6d4307289e30c980637aa851081ad3ce0fbb2f3e0d6b65ff1": {
+  "status": "rejected",
+  "reject": "A KPI time series ('Homes Provided on Brownfield Land (Gross)', CES13ii) with one row per reporting quarter/year and a single aggregate Value column ('314.00 Number'), not a register of individual sites -- no site reference, address, or any per-site attribute.",
+  "version": "1"
+ },
+ "bcff1618587f70b3284bb8c9779de18ad251c08c7354c427d5438c5da3a9850c": {
+  "status": "rejected",
+  "reject": "Duplicate of the FeatureServer copy of the same layer (ad113781): identical title ('Brownfield Land Register (Current)'), identical 11-column header and identical 23 sample rows -- this is the MapServer export of the same 'Brownfield_Land_Register_Current' service. One copy is enough; the FeatureServer copy is proposed instead.",
+  "version": "1"
+ },
+ "ad113781e76399a428807dd2cdd760baacec9642550710dbd555d44966a87db1": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "ID",
+   "site_name_address": "Site_Name",
+   "hectares": "Gross_Area_HA",
+   "easting": "GeoX",
+   "northing": "GeoY"
+  },
+  "constants": {
+   "body": "Fareham ArcGIS Online"
+  },
+  "notes": "A slim GIS layer, not a full standard-columns register: only ID, Site_Name, Gross_Area_HA and coordinates are present -- no ownership/planning/dwellings/dates/plan-url fields to map. The header carries '_lon'/'_lat' fields but they are empty in every sample row (outSR=4326 was requested but not populated for this layer); GeoX/GeoY hold real British National Grid metres for the Fareham area instead, so mapped to easting/northing. ID values are published as floats (e.g. '1058.0') and kept as published. ExportName and the Shape__Area/Shape__Length GIS metadata fields have no home in the schema. OBJECTID/ID/Site_Name/coordinates are identical to the rejected MapServer copy of this layer -- same 23 sites.",
+  "version": "1"
+ },
+ "678840dfba1d2a9f85dfc3092897e0eedf286e6da8cd7b3932c6468642f726e2": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "SiteRefere",
+   "site_name_address": "SiteNameAd",
+   "site_plan_url": "SiteplanUR",
+   "hectares": "Hectares_1",
+   "ownership_status": "OwnershipS",
+   "planning_status": "PlanningSt",
+   "permission_type": "Permission",
+   "permission_date": "Permissi_1",
+   "min_net_dwellings": "NetDwellin",
+   "max_net_dwellings": "NetDwell_1",
+   "deliverable": "Deliverabl",
+   "hazardous_substances": "HazardousS",
+   "notes": "Notes",
+   "first_added_date": "FirstAdded",
+   "last_updated_date": "LastUpdate",
+   "easting": "GeoX",
+   "northing": "GeoY"
+  },
+  "constants": {
+   "body": "Gedling Borough Council"
+  },
+  "notes": "ArcGIS Hub CSV export: the 2017 standard's field names truncated to 10 characters, with an underscore+digit suffix on collisions (Permission/Permissi_1 for PermissionType/PermissionDate; NetDwellin/NetDwell_1 for NetDwellingsRangeFrom/NetDwellingsRangeTo). Hectares is oddly suffixed 'Hectares_1' in this export but plainly holds the site area (e.g. '1.18'). Organisati (organisation URI), PlanningHi (planning history) and EndDate have no home in the schema and are left out; body taken from the index's publisher name.",
+  "version": "1"
+ },
+ "79b285ed3608e0558d3fa1259f6f0c6d7e0f4109885193d1696d7724e87b8559": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "siterefere",
+   "site_name_address": "sitenamead",
+   "site_plan_url": "siteplanur",
+   "hectares": "hectares",
+   "ownership_status": "ownerships",
+   "planning_status": "planningst",
+   "permission_type": "permission",
+   "permission_date": "permissi_1",
+   "min_net_dwellings": "minnetdwel",
+   "max_net_dwellings": "netdwell_1",
+   "deliverable": "deliverabl",
+   "hazardous_substances": "hazardouss",
+   "notes": "notes",
+   "first_added_date": "firstadded",
+   "last_updated_date": "lastupdate",
+   "easting": "geox",
+   "northing": "geoy"
+  },
+  "constants": {
+   "body": "Runnymede Borough Council"
+  },
+  "notes": "A GeoServer WFS CSV export of the 2017 standard's field names, lowercased and truncated to 10 characters, with an underscore+digit suffix on collisions ('permission'/'permissi_1' for PermissionType/PermissionDate). 'coordinate' says the row's CRS ('OSGB36') and geox/geoy are real BNG metres, mapped to easting/northing. Two other columns also carry a net-dwellings figure -- 'netdwellin' duplicates 'minnetdwel' in every sample row and 'site_id_2' duplicates part of 'siterefere' as a bare number -- both left unmapped as redundant. 'developmen' (DevelopmentDescription) is a fuller free-text field than 'notes' in places, but 'notes' is kept for the schema's notes column to match how every other source in this family with both fields is mapped. 'organisati'/'organisa_1' (organisation URI/label), 'previously' (PreviouslyPartOf), 'planninghi' (PlanningHistory, populated with a map URL in the samples rather than history text), 'porposedfo' (ProposedForResidential), 'nonhousing' and 'part2' have no home in the schema and are left out; 'fid'/'id_0'/'id'/'geom' are internal row identifiers and geometry, also left out.",
+  "version": "1"
+ },
+ "0afd4c6032c27b204d3271222dd206504eb45943d6fdfe498dea665fb5611e6e": {
+  "status": "rejected",
+  "reject": "No site name or address column at all -- the header is only objectid, sitereference, ownershipstatus, minnetdwellings and empty _lon/_lat -- so the required site_name_address schema column has nothing to supply it. Mapping with a guess (e.g. sitereference alone) would not meet the required field.",
+  "version": "1"
+ },
+ "2f2eed38fc7b0df9d06169440df4ec91415568ea14319d58b0dcb5a1adda5260": {
+  "status": "proposed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "site_reference": "Brownfield",
+   "site_name_address": "Address",
+   "planning_status": "PlanningSt",
+   "site_plan_url": "Weblink",
+   "first_added_date": "Date Added",
+   "last_updated_date": "Last updated",
+   "easting": "Easting",
+   "northing": "Northing"
+  },
+  "constants": {
+   "body": "South Norfolk District Council"
+  },
+  "notes": "Not standard-named; own headers read plainly. 'Brownfield' (values like 'S/ASL/001') is the register's own systematic site code, used for site_reference over 'Alt_Ref' (a planning-application-style reference, e.g. 'ASL 1 2020/0493'). 'Weblink' is a generic map-portal link, the same webappviewer URL across sample rows, but is the closest thing to a site plan URL published. No hectares, ownership, permission-type/date, dwelling-count, deliverable or hazardous-substances columns exist in this file, so those are left out. 'Brownfie_1', 'App_No' and 'Proposed_U' are blank in every sample row and left out; 'Parish', 'District', 'PropUse', 'WARD', 'Postcode' and 'Date Completed' have no home in the schema.",
+  "version": "1"
+ },
+ "e1af10bf76a18ff61b22fc1966c6f10cb5d144668a29da43ee2421159b4f8876": {
+  "status": "rejected",
+  "reject": "Transport for West Midlands' republication of MHCLG's national brownfield land monitoring platform data, covering many separate authorities' registers at once (sample rows are all 'Tamworth District (B)', a Staffordshire authority outside the West Midlands combined authority area) -- not the authority's own register. Each authority's own source is the family's proper entry point for its register, not this regional aggregation.",
+  "version": "1"
+ }
+}

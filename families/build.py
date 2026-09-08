@@ -327,6 +327,8 @@ def _validate(row: dict, schema: dict) -> str | None:
     for c in schema["columns"]:
         if c["required"] and row.get(c["name"]) in (None, ""):
             return f"missing required {c['name']}"
+    if "hectares_range" in v and row.get("hectares") is not None and not (v["hectares_range"][0] <= row["hectares"] <= v["hectares_range"][1]):
+        return f"hectares out of range: {row['hectares']}"
     if "postcode_regex" in v and row.get("postcode") and not re.fullmatch(v["postcode_regex"], row["postcode"]):
         return f"postcode fails pattern: {row['postcode']!r}"
     for key, rng in (("lat", v.get("lat_range")), ("lon", v.get("lon_range")),
@@ -475,7 +477,17 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
         if "lon" in types and "lat" in types:
             if base.get("lon") is None and base.get("lat") is None and "easting" in cols and "northing" in cols:
                 e, n = _num(r[idx[cols["easting"]]]), _num(r[idx[cols["northing"]]])
-                if e is not None and n is not None and 0 < e < 800000 and 0 < n < 1400000:
+                # Brownfield registers put GeoX/GeoY under one header and say
+                # in another column which grid they are in; degrees are
+                # unmistakable beside six-digit metres.
+                if e is not None and n is not None and -11 < e < 3 and 49 < n < 62:
+                    base["lon"], base["lat"] = e, n
+                    base["coords_source"] = "wgs84"
+                elif e is not None and n is not None and -11 < n < 3 and 49 < e < 62:
+                    # GeoX holding latitude: East Staffordshire's and Gosport's registers
+                    base["lon"], base["lat"] = n, e
+                    base["coords_source"] = "wgs84 (x/y swapped in the file)"
+                elif e is not None and n is not None and 0 < e < 800000 and 0 < n < 1400000:
                     if spec.get("grid") == "irish":
                         # Two Irish grids share six-digit numbers; the easting
                         # tells them apart (TM75 stays below ~370,000).

@@ -185,6 +185,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 |---|---|---|---|
 | recycling_centres | 30 sources | 18 | 13 sources, 98 rows, 12 bodies |
 | air_quality_annual | 56 + 5 national networks | 39 | 22 sources, ~55,000 rows, 10 bodies (AURN, LMAM, Scotland, Wales, Northern Ireland; 1990-2026) |
+| brownfield_land | 176 sources / 129 authorities | 62 | (being published 8 September: the 2017 standard maps most files by name) |
 | spend_over_500 | 212 (every edition) | 76 | 68 sources, 4,259,913 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
 
 Held in review, not published: Bradford's diffusion tubes (nothing in the
@@ -281,6 +282,24 @@ and 104 such twins had doubled those bodies' rows. A series keeps one copy
 of each file, named by the path segment that names it. The storage budget
 is 10 GB (2 GB was reached and fetches failed silently as "previous
 snapshot kept").
+
+**The fourth family: brownfield land registers (8 September).** Chosen
+because publishers were told what columns to use: the 2017 Brownfield
+Land Register data standard. The registry found 176 datasets from 129
+planning authorities; 62 extracted (79 dead links, 35 refused on
+licence). 53 of the 62 use the standard's own header names and were
+mapped by the standard without a model (`scratchpad/brownfield_propose.py`
+became the rule: SiteReference, SiteNameAddress, Hectares, OwnershipStatus,
+PlanningStatus, PermissionType/Date, MinNetDwellings /
+NetDwellingsRangeFrom/To, Deliverable, HazardousSubstances, SiteplanURL,
+FirstAdded/LastUpdated, GeoX/GeoY); the nine with their own or
+shapefile-truncated headings went to an agent. Things learned: an
+authority publishes the same register on two portals (five duplicates
+rejected, newest and fullest kept); GeoX/GeoY hold degrees as often as
+metres and two councils swap them (the build reads both); the CSV
+sniffer's quoting guesses split every address with a comma and shifted
+the columns after it — the sniffer is now trusted for the delimiter only.
+One row is one site on the authority's register as last published.
 
 ## The loop from here
 

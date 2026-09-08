@@ -52,6 +52,12 @@ FAMILIES: dict[str, dict] = {
         # Site *locations* and management-area boundaries are a different family.
         "exclude": r"management\s+area|aqma\b|boundar|\bsites?\s+location|monitoring\s+sites?\s*$|monitors\s*$|action\s+plan|hourly|daily|emissions?\s+inventory|laei\b|24\s*hour|modell?ed|forecast",
     },
+    "brownfield_land": {
+        "label": "Brownfield land registers",
+        "include": r"brownfield\s+(land\s+)?(register|site)|brownfield\s+land\b|brownfield\s+register",
+        # Policies, maps and boundaries about brownfield are not the register.
+        "exclude": r"polic|strateg|boundar|map|assessment|strategic\s+housing|shlaa|consultation|guidance",
+    },
     "spend_over_500": {
         "label": "Spend over £500",
         # The LGA's own title is "Payments to suppliers with a value over
