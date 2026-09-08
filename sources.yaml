@@ -3387,3 +3387,20 @@ sources:
       landing: "https://data.cefas.co.uk/#/View/{id}"
       resources:
         - [links.Map.href, "=API"]
+
+  # National statistics sites that are not catalogues: each has an API of its
+  # own, harvested by harvest_national.py. Both were gaps behind real searches
+  # on 7 September 2026 ("population of hertfordshire", "SATs").
+  - id: ons
+    name: Office for National Statistics
+    type: ons
+    api: https://api.beta.ons.gov.uk/v1/search
+    web: https://www.ons.gov.uk
+    dataset_url: "https://www.ons.gov.uk{name}"
+
+  - id: dfe_ees
+    name: Explore Education Statistics (Department for Education)
+    type: ees
+    api: https://content.explore-education-statistics.service.gov.uk/api
+    web: https://explore-education-statistics.service.gov.uk
+    dataset_url: https://explore-education-statistics.service.gov.uk/find-statistics/{name}

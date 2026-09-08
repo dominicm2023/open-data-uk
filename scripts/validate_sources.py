@@ -174,7 +174,23 @@ def check_csw(src: dict) -> str | None:
     return None
 
 
-CHECKS = {"ckan": check_ckan, "dcat": check_dcat, "ods": check_ods,
+def check_ons(src: dict) -> str | None:
+    r = requests.get(src["api"], params={"content_type": "dataset_landing_page", "limit": 1},
+                     headers=UA, timeout=30)
+    r.raise_for_status()
+    d = r.json()
+    return None if d.get("items") and d.get("count") else "ONS search API returned no dataset landing pages"
+
+
+def check_ees(src: dict) -> str | None:
+    r = requests.get(f"{src['api'].rstrip('/')}/publications/sitemap-items", headers=UA, timeout=30)
+    r.raise_for_status()
+    d = r.json()
+    return None if isinstance(d, list) and d and d[0].get("slug") else "EES content API returned no publications"
+
+
+CHECKS = {"ons": check_ons, "ees": check_ees,
+          "ckan": check_ckan, "dcat": check_dcat, "ods": check_ods,
           "geonode": check_geonode, "json": check_json, "csw": check_csw}
 
 

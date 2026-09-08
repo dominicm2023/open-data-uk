@@ -1336,6 +1336,10 @@ def main() -> int:
             harvest_json(src, conn, args.limit)
         elif src.get("type") == "csw":
             harvest_csw(src, conn, args.limit)
+        elif src.get("type") in ("ons", "ees"):
+            # national statistics sites with APIs of their own (harvest_national.py)
+            from harvest_national import harvest_ees, harvest_ons
+            (harvest_ons if src["type"] == "ons" else harvest_ees)(src, conn, args.limit)
         else:
             print(f"[{src['id']}] skipped: no harvester for type {src.get('type')!r}")
 

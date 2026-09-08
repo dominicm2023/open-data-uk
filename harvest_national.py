@@ -1,0 +1,253 @@
+"""Two national statistics sites that are not catalogues: the ONS website
+and the Department for Education's Explore Education Statistics. Neither
+speaks CKAN or DCAT; each has an API of its own that lists what it
+publishes, and each was the gap behind a real search ("population of
+hertfordshire" found a cattle census; "SATs" found nothing) on 7 September
+2026.
+
+Both adapters write the same rows harvester.py writes for any source, so
+everything downstream — dedupe, editions, the checker, search — treats
+them as portals. They are incremental where the site lets them be: a
+record whose release date has not moved keeps its resources without a
+second request, because the ONS has 3,928 dataset pages and the polite
+spacing is 1.5 s per request.
+"""
+
+from __future__ import annotations
+
+import json
+import re
+import sqlite3
+import sys
+import time
+from pathlib import Path
+
+import requests
+
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))
+from agent import USER_AGENT  # noqa: E402
+from normalise import norm_date, norm_formats, norm_license, norm_tags, norm_title, strip_html  # noqa: E402
+
+SPACING = 1.5           # seconds between requests to one host: the family rule, kept here too
+ONS_API = "https://api.beta.ons.gov.uk/v1/search"
+ONS_WEB = "https://www.ons.gov.uk"
+ONS_PAGE = 500
+EES_API = "https://content.explore-education-statistics.service.gov.uk/api"
+EES_WEB = "https://explore-education-statistics.service.gov.uk"
+
+UPSERT = """
+INSERT INTO datasets (key, source_id, ckan_id, name, title, description,
+    publisher, license_raw, license_norm, created, modified, landing_url,
+    tags, formats_raw, formats_norm, resource_count, harvested_at)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+ON CONFLICT(key) DO UPDATE SET
+    name=excluded.name, title=excluded.title, description=excluded.description,
+    publisher=excluded.publisher, license_raw=excluded.license_raw,
+    license_norm=excluded.license_norm, created=excluded.created,
+    modified=excluded.modified, landing_url=excluded.landing_url,
+    tags=excluded.tags, formats_raw=excluded.formats_raw,
+    formats_norm=excluded.formats_norm, resource_count=excluded.resource_count,
+    harvested_at=excluded.harvested_at
+"""
+
+
+class _Client:
+    def __init__(self):
+        self.s = requests.Session()
+        self.s.headers["User-Agent"] = USER_AGENT
+        self.last = 0.0
+        self.requests = 0
+
+    def get(self, url: str, **kw):
+        wait = SPACING - (time.monotonic() - self.last)
+        if wait > 0:
+            time.sleep(wait)
+        self.last = time.monotonic()
+        self.requests += 1
+        return self.s.get(url, timeout=60, **kw)
+
+    def json(self, url: str, **kw):
+        r = self.get(url, **kw)
+        r.raise_for_status()
+        return r.json()
+
+
+def _ext(name: str) -> str:
+    m = re.search(r"\.([a-z0-9]{2,5})$", (name or "").lower())
+    return m.group(1) if m else ""
+
+
+def _row(src_id: str, ident: str, title: str, description, publisher: str, licence: str,
+         created, modified, landing: str, tags: list, formats: list, n_res: int, now: str) -> tuple | None:
+    t = norm_title(title)
+    if not t:
+        return None
+    return (f"{src_id}:{ident}", src_id, str(ident), ident, t, strip_html(description), publisher,
+            licence, norm_license(licence), norm_date(created), norm_date(modified), landing,
+            json.dumps(norm_tags(tags)), json.dumps([f for f in formats if f]), json.dumps(norm_formats(formats)),
+            n_res, now)
+
+
+def _finish(conn: sqlite3.Connection, src: dict, started: str, rows: list, res_by_key: dict,
+            total, errors: int, unchanged: int) -> None:
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    conn.executemany(UPSERT, rows)
+    for key, res in res_by_key.items():
+        conn.execute("DELETE FROM resources WHERE dataset_key = ?", (key,))
+        conn.executemany("INSERT OR REPLACE INTO resources VALUES (?, ?, ?, ?)", res)
+    conn.execute("INSERT INTO harvest_runs VALUES (?, ?, ?, ?, ?, ?)",
+                 (src["id"], started, now, total, len(rows), errors))
+    conn.commit()
+    print(f"[{src['id']}] done: {len(rows)} stored (catalogue reports {total}), "
+          f"{sum(len(v) for v in res_by_key.values())} files refreshed, {unchanged} unchanged kept, {errors} errors", flush=True)
+
+
+# --- ONS ---------------------------------------------------------------------
+
+def harvest_ons(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
+    """Every dataset landing page the ONS search API lists, with the latest
+    edition's downloads. ons.gov.uk/help/termsandconditions: 'Most content
+    on this website is subject to Crown copyright protection and is
+    published under the Open Government Licence (OGL)' (v3)."""
+    c = _Client()
+    started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    now = started
+    print(f"[{src['id']}] harvesting ONS search API ...", flush=True)
+    known = {k: m for k, m in conn.execute("SELECT key, modified FROM datasets WHERE source_id = ?", (src["id"],))}
+    items, total, offset, errors = [], None, 0, 0
+    while True:
+        try:
+            d = c.json(ONS_API, params={"content_type": "dataset_landing_page", "limit": ONS_PAGE, "offset": offset})
+        except Exception as exc:  # noqa: BLE001
+            errors += 1
+            print(f"[{src['id']}]   page at offset={offset} failed: {exc}", flush=True)
+            break
+        total = d.get("count", total)
+        got = d.get("items") or []
+        items += got
+        offset += len(got)
+        if not got or offset >= (total or 0) or (limit and len(items) >= limit):
+            break
+    if limit:
+        items = items[:limit]
+    rows, res_by_key, unchanged = [], {}, 0
+    for i, it in enumerate(items, 1):
+        uri = (it.get("uri") or "").strip()
+        if not uri.startswith("/"):
+            continue
+        key = f"{src['id']}:{uri}"
+        release = norm_date(it.get("release_date"))
+        formats: list = []
+        n_res = 0
+        # The listing has everything but the files. Files are two requests
+        # away, so only a new or re-released dataset pays for them.
+        if key in known and known[key] == release and release:
+            unchanged += 1
+            n_res = conn.execute("SELECT count(*) FROM resources WHERE dataset_key = ?", (key,)).fetchone()[0]
+            formats = [r[0] for r in conn.execute("SELECT format FROM resources WHERE dataset_key = ?", (key,)) if r[0]]
+        else:
+            res = []
+            try:
+                page = c.json(f"{ONS_WEB}{uri}/data")
+                editions = page.get("datasets") or []
+                if editions:
+                    ver_uri = editions[0].get("uri") or ""
+                    ver = c.json(f"{ONS_WEB}{ver_uri}/data")
+                    for dl in (ver.get("downloads") or []) + (ver.get("supplementaryFiles") or []):
+                        f = dl.get("file") or ""
+                        if f:
+                            res.append((key, f"{ONS_WEB}/file?uri={ver_uri}/{f}", dl.get("title") or f, _ext(f)))
+            except Exception as exc:  # noqa: BLE001 — the landing page still stands
+                errors += 1
+                if errors <= 5:
+                    print(f"[{src['id']}]   files for {uri[-60:]}: {exc}", flush=True)
+            res_by_key[key] = res
+            n_res = len(res)
+            formats = [r[3] for r in res]
+            if i % 100 == 0:
+                print(f"[{src['id']}]   {i}/{len(items)} ({c.requests} requests)", flush=True)
+        row = _row(src["id"], uri, it.get("title"), it.get("summary") or it.get("meta_description"),
+                   "Office for National Statistics", "Open Government Licence v3.0", None, it.get("release_date"),
+                   f"{ONS_WEB}{uri}", it.get("keywords") or [], formats, n_res, now)
+        if row:
+            rows.append(row)
+    _finish(conn, src, started, rows, res_by_key, total, errors, unchanged)
+
+
+# --- DfE Explore Education Statistics ---------------------------------------
+
+def harvest_ees(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
+    """Every publication on Explore Education Statistics, as one dataset
+    record per publication with the latest release's data files. The
+    content API lists publications (sitemap-items), a publication's
+    summary, and a release's data sets. explore-education-statistics is
+    'Crown copyright … Open Government Licence v3.0' (GOV.UK footer)."""
+    c = _Client()
+    started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    now = started
+    print(f"[{src['id']}] harvesting Explore Education Statistics ...", flush=True)
+    known = {k: m for k, m in conn.execute("SELECT key, modified FROM datasets WHERE source_id = ?", (src["id"],))}
+    try:
+        pubs = c.json(f"{EES_API}/publications/sitemap-items")
+    except Exception as exc:  # noqa: BLE001
+        print(f"[{src['id']}] publication list failed: {exc}", flush=True)
+        return
+    if limit:
+        pubs = pubs[:limit]
+    rows, res_by_key, unchanged, errors = [], {}, 0, 0
+    for i, p in enumerate(pubs, 1):
+        slug = p.get("slug")
+        rels = p.get("releases") or []
+        if not slug or not rels:
+            continue
+        latest = max(rels, key=lambda r: r.get("lastModified") or "")
+        key = f"{src['id']}:{slug}"
+        modified = norm_date(latest.get("lastModified"))
+        try:
+            pub = c.json(f"{EES_API}/publications/{slug}")
+        except Exception as exc:  # noqa: BLE001
+            errors += 1
+            if errors <= 5:
+                print(f"[{src['id']}]   {slug}: {exc}", flush=True)
+            continue
+        title = pub.get("title") or slug
+        summary = pub.get("summary") or pub.get("slug")
+        formats: list = []
+        if key in known and known[key] == modified and modified:
+            unchanged += 1
+            n_res = conn.execute("SELECT count(*) FROM resources WHERE dataset_key = ?", (key,)).fetchone()[0]
+            formats = [r[0] for r in conn.execute("SELECT format FROM resources WHERE dataset_key = ?", (key,)) if r[0]]
+        else:
+            res = []
+            try:
+                dc = c.json(f"{EES_API}/publications/{slug}/releases/{latest['slug']}/data-content")
+                rv = dc.get("releaseVersionId") or dc.get("releaseId")
+                # the site's own download route (downloadService.ts):
+                # /releases/{releaseVersionId}/files?fileIds={fileId} -> a zip of the CSV and its metadata
+                for ds in dc.get("dataSets") or []:
+                    fid = ds.get("fileId")
+                    if fid and rv:
+                        res.append((key, f"{EES_API}/releases/{rv}/files?fileIds={fid}",
+                                    ds.get("title") or "data set", "zip"))
+                for sf in dc.get("supportingFiles") or []:
+                    fid = sf.get("id") or sf.get("fileId")
+                    if fid and rv:
+                        res.append((key, f"{EES_API}/releases/{rv}/files?fileIds={fid}",
+                                    sf.get("name") or sf.get("filename") or "supporting file", "zip"))
+            except Exception as exc:  # noqa: BLE001
+                errors += 1
+                if errors <= 5:
+                    print(f"[{src['id']}]   files for {slug}: {exc}", flush=True)
+            res_by_key[key] = res
+            n_res = len(res)
+            formats = [r[3] for r in res]
+        row = _row(src["id"], slug, title, summary, "Department for Education", "Open Government Licence v3.0",
+                   None, latest.get("lastModified"), f"{EES_WEB}/find-statistics/{slug}",
+                   [t.get("title") for t in (pub.get("topics") or []) if isinstance(t, dict)] if isinstance(pub.get("topics"), list) else [],
+                   formats, n_res, now)
+        if row:
+            rows.append(row)
+        if i % 50 == 0:
+            print(f"[{src['id']}]   {i}/{len(pubs)} ({c.requests} requests)", flush=True)
+    _finish(conn, src, started, rows, res_by_key, len(pubs), errors, unchanged)

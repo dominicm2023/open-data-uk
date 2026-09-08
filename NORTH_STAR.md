@@ -62,13 +62,6 @@ above it — cross-source joins, and framing and argument — were removed on
 A living list. Add freely; move to "Done" with the commit that did it.
 
 ### Coverage — know where it all lives
-- **ONS as a source.** "population of hertfordshire" (7 Sep) returned a
-  cattle census first: the index has councils' copies of ONS mid-year
-  estimates but not ONS's own releases, because ons.gov.uk is not a
-  catalogue we harvest (data.gov.uk's ONS records are old census
-  listings). ONS's dataset pages/API are the biggest single gap for the
-  questions people actually type; likewise DfE's explore-education-
-  statistics for "SATs"/KS2.
 - The 8 councils with no trace (5 England, 1 Scotland, 2 Wales): find the
   portal or record that there isn't one. `COUNCIL_COVERAGE.md` has the list.
 - `PLATFORM_BACKLOG.md`: verified portals we have no harvester for.
@@ -198,6 +191,13 @@ A living list. Add freely; move to "Done" with the commit that did it.
   published the same day: 4,755 sites from 53 planning authorities; then
   MHCLG's platform for the rest — 29,977 sites, 311 authorities — and
   headline figures (hectares, minimum homes, share permissioned) on the page.
+- 8 Sep — ONS and DfE added as sources (`harvest_national.py`): the ONS
+  search API's 3,928 dataset landing pages with each latest edition's
+  files, and Explore Education Statistics' publications with each latest
+  release's data files. Both were the gaps behind "population of
+  hertfordshire" (a cattle census came first) and "SATs" (nothing).
+  First full ONS pass runs in the 8 Sep nightly (~3 h at 1.5 s/request);
+  incremental after, by release date.
 - 7 Sep — first publisher outreach: 15 councils holding INSPIRE-licensed
   recycling/air datasets asked (by email, DM's approval, from the
   groundwatercast address) to re-release under OGL via the derived-data
