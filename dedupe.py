@@ -44,6 +44,18 @@ from paths import DB_PATH, connect as db_connect  # noqa: E402
 
 AGGREGATOR = "data_gov_uk"
 
+# key -> the set of resource URLs the record points at, loaded once by main().
+# Two same-titled records that point at the same files are one dataset
+# whatever the catalogue says about who published them: data.gov.uk lists
+# "Stockport GCSE Results" fifteen times under Sunderland, Wakefield and
+# North Tyneside, every copy pointing at Data Mill North's one file.
+RESOURCES: dict[str, frozenset] = {}
+
+
+def same_files(a, b) -> bool:
+    ra, rb = RESOURCES.get(a["key"]), RESOURCES.get(b["key"])
+    return bool(ra) and ra == rb
+
 _RETIRED_RE = re.compile(
     r"(this (record|dataset) (has been|is) (retired|withdrawn|superseded))"
     r"|(record has been retired)|(has been superseded by)",
@@ -144,6 +156,8 @@ def mirrors(a, b) -> bool:
 
 def mergeable(a, b) -> bool:
     """May these two same-titled records be treated as one dataset?"""
+    if same_files(a, b):
+        return True
     if norm(a["publisher"]) == norm(b["publisher"]):
         # Unless it's two records from the same portal whose "publisher" is
         # just the portal's own name — the harvester's fallback when a
@@ -342,6 +356,11 @@ def main() -> None:
         "       description, resource_count, modified, tags, license_norm "
         "FROM datasets"
     ).fetchall()
+    urls_by_key: dict[str, set] = defaultdict(set)
+    for key, url in conn.execute("SELECT dataset_key, url FROM resources WHERE url IS NOT NULL AND url != ''"):
+        urls_by_key[key].add(url.strip().lower())
+    RESOURCES.clear()
+    RESOURCES.update({k: frozenset(v) for k, v in urls_by_key.items()})
 
     # --- tags -------------------------------------------------------------
     import json as _json

@@ -655,8 +655,33 @@ class SearchEngine:
             kept.append(key)
         return kept
 
+    # What people call a thing and what the catalogues call it: "SATs" found
+    # nothing in a corpus with 103 "Key Stage 2" datasets (8 Sep). The
+    # reader's word stays in the query; the catalogue's is added beside it,
+    # so a title in either vocabulary matches.
+    SYNONYMS = {
+        "sats": "key stage 2", "ks2": "key stage 2", "ks4": "key stage 4", "gcses": "gcse key stage 4",
+        "a levels": "a level key stage 5", "hwrc": "household waste recycling centre", "tip": "household waste recycling centre",
+        "aqma": "air quality management area", "no2": "nitrogen dioxide", "pm2.5": "particulate matter",
+        "council tax": "council tax band", "mot": "mot test", "gp": "general practice", "a&e": "accident and emergency",
+        "brownfield": "brownfield land register", "hmo": "houses in multiple occupation", "tpo": "tree preservation order",
+        "epc": "energy performance certificate", "lsoa": "lower super output area", "imd": "index of multiple deprivation",
+        "fpn": "fixed penalty notice", "asb": "anti-social behaviour", "dbs": "disclosure and barring",
+        "spend over 500": "payments to suppliers", "spending": "expenditure payments",
+    }
+
+    @classmethod
+    def _expand(cls, query: str) -> str:
+        q = query
+        low = " " + re.sub(r"\s+", " ", query.lower()) + " "
+        for word, alt in cls.SYNONYMS.items():
+            if f" {word} " in low and alt.lower() not in low:
+                q += f" {alt}"
+        return q
+
     def search(self, query: str, k: int = 10, offset: int = 0,
                filters: dict | None = None) -> dict:
+        query = self._expand(query)
         conn = self._conn()
         try:
             if self._place_vocab is None:

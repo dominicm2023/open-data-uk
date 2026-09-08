@@ -314,7 +314,7 @@ def check_traffic(rep: Report) -> dict:
                  - dt.timedelta(days=1)).strftime("%Y-%m-%dT%H:%M:%S")
         rows = conn.execute(
             "SELECT query, COUNT(*) FROM queries WHERE ts >= ? "
-            "AND query != 'health check' GROUP BY query ORDER BY 2 DESC",
+            "AND query != 'health check' AND k = 15 GROUP BY query ORDER BY 2 DESC",   # k=15 is the site's own search box; this digest's probe is k=3
             (since,)).fetchall()
         conn.close()
     except Exception:  # noqa: BLE001

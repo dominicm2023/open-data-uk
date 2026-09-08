@@ -62,6 +62,13 @@ above it — cross-source joins, and framing and argument — were removed on
 A living list. Add freely; move to "Done" with the commit that did it.
 
 ### Coverage — know where it all lives
+- **ONS as a source.** "population of hertfordshire" (7 Sep) returned a
+  cattle census first: the index has councils' copies of ONS mid-year
+  estimates but not ONS's own releases, because ons.gov.uk is not a
+  catalogue we harvest (data.gov.uk's ONS records are old census
+  listings). ONS's dataset pages/API are the biggest single gap for the
+  questions people actually type; likewise DfE's explore-education-
+  statistics for "SATs"/KS2.
 - The 8 councils with no trace (5 England, 1 Scotland, 2 Wales): find the
   portal or record that there isn't one. `COUNCIL_COVERAGE.md` has the list.
 - `PLATFORM_BACKLOG.md`: verified portals we have no harvester for.
