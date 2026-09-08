@@ -89,6 +89,33 @@ def _row(src_id: str, ident: str, title: str, description, publisher: str, licen
             n_res, now)
 
 
+class _RunLock:
+    """One run of a long source at a time: a cold ONS pass is three hours,
+    and the nightly refresh must not start a second one beside a manual
+    run. A lock whose process is gone is stale and taken over."""
+
+    def __init__(self, conn: sqlite3.Connection, src_id: str):
+        import os
+        self.path = Path(conn.execute("PRAGMA database_list").fetchone()[2]).parent / f"{src_id}.harvest.lock"
+        self.held = False
+        if self.path.exists():
+            try:
+                pid = int(self.path.read_text().strip() or 0)
+                os.kill(pid, 0)
+                return                                  # alive: not ours to take
+            except (ValueError, ProcessLookupError, PermissionError):
+                pass
+        self.path.write_text(str(os.getpid()))
+        self.held = True
+
+    def release(self):
+        if self.held:
+            try:
+                self.path.unlink()
+            except OSError:
+                pass
+
+
 def _finish(conn: sqlite3.Connection, src: dict, started: str, rows: list, res_by_key: dict,
             total, errors: int, unchanged: int) -> None:
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -110,6 +137,17 @@ def harvest_ons(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
     edition's downloads. ons.gov.uk/help/termsandconditions: 'Most content
     on this website is subject to Crown copyright protection and is
     published under the Open Government Licence (OGL)' (v3)."""
+    lock = _RunLock(conn, src["id"])
+    if not lock.held:
+        print(f"[{src['id']}] another run is in progress ({lock.path.name}); skipping", flush=True)
+        return
+    try:
+        _harvest_ons(src, conn, limit)
+    finally:
+        lock.release()
+
+
+def _harvest_ons(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
     c = _Client()
     started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     now = started
@@ -281,6 +319,17 @@ def harvest_govuk(src: dict, conn: sqlite3.Connection, limit: int | None) -> Non
     moved since its attachments were fetched is not fetched again.
     GOV.UK: 'All content is available under the Open Government Licence
     v3.0, except where otherwise stated.'"""
+    lock = _RunLock(conn, src["id"])
+    if not lock.held:
+        print(f"[{src['id']}] another run is in progress ({lock.path.name}); skipping", flush=True)
+        return
+    try:
+        _harvest_govuk(src, conn, limit)
+    finally:
+        lock.release()
+
+
+def _harvest_govuk(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
     cfg = src.get("govuk") or {}
     c = _Client()
     started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
