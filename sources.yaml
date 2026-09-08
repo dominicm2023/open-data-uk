@@ -3425,3 +3425,17 @@ sources:
     govuk:
       document_types: [national_statistics, official_statistics, statistical_data_set]
       attachments_per_run: 3000
+
+  - id: nomis
+    name: Nomis (ONS labour market and census tables)
+    type: nomis
+    api: https://www.nomisweb.co.uk/api/v01/dataset/def.sdmx.json
+    web: https://www.nomisweb.co.uk
+    dataset_url: https://www.nomisweb.co.uk/datasets/{name}
+
+  - id: fingertips
+    name: Fingertips public health profiles (OHID)
+    type: fingertips
+    api: https://fingertips.phe.org.uk/api/indicator_metadata/all
+    web: https://fingertips.phe.org.uk
+    dataset_url: https://fingertips.phe.org.uk/search/{name}

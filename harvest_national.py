@@ -374,3 +374,98 @@ def harvest_govuk(src: dict, conn: sqlite3.Connection, limit: int | None) -> Non
     conn.commit()
     print(f"[{src['id']}] done: {len(rows)} releases stored; attachments fetched for {done_att} "
           f"({n_files} files), {len(todo) - done_att} still waiting; {errors} errors", flush=True)
+
+
+# --- Nomis (ONS labour market and census tables) ----------------------------
+
+NOMIS_DEF = "https://www.nomisweb.co.uk/api/v01/dataset/def.sdmx.json"
+NOMIS_WEB = "https://www.nomisweb.co.uk"
+
+
+def harvest_nomis(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
+    """Every dataset Nomis serves, from its one SDMX definition file: id,
+    name, description, keywords, status and last-updated date. The
+    downloadable resource is the dataset's CSV endpoint on the API, which
+    takes the reader's own geography and time selection."""
+    c = _Client()
+    started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    now = started
+    print(f"[{src['id']}] harvesting Nomis definitions ...", flush=True)
+    try:
+        d = c.json(NOMIS_DEF)
+        fams = d["structure"]["keyfamilies"]["keyfamily"]
+    except Exception as exc:  # noqa: BLE001
+        print(f"[{src['id']}] definition file failed: {exc}", flush=True)
+        return
+    if limit:
+        fams = fams[:limit]
+    rows, res_by_key = [], {}
+    for k in fams:
+        ident = k.get("id")
+        if not ident:
+            continue
+        ann = {a.get("annotationtitle"): a.get("annotationtext") for a in ((k.get("annotations") or {}).get("annotation") or [])}
+        name = k.get("name")
+        name = name.get("value") if isinstance(name, dict) else name
+        desc = k.get("description")
+        desc = desc.get("value") if isinstance(desc, dict) else desc
+        mnemonic = str(ann.get("Mnemonic") or "").strip()
+        landing = f"{NOMIS_WEB}/datasets/{mnemonic}" if mnemonic else f"{NOMIS_WEB}/api/v01/dataset/{ident}.def.htm"
+        key = f"{src['id']}:{ident}"
+        res = [(key, f"{NOMIS_WEB}/api/v01/dataset/{ident}.data.csv", "data (CSV via the Nomis API; select a geography)", "csv"),
+               (key, f"{NOMIS_WEB}/api/v01/dataset/{ident}.def.sdmx.json", "definition (SDMX)", "json")]
+        res_by_key[key] = res
+        tags = [t.strip() for t in str(ann.get("Keywords") or "").split(",") if t.strip()] + [str(ann.get("Status") or "")]
+        row = _row(src["id"], ident, name, desc or ann.get("SubDescription"), "Office for National Statistics (Nomis)",
+                   "Open Government Licence v3.0", ann.get("FirstReleased"), ann.get("LastUpdated"), landing, tags,
+                   ["csv", "json"], 2, now)
+        if row:
+            rows.append(row)
+    _finish(conn, src, started, rows, res_by_key, len(fams), 0, 0)
+
+
+# --- Fingertips (OHID public health profiles) --------------------------------
+
+FT_API = "https://fingertips.phe.org.uk/api"
+FT_WEB = "https://fingertips.phe.org.uk"
+
+
+def harvest_fingertips(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
+    """Every indicator in OHID's public health profiles, from the metadata
+    endpoint, with the API's CSV of all its data by upper-tier local
+    authority as the resource. fingertips.phe.org.uk: 'All content is
+    available under the Open Government Licence, except where otherwise
+    stated'."""
+    c = _Client()
+    started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    now = started
+    print(f"[{src['id']}] harvesting Fingertips indicator metadata ...", flush=True)
+    try:
+        meta = c.json(f"{FT_API}/indicator_metadata/all")
+    except Exception as exc:  # noqa: BLE001
+        print(f"[{src['id']}] metadata failed: {exc}", flush=True)
+        return
+    items = list(meta.values())
+    if limit:
+        items = items[:limit]
+    rows, res_by_key = [], {}
+    for m in items:
+        iid = m.get("IID")
+        if not iid:
+            continue
+        d = m.get("Descriptive") or {}
+        key = f"{src['id']}:{iid}"
+        definition = " ".join(x for x in (d.get("Definition"), d.get("Rationale")) if x) or d.get("Name")
+        unit = (m.get("Unit") or {}).get("Label")
+        res = [(key, f"{FT_API}/all_data/csv/by_indicator_id?indicator_ids={iid}&child_area_type_id=402&parent_area_type_id=6",
+                "all data by upper-tier local authority (CSV)", "csv"),
+               (key, f"{FT_API}/all_data/csv/by_indicator_id?indicator_ids={iid}&child_area_type_id=502&parent_area_type_id=6",
+                "all data by lower-tier local authority (CSV)", "csv")]
+        res_by_key[key] = res
+        tags = [t for t in (unit, d.get("DataSource")) if t]
+        row = _row(src["id"], str(iid), d.get("Name"), definition, "Office for Health Improvement and Disparities (Fingertips)",
+                   "Open Government Licence v3.0", None, m.get("LatestChangeTimestampOverride"), f"{FT_WEB}/search/{iid}",
+                   tags, ["csv"], 2, now)
+        if row:
+            rows.append(row)
+    _finish(conn, src, started, rows, res_by_key, len(meta), 0, 0)
