@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import http.client
 import html
 import ipaddress
 import json
@@ -300,7 +301,9 @@ def fetch(url: str, limit: int, headers: dict | None = None) -> tuple[bytes | No
                 _parked[host] = f"HTTP {err.code}" + (f", Retry-After {retry}" if retry else "")
                 raise Refused(f"rate limited (HTTP {err.code}); host parked for this run")
             raise Refused(f"HTTP {err.code}")
-        except URLError as err:
+        except (URLError, TimeoutError, OSError, http.client.HTTPException) as err:
+            # a connect failure, a read that timed out, a reset mid-handshake:
+            # one slow host ended three nightly intake runs on 7 September
             _retries[host] += 1
             if _retries[host] >= LIMITS["host_retry_budget"]:
                 _parked[host] = "retry budget spent"
@@ -313,7 +316,13 @@ def fetch(url: str, limit: int, headers: dict | None = None) -> tuple[bytes | No
             while True:
                 if time.monotonic() - start > 120:
                     raise Refused("Download time limit exceeded")
-                chunk = resp.read(min(65536, limit - size + 1))
+                try:
+                    chunk = resp.read(min(65536, limit - size + 1))
+                except (TimeoutError, OSError, http.client.HTTPException) as err:
+                    _retries[host] += 1
+                    if _retries[host] >= LIMITS["host_retry_budget"]:
+                        _parked[host] = "retry budget spent"
+                    raise Refused(f"read failed: {err}")
                 if not chunk:
                     break
                 chunks.append(chunk)
