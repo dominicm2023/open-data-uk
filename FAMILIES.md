@@ -185,7 +185,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 |---|---|---|---|
 | recycling_centres | 30 sources | 18 | 13 sources, 98 rows, 12 bodies |
 | air_quality_annual | 56 + 5 national networks | 39 | 22 sources, ~55,000 rows, 10 bodies (AURN, LMAM, Scotland, Wales, Northern Ireland; 1990-2026) |
-| brownfield_land | 176 sources / 129 authorities | 62 | (being published 8 September: the 2017 standard maps most files by name) |
+| brownfield_land | 176 sources / 129 authorities | 62 | 53 sources, 4,755 sites, 53 authorities (79 dead links, 35 refused on licence, 9 rejected: duplicates, a KPI series, a regional copy, one register without addresses) |
 | spend_over_500 | 212 (every edition) | 76 | 68 sources, 4,259,913 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
 
 Held in review, not published: Bradford's diffusion tubes (nothing in the
