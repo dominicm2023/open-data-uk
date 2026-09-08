@@ -80,8 +80,15 @@ def _headline(s: dict) -> dict:
                 via_platform += e["bodies"] - 1
             by_pub[b] = by_pub.get(b, 0) + e["rows"]
     ladder = s.get("ladder", {})
+    # the registry's sources are datasets found in the catalogues we index;
+    # a national network or collection is a route, not a catalogued dataset
+    srcs = s.get("sources", [])
+    catalogued = [e for e in srcs if e.get("portal") not in ("networks", "platform")]
     return {"total": s.get("published_rows", 0), "by_pub": by_pub, "bodies": len(by_pub) + via_platform,
-            "sources": sum(ladder.values()), "built": (s.get("built_at") or "")[:10]}
+            "sources": len(catalogued), "sources_published": sum(1 for e in catalogued if e.get("ladder") == "published"),
+            "via_platform": via_platform + (1 if via_platform else 0),
+            "via_networks": sum(1 for e in srcs if e.get("portal") == "networks" and e.get("ladder") == "published"),
+            "built": (s.get("built_at") or "")[:10]}
 
 
 def _size_note(family: str) -> str:
@@ -243,10 +250,16 @@ def _qa(family: str, s: dict, schema: dict, h: dict) -> list[tuple[str, str]]:
     filled = f.get("filled") or {}
     years = f.get("years") or {}
     qa: list[tuple[str, str]] = []
-    missing = n_sources - h["bodies"]
-    qa.append(("How much is here?",
-               f"{total:,} rows from {h['bodies']} public bodies. {n_sources} bodies publish this dataset, so "
-               f"{missing} are not in the table yet — the list below the preview says why for each."))
+    missing = n_sources - h["sources_published"]
+    how_much = (f"{total:,} rows from {h['bodies']} public bodies. The catalogues we index list {n_sources} datasets of "
+                f"this kind; {h['sources_published']} are in the table and {missing} are not yet — the list below the "
+                "preview says why for each.")
+    if h.get("via_platform"):
+        how_much += (f" A further {h['via_platform']} authorities are here through MHCLG's national collection rather "
+                     "than a file of their own.")
+    if h.get("via_networks"):
+        how_much += f" {h['via_networks']} national monitoring networks are read from their own sites."
+    qa.append(("How much is here?", how_much))
     if years:
         ys = sorted(years)
         peak = max(years.items(), key=lambda kv: kv[1])
@@ -481,7 +494,7 @@ def render_family(family: str, site_url: str) -> str | None:
         + '<div class="stat-row">'
           f'<div class="stat"><b>{total:,}</b><span>rows</span></div>'
           f'<div class="stat"><b>{h["bodies"]}</b><span>bodies in the table</span></div>'
-          f'<div class="stat"><b>{n_sources}</b><span>bodies that publish it</span></div>'
+          f'<div class="stat"><b>{n_sources}</b><span>datasets found in the catalogues</span></div>'
           f'<div class="stat"><b>{esc(_nice_date(h["built"]))}</b><span>last built</span></div>'
           '</div>'
         + _headline_tiles(facets)
@@ -498,7 +511,7 @@ def render_family(family: str, site_url: str) -> str | None:
            "<p class=\"note\">What a person recorded when checking how a body's file was read: a mislabelled header, "
            'a threshold taken from the title, a unit the file does not state.</p>'
            f'<ul class="notes">{review_notes}</ul></details>' if review_notes else "")
-        + f'<details class="fold"><summary>Publish it, but not in the table yet ({len(pending)} of {n_sources})</summary>'
+        + f'<details class="fold"><summary>Found in the catalogues but not in the table ({len(pending)} of {n_sources} datasets)</summary>'
           '<p class="note">A body appears here when it publishes this dataset but its file has not reached the table: '
           'the licence was not stated explicitly, the file could not be read, or the mapping is still waiting for review. '
           'That is a fact about the file, not a judgement of the body.</p>'
