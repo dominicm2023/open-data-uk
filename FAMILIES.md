@@ -185,7 +185,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 |---|---|---|---|
 | recycling_centres | 30 sources | 18 | 13 sources, 98 rows, 12 bodies |
 | air_quality_annual | 56 + 5 national networks | 39 | 22 sources, ~55,000 rows, 10 bodies (AURN, LMAM, Scotland, Wales, Northern Ireland; 1990-2026) |
-| brownfield_land | 176 sources / 129 authorities | 62 | 53 sources, 4,755 sites, 53 authorities (79 dead links, 35 refused on licence, 9 rejected: duplicates, a KPI series, a regional copy, one register without addresses) |
+| brownfield_land | 176 sources / 129 authorities + MHCLG's platform | 62 | 53 own files (4,755 sites) + the platform for 258 more authorities (25,222 sites): 29,977 sites, 311 authorities |
 | spend_over_500 | 212 (every edition) | 76 | 68 sources, 4,259,913 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
 
 Held in review, not published: Bradford's diffusion tubes (nothing in the
@@ -300,6 +300,22 @@ metres and two councils swap them (the build reads both); the CSV
 sniffer's quoting guesses split every address with a comma and shifted
 the columns after it — the sniffer is now trusted for the delimiter only.
 One row is one site on the authority's register as last published.
+
+**The platform, and the figures the page leads with (8 September, later).**
+MHCLG's planning data platform (planning.data.gov.uk) collects every
+authority's register nationally under the OGL. `families/platform.py`
+fetches its brownfield-land CSV (21 MB, conditional) and organisation
+lookup, maps the platform's field names to the schema, and build.py
+appends the rows for every authority *not* already published from its
+own file (`_body_key` matches names across spellings; Fareham's body had
+to be written as the council's name for the match to hold). Those rows
+say so in `quality_note`, and carry the platform's normalised spellings
+('not-owned-by-a-public-authority'). 53 authorities from their own files,
+258 from the platform: 29,977 sites. A schema may now declare `headline`
+figures — a column's sum, or the share of rows matching a pattern — and
+the page shows them as tiles and answers with them: 111,571 hectares,
+1,233,635 homes at the authorities' minimum estimates, 62% of sites
+already permissioned.
 
 ## The loop from here
 

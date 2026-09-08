@@ -1562,9 +1562,9 @@
    "northing": "GeoY"
   },
   "constants": {
-   "body": "Fareham ArcGIS Online"
+   "body": "Fareham Borough Council"
   },
-  "notes": "A slim GIS layer, not a full standard-columns register: only ID, Site_Name, Gross_Area_HA and coordinates are present -- no ownership/planning/dwellings/dates/plan-url fields to map. The header carries '_lon'/'_lat' fields but they are empty in every sample row (outSR=4326 was requested but not populated for this layer); GeoX/GeoY hold real British National Grid metres for the Fareham area instead, so mapped to easting/northing. ID values are published as floats (e.g. '1058.0') and kept as published. ExportName and the Shape__Area/Shape__Length GIS metadata fields have no home in the schema. OBJECTID/ID/Site_Name/coordinates are identical to the rejected MapServer copy of this layer -- same 23 sites. Review 2026-09-08: preview checked — site references and addresses present, hectares and dwelling estimates in range, coordinates land in the authority's area.",
+  "notes": "A slim GIS layer, not a full standard-columns register: only ID, Site_Name, Gross_Area_HA and coordinates are present -- no ownership/planning/dwellings/dates/plan-url fields to map. The header carries '_lon'/'_lat' fields but they are empty in every sample row (outSR=4326 was requested but not populated for this layer); GeoX/GeoY hold real British National Grid metres for the Fareham area instead, so mapped to easting/northing. ID values are published as floats (e.g. '1058.0') and kept as published. ExportName and the Shape__Area/Shape__Length GIS metadata fields have no home in the schema. OBJECTID/ID/Site_Name/coordinates are identical to the rejected MapServer copy of this layer -- same 23 sites. Review 2026-09-08: preview checked — site references and addresses present, hectares and dwelling estimates in range, coordinates land in the authority's area. Review 2026-09-08: body written as 'Fareham Borough Council' (the index names the portal 'Fareham ArcGIS Online'), so the platform's copy of Fareham's register is not taken as well.",
   "version": "1",
   "reviewer": "Dominic Matthews via Claude",
   "reviewed_at": "2026-09-08"

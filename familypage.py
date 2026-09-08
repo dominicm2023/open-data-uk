@@ -70,12 +70,17 @@ def _schema(family: str) -> dict:
 def _headline(s: dict) -> dict:
     """The numbers a page leads with, all from the build summary."""
     by_pub: dict[str, int] = {}
+    # a national collection is one entry that stands for many bodies
+    via_platform = 0
     for e in s.get("sources", []):
         if e.get("ladder") == "published" and e.get("rows"):
             b = e.get("body") or e["publisher"]
+            if e.get("portal") == "platform" and e.get("bodies"):
+                b = f"{b} — {e['bodies']} authorities"
+                via_platform += e["bodies"] - 1
             by_pub[b] = by_pub.get(b, 0) + e["rows"]
     ladder = s.get("ladder", {})
-    return {"total": s.get("published_rows", 0), "by_pub": by_pub, "bodies": len(by_pub),
+    return {"total": s.get("published_rows", 0), "by_pub": by_pub, "bodies": len(by_pub) + via_platform,
             "sources": sum(ladder.values()), "built": (s.get("built_at") or "")[:10]}
 
 
@@ -212,6 +217,23 @@ def _gbp(v: float) -> str:
     return f"£{v:,.0f}"
 
 
+def _headline_tiles(facets: dict) -> str:
+    """The figures a family's schema asks the page to lead with."""
+    tiles = []
+    for t in facets.get("headline") or []:
+        v = t.get("value")
+        if v is None:
+            continue
+        if t.get("format") == "percent":
+            shown = f"{v * 100:.0f}%"
+        elif t.get("format") == "integer":
+            shown = f"{int(round(v)):,}"
+        else:
+            shown = f"{v:,.0f}"
+        tiles.append(f'<div class="stat"><b>{esc(shown)}</b><span>{esc(t["label"])}</span></div>')
+    return f'<div class="stat-row">{"".join(tiles)}</div>' if tiles else ""
+
+
 def _qa(family: str, s: dict, schema: dict, h: dict) -> list[tuple[str, str]]:
     """Questions the table can answer, each answered from the build's own
     facets. Every answer is a fact about this table, and says so when the
@@ -221,9 +243,9 @@ def _qa(family: str, s: dict, schema: dict, h: dict) -> list[tuple[str, str]]:
     filled = f.get("filled") or {}
     years = f.get("years") or {}
     qa: list[tuple[str, str]] = []
-    missing = n_sources - len(by_pub)
+    missing = n_sources - h["bodies"]
     qa.append(("How much is here?",
-               f"{total:,} rows from {len(by_pub)} public bodies. {n_sources} bodies publish this dataset, so "
+               f"{total:,} rows from {h['bodies']} public bodies. {n_sources} bodies publish this dataset, so "
                f"{missing} are not in the table yet — the list below the preview says why for each."))
     if years:
         ys = sorted(years)
@@ -254,6 +276,27 @@ def _qa(family: str, s: dict, schema: dict, h: dict) -> list[tuple[str, str]]:
                    "Only with care. The UK annual mean objective for NO₂ is 40 µg/m³, but a diffusion-tube figure is "
                    "usually bias-adjusted in the body's own report and this table carries the value as published, "
                    "with the method where the body stated it."))
+    if family == "brownfield_land":
+        hl = {t["column"]: t for t in (f.get("headline") or [])}
+        ha, dw, pm = hl.get("hectares"), hl.get("min_net_dwellings"), hl.get("planning_status")
+        if ha and ha.get("value") is not None:
+            qa.append(("How much land is on the registers?",
+                       f"{ha['value']:,.0f} hectares across {ha['n']:,} sites that give an area, as the authorities "
+                       f"measured it; {total - ha['n']:,} sites give no area."))
+        if dw and dw.get("value") is not None:
+            qa.append(("How many homes could it take?",
+                       f"At least {int(dw['value']):,}, adding up each authority's own minimum estimate on {dw['n']:,} sites. "
+                       "That is a sum of estimates made at different times to different rules, not a forecast."))
+        if pm and pm.get("value") is not None:
+            qa.append(("How much of it already has permission?",
+                       f"{pm['value'] * 100:.0f}% of the {pm['n']:,} sites with a stated planning status are permissioned; "
+                       "the rest are pending or not yet applied for. A register lists land suitable for housing, not land "
+                       "being built on."))
+        n_coords = f.get("sites_total", 0)
+        qa.append(("Where are the sites?",
+                   f"{n_coords:,} sites have coordinates and are on the map. Rows marked 'via MHCLG's planning data platform' "
+                   "come from the national collection because the authority's own file was not available; the rest come "
+                   "from the authorities' own registers."))
     if family == "spend_over_500":
         am = f.get("amount") or {}
         if am.get("total"):
@@ -434,13 +477,14 @@ def render_family(family: str, site_url: str) -> str | None:
     body_html = (
         crumb_html
         + f"<h1>{esc(s['label'])}</h1>"
-        + f'<p class="lede">One table of {esc(schema["one_row_is"])}, from {len(by_pub)} public bodies&#39; own published files.</p>'
+        + f'<p class="lede">One table of {esc(schema["one_row_is"])}, from {h["bodies"]} public bodies&#39; published files.</p>'
         + '<div class="stat-row">'
           f'<div class="stat"><b>{total:,}</b><span>rows</span></div>'
-          f'<div class="stat"><b>{len(by_pub)}</b><span>bodies in the table</span></div>'
+          f'<div class="stat"><b>{h["bodies"]}</b><span>bodies in the table</span></div>'
           f'<div class="stat"><b>{n_sources}</b><span>bodies that publish it</span></div>'
           f'<div class="stat"><b>{esc(_nice_date(h["built"]))}</b><span>last built</span></div>'
           '</div>'
+        + _headline_tiles(facets)
         + f'<p class="dl-row"><a class="cta" href="/api/family/{esc(family)}.csv">Download CSV</a>'
           f'<a href="/api/family/{esc(family)}">JSON</a>'
           f'<a href="/who-publishes?name={esc(s["label"])}">Who publishes this</a>'
@@ -467,8 +511,8 @@ def render_family(family: str, site_url: str) -> str | None:
           'only where the licence explicitly allows it and a person has reviewed how the pieces were joined.</p>'
     )
     head_html = simple_head(
-        f"{s['label']} — one table from {len(by_pub)} UK public bodies",
-        f"{total:,} rows of {s['label'].lower()} combined from {len(by_pub)} publishers' own open data, "
+        f"{s['label']} — one table from {h['bodies']} UK public bodies",
+        f"{total:,} rows of {s['label'].lower()} combined from {h['bodies']} public bodies' open data, "
         "with the source, licence and row of every entry.",
         f"/family/{family}", site_url, crumb_ld)
     return _page(head_html, body_html, "/combined")

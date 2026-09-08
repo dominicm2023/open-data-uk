@@ -619,6 +619,13 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
     return out, bad
 
 
+def _body_key(name) -> str:
+    """'London Borough of Camden' and 'Camden London Borough Council' are one body."""
+    n = re.sub(r"[^a-z0-9 ]", " ", str(name or "").lower())
+    n = re.sub(r"\b(the|of|council|borough|district|city|county|metropolitan|london|royal|unitary|authority|and)\b", " ", n)
+    return re.sub(r"\s+", " ", n).strip()
+
+
 def _facets(rows: list[dict], schema: dict) -> dict:
     """What the page draws and answers with, computed once over every
     published row: years covered per body, the distinct sites with
@@ -626,6 +633,19 @@ def _facets(rows: list[dict], schema: dict) -> dict:
     it is a fact about this table, never about the world."""
     types = {c["name"]: c["type"] for c in schema["columns"]}
     year_col = next((c for c in ("year", "payment_date", "as_of") if c in types), None)
+    # Family-specific figures the schema asks the page to lead with: a sum
+    # of a column, or the share of rows whose value matches a pattern.
+    headline = []
+    for spec_h in schema.get("headline", []):
+        col, agg = spec_h["column"], spec_h["agg"]
+        if agg == "sum":
+            vals = [r[col] for r in rows if isinstance(r.get(col), (int, float))]
+            headline.append({**spec_h, "value": sum(vals), "n": len(vals)})
+        elif agg == "share":
+            rx = re.compile(spec_h["match"], re.I)
+            have = [r[col] for r in rows if r.get(col) not in (None, "")]
+            hit = sum(1 for v in have if rx.search(str(v)))
+            headline.append({**spec_h, "value": (hit / len(have)) if have else None, "n": len(have), "hits": hit})
     years: dict = {}
     body_years: dict = {}
     filled = {c: 0 for c in types}
@@ -665,7 +685,7 @@ def _facets(rows: list[dict], schema: dict) -> dict:
     for m in means.values():
         m["sites"] = len(m["sites"])
     site_list = sorted(sites.values(), key=lambda x: -x["n"])
-    return {"year_col": year_col, "years": dict(sorted(years.items())), "body_years": body_years,
+    return {"headline": headline, "year_col": year_col, "years": dict(sorted(years.items())), "body_years": body_years,
             "sites": site_list[:2500], "sites_total": len(site_list), "filled": filled,
             "amount": amount, "annual_mean": means or None}
 
@@ -776,21 +796,38 @@ def build(family: str, include_proposed: bool = False) -> dict:
     # The national networks' annual statistics (families/networks.py) are
     # sources like any other: their rows pass the same validation and carry
     # the same receipts, and each network is an entry on the ladder.
-    net_rows_path, net_sum_path = out_dir / "networks.rows.json", out_dir / "networks.summary.json"
-    if net_rows_path.exists() and net_sum_path.exists():
+    # A national collection (MHCLG's planning data platform) is taken the
+    # same way, except that an authority already published from its own
+    # file is never taken from the platform as well.
+    own_bodies = {_body_key(r.get("body") or r.get("publisher")) for r in published}
+    for extra in ("networks", "platform"):
+        net_rows_path, net_sum_path = out_dir / f"{extra}.rows.json", out_dir / f"{extra}.summary.json"
+        if not (net_rows_path.exists() and net_sum_path.exists()):
+            continue
         net_rows = json.loads(net_rows_path.read_text(encoding="utf-8"))
         held_by_net: dict[str, int] = {}
+        covered: dict[str, set] = {}
         for r in net_rows:
+            if extra == "platform" and _body_key(r.get("body")) in own_bodies:
+                covered.setdefault(r["dataset_key"], set()).add(r.get("body"))
+                continue
             why = _validate(r, schema)
             if why:
                 held_by_net[r["dataset_key"]] = held_by_net.get(r["dataset_key"], 0) + 1
                 continue
             published.append(r)
         for e in json.loads(net_sum_path.read_text(encoding="utf-8")):
-            key = f"network:{e['network']}"
-            summary.append({**e, "dataset_key": key, "body": e["publisher"], "portal": "network", "format": "RDS",
-                            "licence_kind": "network-terms", "intake_state": e["ladder"],
-                            "rows": (e.get("rows") or 0) - held_by_net.get(key, 0),
+            key = f"{'network' if extra == 'networks' else 'platform'}:{e.get('network') or e.get('platform')}"
+            kept = sum(1 for r in published if r.get("dataset_key") == key)
+            note = e.get("notes") or ""
+            if key in covered:
+                note += (f" {len(covered[key])} authorities already published from their own files were not taken "
+                         f"from the platform; {kept:,} rows for {len({r.get('body') for r in published if r.get('dataset_key') == key})} others were.")
+            summary.append({**e, "dataset_key": key, "body": e["publisher"], "portal": extra,
+                            "format": "RDS" if extra == "networks" else "CSV",
+                            "licence_kind": f"{extra}-terms", "intake_state": e["ladder"], "notes": note,
+                            "rows": kept if e["ladder"] == "published" else e.get("rows"),
+                            "bodies": len({r.get("body") for r in published if r.get("dataset_key") == key}) if e.get("bodies") else None,
                             "rows_failed_validation": held_by_net.get(key, 0),
                             "resource_url": e.get("licence_evidence_url"), "landing_url": e.get("licence_evidence_url")})
     # A build that publishes far fewer rows than the last one is more likely

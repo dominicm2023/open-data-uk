@@ -35,7 +35,7 @@ until the gap is closed.
 | **Certainty** — findable datasets with a verdict under 30 days old | 84% checked; 18,264 never | Can we say what is really there? |
 | **Findability** — searches ending at a publisher, ours and Google's | Google: 16 clicks/day, 1,395 impressions/day, avg position 17 (2 Sep); 8,746 indexed, 78,306 waiting | Do people reach it through us? |
 | **Guardrail** — verdicts that were wrong | 1,239 wrong for three weeks (launch-day 429s) | Are we still the people who know? |
-| **Usability** — who-publishes families with a reviewed, published combined table | 4 published (8 Sep): brownfield land registers 4,755 sites/53 authorities; recycling centres 98 rows/12 bodies; air quality annual means 47,294 rows/8 bodies (incl. AURN, LMAM, NI networks 1990-2026); spend over £500 4,259,913 rows/27 bodies (68 sources incl. every edition, ~1,000 files) — of 30, 56+5 networks and 212 sources in each registry | Can a person use it without doing the extraction themselves? |
+| **Usability** — who-publishes families with a reviewed, published combined table | 4 published (8 Sep): brownfield land registers 29,977 sites/311 authorities (53 own files + MHCLG's platform); recycling centres 98 rows/12 bodies; air quality annual means 47,294 rows/8 bodies (incl. AURN, LMAM, NI networks 1990-2026); spend over £500 4,259,913 rows/27 bodies (68 sources incl. every edition, ~1,000 files) — of 30, 56+5 networks and 212 sources in each registry | Can a person use it without doing the extraction themselves? |
 
 The guardrail is a reputation metric. Being wrong for three weeks is worse
 than saying "not verified" for three weeks.
@@ -188,7 +188,9 @@ A living list. Add freely; move to "Done" with the commit that did it.
   had doubled Leicester's and MHCLG's rows. Spend: 4.26M rows, 27 bodies.
 - 8 Sep — fourth family, brownfield land registers: 176 datasets found,
   62 extracted, 53 mapped by the 2017 data standard's own column names;
-  published the same day: 4,755 sites from 53 planning authorities.
+  published the same day: 4,755 sites from 53 planning authorities; then
+  MHCLG's platform for the rest — 29,977 sites, 311 authorities — and
+  headline figures (hectares, minimum homes, share permissioned) on the page.
 - 7 Sep — first publisher outreach: 15 councils holding INSPIRE-licensed
   recycling/air datasets asked (by email, DM's approval, from the
   groundwatercast address) to re-release under OGL via the derived-data

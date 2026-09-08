@@ -34,6 +34,8 @@ for fam in recycling_centres air_quality_annual spend_over_500 brownfield_land; 
   "$PY" families/intake.py "$fam" || true
   # the national networks' annual statistics feed the air family
   [ "$fam" = air_quality_annual ] && { "$PY" families/networks.py || true; }
+  # MHCLG's planning data platform fills the gaps in the brownfield family
+  [ "$fam" = brownfield_land ] && { "$PY" families/platform.py brownfield_land || true; }
   "$PY" families/build.py "$fam" || true
 done
 
