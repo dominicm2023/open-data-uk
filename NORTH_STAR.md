@@ -62,6 +62,10 @@ above it — cross-source joins, and framing and argument — were removed on
 A living list. Add freely; move to "Done" with the commit that did it.
 
 ### Coverage — know where it all lives
+- **StatsWales**: `open.statswales.gov.wales` returns the website's HTML shell
+  to every API path tried (8 Sep); check whether the replacement service
+  publishes a catalogue. **NHS England / NHS Digital** publications: no API;
+  would need the site's search. **UKHSA data dashboard** API is a candidate.
 - The 8 councils with no trace (5 England, 1 Scotland, 2 Wales): find the
   portal or record that there isn't one. `COUNCIL_COVERAGE.md` has the list.
 - `PLATFORM_BACKLOG.md`: verified portals we have no harvester for.
@@ -198,6 +202,13 @@ A living list. Add freely; move to "Done" with the commit that did it.
   hertfordshire" (a cattle census came first) and "SATs" (nothing).
   First full ONS pass runs in the 8 Sep nightly (~3 h at 1.5 s/request);
   incremental after, by release date.
+- 8 Sep — six more national sources in one afternoon (`harvest_national.py`):
+  GOV.UK research and statistics (42,659 releases, every department;
+  attachments fetched 3,000 a night), Nomis (1,617 tables), Fingertips
+  (1,330 indicators), statistics.gov.scot (306), NISRA's data portal
+  (1,172 tables), Public Health Scotland's CKAN (104). Parked: StatsWales
+  (its open-data API answers with the website's HTML shell; the service is
+  being replaced) and NHS England/NHS Digital publications (no API).
 - 7 Sep — first publisher outreach: 15 councils holding INSPIRE-licensed
   recycling/air datasets asked (by email, DM's approval, from the
   groundwatercast address) to re-release under OGL via the derived-data

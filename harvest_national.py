@@ -469,3 +469,106 @@ def harvest_fingertips(src: dict, conn: sqlite3.Connection, limit: int | None) -
         if row:
             rows.append(row)
     _finish(conn, src, started, rows, res_by_key, len(meta), 0, 0)
+
+
+# --- statistics.gov.scot (Scottish Government open statistics) ---------------
+
+SCOT_SPARQL = "https://statistics.gov.scot/sparql.json"
+SCOT_QUERY = """
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?ds ?title ?comment ?modified ?issued ?publisher WHERE {
+  ?ds a <http://publishmydata.com/def/dataset#Dataset> ; rdfs:label ?title .
+  OPTIONAL { ?ds rdfs:comment ?comment }
+  OPTIONAL { ?ds dcterms:modified ?modified }
+  OPTIONAL { ?ds dcterms:issued ?issued }
+  OPTIONAL { ?ds dcterms:publisher ?pub . ?pub rdfs:label ?publisher }
+}"""
+
+
+def harvest_scotstats(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
+    """Every dataset on statistics.gov.scot, from its SPARQL endpoint, with
+    the site's whole-cube CSV download as the resource."""
+    c = _Client()
+    started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    now = started
+    print(f"[{src['id']}] querying statistics.gov.scot ...", flush=True)
+    try:
+        d = c.json(SCOT_SPARQL, params={"query": SCOT_QUERY})
+        binds = d["results"]["bindings"]
+    except Exception as exc:  # noqa: BLE001
+        print(f"[{src['id']}] SPARQL failed: {exc}", flush=True)
+        return
+    if limit:
+        binds = binds[:limit]
+    rows, res_by_key = [], {}
+    from urllib.parse import quote
+    for b in binds:
+        uri = (b.get("ds") or {}).get("value") or ""
+        if not uri:
+            continue
+        slug = uri.rsplit("/", 1)[-1]
+        key = f"{src['id']}:{slug}"
+        landing = uri.replace("http://", "https://", 1)
+        res = [(key, f"https://statistics.gov.scot/downloads/cube-table?uri={quote(uri, safe='')}", "whole dataset (CSV)", "csv"),
+               (key, landing.rstrip("/") + ".json", "dataset metadata (JSON)", "json")]
+        res_by_key[key] = res
+        pub = (b.get("publisher") or {}).get("value") or "Scottish Government"
+        row = _row(src["id"], slug, (b.get("title") or {}).get("value"), (b.get("comment") or {}).get("value"),
+                   pub, "Open Government Licence v3.0", (b.get("issued") or {}).get("value"),
+                   (b.get("modified") or {}).get("value"), landing, [], ["csv", "json"], 2, now)
+        if row:
+            rows.append(row)
+    _finish(conn, src, started, rows, res_by_key, len(binds), 0, 0)
+
+
+# --- NISRA data portal (PxStat) ----------------------------------------------
+
+NISRA_API = ("https://ws-data.nisra.gov.uk/public/api.jsonrpc?data="
+             "%7B%22jsonrpc%22:%222.0%22,%22method%22:%22PxStat.Data.Cube_API.ReadCollection%22,"
+             "%22params%22:%7B%22language%22:%22en%22%7D%7D")
+NISRA_WEB = "https://data.nisra.gov.uk"
+
+
+def harvest_nisra(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
+    """Every table on NISRA's data portal, from PxStat's ReadCollection: a
+    JSON-stat item per table with its label, matrix code, CSV link and
+    copyright. nisra.gov.uk/crown-copyright: released under the Open
+    Government Licence."""
+    c = _Client()
+    started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    now = started
+    print(f"[{src['id']}] harvesting NISRA PxStat collection ...", flush=True)
+    try:
+        d = c.json(NISRA_API)
+        items = (d.get("result") or d).get("link", {}).get("item") or []
+    except Exception as exc:  # noqa: BLE001
+        print(f"[{src['id']}] collection failed: {exc}", flush=True)
+        return
+    if limit:
+        items = items[:limit]
+    rows, res_by_key = [], {}
+    for it in items:
+        matrix = ((it.get("extension") or {}).get("matrix")) or ""
+        if not matrix:
+            continue
+        key = f"{src['id']}:{matrix}"
+        res = []
+        for alt in ((it.get("link") or {}).get("alternate") or []):
+            href = alt.get("href") or ""
+            if href.startswith("http"):
+                fmt = "csv" if "csv" in (alt.get("type") or "") else "json" if "json" in (alt.get("type") or "") else _ext(href)
+                res.append((key, href, f"table {matrix} ({fmt.upper()})", fmt))
+        if it.get("href"):
+            res.append((key, it["href"], f"table {matrix} (JSON-stat)", "json"))
+        res_by_key[key] = res
+        note = (it.get("note") or [""])[0] if isinstance(it.get("note"), list) else it.get("note")
+        subject = ((it.get("extension") or {}).get("subject") or {}).get("value") or ""
+        product = ((it.get("extension") or {}).get("product") or {}).get("value") or ""
+        tags = [t for t in (subject, product) if t]
+        row = _row(src["id"], matrix, it.get("label"), note or it.get("label"), "Northern Ireland Statistics and Research Agency",
+                   "Open Government Licence v3.0", None, it.get("updated"), f"{NISRA_WEB}/table/{matrix}", tags,
+                   [r[3] for r in res], len(res), now)
+        if row:
+            rows.append(row)
+    _finish(conn, src, started, rows, res_by_key, len(items), 0, 0)

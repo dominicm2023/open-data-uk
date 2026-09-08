@@ -3439,3 +3439,17 @@ sources:
     api: https://fingertips.phe.org.uk/api/indicator_metadata/all
     web: https://fingertips.phe.org.uk
     dataset_url: https://fingertips.phe.org.uk/search/{name}
+
+  - id: scotstats
+    name: statistics.gov.scot (Scottish Government)
+    type: scotstats
+    api: https://statistics.gov.scot/sparql.json
+    web: https://statistics.gov.scot
+    dataset_url: https://statistics.gov.scot/data/{name}
+
+  - id: nisra_data
+    name: NISRA data portal (Northern Ireland Statistics and Research Agency)
+    type: nisra
+    api: https://ws-data.nisra.gov.uk/public/api.jsonrpc
+    web: https://data.nisra.gov.uk
+    dataset_url: https://data.nisra.gov.uk/table/{name}
