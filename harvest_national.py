@@ -53,19 +53,40 @@ ON CONFLICT(key) DO UPDATE SET
 
 
 class _Client:
-    def __init__(self):
+    """Requests to one host, spaced, and backing off when the host says so.
+    www.ons.gov.uk answered 429 to most of a cold pass at 1.5 s spacing on
+    8 September (2,961 of 3,928 datasets lost their files): a 429 now waits
+    for the host's Retry-After (or 30 s) and tries once more, and three in
+    a row end the run's fetching so the rest wait for the next night."""
+
+    def __init__(self, spacing: float = SPACING):
         self.s = requests.Session()
         self.s.headers["User-Agent"] = USER_AGENT
+        self.spacing = spacing
         self.last = 0.0
         self.requests = 0
+        self.throttled = 0          # consecutive 429s
+        self.give_up = False
 
     def get(self, url: str, **kw):
-        wait = SPACING - (time.monotonic() - self.last)
-        if wait > 0:
-            time.sleep(wait)
-        self.last = time.monotonic()
-        self.requests += 1
-        return self.s.get(url, timeout=60, **kw)
+        for attempt in (1, 2):
+            wait = self.spacing - (time.monotonic() - self.last)
+            if wait > 0:
+                time.sleep(wait)
+            self.last = time.monotonic()
+            self.requests += 1
+            r = self.s.get(url, timeout=60, **kw)
+            if r.status_code != 429:
+                self.throttled = 0
+                return r
+            self.throttled += 1
+            if self.throttled >= 3:
+                self.give_up = True
+                return r
+            retry = r.headers.get("Retry-After")
+            time.sleep(max(30.0, float(retry)) if retry and retry.isdigit() else 30.0)
+            self.spacing = max(self.spacing, 3.0)       # and stay slower for the rest of the run
+        return r
 
     def json(self, url: str, **kw):
         r = self.get(url, **kw)
@@ -148,7 +169,8 @@ def harvest_ons(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
 
 
 def _harvest_ons(src: dict, conn: sqlite3.Connection, limit: int | None) -> None:
-    c = _Client()
+    c = _Client()                     # api.beta.ons.gov.uk: the listing
+    site = _Client(spacing=3.0)       # www.ons.gov.uk: the files, which it rate-limits harder
     started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     now = started
     print(f"[{src['id']}] harvesting ONS search API ...", flush=True)
@@ -179,19 +201,26 @@ def _harvest_ons(src: dict, conn: sqlite3.Connection, limit: int | None) -> None
         formats: list = []
         n_res = 0
         # The listing has everything but the files. Files are two requests
-        # away, so only a new or re-released dataset pays for them.
-        if key in known and known[key] == release and release:
+        # away, so only a new or re-released dataset pays for them — and a
+        # dataset whose files were never fetched (a 429, a bad night) is
+        # not "unchanged", it is owed.
+        have = conn.execute("SELECT count(*) FROM resources WHERE dataset_key = ?", (key,)).fetchone()[0]
+        if key in known and known[key] == release and release and have:
             unchanged += 1
-            n_res = conn.execute("SELECT count(*) FROM resources WHERE dataset_key = ?", (key,)).fetchone()[0]
+            n_res = have
+            formats = [r[0] for r in conn.execute("SELECT format_norm FROM resources WHERE dataset_key = ?", (key,)) if r[0]]
+        elif site.give_up:
+            # the site asked us to stop for now; the row stands, its files wait
+            n_res = have
             formats = [r[0] for r in conn.execute("SELECT format_norm FROM resources WHERE dataset_key = ?", (key,)) if r[0]]
         else:
             res = []
             try:
-                page = c.json(f"{ONS_WEB}{uri}/data")
+                page = site.json(f"{ONS_WEB}{uri}/data")
                 editions = page.get("datasets") or []
                 if editions:
                     ver_uri = editions[0].get("uri") or ""
-                    ver = c.json(f"{ONS_WEB}{ver_uri}/data")
+                    ver = site.json(f"{ONS_WEB}{ver_uri}/data")
                     for dl in (ver.get("downloads") or []) + (ver.get("supplementaryFiles") or []):
                         f = dl.get("file") or ""
                         if f:
@@ -204,7 +233,8 @@ def _harvest_ons(src: dict, conn: sqlite3.Connection, limit: int | None) -> None
             n_res = len(res)
             formats = [r[3] for r in res]
             if i % 100 == 0:
-                print(f"[{src['id']}]   {i}/{len(items)} ({c.requests} requests)", flush=True)
+                print(f"[{src['id']}]   {i}/{len(items)} ({c.requests + site.requests} requests"
+                      + (", site asked us to stop" if site.give_up else "") + ")", flush=True)
         row = _row(src["id"], uri, it.get("title"), it.get("summary") or it.get("meta_description"),
                    "Office for National Statistics", "Open Government Licence v3.0", None, it.get("release_date"),
                    f"{ONS_WEB}{uri}", it.get("keywords") or [], formats, n_res, now)
