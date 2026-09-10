@@ -98,6 +98,13 @@ A living list. Add freely; move to "Done" with the commit that did it.
   payments to Sunderland): reproduce faithfully, but name them as findings.
 
 ### Findability — be reached first
+- **A national table that covers every area should answer a place query.**
+  "population of hertfordshire" still puts a cattle census first (10 Sep)
+  even with ONS's mid-year estimates in the index, because the estimates'
+  title names no place and the geo arm treats a UK-wide extent as noise.
+  A dataset whose description says "by local authority" / "by
+  administrative area" covers every place by construction; the ranking
+  should let such a dataset answer a place query without a bbox match.
 - **Google is the search box.** 70 searches in ours in three weeks; the
   Search Console shows the rest. The ~90k unindexed pages are the single
   largest gap. Internal linking depth, crawl budget, sitemap hygiene.
