@@ -75,7 +75,7 @@ def _headline(s: dict) -> dict:
     for e in s.get("sources", []):
         if e.get("ladder") == "published" and e.get("rows"):
             b = e.get("body") or e["publisher"]
-            if e.get("portal") == "platform" and e.get("bodies"):
+            if e.get("portal") in ("platform", "dashboard") and e.get("bodies"):
                 b = f"{b} — {e['bodies']} authorities"
                 via_platform += e["bodies"] - 1
             by_pub[b] = by_pub.get(b, 0) + e["rows"]

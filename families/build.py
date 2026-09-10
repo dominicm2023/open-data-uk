@@ -800,7 +800,10 @@ def build(family: str, include_proposed: bool = False) -> dict:
     # same way, except that an authority already published from its own
     # file is never taken from the platform as well.
     own_bodies = {_body_key(r.get("body") or r.get("publisher")) for r in published}
-    for extra in ("networks", "platform"):
+    # the dashboard's Status Report results yield to an authority's own file
+    # for the same year, not for every year
+    own_body_years = {(_body_key(r.get("body") or r.get("publisher")), r.get("year")) for r in published if r.get("year")}
+    for extra in ("networks", "platform", "dashboard"):
         net_rows_path, net_sum_path = out_dir / f"{extra}.rows.json", out_dir / f"{extra}.summary.json"
         if not (net_rows_path.exists() and net_sum_path.exists()):
             continue
@@ -811,13 +814,16 @@ def build(family: str, include_proposed: bool = False) -> dict:
             if extra == "platform" and _body_key(r.get("body")) in own_bodies:
                 covered.setdefault(r["dataset_key"], set()).add(r.get("body"))
                 continue
+            if extra == "dashboard" and (_body_key(r.get("body")), r.get("year")) in own_body_years:
+                covered.setdefault(r["dataset_key"], set()).add(r.get("body"))
+                continue
             why = _validate(r, schema)
             if why:
                 held_by_net[r["dataset_key"]] = held_by_net.get(r["dataset_key"], 0) + 1
                 continue
             published.append(r)
         for e in json.loads(net_sum_path.read_text(encoding="utf-8")):
-            key = f"{'network' if extra == 'networks' else 'platform'}:{e.get('network') or e.get('platform')}"
+            key = f"{'network' if extra == 'networks' else extra}:{e.get('network') or e.get('platform')}"
             kept = sum(1 for r in published if r.get("dataset_key") == key)
             note = e.get("notes") or ""
             if key in covered:
