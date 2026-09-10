@@ -220,11 +220,20 @@ def _harvest_ons(src: dict, conn: sqlite3.Connection, limit: int | None) -> None
                 editions = page.get("datasets") or []
                 if editions:
                     ver_uri = editions[0].get("uri") or ""
-                    ver = site.json(f"{ONS_WEB}{ver_uri}/data")
-                    for dl in (ver.get("downloads") or []) + (ver.get("supplementaryFiles") or []):
-                        f = dl.get("file") or ""
-                        if f:
-                            res.append((key, f"{ONS_WEB}/file?uri={ver_uri}/{f}", dl.get("title") or f, _ext(f)))
+                    if ver_uri.startswith("/datasets/"):
+                        # a "customise my data" dataset: its versions live on
+                        # the API, and the website's /data route 404s for them
+                        ver = c.json(f"https://api.beta.ons.gov.uk/v1{ver_uri}")
+                        for fmt, dl in (ver.get("downloads") or {}).items():
+                            href = (dl or {}).get("href") or ""
+                            if href.startswith("http"):
+                                res.append((key, href, f"{fmt} download", fmt.lower()))
+                    else:
+                        ver = site.json(f"{ONS_WEB}{ver_uri}/data")
+                        for dl in (ver.get("downloads") or []) + (ver.get("supplementaryFiles") or []):
+                            f = dl.get("file") or ""
+                            if f:
+                                res.append((key, f"{ONS_WEB}/file?uri={ver_uri}/{f}", dl.get("title") or f, _ext(f)))
             except Exception as exc:  # noqa: BLE001 — the landing page still stands
                 errors += 1
                 if errors <= 5:

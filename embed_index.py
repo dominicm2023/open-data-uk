@@ -108,10 +108,18 @@ def build_slugs(conn: sqlite3.Connection) -> int:
     """
     rows = [(slug_for(k), k) for (k,) in conn.execute("SELECT key FROM datasets")]
     seen: dict[str, str] = {}
+    clashed: set[str] = set()
     for slug, key in rows:
         if seen.get(slug, key) != key:
-            raise SystemExit(f"slug clash: {slug!r} for {seen[slug]!r} and {key!r}")
+            # Loud, but not fatal: a clash left two nightly runs dead at this
+            # line on 8-9 September 2026, with no embeddings, dedupe or family
+            # builds behind it. Neither key gets a page (a 404 is honest; the
+            # wrong dataset is not) and the clash is printed for a person.
+            print(f"WARNING slug clash: {slug!r} for {seen[slug]!r} and {key!r}; neither gets a page", flush=True)
+            clashed.add(slug)
+            continue
         seen[slug] = key
+    rows = [(s, k) for s, k in rows if s not in clashed]
     conn.executescript(
         "DROP TABLE IF EXISTS slugs;"
         "CREATE TABLE slugs (slug TEXT PRIMARY KEY, key TEXT NOT NULL UNIQUE);")

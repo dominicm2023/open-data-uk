@@ -55,6 +55,14 @@ def short_id(key: str) -> str:
     _, rest = split_key(key)
     if "://" not in rest and not any(ch in rest for ch in "?&%/"):
         cand = rest                                   # UUID, code, number
+    elif rest.startswith("/"):
+        # A site path, not a URL: the ONS lists one dataset under two
+        # taxonomy paths and GOV.UK a release under /statistics/ and
+        # /statistical-data-sets/ with the same last segment, so the
+        # last segment alone clashed (8 Sep 2026, and the nightly stopped
+        # at the check). The segment for reading, a digest for uniqueness.
+        last = urllib.parse.unquote(rest.rstrip("/").rsplit("/", 1)[-1])[:70]
+        cand = f"{last}-{_digest(key)[:6]}"
     elif (m := _ARCGIS.search(rest)):
         cand = m.group(1) + (f"_{m.group(2)}" if m.group(2) else "")
     elif (m := _SOCRATA.search(rest)):
