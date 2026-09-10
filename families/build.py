@@ -828,7 +828,7 @@ def build(family: str, include_proposed: bool = False) -> dict:
             note = e.get("notes") or ""
             if key in covered:
                 note += (f" {len(covered[key])} authorities already published from their own files were not taken "
-                         f"from the platform; {kept:,} rows for {len({r.get('body') for r in published if r.get('dataset_key') == key})} others were.")
+                         f"from here as well; {kept:,} rows for {len({r.get('body') for r in published if r.get('dataset_key') == key})} others were.")
             summary.append({**e, "dataset_key": key, "body": e["publisher"], "portal": extra,
                             "format": "RDS" if extra == "networks" else "CSV",
                             "licence_kind": f"{extra}-terms", "intake_state": e["ladder"], "notes": note,

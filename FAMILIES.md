@@ -184,7 +184,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 | family | registry | extracted | reviewed & published |
 |---|---|---|---|
 | recycling_centres | 30 sources | 18 | 13 sources, 98 rows, 12 bodies |
-| air_quality_annual | 56 + 5 national networks | 39 | 22 sources, ~55,000 rows, 10 bodies (AURN, LMAM, Scotland, Wales, Northern Ireland; 1990-2026) |
+| air_quality_annual | 56 + 5 national networks + Defra's LAQM dashboard | 39 | 73,912 rows, ~346 bodies: 17 own files, 5 networks (1990-2026), and 337 authorities' latest Annual Status Report results via the dashboard |
 | brownfield_land | 176 sources / 129 authorities + MHCLG's platform | 62 | 53 own files (4,755 sites) + the platform for 258 more authorities (25,222 sites): 29,977 sites, 311 authorities |
 | spend_over_500 | 212 (every edition) | 76 | 68 sources, 4,259,913 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
 
@@ -316,6 +316,24 @@ figures — a column's sum, or the share of rows matching a pattern — and
 the page shows them as tiles and answers with them: 111,571 hectares,
 1,233,635 homes at the authorities' minimum estimates, 62% of sites
 already permissioned.
+
+**Every council's Annual Status Report, through Defra's dashboard (10
+September).** The fifteen emails to INSPIRE-licensed councils were chasing
+what Defra already compiles: the Local Air Quality Dashboard
+(uk-air.defra.gov.uk/local-authorities-dashboard) holds each of 361
+authorities' latest Status Report monitoring results — site id, name,
+type, grid reference, method, data capture, NO2 annual mean and objective
+status. It is an R Shiny app whose CSV is a per-session download, so
+`families/laqm_dashboard.py` drives a headless Chromium (Playwright)
+through the authority list, one authority at a time with the usual
+spacing, keeps one CSV per authority, and refetches only when the cache
+is a month old; a lock keeps it to one run. The first pass (10 Sep,
+three hours) took 340 authorities and 15,301 site-years, 2024-25; the
+build adds them with the same receipts, and an authority's own file wins
+for the same year. Licence: UK-AIR's OGL statement and attribution, with
+the dashboard's own words that the data is "provided by local authorities
+in their latest Annual Reports" on every row. Northern Irish councils are
+not in the dashboard (their network comes from airqualityni.co.uk).
 
 ## The loop from here
 

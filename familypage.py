@@ -72,12 +72,14 @@ def _headline(s: dict) -> dict:
     by_pub: dict[str, int] = {}
     # a national collection is one entry that stands for many bodies
     via_platform = 0
+    via: list[tuple[str, int]] = []          # (who compiled it, how many bodies came through them)
     for e in s.get("sources", []):
         if e.get("ladder") == "published" and e.get("rows"):
             b = e.get("body") or e["publisher"]
             if e.get("portal") in ("platform", "dashboard") and e.get("bodies"):
                 b = f"{b} — {e['bodies']} authorities"
                 via_platform += e["bodies"] - 1
+                via.append((e["publisher"], e["bodies"]))
             by_pub[b] = by_pub.get(b, 0) + e["rows"]
     ladder = s.get("ladder", {})
     # the registry's sources are datasets found in the catalogues we index;
@@ -86,7 +88,7 @@ def _headline(s: dict) -> dict:
     catalogued = [e for e in srcs if e.get("portal") not in ("networks", "platform")]
     return {"total": s.get("published_rows", 0), "by_pub": by_pub, "bodies": len(by_pub) + via_platform,
             "sources": len(catalogued), "sources_published": sum(1 for e in catalogued if e.get("ladder") == "published"),
-            "via_platform": via_platform + (1 if via_platform else 0),
+            "via_platform": via_platform + (1 if via_platform else 0), "via": via,
             "via_networks": sum(1 for e in srcs if e.get("portal") == "networks" and e.get("ladder") == "published"),
             "built": (s.get("built_at") or "")[:10]}
 
@@ -254,9 +256,8 @@ def _qa(family: str, s: dict, schema: dict, h: dict) -> list[tuple[str, str]]:
     how_much = (f"{total:,} rows from {h['bodies']} public bodies. The catalogues we index list {n_sources} datasets of "
                 f"this kind; {h['sources_published']} are in the table and {missing} are not yet — the list below the "
                 "preview says why for each.")
-    if h.get("via_platform"):
-        how_much += (f" A further {h['via_platform']} authorities are here through MHCLG's national collection rather "
-                     "than a file of their own.")
+    for who, n in h.get("via") or []:
+        how_much += f" A further {n} authorities are here through {who} rather than a file of their own."
     if h.get("via_networks"):
         how_much += f" {h['via_networks']} national monitoring networks are read from their own sites."
     qa.append(("How much is here?", how_much))

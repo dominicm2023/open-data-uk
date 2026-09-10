@@ -35,7 +35,7 @@ until the gap is closed.
 | **Certainty** — findable datasets with a verdict under 30 days old | 84% checked; 18,264 never | Can we say what is really there? |
 | **Findability** — searches ending at a publisher, ours and Google's | Google: 16 clicks/day, 1,395 impressions/day, avg position 17 (2 Sep); 8,746 indexed, 78,306 waiting | Do people reach it through us? |
 | **Guardrail** — verdicts that were wrong | 1,239 wrong for three weeks (launch-day 429s) | Are we still the people who know? |
-| **Usability** — who-publishes families with a reviewed, published combined table | 4 published (8 Sep): brownfield land registers 29,977 sites/311 authorities (53 own files + MHCLG's platform); recycling centres 98 rows/12 bodies; air quality annual means 47,294 rows/8 bodies (incl. AURN, LMAM, NI networks 1990-2026); spend over £500 4,259,913 rows/27 bodies (68 sources incl. every edition, ~1,000 files) — of 30, 56+5 networks and 212 sources in each registry | Can a person use it without doing the extraction themselves? |
+| **Usability** — who-publishes families with a reviewed, published combined table | 4 published (8 Sep): brownfield land registers 29,977 sites/311 authorities (53 own files + MHCLG's platform); recycling centres 98 rows/12 bodies; air quality annual means 73,912 rows/~346 bodies (5 national networks 1990-2026 + 337 authorities' Status Report results via Defra's dashboard); spend over £500 4,259,913 rows/27 bodies (68 sources incl. every edition, ~1,000 files) — of 30, 56+5 networks and 212 sources in each registry | Can a person use it without doing the extraction themselves? |
 
 The guardrail is a reputation metric. Being wrong for three weeks is worse
 than saying "not verified" for three weeks.
@@ -194,6 +194,10 @@ A living list. Add freely; move to "Done" with the commit that did it.
   annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
   and Scotland on its About page's OGL statement. Air Quality England
   parked (no terms).
+- 10 Sep — every council's Annual Status Report results from Defra's
+  Local Air Quality Dashboard, driven by a headless browser
+  (`families/laqm_dashboard.py`): 340 authorities, 15,301 site-years;
+  air quality annual means 59k → 74k rows, 10 → ~346 bodies.
 - 8 Sep — every edition of a series dataset taken (16 earlier years
   published); 104 same-file-other-format twins found and removed, which
   had doubled Leicester's and MHCLG's rows. Spend: 4.26M rows, 27 bodies.
