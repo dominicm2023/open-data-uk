@@ -206,8 +206,25 @@ def rows_from_cache() -> tuple[list[dict], dict]:
 def main() -> int:
     force, no_fetch = "--force" in sys.argv, "--no-fetch" in sys.argv
     limit = int(sys.argv[sys.argv.index("--limit") + 1]) if "--limit" in sys.argv else None
+    lock = CACHE / "run.lock"
     if not no_fetch:
-        fetch(force=force, limit=limit)
+        # one browser at a time: a full pass is hours, and the nightly must
+        # not start a second one beside a manual run
+        import os
+        CACHE.mkdir(parents=True, exist_ok=True)
+        if lock.exists():
+            try:
+                os.kill(int(lock.read_text().strip() or 0), 0)
+                print("[laqm_dashboard] another run is in progress; skipping the fetch", flush=True)
+                no_fetch = True
+            except (ValueError, ProcessLookupError, PermissionError):
+                pass
+    if not no_fetch:
+        lock.write_text(str(os.getpid()))
+        try:
+            fetch(force=force, limit=limit)
+        finally:
+            lock.unlink(missing_ok=True)
     rows, summary = rows_from_cache()
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "dashboard.rows.json").write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
