@@ -42,6 +42,11 @@ jobs:
       # which changes every night.
       - name: Chart geometry
         run: python scripts/charts_test.py
+      # Every script runs with its own directory first on sys.path, ahead of
+      # the standard library. A families/platform.py once broke the nightly
+      # from inside pandas, so no module may take a standard-library name.
+      - name: Module names
+        run: python scripts/shadow_test.py
 
   live:
     # The unit tests cover rendering with invented records; this covers real

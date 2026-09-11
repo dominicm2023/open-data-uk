@@ -303,7 +303,7 @@ One row is one site on the authority's register as last published.
 
 **The platform, and the figures the page leads with (8 September, later).**
 MHCLG's planning data platform (planning.data.gov.uk) collects every
-authority's register nationally under the OGL. `families/platform.py`
+authority's register nationally under the OGL. `families/planning_platform.py`
 fetches its brownfield-land CSV (21 MB, conditional) and organisation
 lookup, maps the platform's field names to the schema, and build.py
 appends the rows for every authority *not* already published from its

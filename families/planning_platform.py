@@ -10,8 +10,8 @@ Fetched politely through intake.fetch (one 20 MB CSV and the organisation
 lookup), kept by hash, mapped from the platform's field names to the
 schema, and appended by build.py with the same validation and receipts.
 
-Usage:  DATA_DIR=... python families/platform.py            # fetch + write rows
-        DATA_DIR=... python families/platform.py --no-fetch # rows from stored files
+Usage:  DATA_DIR=... python families/planning_platform.py            # fetch + write rows
+        DATA_DIR=... python families/planning_platform.py --no-fetch # rows from stored files
 """
 
 from __future__ import annotations

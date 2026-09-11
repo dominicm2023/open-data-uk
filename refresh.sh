@@ -37,7 +37,7 @@ for fam in recycling_centres air_quality_annual spend_over_500 brownfield_land; 
   # councils' Annual Status Report results from Defra's dashboard (refetches monthly)
   [ "$fam" = air_quality_annual ] && { "$PY" families/laqm_dashboard.py || true; }
   # MHCLG's planning data platform fills the gaps in the brownfield family
-  [ "$fam" = brownfield_land ] && { "$PY" families/platform.py brownfield_land || true; }
+  [ "$fam" = brownfield_land ] && { "$PY" families/planning_platform.py brownfield_land || true; }
   "$PY" families/build.py "$fam" || true
 done
 
