@@ -159,7 +159,11 @@ def check_refresh(rep: Report, state: dict) -> dict:
     out: dict = {}
     text = _refresh_text(data_dir() / "cron_refresh.log")
     runs = re.findall(r"=====REFRESH-RUN===== (\S+)", text)
-    dones = re.findall(r"=====REFRESH-DONE===== (\S+)", text)
+    # Judge the last run only: does a DONE marker follow its RUN marker?
+    # Counting RUNs against DONEs over the whole log kept reporting two runs
+    # that died on 8-9 Sep 2026 as "the last refresh never finished" for
+    # four mornings after every later run had completed.
+    finished = text.rfind("=====REFRESH-DONE=====") > text.rfind("=====REFRESH-RUN=====")
     if not runs:
         rep.add(RED, "No refresh has ever been recorded")
         return out
@@ -176,7 +180,7 @@ def check_refresh(rep: Report, state: dict) -> dict:
     if age_h is not None and age_h > REFRESH_MAX_HOURS:
         rep.add(RED, "The nightly refresh has not run",
                 f"last started {last}, {age_h:.0f} hours ago")
-    elif len(dones) < len(runs):
+    elif not finished:
         # A refresh takes about an hour. Inside that window it is running,
         # not broken — only past it has it actually died, and calling a
         # healthy job a failure is how a monitor teaches you to ignore it.
