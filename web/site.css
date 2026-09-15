@@ -803,3 +803,32 @@ footer {
 .org-juniors th, .org-juniors td { padding: .15rem .5rem .15rem 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
 .org-juniors th { color: var(--muted); font-weight: 600; }
 @media (max-width: 640px) { .org-node { padding-left: .5rem; } .org-meta { display: block; margin-left: 0; } }
+
+/* --- the 3D chart (orgchart3d.js): a full-viewport stage over the page --- */
+.org3d { position: fixed; inset: 0; z-index: 60; background: #090a12; color: #e8e9f0; overflow: hidden; }
+.org3d canvas { position: absolute; inset: 0; display: block; cursor: grab; touch-action: none; }
+.org3d canvas:active { cursor: grabbing; }
+.org3d #labels { position: absolute; inset: 0; pointer-events: none; }
+.org3d-label { position: absolute; left: 0; top: 0; font-size: .74rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap;
+  transform: translate(-50%, -50%); text-shadow: 0 0 6px #000, 0 0 2px #000; pointer-events: auto; cursor: pointer; opacity: 0; transition: opacity .4s; }
+.org3d-tip { position: absolute; max-width: 290px; background: rgba(12, 14, 26, .92); border: 1px solid rgba(255,255,255,.14); border-radius: 8px;
+  padding: .5rem .65rem; font-size: .8rem; line-height: 1.4; pointer-events: none; color: #eef; }
+.org3d-panel { position: absolute; left: 1rem; top: 1rem; max-width: 380px; background: rgba(10, 12, 22, .78); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.12); border-radius: 10px; padding: .8rem 1rem .6rem; font-size: .85rem; }
+.org3d-panel h1 { margin: 0 0 .25rem; font-size: 1.25rem; letter-spacing: -0.01em; color: #f4f5fb; }
+.org3d-sub { margin: 0 0 .5rem; color: #c7cadb; }
+.org3d-legend { margin: 0 0 .5rem; color: #b9bdd0; font-size: .76rem; display: flex; gap: .8rem; flex-wrap: wrap; }
+.org3d-legend i { display: inline-block; width: .7rem; height: .7rem; border-radius: 50%; margin-right: .3rem; vertical-align: -1px; }
+.org3d-legend .k-h { background: linear-gradient(#fff, #445); border-radius: 2px; width: .4rem; height: .8rem; }
+.org3d-legend .k-s { background: radial-gradient(#fff, #56a 70%, transparent); }
+.org3d-legend .k-c { background: conic-gradient(#f66, #fc6, #6f9, #6cf, #c6f, #f66); }
+.org3d-ctl { margin: .35rem 0; display: flex; gap: .4rem; flex-wrap: wrap; align-items: center; }
+.org3d-ctl button, .org3d-ctl select { font: inherit; font-size: .78rem; color: #eef; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2);
+  border-radius: 6px; padding: .3rem .55rem; cursor: pointer; }
+.org3d-ctl button[aria-pressed="true"] { background: rgba(120,150,255,.28); }
+.org3d-ctl select { max-width: 240px; }
+.org3d-ctl a { color: #9fd0ff; font-size: .78rem; }
+.org3d-foot { margin: .4rem 0 0; font-size: .74rem; color: #a9adbf; }
+.org3d-foot a { color: #9fd0ff; }
+.org3d-nogl { position: fixed; z-index: 61; left: 1rem; top: 1rem; background: var(--card); padding: 1rem; border-radius: 8px; }
+@media (max-width: 640px) { .org3d-panel { left: .5rem; right: .5rem; top: auto; bottom: .5rem; max-width: none; font-size: .8rem; } .org3d-legend { display: none; } }

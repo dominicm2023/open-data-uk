@@ -144,6 +144,26 @@ def _mode(values) -> str:
     return c.most_common(1)[0][0] if c else ""
 
 
+def dept_key(name: str) -> str:
+    """'Department for Environment, Food and Rural Affairs' and 'Department for
+    Environment Food & Rural Affairs' are one department: bodies spell their
+    parent in their own way. Lower-case, '&' as 'and', 'Her Majesty's' as
+    'HM', punctuation gone."""
+    n = (name or "").lower().replace("&", " and ")
+    n = n.replace("her majesty's", "hm").replace("her majestys", "hm").replace("his majesty's", "hm").replace("his majestys", "hm")
+    n = "".join(ch if ch.isalnum() or ch == " " else " " for ch in n)
+    return " ".join(n.split())
+
+
+def fold_departments(names) -> dict[str, str]:
+    """Each spelling -> the most common spelling of the same department."""
+    by_key: dict[str, collections.Counter] = collections.defaultdict(collections.Counter)
+    for n in names:
+        if n:
+            by_key[dept_key(n)][n] += 1
+    return {n: c.most_common(1)[0][0] for c in by_key.values() for n in c}
+
+
 # --- reading the family ------------------------------------------------------
 
 def rows_for(body: str) -> list[dict]:
@@ -189,6 +209,9 @@ def _overview_cached(stamp: float) -> list[dict]:
                     "as_of": b["as_of"], "datasets": len(b["datasets"]),
                     "head": (heads[0][2], heads[0][3]) if heads else None,
                     "parent": b["parent"].most_common(1)[0][0] if b["parent"] else ""})
+    fold = fold_departments(x["parent"] for x in out)
+    for x in out:
+        x["parent"] = fold.get(x["parent"], x["parent"])
     out.sort(key=lambda x: -x["fte"])
     return out
 
@@ -306,7 +329,8 @@ def render_chart(site_url: str, body: str | None) -> str | None:
         + f'<p class="lede">{n_bodies} public bodies, {fte:,.0f} full-time-equivalent posts, grouped by the parent department '
           'each body names in its own organogram. Open a body for every senior post nested by reporting line, with the '
           'junior groups beneath. Posts, not people — no names are shown.</p>'
-        + '<p class="dl-row"><a href="/family/organograms">The family table</a> '
+        + '<p class="dl-row"><a class="cta" href="/family/organograms/chart/3d">See it as one figure (3D)</a> '
+          '<a href="/family/organograms">The family table</a> '
           '<a href="/api/family/organograms.csv">Download every row (CSV)</a></p>'
         + "".join(sections)
         + '<p class="note">A body appears under the parent department its file names; a department appears under itself. '
@@ -323,3 +347,129 @@ def _nice(iso: str) -> str:
         return f"{d.day} {d:%B %Y}"
     except ValueError:
         return iso
+
+
+# --- the whole of government as one graph, for the 3D view ----------------------
+
+def graph_from_rows(rows: list[dict]) -> dict:
+    """Every body's tree, flattened into parallel arrays the WebGL page can
+    upload straight to the GPU: for each senior post its body, its parent's
+    index (or -1), title, grade, pay floor, FTE, the FTE and senior posts
+    beneath it, and the FTE of the junior groups that report to it. A body
+    with two datasets contributes its newest snapshot only. Parents always
+    precede children. No name, no contact detail: the columns are never
+    read here."""
+    by_body: dict[str, list[dict]] = collections.defaultdict(list)
+    for r in rows:
+        by_body[r.get("body") or ""].append(r)
+    depts: dict[str, dict] = {}
+    bodies: list[dict] = []
+    cols = {k: [] for k in ("body", "parent", "title", "grade", "pay", "fte", "below_fte", "below_senior", "junior_fte")}
+
+    def add(node: dict, bi: int, parent: int) -> None:
+        i = len(cols["title"])
+        cols["body"].append(bi)
+        cols["parent"].append(parent)
+        cols["title"].append((node["title"] or "")[:90])
+        cols["grade"].append(node["grade"] or "")
+        lo = node.get("_pay_floor")
+        cols["pay"].append(lo)
+        cols["fte"].append(round(node["fte"] or 0, 2))
+        cols["below_fte"].append(round(node.get("below_fte") or 0, 1))
+        cols["below_senior"].append(node.get("below_senior") or 0)
+        cols["junior_fte"].append(round(sum((j["fte"] or 0) for j in node["juniors"]), 1))
+        for c in node["children"]:
+            add(c, bi, i)
+
+    newest: list[tuple[str, list[dict], dict]] = []
+    for name in sorted(by_body):
+        trees = trees_from_rows(by_body[name])
+        if trees:
+            newest.append((name, by_body[name], trees[0]))          # the newest snapshot
+    fold = fold_departments(t["parent_department"] or name for name, _, t in newest)
+    for name, rs, t in newest:
+        # the pay floor travels on the row, not the rendered band
+        floors = {}
+        for r in rs:
+            if (r.get("level") or "").lower() == "senior":
+                floors[str(r.get("post_reference") or "").strip()] = r.get("pay_floor_gbp")
+
+        def stamp(n: dict) -> None:
+            n["_pay_floor"] = floors.get(n["ref"])
+            for c in n["children"]:
+                stamp(c)
+        dept = fold.get(t["parent_department"] or name, t["parent_department"] or name)
+        di = depts.setdefault(dept, {"name": dept, "bodies": [], "i": len(depts)})["i"]
+        bi = len(bodies)
+        heads = t["roots"] or t["orphans"]
+        bodies.append({"name": name, "dept": di, "fte": round(t["fte"], 1), "senior": t["senior"],
+                       "as_of": t["as_of"], "head": (heads[0]["title"] if heads else "")})
+        depts[dept]["bodies"].append(bi)
+        for n in t["roots"] + t["orphans"]:
+            stamp(n)
+            add(n, bi, -1)
+    return {"departments": [{"name": d["name"], "bodies": d["bodies"]} for d in sorted(depts.values(), key=lambda d: d["i"])],
+            "bodies": bodies, "nodes": cols,
+            "as_of": max((b["as_of"] for b in bodies), default=""),
+            "note": "Posts, not people. Pay is the floor of the published band; FTE figures are the bodies' own."}
+
+
+@functools.lru_cache(maxsize=2)
+def _graph_cached(stamp: float) -> str:
+    import json
+    db = _db()
+    conn = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
+    conn.row_factory = sqlite3.Row
+    try:
+        rows = [dict(r) for r in conn.execute('SELECT "body", "level", "post_reference", "job_title", "grade", "unit", '
+                                              '"reports_to", "pay_floor_gbp", "pay_ceiling_gbp", "pay_band", "fte", '
+                                              '"job_function", "as_of", "parent_department", "organisation", '
+                                              '"dataset_key", "source_url" FROM rows')]
+    finally:
+        conn.close()
+    return json.dumps(graph_from_rows(rows), ensure_ascii=False, separators=(",", ":"))
+
+
+def graph_json() -> str | None:
+    db = _db()
+    if not db.exists():
+        return None
+    return _graph_cached(db.stat().st_mtime)
+
+
+def render_3d(site_url: str) -> str:
+    """The full-screen WebGL view: one canvas, a small panel, our own script."""
+    import hashlib
+    js = Path(__file__).resolve().parent / "web" / "orgchart3d.js"
+    ver = hashlib.sha1(js.read_bytes()).hexdigest()[:8] if js.exists() else "0"
+    title = "The shape of the state"
+    desc = ("Every senior post in UK central government as one 3D figure: bodies around their departments, "
+            "posts by reporting line, height by pay band, size by the staff beneath. Drawn from the organograms "
+            "the bodies publish.")
+    body_html = (
+        '<div id="stage" class="org3d">'
+        '<canvas id="c" aria-label="Every senior post in UK central government, drawn as a three-dimensional figure"></canvas>'
+        '<div id="labels" aria-hidden="true"></div>'
+        '<div id="tip" class="org3d-tip" hidden></div>'
+        '<section id="panel" class="org3d-panel">'
+        '<h1>The shape of the state</h1>'
+        '<p id="sub" class="org3d-sub">Loading the organograms…</p>'
+        '<p class="org3d-legend"><span><i class="k-h"></i>height: pay band</span> <span><i class="k-s"></i>size: staff beneath</span> '
+        '<span><i class="k-c"></i>colour: department</span></p>'
+        '<p class="org3d-ctl">'
+        '<button id="orbit" type="button" aria-pressed="true">Orbit: on</button> '
+        '<button id="pillars" type="button" aria-pressed="true">Pillars: on</button> '
+        '<button id="full" type="button">Full screen</button> '
+        '<button id="rec" type="button">Record 12 s</button> '
+        '<a id="dl" hidden download="shape-of-the-state.webm">Save video</a></p>'
+        '<p class="org3d-ctl"><label>Focus <select id="dept"><option value="">whole of government</option></select></label> '
+        '<button id="reset" type="button">Reset view</button></p>'
+        '<p class="org3d-foot"><a href="/family/organograms/chart">Chart as a list</a> · <a href="/family/organograms">The table</a> '
+        '· <span id="asof"></span></p>'
+        '</section>'
+        '<p id="nogl" class="org3d-nogl" hidden>This view needs WebGL, which your browser has turned off. '
+        '<a href="/family/organograms/chart">The chart as a list</a> has every post.</p>'
+        '</div>'
+        f'<script src="/orgchart3d.js?v={ver}" defer></script>')
+    head_html = simple_head(title, desc, "/family/organograms/chart/3d", site_url)
+    return _page(head_html, body_html, "/combined")

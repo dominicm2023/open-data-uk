@@ -296,6 +296,9 @@ STATIC_FILES = {
     "icon-192.png": "image/png",
     "icon-512.png": "image/png",
     "manifest.webmanifest": "application/manifest+json",
+    # The 3D organisation chart's own script (orgchart.render_3d links it
+    # with a content hash). Ours, served from here: the CSP allows no other host.
+    "orgchart3d.js": "text/javascript; charset=utf-8",
     # IndexNow ownership proof. Public by design — search engines fetch it
     # back from the site root to confirm the submissions are really ours,
     # so it belongs in the repo rather than in a secret.
@@ -1151,6 +1154,30 @@ def organogram_chart(body: str | None = Query(default=None, max_length=200)) -> 
         return HTMLResponse(pagerender.render_missing(None, what="page"), status_code=404,
                             headers={"Cache-Control": "no-store"})
     return HTMLResponse(html_out, headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
+@app.get("/family/organograms/chart/3d", include_in_schema=False)
+def organogram_3d() -> Response:
+    """The whole of central government as one WebGL figure (orgchart.render_3d)."""
+    import orgchart
+    if orgchart.graph_json() is None:
+        return HTMLResponse(pagerender.render_missing(None, what="page"), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    return HTMLResponse(orgchart.render_3d(SITE_URL),
+                        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
+@app.get("/api/family/organograms/graph.json", summary="The organograms family as one graph",
+         description="Every senior post in the organograms family as parallel arrays — body, parent index, "
+                     "title, grade, pay floor, FTE, FTE and senior posts beneath, junior FTE — with the bodies "
+                     "and the departments they name. What the 3D chart draws. Posts, not people.")
+def organogram_graph() -> Response:
+    import orgchart
+    js = orgchart.graph_json()
+    if js is None:
+        raise HTTPException(status_code=404, detail="Unknown family")
+    return Response(js, media_type="application/json; charset=utf-8",
+                    headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
 
 
 @app.get("/topics", include_in_schema=False)

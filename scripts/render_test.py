@@ -309,6 +309,16 @@ check("<details" in _node and "£180,000–£184,999" in _node and "Data Enginee
       "the chart renders as nested details with the published pay band")
 check("Name" not in _node and "@" not in _node,
       "no name or contact detail appears in the chart")
+_g = orgchart.graph_from_rows([dict(r, body="Dept X", parent_department="Dept X", source_url="u") for r in _ORG])
+check(len(_g["bodies"]) == 1 and len(_g["departments"]) == 1 and len(_g["nodes"]["title"]) == 3,
+      "the graph has one body under one department and every senior post")
+check(all(p < i for i, p in enumerate(_g["nodes"]["parent"]) if p >= 0),
+      "parents precede their children in the graph, so the layout can walk it once")
+check(_g["nodes"]["junior_fte"][_g["nodes"]["title"].index("Director, Data")] == 12
+      and _g["nodes"]["pay"][_g["nodes"]["title"].index("Permanent Secretary")] == 180000,
+      "junior FTE hangs on the post it reports to and pay is the published floor")
+check("name" not in _g["nodes"] and "Name" not in json.dumps(_g),
+      "the graph carries no name column")
 
 # --- the stylesheet ------------------------------------------------------
 # One file now, after three inline copies drifted apart. These pin the two
