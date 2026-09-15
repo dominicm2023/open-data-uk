@@ -56,22 +56,24 @@
     attribute vec3 v; attribute vec3 nrm; attribute vec2 uv;
     attribute vec3 ipos; attribute vec2 isz; attribute vec3 icol; attribute float ia; attribute float istyle;
     uniform mat4 mvp; uniform float rise; uniform float tier;
-    varying vec3 vc; varying float va; varying vec2 vuv; varying float vshade; varying float vh; varying float vtop; varying float vstyle;
+    varying vec3 vc; varying float va; varying vec2 vuv; varying float vshade; varying float vh; varying float vtop; varying float vstyle; varying float vtone;
     void main() {
       float annex = step(3.5, istyle);
-      float fw = mix(1.0, 0.55, tier), fh = mix(1.0, 1.07, tier);
+      vtone = fract(sin(dot(ipos.xy, vec2(12.9898, 78.233))) * 43758.5453);
+      float fw = tier > 1.5 ? 0.32 : mix(1.0, 0.58, tier), fh = tier > 1.5 ? 1.16 : mix(1.0, 1.07, tier);
       float h = ipos.z * rise;
       vec3 w = vec3(ipos.x + v.x * isz.x * fw, ipos.y + v.y * isz.y * fw, v.z * h * fh);
       vec4 cp = mvp * vec4(w, 1.0); gl_Position = cp;
       vtop = step(0.5, nrm.z);
       vshade = mix(0.5 + 0.35 * max(0.0, dot(nrm.xy, normalize(vec2(-0.55, -0.83)))), 1.0, vtop);
       vuv = vec2(uv.x * max(isz.x, isz.y) * 160.0, uv.y * h * 70.0);
-      float skip = min(1.0, tier * (step(max(isz.x, isz.y), 0.012) + annex));   // no crown on a tiny building or an annex
+      float big = max(isz.x, isz.y);
+      float skip = min(1.0, tier * (step(big, 0.012) + annex) + step(1.5, tier) * step(big, 0.03));   // crowns only on buildings of size, never on annexes
       vc = icol; va = ia * ${FOG} * (1.0 - skip); vh = v.z; vstyle = istyle;
     }`;
   const FS_BOX = `
     precision mediump float; uniform float t;
-    varying vec3 vc; varying float va; varying vec2 vuv; varying float vshade; varying float vh; varying float vtop; varying float vstyle;
+    varying vec3 vc; varying float va; varying vec2 vuv; varying float vshade; varying float vh; varying float vtop; varying float vstyle; varying float vtone;
     float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
     void main() {
       if (va <= 0.002) discard;
@@ -91,7 +93,9 @@
       c += warm * win * lit * 0.75 * (0.5 + 0.5 * vshade);
       c += vc * smoothstep(0.9, 1.0, vh) * (1.0 - vtop) * 0.7;
       c += vc * vtop * 0.45;
+      c += vc * 0.06 * step(0.93, f.y) * (1.0 - vtop);                  // a faint line at each floor
       c *= 0.55 + 0.45 * smoothstep(0.0, 0.12, vh);
+      c *= 0.86 + 0.28 * vtone;                                           // no two buildings quite the same tone
       gl_FragColor = vec4(c * va, 1.0);
     }`;
   const VS_EDGE = `
@@ -140,6 +144,37 @@
     void main() { vec4 cp = mvp * vec4(p.x, p.y, p.z * rise, 1.0); gl_Position = cp; vc = col; va = a * ${FOG}; }`;
   const FS_LN = `precision mediump float; varying vec3 vc; varying float va; void main() { gl_FragColor = vec4(vc * va, 1.0); }`;
   const FS_FLAT = `precision mediump float; varying vec3 vc; varying float va; void main() { gl_FragColor = vec4(vc * va, 1.0); }`;
+  // full-screen passes: the sky behind everything, then bloom over it all
+  const VS_QUAD = `attribute vec2 q; varying vec2 uv; void main() { uv = q * 0.5 + 0.5; gl_Position = vec4(q, 0.0, 1.0); }`;
+  const FS_SKY = `
+    precision mediump float; varying vec2 uv; uniform float theta; uniform float phi; uniform float t; uniform float aspect;
+    float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+    void main() {
+      float h = uv.y;                                                     // 0 at the bottom of the screen
+      vec3 top = vec3(0.012, 0.014, 0.04), mid = vec3(0.05, 0.03, 0.10), glow = vec3(0.16, 0.06, 0.14);
+      vec3 c = mix(mid, top, smoothstep(0.35, 1.0, h));
+      c += glow * exp(-abs(h - 0.42) * 9.0) * 0.6;                        // a city's horizon glow
+      c += vec3(0.02, 0.08, 0.10) * exp(-abs(h - 0.4) * 14.0);
+      vec2 sp = vec2((uv.x + theta * 0.16) * aspect * 90.0, (uv.y + phi * 0.25) * 90.0);
+      vec2 cell = floor(sp); float r = hash(cell);
+      float star = step(0.985, r) * smoothstep(0.45, 0.0, length(fract(sp) - 0.5)) * (0.6 + 0.4 * sin(t * (1.5 + r * 3.0) + r * 20.0));
+      c += vec3(0.8, 0.85, 1.0) * star * smoothstep(0.38, 0.7, h) * 0.9;
+      gl_FragColor = vec4(c, 1.0);
+    }`;
+  const FS_BRIGHT = `precision mediump float; varying vec2 uv; uniform sampler2D tex;
+    void main() { vec3 c = texture2D(tex, uv).rgb; gl_FragColor = vec4(max(c - 0.32, 0.0) * 1.7, 1.0); }`;
+  const FS_BLUR = `precision mediump float; varying vec2 uv; uniform sampler2D tex; uniform vec2 dir;
+    void main() { vec3 c = texture2D(tex, uv).rgb * 0.227;
+      c += (texture2D(tex, uv + dir * 1.385).rgb + texture2D(tex, uv - dir * 1.385).rgb) * 0.316;
+      c += (texture2D(tex, uv + dir * 3.231).rgb + texture2D(tex, uv - dir * 3.231).rgb) * 0.07;
+      gl_FragColor = vec4(c, 1.0); }`;
+  const FS_COMPOSE = `precision mediump float; varying vec2 uv; uniform sampler2D tex; uniform sampler2D bloom; uniform float strength;
+    void main() {
+      vec3 c = texture2D(tex, uv).rgb + texture2D(bloom, uv).rgb * strength;
+      c = vec3(1.0) - exp(-c * 1.25);                                     // soft shoulder on the brightest neon
+      vec2 d = uv - 0.5; c *= 1.0 - 0.32 * dot(d, d) * 1.6;               // vignette
+      gl_FragColor = vec4(c, 1.0);
+    }`;
   function program(vs, fs) {
     const mk = (t, s) => { const sh = gl.createShader(t); gl.shaderSource(sh, s); gl.compileShader(sh);
       if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(sh)); return sh; };
@@ -149,6 +184,29 @@
   }
   const PT = program(VS_PT, FS_PT), RING = program(VS_PT, FS_RING), LN = program(VS_LN, FS_LN);
   const BOX = EXT ? program(VS_BOX, FS_BOX) : null, EDGE = EXT ? program(VS_EDGE, FS_FLAT) : null, SIGN = program(VS_SIGN, FS_SIGN);
+  const SKY = program(VS_QUAD, FS_SKY), BRIGHT = program(VS_QUAD, FS_BRIGHT), BLUR = program(VS_QUAD, FS_BLUR), COMPOSE = program(VS_QUAD, FS_COMPOSE);
+  const QUAD = (() => { const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, 1, 1, -1, -1, 1, 1, -1, 1]), gl.STATIC_DRAW); return b; })();
+  // render targets: the scene at full size with depth, and two quarter-size buffers for the bloom
+  const RT = { scene: null, a: null, b: null, w: 0, h: 0 };
+  function target(w, h, depth) {
+    const tex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, w, h, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    const fb = gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFFER, fb);
+    gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, tex, 0);
+    if (depth) { const rb = gl.createRenderbuffer(); gl.bindRenderbuffer(gl.RENDERBUFFER, rb); gl.renderbufferStorage(gl.RENDERBUFFER, gl.DEPTH_COMPONENT16, w, h); gl.framebufferRenderbuffer(gl.FRAMEBUFFER, gl.DEPTH_ATTACHMENT, gl.RENDERBUFFER, rb); }
+    const ok = gl.checkFramebufferStatus(gl.FRAMEBUFFER) === gl.FRAMEBUFFER_COMPLETE;
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    return ok ? { fb, tex, w, h } : null;
+  }
+  function makeTargets(w, h) {
+    if (RT.w === w && RT.h === h) return;
+    RT.w = w; RT.h = h; RT.scene = target(w, h, true);
+    const bw = Math.max(1, w >> 2), bh = Math.max(1, h >> 2); RT.a = target(bw, bh, false); RT.b = target(bw, bh, false);
+    RT.ok = !!(RT.scene && RT.a && RT.b);
+  }
+  function fullscreen(pr) { disableAll(); gl.useProgram(pr); attrib(pr, "q", QUAD, 2); gl.drawArrays(gl.TRIANGLES, 0, 6); }
   const uni = (pr, n) => gl.getUniformLocation(pr, n);
   function buffer(arr, dyn) { const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, arr, dyn ? gl.DYNAMIC_DRAW : gl.STATIC_DRAW); return b; }
   function upload(b, arr) { gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, arr, gl.DYNAMIC_DRAW); }
@@ -553,7 +611,7 @@
     pxr = Math.min(window.devicePixelRatio || 1, 1.5);
     const r = stage.getBoundingClientRect(); W = Math.max(1, Math.floor(r.width)); Hh = Math.max(1, Math.floor(r.height));
     canvas.width = Math.floor(W * pxr); canvas.height = Math.floor(Hh * pxr); canvas.style.width = W + "px"; canvas.style.height = Hh + "px";
-    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.viewport(0, 0, canvas.width, canvas.height); makeTargets(canvas.width, canvas.height);
   }
   window.addEventListener("resize", resize); resize();
   function camera() {
@@ -594,8 +652,12 @@
       if (e >= 1) S.camTo = null; }
     else if (S.orbit && !S.drag && (now - S.idleSince) > 7000) S.theta += dt * 0.06;
     const m = camera(), tsec = now / 1000;
+    gl.bindFramebuffer(gl.FRAMEBUFFER, RT.ok ? RT.scene.fb : null); gl.viewport(0, 0, canvas.width, canvas.height);
     gl.clearColor(0.02, 0.022, 0.045, 1); gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-    gl.enable(gl.DEPTH_TEST); gl.depthFunc(gl.LEQUAL); gl.disable(gl.BLEND); disableAll();
+    gl.disable(gl.DEPTH_TEST); gl.disable(gl.BLEND); gl.depthMask(false);
+    gl.useProgram(SKY); gl.uniform1f(uni(SKY, "theta"), S.theta); gl.uniform1f(uni(SKY, "phi"), S.phi); gl.uniform1f(uni(SKY, "t"), tsec); gl.uniform1f(uni(SKY, "aspect"), W / Hh);
+    fullscreen(SKY);
+    gl.depthMask(true); gl.enable(gl.DEPTH_TEST); gl.depthFunc(gl.LEQUAL); gl.disable(gl.BLEND); disableAll();
     // the ground plane, opaque, so buildings hide what stands behind them
     gl.useProgram(LN); gl.uniformMatrix4fv(uni(LN, "mvp"), false, m); gl.uniform1f(uni(LN, "rise"), 1);
     attrib(LN, "p", S.plane.pos, 3); attrib(LN, "col", S.plane.col, 3); attrib(LN, "a", S.plane.al, 1); gl.drawArrays(gl.TRIANGLES, 0, 6);
@@ -608,6 +670,7 @@
       attrib(BOX, "ipos", S.pts.pos, 3, 1); attrib(BOX, "isz", S.pts.fp, 2, 1); attrib(BOX, "icol", S.pts.col, 3, 1); attrib(BOX, "ia", S.pts.al, 1, 1); attrib(BOX, "istyle", S.pts.style, 1, 1);
       gl.uniform1f(uni(BOX, "tier"), 0); EXT.drawArraysInstancedANGLE(gl.TRIANGLES, 0, S.unit.nv, S.n);
       gl.uniform1f(uni(BOX, "tier"), 1); EXT.drawArraysInstancedANGLE(gl.TRIANGLES, 0, S.unit.nv, S.n);   // the crown: a slimmer top storey
+      gl.uniform1f(uni(BOX, "tier"), 2); EXT.drawArraysInstancedANGLE(gl.TRIANGLES, 0, S.unit.nv, S.n);   // and a second on the towers
     }
     // everything luminous: additive, tested against the buildings but not written
     gl.depthMask(false); gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE); disableAll();
@@ -646,6 +709,19 @@
       gl.drawArrays(gl.TRIANGLES, 0, S.signs.n);
     }
     gl.depthMask(true);
+    if (RT.ok) {                                                       // bloom: bright pass, two blurs, compose
+      gl.disable(gl.DEPTH_TEST); gl.disable(gl.BLEND);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, RT.a.fb); gl.viewport(0, 0, RT.a.w, RT.a.h);
+      gl.useProgram(BRIGHT); gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, RT.scene.tex); gl.uniform1i(uni(BRIGHT, "tex"), 0); fullscreen(BRIGHT);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, RT.b.fb); gl.useProgram(BLUR); gl.bindTexture(gl.TEXTURE_2D, RT.a.tex); gl.uniform1i(uni(BLUR, "tex"), 0); gl.uniform2f(uni(BLUR, "dir"), 1 / RT.a.w, 0); fullscreen(BLUR);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, RT.a.fb); gl.useProgram(BLUR); gl.bindTexture(gl.TEXTURE_2D, RT.b.tex); gl.uniform1i(uni(BLUR, "tex"), 0); gl.uniform2f(uni(BLUR, "dir"), 0, 1 / RT.a.h); fullscreen(BLUR);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, RT.b.fb); gl.useProgram(BLUR); gl.bindTexture(gl.TEXTURE_2D, RT.a.tex); gl.uniform1i(uni(BLUR, "tex"), 0); gl.uniform2f(uni(BLUR, "dir"), 1.6 / RT.a.w, 0); fullscreen(BLUR);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, RT.a.fb); gl.useProgram(BLUR); gl.bindTexture(gl.TEXTURE_2D, RT.b.tex); gl.uniform1i(uni(BLUR, "tex"), 0); gl.uniform2f(uni(BLUR, "dir"), 0, 1.6 / RT.a.h); fullscreen(BLUR);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, null); gl.viewport(0, 0, canvas.width, canvas.height);
+      gl.useProgram(COMPOSE); gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, RT.scene.tex); gl.uniform1i(uni(COMPOSE, "tex"), 0);
+      gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, RT.a.tex); gl.uniform1i(uni(COMPOSE, "bloom"), 1); gl.uniform1f(uni(COMPOSE, "strength"), 1.1);
+      fullscreen(COMPOSE); gl.activeTexture(gl.TEXTURE0);
+    }
     project(m, rise);
   }
   function project(m, rise) {
