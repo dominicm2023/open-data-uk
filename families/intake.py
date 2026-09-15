@@ -118,6 +118,7 @@ _MIXED = re.compile(r"inspire\s+end\s+user|end\s+user\s+licen[cs]e|public\s+sect
 # The acknowledgement a derived-data release must carry, kept verbatim.
 _OS_ACK = re.compile(r"©?\s*(?:crown\s+copyright\s+and\s+database\s+rights?|local\s+government\s+information\s+house[^.]{0,60}?"
                      r"copyright\s+and\s+database\s+rights?)\s*(?:\[[^\]]*\]|\d{4})?\s*(?:ordnance\s+survey)?\s*\d{6,9}", re.I)
+_PUBLIC_DOMAIN = re.compile(r"other \(public domain\)|other-pd|public domain")
 _NEUTRAL = {"uk-ogl", "uk_ogl", "ogl", "ogl-uk", "uk open government licence (ogl)", "open government license", "",
             "http://reference.data.gov.uk/id/open-government-licence",
             "https://reference.data.gov.uk/id/open-government-licence"}
@@ -148,6 +149,7 @@ def licence(fields, portal: str | None = None) -> dict:
     versions: set[str] = set()
     named = False
     ccby: str | None = None
+    public_domain = False
     mixed: set[str] = set()
     acks: list[str] = []
     saw_text = False
@@ -161,6 +163,13 @@ def licence(fields, portal: str | None = None) -> dict:
         links = re.findall(r"href=[\"']([^\"']+)", raw)
         if low == "uk_oglv3.0":
             low = "open government licence v3.0"
+        if _PUBLIC_DOMAIN.fullmatch(low):
+            # data.gov.uk's "Other (Public Domain)" (id other-pd): the
+            # publisher waives its rights, which is at least as open as
+            # the OGL. Accepted by decision DM 2026-09-15 (the MoD's and
+            # The National Archives' organograms state it).
+            public_domain = True
+            continue
         m_id = re.fullmatch(r"ogl-uk-([123])\.0", low)
         if m_id:
             versions.add(m_id.group(1)); named = True; continue
@@ -191,6 +200,12 @@ def licence(fields, portal: str | None = None) -> dict:
         if m:
             ccby = next((g for g in m.groups() if g), None) or "4.0"
             continue
+    if not named and not ccby and public_domain:
+        return {"id": "Public-Domain", "version": None,
+                "url": "https://www.data.gov.uk/dataset/licences",
+                "attribution": "Released by the publisher without restriction ('Other (Public Domain)' on data.gov.uk).",
+                "mixed": sorted(mixed), "os_acknowledgement": None,
+                "basis": "data.gov.uk licence 'Other (Public Domain)', accepted by decision DM 2026-09-15"}
     if not named and not ccby:
         if saw_text and acks and portal in PORTAL_LICENCE and not mixed - {"ordnance survey"}:
             v, basis = PORTAL_LICENCE[portal]

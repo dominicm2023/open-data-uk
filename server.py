@@ -1140,6 +1140,19 @@ def api_family(request: Request, response: Response, name: str,
     return FileResponse(api, media_type="application/json; charset=utf-8",
                         headers={"Cache-Control": "public, max-age=3600"})
 
+@app.get("/family/organograms/chart", include_in_schema=False)
+def organogram_chart(body: str | None = Query(default=None, max_length=200)) -> Response:
+    """The organisation chart drawn from the organograms family: every body
+    by parent department, or one body's posts nested by reporting line.
+    Server-rendered, self-contained, not rate-limited (three SQLite reads)."""
+    import orgchart
+    html_out = orgchart.render_chart(SITE_URL, body or None)
+    if html_out is None:
+        return HTMLResponse(pagerender.render_missing(None, what="page"), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    return HTMLResponse(html_out, headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
 @app.get("/topics", include_in_schema=False)
 def topics_page() -> HTMLResponse:
     return HTMLResponse(

@@ -779,3 +779,27 @@ footer {
   z-index: 10;
 }
 .skip:focus { left: 0; }
+
+/* --- the organisation chart (orgchart.py): nested <details>, no script --- */
+.org-dept { margin: 1.4rem 0; }
+.org-dept h2, .org-file h2 { font-size: 1.15rem; margin: 0 0 .4rem; }
+.org-asof { color: var(--muted); font-weight: normal; font-size: .85rem; margin-left: .4rem; }
+.org-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .25rem; }
+.org-list li { padding: .35rem .5rem; border-bottom: 1px solid var(--line); }
+.org-list .org-head { color: var(--muted); font-size: .9rem; }
+.org-list .org-meta { display: block; color: var(--muted); font-size: .8rem; }
+.org-file { margin: 1.6rem 0; }
+.org-file .stats { color: var(--muted); font-size: .875rem; margin: 0 0 .6rem; }
+.org-node { margin: .25rem 0 .25rem 0; padding-left: .9rem; border-left: 2px solid var(--line); }
+.org-node > summary, .org-sum { cursor: pointer; padding: .3rem .4rem; border-radius: 6px; line-height: 1.35; }
+.org-node > summary:hover { background: var(--card); }
+.org-leaf .org-sum { cursor: default; }
+.org-title { font-weight: 600; }
+.org-meta { color: var(--muted); font-size: .82rem; margin-left: .5rem; font-variant-numeric: tabular-nums; }
+.org-below { display: block; color: var(--muted); font-size: .78rem; }
+.org-unit { display: block; color: var(--muted); font-size: .78rem; font-style: italic; }
+.org-fn { color: var(--muted); font-size: .85rem; margin: .2rem .4rem .5rem; }
+.org-juniors { font-size: .82rem; margin: .3rem 0 .6rem .4rem; border-collapse: collapse; max-width: 100%; }
+.org-juniors th, .org-juniors td { padding: .15rem .5rem .15rem 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.org-juniors th { color: var(--muted); font-weight: 600; }
+@media (max-width: 640px) { .org-node { padding-left: .5rem; } .org-meta { display: block; margin-left: 0; } }

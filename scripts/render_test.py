@@ -279,6 +279,37 @@ check(slugs.legacy_slugs(_ONS) == ["ons/adminbasedhouseholdestimates"],
 check(slugs.legacy_slugs("data_gov_uk:abc-123") == [] and slugs.legacy_slugs(_AGOL) == [],
       "keys whose rule never changed have no former address")
 
+# --- the organisation chart ----------------------------------------------
+# A body's chart is a tree walk over its own rows: senior posts nest by
+# reports_to, junior groups hang off the senior post they name, and a post
+# whose line is 'XX' is the top. Nothing is inferred and no name is shown.
+import orgchart  # noqa: E402
+_ORG = [
+    {"dataset_key": "d", "level": "senior", "post_reference": "1", "job_title": "Permanent Secretary", "grade": "SCS4",
+     "reports_to": "XX", "pay_floor_gbp": 180000, "pay_ceiling_gbp": 184999, "fte": 1, "as_of": "2026-03-31", "unit": "Board"},
+    {"dataset_key": "d", "level": "senior", "post_reference": "2", "job_title": "Director, Data", "grade": "SCS2",
+     "reports_to": "1", "pay_floor_gbp": 100000, "pay_ceiling_gbp": 104999, "fte": 1, "as_of": "2026-03-31", "unit": "Digital"},
+    {"dataset_key": "d", "level": "senior", "post_reference": "3", "job_title": "Adviser", "grade": "SCS1",
+     "reports_to": "9", "pay_floor_gbp": 75000, "pay_ceiling_gbp": 79999, "fte": 0.5, "as_of": "2026-03-31", "unit": ""},
+    {"dataset_key": "d", "level": "junior", "job_title": "Data Engineer", "grade": "G7", "reports_to": "2",
+     "pay_floor_gbp": 57204, "pay_ceiling_gbp": 68558, "fte": 12, "as_of": "2026-03-31", "unit": "Digital"},
+]
+_trees = orgchart.trees_from_rows(_ORG)
+check(len(_trees) == 1 and len(_trees[0]["roots"]) == 1 and _trees[0]["roots"][0]["title"] == "Permanent Secretary",
+      "the post reporting to XX is the top of the chart")
+check(_trees[0]["roots"][0]["children"][0]["title"] == "Director, Data"
+      and _trees[0]["roots"][0]["children"][0]["juniors"][0]["fte"] == 12,
+      "a senior post nests under the post it reports to, and its junior group under it")
+check(_trees[0]["roots"][0]["below_fte"] == 14 and _trees[0]["roots"][0]["below_senior"] == 2,
+      "FTE and senior posts beneath a post are rolled up")
+check(len(_trees[0]["orphans"]) == 1 and _trees[0]["orphans"][0]["title"] == "Adviser",
+      "a post whose reporting line names no post in the file is listed apart, not dropped")
+_node = orgchart._node_html(_trees[0]["roots"][0], 0)
+check("<details" in _node and "£180,000–£184,999" in _node and "Data Engineer" in _node and "Permanent Secretary" in _node,
+      "the chart renders as nested details with the published pay band")
+check("Name" not in _node and "@" not in _node,
+      "no name or contact detail appears in the chart")
+
 # --- the stylesheet ------------------------------------------------------
 # One file now, after three inline copies drifted apart. These pin the two
 # things that silently broke while they were separate.

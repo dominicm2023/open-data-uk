@@ -523,7 +523,8 @@ def render_family(family: str, site_url: str) -> str | None:
           '</div>'
         + _headline_tiles(facets)
         + f'<p class="dl-row"><a class="cta" href="/api/family/{esc(family)}.csv">Download CSV</a>'
-          f'<a href="/api/family/{esc(family)}">JSON</a>'
+        + ('<a class="cta" href="/family/organograms/chart">Organisation chart</a>' if family == "organograms" else "")
+        + f'<a href="/api/family/{esc(family)}">JSON</a>'
           f'<a href="/who-publishes?name={esc(s["label"])}">Who publishes this</a>'
           f'<span class="note">Licence: {esc(lic)}</span></p>'
         + viz
