@@ -384,8 +384,21 @@ def graph_from_rows(rows: list[dict]) -> dict:
     newest: list[tuple[str, list[dict], dict]] = []
     for name in sorted(by_body):
         trees = trees_from_rows(by_body[name])
-        if trees:
-            newest.append((name, by_body[name], trees[0]))          # the newest snapshot
+        if not trees:
+            continue
+        # The newest snapshot — every dataset that carries it. The Ministry
+        # of Defence publishes one organogram per top-level budget (Head
+        # Office, Navy, Army, Air, Strategic Command…), all dated the same
+        # day; the figure needs all of them, not the first.
+        top = trees[0]["as_of"]
+        same = [t for t in trees if t["as_of"] == top]
+        merged = dict(same[0])
+        merged["roots"] = [r for t in same for r in t["roots"]]
+        merged["orphans"] = [r for t in same for r in t["orphans"]]
+        merged["senior"] = sum(t["senior"] for t in same)
+        merged["fte"] = sum(t["fte"] for t in same)
+        merged["parent_department"] = _mode(t["parent_department"] for t in same)
+        newest.append((name, by_body[name], merged))
     fold = fold_departments(t["parent_department"] or name for name, _, t in newest)
     for name, rs, t in newest:
         # the pay floor travels on the row, not the rendered band

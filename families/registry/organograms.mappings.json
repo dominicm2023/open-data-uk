@@ -13907,5 +13907,53 @@
   "version": "1",
   "reviewer": "Dominic Matthews via Claude",
   "reviewed_at": "2026-09-15"
+ },
+ "064fb3da1ffd0c0a8d63f58f6121dd566e03a9e259e3212e539be40838bdc024": {
+  "status": "reviewed",
+  "table": 1,
+  "header_row": 0,
+  "columns": {
+   "post_reference": "Post Unique Reference",
+   "job_title": "Job Title",
+   "grade": "Grade (or equivalent)",
+   "job_function": "Job/Team Function",
+   "parent_department": "Parent Department",
+   "organisation": "Organisation",
+   "unit": "Unit",
+   "reports_to": "Reports to Senior Post",
+   "salary_cost_of_reports_gbp": "Salary Cost of Reports (£)",
+   "fte": "FTE",
+   "pay_floor_gbp": "Actual Pay Floor (£)",
+   "pay_ceiling_gbp": "Actual Pay Ceiling (£)",
+   "professional_group": "Professional/Occupational Group",
+   "notes": "Notes"
+  },
+  "constants": {
+   "body": "Ministry of Defence",
+   "level": "senior"
+  },
+  "alt_columns": [
+   {
+    "job_title": "Generic Job Title",
+    "grade": "Grade",
+    "parent_department": "Parent Department",
+    "organisation": "Organisation",
+    "unit": "Unit",
+    "reports_to": "Reporting Senior Post",
+    "pay_floor_gbp": "Payscale Minimum (£)",
+    "pay_ceiling_gbp": "Payscale Maximum (£)",
+    "fte": "Number of Posts in FTE",
+    "professional_group": "Professional/Occupational Group"
+   }
+  ],
+  "alt_constants": [
+   {
+    "level": "junior"
+   }
+  ],
+  "notes": "Mapped by the Cabinet Office organogram standard: senior and junior files, headers verbatim from the files (14 senior, 10 junior columns). Name, contact phone and e-mail columns deliberately not taken (posts, not people). as_of from the file's name. Body from the index's publisher name. Title: 'Organogram of Staff Roles & Salaries'. Review 2026-09-15: standard headers matched exactly; pay bands and FTE read as numbers, N/A as empty.",
+  "version": "1",
+  "reviewer": "Dominic Matthews via Claude",
+  "reviewed_at": "2026-09-15"
  }
 }

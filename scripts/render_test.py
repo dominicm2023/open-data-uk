@@ -319,6 +319,14 @@ check(_g["nodes"]["junior_fte"][_g["nodes"]["title"].index("Director, Data")] ==
       "junior FTE hangs on the post it reports to and pay is the published floor")
 check("name" not in _g["nodes"] and "Name" not in json.dumps(_g),
       "the graph carries no name column")
+_two = [dict(r, body="MoD", parent_department="MoD", source_url="u") for r in _ORG] + [
+    {"dataset_key": "e", "body": "MoD", "parent_department": "MoD", "source_url": "u", "level": "senior", "post_reference": "9",
+     "job_title": "Chief of the Air Staff", "grade": "SCS4", "reports_to": "XX", "pay_floor_gbp": 170000, "fte": 1, "as_of": "2026-03-31"},
+    {"dataset_key": "old", "body": "MoD", "parent_department": "MoD", "source_url": "u", "level": "senior", "post_reference": "1",
+     "job_title": "Permanent Under Secretary", "grade": "SCS4", "reports_to": "XX", "pay_floor_gbp": 150000, "fte": 1, "as_of": "2016-03-31"}]
+_g2 = orgchart.graph_from_rows(_two)
+check(_g2["nodes"]["parent"].count(-1) == 3 and "Permanent Under Secretary" not in _g2["nodes"]["title"],
+      "every dataset carrying a body's newest snapshot is in the graph (the MoD's one per budget), an older one is not")
 
 # --- the stylesheet ------------------------------------------------------
 # One file now, after three inline copies drifted apart. These pin the two
