@@ -54,37 +54,63 @@
   const FOG = "clamp(1.35 - max(cp.w, 0.0) * 0.14, 0.18, 1.0)";
   const VS_BOX = `
     attribute vec3 v; attribute vec3 nrm; attribute vec2 uv;
-    attribute vec3 ipos; attribute vec2 isz; attribute vec3 icol; attribute float ia;
-    uniform mat4 mvp; uniform float rise;
-    varying vec3 vc; varying float va; varying vec2 vuv; varying float vshade; varying float vh; varying float vtop;
+    attribute vec3 ipos; attribute vec2 isz; attribute vec3 icol; attribute float ia; attribute float istyle;
+    uniform mat4 mvp; uniform float rise; uniform float tier;
+    varying vec3 vc; varying float va; varying vec2 vuv; varying float vshade; varying float vh; varying float vtop; varying float vstyle;
     void main() {
+      float annex = step(3.5, istyle);
+      float fw = mix(1.0, 0.55, tier), fh = mix(1.0, 1.07, tier);
       float h = ipos.z * rise;
-      vec3 w = vec3(ipos.x + v.x * isz.x, ipos.y + v.y * isz.y, v.z * h);
+      vec3 w = vec3(ipos.x + v.x * isz.x * fw, ipos.y + v.y * isz.y * fw, v.z * h * fh);
       vec4 cp = mvp * vec4(w, 1.0); gl_Position = cp;
       vtop = step(0.5, nrm.z);
       vshade = mix(0.5 + 0.35 * max(0.0, dot(nrm.xy, normalize(vec2(-0.55, -0.83)))), 1.0, vtop);
       vuv = vec2(uv.x * max(isz.x, isz.y) * 160.0, uv.y * h * 70.0);
-      vc = icol; va = ia * ${FOG}; vh = v.z;
+      float skip = min(1.0, tier * (step(max(isz.x, isz.y), 0.012) + annex));   // no crown on a tiny building or an annex
+      vc = icol; va = ia * ${FOG} * (1.0 - skip); vh = v.z; vstyle = istyle;
     }`;
   const FS_BOX = `
     precision mediump float; uniform float t;
-    varying vec3 vc; varying float va; varying vec2 vuv; varying float vshade; varying float vh; varying float vtop;
+    varying vec3 vc; varying float va; varying vec2 vuv; varying float vshade; varying float vh; varying float vtop; varying float vstyle;
     float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
     void main() {
       if (va <= 0.002) discard;
-      vec3 c = vc * 0.16 * vshade;                                   // the dark body of the building
-      vec2 cell = floor(vuv); vec2 f = fract(vuv);
-      float lit = step(0.58, hash(cell + floor(t * 0.12 + hash(cell * 1.7) * 9.0)));
-      float win = step(0.22, f.x) * step(f.x, 0.78) * step(0.18, f.y) * step(f.y, 0.72) * (1.0 - vtop);
-      c += vc * win * lit * 0.75 * (0.5 + 0.5 * vshade);              // lit windows, slowly changing
-      c += vc * smoothstep(0.9, 1.0, vh) * (1.0 - vtop) * 0.7;        // neon rim under the roof
-      c += vc * vtop * 0.45;                                          // the roof glows
+      if (vstyle > 3.5) {                                             // an annex: the posts with no pay band, grouped
+        float stripe = step(0.5, fract(vuv.y * 0.3));
+        vec3 g = vec3(0.3, 0.32, 0.4) * (0.3 + 0.25 * vshade) + vc * 0.06 * stripe * (1.0 - vtop);
+        gl_FragColor = vec4(g * va, 1.0); return;
+      }
+      vec2 g = vuv;                                                   // each district builds its own way
+      if (vstyle < 0.5) { } else if (vstyle < 1.5) { g.x *= 0.55; } else if (vstyle < 2.5) { g.y *= 0.45; } else { g *= 0.7; }
+      vec2 cell = floor(g); vec2 f = fract(g);
+      float busy = vstyle < 0.5 ? 0.42 : vstyle < 1.5 ? 0.35 : vstyle < 2.5 ? 0.6 : 0.28;
+      float lit = step(1.0 - busy, hash(cell + floor(t * 0.1 + hash(cell * 1.7) * 9.0)));
+      float win = (vstyle < 2.5 ? step(0.2, f.x) * step(f.x, 0.8) * step(0.2, f.y) * step(f.y, 0.75) : step(0.12, f.y) * step(f.y, 0.82)) * (1.0 - vtop);
+      vec3 c = vc * 0.14 * vshade;
+      vec3 warm = mix(vc, vec3(1.0, 0.86, 0.6), vstyle > 2.5 ? 0.6 : 0.15);
+      c += warm * win * lit * 0.75 * (0.5 + 0.5 * vshade);
+      c += vc * smoothstep(0.9, 1.0, vh) * (1.0 - vtop) * 0.7;
+      c += vc * vtop * 0.45;
+      c *= 0.55 + 0.45 * smoothstep(0.0, 0.12, vh);
       gl_FragColor = vec4(c * va, 1.0);
     }`;
   const VS_EDGE = `
-    attribute vec3 v; attribute vec3 ipos; attribute vec2 isz; attribute vec3 icol; attribute float ia;
+    attribute vec3 v; attribute vec3 ipos; attribute vec2 isz; attribute vec3 icol; attribute float ia; attribute float istyle;
     uniform mat4 mvp; uniform float rise; varying vec3 vc; varying float va;
-    void main() { vec4 cp = mvp * vec4(ipos.x + v.x * isz.x, ipos.y + v.y * isz.y, v.z * ipos.z * rise, 1.0); gl_Position = cp; vc = icol; va = ia * ${FOG}; }`;
+    void main() { vec4 cp = mvp * vec4(ipos.x + v.x * isz.x, ipos.y + v.y * isz.y, v.z * ipos.z * rise, 1.0); gl_Position = cp;
+      vc = mix(icol, vec3(0.42, 0.44, 0.52), step(3.5, istyle)); va = ia * ${FOG}; }`;
+  // signs: the names as objects in the scene, each a camera-facing quad of a text atlas
+  const VS_SIGN = `
+    attribute vec3 c; attribute vec2 o; attribute vec2 uv; attribute vec2 sz; attribute vec3 tint;
+    uniform mat4 mvp; uniform vec3 right; uniform vec3 upv; uniform float rise;
+    varying vec2 vuv; varying vec3 vt; varying float va;
+    void main() {
+      vec3 w = vec3(c.x, c.y, c.z * rise) + right * (o.x * sz.x) + upv * (o.y * sz.y);
+      vec4 cp = mvp * vec4(w, 1.0); gl_Position = cp; vuv = uv; vt = tint; va = ${FOG};
+    }`;
+  const FS_SIGN = `
+    precision mediump float; uniform sampler2D tex; varying vec2 vuv; varying vec3 vt; varying float va;
+    void main() { vec4 s = texture2D(tex, vuv); gl_FragColor = vec4(vt * s.rgb * s.a * va * 1.5, 1.0); }`;
   const VS_PT = `
     attribute vec3 p; attribute vec3 col; attribute float sz; attribute float a;
     uniform mat4 mvp; uniform float pxr; uniform float scale; uniform float rise;
@@ -122,7 +148,7 @@
     return pr;
   }
   const PT = program(VS_PT, FS_PT), RING = program(VS_PT, FS_RING), LN = program(VS_LN, FS_LN);
-  const BOX = EXT ? program(VS_BOX, FS_BOX) : null, EDGE = EXT ? program(VS_EDGE, FS_FLAT) : null;
+  const BOX = EXT ? program(VS_BOX, FS_BOX) : null, EDGE = EXT ? program(VS_EDGE, FS_FLAT) : null, SIGN = program(VS_SIGN, FS_SIGN);
   const uni = (pr, n) => gl.getUniformLocation(pr, n);
   function buffer(arr, dyn) { const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, arr, dyn ? gl.DYNAMIC_DRAW : gl.STATIC_DRAW); return b; }
   function upload(b, arr) { gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, arr, gl.DYNAMIC_DRAW); }
@@ -173,10 +199,20 @@
       sz[i] = 0.12 + Math.sqrt(N.below_fte[i] || 0) * 0.02 + (N.parent[i] < 0 ? 0.14 : 0);
     }
     S.col = col; S.sz = sz;
+    // each district builds its own way: four architectures, by department rank
+    S.deptStyle = new Array(G.departments.length); S.order.forEach((di, k) => { S.deptStyle[di] = k % 4; });
+    S.nopay = new Uint8Array(n); for (let i = 0; i < n; i++) S.nopay[i] = N.pay[i] ? 0 : 1;
+    S.styleArr = new Float32Array(n); S.hidden = new Uint8Array(n); S.annex = new Int32Array(n);
+    // a spire on the head of every body
+    S.spireList = []; for (let bi = 0; bi < G.bodies.length; bi++) for (const r of S.roots[bi]) S.spireList.push(r);
+    const spc = new Float32Array(S.spireList.length * 6); S.spireList.forEach((i, k) => { for (let e = 0; e < 2; e++) { spc[k * 6 + e * 3] = col[i * 3]; spc[k * 6 + e * 3 + 1] = col[i * 3 + 1]; spc[k * 6 + e * 3 + 2] = col[i * 3 + 2]; } });
+    S.spos = new Float32Array(S.spireList.length * 6); S.sal = new Float32Array(S.spireList.length * 2);
+    S.spires = { pos: buffer(S.spos, true), col: buffer(spc), al: buffer(S.sal, true) };
+    S.signs = { tex: gl.createTexture(), c: buffer(new Float32Array(0), true), o: buffer(new Float32Array(0), true), uv: buffer(new Float32Array(0), true), sz: buffer(new Float32Array(0), true), tint: buffer(new Float32Array(0), true), n: 0 };
     S.pos = new Float32Array(n * 3); S.from = new Float32Array(n * 3); S.to = new Float32Array(n * 3);
     S.fp = new Float32Array(n * 2); S.fpFrom = new Float32Array(n * 2); S.fpTo = new Float32Array(n * 2);   // footprints
     S.al = new Float32Array(n); S.screen = new Float32Array(n * 2); S.vis = new Uint8Array(n);
-    S.pts = { pos: buffer(S.pos, true), col: buffer(col), sz: buffer(sz), al: buffer(S.al, true), fp: buffer(S.fp, true) };
+    S.pts = { pos: buffer(S.pos, true), col: buffer(col), sz: buffer(sz), al: buffer(S.al, true), fp: buffer(S.fp, true), style: buffer(S.styleArr, true) };
     // the unit building: five faces, with normals and window coordinates; and its twelve edges
     const F = [], E = [];
     const face = (pts, nrm) => { const [a, b, c, d] = pts; for (const q of [a, b, c, a, c, d]) F.push(q[0], q[1], q[2], nrm[0], nrm[1], nrm[2], q[3], q[4]); };
@@ -252,33 +288,46 @@
     }
     return out;
   }
+  const ASPECT = [[1, 1], [1.35, 0.72], [0.78, 1.3], [1.12, 1.12]];
+  const jitter = i => 0.82 + ((i * 2654435761) >>> 0) % 1000 / 1000 * 0.36;
   // A body's buildings on their block: depth-first so a subtree keeps together; the
-  // footprint is the staff beneath, capped by the plot.
-  function placeBlock(bi, r) {
-    const order = []; S.roots[bi].forEach(function walk(i) { order.push(i); S.kids[i].forEach(walk); });
-    const n = order.length; if (!n) return;
+  // footprint is the staff beneath, capped by the plot, in the district's own shape.
+  // Posts with no pay band do not stand as buildings (their height would be a
+  // guess): they are one low annex per block, sized by how many there are.
+  function placeBlock(bi, r, di) {
+    const paid = [], unpaid = []; S.roots[bi].forEach(function walk(i) { (S.nopay[i] ? unpaid : paid).push(i); S.kids[i].forEach(walk); });
+    const n = paid.length + (unpaid.length ? 1 : 0); if (!n) return;
     const cols = Math.max(1, Math.ceil(Math.sqrt(n * r.w / Math.max(r.h, 1e-6)))), rows = Math.ceil(n / cols);
-    const cw = r.w / cols, ch = r.h / rows;
-    order.forEach((i, k) => {
+    const cw = r.w / cols, ch = r.h / rows, asp = ASPECT[S.deptStyle[di]];
+    paid.forEach((i, k) => {
       S.to[i * 3] = r.x + cw * ((k % cols) + 0.5); S.to[i * 3 + 1] = r.y + ch * (Math.floor(k / cols) + 0.5); S.to[i * 3 + 2] = S.z[i];
-      const want = 0.01 + Math.sqrt(S.N.below_fte[i] || 0) * 0.0025;
-      S.fpTo[i * 2] = Math.min(cw * 0.62, want); S.fpTo[i * 2 + 1] = Math.min(ch * 0.62, want);
+      const want = (0.01 + Math.sqrt(S.N.below_fte[i] || 0) * 0.0025) * jitter(i);
+      S.fpTo[i * 2] = Math.min(cw * 0.66, want * asp[0]); S.fpTo[i * 2 + 1] = Math.min(ch * 0.66, want * asp[1]);
+      S.styleArr[i] = S.deptStyle[di]; S.hidden[i] = 0; S.annex[i] = 0;
     });
+    if (unpaid.length) {
+      const k = paid.length, rep = unpaid[0];
+      unpaid.forEach(i => { S.to[i * 3] = r.x + cw * ((k % cols) + 0.5); S.to[i * 3 + 1] = r.y + ch * (Math.floor(k / cols) + 0.5); S.to[i * 3 + 2] = 0.045; S.fpTo[i * 2] = 0; S.fpTo[i * 2 + 1] = 0; S.hidden[i] = 1; S.styleArr[i] = 4; S.annex[i] = 0; });
+      const w = Math.min(cw * 0.8, 0.008 + Math.sqrt(unpaid.length) * 0.006);
+      S.fpTo[rep * 2] = w; S.fpTo[rep * 2 + 1] = Math.min(ch * 0.8, w); S.hidden[rep] = 0; S.annex[rep] = unpaid.length;
+    }
   }
   // The organisation chart: leaves evenly across, parents centred over children, rows by
-  // depth running away from the viewer, each building on its pay.
-  function placeTree(roots, width, depthStep, backY) {
-    let leaf = 0; const xs = new Map();
+  // depth running away from the viewer, each building on its pay. A post with no pay
+  // band stands as a low plinth here, so the line of reports is complete.
+  function placeTree(roots, width, depthStep, backY, di) {
+    let leaf = 0; const xs = new Map(); const asp = ASPECT[S.deptStyle[di]];
     function place(i, d) {
       const ks = S.kids[i]; let x;
       if (!ks.length) x = leaf++; else { ks.forEach(k => place(k, d + 1)); x = ks.reduce((s, k) => s + xs.get(k), 0) / ks.length; }
-      xs.set(i, x); S.to[i * 3 + 1] = backY - d * depthStep; S.to[i * 3 + 2] = S.z[i];
+      xs.set(i, x); S.to[i * 3 + 1] = backY - d * depthStep; S.to[i * 3 + 2] = S.nopay[i] ? 0.03 : S.z[i];
     }
     roots.forEach(r => place(r, 0));
     const span = Math.max(1, leaf - 1), w = Math.min(width, Math.max(0.6, leaf * 0.09)), pitch = leaf > 1 ? w / span : w;
     xs.forEach((x, i) => { S.to[i * 3] = leaf > 1 ? (x / span - 0.5) * w : 0;
-      const want = 0.03 + Math.sqrt(S.N.below_fte[i] || 0) * 0.004; const cap = Math.min(pitch * 0.75, depthStep * 0.45, 0.14);
-      S.fpTo[i * 2] = Math.min(cap, want); S.fpTo[i * 2 + 1] = Math.min(cap, want); });
+      const want = (0.03 + Math.sqrt(S.N.below_fte[i] || 0) * 0.004) * jitter(i); const cap = Math.min(pitch * 0.78, depthStep * 0.45, 0.14);
+      S.fpTo[i * 2] = Math.min(cap, want * asp[0]); S.fpTo[i * 2 + 1] = Math.min(cap, want * asp[1]);
+      S.styleArr[i] = S.nopay[i] ? 4 : S.deptStyle[di]; S.hidden[i] = 0; S.annex[i] = 0; });
     return { leaves: leaf, width: w, rows: 1 + Math.max(...Array.from(xs.keys()).map(i => (backY - S.to[i * 3 + 1]) / depthStep)) };
   }
   function layout(f) {
@@ -293,18 +342,18 @@
         const r = rects.get(di); S.rects[di] = r; addFloor(r, di, 0.045); addStreets(r, di);
         const inner = { x: r.x + r.w * 0.06, y: r.y + r.h * 0.06, w: r.w * 0.88, h: r.h * 0.88 };
         const bs = treemap(D[di].bodies, bi => Math.max(B[bi].senior, 1), inner);
-        D[di].bodies.forEach(bi => { const q = bs.get(bi); placeBlock(bi, { x: q.x + q.w * 0.1, y: q.y + q.h * 0.1, w: q.w * 0.8, h: q.h * 0.8 }); });
+        D[di].bodies.forEach(bi => { const q = bs.get(bi); placeBlock(bi, { x: q.x + q.w * 0.1, y: q.y + q.h * 0.1, w: q.w * 0.8, h: q.h * 0.8 }, di); });
       });
       S.vis.fill(1); S.sizeScale = 0.7; S.phiWant = 0.66; S.thetaWant = null;
     } else if (f.kind === "dept") {
       const bs = D[f.d].bodies.slice().sort((a, b) => B[b].fte - B[a].fte);
       const rects = treemap(bs, bi => Math.max(B[bi].senior, 1) + Math.sqrt(B[bi].fte || 0) * 0.15, { x: -1.7, y: -1.2, w: 3.4, h: 2.4 });
-      S.bodyRects = {}; bs.forEach(bi => { const r = rects.get(bi); S.bodyRects[bi] = r; addFloor(r, f.d, 0.05); addStreets(r, f.d); placeBlock(bi, { x: r.x + r.w * 0.1, y: r.y + r.h * 0.1, w: r.w * 0.8, h: r.h * 0.8 }); });
+      S.bodyRects = {}; bs.forEach(bi => { const r = rects.get(bi); S.bodyRects[bi] = r; addFloor(r, f.d, 0.05); addStreets(r, f.d); placeBlock(bi, { x: r.x + r.w * 0.1, y: r.y + r.h * 0.1, w: r.w * 0.8, h: r.h * 0.8 }, f.d); });
       for (let i = 0; i < S.n; i++) if (B[S.N.body[i]].dept === f.d) S.vis[i] = 1;
       S.sizeScale = 1.0; S.phiWant = 0.6; S.thetaWant = null;
     } else {
       const roots = f.kind === "body" ? S.roots[f.b] : [f.p];
-      const t = placeTree(roots, 3.4, 0.5, 1.2);
+      const t = placeTree(roots, 3.4, 0.5, 1.2, f.d);
       if (f.kind === "body") { for (let i = 0; i < S.n; i++) if (S.N.body[i] === f.b) S.vis[i] = 1; }
       else (function mark(i) { S.vis[i] = 1; S.kids[i].forEach(mark); })(f.p);
       const depthY = 1.2 - (t.rows - 1) * 0.5;
@@ -325,10 +374,41 @@
     for (const { s, c } of streets) { sp.push(s[0], s[1], 0.001, s[2], s[3], 0.001); sc.push(c[0], c[1], c[2], c[0], c[1], c[2]); sa.push(0.35, 0.35); }
     upload(S.streets.pos, new Float32Array(sp)); upload(S.streets.col, new Float32Array(sc)); upload(S.streets.al, new Float32Array(sa)); S.streets.n = sa.length;
     S.segs = segs; for (let k = 0; k < S.traffic.n; k++) S.traffic.seg[k] = segs.length ? Math.floor(Math.random() * segs.length) : -1;
+    upload(S.pts.style, S.styleArr);
+    makeSigns(f);
+  }
+  // The names, as objects in the scene: one text atlas per level, a camera-facing
+  // quad per name, sized by what it names, floating above it. Far ones are small
+  // and faint, as far things are, so they no longer pile up as flat text.
+  function makeSigns(f) {
+    const G = S.G, B = G.bodies, N = S.N, want = [];
+    const tintOf = di => { const c = hsl(S.hue[di], S.sat[di], 0.78); return c; };
+    if (f.kind === "gov") S.order.forEach(di => { const r = S.rects[di]; want.push({ text: G.departments[di].name, x: r.x + r.w / 2, y: r.y + r.h / 2, z: 0.92, w: Math.max(0.2, Math.min(0.9, Math.sqrt(r.w * r.h) * 1.15)), tint: tintOf(di) }); });
+    else if (f.kind === "dept") G.departments[f.d].bodies.forEach(bi => { const r = S.bodyRects[bi]; if (!r) return; want.push({ text: B[bi].name, x: r.x + r.w / 2, y: r.y + r.h / 2, z: 0.86, w: Math.max(0.16, Math.min(0.75, Math.sqrt(r.w * r.h) * 1.2)), tint: tintOf(f.d) }); });
+    else { const list = []; for (let i = 0; i < S.n; i++) if (S.vis[i]) list.push(i);
+      list.sort((a, b) => N.below_fte[b] - N.below_fte[a]).slice(0, 48).forEach(i => want.push({ text: N.title[i] || "(untitled post)", x: S.to[i * 3], y: S.to[i * 3 + 1], z: S.to[i * 3 + 2] + 0.07, w: Math.max(0.14, Math.min(0.42, 0.1 + Math.sqrt(N.below_fte[i] || 0) * 0.008)), tint: tintOf(f.d) })); }
+    const ROW = 64, CW = 1024, n = Math.min(want.length, 64);
+    const cv = document.createElement("canvas"); cv.width = CW; cv.height = Math.max(ROW, ROW * n);
+    const ctx = cv.getContext("2d"); ctx.font = "700 40px system-ui, -apple-system, Segoe UI, Roboto, sans-serif"; ctx.textBaseline = "middle"; ctx.fillStyle = "#fff";
+    const c = [], o = [], uv = [], sz = [], tint = [];
+    for (let k = 0; k < n; k++) {
+      const L = want[k]; let text = L.text; while (ctx.measureText(text).width > CW - 40 && text.length > 4) text = text.slice(0, -2).trimEnd() + "…";
+      const tw = ctx.measureText(text).width + 20;
+      ctx.shadowColor = `hsl(${S.hue[f.kind === "gov" ? S.order[k] : f.d]}, 90%, 60%)`; ctx.shadowBlur = 16; ctx.fillText(text, 10, k * ROW + ROW / 2); ctx.shadowBlur = 0; ctx.fillText(text, 10, k * ROW + ROW / 2);
+      const h = L.w * ROW / tw, u1 = tw / CW, v0 = k / n, v1 = (k + 1) / n;
+      for (const [ox, oy, u, v] of [[-0.5, -0.5, 0, v1], [0.5, -0.5, u1, v1], [0.5, 0.5, u1, v0], [-0.5, -0.5, 0, v1], [0.5, 0.5, u1, v0], [-0.5, 0.5, 0, v0]]) {
+        c.push(L.x, L.y, L.z); o.push(ox, oy); uv.push(u, v); sz.push(L.w, h); tint.push(L.tint[0], L.tint[1], L.tint[2]);
+      }
+    }
+    gl.bindTexture(gl.TEXTURE_2D, S.signs.tex); gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false); gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, cv);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    upload(S.signs.c, new Float32Array(c)); upload(S.signs.o, new Float32Array(o)); upload(S.signs.uv, new Float32Array(uv)); upload(S.signs.sz, new Float32Array(sz)); upload(S.signs.tint, new Float32Array(tint)); S.signs.n = c.length / 3;
   }
   function applyAlpha() {
     const open = S.focus.kind === "body" || S.focus.kind === "post";
-    for (let i = 0; i < S.n; i++) S.al[i] = S.vis[i] ? 1 : 0;
+    for (let i = 0; i < S.n; i++) S.al[i] = S.vis[i] && !S.hidden[i] ? 1 : 0;
     S.jn.forEach((i, k) => { S.hal[k] = S.vis[i] && open ? 0.1 : 0; });
     S.ln.forEach((i, k) => { const v = S.vis[i] && S.vis[S.N.parent[i]]; S.lal[k * 2] = v && open ? 0.25 : 0; S.lal[k * 2 + 1] = v && open ? 0.5 : 0; });
     upload(S.pts.al, S.al); upload(S.halo.al, S.hal); upload(S.lines.al, S.lal);
@@ -338,6 +418,8 @@
     upload(S.pts.pos, p); upload(S.pts.fp, S.fp);
     S.jn.forEach((i, k) => { S.hpos[k * 3] = p[i * 3]; S.hpos[k * 3 + 1] = p[i * 3 + 1]; S.hpos[k * 3 + 2] = p[i * 3 + 2] * 0.5; }); upload(S.halo.pos, S.hpos);
     S.ln.forEach((i, k) => { const q = N.parent[i]; S.lpos[k * 6] = p[q * 3]; S.lpos[k * 6 + 1] = p[q * 3 + 1]; S.lpos[k * 6 + 2] = p[q * 3 + 2]; S.lpos[k * 6 + 3] = p[i * 3]; S.lpos[k * 6 + 4] = p[i * 3 + 1]; S.lpos[k * 6 + 5] = p[i * 3 + 2]; }); upload(S.lines.pos, S.lpos);
+    S.spireList.forEach((i, k) => { const v = S.vis[i] && !S.hidden[i] && !S.nopay[i]; S.spos[k * 6] = p[i * 3]; S.spos[k * 6 + 1] = p[i * 3 + 1]; S.spos[k * 6 + 2] = p[i * 3 + 2] * 1.07; S.spos[k * 6 + 3] = p[i * 3]; S.spos[k * 6 + 4] = p[i * 3 + 1]; S.spos[k * 6 + 5] = p[i * 3 + 2] * 1.07 + 0.05 + S.fp[i * 2] * 1.5; S.sal[k * 2] = v ? 0.9 : 0; S.sal[k * 2 + 1] = v ? 0.05 : 0; });
+    upload(S.spires.pos, S.spos); upload(S.spires.al, S.sal);
   }
 
   // --- focus ----------------------------------------------------------------------------------
@@ -476,6 +558,9 @@
   window.addEventListener("resize", resize); resize();
   function camera() {
     const eye = [S.target[0] + S.dist * Math.cos(S.phi) * Math.cos(S.theta), S.target[1] + S.dist * Math.cos(S.phi) * Math.sin(S.theta), S.target[2] + S.dist * Math.sin(S.phi)];
+    let fx = S.target[0] - eye[0], fy = S.target[1] - eye[1], fz = S.target[2] - eye[2]; const fl = Math.hypot(fx, fy, fz) || 1; fx /= fl; fy /= fl; fz /= fl;
+    let rx = fy, ry = -fx; const rl = Math.hypot(rx, ry) || 1; rx /= rl; ry /= rl;               // right = forward x up(z)
+    S.camRight = [rx, ry, 0]; S.camUp = [ry * fz, -rx * fz, rx * fy - ry * fx];                  // up = right x forward
     return mul(perspective(0.8, W / Hh, 0.01, 40), lookAt(eye, S.target, [0, 0, 1]));
   }
   const ease = t => 1 - Math.pow(1 - t, 3), easeIO = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -520,8 +605,9 @@
       gl.bindBuffer(gl.ARRAY_BUFFER, S.unit.geo);
       const lv = gl.getAttribLocation(BOX, "v"), ln = gl.getAttribLocation(BOX, "nrm"), lu = gl.getAttribLocation(BOX, "uv");
       for (const [l, size, off] of [[lv, 3, 0], [ln, 3, 12], [lu, 2, 24]]) { gl.enableVertexAttribArray(l); enabled.add(l); gl.vertexAttribPointer(l, size, gl.FLOAT, false, 32, off); EXT.vertexAttribDivisorANGLE(l, 0); }
-      attrib(BOX, "ipos", S.pts.pos, 3, 1); attrib(BOX, "isz", S.pts.fp, 2, 1); attrib(BOX, "icol", S.pts.col, 3, 1); attrib(BOX, "ia", S.pts.al, 1, 1);
-      EXT.drawArraysInstancedANGLE(gl.TRIANGLES, 0, S.unit.nv, S.n);
+      attrib(BOX, "ipos", S.pts.pos, 3, 1); attrib(BOX, "isz", S.pts.fp, 2, 1); attrib(BOX, "icol", S.pts.col, 3, 1); attrib(BOX, "ia", S.pts.al, 1, 1); attrib(BOX, "istyle", S.pts.style, 1, 1);
+      gl.uniform1f(uni(BOX, "tier"), 0); EXT.drawArraysInstancedANGLE(gl.TRIANGLES, 0, S.unit.nv, S.n);
+      gl.uniform1f(uni(BOX, "tier"), 1); EXT.drawArraysInstancedANGLE(gl.TRIANGLES, 0, S.unit.nv, S.n);   // the crown: a slimmer top storey
     }
     // everything luminous: additive, tested against the buildings but not written
     gl.depthMask(false); gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE); disableAll();
@@ -533,9 +619,11 @@
     attrib(LN, "p", S.lines.pos, 3); attrib(LN, "col", S.lines.col, 3); attrib(LN, "a", S.lines.al, 1); gl.drawArrays(gl.LINES, 0, S.ln.length * 2);
     if (EXT) {
       disableAll(); gl.useProgram(EDGE); gl.uniformMatrix4fv(uni(EDGE, "mvp"), false, m); gl.uniform1f(uni(EDGE, "rise"), rise);
-      attrib(EDGE, "v", S.unit.edges, 3, 0); attrib(EDGE, "ipos", S.pts.pos, 3, 1); attrib(EDGE, "isz", S.pts.fp, 2, 1); attrib(EDGE, "icol", S.pts.col, 3, 1); attrib(EDGE, "ia", S.pts.al, 1, 1);
+      attrib(EDGE, "v", S.unit.edges, 3, 0); attrib(EDGE, "ipos", S.pts.pos, 3, 1); attrib(EDGE, "isz", S.pts.fp, 2, 1); attrib(EDGE, "icol", S.pts.col, 3, 1); attrib(EDGE, "ia", S.pts.al, 1, 1); attrib(EDGE, "istyle", S.pts.style, 1, 1);
       EXT.drawArraysInstancedANGLE(gl.LINES, 0, S.unit.ne, S.n);
     }
+    disableAll(); gl.useProgram(LN); gl.uniformMatrix4fv(uni(LN, "mvp"), false, m); gl.uniform1f(uni(LN, "rise"), rise);
+    attrib(LN, "p", S.spires.pos, 3); attrib(LN, "col", S.spires.col, 3); attrib(LN, "a", S.spires.al, 1); gl.drawArrays(gl.LINES, 0, S.spireList.length * 2);
     disableAll(); gl.useProgram(PT); gl.uniformMatrix4fv(uni(PT, "mvp"), false, m); gl.uniform1f(uni(PT, "pxr"), pxr); gl.uniform1f(uni(PT, "rise"), rise);
     if (S.focus.kind === "body" || S.focus.kind === "post") { gl.uniform1f(uni(PT, "scale"), S.sizeScale); attrib(PT, "p", S.halo.pos, 3); attrib(PT, "col", S.halo.col, 3); attrib(PT, "sz", S.halo.sz, 1); attrib(PT, "a", S.halo.al, 1); gl.drawArrays(gl.POINTS, 0, S.jn.length); }
     // roof lights: with buildings, small caps; without the extension, the buildings themselves
@@ -550,8 +638,15 @@
       gl.useProgram(RING); gl.uniformMatrix4fv(uni(RING, "mvp"), false, m); gl.uniform1f(uni(RING, "pxr"), pxr); gl.uniform1f(uni(RING, "scale"), 1); gl.uniform1f(uni(RING, "rise"), rise);
       attrib(RING, "p", S.ring.pos, 3); attrib(RING, "col", S.ring.col, 3); attrib(RING, "sz", S.ring.sz, 1); attrib(RING, "a", S.ring.al, 1); gl.drawArrays(gl.POINTS, 0, 1);
     }
+    if (S.signs.n && !(S.tour && !S.tour.tree)) {
+      gl.enable(gl.DEPTH_TEST); disableAll(); gl.useProgram(SIGN); gl.uniformMatrix4fv(uni(SIGN, "mvp"), false, m); gl.uniform1f(uni(SIGN, "rise"), rise);
+      gl.uniform3fv(uni(SIGN, "right"), S.camRight); gl.uniform3fv(uni(SIGN, "upv"), S.camUp);
+      gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, S.signs.tex); gl.uniform1i(uni(SIGN, "tex"), 0);
+      attrib(SIGN, "c", S.signs.c, 3); attrib(SIGN, "o", S.signs.o, 2); attrib(SIGN, "uv", S.signs.uv, 2); attrib(SIGN, "sz", S.signs.sz, 2); attrib(SIGN, "tint", S.signs.tint, 3);
+      gl.drawArrays(gl.TRIANGLES, 0, S.signs.n);
+    }
     gl.depthMask(true);
-    project(m, rise); labels(m, rise);
+    project(m, rise);
   }
   function project(m, rise) {
     const p = S.pos, s = S.screen;
@@ -594,7 +689,7 @@
   // --- pointer ------------------------------------------------------------------------------------
   function pick(mx, my) {
     let best = -1, bd = 14 * 14; const s = S.screen;
-    for (let i = 0; i < S.n; i++) { if (!S.vis[i]) continue; const dx = s[i * 2] - mx, dy = s[i * 2 + 1] - my, d = dx * dx + dy * dy - S.sz[i] * 6; if (d < bd) { bd = d; best = i; } }
+    for (let i = 0; i < S.n; i++) { if (!S.vis[i] || S.hidden[i]) continue; const dx = s[i * 2] - mx, dy = s[i * 2 + 1] - my, d = dx * dx + dy * dy - S.sz[i] * 6; if (d < bd) { bd = d; best = i; } }
     return best;
   }
   const wake = () => { S.idleSince = performance.now(); S.tour = null; };
@@ -614,7 +709,9 @@
     if (i < 0) { tip.hidden = true; return; }
     const N = S.N, b = S.B[N.body[i]];
     const next = S.focus.kind === "gov" ? "click: open this department" : S.focus.kind === "dept" ? "click: open this body" : S.kids[i].length ? "click: open the posts beneath" : "click: details";
-    tip.innerHTML = `<b>${esc(N.title[i] || "(untitled post)")}</b><br>${esc(b.name)}<br>${esc(N.grade[i])} · ${N.pay[i] ? "from £" + N.pay[i].toLocaleString() : "pay not stated"}<br>${fmt(N.below_fte[i])} FTE beneath` + (N.below_senior[i] > 1 ? `, ${(N.below_senior[i] - 1).toLocaleString()} senior posts` : "") + `<br><i>${next}</i>`;
+    tip.innerHTML = S.annex[i]
+      ? `<b>${S.annex[i]} senior post${S.annex[i] === 1 ? "" : "s"} with no pay band stated</b><br>${esc(b.name)}<br>Grouped as one low annex: a building's height is its pay band, and these give none. Open the body to see each in its place.<br><i>${next}</i>`
+      : `<b>${esc(N.title[i] || "(untitled post)")}</b><br>${esc(b.name)}<br>${esc(N.grade[i])} · ${N.pay[i] ? "from £" + N.pay[i].toLocaleString() : "pay band not stated (shown as a plinth)"}<br>${fmt(N.below_fte[i])} FTE beneath` + (N.below_senior[i] > 1 ? `, ${(N.below_senior[i] - 1).toLocaleString()} senior posts` : "") + `<br><i>${next}</i>`;
     tip.style.left = Math.min(mx + 14, W - 300) + "px"; tip.style.top = (my + 14) + "px"; tip.hidden = false;
   });
   canvas.addEventListener("pointerleave", () => { tip.hidden = true; S.hover = -1; });
