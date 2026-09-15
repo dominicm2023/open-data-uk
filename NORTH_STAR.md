@@ -194,6 +194,14 @@ A living list. Add freely; move to "Done" with the commit that did it.
   annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
   and Scotland on its About page's OGL statement. Air Quality England
   parked (no terms).
+- 15 Sep — the organisation chart, two ways. `/family/organograms/chart`:
+  every body under its parent department, and one body's posts nested by
+  reporting line as plain <details>. `/family/organograms/chart/3d`, "The
+  shape of the state": 12,856 senior posts as one WebGL figure (raw WebGL,
+  no library, nothing fetched from anywhere else) — departments as sectors,
+  bodies as slices, posts as radial trees, pay as height, staff beneath as
+  size; orbit, focus, full screen, 12-second WebM recording in the browser.
+  "Other (Public Domain)" accepted at the licence gate (DM 2026-09-15).
 - 15 Sep — fifth family, organograms (posts, grades and pay): 356 datasets
   found, the newest senior and junior file of each body fetched as a pair,
   292 mapped by the Cabinet Office standard's own headers: 162,568 rows
