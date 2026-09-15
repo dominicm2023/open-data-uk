@@ -841,7 +841,7 @@ footer {
 .org3d-panel { max-height: calc(100vh - 2rem); overflow: auto; width: 360px; }
 .org3d-search { position: relative; margin: .2rem 0 .5rem; }
 .org3d-search input { width: 100%; box-sizing: border-box; font: inherit; font-size: .85rem; color: #eef; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); border-radius: 8px; padding: .45rem .6rem; }
-.org3d-hits { position: absolute; left: 0; right: 0; top: 100%; z-index: 5; list-style: none; margin: .2rem 0 0; padding: .2rem; background: #141728; border: 1px solid rgba(255,255,255,.18); border-radius: 8px; max-height: 300px; overflow: auto; }
+.org3d-hits { position: static; list-style: none; margin: .2rem 0 0; padding: .2rem; background: #141728; border: 1px solid rgba(255,255,255,.18); border-radius: 8px; max-height: 300px; overflow: auto; }
 .org3d-navhead { margin: .3rem 0 .4rem; font-size: .85rem; color: #c7cadb; } .org3d-navhead b { display: block; color: #f4f5fb; font-size: .95rem; } .org3d-navhead span { display: block; font-size: .76rem; }
 .org3d-nav, .org3d-hits { list-style: none; padding: 0; margin: 0 0 .5rem; max-height: 38vh; overflow: auto; }
 .org3d-nav li a, .org3d-hits li a { display: grid; grid-template-columns: .55rem 1fr; column-gap: .45rem; align-items: start; padding: .3rem .4rem; border-radius: 6px; color: #eef; text-decoration: none; font-size: .8rem; line-height: 1.3; }
