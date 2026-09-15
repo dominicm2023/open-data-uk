@@ -59,7 +59,7 @@
       vec4 cp = mvp * vec4(q, 1.0);
       gl_Position = cp;
       float d = max(cp.w, 0.001);
-      gl_PointSize = clamp(sz * pxr * 260.0 / d, 1.5 * pxr, 90.0 * pxr);
+      gl_PointSize = clamp(sz * pxr * 70.0 / d, 1.2 * pxr, 46.0 * pxr);
       vc = col; va = a * fade;
     }`;
   const FS_PT = `
@@ -67,7 +67,7 @@
     void main() {
       vec2 d = gl_PointCoord - 0.5; float r = dot(d, d) * 4.0;
       if (r > 1.0) discard;
-      float core = exp(-r * 6.0); float halo = (1.0 - r) * 0.35;
+      float core = exp(-r * 7.0) * 0.85; float halo = (1.0 - r) * 0.12;
       gl_FragColor = vec4(vc * (core + halo) * va, 1.0);
     }`;
   const VS_LN = `
@@ -102,7 +102,7 @@
   // --- state -------------------------------------------------------------------
   const S = {
     G: null, n: 0, pos: null, screen: null, pts: {}, lines: {}, pillars: {},
-    theta: 0.9, phi: 0.95, dist: 3.1, target: [0, 0, 0.12], drag: null,
+    theta: 0.9, phi: 0.72, dist: 3.9, target: [0, 0, 0.18], drag: null,
     orbit: !window.matchMedia("(prefers-reduced-motion: reduce)").matches, showPillars: true,
     t0: performance.now(), grow: 0, focus: -1, fade: 1, deptHub: [], deptLabel: [], hover: -1,
     fly: null,
@@ -133,7 +133,7 @@
     for (let i = 0; i < n; i++) { const p = N.parent[i]; if (p >= 0) { kids[p].push(i); depth[i] = depth[p] + 1; } else roots[N.body[i]].push(i); }
     const weight = i => (N.below_senior[i] || 1) + 0.6;
     const ang = new Float32Array(n), rad = new Float32Array(n);
-    const R0 = 0.34, DR = 0.115;
+    const R0 = 0.62, DR = 0.15;
     function place(i, lo, hi) {
       ang[i] = (lo + hi) / 2; rad[i] = R0 + depth[i] * DR;
       const ks = kids[i]; if (!ks.length) return;
@@ -160,7 +160,7 @@
       const g = (N.grade[i] || "").replace(/\s/g, "").toLowerCase();
       const c = hsl(((order.indexOf(di)) * 137.508) % 360, 0.75, GRADE_L[g] || 0.5);
       col[i * 3] = c[0]; col[i * 3 + 1] = c[1]; col[i * 3 + 2] = c[2];
-      sz[i] = 0.22 + Math.sqrt(N.below_fte[i] || 0) * 0.075 + (depth[i] === 0 ? 0.25 : 0);
+      sz[i] = 0.16 + Math.sqrt(N.below_fte[i] || 0) * 0.032 + (depth[i] === 0 ? 0.2 : 0);
       al[i] = 1;
     }
     S.pos = pos; S.screen = new Float32Array(n * 2); S.depth = depth; S.kids = kids;
@@ -170,21 +170,21 @@
     const jp = new Float32Array(jn.length * 3), jc = new Float32Array(jn.length * 3), js = new Float32Array(jn.length), ja = new Float32Array(jn.length);
     jn.forEach((i, k) => { jp[k * 3] = pos[i * 3]; jp[k * 3 + 1] = pos[i * 3 + 1]; jp[k * 3 + 2] = pos[i * 3 + 2] * 0.5;
       const di = B[N.body[i]].dept, c = deptCol[di]; jc[k * 3] = c[0]; jc[k * 3 + 1] = c[1]; jc[k * 3 + 2] = c[2];
-      js[k] = 0.35 + Math.sqrt(N.junior_fte[i]) * 0.09; ja[k] = 0.22; });
+      js[k] = 0.3 + Math.sqrt(N.junior_fte[i]) * 0.05; ja[k] = 0.07; });
     S.halo = { pos: buffer(jp), col: buffer(jc), sz: buffer(js), al: buffer(ja), alArr: ja, idx: jn, n: jn.length };
     // reporting lines: parent -> child; pillars: disc -> post
     const lp = [], lc = [], la = [], pp = [], pc = [], pa = [];
     for (let i = 0; i < n; i++) {
       const di = B[N.body[i]].dept, c = deptCol[di]; const p = N.parent[i];
       if (p >= 0) { lp.push(pos[p * 3], pos[p * 3 + 1], pos[p * 3 + 2], pos[i * 3], pos[i * 3 + 1], pos[i * 3 + 2]);
-        lc.push(c[0], c[1], c[2], c[0], c[1], c[2]); la.push(0.22, 0.34); }
+        lc.push(c[0], c[1], c[2], c[0], c[1], c[2]); la.push(0.09, 0.2); }
       pp.push(pos[i * 3], pos[i * 3 + 1], 0, pos[i * 3], pos[i * 3 + 1], pos[i * 3 + 2]);
-      pc.push(c[0], c[1], c[2], c[0], c[1], c[2]); pa.push(0.02, 0.16);
+      pc.push(c[0], c[1], c[2], c[0], c[1], c[2]); pa.push(0.012, 0.08);
     }
     S.lines = { pos: buffer(new Float32Array(lp)), col: buffer(new Float32Array(lc)), al: buffer(new Float32Array(la)), alArr: new Float32Array(la), n: la.length };
     S.pillars = { pos: buffer(new Float32Array(pp)), col: buffer(new Float32Array(pc)), al: buffer(new Float32Array(pa)), alArr: new Float32Array(pa), n: pa.length };
     // department hubs for labels: the mid-angle of the sector at the inner ring
-    S.deptHub = D.map((d, di) => { const [s0, s1] = sector[di]; const a = (s0 + s1) / 2; return [Math.cos(a) * 0.22, Math.sin(a) * 0.22, 0.0, deptFte[di]]; });
+    S.deptHub = D.map((d, di) => { const [s0, s1] = sector[di]; const a = (s0 + s1) / 2; return [Math.cos(a) * 1.3, Math.sin(a) * 1.3, 0.0, deptFte[di]]; });
     S.order = order;
     // panel
     const totalFte = B.reduce((s, b) => s + (b.fte || 0), 0);
@@ -193,7 +193,7 @@
     const sel = document.getElementById("dept");
     order.forEach(di => { const o = document.createElement("option"); o.value = di; o.textContent = `${D[di].name} (${Math.round(deptFte[di]).toLocaleString()} FTE)`; sel.appendChild(o); });
     labelsEl.innerHTML = "";
-    S.deptLabel = order.slice(0, 28).map(di => { const el = document.createElement("div"); el.className = "org3d-label"; el.textContent = D[di].name; el.style.color = `rgb(${deptCol[di].map(v => Math.round(v * 255)).join(",")})`; el.dataset.di = di; labelsEl.appendChild(el); return [di, el]; });
+    S.deptLabel = order.slice(0, 16).map(di => { const el = document.createElement("div"); el.className = "org3d-label"; el.textContent = D[di].name; el.style.color = `rgb(${deptCol[di].map(v => Math.round(v * 255)).join(",")})`; el.dataset.di = di; labelsEl.appendChild(el); return [di, el]; });
   }
 
   // --- focus: dim every other department --------------------------------------
@@ -203,15 +203,15 @@
     const dim = i => (di < 0 || B[N.body[i]].dept === di) ? 1 : 0.06;
     const al = S.pts.alArr; for (let i = 0; i < S.n; i++) al[i] = dim(i);
     gl.bindBuffer(gl.ARRAY_BUFFER, S.pts.al); gl.bufferData(gl.ARRAY_BUFFER, al, gl.STATIC_DRAW);
-    const ha = S.halo.alArr; S.halo.idx.forEach((i, k) => { ha[k] = 0.22 * dim(i); });
+    const ha = S.halo.alArr; S.halo.idx.forEach((i, k) => { ha[k] = 0.07 * dim(i); });
     gl.bindBuffer(gl.ARRAY_BUFFER, S.halo.al); gl.bufferData(gl.ARRAY_BUFFER, ha, gl.STATIC_DRAW);
     const la = S.lines.alArr; let k = 0;
-    for (let i = 0; i < S.n; i++) if (N.parent[i] >= 0) { const d = dim(i); la[k++] = 0.22 * d; la[k++] = 0.34 * d; }
+    for (let i = 0; i < S.n; i++) if (N.parent[i] >= 0) { const d = dim(i); la[k++] = 0.09 * d; la[k++] = 0.2 * d; }
     gl.bindBuffer(gl.ARRAY_BUFFER, S.lines.al); gl.bufferData(gl.ARRAY_BUFFER, la, gl.STATIC_DRAW);
-    const pa = S.pillars.alArr; for (let i = 0; i < S.n; i++) { const d = dim(i); pa[i * 2] = 0.02 * d; pa[i * 2 + 1] = 0.16 * d; }
+    const pa = S.pillars.alArr; for (let i = 0; i < S.n; i++) { const d = dim(i); pa[i * 2] = 0.012 * d; pa[i * 2 + 1] = 0.08 * d; }
     gl.bindBuffer(gl.ARRAY_BUFFER, S.pillars.al); gl.bufferData(gl.ARRAY_BUFFER, pa, gl.STATIC_DRAW);
-    if (di >= 0) { const h = S.deptHub[di]; S.fly = { to: [h[0] * 1.6, h[1] * 1.6, 0.16], dist: 1.6, t: 0 }; }
-    else S.fly = { to: [0, 0, 0.12], dist: 3.1, t: 0 };
+    if (di >= 0) { const h = S.deptHub[di]; S.fly = { to: [h[0] * 1.15, h[1] * 1.15, 0.2], dist: 2.3, t: 0 }; }
+    else S.fly = { to: [0, 0, 0.18], dist: 3.9, t: 0 };
   }
 
   // --- camera and drawing ----------------------------------------------------------
@@ -268,13 +268,18 @@
     }
   }
   function labels(m, g) {
+    const placed = [];
     for (const [di, el] of S.deptLabel) {
-      const h = S.deptHub[di]; const x = h[0] * g, y = h[1] * g, z = 0.0;
+      const h = S.deptHub[di]; const x = h[0] * g, y = h[1] * g, z = 0.02;
       const cw = m[3] * x + m[7] * y + m[11] * z + m[15];
       if (cw <= 0.001 || (S.focus >= 0 && S.focus !== di)) { el.style.opacity = 0; continue; }
       const cx = (m[0] * x + m[4] * y + m[8] * z + m[12]) / cw, cy = (m[1] * x + m[5] * y + m[9] * z + m[13]) / cw;
+      const px = (cx * 0.5 + 0.5) * W, py = (0.5 - cy * 0.5) * Hh;
+      // a label that would sit on another is left out this frame; the biggest departments come first
+      if (placed.some(([qx, qy]) => Math.abs(qx - px) < 150 && Math.abs(qy - py) < 16)) { el.style.opacity = 0; continue; }
+      placed.push([px, py]);
       el.style.opacity = Math.min(1, Math.max(0, (S.grow - 0.5) * 2)) * 0.9;
-      el.style.transform = `translate(${(cx * 0.5 + 0.5) * W}px, ${(0.5 - cy * 0.5) * Hh}px)`;
+      el.style.transform = `translate(${px}px, ${py}px)`;
     }
   }
 
@@ -298,7 +303,7 @@
     tip.style.left = Math.min(mx + 14, W - 300) + "px"; tip.style.top = (my + 14) + "px"; tip.hidden = false;
   });
   canvas.addEventListener("pointerleave", () => { tip.hidden = true; });
-  canvas.addEventListener("wheel", e => { e.preventDefault(); S.dist = Math.max(0.4, Math.min(8, S.dist * (1 + Math.sign(e.deltaY) * 0.08))); }, { passive: false });
+  canvas.addEventListener("wheel", e => { e.preventDefault(); S.dist = Math.max(0.5, Math.min(10, S.dist * (1 + Math.sign(e.deltaY) * 0.08))); }, { passive: false });
   labelsEl.addEventListener("click", e => { const el = e.target.closest(".org3d-label"); if (!el) return; document.getElementById("dept").value = el.dataset.di; setFocus(+el.dataset.di); });
   function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
 
@@ -310,7 +315,7 @@
   document.getElementById("full").addEventListener("click", () => { if (document.fullscreenElement) document.exitFullscreen(); else stage.requestFullscreen && stage.requestFullscreen(); });
   document.addEventListener("fullscreenchange", () => setTimeout(resize, 50));
   document.getElementById("dept").addEventListener("change", e => setFocus(e.target.value === "" ? -1 : +e.target.value));
-  document.getElementById("reset").addEventListener("click", () => { document.getElementById("dept").value = ""; setFocus(-1); S.theta = 0.9; S.phi = 0.95; S.t0 = performance.now(); });
+  document.getElementById("reset").addEventListener("click", () => { document.getElementById("dept").value = ""; setFocus(-1); S.theta = 0.9; S.phi = 0.72; S.t0 = performance.now(); });
 
   // --- record: the canvas to a WebM, in the browser ------------------------------
   const recBtn = document.getElementById("rec"), dl = document.getElementById("dl");

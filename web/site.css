@@ -809,7 +809,7 @@ footer {
 .org3d canvas { position: absolute; inset: 0; display: block; cursor: grab; touch-action: none; }
 .org3d canvas:active { cursor: grabbing; }
 .org3d #labels { position: absolute; inset: 0; pointer-events: none; }
-.org3d-label { position: absolute; left: 0; top: 0; font-size: .74rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap;
+.org3d-label { position: absolute; left: 0; top: 0; font-size: .8rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap;
   transform: translate(-50%, -50%); text-shadow: 0 0 6px #000, 0 0 2px #000; pointer-events: auto; cursor: pointer; opacity: 0; transition: opacity .4s; }
 .org3d-tip { position: absolute; max-width: 290px; background: rgba(12, 14, 26, .92); border: 1px solid rgba(255,255,255,.14); border-radius: 8px;
   padding: .5rem .65rem; font-size: .8rem; line-height: 1.4; pointer-events: none; color: #eef; }
