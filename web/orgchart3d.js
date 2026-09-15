@@ -2,32 +2,30 @@
    one three-dimensional figure, drawn in WebGL from
    /api/family/organograms/graph.json.
 
-   Navigation follows the rule the good hierarchy explorers share (zoomable
-   circle packing, sunbursts with breadcrumbs, 3D graph tools): overview
-   first, click to drill, the thing you clicked re-laid to fill the view,
-   the trail always visible, one step back always one click or Esc away,
-   and a list beside the picture so nothing has to be hunted for in 3D.
+   The figure is a city at night. The ground is a map: every department a
+   district, sized by its staff; every body a block within its district. On
+   each block stand the body's senior posts as slender pillars of light,
+   their height the pay band, so the skyline is the pay. Open a department
+   and its district grows to fill the map; open a body and its posts
+   re-form as a proper organisation chart — the head at the back, each
+   level of reports a row nearer you, lines between them — still standing
+   on their pay. Open a post and its reports do the same.
 
-   Levels:  government -> department -> body -> post (any post with reports)
-   Layout:  at each level the focused set is laid out afresh to fill the
-            disc — departments as sectors, bodies as slices, a body's posts
-            as a radial tree with the head at the centre — and the figure
-            morphs from the old layout to the new. Height is the pay band's
-            floor; a post's size is the staff beneath it; junior groups glow
-            round the post they report to; colour is department.
-   Labels:  the level's own names (departments, then bodies, then posts),
-            largest first, never on top of each other.
+   Navigation follows what the good hierarchy explorers share: overview
+   first, click to drill, the thing you opened laid out afresh to fill the
+   view, a trail always visible, one step back always one click or Esc
+   away, and a list beside the picture so nothing has to be hunted for.
 
-   No library, no request to any other host (the CSP forbids both). Raw
-   WebGL 1; the morph is computed on the CPU (12,856 posts is nothing) and
-   uploaded while it runs. Record captures the canvas to a WebM.
+   Raw WebGL 1, no library, no request to any other host (the CSP forbids
+   both). Everything is lines and small points, so it runs on integrated
+   graphics: the big soft sprites only appear when a body is open.
 */
 (function () {
   "use strict";
   const $ = id => document.getElementById(id);
   const canvas = $("c"), stage = $("stage"), tip = $("tip"), labelsEl = $("labels"), nogl = $("nogl");
   const crumbsEl = $("crumbs"), navList = $("navlist"), navHead = $("navhead"), search = $("search"), hits = $("hits");
-  const gl = canvas.getContext("webgl", { antialias: true, alpha: false, preserveDrawingBuffer: true, powerPreference: "high-performance" });
+  const gl = canvas.getContext("webgl", { antialias: true, alpha: false, preserveDrawingBuffer: false, powerPreference: "high-performance" });
   if (!gl) { nogl.hidden = false; $("panel").hidden = true; return; }
   const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -53,35 +51,37 @@
   }
 
   // --- shaders --------------------------------------------------------------------
+  // fog: things far from the eye fade, which is most of what makes a flat
+  // picture read as depth.
   const VS_PT = `
     attribute vec3 p; attribute vec3 col; attribute float sz; attribute float a;
-    uniform mat4 mvp; uniform float pxr; uniform float scale;
+    uniform mat4 mvp; uniform float pxr; uniform float scale; uniform float rise;
     varying vec3 vc; varying float va;
     void main() {
-      vec4 cp = mvp * vec4(p, 1.0); gl_Position = cp;
+      vec4 cp = mvp * vec4(p.x, p.y, p.z * rise, 1.0); gl_Position = cp;
       float d = max(cp.w, 0.001);
-      gl_PointSize = clamp(sz * scale * pxr * 70.0 / d, 1.2 * pxr, 48.0 * pxr);
-      vc = col; va = a;
+      gl_PointSize = clamp(sz * scale * pxr * 60.0 / d, 1.0 * pxr, 30.0 * pxr);
+      vc = col; va = a * clamp(1.25 - d * 0.16, 0.25, 1.0);
     }`;
   const FS_PT = `
     precision mediump float; varying vec3 vc; varying float va;
     void main() {
       vec2 d = gl_PointCoord - 0.5; float r = dot(d, d) * 4.0;
       if (r > 1.0) discard;
-      float core = exp(-r * 7.0) * 0.85; float halo = (1.0 - r) * 0.12;
+      float core = exp(-r * 6.0) * 0.9; float halo = (1.0 - r) * 0.1;
       gl_FragColor = vec4(vc * (core + halo) * va, 1.0);
     }`;
   const FS_RING = `
     precision mediump float; varying vec3 vc; varying float va;
     void main() {
       vec2 d = gl_PointCoord - 0.5; float r = sqrt(dot(d, d)) * 2.0;
-      float ring = smoothstep(0.62, 0.7, r) * (1.0 - smoothstep(0.86, 0.96, r));
+      float ring = smoothstep(0.6, 0.68, r) * (1.0 - smoothstep(0.86, 0.96, r));
       gl_FragColor = vec4(vc * ring * va, 1.0);
     }`;
   const VS_LN = `
     attribute vec3 p; attribute vec3 col; attribute float a;
-    uniform mat4 mvp; varying vec3 vc; varying float va;
-    void main() { gl_Position = mvp * vec4(p, 1.0); vc = col; va = a; }`;
+    uniform mat4 mvp; uniform float rise; varying vec3 vc; varying float va;
+    void main() { vec4 cp = mvp * vec4(p.x, p.y, p.z * rise, 1.0); gl_Position = cp; vc = col; va = a * clamp(1.25 - max(cp.w, 0.0) * 0.16, 0.25, 1.0); }`;
   const FS_LN = `precision mediump float; varying vec3 vc; varying float va; void main() { gl_FragColor = vec4(vc * va, 1.0); }`;
   function program(vs, fs) {
     const mk = (t, s) => { const sh = gl.createShader(t); gl.shaderSource(sh, s); gl.compileShader(sh);
@@ -101,18 +101,21 @@
     const f = n => l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
     return [f(0), f(8), f(4)];
   }
-  const GRADE_L = { scs4: 0.84, scs3: 0.74, scs2: 0.64, scs1a: 0.56, scs1: 0.5 };
+  // A restrained palette: twelve hues, restated at a second lightness for the
+  // next twelve, so forty departments do not become a rainbow.
+  const HUES = [204, 28, 160, 262, 44, 340, 186, 76, 300, 12, 226, 120];
+  const GRADE_L = { scs4: 0.92, scs3: 0.8, scs2: 0.68, scs1a: 0.6, scs1: 0.55 };
   const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const fmt = v => Math.round(v || 0).toLocaleString();
 
   // --- state ---------------------------------------------------------------------
   const S = {
-    G: null, n: 0, N: null, B: null, D: null, kids: null, depth: null, order: null, deptFte: null, hue: null,
+    G: null, n: 0, N: null, B: null, D: null, kids: null, order: null, deptFte: null, hue: null,
     pos: null, from: null, to: null, morph: 1, morphT0: 0, screen: null, vis: null,
-    theta: 0.9, phi: 0.72, dist: 3.9, target: [0, 0, 0.18], camTo: null, drag: null, moved: 0,
+    theta: -1.1, phi: 0.62, dist: 3.6, target: [0, 0, 0.15], camTo: null, drag: null, moved: 0,
     orbit: !REDUCED, showPillars: true, idleSince: performance.now(),
     focus: { kind: "gov", d: -1, b: -1, p: -1 }, hover: -1, sizeScale: 1,
-    grow: REDUCED ? 1 : 0, t0: performance.now(),
+    grow: REDUCED ? 1 : 0, t0: performance.now(), rects: {}, quads: null,
   };
 
   // --- build the static parts --------------------------------------------------------
@@ -120,29 +123,27 @@
     S.G = G; const N = G.nodes, n = N.title.length; S.n = n; S.N = N; S.B = G.bodies; S.D = G.departments;
     S.deptFte = G.departments.map(d => d.bodies.reduce((s, bi) => s + (G.bodies[bi].fte || 0), 0));
     S.order = G.departments.map((_, i) => i).sort((a, b) => S.deptFte[b] - S.deptFte[a]);
-    S.hue = new Array(G.departments.length); S.order.forEach((di, k) => { S.hue[di] = (k * 137.508) % 360; });
-    S.kids = Array.from({ length: n }, () => []); S.depth = new Int16Array(n); S.roots = Array.from({ length: G.bodies.length }, () => []);
-    for (let i = 0; i < n; i++) { const p = N.parent[i]; if (p >= 0) { S.kids[p].push(i); S.depth[i] = S.depth[p] + 1; } else S.roots[N.body[i]].push(i); }
+    S.hue = new Array(G.departments.length); S.sat = new Array(G.departments.length);
+    S.order.forEach((di, k) => { S.hue[di] = HUES[k % HUES.length]; S.sat[di] = k < HUES.length ? 0.7 : 0.45; });
+    S.kids = Array.from({ length: n }, () => []); S.roots = Array.from({ length: G.bodies.length }, () => []);
+    for (let i = 0; i < n; i++) { const p = N.parent[i]; if (p >= 0) S.kids[p].push(i); else S.roots[N.body[i]].push(i); }
     let maxPay = 0; for (let i = 0; i < n; i++) if (N.pay[i] > maxPay) maxPay = N.pay[i]; S.maxPay = Math.max(maxPay, 200000);
-    S.z = new Float32Array(n); for (let i = 0; i < n; i++) S.z[i] = N.pay[i] ? Math.max(0.02, (N.pay[i] - 20000) / (S.maxPay - 20000)) * 0.9 : 0.02;
-    // colours and sizes never change
+    S.z = new Float32Array(n); for (let i = 0; i < n; i++) S.z[i] = N.pay[i] ? Math.max(0.03, (N.pay[i] - 20000) / (S.maxPay - 20000)) * 0.8 : 0.03;
     const col = new Float32Array(n * 3), sz = new Float32Array(n);
     for (let i = 0; i < n; i++) {
       const di = G.bodies[N.body[i]].dept, g = (N.grade[i] || "").replace(/\s/g, "").toLowerCase();
-      const c = hsl(S.hue[di], 0.75, GRADE_L[g] || 0.5); col[i * 3] = c[0]; col[i * 3 + 1] = c[1]; col[i * 3 + 2] = c[2];
-      sz[i] = 0.16 + Math.sqrt(N.below_fte[i] || 0) * 0.032 + (N.parent[i] < 0 ? 0.2 : 0);
+      const c = hsl(S.hue[di], S.sat[di], GRADE_L[g] || 0.55); col[i * 3] = c[0]; col[i * 3 + 1] = c[1]; col[i * 3 + 2] = c[2];
+      sz[i] = 0.12 + Math.sqrt(N.below_fte[i] || 0) * 0.02 + (N.parent[i] < 0 ? 0.14 : 0);
     }
     S.col = col; S.sz = sz;
     S.pos = new Float32Array(n * 3); S.from = new Float32Array(n * 3); S.to = new Float32Array(n * 3);
     S.al = new Float32Array(n); S.screen = new Float32Array(n * 2); S.vis = new Uint8Array(n);
     S.pts = { pos: buffer(S.pos, true), col: buffer(col), sz: buffer(sz), al: buffer(S.al, true) };
-    // halos: one per post with junior staff
     S.jn = []; for (let i = 0; i < n; i++) if (N.junior_fte[i] > 0) S.jn.push(i);
     const jc = new Float32Array(S.jn.length * 3), js = new Float32Array(S.jn.length);
-    S.jn.forEach((i, k) => { const c = hsl(S.hue[G.bodies[N.body[i]].dept], 0.75, 0.6); jc[k * 3] = c[0]; jc[k * 3 + 1] = c[1]; jc[k * 3 + 2] = c[2]; js[k] = 0.3 + Math.sqrt(N.junior_fte[i]) * 0.05; });
+    S.jn.forEach((i, k) => { const di = G.bodies[N.body[i]].dept, c = hsl(S.hue[di], S.sat[di], 0.6); jc[k * 3] = c[0]; jc[k * 3 + 1] = c[1]; jc[k * 3 + 2] = c[2]; js[k] = 0.25 + Math.sqrt(N.junior_fte[i]) * 0.04; });
     S.hpos = new Float32Array(S.jn.length * 3); S.hal = new Float32Array(S.jn.length);
     S.halo = { pos: buffer(S.hpos, true), col: buffer(jc), sz: buffer(js), al: buffer(S.hal, true) };
-    // lines (parent->child) and pillars (disc->post)
     S.ln = []; for (let i = 0; i < n; i++) if (N.parent[i] >= 0) S.ln.push(i);
     const lc = new Float32Array(S.ln.length * 6), pc = new Float32Array(n * 6);
     S.ln.forEach((i, k) => { for (let e = 0; e < 2; e++) { lc[k * 6 + e * 3] = col[i * 3]; lc[k * 6 + e * 3 + 1] = col[i * 3 + 1]; lc[k * 6 + e * 3 + 2] = col[i * 3 + 2]; } });
@@ -152,6 +153,11 @@
     S.lines = { pos: buffer(S.lpos, true), col: buffer(lc), al: buffer(S.lal, true) };
     S.pillars = { pos: buffer(S.ppos, true), col: buffer(pc), al: buffer(S.pal, true) };
     S.ring = { pos: buffer(new Float32Array(3), true), col: buffer(new Float32Array([1, 1, 1])), sz: buffer(new Float32Array([1]), true), al: buffer(new Float32Array([1])) };
+    // the ground: a grid, and district floors (filled per level)
+    const gp = [], gc = [], ga = [];
+    for (let v = -2; v <= 2.001; v += 0.25) { gp.push(v, -2, 0, v, 2, 0, -2, v, 0, 2, v, 0); for (let e = 0; e < 4; e++) { gc.push(0.45, 0.5, 0.75); ga.push(Math.abs(v) < 0.01 ? 0.09 : 0.045); } }
+    S.grid = { pos: buffer(new Float32Array(gp)), col: buffer(new Float32Array(gc)), al: buffer(new Float32Array(ga)), n: ga.length };
+    S.floor = { pos: buffer(new Float32Array(0), true), col: buffer(new Float32Array(0), true), al: buffer(new Float32Array(0), true), n: 0 };
     $("sub").textContent = `${n.toLocaleString()} senior posts in ${G.bodies.length} bodies under ${G.departments.length} departments, ${fmt(S.deptFte.reduce((a, b) => a + b, 0))} staff (FTE) beneath them.`;
     $("asof").textContent = G.as_of ? `newest snapshot ${G.as_of}` : "";
     layout(S.focus);
@@ -168,64 +174,99 @@
     renderPanel(); frameFocus(true);
   }
 
-  // --- layouts: every node gets a target position for the current focus -----------
-  // Radial tree: siblings share their parent's angle in proportion to the posts beneath.
-  function placeTree(root, lo, hi, r0, dr, centre) {
-    const N = S.N;
-    const weight = i => (N.below_senior[i] || 1) + 0.6;
-    (function place(i, a0, a1, d) {
-      const a = (a0 + a1) / 2, r = (centre && d === 0) ? 0 : r0 + d * dr;
-      S.to[i * 3] = Math.cos(a) * r; S.to[i * 3 + 1] = Math.sin(a) * r; S.to[i * 3 + 2] = S.z[i];
-      const ks = S.kids[i]; if (!ks.length) return;
-      const ws = ks.map(weight), wsum = ws.reduce((x, y) => x + y, 0);
-      let c = a0; ks.forEach((k, j) => { const span = (a1 - a0) * ws[j] / wsum; place(k, c, c + span, d + 1); c += span; });
-    })(root, lo, hi, 0);
-  }
-  function placeBody(bi, lo, hi, r0, dr, centre) {
-    const rs = S.roots[bi]; if (!rs.length) return;
-    const ws = rs.map(i => (S.N.below_senior[i] || 1) + 0.6), wsum = ws.reduce((x, y) => x + y, 0);
-    let c = lo; rs.forEach((r, j) => { const span = (hi - lo) * ws[j] / wsum; placeTree(r, c, c + span, r0, dr, centre && rs.length === 1); c += span; });
-  }
-  function sectors(items, weightOf, gap) {
-    const w = items.map(weightOf), wsum = w.reduce((a, b) => a + b, 0); const out = []; let a0 = -Math.PI / 2;
-    items.forEach((it, k) => { const span = 2 * Math.PI * w[k] / wsum; out.push([a0 + span * gap, a0 + span * (1 - gap)]); a0 += span; });
+  // --- layouts ---------------------------------------------------------------------------
+  // Squarified treemap: items with weights into a rectangle, blocks as square as can be.
+  function treemap(items, weightOf, rect) {
+    const out = new Map(); const total = items.reduce((s, it) => s + weightOf(it), 0) || 1;
+    let { x, y, w, h } = rect; let rest = items.slice().sort((a, b) => weightOf(b) - weightOf(a));
+    let area = w * h;
+    while (rest.length) {
+      const horiz = w >= h; const side = horiz ? h : w;
+      let row = [], rowW = 0, best = Infinity;
+      for (const it of rest) {
+        const wt = weightOf(it) / total * area; const tryW = rowW + wt;
+        const len = tryW / side; let worst = 0;
+        for (const r of row.concat(it)) { const a = weightOf(r) / total * area; const s = a / len; worst = Math.max(worst, Math.max(len / s, s / len)); }
+        if (row.length && worst > best) break;
+        row.push(it); rowW = tryW; best = worst;
+      }
+      const len = rowW / side; let off = 0;
+      for (const r of row) { const a = weightOf(r) / total * area, s = a / len;
+        out.set(r, horiz ? { x, y: y + off, w: len, h: s } : { x: x + off, y, w: s, h: len }); off += s; }
+      if (horiz) { x += len; w -= len; } else { y += len; h -= len; }
+      area = w * h; rest = rest.slice(row.length);
+      if (area <= 0) { for (const r of rest) out.set(r, { x, y, w: 0.001, h: 0.001 }); break; }
+    }
     return out;
+  }
+  // A body's posts on their block: depth-first order so a subtree keeps together, on a grid.
+  function placeBlock(bi, r) {
+    const order = []; S.roots[bi].forEach(function walk(i) { order.push(i); S.kids[i].forEach(walk); });
+    const n = order.length; if (!n) return;
+    const cols = Math.max(1, Math.ceil(Math.sqrt(n * r.w / Math.max(r.h, 1e-6)))), rows = Math.ceil(n / cols);
+    const inset = 0.12;
+    order.forEach((i, k) => {
+      const cx = r.x + r.w * (inset + (1 - 2 * inset) * ((k % cols) + 0.5) / cols), cy = r.y + r.h * (inset + (1 - 2 * inset) * (Math.floor(k / cols) + 0.5) / rows);
+      S.to[i * 3] = cx; S.to[i * 3 + 1] = cy; S.to[i * 3 + 2] = S.z[i];
+    });
+  }
+  // A tidy tree: leaves evenly across, parents centred over children, rows by depth
+  // running away from the viewer. The classic organisation chart, stood on its pay.
+  function placeTree(roots, width, depthStep, backY) {
+    let leaf = 0; const xs = new Map();
+    function place(i, d) {
+      const ks = S.kids[i]; let x;
+      if (!ks.length) x = leaf++; else { ks.forEach(k => place(k, d + 1)); x = ks.reduce((s, k) => s + xs.get(k), 0) / ks.length; }
+      xs.set(i, x); S.to[i * 3 + 1] = backY - d * depthStep; S.to[i * 3 + 2] = S.z[i];
+    }
+    roots.forEach(r => place(r, 0));
+    const span = Math.max(1, leaf - 1), w = Math.min(width, Math.max(0.6, leaf * 0.08));
+    xs.forEach((x, i) => { S.to[i * 3] = leaf > 1 ? (x / span - 0.5) * w : 0; });
+    return { leaves: leaf, width: w };
   }
   function layout(f) {
     const G = S.G, B = G.bodies, D = G.departments;
-    S.vis.fill(0);
+    S.vis.fill(0); const floors = [];
+    const addFloor = (r, di, a) => { const c = hsl(S.hue[di], S.sat[di], 0.5); floors.push({ r, c, a }); };
     if (f.kind === "gov") {
-      const sec = sectors(S.order, di => Math.sqrt(Math.max(S.deptFte[di], 30)) + 6, 0.04);
-      S.sector = {}; S.order.forEach((di, k) => { S.sector[di] = sec[k]; });
+      const rects = treemap(S.order, di => Math.max(S.deptFte[di], 400), { x: -1.7, y: -1.25, w: 3.4, h: 2.5 });
+      S.rects = {};
       S.order.forEach(di => {
-        const [s0, s1] = S.sector[di]; const bs = D[di].bodies;
-        const w = bs.map(bi => Math.sqrt(Math.max(B[bi].senior, 1)) + 1.5), ws = w.reduce((a, b) => a + b, 0); let c = s0;
-        bs.forEach((bi, k) => { const span = (s1 - s0) * w[k] / ws; placeBody(bi, c + span * 0.08, c + span * 0.92, 0.62, 0.15, false); c += span; });
+        const r = rects.get(di); S.rects[di] = r; addFloor(r, di, 0.05);
+        const inner = { x: r.x + r.w * 0.05, y: r.y + r.h * 0.05, w: r.w * 0.9, h: r.h * 0.9 };
+        const bs = treemap(D[di].bodies, bi => Math.max(B[bi].senior, 1), inner);
+        D[di].bodies.forEach(bi => placeBlock(bi, bs.get(bi)));
       });
-      S.vis.fill(1); S.sizeScale = 1;
+      S.vis.fill(1); S.sizeScale = 0.75; S.phiWant = 0.7; S.thetaWant = null;
     } else if (f.kind === "dept") {
       const bs = D[f.d].bodies.slice().sort((a, b) => B[b].fte - B[a].fte);
-      const sec = sectors(bs, bi => Math.sqrt(Math.max(B[bi].senior, 1)) + 2, 0.06);
-      bs.forEach((bi, k) => placeBody(bi, sec[k][0], sec[k][1], 0.45, 0.17, false));
+      const rects = treemap(bs, bi => Math.max(B[bi].senior, 1) + Math.sqrt(B[bi].fte || 0) * 0.15, { x: -1.6, y: -1.15, w: 3.2, h: 2.3 });
+      S.bodyRects = {}; bs.forEach(bi => { const r = rects.get(bi); S.bodyRects[bi] = r; addFloor(r, f.d, 0.06); placeBlock(bi, { x: r.x + r.w * 0.06, y: r.y + r.h * 0.06, w: r.w * 0.88, h: r.h * 0.88 }); });
       for (let i = 0; i < S.n; i++) if (B[S.N.body[i]].dept === f.d) S.vis[i] = 1;
-      S.sizeScale = 1.25;
-    } else if (f.kind === "body") {
-      placeBody(f.b, -Math.PI / 2, Math.PI * 1.5, 0.28, 0.24, true);
-      for (let i = 0; i < S.n; i++) if (S.N.body[i] === f.b) S.vis[i] = 1;
-      S.sizeScale = 1.6;
+      S.sizeScale = 1.1; S.phiWant = 0.62; S.thetaWant = null;
     } else {
-      placeTree(f.p, -Math.PI / 2, Math.PI * 1.5, 0.3, 0.26, true);
-      (function mark(i) { S.vis[i] = 1; S.kids[i].forEach(mark); })(f.p);
-      S.sizeScale = 1.8;
+      const roots = f.kind === "body" ? S.roots[f.b] : [f.p];
+      const t = placeTree(roots, 3.2, 0.42, 1.1);
+      if (f.kind === "body") { for (let i = 0; i < S.n; i++) if (S.N.body[i] === f.b) S.vis[i] = 1; }
+      else (function mark(i) { S.vis[i] = 1; S.kids[i].forEach(mark); })(f.p);
+      addFloor({ x: -t.width / 2 - 0.15, y: -2.2, w: t.width + 0.3, h: 3.5 }, f.d, 0.035);
+      S.sizeScale = t.leaves > 120 ? 1.2 : t.leaves > 40 ? 1.7 : 2.4; S.phiWant = 0.58; S.thetaWant = -Math.PI / 2;
     }
-    // nodes out of view keep their last place, so a morph never flings them across the disc
     for (let i = 0; i < S.n; i++) if (!S.vis[i]) { S.to[i * 3] = S.pos[i * 3]; S.to[i * 3 + 1] = S.pos[i * 3 + 1]; S.to[i * 3 + 2] = S.pos[i * 3 + 2]; }
+    // district floors as two triangles each
+    const fp = [], fc = [], fa = [];
+    for (const { r, c, a } of floors) {
+      const q = [[r.x, r.y], [r.x + r.w, r.y], [r.x + r.w, r.y + r.h], [r.x, r.y], [r.x + r.w, r.y + r.h], [r.x, r.y + r.h]];
+      for (const [x, y] of q) { fp.push(x, y, 0); fc.push(c[0], c[1], c[2]); fa.push(a); }
+    }
+    upload(S.floor.pos, new Float32Array(fp)); upload(S.floor.col, new Float32Array(fc)); upload(S.floor.al, new Float32Array(fa)); S.floor.n = fa.length;
   }
   function applyAlpha() {
-    for (let i = 0; i < S.n; i++) S.al[i] = S.vis[i] ? 1 : 0;      // out of focus: gone, not ghosted — the view is the level
-    S.jn.forEach((i, k) => { S.hal[k] = S.vis[i] ? 0.07 : 0; });
-    S.ln.forEach((i, k) => { const v = S.vis[i] && S.vis[S.N.parent[i]]; S.lal[k * 2] = v ? 0.1 : 0; S.lal[k * 2 + 1] = v ? 0.22 : 0; });
-    for (let i = 0; i < S.n; i++) { S.pal[i * 2] = S.vis[i] ? 0.012 : 0; S.pal[i * 2 + 1] = S.vis[i] ? 0.08 : 0; }
+    const open = S.focus.kind === "body" || S.focus.kind === "post";
+    for (let i = 0; i < S.n; i++) S.al[i] = S.vis[i] ? 1 : 0;
+    S.jn.forEach((i, k) => { S.hal[k] = S.vis[i] && open ? 0.08 : 0; });
+    S.ln.forEach((i, k) => { const v = S.vis[i] && S.vis[S.N.parent[i]]; const a = open ? 0.35 : 0; S.lal[k * 2] = v ? a * 0.6 : 0; S.lal[k * 2 + 1] = v ? a : 0; });
+    for (let i = 0; i < S.n; i++) { S.pal[i * 2] = S.vis[i] ? 0.015 : 0; S.pal[i * 2 + 1] = S.vis[i] ? (open ? 0.24 : 0.18) : 0; }
     upload(S.pts.al, S.al); upload(S.halo.al, S.hal); upload(S.lines.al, S.lal); upload(S.pillars.al, S.pal);
   }
   function uploadAll() {
@@ -236,7 +277,7 @@
     for (let i = 0; i < S.n; i++) { S.ppos[i * 6] = p[i * 3]; S.ppos[i * 6 + 1] = p[i * 3 + 1]; S.ppos[i * 6 + 2] = 0; S.ppos[i * 6 + 3] = p[i * 3]; S.ppos[i * 6 + 4] = p[i * 3 + 1]; S.ppos[i * 6 + 5] = p[i * 3 + 2]; } upload(S.pillars.pos, S.ppos);
   }
 
-  // --- focus: the one operation everything else calls --------------------------------
+  // --- focus ----------------------------------------------------------------------------------
   function setFocus(f, push) {
     S.focus = f;
     for (let i = 0; i < S.n * 3; i++) S.from[i] = S.pos[i];
@@ -256,25 +297,26 @@
     else if (f.kind === "body") setFocus({ kind: "dept", d: f.d, b: -1, p: -1 }, true);
     else if (f.kind === "dept") setFocus({ kind: "gov", d: -1, b: -1, p: -1 }, true);
   }
-  function drillTo(i) {           // a click on post i: the next level down that makes sense
-    const f = S.focus, B = S.B, N = S.N, bi = N.body[i], di = B[bi].dept;
+  function drillTo(i) {
+    const f = S.focus, bi = S.N.body[i], di = S.B[bi].dept;
     if (f.kind === "gov") return setFocus({ kind: "dept", d: di, b: -1, p: -1 }, true);
     if (f.kind === "dept") return setFocus({ kind: "body", d: di, b: bi, p: -1 }, true);
     if (S.kids[i].length && !(f.kind === "post" && f.p === i)) return setFocus({ kind: "post", d: di, b: bi, p: i }, true);
     showDetail(i);
   }
-  // camera framing: fit the visible nodes
   function frameFocus(instant) {
-    let cx = 0, cy = 0, cz = 0, k = 0;
-    for (let i = 0; i < S.n; i++) if (S.vis[i]) { cx += S.to[i * 3]; cy += S.to[i * 3 + 1]; cz += S.to[i * 3 + 2]; k++; }
-    if (!k) return; cx /= k; cy /= k; cz /= k;
-    let r = 0; for (let i = 0; i < S.n; i++) if (S.vis[i]) r = Math.max(r, Math.hypot(S.to[i * 3] - cx, S.to[i * 3 + 1] - cy));
-    const dist = Math.max(0.9, r * 2.35 + 0.6), phi = S.focus.kind === "gov" ? 0.72 : 0.62;
-    S.camTo = { target: [cx, cy, Math.min(cz, 0.25)], dist, phi, from: { target: S.target.slice(), dist: S.dist, phi: S.phi }, t0: performance.now() };
-    if (instant || REDUCED) { S.target = S.camTo.target.slice(); S.dist = dist; S.phi = phi; S.camTo = null; }
+    let x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9, zmax = 0;
+    for (let i = 0; i < S.n; i++) if (S.vis[i]) { const x = S.to[i * 3], y = S.to[i * 3 + 1]; x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); zmax = Math.max(zmax, S.to[i * 3 + 2]); }
+    if (x0 > x1) return;
+    const tree = S.focus.kind === "body" || S.focus.kind === "post";
+    const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, r = tree ? Math.max((x1 - x0) * 0.55, (y1 - y0) * 0.9, 0.35) : Math.max(x1 - x0, (y1 - y0) * 1.2, 0.5) / 2;
+    const dist = Math.max(0.9, r * (tree ? 2.1 : 2.5) + 0.45);
+    S.camTo = { target: [cx, cy, Math.min(zmax * 0.4, tree ? 0.3 : 0.2)], dist, phi: S.phiWant, theta: S.thetaWant == null ? S.theta : S.thetaWant,
+      from: { target: S.target.slice(), dist: S.dist, phi: S.phi, theta: S.theta }, t0: performance.now() };
+    if (instant || REDUCED) { S.target = S.camTo.target.slice(); S.dist = dist; S.phi = S.camTo.phi; S.theta = S.camTo.theta; S.camTo = null; }
   }
 
-  // --- the side panel: trail, list, search ---------------------------------------------
+  // --- panel: trail, list, search ----------------------------------------------------------------
   function trail() {
     const f = S.focus, G = S.G, t = [["UK government", { kind: "gov", d: -1, b: -1, p: -1 }]];
     if (f.d >= 0) t.push([G.departments[f.d].name, { kind: "dept", d: f.d, b: -1, p: -1 }]);
@@ -283,31 +325,30 @@
     return t;
   }
   function renderPanel() {
-    const f = S.focus, G = S.G, N = S.N, B = G.bodies, D = G.departments;
-    const t = trail();
-    crumbsEl.innerHTML = t.map(([name, ff], k) => k === t.length - 1 ? `<span aria-current="page">${esc(name)}</span>` : `<a href="#" data-k="${k}">${esc(name)}</a>`).join('<i class="sep">›</i>');
+    const f = S.focus, G = S.G, N = S.N, B = G.bodies, D = G.departments, t = trail();
+    crumbsEl.innerHTML = t.map(([name], k) => k === t.length - 1 ? `<span aria-current="page">${esc(name)}</span>` : `<a href="#" data-k="${k}">${esc(name)}</a>`).join('<i class="sep">›</i>');
     crumbsEl.querySelectorAll("a").forEach(a => a.addEventListener("click", e => { e.preventDefault(); setFocus(t[+a.dataset.k][1], true); }));
     $("upbtn").hidden = f.kind === "gov";
     let head = "", items = [];
     if (f.kind === "gov") {
-      head = `<b>UK central government</b><span>${D.length} departments · ${B.length} bodies · ${fmt(S.deptFte.reduce((a, b) => a + b, 0))} FTE · click a department</span>`;
-      items = S.order.map(di => ({ name: D[di].name, meta: `${fmt(S.deptFte[di])} FTE · ${D[di].bodies.length} bod${D[di].bodies.length === 1 ? "y" : "ies"}`, f: { kind: "dept", d: di, b: -1, p: -1 }, hue: S.hue[di] }));
+      head = `<b>UK central government</b><span>${D.length} departments · ${B.length} bodies · ${fmt(S.deptFte.reduce((a, b) => a + b, 0))} FTE · each district is a department; click one</span>`;
+      items = S.order.map(di => ({ name: D[di].name, meta: `${fmt(S.deptFte[di])} FTE · ${D[di].bodies.length} bod${D[di].bodies.length === 1 ? "y" : "ies"}`, f: { kind: "dept", d: di, b: -1, p: -1 }, hue: S.hue[di], sat: S.sat[di] }));
     } else if (f.kind === "dept") {
       const d = D[f.d];
-      head = `<b>${esc(d.name)}</b><span>${fmt(S.deptFte[f.d])} FTE · ${d.bodies.length} bod${d.bodies.length === 1 ? "y" : "ies"} · click a body</span>`;
-      items = d.bodies.slice().sort((a, b) => B[b].fte - B[a].fte).map(bi => ({ name: B[bi].name, meta: `${fmt(B[bi].fte)} FTE · ${B[bi].senior} senior posts` + (B[bi].head ? ` · top: ${esc(B[bi].head)}` : ""), f: { kind: "body", d: f.d, b: bi, p: -1 }, hue: S.hue[f.d], i: S.roots[bi][0] }));
+      head = `<b>${esc(d.name)}</b><span>${fmt(S.deptFte[f.d])} FTE · ${d.bodies.length} bod${d.bodies.length === 1 ? "y" : "ies"} · each block is a body; click one</span>`;
+      items = d.bodies.slice().sort((a, b) => B[b].fte - B[a].fte).map(bi => ({ name: B[bi].name, meta: `${fmt(B[bi].fte)} FTE · ${B[bi].senior} senior posts` + (B[bi].head ? ` · top: ${esc(B[bi].head)}` : ""), f: { kind: "body", d: f.d, b: bi, p: -1 }, hue: S.hue[f.d], sat: S.sat[f.d], i: S.roots[bi][0] }));
     } else {
       const b = B[f.b];
       head = f.kind === "body"
-        ? `<b>${esc(b.name)}</b><span>${fmt(b.fte)} FTE · ${b.senior} senior posts · snapshot ${esc(b.as_of)} · click a post that has reports</span>`
+        ? `<b>${esc(b.name)}</b><span>${fmt(b.fte)} FTE · ${b.senior} senior posts · snapshot ${esc(b.as_of)} · the head at the back, each level of reports a row nearer; click a post that has reports</span>`
         : `<b>${esc(N.title[f.p])}</b><span>${esc(N.grade[f.p])}${N.pay[f.p] ? " · from £" + N.pay[f.p].toLocaleString() : ""} · ${fmt(N.below_fte[f.p])} FTE beneath</span>`;
       const list = f.kind === "body" ? S.roots[f.b] : S.kids[f.p];
       items = list.slice().sort((a, c) => N.below_fte[c] - N.below_fte[a]).map(i => ({
         name: N.title[i] || "(untitled post)", meta: `${esc(N.grade[i])}${N.pay[i] ? " · from £" + N.pay[i].toLocaleString() : ""} · ${fmt(N.below_fte[i])} FTE beneath` + (S.kids[i].length ? ` · ${S.kids[i].length} direct senior reports` : ""),
-        f: S.kids[i].length ? { kind: "post", d: f.d, b: f.b, p: i } : null, i, hue: S.hue[f.d] }));
+        f: S.kids[i].length ? { kind: "post", d: f.d, b: f.b, p: i } : null, i, hue: S.hue[f.d], sat: S.sat[f.d] }));
     }
     navHead.innerHTML = head;
-    navList.innerHTML = items.slice(0, 400).map((it, k) => `<li><a href="#" data-k="${k}" class="${it.f ? "" : "leaf"}"><i style="background:hsl(${it.hue},75%,60%)"></i><span class="nm">${esc(it.name)}</span><span class="mt">${it.meta}</span></a></li>`).join("")
+    navList.innerHTML = items.slice(0, 400).map((it, k) => `<li><a href="#" data-k="${k}" class="${it.f ? "" : "leaf"}"><i style="background:hsl(${it.hue},${Math.round(it.sat * 100)}%,60%)"></i><span class="nm">${esc(it.name)}</span><span class="mt">${it.meta}</span></a></li>`).join("")
       + (items.length > 400 ? `<li class="more">and ${items.length - 400} more — use search</li>` : "");
     navList.querySelectorAll("a").forEach((a, k) => {
       const it = items[k];
@@ -321,7 +362,6 @@
       + (N.junior_fte[i] ? `<br>${fmt(N.junior_fte[i])} FTE in junior groups report here` : "") + `<br><a href="/family/organograms/chart?body=${encodeURIComponent(b.name)}">This body's chart as a list</a>`;
     $("detail").hidden = false; S.hover = i;
   }
-  // search: bodies and posts, by substring, best dozen
   let idx = null;
   function searchIndex() {
     if (idx) return idx; idx = [];
@@ -338,10 +378,10 @@
   });
   search.addEventListener("keydown", e => { if (e.key === "Escape") { hits.hidden = true; search.blur(); } if (e.key === "Enter") { const a = hits.querySelector("a"); if (a) a.click(); } });
 
-  // --- camera and drawing ----------------------------------------------------------------
+  // --- camera and drawing --------------------------------------------------------------------------
   let W = 1, Hh = 1, pxr = 1;
   function resize() {
-    pxr = Math.min(window.devicePixelRatio || 1, 2);
+    pxr = Math.min(window.devicePixelRatio || 1, 1.5);
     const r = stage.getBoundingClientRect(); W = Math.max(1, Math.floor(r.width)); Hh = Math.max(1, Math.floor(r.height));
     canvas.width = Math.floor(W * pxr); canvas.height = Math.floor(Hh * pxr); canvas.style.width = W + "px"; canvas.style.height = Hh + "px";
     gl.viewport(0, 0, canvas.width, canvas.height);
@@ -349,74 +389,67 @@
   window.addEventListener("resize", resize); resize();
   function camera() {
     const eye = [S.target[0] + S.dist * Math.cos(S.phi) * Math.cos(S.theta), S.target[1] + S.dist * Math.cos(S.phi) * Math.sin(S.theta), S.target[2] + S.dist * Math.sin(S.phi)];
-    return mul(perspective(0.9, W / Hh, 0.02, 40), lookAt(eye, S.target, [0, 0, 1]));
+    return mul(perspective(0.8, W / Hh, 0.02, 40), lookAt(eye, S.target, [0, 0, 1]));
   }
   const ease = t => 1 - Math.pow(1 - t, 3);
   function draw(now) {
     requestAnimationFrame(draw); if (!S.G) return;
     const dt = Math.min(0.05, (now - (S.last || now)) / 1000); S.last = now;
-    if (S.grow < 1) S.grow = Math.min(1, (now - S.t0) / 2600);
-    const g = ease(S.grow);
-    if (S.morph < 1) {
-      S.morph = Math.min(1, (now - S.morphT0) / 1000); const e = ease(S.morph);
-      for (let i = 0; i < S.n * 3; i++) S.pos[i] = S.from[i] + (S.to[i] - S.from[i]) * e;
-      uploadAll();
-    }
-    if (S.camTo) { const c = S.camTo, e = ease(Math.min(1, (now - c.t0) / 1100));   // time-based: the same flight at any frame rate
+    if (S.grow < 1) S.grow = Math.min(1, (now - S.t0) / 2200);
+    const rise = ease(S.grow);
+    if (S.morph < 1) { S.morph = Math.min(1, (now - S.morphT0) / 1000); const e = ease(S.morph);
+      for (let i = 0; i < S.n * 3; i++) S.pos[i] = S.from[i] + (S.to[i] - S.from[i]) * e; uploadAll(); }
+    if (S.camTo) { const c = S.camTo, e = ease(Math.min(1, (now - c.t0) / 1200));
       for (let j = 0; j < 3; j++) S.target[j] = c.from.target[j] + (c.target[j] - c.from.target[j]) * e;
       S.dist = c.from.dist + (c.dist - c.from.dist) * e; S.phi = c.from.phi + (c.phi - c.from.phi) * e;
+      let dth = c.theta - c.from.theta; dth = Math.atan2(Math.sin(dth), Math.cos(dth)); S.theta = c.from.theta + dth * e;
       if (e >= 1) S.camTo = null; }
-    const idle = (now - S.idleSince) > 6000;
-    if (S.orbit && !S.drag && S.focus.kind === "gov" && idle) S.theta += dt * 0.1;
-    const mvp = camera();
-    gl.clearColor(0.035, 0.04, 0.07, 1); gl.clear(gl.COLOR_BUFFER_BIT);
+    if (S.orbit && !S.drag && S.focus.kind === "gov" && (now - S.idleSince) > 6000) S.theta += dt * 0.07;
+    const m = camera();
+    gl.clearColor(0.028, 0.032, 0.06, 1); gl.clear(gl.COLOR_BUFFER_BIT);
     gl.disable(gl.DEPTH_TEST); gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE);
-    // the intro: the whole figure scales up from the centre, through the matrix
-    const m = mvp.slice(); for (let j = 0; j < 12; j++) m[j] *= g;
-    gl.useProgram(LN); gl.uniformMatrix4fv(uni(LN, "mvp"), false, m);
+    gl.useProgram(LN); gl.uniformMatrix4fv(uni(LN, "mvp"), false, m); gl.uniform1f(uni(LN, "rise"), 1);
+    attrib(LN, "p", S.floor.pos, 3); attrib(LN, "col", S.floor.col, 3); attrib(LN, "a", S.floor.al, 1); if (S.floor.n) gl.drawArrays(gl.TRIANGLES, 0, S.floor.n);
+    attrib(LN, "p", S.grid.pos, 3); attrib(LN, "col", S.grid.col, 3); attrib(LN, "a", S.grid.al, 1); gl.drawArrays(gl.LINES, 0, S.grid.n);
+    gl.uniform1f(uni(LN, "rise"), rise);
     if (S.showPillars) { attrib(LN, "p", S.pillars.pos, 3); attrib(LN, "col", S.pillars.col, 3); attrib(LN, "a", S.pillars.al, 1); gl.drawArrays(gl.LINES, 0, S.n * 2); }
     attrib(LN, "p", S.lines.pos, 3); attrib(LN, "col", S.lines.col, 3); attrib(LN, "a", S.lines.al, 1); gl.drawArrays(gl.LINES, 0, S.ln.length * 2);
-    gl.useProgram(PT); gl.uniformMatrix4fv(uni(PT, "mvp"), false, m); gl.uniform1f(uni(PT, "pxr"), pxr); gl.uniform1f(uni(PT, "scale"), S.sizeScale);
-    attrib(PT, "p", S.halo.pos, 3); attrib(PT, "col", S.halo.col, 3); attrib(PT, "sz", S.halo.sz, 1); attrib(PT, "a", S.halo.al, 1); gl.drawArrays(gl.POINTS, 0, S.jn.length);
+    gl.useProgram(PT); gl.uniformMatrix4fv(uni(PT, "mvp"), false, m); gl.uniform1f(uni(PT, "pxr"), pxr); gl.uniform1f(uni(PT, "scale"), S.sizeScale); gl.uniform1f(uni(PT, "rise"), rise);
+    if (S.focus.kind === "body" || S.focus.kind === "post") { attrib(PT, "p", S.halo.pos, 3); attrib(PT, "col", S.halo.col, 3); attrib(PT, "sz", S.halo.sz, 1); attrib(PT, "a", S.halo.al, 1); gl.drawArrays(gl.POINTS, 0, S.jn.length); }
     attrib(PT, "p", S.pts.pos, 3); attrib(PT, "col", S.pts.col, 3); attrib(PT, "sz", S.pts.sz, 1); attrib(PT, "a", S.pts.al, 1); gl.drawArrays(gl.POINTS, 0, S.n);
     if (S.hover >= 0 && S.vis[S.hover]) {
       upload(S.ring.pos, new Float32Array([S.pos[S.hover * 3], S.pos[S.hover * 3 + 1], S.pos[S.hover * 3 + 2]]));
-      upload(S.ring.sz, new Float32Array([Math.max(S.sz[S.hover] * S.sizeScale, 0.45) + 0.25]));
-      gl.useProgram(RING); gl.uniformMatrix4fv(uni(RING, "mvp"), false, m); gl.uniform1f(uni(RING, "pxr"), pxr); gl.uniform1f(uni(RING, "scale"), 1);
+      upload(S.ring.sz, new Float32Array([Math.max(S.sz[S.hover] * S.sizeScale, 0.4) + 0.3]));
+      gl.useProgram(RING); gl.uniformMatrix4fv(uni(RING, "mvp"), false, m); gl.uniform1f(uni(RING, "pxr"), pxr); gl.uniform1f(uni(RING, "scale"), 1); gl.uniform1f(uni(RING, "rise"), rise);
       attrib(RING, "p", S.ring.pos, 3); attrib(RING, "col", S.ring.col, 3); attrib(RING, "sz", S.ring.sz, 1); attrib(RING, "a", S.ring.al, 1); gl.drawArrays(gl.POINTS, 0, 1);
     }
-    project(m); labels(m);
+    project(m, rise); labels(m, rise);
   }
-  function project(m) {
+  function project(m, rise) {
     const p = S.pos, s = S.screen;
     for (let i = 0; i < S.n; i++) {
       if (!S.vis[i]) { s[i * 2] = -1e4; s[i * 2 + 1] = -1e4; continue; }
-      const x = p[i * 3], y = p[i * 3 + 1], z = p[i * 3 + 2];
+      const x = p[i * 3], y = p[i * 3 + 1], z = p[i * 3 + 2] * rise;
       const cw = m[3] * x + m[7] * y + m[11] * z + m[15];
       if (cw <= 0.001) { s[i * 2] = -1e4; s[i * 2 + 1] = -1e4; continue; }
       s[i * 2] = ((m[0] * x + m[4] * y + m[8] * z + m[12]) / cw * 0.5 + 0.5) * W;
       s[i * 2 + 1] = (0.5 - (m[1] * x + m[5] * y + m[9] * z + m[13]) / cw * 0.5) * Hh;
     }
   }
-  // labels: the level's names, largest first, none on top of another
   let labelWant = [], labelKey = "";
   function labelsFor() {
     const f = S.focus, G = S.G, B = G.bodies, N = S.N, out = [];
-    if (f.kind === "gov") {
-      S.order.slice(0, 18).forEach(di => { const [s0, s1] = S.sector[di], a = (s0 + s1) / 2; out.push({ text: G.departments[di].name, x: Math.cos(a) * 1.3, y: Math.sin(a) * 1.3, z: 0.02, hue: S.hue[di], f: { kind: "dept", d: di, b: -1, p: -1 }, big: true }); });
-    } else if (f.kind === "dept") {
-      G.departments[f.d].bodies.slice().sort((a, b) => B[b].fte - B[a].fte).slice(0, 40).forEach(bi => { const r = S.roots[bi][0]; if (r == null) return;
-        out.push({ text: B[bi].name, i: r, hue: S.hue[f.d], f: { kind: "body", d: f.d, b: bi, p: -1 }, big: B[bi].fte > S.deptFte[f.d] * 0.1 }); });
-    } else {
-      const list = []; for (let i = 0; i < S.n; i++) if (S.vis[i]) list.push(i);
-      list.sort((a, b) => N.below_fte[b] - N.below_fte[a]).slice(0, 26).forEach(i => out.push({ text: N.title[i] || "(untitled post)", i, hue: S.hue[f.d], f: S.kids[i].length ? { kind: "post", d: f.d, b: f.b, p: i } : null, big: N.below_fte[i] > 200 }));
-    }
+    if (f.kind === "gov") S.order.slice(0, 22).forEach(di => { const r = S.rects[di]; out.push({ text: G.departments[di].name, x: r.x + r.w / 2, y: r.y + r.h / 2, z: 0.0, hue: S.hue[di], f: { kind: "dept", d: di, b: -1, p: -1 }, big: S.deptFte[di] > 20000 }); });
+    else if (f.kind === "dept") G.departments[f.d].bodies.slice().sort((a, b) => B[b].fte - B[a].fte).slice(0, 40).forEach(bi => { const r = S.bodyRects[bi]; if (!r) return;
+      out.push({ text: B[bi].name, x: r.x + r.w / 2, y: r.y + r.h / 2, z: 0.0, hue: S.hue[f.d], f: { kind: "body", d: f.d, b: bi, p: -1 }, big: B[bi].fte > S.deptFte[f.d] * 0.12 }); });
+    else { const list = []; for (let i = 0; i < S.n; i++) if (S.vis[i]) list.push(i);
+      list.sort((a, b) => N.below_fte[b] - N.below_fte[a]).slice(0, 28).forEach(i => out.push({ text: N.title[i] || "(untitled post)", i, hue: S.hue[f.d], f: S.kids[i].length ? { kind: "post", d: f.d, b: f.b, p: i } : null, big: N.below_fte[i] > 200 })); }
     return out;
   }
-  function labels(m) {
+  function labels(m, rise) {
     const key = JSON.stringify(S.focus);
     if (key !== labelKey) { labelKey = key; labelWant = labelsFor(); labelsEl.innerHTML = "";
-      labelWant.forEach(l => { const el = document.createElement("div"); el.className = "org3d-label" + (l.big ? " big" : ""); el.textContent = l.text; el.style.color = `hsl(${l.hue},80%,78%)`;
+      labelWant.forEach(l => { const el = document.createElement("div"); el.className = "org3d-label" + (l.big ? " big" : "") + (l.i == null ? " ground" : ""); el.textContent = l.text; el.style.color = `hsl(${l.hue},70%,80%)`;
         el.addEventListener("click", () => { if (l.f) setFocus(l.f, true); else showDetail(l.i); }); el.addEventListener("pointerenter", () => { if (l.i != null) S.hover = l.i; }); labelsEl.appendChild(el); l.el = el; }); }
     const placed = [];
     for (const l of labelWant) {
@@ -424,13 +457,13 @@
       if (l.i != null) { px = S.screen[l.i * 2]; py = S.screen[l.i * 2 + 1] - 12; }
       else { const cw = m[3] * l.x + m[7] * l.y + m[11] * l.z + m[15]; if (cw <= 0.001) { l.el.style.opacity = 0; continue; }
         px = ((m[0] * l.x + m[4] * l.y + m[8] * l.z + m[12]) / cw * 0.5 + 0.5) * W; py = (0.5 - (m[1] * l.x + m[5] * l.y + m[9] * l.z + m[13]) / cw * 0.5) * Hh; }
-      if (px < -50 || py < -20 || px > W + 50 || py > Hh + 20 || placed.some(([qx, qy]) => Math.abs(qx - px) < 200 && Math.abs(qy - py) < 17)) { l.el.style.opacity = 0; continue; }
+      if (px < -50 || py < -20 || px > W + 50 || py > Hh + 20 || placed.some(([qx, qy]) => Math.abs(qx - px) < 190 && Math.abs(qy - py) < 17)) { l.el.style.opacity = 0; continue; }
       placed.push([px, py]); l.el.style.opacity = Math.max(0, (S.grow - 0.4) * 1.7) * (S.morph < 0.6 ? S.morph : 1);
       l.el.style.transform = `translate(${px}px, ${py}px)`;
     }
   }
 
-  // --- pointer: drag to turn, click to drill, background to go up ------------------------
+  // --- pointer ------------------------------------------------------------------------------------
   function pick(mx, my) {
     let best = -1, bd = 14 * 14; const s = S.screen;
     for (let i = 0; i < S.n; i++) { if (!S.vis[i]) continue; const dx = s[i * 2] - mx, dy = s[i * 2 + 1] - my, d = dx * dx + dy * dy - S.sz[i] * 6; if (d < bd) { bd = d; best = i; } }
@@ -438,15 +471,14 @@
   }
   canvas.addEventListener("pointerdown", e => { S.drag = { x: e.clientX, y: e.clientY, th: S.theta, ph: S.phi }; S.moved = 0; canvas.setPointerCapture(e.pointerId); S.idleSince = performance.now(); });
   canvas.addEventListener("pointerup", e => {
-    const wasClick = S.drag && S.moved < 5; S.drag = null;
-    if (!wasClick) return;
+    const wasClick = S.drag && S.moved < 5; S.drag = null; if (!wasClick) return;
     const r = canvas.getBoundingClientRect(), i = pick(e.clientX - r.left, e.clientY - r.top);
     if (i >= 0) drillTo(i); else up();
   });
   canvas.addEventListener("pointermove", e => {
     S.idleSince = performance.now();
     if (S.drag) { S.moved = Math.max(S.moved, Math.abs(e.clientX - S.drag.x) + Math.abs(e.clientY - S.drag.y));
-      if (S.moved >= 5) { S.theta = S.drag.th - (e.clientX - S.drag.x) * 0.006; S.phi = Math.max(0.08, Math.min(1.45, S.drag.ph + (e.clientY - S.drag.y) * 0.005)); S.camTo = null; tip.hidden = true; } return; }
+      if (S.moved >= 5) { S.theta = S.drag.th - (e.clientX - S.drag.x) * 0.006; S.phi = Math.max(0.12, Math.min(1.45, S.drag.ph + (e.clientY - S.drag.y) * 0.005)); S.camTo = null; tip.hidden = true; } return; }
     if (!S.G) return;
     const r = canvas.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top, i = pick(mx, my);
     S.hover = i; canvas.style.cursor = i >= 0 ? "pointer" : "grab";
@@ -462,7 +494,7 @@
     if (e.target === search) return;
     if (e.key === "Escape") { if (!$("detail").hidden) { $("detail").hidden = true; return; } up(); }
     else if (e.key === "ArrowLeft") S.theta -= 0.12; else if (e.key === "ArrowRight") S.theta += 0.12;
-    else if (e.key === "ArrowUp") S.phi = Math.min(1.45, S.phi + 0.08); else if (e.key === "ArrowDown") S.phi = Math.max(0.08, S.phi - 0.08);
+    else if (e.key === "ArrowUp") S.phi = Math.min(1.45, S.phi + 0.08); else if (e.key === "ArrowDown") S.phi = Math.max(0.12, S.phi - 0.08);
     else if (e.key === "+" || e.key === "=") S.dist *= 0.9; else if (e.key === "-") S.dist *= 1.1;
     else if (e.key === "/") { e.preventDefault(); search.focus(); return; } else if (e.key === "?") { $("help").hidden = !$("help").hidden; return; } else return;
     S.idleSince = performance.now(); S.camTo = null;
@@ -477,9 +509,9 @@
   pillBtn.addEventListener("click", () => { S.showPillars = !S.showPillars; pillBtn.textContent = `Pillars: ${S.showPillars ? "on" : "off"}`; pillBtn.setAttribute("aria-pressed", S.showPillars); });
   $("full").addEventListener("click", () => { if (document.fullscreenElement) document.exitFullscreen(); else if (stage.requestFullscreen) stage.requestFullscreen(); });
   document.addEventListener("fullscreenchange", () => setTimeout(resize, 50));
-  $("reset").addEventListener("click", () => { S.theta = 0.9; setFocus({ kind: "gov", d: -1, b: -1, p: -1 }, true); S.t0 = performance.now(); S.grow = REDUCED ? 1 : 0; S.idleSince = 0; });
+  $("reset").addEventListener("click", () => { setFocus({ kind: "gov", d: -1, b: -1, p: -1 }, true); S.theta = -1.1; S.t0 = performance.now(); S.grow = REDUCED ? 1 : 0; S.idleSince = 0; });
 
-  // --- record the canvas to a WebM ------------------------------------------------------------
+  // --- record the canvas to a WebM ---------------------------------------------------------------------
   const recBtn = $("rec"), dl = $("dl");
   recBtn.addEventListener("click", () => {
     if (!canvas.captureStream || !window.MediaRecorder) { recBtn.textContent = "Recording not supported here"; recBtn.disabled = true; return; }

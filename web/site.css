@@ -858,3 +858,5 @@ footer {
 .org3d-detail a, .org3d-help a { color: #9fd0ff; }
 .org3d-detail button, .org3d-help button { position: absolute; right: .4rem; top: .3rem; background: none; border: 0; color: #a9adbf; font-size: 1.1rem; cursor: pointer; }
 @media (max-width: 760px) { .org3d-panel { width: auto; max-height: 45vh; } .org3d-nav { max-height: 20vh; } .org3d-crumbs { top: .4rem; max-width: 92vw; font-size: .74rem; } .org3d-detail, .org3d-help { left: .5rem; right: .5rem; max-width: none; } }
+.org3d-label.ground { text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; font-weight: 700; opacity: .85; }
+.org3d-label.ground.big { font-size: .8rem; }
