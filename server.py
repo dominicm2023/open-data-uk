@@ -1163,8 +1163,10 @@ def organogram_3d() -> Response:
     if orgchart.graph_json() is None:
         return HTMLResponse(pagerender.render_missing(None, what="page"), status_code=404,
                             headers={"Cache-Control": "no-store"})
-    return HTMLResponse(orgchart.render_3d(SITE_URL),
-                        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+    # Not cached: the page is 4 KB and names the script by content hash, so a
+    # new script must reach the next visitor at once — an hour-old copy of
+    # this page pins them to an hour-old city.
+    return HTMLResponse(orgchart.render_3d(SITE_URL), headers={"Cache-Control": "no-cache"})
 
 
 @app.get("/api/family/organograms/graph.json", summary="The organograms family as one graph",
