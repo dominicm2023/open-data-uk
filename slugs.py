@@ -83,6 +83,42 @@ def slug_for(key: str) -> str:
     return f"{split_key(key)[0]}/{short_id(key)}"
 
 
+def _short_id_until_9_sep_2026(key: str) -> str:
+    """The rule as it stood from 5 to 9 September 2026, kept verbatim.
+
+    It had no branch for a site path (an ONS or GOV.UK key), so those fell
+    through to the last-segment rule or to a bare digest. Those paths were
+    announced to the search engines on 8 and 9 September and crawled for a
+    week afterwards — 18,385 distinct GOV.UK paths in the seven days to
+    15 September — so every one of them must still land on its page.
+    """
+    _, rest = split_key(key)
+    if "://" not in rest and not any(ch in rest for ch in "?&%/"):
+        cand = rest
+    elif (m := _ARCGIS.search(rest)):
+        cand = m.group(1) + (f"_{m.group(2)}" if m.group(2) else "")
+    elif (m := _SOCRATA.search(rest)):
+        cand = m.group(1)
+    elif (m := _LASTSEG.search(rest)):
+        cand = urllib.parse.unquote(m.group(1))
+        if rest[m.end():].strip("/"):
+            cand = f"{cand}-{_digest(key)[:6]}"
+    else:
+        cand = None
+    if cand is None or not _PLAIN.match(cand):
+        cand = _digest(key)
+    return cand
+
+
+def legacy_slugs(key: str) -> list[str]:
+    """Every '<source>/<id>' this key was once addressed by, other than the
+    current one. A page's old addresses are redirected, never dropped: a
+    search engine that was told a path exists keeps asking for it."""
+    source = split_key(key)[0]
+    current = short_id(key)
+    return [f"{source}/{old}" for old in {_short_id_until_9_sep_2026(key)} if old != current]
+
+
 def dataset_path(key: str) -> str:
     """The one canonical path for a dataset, percent-encoded for a URL."""
     source, ident = slug_for(key).split("/", 1)

@@ -20,7 +20,7 @@ import re
 import sqlite3
 from pathlib import Path
 
-from slugs import slug_for
+from slugs import legacy_slugs, slug_for
 
 import numpy as np
 from sentence_transformers import SentenceTransformer
@@ -120,11 +120,28 @@ def build_slugs(conn: sqlite3.Connection) -> int:
             continue
         seen[slug] = key
     rows = [(s, k) for s, k in rows if s not in clashed]
+    # The addresses these keys had before the rule changed (9 September
+    # 2026). Each becomes a permanent redirect to the current path — unless
+    # it is now some other dataset's current path, or two keys once shared
+    # it (the clash the rule change fixed), in which case it stays a 404.
+    current = {s for s, _ in rows}
+    aliases: dict[str, str | None] = {}
+    for _, key in rows:
+        for old in legacy_slugs(key):
+            if old in current:
+                continue
+            aliases[old] = None if old in aliases else key
+    alias_rows = [(s, k) for s, k in aliases.items() if k is not None]
     conn.executescript(
         "DROP TABLE IF EXISTS slugs;"
-        "CREATE TABLE slugs (slug TEXT PRIMARY KEY, key TEXT NOT NULL UNIQUE);")
+        "CREATE TABLE slugs (slug TEXT PRIMARY KEY, key TEXT NOT NULL UNIQUE);"
+        "DROP TABLE IF EXISTS slug_aliases;"
+        "CREATE TABLE slug_aliases (slug TEXT PRIMARY KEY, key TEXT NOT NULL);")
     conn.executemany("INSERT INTO slugs (slug, key) VALUES (?, ?)", rows)
+    conn.executemany("INSERT INTO slug_aliases (slug, key) VALUES (?, ?)", alias_rows)
     conn.commit()
+    print(f"slugs: {len(rows):,} current paths, {len(alias_rows):,} former paths redirected, "
+          f"{sum(1 for v in aliases.values() if v is None):,} former paths ambiguous", flush=True)
     return len(rows)
 
 

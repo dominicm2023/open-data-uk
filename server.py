@@ -690,6 +690,27 @@ def _key_for_slug(slug: str) -> str | None:
         conn.close()
 
 
+def _key_for_former_slug(slug: str) -> str | None:
+    """A path a dataset was addressed by before its slug rule changed.
+
+    Built nightly beside the slugs table (embed_index.build_slugs). Found
+    here, the page is served by permanent redirect to its current path, so
+    an address once announced to a search engine never becomes a 404 while
+    the dataset is still in the index.
+    """
+    import sqlite3
+    from paths import connect as db_connect
+    conn = db_connect()
+    try:
+        try:
+            row = conn.execute("SELECT key FROM slug_aliases WHERE slug = ?", (slug,)).fetchone()
+        except sqlite3.OperationalError:          # an index built before the table existed
+            return None
+        return row[0] if row else None
+    finally:
+        conn.close()
+
+
 def _dataset_response(key: str) -> HTMLResponse | None:
     rec = _dataset_record(key)
     if rec is None:
@@ -722,6 +743,12 @@ def dataset_page(source: str, ident: str) -> Response:
     key = _key_for_slug(slug)
     resp = _dataset_response(key) if key else None
     if resp is None:
+        former = _key_for_former_slug(slug)
+        if former and _dataset_record(former) is not None:
+            # An address from before the slug rule changed on 9 September
+            # 2026: the search engines were told it existed, so it lands.
+            return RedirectResponse(SITE_URL + pagerender.dataset_path(former), status_code=301,
+                                    headers={"Cache-Control": "public, max-age=31536000"})
         return HTMLResponse(pagerender.render_missing(slug), status_code=404,
                             headers={"Cache-Control": "no-store"})
     return resp

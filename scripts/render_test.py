@@ -264,6 +264,21 @@ check("?" not in pagerender.dataset_path("a:b c") and pagerender.dataset_path("a
 check("noindex" in pagerender.render_missing("nope:nope"),
       "a 404 page is never offered for indexing")
 
+# --- addresses from before the rule changed ------------------------------
+# The site-path rule (a digest suffix on the last segment) arrived on 9 Sep
+# 2026; the paths announced before it must redirect, never 404.
+import slugs  # noqa: E402
+_GOVUK = "govuk_statistics:/government/statistics/uk-house-price-index-april-2020"
+_ONS = "ons:/peoplepopulationandcommunity/populationandmigration/datasets/adminbasedhouseholdestimates"
+check(pagerender.dataset_path(_GOVUK).startswith("/dataset/govuk_statistics/uk-house-price-index-april-2020-"),
+      "a GOV.UK release path reads as its last segment plus a digest")
+check(slugs.legacy_slugs(_GOVUK) == [f"govuk_statistics/{slugs._digest(_GOVUK)}"],
+      "and its former address was a bare 16-character digest")
+check(slugs.legacy_slugs(_ONS) == ["ons/adminbasedhouseholdestimates"],
+      "an ONS dataset's former address was the last segment alone")
+check(slugs.legacy_slugs("data_gov_uk:abc-123") == [] and slugs.legacy_slugs(_AGOL) == [],
+      "keys whose rule never changed have no former address")
+
 # --- the stylesheet ------------------------------------------------------
 # One file now, after three inline copies drifted apart. These pin the two
 # things that silently broke while they were separate.
