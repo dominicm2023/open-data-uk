@@ -47,7 +47,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from paths import DATA_DIR  # noqa: E402
+import registry as _registry  # noqa: E402  (snapshot_date: the date in a file's name)
 
 HERE = Path(__file__).resolve().parent
 STORE = DATA_DIR / "families"
@@ -339,6 +341,12 @@ def _validate(row: dict, schema: dict) -> str | None:
         return f"year out of range: {row['year']}"
     if "amount_abs_max" in v and row.get("amount_gbp") is not None and abs(row["amount_gbp"]) > v["amount_abs_max"]:
         return f"amount implausible: {row['amount_gbp']}"
+    # Any "<column>_range" the schema states, for the columns not named above.
+    for vkey, rng in v.items():
+        if vkey.endswith("_range") and isinstance(rng, list) and len(rng) == 2:
+            val = row.get(vkey[:-6])
+            if isinstance(val, (int, float)) and not (rng[0] <= val <= rng[1]):
+                return f"{vkey[:-6]} out of range: {val}"
     for name, typ in types.items():
         val = row.get(name)
         if val is None:
@@ -457,6 +465,16 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
     # sites among 51 bring banks, Perth's centres among points — keeps only
     # the rows whose cell in one column matches the mapping's pattern. The
     # column and pattern are the reviewer's, and the count skipped is said.
+    # A date the file is a snapshot of, when the schema says a column takes
+    # it from the file's name rather than a cell: an organogram has no date
+    # inside it, only in "2026-03-31 Organogram (Senior)".
+    file_date_col = schema.get("date_from_file")
+    file_date = _date(_registry.snapshot_date(f.get("name") or "", f["url"])) if file_date_col else None
+    # A layout may carry its own constants: the junior file of an organogram
+    # is the same mapping as the senior one, but 'level' differs. Paired by
+    # position with alt_columns.
+    alt_specs = [{k: str(v).strip() for k, v in a.items()} for a in spec.get("alt_columns", [])]
+    alt_consts = list(spec.get("alt_constants", []))
     flt = spec.get("filter")
     flt_idx = flt_re = None
     if flt:
@@ -506,6 +524,11 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
                 base["coords_source"] = "none"
         for k, v in spec.get("constants", {}).items():
             base[k] = v
+        for i, a in enumerate(alt_specs):
+            if a == cols and i < len(alt_consts):
+                base.update(alt_consts[i])
+        if file_date_col and base.get(file_date_col) in (None, "") and file_date:
+            base[file_date_col] = file_date
         # "2010/2011" in a year column is a reporting period, not a year.
         # Keep the first year and say so, rather than lose the row or guess.
         if "year" in types and isinstance(base.get("year"), str):

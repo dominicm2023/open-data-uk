@@ -19,7 +19,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ALLOWED = {"status", "reject", "table", "header_row", "columns", "constants", "unpivot",
-           "notes", "version", "reviewer", "reviewed_at", "grid", "alt_columns", "filter"}
+           "notes", "version", "reviewer", "reviewed_at", "grid", "alt_columns", "alt_constants", "filter"}
 EXTRA_COLS = {"easting", "northing"}
 
 

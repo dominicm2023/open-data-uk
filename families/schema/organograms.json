@@ -1,0 +1,156 @@
+{
+  "family": "organograms",
+  "label": "Organograms: posts, grades and pay",
+  "one_row_is": "one post (senior) or one group of posts at a grade under a senior post (junior) in a public body's organogram, as last published",
+  "columns": [
+    {
+      "name": "body",
+      "type": "text",
+      "required": true,
+      "meaning": "the public body whose organogram this is, as the index names the publisher"
+    },
+    {
+      "name": "level",
+      "type": "text",
+      "required": true,
+      "meaning": "'senior' (one row is one post, Senior Civil Service or equivalent) or 'junior' (one row is a number of posts at one grade reporting to one senior post)"
+    },
+    {
+      "name": "as_of",
+      "type": "date",
+      "required": false,
+      "meaning": "the date the organogram is a snapshot of, read from the file's name (central government reports at 31 March and 30 September)"
+    },
+    {
+      "name": "post_reference",
+      "type": "text",
+      "required": false,
+      "meaning": "the body's own reference for a senior post (Post Unique Reference); junior rows have none"
+    },
+    {
+      "name": "job_title",
+      "type": "text",
+      "required": true,
+      "meaning": "the post's title as published (a senior post's Job Title; a junior group's Generic Job Title); 'REDACTED' or 'N/D' is kept as published"
+    },
+    {
+      "name": "grade",
+      "type": "text",
+      "required": false,
+      "meaning": "the grade or equivalent as published (SCS1-4, G6, G7, SEO, HEO, EO, AO, AA, or the body's own scale)"
+    },
+    {
+      "name": "unit",
+      "type": "text",
+      "required": false,
+      "meaning": "the unit, directorate or team the post sits in, as published"
+    },
+    {
+      "name": "organisation",
+      "type": "text",
+      "required": false,
+      "meaning": "the organisation named in the file (an agency or arm's-length body may report under a parent department)"
+    },
+    {
+      "name": "parent_department",
+      "type": "text",
+      "required": false,
+      "meaning": "the parent department named in the file"
+    },
+    {
+      "name": "reports_to",
+      "type": "text",
+      "required": false,
+      "meaning": "the post_reference of the senior post this post or group reports to; 'XX' marks the head of the body"
+    },
+    {
+      "name": "pay_floor_gbp",
+      "type": "number",
+      "required": false,
+      "meaning": "the bottom of the pay band as published: a senior post's Actual Pay Floor (£5,000 bands), a junior grade's Payscale Minimum"
+    },
+    {
+      "name": "pay_ceiling_gbp",
+      "type": "number",
+      "required": false,
+      "meaning": "the top of the pay band as published: Actual Pay Ceiling, or Payscale Maximum"
+    },
+    {
+      "name": "pay_band",
+      "type": "text",
+      "required": false,
+      "meaning": "a pay band published as text where a body gives one ('£180,000 to £184,999') instead of a floor and ceiling"
+    },
+    {
+      "name": "fte",
+      "type": "number",
+      "required": false,
+      "meaning": "full-time equivalent: the senior post's FTE, or the junior group's Number of Posts in FTE"
+    },
+    {
+      "name": "salary_cost_of_reports_gbp",
+      "type": "number",
+      "required": false,
+      "meaning": "a senior post's Salary Cost of Reports as published: the total pay of the staff under it"
+    },
+    {
+      "name": "job_function",
+      "type": "text",
+      "required": false,
+      "meaning": "the senior post's Job/Team Function as published"
+    },
+    {
+      "name": "professional_group",
+      "type": "text",
+      "required": false,
+      "meaning": "the Professional/Occupational Group as published"
+    },
+    {
+      "name": "notes",
+      "type": "text",
+      "required": false,
+      "meaning": "the file's notes column, as published"
+    }
+  ],
+  "provenance": [
+    "publisher",
+    "dataset_key",
+    "source_url",
+    "source_sha256",
+    "source_table",
+    "source_row",
+    "licence_id",
+    "licence_url",
+    "licence_evidence_sha256",
+    "licence_evidence_kind",
+    "adapter_version"
+  ],
+  "validation": {
+    "pay_floor_gbp_range": [0, 2000000],
+    "pay_ceiling_gbp_range": [0, 2000000],
+    "fte_range": [0, 100000]
+  },
+  "date_from_file": "as_of",
+  "rules": [
+    "The table is posts, not people. The senior file names the holder of each post by statute; that column is not taken, nor are contact phone numbers or e-mail addresses. Whether names join the table is a separate decision (FAMILIES.md), not a consequence of the licence.",
+    "Central government files follow the Cabinet Office organogram standard: a senior file (one row per post) and a junior file (one row per grade under a senior post, with a number of posts). Both are mapped to this one shape; 'level' says which a row came from.",
+    "The newest senior and the newest junior file of a body are the family's source, taken by the date in the file's name; older snapshots stay findable in the index.",
+    "Pay is kept as published: senior pay in the £5,000 band the body reported, junior pay as the grade's scale. 'N/A' and 'N/D' become an empty cell, never zero.",
+    "Councils' senior-salary tables under the transparency code are mapped only where a person has matched their columns to this shape; a table that lists people rather than posts is mapped without the name columns."
+  ],
+  "headline": [
+    {
+      "column": "fte",
+      "agg": "sum",
+      "label": "full-time-equivalent posts covered",
+      "format": "integer"
+    },
+    {
+      "column": "level",
+      "agg": "share",
+      "match": "^senior",
+      "label": "of rows are individual senior posts",
+      "format": "percent"
+    }
+  ]
+}

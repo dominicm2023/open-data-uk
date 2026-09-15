@@ -1014,7 +1014,10 @@ def findings_page() -> HTMLResponse:
 
 # --- Dataset families: one table for a thing many bodies publish ---------------
 
-FAMILY_NAMES = {"recycling_centres", "air_quality_annual", "spend_over_500", "brownfield_land"}
+# One list, in familypage: a family added there is a page here, so a fifth
+# family is never a 404 while the hub already links to it (15 Sep 2026).
+import familypage  # noqa: E402
+FAMILY_NAMES = set(familypage.FAMILY_ORDER)
 
 
 @app.get("/combined", include_in_schema=False)

@@ -71,7 +71,58 @@ FAMILIES: dict[str, dict] = {
         # file of a dataset is fetched and mapped, not the newest one.
         "series": True, "max_files": 72,
     },
+    "organograms": {
+        "label": "Organograms: posts, grades and pay",
+        # Central government's "Organogram of Staff Roles & Salaries" (one
+        # dataset per body, a senior and a junior file per snapshot since
+        # 2010) and councils' senior-salary tables under the transparency
+        # code. Pay multiples and gender pay gaps are ratios, not posts.
+        "include": r"organogram|staff\s+roles?\s*(&|and)\s*salar|senior\s+(officer|staff|manager|management|employee)s?'?\s+(pay|salar|remuneration)|senior\s+(salar|pay)|salaries?\s+(over|above)\s+£?\s*\d",
+        "exclude": r"pay\s+multiple|gender\s+pay|pay\s+polic|pay\s+gap|trade\s+union|spend|expenditure|councillor|members?'?\s+allowance|allowances|payments?\b|policy\s+statement|chart\s+of\s+accounts|organisation\s+chart\s*$",
+        # A snapshot is two files, senior posts and junior posts. The newest
+        # of each is fetched (the registry picks them by the date in the
+        # file's name), never every snapshot: 80 files a body would be a
+        # decade of history the page does not yet show.
+        "roles": {"senior": r"senior", "junior": r"junior"},
+    },
 }
+
+_ISO = re.compile(r"(?<!\d)((?:19|20)\d{2})-(\d{2})-(\d{2})(?!\d)")
+_DMY_PATH = re.compile(r"/(\d{1,2})/(\d{1,2})/((?:19|20)\d{2})/")
+
+
+def snapshot_date(name: str, url: str) -> str | None:
+    """The date a file is a snapshot of, from its name or URL: an ISO date in
+    the name ('2026-03-31 Organogram (Senior)'), else the *last* ISO date in
+    the URL's file name (data.gov.uk prefixes the upload time: '2026-07-24T…Z-
+    2026-03-31-organogram-senior.csv'), else a d/m/yyyy path ('/30/9/2011/')."""
+    m = _ISO.search(name or "")
+    if m:
+        return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+    base = (url or "").split("?")[0].rsplit("/", 1)[-1]
+    found = _ISO.findall(base)
+    if found:
+        y, mo, d = found[-1]
+        return f"{y}-{mo}-{d}"
+    m = _DMY_PATH.search(url or "")
+    if m:
+        return f"{m.group(3)}-{int(m.group(2)):02d}-{int(m.group(1)):02d}"
+    return None
+
+
+def _newest_per_role(cands: list[dict], roles: dict[str, str]) -> list[dict]:
+    """For each role (a pattern on the file's name or URL), the newest
+    matching candidate by snapshot date; roles with no match are absent."""
+    picked = []
+    for role, pat in roles.items():
+        rx = re.compile(pat, re.I)
+        pool = [r for r in cands if rx.search((r["name"] or "") + " " + (r["url"] or "").rsplit("/", 1)[-1])]
+        if not pool:
+            continue
+        pool.sort(key=_rank)                                    # a .csv before a page, then
+        pool.sort(key=lambda r: snapshot_date(r["name"] or "", r["url"]) or "", reverse=True)  # newest first
+        picked.append({**pool[0], "role": role})
+    return picked
 
 # Preference order for the resources fetched per dataset. A dataset can list
 # dozens of files (a spend return has one a month), and on data.gov.uk a
@@ -162,10 +213,19 @@ def build(family: str) -> dict:
                             "formats": sorted({(r["format_norm"] or "?") for r in res})})
             continue
         cands.sort(key=_rank)
+        series = bool(spec.get("series"))
+        take = spec.get("max_files") if series else CANDIDATES
+        if spec.get("roles"):
+            # One file per role, the newest of each: they are fetched as a
+            # series (every candidate), so the build sees both. A dataset
+            # with no file matching any role is one file, the usual way.
+            picked = _newest_per_role(cands, spec["roles"])
+            if picked:
+                cands, series, take = picked, True, len(picked)
         best = cands[0]
         url, fmt = _resource_url(best["url"], best["format_norm"].upper())
         ranked = []
-        for r in cands[:(spec.get("max_files") if spec.get("series") else CANDIDATES)]:
+        for r in cands[:take]:
             u, f = _resource_url(r["url"], r["format_norm"].upper())
             ranked.append({"url": u, "name": r["name"] or "", "format": f})
             if f == "ESRI":
@@ -191,7 +251,7 @@ def build(family: str) -> dict:
             "index_harvested_at": d["harvested_at"],
             "resource": {"url": url, "name": best["name"] or "", "format": fmt},
             "candidates": ranked,
-            "series": bool(spec.get("series")),
+            "series": series,
             "other_resources": len(res),
         })
     conn.close()

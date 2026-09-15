@@ -90,8 +90,14 @@ not a licence — Transport for West Midlands, left for now).
 **Personal data is a separate decision from licence.** OGL excludes it.
 Senior-salary returns name people by statute; republishing those names in a
 combined table is a choice for Dominic, not a consequence of the licence.
-The first three families below contain no personal data. Salaries and
-organograms wait until that position is settled.
+The first four families contain no personal data. The organograms family
+(15 September 2026) resolves the question by scope: it is **posts, not
+people**. The name, contact phone and e-mail columns of a senior file are
+never mapped; the post's reference, title, grade, unit, pay band, FTE and
+the post it reports to are. That is everything an organisation chart needs
+and nothing that identifies a person beyond what the body's own file, linked
+on every row, already states. Adding names would be a one-line change to
+each mapping and a decision for Dominic, recorded here first.
 
 ## Politeness: fix before anything scales
 
@@ -187,6 +193,19 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 | air_quality_annual | 56 + 5 national networks + Defra's LAQM dashboard | 39 | 73,912 rows, ~346 bodies: 17 own files, 5 networks (1990-2026), and 337 authorities' latest Annual Status Report results via the dashboard |
 | brownfield_land | 176 sources / 129 authorities + MHCLG's platform | 62 | 53 own files (4,755 sites) + the platform for 258 more authorities (25,222 sites): 29,977 sites, 311 authorities |
 | spend_over_500 | 212 (every edition) | 76 | 68 sources, 4,259,913 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
+| organograms | 356 sources (339 a senior + junior pair; 15 Sep 2026) | 307 | 292 sources by the Cabinet Office standard, 162,568 rows, 249 bodies; 15 councils' own-shape tables await a person; 38 dead links, 11 refused on licence (CCRC "notspecified", MoD and TNA "Other (Public Domain)") |
+
+Fifth family, 15 September 2026: organograms. Central government's
+"Organogram of Staff Roles & Salaries" is one dataset per body with a senior
+and a junior file per snapshot since 2010 (up to 80 files), so the registry
+gained `roles`: a pattern per file role, and the newest match of each is
+fetched as a two-file series. The snapshot date is not inside the file, only
+in its name, so a schema may say `date_from_file` and the build reads it
+there (`registry.snapshot_date`). The junior file is the same mapping as the
+senior with one constant different, so a mapping may carry `alt_constants`
+paired with `alt_columns`. 292 of 307 extracted sources have the standard's
+headers exactly and were mapped by them; the 15 councils with their own
+shapes (Bristol, Leicester, Rushmoor, Stockport, TfGM…) wait for a person.
 
 Held in review, not published: Bradford's diffusion tubes (nothing in the
 file, title or description names the pollutant); Perth & Kinross (mixes

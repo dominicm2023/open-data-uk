@@ -58,7 +58,7 @@ def published_rows(family: str) -> list[dict]:
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
 
 
-FAMILY_ORDER = ["recycling_centres", "air_quality_annual", "spend_over_500", "brownfield_land"]
+FAMILY_ORDER = ["recycling_centres", "air_quality_annual", "spend_over_500", "brownfield_land", "organograms"]
 PREVIEW_ROWS = 8
 PREVIEW_COLS = 6
 
@@ -311,6 +311,29 @@ def _qa(family: str, s: dict, schema: dict, h: dict) -> list[tuple[str, str]]:
                    f"{n_coords:,} sites have coordinates and are on the map. Rows marked 'via MHCLG's planning data platform' "
                    "come from the national collection because the authority's own file was not available; the rest come "
                    "from the authorities' own registers."))
+    if family == "organograms":
+        hl = {t["column"]: t for t in (f.get("headline") or [])}
+        fte, sen = hl.get("fte"), hl.get("level")
+        if fte and fte.get("value") is not None:
+            qa.append(("How many posts does it cover?",
+                       f"{int(fte['value']):,} full-time-equivalent posts, adding each body's own figures: one per senior "
+                       f"post and the stated number of posts in each junior group. {total - fte['n']:,} rows give no FTE."))
+        if sen and sen.get("value") is not None:
+            qa.append(("Which rows are people and which are groups?",
+                       f"{sen['hits']:,} rows ({sen['value'] * 100:.0f}%) are individual senior posts, each with its grade, "
+                       f"pay band and the post it reports to. The other {sen['n'] - sen['hits']:,} are junior groups: a "
+                       "number of posts at one grade under one senior post, with that grade's pay scale."))
+        qa.append(("Who holds the posts?",
+                   "Not here. The senior files name the post-holders by statute, but this table is posts, not people: "
+                   "the name, phone and e-mail columns are not taken. The body's own file, linked on every row, has them."))
+        qa.append(("Can I draw the organisation chart?",
+                   "For the central government bodies, yes: reports_to carries the post_reference of the senior post above, "
+                   "and junior groups hang off the same references. 'XX' marks the head of the body. Councils' senior-salary "
+                   "tables have no reporting lines, so they list posts without a tree."))
+        qa.append(("How current is it?",
+                   "as_of is the snapshot date read from each file's name; central government reports at 31 March and "
+                   "30 September and the newest senior and junior files are taken. A body whose latest file is old is "
+                   "shown as old, not refreshed by us."))
     if family == "spend_over_500":
         am = f.get("amount") or {}
         if am.get("total"):
