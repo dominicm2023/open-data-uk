@@ -197,10 +197,13 @@ A living list. Add freely; move to "Done" with the commit that did it.
 - 15 Sep — the organisation chart, two ways. `/family/organograms/chart`:
   every body under its parent department, and one body's posts nested by
   reporting line as plain <details>. `/family/organograms/chart/3d`, "The
-  shape of the state": 12,856 senior posts as one WebGL figure (raw WebGL,
-  no library, nothing fetched from anywhere else) — departments as sectors,
-  bodies as slices, posts as radial trees, pay as height, staff beneath as
-  size; orbit, focus, full screen, 12-second WebM recording in the browser.
+  shape of the state": 13,871 senior posts as a neon city at night (raw
+  WebGL with instanced drawing, no library, nothing fetched from anywhere
+  else) — every post a building with lit windows, footprint by staff
+  beneath, height by pay band; departments as districts, bodies as blocks,
+  streets with traffic; open a body and its buildings re-form as an
+  organisation chart with the traffic running down the reporting lines.
+  Click to drill, trail, list, search, fly-through, WebM recording.
   "Other (Public Domain)" accepted at the licence gate (DM 2026-09-15).
 - 15 Sep — fifth family, organograms (posts, grades and pay): 356 datasets
   found, the newest senior and junior file of each body fetched as a pair,
