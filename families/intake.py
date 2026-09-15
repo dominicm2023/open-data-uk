@@ -54,6 +54,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from agent import USER_AGENT  # noqa: E402
 from paths import DATA_DIR  # noqa: E402
+from registry import snapshot_date  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 STORE = DATA_DIR / "families"
@@ -528,6 +529,18 @@ def process(c: sqlite3.Connection, job_id: str) -> None:
             if series and stem and stem in seen_items:
                 continue
             prev = c.execute("SELECT * FROM files WHERE job_id=? AND url=?", (job_id, cand["url"])).fetchone()
+            # A snapshot more than a year old does not change: once it is
+            # extracted it is kept without another request, so a series of
+            # thirty snapshots costs the host one fetch each, not one a night.
+            snap = snapshot_date(cand.get("name") or "", cand["url"])
+            if (series and prev and prev["extraction_sha"] and (STORE / "tables" / prev["extraction_sha"]).is_file()
+                    and snap and snap < (datetime.now(timezone.utc).date() - __import__("datetime").timedelta(days=400)).isoformat()):
+                got.append((cand, prev["blob_sha"], prev["extraction_sha"], {}, 0, "historic snapshot, kept"))
+                if item:
+                    seen_items.add(item.group(0))
+                if stem:
+                    seen_items.add(stem)
+                continue
             probe = dict(job)
             if prev:                      # let the conditional fetch see this file's own state
                 probe.update(resource_url=cand["url"], blob_sha=prev["blob_sha"], extraction_sha=prev["extraction_sha"],

@@ -860,3 +860,7 @@ footer {
 @media (max-width: 760px) { .org3d-panel { width: auto; max-height: 45vh; } .org3d-nav { max-height: 20vh; } .org3d-crumbs { top: .4rem; max-width: 92vw; font-size: .74rem; } .org3d-detail, .org3d-help { left: .5rem; right: .5rem; max-width: none; } }
 .org3d-label.ground { text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; font-weight: 700; opacity: .85; }
 .org3d-label.ground.big { font-size: .8rem; }
+.org3d-when { display: flex; align-items: center; gap: .5rem; margin: .5rem 0 .3rem; font-size: .76rem; color: #c7cadb; }
+.org3d-when button { font: inherit; color: #eef; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); border-radius: 6px; padding: .2rem .5rem; cursor: pointer; }
+.org3d-when input[type=range] { flex: 1; min-width: 90px; accent-color: #9fd0ff; }
+.org3d-when span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }

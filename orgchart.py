@@ -67,11 +67,11 @@ def trees_from_rows(rows: list[dict]) -> list[dict]:
     is a root: the head of the body, or a post whose line is not stated —
     the chart says which.
     """
-    by_ds: dict[str, list[dict]] = collections.defaultdict(list)
+    by_ds: dict[tuple, list[dict]] = collections.defaultdict(list)
     for r in rows:
-        by_ds[r.get("dataset_key") or ""].append(r)
+        by_ds[(r.get("dataset_key") or "", r.get("as_of") or "")].append(r)
     out = []
-    for key, rs in by_ds.items():
+    for (key, _snap), rs in by_ds.items():
         seniors = [r for r in rs if (r.get("level") or "").lower() == "senior"]
         juniors = [r for r in rs if (r.get("level") or "").lower() != "senior"]
         nodes: dict[str, dict] = {}
@@ -262,6 +262,11 @@ def render_chart(site_url: str, body: str | None) -> str | None:
         if not rows:
             return None
         trees = trees_from_rows(rows)
+        newest_of = {}
+        for t in trees:
+            newest_of[t["dataset_key"]] = max(newest_of.get(t["dataset_key"], ""), t["as_of"])
+        n_all = len(trees)
+        trees = [t for t in trees if t["as_of"] == newest_of[t["dataset_key"]]]
         crumb_html, crumb_ld = breadcrumbs(
             [("Home", "/"), ("Combined data", "/combined"), ("Organograms", "/family/organograms"),
              ("Organisation chart", "/family/organograms/chart"), (body, None)], site_url)
@@ -292,6 +297,7 @@ def render_chart(site_url: str, body: str | None) -> str | None:
               f'<a href="/api/family/organograms.csv?body={esc(body)}">Download this body\'s rows (CSV)</a> '
               f'<a href="/family/organograms">The family table</a></p>'
             + "".join(parts)
+            + (f'<p class="note">{n_all - len(trees)} earlier snapshots of this body are in the table too (the 3D view can scrub through them); this page shows the newest.</p>' if n_all > len(trees) else "")
             + '<p class="note">Open a post to see the posts and groups beneath it. Pay is the band the body published: '
               'senior posts in £5,000 bands, junior groups as the grade\'s scale. FTE is the body\'s own figure.</p>')
         head_html = simple_head(title, desc, f"/family/organograms/chart?body={esc(body)}", site_url,
@@ -351,7 +357,7 @@ def _nice(iso: str) -> str:
 
 # --- the whole of government as one graph, for the 3D view ----------------------
 
-def graph_from_rows(rows: list[dict]) -> dict:
+def graph_from_rows(rows: list[dict], at: str | None = None) -> dict:
     """Every body's tree, flattened into parallel arrays the WebGL page can
     upload straight to the GPU: for each senior post its body, its parent's
     index (or -1), title, grade, pay floor, FTE, the FTE and senior posts
@@ -364,12 +370,13 @@ def graph_from_rows(rows: list[dict]) -> dict:
         by_body[r.get("body") or ""].append(r)
     depts: dict[str, dict] = {}
     bodies: list[dict] = []
-    cols = {k: [] for k in ("body", "parent", "title", "grade", "pay", "fte", "below_fte", "below_senior", "junior_fte")}
+    cols = {k: [] for k in ("body", "parent", "ref", "title", "grade", "pay", "fte", "below_fte", "below_senior", "junior_fte")}
 
     def add(node: dict, bi: int, parent: int) -> None:
         i = len(cols["title"])
         cols["body"].append(bi)
         cols["parent"].append(parent)
+        cols["ref"].append(node["ref"] or "")
         cols["title"].append((node["title"] or "")[:90])
         cols["grade"].append(node["grade"] or "")
         lo = node.get("_pay_floor")
@@ -384,6 +391,9 @@ def graph_from_rows(rows: list[dict]) -> dict:
     newest: list[tuple[str, list[dict], dict]] = []
     for name in sorted(by_body):
         trees = trees_from_rows(by_body[name])
+        if at:
+            # the snapshot in force at that date: the newest one on or before it
+            trees = [t for t in trees if t["as_of"] and t["as_of"] <= at]
         if not trees:
             continue
         # The newest snapshot — every dataset that carries it. The Ministry
@@ -423,12 +433,12 @@ def graph_from_rows(rows: list[dict]) -> dict:
             add(n, bi, -1)
     return {"departments": [{"name": d["name"], "bodies": d["bodies"]} for d in sorted(depts.values(), key=lambda d: d["i"])],
             "bodies": bodies, "nodes": cols,
-            "as_of": max((b["as_of"] for b in bodies), default=""),
+            "as_of": max((b["as_of"] for b in bodies), default=""), "at": at,
             "note": "Posts, not people. Pay is the floor of the published band; FTE figures are the bodies' own."}
 
 
-@functools.lru_cache(maxsize=2)
-def _graph_cached(stamp: float) -> str:
+@functools.lru_cache(maxsize=48)
+def _graph_cached(stamp: float, at: str | None = None) -> str:
     import json
     db = _db()
     conn = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
@@ -440,14 +450,40 @@ def _graph_cached(stamp: float) -> str:
                                               '"dataset_key", "source_url" FROM rows')]
     finally:
         conn.close()
-    return json.dumps(graph_from_rows(rows), ensure_ascii=False, separators=(",", ":"))
+    return json.dumps(graph_from_rows(rows, at), ensure_ascii=False, separators=(",", ":"))
 
 
-def graph_json() -> str | None:
+def graph_json(at: str | None = None) -> str | None:
     db = _db()
     if not db.exists():
         return None
-    return _graph_cached(db.stat().st_mtime)
+    return _graph_cached(db.stat().st_mtime, at or None)
+
+
+@functools.lru_cache(maxsize=2)
+def _timeline_cached(stamp: float) -> str:
+    """Every snapshot date the family holds, with what stood at it: the
+    scrubber's ticks. A date carried by fewer than three bodies is a
+    body's own odd reporting day, not a government-wide snapshot."""
+    import json
+    db = _db()
+    conn = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
+    try:
+        rows = conn.execute("SELECT as_of, COUNT(DISTINCT body), COUNT(*), SUM(fte) FROM rows "
+                            "WHERE level = ? AND as_of IS NOT NULL AND as_of != ? GROUP BY as_of ORDER BY as_of",
+                            ("senior", "")).fetchall()
+    finally:
+        conn.close()
+    dates = [{"date": d, "bodies": b, "senior": n, "fte": round(f or 0)} for d, b, n, f in rows if b >= 3]
+    return json.dumps({"dates": dates, "note": "Senior posts only for earlier snapshots; junior groups are held for the newest."},
+                      ensure_ascii=False, separators=(",", ":"))
+
+
+def timeline_json() -> str | None:
+    db = _db()
+    if not db.exists():
+        return None
+    return _timeline_cached(db.stat().st_mtime)
 
 
 def render_3d(site_url: str) -> str:
@@ -484,6 +520,8 @@ def render_3d(site_url: str) -> str:
         '<a id="dl" hidden download="shape-of-the-state.webm">Save video</a> '
         '<button id="reset" type="button">Start again</button> '
         '<button id="helpbtn" type="button" aria-label="Help">?</button></p>'
+        '<div id="when-wrap" class="org3d-when" hidden><button id="play" type="button" aria-label="Play through the years">▶</button>'
+        '<input id="when" type="range" min="0" max="0" value="0" aria-label="Snapshot date"><span id="whenlabel"></span></div>'
         '<p class="org3d-foot"><a href="/family/organograms/chart">Chart as a list</a> · <a href="/family/organograms">The table</a> '
         '· <span id="asof"></span></p>'
         '</section>'
@@ -495,6 +533,7 @@ def render_3d(site_url: str) -> str:
         '<li><b>Click empty space</b>, press <b>Esc</b>, or use the trail at the top to go back up. The browser&#39;s back button works too.</li>'
         '<li><b>Drag</b> to turn, <b>wheel</b> or <b>+</b>/<b>−</b> to zoom right down into the streets, arrow keys to turn and tilt. <b>F</b> or Fly-through glides you down and round; Record captures that to a video.</li>'
         '<li><b>/</b> jumps to search: any body or post title.</li>'
+        '<li>The slider at the foot of the panel scrubs through every snapshot since 2010 (<b>[</b> and <b>]</b> step it, ▶ plays): buildings that stood then keep their place, new ones rise, gone ones vanish. Earlier snapshots hold senior posts only.</li>'
         '<li>Height is the post&#39;s pay band, size is the staff beneath it, colour is the department. Posts, not people: no names are shown.</li></ul></aside>'
         '<p id="nogl" class="org3d-nogl" hidden>This view needs WebGL, which your browser has turned off. '
         '<a href="/family/organograms/chart">The chart as a list</a> has every post.</p>'

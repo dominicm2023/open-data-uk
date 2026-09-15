@@ -1173,9 +1173,22 @@ def organogram_3d() -> Response:
          description="Every senior post in the organograms family as parallel arrays — body, parent index, "
                      "title, grade, pay floor, FTE, FTE and senior posts beneath, junior FTE — with the bodies "
                      "and the departments they name. What the 3D chart draws. Posts, not people.")
-def organogram_graph() -> Response:
+def organogram_graph(at: str | None = Query(default=None, pattern=r"^\d{4}-\d{2}-\d{2}$",
+                                            description="the snapshot in force on this date (YYYY-MM-DD); default the newest")) -> Response:
     import orgchart
-    js = orgchart.graph_json()
+    js = orgchart.graph_json(at)
+    if js is None:
+        raise HTTPException(status_code=404, detail="Unknown family")
+    return Response(js, media_type="application/json; charset=utf-8",
+                    headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
+@app.get("/api/family/organograms/timeline.json", summary="The snapshot dates the organograms family holds",
+         description="Every date a government-wide organogram snapshot exists for, with how many bodies, senior "
+                     "posts and FTE stood at it. What the 3D chart's time scrubber moves along.")
+def organogram_timeline() -> Response:
+    import orgchart
+    js = orgchart.timeline_json()
     if js is None:
         raise HTTPException(status_code=404, detail="Unknown family")
     return Response(js, media_type="application/json; charset=utf-8",

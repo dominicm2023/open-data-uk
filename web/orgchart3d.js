@@ -241,6 +241,7 @@
 
   // --- build the static parts --------------------------------------------------------
   function build(G) {
+    const rebuilding = !!S.G, prev = rebuilding ? identityMap() : null, focusNames = rebuilding ? namesOf(S.focus) : null;
     S.G = G; const N = G.nodes, n = N.title.length; S.n = n; S.N = N; S.B = G.bodies; S.D = G.departments;
     S.deptFte = G.departments.map(d => d.bodies.reduce((s, bi) => s + (G.bodies[bi].fte || 0), 0));
     S.order = G.departments.map((_, i) => i).sort((a, b) => S.deptFte[b] - S.deptFte[a]);
@@ -305,6 +306,19 @@
     for (let k = 0; k < TN; k++) { S.traffic.ph[k] = Math.random(); S.traffic.sp[k] = 0.05 + Math.random() * 0.12; }
     $("sub").textContent = `${n.toLocaleString()} senior posts in ${G.bodies.length} bodies under ${G.departments.length} departments, ${fmt(S.deptFte.reduce((a, b) => a + b, 0))} staff (FTE) beneath them.`;
     $("asof").textContent = G.as_of ? `newest snapshot ${G.as_of}` : "";
+    if (rebuilding) {
+      // the same date's posts keep their place; a post new at this date rises from the ground
+      S.focus = resolveFocus(focusNames);
+      layout(S.focus);
+      for (let i = 0; i < n; i++) {
+        const was = prev.get(identity(i));
+        if (was) { S.from[i * 3] = was[0]; S.from[i * 3 + 1] = was[1]; S.from[i * 3 + 2] = was[2]; S.fpFrom[i * 2] = was[3]; S.fpFrom[i * 2 + 1] = was[4]; }
+        else { S.from[i * 3] = S.to[i * 3]; S.from[i * 3 + 1] = S.to[i * 3 + 1]; S.from[i * 3 + 2] = 0; S.fpFrom[i * 2] = S.fpTo[i * 2]; S.fpFrom[i * 2 + 1] = S.fpTo[i * 2 + 1]; }
+        S.pos[i * 3] = S.from[i * 3]; S.pos[i * 3 + 1] = S.from[i * 3 + 1]; S.pos[i * 3 + 2] = S.from[i * 3 + 2]; S.fp[i * 2] = S.fpFrom[i * 2]; S.fp[i * 2 + 1] = S.fpFrom[i * 2 + 1];
+      }
+      S.morph = REDUCED ? 1 : 0; S.morphT0 = performance.now(); applyAlpha(); uploadAll(); renderPanel(); frameFocus(false, 1400, 0);
+      return;
+    }
     layout(S.focus);
     for (let i = 0; i < n * 3; i++) S.pos[i] = S.to[i];
     for (let i = 0; i < n * 2; i++) S.fp[i] = S.fpTo[i];
@@ -320,6 +334,48 @@
     renderPanel();
     // arrival from the sky: a long slow descent to the three-quarter view
     frameFocus(false, 4200, 900);
+  }
+
+  // --- identity across dates ---------------------------------------------------------------
+  const identity = i => S.B[S.N.body[i]].name + "|" + (S.N.ref ? S.N.ref[i] : "") + "|" + (S.N.ref && S.N.ref[i] ? "" : S.N.title[i]);
+  function identityMap() { const m = new Map(); for (let i = 0; i < S.n; i++) m.set(identity(i), [S.pos[i * 3], S.pos[i * 3 + 1], S.pos[i * 3 + 2], S.fp[i * 2], S.fp[i * 2 + 1]]); return m; }
+  function namesOf(f) { return { kind: f.kind, d: f.d >= 0 ? S.D[f.d].name : null, b: f.b >= 0 ? S.B[f.b].name : null, p: f.p >= 0 ? identity(f.p) : null }; }
+  function resolveFocus(nm) {
+    const gov = { kind: "gov", d: -1, b: -1, p: -1 }; if (!nm || nm.kind === "gov") return gov;
+    const d = S.D.findIndex(x => x.name === nm.d); if (d < 0) return gov;
+    if (nm.kind === "dept") return { kind: "dept", d, b: -1, p: -1 };
+    const b = S.B.findIndex(x => x.name === nm.b); if (b < 0) return { kind: "dept", d, b: -1, p: -1 };
+    if (nm.kind === "body") return { kind: "body", d, b, p: -1 };
+    for (let i = 0; i < S.n; i++) if (S.N.body[i] === b && identity(i) === nm.p && S.kids[i].length) return { kind: "post", d, b, p: i };
+    return { kind: "body", d, b, p: -1 };
+  }
+  // the scrubber: every government-wide snapshot date the family holds
+  const TL = { dates: [], at: null, playing: false, timer: null, loading: false, want: null };
+  function showDate(k, andLoad) {
+    const d = TL.dates[k]; if (!d) return;
+    $("whenlabel").textContent = `${niceDate(d.date)} · ${d.senior.toLocaleString()} senior posts · ${(d.fte / 1e6).toFixed(2)}m FTE · ${d.bodies} bodies`;
+    $("when").value = k;
+    if (andLoad) loadDate(d.date);
+  }
+  const niceDate = iso => { const dt = new Date(iso + "T00:00:00Z"); return dt.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }); };
+  function loadDate(date) {
+    const last = TL.dates[TL.dates.length - 1]; const at = (last && date === last.date) ? null : date;
+    if (TL.loading) { TL.want = at; return; }
+    TL.loading = true; TL.at = at;
+    fetch("/api/family/organograms/graph.json" + (at ? "?at=" + at : "")).then(r => r.json()).then(G => { build(G); })
+      .catch(() => {}).finally(() => { TL.loading = false; if (TL.want !== undefined && TL.want !== null && TL.want !== TL.at) { const w = TL.want; TL.want = null; loadDate(w); } else TL.want = null; });
+  }
+  function setupTimeline(t) {
+    TL.dates = (t.dates || []).filter(d => d.bodies >= 3); if (TL.dates.length < 2) return;
+    const wrap = $("when-wrap"), rng = $("when"); wrap.hidden = false; rng.min = 0; rng.max = TL.dates.length - 1; rng.value = TL.dates.length - 1;
+    showDate(TL.dates.length - 1, false);
+    rng.addEventListener("input", () => showDate(+rng.value, true));
+    $("play").addEventListener("click", () => {
+      TL.playing = !TL.playing; $("play").textContent = TL.playing ? "❚❚" : "▶";
+      if (TL.playing) { if (+rng.value >= TL.dates.length - 1) rng.value = 0; TL.timer = setInterval(() => { const k = +rng.value + 1; if (k >= TL.dates.length) { clearInterval(TL.timer); TL.playing = false; $("play").textContent = "▶"; return; } showDate(k, true); }, 1500); }
+      else clearInterval(TL.timer);
+    });
+    document.addEventListener("keydown", e => { if (e.target === search) return; if (e.key === "[" || e.key === "]") { const k = Math.max(0, Math.min(TL.dates.length - 1, +rng.value + (e.key === "]" ? 1 : -1))); showDate(k, true); } });
   }
 
   // --- layouts ---------------------------------------------------------------------------
@@ -829,6 +885,7 @@
   });
 
   fetch("/api/family/organograms/graph.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(G => { build(G); requestAnimationFrame(draw); })
+    .then(G => { build(G); requestAnimationFrame(draw); return fetch("/api/family/organograms/timeline.json").then(r => r.ok ? r.json() : null); })
+    .then(t => { if (t) setupTimeline(t); })
     .catch(err => { $("sub").textContent = "The graph could not be loaded (" + err.message + "). The chart as a list has every post."; });
 })();

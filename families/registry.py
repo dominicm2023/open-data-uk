@@ -84,6 +84,11 @@ FAMILIES: dict[str, dict] = {
         # file's name), never every snapshot: 80 files a body would be a
         # decade of history the page does not yet show.
         "roles": {"senior": r"senior", "junior": r"junior"},
+        # The senior file of every snapshot is taken too (one per date), so
+        # the city can be scrubbed through time; the junior file only for the
+        # newest. Historic files are fetched once (intake keeps them without
+        # asking again), so the series costs one long night, not every night.
+        "history": ["senior"],
     },
 }
 
@@ -110,9 +115,10 @@ def snapshot_date(name: str, url: str) -> str | None:
     return None
 
 
-def _newest_per_role(cands: list[dict], roles: dict[str, str]) -> list[dict]:
+def _newest_per_role(cands: list[dict], roles: dict[str, str], history: list[str] = ()) -> list[dict]:
     """For each role (a pattern on the file's name or URL), the newest
-    matching candidate by snapshot date; roles with no match are absent."""
+    matching candidate by snapshot date; for a role in `history`, one
+    candidate per snapshot date, newest first. Roles with no match are absent."""
     picked = []
     for role, pat in roles.items():
         rx = re.compile(pat, re.I)
@@ -121,7 +127,16 @@ def _newest_per_role(cands: list[dict], roles: dict[str, str]) -> list[dict]:
             continue
         pool.sort(key=_rank)                                    # a .csv before a page, then
         pool.sort(key=lambda r: snapshot_date(r["name"] or "", r["url"]) or "", reverse=True)  # newest first
-        picked.append({**pool[0], "role": role})
+        if role in history:
+            seen = set()
+            for r in pool:
+                d = snapshot_date(r["name"] or "", r["url"]) or r["url"]
+                if d in seen:
+                    continue                                  # the same snapshot listed twice (a legacy and a current URL)
+                seen.add(d)
+                picked.append({**r, "role": role})
+        else:
+            picked.append({**pool[0], "role": role})
     return picked
 
 # Preference order for the resources fetched per dataset. A dataset can list
@@ -219,7 +234,7 @@ def build(family: str) -> dict:
             # One file per role, the newest of each: they are fetched as a
             # series (every candidate), so the build sees both. A dataset
             # with no file matching any role is one file, the usual way.
-            picked = _newest_per_role(cands, spec["roles"])
+            picked = _newest_per_role(cands, spec["roles"], spec.get("history", ()))
             if picked:
                 cands, series, take = picked, True, len(picked)
         best = cands[0]
