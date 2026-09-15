@@ -270,8 +270,8 @@
     if (!k) return; cx /= k; cy /= k; cz /= k;
     let r = 0; for (let i = 0; i < S.n; i++) if (S.vis[i]) r = Math.max(r, Math.hypot(S.to[i * 3] - cx, S.to[i * 3 + 1] - cy));
     const dist = Math.max(0.9, r * 2.35 + 0.6), phi = S.focus.kind === "gov" ? 0.72 : 0.62;
-    S.camTo = { target: [cx, cy, Math.min(cz, 0.25)], dist, phi };
-    if (instant) { S.target = S.camTo.target.slice(); S.dist = dist; S.phi = phi; S.camTo = null; }
+    S.camTo = { target: [cx, cy, Math.min(cz, 0.25)], dist, phi, from: { target: S.target.slice(), dist: S.dist, phi: S.phi }, t0: performance.now() };
+    if (instant || REDUCED) { S.target = S.camTo.target.slice(); S.dist = dist; S.phi = phi; S.camTo = null; }
   }
 
   // --- the side panel: trail, list, search ---------------------------------------------
@@ -362,10 +362,10 @@
       for (let i = 0; i < S.n * 3; i++) S.pos[i] = S.from[i] + (S.to[i] - S.from[i]) * e;
       uploadAll();
     }
-    if (S.camTo) { const c = S.camTo, k = 1 - Math.pow(0.02, dt);   // exponential ease, frame-rate independent
-      for (let j = 0; j < 3; j++) S.target[j] += (c.target[j] - S.target[j]) * k;
-      S.dist += (c.dist - S.dist) * k; S.phi += (c.phi - S.phi) * k;
-      if (Math.abs(S.dist - c.dist) < 0.003 && Math.hypot(S.target[0] - c.target[0], S.target[1] - c.target[1]) < 0.003) S.camTo = null; }
+    if (S.camTo) { const c = S.camTo, e = ease(Math.min(1, (now - c.t0) / 1100));   // time-based: the same flight at any frame rate
+      for (let j = 0; j < 3; j++) S.target[j] = c.from.target[j] + (c.target[j] - c.from.target[j]) * e;
+      S.dist = c.from.dist + (c.dist - c.from.dist) * e; S.phi = c.from.phi + (c.phi - c.from.phi) * e;
+      if (e >= 1) S.camTo = null; }
     const idle = (now - S.idleSince) > 6000;
     if (S.orbit && !S.drag && S.focus.kind === "gov" && idle) S.theta += dt * 0.1;
     const mvp = camera();
@@ -409,7 +409,7 @@
         out.push({ text: B[bi].name, i: r, hue: S.hue[f.d], f: { kind: "body", d: f.d, b: bi, p: -1 }, big: B[bi].fte > S.deptFte[f.d] * 0.1 }); });
     } else {
       const list = []; for (let i = 0; i < S.n; i++) if (S.vis[i]) list.push(i);
-      list.sort((a, b) => N.below_fte[b] - N.below_fte[a]).slice(0, 34).forEach(i => out.push({ text: N.title[i] || "(untitled post)", i, hue: S.hue[f.d], f: S.kids[i].length ? { kind: "post", d: f.d, b: f.b, p: i } : null, big: N.below_fte[i] > 200 }));
+      list.sort((a, b) => N.below_fte[b] - N.below_fte[a]).slice(0, 26).forEach(i => out.push({ text: N.title[i] || "(untitled post)", i, hue: S.hue[f.d], f: S.kids[i].length ? { kind: "post", d: f.d, b: f.b, p: i } : null, big: N.below_fte[i] > 200 }));
     }
     return out;
   }
@@ -424,7 +424,7 @@
       if (l.i != null) { px = S.screen[l.i * 2]; py = S.screen[l.i * 2 + 1] - 12; }
       else { const cw = m[3] * l.x + m[7] * l.y + m[11] * l.z + m[15]; if (cw <= 0.001) { l.el.style.opacity = 0; continue; }
         px = ((m[0] * l.x + m[4] * l.y + m[8] * l.z + m[12]) / cw * 0.5 + 0.5) * W; py = (0.5 - (m[1] * l.x + m[5] * l.y + m[9] * l.z + m[13]) / cw * 0.5) * Hh; }
-      if (px < -50 || py < -20 || px > W + 50 || py > Hh + 20 || placed.some(([qx, qy]) => Math.abs(qx - px) < 140 && Math.abs(qy - py) < 15)) { l.el.style.opacity = 0; continue; }
+      if (px < -50 || py < -20 || px > W + 50 || py > Hh + 20 || placed.some(([qx, qy]) => Math.abs(qx - px) < 200 && Math.abs(qy - py) < 17)) { l.el.style.opacity = 0; continue; }
       placed.push([px, py]); l.el.style.opacity = Math.max(0, (S.grow - 0.4) * 1.7) * (S.morph < 0.6 ? S.morph : 1);
       l.el.style.transform = `translate(${px}px, ${py}px)`;
     }
