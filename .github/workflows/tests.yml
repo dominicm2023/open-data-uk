@@ -47,6 +47,12 @@ jobs:
       # from inside pandas, so no module may take a standard-library name.
       - name: Module names
         run: python scripts/shadow_test.py
+      # The server must import with no data behind it. A module-level
+      # reference to a lazily imported module crash-looped every worker and
+      # took the site down for five minutes on 15 Sep 2026; this catches
+      # that class of break before the file reaches the box.
+      - name: Server imports
+        run: DATA_DIR=$RUNNER_TEMP/empty python -c "import server"
 
   live:
     # The unit tests cover rendering with invented records; this covers real
