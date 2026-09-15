@@ -353,7 +353,8 @@
   const TL = { dates: [], at: null, playing: false, timer: null, loading: false, want: null };
   function showDate(k, andLoad) {
     const d = TL.dates[k]; if (!d) return;
-    $("whenlabel").textContent = `${niceDate(d.date)} · ${d.senior.toLocaleString()} senior posts · ${(d.fte / 1e6).toFixed(2)}m FTE · ${d.bodies} bodies`;
+    const last = k === TL.dates.length - 1;
+    $("whenlabel").textContent = last ? "Newest snapshot of every body" : `As it stood on ${niceDate(d.date)}`;
     $("when").value = k;
     if (andLoad) loadDate(d.date);
   }
