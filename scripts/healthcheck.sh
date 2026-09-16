@@ -29,15 +29,35 @@ ts() { date -Is; }
 fail=0
 say() { echo "$(ts) $*"; }
 
+# curl prints 000 itself when nothing answers; the fallback only covers curl
+# not running at all (an earlier version appended a second 000 to the first).
+probe() { curl -s -o "${1:-/dev/null}" -w "%{http_code}" --max-time 25 \
+          "$BASE/api/search?q=health+check&k=1" 2>/dev/null || true; }
+
 # 1. Does it actually answer a search?
-code=$(curl -s -o /tmp/hc_body -w "%{http_code}" --max-time 25 \
-       "$BASE/api/search?q=health+check&k=1" || echo 000)
+code=$(probe /tmp/hc_body); code="${code:-000}"
+if [ "$code" != "200" ]; then
+  # A deploy restarts the service; its workers take ~15s to load the model.
+  # If the unit came up within the last two minutes this is that, not a
+  # wedged worker: wait for it rather than restart it a second time, which
+  # only doubles the blip (15 Sep: two amber checks, both deploys).
+  up_since=$(systemctl show -p ActiveEnterTimestampMonotonic --value "$SERVICE" 2>/dev/null || echo 0)
+  now_mono=$(awk '{printf "%d", $1 * 1000000}' /proc/uptime)
+  age=$(( (now_mono - ${up_since:-0}) / 1000000 ))
+  if [ "$age" -ge 0 ] && [ "$age" -lt 120 ]; then
+    for _ in 1 2 3 4 5 6; do
+      sleep 10
+      code=$(probe); code="${code:-000}"
+      [ "$code" = "200" ] && break
+    done
+    [ "$code" = "200" ] && say "ok  http=200 after a restart ${age}s earlier (waited, did not restart)"
+  fi
+fi
 if [ "$code" != "200" ]; then
   say "FAIL http search returned $code — restarting $SERVICE once"
   systemctl --user restart "$SERVICE" 2>/dev/null || sudo systemctl restart "$SERVICE"
   sleep 45
-  code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 25 \
-         "$BASE/api/search?q=health+check&k=1" || echo 000)
+  code=$(probe); code="${code:-000}"
   if [ "$code" = "200" ]; then
     say "RECOVERED after restart"
   else

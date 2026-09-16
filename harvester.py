@@ -447,12 +447,25 @@ def harvest_dcat(src: dict, conn: sqlite3.Connection) -> None:
     session.headers["User-Agent"] = USER_AGENT
     started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     print(f"[{src['id']}] harvesting DCAT feed {src['api']} ...", flush=True)
-    try:
-        resp = session.get(src["api"], timeout=120)
-        resp.raise_for_status()
-        datasets = resp.json().get("dataset") or []
-    except Exception as exc:  # noqa: BLE001
-        print(f"[{src['id']}] feed failed: {exc}", flush=True)
+    # One document of 10+ MB from an ArcGIS hub is sometimes cut off mid-stream
+    # (ONS geography, 15 Sep 2026: "Expecting ',' delimiter" 13.5 MB in) and
+    # whole the next night. Two more tries, a pause apart, before it is a failure.
+    last_exc: Exception | None = None
+    datasets: list = []
+    for attempt in range(3):
+        if attempt:
+            time.sleep(30 * attempt)
+        try:
+            resp = session.get(src["api"], timeout=120)
+            resp.raise_for_status()
+            datasets = resp.json().get("dataset") or []
+            last_exc = None
+            break
+        except Exception as exc:  # noqa: BLE001
+            last_exc = exc
+            print(f"[{src['id']}] feed attempt {attempt + 1} failed: {exc}", flush=True)
+    if last_exc is not None:
+        print(f"[{src['id']}] feed failed: {last_exc}", flush=True)
         conn.execute("INSERT INTO harvest_runs VALUES (?, ?, ?, ?, ?, ?)",
                      (src["id"], started, started, None, 0, 1))
         conn.commit()
