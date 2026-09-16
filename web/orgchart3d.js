@@ -151,36 +151,78 @@
   // per pixel — a swell, a shimmer in the shallows, and a tide line along every shore
   const VS_TER = `
     attribute vec3 p; attribute vec3 col; attribute float d;
-    uniform mat4 mvp; varying vec3 vc; varying float vd; varying vec2 vw; varying float va;
-    void main() { vec4 cp = mvp * vec4(p, 1.0); gl_Position = cp; vc = col; vd = d; vw = p.xy; va = ${FOG}; }`;
+    uniform mat4 mvp; varying vec3 vc; varying float vd; varying vec2 vw; varying float va; varying float vh;
+    void main() { vec4 cp = mvp * vec4(p, 1.0); gl_Position = cp; vc = col; vd = d; vw = p.xy; vh = p.z; va = ${FOG}; }`;
   const FS_TER = `
-    precision mediump float; uniform float t; varying vec3 vc; varying float vd; varying vec2 vw; varying float va;
+    #ifdef GL_FRAGMENT_PRECISION_HIGH
+    precision highp float;
+    #else
+    precision mediump float;
+    #endif
+    uniform float t; uniform vec3 eye; varying vec3 vc; varying float vd; varying vec2 vw; varying float va; varying float vh;
+    float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+    float vnoise(vec2 p) { vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);
+      return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), f.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), f.x), f.y); }
+    float fbm(vec2 p) { float v = 0.0, a = 0.5; for (int k = 0; k < 3; k++) { v += a * vnoise(p); p = p * 2.03 + 17.0; a *= 0.5; } return v; }
+    const vec3 MOON = vec3(-0.5661, -0.7926, 0.2264);
     void main() {
       vec3 c = vc;
+      float shade = 0.8 + 0.2 * fbm(vw * 1.3 + vec2(t * 0.015, t * 0.006));                    // cloud shadow drifting over land and sea
       if (vd > 0.0) {
-        float swell = sin(vw.x * 9.0 + t * 0.5 + sin(vw.y * 6.0 - t * 0.3) * 1.7) * sin(vw.y * 7.5 - t * 0.4);
-        float rip = sin(vw.x * 38.0 + t * 0.9 + swell * 2.0) * sin(vw.y * 31.0 - t * 0.7);
-        c += vec3(0.03, 0.06, 0.10) * (0.5 + 0.5 * swell);                          // the open sea moves
-        c += vec3(0.05, 0.16, 0.20) * (0.5 + 0.5 * rip) * exp(-vd * 45.0) * 0.6;     // the shallows shimmer
+        float swell = fbm(vw * 2.5 + vec2(t * 0.04, t * 0.03)) * 2.0 - 1.0;                   // slow, long waves
+        float nx = vnoise(vw * 30.0 + vec2(t * 0.6, -t * 0.4)) - 0.5, ny = vnoise(vw * 30.0 + vec2(-t * 0.5, t * 0.7) + 31.0) - 0.5;
+        float rip = nx + ny;                                                                  // the chop on top
+        c += vec3(0.03, 0.06, 0.10) * (0.5 + 0.5 * swell);                                    // the open sea moves
+        vec3 n = normalize(vec3(nx * 0.4 + swell * 0.06, ny * 0.4 - swell * 0.06, 1.0));       // moonlight on the chop
+        vec3 v = normalize(eye - vec3(vw, -0.02)); float g = max(dot(reflect(-v, n), MOON), 0.0);
+        c += vec3(0.8, 0.85, 1.0) * (pow(g, 160.0) * 0.55 + pow(g, 10.0) * 0.05);
+        c += vec3(0.05, 0.16, 0.20) * (0.5 + 0.5 * rip) * exp(-vd * 45.0) * 0.6;              // the shallows shimmer
         c += vec3(0.35, 0.9, 1.0) * exp(-vd * 300.0) * (0.5 + 0.5 * sin(t * 1.3 + vw.x * 9.0 + vw.y * 7.0)) * 0.7;   // the tide line
+      } else {
+        c *= 0.8 + 0.4 * fbm(vw * 45.0);                                                      // rock and moss
+        float up = smoothstep(-0.003, -0.0005, vh);                                            // 1 on the plateau
+        float f = fract(vh / 0.0035), line = smoothstep(0.1, 0.0, min(f, 1.0 - f)) * (1.0 - up) * step(-0.0195, vh);   // contour lines down the shore
+        c += vec3(0.15, 0.6, 0.7) * line * 0.25;
+        vec2 gq = abs(fract(vw * 20.0) - 0.5); float grid = smoothstep(0.47, 0.5, max(gq.x, gq.y));   // the plateau's faint grid
+        c += vc * grid * up * 0.35;
       }
-      gl_FragColor = vec4(c * va, 1.0);
+      c *= shade;
+      float haze = clamp(1.35 - length(eye - vec3(vw, vh)) * 0.11, 0.18, 1.0);
+      gl_FragColor = vec4(mix(vec3(0.03, 0.035, 0.07), c, haze), 1.0);                        // haze, not darkness, in the distance
     }`;
   // full-screen passes: the sky behind everything, then bloom over it all
   const VS_QUAD = `attribute vec2 q; varying vec2 uv; void main() { uv = q * 0.5 + 0.5; gl_Position = vec4(q, 0.0, 1.0); }`;
   const FS_SKY = `
-    precision mediump float; varying vec2 uv; uniform float theta; uniform float phi; uniform float t; uniform float aspect;
+    precision mediump float; varying vec2 uv;
+    uniform vec3 fwd; uniform vec3 rgt; uniform vec3 upv; uniform float tanf; uniform float aspect; uniform float t;
     float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+    float vnoise(vec2 p) { vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);
+      return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), f.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), f.x), f.y); }
+    float fbm(vec2 p) { float v = 0.0, a = 0.5; for (int k = 0; k < 4; k++) { v += a * vnoise(p); p = p * 2.03 + 17.0; a *= 0.5; } return v; }
+    const vec3 MOON = vec3(-0.5661, -0.7926, 0.2264);
     void main() {
-      float h = uv.y;                                                     // 0 at the bottom of the screen
-      vec3 top = vec3(0.012, 0.014, 0.04), mid = vec3(0.05, 0.03, 0.10), glow = vec3(0.16, 0.06, 0.14);
-      vec3 c = mix(mid, top, smoothstep(0.35, 1.0, h));
-      c += glow * exp(-abs(h - 0.42) * 9.0) * 0.6;                        // a city's horizon glow
-      c += vec3(0.02, 0.08, 0.10) * exp(-abs(h - 0.4) * 14.0);
-      vec2 sp = vec2((uv.x + theta * 0.16) * aspect * 90.0, (uv.y + phi * 0.25) * 90.0);
-      vec2 cell = floor(sp); float r = hash(cell);
-      float star = step(0.985, r) * smoothstep(0.45, 0.0, length(fract(sp) - 0.5)) * (0.6 + 0.4 * sin(t * (1.5 + r * 3.0) + r * 20.0));
-      c += vec3(0.8, 0.85, 1.0) * star * smoothstep(0.38, 0.7, h) * 0.9;
+      vec3 dir = normalize(fwd + rgt * ((uv.x * 2.0 - 1.0) * tanf * aspect) + upv * ((uv.y * 2.0 - 1.0) * tanf));
+      float el = dir.z, az = atan(dir.y, dir.x), md = dot(dir, MOON);
+      vec3 top = vec3(0.012, 0.014, 0.04), mid = vec3(0.05, 0.03, 0.10), low = vec3(0.02, 0.018, 0.05);
+      vec3 c = el < 0.0 ? mix(mid, low, clamp(-el * 4.0, 0.0, 1.0)) : mix(mid, top, smoothstep(0.0, 0.7, el));
+      c += vec3(0.16, 0.06, 0.14) * exp(-abs(el) * 7.0) * 0.6;                                // the city's glow on the horizon
+      c += vec3(0.02, 0.08, 0.10) * exp(-abs(el) * 12.0);
+      vec2 sp = vec2(az * 28.0, el * 70.0), cell = floor(sp); float r = hash(cell);            // stars, fixed to the world
+      float star = step(0.975, r) * smoothstep(0.4, 0.0, length(fract(sp) - 0.5)) * (0.55 + 0.45 * sin(t * (1.5 + r * 3.0) + r * 20.0));
+      c += vec3(0.8, 0.85, 1.0) * star * smoothstep(0.02, 0.25, el) * 0.9;
+      c += vec3(0.85, 0.88, 1.0) * (smoothstep(0.99905, 0.99935, md) * 1.6 + pow(max(md, 0.0), 500.0) * 0.5 + pow(max(md, 0.0), 40.0) * 0.12);   // the moon and its halo
+      vec2 cp = dir.xy / max(el, 0.06);                                                       // thin high cloud, drifting, lit near the moon
+      float cl = smoothstep(0.38, 0.72, fbm(cp * 0.9 + vec2(t * 0.01, t * 0.004))) * smoothstep(0.0, 0.12, el);
+      c = mix(c, vec3(0.11, 0.12, 0.20) + vec3(0.3, 0.3, 0.35) * pow(max(md, 0.0), 6.0), cl * 0.85);
+      float band = exp(-pow((el - 0.36 - 0.06 * sin(az * 2.0 + t * 0.15)) * 7.0, 2.0));        // an aurora, faint, in the city's colours
+      float wave = 0.5 + 0.5 * sin(az * 11.0 + t * 0.35 + fbm(cp * 0.4 + t * 0.02) * 6.0);
+      vec3 ac = mix(vec3(0.0, 0.9, 0.8), vec3(0.9, 0.2, 0.9), 0.5 + 0.5 * sin(az * 2.0 + t * 0.1));
+      c += ac * band * wave * 0.16 * (1.0 - cl);
+      float cyc = floor(t / 6.0), u = fract(t / 6.0), h1 = hash(vec2(cyc, 3.0)), h2 = hash(vec2(cyc, 7.0));   // now and then a shooting star
+      vec2 s0 = vec2(-3.0 + h1 * 6.0, 0.35 + h2 * 0.35), sd = normalize(vec2(1.0, -0.35)), q = vec2(az, el) - s0;
+      float along = dot(q, sd), off = abs(dot(q, vec2(-sd.y, sd.x))), head = u * 2.4;
+      float streak = step(0.0, along) * step(along, head) * smoothstep(0.12, 0.0, head - along) * smoothstep(0.004, 0.0, off) * step(u, 0.35);
+      c += vec3(0.9, 0.95, 1.0) * streak * 1.2;
       gl_FragColor = vec4(c, 1.0);
     }`;
   const FS_BRIGHT = `precision mediump float; varying vec2 uv; uniform sampler2D tex;
@@ -267,8 +309,12 @@
     S.G = G; const N = G.nodes, n = N.title.length; S.n = n; S.N = N; S.B = G.bodies; S.D = G.departments;
     S.deptFte = G.departments.map(d => d.bodies.reduce((s, bi) => s + (G.bodies[bi].fte || 0), 0));
     S.order = G.departments.map((_, i) => i).sort((a, b) => S.deptFte[b] - S.deptFte[a]);
-    S.hue = new Array(G.departments.length); S.sat = new Array(G.departments.length);
-    S.order.forEach((di, k) => { S.hue[di] = HUES[k % HUES.length]; S.sat[di] = k < HUES.length ? 0.85 : 0.6; });
+    // a department keeps its colour and its architecture (four ways of building, by rank)
+    // across dates: from the plan once there is one, by rank the first time
+    S.hue = new Array(G.departments.length); S.sat = new Array(G.departments.length); S.deptStyle = new Array(G.departments.length);
+    S.order.forEach((di, k) => { const nm = G.departments[di].name, P = S.plan;
+      if (P && P.hue[nm] != null) { S.hue[di] = P.hue[nm]; S.sat[di] = P.sat[nm]; S.deptStyle[di] = P.style[nm]; }
+      else { S.hue[di] = HUES[k % HUES.length]; S.sat[di] = k < HUES.length ? 0.85 : 0.6; S.deptStyle[di] = k % 4; if (P) { P.hue[nm] = S.hue[di]; P.sat[nm] = S.sat[di]; P.style[nm] = S.deptStyle[di]; } } });
     S.kids = Array.from({ length: n }, () => []); S.roots = Array.from({ length: G.bodies.length }, () => []);
     for (let i = 0; i < n; i++) { const p = N.parent[i]; if (p >= 0) S.kids[p].push(i); else S.roots[N.body[i]].push(i); }
     let maxPay = 0; for (let i = 0; i < n; i++) if (N.pay[i] > maxPay) maxPay = N.pay[i]; S.maxPay = Math.max(maxPay, 200000);
@@ -280,8 +326,6 @@
       sz[i] = 0.12 + Math.sqrt(N.below_fte[i] || 0) * 0.02 + (N.parent[i] < 0 ? 0.14 : 0);
     }
     S.col = col; S.sz = sz;
-    // each district builds its own way: four architectures, by department rank
-    S.deptStyle = new Array(G.departments.length); S.order.forEach((di, k) => { S.deptStyle[di] = k % 4; });
     S.nopay = new Uint8Array(n); for (let i = 0; i < n; i++) S.nopay[i] = N.pay[i] ? 0 : 1;
     S.styleArr = new Float32Array(n); S.hidden = new Uint8Array(n); S.annex = new Int32Array(n);
     // a spire on the head of every body
@@ -427,44 +471,57 @@
     ["Security and the world", /defence|home office|foreign|international development/i],
   ];
   const sectorOf = name => { const k = SECTORS.findIndex(q => q[1].test(name)); return k < 0 ? SECTORS.length : k; };
-  const hash01 = (i, k) => (((i + 1) * 2654435761 + k * 40503) >>> 0) % 10000 / 10000;
-  // Each island's area follows the department's staff, with room for its senior posts
-  // to stand. Each kind gets a circle of sea: the centre in the middle, the rest round
-  // it in order, so neighbouring fields are neighbours. Islands settle nearest their
-  // kind's centre, largest first, with a channel of open water between any two.
+  const hashName = (nm, k) => { let h = 2166136261 ^ Math.imul(k, 16777619); for (let i = 0; i < nm.length; i++) { h ^= nm.charCodeAt(i); h = Math.imul(h, 16777619); } return ((h >>> 0) % 10000) / 10000; };
+  // The plan is drawn once, from the first graph shown, and kept: each kind a circle of
+  // sea (the centre in the middle, the rest round it in order, so neighbouring fields
+  // are neighbours), each department a plot near its kind's centre, largest first, with
+  // a channel of water between islands of a kind and open sea between the kinds. A plot's
+  // area follows the department's staff, with room for its senior posts to stand. At
+  // another date the island stands in the same plot at the size of that day, never past
+  // the plot's edge, and a department first seen then takes the nearest free water.
   function packIslands() {
     const G = S.G, D = G.departments, B = G.bodies;
     const weight = di => Math.pow(Math.max(S.deptFte[di], 500), 0.85) + D[di].bodies.reduce((q, bi) => q + (B[bi].senior || 0), 0) * 8;
-    const total = S.order.reduce((q, di) => q + weight(di), 0) || 1, A = 9.4;
-    const size = {}; S.sector = {};
-    for (const di of S.order) {
-      const a = weight(di) / total * A, asp = 1.1 + hash01(di, 1) * 0.6; let w = Math.sqrt(a * asp), h = Math.sqrt(a / asp);
-      if (hash01(di, 2) > 0.5) { const t = w; w = h; h = t; } size[di] = { w, h }; S.sector[di] = sectorOf(D[di].name);
+    const first = !S.plan;
+    const P = S.plan || (S.plan = { scale: 9.4 / (S.order.reduce((q, di) => q + weight(di), 0) || 1), rect: {}, centre: {}, hue: {}, sat: {}, style: {}, box: null });
+    if (first) for (const di of S.order) { const nm = D[di].name; P.hue[nm] = S.hue[di]; P.sat[nm] = S.sat[di]; P.style[nm] = S.deptStyle[di]; }
+    const sizeOf = di => { const nm = D[di].name, a = weight(di) * P.scale, asp = 1.1 + hashName(nm, 1) * 0.6; let w = Math.sqrt(a * asp), h = Math.sqrt(a / asp); if (hashName(nm, 2) > 0.5) { const q = w; w = h; h = q; } return { w, h }; };
+    S.sector = {}; for (const di of S.order) S.sector[di] = sectorOf(D[di].name);
+    if (first) {
+      const size = {}; for (const di of S.order) size[di] = sizeOf(di);
+      const kinds = []; for (let k = 0; k <= SECTORS.length; k++) { const m = S.order.filter(di => S.sector[di] === k); if (m.length) kinds.push({ k, r: Math.sqrt(m.reduce((q, di) => q + size[di].w * size[di].h, 0)) * 0.8 + 0.12 }); }
+      const ring = kinds.filter(q => q.k !== 0), mid = kinds.find(q => q.k === 0), gap = 0.3;
+      const arc = ring.reduce((q, r) => q + 2 * r.r + gap, 0);
+      const R = Math.max(arc / (2 * Math.PI), (mid ? mid.r : 0) + Math.max(0, ...ring.map(q => q.r)) + gap);
+      P.centre[0] = [0, 0]; let ang = -Math.PI / 2;
+      for (const q of ring) { const span = (2 * q.r + gap) / R; ang += span / 2; P.centre[q.k] = [Math.cos(ang) * R, Math.sin(ang) * R]; ang += span / 2; }
     }
-    const kinds = []; for (let k = 0; k <= SECTORS.length; k++) { const m = S.order.filter(di => S.sector[di] === k); if (m.length) kinds.push({ k, members: m, area: m.reduce((q, di) => q + size[di].w * size[di].h, 0) }); }
-    for (const q of kinds) q.r = Math.sqrt(q.area) * 0.8 + 0.12;
-    const ring = kinds.filter(q => q.k !== 0), mid = kinds.find(q => q.k === 0), gap = 0.3;
-    const arc = ring.reduce((q, r) => q + 2 * r.r + gap, 0);
-    const R = Math.max(arc / (2 * Math.PI), (mid ? mid.r : 0) + Math.max(0, ...ring.map(q => q.r)) + gap);
-    const centre = {}; if (mid) centre[0] = [0, 0];
-    let ang = -Math.PI / 2;
-    for (const q of ring) { const span = (2 * q.r + gap) / R; ang += span / 2; centre[q.k] = [Math.cos(ang) * R, Math.sin(ang) * R]; ang += span / 2; }
-    const placed = [], out = new Map();
+    const placed = Object.values(P.rect), out = new Map();
     const free = (x, y, w, h, k) => placed.every(p => { const m = p.k === k ? 0.14 : 0.34; return x + w + m <= p.x || p.x + p.w + m <= x || y + h + m <= p.y || p.y + p.h + m <= y; });
     for (const di of S.order) {
-      const { w, h } = size[di], c = centre[S.sector[di]], a0 = hash01(di, 3) * Math.PI * 2; let done = false;
-      for (let r = 0; r < 30 && !done; r += 0.03) {
-        const steps = Math.max(1, Math.floor(r * 40));
-        for (let k = 0; k < steps && !done; k++) {
-          const a = a0 + k / steps * Math.PI * 2 + r * 0.7, x = c[0] + Math.cos(a) * r - w / 2, y = c[1] + Math.sin(a) * r - h / 2;
-          if (free(x, y, w, h, S.sector[di])) { const q = { x, y, w, h }; placed.push({ x, y, w, h, k: S.sector[di] }); out.set(di, q); done = true; }
+      const nm = D[di].name, sz = sizeOf(di), k = S.sector[di]; let plot = P.rect[nm];
+      if (!plot) {
+        const c = P.centre[k] || [0, 0], a0 = hashName(nm, 3) * Math.PI * 2;
+        for (let r = 0; r < 30 && !plot; r += 0.03) {
+          const steps = Math.max(1, Math.floor(r * 40));
+          for (let q = 0; q < steps && !plot; q++) {
+            const a = a0 + q / steps * Math.PI * 2 + r * 0.7, x = c[0] + Math.cos(a) * r - sz.w / 2, y = c[1] + Math.sin(a) * r - sz.h / 2;
+            if (free(x, y, sz.w, sz.h, k)) plot = { x, y, w: sz.w, h: sz.h, k };
+          }
         }
+        P.rect[nm] = plot; placed.push(plot);
       }
+      const f = Math.min(1, Math.sqrt(sz.w * sz.h / (plot.w * plot.h))), w = plot.w * f, h = plot.h * f;
+      out.set(di, { x: plot.x + (plot.w - w) / 2, y: plot.y + (plot.h - h) / 2, w, h });
     }
+    let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+    for (const q of placed) { x0 = Math.min(x0, q.x); y0 = Math.min(y0, q.y); x1 = Math.max(x1, q.x + q.w); y1 = Math.max(y1, q.y + q.h); }
+    P.box = { x0: x0 - 1.2, y0: y0 - 1.2, x1: x1 + 1.2, y1: y1 + 1.2 };            // the sea's extent, kept so the terrain can morph
     S.hubs = {};
-    for (const q of kinds) {
-      let cx = 0, cy = 0; for (const di of q.members) { const r = out.get(di); cx += r.x + r.w / 2; cy += r.y + r.h / 2; }
-      S.hubs[q.k] = { di: q.members[0], members: q.members, name: q.k < SECTORS.length ? SECTORS[q.k][0] : "Elsewhere", c: [cx / q.members.length, cy / q.members.length] };
+    for (let k = 0; k <= SECTORS.length; k++) {
+      const members = S.order.filter(di => S.sector[di] === k); if (!members.length) continue;
+      let cx = 0, cy = 0; for (const di of members) { const r = P.rect[D[di].name]; cx += r.x + r.w / 2; cy += r.y + r.h / 2; }
+      S.hubs[k] = { di: members[0], members, name: k < SECTORS.length ? SECTORS[k][0] : "Elsewhere", c: [cx / members.length, cy / members.length] };
     }
     return out;
   }
@@ -484,11 +541,13 @@
     const h = (a, b) => { const q = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return q - Math.floor(q); };
     return (h(xi, yi) * (1 - sx) + h(xi + 1, yi) * sx) * (1 - sy) + (h(xi, yi + 1) * (1 - sx) + h(xi + 1, yi + 1) * sx) * sy;
   };
-  function makeTerrain(islands) {
+  function makeTerrain(islands, box) {
     const T = S.terrain, n = TG; if (!islands.length) { T.n = 0; return; }
     let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
-    for (const { r } of islands) { x0 = Math.min(x0, r.x); y0 = Math.min(y0, r.y); x1 = Math.max(x1, r.x + r.w); y1 = Math.max(y1, r.y + r.h); }
-    const pad = 1.2; x0 -= pad; y0 -= pad; x1 += pad; y1 += pad;
+    if (box) { x0 = box.x0; y0 = box.y0; x1 = box.x1; y1 = box.y1; }
+    else { for (const { r } of islands) { x0 = Math.min(x0, r.x); y0 = Math.min(y0, r.y); x1 = Math.max(x1, r.x + r.w); y1 = Math.max(y1, r.y + r.h); }
+      const pad = 1.2; x0 -= pad; y0 -= pad; x1 += pad; y1 += pad; }
+    const key = [x0, y0, x1, y1].map(v => v.toFixed(4)).join(",");
     const SEA = -0.02, grow = 0.06, pos = new Float32Array(n * n * 3), col = new Float32Array(n * n * 3), dep = new Float32Array(n * n), hgt = new Float32Array(n * n), who = new Int16Array(n * n);
     const tint = islands.map(({ di }) => hsl(S.hue[di], S.sat[di], 0.5));
     for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) {
@@ -503,7 +562,7 @@
       const f = Math.min(1, Math.max(0, (s + 0.02) / 0.16)), z = -0.05 * f * f * (3 - 2 * f);   // plateau, shore, sea bed
       const k = j * n + i; hgt[k] = z; who[k] = w; pos[k * 3] = x; pos[k * 3 + 1] = y; pos[k * 3 + 2] = Math.max(z, SEA); dep[k] = Math.max(0, SEA - z);
     }
-    const lx = -0.5, ly = -0.7, lz = 0.55, ll = Math.hypot(lx, ly, lz), cell = (x1 - x0) / (n - 1), sand = [0.23, 0.2, 0.15], deep = DEEP;
+    const lx = -0.5, ly = -0.7, lz = 0.2, ll = Math.hypot(lx, ly, lz), cell = (x1 - x0) / (n - 1), sand = [0.23, 0.2, 0.15], deep = DEEP;
     for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) {
       const k = j * n + i, z = hgt[k]; let c;
       if (z > SEA) {
@@ -514,7 +573,19 @@
       } else c = deep;
       col[k * 3] = c[0]; col[k * 3 + 1] = c[1]; col[k * 3 + 2] = c[2];
     }
-    upload(T.pos, pos); upload(T.col, col); upload(T.d, dep); T.n = T.ni;
+    // the same sea as before: the land rises and settles from what stood, over the morph
+    if (T.key === key && T.cur && !REDUCED) { T.from = T.cur; T.to = { pos, col, dep }; T.cur = { pos: new Float32Array(pos), col: new Float32Array(col), dep: new Float32Array(dep) }; T.lerp = true; }
+    else { T.cur = { pos, col, dep }; T.lerp = false; upload(T.pos, pos); upload(T.col, col); upload(T.d, dep); }
+    T.key = key; T.n = T.ni;
+  }
+  function terrainLerp(e) {
+    const T = S.terrain; if (!T || !T.lerp) return;
+    const A = T.from, Z = T.to, C = T.cur;
+    for (let k = 0; k < C.pos.length; k++) C.pos[k] = A.pos[k] + (Z.pos[k] - A.pos[k]) * e;
+    for (let k = 0; k < C.col.length; k++) C.col[k] = A.col[k] + (Z.col[k] - A.col[k]) * e;
+    for (let k = 0; k < C.dep.length; k++) C.dep[k] = A.dep[k] + (Z.dep[k] - A.dep[k]) * e;
+    upload(T.pos, C.pos); upload(T.col, C.col); upload(T.d, C.dep);
+    if (e >= 1) T.lerp = false;
   }
 
   // --- layouts ---------------------------------------------------------------------------
@@ -632,7 +703,7 @@
     const sp = [], sc = [], sa = [];
     for (const { s, c, a } of streets) { sp.push(s[0], s[1], 0.003, s[2], s[3], 0.003); sc.push(c[0], c[1], c[2], c[0], c[1], c[2]); sa.push(a || 0.35, a || 0.35); }
     upload(S.streets.pos, new Float32Array(sp)); upload(S.streets.col, new Float32Array(sc)); upload(S.streets.al, new Float32Array(sa)); S.streets.n = sa.length;
-    makeTerrain(islands);
+    makeTerrain(islands, f.kind === "gov" ? S.plan.box : null);
     S.segs = segs; for (let k = 0; k < S.traffic.n; k++) S.traffic.seg[k] = segs.length ? Math.floor(Math.random() * segs.length) : -1;
     upload(S.pts.style, S.styleArr);
     makeSigns(f);
@@ -823,7 +894,7 @@
     const eye = [S.target[0] + S.dist * Math.cos(S.phi) * Math.cos(S.theta), S.target[1] + S.dist * Math.cos(S.phi) * Math.sin(S.theta), S.target[2] + S.dist * Math.sin(S.phi)];
     let fx = S.target[0] - eye[0], fy = S.target[1] - eye[1], fz = S.target[2] - eye[2]; const fl = Math.hypot(fx, fy, fz) || 1; fx /= fl; fy /= fl; fz /= fl;
     let rx = fy, ry = -fx; const rl = Math.hypot(rx, ry) || 1; rx /= rl; ry /= rl;               // right = forward x up(z)
-    S.camRight = [rx, ry, 0]; S.camUp = [ry * fz, -rx * fz, rx * fy - ry * fx];                  // up = right x forward
+    S.camRight = [rx, ry, 0]; S.camUp = [ry * fz, -rx * fz, rx * fy - ry * fx]; S.camFwd = [fx, fy, fz]; S.eye = eye;   // up = right x forward
     return mul(perspective(0.8, W / Hh, 0.01, 40), lookAt(eye, S.target, [0, 0, 1]));
   }
   const ease = t => 1 - Math.pow(1 - t, 3), easeIO = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -848,7 +919,7 @@
     const rise = ease(Math.max(0, S.grow));
     if (S.morph < 1) { S.morph = Math.min(1, (now - S.morphT0) / 1100); const e = easeIO(S.morph);
       for (let i = 0; i < S.n * 3; i++) S.pos[i] = S.from[i] + (S.to[i] - S.from[i]) * e;
-      for (let i = 0; i < S.n * 2; i++) S.fp[i] = S.fpFrom[i] + (S.fpTo[i] - S.fpFrom[i]) * e; uploadAll(); }
+      for (let i = 0; i < S.n * 2; i++) S.fp[i] = S.fpFrom[i] + (S.fpTo[i] - S.fpFrom[i]) * e; uploadAll(); terrainLerp(e); }
     if (S.tour) tourCamera(now);
     else if (S.camTo && now >= S.camTo.t0) { const c = S.camTo, e = easeIO(Math.min(1, (now - c.t0) / c.dur));
       for (let j = 0; j < 3; j++) S.target[j] = c.from.target[j] + (c.target[j] - c.from.target[j]) * e;
@@ -860,11 +931,12 @@
     gl.bindFramebuffer(gl.FRAMEBUFFER, RT.ok ? RT.scene.fb : null); gl.viewport(0, 0, canvas.width, canvas.height);
     gl.clearColor(0.02, 0.022, 0.045, 1); gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     gl.disable(gl.DEPTH_TEST); gl.disable(gl.BLEND); gl.depthMask(false);
-    gl.useProgram(SKY); gl.uniform1f(uni(SKY, "theta"), S.theta); gl.uniform1f(uni(SKY, "phi"), S.phi); gl.uniform1f(uni(SKY, "t"), tsec); gl.uniform1f(uni(SKY, "aspect"), W / Hh);
+    gl.useProgram(SKY); gl.uniform3fv(uni(SKY, "fwd"), S.camFwd); gl.uniform3fv(uni(SKY, "rgt"), S.camRight); gl.uniform3fv(uni(SKY, "upv"), S.camUp);
+    gl.uniform1f(uni(SKY, "tanf"), Math.tan(0.4)); gl.uniform1f(uni(SKY, "t"), tsec); gl.uniform1f(uni(SKY, "aspect"), W / Hh);
     fullscreen(SKY);
     gl.depthMask(true); gl.enable(gl.DEPTH_TEST); gl.depthFunc(gl.LEQUAL); gl.disable(gl.BLEND); disableAll();
     // the sea to the horizon and the islands on it, opaque, so buildings hide what stands behind them
-    gl.useProgram(TER); gl.uniformMatrix4fv(uni(TER, "mvp"), false, m); gl.uniform1f(uni(TER, "t"), tsec);
+    gl.useProgram(TER); gl.uniformMatrix4fv(uni(TER, "mvp"), false, m); gl.uniform1f(uni(TER, "t"), tsec); gl.uniform3fv(uni(TER, "eye"), S.eye);
     attrib(TER, "p", S.plane.pos, 3); attrib(TER, "col", S.plane.col, 3); attrib(TER, "d", S.plane.d, 1); gl.drawArrays(gl.TRIANGLES, 0, 6);
     if (S.terrain.n) { disableAll(); attrib(TER, "p", S.terrain.pos, 3); attrib(TER, "col", S.terrain.col, 3); attrib(TER, "d", S.terrain.d, 1);
       gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, S.terrain.ib); gl.drawElements(gl.TRIANGLES, S.terrain.n, gl.UNSIGNED_SHORT, 0); }

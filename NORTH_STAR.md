@@ -194,6 +194,15 @@ A living list. Add freely; move to "Done" with the commit that did it.
   annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
   and Scotland on its About page's OGL statement. Air Quality England
   parked (no terms).
+- 16 Sep — the archipelago keeps its map. The plan (each department's
+  plot, colour and architecture) is drawn once from the first graph shown
+  and kept: at another date an island stands in its own plot at the size of
+  that day, and the terrain morphs between dates instead of popping. The sky
+  is drawn from the real view direction: a low moon with a halo in drifting
+  cloud, world-fixed stars, a faint aurora in the city's colours, a shooting
+  star now and then. The sea has noise-driven swell and chop with the moon's
+  path on it; the land has rock texture, cloud shadow, Tron contour lines
+  down the shore and a faint grid on the plateau; haze in the distance.
 - 16 Sep — the city became an archipelago. Every department is an island
   whose area follows its staff, with its bodies as blocks; islands of a kind
   lie together (the same ministry under its earlier names, the departments
