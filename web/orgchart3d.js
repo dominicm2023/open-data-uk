@@ -304,7 +304,9 @@
     S.streets = { pos: buffer(new Float32Array(0), true), col: buffer(new Float32Array(0), true), al: buffer(new Float32Array(0), true), n: 0 };
     const TN = 700; S.traffic = { n: TN, seg: new Int32Array(TN), ph: new Float32Array(TN), sp: new Float32Array(TN), pos: buffer(new Float32Array(TN * 3), true), col: buffer(new Float32Array(TN * 3), true), sz: buffer(new Float32Array(TN).fill(0.16)), al: buffer(new Float32Array(TN).fill(0.9)), arr: new Float32Array(TN * 3), carr: new Float32Array(TN * 3) };
     for (let k = 0; k < TN; k++) { S.traffic.ph[k] = Math.random(); S.traffic.sp[k] = 0.05 + Math.random() * 0.12; }
-    $("sub").textContent = `${n.toLocaleString()} senior posts in ${G.bodies.length} bodies under ${G.departments.length} departments, ${fmt(S.deptFte.reduce((a, b) => a + b, 0))} staff (FTE) beneath them.`;
+    $("sub").textContent = G.at
+      ? `${n.toLocaleString()} senior posts in ${G.bodies.length} bodies under ${G.departments.length} departments, as they stood on ${niceDate(G.at)}. Junior staff are held for the newest snapshot only, so sizes here follow senior posts beneath.`
+      : `${n.toLocaleString()} senior posts in ${G.bodies.length} bodies under ${G.departments.length} departments, ${fmt(S.deptFte.reduce((a, b) => a + b, 0))} staff (FTE) beneath them.`;
     $("asof").textContent = G.as_of ? `newest snapshot ${G.as_of}` : "";
     if (rebuilding) {
       // the same date's posts keep their place; a post new at this date rises from the ground
