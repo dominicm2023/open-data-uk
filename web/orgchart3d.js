@@ -367,7 +367,14 @@
       .catch(() => {}).finally(() => { TL.loading = false; if (TL.want !== undefined && TL.want !== null && TL.want !== TL.at) { const w = TL.want; TL.want = null; loadDate(w); } else TL.want = null; });
   }
   function setupTimeline(t) {
-    TL.dates = (t.dates || []).filter(d => d.bodies >= 3); if (TL.dates.length < 2) return;
+    // bodies report on their own days, so the ticks are the half-years (31 March, 30 September)
+    // from the first snapshot to the last; the city at a tick is every body's newest snapshot on or before it
+    const have = (t.dates || []).filter(d => d.bodies >= 3); if (have.length < 2) return;
+    const y0 = +have[0].date.slice(0, 4), last = have[have.length - 1].date, y1 = +last.slice(0, 4);
+    TL.dates = [];
+    for (let y = y0; y <= y1; y++) for (const md of ["-03-31", "-09-30"]) { const d = y + md; if (d >= have[0].date && d <= last) TL.dates.push({ date: d }); }
+    if (!TL.dates.length || TL.dates[TL.dates.length - 1].date !== last) TL.dates.push({ date: last });
+    if (TL.dates.length < 2) return;
     const wrap = $("when-wrap"), rng = $("when"); wrap.hidden = false; rng.min = 0; rng.max = TL.dates.length - 1; rng.value = TL.dates.length - 1;
     showDate(TL.dates.length - 1, false);
     rng.addEventListener("input", () => showDate(+rng.value, true));

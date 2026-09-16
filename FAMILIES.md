@@ -193,7 +193,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 | air_quality_annual | 56 + 5 national networks + Defra's LAQM dashboard | 39 | 73,912 rows, ~346 bodies: 17 own files, 5 networks (1990-2026), and 337 authorities' latest Annual Status Report results via the dashboard |
 | brownfield_land | 176 sources / 129 authorities + MHCLG's platform | 62 | 53 own files (4,755 sites) + the platform for 258 more authorities (25,222 sites): 29,977 sites, 311 authorities |
 | spend_over_500 | 212 (every edition) | 76 | 68 sources, 4,259,913 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
-| organograms | 356 sources (339 a senior + junior pair; 15 Sep 2026) | 309 | 293 sources by the Cabinet Office standard, 169,623 rows, 249 bodies; 16 own-shape tables await a person (15 councils, The National Archives' newest); 38 dead links, 9 refused on licence (CCRC "notspecified"). "Other (Public Domain)" accepted 15 Sep (DM): the MoD's 2016 organogram came in; its current one is seven per-budget files already published |
+| organograms | 356 sources (339 a senior + junior pair; every snapshot's senior file since 2010, 16 Sep) | 309 | 294 sources by the Cabinet Office standard, 343,329 rows (68 snapshot dates), 249 bodies; 16 own-shape tables await a person (15 councils, The National Archives' newest); 38 dead links, 9 refused on licence (CCRC "notspecified"). "Other (Public Domain)" accepted 15 Sep (DM): the MoD's 2016 organogram came in; its current one is seven per-budget files already published |
 
 Fifth family, 15 September 2026: organograms. Central government's
 "Organogram of Staff Roles & Salaries" is one dataset per body with a senior
