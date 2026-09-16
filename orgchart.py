@@ -437,20 +437,70 @@ def graph_from_rows(rows: list[dict], at: str | None = None) -> dict:
             "note": "Posts, not people. Pay is the floor of the published band; FTE figures are the bodies' own."}
 
 
-@functools.lru_cache(maxsize=48)
+_COLS = ('"body", "level", "post_reference", "job_title", "grade", "unit", "reports_to", "pay_floor_gbp", '
+         '"pay_ceiling_gbp", "pay_band", "fte", "job_function", "as_of", "parent_department", "organisation", '
+         '"dataset_key", "source_url"')
+
+
+@functools.lru_cache(maxsize=64)
 def _graph_cached(stamp: float, at: str | None = None) -> str:
+    """The graph at a date, from each body's newest snapshot on or before it
+    — read as those rows only (about 15,000 of 343,000), not the whole
+    series — and kept on disk beside the family, so the four workers share
+    one build per date rather than each spending six seconds."""
     import json
+    cache = STORE / FAMILY / "graphs"
+    cache.mkdir(exist_ok=True)
+    f = cache / f"{int(stamp)}-{at or 'newest'}.json"
+    if f.exists():
+        return f.read_text(encoding="utf-8")
     db = _db()
     conn = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
     conn.row_factory = sqlite3.Row
     try:
-        rows = [dict(r) for r in conn.execute('SELECT "body", "level", "post_reference", "job_title", "grade", "unit", '
-                                              '"reports_to", "pay_floor_gbp", "pay_ceiling_gbp", "pay_band", "fte", '
-                                              '"job_function", "as_of", "parent_department", "organisation", '
-                                              '"dataset_key", "source_url" FROM rows')]
+        if at:
+            pairs = conn.execute("SELECT body, MAX(as_of) FROM rows WHERE as_of IS NOT NULL AND as_of != '' AND as_of <= ? GROUP BY body", (at,)).fetchall()
+        else:
+            pairs = conn.execute("SELECT body, MAX(as_of) FROM rows GROUP BY body").fetchall()
+        rows = []
+        for body, snap in pairs:
+            if snap is None:
+                rows += [dict(r) for r in conn.execute(f"SELECT {_COLS} FROM rows WHERE body = ? AND as_of IS NULL", (body,))]
+            else:
+                rows += [dict(r) for r in conn.execute(f"SELECT {_COLS} FROM rows WHERE body = ? AND as_of = ?", (body, snap))]
     finally:
         conn.close()
-    return json.dumps(graph_from_rows(rows, at), ensure_ascii=False, separators=(",", ":"))
+    out = json.dumps(graph_from_rows(rows, at), ensure_ascii=False, separators=(",", ":"))
+    for old in cache.glob("*.json"):                    # a new build makes every older graph stale
+        if not old.name.startswith(f"{int(stamp)}-"):
+            old.unlink(missing_ok=True)
+    f.write_text(out, encoding="utf-8")
+    return out
+
+
+def warm_graphs() -> int:
+    """Build the graph for every half-year tick the scrubber offers, so the
+    first visitor after a build waits for none of them. Run after the
+    family builds (refresh.sh) and safe to run any time."""
+    import json
+    tl = timeline_json()
+    if not tl:
+        return 0
+    dates = [d["date"] for d in json.loads(tl)["dates"] if d["bodies"] >= 3]
+    if not dates:
+        return 0
+    ticks = []
+    for y in range(int(dates[0][:4]), int(dates[-1][:4]) + 1):
+        for md in ("-03-31", "-09-30"):
+            d = f"{y}{md}"
+            if dates[0] <= d <= dates[-1]:
+                ticks.append(d)
+    if not ticks or ticks[-1] != dates[-1]:
+        ticks.append(dates[-1])
+    graph_json(None)
+    for d in ticks:
+        graph_json(d)
+    return len(ticks) + 1
 
 
 def graph_json(at: str | None = None) -> str | None:
@@ -541,3 +591,8 @@ def render_3d(site_url: str) -> str:
         f'<script src="/orgchart3d.js?v={ver}" defer></script>')
     head_html = simple_head(title, desc, "/family/organograms/chart/3d", site_url)
     return _page(head_html, body_html, "/combined")
+
+
+if __name__ == "__main__":
+    import sys
+    print(f"organograms: {warm_graphs()} graphs warm", file=sys.stderr)

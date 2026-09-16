@@ -39,6 +39,9 @@ for fam in recycling_centres air_quality_annual spend_over_500 brownfield_land o
   # MHCLG's planning data platform fills the gaps in the brownfield family
   [ "$fam" = brownfield_land ] && { "$PY" families/planning_platform.py brownfield_land || true; }
   "$PY" families/build.py "$fam" || true
+  # the 3D city's graph for every date the scrubber offers, built once here
+  # rather than by the first visitor of each
+  [ "$fam" = organograms ] && { "$PY" orgchart.py || true; }
 done
 
 # Tell the engines which pages actually changed tonight. Runs last, after the
