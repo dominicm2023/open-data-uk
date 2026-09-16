@@ -3,9 +3,12 @@
 
    Every post is a building. Its footprint is the staff beneath it, its
    height the pay band, its lit windows flicker, and a neon rim marks the
-   roof. The ground is a map: every department a district, every body a
-   block, streets between them with traffic running. You arrive from the
-   sky. Open a department and its district grows to fill the map; open a
+   roof. The ground is an archipelago: every department an island, its
+   area the staff it employs, every body a block on it with streets between
+   and traffic running. Islands of a kind lie together in the sea: the same
+   ministry under its earlier names, the departments of one field, with
+   ferry lanes between them. You arrive from the sky. Open a department
+   and its island grows to fill the sea; open a
    body and its buildings re-form as an organisation chart — the head at
    the back, each level of reports a row nearer you, lit lines between
    them, and the traffic now runs along the reporting lines. Fly-through
@@ -51,7 +54,7 @@
   }
 
   // --- shaders --------------------------------------------------------------------
-  const FOG = "clamp(1.35 - max(cp.w, 0.0) * 0.14, 0.18, 1.0)";
+  const FOG = "clamp(1.35 - max(cp.w, 0.0) * 0.11, 0.18, 1.0)";
   const VS_BOX = `
     attribute vec3 v; attribute vec3 nrm; attribute vec2 uv;
     attribute vec3 ipos; attribute vec2 isz; attribute vec3 icol; attribute float ia; attribute float istyle;
@@ -144,6 +147,25 @@
     void main() { vec4 cp = mvp * vec4(p.x, p.y, p.z * rise, 1.0); gl_Position = cp; vc = col; va = a * ${FOG}; }`;
   const FS_LN = `precision mediump float; varying vec3 vc; varying float va; void main() { gl_FragColor = vec4(vc * va, 1.0); }`;
   const FS_FLAT = `precision mediump float; varying vec3 vc; varying float va; void main() { gl_FragColor = vec4(vc * va, 1.0); }`;
+  // the sea and the islands: one heightfield, lit per vertex on land, the water alive
+  // per pixel — a swell, a shimmer in the shallows, and a tide line along every shore
+  const VS_TER = `
+    attribute vec3 p; attribute vec3 col; attribute float d;
+    uniform mat4 mvp; varying vec3 vc; varying float vd; varying vec2 vw; varying float va;
+    void main() { vec4 cp = mvp * vec4(p, 1.0); gl_Position = cp; vc = col; vd = d; vw = p.xy; va = ${FOG}; }`;
+  const FS_TER = `
+    precision mediump float; uniform float t; varying vec3 vc; varying float vd; varying vec2 vw; varying float va;
+    void main() {
+      vec3 c = vc;
+      if (vd > 0.0) {
+        float swell = sin(vw.x * 9.0 + t * 0.5 + sin(vw.y * 6.0 - t * 0.3) * 1.7) * sin(vw.y * 7.5 - t * 0.4);
+        float rip = sin(vw.x * 38.0 + t * 0.9 + swell * 2.0) * sin(vw.y * 31.0 - t * 0.7);
+        c += vec3(0.03, 0.06, 0.10) * (0.5 + 0.5 * swell);                          // the open sea moves
+        c += vec3(0.05, 0.16, 0.20) * (0.5 + 0.5 * rip) * exp(-vd * 45.0) * 0.6;     // the shallows shimmer
+        c += vec3(0.35, 0.9, 1.0) * exp(-vd * 300.0) * (0.5 + 0.5 * sin(t * 1.3 + vw.x * 9.0 + vw.y * 7.0)) * 0.7;   // the tide line
+      }
+      gl_FragColor = vec4(c * va, 1.0);
+    }`;
   // full-screen passes: the sky behind everything, then bloom over it all
   const VS_QUAD = `attribute vec2 q; varying vec2 uv; void main() { uv = q * 0.5 + 0.5; gl_Position = vec4(q, 0.0, 1.0); }`;
   const FS_SKY = `
@@ -182,7 +204,7 @@
     gl.linkProgram(pr); if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(pr));
     return pr;
   }
-  const PT = program(VS_PT, FS_PT), RING = program(VS_PT, FS_RING), LN = program(VS_LN, FS_LN);
+  const PT = program(VS_PT, FS_PT), RING = program(VS_PT, FS_RING), LN = program(VS_LN, FS_LN), TER = program(VS_TER, FS_TER);
   const BOX = EXT ? program(VS_BOX, FS_BOX) : null, EDGE = EXT ? program(VS_EDGE, FS_FLAT) : null, SIGN = program(VS_SIGN, FS_SIGN);
   const SKY = program(VS_QUAD, FS_SKY), BRIGHT = program(VS_QUAD, FS_BRIGHT), BLUR = program(VS_QUAD, FS_BLUR), COMPOSE = program(VS_QUAD, FS_COMPOSE);
   const QUAD = (() => { const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, 1, 1, -1, -1, 1, 1, -1, 1]), gl.STATIC_DRAW); return b; })();
@@ -295,11 +317,11 @@
     S.lpos = new Float32Array(S.ln.length * 6); S.lal = new Float32Array(S.ln.length * 2);
     S.lines = { pos: buffer(S.lpos, true), col: buffer(lc), al: buffer(S.lal, true) };
     S.ring = { pos: buffer(new Float32Array(3), true), col: buffer(new Float32Array([1, 1, 1])), sz: buffer(new Float32Array([1]), true), al: buffer(new Float32Array([1])) };
-    // the ground: a dark plane (opaque), a grid, district floors, street lines and traffic
-    S.plane = { pos: buffer(new Float32Array([-6, -6, -0.001, 6, -6, -0.001, 6, 6, -0.001, -6, -6, -0.001, 6, 6, -0.001, -6, 6, -0.001])), col: buffer(new Float32Array(18).fill(0.05)), al: buffer(new Float32Array(6).fill(1)) };
-    const gp = [], gc = [], ga = [];
-    for (let v = -3; v <= 3.001; v += 0.25) { gp.push(v, -3, 0, v, 3, 0, -3, v, 0, 3, v, 0); for (let e = 0; e < 4; e++) { gc.push(0.4, 0.5, 0.8); ga.push(0.035); } }
-    S.grid = { pos: buffer(new Float32Array(gp)), col: buffer(new Float32Array(gc)), al: buffer(new Float32Array(ga)), n: ga.length };
+    // the ground: the open sea to the horizon (opaque), the islands as a heightfield
+    // over it, then block floors, street lines and traffic
+    const deep = DEEP, pc = []; for (let e = 0; e < 6; e++) pc.push(deep[0], deep[1], deep[2]);
+    S.plane = { pos: buffer(new Float32Array([-40, -40, -0.0205, 40, -40, -0.0205, 40, 40, -0.0205, -40, -40, -0.0205, 40, 40, -0.0205, -40, 40, -0.0205])), col: buffer(new Float32Array(pc)), d: buffer(new Float32Array(6).fill(0.03)) };
+    if (!S.terrain) S.terrain = makeTerrainBuffers();
     S.floor = { pos: buffer(new Float32Array(0), true), col: buffer(new Float32Array(0), true), al: buffer(new Float32Array(0), true), n: 0 };
     S.streets = { pos: buffer(new Float32Array(0), true), col: buffer(new Float32Array(0), true), al: buffer(new Float32Array(0), true), n: 0 };
     const TN = 700; S.traffic = { n: TN, seg: new Int32Array(TN), ph: new Float32Array(TN), sp: new Float32Array(TN), pos: buffer(new Float32Array(TN * 3), true), col: buffer(new Float32Array(TN * 3), true), sz: buffer(new Float32Array(TN).fill(0.16)), al: buffer(new Float32Array(TN).fill(0.9)), arr: new Float32Array(TN * 3), carr: new Float32Array(TN * 3) };
@@ -388,6 +410,113 @@
     document.addEventListener("keydown", e => { if (e.target === search) return; if (e.key === "[" || e.key === "]") { const k = Math.max(0, Math.min(TL.dates.length - 1, +rng.value + (e.key === "]" ? 1 : -1))); showDate(k, true); } });
   }
 
+  // --- islands ---------------------------------------------------------------------------
+  // Islands of a kind lie together: the same ministry under its earlier names, the
+  // departments of one field. The grouping is editorial, not a fact from the data,
+  // which says only which body sits under which department; the names are matched
+  // here, in order, and a department no pattern names sits in "Elsewhere".
+  const SECTORS = [
+    ["The centre", /cabinet office|treasury$|equalities|actuary|statistics|prime minister/i],
+    ["Money and business", /revenue|business|export finance|competition|science, innovation/i],
+    ["Energy and environment", /energy|environment|forestry|climate/i],
+    ["Places and transport", /housing|communities|local government|transport/i],
+    ["Health and welfare", /health|work and pensions|food standards/i],
+    ["Learning and culture", /education|culture|skills/i],
+    ["The nations", /scottish|scotland|wales|welsh|northern ireland/i],
+    ["Law and justice", /justice|attorney|solicitor|legal|supreme court|prosecution|serious fraud/i],
+    ["Security and the world", /defence|home office|foreign|international development/i],
+  ];
+  const sectorOf = name => { const k = SECTORS.findIndex(q => q[1].test(name)); return k < 0 ? SECTORS.length : k; };
+  const hash01 = (i, k) => (((i + 1) * 2654435761 + k * 40503) >>> 0) % 10000 / 10000;
+  // Each island's area follows the department's staff, with room for its senior posts
+  // to stand. Each kind gets a circle of sea: the centre in the middle, the rest round
+  // it in order, so neighbouring fields are neighbours. Islands settle nearest their
+  // kind's centre, largest first, with a channel of open water between any two.
+  function packIslands() {
+    const G = S.G, D = G.departments, B = G.bodies;
+    const weight = di => Math.pow(Math.max(S.deptFte[di], 500), 0.85) + D[di].bodies.reduce((q, bi) => q + (B[bi].senior || 0), 0) * 8;
+    const total = S.order.reduce((q, di) => q + weight(di), 0) || 1, A = 9.4;
+    const size = {}; S.sector = {};
+    for (const di of S.order) {
+      const a = weight(di) / total * A, asp = 1.1 + hash01(di, 1) * 0.6; let w = Math.sqrt(a * asp), h = Math.sqrt(a / asp);
+      if (hash01(di, 2) > 0.5) { const t = w; w = h; h = t; } size[di] = { w, h }; S.sector[di] = sectorOf(D[di].name);
+    }
+    const kinds = []; for (let k = 0; k <= SECTORS.length; k++) { const m = S.order.filter(di => S.sector[di] === k); if (m.length) kinds.push({ k, members: m, area: m.reduce((q, di) => q + size[di].w * size[di].h, 0) }); }
+    for (const q of kinds) q.r = Math.sqrt(q.area) * 0.8 + 0.12;
+    const ring = kinds.filter(q => q.k !== 0), mid = kinds.find(q => q.k === 0), gap = 0.3;
+    const arc = ring.reduce((q, r) => q + 2 * r.r + gap, 0);
+    const R = Math.max(arc / (2 * Math.PI), (mid ? mid.r : 0) + Math.max(0, ...ring.map(q => q.r)) + gap);
+    const centre = {}; if (mid) centre[0] = [0, 0];
+    let ang = -Math.PI / 2;
+    for (const q of ring) { const span = (2 * q.r + gap) / R; ang += span / 2; centre[q.k] = [Math.cos(ang) * R, Math.sin(ang) * R]; ang += span / 2; }
+    const placed = [], out = new Map();
+    const free = (x, y, w, h, k) => placed.every(p => { const m = p.k === k ? 0.14 : 0.34; return x + w + m <= p.x || p.x + p.w + m <= x || y + h + m <= p.y || p.y + p.h + m <= y; });
+    for (const di of S.order) {
+      const { w, h } = size[di], c = centre[S.sector[di]], a0 = hash01(di, 3) * Math.PI * 2; let done = false;
+      for (let r = 0; r < 30 && !done; r += 0.03) {
+        const steps = Math.max(1, Math.floor(r * 40));
+        for (let k = 0; k < steps && !done; k++) {
+          const a = a0 + k / steps * Math.PI * 2 + r * 0.7, x = c[0] + Math.cos(a) * r - w / 2, y = c[1] + Math.sin(a) * r - h / 2;
+          if (free(x, y, w, h, S.sector[di])) { const q = { x, y, w, h }; placed.push({ x, y, w, h, k: S.sector[di] }); out.set(di, q); done = true; }
+        }
+      }
+    }
+    S.hubs = {};
+    for (const q of kinds) {
+      let cx = 0, cy = 0; for (const di of q.members) { const r = out.get(di); cx += r.x + r.w / 2; cy += r.y + r.h / 2; }
+      S.hubs[q.k] = { di: q.members[0], members: q.members, name: q.k < SECTORS.length ? SECTORS[q.k][0] : "Elsewhere", c: [cx / q.members.length, cy / q.members.length] };
+    }
+    return out;
+  }
+  // The heightfield: a plateau under every island's streets, falling as a shore to the
+  // sea, with two octaves of noise so no coast is straight. Water is the same mesh held
+  // at sea level and marked by its depth, so the shoreline is wherever the land dips
+  // under. Colour and light are set per vertex here; the water's motion is the shader's.
+  const TG = 200, DEEP = [0.02, 0.042, 0.09];
+  function makeTerrainBuffers() {
+    const n = TG, idx = [];
+    for (let j = 0; j < n - 1; j++) for (let i = 0; i < n - 1; i++) { const a = j * n + i, b = a + 1, c = a + n; idx.push(a, c, b, b, c, c + 1); }
+    const ib = gl.createBuffer(); gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ib); gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(idx), gl.STATIC_DRAW);
+    return { pos: buffer(new Float32Array(n * n * 3), true), col: buffer(new Float32Array(n * n * 3), true), d: buffer(new Float32Array(n * n), true), ib, ni: idx.length, n: 0 };
+  }
+  const noise = (x, y) => {
+    const xi = Math.floor(x), yi = Math.floor(y), fx = x - xi, fy = y - yi, sx = fx * fx * (3 - 2 * fx), sy = fy * fy * (3 - 2 * fy);
+    const h = (a, b) => { const q = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return q - Math.floor(q); };
+    return (h(xi, yi) * (1 - sx) + h(xi + 1, yi) * sx) * (1 - sy) + (h(xi, yi + 1) * (1 - sx) + h(xi + 1, yi + 1) * sx) * sy;
+  };
+  function makeTerrain(islands) {
+    const T = S.terrain, n = TG; if (!islands.length) { T.n = 0; return; }
+    let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+    for (const { r } of islands) { x0 = Math.min(x0, r.x); y0 = Math.min(y0, r.y); x1 = Math.max(x1, r.x + r.w); y1 = Math.max(y1, r.y + r.h); }
+    const pad = 1.2; x0 -= pad; y0 -= pad; x1 += pad; y1 += pad;
+    const SEA = -0.02, grow = 0.06, pos = new Float32Array(n * n * 3), col = new Float32Array(n * n * 3), dep = new Float32Array(n * n), hgt = new Float32Array(n * n), who = new Int16Array(n * n);
+    const tint = islands.map(({ di }) => hsl(S.hue[di], S.sat[di], 0.5));
+    for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) {
+      const x = x0 + (x1 - x0) * i / (n - 1), y = y0 + (y1 - y0) * j / (n - 1); let s = 1e9, w = 0;
+      for (let k = 0; k < islands.length; k++) {
+        const r = islands[k].r, lx = r.x - grow, rx = r.x + r.w + grow, ly = r.y - grow, ry = r.y + r.h + grow;
+        const dx = Math.max(lx - x, 0, x - rx), dy = Math.max(ly - y, 0, y - ry);
+        const d = dx > 0 || dy > 0 ? Math.hypot(dx, dy) : Math.max(lx - x, x - rx, ly - y, y - ry);   // negative inside
+        if (d < s) { s = d; w = k; }
+      }
+      s += (noise(x * 6.5, y * 6.5) - 0.5) * 0.09 + (noise(x * 13, y * 13) - 0.5) * 0.03;
+      const f = Math.min(1, Math.max(0, (s + 0.02) / 0.16)), z = -0.05 * f * f * (3 - 2 * f);   // plateau, shore, sea bed
+      const k = j * n + i; hgt[k] = z; who[k] = w; pos[k * 3] = x; pos[k * 3 + 1] = y; pos[k * 3 + 2] = Math.max(z, SEA); dep[k] = Math.max(0, SEA - z);
+    }
+    const lx = -0.5, ly = -0.7, lz = 0.55, ll = Math.hypot(lx, ly, lz), cell = (x1 - x0) / (n - 1), sand = [0.23, 0.2, 0.15], deep = DEEP;
+    for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) {
+      const k = j * n + i, z = hgt[k]; let c;
+      if (z > SEA) {
+        const zx = (hgt[j * n + Math.min(i + 1, n - 1)] - hgt[j * n + Math.max(i - 1, 0)]) / (2 * cell), zy = (hgt[Math.min(j + 1, n - 1) * n + i] - hgt[Math.max(j - 1, 0) * n + i]) / (2 * cell);
+        const lit = 0.55 + 0.45 * Math.max(0, (-zx * lx - zy * ly + lz) / (Math.hypot(zx, zy, 1) * ll));
+        const t = tint[who[k]], up = Math.min(1, Math.max(0, 1 + z / 0.02));                 // 1 on the plateau, 0 at the tide line
+        c = [(0.06 + t[0] * 0.09) * up + sand[0] * (1 - up), (0.062 + t[1] * 0.09) * up + sand[1] * (1 - up), (0.08 + t[2] * 0.09) * up + sand[2] * (1 - up)].map(v => v * lit);
+      } else c = deep;
+      col[k * 3] = c[0]; col[k * 3 + 1] = c[1]; col[k * 3 + 2] = c[2];
+    }
+    upload(T.pos, pos); upload(T.col, col); upload(T.d, dep); T.n = T.ni;
+  }
+
   // --- layouts ---------------------------------------------------------------------------
   function treemap(items, weightOf, rect) {
     const out = new Map(); const total = items.reduce((s, it) => s + weightOf(it), 0) || 1;
@@ -456,20 +585,26 @@
   }
   function layout(f) {
     const G = S.G, B = G.bodies, D = G.departments;
-    S.vis.fill(0); const floors = [], streets = [], segs = [];
+    S.vis.fill(0); const floors = [], streets = [], segs = [], islands = [];
     const addFloor = (r, di, a) => { floors.push({ r, c: hsl(S.hue[di], S.sat[di], 0.5), a }); };
     const addStreets = (r, di) => { const c = hsl(S.hue[di], S.sat[di], 0.6); const q = [[r.x, r.y, r.x + r.w, r.y], [r.x + r.w, r.y, r.x + r.w, r.y + r.h], [r.x + r.w, r.y + r.h, r.x, r.y + r.h], [r.x, r.y + r.h, r.x, r.y]]; for (const s of q) { streets.push({ s, c }); segs.push({ s, c }); } };
     if (f.kind === "gov") {
-      const rects = treemap(S.order, di => Math.max(S.deptFte[di], 400), { x: -1.8, y: -1.3, w: 3.6, h: 2.6 });
+      const rects = packIslands();
       S.rects = {};
       S.order.forEach(di => {
-        const r = rects.get(di); S.rects[di] = r; addFloor(r, di, 0.045); addStreets(r, di);
+        const r = rects.get(di); S.rects[di] = r; islands.push({ r, di }); addFloor(r, di, 0.045); addStreets(r, di);
         const inner = { x: r.x + r.w * 0.06, y: r.y + r.h * 0.06, w: r.w * 0.88, h: r.h * 0.88 };
         const bs = treemap(D[di].bodies, bi => Math.max(B[bi].senior, 1), inner);
         D[di].bodies.forEach(bi => { const q = bs.get(bi); placeBlock(bi, { x: q.x + q.w * 0.1, y: q.y + q.h * 0.1, w: q.w * 0.8, h: q.h * 0.8 }, di); });
       });
+      // ferry lanes: every island of a kind to the largest of its kind, with traffic between
+      for (const hub of Object.values(S.hubs)) for (const di of hub.members) if (di !== hub.di) {
+        const a = S.rects[hub.di], b = S.rects[di], c = hsl(S.hue[hub.di], S.sat[hub.di], 0.6);
+        const sg = [a.x + a.w / 2, a.y + a.h / 2, b.x + b.w / 2, b.y + b.h / 2]; streets.push({ s: sg, c, a: 0.09 }); segs.push({ s: sg, c, z: [0.006, 0.006] });
+      }
       S.vis.fill(1); S.sizeScale = 0.7; S.phiWant = 0.66; S.thetaWant = null;
     } else if (f.kind === "dept") {
+      islands.push({ r: { x: -1.7, y: -1.2, w: 3.4, h: 2.4 }, di: f.d });
       const bs = D[f.d].bodies.slice().sort((a, b) => B[b].fte - B[a].fte);
       const rects = treemap(bs, bi => Math.max(B[bi].senior, 1) + Math.sqrt(B[bi].fte || 0) * 0.15, { x: -1.7, y: -1.2, w: 3.4, h: 2.4 });
       S.bodyRects = {}; bs.forEach(bi => { const r = rects.get(bi); S.bodyRects[bi] = r; addFloor(r, f.d, 0.05); addStreets(r, f.d); placeBlock(bi, { x: r.x + r.w * 0.1, y: r.y + r.h * 0.1, w: r.w * 0.8, h: r.h * 0.8 }, f.d); });
@@ -481,7 +616,7 @@
       if (f.kind === "body") { for (let i = 0; i < S.n; i++) if (S.N.body[i] === f.b) S.vis[i] = 1; }
       else (function mark(i) { S.vis[i] = 1; S.kids[i].forEach(mark); })(f.p);
       const depthY = 1.2 - (t.rows - 1) * 0.5;
-      addFloor({ x: -t.width / 2 - 0.25, y: depthY - 0.35, w: t.width + 0.5, h: 1.2 - depthY + 0.7 }, f.d, 0.03);
+      const fr = { x: -t.width / 2 - 0.25, y: depthY - 0.35, w: t.width + 0.5, h: 1.2 - depthY + 0.7 }; addFloor(fr, f.d, 0.03); islands.push({ r: fr, di: f.d });
       // the reporting lines are the streets here: traffic runs down them
       const c = hsl(S.hue[f.d], S.sat[f.d], 0.7);
       for (let i = 0; i < S.n; i++) if (S.vis[i] && S.N.parent[i] >= 0 && S.vis[S.N.parent[i]]) { const p = S.N.parent[i]; segs.push({ s: [S.to[p * 3], S.to[p * 3 + 1], S.to[i * 3], S.to[i * 3 + 1]], z: [S.to[p * 3 + 2], S.to[i * 3 + 2]], c }); }
@@ -491,12 +626,13 @@
     const fp = [], fc = [], fa = [];
     for (const { r, c, a } of floors) {
       const q = [[r.x, r.y], [r.x + r.w, r.y], [r.x + r.w, r.y + r.h], [r.x, r.y], [r.x + r.w, r.y + r.h], [r.x, r.y + r.h]];
-      for (const [x, y] of q) { fp.push(x, y, 0); fc.push(c[0], c[1], c[2]); fa.push(a); }
+      for (const [x, y] of q) { fp.push(x, y, 0.002); fc.push(c[0], c[1], c[2]); fa.push(a); }
     }
     upload(S.floor.pos, new Float32Array(fp)); upload(S.floor.col, new Float32Array(fc)); upload(S.floor.al, new Float32Array(fa)); S.floor.n = fa.length;
     const sp = [], sc = [], sa = [];
-    for (const { s, c } of streets) { sp.push(s[0], s[1], 0.001, s[2], s[3], 0.001); sc.push(c[0], c[1], c[2], c[0], c[1], c[2]); sa.push(0.35, 0.35); }
+    for (const { s, c, a } of streets) { sp.push(s[0], s[1], 0.003, s[2], s[3], 0.003); sc.push(c[0], c[1], c[2], c[0], c[1], c[2]); sa.push(a || 0.35, a || 0.35); }
     upload(S.streets.pos, new Float32Array(sp)); upload(S.streets.col, new Float32Array(sc)); upload(S.streets.al, new Float32Array(sa)); S.streets.n = sa.length;
+    makeTerrain(islands);
     S.segs = segs; for (let k = 0; k < S.traffic.n; k++) S.traffic.seg[k] = segs.length ? Math.floor(Math.random() * segs.length) : -1;
     upload(S.pts.style, S.styleArr);
     makeSigns(f);
@@ -507,10 +643,13 @@
   function makeSigns(f) {
     const G = S.G, B = G.bodies, N = S.N, want = [];
     const tintOf = di => { const c = hsl(S.hue[di], S.sat[di], 0.78); return c; };
-    if (f.kind === "gov") S.order.forEach(di => { const r = S.rects[di]; want.push({ text: G.departments[di].name, x: r.x + r.w / 2, y: r.y + r.h / 2, z: 0.92, w: Math.max(0.2, Math.min(0.9, Math.sqrt(r.w * r.h) * 1.15)), tint: tintOf(di) }); });
-    else if (f.kind === "dept") G.departments[f.d].bodies.forEach(bi => { const r = S.bodyRects[bi]; if (!r) return; want.push({ text: B[bi].name, x: r.x + r.w / 2, y: r.y + r.h / 2, z: 0.86, w: Math.max(0.16, Math.min(0.75, Math.sqrt(r.w * r.h) * 1.2)), tint: tintOf(f.d) }); });
+    if (f.kind === "gov") {
+      for (const hub of Object.values(S.hubs)) if (hub.members.length > 1) want.push({ text: hub.name.toUpperCase(), x: hub.c[0], y: hub.c[1], z: 1.25, w: 1.1, tint: [0.42, 0.48, 0.62], hue: 225 });
+      S.order.forEach(di => { const r = S.rects[di]; want.push({ text: G.departments[di].name, x: r.x + r.w / 2, y: r.y + r.h / 2, z: 0.92, w: Math.max(0.2, Math.min(0.9, Math.sqrt(r.w * r.h) * 1.15)), tint: tintOf(di), hue: S.hue[di] }); });
+    }
+    else if (f.kind === "dept") G.departments[f.d].bodies.forEach(bi => { const r = S.bodyRects[bi]; if (!r) return; want.push({ text: B[bi].name, x: r.x + r.w / 2, y: r.y + r.h / 2, z: 0.86, w: Math.max(0.16, Math.min(0.75, Math.sqrt(r.w * r.h) * 1.2)), tint: tintOf(f.d), hue: S.hue[f.d] }); });
     else { const list = []; for (let i = 0; i < S.n; i++) if (S.vis[i]) list.push(i);
-      list.sort((a, b) => N.below_fte[b] - N.below_fte[a]).slice(0, 48).forEach(i => want.push({ text: N.title[i] || "(untitled post)", x: S.to[i * 3], y: S.to[i * 3 + 1], z: S.to[i * 3 + 2] + 0.07, w: Math.max(0.14, Math.min(0.42, 0.1 + Math.sqrt(N.below_fte[i] || 0) * 0.008)), tint: tintOf(f.d) })); }
+      list.sort((a, b) => N.below_fte[b] - N.below_fte[a]).slice(0, 48).forEach(i => want.push({ text: N.title[i] || "(untitled post)", x: S.to[i * 3], y: S.to[i * 3 + 1], z: S.to[i * 3 + 2] + 0.07, w: Math.max(0.14, Math.min(0.42, 0.1 + Math.sqrt(N.below_fte[i] || 0) * 0.008)), tint: tintOf(f.d), hue: S.hue[f.d] })); }
     const ROW = 64, CW = 1024, n = Math.min(want.length, 64);
     const cv = document.createElement("canvas"); cv.width = CW; cv.height = Math.max(ROW, ROW * n);
     const ctx = cv.getContext("2d"); ctx.font = "700 40px system-ui, -apple-system, Segoe UI, Roboto, sans-serif"; ctx.textBaseline = "middle"; ctx.fillStyle = "#fff";
@@ -518,7 +657,7 @@
     for (let k = 0; k < n; k++) {
       const L = want[k]; let text = L.text; while (ctx.measureText(text).width > CW - 40 && text.length > 4) text = text.slice(0, -2).trimEnd() + "…";
       const tw = ctx.measureText(text).width + 20;
-      ctx.shadowColor = `hsl(${S.hue[f.kind === "gov" ? S.order[k] : f.d]}, 90%, 60%)`; ctx.shadowBlur = 16; ctx.fillText(text, 10, k * ROW + ROW / 2); ctx.shadowBlur = 0; ctx.fillText(text, 10, k * ROW + ROW / 2);
+      ctx.shadowColor = `hsl(${L.hue}, 90%, 60%)`; ctx.shadowBlur = 16; ctx.fillText(text, 10, k * ROW + ROW / 2); ctx.shadowBlur = 0; ctx.fillText(text, 10, k * ROW + ROW / 2);
       const h = L.w * ROW / tw, u1 = tw / CW, v0 = k / n, v1 = (k + 1) / n;
       for (const [ox, oy, u, v] of [[-0.5, -0.5, 0, v1], [0.5, -0.5, u1, v1], [0.5, 0.5, u1, v0], [-0.5, -0.5, 0, v1], [0.5, 0.5, u1, v0], [-0.5, 0.5, 0, v0]]) {
         c.push(L.x, L.y, L.z); o.push(ox, oy); uv.push(u, v); sz.push(L.w, h); tint.push(L.tint[0], L.tint[1], L.tint[2]);
@@ -624,7 +763,7 @@
     $("upbtn").hidden = f.kind === "gov";
     let head = "", items = [];
     if (f.kind === "gov") {
-      head = `<b>UK central government</b><span>${D.length} departments · ${B.length} bodies · ${fmt(S.deptFte.reduce((a, b) => a + b, 0))} FTE · each district is a department; click one</span>`;
+      head = `<b>UK central government</b><span>${D.length} departments · ${B.length} bodies · ${fmt(S.deptFte.reduce((a, b) => a + b, 0))} FTE · each island is a department; click one</span>`;
       items = S.order.map(di => ({ name: D[di].name, meta: `${fmt(S.deptFte[di])} FTE · ${D[di].bodies.length} bod${D[di].bodies.length === 1 ? "y" : "ies"}`, f: { kind: "dept", d: di, b: -1, p: -1 }, hue: S.hue[di], sat: S.sat[di] }));
     } else if (f.kind === "dept") {
       const d = D[f.d];
@@ -724,9 +863,11 @@
     gl.useProgram(SKY); gl.uniform1f(uni(SKY, "theta"), S.theta); gl.uniform1f(uni(SKY, "phi"), S.phi); gl.uniform1f(uni(SKY, "t"), tsec); gl.uniform1f(uni(SKY, "aspect"), W / Hh);
     fullscreen(SKY);
     gl.depthMask(true); gl.enable(gl.DEPTH_TEST); gl.depthFunc(gl.LEQUAL); gl.disable(gl.BLEND); disableAll();
-    // the ground plane, opaque, so buildings hide what stands behind them
-    gl.useProgram(LN); gl.uniformMatrix4fv(uni(LN, "mvp"), false, m); gl.uniform1f(uni(LN, "rise"), 1);
-    attrib(LN, "p", S.plane.pos, 3); attrib(LN, "col", S.plane.col, 3); attrib(LN, "a", S.plane.al, 1); gl.drawArrays(gl.TRIANGLES, 0, 6);
+    // the sea to the horizon and the islands on it, opaque, so buildings hide what stands behind them
+    gl.useProgram(TER); gl.uniformMatrix4fv(uni(TER, "mvp"), false, m); gl.uniform1f(uni(TER, "t"), tsec);
+    attrib(TER, "p", S.plane.pos, 3); attrib(TER, "col", S.plane.col, 3); attrib(TER, "d", S.plane.d, 1); gl.drawArrays(gl.TRIANGLES, 0, 6);
+    if (S.terrain.n) { disableAll(); attrib(TER, "p", S.terrain.pos, 3); attrib(TER, "col", S.terrain.col, 3); attrib(TER, "d", S.terrain.d, 1);
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, S.terrain.ib); gl.drawElements(gl.TRIANGLES, S.terrain.n, gl.UNSIGNED_SHORT, 0); }
     // the buildings
     if (EXT) {
       disableAll(); gl.useProgram(BOX); gl.uniformMatrix4fv(uni(BOX, "mvp"), false, m); gl.uniform1f(uni(BOX, "rise"), rise); gl.uniform1f(uni(BOX, "t"), tsec);
@@ -742,7 +883,6 @@
     gl.depthMask(false); gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE); disableAll();
     gl.useProgram(LN); gl.uniformMatrix4fv(uni(LN, "mvp"), false, m); gl.uniform1f(uni(LN, "rise"), 1);
     if (S.floor.n) { attrib(LN, "p", S.floor.pos, 3); attrib(LN, "col", S.floor.col, 3); attrib(LN, "a", S.floor.al, 1); gl.drawArrays(gl.TRIANGLES, 0, S.floor.n); }
-    attrib(LN, "p", S.grid.pos, 3); attrib(LN, "col", S.grid.col, 3); attrib(LN, "a", S.grid.al, 1); gl.drawArrays(gl.LINES, 0, S.grid.n);
     if (S.streets.n) { attrib(LN, "p", S.streets.pos, 3); attrib(LN, "col", S.streets.col, 3); attrib(LN, "a", S.streets.al, 1); gl.drawArrays(gl.LINES, 0, S.streets.n); }
     gl.uniform1f(uni(LN, "rise"), rise);
     attrib(LN, "p", S.lines.pos, 3); attrib(LN, "col", S.lines.col, 3); attrib(LN, "a", S.lines.al, 1); gl.drawArrays(gl.LINES, 0, S.ln.length * 2);

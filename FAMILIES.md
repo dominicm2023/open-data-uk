@@ -99,6 +99,13 @@ and nothing that identifies a person beyond what the body's own file, linked
 on every row, already states. Adding names would be a one-line change to
 each mapping and a decision for Dominic, recorded here first.
 
+**The 3D chart's grouping of departments is editorial.** On the archipelago
+(16 September 2026) islands of a kind lie together: the same ministry under
+its earlier names, the departments of one field. That grouping is a table of
+name patterns in `web/orgchart3d.js` (`SECTORS`), not a fact from any file;
+the data says only which body sits under which department, and the page's
+help says so. A department no pattern names sits in "Elsewhere".
+
 ## Politeness: fix before anything scales
 
 The pilot ran at four requests a second to one host and Brent answered 429.

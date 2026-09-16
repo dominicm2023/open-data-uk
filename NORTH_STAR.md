@@ -194,6 +194,14 @@ A living list. Add freely; move to "Done" with the commit that did it.
   annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
   and Scotland on its About page's OGL statement. Air Quality England
   parked (no terms).
+- 16 Sep — the city became an archipelago. Every department is an island
+  whose area follows its staff, with its bodies as blocks; islands of a kind
+  lie together (the same ministry under its earlier names, the departments
+  of one field) round "The centre", with ferry lanes and traffic between
+  them and the kind's name over its waters. A heightfield sea and shore
+  (plateau, sand, tide line, swell in the shader), no library. The grouping
+  is editorial, by name, and the help says so: the data says only which
+  body sits under which department.
 - 15 Sep — the organisation chart, two ways. `/family/organograms/chart`:
   every body under its parent department, and one body's posts nested by
   reporting line as plain <details>. `/family/organograms/chart/3d`, "The
