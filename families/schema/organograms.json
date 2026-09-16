@@ -126,9 +126,18 @@
     "adapter_version"
   ],
   "validation": {
-    "pay_floor_gbp_range": [0, 2000000],
-    "pay_ceiling_gbp_range": [0, 2000000],
-    "fte_range": [0, 100000]
+    "pay_floor_gbp_range": [
+      0,
+      2000000
+    ],
+    "pay_ceiling_gbp_range": [
+      0,
+      2000000
+    ],
+    "fte_range": [
+      0,
+      100000
+    ]
   },
   "date_from_file": "as_of",
   "rules": [
@@ -136,21 +145,24 @@
     "Central government files follow the Cabinet Office organogram standard: a senior file (one row per post) and a junior file (one row per grade under a senior post, with a number of posts). Both are mapped to this one shape; 'level' says which a row came from.",
     "The newest senior and the newest junior file of a body are the family's source, taken by the date in the file's name; older snapshots stay findable in the index.",
     "Pay is kept as published: senior pay in the £5,000 band the body reported, junior pay as the grade's scale. 'N/A' and 'N/D' become an empty cell, never zero.",
-    "Councils' senior-salary tables under the transparency code are mapped only where a person has matched their columns to this shape; a table that lists people rather than posts is mapped without the name columns."
+    "Councils' senior-salary tables under the transparency code are mapped only where a person has matched their columns to this shape; a table that lists people rather than posts is mapped without the name columns.",
+    "The table holds every snapshot's senior posts since 2010 (junior groups for the newest only), so the same post appears once per snapshot; as_of tells them apart. Headline figures count each body's newest snapshot only."
   ],
   "headline": [
     {
       "column": "fte",
       "agg": "sum",
-      "label": "full-time-equivalent posts covered",
-      "format": "integer"
+      "label": "full-time-equivalent posts covered, at each body's newest snapshot",
+      "format": "integer",
+      "newest_per_body": true
     },
     {
       "column": "level",
       "agg": "share",
       "match": "^senior",
-      "label": "of rows are individual senior posts",
-      "format": "percent"
+      "label": "of rows at the newest snapshots are individual senior posts",
+      "format": "percent",
+      "newest_per_body": true
     }
   ]
 }

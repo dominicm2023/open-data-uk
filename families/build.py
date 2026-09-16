@@ -659,14 +659,23 @@ def _facets(rows: list[dict], schema: dict) -> dict:
     # Family-specific figures the schema asks the page to lead with: a sum
     # of a column, or the share of rows whose value matches a pattern.
     headline = []
+    # a series family holds every snapshot; a headline about "now" counts
+    # each body's newest snapshot only, or it would add the years together
+    newest_of: dict = {}
+    for r in rows:
+        b = r.get("body") or r.get("publisher")
+        if (r.get("as_of") or "") > (newest_of.get(b) or ""):
+            newest_of[b] = r.get("as_of")
+    newest_rows = [r for r in rows if not r.get("as_of") or r.get("as_of") == newest_of.get(r.get("body") or r.get("publisher"))]
     for spec_h in schema.get("headline", []):
         col, agg = spec_h["column"], spec_h["agg"]
+        rows_h = newest_rows if spec_h.get("newest_per_body") else rows
         if agg == "sum":
-            vals = [r[col] for r in rows if isinstance(r.get(col), (int, float))]
+            vals = [r[col] for r in rows_h if isinstance(r.get(col), (int, float))]
             headline.append({**spec_h, "value": sum(vals), "n": len(vals)})
         elif agg == "share":
             rx = re.compile(spec_h["match"], re.I)
-            have = [r[col] for r in rows if r.get(col) not in (None, "")]
+            have = [r[col] for r in rows_h if r.get(col) not in (None, "")]
             hit = sum(1 for v in have if rx.search(str(v)))
             headline.append({**spec_h, "value": (hit / len(have)) if have else None, "n": len(have), "hits": hit})
     years: dict = {}
