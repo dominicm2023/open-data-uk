@@ -82,8 +82,8 @@
       if (va <= 0.002) discard;
       if (vstyle > 3.5) {                                             // an annex: the posts with no pay band, grouped
         float stripe = step(0.5, fract(vuv.y * 0.3));
-        vec3 g = vec3(0.3, 0.32, 0.4) * (0.3 + 0.25 * vshade) + vc * 0.06 * stripe * (1.0 - vtop);
-        gl_FragColor = vec4(g * va, 1.0); return;
+        vec3 g = vec3(0.3, 0.32, 0.4) * (0.5 + 0.35 * vshade) + vc * 0.08 * stripe * (1.0 - vtop);
+        gl_FragColor = vec4(mix(vec3(0.075, 0.09, 0.17), g, va), 1.0); return;
       }
       vec2 g = vuv;                                                   // each district builds its own way
       if (vstyle < 0.5) { } else if (vstyle < 1.5) { g.x *= 0.55; } else if (vstyle < 2.5) { g.y *= 0.45; } else { g *= 0.7; }
@@ -91,7 +91,7 @@
       float busy = vstyle < 0.5 ? 0.42 : vstyle < 1.5 ? 0.35 : vstyle < 2.5 ? 0.6 : 0.28;
       float lit = step(1.0 - busy, hash(cell + floor(t * 0.1 + hash(cell * 1.7) * 9.0)));
       float win = (vstyle < 2.5 ? step(0.2, f.x) * step(f.x, 0.8) * step(0.2, f.y) * step(f.y, 0.75) : step(0.12, f.y) * step(f.y, 0.82)) * (1.0 - vtop);
-      vec3 c = vc * 0.14 * vshade;
+      vec3 c = (vc * 0.24 + vec3(0.035, 0.04, 0.06)) * vshade;               // walls the moon can find
       vec3 warm = mix(vc, vec3(1.0, 0.86, 0.6), vstyle > 2.5 ? 0.6 : 0.15);
       c += warm * win * lit * 0.75 * (0.5 + 0.5 * vshade);
       c += vc * smoothstep(0.9, 1.0, vh) * (1.0 - vtop) * 0.7;
@@ -99,7 +99,7 @@
       c += vc * 0.06 * step(0.93, f.y) * (1.0 - vtop);                  // a faint line at each floor
       c *= 0.55 + 0.45 * smoothstep(0.0, 0.12, vh);
       c *= 0.86 + 0.28 * vtone;                                           // no two buildings quite the same tone
-      gl_FragColor = vec4(c * va, 1.0);
+      gl_FragColor = vec4(mix(vec3(0.075, 0.09, 0.17), c, va), 1.0);
     }`;
   const VS_EDGE = `
     attribute vec3 v; attribute vec3 ipos; attribute vec2 isz; attribute vec3 icol; attribute float ia; attribute float istyle;
@@ -172,11 +172,12 @@
         float swell = fbm(vw * 2.5 + vec2(t * 0.04, t * 0.03)) * 2.0 - 1.0;                   // slow, long waves
         float nx = vnoise(vw * 30.0 + vec2(t * 0.6, -t * 0.4)) - 0.5, ny = vnoise(vw * 30.0 + vec2(-t * 0.5, t * 0.7) + 31.0) - 0.5;
         float rip = nx + ny;                                                                  // the chop on top
-        c += vec3(0.03, 0.06, 0.10) * (0.5 + 0.5 * swell);                                    // the open sea moves
+        c += vec3(0.04, 0.08, 0.13) * (0.5 + 0.5 * swell);                                    // the open sea moves
         vec3 n = normalize(vec3(nx * 0.4 + swell * 0.06, ny * 0.4 - swell * 0.06, 1.0));       // moonlight on the chop
         vec3 v = normalize(eye - vec3(vw, -0.02)); float g = max(dot(reflect(-v, n), MOON), 0.0);
-        c += vec3(0.8, 0.85, 1.0) * (pow(g, 160.0) * 0.55 + pow(g, 10.0) * 0.05);
-        c += vec3(0.05, 0.16, 0.20) * (0.5 + 0.5 * rip) * exp(-vd * 45.0) * 0.6;              // the shallows shimmer
+        c += vec3(0.8, 0.85, 1.0) * (pow(g, 160.0) * 0.55 + pow(g, 10.0) * 0.07);
+        c += vec3(0.10, 0.10, 0.22) * pow(1.0 - max(v.z, 0.0), 4.0);                          // the sky lies on the water where you look along it
+        c += vec3(0.06, 0.24, 0.28) * (0.6 + 0.4 * rip) * exp(-vd * 30.0) * 0.9;              // the shallows shimmer
         c += vec3(0.35, 0.9, 1.0) * exp(-vd * 300.0) * (0.5 + 0.5 * sin(t * 1.3 + vw.x * 9.0 + vw.y * 7.0)) * 0.7;   // the tide line
       } else {
         c *= 0.8 + 0.4 * fbm(vw * 45.0);                                                      // rock and moss
@@ -188,7 +189,7 @@
       }
       c *= shade;
       float haze = clamp(1.35 - length(eye - vec3(vw, vh)) * 0.11, 0.18, 1.0);
-      gl_FragColor = vec4(mix(vec3(0.03, 0.035, 0.07), c, haze), 1.0);                        // haze, not darkness, in the distance
+      gl_FragColor = vec4(mix(vec3(0.075, 0.09, 0.17), c, haze), 1.0);                        // haze, not darkness, in the distance
     }`;
   // full-screen passes: the sky behind everything, then bloom over it all
   const VS_QUAD = `attribute vec2 q; varying vec2 uv; void main() { uv = q * 0.5 + 0.5; gl_Position = vec4(q, 0.0, 1.0); }`;
@@ -203,10 +204,10 @@
     void main() {
       vec3 dir = normalize(fwd + rgt * ((uv.x * 2.0 - 1.0) * tanf * aspect) + upv * ((uv.y * 2.0 - 1.0) * tanf));
       float el = dir.z, az = atan(dir.y, dir.x), md = dot(dir, MOON);
-      vec3 top = vec3(0.012, 0.014, 0.04), mid = vec3(0.05, 0.03, 0.10), low = vec3(0.02, 0.018, 0.05);
+      vec3 top = vec3(0.03, 0.04, 0.11), mid = vec3(0.11, 0.09, 0.24), low = vec3(0.06, 0.07, 0.15);
       vec3 c = el < 0.0 ? mix(mid, low, clamp(-el * 4.0, 0.0, 1.0)) : mix(mid, top, smoothstep(0.0, 0.7, el));
-      c += vec3(0.16, 0.06, 0.14) * exp(-abs(el) * 7.0) * 0.6;                                // the city's glow on the horizon
-      c += vec3(0.02, 0.08, 0.10) * exp(-abs(el) * 12.0);
+      c += vec3(0.24, 0.10, 0.20) * exp(-abs(el) * 6.0) * 0.7;                                // the city's glow on the horizon
+      c += vec3(0.04, 0.14, 0.17) * exp(-abs(el) * 11.0);
       vec2 sp = vec2(az * 28.0, el * 70.0), cell = floor(sp); float r = hash(cell);            // stars, fixed to the world
       float star = step(0.975, r) * smoothstep(0.4, 0.0, length(fract(sp) - 0.5)) * (0.55 + 0.45 * sin(t * (1.5 + r * 3.0) + r * 20.0));
       c += vec3(0.8, 0.85, 1.0) * star * smoothstep(0.02, 0.25, el) * 0.9;
@@ -226,7 +227,7 @@
       gl_FragColor = vec4(c, 1.0);
     }`;
   const FS_BRIGHT = `precision mediump float; varying vec2 uv; uniform sampler2D tex;
-    void main() { vec3 c = texture2D(tex, uv).rgb; gl_FragColor = vec4(max(c - 0.32, 0.0) * 1.7, 1.0); }`;
+    void main() { vec3 c = texture2D(tex, uv).rgb; gl_FragColor = vec4(max(c - 0.4, 0.0) * 1.7, 1.0); }`;
   const FS_BLUR = `precision mediump float; varying vec2 uv; uniform sampler2D tex; uniform vec2 dir;
     void main() { vec3 c = texture2D(tex, uv).rgb * 0.227;
       c += (texture2D(tex, uv + dir * 1.385).rgb + texture2D(tex, uv - dir * 1.385).rgb) * 0.316;
@@ -235,8 +236,8 @@
   const FS_COMPOSE = `precision mediump float; varying vec2 uv; uniform sampler2D tex; uniform sampler2D bloom; uniform float strength;
     void main() {
       vec3 c = texture2D(tex, uv).rgb + texture2D(bloom, uv).rgb * strength;
-      c = vec3(1.0) - exp(-c * 1.25);                                     // soft shoulder on the brightest neon
-      vec2 d = uv - 0.5; c *= 1.0 - 0.32 * dot(d, d) * 1.6;               // vignette
+      c = vec3(1.0) - exp(-c * 1.5);                                     // soft shoulder on the brightest neon
+      vec2 d = uv - 0.5; c *= 1.0 - 0.2 * dot(d, d) * 1.6;               // vignette
       gl_FragColor = vec4(c, 1.0);
     }`;
   function program(vs, fs) {
@@ -529,7 +530,7 @@
   // sea, with two octaves of noise so no coast is straight. Water is the same mesh held
   // at sea level and marked by its depth, so the shoreline is wherever the land dips
   // under. Colour and light are set per vertex here; the water's motion is the shader's.
-  const TG = 200, DEEP = [0.02, 0.042, 0.09];
+  const TG = 200, DEEP = [0.035, 0.075, 0.15];
   function makeTerrainBuffers() {
     const n = TG, idx = [];
     for (let j = 0; j < n - 1; j++) for (let i = 0; i < n - 1; i++) { const a = j * n + i, b = a + 1, c = a + n; idx.push(a, c, b, b, c, c + 1); }
@@ -562,14 +563,14 @@
       const f = Math.min(1, Math.max(0, (s + 0.02) / 0.16)), z = -0.05 * f * f * (3 - 2 * f);   // plateau, shore, sea bed
       const k = j * n + i; hgt[k] = z; who[k] = w; pos[k * 3] = x; pos[k * 3 + 1] = y; pos[k * 3 + 2] = Math.max(z, SEA); dep[k] = Math.max(0, SEA - z);
     }
-    const lx = -0.5, ly = -0.7, lz = 0.2, ll = Math.hypot(lx, ly, lz), cell = (x1 - x0) / (n - 1), sand = [0.23, 0.2, 0.15], deep = DEEP;
+    const lx = -0.5, ly = -0.7, lz = 0.2, ll = Math.hypot(lx, ly, lz), cell = (x1 - x0) / (n - 1), sand = [0.4, 0.35, 0.26], deep = DEEP;
     for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) {
       const k = j * n + i, z = hgt[k]; let c;
       if (z > SEA) {
         const zx = (hgt[j * n + Math.min(i + 1, n - 1)] - hgt[j * n + Math.max(i - 1, 0)]) / (2 * cell), zy = (hgt[Math.min(j + 1, n - 1) * n + i] - hgt[Math.max(j - 1, 0) * n + i]) / (2 * cell);
-        const lit = 0.55 + 0.45 * Math.max(0, (-zx * lx - zy * ly + lz) / (Math.hypot(zx, zy, 1) * ll));
+        const lit = 0.75 + 0.4 * Math.max(0, (-zx * lx - zy * ly + lz) / (Math.hypot(zx, zy, 1) * ll));
         const t = tint[who[k]], up = Math.min(1, Math.max(0, 1 + z / 0.02));                 // 1 on the plateau, 0 at the tide line
-        c = [(0.06 + t[0] * 0.09) * up + sand[0] * (1 - up), (0.062 + t[1] * 0.09) * up + sand[1] * (1 - up), (0.08 + t[2] * 0.09) * up + sand[2] * (1 - up)].map(v => v * lit);
+        c = [(0.14 + t[0] * 0.17) * up + sand[0] * (1 - up), (0.15 + t[1] * 0.17) * up + sand[1] * (1 - up), (0.185 + t[2] * 0.17) * up + sand[2] * (1 - up)].map(v => v * lit);
       } else c = deep;
       col[k * 3] = c[0]; col[k * 3 + 1] = c[1]; col[k * 3 + 2] = c[2];
     }
