@@ -23,7 +23,6 @@ from pathlib import Path
 from slugs import legacy_slugs, slug_for
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
 
 from paths import DB_PATH, EMB_PATH, KEYS_PATH, connect as db_connect  # noqa: E402
 
@@ -193,6 +192,9 @@ def main() -> None:
         print("nothing to do")
         return
 
+    # Imported here, not at the top: the server takes two constants from this
+    # file, and should not need torch installed to be imported (CI imports it).
+    from sentence_transformers import SentenceTransformer
     model = SentenceTransformer(MODEL_NAME)
     model.max_seq_length = MAX_SEQ_TOKENS
 

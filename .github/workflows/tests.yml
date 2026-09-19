@@ -18,8 +18,10 @@ jobs:
         with:
           python-version: "3.12"
       # requests is imported by harvester.py, which the placeholder suite
-      # exercises directly; nothing here makes a request.
-      - run: pip install pyyaml requests
+      # exercises directly; nothing here makes a request. fastapi and numpy
+      # are what server.py needs to be imported; the embedding library is
+      # loaded only when a model is, so it is not needed here.
+      - run: pip install pyyaml requests fastapi numpy
       - name: Duplicate-collapsing rules
         run: python scripts/dedupe_test.py
       - name: Page rendering and escaping
