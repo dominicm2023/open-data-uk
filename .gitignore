@@ -49,3 +49,8 @@ cron_digest.log
 # individuals from published salary tables. Private until a field-scope review.
 outputs/
 pilot/data/
+
+# Pilot working data: fetched files and tool installs, not source
+pilot/data/
+analysis/salary-pilot/raw/
+node_modules/

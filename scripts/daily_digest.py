@@ -181,10 +181,12 @@ def check_refresh(rep: Report, state: dict) -> dict:
         rep.add(RED, "The nightly refresh has not run",
                 f"last started {last}, {age_h:.0f} hours ago")
     elif not finished:
-        # A refresh takes about an hour. Inside that window it is running,
-        # not broken — only past it has it actually died, and calling a
-        # healthy job a failure is how a monitor teaches you to ignore it.
-        if age_h is not None and age_h < 3:
+        # A refresh took about an hour when this was written and takes about
+        # seven and a half now (harvest ~3.5h, the spend family ~2.5h; 14:20
+        # to 21:49 on 16 Sep 2026). Inside ten hours it is running, not
+        # broken — only past that has it actually died, and calling a healthy
+        # job a failure is how a monitor teaches you to ignore it.
+        if age_h is not None and age_h < 10:
             rep.add(GREEN, "Refresh is still running",
                     f"started {last}, {age_h:.1f}h ago")
         else:
