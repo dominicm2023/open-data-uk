@@ -48,7 +48,12 @@ CASES = [
      "rare-term boost must beat the common phrase 'waiting lists'"),
     ("winter gritting routes", 3, r"gritting", None,
      "plain topical query"),
-    ("antidepressant prescriptions by GP practice", 3, r"prescri|antidepressant", None,
+    # r"prescri" used to pass this on "Whether GP Practices Provide
+    # Functionality For Patients To Order Repeat Prescriptions", a record
+    # with no files and nothing about antidepressants. It wants prescribing
+    # data, and as of 20 Sep 2026 the top three are FOI responses: an honest
+    # failure, left failing until the search finds NHS prescribing data.
+    ("antidepressant prescriptions by GP practice", 3, r"prescribing|antidepressant", None,
      "health known-item"),
     ("hospital waiting times northern ireland", 3, r"waiting", None,
      "nation-level geography"),

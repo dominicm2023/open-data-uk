@@ -64,9 +64,26 @@ PUBLISHER_MAX_DF = 1500   # ignore terms matching many publishers ("council", "c
 # Silence is not evidence the data is gone, so it sits above "dead" — but
 # from the reader's side of the screen it is a worse click than a page that
 # loads, so it sits below that.
+#
+# "nofiles" was absent too, and that was a bug rather than a choice: the
+# NO_FILES_MULT nudge below only fires when there is no verdict, and the
+# checker stores "nofiles" as a verdict, so all 26,637 records that list
+# nothing to download scored exactly 1.0. On 19 Sep 2026 a visitor searched
+# "inspection" and got eight no-file records in the top ten, then opened a
+# 2013 stub at rank 2 for "fire inspection" and left. A record with nothing
+# to download is a dead end from the reader's side, so it sits with "dead";
+# both are demoted, never hidden — a search that wants only them finds them.
 AVAILABILITY_MULT = {"data": 1.15, "api": 1.05, "webpage": 0.97,
-                     "unreachable": 0.90, "dead": 0.85}
+                     "unreachable": 0.90, "nofiles": 0.85, "dead": 0.80}
 NO_FILES_MULT = 0.95
+# A stub: no files, and untouched since before 2015. About 3,200 records,
+# most of them data.gov.uk's 2013 inventory of datasets departments held but
+# had NOT published ("SSI database", "Cattle Identification Inspection
+# Database"). They match a query in title and in meaning, so they land in
+# both ranked lists and score double a good record found by one; 0.85 does
+# not move them. Half does: a stub still leads when it is the only match.
+STALE_STUB_BEFORE = "2015"
+STALE_STUB_MULT = 0.5
 # "brighton recycling rates" shouldn't surface Brighton's supplier payments:
 # matching the place but nothing of the topic is weak evidence. Kept gentle
 # (not a filter) because the semantic arm legitimately finds datasets that
@@ -466,18 +483,18 @@ class SearchEngine:
 
     @staticmethod
     def _availability(conn: sqlite3.Connection,
-                      keys: list[str]) -> dict[str, tuple[str | None, int]]:
-        """key -> (availability verdict or None, resource_count)."""
+                      keys: list[str]) -> dict[str, tuple[str | None, int, str]]:
+        """key -> (availability verdict or None, resource_count, modified)."""
         if not keys:
             return {}
         try:
             marks = ",".join("?" * len(keys))
             rows = conn.execute(
-                f"SELECT key, availability, resource_count FROM datasets "
+                f"SELECT key, availability, resource_count, modified FROM datasets "
                 f"WHERE key IN ({marks})", keys).fetchall()
         except sqlite3.OperationalError:  # checker.py has not run yet
             return {}
-        return {r[0]: (r[1], r[2] or 0) for r in rows}
+        return {r[0]: (r[1], r[2] or 0, r[3] or "") for r in rows}
 
     @staticmethod
     def _columns_for_keys(conn: sqlite3.Connection,
@@ -649,7 +666,7 @@ class SearchEngine:
                 if not (have & want_format):
                     continue
             if want_avail:
-                verdict, _ = availability.get(key, (None, 0))
+                verdict = availability.get(key, (None, 0, ""))[0]
                 if (verdict or "unchecked") not in want_avail:
                     continue
             kept.append(key)
@@ -730,7 +747,7 @@ class SearchEngine:
                 # came to 1.45 × 0.80 = a net *lift* for matching the place
                 # alone, which put Newcastle's conservation areas above
                 # actual air quality data.
-                verdict_now, _ = availability.get(key, (None, 0))
+                verdict_now = availability.get(key, (None, 0, ""))[0]
                 place_only = (place and topic_keys is not None
                               and key not in topic_keys)
                 if key in geo_set and verdict_now != "dead" and not place_only:
@@ -738,8 +755,10 @@ class SearchEngine:
                 # matched the place but nothing of what was actually asked
                 if place_only:
                     mult *= PLACE_ONLY_MULT
-                verdict, n_res = availability.get(key, (None, 0))
-                if verdict:
+                verdict, n_res, modified = availability.get(key, (None, 0, ""))
+                if verdict == "nofiles" and modified and modified < STALE_STUB_BEFORE:
+                    mult *= STALE_STUB_MULT
+                elif verdict:
                     mult *= AVAILABILITY_MULT.get(verdict, 1.0)
                 elif n_res == 0:
                     mult *= NO_FILES_MULT
@@ -768,7 +787,7 @@ class SearchEngine:
                 ).fetchone()
                 if not row:
                     continue
-                verdict, _ = availability.get(key, (None, 0))
+                verdict = availability.get(key, (None, 0, ""))[0]
                 results.append({
                     "key": key,
                     "score": round(collapsed[key], 4),
