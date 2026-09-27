@@ -864,3 +864,32 @@ footer {
 .org3d-when button { font: inherit; color: #eef; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); border-radius: 6px; padding: .2rem .5rem; cursor: pointer; }
 .org3d-when input[type=range] { flex: 1; min-width: 90px; accent-color: #9fd0ff; }
 .org3d-when span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+
+/* --- the HMO map ---------------------------------------------------------
+   The map beside the district it has open; beneath it on a phone. The names
+   on the map are HTML buttons (no map glyphs are loaded), so they take the
+   site's own type and colours, and its focus ring. */
+.hmo-wrap { display: grid; gap: .9rem; grid-template-columns: 1fr; margin: 0 0 .6rem; }
+@media (min-width: 60rem) { .hmo-wrap { grid-template-columns: minmax(0, 1fr) 19rem; } }
+.hmo-map { height: min(70vh, 40rem); min-height: 24rem; border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; background: var(--card); }
+.hmo-panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); padding: var(--pad); align-self: start; max-height: min(70vh, 40rem); overflow-y: auto; }
+.hmo-panel h2 { margin: 0 0 .2rem; font-size: 1.35rem; }
+.hmo-panel h3 { margin: 1rem 0 .25rem; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.hmo-big { font-size: 1.15rem; font-weight: 650; margin: 0 0 .4rem; font-variant-numeric: tabular-nums; }
+.hmo-list { list-style: none; padding: 0; margin: 0; font-size: .9rem; }
+.hmo-list li { padding: .2rem 0; border-bottom: 1px solid var(--line); }
+.hmo-reset, .hmo-go { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: .15em; }
+.hmo-reset { margin-top: .9rem; }
+.hmo-go { font-weight: 650; }
+.hmo-legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; align-items: center; font-size: .8rem; color: var(--muted); margin: 0 0 1.2rem; }
+.hmo-legend-title { font-weight: 650; color: var(--ink); }
+.hmo-key { display: inline-flex; align-items: center; gap: .35rem; }
+.hmo-key i { width: 1rem; height: .75rem; border-radius: 2px; border: 1px solid var(--line-strong); display: inline-block; }
+.hmo-key i.hmo-none { background: transparent; }
+.hmo-place, .hmo-district { font: 600 .78rem/1.15 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--card); border: 1px solid var(--line-strong); border-radius: var(--radius-sm); padding: .2rem .45rem; cursor: pointer; text-align: center; box-shadow: 0 1px 3px rgba(0, 0, 0, .25); }
+.hmo-place b, .hmo-district b { display: block; }
+.hmo-place span, .hmo-district span { display: block; font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
+.hmo-district { font-size: .7rem; padding: .1rem .3rem; background: color-mix(in srgb, var(--card) 86%, transparent); }
+.hmo-place[hidden], .hmo-district[hidden] { display: none; }
+.hmo-table th[scope="row"] { text-align: left; }
+.maplibregl-ctrl-attrib { font-size: .68rem; }

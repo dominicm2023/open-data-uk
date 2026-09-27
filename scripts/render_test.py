@@ -345,6 +345,30 @@ check(_g2["nodes"]["parent"].count(-1) == 3 and "Permanent Under Secretary" not 
 check(orgchart.chart_path("Victoria & Albert Museum") == "/family/organograms/chart?body=Victoria%20%26%20Albert%20Museum",
       "a body's chart link encodes its name: an ampersand does not end the parameter")
 
+# --- districts, not doors --------------------------------------------------
+# The HMO family keeps a postcode district and nothing finer. These pin the
+# reader that takes it from a published postcode or address, and the rule that
+# what it was read from never survives.
+sys.path.insert(0, str(Path(__file__).parent.parent / "families"))
+import build as _fbuild  # noqa: E402
+import districts as _fdist  # noqa: E402
+check(_fbuild._district("LE5 5HH") == "LE5" and _fbuild._district(" sw8 1hr") == "SW8" and _fbuild._district("nw18ab") == "NW1",
+      "a district is the outward part of a published postcode, however it is spaced")
+check(_fbuild._district("Flat 2, A1 2BC House, 12 High Street, London WC1N 3XX") == "WC1N",
+      "an address gives the district of the postcode it ends with, not of one inside it")
+check(_fbuild._district("12 High Street, London") is None and _fbuild._district("") is None,
+      "an address with no postcode gives no district: none is guessed from a street")
+_hs = json.loads((Path(__file__).parent.parent / "families" / "schema" / "hmo_registers.json").read_text(encoding="utf-8"))
+_hcols = {c["name"] for c in _hs["columns"]}
+check(not _hcols & {"address", "postcode", "lat", "lon", "easting", "northing", "licence_holder", "holder", "manager", "name"},
+      "the HMO schema has no column that could hold an address, a full postcode, a coordinate or a name")
+_hm = json.loads((Path(__file__).parent.parent / "families" / "registry" / "hmo_registers.mappings.json").read_text(encoding="utf-8"))
+_mapped = {str(v).lower() for m in _hm.values() for v in (m.get("columns") or {}).values()}
+check(not any(re.search(r"holder|landlord|manag|longitude|latitude|easting|northing|^x$|^y$", v) for v in _mapped),
+      "no HMO mapping reads a holder's, landlord's or manager's column, or a coordinate")
+_sq = [[0, 0], [0.5, 0.00001], [1, 0], [1, 1], [0, 1], [0, 0]]
+check(len(_fdist._simplify(_sq, 0.001)) == 5, "simplifying a shape drops the point that adds nothing and keeps the corners")
+
 # --- the stylesheet ------------------------------------------------------
 # One file now, after three inline copies drifted apart. These pin the two
 # things that silently broke while they were separate.

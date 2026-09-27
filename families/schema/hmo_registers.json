@@ -1,0 +1,134 @@
+{
+  "family": "hmo_registers",
+  "label": "HMO licence registers",
+  "one_row_is": "one licence for a house in multiple occupation, as the council's public register lists it, with the property generalised to its postcode district; or, where a council publishes only counts, one postcode's count",
+  "columns": [
+    {
+      "name": "council",
+      "type": "text",
+      "required": true,
+      "meaning": "the licensing authority, as the body that published the register"
+    },
+    {
+      "name": "postcode_district",
+      "type": "text",
+      "required": true,
+      "meaning": "the outward part of the property's postcode as published (NW1, LE2, FK8), upper-cased. The address, the full postcode and any coordinates in the source are not carried"
+    },
+    {
+      "name": "licences",
+      "type": "number",
+      "required": true,
+      "meaning": "how many licences the row stands for: 1 where the register lists each licence, the published count where the council lists licensed properties per postcode (Stirling). Sum this, never count rows"
+    },
+    {
+      "name": "licence_type",
+      "type": "text",
+      "required": false,
+      "meaning": "the scheme the licence was granted under, as published (mandatory, additional, selective); null if the register does not say"
+    },
+    {
+      "name": "licence_status",
+      "type": "text",
+      "required": false,
+      "meaning": "the licence's state as published (issued, pending, expired); null if the register lists only licences in force and says nothing more"
+    },
+    {
+      "name": "licence_start",
+      "type": "date",
+      "required": false,
+      "meaning": "the date the licence runs from, as published"
+    },
+    {
+      "name": "licence_end",
+      "type": "date",
+      "required": false,
+      "meaning": "the date the licence expires, as published"
+    },
+    {
+      "name": "max_occupants",
+      "type": "number",
+      "required": false,
+      "meaning": "the most people the licence permits to live in the property; null if not published"
+    },
+    {
+      "name": "max_households",
+      "type": "number",
+      "required": false,
+      "meaning": "the most households the licence permits; null if not published"
+    },
+    {
+      "name": "storeys",
+      "type": "number",
+      "required": false,
+      "meaning": "storeys of the property as published; null if not published"
+    },
+    {
+      "name": "as_of",
+      "type": "date",
+      "required": false,
+      "meaning": "the date the source says the register is current to; null if the source states none (never the download date)"
+    }
+  ],
+  "provenance": [
+    "publisher",
+    "dataset_key",
+    "source_url",
+    "source_sha256",
+    "source_table",
+    "source_row",
+    "licence_id",
+    "licence_url",
+    "licence_evidence_sha256",
+    "licence_evidence_kind",
+    "adapter_version"
+  ],
+  "validation": {
+    "postcode_district_regex": "^[A-Z]{1,2}[0-9][A-Z0-9]?$",
+    "max_occupants_range": [
+      1,
+      500
+    ],
+    "max_households_range": [
+      1,
+      300
+    ],
+    "storeys_range": [
+      1,
+      30
+    ],
+    "licences_range": [
+      1,
+      500
+    ],
+    "null_when_implausible": [
+      "max_occupants",
+      "max_households",
+      "storeys"
+    ]
+  },
+  "rules": [
+    "Properties, not people: the licence holder's and manager's names and addresses are never mapped. Adding them is a decision for Dominic, recorded in FAMILIES.md first.",
+    "Districts, not doors: the property's address, full postcode and coordinates are never carried into the table. Only the postcode district is, taken from the postcode the register publishes.",
+    "A register that gives no postcode for a property gives no row for it: a district is never worked out from coordinates or guessed from a street name.",
+    "A count of persons, households or storeys that is zero or outside its stated range is nulled with a note; the licence stays.",
+    "A row is one licence, and 'licences' is 1. Where a council publishes properties per postcode rather than a register, a row is one postcode and 'licences' is its count. A register that lists one row per room or per occupant is held at 'mapped' for review.",
+    "Licence type and status are the publisher's own words, not normalised into a vocabulary.",
+    "The council's own register, linked on every row, is where the address is; this table is for counting."
+  ],
+  "headline": [
+    {
+      "column": "licences",
+      "agg": "sum",
+      "label": "licensed houses in multiple occupation on the registers",
+      "format": "integer"
+    },
+    {
+      "column": "max_occupants",
+      "agg": "sum",
+      "label": "people the licences permit to live in them, where the register says",
+      "format": "integer"
+    }
+  ],
+  "brief_samples": false
+}

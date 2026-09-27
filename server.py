@@ -299,6 +299,15 @@ STATIC_FILES = {
     # The 3D organisation chart's own script (orgchart.render_3d links it
     # with a content hash). Ours, served from here: the CSP allows no other host.
     "orgchart3d.js": "text/javascript; charset=utf-8",
+    # The HMO map's script, and MapLibre GL JS 6.11.2 (BSD 3-Clause, from the
+    # npm registry, unmodified but for the source-map comment). Three modules
+    # that find each other by name beside themselves, so the names are theirs.
+    # Served from here like everything else: the map asks nothing of any other host.
+    "hmomap.js": "text/javascript; charset=utf-8",
+    "maplibre-gl.mjs": "text/javascript; charset=utf-8",
+    "maplibre-gl-shared.mjs": "text/javascript; charset=utf-8",
+    "maplibre-gl-worker.mjs": "text/javascript; charset=utf-8",
+    "maplibre-gl.css": "text/css; charset=utf-8",
     # IndexNow ownership proof. Public by design — search engines fetch it
     # back from the site root to confirm the submissions are really ours,
     # so it belongs in the repo rather than in a secret.
@@ -1143,6 +1152,31 @@ def api_family(request: Request, response: Response, name: str,
     return FileResponse(api, media_type="application/json; charset=utf-8",
                         headers={"Cache-Control": "public, max-age=3600"})
 
+@app.get("/family/hmo_registers/map", include_in_schema=False)
+def hmo_map() -> Response:
+    """Licensed HMOs by postcode district: a density seen whole, districts up
+    close. Server-rendered and complete without its script (hmomap.render_map)."""
+    import hmomap
+    html_out = hmomap.render_map(SITE_URL)
+    if html_out is None:
+        return HTMLResponse(pagerender.render_missing(None, what="page"), status_code=404,
+                            headers={"Cache-Control": "no-store"})
+    return HTMLResponse(html_out, headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
+@app.get("/api/family/hmo_registers/{name}.geojson", summary="The HMO map's shapes and counts",
+         description="`districts`: every postcode district with a count of licensed HMOs, and its neighbours "
+                     "without one, as GeoJSON. `areas`: the postcode areas of Great Britain, as land. "
+                     "Districts only: no address, postcode or coordinate of any property is held.")
+def hmo_geojson(name: str) -> Response:
+    import hmomap
+    path = hmomap.geo_file(f"{name}.geojson")
+    if path is None:
+        raise HTTPException(status_code=404, detail="Unknown file: districts or areas")
+    return FileResponse(path, media_type="application/geo+json",
+                        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"})
+
+
 @app.get("/family/organograms/chart", include_in_schema=False)
 def organogram_chart(body: str | None = Query(default=None, max_length=200)) -> Response:
     """The organisation chart drawn from the organograms family: every body
@@ -1511,6 +1545,12 @@ def sitemap_browse() -> Response:
         bodies = orgchart.indexable_bodies()
     except Exception:  # noqa: BLE001
         bodies = []
+    try:
+        import hmomap
+        if hmomap.data():
+            urls.append(f"<url><loc>{SITE_URL}{hmomap.PATH}</loc><changefreq>weekly</changefreq></url>")
+    except Exception:  # noqa: BLE001
+        pass
     if bodies:
         for path in ("/family/organograms/chart", "/family/organograms/chart/3d"):
             urls.append(f"<url><loc>{SITE_URL}{path}</loc><changefreq>weekly</changefreq></url>")

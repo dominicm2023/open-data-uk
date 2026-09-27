@@ -1,0 +1,77 @@
+{
+  "0d94e5aaf6927feff25e4fbcd75e547db3df22be97ebd4c73caa6b59792543c4": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "postcode",
+      "licence_start": "date_issed",
+      "licence_end": "licence_expiry_date",
+      "max_occupants": "0ccupiers",
+      "max_households": "households",
+      "storeys": "storey"
+    },
+    "constants": {"council": "Leicester City Council", "licences": 1},
+    "notes": "One row per licence: 884 rows, 884 distinct licence numbers. The header's own spellings ('date_issed', '0ccupiers' with a zero) are kept as published. landlord_last_name and landlord_first_name are never mapped, nor street_name and property_number. 5 rows give no postcode and are refused. No licence type or status column: the register lists licences in force. No as_of in the file. Review: districts LE1-LE5 and one LE9, occupiers 3-36, storeys 1-4, dates ISO.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "a9547c853cb99749f985d07ee188542fd3f5c0014196b28b38363e4147c35ac5": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Property Address",
+      "licence_type": "Type Of Licence",
+      "licence_status": "Status",
+      "licence_start": "Commencement Date",
+      "licence_end": "End Date",
+      "max_occupants": "Maximum Number Of Persons",
+      "storeys": "Storeys Of HMO",
+      "as_of": "Last Uploaded"
+    },
+    "constants": {"council": "London Borough of Camden", "licences": 1},
+    "notes": "One row per licence: 3,485 rows, 3,485 distinct licence numbers. There is no postcode column; the district is read from the postcode that ends 'Property Address', found in all 3,485. Never mapped: the holder's and manager's names and addresses, the address itself, Easting, Northing, Longitude, Latitude and Location. The register's own Notice says it is for identifying licensed HMOs and not for marketing, and that nobody named in it consented to that; nothing that names anybody is carried. The Notice also says the maximum persons follows an inspection while rooms and amenities are as the applicant stated, so only the former is mapped. Zero persons and storeys of 0 or 200 appear and are nulled with a note. Dates are day-first. Review: 25 districts, NW1 the largest; two types, two statuses.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "11ecd966cf9b568415b7620460ea01741a1c3238efa6f960b85bbab7fc2a5989": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "POSTCODE",
+      "licence_type": "LICENCE_TYPE",
+      "licence_start": "LICENCE_START_DATE",
+      "licence_end": "LICENCE_END_DATE",
+      "max_occupants": "MAXIMUM_PERMITTED_OCCUPANTS",
+      "max_households": "MAXIMUM_PERMITTED_HOUSEHOLDS"
+    },
+    "constants": {"council": "London Borough of Lambeth", "licences": 1},
+    "notes": "One row per licence: 5,545 rows, 5,545 distinct reference numbers. Never mapped: LICENCE_HOLDER_NAME, PROPERTY_ADDRESS, X, Y, EASTING, NORTHING, WARD. 27 rows give no readable postcode and are refused. Three licence types, including 11 '257 HMO' (buildings converted into flats, section 257 of the Housing Act 2004), kept in the publisher's words. Zero occupants or households appear and are nulled with a note. No status column and no as_of in the file. Review: 13 districts, SW4 the largest; dates year-first with a time that is always midnight.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "56e1871a28940d20246e5ccd3762504fbd9e10b94078ecbcf1a0b8c76887ec9d": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Postcode",
+      "licences": "Properties_Per_Postcode",
+      "as_of": "Publication_Date"
+    },
+    "constants": {"council": "Stirling Council"},
+    "notes": "Not a register: Stirling publishes the number of licensed properties at each postcode, one row per postcode (137 postcodes, each once). The row therefore stands for its count, in 'licences'; nothing about any one licence is published, so type, dates and occupancy are absent. Ward and Community_Council are not mapped. Review: 9 districts, FK8 the largest; counts 1 to 39; every row published 30 October 2024.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "8a0a3e68c8341c24f2b5dace608edf1a3ec3fcd6db887109f9993b23d9a3ade4": {
+    "status": "rejected",
+    "reject": "A summary, not a register: the number of HMO licences in Stirling in each year, 23 rows. It has no property and no postcode, so it cannot say where."
+  }
+}

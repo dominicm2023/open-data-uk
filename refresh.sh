@@ -29,7 +29,7 @@ echo "=====REFRESH-RUN===== $(date -Is)"
 # tonight's index, a polite licence-gated fetch, then the build — which
 # publishes only mappings a person has marked reviewed. Each step is allowed
 # to fail without stopping the rest of the night.
-for fam in recycling_centres air_quality_annual spend_over_500 brownfield_land organograms; do
+for fam in recycling_centres air_quality_annual spend_over_500 brownfield_land organograms hmo_registers; do
   "$PY" families/registry.py "$fam" || true
   "$PY" families/intake.py "$fam" || true
   # the national networks' annual statistics feed the air family
@@ -42,6 +42,8 @@ for fam in recycling_centres air_quality_annual spend_over_500 brownfield_land o
   # the 3D city's graph for every date the scrubber offers, built once here
   # rather than by the first visitor of each
   [ "$fam" = organograms ] && { "$PY" orgchart.py || true; }
+  # the HMO map's shapes, with tonight's counts laid on them by district
+  [ "$fam" = hmo_registers ] && { "$PY" families/districts.py hmo_registers || true; }
 done
 
 # Tell the engines which pages actually changed tonight. Runs last, after the

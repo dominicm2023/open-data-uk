@@ -1,0 +1,668 @@
+{
+ "family": "hmo_registers",
+ "label": "HMO licence registers",
+ "rule": {
+  "label": "HMO licence registers",
+  "include": "(\\bhmos?\\b|(houses?|homes|housing)\\s+(in|of)\\s+multiple\\s+occup)",
+  "exclude": "article\\s*(4|four)|direction|boundar|densit|percentage|\\bby\\s+(ward|lsoa|msoa|output\\s+area|postcode|type|year|action\\s+status)\\b|number\\s+of|estimated|\\bfires?\\b|census|households\\s+in|experimental|land\\s+charge|concentration|student\\s+percentage|revenue|statistic|data\\s+zones?|\\brm1\\d\\d\\b|verifiable"
+ },
+ "sources": [
+  {
+   "dataset_key": "agol_brighton_hove_city_council:5e647f02a06444f0b2ef8393a7123ece",
+   "title": "CityPlanning HMO",
+   "publisher": "Brighton & Hove City Council",
+   "portal": "agol_brighton_hove_city_council",
+   "landing_url": "https://hub.arcgis.com/datasets/5e647f02a06444f0b2ef8393a7123ece",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/5e647f02a06444f0b2ef8393a7123ece?f=json",
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-26T14:42:02Z",
+   "resource": {
+    "url": "https://gis.brighton-hove.gov.uk/server/rest/services/City_Planning/CityPlanning_HMO/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "candidates": [
+    {
+     "url": "https://gis.brighton-hove.gov.uk/server/rest/services/City_Planning/CityPlanning_HMO/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+     "name": "download",
+     "format": "ESRI"
+    },
+    {
+     "url": "https://hub.arcgis.com/api/download/v1/items/5e647f02a06444f0b2ef8393a7123ece/csv?layers=0",
+     "name": "download (Hub CSV export)",
+     "format": "CSV"
+    }
+   ],
+   "series": false,
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "bristol:https://www.arcgis.com/home/item.html?id=bcc267a0f8c449dbaf45dab68971de4e&sublayer=7",
+   "title": "Additional HMO licences",
+   "publisher": "Bristol City Council",
+   "portal": "bristol",
+   "landing_url": "https://opendata.bristol.gov.uk/datasets/bcc::additional-hmo-licences",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/bcc267a0f8c449dbaf45dab68971de4e?f=json",
+   "index_licence_raw": "© Crown Copyright and database rights 2023 Ordnance Survey AC0000807971.",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-26T14:22:16Z",
+   "resource": {
+    "url": "https://opendata.bristol.gov.uk/api/download/v1/items/bcc267a0f8c449dbaf45dab68971de4e/csv?layers=7",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://opendata.bristol.gov.uk/api/download/v1/items/bcc267a0f8c449dbaf45dab68971de4e/csv?layers=7",
+     "name": "CSV",
+     "format": "CSV"
+    },
+    {
+     "url": "https://opendata.bristol.gov.uk/api/download/v1/items/bcc267a0f8c449dbaf45dab68971de4e/geojson?layers=7",
+     "name": "GeoJSON",
+     "format": "GEOJSON"
+    },
+    {
+     "url": "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_housing_and_property/MapServer/7/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+     "name": "ArcGIS GeoService",
+     "format": "ESRI"
+    }
+   ],
+   "series": false,
+   "other_resources": 6
+  },
+  {
+   "dataset_key": "agol_bristol_city_council:443bbab8ef2a4ba79ca6c34f8e65dfa1_0",
+   "title": "Mandatory HMO Licences",
+   "publisher": "Bristol City Council",
+   "portal": "agol_bristol_city_council",
+   "landing_url": "https://hub.arcgis.com/datasets/443bbab8ef2a4ba79ca6c34f8e65dfa1_0",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/443bbab8ef2a4ba79ca6c34f8e65dfa1?f=json",
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-26T14:48:33Z",
+   "resource": {
+    "url": "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_housing_and_property/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "candidates": [
+    {
+     "url": "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_housing_and_property/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+     "name": "download",
+     "format": "ESRI"
+    },
+    {
+     "url": "https://hub.arcgis.com/api/download/v1/items/443bbab8ef2a4ba79ca6c34f8e65dfa1/csv?layers=0",
+     "name": "download (Hub CSV export)",
+     "format": "CSV"
+    }
+   ],
+   "series": false,
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "agol_bristol_city_council:10a9739f48d445168ddc94b9c287642f_6",
+   "title": "Selective HMO licences",
+   "publisher": "Bristol City Council",
+   "portal": "agol_bristol_city_council",
+   "landing_url": "https://hub.arcgis.com/datasets/10a9739f48d445168ddc94b9c287642f_6",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/10a9739f48d445168ddc94b9c287642f?f=json",
+   "index_licence_raw": "custom",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-26T14:48:33Z",
+   "resource": {
+    "url": "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_housing_and_property/MapServer/6/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+    "name": "download",
+    "format": "ESRI"
+   },
+   "candidates": [
+    {
+     "url": "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_housing_and_property/MapServer/6/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+     "name": "download",
+     "format": "ESRI"
+    },
+    {
+     "url": "https://hub.arcgis.com/api/download/v1/items/10a9739f48d445168ddc94b9c287642f/csv?layers=6",
+     "name": "download (Hub CSV export)",
+     "format": "CSV"
+    }
+   ],
+   "series": false,
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "data_gov_uk:36fd826e-2336-496e-9d13-6c08633b27f7",
+   "title": "Licensed HMO Register",
+   "publisher": "Epsom and Ewell Borough Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/licensed-hmo-register",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=36fd826e-2336-496e-9d13-6c08633b27f7",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-26T14:20:22Z",
+   "resource": {
+    "url": "https://maps.epsom-ewell.gov.uk/GetData.aspx?type=data&ds=licensed_hmo_register&requesttype=xsl&xsl=atcsv.xsl",
+    "name": "Data Download",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://maps.epsom-ewell.gov.uk/GetData.aspx?type=data&ds=licensed_hmo_register&requesttype=xsl&xsl=atcsv.xsl",
+     "name": "Data Download",
+     "format": "CSV"
+    }
+   ],
+   "series": false,
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "glasgow:https://www.arcgis.com/home/item.html?id=c4d432bf3bb34b7583c07527c770a373&sublayer=0",
+   "title": "HMO Public Register",
+   "publisher": "Glasgow City Council",
+   "portal": "glasgow",
+   "landing_url": "https://data.glasgow.gov.uk/datasets/GlasgowGIS::hmo-public-register-1",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/c4d432bf3bb34b7583c07527c770a373?f=json",
+   "index_licence_raw": "This information is supplied under the Open Government License v3.0. Licensed under the One Scotland Mapping Agreement (OSMA). All mapping data is sub",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-26T14:22:17Z",
+   "resource": {
+    "url": "https://data.glasgow.gov.uk/api/download/v1/items/c4d432bf3bb34b7583c07527c770a373/csv?layers=0",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://data.glasgow.gov.uk/api/download/v1/items/c4d432bf3bb34b7583c07527c770a373/csv?layers=0",
+     "name": "CSV",
+     "format": "CSV"
+    },
+    {
+     "url": "https://data.glasgow.gov.uk/api/download/v1/items/c4d432bf3bb34b7583c07527c770a373/geojson?layers=0",
+     "name": "GeoJSON",
+     "format": "GEOJSON"
+    },
+    {
+     "url": "https://utility.arcgis.com/usrsvcs/servers/c4d432bf3bb34b7583c07527c770a373/rest/services/OPEN_DATA/HMO_Public_Register/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+     "name": "ArcGIS GeoService",
+     "format": "ESRI"
+    }
+   ],
+   "series": false,
+   "other_resources": 7
+  },
+  {
+   "dataset_key": "leicester:public-register-of-licenced-hmos",
+   "title": "Public Register of Licenced HMOs",
+   "publisher": "Leicester City Council",
+   "portal": "leicester",
+   "landing_url": "https://data.leicester.gov.uk/explore/dataset/public-register-of-licenced-hmos/",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "Open Government Licence v3.0",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-26T14:24:23Z",
+   "resource": {
+    "url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/public-register-of-licenced-hmos/exports/csv",
+    "name": "public-register-of-licenced-hmos.csv",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/public-register-of-licenced-hmos/exports/csv",
+     "name": "public-register-of-licenced-hmos.csv",
+     "format": "CSV"
+    },
+    {
+     "url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/public-register-of-licenced-hmos/exports/json",
+     "name": "public-register-of-licenced-hmos.json",
+     "format": "JSON"
+    }
+   ],
+   "series": false,
+   "other_resources": 2
+  },
+  {
+   "dataset_key": "data_gov_uk:e5d7c4b6-2527-407c-bcff-23401e4c463e",
+   "title": "HMO Register",
+   "publisher": "London Borough of Barnet",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/hmo-register5",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=e5d7c4b6-2527-407c-bcff-23401e4c463e",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-26T14:20:07Z",
+   "resource": {
+    "url": "https://open.barnet.gov.uk/download/29r12/1sb/HMO%20Register%20-%207%20September%202026.csv",
+    "name": "HMO Register - 7 September 2026 ",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://open.barnet.gov.uk/download/29r12/1sb/HMO%20Register%20-%207%20September%202026.csv",
+     "name": "HMO Register - 7 September 2026 ",
+     "format": "CSV"
+    }
+   ],
+   "series": false,
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "camden:https://opendata.camden.gov.uk/api/views/x43g-c2rf",
+   "title": "HMO Licensing Register",
+   "publisher": "London Borough of Camden",
+   "portal": "camden",
+   "landing_url": "https://opendata.camden.gov.uk/d/x43g-c2rf",
+   "licence_kind": "index",
+   "metadata_url": null,
+   "index_licence_raw": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-26T14:24:21Z",
+   "resource": {
+    "url": "https://opendata.camden.gov.uk/api/v3/views/x43g-c2rf/export.csv?accessType=DOWNLOAD",
+    "name": "",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://opendata.camden.gov.uk/api/v3/views/x43g-c2rf/export.csv?accessType=DOWNLOAD",
+     "name": "",
+     "format": "CSV"
+    },
+    {
+     "url": "https://opendata.camden.gov.uk/api/v3/views/x43g-c2rf/query.geojson?accessType=DOWNLOAD",
+     "name": "",
+     "format": "GEOJSON"
+    },
+    {
+     "url": "https://opendata.camden.gov.uk/api/v3/views/x43g-c2rf/query.json?accessType=DOWNLOAD",
+     "name": "",
+     "format": "JSON"
+    }
+   ],
+   "series": false,
+   "other_resources": 6
+  },
+  {
+   "dataset_key": "data_gov_uk:05a064b5-081a-46ff-be7c-73fc9eb96dd1",
+   "title": "Latest Register of licensed HMOs",
+   "publisher": "London Borough of Hounslow",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/latest-register-of-licensed-hmos",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=05a064b5-081a-46ff-be7c-73fc9eb96dd1",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-26T14:20:49Z",
+   "resource": {
+    "url": "https://data.hounslow.gov.uk/@london-borough-of-hounslow/register-of-licensed-hmos/r/3253329e-82f7-44af-89fe-e02b0a3c5941",
+    "name": "HMO Public Register",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://data.hounslow.gov.uk/@london-borough-of-hounslow/register-of-licensed-hmos/r/3253329e-82f7-44af-89fe-e02b0a3c5941",
+     "name": "HMO Public Register",
+     "format": "CSV"
+    }
+   ],
+   "series": false,
+   "other_resources": 1
+  },
+  {
+   "dataset_key": "data_gov_uk:6381aaa8-3755-4d92-ac9d-c41610a066bf",
+   "title": "Houses in Multiple Occupation",
+   "publisher": "Oxford City Council",
+   "portal": "data_gov_uk",
+   "landing_url": "https://www.data.gov.uk/dataset/houses-in-multiple-occupation",
+   "licence_kind": "ckan",
+   "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=6381aaa8-3755-4d92-ac9d-c41610a066bf",
+   "index_licence_raw": "uk-ogl",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-26T14:21:28Z",
+   "resource": {
+    "url": "https://www2.oxopendata.uk/api/views/rwt9-jjj9/rows.csv?accessType=DOWNLOAD",
+    "name": "Download",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://www2.oxopendata.uk/api/views/rwt9-jjj9/rows.csv?accessType=DOWNLOAD",
+     "name": "Download",
+     "format": "CSV"
+    },
+    {
+     "url": "https://www2.oxopendata.uk/api/views/rwt9-jjj9/rows.json?accessType=DOWNLOAD",
+     "name": "Download",
+     "format": "JSON"
+    }
+   ],
+   "series": false,
+   "other_resources": 5
+  },
+  {
+   "dataset_key": "stirling:https://www.arcgis.com/home/item.html?id=79e2c243706f44d7877b7189284a8dcf&sublayer=0",
+   "title": "hmo licences stirling council - open data",
+   "publisher": "Stirling Council",
+   "portal": "stirling",
+   "landing_url": "https://data.stirling.gov.uk/datasets/stirling-council::hmo-licences-stirling-council-open-data",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/79e2c243706f44d7877b7189284a8dcf?f=json",
+   "index_licence_raw": "Data Licensing Data published by the Council at a URL beginning data.stirling.gov.uk is open to use, you do not have to apply or ask for permission, b",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-26T14:24:26Z",
+   "resource": {
+    "url": "https://data.stirling.gov.uk/api/download/v1/items/79e2c243706f44d7877b7189284a8dcf/csv?layers=0",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://data.stirling.gov.uk/api/download/v1/items/79e2c243706f44d7877b7189284a8dcf/csv?layers=0",
+     "name": "CSV",
+     "format": "CSV"
+    },
+    {
+     "url": "https://data.stirling.gov.uk/api/download/v1/items/79e2c243706f44d7877b7189284a8dcf/geojson?layers=0",
+     "name": "GeoJSON",
+     "format": "GEOJSON"
+    },
+    {
+     "url": "https://services-eu1.arcgis.com/cECIr59LclpO818r/arcgis/rest/services/hmo_licences_stirling_council/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+     "name": "ArcGIS GeoService",
+     "format": "ESRI"
+    },
+    {
+     "url": "https://data.stirling.gov.uk/api/download/v1/items/79e2c243706f44d7877b7189284a8dcf/excel?layers=0",
+     "name": "Excel",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 11
+  },
+  {
+   "dataset_key": "stirling:https://www.arcgis.com/home/item.html?id=b2f657eec91444c8aa8218c253c78a59&sublayer=0",
+   "title": "houses of multiple occupancy licensing (stirling council) housing - open data",
+   "publisher": "Stirling Council",
+   "portal": "stirling",
+   "landing_url": "https://data.stirling.gov.uk/datasets/stirling-council::houses-of-multiple-occupancy-licensing-stirling-council-housing-open-data",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/b2f657eec91444c8aa8218c253c78a59?f=json",
+   "index_licence_raw": "Data Licensing Data published by the Council at a URL beginning data.stirling.gov.uk is open to use, you do not have to apply or ask for permission, b",
+   "index_licence_norm": "Custom licence",
+   "index_harvested_at": "2026-09-26T14:24:26Z",
+   "resource": {
+    "url": "https://data.stirling.gov.uk/api/download/v1/items/b2f657eec91444c8aa8218c253c78a59/csv?layers=0",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://data.stirling.gov.uk/api/download/v1/items/b2f657eec91444c8aa8218c253c78a59/csv?layers=0",
+     "name": "CSV",
+     "format": "CSV"
+    },
+    {
+     "url": "https://data.stirling.gov.uk/api/download/v1/items/b2f657eec91444c8aa8218c253c78a59/geojson?layers=0",
+     "name": "GeoJSON",
+     "format": "GEOJSON"
+    },
+    {
+     "url": "https://services-eu1.arcgis.com/cECIr59LclpO818r/arcgis/rest/services/hmo_licensing_stirling_council/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+     "name": "ArcGIS GeoService",
+     "format": "ESRI"
+    },
+    {
+     "url": "https://data.stirling.gov.uk/api/download/v1/items/b2f657eec91444c8aa8218c253c78a59/excel?layers=0",
+     "name": "Excel",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 11
+  },
+  {
+   "dataset_key": "lambeth:https://www.arcgis.com/home/item.html?id=cb30b79f867145708a9b1742dc1d2c6d&sublayer=0",
+   "title": "Homes Of Multiple Occupancy",
+   "publisher": "london borough of lambeth",
+   "portal": "lambeth",
+   "landing_url": "https://lambethopenmappingdata-lambethcouncil.opendata.arcgis.com/datasets/lambethcouncil::homes-of-multiple-occupancy",
+   "licence_kind": "arcgis",
+   "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/cb30b79f867145708a9b1742dc1d2c6d?f=json",
+   "index_licence_raw": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+   "index_licence_norm": "OGL-UK-3.0",
+   "index_harvested_at": "2026-09-26T14:22:14Z",
+   "resource": {
+    "url": "https://lambethopenmappingdata-lambethcouncil.opendata.arcgis.com/api/download/v1/items/cb30b79f867145708a9b1742dc1d2c6d/csv?layers=0",
+    "name": "CSV",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://lambethopenmappingdata-lambethcouncil.opendata.arcgis.com/api/download/v1/items/cb30b79f867145708a9b1742dc1d2c6d/csv?layers=0",
+     "name": "CSV",
+     "format": "CSV"
+    },
+    {
+     "url": "https://lambethopenmappingdata-lambethcouncil.opendata.arcgis.com/api/download/v1/items/cb30b79f867145708a9b1742dc1d2c6d/geojson?layers=0",
+     "name": "GeoJSON",
+     "format": "GEOJSON"
+    },
+    {
+     "url": "https://services5.arcgis.com/YzAbPjFO62myKADc/arcgis/rest/services/Homes_Of_Multiple_Occupancy/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+     "name": "ArcGIS GeoService",
+     "format": "ESRI"
+    }
+   ],
+   "series": false,
+   "other_resources": 6
+  }
+ ],
+ "skipped": [
+  {
+   "key": "agol_aberdeen_city_council_arcgis:7207fe978f7f4ac9a85e501cb012068e_82",
+   "title": "HMO Percentage in Data Zones",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "agol_bassetlaw_district_council:f27566018eaf40b491bb121983046489_37",
+   "title": "HMO Article 4 Boundary",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:574956c5-4ca0-476c-930c-c54ee5b90b5a",
+   "title": "Article 4 Direction HMOs",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:5f4ca2be-54a1-46eb-8e22-a0920071d01f",
+   "title": "Licensed Houses of Multiple Occupation Register",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:9a8380ce-8e2e-4dfe-981c-14222f155623",
+   "title": "HMO experimental data, 2022",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:54dc1fde-9da9-480b-9511-43c4e605043d",
+   "title": "Housing of Multiple Occupation",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "HTML"
+   ]
+  },
+  {
+   "key": "york:24dc0dd4-2200-4f9c-aa9b-23d0240b044a",
+   "title": "Estimated HMOs as % of properties in York",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "agol_durham_county_council:12d3e849cd0b41eaa77842e36e1f2fcc_0",
+   "title": "HMO Student Percentage Apr25 Webmap",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:ed7e2fd7-b819-47fb-a160-b02fdfacad0c",
+   "title": "HMO Public Register",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": [
+    "?"
+   ]
+  },
+  {
+   "key": "data_gov_uk:b8e32240-0f78-43ea-ab25-9272025030b2",
+   "title": "Register of Large Houses in Multiple Occupation (ROLHMO)",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "agol_lancaster_city_council:fd965e16d4e74fe582fdba88996d6475_58",
+   "title": "HMO Density by Output Area",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "agol_lancaster_city_council:edaed62d7b054bd8a5b2fd8bbe22bec7",
+   "title": "HMO Density by Postcode",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:4275bcbd-f993-4a24-a529-064efcc10416",
+   "title": "HMO and student housing register",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:e9d2bd5d-bdd9-4175-accc-7059ed7bda7a",
+   "title": "Houses in multiple occupation licence register",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "data_gov_uk:83db633a-3d04-4eec-bcb3-5394260d7300",
+   "title": "Estimated total number of houses in multiple occupation in area",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:aa7d6e4a-bc8a-49cb-a0f9-e19bbd8ace68",
+   "title": "Number of verifiable houses in multiple occupation in administrative area",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:15d7b82d-6e21-47dc-8075-8893c1966b09",
+   "title": "Article 4 Direction Areas - Houses in Multiple Occupation",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "nottingham:https://www.arcgis.com/home/item.html?id=9f28b0ca0fed4f15a09209c543243491&sublayer=10",
+   "title": "Article 4 Direction Areas: HMO",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "ons:/datasets/RM192/editions/2021/versions/2",
+   "title": "Number of dwellings that are houses in multiple occupation (HMO)",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "ons:/datasets/RM193/editions/2021/versions/2",
+   "title": "Number of households in houses in multiple occupation (HMO) by accommodation type",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "ons:/datasets/RM194/editions/2021/versions/2",
+   "title": "Number of households in houses in multiple occupation (HMO) by type of central heating in household",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "ons:/datasets/RM195/editions/2021/versions/2",
+   "title": "Number of households in houses in multiple occupation (HMO) by type of occupancy rating (bedrooms)",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "nomis:NM_2292_1",
+   "title": "RM192 - Number of dwellings that are houses in multiple occupation (HMO)",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "nomis:NM_2293_1",
+   "title": "RM193 - Number of households in houses in multiple occupation (HMO) by accommodation type",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "nomis:NM_2294_1",
+   "title": "RM194 - Number of households in houses in multiple occupation (HMO) by type of central heating in household",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "nomis:NM_2295_1",
+   "title": "RM195 - Number of households in houses in multiple occupation (HMO) by type of occupancy rating (bedrooms)",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "agol_salford_city_council:abbada32283842b1ac3786cc6a7b66db_0",
+   "title": "Additional HMOs by LSOA 2025",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "agol_salford_city_council:cb6e7e5894d842ebbe203e9825230726_0",
+   "title": "Additional HMOs by ward",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "agol_salford_city_council:b42a7cb350f04151b99180f1bbafae0d_0",
+   "title": "HMO licences by ward",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "agol_salford_city_council:0d644047c4f04243a5023fed9b7a325c_0",
+   "title": "Licensed HMOs by LSOA 2025",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "scotstats:hmo-licences",
+   "title": "Number of HMO Licences in Force",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "sheffield:https://www.arcgis.com/home/item.html?id=75be2984fa6a402ca282f44a8f047c18&sublayer=22",
+   "title": "Houses in Multiple Occupation Article 4",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "agol_stirling_council_insights_by:613354383c0845a3863d517155de63ce_0",
+   "title": "houses of multiple occupation licences by action status - open data",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "agol_stirling_council_insights_by:591818dd73fe425b887e43ad0ff02353_0",
+   "title": "houses of multiple occupation licences by type - open data",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "agol_stirling_council_insights_by:549c6e832d804a59ad2111e1b36ee467_0",
+   "title": "houses of multiple occupation licences by year - open data",
+   "why": "title matches exclusion"
+  },
+  {
+   "key": "data_gov_uk:0464aa04-8a9d-4d35-be17-cdbd576d4135",
+   "title": "Houses of multiple occupation",
+   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
+   "formats": []
+  },
+  {
+   "key": "lambeth:https://www.arcgis.com/home/item.html?id=c1c9b8ca6c1549248de74ad02cde99ee&sublayer=0",
+   "title": "Planning Article 4 Direction Small HMO C3 to C4",
+   "why": "title matches exclusion"
+  }
+ ]
+}

@@ -313,6 +313,25 @@ def _postcode(v):
     return s[:-3] + " " + s[-3:]
 
 
+_FULL_POSTCODE = re.compile(r"\b([A-Z]{1,2}[0-9][A-Z0-9]?)\s*([0-9][A-Z]{2})\b")
+_OUTWARD = re.compile(r"[A-Z]{1,2}[0-9][A-Z0-9]?")
+
+
+def _district(v):
+    """The postcode district of a published postcode, or of an address that
+    ends in one: the outward part and nothing else (NW1, LE2, FK8). The
+    value it is read from is an address or a full postcode, and is not kept.
+    The last postcode in the text is the property's: an address ends with it."""
+    if not v:
+        return None
+    text = str(v).upper()
+    hits = _FULL_POSTCODE.findall(text)
+    if hits:
+        return hits[-1][0]
+    text = text.strip()
+    return text if _OUTWARD.fullmatch(text) else None
+
+
 def _load_table(extraction_sha: str, which) -> list[list]:
     doc = json.loads((STORE / "tables" / extraction_sha).read_text(encoding="utf-8"))
     for t in doc["tables"]:
@@ -564,6 +583,25 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
                 # postcode is not, so it goes and the row says why.
                 quality.append(f"postcode {str(raw_pc).strip()!r} fails the UK pattern; nulled")
                 base["postcode"] = None
+        # Districts, not doors: a schema with a postcode_district column is
+        # mapped from the source's postcode or address, and keeps only the
+        # outward part. A row whose value holds no postcode is refused, and
+        # the refusal never repeats the value: it is somebody's address.
+        if "postcode_district" in types:
+            had = base.get("postcode_district") not in (None, "")
+            base["postcode_district"] = _district(base.get("postcode_district"))
+            if had and base["postcode_district"] is None:
+                bad.append({**base, **receipts, "source_row": rno, "why": "no postcode could be read from the published address"})
+                return
+        # A count that is zero or absurd is a blank the publisher filled in
+        # (Camden's registers carry 0 persons and 200 storeys). The licence
+        # is real; the number is not, so the number goes and the row says so.
+        for name in schema.get("validation", {}).get("null_when_implausible", []):
+            rng = schema["validation"].get(name + "_range")
+            val = base.get(name)
+            if rng and isinstance(val, (int, float)) and not (rng[0] <= val <= rng[1]):
+                quality.append(f"{name} published as {val:g}, outside {rng[0]}-{rng[1]}; nulled")
+                base[name] = None
         # A published annual mean of exactly zero is a placeholder for a year
         # not yet measured (Camden fills future columns with 0.00), never an
         # observation. The schema names which columns that rule applies to.

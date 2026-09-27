@@ -1,0 +1,151 @@
+"""The HMO map: licensed houses in multiple occupation, by postcode district.
+
+  /family/hmo_registers/map      the page
+  /api/family/hmo_registers/districts.geojson, areas.geojson   what it draws
+
+Districts, not doors. The family table carries a postcode district on every
+row and nothing finer, so this map cannot show a property and does not try:
+seen whole, the country is a density; closer, each district is a shape with
+its count, and a click says how many licences, under which council's
+register, of what kind.
+
+The page is server-rendered and complete without its script: every number
+the map shows is in the table beneath it. The script (web/hmomap.js) draws
+with MapLibre GL JS, served from this site with the shapes; nothing is
+asked of any other host.
+"""
+
+from __future__ import annotations
+
+import functools
+import hashlib
+import json
+from pathlib import Path
+
+from pagerender import _page, breadcrumbs, esc, simple_head
+from paths import DATA_DIR
+
+FAMILY = "hmo_registers"
+OUT = DATA_DIR / "families" / "out" / FAMILY
+WEB = Path(__file__).parent / "web"
+PATH = f"/family/{FAMILY}/map"
+
+
+def geo_file(name: str) -> Path | None:
+    p = OUT / name
+    return p if name in ("districts.geojson", "areas.geojson") and p.is_file() else None
+
+
+@functools.lru_cache(maxsize=2)
+def _load(stamp: float) -> dict | None:
+    try:
+        doc = json.loads((OUT / "districts.geojson").read_text(encoding="utf-8"))
+        summary = json.loads((OUT / "summary.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    rows = []
+    for f in doc["features"]:
+        p = f["properties"]
+        if p.get("licences"):
+            rows.append({"district": p["district"], "licences": p["licences"], "occupants": p.get("occupants") or 0,
+                         "occupants_of": p.get("occupants_of") or 0,
+                         "councils": json.loads(p["councils"]), "types": json.loads(p["types"])})
+    rows.sort(key=lambda r: -r["licences"])
+    councils: dict[str, dict] = {}
+    for r in rows:
+        for c in r["councils"]:
+            e = councils.setdefault(c["council"], {"licences": 0, "districts": 0, "as_of": c.get("as_of"), "source_url": c.get("source_url")})
+            e["licences"] += c["licences"]
+            e["districts"] += 1
+    absent = [s for s in summary.get("sources", []) if s.get("ladder") in ("not admitted", "fetch failed", "extracted")]
+    return {"rows": rows, "councils": councils, "absent": absent, "attribution": doc.get("attribution", ""),
+            "no_shape": doc.get("districts_without_a_shape", []), "built_at": summary.get("built_at", "")}
+
+
+def data() -> dict | None:
+    try:
+        return _load((OUT / "districts.geojson").stat().st_mtime)
+    except OSError:
+        return None
+
+
+def _version(name: str) -> str:
+    try:
+        return hashlib.sha1((WEB / name).read_bytes()).hexdigest()[:8]
+    except OSError:
+        return "0"
+
+
+_WHY = {
+    "not admitted": "its licence does not let us",
+    "fetch failed": "its file could not be fetched",
+    "extracted": "it is published in a form we cannot read yet",
+}
+
+
+def render_map(site_url: str) -> str | None:
+    d = data()
+    if not d or not d["rows"]:
+        return None
+    total = sum(r["licences"] for r in d["rows"])
+    crumb_html, crumb_ld = breadcrumbs(
+        [("Home", "/"), ("Combined data", "/combined"), ("HMO licence registers", f"/family/{FAMILY}"), ("Map", None)], site_url)
+    title = "Map of licensed HMOs by postcode district"
+    desc = (f"{total:,} licensed houses in multiple occupation on {len(d['councils'])} councils' public registers, "
+            f"counted by postcode district across {len(d['rows'])} districts. Districts, not addresses.")
+    councils = "".join(
+        f'<li><a href="{esc(c["source_url"])}">{esc(name)}</a> <span class="org-meta">{c["licences"]:,} licences in '
+        f'{c["districts"]} district{"" if c["districts"] == 1 else "s"}'
+        + (f' · register dated {esc(c["as_of"])}' if c.get("as_of") else " · the register states no date") + "</span></li>"
+        for name, c in sorted(d["councils"].items(), key=lambda kv: -kv[1]["licences"]))
+    seen, absent = set(), []
+    for s in d["absent"]:
+        key = (s["publisher"], s["ladder"])
+        if key in seen:
+            continue
+        seen.add(key)
+        absent.append(f'<li><a href="{esc(s.get("landing_url") or s.get("resource_url") or "#")}">{esc(s["publisher"])}</a> '
+                      f'<span class="org-meta">{esc(_WHY.get(s["ladder"], s["ladder"]))}: {esc(str(s.get("intake_detail") or "")[:160])}</span></li>')
+    trs = "".join(
+        f'<tr data-district="{esc(r["district"])}"><th scope="row"><button type="button" class="hmo-go">{esc(r["district"])}</button></th>'
+        f'<td class="num">{r["licences"]:,}</td>'
+        f'<td>{esc(", ".join(c["council"] for c in r["councils"]))}</td>'
+        f'<td>{esc("; ".join(f"{t}: {n:,}" for t, n in r["types"]))}</td>'
+        f'<td class="num">{(format(r["occupants"], ",") if r["occupants_of"] else "—")}</td></tr>'
+        for r in d["rows"])
+    body_html = (
+        crumb_html
+        + "<h1>Licensed HMOs by postcode district</h1>"
+        + f'<p class="lede">{total:,} licensed houses in multiple occupation, from the public registers of '
+          f'{len(d["councils"])} councils, counted by postcode district. Seen whole, the map shows where they are dense; '
+          'closer, each district is a shape you can open. It shows districts, never addresses: the table behind it holds '
+          'no address, no full postcode and nobody&#39;s name.</p>'
+        + '<div class="hmo-wrap"><div id="hmo-map" class="hmo-map" role="application" '
+          'aria-label="Map of licensed HMOs by postcode district. The table below holds the same figures."></div>'
+          '<aside id="hmo-panel" class="hmo-panel" aria-live="polite"><h2>Open a district</h2>'
+          '<p class="note">Click a district on the map, or a district in the table below.</p></aside></div>'
+        + '<p class="hmo-legend" id="hmo-legend" aria-hidden="true"></p>'
+        + '<p id="hmo-nogl" class="note" hidden>The map needs WebGL, which this browser has turned off. '
+          'Every figure it would show is in the table below.</p>'
+        + f'<p class="dl-row"><a class="cta" href="/family/{FAMILY}">The table and downloads</a></p>'
+        + "<h2>Whose registers these are</h2>"
+        + f'<ul class="org-list">{councils}</ul>'
+        + '<p class="note">A count is the licences on a council&#39;s register as it published it, not every HMO: smaller HMOs '
+          'need a licence only where the council runs an additional scheme, and an unlicensed one is on no register. '
+          'A district with no count is one these registers say nothing about, which is not the same as none.</p>'
+        + (("<h2>Registers that are not on the map</h2>"
+            f'<ul class="org-list">{"".join(absent)}</ul>'
+            '<p class="note">Most councils publish their register as a web page or a PDF, or not as open data at all. '
+            'These are the ones the index knows of and could not use, with the reason.</p>') if absent else "")
+        + "<h2>Every district</h2>"
+        + '<div class="table-wrap"><table class="hmo-table"><thead><tr><th scope="col">District</th><th scope="col" class="num">Licences</th>'
+          '<th scope="col">Council</th><th scope="col">Kind of licence, in the council&#39;s words</th>'
+          '<th scope="col" class="num">People permitted</th></tr></thead>'
+        + f"<tbody>{trs}</tbody></table></div>"
+        + '<p class="note">People permitted is the sum of the most occupants each licence allows, where the register gives it.</p>'
+        + f'<p class="note">{esc(d["attribution"])} The boundaries are approximate by their maker&#39;s own account. '
+          'Drawn with MapLibre GL JS (BSD 3-Clause), served from this site.</p>'
+        + f'<link rel="stylesheet" href="/maplibre-gl.css?v={_version("maplibre-gl.css")}">'
+        + f'<script type="module" src="/hmomap.js?v={_version("hmomap.js")}"></script>')
+    head_html = simple_head(title, desc, PATH, site_url, extra=crumb_ld)
+    return _page(head_html, body_html, "/combined")

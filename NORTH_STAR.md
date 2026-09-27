@@ -194,6 +194,16 @@ A living list. Add freely; move to "Done" with the commit that did it.
   annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
   and Scotland on its About page's OGL statement. Air Quality England
   parked (no terms).
+- 27 Sep — sixth family, HMO licence registers, because Search Console
+  showed people arriving for them. Four councils' registers, 10,446
+  licences, 53 postcode districts. Properties, not people, and districts,
+  not doors: the table holds no name, address, full postcode or coordinate.
+  `/family/hmo_registers/map`: a density seen whole, the districts shaded by
+  count up close, a click for one district's licences, council and kinds;
+  complete without its script, as a table. MapLibre GL JS 6.11.2 and
+  mySociety's open postcode boundaries (OGL v3), both served from here.
+- 27 Sep — each body's organisation chart is indexed and in the sitemap;
+  Canterbury's feed found at Esri's hostname after its own left DNS.
 - 16 Sep — the archipelago keeps its map. The plan (each department's
   plot, colour and architecture) is drawn once from the first graph shown
   and kept: at another date an island stands in its own plot at the size of

@@ -356,6 +356,24 @@ trusting it to cron.
 
 ---
 
+### Postcode boundaries for the HMO map
+
+`families/districts.py` lays the HMO family's counts on postcode district
+shapes. The shapes are not in the repository (1 GB compressed): unpack them
+once on the box, without the per-postcode unit shapes, which nothing here
+uses. Open Government Licence v3; the attribution is in `districts.py` and
+on the map.
+
+```bash
+mkdir -p ~/opendata-index/data/geo/mapit && cd ~/opendata-index/data/geo/mapit
+curl -s https://postcodes-mapit-static.s3.eu-west-2.amazonaws.com/data/gb-postcodes-v5.tar.bz2   | bzip2 -dc | tar x --exclude='*/units/*' --exclude='*/units'
+# sha256 of the archive as fetched 27 Sep 2026:
+# 66d4ff37536f0ae394c077ef90b717e230598cd44f4be40040801dff2acf0cd3
+```
+
+Without them the family still builds and its table is served; only the map
+has nothing to draw, and its page answers 404.
+
 ## Rollback
 
 Complete removal, in order:

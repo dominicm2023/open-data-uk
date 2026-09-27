@@ -56,7 +56,7 @@ FAMILIES: dict[str, dict] = {
         "label": "Brownfield land registers",
         "include": r"brownfield\s+(land\s+)?(register|site)|brownfield\s+land\b|brownfield\s+register",
         # Policies, maps and boundaries about brownfield are not the register.
-        "exclude": r"polic|strateg|boundar|map|assessment|strategic\s+housing|shlaa|consultation|guidance",
+        "exclude": r"polic|strateg|boundar|\bmap\b|assessment|strategic\s+housing|shlaa|consultation|guidance",
     },
     "spend_over_500": {
         "label": "Spend over £500",
@@ -70,6 +70,14 @@ FAMILIES: dict[str, dict] = {
         # A return is one file a month; the family is the series, so every
         # file of a dataset is fetched and mapped, not the newest one.
         "series": True, "max_files": 72,
+    },
+    "hmo_registers": {
+        "label": "HMO licence registers",
+        # \b on "hmo": the bare letters sit inside Richmond and Rushmoor.
+        "include": r"(\bhmos?\b|(houses?|homes|housing)\s+(in|of)\s+multiple\s+occup)",
+        # The register lists licensed properties. Planning directions about
+        # HMOs, counts by area and census tables are about HMOs, not the register.
+        "exclude": r"article\s*(4|four)|direction|boundar|densit|percentage|\bby\s+(ward|lsoa|msoa|output\s+area|postcode|type|year|action\s+status)\b|number\s+of|estimated|\bfires?\b|census|households\s+in|experimental|land\s+charge|concentration|student\s+percentage|revenue|statistic|data\s+zones?|\brm1\d\d\b|verifiable",
     },
     "organograms": {
         "label": "Organograms: posts, grades and pay",
