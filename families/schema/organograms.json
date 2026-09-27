@@ -164,5 +164,12 @@
       "format": "percent",
       "newest_per_body": true
     }
+  ],
+  "never_sample": [
+    "^name$",
+    "contact",
+    "e-?mail",
+    "phone",
+    "telephone"
   ]
 }

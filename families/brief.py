@@ -16,6 +16,7 @@ Usage:  DATA_DIR=... python families/brief.py recycling_centres
 from __future__ import annotations
 
 import json
+import re
 import sqlite3
 import sys
 from pathlib import Path
@@ -40,11 +41,29 @@ def _header_row(rows: list) -> int:
     return 0
 
 
+# The brief is committed to a public repository, and its sample rows are the
+# publisher's own rows. A family that does not carry people must not carry
+# them here either: the organograms brief held 3,211 sample rows with a name,
+# a work e-mail or a phone number in them until 27 Sep 2026. A schema may
+# name the columns never to sample ("never_sample": patterns on the header),
+# or say the family's rows are not to be sampled at all ("brief_samples":
+# false), which is what a register of addresses needs. Headers always stay:
+# a column's name is not anybody's.
+_HIDE: list = []
+_SAMPLES = True
+HIDDEN = "(not sampled)"
+
+
 def _preview(table: dict) -> dict:
     rows = table["rows"]
     hr = _header_row(rows)
     header = [str(h) if h is not None else "" for h in (rows[hr] if rows else [])][:MAX_COLS]
     body = [[("" if v is None else str(v))[:80] for v in r[:MAX_COLS]] for r in rows[hr + 1:hr + 1 + SAMPLE_ROWS]]
+    if not _SAMPLES:
+        body = []
+    elif _HIDE:
+        hide = {i for i, h in enumerate(header) if any(p.search(h.strip()) for p in _HIDE)}
+        body = [[(HIDDEN if i in hide and v.strip() else v) for i, v in enumerate(r)] for r in body]
     where = {k: v for k, v in table.items() if k != "rows"}
     return {"where": where, "header": header, "header_row": hr, "sample_rows": body,
             "row_count": max(len(rows) - hr - 1, 0), "column_count": max((len(r) for r in rows), default=0)}
@@ -52,6 +71,9 @@ def _preview(table: dict) -> dict:
 
 def build(family: str) -> dict:
     schema = json.loads((HERE / "schema" / f"{family}.json").read_text(encoding="utf-8"))
+    global _HIDE, _SAMPLES
+    _HIDE = [re.compile(p, re.I) for p in schema.get("never_sample", [])]
+    _SAMPLES = schema.get("brief_samples", True)
     c = sqlite3.connect(f"file:{STORE / 'families.db'}?mode=ro", uri=True)
     c.row_factory = sqlite3.Row
     entries = []
