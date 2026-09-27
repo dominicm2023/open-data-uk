@@ -148,11 +148,16 @@ async function start() {
     for (const f of counted) {
       const b = el("button", "hmo-district"); b.type = "button"; b.append(el("b", null, f.properties.district), el("span", null, fmt(f.properties.licences)));
       b.addEventListener("click", ev => { ev.stopPropagation(); open(f.properties.district, false); });
-      near.push(new Marker({ element: b, anchor: "center" }).setLngLat([f.properties.lon, f.properties.lat]).addTo(map));
+      const m = new Marker({ element: b, anchor: "center" }).setLngLat([f.properties.lon, f.properties.lat]).addTo(map);
+      const bb = boundsOf(f.geometry); m.wide = (bb.getEast() - bb.getWest()) * Math.cos(f.properties.lat * Math.PI / 180);
+      near.push(m);
     }
     const names = () => { const z = map.getZoom();
       for (const m of far) m.getElement().hidden = z >= 8;
-      for (const m of near) m.getElement().hidden = z < 9.6; };
+      // a district's code is shown once the district is wide enough on screen to hold it:
+      // the WC and EC districts are a few streets each, and piled up over central London
+      const px = 512 * Math.pow(2, z) / 360;
+      for (const m of near) m.getElement().hidden = z < 9.2 || m.wide * px < 46; };
     map.on("zoom", names); names();
 
     let on = null, over = null;
