@@ -493,7 +493,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000170",
@@ -521,7 +522,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": false
+   "statutory": false,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E08000038",
@@ -549,7 +551,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": "DM 2026-09-27"
   },
   {
    "dataset_key": "found:E07000084",
@@ -577,7 +580,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000171",
@@ -605,7 +609,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E09000004",
@@ -633,7 +638,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E06000058",
@@ -661,7 +667,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000234",
@@ -689,7 +696,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000069",
@@ -717,7 +725,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000118",
@@ -745,7 +754,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000107",
@@ -773,7 +783,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000085",
@@ -801,7 +812,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000242",
@@ -829,7 +841,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000086",
@@ -857,7 +870,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000207",
@@ -885,7 +899,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000036",
@@ -913,7 +928,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": "DM 2026-09-27"
   },
   {
    "dataset_key": "found:E07000131",
@@ -941,7 +957,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": "DM 2026-09-27"
   },
   {
    "dataset_key": "found:E07000073",
@@ -969,7 +986,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E09000015",
@@ -997,7 +1015,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000089",
@@ -1025,7 +1044,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000098",
@@ -1053,7 +1073,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E09000017",
@@ -1081,7 +1102,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E09000018",
@@ -1109,7 +1131,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": false
+   "statutory": false,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E09000021",
@@ -1137,7 +1160,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E06000032",
@@ -1165,7 +1189,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000074",
@@ -1193,7 +1218,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": "DM 2026-09-27"
   },
   {
    "dataset_key": "found:E07000228",
@@ -1221,7 +1247,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E06000042",
@@ -1249,7 +1276,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E09000025",
@@ -1277,7 +1305,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E06000012",
@@ -1305,7 +1334,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E06000024",
@@ -1333,7 +1363,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000218",
@@ -1361,7 +1392,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000148",
@@ -1389,7 +1421,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000236",
@@ -1417,7 +1450,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000124",
@@ -1445,7 +1479,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": "DM 2026-09-27"
   },
   {
    "dataset_key": "found:E08000005",
@@ -1473,7 +1508,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000075",
@@ -1501,7 +1537,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E08000029",
@@ -1529,7 +1566,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E06000066",
@@ -1557,7 +1595,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000126",
@@ -1585,7 +1624,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000196",
@@ -1613,7 +1653,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000213",
@@ -1641,7 +1682,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000240",
@@ -1669,7 +1711,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E09000029",
@@ -1697,7 +1740,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E08000008",
@@ -1725,7 +1769,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E06000020",
@@ -1753,7 +1798,37 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": "DM 2026-09-27"
+  },
+  {
+   "dataset_key": "found:E06000027",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Torbay Council",
+   "portal": "web",
+   "landing_url": "https://www.torbay.gov.uk/housing/hmo-landlords/hmo-register/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.torbay.gov.uk/housing/hmo-landlords/hmo-register/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.torbay.gov.uk/housing/hmo-landlords/hmo-register/",
+    "name": "",
+    "format": "HTML"
+   },
+   "candidates": [
+    {
+     "url": "https://www.torbay.gov.uk/housing/hmo-landlords/hmo-register/",
+     "name": "",
+     "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true,
+   "rights_reserved_decision": "DM 2026-09-27"
   },
   {
    "dataset_key": "found:E09000031",
@@ -1781,7 +1856,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E06000007",
@@ -1809,7 +1885,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000222",
@@ -1837,7 +1914,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000103",
@@ -1865,7 +1943,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": "DM 2026-09-27"
   },
   {
    "dataset_key": "found:E07000241",
@@ -1893,7 +1972,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E06000062",
@@ -1921,7 +2001,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000181",
@@ -1949,7 +2030,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E08000010",
@@ -1977,7 +2059,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E07000094",
@@ -2005,7 +2088,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:E06000041",
@@ -2033,7 +2117,37 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
+  },
+  {
+   "dataset_key": "found:W06000018",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Caerphilly County Borough Council",
+   "portal": "web",
+   "landing_url": "https://www.caerphilly.gov.uk/services/housing/private-housing/houses-in-multiple-occupation/hmo-public-register?lang=en-GB",
+   "licence_kind": "page",
+   "metadata_url": "https://www.caerphilly.gov.uk/services/housing/private-housing/houses-in-multiple-occupation/hmo-public-register?lang=en-GB",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.caerphilly.gov.uk/services/housing/private-housing/houses-in-multiple-occupation/hmo-public-register?lang=en-GB",
+    "name": "",
+    "format": "HTML"
+   },
+   "candidates": [
+    {
+     "url": "https://www.caerphilly.gov.uk/services/housing/private-housing/houses-in-multiple-occupation/hmo-public-register?lang=en-GB",
+     "name": "",
+     "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true,
+   "rights_reserved_decision": "DM 2026-09-27"
   },
   {
    "dataset_key": "found:W06000015",
@@ -2061,7 +2175,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:W06000010",
@@ -2089,7 +2204,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:W06000004",
@@ -2117,7 +2233,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:W06000005",
@@ -2145,7 +2262,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:W06000024",
@@ -2173,7 +2291,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:W06000022",
@@ -2201,7 +2320,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:W06000023",
@@ -2229,7 +2349,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   },
   {
    "dataset_key": "found:W06000020",
@@ -2257,7 +2378,8 @@
    "series": false,
    "other_resources": 1,
    "found": "2026-09-27",
-   "statutory": true
+   "statutory": true,
+   "rights_reserved_decision": null
   }
  ],
  "skipped": [

@@ -194,6 +194,11 @@ A living list. Add freely; move to "Done" with the commit that did it.
   annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
   and Scotland on its About page's OGL statement. Air Quality England
   parked (no terms).
+- 27 Sep — 48 councils, 27,371 licences, 321 districts. Newham's 1,771-page
+  register is read by a new header-columns PDF reader (3,489 licences); the
+  nine councils whose websites say "All rights reserved" are admitted by
+  name (DM), six of them readable. A one-column mapping now fits (Torbay's
+  register had been dropping out silently).
 - 27 Sep — the HMO family reaches 40 councils, 22,975 licences in 279
   postcode districts. Dominic admitted statutory registers that state no
   licence (this family only); 31 came in, read from CSVs, spreadsheets, web

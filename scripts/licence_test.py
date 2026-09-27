@@ -194,6 +194,19 @@ check(page(b"<p>Download the register (PDF).</p>"), "refused: The page says noth
 check(page(b'<script>x="All rights reserved"</script><p>Available under the Open Government Licence v3.0</p>'),
       "OGL-UK-3.0", "words inside a script are not the page's statement")
 check(intake.licence_from_page.__module__, "intake", "the page reader lives in the intake")
+_maldon = b"<p>Apply for a licence.</p><footer>All content &copy; 2026 Anytown District Council. All Rights Reserved.</footer>"
+try:
+    intake.licence_from_page(_maldon, set_aside=r"all\s+rights\s+reserved"); _aside = "admitted"
+except intake.Refused as err:
+    _aside = str(err)[:30]
+check(_aside, "Unrecognised licence statement", "a decision can set aside 'All rights reserved' and the page then reads as silent")
+try:
+    intake.licence_from_page(b"<footer>&copy; Anytown. All rights reserved. Reuse of this information is for non-commercial "
+                             b"purposes only.</footer>", set_aside=r"all\s+rights\s+reserved")
+    _rest = "admitted"
+except intake.Refused as err:
+    _rest = str(err)[:40]
+check(_rest[:20], "Licence text names o", "setting one phrase aside never sets aside anything else the page says")
 check(page(b"<p>You need a licence. Unlicensed landlords will also be restricted on how you terminate tenancies.</p>"
            b"<footer>&copy; Anytown Council</footer>")[:30], "refused: Unrecognised licence ",
       "prose about licensing houses is not a statement about the data (North Somerset's 'restricted')")
@@ -206,6 +219,22 @@ with tempfile.NamedTemporaryFile("wb", suffix=".csv", delete=False) as tmp:
 _t = extract.extract(Path(tmp.name), "CSV", {"max_rows": 100})
 check(_t[0]["rows"], [["address", "ref"], ["1 A Road, KT17 1AA", "R1"]], "an HTML table served as CSV is read as its table")
 Path(tmp.name).unlink()
+
+# --- a PDF whose licences are each one box across the table (Newham's) ------
+# The ruled header's cells are where the columns are; each word goes to the
+# column its centre sits under. A stand-in page with that shape:
+from types import SimpleNamespace as _NS  # noqa: E402
+_head = _NS(bbox=(0, 0, 300, 10), cells=[(0, 0, 100, 10), (100, 0, 200, 10), (200, 0, 300, 10)])
+_row = _NS(bbox=(0, 10, 300, 40), cells=[(0, 10, 300, 40), None, None])
+_tbl = _NS(rows=[_head, _row], bbox=(0, 0, 300, 40), extract=lambda: [["Ref", "Property address", "Licence holder name"], ["merged", None, None]])
+_w = lambda t, x0, x1, top: {"text": t, "x0": x0, "x1": x1, "top": top, "bottom": top + 6}
+_page = _NS(extract_words=lambda: [_w("R1", 5, 20, 12), _w("1", 105, 110, 12), _w("A", 112, 118, 12), _w("Road", 120, 140, 12),
+                                   _w("E17", 105, 125, 22), _w("1AA", 128, 145, 22), _w("Holder", 205, 240, 12)])
+check(extract._resplit(_page, _tbl), [["Ref", "Property address", "Licence holder name"], ["R1", "1 A Road E17 1AA", "Holder"]],
+      "a licence drawn as one box is split under the header's columns, the address's lines kept in order")
+_tbl2 = _NS(rows=[_head, _NS(bbox=(0, 10, 300, 40), cells=[(0, 10, 100, 40), (100, 10, 200, 40), (200, 10, 300, 40)])],
+            bbox=(0, 0, 300, 40), extract=lambda: [["a", "b", "c"], ["1", "2", "3"]])
+check(extract._resplit(_page, _tbl2), None, "a table drawn with its columns is read as drawn")
 
 print()
 print("all licence rules hold" if not failures

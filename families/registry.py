@@ -299,6 +299,7 @@ def build(family: str) -> dict:
                 "index_licence_raw": None, "index_licence_norm": None, "index_harvested_at": e.get("checked"),
                 "resource": f, "candidates": [f], "series": False, "other_resources": 1,
                 "found": e.get("checked"), "statutory": bool(u.get("statutory")),
+                "rights_reserved_decision": u.get("rights_reserved_decision"),
             })
     reg = {"family": family, "label": spec["label"], "rule": spec,
            "sources": admitted, "skipped": skipped}

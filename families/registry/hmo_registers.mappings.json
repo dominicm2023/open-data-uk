@@ -871,8 +871,24 @@
     "reject": "The PDF's table puts a whole licence in one cell, so the property's postcode cannot be told from the holder's; needs a reader that works from positions on the page."
   },
   "ee80fa3f27b5cc78ac6b3aa34e5269251363386c7f50ef7c2e87c61bd780be8e": {
-    "status": "rejected",
-    "reject": "The PDF (1,771 pages) puts every field of a licence in one cell, so the property's postcode cannot be told from the holder's; needs a reader that works from positions on the page."
+    "status": "reviewed",
+    "table": "all",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Property address",
+      "licence_type": "Licence type",
+      "licence_start": "Licence valid from",
+      "licence_end": "Licence expiry",
+      "max_occupants": "Total number of permitted occupants"
+    },
+    "constants": {
+      "council": "London Borough of Newham",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. A 1,771-page PDF whose ruled header has ten cells but whose licences are each drawn as one box across the table; read by the extractor's header-columns reader (tables-v5), which puts each word under the header cell it sits beneath. 3,492 licence rows, 3,489 with the property's postcode. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
   },
   "d42bace063006ba681ac02ce38dfd697836f4846bd4824310a498f55ad7b16ce": {
     "status": "rejected",
@@ -913,5 +929,126 @@
   "0a2ec4537d167b1d139957d160903f6fd59438546092df6d753d3a98b3a2b310": {
     "status": "rejected",
     "reject": "The PDF's table extracts with its header but no rows."
+  },
+  "7f3a0f6627a32c84a5ffa560318cf1f7481f9efa7b4748e929c54448351fb28e": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Address of HMO",
+      "licence_start": "Licence start date",
+      "licence_end": "Licence expiry date",
+      "max_occupants": "Max Number of Persons",
+      "max_households": "Max number of Households",
+      "storeys": "HMO Storeys"
+    },
+    "constants": {
+      "council": "Erewash Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "b418c5c0d71d6b9b71db39945f77fe3ae45e78e8454c1e62a0dd50ba55b7a97f": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "HMO Address",
+      "licence_start": "Valid from date",
+      "licence_end": "Expiry date",
+      "max_households": "No. of Households"
+    },
+    "constants": {
+      "council": "Harborough District Council",
+      "licences": 1
+    },
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "0c89021a30b8eab4613f1923b92b339d34b3fe756bbcb4b72a0b566147b0b335": {
+    "status": "reviewed",
+    "table": "all",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "ADDRESS OF LICENCED PREMISES",
+      "licence_start": "COMMENCEMENT DATE OF THE LICENCE",
+      "storeys": "NUMBER OF STOREYS"
+    },
+    "constants": {
+      "council": "Maldon District Council",
+      "licences": 1
+    },
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27. 'PERMITTED NO. OF PERSONS AND/OR HOUSEHOLDS' mixes two counts and is not mapped. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "c220f5d64fcc87a490dc1c85c44798d69fe1524c9108752e91588e4c46f8de31": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Post Code"
+    },
+    "constants": {
+      "council": "Torbay Council",
+      "licences": 1
+    },
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27. The register gives no dates or occupancy. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "63a0a5e8d9b5b37fa82629d391932dd3088190627b8c2e9f251ec66147d00633": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Postcode of licensed HMO",
+      "licence_start": "Commencement date of licence"
+    },
+    "constants": {
+      "council": "Caerphilly County Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "3eec02dfd18a6a965cb774d5e3bb948f292a3fa40aa7974123f5f772f7d28dcc": {
+    "status": "reviewed",
+    "table": "all",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "POSTCODE",
+      "licence_end": "Licence Expires",
+      "max_occupants": "Permitted number"
+    },
+    "constants": {
+      "council": "Barnsley Metropolitan Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27. Barnsley's copyright page also grants the Open Government Licence. Later pages continue the first page's columns without a header; the PDF's note tables give no postcode and are set aside. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "aef39d9189fdf95ef84f32b0219eb498444cc8b718d7a4b4d8f7e6f08ced0c98": {
+    "status": "rejected",
+    "reject": "The PDF is one card per licence, label beside value, not a table; needs a card reader."
+  },
+  "8ee1cb5b40717bfd851b744d3fc1cc3f87d29a2bb5bf644e34d282e0e877e729": {
+    "status": "rejected",
+    "reject": "The PDF is one card per licence (334 of them), label beside value, not a table; needs a card reader."
+  },
+  "3699ff757e1618893bf31be5bfff5bd6038e75a078c1f2b68dfb832286f07410": {
+    "status": "rejected",
+    "reject": "The PDF extracts as one block of text with no table."
   }
 }

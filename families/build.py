@@ -428,7 +428,9 @@ def _fits(rows: list, candidates: list, h: int) -> list[tuple[int, int, dict]]:
         for order, lay in enumerate(candidates):
             names = [_norm(v) for v in lay.values()]
             hits = sum(1 for n in names if n in lowered)
-            if lay and hits >= max(2, int(0.6 * len(lay))):
+            # a mapping of one column (Torbay's register gives nothing but the
+            # postcode worth mapping) fits on its one name; two or more need two
+            if lay and hits >= max(min(2, len(lay)), int(0.6 * len(lay))):
                 fits.append((hits, hr, order, lay))
     fits.sort(key=lambda t: (-t[0], t[2], t[1]))
     return [(hits, hr, lay) for hits, hr, order, lay in fits]

@@ -145,12 +145,23 @@ on its own website and says nothing about reuse, the intake admits it
 nothing from it but a count of licences per postcode district, and links
 the council's own page. Silence admits; words that reserve the council's
 rights still refuse, since the page is read by the same gate and only its
-silence counts as this basis. Held on those words: Torbay and Caerphilly
-("All rights reserved"). A no-marketing notice (Cardiff, Newham, Camden)
+silence counts as this basis. Nine councils whose websites say "All rights
+reserved" (in most, the website software's default footer) were then
+admitted by name, also by Dominic on 27 September: Barnsley, Caerphilly,
+Erewash, Harborough, Maldon, Ribble Valley, Telford and Wrekin, Torbay and
+Watford. The decision is recorded on each council's entry in the coverage
+file (`rights_reserved_decision`); for those sources only, the page reader
+sets that one phrase aside and reads the rest of the page as ever. It is
+not a rule for councils found later: those come back to Dominic. A no-marketing notice (Cardiff, Newham, Camden)
 is not a reservation of rights and does not refuse: the family carries
 nobody's details. This is not a precedent for any other family. Bristol's
 three licence layers come in under the Bristol decision of 7 September,
 extended to the same council's ArcGIS Online items.
+
+A PDF whose ruled header is split into columns but whose licences are each
+drawn as one box across the table (Newham) is read by the extractor's
+header-columns reader: each word goes to the column its centre sits under.
+It applies only to that shape, and marks the tables it read that way.
 
 The brief of a family that samples no rows shows its first rows only where
 a row reads as a table's header: three column names at least, a majority of
@@ -271,7 +282,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 | brownfield_land | 176 sources / 129 authorities + MHCLG's platform | 62 | 53 own files (4,755 sites) + the platform for 258 more authorities (25,222 sites): 29,977 sites, 311 authorities |
 | spend_over_500 | 212 (every edition) | 76 | 68 sources, 4,259,913 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
 | organograms | 356 sources (339 a senior + junior pair; every snapshot's senior file since 2010, 16 Sep) | 309 | 294 sources by the Cabinet Office standard, 343,329 rows (68 snapshot dates), 249 bodies; 16 own-shape tables await a person (15 councils, The National Archives' newest); 38 dead links, 9 refused on licence (CCRC "notspecified"). "Other (Public Domain)" accepted 15 Sep (DM): the MoD's 2016 organogram came in; its current one is seven per-budget files already published |
-| hmo_registers | 78 sources (14 from the index, 64 found by search, 27 Sep) | 62 | 40 councils, 22,975 licences in 279 postcode districts (31 of them statutory registers stating no licence, DM 27 Sep). Largest: Lambeth 5,518, Camden 3,485, Glasgow 2,414, Barnet 1,610, Hounslow 1,403, Warwick 1,080, Norwich 910, Waltham Forest 884. Not mappable, 19, each with its reason: no postcode published (Amber Valley, Basingstoke, Chorley, Milton Keynes, North East Lincolnshire, Bristol's coordinates-only layers), a PDF needing a reader that works from positions on the page (Newham's 1,771 pages, BCP, Wigan, Elmbridge's and Mid Sussex's cards), garbled or text-only PDFs. Held on 'All rights reserved': 9 (Barnsley, Caerphilly, Erewash, Harborough, Maldon, Ribble Valley, Telford and Wrekin, Torbay, Watford). 11 rows refused for a district that does not exist (source typos: RG4O, AL19, G8) |
+| hmo_registers | 80 sources (14 from the index, 66 found by search, 27 Sep) | 71 | 48 councils, 27,371 licences in 321 postcode districts. Largest: Lambeth 5,518, Newham 3,489 (a 1,771-page PDF, read by the header-columns reader), Camden 3,485, Glasgow 2,414, Barnet 1,610, Hounslow 1,403, Warwick 1,080, Norwich 910, Waltham Forest 884. Not mappable, 22, each with its reason on the map page: no postcode published (Amber Valley, Basingstoke, Chorley, Milton Keynes, North East Lincolnshire, Bristol's coordinates-only layers), one card per licence (Elmbridge, Mid Sussex, Ribble Valley, Watford: a card reader would take them), PDFs that are one block of text, garbled or merged differently (BCP, Wigan, Denbighshire, Harrow, Telford, Solihull, West Northamptonshire, East Hertfordshire), a page of fees (Hart), an empty table (Tameside). 11 rows refused for a district that does not exist |
 
 Fifth family, 15 September 2026: organograms. Central government's
 "Organogram of Staff Roles & Salaries" is one dataset per body with a senior

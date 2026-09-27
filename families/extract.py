@@ -19,7 +19,7 @@ import zipfile
 from html.parser import HTMLParser
 from pathlib import Path
 
-VERSION = "tables-v4"
+VERSION = "tables-v5"
 
 
 def _features_to_rows(features: list[dict], props_key: str, limits: dict) -> list[list]:
@@ -82,6 +82,43 @@ class _Tables(HTMLParser):
     def handle_data(self, data):
         if self.cell is not None:
             self.cell.append(data)
+
+
+def _resplit(page, table) -> list[list[str]] | None:
+    """A ruled table whose header row is split into columns but whose data
+    rows are each drawn as one cell across the whole table (Newham's
+    register: ten ruled header cells, then each licence one wide box, so the
+    extractor read the licence as one cell). The header's cells are where
+    the columns are: each word in a data row goes to the column its centre
+    sits under, in reading order. Only when every data row is one cell
+    spanning most of the table; any other table is read as drawn."""
+    rows = table.rows
+    if len(rows) < 2:
+        return None
+    head = rows[0].cells
+    if sum(1 for c in head if c) < 3:
+        return None
+    width = table.bbox[2] - table.bbox[0]
+    for r in rows[1:]:
+        cells = [c for c in r.cells if c]
+        if len(cells) != 1 or (cells[0][2] - cells[0][0]) < 0.8 * width:
+            return None
+    words = page.extract_words()
+    names = table.extract()[0]
+    out = [[" ".join(str(n).split()) if n else "" for n in names]]
+    for r in rows[1:]:
+        top, bottom = r.bbox[1], r.bbox[3]
+        cols: list[list[dict]] = [[] for _ in head]
+        for w in words:
+            if not top <= (w["top"] + w["bottom"]) / 2 <= bottom:
+                continue
+            cx = (w["x0"] + w["x1"]) / 2
+            for i, c in enumerate(head):
+                if c and c[0] <= cx < c[2]:
+                    cols[i].append(w)
+                    break
+        out.append([" ".join(w["text"] for w in sorted(ws, key=lambda w: (round(w["top"] / 3), w["x0"]))) for ws in cols])
+    return out
 
 
 def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
@@ -253,7 +290,11 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
                 raise ValueError("Page limit exceeded")
             for pno, page in enumerate(pdf.pages, 1):
                 for tno, table in enumerate(page.find_tables(), 1):
-                    add(table.extract(), page=pno, table=tno, bbox=list(table.bbox))
+                    split = _resplit(page, table)
+                    if split:
+                        add(split, page=pno, table=tno, bbox=list(table.bbox), strategy="header columns")
+                    else:
+                        add(table.extract(), page=pno, table=tno, bbox=list(table.bbox))
             # A register laid out as a table without ruled lines (most council
             # PDFs made from a spreadsheet's print view): the columns are read
             # from the text's own alignment instead, page by page, and marked

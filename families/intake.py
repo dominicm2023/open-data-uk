@@ -348,7 +348,7 @@ _LICENCE_WORDS = re.compile(r"open\s+government\s+licen[cs]e|creative\s+commons|
                             r"all\s+rights\s+reserved|terms\s+(?:and|&)\s+conditions|open\s+data\s+licen", re.I)
 
 
-def licence_from_page(body: bytes, portal: str | None = None) -> dict:
+def licence_from_page(body: bytes, portal: str | None = None, set_aside: str | None = None) -> dict:
     """The licence a council web page states, read like any other statement.
 
     A page is not a licence field: it is navigation, a footer and prose. The
@@ -360,6 +360,11 @@ def licence_from_page(body: bytes, portal: str | None = None) -> dict:
     raw = re.sub(r"(?is)<(script|style|noscript|svg)\b.*?</\1>", " ", raw)
     fields = [m.group(0) for m in re.finditer(r"(?is)<a\b[^>]*href=[\"'][^\"']*(?:open-government-licence|creativecommons\.org/licenses)[^\"']*[\"'][^>]*>.*?</a>", raw)]
     text = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", raw)))
+    # A person's decision may set aside one phrase on a named source and
+    # nothing else (the HMO registers whose website footers say "All rights
+    # reserved", admitted DM 2026-09-27); the rest of the page is read as ever.
+    if set_aside:
+        text = re.sub(set_aside, " ", text, flags=re.I)
     # The sentence that holds the wording, and the one after it: a copyright
     # line is its own sentence, and the page's prose about licensing houses
     # stays out of it. Each is capped, since a footer has no full stops.
@@ -529,12 +534,16 @@ def admit(c: sqlite3.Connection, family: str, src: dict) -> str | None:
             body, _, _ = fetch(src["metadata_url"], LIMITS["max_metadata_bytes"])
             evidence_sha = store("evidence", body)
             try:
-                approval = licence_from_page(body or b"", src.get("portal"))
+                aside = r"all\s+rights\s+reserved" if src.get("rights_reserved_decision") else None
+                approval = licence_from_page(body or b"", src.get("portal"), set_aside=aside)
                 kind = "page"
             except Refused as err:
                 if not (src.get("statutory") and _SILENCE.search(str(err))):
                     raise
                 approval = dict(STATUTORY_REGISTER, attribution=f"{src['publisher']}: public register of licensed HMOs.")
+                if src.get("rights_reserved_decision"):
+                    approval["basis"] += (" The council's website says 'All rights reserved'; admitted notwithstanding by "
+                                          f"decision {src['rights_reserved_decision']}.")
                 kind = "statutory"
             evidence_url = src["metadata_url"]
         elif src["licence_kind"] in ("ckan", "arcgis") and src["metadata_url"]:

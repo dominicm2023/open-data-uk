@@ -170,8 +170,8 @@
    "has_postcodes": "yes",
    "as_of": null,
    "search_notes": "Indexed copy of the PDF shows columns House number, HMO address, POSTCODE, permitted occupants and licence details; full register with landlord names only viewable by in-person appointment; direct file fetch returned 404 despite being linked from the live page.",
-   "status": "held",
-   "note": "published, but the council's website says 'All rights reserved'",
+   "status": "in_table",
+   "note": "189 licences in the table",
    "use": {
     "publisher": "Barnsley Council",
     "title": "Public register of licensed HMOs",
@@ -179,7 +179,8 @@
     "format": "PDF",
     "licence_page": "https://www.barnsley.gov.uk/services/housing/private-landlords/houses-in-multiple-occupation-hmo/",
     "statutory": true,
-    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights",
+    "rights_reserved_decision": "DM 2026-09-27"
    }
   },
   {
@@ -1647,8 +1648,8 @@
    "has_postcodes": "yes",
    "as_of": null,
    "search_notes": "Reduced register shown as an HTML table on the page with postcodes; full version with more detail available on request for a £55 fee.",
-   "status": "held",
-   "note": "published, but the council's website says 'All rights reserved'",
+   "status": "in_table",
+   "note": "74 licences in the table",
    "use": {
     "publisher": "Erewash Council",
     "title": "Public register of licensed HMOs",
@@ -1656,7 +1657,8 @@
     "format": "HTML",
     "licence_page": "https://www.erewash.gov.uk/housing/privately-rented-homes/houses-multiple-occupation-hmos/register-licenced-hmos",
     "statutory": true,
-    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights",
+    "rights_reserved_decision": "DM 2026-09-27"
    }
   },
   {
@@ -1962,8 +1964,8 @@
    "has_postcodes": "yes",
    "as_of": null,
    "search_notes": "Register shown as an on-page table with reference number, licence holder, full address (incl. postcode), validity dates and occupancy; some entries marked PENDING.",
-   "status": "held",
-   "note": "published, but the council's website says 'All rights reserved'",
+   "status": "in_table",
+   "note": "11 licences in the table",
    "use": {
     "publisher": "Harborough Council",
     "title": "Public register of licensed HMOs",
@@ -1971,7 +1973,8 @@
     "format": "HTML",
     "licence_page": "https://www.harborough.gov.uk/info/20009/licences/135/house_in_multiple_occupation_hmo/2",
     "statutory": true,
-    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights",
+    "rights_reserved_decision": "DM 2026-09-27"
    }
   },
   {
@@ -2211,8 +2214,8 @@
    "has_postcodes": "no",
    "as_of": "July 2023",
    "search_notes": "PDF lists reference, licence holder name and property address, not postcode as a separate field; the only copy found is dated July 2023, so may be stale (an unofficial resident-run mirror site references an August 2026 file but is not the council's own page).",
-   "status": "document",
-   "note": "PDF, no licence stated, dated July 2023",
+   "status": "in_table",
+   "note": "476 licences in the table",
    "use": {
     "publisher": "Hillingdon Council",
     "title": "Public register of licensed HMOs",
@@ -2705,8 +2708,8 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "PDF list of currently licensed HMO properties; no currency date stated on the page.",
-   "status": "held",
-   "note": "published, but the council's website says 'All rights reserved'",
+   "status": "in_table",
+   "note": "5 licences in the table",
    "use": {
     "publisher": "Maldon Council",
     "title": "Public register of licensed HMOs",
@@ -2714,7 +2717,8 @@
     "format": "PDF",
     "licence_page": "https://www.maldon.gov.uk/downloads/file/11872/mdc_licensed_hmo_register",
     "statutory": true,
-    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights",
+    "rights_reserved_decision": "DM 2026-09-27"
    }
   },
   {
@@ -3021,8 +3025,8 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "Page offers a PDF public register for HMOs but states the online register is currently offline for development work, with data use restricted to non-marketing purposes.",
-   "status": "document",
-   "note": "The PDF (1,771 pages) puts every field of a licence in one cell, so the property's postcode cannot be told from the holder's; needs a reader that works from positions on the page.",
+   "status": "in_table",
+   "note": "3,489 licences in the table",
    "use": {
     "publisher": "Newham Council",
     "title": "Public register of licensed HMOs",
@@ -3602,8 +3606,8 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "PDF is scanned/image-based so contents could not be confirmed by text extraction; a third-party site separately lists 9 licensed HMOs said to be sourced from this register.",
-   "status": "held",
-   "note": "published, but the council's website says 'All rights reserved'",
+   "status": "document",
+   "note": "The PDF is one card per licence, label beside value, not a table; needs a card reader.",
    "use": {
     "publisher": "Ribble Valley Council",
     "title": "Public register of licensed HMOs",
@@ -3611,7 +3615,8 @@
     "format": "PDF",
     "licence_page": "https://www.ribblevalley.gov.uk/housing-standards/housing-standards-1",
     "statutory": true,
-    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights",
+    "rights_reserved_decision": "DM 2026-09-27"
    }
   },
   {
@@ -4636,8 +4641,8 @@
    "has_postcodes": "unknown",
    "as_of": "June 2026",
    "search_notes": "Downloadable PDF ('hmo-public-register-june-2026.pdf') linked as 'Download the Public Register'; council notes it excludes licence applications still in progress.",
-   "status": "held",
-   "note": "published, but the council's website says 'All rights reserved'",
+   "status": "document",
+   "note": "The PDF extracts as one block of text with no table.",
    "use": {
     "publisher": "Telford and Wrekin Council",
     "title": "Public register of licensed HMOs",
@@ -4645,7 +4650,8 @@
     "format": "PDF",
     "licence_page": "https://www.telford.gov.uk/public-protection/licensing/houses-in-multiple-occupancy-hmos/",
     "statutory": true,
-    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights",
+    "rights_reserved_decision": "DM 2026-09-27"
    }
   },
   {
@@ -4781,8 +4787,18 @@
    "has_postcodes": "yes",
    "as_of": "September 2026",
    "search_notes": "HTML table of roughly 280 licensed HMOs across Torquay, Paignton, Brixham and surrounding areas, with a GDPR/privacy note about publishing licence-holder details.",
-   "status": "held",
-   "note": "published, but the council's website says 'All rights reserved'"
+   "status": "in_table",
+   "note": "145 licences in the table",
+   "use": {
+    "publisher": "Torbay Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.torbay.gov.uk/housing/hmo-landlords/hmo-register/",
+    "format": "HTML",
+    "licence_page": "https://www.torbay.gov.uk/housing/hmo-landlords/hmo-register/",
+    "statutory": true,
+    "reviewed": "2026-09-27: the register is a table on the council's page",
+    "rights_reserved_decision": "DM 2026-09-27"
+   }
   },
   {
    "code": "E07000046",
@@ -5029,8 +5045,8 @@
    "has_postcodes": "unknown",
    "as_of": "September 2026",
    "search_notes": "330-page PDF listing property addresses, licence holder/manager details and property characteristics.",
-   "status": "held",
-   "note": "published, but the council's website says 'All rights reserved'",
+   "status": "document",
+   "note": "The PDF is one card per licence (334 of them), label beside value, not a table; needs a card reader.",
    "use": {
     "publisher": "Watford Council",
     "title": "Public register of licensed HMOs",
@@ -5038,7 +5054,8 @@
     "format": "PDF",
     "licence_page": "https://www.watford.gov.uk/downloads/download/193/hmo-public-register",
     "statutory": true,
-    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+    "reviewed": "2026-09-27: resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights",
+    "rights_reserved_decision": "DM 2026-09-27"
    }
   },
   {
@@ -6316,8 +6333,18 @@
    "has_postcodes": "yes",
    "as_of": "July 2026",
    "search_notes": "Register is an HTML table on the page itself (titled 'HMO public register - July 2026'), listing around 7 licensed HMOs with address, postcode, licence holder/agent, household capacity and licence term columns.",
-   "status": "held",
-   "note": "published, but the council's website says 'All rights reserved'"
+   "status": "in_table",
+   "note": "7 licences in the table",
+   "use": {
+    "publisher": "Caerphilly County Borough Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.caerphilly.gov.uk/services/housing/private-housing/houses-in-multiple-occupation/hmo-public-register?lang=en-GB",
+    "format": "HTML",
+    "licence_page": "https://www.caerphilly.gov.uk/services/housing/private-housing/houses-in-multiple-occupation/hmo-public-register?lang=en-GB",
+    "statutory": true,
+    "reviewed": "2026-09-27: the register is a table on the council's page",
+    "rights_reserved_decision": "DM 2026-09-27"
+   }
   },
   {
    "code": "W06000015",
