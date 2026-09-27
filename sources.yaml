@@ -276,11 +276,17 @@ sources:
     web: https://ccgbcodni-cbcni.opendata.arcgis.com
     dataset_url: "unused-for-dcat"
 
+  # opendata.canterbury.gov.uk left DNS on or before 25 Sep 2026 (NXDOMAIN;
+  # the council's main site is fine). The hub site itself still exists in
+  # the council's ArcGIS organisation, and Esri serves it at the default
+  # hostname below: the same 28 datasets under the same identifiers, so the
+  # records we hold are updated in place. If the council's own hostname
+  # returns, either address works.
   - id: canterbury
     name: Canterbury City Council
     type: dcat
-    api: https://opendata.canterbury.gov.uk/api/feed/dcat-us/1.1.json
-    web: https://opendata.canterbury.gov.uk
+    api: https://data1-canterburycc.opendata.arcgis.com/api/feed/dcat-us/1.1.json
+    web: https://data1-canterburycc.opendata.arcgis.com
     dataset_url: "unused-for-dcat"
 
   - id: mid_ulster
