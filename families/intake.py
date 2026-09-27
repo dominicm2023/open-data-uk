@@ -67,8 +67,8 @@ LIMITS = {
     "max_storage_bytes": 10_000_000_000, "min_free_bytes": 20_000_000_000,
     # A monitoring archive or a year of payments can run to six figures of
     # rows; York's diffusion-tube file was refused at 50,000.
-    "max_pages": 100, "max_rows": 250_000, "max_output_bytes": 80_000_000,
-    "job_timeout_seconds": 120, "host_spacing_seconds": 1.5, "host_retry_budget": 3,
+    "max_pages": 2000, "max_rows": 250_000, "max_output_bytes": 80_000_000,
+    "job_timeout_seconds": 600, "host_spacing_seconds": 1.5, "host_retry_budget": 3,
 }
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS jobs(
@@ -129,6 +129,12 @@ _NEUTRAL = {"uk-ogl", "uk_ogl", "ogl", "ogl-uk", "uk open government licence (og
 PORTAL_LICENCE = {
     "bristol": ("3", "Bristol's dataset fields carry only an Ordnance Survey / LGIH acknowledgement; the council's "
                      "datasets harvested to data.gov.uk are licensed uk-ogl. Decision DM 2026-09-07."),
+    # The same council's datasets reached through ArcGIS Online rather than
+    # its Hub: the same fields, the same decision (applied 27 Sep 2026 to its
+    # three HMO licence layers).
+    "agol_bristol_city_council": ("3", "Bristol's dataset fields carry only an Ordnance Survey / LGIH acknowledgement; "
+                                       "the council's datasets harvested to data.gov.uk are licensed uk-ogl. Decision "
+                                       "DM 2026-09-07, for the same council's ArcGIS Online items."),
 }
 
 
@@ -180,6 +186,26 @@ DATASET_LICENCE = {
                     "basis": "A public layer whose statement reads 'Various copyrights - do not share outside BHCC "
                              "network'. Admitted by decision DM 2026-09-27, taken knowing that statement."}},
 }
+
+
+# A statutory public register a council publishes on its own website and
+# says nothing about reusing. Decision DM 2026-09-27, for the HMO family
+# only: section 232 of the Housing Act 2004 (and Part 5 of the Housing
+# (Scotland) Act 2006) requires the register to be kept and made available
+# to the public, and the family republishes nothing from it but a count of
+# licences per postcode district, with a link to the council's own page.
+# Silence admits. Words that reserve the council's rights refuse as they
+# always do: the page is still read by licence_from_page, and only its
+# silence ("says nothing", "unrecognised") is taken as this basis.
+STATUTORY_REGISTER = {
+    "id": "Statutory-register", "version": None,
+    "url": "https://www.legislation.gov.uk/ukpga/2004/34/section/232",
+    "mixed": [], "os_acknowledgement": None,
+    "basis": "A public register the council must keep and make available (Housing Act 2004 s.232; Housing (Scotland) "
+             "Act 2006 Part 5), published on its website with no licence stated. Only counts of licences per postcode "
+             "district are republished. Admitted by decision DM 2026-09-27.",
+}
+_SILENCE = re.compile(r"says nothing about a licence|unrecognised licence statement|no licence stated", re.I)
 
 
 def licence_by_decision(src: dict, fetch_page) -> tuple[dict, bytes, str] | None:
@@ -313,8 +339,13 @@ def licence_from_metadata(kind: str, doc: dict, portal: str | None = None) -> di
     raise Refused("Unknown metadata kind " + kind)
 
 
-_LICENCE_WORDS = re.compile(r"licen[cs]e|copyright|©|re-?use|all\s+rights\s+reserved|open\s+data|terms\s+(?:and|&)\s+conditions",
-                           re.I)
+# The words that open a passage about reusing the page's information. Not a
+# bare "licence": an HMO page says it in every paragraph about licensing
+# houses, and North Somerset's "you will also be restricted on how you
+# terminate tenancies" was read as a restriction on the data (27 Sep).
+_LICENCE_WORDS = re.compile(r"open\s+government\s+licen[cs]e|creative\s+commons|licen[cs]ed\s+under|"
+                            r"copyright|©|re-?us(?:e|ing)\s+(?:of\s+)?(?:this|our|the)?\s*(?:information|data|content)|"
+                            r"all\s+rights\s+reserved|terms\s+(?:and|&)\s+conditions|open\s+data\s+licen", re.I)
 
 
 def licence_from_page(body: bytes, portal: str | None = None) -> dict:
@@ -329,14 +360,13 @@ def licence_from_page(body: bytes, portal: str | None = None) -> dict:
     raw = re.sub(r"(?is)<(script|style|noscript|svg)\b.*?</\1>", " ", raw)
     fields = [m.group(0) for m in re.finditer(r"(?is)<a\b[^>]*href=[\"'][^\"']*(?:open-government-licence|creativecommons\.org/licenses)[^\"']*[\"'][^>]*>.*?</a>", raw)]
     text = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", raw)))
-    spans: list[tuple[int, int]] = []
-    for m in _LICENCE_WORDS.finditer(text):
-        a, b = max(0, m.start() - 300), min(len(text), m.end() + 300)
-        if spans and a <= spans[-1][1]:
-            spans[-1] = (spans[-1][0], b)
-        else:
-            spans.append((a, b))
-    fields += [text[a:b] for a, b in spans]
+    # The sentence that holds the wording, and the one after it: a copyright
+    # line is its own sentence, and the page's prose about licensing houses
+    # stays out of it. Each is capped, since a footer has no full stops.
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    for i, sent in enumerate(sentences):
+        if _LICENCE_WORDS.search(sent):
+            fields.append(" ".join(sentences[i:i + 2])[:500])
     if not fields:
         raise Refused("The page says nothing about a licence")
     return licence(fields, portal)
@@ -498,8 +528,15 @@ def admit(c: sqlite3.Connection, family: str, src: dict) -> str | None:
         elif src["licence_kind"] == "page" and src["metadata_url"]:
             body, _, _ = fetch(src["metadata_url"], LIMITS["max_metadata_bytes"])
             evidence_sha = store("evidence", body)
-            approval = licence_from_page(body or b"", src.get("portal"))
-            evidence_url, kind = src["metadata_url"], "page"
+            try:
+                approval = licence_from_page(body or b"", src.get("portal"))
+                kind = "page"
+            except Refused as err:
+                if not (src.get("statutory") and _SILENCE.search(str(err))):
+                    raise
+                approval = dict(STATUTORY_REGISTER, attribution=f"{src['publisher']}: public register of licensed HMOs.")
+                kind = "statutory"
+            evidence_url = src["metadata_url"]
         elif src["licence_kind"] in ("ckan", "arcgis") and src["metadata_url"]:
             body, _, _ = fetch(src["metadata_url"], LIMITS["max_metadata_bytes"])
             evidence_sha = store("evidence", body)

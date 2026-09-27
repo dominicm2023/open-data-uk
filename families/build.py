@@ -36,6 +36,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import functools
 import json
 import os
 import math
@@ -332,6 +333,15 @@ def _district(v):
     return text if _OUTWARD.fullmatch(text) else None
 
 
+@functools.lru_cache(maxsize=1)
+def _known_districts() -> frozenset:
+    """Every postcode district in Great Britain, from the boundary set the map
+    draws (DATA_DIR/geo/mapit, see DEPLOY.md). Empty where it is not
+    unpacked, and then no district is refused for being unknown."""
+    d = DATA_DIR / "geo" / "mapit" / "gb-postcodes-v5" / "districts"
+    return frozenset(p.stem for p in d.glob("*.geojson")) if d.is_dir() else frozenset()
+
+
 def _load_table(extraction_sha: str, which) -> list[list]:
     doc = json.loads((STORE / "tables" / extraction_sha).read_text(encoding="utf-8"))
     # A PDF register arrives as one table per page. "all" reads them as one,
@@ -600,6 +610,14 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
             base["postcode_district"] = _district(base.get("postcode_district"))
             if had and base["postcode_district"] is None:
                 bad.append({**base, **receipts, "source_row": rno, "why": "no postcode could be read from the published address"})
+                return
+            # A district that does not exist is a typo in the source (Redditch's
+            # "RG4O", a letter O for a nought): refused and named, never drawn
+            # as a place. Northern Ireland's BT districts are not in the set.
+            known = _known_districts()
+            d = base["postcode_district"]
+            if d and known and d not in known and not d.startswith("BT"):
+                bad.append({**base, **receipts, "source_row": rno, "why": f"{d} is not a postcode district (a typo in the source?)"})
                 return
         # A count that is zero or absurd is a blank the publisher filled in
         # (Camden's registers carry 0 persons and 200 storeys). The licence

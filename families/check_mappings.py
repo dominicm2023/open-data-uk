@@ -62,7 +62,13 @@ def check(family: str) -> int:
         # A header on a later row: the brief's sample rows show it, and the
         # build reads it from there. Compare against the same row.
         hr = int(spec.get("header_row", 0) or 0)
-        if hr > 0:
+        if hr > 0 and table.get("head_rows") is not None:
+            # a family that samples no rows shows its header rows alone, by absolute index
+            head = table["head_rows"][hr] if hr < len(table["head_rows"]) else []
+            if not head:
+                problems.append(f"{tag}: header_row {hr} does not read as column names; cannot check"); continue
+            header = [str(x).strip() for x in head]
+        elif hr > 0:
             if hr - 1 < len(table["sample_rows"]):
                 header = [str(x).strip() for x in table["sample_rows"][hr - 1]]
             else:
@@ -70,19 +76,19 @@ def check(family: str) -> int:
         cols = {k: str(v).strip() for k, v in spec.get("columns", {}).items()}
         # A series carries several layouts; a name is fine if any layout in
         # the brief (its header, or a row just under a title line) has it.
-        known = {h.strip().lower() for h in header}
+        known = {" ".join(h.split()).lower() for h in header}
         for lay in src.get("layouts") or []:
-            known |= {str(h).strip().lower() for h in lay.get("header", [])}
+            known |= {" ".join(str(h).split()).lower() for h in lay.get("header", [])}
             for r in lay.get("sample_rows", [])[:3]:
-                known |= {str(h).strip().lower() for h in r}
+                known |= {" ".join(str(h).split()).lower() for h in r}
         for t in src["tables"]:
             for r in t.get("sample_rows", [])[:3]:
-                known |= {str(h).strip().lower() for h in r}
+                known |= {" ".join(str(h).split()).lower() for h in r}
         flt = spec.get("filter")
         if flt:
             if not isinstance(flt, dict) or not flt.get("column") or not flt.get("match"):
                 problems.append(f"{tag}: filter needs 'column' and 'match'")
-            elif str(flt["column"]).strip().lower() not in known:
+            elif " ".join(str(flt["column"]).split()).lower() not in known:
                 problems.append(f"{tag}: filter column {flt['column']!r} not found in any layout")
             else:
                 try:
@@ -94,7 +100,7 @@ def check(family: str) -> int:
             for target, source_col in lay.items():
                 if target not in names:
                     problems.append(f"{tag}: unknown schema column {target!r}")
-                if source_col.lower() not in known:
+                if " ".join(source_col.split()).lower() not in known:
                     if n and not src.get("layouts"):
                         # an alternate layout for a block *inside* one file: the
                         # brief cannot show it, so this is a note, not a fault

@@ -194,6 +194,9 @@ check(page(b"<p>Download the register (PDF).</p>"), "refused: The page says noth
 check(page(b'<script>x="All rights reserved"</script><p>Available under the Open Government Licence v3.0</p>'),
       "OGL-UK-3.0", "words inside a script are not the page's statement")
 check(intake.licence_from_page.__module__, "intake", "the page reader lives in the intake")
+check(page(b"<p>You need a licence. Unlicensed landlords will also be restricted on how you terminate tenancies.</p>"
+           b"<footer>&copy; Anytown Council</footer>")[:30], "refused: Unrecognised licence ",
+      "prose about licensing houses is not a statement about the data (North Somerset's 'restricted')")
 
 # --- a file that is an HTML table under a CSV name (Epsom and Ewell's)
 import extract  # noqa: E402

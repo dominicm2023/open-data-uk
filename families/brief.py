@@ -52,6 +52,31 @@ def _header_row(rows: list) -> int:
 _HIDE: list = []
 _SAMPLES = True
 HIDDEN = "(not sampled)"
+# Where no rows are sampled, a header on a later row (under a title line)
+# must still be checkable. The first rows are shown only where the whole row
+# reads as column names: no postcode, date or number in it, and most of its
+# filled cells made of header words. Any other row comes through empty, so
+# a holder's or company's name in a data row never reaches the brief.
+_HEAD_WORD = re.compile(r"address|post\s*code|postcode|licen|date|occup|person|people|storey|floor|holder|manag|type|"
+                        r"number|no\.?\b|reference|ref\b|expir|issue|start|end|status|household|categor|property|"
+                        r"premises|ward|description|agent|owner|valid|renew|name|room|kitchen|bath|toilet|amenit|condition|"
+                        r"duration|commenc|scheme|area|council|register", re.I)
+_DATA = re.compile(r"\b[A-Z]{1,2}[0-9][A-Z0-9]?\s*[0-9][A-Z]{2}\b|\d{1,4}[/.-]\d{1,2}[/.-]\d{2,4}|"
+                   r"\b(?:ltd|limited|llp|plc|group|trust|estates?|lettings|homes|mr|mrs|ms|miss|dr)\b", re.I)
+
+
+def _head_rows(rows: list) -> list:
+    out = []
+    for r in rows[:10]:
+        cells = [("" if v is None else str(v)).strip() for v in r[:MAX_COLS]]
+        filled = [c for c in cells if c and c != "None"]
+        heady = [c for c in filled if _HEAD_WORD.search(c) and not re.search(r"\d{3,}", c) and len(c) < 80]
+        # A table's header names several columns; a card's row is one label
+        # beside one value ("Licence holder" | a name). Three column names at
+        # least, a majority of the row, and every other cell blanked.
+        ok = len(heady) >= 3 and len(heady) * 2 >= len(filled) and not any(_DATA.search(c) for c in filled)
+        out.append([c if c in heady else "" for c in cells] if ok else [])
+    return out
 
 
 def _preview(table: dict) -> dict:
@@ -59,13 +84,16 @@ def _preview(table: dict) -> dict:
     hr = _header_row(rows)
     header = [str(h) if h is not None else "" for h in (rows[hr] if rows else [])][:MAX_COLS]
     body = [[("" if v is None else str(v))[:80] for v in r[:MAX_COLS]] for r in rows[hr + 1:hr + 1 + SAMPLE_ROWS]]
+    head_rows = None
     if not _SAMPLES:
         body = []
+        head_rows = _head_rows(rows)
     elif _HIDE:
         hide = {i for i, h in enumerate(header) if any(p.search(h.strip()) for p in _HIDE)}
         body = [[(HIDDEN if i in hide and v.strip() else v) for i, v in enumerate(r)] for r in body]
     where = {k: v for k, v in table.items() if k != "rows"}
-    return {"where": where, "header": header, "header_row": hr, "sample_rows": body,
+    extra = {"head_rows": head_rows} if head_rows is not None else {}
+    return {**extra, "where": where, "header": header, "header_row": hr, "sample_rows": body,
             "row_count": max(len(rows) - hr - 1, 0), "column_count": max((len(r) for r in rows), default=0)}
 
 

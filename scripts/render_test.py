@@ -378,6 +378,16 @@ check(not re.search(r"\b[A-Z]{1,2}[0-9][A-Z0-9]?\s*[0-9][A-Z]{2}\b", _free) and 
       "the coverage notes hold no full postcode and no e-mail address")
 import hmomap as _hm  # noqa: E402
 check({c["status"] for c in _cov["councils"]} <= {k for k, _ in _hm.STATUS}, "every council's status is one the page can show")
+# A family that samples no rows still shows its header rows, and only those:
+# a data row, a card's label beside a name, and a company's name come through
+# empty (the HMO brief is committed to a public repository).
+import brief as _fbrief  # noqa: E402
+_hr = _fbrief._head_rows([["Register of licensed HMOs"], ["11(1a)", "", "Property_Address", "Prop_Postcode", "Commencent Date"],
+                          ["Additional HMO licence", "1 A Road, E17 1AA", "Jo Bloggs", "01/02/2024"],
+                          ["License Holder", "", "Jo Bloggs", ""], ["Managers Name", "", "Champion Property Management", ""],
+                          ["Reference Number", "Anytown Lettings Ltd", "Address of the licence holder", "Post Code"]])
+check(_hr == [[], ["", "", "Property_Address", "Prop_Postcode", "Commencent Date"], [], [], [], []],
+      "a brief's head rows show column names only: no data row, no card label's value, no company")
 _sq = [[0, 0], [0.5, 0.00001], [1, 0], [1, 1], [0, 1], [0, 0]]
 check(len(_fdist._simplify(_sq, 0.001)) == 5, "simplifying a shape drops the point that adds nothing and keeps the corners")
 

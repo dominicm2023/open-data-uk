@@ -196,8 +196,10 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
                         vals.pop()
                     width = max(width, len(vals))
                     if width > 100:
-                        raise ValueError("Column limit exceeded")
+                        break
                     rows.append([("" if v is None else v) for v in vals])
+                if width > 100:
+                    continue                      # not a table of records; see XLS below
                 rows = [r + [""] * (width - len(r)) for r in rows]
                 if rows and width:
                     add(rows, sheet=sheet.title)
@@ -209,14 +211,25 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
         import xlrd
         book = xlrd.open_workbook(file_contents=data, on_demand=True)
         for sheet in book.sheets():
-            if sheet.ncols > 100:
-                raise ValueError("Column limit exceeded")
+            # As for XLSX: the stated width is formatting (Spelthorne's says
+            # 256); the limit is on columns that hold something.
+            real = 0
+            for i in range(min(sheet.nrows, 5000)):
+                vals = sheet.row_values(i, 0, min(sheet.ncols, 200))
+                while vals and str(vals[-1]).strip() == "":
+                    vals.pop()
+                real = max(real, len(vals))
+            if real > 100:
+                # A sheet this wide is not a table of records (Spelthorne's
+                # renewals sheet runs to column 200); the workbook's other
+                # sheets are still read, and only a workbook of nothing else fails.
+                continue
             rows = []
             for i in range(sheet.nrows):
                 if len(rows) + total >= limits["max_rows"]:
                     raise ValueError("Row limit exceeded")
                 out_row = []
-                for cell in sheet.row(i):
+                for cell in sheet.row(i)[:real]:
                     if cell.ctype == xlrd.XL_CELL_DATE:
                         try:
                             out_row.append(xlrd.xldate_as_datetime(cell.value, book.datemode).date().isoformat())
@@ -229,6 +242,8 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
                 rows.append(out_row)
             if rows:
                 add(rows, sheet=sheet.name)
+        if not tables:
+            raise ValueError("Column limit exceeded on every sheet")
     elif fmt == "PDF":
         import pdfplumber
         if data[:5] != b"%PDF-":
@@ -239,8 +254,67 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
             for pno, page in enumerate(pdf.pages, 1):
                 for tno, table in enumerate(page.find_tables(), 1):
                     add(table.extract(), page=pno, table=tno, bbox=list(table.bbox))
+            # A register laid out as a table without ruled lines (most council
+            # PDFs made from a spreadsheet's print view): the columns are read
+            # from the text's own alignment instead, page by page, and marked
+            # as such so a reviewer knows the columns were inferred.
+            if not tables:
+                for pno, page in enumerate(pdf.pages, 1):
+                    t = page.extract_table({"vertical_strategy": "text", "horizontal_strategy": "text"})
+                    if t and len(t) > 1 and max(map(len, t)) >= 2:
+                        add([[("" if v is None else v) for v in r] for r in t], page=pno, table=1, strategy="text")
         if not tables:
-            raise ValueError("No ruled tables; layout adapter required")
+            raise ValueError("No table in the PDF, ruled or by alignment; layout adapter required")
+    elif fmt == "HTML":
+        # A register published as a table on a web page (Norwich, Rochford,
+        # Castle Point): every table on the page with two columns and three
+        # rows or more; a page's layout tables rarely have both.
+        try:
+            text = data.decode("utf-8")
+        except UnicodeDecodeError:
+            text = data.decode("cp1252", "replace")
+        parser = _Tables()
+        parser.feed(text)
+        parser.close()
+        found = [t for t in parser.tables if len(t) >= 3 and max(map(len, t)) >= 2]
+        if not found:
+            raise ValueError("No table of data on the page")
+        for i, t in enumerate(found, start=1):
+            add(t, table=i, source_markup="html page")
+    elif fmt == "ODS":
+        import pandas as pd
+        for name, frame in pd.read_excel(path, engine="odf", sheet_name=None, header=None, dtype=str).items():
+            rows = [["" if (v is None or (isinstance(v, float) and v != v)) else str(v) for v in r] for r in frame.itertuples(index=False)]
+            if len(rows) + total > limits["max_rows"]:
+                raise ValueError("Row limit exceeded")
+            if rows:
+                add(rows, sheet=str(name))
+    elif fmt == "DOCX":
+        import docx
+        doc = docx.Document(str(path))
+        for i, t in enumerate(doc.tables, start=1):
+            rows = [[" ".join(c.text.split()) for c in r.cells] for r in t.rows]
+            if len(rows) > 1:
+                add(rows, table=i)
+        if not tables:
+            raise ValueError("No table in the document")
+    elif fmt == "ZIP":
+        # A register shipped inside a ZIP (Powys): the one spreadsheet, CSV or
+        # PDF in it is read as itself. More than one, and it is a bundle, not
+        # a register, so the adapter must say which.
+        import tempfile
+        with zipfile.ZipFile(path) as archive:
+            if sum(z.file_size for z in archive.infolist()) > 100_000_000:
+                raise ValueError("Expanded ZIP exceeds 100 MB")
+            kinds = {".xlsx": "XLSX", ".xls": "XLS", ".csv": "CSV", ".pdf": "PDF", ".ods": "ODS", ".docx": "DOCX"}
+            inner = [z for z in archive.infolist() if not z.is_dir() and Path(z.filename).suffix.lower() in kinds]
+            if len(inner) != 1:
+                raise ValueError(f"ZIP holds {len(inner)} readable files, not one")
+            with tempfile.TemporaryDirectory() as tmp:
+                member = Path(tmp) / Path(inner[0].filename).name
+                member.write_bytes(archive.read(inner[0]))
+                for t in extract(member, kinds[member.suffix.lower()], limits):
+                    add(t.pop("rows"), **t, zip_member=inner[0].filename)
     else:
         raise ValueError(f"Unsupported format {fmt}")
     return tables
