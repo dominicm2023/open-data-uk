@@ -16,9 +16,10 @@ import io
 import json
 import sys
 import zipfile
+from html.parser import HTMLParser
 from pathlib import Path
 
-VERSION = "tables-v3"
+VERSION = "tables-v4"
 
 
 def _features_to_rows(features: list[dict], props_key: str, limits: dict) -> list[list]:
@@ -45,6 +46,44 @@ def _features_to_rows(features: list[dict], props_key: str, limits: dict) -> lis
     return rows
 
 
+class _Tables(HTMLParser):
+    """Every <table> in a fragment, as rows of cell text. Nested tables are
+    read as their own tables; a cell's text is its text, whitespace folded."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.tables: list[list[list[str]]] = []
+        self.stack: list[list[list[str]]] = []
+        self.row: list[str] | None = None
+        self.cell: list[str] | None = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "table":
+            self.stack.append([])
+        elif tag == "tr" and self.stack:
+            self.row = []
+            self.stack[-1].append(self.row)
+        elif tag in ("td", "th") and self.row is not None:
+            self.cell = []
+        elif tag == "br" and self.cell is not None:
+            self.cell.append(" ")
+
+    def handle_endtag(self, tag):
+        if tag in ("td", "th") and self.cell is not None and self.row is not None:
+            self.row.append(" ".join("".join(self.cell).split()))
+            self.cell = None
+        elif tag == "tr":
+            self.row = None
+        elif tag == "table" and self.stack:
+            t = self.stack.pop()
+            if t:
+                self.tables.append(t)
+
+    def handle_data(self, data):
+        if self.cell is not None:
+            self.cell.append(data)
+
+
 def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
     tables: list[dict] = []
     total = 0
@@ -68,7 +107,23 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
                 text = data.decode("cp1252")
             except UnicodeDecodeError:
                 text = data.decode("latin-1")
-        if text.lstrip().lower().startswith(("<!doctype", "<html")):
+        head = text.lstrip()[:200].lower()
+        # A file that is nothing but an HTML table, served under a CSV name:
+        # Epsom and Ewell's map server applies an XSL called "atcsv" and
+        # returns <table><tr><th>... Read as CSV it was one column of tags.
+        # Only a document that *starts* with a table is read this way; a
+        # whole web page is still refused, since its tables are its layout.
+        if head.startswith("<table"):
+            parser = _Tables()
+            parser.feed(text)
+            parser.close()
+            found = [t for t in parser.tables if len(t) > 1 and max(map(len, t)) >= 2]
+            if not found:
+                raise ValueError("HTML fragment with no table of data")
+            for i, t in enumerate(found, start=1):
+                add(t, table=i, source_markup="html table")
+            return tables
+        if head.startswith(("<!doctype", "<html")):
             raise ValueError("HTML response, not CSV")
         # The sniffer is trusted for the delimiter only. Its guesses at
         # quoting (doublequote off, for one) broke every brownfield register

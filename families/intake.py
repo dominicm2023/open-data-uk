@@ -132,6 +132,68 @@ PORTAL_LICENCE = {
 }
 
 
+# One dataset whose licence statement the gate cannot pass, admitted by a
+# person's decision. Each entry names the page the decision was taken on and
+# the words it rested on: the page is fetched at every intake and kept as
+# evidence, and if those words are no longer there the decision no longer
+# applies and the dataset goes back through the gate like any other.
+DATASET_LICENCE = {
+    # Glasgow's HMO register: "This information is supplied under the Open
+    # Government License v3.0. Licensed under the One Scotland Mapping
+    # Agreement (OSMA). All mapping data is subject Crown Copyright ..."
+    "glasgow:https://www.arcgis.com/home/item.html?id=c4d432bf3bb34b7583c07527c770a373&sublayer=0": {
+        "evidence_url": "https://www.arcgis.com/sharing/rest/content/items/c4d432bf3bb34b7583c07527c770a373?f=json",
+        "statement": r"open\s+government\s+licen[cs]e\s+v?3\.0.{0,200}one\s+scotland\s+mapping\s+agreement",
+        "licence": {"id": "OGL-UK-3.0", "version": "3.0",
+                    "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+                    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. "
+                                   "Glasgow City Council.",
+                    "mixed": ["one scotland mapping agreement", "ordnance survey"], "os_acknowledgement": None,
+                    "basis": "The statement names the OGL v3.0 for the information and the One Scotland Mapping "
+                             "Agreement for the mapping data. The family carries no mapping data, only counts by "
+                             "postcode district. Accepted by decision DM 2026-09-27."}},
+    # Barnet's HMO register: data.gov.uk's copy states no licence; the
+    # council's own portal, which data.gov.uk harvests, states the OGL v3.
+    "data_gov_uk:e5d7c4b6-2527-407c-bcff-23401e4c463e": {
+        "evidence_url": "https://open.barnet.gov.uk/dataset/hmo-register-29r12",
+        "statement": r"open\s+government\s+licen[cs]e\s+v3",
+        "licence": {"id": "OGL-UK-3.0", "version": "3.0",
+                    "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+                    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. "
+                                   "London Borough of Barnet.",
+                    "mixed": [], "os_acknowledgement": None,
+                    "basis": "The council's own portal page for the dataset states the Open Government Licence v3; "
+                             "data.gov.uk's copy of the record lost it. Admitted by decision DM 2026-09-27."}},
+    # Brighton & Hove's "CityPlanning HMO" layer: public on the council's
+    # ArcGIS server, with the statement "Various copyrights - do not share
+    # outside BHCC network". Admitted by Dominic knowing that statement. Its
+    # mapping is rejected on content, not licence: it is Planning's list of
+    # HMO addresses, not the licence register (checked 27 Sep: four fields,
+    # OBJECTID, ADDRESS, EASTING, NORTHING).
+    "agol_brighton_hove_city_council:5e647f02a06444f0b2ef8393a7123ece": {
+        "evidence_url": "https://www.arcgis.com/sharing/rest/content/items/5e647f02a06444f0b2ef8393a7123ece?f=json",
+        "statement": r"do\s+not\s+share\s+outside\s+bhcc\s+network",
+        "licence": {"id": "BHCC-public-layer", "version": None,
+                    "url": "https://www.arcgis.com/home/item.html?id=5e647f02a06444f0b2ef8393a7123ece",
+                    "attribution": "Brighton & Hove City Council, and partners.",
+                    "mixed": ["various copyrights - do not share outside bhcc network"], "os_acknowledgement": None,
+                    "basis": "A public layer whose statement reads 'Various copyrights - do not share outside BHCC "
+                             "network'. Admitted by decision DM 2026-09-27, taken knowing that statement."}},
+}
+
+
+def licence_by_decision(src: dict, fetch_page) -> tuple[dict, bytes, str] | None:
+    """The licence a person decided for this dataset, if its statement stands."""
+    dec = DATASET_LICENCE.get(src["dataset_key"])
+    if not dec:
+        return None
+    body, _, _ = fetch_page(dec["evidence_url"], LIMITS["max_metadata_bytes"])
+    text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html.unescape((body or b"").decode("utf-8", "replace"))))
+    if not re.search(dec["statement"], text, re.I | re.S):
+        raise Refused("The statement a licence decision rested on is no longer on " + dec["evidence_url"])
+    return dict(dec["licence"]), body, dec["evidence_url"]
+
+
 def licence(fields, portal: str | None = None) -> dict:
     """An open licence, stated, or refuse.
 
@@ -399,7 +461,12 @@ def admit(c: sqlite3.Connection, family: str, src: dict) -> str | None:
     checked = now()
     job_id = sha((family + "\n" + src["dataset_key"]).encode())   # a job is a dataset
     try:
-        if src["licence_kind"] in ("ckan", "arcgis") and src["metadata_url"]:
+        decided = licence_by_decision(src, fetch)
+        if decided:
+            approval, body, evidence_url = decided
+            evidence_sha = store("evidence", body)
+            kind = "decision"
+        elif src["licence_kind"] in ("ckan", "arcgis") and src["metadata_url"]:
             body, _, _ = fetch(src["metadata_url"], LIMITS["max_metadata_bytes"])
             evidence_sha = store("evidence", body)
             approval = licence_from_metadata(src["licence_kind"], json.loads(body), src.get("portal"))

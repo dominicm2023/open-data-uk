@@ -11,7 +11,10 @@
       "max_households": "households",
       "storeys": "storey"
     },
-    "constants": {"council": "Leicester City Council", "licences": 1},
+    "constants": {
+      "council": "Leicester City Council",
+      "licences": 1
+    },
     "notes": "One row per licence: 884 rows, 884 distinct licence numbers. The header's own spellings ('date_issed', '0ccupiers' with a zero) are kept as published. landlord_last_name and landlord_first_name are never mapped, nor street_name and property_number. 5 rows give no postcode and are refused. No licence type or status column: the register lists licences in force. No as_of in the file. Review: districts LE1-LE5 and one LE9, occupiers 3-36, storeys 1-4, dates ISO.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
@@ -31,7 +34,10 @@
       "storeys": "Storeys Of HMO",
       "as_of": "Last Uploaded"
     },
-    "constants": {"council": "London Borough of Camden", "licences": 1},
+    "constants": {
+      "council": "London Borough of Camden",
+      "licences": 1
+    },
     "notes": "One row per licence: 3,485 rows, 3,485 distinct licence numbers. There is no postcode column; the district is read from the postcode that ends 'Property Address', found in all 3,485. Never mapped: the holder's and manager's names and addresses, the address itself, Easting, Northing, Longitude, Latitude and Location. The register's own Notice says it is for identifying licensed HMOs and not for marketing, and that nobody named in it consented to that; nothing that names anybody is carried. The Notice also says the maximum persons follows an inspection while rooms and amenities are as the applicant stated, so only the former is mapped. Zero persons and storeys of 0 or 200 appear and are nulled with a note. Dates are day-first. Review: 25 districts, NW1 the largest; two types, two statuses.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
@@ -49,7 +55,10 @@
       "max_occupants": "MAXIMUM_PERMITTED_OCCUPANTS",
       "max_households": "MAXIMUM_PERMITTED_HOUSEHOLDS"
     },
-    "constants": {"council": "London Borough of Lambeth", "licences": 1},
+    "constants": {
+      "council": "London Borough of Lambeth",
+      "licences": 1
+    },
     "notes": "One row per licence: 5,545 rows, 5,545 distinct reference numbers. Never mapped: LICENCE_HOLDER_NAME, PROPERTY_ADDRESS, X, Y, EASTING, NORTHING, WARD. 27 rows give no readable postcode and are refused. Three licence types, including 11 '257 HMO' (buildings converted into flats, section 257 of the Housing Act 2004), kept in the publisher's words. Zero occupants or households appear and are nulled with a note. No status column and no as_of in the file. Review: 13 districts, SW4 the largest; dates year-first with a time that is always midnight.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
@@ -64,7 +73,9 @@
       "licences": "Properties_Per_Postcode",
       "as_of": "Publication_Date"
     },
-    "constants": {"council": "Stirling Council"},
+    "constants": {
+      "council": "Stirling Council"
+    },
     "notes": "Not a register: Stirling publishes the number of licensed properties at each postcode, one row per postcode (137 postcodes, each once). The row therefore stands for its count, in 'licences'; nothing about any one licence is published, so type, dates and occupancy are absent. Ward and Community_Council are not mapped. Review: 9 districts, FK8 the largest; counts 1 to 39; every row published 30 October 2024.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
@@ -73,5 +84,80 @@
   "8a0a3e68c8341c24f2b5dace608edf1a3ec3fcd6db887109f9993b23d9a3ade4": {
     "status": "rejected",
     "reject": "A summary, not a register: the number of HMO licences in Stirling in each year, 23 rows. It has no property and no postcode, so it cannot say where."
+  },
+  "7cfc2a5505a3328b24d489ee0a0eabc7dc2b73359a84bf8df7499c70c688f6d0": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "address",
+      "licence_start": "commencement_date",
+      "licence_end": "expiry_date",
+      "max_occupants": "total_permanent_occupancy",
+      "as_of": "extractdate"
+    },
+    "constants": {
+      "council": "Epsom and Ewell Borough Council",
+      "licences": 1
+    },
+    "notes": "Served as an HTML table under a CSV name; read by the extractor's HTML table path since 27 Sep. One row per licence: 109 rows, 109 distinct references. The district is read from the postcode that ends 'address', found in all 109 (KT4, KT17, KT18, KT19). Never mapped: address, uprn, ogc_fid. 'property_classification' is the address's AddressBase class, not the licence's type, so it is not licence_type. One row has its cells shifted by one; its dates will not read and are left null. Zero occupancy is nulled by the family rule.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "53052d4ab88410c821735e3716c3cdceb1b386a914d3a8fadb1344277b85202e": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "HMO POSTCODE",
+      "licence_start": "LICENCE ISSUE DATE",
+      "licence_end": "LICENCE EXPIRY DATE",
+      "max_occupants": "TOTAL NUMBER PERMITTED",
+      "max_households": "NUMBER OF HOUSEHOLDS",
+      "storeys": "NUMBER OF FLOORS"
+    },
+    "constants": {
+      "council": "London Borough of Barnet",
+      "licences": 1
+    },
+    "latest_per": {
+      "key": "HMO LICENCE REFERENCE",
+      "by": "LICENCE ISSUE DATE"
+    },
+    "notes": "Admitted on the council's own portal statement of the OGL v3 (decision DM 2026-09-27; data.gov.uk's copy lost the licence). 1,696 rows for 1,611 licences: a licence with two managers is listed once per manager, identical but for the manager's name and address, so one row per reference is kept. Never mapped: HMO ADDRESS, MANAGERS NAME, MANAGERS ADDRESS, LICENCE HOLDER, LICENCE HOLDER ADDRESS. The dataset notes say it is not for marketing and nobody named in it consented to that. 'TOTAL NUMBER PERMITTED' reaches 760 once, above the family's range, and is nulled with a note. Dates are day-month-year with a two-digit year.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "ed3667cbd8c3cf67913e6a22116ad835ccd4c100becc1a6e8f4501a3920842f2": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "LIVING_ACCOMMODATION",
+      "licence_status": "LICENCE_STATUS",
+      "licence_type": "CATEGORY",
+      "licence_start": "LICENSED_FROM",
+      "licence_end": "EXPIRY_DATE",
+      "max_occupants": "OCCUPANT_CAPACITY"
+    },
+    "constants": {
+      "council": "Glasgow City Council",
+      "licences": 1
+    },
+    "filter": {
+      "column": "LICENCE_STATUS",
+      "match": "^Granted$"
+    },
+    "latest_per": {
+      "key": "LICENCE_NUMBER",
+      "by": "LICENSED_FROM"
+    },
+    "in_force_on": "EXPIRY_DATE",
+    "notes": "Accepted by decision DM 2026-09-27 (OGL v3.0 for the information; the One Scotland Mapping Agreement covers mapping data this family does not carry). Not a register but a log of applications since 2020: 6,523 rows, of which 5,807 granted, for 4,974 distinct licences. Kept: the latest grant of each licence number whose expiry date has not passed on the build day, about 2,490 on 27 Sep 2026. Not counted: 611 licences with an application awaiting reports, some of them renewals, and every refusal and withdrawal. 'LIVING_ACCOMMODATION' is the address; the district is read from the postcode at its end (97.5% have one). 'CATEGORY' (A: up to 10 persons, B: 11 or more) is the only kind the register gives. Never mapped: LICENCE_HOLDER, LETTING_AGENT, the address itself, WARD, SHAPEAREA, SHAPELEN.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
   }
 }

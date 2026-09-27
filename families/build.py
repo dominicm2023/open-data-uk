@@ -624,7 +624,59 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
     # carry on. One-cell dividers ("Apr-12") are skipped and counted.
     layouts = [cols] + [{k: str(v).strip() for k, v in alt.items()} for alt in spec.get("alt_columns", [])]
 
+    # A register published as a log of what happened to each licence
+    # (Glasgow's holds every grant, renewal, refusal and withdrawal since
+    # 2020, 6,523 rows for 4,974 licences) is reduced to one row per licence:
+    # of the rows the filter keeps, the latest by a date column for each key.
+    # "in_force_on" then keeps only the rows whose end date has not passed on
+    # the day of the build. Barnet repeats a licence once per manager, and
+    # the same reduction makes that one row. Every row set aside is counted.
+    keep_rows = None
+    reduced = [0, 0, 0]                  # earlier rows of a licence, licences past their end, rows with no key
+    lp, live_col = spec.get("latest_per"), spec.get("in_force_on")
+    if lp or live_col:
+        def where(name):
+            i = next((i for i, c in enumerate(lowered) if c == _norm(str(name).strip())), None)
+            if i is None:
+                raise KeyError(f"column {name!r} not in header")
+            return i
+        ki = where(lp["key"]) if lp else None
+        bi = where(lp["by"]) if lp else None
+        li = where(live_col) if live_col else None
+        today = datetime.now(timezone.utc).date().isoformat()
+        best: dict = {}
+        for rno, r in enumerate(rows[h + 1:], start=h + 2):
+            get = lambda i: (str(r[i]).strip() if i is not None and i < len(r) and r[i] is not None else "")
+            if flt_re is not None and not flt_re.search(get(flt_idx)):
+                continue
+            if lp:
+                k = get(ki)
+                if not k:
+                    if any(str(x).strip() for x in r if x is not None):
+                        reduced[2] += 1
+                    continue
+                v = _date(get(bi), us) or ""
+                if k not in best or v > best[k][0]:
+                    best[k] = (v, rno, r)
+            else:
+                best[rno] = ("", rno, r)
+        keep_rows = set()
+        eligible = sum(1 for rno, r in enumerate(rows[h + 1:], start=h + 2)
+                       if (flt_re is None or flt_re.search(str(r[flt_idx]).strip() if flt_idx < len(r) and r[flt_idx] is not None else ""))
+                       and (not lp or (ki < len(r) and str(r[ki] or "").strip())))
+        reduced[0] = eligible - len(best)
+        for _, rno, r in best.values():
+            end = _date(str(r[li]).strip(), us) if li is not None and li < len(r) and r[li] not in (None, "") else None
+            if end and end < today:
+                reduced[1] += 1
+                continue
+            keep_rows.add(rno)
+
     for rno, r in enumerate(rows[h + 1:], start=h + 2):
+        if keep_rows is not None and rno not in keep_rows:
+            if flt_re is not None and not flt_re.search(str(r[flt_idx]).strip() if flt_idx < len(r) and r[flt_idx] is not None else ""):
+                skipped_headers[2] += 1
+            continue
         cells = [str(x).strip() if x is not None else "" for x in r]
         if not any(cells):
             continue
@@ -677,6 +729,15 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
     if skipped_headers[2]:
         bad.append({"why": f"{skipped_headers[2]} rows outside the filter {flt['column']!r} ~ /{flt['match']}/ (not this family)",
                     "source_row": None})
+    if keep_rows is not None:
+        if reduced[2]:
+            bad.append({"why": f"{reduced[2]} rows with no {lp['key']!r}: not one licence, so not counted", "source_row": None})
+        if reduced[0]:
+            bad.append({"why": f"{reduced[0]} earlier rows for a licence that has a later one ({lp['key']!r} by {lp['by']!r})",
+                        "source_row": None})
+        if reduced[1]:
+            bad.append({"why": f"{reduced[1]} licences whose {live_col!r} had passed on the day of the build",
+                        "source_row": None})
     return out, bad
 
 

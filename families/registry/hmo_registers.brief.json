@@ -149,15 +149,75 @@
    "tables": [
     {
      "where": {
-      "table": 1
+      "table": 1,
+      "source_markup": "html table"
      },
      "header": [
-      "<table style=\"float:left;\">"
+      "address",
+      "reference",
+      "condition_description",
+      "number_of_units",
+      "total_permanent_occupancy",
+      "number_of_rooms",
+      "uprn",
+      "issue_date",
+      "commencement_date",
+      "renewal_date",
+      "expiry_date",
+      "property_classification",
+      "extractdate",
+      "ogc_fid"
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 2213,
-     "column_count": 4
+     "row_count": 109,
+     "column_count": 14
+    }
+   ]
+  },
+  {
+   "job_id": "ed3667cbd8c3cf67913e6a22116ad835ccd4c100becc1a6e8f4501a3920842f2",
+   "publisher": "Glasgow City Council",
+   "title": "HMO Public Register",
+   "portal": "glasgow",
+   "format": "CSV",
+   "resource_url": "https://data.glasgow.gov.uk/api/download/v1/items/c4d432bf3bb34b7583c07527c770a373/csv?layers=0",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "OBJECTID",
+      "LICENSED_FROM",
+      "EXPIRY_DATE",
+      "LICENCE_NUMBER",
+      "LICENCE_HOLDER",
+      "LETTING_AGENT",
+      "LIVING_ACCOMMODATION",
+      "NUMBER_OF_BEDROOMS",
+      "OCCUPANT_CAPACITY",
+      "WARD",
+      "DATE_RECEIVED",
+      "APPLICATION_TYPE",
+      "DATE_OF_DECISION",
+      "DECISION",
+      "LICENCE_STATUS",
+      "TYPE",
+      "CATEGORY",
+      "APPTYPENAME",
+      "DESCRIPTION",
+      "SHAPEAREA",
+      "SHAPELEN"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 6523,
+     "column_count": 21
     }
    ]
   },
@@ -196,6 +256,49 @@
      "sample_rows": [],
      "row_count": 884,
      "column_count": 13
+    }
+   ]
+  },
+  {
+   "job_id": "53052d4ab88410c821735e3716c3cdceb1b386a914d3a8fadb1344277b85202e",
+   "publisher": "London Borough of Barnet",
+   "title": "HMO Register",
+   "portal": "data_gov_uk",
+   "format": "CSV",
+   "resource_url": "https://open.barnet.gov.uk/download/29r12/1sb/HMO%20Register%20-%207%20September%202026.csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "HMO LICENCE REFERENCE",
+      "HMO ADDRESS\n",
+      "HMO POSTCODE",
+      "LICENCE ISSUE DATE",
+      "LICENCE EXPIRY DATE",
+      "TOTAL NUMBER OF ROOMS",
+      "TOTAL NUMBER OF OCCUPANTS",
+      "TOTAL NUMBER PERMITTED",
+      "MANAGERS NAME",
+      "MANAGERS ADDRESS",
+      "LICENCE HOLDER",
+      "LICENCE HOLDER ADDRESS",
+      "NUMBER OF HOUSEHOLDS",
+      "NUMBER OF PERSONS",
+      "NUMBER OF KITCHIN FACILITIES",
+      "NUMBER OF BATHROOMS",
+      "NUMBER OF WCs",
+      "NUMBER OF FLOORS"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1696,
+     "column_count": 18
     }
    ]
   },
