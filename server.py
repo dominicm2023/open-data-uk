@@ -1504,6 +1504,18 @@ def sitemap_browse() -> Response:
     urls.append(f"<url><loc>{SITE_URL}/combined</loc><changefreq>daily</changefreq></url>")
     for fam in sorted(FAMILY_NAMES):
         urls.append(f"<url><loc>{SITE_URL}/family/{fam}</loc><changefreq>daily</changefreq></url>")
+    # The organisation charts: the list of bodies, the 3D figure, and each
+    # body's own chart. Never a reason for the sitemap to fail.
+    try:
+        import orgchart
+        bodies = orgchart.indexable_bodies()
+    except Exception:  # noqa: BLE001
+        bodies = []
+    if bodies:
+        for path in ("/family/organograms/chart", "/family/organograms/chart/3d"):
+            urls.append(f"<url><loc>{SITE_URL}{path}</loc><changefreq>weekly</changefreq></url>")
+        for name in bodies:
+            urls.append(f"<url><loc>{SITE_URL}{orgchart.chart_path(name)}</loc></url>")
     xml = ('<?xml version="1.0" encoding="UTF-8"?>'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
            f'{"".join(urls)}</urlset>')

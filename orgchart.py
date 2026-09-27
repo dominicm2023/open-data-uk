@@ -21,6 +21,7 @@ from __future__ import annotations
 import collections
 import functools
 import sqlite3
+from urllib.parse import quote
 from pathlib import Path
 
 from pagerender import _page, breadcrumbs, esc, simple_head
@@ -255,6 +256,23 @@ def _node_html(n: dict, depth: int) -> str:
     return f'<details class="org-node"{open_attr}>{summary}{inner}</details>'
 
 
+# A chart of one or two posts is a line, not a chart: the page works and is
+# linked, but it is not offered up for ranking.
+INDEX_MIN_SENIOR = 3
+
+
+def chart_path(body: str) -> str:
+    """One body's chart. The name is percent-encoded: four bodies carry an
+    ampersand (Victoria & Albert Museum), and unencoded it ended the
+    parameter at "Victoria ", so their links led to a page not found."""
+    return "/family/organograms/chart?body=" + quote(body, safe="")
+
+
+def indexable_bodies() -> list[str]:
+    """The bodies whose chart goes in the sitemap."""
+    return [b["body"] for b in (overview() or []) if b["senior"] >= INDEX_MIN_SENIOR]
+
+
 def render_chart(site_url: str, body: str | None) -> str | None:
     """The chart page: one body's tree, or every body by parent department."""
     if body:
@@ -285,7 +303,7 @@ def render_chart(site_url: str, body: str | None) -> str | None:
                 + "".join(_node_html(n, 0) for n in t["roots"])
                 + (('<h3>Posts whose reporting line is not in the file</h3>' + "".join(_node_html(n, 0) for n in t["orphans"])) if t["orphans"] else "")
                 + "</section>")
-        title = f"{body}: organisation chart"
+        title = f"{body} organisation chart (organogram)"
         desc = (f"The posts, grades and pay bands of {body}, nested by reporting line as the body published them "
                 "in its organogram. Posts, not people.")
         body_html = (
@@ -300,8 +318,12 @@ def render_chart(site_url: str, body: str | None) -> str | None:
             + (f'<p class="note">{n_all - len(trees)} earlier snapshots of this body are in the table too (the 3D view can scrub through them); this page shows the newest.</p>' if n_all > len(trees) else "")
             + '<p class="note">Open a post to see the posts and groups beneath it. Pay is the band the body published: '
               'senior posts in £5,000 bands, junior groups as the grade\'s scale. FTE is the body\'s own figure.</p>')
-        head_html = simple_head(title, desc, f"/family/organograms/chart?body={esc(body)}", site_url,
-                                extra=crumb_ld + '<meta name="robots" content="noindex,follow">')
+        # Indexed since 27 Sep 2026: people search "hm treasury organisation
+        # chart" and "fcdo organogram", and this page is the answer. It was
+        # noindex from the day it was built, for no reason that was written down.
+        thin = sum(t["senior"] for t in trees) < INDEX_MIN_SENIOR
+        head_html = simple_head(title, desc, chart_path(body), site_url,
+                                extra=crumb_ld + ('<meta name="robots" content="noindex,follow">' if thin else ""))
         return _page(head_html, body_html, "/combined")
 
     ov = overview()
@@ -318,7 +340,7 @@ def render_chart(site_url: str, body: str | None) -> str | None:
     for parent, bodies in groups:
         bodies.sort(key=lambda x: (x["body"] != parent, -x["fte"]))
         items = "".join(
-            f'<li><a href="/family/organograms/chart?body={esc(b["body"])}">{esc(b["body"])}</a>'
+            f'<li><a href="{chart_path(b["body"])}">{esc(b["body"])}</a>'
             + (f' <span class="org-head">— {esc(b["head"][0])}' + (f' ({esc(b["head"][1])})' if b["head"][1] else "") + "</span>" if b["head"] else "")
             + f'<span class="org-meta">{b["fte"]:,.0f} FTE · {b["senior"]:,} senior posts'
             + (f' · as of {esc(_nice(b["as_of"]))}' if b["as_of"] else "") + "</span></li>"

@@ -342,6 +342,8 @@ _two = [dict(r, body="MoD", parent_department="MoD", source_url="u") for r in _O
 _g2 = orgchart.graph_from_rows(_two)
 check(_g2["nodes"]["parent"].count(-1) == 3 and "Permanent Under Secretary" not in _g2["nodes"]["title"],
       "every dataset carrying a body's newest snapshot is in the graph (the MoD's one per budget), an older one is not")
+check(orgchart.chart_path("Victoria & Albert Museum") == "/family/organograms/chart?body=Victoria%20%26%20Albert%20Museum",
+      "a body's chart link encodes its name: an ampersand does not end the parameter")
 
 # --- the stylesheet ------------------------------------------------------
 # One file now, after three inline copies drifted apart. These pin the two
