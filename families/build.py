@@ -474,13 +474,31 @@ def _norm(x) -> str:
     return re.sub(r"\s+", " ", str(x)).strip().lower()
 
 
+def _numbered(cells) -> list[str]:
+    """A header's cells with a repeated name numbered from its second
+    appearance: North Warwickshire heads three columns 'Address' and the
+    postcode is in the third, 'Address (3)'. The first keeps its name, so a
+    mapping written before (Bexley's first 'Postcode') reads as it did."""
+    seen: dict[str, int] = {}
+    out = []
+    for c in cells:
+        v = str(c).strip() if c is not None else ""
+        n = _norm(v)
+        if n:
+            seen[n] = seen.get(n, 0) + 1
+            if seen[n] > 1:
+                v = f"{v} ({seen[n]})"
+        out.append(v)
+    return out
+
+
 def _fits(rows: list, candidates: list, h: int) -> list[tuple[int, int, dict]]:
     """Every (hits, header_row, layout) whose names the header carries well
     enough, best first. Names are compared stripped and case-folded, because
     publishers' trailing spaces are not information."""
     fits = []
     for hr in range(0, min(max(h, 0) + 4, len(rows))):     # a sibling file may lack the title row
-        lowered = [_norm(c) for c in rows[hr]]
+        lowered = [_norm(c) for c in _numbered(rows[hr])]
         for order, lay in enumerate(candidates):
             names = [_norm(v) for v in lay.values()]
             hits = sum(1 for n in names if n in lowered)
@@ -498,6 +516,11 @@ def _map_file(job: dict, f: dict, spec: dict, schema: dict) -> tuple[list[dict],
     else:
         rows = _load_table(f["extraction_sha"], spec.get("table", 1))
         h = spec.get("header_row", 0)
+    if spec.get("transpose"):
+        # a register laid on its side, one column per licence and its labels
+        # down the first column (Broxbourne): turned upright before reading
+        w = max((len(r) for r in rows), default=0)
+        rows = [list(c) for c in zip(*[list(r) + [""] * (w - len(r)) for r in rows])]
     # A series' files do not all share a layout: Greenwich's returns gained
     # a "Payment Date" column one year. The mapping's own columns and its
     # alt_columns are each a layout; the header row of this file chooses
@@ -532,7 +555,7 @@ def _map_file(job: dict, f: dict, spec: dict, schema: dict) -> tuple[list[dict],
 
 
 def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: dict, h: int) -> tuple[list[dict], list[dict]]:
-    header = [str(x).strip() if x is not None else "" for x in rows[h]]
+    header = _numbered(rows[h])
     # Every header cell by position — an unpivot names year columns directly
     # — with the layout's names laid over it case-insensitively.
     idx = {name: i for i, name in enumerate(header) if name}
@@ -767,7 +790,7 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
         cells = [str(x).strip() if x is not None else "" for x in r]
         if not any(cells):
             continue
-        lowered = [_norm(c) for c in cells]
+        lowered = [_norm(c) for c in _numbered(cells)]
         best, best_hits = None, 0
         for lay in layouts:
             names = {_norm(v) for v in lay.values()}

@@ -57,26 +57,48 @@ HIDDEN = "(not sampled)"
 # reads as column names: no postcode, date or number in it, and most of its
 # filled cells made of header words. Any other row comes through empty, so
 # a holder's or company's name in a data row never reaches the brief.
-_HEAD_WORD = re.compile(r"address|post\s*code|postcode|licen|date|occup|person|people|storey|floor|holder|manag|type|"
-                        r"number|no\.?\b|reference|ref\b|expir|issue|start|end|status|household|categor|property|"
-                        r"premises|ward|description|agent|owner|valid|renew|name|room|kitchen|bath|toilet|amenit|condition|"
-                        r"duration|commenc|scheme|area|council|register", re.I)
+_HEAD_WORD = re.compile(r"\b(?:address|addr|post\s*code|postcode|licen|lic\b|date|occup|occ\b|person|people|storey|floor|"
+                        r"holder|manag|type|number|no\b|reference|ref\b|expir|issue|start|end\b|status|household|categor|"
+                        r"property|premises|ward\b|description|agent|owner|valid|renew|name\b|room|kitchen|bath|toilet|"
+                        r"amenit|condition|duration|commenc|scheme|area\b|council|register|hmo|max|minimum|maximum|"
+                        r"permitted|tenant|uprn|units?\b|bedroom|flats?\b|house\b|app\b|application|granted|effective|"
+                        r"term|period|decision|tribunal|shared|living|sleeping|licensee|let\b|"
+                        # publishers' own spellings of column names: Leicester's
+                        # zero for O, Bexley's dropped letter, Epsom's run together
+                        r"last|upload|extract\w*date|0ccup|postode)", re.I)
 _DATA = re.compile(r"\b[A-Z]{1,2}[0-9][A-Z0-9]?\s*[0-9][A-Z]{2}\b|\d{1,4}[/.-]\d{1,2}[/.-]\d{2,4}|"
-                   r"\b(?:ltd|limited|llp|plc|group|trust|estates?|lettings|homes|mr|mrs|ms|miss|dr)\b", re.I)
+                   r"\b(?:ltd|limited|llp|plc|group|trust|estates?|lettings|homes|mr|mrs|ms|miss|dr)\b|"
+                   r"[\w.+-]+@[\w-]+\.[\w.-]+|\b0\d{2,4}\s?\d{3,4}\s?\d{3,4}\b", re.I)
+_FIELD = re.compile(r"[A-Z][A-Z0-9_.-]{3,}")        # a database field's name: FULLADDR, CSTDATE
+
+
+def _is_head(c: str) -> bool:
+    """A column name: a header word starting a word (a name with 'ward'
+    inside it is not one), or a database field's capitalised name; short,
+    and with no run of digits."""
+    words = re.sub(r"[_\-.:/]+", " ", re.sub(r"([a-z])([A-Z])", r"\1 \2", c))
+    field = bool(_FIELD.fullmatch(c)) and bool(re.search(r"DATE|ADDR|REF|CODE|STAT|TYPE|LIC|UPRN|NUM|POST|DESC|OCC|EXP|ISS|_NO$", c))
+    return len(c) < 80 and not re.search(r"\d{3,}", c) and bool(_HEAD_WORD.search(words) or field)
+
+
+def _masked_row(r, least: int) -> list | None:
+    """The row with every cell that is not a column name blanked, if the
+    whole row reads as a header: at least `least` column names, a majority
+    of the row, and no postcode, date, title, company, e-mail or phone in
+    any cell. Otherwise None."""
+    cells = [("" if v is None else str(v)).strip() for v in r[:MAX_COLS]]
+    filled = [c for c in cells if c and c != "None"]
+    heady = [c for c in filled if _is_head(c)]
+    if len(heady) >= least and len(heady) * 2 >= len(filled) and not any(_DATA.search(c) for c in filled):
+        return [c if c in heady else "" for c in cells]
+    return None
 
 
 def _head_rows(rows: list) -> list:
-    out = []
-    for r in rows[:10]:
-        cells = [("" if v is None else str(v)).strip() for v in r[:MAX_COLS]]
-        filled = [c for c in cells if c and c != "None"]
-        heady = [c for c in filled if _HEAD_WORD.search(c) and not re.search(r"\d{3,}", c) and len(c) < 80]
-        # A table's header names several columns; a card's row is one label
-        # beside one value ("Licence holder" | a name). Three column names at
-        # least, a majority of the row, and every other cell blanked.
-        ok = len(heady) >= 3 and len(heady) * 2 >= len(filled) and not any(_DATA.search(c) for c in filled)
-        out.append([c if c in heady else "" for c in cells] if ok else [])
-    return out
+    # A table's header names several columns; a card's row is one label
+    # beside one value ("Licence holder" | a name). Three column names at
+    # least, a majority of the row, and every other cell blanked.
+    return [_masked_row(r, 3) or [] for r in rows[:10]]
 
 
 def _preview(table: dict) -> dict:
@@ -86,8 +108,15 @@ def _preview(table: dict) -> dict:
     body = [[("" if v is None else str(v))[:80] for v in r[:MAX_COLS]] for r in rows[hr + 1:hr + 1 + SAMPLE_ROWS]]
     head_rows = None
     if not _SAMPLES:
+        # The first row of a table is not always a header: a card, a page of
+        # a PDF or a register on its side starts with a record. The header
+        # is shown only where it reads as one (two columns may both be
+        # names), and blank otherwise; the brief is in a public repository.
         body = []
         head_rows = _head_rows(rows)
+        if rows:
+            filled = sum(1 for v in rows[hr][:MAX_COLS] if v not in (None, "") and str(v).strip() not in ("", "None"))
+            header = _masked_row(rows[hr], min(3, max(filled, 1))) or [""] * len(header)
     elif _HIDE:
         hide = {i for i, h in enumerate(header) if any(p.search(h.strip()) for p in _HIDE)}
         body = [[(HIDDEN if i in hide and v.strip() else v) for i, v in enumerate(r)] for r in body]

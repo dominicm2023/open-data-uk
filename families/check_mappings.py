@@ -17,10 +17,13 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+from build import _numbered  # noqa: E402  the build's own naming of repeated columns
+
 HERE = Path(__file__).resolve().parent
 ALLOWED = {"status", "reject", "table", "header_row", "columns", "constants", "unpivot",
            "notes", "version", "reviewer", "reviewed_at", "grid", "alt_columns", "alt_constants", "filter",
-           "latest_per", "in_force_on", "cards"}
+           "latest_per", "in_force_on", "cards", "transpose"}
 EXTRA_COLS = {"easting", "northing"}
 
 
@@ -56,6 +59,9 @@ def check(family: str) -> int:
             # names are checked there, where a missing one stops the source
             notes.append(f"{tag}: card register; labels checked at build")
             continue
+        if spec.get("transpose"):
+            notes.append(f"{tag}: register on its side; labels checked at build")
+            continue
         which = spec.get("table", 1)
         if which == "all":
             which = 1                                   # every table is read; the first carries the header
@@ -64,7 +70,7 @@ def check(family: str) -> int:
             table = src["tables"][which - 1]          # the build reads an XLSX's nth sheet the same way
         if table is None:
             problems.append(f"{tag}: table {which!r} not in brief"); continue
-        header = [str(h).strip() for h in table["header"]]
+        header = _numbered(table["header"])
         # A header on a later row: the brief's sample rows show it, and the
         # build reads it from there. Compare against the same row.
         hr = int(spec.get("header_row", 0) or 0)
@@ -73,10 +79,10 @@ def check(family: str) -> int:
             head = table["head_rows"][hr] if hr < len(table["head_rows"]) else []
             if not head:
                 problems.append(f"{tag}: header_row {hr} does not read as column names; cannot check"); continue
-            header = [str(x).strip() for x in head]
+            header = _numbered(head)
         elif hr > 0:
             if hr - 1 < len(table["sample_rows"]):
-                header = [str(x).strip() for x in table["sample_rows"][hr - 1]]
+                header = _numbered(table["sample_rows"][hr - 1])
             else:
                 problems.append(f"{tag}: header_row {hr} beyond the sampled rows; cannot check"); continue
         cols = {k: str(v).strip() for k, v in spec.get("columns", {}).items()}

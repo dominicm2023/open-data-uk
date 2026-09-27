@@ -75,7 +75,7 @@ STATUS = [
     ("search_only", "Published only as a search box on the council's website"),
     ("on_request", "Available only on request or for inspection"),
     ("not_found", "No register found online"),
-    ("unsearched", "Not yet searched fully: the web search ran out part-way on 27 September"),
+    ("unsearched", "Not yet confirmed: the council's website refused our reader, or its register page could not be found"),
 ]
 
 

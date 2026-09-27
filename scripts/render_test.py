@@ -376,6 +376,8 @@ check([c.get("Number of Storeys") for c in _cd] == ["3", "2"] and _cd[0].get("Nu
       "a card's label reads the cell beside it, and a 'Label: value' cell is a field of its own")
 check(_fbuild._date(_cd[0]["StartDate"]) == "2023-09-12" and _fbuild._date("4 January 2024") == "2024-01-04" and _fbuild._date("12 Sept 2023") == "2023-09-12",
       "a date with its month written out is read, spaced or not")
+check(_fbuild._numbered(["Ref", "Address", "Address", "Postcode", "address"]) == ["Ref", "Address", "Address (2)", "Postcode", "address (3)"],
+      "a column name a header repeats is numbered from its second appearance; the first keeps its name")
 _hs =json.loads((Path(__file__).parent.parent / "families" / "schema" / "hmo_registers.json").read_text(encoding="utf-8"))
 _hcols = {c["name"] for c in _hs["columns"]}
 check(not _hcols & {"address", "postcode", "lat", "lon", "easting", "northing", "licence_holder", "holder", "manager", "name"},
@@ -406,6 +408,18 @@ _hr = _fbrief._head_rows([["Register of licensed HMOs"], ["11(1a)", "", "Propert
                           ["Reference Number", "Anytown Lettings Ltd", "Address of the licence holder", "Post Code"]])
 check(_hr == [[], ["", "", "Property_Address", "Prop_Postcode", "Commencent Date"], [], [], [], []],
       "a brief's head rows show column names only: no data row, no card label's value, no company")
+# The header itself is a table's first row, and that can be a record (a card,
+# a page of a PDF, a register on its side): until 27 Sep it went into the
+# brief as it was. A name with a header word inside it ('Edward') is no header.
+_fbrief._SAMPLES = False                      # as the HMO schema sets it
+_pv = _fbrief._preview({"rows": [["1 A Road, Town AB1 2CD", "Edward Wardle", "01/02/2024"], ["2 B Road", "Jo Bloggs", "01/03/2024"]]})
+_fbrief._SAMPLES = True
+check(not any(_pv["header"]) and _fbrief._is_head("Ward") and not _fbrief._is_head("Edward"),
+      "a brief's header row is blank unless it reads as column names; header words count only at a word's start")
+_hb = (Path(__file__).parent.parent / "families" / "registry" / "hmo_registers.brief.json").read_text(encoding="utf-8")
+check(not re.search(r"\b[A-Z]{1,2}[0-9][A-Z0-9]?\s*[0-9][A-Z]{2}\b", _hb.upper()) and not re.search(r"[\w.+-]+@[\w-]+\.[\w.-]+", re.sub(r"https?://\S+", "", _hb))
+      and not re.search(r"\b(Mr|Mrs|Ms|Miss|Dr)\.?\s+[A-Z]", _hb),
+      "the committed HMO brief holds no full postcode, e-mail address or titled name")
 _sq = [[0, 0], [0.5, 0.00001], [1, 0], [1, 1], [0, 1], [0, 0]]
 check(len(_fdist._simplify(_sq, 0.001)) == 5, "simplifying a shape drops the point that adds nothing and keeps the corners")
 

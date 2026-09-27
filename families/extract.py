@@ -19,7 +19,7 @@ import zipfile
 from html.parser import HTMLParser
 from pathlib import Path
 
-VERSION = "tables-v5"
+VERSION = "tables-v6"
 
 
 def _features_to_rows(features: list[dict], props_key: str, limits: dict) -> list[list]:
@@ -224,16 +224,28 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
                 # cap; trailing empty cells go and rows are padded back to
                 # the table's real width.
                 cap = min(sheet.max_column or 200, 200)
-                rows, width = [], 0
+                # A cell holding only spaces is empty (Buckinghamshire's rows
+                # run to 700 of them), and blank rows after the last record
+                # are formatting (Surrey Heath's, Tamworth's): they count
+                # towards neither the width nor the row limit. A blank row
+                # between records is kept, so a header's row number holds.
+                rows, width, blanks = [], 0, 0
                 for row in sheet.iter_rows(values_only=True, max_col=cap):
-                    if len(rows) + total >= limits["max_rows"]:
-                        raise ValueError("Row limit exceeded")
                     vals = list(row)
-                    while vals and (vals[-1] is None or vals[-1] == ""):
+                    while vals and (vals[-1] is None or (isinstance(vals[-1], str) and not vals[-1].strip())):
                         vals.pop()
+                    if not vals:
+                        blanks += 1
+                        if blanks > 5000:
+                            break
+                        continue
+                    if len(rows) + blanks + total >= limits["max_rows"]:
+                        raise ValueError("Row limit exceeded")
                     width = max(width, len(vals))
                     if width > 100:
                         break
+                    rows.extend([[] for _ in range(blanks)])
+                    blanks = 0
                     rows.append([("" if v is None else v) for v in vals])
                 if width > 100:
                     continue                      # not a table of records; see XLS below
@@ -246,7 +258,23 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
         # only .xls; dates arrive as serial numbers and are turned into ISO
         # dates here, so a mapping sees the same thing an XLSX would give.
         import xlrd
-        book = xlrd.open_workbook(file_contents=data, on_demand=True)
+        try:
+            book = xlrd.open_workbook(file_contents=data, on_demand=True)
+        except xlrd.XLRDError as err:
+            # Excel's own write protection (Derby's register): the workbook
+            # is "encrypted" with the built-in password Excel opens it with,
+            # asking nobody. A workbook with a password of its own stays shut.
+            if "encrypted" not in str(err).lower():
+                raise
+            import msoffcrypto
+            locked = msoffcrypto.OfficeFile(io.BytesIO(data))
+            locked.load_key(password="VelvetSweatshop")
+            out = io.BytesIO()
+            try:
+                locked.decrypt(out)
+            except Exception:  # noqa: BLE001
+                raise ValueError("Workbook is encrypted with a password of its own") from None
+            book = xlrd.open_workbook(file_contents=out.getvalue(), on_demand=True)
         for sheet in book.sheets():
             # As for XLSX: the stated width is formatting (Spelthorne's says
             # 256); the limit is on columns that hold something.

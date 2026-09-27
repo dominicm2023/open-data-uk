@@ -505,8 +505,17 @@
    "has_postcodes": "unknown",
    "as_of": "May 2026",
    "search_notes": "Council's own page links a downloadable CSV register (72KB); page footer claims 'All Rights Reserved' rather than an open licence.",
-   "status": "file_no_licence",
-   "note": "CSV, reuse restricted, dated May 2026"
+   "status": "held",
+   "note": "The council's page says 'All Rights Reserved'; held for Dominic's decision.",
+   "use": {
+    "publisher": "Braintree Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.braintree.gov.uk/downloads/file/4420/hmo-public-register-may-2026",
+    "format": "CSV",
+    "licence_page": "https://www.braintree.gov.uk/homepage/141/hmo-public-register",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000143",
@@ -540,7 +549,16 @@
    "as_of": null,
    "search_notes": "Council's own page confirms a downloadable PDF register of licensed properties plus an online search tool to check an individual property; exact PDF filename not resolved by fetch.",
    "status": "document",
-   "note": "PDF, reuse restricted"
+   "note": "The PDF is too large to read within the extractor's ten-minute limit.",
+   "use": {
+    "publisher": "Brent Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.brent.gov.uk/-/media/files/resident-documents/housing-documents/online-register-of-licenced-properties.pdf?rev=db98c70a351e4bec9a1e6cbf76d19023&amp;hash=04E53FE92C0A79E67D601ACCE5C7D331",
+    "format": "PDF",
+    "licence_page": "https://www.brent.gov.uk/prslicensing",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000068",
@@ -573,8 +591,17 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "Found and fetched the council's actual XLSX HMO Licensing Register file (263.9KB) hosted on brighton-hove.gov.uk (path dated 2023-08); no licence statement found in the file. There is also an ArcGIS City_Planning/CityPlanning_HMO map layer at gis.brighton-hove.gov.uk which may or may not be the same dataset.",
-   "status": "unsearched",
-   "note": "the public ArcGIS layer is Planning's list of 4,478 HMO addresses, not the licence register; the licensing layer needs a login"
+   "status": "file_no_licence",
+   "note": "The only register file found dates from August 2023, and the council's page now refuses our fetcher (HTTP 403).",
+   "use": {
+    "publisher": "Brighton and Hove Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.brighton-hove.gov.uk/sites/default/files/2023-08/HMO%20Licensing%20Register_0.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://www.brighton-hove.gov.uk/housing/private-renting/houses-multiple-occupation-hmo",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E06000023",
@@ -667,8 +694,17 @@
    "has_postcodes": "unknown",
    "as_of": "September 2025",
    "search_notes": "Council's own page links the 'HMO Licence Public Register'; fetching the file directly confirmed it is an XLSX workbook dated September 2025.",
-   "status": "file_no_licence",
-   "note": "XLSX, no licence stated, dated September 2025"
+   "status": "in_table",
+   "note": "69 licences in the table",
+   "use": {
+    "publisher": "Broxbourne Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.broxbourne.gov.uk:443/downloads/file/4789/hmo-register-september-2025",
+    "format": "XLSX",
+    "licence_page": "https://www.broxbourne.gov.uk/housing/private-renting-tenants/3",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000172",
@@ -701,8 +737,17 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "Council's own page links a downloadable XLSX register (217KB); page did not separately break out Aylesbury Vale/Chiltern-South Bucks/Wycombe legacy-area registers in the fetched excerpt.",
-   "status": "file_no_licence",
-   "note": "XLSX, no licence stated"
+   "status": "in_table",
+   "note": "388 licences in the table",
+   "use": {
+    "publisher": "Buckinghamshire Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://media.buckinghamshire.gov.uk/documents/Official_Buckinghamshire_HMO_Public_Register.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://www.buckinghamshire.gov.uk/housing-and-benefits/housing/housing-conditions/houses-in-multiple-occupation-hmos/hmo-registers/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000117",
@@ -982,8 +1027,17 @@
    "has_postcodes": "unknown",
    "as_of": "September 2026",
    "search_notes": "Council's own page links a reduced/redacted PDF public register (145KB); a complete version costs GBP50 on request to the private sector housing team.",
-   "status": "document",
-   "note": "PDF, no licence stated, dated September 2026"
+   "status": "in_table",
+   "note": "64 licences in the table",
+   "use": {
+    "publisher": "Chesterfield Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.chesterfield.gov.uk/media/e5mkbsqz/hmo-licence-public-register-september-2026.pdf",
+    "format": "PDF",
+    "licence_page": "https://chesterfield.gov.uk/housing/private-homes/houses-in-multiple-occupation/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000225",
@@ -1077,7 +1131,16 @@
    "as_of": "1 September 2026",
    "search_notes": "Council's own page links a PDF 'Public register of licensed HMOs as at 01 September 2026'.",
    "status": "document",
-   "note": "PDF, reuse restricted, dated 1 September 2026"
+   "note": "The PDF sets each licence out as a form across the page; the property's postcode cannot be told from the holder's.",
+   "use": {
+    "publisher": "Cornwall Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.cornwall.gov.uk/media/rypjzn0x/010926-hmo-register.pdf",
+    "format": "PDF",
+    "licence_page": "https://www.cornwall.gov.uk/housing/private-housing/houses-in-multiple-occupation/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000079",
@@ -1093,8 +1156,17 @@
    "has_postcodes": "unknown",
    "as_of": "2026-09-21",
    "search_notes": "Register downloadable as a docx file dated 21 Sep 2026; council also offers to email a copy on request.",
-   "status": "document",
-   "note": "DOCX, no licence stated, dated 2026-09-21"
+   "status": "in_table",
+   "note": "46 licences in the table",
+   "use": {
+    "publisher": "Cotswold Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.cotswold.gov.uk/media/rv4ih51b/hmo-copy-of-copy-of-public-register-21-09-2026.docx",
+    "format": "DOCX",
+    "licence_page": "https://www.cotswold.gov.uk/housing/private-housing/houses-in-multiple-occupation/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E06000047",
@@ -1144,8 +1216,17 @@
    "has_postcodes": "unknown",
    "as_of": "2026-09",
    "search_notes": "Public register published as CSV, updated quarterly; latest file dated September 2026.",
-   "status": "file_no_licence",
-   "note": "CSV, reuse restricted, dated 2026-09"
+   "status": "in_table",
+   "note": "239 licences in the table",
+   "use": {
+    "publisher": "Crawley Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://crawley.gov.uk/sites/default/files/2026-09/Crawley%20public%20register%20of%20HMO%20licensed%20properties%2C%20September%202026.csv",
+    "format": "CSV",
+    "licence_page": "https://crawley.gov.uk/housing/private-housing/houses-multiple-occupation",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E09000008",
@@ -1196,7 +1277,16 @@
    "as_of": null,
    "search_notes": "Register published as a 3.5MB PDF; page section last updated 24 September 2026.",
    "status": "document",
-   "note": "PDF, no licence stated"
+   "note": "The PDF's tables extract as fragments of one or two cells, with no header.",
+   "use": {
+    "publisher": "Dacorum Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.dacorum.gov.uk/docs/default-source/licensing-documents/publicregisters/hmoregister.pdf?sfvrsn=7484349e_739",
+    "format": "PDF",
+    "licence_page": "https://www.dacorum.gov.uk/home/housing/private-housing/private-landlords/hmo-licences",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E06000005",
@@ -1255,8 +1345,17 @@
    "has_postcodes": "unknown",
    "as_of": "2026-09",
    "search_notes": "A compact downloadable xls register exists (Sep 2026); full register also viewable by appointment or supplied electronically for a 50-pound fee.",
-   "status": "file_no_licence",
-   "note": "XLS, no licence stated, dated 2026-09"
+   "status": "in_table",
+   "note": "913 licences in the table",
+   "use": {
+    "publisher": "Derby Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.derby.gov.uk/media/derbycitycouncil/content/documents/housing/register-of-hmo-licences-sep-26.xls",
+    "format": "XLS",
+    "licence_page": "https://www.derby.gov.uk/trading-standards-environmental-health/environmental-health/housing-standards/houses-in-multiple-occupation/about/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000035",
@@ -1306,8 +1405,17 @@
    "has_postcodes": "unknown",
    "as_of": "2026-08-06",
    "search_notes": "Register downloadable as xlsx, titled 'Mandatory HMO Licence Register as of 6 August 2026'.",
-   "status": "file_no_licence",
-   "note": "XLSX, no licence stated, dated 2026-08-06"
+   "status": "in_table",
+   "note": "107 licences in the table",
+   "use": {
+    "publisher": "Dorset Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.dorsetcouncil.gov.uk/documents/d/guest/060826-hmo-public-register-xls",
+    "format": "XLSX",
+    "licence_page": "https://www.dorsetcouncil.gov.uk/w/houses-in-multiple-occupation-hmos",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000108",
@@ -1392,7 +1500,16 @@
    "as_of": "2026-07-07",
    "search_notes": "Register downloadable as PDF dated 7 July 2026; council also runs a separate online licensing public-registers search tool (eastdevon.gov.uk/licensing/public-registers) which may cover HMOs too.",
    "status": "document",
-   "note": "PDF, no licence stated, dated 2026-07-07"
+   "note": "The register gives each property's address without a postcode, so it gives no district.",
+   "use": {
+    "publisher": "East Devon Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://eastdevon.gov.uk/media/r5xbcfb4/hmo-register-07-07-2026.pdf",
+    "format": "PDF",
+    "licence_page": "https://eastdevon.gov.uk/housing-and-homelessness/housing-in-the-private-sector/houses-in-multiple-occupation/hmo-register-and-what-is-a-house-in-multiple-occupation/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000085",
@@ -2257,8 +2374,8 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "Mandatory-licence-only register published as a PDF; full statutory register (with licence holder names) available by appointment/hard copy on request; site's WAF returned 403 to direct fetch of the page and PDF this session.",
-   "status": "unsearched",
-   "note": "the council's website refuses automated requests (HTTP 403), so the register could not be read"
+   "status": "document",
+   "note": "The register's file is linked from the council's page, but the council's website refuses our fetcher (HTTP 403)."
   },
   {
    "code": "E09000018",
@@ -2401,8 +2518,17 @@
    "has_postcodes": "unknown",
    "as_of": "4 September 2026",
    "search_notes": "Register offered both as a monthly PDF and via a searchable database at rbkc.metastreet.co.uk/public-register; no OGL/licence statement found, only standard council copyright notice.",
-   "status": "document",
-   "note": "PDF, no licence stated, dated 4 September 2026"
+   "status": "in_table",
+   "note": "67 licences in the table",
+   "use": {
+    "publisher": "Kensington and Chelsea Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.rbkc.gov.uk/sites/default/files/media/documents/public-register-report-september-2026.pdf",
+    "format": "PDF",
+    "licence_page": "https://www.rbkc.gov.uk/housing/information-homeowners-private-rented-tenants-and-landlords/houses-multiple-occupation-hmo/public-hmo-register",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000146",
@@ -2597,8 +2723,17 @@
    "has_postcodes": "unknown",
    "as_of": "25/06/2026",
    "search_notes": "Register published as an Excel spreadsheet and also via an online search tool at lewisham.metastreet.co.uk/public-register; council notes some register data is currently missing and being fixed; only standard copyright notice, no OGL statement.",
-   "status": "file_no_licence",
-   "note": "XLSX, no licence stated, dated 25/06/2026"
+   "status": "in_table",
+   "note": "1,312 licences in the table",
+   "use": {
+    "publisher": "Lewisham Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://lewisham.gov.uk/-/media/services/housing/hmo-register.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://lewisham.gov.uk/myservices/housing/private-tenants-and-landlords/landlords/hmo/register-of-licensed-houses-in-multiple-occupation--hmos",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000194",
@@ -2837,8 +2972,17 @@
    "has_postcodes": "unknown",
    "as_of": "January 2026",
    "search_notes": "Open-data page publishes an extract of the HMO register as a CSV download; full register available for a charge; no OGL/licence statement found on the page.",
-   "status": "file_no_licence",
-   "note": "CSV, no licence stated, dated January 2026"
+   "status": "in_table",
+   "note": "18 licences in the table",
+   "use": {
+    "publisher": "Mid Devon Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.middevon.gov.uk/media/357915/l1002-extract-hmo-licensing-public-register.csv",
+    "format": "CSV",
+    "licence_page": "https://www.middevon.gov.uk/your-council/access-to-information/freedom-of-information/open-data/licensing/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000203",
@@ -3239,8 +3383,8 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "Page 4 of the council's HMO guide links to an 'HMO public register' download (format not fully confirmed, likely PDF); council disclaims accuracy/completeness of the data.",
-   "status": "document",
-   "note": "PDF, no licence stated",
+   "status": "in_table",
+   "note": "27 licences in the table",
    "use": {
     "publisher": "North Warwickshire Council",
     "title": "Public register of licensed HMOs",
@@ -3343,7 +3487,7 @@
    "as_of": "1 September 2026",
    "search_notes": "Register published monthly as an .xls file; a separate 'My Property' postcode-search tool checks whether an individual address needs licensing but is not the register itself; a charge applies for a full, non-extract copy.",
    "status": "file_no_licence",
-   "note": "XLS, reuse restricted, dated 1 September 2026"
+   "note": "The spreadsheet says it is 'not intended for marketing or commercial use'; held for Dominic's decision."
   },
   {
    "code": "E07000219",
@@ -3787,8 +3931,17 @@
    "has_postcodes": "unknown",
    "as_of": "2026-09-14",
    "search_notes": "Register is searchable online (select HMOs category) and also offered as an Excel download (edited list, updated 14 Sep 2026); a certified PDF copy costs GBP 50.",
-   "status": "search_only",
-   "note": "dated 2026-09-14"
+   "status": "file_no_licence",
+   "note": "The register gives each property's address without a postcode, so it gives no district.",
+   "use": {
+    "publisher": "Rushcliffe Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.rushcliffe.gov.uk/media/0amfpuka/hmo-list-amenity-14-9-26.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://www.rushcliffe.gov.uk/environmental-health/licensing/other-licences/houses-in-multiple-occupation/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000092",
@@ -3838,8 +3991,17 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "Council publishes downloadable PDF and CSV lists of properties with a mandatory HMO licence on its licensing public register page.",
-   "status": "unsearched",
-   "note": "publishes licence counts by ward and LSOA as ArcGIS layers, not the register itself"
+   "status": "in_table",
+   "note": "640 licences in the table",
+   "use": {
+    "publisher": "Salford Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.salford.gov.uk/static/licensing/hmo.csv",
+    "format": "CSV",
+    "licence_page": "https://www.salford.gov.uk/licensing-and-permits/licensing-and-permits-public-register/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E08000028",
@@ -3889,8 +4051,17 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "Council's HMO page links directly to PDF and CSV downloads of the HMO register; page carries only a generic council copyright footer, no data licence.",
-   "status": "file_no_licence",
-   "note": "CSV, no licence stated"
+   "status": "in_table",
+   "note": "21 licences in the table",
+   "use": {
+    "publisher": "Sevenoaks Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.sevenoaks.gov.uk/download/downloads/id/3797/houses_in_multiple_occupation_hmo_register_csv_format.csv",
+    "format": "CSV",
+    "licence_page": "https://www.sevenoaks.gov.uk/info/20048/homeowners_landlords_and_private_tenants/105/houses_in_multiple_occupation_hmo",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E08000039",
@@ -3906,8 +4077,17 @@
    "has_postcodes": "unknown",
    "as_of": "2026-09-03",
    "search_notes": "Council's HMO page links to an Excel list of HMO licences dated 3 Sep 2026; the full paper register (18 lever-arch files) is also viewable by appointment for a fee, per council FOI responses.",
-   "status": "file_no_licence",
-   "note": "XLSX, no licence stated, dated 2026-09-03"
+   "status": "in_table",
+   "note": "1,420 licences in the table",
+   "use": {
+    "publisher": "Sheffield Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.sheffield.gov.uk/sites/default/files/2026-09/hmo-licences-3-september-2026.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://www.sheffield.gov.uk/node/8476/houses-multiple-occupation",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E06000051",
@@ -4215,7 +4395,16 @@
    "as_of": "2026-05-06",
    "search_notes": "PDF register (titled 'Public register 6 May 2026') downloaded successfully from the council's media library; the council also reportedly runs a searchable web register with a map, but that page returned empty/404 content on fetch.",
    "status": "document",
-   "note": "PDF, no licence stated, dated 2026-05-06"
+   "note": "The council's website answers our fetcher with a web page instead of the PDF.",
+   "use": {
+    "publisher": "Southampton Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.southampton.gov.uk/media/1dkb4e24/public-register-06052026.pdf",
+    "format": "PDF",
+    "licence_page": "https://www.southampton.gov.uk/housing/landlords/houses-multiple-occupation/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E06000033",
@@ -4344,15 +4533,15 @@
    "checked": "2026-09-27",
    "register_page": "https://www.staffsmoorlands.gov.uk/article/432/Multiple-occupancy-homes-HMO",
    "register_url": null,
-   "format": "none_found",
+   "format": "other",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "No register link found on the HMO page or the council's 'Lists and registers' page within search budget (pages also had certificate errors on fetch); contact [e-mail]",
+   "search_notes": "staffsmoorlands.gov.uk fails TLS certificate verification on both the HMO page and the 'Lists and registers' page (both http and https), blocking automated access; could not confirm register location or format.",
    "status": "unsearched",
-   "note": null
+   "note": "other form, no licence stated"
   },
   {
    "code": "E07000243",
@@ -4444,17 +4633,26 @@
    "name": "Stroud",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
+   "register_page": "https://www.stroud.gov.uk/council-and-democracy/transparency-and-open-data/registers/hmo-licensing-register/",
+   "register_url": "https://www.stroud.gov.uk/media/23kizpfn/licensed-hmos-september-2026.xlsx",
+   "format": "xlsx",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
-   "as_of": null,
-   "search_notes": "Several guessed HMO-page URLs 404'd and the homepage listed no HMO link within budget; council site search endpoint also 404'd.",
-   "status": "unsearched",
-   "note": null
+   "as_of": "September 2026",
+   "search_notes": "Council's transparency/open-data section has a dedicated HMO Licensing Register page linking an Excel download, described as frequently updated.",
+   "status": "in_table",
+   "note": "26 licences in the table",
+   "use": {
+    "publisher": "Stroud Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.stroud.gov.uk/media/23kizpfn/licensed-hmos-september-2026.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://www.stroud.gov.uk/council-and-democracy/transparency-and-open-data/registers/hmo-licensing-register/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E08000024",
@@ -4463,32 +4661,41 @@
    "checked": "2026-09-27",
    "register_page": null,
    "register_url": null,
-   "format": "none_found",
+   "format": "other",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "sunderland.gov.uk returned 403 Forbidden to automated fetches on every URL tried (homepage and direct guesses); could not locate the register within budget.",
+   "search_notes": "sunderland.gov.uk (and mirror icm.sunderland.gov.uk) returned 403 Forbidden on the HMO public register article and other URLs tried; could not confirm directly. Search snippets suggest the register is viewable by appointment or as a paid (GBP 75) electronic copy, not published online, but this is unconfirmed.",
    "status": "unsearched",
-   "note": null
+   "note": "other form, no licence stated"
   },
   {
    "code": "E07000214",
    "name": "Surrey Heath",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": "https://www.surreyheath.gov.uk/housing",
-   "register_url": null,
-   "format": "none_found",
+   "register_page": "https://www.surreyheath.gov.uk/housing/help-landlords/houses-multiple-occupancy",
+   "register_url": "https://www.surreyheath.gov.uk/sites/default/files/2026-07/HMO%20Register.xlsx",
+   "format": "xlsx",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
-   "as_of": null,
-   "search_notes": "Housing page lists no HMO-specific link within budget; council suggests contacting [e-mail]",
-   "status": "unsearched",
-   "note": null
+   "as_of": "July 2026",
+   "search_notes": "Council's HMO page for landlords links directly to an Excel register download (HMO Register.xlsx).",
+   "status": "in_table",
+   "note": "80 licences in the table",
+   "use": {
+    "publisher": "Surrey Heath Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.surreyheath.gov.uk/sites/default/files/2026-07/HMO%20Register.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://www.surreyheath.gov.uk/housing/help-landlords/houses-multiple-occupancy",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E09000029",
@@ -4523,32 +4730,41 @@
    "checked": "2026-09-27",
    "register_page": null,
    "register_url": null,
-   "format": "none_found",
+   "format": "other",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "swale.gov.uk returned 403 Forbidden to automated fetches on every URL tried (homepage and direct guesses); could not locate the register within budget.",
+   "search_notes": "swale.gov.uk returned HTTP 403 Forbidden on the housing landing page and other URLs tried; could not locate or confirm the register.",
    "status": "unsearched",
-   "note": null
+   "note": "other form, no licence stated"
   },
   {
    "code": "E06000030",
    "name": "Swindon",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
+   "register_page": "https://www.swindon.gov.uk/directory_record/23499/list_of_houses_in_multiple_occupation_hmos_in_swindon",
+   "register_url": "https://www.swindon.gov.uk/downloads/file/11085/list_of_houses_in_multiple_occupation_hmos_in_swindon",
+   "format": "xlsx",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Council's site search is JS-rendered and returned no visible results to automated fetch; direct URL guesses 404'd; could not locate register within budget.",
-   "status": "unsearched",
-   "note": null
+   "search_notes": "Council's publication-scheme record links an Excel download (property address and licence holder name), stated to be updated every month.",
+   "status": "in_table",
+   "note": "393 licences in the table",
+   "use": {
+    "publisher": "Swindon Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.swindon.gov.uk/download/downloads/id/11085/list_of_houses_in_multiple_occupation_hmos_in_swindon.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://www.swindon.gov.uk/directory_record/23499/list_of_houses_in_multiple_occupation_hmos_in_swindon",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E08000008",
@@ -4581,51 +4797,69 @@
    "name": "Tamworth",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
+   "register_page": "https://community.tamworth.gov.uk/housing/private-sector-housing/houses-multiple-occupation-hmos",
+   "register_url": "https://www.tamworth.gov.uk/sites/default/files/housing_docs/Public-HMO-Register.xlsx",
+   "format": "xlsx",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "No HMO register link found via site search or direct guesses within budget; try the council's Licensing and permits section directly.",
-   "status": "unsearched",
-   "note": null
+   "search_notes": "Excel Public HMO Register file downloaded successfully (186.5KB) from the council's housing_docs folder, linked from the council's HMO page.",
+   "status": "in_table",
+   "note": "64 licences in the table",
+   "use": {
+    "publisher": "Tamworth Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.tamworth.gov.uk/sites/default/files/housing_docs/Public-HMO-Register.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://community.tamworth.gov.uk/housing/private-sector-housing/houses-multiple-occupation-hmos",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000215",
    "name": "Tandridge",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": "https://www.tandridge.gov.uk/housing",
-   "register_url": null,
-   "format": "none_found",
+   "register_page": "https://www.tandridge.gov.uk/Housing/Private-housing/Houses-in-multiple-occupation",
+   "register_url": "https://www.tandridge.gov.uk/Portals/0/Documents/Housing/Private%20housing/Public-Register-Licensed-HMOs.pdf",
+   "format": "pdf",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Housing page lists no HMO-specific link within budget; likely under a private-housing subsection not reached by automated fetch.",
-   "status": "unsearched",
-   "note": null
+   "search_notes": "PDF register (Public-Register-Licensed-HMOs.pdf) downloaded successfully (60.9KB) from the council's document library; internal PDF metadata shows a 2022 creation date, so currency of the underlying document template is unclear.",
+   "status": "in_table",
+   "note": "12 licences in the table",
+   "use": {
+    "publisher": "Tandridge Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.tandridge.gov.uk/Portals/0/Documents/Housing/Private%20housing/Public-Register-Licensed-HMOs.pdf",
+    "format": "PDF",
+    "licence_page": "https://www.tandridge.gov.uk/Housing/Private-housing/Houses-in-multiple-occupation",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000045",
    "name": "Teignbridge",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
+   "register_page": "https://www.teignbridge.gov.uk/housing/landlords/teignbridge-licensed-hmo-register/",
    "register_url": null,
-   "format": "none_found",
+   "format": "other",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "No HMO register or dedicated licensing subpage found within budget across the housing, licensing and private-sector-housing sections tried.",
+   "search_notes": "Search results show a page titled 'Teignbridge Licensed HMO Register' at this URL, but it returns 404 on fetch (with and without trailing slash); the general housing/landlords pages do not surface an HMO register link.",
    "status": "unsearched",
-   "note": null
+   "note": "other form, no licence stated"
   },
   {
    "code": "E06000020",
@@ -4659,51 +4893,78 @@
    "name": "Tendring",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
+   "register_page": "https://www.tendringdc.gov.uk/content/houses-in-multiple-occupation-hmos",
+   "register_url": "https://legacy.tendringdc.gov.uk/sites/default/files/documents/Online%20Register%20of%20HMO%27s%20Current.pdf",
+   "format": "pdf",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
-   "as_of": null,
-   "search_notes": "Housing page found made no mention of an HMO register; no dedicated HMO page located within budget. Contact [e-mail]",
-   "status": "unsearched",
-   "note": null
+   "as_of": "2026-09-08",
+   "search_notes": "Council's HMO page links an 'Online Register of HMO's Current' PDF (downloaded successfully, 54.1KB, dated 8 Sep 2026 in file metadata) despite older FOI responses suggesting the register was inspection-only; the file is served from a legacy.tendringdc.gov.uk redirect.",
+   "status": "in_table",
+   "note": "13 licences in the table",
+   "use": {
+    "publisher": "Tendring Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://legacy.tendringdc.gov.uk/sites/default/files/documents/Online%20Register%20of%20HMO%27s%20Current.pdf",
+    "format": "PDF",
+    "licence_page": "https://www.tendringdc.gov.uk/content/houses-in-multiple-occupation-hmos",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000093",
    "name": "Test Valley",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
-   "licence": "unclear",
+   "register_page": "https://www.testvalley.gov.uk/business/licensingandregulation/licensing/houses-multiple-occupation",
+   "register_url": "https://www.testvalley.gov.uk/assets/attach/25077/HMO-Public-Register-March-26.xlsx",
+   "format": "xlsx",
+   "licence": "none_stated",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
-   "as_of": null,
-   "search_notes": "Guessed HMO-page URL 404'd; could not locate the register within budget.",
-   "status": "unsearched",
-   "note": null
+   "as_of": "March 2026",
+   "search_notes": "Xlsx register downloadable directly from the council's HMO licensing page.",
+   "status": "in_table",
+   "note": "48 licences in the table",
+   "use": {
+    "publisher": "Test Valley Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.testvalley.gov.uk/assets/attach/25077/HMO-Public-Register-March-26.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://www.testvalley.gov.uk/business/licensingandregulation/licensing/houses-multiple-occupation",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000083",
    "name": "Tewkesbury",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
-   "licence": "unclear",
+   "register_page": "https://tewkesbury.gov.uk/services/licensing-and-permits/housing/houses-in-multiple-occupation/",
+   "register_url": "https://tewkesbury.gov.uk/wp-content/uploads/2026/07/HMO-register-website-version-updated-14.08.26.xlsx",
+   "format": "xlsx",
+   "licence": "none_stated",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
-   "as_of": null,
-   "search_notes": "Homepage licensing section did not mention HMO; could not locate a dedicated page within budget.",
-   "status": "unsearched",
-   "note": null
+   "as_of": "14 August 2026",
+   "search_notes": "Xlsx register is on the dedicated HMO page, not the general licensing-registers page the earlier pass checked.",
+   "status": "in_table",
+   "note": "10 licences in the table",
+   "use": {
+    "publisher": "Tewkesbury Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://tewkesbury.gov.uk/wp-content/uploads/2026/07/HMO-register-website-version-updated-14.08.26.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://tewkesbury.gov.uk/services/licensing-and-permits/housing/houses-in-multiple-occupation/",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000114",
@@ -4727,16 +4988,16 @@
    "name": "Three Rivers",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
+   "register_page": "https://www.threerivers.gov.uk/services/licensing/licence-register",
+   "register_url": "https://www3.threerivers.gov.uk/online-applications/search.do?action=simple&searchType=LicencingApplication",
+   "format": "online_search",
    "licence": "unclear",
-   "licence_statement": null,
-   "licence_where": null,
+   "licence_statement": "Copyright © Three Rivers District Council 2026",
+   "licence_where": "page",
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Council services page lists licensing categories but none specific to HMO; could not locate a register within budget.",
-   "status": "unsearched",
+   "search_notes": "General licence-application search tool the council links from its 'licence register' page; a council news item confirms HMO licences are included, but no HMO-specific register page was found.",
+   "status": "search_only",
    "note": null
   },
   {
@@ -4744,34 +5005,43 @@
    "name": "Thurrock",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
-   "licence": "unclear",
+   "register_page": "https://www.thurrock.gov.uk/houses-in-multiple-occupation/register-of-licensed-hmos",
+   "register_url": "https://www.thurrock.gov.uk/houses-in-multiple-occupation/register-of-licensed-hmos",
+   "format": "html_table",
+   "licence": "none_stated",
    "licence_statement": null,
    "licence_where": null,
-   "has_postcodes": "unknown",
+   "has_postcodes": "yes",
    "as_of": null,
-   "search_notes": "Could not find a dedicated HMO page or register link within budget via homepage and business-and-licensing sections.",
-   "status": "unsearched",
-   "note": null
+   "search_notes": "Register is an HTML table embedded on the page and includes postcodes; a separate mandatory-licensing PDF also exists on the site.",
+   "status": "in_table",
+   "note": "169 licences in the table",
+   "use": {
+    "publisher": "Thurrock Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.thurrock.gov.uk/houses-in-multiple-occupation/register-of-licensed-hmos",
+    "format": "HTML",
+    "licence_page": "https://www.thurrock.gov.uk/houses-in-multiple-occupation/register-of-licensed-hmos",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E07000115",
    "name": "Tonbridge and Malling",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": "https://www.tmbc.gov.uk/housing/landlords-tenants",
-   "register_url": null,
-   "format": "none_found",
+   "register_page": "https://www.tmbc.gov.uk/housing/landlords-tenants/3",
+   "register_url": "https://www.tmbc.gov.uk/downloads/file/4746/hmo-public-register",
+   "format": "pdf",
    "licence": "unclear",
-   "licence_statement": null,
-   "licence_where": null,
-   "has_postcodes": "unknown",
+   "licence_statement": "2026 © Tonbridge and Malling Borough Council",
+   "licence_where": "page",
+   "has_postcodes": "no",
    "as_of": null,
-   "search_notes": "No register link found within budget; landlords/tenants housing page exists but a dedicated HMO register was not located. Contact [e-mail]",
-   "status": "unsearched",
-   "note": null
+   "search_notes": "Redacted PDF register (licensee/manager details excluded); full register available on request by email.",
+   "status": "document",
+   "note": "PDF, no licence stated"
   },
   {
    "code": "E06000027",
@@ -4805,51 +5075,69 @@
    "name": "Torridge",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
-   "licence": "unclear",
+   "register_page": "https://www.torridge.gov.uk/article/11221/Houses-in-Multiple-Occupation-HMOs",
+   "register_url": "https://www.torridge.gov.uk/media/28871/Torridge-HMO-Public-Register/pdf/HMO_Public_Register_2026-07-21.pdf",
+   "format": "pdf",
+   "licence": "none_stated",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
-   "as_of": null,
-   "search_notes": "General licensing page lists several licence types but none for HMO; no dedicated HMO page located within budget.",
-   "status": "unsearched",
-   "note": null
+   "as_of": "21 July 2026",
+   "search_notes": "PDF register linked directly from the statutory HMO page.",
+   "status": "document",
+   "note": "The property's postcode sits under a column with no heading of its own, so it cannot be named.",
+   "use": {
+    "publisher": "Torridge Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.torridge.gov.uk/media/28871/Torridge-HMO-Public-Register/pdf/HMO_Public_Register_2026-07-21.pdf",
+    "format": "PDF",
+    "licence_page": "https://www.torridge.gov.uk/article/11221/Houses-in-Multiple-Occupation-HMOs",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E09000030",
    "name": "Tower Hamlets",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": "https://www.londonpropertylicensing.co.uk/tower-hamlets/",
-   "register_url": null,
-   "format": "none_found",
-   "licence": "unclear",
+   "register_page": "https://www.towerhamlets.gov.uk/lgnl/housing/Private-tenants-landlords-and-homeowners/Private-Landlords/Mandatory_HMO_Licensing.aspx",
+   "register_url": "https://www.towerhamlets.gov.uk/Documents/Housing/PublicRegister.xlsx",
+   "format": "xlsx",
+   "licence": "none_stated",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Third-party summary confirms the council keeps separate mandatory/additional/selective licensing registers online and 'regularly updated', but the exact towerhamlets.gov.uk register URL 404'd on direct guesses within budget.",
-   "status": "unsearched",
-   "note": null
+   "search_notes": "Xlsx register found via the mandatory-HMO-licensing page, resolving the 404s the earlier pass hit on guessed URLs.",
+   "status": "in_table",
+   "note": "582 licences in the table",
+   "use": {
+    "publisher": "Tower Hamlets Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.towerhamlets.gov.uk/Documents/Housing/PublicRegister.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://www.towerhamlets.gov.uk/lgnl/housing/Private-tenants-landlords-and-homeowners/Private-Landlords/Mandatory_HMO_Licensing.aspx",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E08000009",
    "name": "Trafford",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
-   "licence": "unclear",
+   "register_page": "https://www.trafford.gov.uk/housing/housing-advice/houses-multiple-occupation-hmo/hmo-licensing-register",
+   "register_url": "https://www.trafford.gov.uk/sites/default/files/2025-12/HMO-Register.xlsx",
+   "format": "xlsx",
+   "licence": "none_stated",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
-   "as_of": null,
-   "search_notes": "Homepage had no visible HMO link and guessed housing/private-housing page URLs 404'd; could not locate register within budget.",
-   "status": "unsearched",
-   "note": null
+   "as_of": "December 2025",
+   "search_notes": "Redacted xlsx register (excludes licensee/manager details); full register viewable by appointment only.",
+   "status": "file_no_licence",
+   "note": "The register's file is linked from the council's page, but the council's website refuses our fetcher (HTTP 403)."
   },
   {
    "code": "E07000116",
@@ -4858,15 +5146,15 @@
    "checked": "2026-09-27",
    "register_page": null,
    "register_url": null,
-   "format": "none_found",
+   "format": "other",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Site returned 403 Forbidden to automated fetches on both the homepage and a guessed HMO page; could not locate register within budget.",
+   "search_notes": "tunbridgewells.gov.uk returned HTTP 403 to every automated fetch attempted (homepage and several guessed HMO/housing URLs); register's existence and format could not be confirmed.",
    "status": "unsearched",
-   "note": null
+   "note": "other form, no licence stated"
   },
   {
    "code": "E07000077",
@@ -4875,15 +5163,15 @@
    "checked": "2026-09-27",
    "register_page": null,
    "register_url": null,
-   "format": "none_found",
+   "format": "other",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Site returned 403 Forbidden to automated fetches on both the homepage and a guessed HMO page; could not locate register within budget.",
+   "search_notes": "uttlesford.gov.uk returned HTTP 403 to every automated fetch (homepage, /hmo, /article/7896/Register); could not confirm register format.",
    "status": "unsearched",
-   "note": null
+   "note": "other form, no licence stated"
   },
   {
    "code": "E07000180",
@@ -4892,30 +5180,30 @@
    "checked": "2026-09-27",
    "register_page": null,
    "register_url": null,
-   "format": "none_found",
+   "format": "other",
    "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Guessed HMO page 404'd; council shares whitehorsedc.gov.uk domain with South Oxfordshire and structure was not resolved within budget. Contact [phone].",
+   "search_notes": "Could not locate the council's own HMO page within budget (guessed whitehorsedc.gov.uk URLs 404'd); GOV.UK licence finder gave no council HMO URL. A third-party site claims to mirror a register of licensed HMOs but this was not verified against the council's own site.",
    "status": "unsearched",
-   "note": null
+   "note": "other form, no licence stated"
   },
   {
    "code": "E08000036",
    "name": "Wakefield",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": "https://www.wakefield.gov.uk/housing/information-for-landlords",
+   "register_page": "https://www.wakefield.gov.uk/housing/information-for-landlords/apply-for-a-landlords-hmo-licence",
    "register_url": null,
    "format": "none_found",
-   "licence": "unclear",
+   "licence": "none_stated",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Landlords page covers applying for an HMO licence and a voluntary 'Responsible Landlord' membership list, but no public register of licensed HMOs was found within budget.",
+   "search_notes": "Landlord/HMO-licence application page read directly; no public register link present, only a voluntary Responsible Landlord scheme list and a separate licensing.wakefield.gov.uk search tool of uncertain scope.",
    "status": "unsearched",
    "note": null
   },
@@ -5082,14 +5370,14 @@
    "checked": "2026-09-27",
    "register_page": "https://www.wealden.gov.uk/housing/private-housing/houses-in-multiple-occupation/",
    "register_url": null,
-   "format": "none_found",
+   "format": "on_request",
    "licence": "none_stated",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Council text says licensed properties 'can be searched from the council's public register' but no working link was found on the HMO or licensing/registers pages within search budget.",
-   "status": "unsearched",
+   "search_notes": "HMO page and the council's public-registers index were both read directly; neither currently links a downloadable/searchable HMO register, though a 'My Wealden' account portal exists that may hold one.",
+   "status": "on_request",
    "note": null
   },
   {
@@ -5125,15 +5413,15 @@
    "checked": "2026-09-27",
    "register_page": "https://www.westberks.gov.uk/licensing",
    "register_url": null,
-   "format": "none_found",
-   "licence": "none_stated",
+   "format": "other",
+   "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "HMO licensing is run by the shared Public Protection Partnership (with Bracknell Forest and Wokingham); a 2014 FOI said no full HMO register existed, and the PPP site blocked automated access so a register link could not be confirmed.",
+   "search_notes": "HMO licensing is run by the shared Public Protection Partnership; publicprotectionpartnership.org.uk returned HTTP 403 to automated fetch so the register could not be confirmed. A 2014 FOI said no full HMO register existed at that time.",
    "status": "unsearched",
-   "note": null
+   "note": "other form, no licence stated"
   },
   {
    "code": "E07000047",
@@ -5141,14 +5429,14 @@
    "nation": "England",
    "checked": "2026-09-27",
    "register_page": "https://www.westdevon.gov.uk/HMO-Register-West-Devon",
-   "register_url": "https://www.westdevon.gov.uk/HMO-Register-West-Devon",
+   "register_url": null,
    "format": "other",
-   "licence": "none_stated",
+   "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Council confirms a dedicated register page exists but automated fetch was blocked (403), so its exact format (table, PDF, etc.) could not be confirmed.",
+   "search_notes": "westdevon.gov.uk returned HTTP 403 to every automated fetch attempt; the page's own URL/title confirms a register exists but its format could not be read.",
    "status": "unsearched",
    "note": "other form, no licence stated"
   },
@@ -5363,7 +5651,7 @@
    "name": "Windsor and Maidenhead",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
+   "register_page": "https://www.rbwm.gov.uk/home/housing/homeowners-and-landlords/houses-multiple-occupation",
    "register_url": null,
    "format": "none_found",
    "licence": "none_stated",
@@ -5371,8 +5659,8 @@
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Could not locate RBWM's HMO register page within budget; general web search kept returning unrelated Windsor tourism results and several guessed council URL patterns 404'd.",
-   "status": "unsearched",
+   "search_notes": "Current rbwm.gov.uk HMO pages ('do you need a licence', 'about HMOs') were read directly and carry no register link; an older 'Full public HMO register Jan 2021' PDF exists only on the now-unreachable www3.rbwm.gov.uk legacy subdomain.",
+   "status": "not_found",
    "note": null
   },
   {
@@ -5380,16 +5668,16 @@
    "name": "Wirral",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
-   "licence": "none_stated",
-   "licence_statement": null,
-   "licence_where": null,
+   "register_page": "https://www.wirral.gov.uk/business/licences-and-permits/houses-multiple-occupation-licence",
+   "register_url": "https://online.wirral.gov.uk/registers/index.html?fa=licence_register",
+   "format": "online_search",
+   "licence": "unclear",
+   "licence_statement": "© Wirral Council 2026",
+   "licence_where": "page",
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Council's own site search returned no HMO-register-specific results and several guessed URL patterns 404'd within budget.",
-   "status": "unsearched",
+   "search_notes": "Page links 'View the online HMO Register' to an online search tool; a full paper copy is also available on written request for a fee.",
+   "status": "search_only",
    "note": null
   },
   {
@@ -5397,17 +5685,17 @@
    "name": "Woking",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
+   "register_page": "https://www.woking.gov.uk/housing/private-rented-housing/houses-multiple-occupation-hmos/hmo-public-register",
+   "register_url": "https://www.woking.gov.uk/sites/default/files/2026-04/Houses%20in%20multiple%20occupation%20%28HMOs%29%20licensing%20public%20register.csv",
+   "format": "csv",
    "licence": "none_stated",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
-   "as_of": null,
-   "search_notes": "Council's own site search returned 1,301 unrelated results (council tax, parks, etc.) with nothing matching an HMO register within budget.",
-   "status": "unsearched",
-   "note": null
+   "as_of": "April 2026",
+   "search_notes": "Direct CSV download of the HMO public register; also viewable in person at Civic Offices free of charge.",
+   "status": "file_no_licence",
+   "note": "The register's file is linked from the council's page, but the council's website refuses our fetcher (HTTP 403)."
   },
   {
    "code": "E06000041",
@@ -5457,33 +5745,33 @@
    "name": "Worcester",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
+   "register_page": "https://www.worcester.gov.uk/housing/landlord-advice/house-in-multiple-occupancy-hmo",
    "register_url": null,
-   "format": "none_found",
-   "licence": "none_stated",
+   "format": "other",
+   "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Could not locate a working HMO register page on worcester.gov.uk within budget; several guessed URL patterns 404'd or redirected.",
+   "search_notes": "worcester.gov.uk consistently returned HTTP 307 (bot-check redirect) on every attempt; the register is said to be held by Worcestershire Regulatory Services, but WRS's public-registers pages list only alcohol/taxi/gambling/etc. categories, not HMO.",
    "status": "unsearched",
-   "note": null
+   "note": "other form, no licence stated"
   },
   {
    "code": "E07000229",
    "name": "Worthing",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
+   "register_page": "https://www.adur-worthing.gov.uk/housing/conditions-and-empty-properties/hmo/",
    "register_url": null,
-   "format": "none_found",
+   "format": "on_request",
    "licence": "none_stated",
-   "licence_statement": null,
-   "licence_where": null,
+   "licence_statement": "Only the information we are required by law to maintain is held on the register.",
+   "licence_where": "page",
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Worthing's housing services are run jointly with Adur under Adur & Worthing Councils; a specific HMO register page could not be located within budget.",
-   "status": "unsearched",
+   "search_notes": "Combined Adur & Worthing register supplied as an Excel file by emailing the private sector housing team; no online download.",
+   "status": "on_request",
    "note": null
   },
   {
@@ -5491,15 +5779,15 @@
    "name": "Wychavon",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": "https://www.wychavon.gov.uk/housing/houses-in-multiple-occupation",
-   "register_url": "https://www.wychavon.gov.uk/housing/houses-in-multiple-occupation",
+   "register_page": null,
+   "register_url": null,
    "format": "other",
-   "licence": "none_stated",
+   "licence": "unclear",
    "licence_statement": null,
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Page is indexed by search engines but automated fetch was repeatedly blocked (HTTP 307, likely a bot-check redirect), so its register format could not be confirmed.",
+   "search_notes": "wychavon.gov.uk returned HTTP 307 (bot-check) on every fetch attempt; search results indicate the register is viewable only by booked in-person appointment, updated monthly.",
    "status": "unsearched",
    "note": "other form, no licence stated"
   },
@@ -5508,24 +5796,7 @@
    "name": "Wyre",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": "https://www.wyre.gov.uk/housing-standards/houses-in-multiple-occupation",
-   "register_url": "https://www.wyre.gov.uk/housing-standards/houses-in-multiple-occupation",
-   "format": "other",
-   "licence": "none_stated",
-   "licence_statement": null,
-   "licence_where": null,
-   "has_postcodes": "unknown",
-   "as_of": null,
-   "search_notes": "Automated fetch was repeatedly blocked (HTTP 307, likely a bot-check redirect); register's existence and format could not be confirmed within budget.",
-   "status": "unsearched",
-   "note": "other form, no licence stated"
-  },
-  {
-   "code": "E07000239",
-   "name": "Wyre Forest",
-   "nation": "England",
-   "checked": "2026-09-27",
-   "register_page": null,
+   "register_page": "https://www.wyre.gov.uk/private-sector-housing/hmo/1",
    "register_url": null,
    "format": "none_found",
    "licence": "none_stated",
@@ -5533,8 +5804,25 @@
    "licence_where": null,
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "Council's own site search explicitly returned 'No results match your search' for an HMO register; a specific page could not be located within budget.",
-   "status": "unsearched",
+   "search_notes": "Council's own HMO pages (hmo/1 and hmo/3) were read directly and show no register link; only phone/email contact is given.",
+   "status": "not_found",
+   "note": null
+  },
+  {
+   "code": "E07000239",
+   "name": "Wyre Forest",
+   "nation": "England",
+   "checked": "2026-09-27",
+   "register_page": "https://www.wyreforestdc.gov.uk/housing-and-homes/owning-or-privately-renting/houses-in-multiple-occupation/",
+   "register_url": null,
+   "format": "none_found",
+   "licence": "none_stated",
+   "licence_statement": null,
+   "licence_where": null,
+   "has_postcodes": "unknown",
+   "as_of": null,
+   "search_notes": "HMO page and the council's public-access page were both read directly; both point to Worcestershire Regulatory Services' public registers, which do not list an HMO category.",
+   "status": "not_found",
    "note": null
   },
   {
@@ -5542,17 +5830,17 @@
    "name": "York",
    "nation": "England",
    "checked": "2026-09-27",
-   "register_page": null,
-   "register_url": null,
-   "format": "none_found",
-   "licence": "none_stated",
-   "licence_statement": null,
-   "licence_where": null,
-   "has_postcodes": "unknown",
+   "register_page": "https://www.york.gov.uk/HMOLicences",
+   "register_url": "https://hmolicensing.york.gov.uk/online-application/york-hmo-public-register-public-register/",
+   "format": "online_search",
+   "licence": "restricted",
+   "licence_statement": "© City of York Council: West Offices, Station Rise, York, [postcode] - All rights reserved 2018 - 2026",
+   "licence_where": "page",
+   "has_postcodes": "yes",
    "as_of": null,
-   "search_notes": "The index's existing hint (a York Open Data KPI dataset on % of HMOs, itself blocked) is a statistic, not the register; a City of York Council HMO public register page could not be located within budget.",
-   "status": "unsearched",
-   "note": null
+   "search_notes": "Searchable online register by address/postcode, licence number or name; a full copy can also be viewed in person or purchased as an electronic copy.",
+   "status": "search_only",
+   "note": "reuse restricted"
   },
   {
    "code": "N09000001",
@@ -5916,17 +6204,17 @@
    "name": "East Lothian",
    "nation": "Scotland",
    "checked": "2026-09-27",
-   "register_page": null,
+   "register_page": "https://www.eastlothian.gov.uk/info/210571/licensing/12183/licences",
    "register_url": null,
-   "format": "none_found",
-   "licence": "unclear",
-   "licence_statement": null,
-   "licence_where": null,
+   "format": "other",
+   "licence": "restricted",
+   "licence_statement": "All content © 2026 East Lothian Council. All Rights Reserved.",
+   "licence_where": "site_terms",
    "has_postcodes": "unknown",
    "as_of": null,
-   "search_notes": "gov.uk licence directory states the HMO licence is 'currently not available online' for East Lothian and gives only phone/email contact; the session's web-search quota was exhausted so a fuller search could not be done, and guessed council-site URLs were not tried for this council.",
+   "search_notes": "The council's licences index page lists an HMO category link, but the specific HMO sub-page returned 404 on every guessed path; GOV.UK's licence finder separately says HMO licensing is 'currently not available online' for East Lothian.",
    "status": "unsearched",
-   "note": null
+   "note": "other form, reuse restricted"
   },
   {
    "code": "S12000011",
@@ -6010,8 +6298,17 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "Register of civic government licence applications (taxi, entertainment, HMO, business) published as a combined XLSX download, ~1.7MB; no separate HMO-only file and no licence/copyright statement found on the page.",
-   "status": "file_no_licence",
-   "note": "XLSX, no licence stated"
+   "status": "in_table",
+   "note": "145 licences in the table",
+   "use": {
+    "publisher": "Highland Council",
+    "title": "Register of civic government applications (HMO licences among other licences)",
+    "url": "https://www.highland.gov.uk/downloads/file/5605/register-of-civic-government-applications",
+    "format": "XLSX",
+    "licence_page": "https://www.highland.gov.uk/licensing/register-civic-government-applications",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "S12000018",
@@ -6112,8 +6409,17 @@
    "has_postcodes": "unknown",
    "as_of": "08 Sep 2026",
    "search_notes": "Council publishes a small (~13KB) XLSX 'Web Extract HMO Listing' updated 08 Sep 2026, linked directly from its HMO page.",
-   "status": "file_no_licence",
-   "note": "XLSX, no licence stated, dated 08 Sep 2026"
+   "status": "in_table",
+   "note": "8 licences in the table",
+   "use": {
+    "publisher": "North Lanarkshire Council",
+    "title": "Public register of licensed HMOs",
+    "url": "https://www.northlanarkshire.gov.uk/sites/default/files/2026-09/Web%20Extract%20HMO%20Listing%20%28Last%20updated%2008%20Sep%202026%29.xlsx",
+    "format": "XLSX",
+    "licence_page": "https://www.northlanarkshire.gov.uk/housing/private-housing/houses-multiple-occupation",
+    "statutory": true,
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "S12000023",

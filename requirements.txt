@@ -9,3 +9,4 @@ pyreadr
 playwright
 odfpy
 python-docx
+msoffcrypto-tool

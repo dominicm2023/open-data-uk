@@ -176,21 +176,41 @@ a card using another leaves that field empty. The mapping checker cannot see
 card labels (they are not a header row) and leaves them to the build, which
 names any it cannot find.
 
+Three smaller readings, all general. A register laid on its side, one
+column per licence and the labels down the first column (Broxbourne), is
+turned upright by `"transpose": true`. A column name a header repeats is
+numbered from its second appearance, 'Address (2)', 'Address (3)' (North
+Warwickshire's postcode is in its third 'Address'); the first keeps its
+name, so earlier mappings read as before. In a spreadsheet, a cell holding
+only spaces is empty and blank rows after the last record are formatting
+(Buckinghamshire's rows ran to 700 blank cells; Surrey Heath's sheet hit the
+row limit on empty rows). An old-format workbook "encrypted" with Excel's
+own built-in password (write protection; Derby) is opened as Excel opens it,
+asking nobody; one with a password of its own stays shut.
+
 The brief of a family that samples no rows shows its first rows only where
 a row reads as a table's header: three column names at least, a majority of
 the row, no postcode, date or company word in it, and every other cell
 blanked. That lets a header under a title line be checked without a single
-data row, a card's value or a company's name reaching the repository.
+data row, a card's value or a company's name reaching the repository. The
+brief's `header` (a table's first row) is held to the same test, since a
+first row can be a record (a card, a page of a PDF, a register on its side):
+until 27 September it was written as it stood, and the committed brief
+carried 88 property postcodes, a titled name and an e-mail address from 14
+registers. Header words count only at the start of a word, so a name with
+one inside it ('Edward') is not a header. A test scans the committed brief.
+The earlier versions remain in the repository's history.
 
 Registers found by search, in no catalogue, are recorded for every housing
 authority in `families/registry/hmo_registers.coverage.json`. A person
 marks one for use with its file and the page whose licence statement the
 intake reads (`licence_from_page`); nothing is taken unreviewed. Of 361
-councils on 27 Sep: 9 in the table, 29 publish a data file with no open
-licence stated, 54 a PDF or web page, 66 only a search box, 45 only on
-request, 17 confirmed as not online, and 141 not yet confirmed: the session's
-web-search allowance ran out part-way and many council sites refuse
-automated reading. The notes hold no full postcode, e-mail or phone
+councils on 27 Sep, after a second search of every council the first could
+not confirm: 77 in the table, 17 publish a data file we cannot use (the
+reason beside each), 29 a PDF or web page we cannot read, 81 only a search
+box, 62 only on request, 33 confirmed as not online, 1 held on "All Rights
+Reserved" (Braintree), and 61 not yet confirmed: nearly all of those are
+council websites that refuse automated reading (HTTP 403). The notes hold no full postcode, e-mail or phone
 number; a test holds them to that.
 
 **The 3D chart's grouping of departments is editorial.** On the archipelago
