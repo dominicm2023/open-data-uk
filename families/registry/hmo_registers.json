@@ -18,7 +18,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/5e647f02a06444f0b2ef8393a7123ece?f=json",
    "index_licence_raw": "custom",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-26T14:42:02Z",
+   "index_harvested_at": "2026-09-27T14:40:10Z",
    "resource": {
     "url": "https://gis.brighton-hove.gov.uk/server/rest/services/City_Planning/CityPlanning_HMO/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
     "name": "download",
@@ -49,7 +49,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/bcc267a0f8c449dbaf45dab68971de4e?f=json",
    "index_licence_raw": "© Crown Copyright and database rights 2023 Ordnance Survey AC0000807971.",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-26T14:22:16Z",
+   "index_harvested_at": "2026-09-27T14:22:11Z",
    "resource": {
     "url": "https://opendata.bristol.gov.uk/api/download/v1/items/bcc267a0f8c449dbaf45dab68971de4e/csv?layers=7",
     "name": "CSV",
@@ -85,7 +85,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/443bbab8ef2a4ba79ca6c34f8e65dfa1?f=json",
    "index_licence_raw": "custom",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-26T14:48:33Z",
+   "index_harvested_at": "2026-09-27T14:46:41Z",
    "resource": {
     "url": "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_housing_and_property/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
     "name": "download",
@@ -116,7 +116,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/10a9739f48d445168ddc94b9c287642f?f=json",
    "index_licence_raw": "custom",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-26T14:48:33Z",
+   "index_harvested_at": "2026-09-27T14:46:41Z",
    "resource": {
     "url": "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_housing_and_property/MapServer/6/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
     "name": "download",
@@ -147,7 +147,7 @@
    "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=36fd826e-2336-496e-9d13-6c08633b27f7",
    "index_licence_raw": "uk-ogl",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-26T14:20:22Z",
+   "index_harvested_at": "2026-09-27T14:20:20Z",
    "resource": {
     "url": "https://maps.epsom-ewell.gov.uk/GetData.aspx?type=data&ds=licensed_hmo_register&requesttype=xsl&xsl=atcsv.xsl",
     "name": "Data Download",
@@ -173,7 +173,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/c4d432bf3bb34b7583c07527c770a373?f=json",
    "index_licence_raw": "This information is supplied under the Open Government License v3.0. Licensed under the One Scotland Mapping Agreement (OSMA). All mapping data is sub",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-26T14:22:17Z",
+   "index_harvested_at": "2026-09-27T14:22:11Z",
    "resource": {
     "url": "https://data.glasgow.gov.uk/api/download/v1/items/c4d432bf3bb34b7583c07527c770a373/csv?layers=0",
     "name": "CSV",
@@ -209,7 +209,7 @@
    "metadata_url": null,
    "index_licence_raw": "Open Government Licence v3.0",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-26T14:24:23Z",
+   "index_harvested_at": "2026-09-27T14:22:53Z",
    "resource": {
     "url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/public-register-of-licenced-hmos/exports/csv",
     "name": "public-register-of-licenced-hmos.csv",
@@ -240,7 +240,7 @@
    "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=e5d7c4b6-2527-407c-bcff-23401e4c463e",
    "index_licence_raw": null,
    "index_licence_norm": null,
-   "index_harvested_at": "2026-09-26T14:20:07Z",
+   "index_harvested_at": "2026-09-27T14:20:06Z",
    "resource": {
     "url": "https://open.barnet.gov.uk/download/29r12/1sb/HMO%20Register%20-%207%20September%202026.csv",
     "name": "HMO Register - 7 September 2026 ",
@@ -266,7 +266,7 @@
    "metadata_url": null,
    "index_licence_raw": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-26T14:24:21Z",
+   "index_harvested_at": "2026-09-27T14:22:50Z",
    "resource": {
     "url": "https://opendata.camden.gov.uk/api/v3/views/x43g-c2rf/export.csv?accessType=DOWNLOAD",
     "name": "",
@@ -302,7 +302,7 @@
    "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=05a064b5-081a-46ff-be7c-73fc9eb96dd1",
    "index_licence_raw": "uk-ogl",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-26T14:20:49Z",
+   "index_harvested_at": "2026-09-27T14:20:48Z",
    "resource": {
     "url": "https://data.hounslow.gov.uk/@london-borough-of-hounslow/register-of-licensed-hmos/r/3253329e-82f7-44af-89fe-e02b0a3c5941",
     "name": "HMO Public Register",
@@ -328,7 +328,7 @@
    "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=6381aaa8-3755-4d92-ac9d-c41610a066bf",
    "index_licence_raw": "uk-ogl",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-26T14:21:28Z",
+   "index_harvested_at": "2026-09-27T14:21:25Z",
    "resource": {
     "url": "https://www2.oxopendata.uk/api/views/rwt9-jjj9/rows.csv?accessType=DOWNLOAD",
     "name": "Download",
@@ -359,7 +359,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/79e2c243706f44d7877b7189284a8dcf?f=json",
    "index_licence_raw": "Data Licensing Data published by the Council at a URL beginning data.stirling.gov.uk is open to use, you do not have to apply or ask for permission, b",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-26T14:24:26Z",
+   "index_harvested_at": "2026-09-27T14:22:55Z",
    "resource": {
     "url": "https://data.stirling.gov.uk/api/download/v1/items/79e2c243706f44d7877b7189284a8dcf/csv?layers=0",
     "name": "CSV",
@@ -400,7 +400,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/b2f657eec91444c8aa8218c253c78a59?f=json",
    "index_licence_raw": "Data Licensing Data published by the Council at a URL beginning data.stirling.gov.uk is open to use, you do not have to apply or ask for permission, b",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-26T14:24:26Z",
+   "index_harvested_at": "2026-09-27T14:22:55Z",
    "resource": {
     "url": "https://data.stirling.gov.uk/api/download/v1/items/b2f657eec91444c8aa8218c253c78a59/csv?layers=0",
     "name": "CSV",
@@ -441,7 +441,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/cb30b79f867145708a9b1742dc1d2c6d?f=json",
    "index_licence_raw": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-26T14:22:14Z",
+   "index_harvested_at": "2026-09-27T14:22:09Z",
    "resource": {
     "url": "https://lambethopenmappingdata-lambethcouncil.opendata.arcgis.com/api/download/v1/items/cb30b79f867145708a9b1742dc1d2c6d/csv?layers=0",
     "name": "CSV",
@@ -468,6 +468,34 @@
    "other_resources": 6
   },
   {
+   "dataset_key": "found:E07000032",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Amber Valley Council",
+   "portal": "web",
+   "landing_url": "https://www.ambervalley.gov.uk/housing/private-rented-housing/houses-in-multiple-occupancy",
+   "licence_kind": "page",
+   "metadata_url": "https://www.ambervalley.gov.uk/housing/private-rented-housing/houses-in-multiple-occupancy",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.ambervalley.gov.uk/media/2333/public-hmo-register.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.ambervalley.gov.uk/media/2333/public-hmo-register.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
    "dataset_key": "found:E07000170",
    "title": "HMO register",
    "publisher": "Ashfield District Council",
@@ -492,7 +520,568 @@
    ],
    "series": false,
    "other_resources": 1,
-   "found": "2026-09-27"
+   "found": "2026-09-27",
+   "statutory": false
+  },
+  {
+   "dataset_key": "found:E08000038",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Barnsley Council",
+   "portal": "web",
+   "landing_url": "https://www.barnsley.gov.uk/services/housing/private-landlords/houses-in-multiple-occupation-hmo/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.barnsley.gov.uk/services/housing/private-landlords/houses-in-multiple-occupation-hmo/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.barnsley.gov.uk/media/zebimlz3/hmo-register.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.barnsley.gov.uk/media/zebimlz3/hmo-register.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000084",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Basingstoke and Deane Council",
+   "portal": "web",
+   "landing_url": "https://www.basingstoke.gov.uk/hmo",
+   "licence_kind": "page",
+   "metadata_url": "https://www.basingstoke.gov.uk/hmo",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.basingstoke.gov.uk/content/page/96583/HMO%20licence%20register%20August%202026.xlsx",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://www.basingstoke.gov.uk/content/page/96583/HMO%20licence%20register%20August%202026.xlsx",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000171",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Bassetlaw Council",
+   "portal": "web",
+   "landing_url": "https://www.bassetlaw.gov.uk/environmental-health/information-for-private-tenants-and-landlords/houses-in-multiple-occupation-hmos/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.bassetlaw.gov.uk/environmental-health/information-for-private-tenants-and-landlords/houses-in-multiple-occupation-hmos/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.bassetlaw.gov.uk/media/2xipelj0/hmo-register.xls",
+    "name": "",
+    "format": "XLS"
+   },
+   "candidates": [
+    {
+     "url": "https://www.bassetlaw.gov.uk/media/2xipelj0/hmo-register.xls",
+     "name": "",
+     "format": "XLS"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E09000004",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Bexley Council",
+   "portal": "web",
+   "landing_url": "https://www.bexley.gov.uk/services/housing/property-licensing/property-licensing-schemes",
+   "licence_kind": "page",
+   "metadata_url": "https://www.bexley.gov.uk/services/housing/property-licensing/property-licensing-schemes",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.bexley.gov.uk/sites/default/files/2026-09/hmo-public-register-25-september-26.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://www.bexley.gov.uk/sites/default/files/2026-09/hmo-public-register-25-september-26.csv",
+     "name": "",
+     "format": "CSV"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E06000058",
+   "title": "Public register of licensed HMOs",
+   "publisher": "BCP Council",
+   "portal": "web",
+   "landing_url": "https://www.bcpcouncil.gov.uk/housing/houses-in-multiple-occupation-hmos",
+   "licence_kind": "page",
+   "metadata_url": "https://www.bcpcouncil.gov.uk/housing/houses-in-multiple-occupation-hmos",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.bcpcouncil.gov.uk/Assets/Housing/HMO-public-register.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.bcpcouncil.gov.uk/Assets/Housing/HMO-public-register.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000234",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Bromsgrove Council",
+   "portal": "web",
+   "landing_url": "https://www.bromsgrove.gov.uk/residents/my-home/living-in-a-house-in-multiple-occupation-hmo/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.bromsgrove.gov.uk/residents/my-home/living-in-a-house-in-multiple-occupation-hmo/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.bromsgrove.gov.uk/media/nu2j3dya/bromsgrove-hmo-register-october-2025.xls",
+    "name": "",
+    "format": "XLS"
+   },
+   "candidates": [
+    {
+     "url": "https://www.bromsgrove.gov.uk/media/nu2j3dya/bromsgrove-hmo-register-october-2025.xls",
+     "name": "",
+     "format": "XLS"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000069",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Castle Point Council",
+   "portal": "web",
+   "landing_url": "https://www.castlepoint.gov.uk/houses-in-multiple-occupation",
+   "licence_kind": "page",
+   "metadata_url": "https://apps.castlepoint.gov.uk/cpapps/index.cfm?fa=hmo",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://apps.castlepoint.gov.uk/cpapps/index.cfm?fa=hmo",
+    "name": "",
+    "format": "HTML"
+   },
+   "candidates": [
+    {
+     "url": "https://apps.castlepoint.gov.uk/cpapps/index.cfm?fa=hmo",
+     "name": "",
+     "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000118",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Chorley Council",
+   "portal": "web",
+   "landing_url": "https://chorley.gov.uk/environmental-health/hmo/4",
+   "licence_kind": "page",
+   "metadata_url": "https://chorley.gov.uk/environmental-health/hmo/4",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://chorley.gov.uk/downloads/file/1473/hmo-register",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://chorley.gov.uk/downloads/file/1473/hmo-register",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000107",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Dartford Council",
+   "portal": "web",
+   "landing_url": "https://www.dartford.gov.uk/private-sector-1/licensed-houses-multiple-occupation",
+   "licence_kind": "page",
+   "metadata_url": "https://www.dartford.gov.uk/private-sector-1/licensed-houses-multiple-occupation",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.dartford.gov.uk/private-sector-1/licensed-houses-multiple-occupation",
+    "name": "",
+    "format": "HTML"
+   },
+   "candidates": [
+    {
+     "url": "https://www.dartford.gov.uk/private-sector-1/licensed-houses-multiple-occupation",
+     "name": "",
+     "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000085",
+   "title": "Public register of licensed HMOs",
+   "publisher": "East Hampshire Council",
+   "portal": "web",
+   "landing_url": "https://www.easthants.gov.uk/housing/private-sector-housing/houses-multiple-occupation-hmo",
+   "licence_kind": "page",
+   "metadata_url": "https://www.easthants.gov.uk/housing/private-sector-housing/houses-multiple-occupation-hmo",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.easthants.gov.uk/media/10388",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://www.easthants.gov.uk/media/10388",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000242",
+   "title": "Public register of licensed HMOs",
+   "publisher": "East Hertfordshire Council",
+   "portal": "web",
+   "landing_url": "https://www.eastherts.gov.uk/hmo-licencing",
+   "licence_kind": "page",
+   "metadata_url": "https://www.eastherts.gov.uk/hmo-licencing",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://eastherts.fra1.digitaloceanspaces.com/s3fs-public/2026-09/HMO%20Public%20register%20on%2016.09.2026.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://eastherts.fra1.digitaloceanspaces.com/s3fs-public/2026-09/HMO%20Public%20register%20on%2016.09.2026.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000086",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Eastleigh Council",
+   "portal": "web",
+   "landing_url": "https://www.eastleigh.gov.uk/housing/landlords-renters-and-homeowners/information-for-tenants/houses-in-multiple-occupation",
+   "licence_kind": "page",
+   "metadata_url": "https://www.eastleigh.gov.uk/housing/landlords-renters-and-homeowners/information-for-tenants/houses-in-multiple-occupation",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.eastleigh.gov.uk/media/13792/hmo-licence-register.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.eastleigh.gov.uk/media/13792/hmo-licence-register.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000207",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Elmbridge Council",
+   "portal": "web",
+   "landing_url": "https://www.elmbridge.gov.uk/housing/help-private-landlords/houses-multiple-occupation-hmos",
+   "licence_kind": "page",
+   "metadata_url": "https://www.elmbridge.gov.uk/housing/help-private-landlords/houses-multiple-occupation-hmos",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.elmbridge.gov.uk/sites/default/files/2026-01/HMO%20register_0.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.elmbridge.gov.uk/sites/default/files/2026-01/HMO%20register_0.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000036",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Erewash Council",
+   "portal": "web",
+   "landing_url": "https://www.erewash.gov.uk/housing/privately-rented-homes/houses-multiple-occupation-hmos/register-licenced-hmos",
+   "licence_kind": "page",
+   "metadata_url": "https://www.erewash.gov.uk/housing/privately-rented-homes/houses-multiple-occupation-hmos/register-licenced-hmos",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.erewash.gov.uk/housing/privately-rented-homes/houses-multiple-occupation-hmos/register-licenced-hmos",
+    "name": "",
+    "format": "HTML"
+   },
+   "candidates": [
+    {
+     "url": "https://www.erewash.gov.uk/housing/privately-rented-homes/houses-multiple-occupation-hmos/register-licenced-hmos",
+     "name": "",
+     "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000131",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Harborough Council",
+   "portal": "web",
+   "landing_url": "https://www.harborough.gov.uk/info/20009/licences/135/house_in_multiple_occupation_hmo/2",
+   "licence_kind": "page",
+   "metadata_url": "https://www.harborough.gov.uk/info/20009/licences/135/house_in_multiple_occupation_hmo/2",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.harborough.gov.uk/info/20009/licences/135/house_in_multiple_occupation_hmo/2",
+    "name": "",
+    "format": "HTML"
+   },
+   "candidates": [
+    {
+     "url": "https://www.harborough.gov.uk/info/20009/licences/135/house_in_multiple_occupation_hmo/2",
+     "name": "",
+     "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000073",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Harlow Council",
+   "portal": "web",
+   "landing_url": "https://www.harlow.gov.uk/housing-and-garages/landlords-and-private-housing/house-multiple-occupation-public-register",
+   "licence_kind": "page",
+   "metadata_url": "https://www.harlow.gov.uk/housing-and-garages/landlords-and-private-housing/house-multiple-occupation-public-register",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.harlow.gov.uk/sites/default/files/documents/HMO%20mandatory%20licence%20public%20register_.xlsx",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://www.harlow.gov.uk/sites/default/files/documents/HMO%20mandatory%20licence%20public%20register_.xlsx",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E09000015",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Harrow Council",
+   "portal": "web",
+   "landing_url": "https://www.harrow.gov.uk/licences/licences-houses-multiple-occupation-hmos",
+   "licence_kind": "page",
+   "metadata_url": "https://www.harrow.gov.uk/licences/licences-houses-multiple-occupation-hmos",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.harrow.gov.uk/downloads/file/28942/hmo-public-register",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.harrow.gov.uk/downloads/file/28942/hmo-public-register",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000089",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Hart Council",
+   "portal": "web",
+   "landing_url": "https://www.hart.gov.uk/housing/private-sector-housing/how-we-work-landlords/houses-multiple-occupation",
+   "licence_kind": "page",
+   "metadata_url": "https://www.hart.gov.uk/housing/private-sector-housing/how-we-work-landlords/houses-multiple-occupation",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.hart.gov.uk/housing/private-sector-housing/how-we-work-landlords/houses-multiple-occupation",
+    "name": "",
+    "format": "HTML"
+   },
+   "candidates": [
+    {
+     "url": "https://www.hart.gov.uk/housing/private-sector-housing/how-we-work-landlords/houses-multiple-occupation",
+     "name": "",
+     "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000098",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Hertsmere Council",
+   "portal": "web",
+   "landing_url": "https://www.hertsmere.gov.uk/housing-private-property/private-sector-housing/multiple-occupancy-homes",
+   "licence_kind": "page",
+   "metadata_url": "https://www.hertsmere.gov.uk/housing-private-property/private-sector-housing/multiple-occupancy-homes",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.hertsmere.gov.uk/asset-library/licenced-hmos-at-30th-july-2026.xlsx",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://www.hertsmere.gov.uk/asset-library/licenced-hmos-at-30th-july-2026.xlsx",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E09000017",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Hillingdon Council",
+   "portal": "web",
+   "landing_url": "https://www.hillingdon.gov.uk/HMO",
+   "licence_kind": "page",
+   "metadata_url": "https://pre.hillingdon.gov.uk/hmo",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://pre.hillingdon.gov.uk/downloads/file/2951/hmo-register",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://pre.hillingdon.gov.uk/downloads/file/2951/hmo-register",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
   },
   {
    "dataset_key": "found:E09000018",
@@ -519,7 +1108,1156 @@
    ],
    "series": false,
    "other_resources": 1,
-   "found": "2026-09-27"
+   "found": "2026-09-27",
+   "statutory": false
+  },
+  {
+   "dataset_key": "found:E09000021",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Kingston upon Thames Council",
+   "portal": "web",
+   "landing_url": "https://www.kingston.gov.uk/housing/landlords-and-private-sector/houses-multiple-occupation-hmo/hmo-licensing-register",
+   "licence_kind": "page",
+   "metadata_url": "https://www.kingston.gov.uk/housing/landlords-and-private-sector/houses-multiple-occupation-hmo/hmo-licensing-register",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.kingston.gov.uk/sites/default/files/2026-07/Kingston%20Licenced%20HMO%20Register%20Website%201%20July%202026.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.kingston.gov.uk/sites/default/files/2026-07/Kingston%20Licenced%20HMO%20Register%20Website%201%20July%202026.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E06000032",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Luton Council",
+   "portal": "web",
+   "landing_url": "https://www.luton.gov.uk/housing/private-tenants-homeowners-landlords/landlords/mandatory-house-multiple-occupation-hmo-licensing",
+   "licence_kind": "page",
+   "metadata_url": "https://www.luton.gov.uk/housing/private-tenants-homeowners-landlords/landlords/mandatory-house-multiple-occupation-hmo-licensing",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.luton.gov.uk/sites/default/files/2026-09/hmo-public-register.xlsx",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://www.luton.gov.uk/sites/default/files/2026-09/hmo-public-register.xlsx",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000074",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Maldon Council",
+   "portal": "web",
+   "landing_url": "https://www.maldon.gov.uk/info/20075/licensing/9462/houses_in_multiple_occupation",
+   "licence_kind": "page",
+   "metadata_url": "https://www.maldon.gov.uk/downloads/file/11872/mdc_licensed_hmo_register",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.maldon.gov.uk/download/downloads/id/11872/mdc_licensed_hmo_register.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.maldon.gov.uk/download/downloads/id/11872/mdc_licensed_hmo_register.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000228",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Mid Sussex Council",
+   "portal": "web",
+   "landing_url": "https://www.midsussex.gov.uk/housing-council-tax/houses-in-multiple-occupation-hmo/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.midsussex.gov.uk/housing-council-tax/houses-in-multiple-occupation-hmo/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.midsussex.gov.uk/media/cq2fxnem/public-register-of-licensed-hmo-050925.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.midsussex.gov.uk/media/cq2fxnem/public-register-of-licensed-hmo-050925.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E06000042",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Milton Keynes Council",
+   "portal": "web",
+   "landing_url": "https://www.milton-keynes.gov.uk/housing/private-sector-housing/houses-multiple-occupation-hmo",
+   "licence_kind": "page",
+   "metadata_url": "https://www.milton-keynes.gov.uk/housing/private-sector-housing/houses-multiple-occupation-hmo",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.milton-keynes.gov.uk/sites/default/files/2026-09/HMOs%20Licensed%20Public%20Register.xlsx",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://www.milton-keynes.gov.uk/sites/default/files/2026-09/HMOs%20Licensed%20Public%20Register.xlsx",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E09000025",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Newham Council",
+   "portal": "web",
+   "landing_url": "https://www.newham.gov.uk/landlords-newham/rented-property-licensing/6",
+   "licence_kind": "page",
+   "metadata_url": "https://www.newham.gov.uk/landlords-newham/rented-property-licensing/6",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.newham.gov.uk/downloads/file/11383/public-register-hmo",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.newham.gov.uk/downloads/file/11383/public-register-hmo",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E06000012",
+   "title": "Public register of licensed HMOs",
+   "publisher": "North East Lincolnshire Council",
+   "portal": "web",
+   "landing_url": "https://www.nelincs.gov.uk/licencing/houses-in-multiple-occupation-hmo/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.nelincs.gov.uk/licencing/houses-in-multiple-occupation-hmo/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.nelincs.gov.uk/assets/uploads/2026/06/HMO-REG-JUNE-26.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.nelincs.gov.uk/assets/uploads/2026/06/HMO-REG-JUNE-26.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E06000024",
+   "title": "Public register of licensed HMOs",
+   "publisher": "North Somerset Council",
+   "portal": "web",
+   "landing_url": "https://n-somerset.gov.uk/my-services/housing/help-landlords-letting-out-homes/houses-multiple-occupation-hmo-licensing",
+   "licence_kind": "page",
+   "metadata_url": "https://n-somerset.gov.uk/my-services/housing/help-landlords-letting-out-homes/houses-multiple-occupation-hmo-licensing",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://n-somerset.gov.uk/sites/default/files/2024-05/HMO%20Public%20Register%20May%2024.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://n-somerset.gov.uk/sites/default/files/2024-05/HMO%20Public%20Register%20May%2024.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000218",
+   "title": "Public register of licensed HMOs",
+   "publisher": "North Warwickshire Council",
+   "portal": "web",
+   "landing_url": "https://www.northwarks.gov.uk/private-rented-housing/houses-multiple-occupation/4",
+   "licence_kind": "page",
+   "metadata_url": "https://www.northwarks.gov.uk/private-rented-housing/houses-multiple-occupation/4",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.northwarks.gov.uk/downloads/file/2909/hmo-public-register",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://www.northwarks.gov.uk/downloads/file/2909/hmo-public-register",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000148",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Norwich Council",
+   "portal": "web",
+   "landing_url": "https://www.norwich.gov.uk/registers/hmo/registerhmo.html",
+   "licence_kind": "page",
+   "metadata_url": "https://www.norwich.gov.uk/registers/hmo/registerhmo.html",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.norwich.gov.uk/registers/hmo/registerhmo.html",
+    "name": "",
+    "format": "HTML"
+   },
+   "candidates": [
+    {
+     "url": "https://www.norwich.gov.uk/registers/hmo/registerhmo.html",
+     "name": "",
+     "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000236",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Redditch Council",
+   "portal": "web",
+   "landing_url": "https://www.redditchbc.gov.uk/business/landlords/landlord-regulatory-requirements-including-hmo-s/landlords-and-house-in-multiple-occupation-hmos/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.redditchbc.gov.uk/business/landlords/landlord-regulatory-requirements-including-hmo-s/landlords-and-house-in-multiple-occupation-hmos/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.redditchbc.gov.uk/media/aswjg24k/redditch-hmo-register-december-2025.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://www.redditchbc.gov.uk/media/aswjg24k/redditch-hmo-register-december-2025.csv",
+     "name": "",
+     "format": "CSV"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000124",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Ribble Valley Council",
+   "portal": "web",
+   "landing_url": "https://www.ribblevalley.gov.uk/housing-standards/housing-standards-1",
+   "licence_kind": "page",
+   "metadata_url": "https://www.ribblevalley.gov.uk/housing-standards/housing-standards-1",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.ribblevalley.gov.uk/downloads/file/2414/licensed-houses-in-multiple-occupation",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.ribblevalley.gov.uk/downloads/file/2414/licensed-houses-in-multiple-occupation",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E08000005",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Rochdale Council",
+   "portal": "web",
+   "landing_url": "https://www.rochdale.gov.uk/private-landlords/hmo-licensing-register",
+   "licence_kind": "page",
+   "metadata_url": "https://www.rochdale.gov.uk/downloads/download/532/register-of-licensed-houses-in-multiple-occupation-hmos",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.rochdale.gov.uk/downloads/file/997/register-of-hmos",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.rochdale.gov.uk/downloads/file/997/register-of-hmos",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000075",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Rochford Council",
+   "portal": "web",
+   "landing_url": "https://www.rochford.gov.uk/register-of-licenced-hmo-in-the-rochford-district",
+   "licence_kind": "page",
+   "metadata_url": "https://www.rochford.gov.uk/register-of-licenced-hmo-in-the-rochford-district",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.rochford.gov.uk/register-of-licenced-hmo-in-the-rochford-district",
+    "name": "",
+    "format": "HTML"
+   },
+   "candidates": [
+    {
+     "url": "https://www.rochford.gov.uk/register-of-licenced-hmo-in-the-rochford-district",
+     "name": "",
+     "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E08000029",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Solihull Council",
+   "portal": "web",
+   "landing_url": "https://www.solihull.gov.uk/housing/homes-multiple-occupation",
+   "licence_kind": "page",
+   "metadata_url": "https://www.solihull.gov.uk/housing/homes-multiple-occupation",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.solihull.gov.uk/sites/default/files/2026-09/HMO-Register.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.solihull.gov.uk/sites/default/files/2026-09/HMO-Register.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E06000066",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Somerset Council",
+   "portal": "web",
+   "landing_url": "https://www.somerset.gov.uk/hmo",
+   "licence_kind": "page",
+   "metadata_url": "https://www.somerset.gov.uk/hmo",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://somersetcc.sharepoint.com/:x:/s/SCCPublic/IQAnj6UGtmgARJCAllcxH5ZnAVZ_NF5K2x1NAd0Q98NTnMY?e=0yzKjW&download=1",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://somersetcc.sharepoint.com/:x:/s/SCCPublic/IQAnj6UGtmgARJCAllcxH5ZnAVZ_NF5K2x1NAd0Q98NTnMY?e=0yzKjW&download=1",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000126",
+   "title": "Public register of licensed HMOs",
+   "publisher": "South Ribble Council",
+   "portal": "web",
+   "landing_url": "https://southribble.gov.uk/environmental-health/hmo/4",
+   "licence_kind": "page",
+   "metadata_url": "https://southribble.gov.uk/environmental-health/hmo/4",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://southribble.gov.uk/downloads/file/999/south-ribble-hmo-register",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://southribble.gov.uk/downloads/file/999/south-ribble-hmo-register",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000196",
+   "title": "Public register of licensed HMOs",
+   "publisher": "South Staffordshire Council",
+   "portal": "web",
+   "landing_url": "https://www.sstaffs.gov.uk/licensing-and-permits/houses-multiple-occupation-hmos",
+   "licence_kind": "page",
+   "metadata_url": "https://www.sstaffs.gov.uk/licensing-and-permits/houses-multiple-occupation-hmos",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.sstaffs.gov.uk/sites/default/files/2026-05/HMO%20Register%202026.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.sstaffs.gov.uk/sites/default/files/2026-05/HMO%20Register%202026.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000213",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Spelthorne Council",
+   "portal": "web",
+   "landing_url": "https://www.spelthorne.gov.uk/page/1881/houses-multiple-occupation-hmo-landlords",
+   "licence_kind": "page",
+   "metadata_url": "https://www.spelthorne.gov.uk/page/1881/houses-multiple-occupation-hmo-landlords",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.spelthorne.gov.uk/sites/default/files/2026-09/HMO%20register.xls",
+    "name": "",
+    "format": "XLS"
+   },
+   "candidates": [
+    {
+     "url": "https://www.spelthorne.gov.uk/sites/default/files/2026-09/HMO%20register.xls",
+     "name": "",
+     "format": "XLS"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000240",
+   "title": "Public register of licensed HMOs",
+   "publisher": "St Albans Council",
+   "portal": "web",
+   "landing_url": "https://www.stalbans.gov.uk/houses-multiple-occupation",
+   "licence_kind": "page",
+   "metadata_url": "https://www.stalbans.gov.uk/houses-multiple-occupation",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.stalbans.gov.uk/sites/default/files/attachments/Published%20HMO%20Extended%20Register%20-%20March%202026.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.stalbans.gov.uk/sites/default/files/attachments/Published%20HMO%20Extended%20Register%20-%20March%202026.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E09000029",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Sutton Council",
+   "portal": "web",
+   "landing_url": "https://www.sutton.gov.uk/w/houses-in-multiple-occupation-hmo-licensing-register-who-has-a-licence",
+   "licence_kind": "page",
+   "metadata_url": "https://www.sutton.gov.uk/businesses-and-licensing/licensing/houses-multiple-occupation/hmo-licensing-register-who-has-licence",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.sutton.gov.uk/sites/default/files/2026-09/LBS%20%20Public%20Register%20Website%20September%202026.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.sutton.gov.uk/sites/default/files/2026-09/LBS%20%20Public%20Register%20Website%20September%202026.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E08000008",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Tameside Council",
+   "portal": "web",
+   "landing_url": "https://www.tameside.gov.uk/housing/houses-in-multiple-occupancy-hmo-",
+   "licence_kind": "page",
+   "metadata_url": "https://www.tameside.gov.uk/housing/houses-in-multiple-occupancy-hmo-",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.tameside.gov.uk/documents/d/guest/hmo-public-register",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.tameside.gov.uk/documents/d/guest/hmo-public-register",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E06000020",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Telford and Wrekin Council",
+   "portal": "web",
+   "landing_url": "https://www.telford.gov.uk/public-protection/licensing/houses-in-multiple-occupancy-hmos/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.telford.gov.uk/public-protection/licensing/houses-in-multiple-occupancy-hmos/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.telford.gov.uk/media/df2hvsdt/hmo-public-register-june-2026.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.telford.gov.uk/media/df2hvsdt/hmo-public-register-june-2026.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E09000031",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Waltham Forest Council",
+   "portal": "web",
+   "landing_url": "https://www.walthamforest.gov.uk/housing/private-sector-housing/private-rented-property-licensing-prpl/our-public-register-licensed-properties",
+   "licence_kind": "page",
+   "metadata_url": "https://www.walthamforest.gov.uk/housing/private-sector-housing/private-rented-property-licensing-prpl/our-public-register-licensed-properties",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.walthamforest.gov.uk/sites/default/files/2026-08/HMO%20Public%20register%20August%202026.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.walthamforest.gov.uk/sites/default/files/2026-08/HMO%20Public%20register%20August%202026.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E06000007",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Warrington Council",
+   "portal": "web",
+   "landing_url": "https://www.warrington.gov.uk/information-about-hmos-and-hmo-licensing",
+   "licence_kind": "page",
+   "metadata_url": "https://www.warrington.gov.uk/information-about-hmos-and-hmo-licensing",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.warrington.gov.uk/sites/default/files/2026-04/HMO-public-register-April-2026.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://www.warrington.gov.uk/sites/default/files/2026-04/HMO-public-register-April-2026.csv",
+     "name": "",
+     "format": "CSV"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000222",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Warwick Council",
+   "portal": "web",
+   "landing_url": "https://www.warwickdc.gov.uk/downloads/20237/houses_in_multiple_occupation_hmo",
+   "licence_kind": "page",
+   "metadata_url": "https://www.warwickdc.gov.uk/downloads/20237/houses_in_multiple_occupation_hmo",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.warwickdc.gov.uk/download/downloads/id/9537/public_register_june_2026.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://www.warwickdc.gov.uk/download/downloads/id/9537/public_register_june_2026.csv",
+     "name": "",
+     "format": "CSV"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000103",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Watford Council",
+   "portal": "web",
+   "landing_url": "https://www.watford.gov.uk/downloads/download/193/hmo-public-register",
+   "licence_kind": "page",
+   "metadata_url": "https://www.watford.gov.uk/downloads/download/193/hmo-public-register",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.watford.gov.uk/downloads/file/2152/hmo-register-september-2026",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.watford.gov.uk/downloads/file/2152/hmo-register-september-2026",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000241",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Welwyn Hatfield Council",
+   "portal": "web",
+   "landing_url": "https://www.welhat.gov.uk/homepage/104/public-lists-and-registers",
+   "licence_kind": "page",
+   "metadata_url": "https://www.welhat.gov.uk/homepage/104/public-lists-and-registers",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.welhat.gov.uk/downloads/file/671/hmo-register",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.welhat.gov.uk/downloads/file/671/hmo-register",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E06000062",
+   "title": "Public register of licensed HMOs",
+   "publisher": "West Northamptonshire Council",
+   "portal": "web",
+   "landing_url": "https://www.westnorthants.gov.uk/private-housing-tenants-and-landlords/houses-multiple-occupation-hmos/hmo-public-register-and",
+   "licence_kind": "page",
+   "metadata_url": "https://www.westnorthants.gov.uk/private-housing-tenants-and-landlords/houses-multiple-occupation-hmos/hmo-public-register-and",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://cms.westnorthants.gov.uk/sites/default/files/2026-02/HMO%20Public%20Register%20-%20Feb%202026.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://cms.westnorthants.gov.uk/sites/default/files/2026-02/HMO%20Public%20Register%20-%20Feb%202026.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000181",
+   "title": "Public register of licensed HMOs",
+   "publisher": "West Oxfordshire Council",
+   "portal": "web",
+   "landing_url": "https://www.westoxon.gov.uk/housing/private-housing/houses-in-multiple-occupation/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.westoxon.gov.uk/housing/private-housing/houses-in-multiple-occupation/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.westoxon.gov.uk/media/ejihfkjx/wodc-licensed-hmo-web-register-01-sep-2026.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.westoxon.gov.uk/media/ejihfkjx/wodc-licensed-hmo-web-register-01-sep-2026.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E08000010",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Wigan Council",
+   "portal": "web",
+   "landing_url": "https://www.wigan.gov.uk/Business/Licensing-Permits-Registrations/Houses-in-Multiple-Occupation-Licence.aspx",
+   "licence_kind": "page",
+   "metadata_url": "https://www.wigan.gov.uk/Business/Licensing-Permits-Registrations/Houses-in-Multiple-Occupation-Licence.aspx",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.wigan.gov.uk/Docs/PDF/Business/Licensing-Permits-Registrations/HMO/Wigan-HMO-Licence-Register.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.wigan.gov.uk/Docs/PDF/Business/Licensing-Permits-Registrations/HMO/Wigan-HMO-Licence-Register.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E07000094",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Winchester Council",
+   "portal": "web",
+   "landing_url": "https://www.winchester.gov.uk/housing/private-housing-and-empty-properties/houses-in-multiple-occupation",
+   "licence_kind": "page",
+   "metadata_url": "https://www.winchester.gov.uk/housing/private-housing-and-empty-properties/houses-in-multiple-occupation",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.winchester.gov.uk/assets/attach/47414/HMO-Public-Register-30-July-2026.xlsx",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://www.winchester.gov.uk/assets/attach/47414/HMO-Public-Register-30-July-2026.xlsx",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:E06000041",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Wokingham Council",
+   "portal": "web",
+   "landing_url": "https://www.wokingham.gov.uk/foi/house-multiple-occupancy-hmos-2",
+   "licence_kind": "page",
+   "metadata_url": "https://www.wokingham.gov.uk/foi/house-multiple-occupancy-hmos-2",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://wokingham.axlr8.uk/documents/14373/Wokingham%20-%20Public%20register%20of%20Licensed%20HMOS%20May%202021.xlsx",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://wokingham.axlr8.uk/documents/14373/Wokingham%20-%20Public%20register%20of%20Licensed%20HMOS%20May%202021.xlsx",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:W06000015",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Cardiff Council",
+   "portal": "web",
+   "landing_url": "https://www.cardiff.gov.uk/ENG/resident/Housing/Private-housing/Houses-in-Multiple-Occupation/Pages/Houses-in-Multiple-Occupation.aspx",
+   "licence_kind": "page",
+   "metadata_url": "https://www.cardiff.gov.uk/ENG/resident/Housing/Private-housing/Houses-in-Multiple-Occupation/Pages/Houses-in-Multiple-Occupation.aspx",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.srs.wales/Documents/Housing/Cardiff/Cardiff-Full-HMO-Licence-Register-May-2026.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.srs.wales/Documents/Housing/Cardiff/Cardiff-Full-HMO-Licence-Register-May-2026.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:W06000010",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Carmarthenshire Council",
+   "portal": "web",
+   "landing_url": "https://www.carmarthenshire.gov.wales/business/landlords/licensing/houses-in-multiple-occupation-hmo-public-register/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.carmarthenshire.gov.wales/business/landlords/licensing/houses-in-multiple-occupation-hmo-public-register/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.carmarthenshire.gov.wales/business/landlords/licensing/houses-in-multiple-occupation-hmo-public-register/",
+    "name": "",
+    "format": "HTML"
+   },
+   "candidates": [
+    {
+     "url": "https://www.carmarthenshire.gov.wales/business/landlords/licensing/houses-in-multiple-occupation-hmo-public-register/",
+     "name": "",
+     "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:W06000004",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Denbighshire Council",
+   "portal": "web",
+   "landing_url": "https://www.denbighshire.gov.uk/en/documents/licences-permits-and-trading-standards/houses-in-multiple-occupation-licensing-register-31-1-2023.pdf",
+   "licence_kind": "page",
+   "metadata_url": "https://www.denbighshire.gov.uk/en/documents/licences-permits-and-trading-standards/houses-in-multiple-occupation-licensing-register-31-1-2023.pdf",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.denbighshire.gov.uk/en/documents/licences-permits-and-trading-standards/houses-in-multiple-occupation-licensing-register-31-1-2023.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.denbighshire.gov.uk/en/documents/licences-permits-and-trading-standards/houses-in-multiple-occupation-licensing-register-31-1-2023.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:W06000005",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Flintshire Council",
+   "portal": "web",
+   "landing_url": "https://www.flintshire.gov.uk/en/Business/Licences-and-permits/House-in-multiple-occupation-licence.aspx",
+   "licence_kind": "page",
+   "metadata_url": "https://www.flintshire.gov.uk/en/Business/Licences-and-permits/House-in-multiple-occupation-licence.aspx",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.flintshire.gov.uk/en/PDFFiles/Licensing/HMO-Licence-Public-Register.xlsx",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://www.flintshire.gov.uk/en/PDFFiles/Licensing/HMO-Licence-Public-Register.xlsx",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:W06000024",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Merthyr Tydfil Council",
+   "portal": "web",
+   "landing_url": "https://www.merthyr.gov.uk/resident/environmental-health/houses-in-multiple-occupation/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.merthyr.gov.uk/resident/environmental-health/houses-in-multiple-occupation/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.merthyr.gov.uk/media/5030/public-register-of-hmos.pdf",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.merthyr.gov.uk/media/5030/public-register-of-hmos.pdf",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:W06000022",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Newport Council",
+   "portal": "web",
+   "landing_url": "https://live-newport.cloud.contensis.com/en/Planning-Housing/Housing/Rented-housing/Houses-in-Multiple-Occupation/Houses-in-multiple-occupation.aspx",
+   "licence_kind": "page",
+   "metadata_url": "https://live-newport.cloud.contensis.com/en/Planning-Housing/Housing/Rented-housing/Houses-in-Multiple-Occupation/Houses-in-multiple-occupation.aspx",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://live-newport.cloud.contensis.com/documents/Housing-documents/HMO/HMO-Public-Register/HMO-Public-Register.xlsx",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://live-newport.cloud.contensis.com/documents/Housing-documents/HMO/HMO-Public-Register/HMO-Public-Register.xlsx",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:W06000023",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Powys Council",
+   "portal": "web",
+   "landing_url": "https://en.powys.gov.uk/article/4231/Licences-and-Permits---Houses-in-multiple-occupation",
+   "licence_kind": "page",
+   "metadata_url": "https://en.powys.gov.uk/article/4231/Licences-and-Permits---Houses-in-multiple-occupation",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://en.powys.gov.uk/media/21285/Register-of-Mandatory-Houses-in-Multiple-Occupation-HMOs/zip/slRegister_of_Mandatory_Houses__in_Mutiple_Occupation_HMOs_.zip?m=1718721214573",
+    "name": "",
+    "format": "ZIP"
+   },
+   "candidates": [
+    {
+     "url": "https://en.powys.gov.uk/media/21285/Register-of-Mandatory-Houses-in-Multiple-Occupation-HMOs/zip/slRegister_of_Mandatory_Houses__in_Mutiple_Occupation_HMOs_.zip?m=1718721214573",
+     "name": "",
+     "format": "ZIP"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
+  },
+  {
+   "dataset_key": "found:W06000020",
+   "title": "Public register of licensed HMOs",
+   "publisher": "Torfaen Council",
+   "portal": "web",
+   "landing_url": "https://www.torfaen.gov.uk/en/Housing/Landlords/Licence-homesinmultipleoccupancy/Public-Register-of-HMO-Licences.aspx",
+   "licence_kind": "page",
+   "metadata_url": "https://www.torfaen.gov.uk/en/business/licensing/other-licences/houses-in-multiple-occupation/public-register-of-hmo-licences",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.torfaen.gov.uk/en/business/licensing/other-licences/houses-in-multiple-occupation/public-register-of-hmo-licences",
+    "name": "",
+    "format": "HTML"
+   },
+   "candidates": [
+    {
+     "url": "https://www.torfaen.gov.uk/en/business/licensing/other-licences/houses-in-multiple-occupation/public-register-of-hmo-licences",
+     "name": "",
+     "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true
   }
  ],
  "skipped": [

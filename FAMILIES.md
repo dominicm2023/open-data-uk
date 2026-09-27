@@ -136,6 +136,28 @@ decision lapses.
   BHCC network", but its public layer is Planning's list of HMO addresses,
   not the licence register, and is not in the table.
 
+**Statutory registers that state no licence are admitted, for this family
+only** (Dominic, 27 September 2026). A council must keep its register of
+licensed HMOs and make it available to the public (Housing Act 2004
+s.232; Housing (Scotland) Act 2006 Part 5). Where it publishes the register
+on its own website and says nothing about reuse, the intake admits it
+(`STATUTORY_REGISTER` in `families/intake.py`): the family republishes
+nothing from it but a count of licences per postcode district, and links
+the council's own page. Silence admits; words that reserve the council's
+rights still refuse, since the page is read by the same gate and only its
+silence counts as this basis. Held on those words: Torbay and Caerphilly
+("All rights reserved"). A no-marketing notice (Cardiff, Newham, Camden)
+is not a reservation of rights and does not refuse: the family carries
+nobody's details. This is not a precedent for any other family. Bristol's
+three licence layers come in under the Bristol decision of 7 September,
+extended to the same council's ArcGIS Online items.
+
+The brief of a family that samples no rows shows its first rows only where
+a row reads as a table's header: three column names at least, a majority of
+the row, no postcode, date or company word in it, and every other cell
+blanked. That lets a header under a title line be checked without a single
+data row, a card's value or a company's name reaching the repository.
+
 Registers found by search, in no catalogue, are recorded for every housing
 authority in `families/registry/hmo_registers.coverage.json`. A person
 marks one for use with its file and the page whose licence statement the
@@ -249,7 +271,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 | brownfield_land | 176 sources / 129 authorities + MHCLG's platform | 62 | 53 own files (4,755 sites) + the platform for 258 more authorities (25,222 sites): 29,977 sites, 311 authorities |
 | spend_over_500 | 212 (every edition) | 76 | 68 sources, 4,259,913 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
 | organograms | 356 sources (339 a senior + junior pair; every snapshot's senior file since 2010, 16 Sep) | 309 | 294 sources by the Cabinet Office standard, 343,329 rows (68 snapshot dates), 249 bodies; 16 own-shape tables await a person (15 councils, The National Archives' newest); 38 dead links, 9 refused on licence (CCRC "notspecified"). "Other (Public Domain)" accepted 15 Sep (DM): the MoD's 2016 organogram came in; its current one is seven per-budget files already published |
-| hmo_registers | 16 sources (14 from the index, 2 found by search, 27 Sep) | 11 | 9 councils, 16,121 licences in 116 postcode districts: Lambeth 5,518, Camden 3,485, Glasgow 2,414 (licences in force, from a log of 6,523 applications), Barnet 1,610, Hounslow 1,403, Leicester 879, Stirling 564 (counts per postcode), Ashfield 139, Epsom and Ewell 109. Refused: Bristol ×3 (Ordnance Survey terms only). Not a register: Brighton & Hove (Planning's addresses), Stirling's yearly totals. Dead: Oxford (DNS). 29 more councils publish a data file with no open licence stated: a decision for Dominic |
+| hmo_registers | 78 sources (14 from the index, 64 found by search, 27 Sep) | 62 | 40 councils, 22,975 licences in 279 postcode districts (31 of them statutory registers stating no licence, DM 27 Sep). Largest: Lambeth 5,518, Camden 3,485, Glasgow 2,414, Barnet 1,610, Hounslow 1,403, Warwick 1,080, Norwich 910, Waltham Forest 884. Not mappable, 19, each with its reason: no postcode published (Amber Valley, Basingstoke, Chorley, Milton Keynes, North East Lincolnshire, Bristol's coordinates-only layers), a PDF needing a reader that works from positions on the page (Newham's 1,771 pages, BCP, Wigan, Elmbridge's and Mid Sussex's cards), garbled or text-only PDFs. Held on 'All rights reserved': 9 (Barnsley, Caerphilly, Erewash, Harborough, Maldon, Ribble Valley, Telford and Wrekin, Torbay, Watford). 11 rows refused for a district that does not exist (source typos: RG4O, AL19, G8) |
 
 Fifth family, 15 September 2026: organograms. Central government's
 "Organogram of Staff Roles & Salaries" is one dataset per body with a senior

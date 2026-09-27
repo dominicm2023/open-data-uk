@@ -197,5 +197,721 @@
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
     "reviewed_at": "2026-09-27"
+  },
+  "b9886a462648be0f3a1294a7535d8089b25b00d98c633ffe2bfd48a7a59bfbbf": {
+    "status": "reviewed",
+    "table": "HMO Return",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "HMO Prop_Postcode",
+      "licence_start": "Licence Date",
+      "max_occupants": "No of People",
+      "max_households": "No of Households",
+      "storeys": "No of Floors",
+      "licence_type": "Category"
+    },
+    "constants": {
+      "council": "Bassetlaw District Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "dd6fb2e795a51f57c5c39594d1dd27b6cd6b00c32d541ce5b0966337ade844e5": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Postode",
+      "licence_start": "Date licence valid from",
+      "licence_end": "Date licence expires",
+      "max_occupants": "Number of persons licenced for",
+      "max_households": "Number of Households licenced for",
+      "storeys": "Number of storeys"
+    },
+    "constants": {
+      "council": "London Borough of Bexley",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "5f319233d585f62d1d6b4c6156dbaedf36642a9f8a83c3bc1a1760340c259454": {
+    "status": "reviewed",
+    "table": "HMO_Return",
+    "header_row": 6,
+    "columns": {
+      "postcode_district": "Prop_Postcode",
+      "licence_start": "Licence Issue Date",
+      "licence_end": "Licence Expiry Date",
+      "max_occupants": "No of People",
+      "max_households": "No of Households",
+      "storeys": "No of Floors",
+      "licence_type": "Category"
+    },
+    "constants": {
+      "council": "Bromsgrove District Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "efd7ce42716476b4a90fafed03fbb0f47f0421e0e6af1d46cadca34767e63fd2": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Post Code",
+      "licence_start": "Licence Issue Date",
+      "licence_end": "Licence Expiry Date",
+      "licence_type": "Licence Type"
+    },
+    "constants": {
+      "council": "Carmarthenshire County Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "1e3d336df2b12553c4ea805a0e8e615d7afbc2dd3ba05dca128a6e57476635d6": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Postcode",
+      "licence_start": "Start",
+      "licence_end": "Expires"
+    },
+    "constants": {
+      "council": "Castle Point Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "4523a62e42fed9bb9f194a1098d26b1cab51ae8b5972b9bcce897a8d3c84ce01": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Address of licenced property",
+      "licence_start": "Start date of licence",
+      "licence_end": "Expiry date of licence"
+    },
+    "constants": {
+      "council": "Dartford Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "aca44bc3284440dcd02ea14d24f130006ca6a700f801b8525580246f6cdac2fa": {
+    "status": "reviewed",
+    "table": "EHDC HMO Licensed",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Postcode",
+      "licence_start": "Issued",
+      "licence_end": "Expires",
+      "max_occupants": "Maximum number of occupants",
+      "max_households": "Maximum number of households",
+      "storeys": "Number of Storeys"
+    },
+    "constants": {
+      "council": "East Hampshire District Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "81d630ffa2ed0f3ee2a605cf2db7fbfdd74d8102458d131fb2256ced9516c73d": {
+    "status": "reviewed",
+    "table": "Sheet1",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Property Postcode",
+      "licence_start": "Date License last Issued",
+      "licence_end": "Date licence expires",
+      "max_occupants": "Number of People",
+      "max_households": "Number of Households",
+      "storeys": "Number of Floors"
+    },
+    "constants": {
+      "council": "Flintshire County Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Two postcode columns: 'Property Postcode' is read; 'Postcode' is the licence holder's (it lands in Leeds and Kent). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "ef339748a0bb5d6b2f3a22dfd8d753e8b8185381439226fc1f321ea252fe3de1": {
+    "status": "reviewed",
+    "table": "Sheet1",
+    "header_row": 4,
+    "columns": {
+      "postcode_district": "Address of HMO",
+      "licence_start": "Licence Date",
+      "licence_end": "Expiry Date"
+    },
+    "constants": {
+      "council": "Harlow Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "87d4a2e2f6b9dd188287aa11d67b7bc695227b66941aeae2f3158ff144979e6b": {
+    "status": "reviewed",
+    "table": "Sheet1",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Address of HMO",
+      "licence_start": "Date Issued",
+      "licence_end": "Expiry Date",
+      "max_households": "Households",
+      "storeys": "Storeys",
+      "licence_status": "Licence Status"
+    },
+    "constants": {
+      "council": "Hertsmere Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "3045aea8b41ddf66807b12049581bc0807a243135e94bba0373b2ea1c65f7ebd": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Address",
+      "licence_start": "Issue Date",
+      "licence_end": "Expiry Date",
+      "max_occupants": "Maximum Permitted Occupants",
+      "max_households": "Maximum Number of Households",
+      "storeys": "No of Storeys",
+      "licence_status": "Status"
+    },
+    "constants": {
+      "council": "Royal Borough of Kingston upon Thames",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "affe3123adb04db2f8f364e545b72928c6b97bc027d2d302673171184bc63a2e": {
+    "status": "reviewed",
+    "table": "public-register-report-20260908",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Property address",
+      "licence_end": "Licence end date",
+      "max_occupants": "Maximum permitted occupants",
+      "licence_type": "Licence type"
+    },
+    "constants": {
+      "council": "Luton Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "5932f9649adc988cd6a42c849a4892fb08b9bdcc3dcc30e39c63b2ca99ea1cd0": {
+    "status": "reviewed",
+    "table": "HMO-Public-Register",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "HMO Address",
+      "licence_start": "Issued",
+      "licence_end": "Expires",
+      "max_occupants": "Occupants",
+      "licence_type": "Licence Type"
+    },
+    "constants": {
+      "council": "Newport City Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "487736cf4e41c4e9f7c5d43cceb8c4b160395e0f3711ce25a2ac3377ca8c5c93": {
+    "status": "reviewed",
+    "table": "all",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Address of Licenced HMO",
+      "licence_start": "Licence Commenced",
+      "licence_end": "Date Licence Expires",
+      "storeys": "No. HMO Storeys"
+    },
+    "constants": {
+      "council": "North Somerset Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "3ae8eb052e89f24aaab91ce7ae2c341f110fd9bb83fe2019f23c7a76e883d019": {
+    "status": "reviewed",
+    "table": "Sheet1",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Address",
+      "licence_start": "HMO Licence Issued",
+      "licence_end": "HMO Licence Expiry",
+      "storeys": "Number of Storeys"
+    },
+    "constants": {
+      "council": "North Warwickshire Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "3e334f8b56887dd1992ebdbd7dbbc471c2dfedae5dd85e661af45d47888e0408": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Property",
+      "licence_start": "Issue Date",
+      "licence_end": "Renewal date"
+    },
+    "constants": {
+      "council": "Norwich City Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Each licence takes two rows on the page; the second (storeys, occupants) gives no postcode and is set aside. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "0facf72d1af7c5df5fdaa45a540cea38dedd0f948353c11cb144fb07d58faae9": {
+    "status": "reviewed",
+    "table": "HMO Mandatory Licence Register",
+    "header_row": 5,
+    "columns": {
+      "postcode_district": "Property Details",
+      "licence_start": "Licence Issue Date",
+      "licence_end": "Licence Expiry Date"
+    },
+    "constants": {
+      "council": "Powys County Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "c11d02b857931ad246b35baea991fdda5b174a434f76ddeea86c71de43c9398b": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Prop_Postcode",
+      "licence_start": "Licence Issue Date",
+      "licence_end": "Licence Expiry Date",
+      "max_occupants": "No of People",
+      "max_households": "No of Households",
+      "storeys": "No of Floors",
+      "licence_type": "HMO Category"
+    },
+    "constants": {
+      "council": "Redditch Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. 'Prop_Postcode' is read; the proposer's first pick, 'HMO Category', was a category code. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "5a762a2961dfba04b9b352069a29100d98b56a128bca80d0640302ecfa22cf1f": {
+    "status": "reviewed",
+    "table": "all",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "ADDRESS OF PROPERTY",
+      "licence_end": "LICENCE OR TEMPORARY EXEMPTON EXPIRY DATE (unless previously revoked)",
+      "storeys": "No OF STOREY WHICH MAY BE OCCUPIED",
+      "licence_type": "CATEGORY DESCRIPTION OF PROPERTY"
+    },
+    "constants": {
+      "council": "Rochdale Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Only 102 of its 248 rows give the property's postcode; the rest are counted nowhere, as the family's rule says. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "69abaf35f3ecbd59e2408360388e9030ae6c54a201820cb6b19bdb8cde742d81": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Address of Licenced Property",
+      "licence_start": "Date Licence Issued"
+    },
+    "constants": {
+      "council": "Rochford District Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "fd0d451ff2403d5126a47d0a069ff67bbb1bc7bffe22e9b0ac66a8783e4e47ed": {
+    "status": "reviewed",
+    "table": "Sheet1",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "HMO address",
+      "licence_start": "Commencement date",
+      "max_occupants": "Maximum number of persons to occupy HMO"
+    },
+    "constants": {
+      "council": "South Ribble Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "bff15c4567ed4ad364c34792f3ce69f7a5ce72888a255a1d94f5db6cd5fe6cf5": {
+    "status": "reviewed",
+    "table": "Licensed HMOs",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Postcode",
+      "licence_start": "Licence issued date",
+      "licence_end": "Licence expiry date",
+      "max_occupants": "Licensed maximum number of occupants",
+      "max_households": "Licensed maximum number of households"
+    },
+    "constants": {
+      "council": "Spelthorne Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Two columns are both called 'Postcode': the first, beside the property's address, is read; the second is the licence holder's and is not. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "d9c66311ac148b7b3c75d6a6706159856fef6546d84a81dbf70f85e99cd4be92": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Address",
+      "licence_start": "Date Licence Issued",
+      "storeys": "No. of Floors"
+    },
+    "constants": {
+      "council": "St Albans City and District Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "c16b004415709e826b63b6fdb63f779a5b151ad378a8a22bd45875426f9f7cab": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 1,
+    "columns": {
+      "postcode_district": "Post code",
+      "licence_start": "Commencement date of licence",
+      "storeys": "No of storeys"
+    },
+    "constants": {
+      "council": "Warrington Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "643ec225152c6beef95c671b45a7dd2d9c7d7299eba9aaa33522bed18d766b4e": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "HMO Postcode",
+      "licence_start": "Licence Start Date",
+      "licence_end": "Licence End Date",
+      "max_households": "Maximum No. of Households",
+      "storeys": "storeys",
+      "licence_type": "Scheme Type"
+    },
+    "constants": {
+      "council": "Warwick District Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "ec38bee96d53903800bab2b82152439157b2b6e87790aad4ebf3dedd4a31f15d": {
+    "status": "reviewed",
+    "table": "all",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Property Postcode",
+      "licence_start": "Licence Start",
+      "licence_end": "Licence Expiry",
+      "max_occupants": "No of People",
+      "licence_type": "Category"
+    },
+    "constants": {
+      "council": "Welwyn Hatfield Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "d0620358e454673abf951d75a0a6c1a59b2561388f2645fead40c437a63c1807": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "HMO Address",
+      "licence_start": "Issued",
+      "licence_end": "Expires"
+    },
+    "constants": {
+      "council": "West Oxfordshire District Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "f834ea9ef2d9647d341b085fb293a9e6324ba82c65a68a4c66b7f57087d1d60c": {
+    "status": "reviewed",
+    "table": "Sheet1",
+    "header_row": 2,
+    "columns": {
+      "postcode_district": "Post Code",
+      "licence_start": "Valid from",
+      "licence_end": "Expires on"
+    },
+    "constants": {
+      "council": "Winchester City Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "e92ac7a8bccc0de7c4f0c20162849cc4ae20720cab508e6541dabfc6de6d4317": {
+    "status": "reviewed",
+    "table": "all",
+    "header_row": 1,
+    "columns": {
+      "postcode_district": "Property address",
+      "licence_type": "Licence type",
+      "licence_start": "Licence start date",
+      "licence_end": "Licence end date",
+      "max_occupants": "Maximum permitted occupants",
+      "max_households": "Maximum permitted households"
+    },
+    "constants": {
+      "council": "London Borough of Waltham Forest",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. A title line sits above the header on page 1; the other pages are read under it. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "5b26c6f1bdab7dc4d6991b6674c12468f9c2f54426a9bf3f075acb7ceeeaa966": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "FULL ADDRESS",
+      "licence_status": "Status",
+      "licence_start": "ISSUED",
+      "licence_end": "EXPIRYD",
+      "max_occupants": "Maximum Permitted Occupants",
+      "max_households": "Maximum Number of Households",
+      "storeys": "No of Storeys"
+    },
+    "constants": {
+      "council": "London Borough of Sutton",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "46d24554cc1f7a31c57a8b645618dec64a5a478a19338f996772f115f4e583f3": {
+    "status": "reviewed",
+    "table": "all",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Post Code"
+    },
+    "constants": {
+      "council": "London Borough of Hillingdon",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Page 1 carries the header; the other pages are read under it. 'Post Code' is the property's; the holder's address is a separate column, never mapped. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "da181d002b6d14438ac080be6df80d0d270c1020b44b2f88c1721a00333b8d40": {
+    "status": "reviewed",
+    "table": "Register of Licensed HMOs",
+    "header_row": 3,
+    "columns": {
+      "postcode_district": "Prop_Postcode",
+      "licence_start": "Commencent Date",
+      "storeys": "No of storeys"
+    },
+    "constants": {
+      "council": "Wokingham Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Three title lines sit above the header. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "77a571a0a1a8031b3c3bc855e47a840d681abacf4adc6b235d41c4b7781d8ed2": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 1,
+    "columns": {
+      "postcode_district": "Property Address",
+      "licence_start": "Date Issued",
+      "licence_end": "Expiry",
+      "storeys": "Storeys"
+    },
+    "constants": {
+      "council": "South Staffordshire Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "4c114611ec962e8d460b776003bdb1cf1c26d3ecc61ed6b19321d2bb51397606": {
+    "status": "rejected",
+    "reject": "The register gives each property's address without a postcode, so it gives no district."
+  },
+  "c022382578245feca4aec92f74e648795e88b8176f5e6da31fc4feb8f83bd232": {
+    "status": "rejected",
+    "reject": "The register gives each property's address without a postcode, so it gives no district."
+  },
+  "7ddf6a9d1f6e833c00efaf76b6631505f3b07b81ffe41da443f9b81a48ed962c": {
+    "status": "rejected",
+    "reject": "The register gives each property's address without a postcode, so it gives no district."
+  },
+  "48688a9ca69b8b8bcb0ce2d25e189052dd01b706e2f9dda89289152e017b9a28": {
+    "status": "rejected",
+    "reject": "The register gives each property's address without a postcode, so it gives no district."
+  },
+  "2e36806668a6c757a421b42f37c003aae65d9a8d6a78f5aa69317f7d84fcec99": {
+    "status": "rejected",
+    "reject": "The register gives each property's address without a postcode, so it gives no district."
+  },
+  "74a9a3e6888d66f86c397b7238394366441e0013ecd2b79c90240087787f12ce": {
+    "status": "rejected",
+    "reject": "The layer gives each licence's coordinates and UPRN but no postcode, and the family never works a district out from coordinates."
+  },
+  "04f5186df09c1686671caf05fb7912e4f74cbd3cae29983fc634f09a4df5b79a": {
+    "status": "rejected",
+    "reject": "The layer gives each licence's coordinates and UPRN but no postcode, and the family never works a district out from coordinates."
+  },
+  "6a18c006edf09cb179032508527db3a8a789b1119182b57bffea6facf732fa9b": {
+    "status": "rejected",
+    "reject": "The PDF's table puts a whole licence in one cell, so the property's postcode cannot be told from the holder's; needs a reader that works from positions on the page."
+  },
+  "ee80fa3f27b5cc78ac6b3aa34e5269251363386c7f50ef7c2e87c61bd780be8e": {
+    "status": "rejected",
+    "reject": "The PDF (1,771 pages) puts every field of a licence in one cell, so the property's postcode cannot be told from the holder's; needs a reader that works from positions on the page."
+  },
+  "d42bace063006ba681ac02ce38dfd697836f4846bd4824310a498f55ad7b16ce": {
+    "status": "rejected",
+    "reject": "The PDF's header is one merged cell, so no column can be named; needs a reader that works from positions on the page."
+  },
+  "30aa488ad849052d848a4a8262da5710ea4ed605872c79aea3e44b135adeb7fe": {
+    "status": "rejected",
+    "reject": "The PDF is one card per licence, label beside value, not a table; needs a card reader."
+  },
+  "48c22baae84aa3e8317a006b3169f1e0ecfccf9510baa5ef0e5d03768d5469c3": {
+    "status": "rejected",
+    "reject": "The PDF is one card per licence, label beside value, not a table; needs a card reader."
+  },
+  "c2812da8a55a40228742f191a6541aac0d3ffa0b523ebde66c12c88080615231": {
+    "status": "rejected",
+    "reject": "The PDF's columns are not ruled and its text overlaps, so the columns read by alignment come out garbled."
+  },
+  "6c62706c114a435e78277fa2d5bf01b62e135c414d1c0e977b23225afc6afb0d": {
+    "status": "rejected",
+    "reject": "The PDF's columns are not ruled and its header runs over several lines, so the columns read by alignment come out garbled."
+  },
+  "ee11843c0a86743b1848c0a4a5b64b72d4df0137391656eef7480ca9a63e1dea": {
+    "status": "rejected",
+    "reject": "The PDF's fonts carry no readable text (every character reads as a code), so nothing can be read from it."
+  },
+  "268251ba60ddf050f93713f96e8b4359cb4340eea75fad26d0582434a44707e9": {
+    "status": "rejected",
+    "reject": "The PDF extracts as one block of text with no table."
+  },
+  "b908a28757f9a0de6412f9202b88b51ce7625ba24a444b6b3883c95365559bca": {
+    "status": "rejected",
+    "reject": "The PDF extracts as one block of text with no table."
+  },
+  "7376908364eee625701e5ce2d325c6778158cc31912c8e73c282da6d2c631a03": {
+    "status": "rejected",
+    "reject": "The only table on the council's page is its schedule of fees, not the register."
+  },
+  "0a2ec4537d167b1d139957d160903f6fd59438546092df6d753d3a98b3a2b310": {
+    "status": "rejected",
+    "reject": "The PDF's table extracts with its header but no rows."
   }
 }

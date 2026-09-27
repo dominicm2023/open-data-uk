@@ -69,8 +69,9 @@ COVERAGE = Path(__file__).parent / "families" / "registry" / f"{FAMILY}.coverage
 STATUS = [
     ("in_table", "In this table"),
     ("open_file", "Published as open data, not yet in this table"),
-    ("file_no_licence", "Published as a data file with no open licence stated"),
-    ("document", "Published as a PDF, a Word document or a web page"),
+    ("file_no_licence", "Published as a data file we could not use: the reason is beside each"),
+    ("held", "Published, but the council's website says ‘All rights reserved’"),
+    ("document", "Published as a PDF or web page we could not use: the reason is beside each"),
     ("search_only", "Published only as a search box on the council's website"),
     ("on_request", "Available only on request or for inspection"),
     ("not_found", "No register found online"),

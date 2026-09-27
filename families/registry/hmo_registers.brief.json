@@ -136,6 +136,238 @@
  },
  "sources": [
   {
+   "job_id": "4c114611ec962e8d460b776003bdb1cf1c26d3ecc61ed6b19321d2bb51397606",
+   "publisher": "Amber Valley Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.ambervalley.gov.uk/media/2333/public-hmo-register.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Address of HMO",
+       "Number of\nStories",
+       "Numbers of\nOccupiers",
+       "Status",
+       "Date of Licence",
+       "First\nLicenced",
+       "Licence Reference"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       72.288,
+       84.96000000000004,
+       773.688,
+       493.71966666666674
+      ]
+     },
+     "header": [
+      "Address of HMO",
+      "Number of\nStories",
+      "Numbers of\nOccupiers",
+      "Status",
+      "Date of Licence",
+      "First\nLicenced",
+      "Licence Reference"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 7,
+     "column_count": 7
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 2,
+      "bbox": [
+       77.64,
+       136.20000000000005,
+       165.92399999999998,
+       161.64000000000004
+      ]
+     },
+     "header": [
+      "55 Nottingham"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 3,
+      "bbox": [
+       77.64,
+       238.44000000000005,
+       165.92399999999998,
+       263.88000000000005
+      ]
+     },
+     "header": [
+      "120 Bridge"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 4,
+      "bbox": [
+       77.64,
+       340.6197500000001,
+       165.92399999999998,
+       366.0000000000001
+      ]
+     },
+     "header": [
+      "3 Windmill Lane,"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 5,
+      "bbox": [
+       77.64,
+       442.7997500000001,
+       165.92399999999998,
+       480.84000000000003
+      ]
+     },
+     "header": [
+      "Alpha House,"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 2,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       72.28363636363636,
+       28.679500000000075,
+       773.6945454545454,
+       488.52000000000004
+      ]
+     },
+     "header": [
+      "1 Victoria Street,\nSomercotes",
+      "2",
+      "6",
+      "Licenced HMO",
+      "2024",
+      "2018",
+      "HMOLIC/2024/0061"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 7
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 2,
+      "bbox": [
+       77.64,
+       79.91975000000009,
+       166.2,
+       105.24000000000007
+      ]
+     },
+     "header": [
+      "104 Prospect"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 3,
+      "bbox": [
+       77.64,
+       182.03975000000005,
+       166.2,
+       207.48000000000008
+      ]
+     },
+     "header": [
+      "76 Nottingham"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    }
+   ]
+  },
+  {
    "job_id": "8a6774f999dabd8730c119c740a9d2f13d894b3e845d13a5d4715bcba346d765",
    "publisher": "Ashfield District Council",
    "title": "HMO register",
@@ -148,6 +380,33 @@
    "layouts": [],
    "tables": [
     {
+     "head_rows": [
+      [
+       "Flare Ref",
+       "Address:   Street",
+       "",
+       "Postcode",
+       "Draft Licence Issued",
+       "Full Licence Issued",
+       "Full Licence Expires",
+       "Occupancy",
+       "No. of Kitchens",
+       "Total No. of Bathrooms",
+       "No. of WC's",
+       "No. of En-suites",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
      "where": {
       "sheet": "HMO"
      },
@@ -175,6 +434,1432 @@
    ]
   },
   {
+   "job_id": "6a18c006edf09cb179032508527db3a8a789b1119182b57bffea6facf732fa9b",
+   "publisher": "BCP Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.bcpcouncil.gov.uk/Assets/Housing/HMO-public-register.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       15.359999999999998,
+       42.95999999999992,
+       1170.6,
+       165.38
+      ]
+     },
+     "header": [
+      "BCP Council - House in Multiple Occupation Register\n26-Aug-26"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 2,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       15.36,
+       42.85399999999996,
+       1170.6,
+       107.53999999999996
+      ]
+     },
+     "header": [
+      "Licence Total\nLicence Self Non Self Total Permitted Permitted Shared Shared Shared Total\nRenewal Address Address 1 Address 2 Post Code Licensee Name Storeys Living\nNumber Contained Contained Bedroom Occupants Households Kitchen Bathroom Wcs Wcs\nDate Room"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "bbox": [
+       15.36,
+       42.85399999999996,
+       1170.6,
+       107.53999999999996
+      ]
+     },
+     "header": [
+      "Licence Total\nLicence Self Non Self Total Permitted Permitted Shared Shared Shared Total\nRenewal Address Address 1 Address 2 Post Code Licensee Name Storeys Living\nNumber Contained Contained Bedroom Occupants Households Kitchen Bathroom Wcs Wcs\nDate Room"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 9,
+      "table": 1,
+      "bbox": [
+       15.360000000000001,
+       42.85399999999996,
+       1170.6,
+       107.53999999999996
+      ]
+     },
+     "header": [
+      "Licence Total\nLicence Self Non Self Total Permitted Permitted Shared Shared Shared Total\nRenewal Address Address 1 Address 2 Post Code Licensee Name Storeys Living\nNumber Contained Contained Bedroom Occupants Households Kitchen Bathroom Wcs Wcs\nDate Room"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 10,
+      "table": 1,
+      "bbox": [
+       15.36,
+       42.85399999999996,
+       1170.6,
+       107.53999999999996
+      ]
+     },
+     "header": [
+      "Licence Total\nLicence Self Non Self Total Permitted Permitted Shared Shared Shared Total\nRenewal Address Address 1 Address 2 Post Code Licensee Name Storeys Living\nNumber Contained Contained Bedroom Occupants Households Kitchen Bathroom Wcs Wcs\nDate Room"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 11,
+      "table": 1,
+      "bbox": [
+       15.36,
+       42.85399999999996,
+       1170.6,
+       131.29999999999995
+      ]
+     },
+     "header": [
+      "Licence Total\nLicence Self Non Self Total Permitted Permitted Shared Shared Shared Total\nRenewal Address Address 1 Address 2 Post Code Licensee Name Storeys Living\nNumber Contained Contained Bedroom Occupants Households Kitchen Bathroom Wcs Wcs\nDate Room"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 12,
+      "table": 1,
+      "bbox": [
+       15.36,
+       42.85399999999996,
+       1170.6,
+       107.53999999999996
+      ]
+     },
+     "header": [
+      "Licence Total\nLicence Self Non Self Total Permitted Permitted Shared Shared Shared Total\nRenewal Address Address 1 Address 2 Post Code Licensee Name Storeys Living\nNumber Contained Contained Bedroom Occupants Households Kitchen Bathroom Wcs Wcs\nDate Room"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    },
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 17,
+      "table": 1,
+      "bbox": [
+       15.36,
+       42.85399999999996,
+       1170.6,
+       107.53999999999996
+      ]
+     },
+     "header": [
+      "Licence Total\nLicence Self Non Self Total Permitted Permitted Shared Shared Shared Total\nRenewal Address Address 1 Address 2 Post Code Licensee Name Storeys Living\nNumber Contained Contained Bedroom Occupants Households Kitchen Bathroom Wcs Wcs\nDate Room"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    }
+   ]
+  },
+  {
+   "job_id": "c022382578245feca4aec92f74e648795e88b8176f5e6da31fc4feb8f83bd232",
+   "publisher": "Basingstoke and Deane Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://www.basingstoke.gov.uk/content/page/96583/HMO%20licence%20register%20August%202026.xlsx",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Reference number",
+       "HMO address",
+       "Licence holder name",
+       "Licence holder address",
+       "Description of property",
+       "Date licence issued",
+       "Date of licence expiry",
+       "Number of bedrooms",
+       "Total number of permitted occupants",
+       "Storeys"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Sheet1"
+     },
+     "header": [
+      "Reference number",
+      "HMO address",
+      "Licence holder name",
+      "Licence holder address",
+      "Description of property",
+      "Date licence issued",
+      "Date of licence expiry",
+      "Number of bedrooms",
+      "Total number of permitted occupants",
+      "Storeys"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 85,
+     "column_count": 10
+    }
+   ]
+  },
+  {
+   "job_id": "b9886a462648be0f3a1294a7535d8089b25b00d98c633ffe2bfd48a7a59bfbbf",
+   "publisher": "Bassetlaw Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLS",
+   "resource_url": "https://www.bassetlaw.gov.uk/media/2xipelj0/hmo-register.xls",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Your Reference",
+       "Property Address",
+       "HMO Prop_Postcode",
+       "License Holder",
+       "License Holder Address",
+       "Postcode",
+       "Category",
+       "No of Floors",
+       "No of Households",
+       "No of People",
+       "Inspection Date",
+       "Licence Date"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "HMO Return"
+     },
+     "header": [
+      "Your Reference",
+      "Property Address",
+      "HMO Prop_Postcode",
+      "License Holder",
+      "License Holder Address",
+      "Postcode",
+      "Category",
+      "No of Floors",
+      "No of Households",
+      "No of People",
+      "Inspection Date",
+      "Licence Date"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 72,
+     "column_count": 12
+    }
+   ]
+  },
+  {
+   "job_id": "dd6fb2e795a51f57c5c39594d1dd27b6cd6b00c32d541ce5b0966337ade844e5",
+   "publisher": "Bexley Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "CSV",
+   "resource_url": "https://www.bexley.gov.uk/sites/default/files/2026-09/hmo-public-register-25-september-26.csv",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Address",
+       "",
+       "",
+       "Number of storeys",
+       "Bedrooms",
+       "Living/Dining Rooms",
+       "Number of self contained flats",
+       "Number of non-self containing flats",
+       "Number of Households licenced for",
+       "Number of persons licenced for",
+       "Summary of conditions on licence",
+       "Date licence valid from",
+       "Date licence expires"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Address",
+      "Town",
+      "Postode",
+      "Number of storeys",
+      "Bedrooms",
+      "Living/Dining Rooms",
+      "Number of self contained flats",
+      "Number of non-self containing flats",
+      "Number of Households licenced for",
+      "Number of persons licenced for",
+      "Summary of conditions on licence",
+      "Date licence valid from",
+      "Date licence expires"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 287,
+     "column_count": 13
+    }
+   ]
+  },
+  {
+   "job_id": "74a9a3e6888d66f86c397b7238394366441e0013ecd2b79c90240087787f12ce",
+   "publisher": "Bristol City Council",
+   "title": "Mandatory HMO Licences",
+   "portal": "agol_bristol_city_council",
+   "format": "ESRI",
+   "resource_url": "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_housing_and_property/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "",
+       "Licence_Type",
+       "Property_Type",
+       "Permitted_Occupants_Mand_Lic",
+       "Permitted_Households_Mand_Lic",
+       "Licence_start_date",
+       "Licence_end_date",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "table": 1,
+      "exceeded": true
+     },
+     "header": [
+      "OBJECTID",
+      "Licence_Type",
+      "Property_Type",
+      "Permitted_Occupants_Mand_Lic",
+      "Permitted_Households_Mand_Lic",
+      "Licence_start_date",
+      "Licence_end_date",
+      "UPRN",
+      "X",
+      "Y",
+      "_lon",
+      "_lat"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1000,
+     "column_count": 12
+    }
+   ]
+  },
+  {
+   "job_id": "04f5186df09c1686671caf05fb7912e4f74cbd3cae29983fc634f09a4df5b79a",
+   "publisher": "Bristol City Council",
+   "title": "Selective HMO licences",
+   "portal": "agol_bristol_city_council",
+   "format": "ESRI",
+   "resource_url": "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_housing_and_property/MapServer/6/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "table": 1,
+      "exceeded": true
+     },
+     "header": [
+      "OBJECTID",
+      "Licence_Type",
+      "Property_Type",
+      "Licence_start_date",
+      "Licence_end_date",
+      "UPRN",
+      "X",
+      "Y",
+      "_lon",
+      "_lat"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1000,
+     "column_count": 10
+    }
+   ]
+  },
+  {
+   "job_id": "5f319233d585f62d1d6b4c6156dbaedf36642a9f8a83c3bc1a1760340c259454",
+   "publisher": "Bromsgrove Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLS",
+   "resource_url": "https://www.bromsgrove.gov.uk/media/nu2j3dya/bromsgrove-hmo-register-october-2025.xls",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+       "Landlord Name",
+       "",
+       "Category",
+       "No of Floors",
+       "No of Households",
+       "No of People",
+       "Last Inspection Date",
+       "Licence Issue Date",
+       "Licence Expiry Date",
+       "Property_Address",
+       "Prop_Postcode",
+       "Your Organisation Name",
+       "Your_Reference",
+       "Property Description",
+       "Number of Bedrooms",
+       "Number of Living rooms",
+       "Manager's Name",
+       "Licence Holder's Name",
+       "",
+       "Licence Conditions",
+       ""
+      ],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "HMO_Return"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 27,
+     "column_count": 21
+    }
+   ]
+  },
+  {
+   "job_id": "efd7ce42716476b4a90fafed03fbb0f47f0421e0e6af1d46cadca34767e63fd2",
+   "publisher": "Carmarthenshire Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "HTML",
+   "resource_url": "https://www.carmarthenshire.gov.wales/business/landlords/licensing/houses-in-multiple-occupation-hmo-public-register/",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Licencing Progress",
+       "Licence Type",
+       "Ref No",
+       "Prem Address 1",
+       "Prem Address 2",
+       "Post Code",
+       "Licence Holder",
+       "HMO Type",
+       "Current No. Occupants",
+       "Max No. Occupants",
+       "Licence Issue Date",
+       "Licence Expiry Date"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "table": 1,
+      "source_markup": "html page"
+     },
+     "header": [
+      "Licencing Progress",
+      "Licence Type",
+      "Ref No",
+      "Prem Address 1",
+      "Prem Address 2",
+      "Post Code",
+      "Licence Holder",
+      "HMO Type",
+      "Current No. Occupants",
+      "Max No. Occupants",
+      "Licence Issue Date",
+      "Licence Expiry Date"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 13,
+     "column_count": 12
+    }
+   ]
+  },
+  {
+   "job_id": "1e3d336df2b12553c4ea805a0e8e615d7afbc2dd3ba05dca128a6e57476635d6",
+   "publisher": "Castle Point Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "HTML",
+   "resource_url": "https://apps.castlepoint.gov.uk/cpapps/index.cfm?fa=hmo",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Ref",
+       "Address",
+       "Postcode",
+       "Start",
+       "Expires",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "table": 1,
+      "source_markup": "html page"
+     },
+     "header": [
+      "Ref",
+      "Address",
+      "Postcode",
+      "Start",
+      "Expires",
+      "Length"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 20,
+     "column_count": 6
+    }
+   ]
+  },
+  {
+   "job_id": "7ddf6a9d1f6e833c00efaf76b6631505f3b07b81ffe41da443f9b81a48ed962c",
+   "publisher": "Chorley Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://chorley.gov.uk/downloads/file/1473/hmo-register",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "",
+       "Address of licensed HMO",
+       "Maximum Number of Occupants",
+       "Licence Issue Date",
+       "Licence Expiry Date",
+       "Number of Rooms – Sleeping Accomodation",
+       "Number of Living Rooms",
+       "Number of Storeys",
+       "Description of HMO",
+       "Number of Flats         (self contained/ not self contained)",
+       "Conditions"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Licensed"
+     },
+     "header": [
+      "UPRN",
+      "Address of licensed HMO",
+      "Maximum Number of Occupants ",
+      "Licence Issue Date",
+      "Licence Expiry Date",
+      "Number of Rooms – Sleeping Accomodation",
+      "Number of Living Rooms",
+      "Number of Storeys",
+      "Description of HMO",
+      "Number of Flats         (self contained/ not self contained)",
+      "Conditions"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 71,
+     "column_count": 11
+    }
+   ]
+  },
+  {
+   "job_id": "4523a62e42fed9bb9f194a1098d26b1cab51ae8b5972b9bcce897a8d3c84ce01",
+   "publisher": "Dartford Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "HTML",
+   "resource_url": "https://www.dartford.gov.uk/private-sector-1/licensed-houses-multiple-occupation",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Licence Reference Number",
+       "Name of Licence Holder",
+       "Address of licenced property",
+       "Start date of licence",
+       "",
+       "Expiry date of licence"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "table": 1,
+      "source_markup": "html page"
+     },
+     "header": [
+      "Licence Reference Number",
+      "Name of Licence Holder",
+      "Address of licenced property",
+      "Start date of licence",
+      "-",
+      "Expiry date of licence"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 97,
+     "column_count": 6
+    }
+   ]
+  },
+  {
+   "job_id": "268251ba60ddf050f93713f96e8b4359cb4340eea75fad26d0582434a44707e9",
+   "publisher": "Denbighshire Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.denbighshire.gov.uk/en/documents/licences-permits-and-trading-standards/houses-in-multiple-occupation-licensing-register-31-1-2023.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       11.5,
+       82.70000000000005,
+       583.65,
+       128.55000000000007
+      ]
+     },
+     "header": [
+      "Address License Type Start Date Expiry Date License Holder Persons Households"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    }
+   ]
+  },
+  {
+   "job_id": "aca44bc3284440dcd02ea14d24f130006ca6a700f801b8525580246f6cdac2fa",
+   "publisher": "East Hampshire Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://www.easthants.gov.uk/media/10388",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Licence reference number",
+       "Address",
+       "Postcode",
+       "HMO Type",
+       "Licence holder",
+       "Manager",
+       "Number of Storeys",
+       "Maximum number of occupants",
+       "Maximum number of households",
+       "Number of bedrooms / bedsits",
+       "Number of living areas",
+       "Number of Kitchens",
+       "Number of bathrooms",
+       "Number of separate WCs",
+       "Number of self contained units",
+       "Summary of conditions",
+       "Issued",
+       "Expires"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "EHDC HMO Licensed"
+     },
+     "header": [
+      "Licence reference number",
+      "Address",
+      "Postcode",
+      "HMO Type",
+      "Licence holder",
+      "Manager",
+      "Number of Storeys",
+      "Maximum number of occupants",
+      "Maximum number of households",
+      "Number of bedrooms / bedsits",
+      "Number of living areas",
+      "Number of Kitchens",
+      "Number of bathrooms",
+      "Number of separate WCs",
+      "Number of self contained units",
+      "Summary of conditions",
+      "Issued",
+      "Expires"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 23,
+     "column_count": 18
+    }
+   ]
+  },
+  {
+   "job_id": "ee11843c0a86743b1848c0a4a5b64b72d4df0137391656eef7480ca9a63e1dea",
+   "publisher": "East Hertfordshire Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://eastherts.fra1.digitaloceanspaces.com/s3fs-public/2026-09/HMO%20Public%20register%20on%2016.09.2026.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 55,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 55,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 54,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 54,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 56,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 52,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 7,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 54,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 8,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 58,
+     "column_count": 2
+    }
+   ]
+  },
+  {
+   "job_id": "30aa488ad849052d848a4a8262da5710ea4ed605872c79aea3e44b135adeb7fe",
+   "publisher": "Elmbridge Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.elmbridge.gov.uk/sites/default/files/2026-01/HMO%20register_0.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       80.25632876712328,
+       165.44999999999996,
+       509.67739130434785,
+       360.12999999999994
+      ]
+     },
+     "header": [
+      "",
+      "",
+      "72a Church Street, Weybridge, KT13 8DL",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 11,
+     "column_count": 4
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 2,
+      "bbox": [
+       80.25632876712328,
+       385.79999999999995,
+       509.67739130434785,
+       566.6699999999998
+      ]
+     },
+     "header": [
+      "Property Address",
+      "",
+      "1 Lovelace Villas, Portsmouth Road, KT7 0XS",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 10,
+     "column_count": 4
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       80.25632876712328,
+       73.86899999999993,
+       509.6773913043478,
+       259.5958823529411
+      ]
+     },
+     "header": [
+      "Property Address",
+      "",
+      "61 Manor Road South, Esher, KT10 0QA",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 10,
+     "column_count": 4
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 2,
+      "bbox": [
+       80.25632876712328,
+       285.2588888888888,
+       509.6773913043478,
+       466.06789473684205
+      ]
+     },
+     "header": [
+      "Property Address",
+      "",
+      "The Prince of Wales, 48 West End Lane, KT10 8LA",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 10,
+     "column_count": 4
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 3,
+      "bbox": [
+       80.25632876712328,
+       491.6599999999999,
+       509.6773913043478,
+       672.6466666666666
+      ]
+     },
+     "header": [
+      "Property Address",
+      "",
+      "The Fairmile, Portsmouth Road, Cobham, KT11 1BW",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 10,
+     "column_count": 4
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       80.25632876712328,
+       96.80999999999999,
+       509.6773913043478,
+       291.49
+      ]
+     },
+     "header": [
+      "",
+      "",
+      "The Giggling Squid, 57/59 High Street, Esher, KT10",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 11,
+     "column_count": 4
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 2,
+      "bbox": [
+       80.25632876712328,
+       317.1599999999999,
+       509.6773913043478,
+       498.03
+      ]
+     },
+     "header": [
+      "Property Address",
+      "",
+      "The Queens Head, 1 Bridge Road, KT13 8XS",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 10,
+     "column_count": 4
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 3,
+      "bbox": [
+       80.25632876712328,
+       523.34,
+       509.6773913043478,
+       718.0458823529411
+      ]
+     },
+     "header": [
+      "Property Address",
+      "",
+      "The Prince of Wales Pub, 23 Bridge Street, KT8 9EU",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 10,
+     "column_count": 4
+    }
+   ]
+  },
+  {
    "job_id": "7cfc2a5505a3328b24d489ee0a0eabc7dc2b73359a84bf8df7499c70c688f6d0",
    "publisher": "Epsom and Ewell Borough Council",
    "title": "Licensed HMO Register",
@@ -187,6 +1872,33 @@
    "layouts": [],
    "tables": [
     {
+     "head_rows": [
+      [
+       "address",
+       "reference",
+       "condition_description",
+       "number_of_units",
+       "total_permanent_occupancy",
+       "number_of_rooms",
+       "",
+       "issue_date",
+       "commencement_date",
+       "renewal_date",
+       "expiry_date",
+       "property_classification",
+       "extractdate",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
      "where": {
       "table": 1,
       "source_markup": "html table"
@@ -215,6 +1927,108 @@
    ]
   },
   {
+   "job_id": "81d630ffa2ed0f3ee2a605cf2db7fbfdd74d8102458d131fb2256ced9516c73d",
+   "publisher": "Flintshire Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://www.flintshire.gov.uk/en/PDFFiles/Licensing/HMO-Licence-Public-Register.xlsx",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Manager",
+       "Landlord Name",
+       "Landlord Address",
+       "",
+       "",
+       "",
+       "",
+       "Postcode",
+       "Description of HMO",
+       "HMO Address",
+       "",
+       "",
+       "",
+       "",
+       "Property Postcode",
+       "Number of Floors",
+       "Number of Households",
+       "",
+       "",
+       "",
+       "Kitchen",
+       "Bathroom",
+       "",
+       "Number of People",
+       "Summary of conditions",
+       "Date License last Issued",
+       "Date licence expires",
+       "",
+       "",
+       "Our Reference",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Sheet1"
+     },
+     "header": [
+      "Manager",
+      "Landlord Name",
+      "Landlord Address",
+      "",
+      "",
+      "",
+      "",
+      "Postcode",
+      "Description of HMO",
+      "HMO Address",
+      "",
+      "",
+      "",
+      "",
+      "Property Postcode",
+      "Number of Floors",
+      "Number of Households",
+      "Living accomodation",
+      "Self contained ",
+      "Not self contained",
+      "Kitchen",
+      "Bathroom",
+      "Sleeping accomodation",
+      "Number of People",
+      "Summary of conditions",
+      "Date License last Issued",
+      "Date licence expires",
+      "Referred to RTP",
+      "Outcome of RTP",
+      "Our Reference",
+      "Last inspection",
+      "Notes"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 15,
+     "column_count": 32
+    }
+   ]
+  },
+  {
    "job_id": "ed3667cbd8c3cf67913e6a22116ad835ccd4c100becc1a6e8f4501a3920842f2",
    "publisher": "Glasgow City Council",
    "title": "HMO Public Register",
@@ -227,6 +2041,40 @@
    "layouts": [],
    "tables": [
     {
+     "head_rows": [
+      [
+       "",
+       "LICENSED_FROM",
+       "EXPIRY_DATE",
+       "LICENCE_NUMBER",
+       "LICENCE_HOLDER",
+       "LETTING_AGENT",
+       "",
+       "NUMBER_OF_BEDROOMS",
+       "OCCUPANT_CAPACITY",
+       "WARD",
+       "DATE_RECEIVED",
+       "APPLICATION_TYPE",
+       "DATE_OF_DECISION",
+       "",
+       "LICENCE_STATUS",
+       "TYPE",
+       "CATEGORY",
+       "APPTYPENAME",
+       "DESCRIPTION",
+       "SHAPEAREA",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
      "where": {
       "table": 1
      },
@@ -261,6 +2109,908 @@
    ]
   },
   {
+   "job_id": "ef339748a0bb5d6b2f3a22dfd8d753e8b8185381439226fc1f321ea252fe3de1",
+   "publisher": "Harlow Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://www.harlow.gov.uk/sites/default/files/documents/HMO%20mandatory%20licence%20public%20register_.xlsx",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [
+       "Licence Reference",
+       "Address of HMO",
+       "Licence Number",
+       "Licence Date",
+       "Expiry Date",
+       "Name of Licence Holder",
+       "Address of Licence Holder",
+       "Name of Manager",
+       "Address of Manager",
+       "Property Type",
+       "Extra Conditions (See Key Above)",
+       "Residential Property Tribunal Matters",
+       "No. Floors",
+       "No. Sleeping Rooms",
+       "No. Lounges",
+       "No. S/C Flats",
+       "No. non-S/C Flats",
+       "No. Shared Bathrooms",
+       "No. Shared WC",
+       "No. Shared Kitchens",
+       "Max. No. Occupiers"
+      ],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Sheet1"
+     },
+     "header": [
+      "Licence Reference",
+      "Address of HMO",
+      "Licence Number",
+      "Licence Date",
+      "Expiry Date",
+      "Name of Licence Holder",
+      "Address of Licence Holder",
+      "Name of Manager",
+      "Address of Manager",
+      "Property Type",
+      "Extra Conditions (See Key Above)",
+      "Residential Property Tribunal Matters",
+      "No. Floors",
+      "No. Sleeping Rooms",
+      "No. Lounges",
+      "No. S/C Flats",
+      "No. non-S/C Flats",
+      "No. Shared Bathrooms",
+      "No. Shared WC",
+      "No. Shared Kitchens",
+      "Max. No. Occupiers"
+     ],
+     "header_row": 4,
+     "sample_rows": [],
+     "row_count": 284,
+     "column_count": 21
+    }
+   ]
+  },
+  {
+   "job_id": "b908a28757f9a0de6412f9202b88b51ce7625ba24a444b6b3883c95365559bca",
+   "publisher": "Harrow Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.harrow.gov.uk/downloads/file/28942/hmo-public-register",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       0.25005000000000166,
+       0.5000023999999712,
+       240.6949,
+       679.8150024
+      ]
+     },
+     "header": [
+      "PUBLIC LEGAL NOTICE\nThis Notice is published in accordance with Sections 56 to 60 of the\nHousing Act 2004 and Regulation 9 of the Licensing and Management\nof Houses in Multiple Occupation and Other Houses (Miscellaneous\nProvisions) (England) Regulations 2006.\nNotice is hereby given that the London Borough of Harrow on 6th May 2021\ndesignated an additional licensing scheme in respect to houses in multiple\noccupation. This scheme will be known as the London Borough of Harrow\nDesignated Area Additional Licensing (Houses in Multiple Occupation)\nScheme 2015. ('the Scheme'). This is in accordance with section 56 to\n60 and 257 of the Housing Act 2004, ('the Act'). The Housing Act 2004\n(Commencement no. 5 and Transitional Provisions and Savings) (England)\nOrder 2006, and paragraphs (a), (b) and (c) of Regulation 9 (2) of the\nLicensing and Management of Houses in Multiple Occupation and Other\nHouses (Miscellaneous Provisions) (England) Regulations 2006.\nThe Scheme to which the designation applies has general approval under\nparagraph 3 of The Housing Act 2004: Licensing of Houses in Multiple\nOccupation and Selective Licensing of Other Residential Accommodation\n(England) General Approval 2015 which came into force on the 1 April 2015.\nThe Scheme satisfies the condition contained in paragraph 5 of that same\nOrder.\nTherefore, the designation is approved generally by the Secretary of\nState and need not be confirmed and will accordingly come into force on\n6th August 2021 and unless revoked beforehand or extended will cease to\nhave effect on 5th August 2026\nThe Scheme applies to all Houses in Multiple Occupation (HMOs) within\nthe entire borough. This will also include properties under section 254 and\nsection 257 of the Act. Properties converted into flats and the building work\nundertaken in connection with the conversion did not comply with regulation\n20 of Building Regulation 1991 which came into force in June 1992.\nLandlords, people managing properties and tenants within the borough\nshould contact the Residential Licensing Enforcement Team for further\nadvice if they have any doubts as to whether a license is required for their\nproperty.\nA person having control of or managing a licensable HMO in the borough\nmust apply to the London Borough of Harrow for a Licence of such\nproperties. A person who wishes to establish an HMO must ensure that the\nhouse has been granted a Licence by this Authority unless exempted by the\nrelevant sections of the Act.\nThe person in control of or managing the property shall apply for a license\nfor such properties for a fee, set up by the Authority and such a licence if\ngranted shall be valid for a period not exceeding five years from the date of\nthe granting of the licence. The person having control or managing is defined\nin s263 of the Act and is in most cases the person collecting or ultimately\nreceiving the rent. This may result in more than one person being liable to\nlicence the relevant property in which case the Authority will expect the\nperson most suitable to hold the licence to apply.\nFailure to apply for a licence in the designated area is an offence under\nSection 72(1) of the Housing Act 2004, punishable on conviction by\npayment of an unlimited fine. In addition, they may be required to repay up to\n12 months rent or benefit payments if the tenant or the Council, in the case\nof benefit payments, apply to the First Tier Tribunal under the provisions of\nsection 73 and section 74 of the Housing Act 2004 for a rent repayment\norder.\nFor an application to be considered it must provide prescribed particulars\nand must be accompanied by the required fee, including documentation\nwhich the Authority may deem appropriate.\nThe London Borough of Harrow will comply with the notification requirements\ncontained in section 59 of the Act and shall maintain a register of all houses\nregistered under this designation, as required under section 232 of the Act\nEnquiries regarding the licensing of Houses in Multiple Occupation\nwithin the London Borough of Harrow and requests for application\nforms may be made via e-mail to the Residential Licensing Team on\nresidential.licensing@harrow.gov.uk or in writing to Harrow Council,\nCivic Centre, PO Box 18, Station Road, Harrow, Middlesex, HA1 2UT.\nThe Designation in respect of Additional Licensing of HMOs in the London\nBorough of Harrow is available on the Council's website and may be\ninspected at the address given above."
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 1
+    }
+   ]
+  },
+  {
+   "job_id": "7376908364eee625701e5ce2d325c6778158cc31912c8e73c282da6d2c631a03",
+   "publisher": "Hart Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "HTML",
+   "resource_url": "https://www.hart.gov.uk/housing/private-sector-housing/how-we-work-landlords/houses-multiple-occupation",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "table": 1,
+      "source_markup": "html page"
+     },
+     "header": [
+      "Item",
+      "2026/2027"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 11,
+     "column_count": 2
+    }
+   ]
+  },
+  {
+   "job_id": "87d4a2e2f6b9dd188287aa11d67b7bc695227b66941aeae2f3158ff144979e6b",
+   "publisher": "Hertsmere Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://www.hertsmere.gov.uk/asset-library/licenced-hmos-at-30th-july-2026.xlsx",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Ref",
+       "Licence No",
+       "",
+       "Address of HMO",
+       "Licence Holder",
+       "Licence Holders Address",
+       "Manager",
+       "Managers Address",
+       "",
+       "Storeys",
+       "Households",
+       "Conditions",
+       "Date Issued",
+       "Licence Status",
+       "Expiry Date",
+       "New/Renewal"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Sheet1"
+     },
+     "header": [
+      "Ref",
+      "Licence No",
+      "UPRN",
+      "Address of HMO",
+      "Licence Holder",
+      "Licence Holders Address",
+      "Manager",
+      "Managers Address",
+      "Tenants",
+      "Storeys",
+      "Households",
+      "Conditions",
+      "Date Issued",
+      "Licence Status ",
+      "Expiry Date",
+      "New/Renewal"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 202,
+     "column_count": 16
+    }
+   ]
+  },
+  {
+   "job_id": "46d24554cc1f7a31c57a8b645618dec64a5a478a19338f996772f115f4e583f3",
+   "publisher": "Hillingdon Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://pre.hillingdon.gov.uk/downloads/file/2951/hmo-register",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Reference\nNumber",
+       "",
+       "Name of the licence holder",
+       "Address of the licence holder",
+       "Name and address of the person managing the licensed HMO or house",
+       "Address of the licensed HMO or\nhouse",
+       "Post Code",
+       "Ward",
+       "Commencement\ndate",
+       "Expiry date",
+       "Duration (in\nyears)",
+       "",
+       "",
+       "The number of\nstoreys\ncomprising the\nlicensed HMO",
+       "",
+       "",
+       "Description of shared\namenities including\nthe numbers of each\namenity",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       18.528,
+       54.5,
+       814.848804,
+       540.7599833333334
+      ]
+     },
+     "header": [
+      "Reference\nNumber",
+      "UPRN",
+      "Name of the licence holder",
+      "Address of the licence holder",
+      "Name and address of the person managing the licensed HMO or house",
+      "Address of the licensed HMO or\nhouse",
+      "Post Code",
+      "Ward",
+      "Commencement\ndate",
+      "Expiry date",
+      "Duration (in\nyears)",
+      "Summary information of\nany matter concerning the\nlicensing of the HMO or\nhouse that has been\nreferred to a Residential\nProperty Tribunal or to\nthe Lands Tribunal",
+      "Summary information of\nany decisions of the\ntribunals that relate to the\nlicensed HMO, together\nwith the reference\nnumber allocated to the\ncase by tribunal",
+      "The number of\nstoreys\ncomprising the\nlicensed HMO",
+      "The number of\nrooms in the\nlicensed HMO\nproviding (i)\nsleeping\naccommodation\n(ii) living\naccommodation",
+      "In the case of a\nlicensed HMO\nconsisting of flats (i)\nthe number of flats\nthat are self\ncontained, (ii) the\nnumber of flats that\nare not self\ncontained",
+      "Description of shared\namenities including\nthe numbers of each\namenity",
+      "The maximum\nnumber of persons\nor households\npermitted to occupy\nthe licensed HMO\nunder the conditions\nof the licence"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 49,
+     "column_count": 18
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       18.564,
+       54.5,
+       814.860015,
+       539.6400050000001
+      ]
+     },
+     "header": [
+      "27670",
+      "100021502384",
+      "Antigone Fairfax",
+      "Caynham House, Ludlow. SY8 4JZ",
+      "Antigone Fairfax, Caynham House, Ludlow. SY8 4JZ",
+      "1 East Road",
+      "UB7 9EZ",
+      "West Drayton",
+      "30/11/2021",
+      "29/11/2026",
+      "5",
+      "Not referred",
+      "N/A",
+      "2",
+      "(i) 6 (ii) 1",
+      "N/A",
+      "1 Bathroom. 1 Kitchen",
+      "6"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 52,
+     "column_count": 18
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       18.564,
+       54.5,
+       814.860015,
+       535.1200033333333
+      ]
+     },
+     "header": [
+      "28289",
+      "100021435151",
+      "Chris Phillipou",
+      "The Grange, 100 High Street, London, N14 6BN",
+      "Stef & Philips Limited, 100 High Street, London,\nN14 6BN",
+      "7 Savoy Avenue",
+      "UB3 4HE",
+      "Pinkwell",
+      "27/04/2022",
+      "26/04/2027",
+      "5",
+      "Not Referred",
+      "N/A",
+      "2",
+      "(i) 5 (ii) 0",
+      "N/A",
+      "7 Bathroom, 4 Kitchen",
+      "6"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 51,
+     "column_count": 18
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "bbox": [
+       18.564,
+       54.50200000000003,
+       814.860015,
+       534.960005
+      ]
+     },
+     "header": [
+      "28100",
+      "100021435900",
+      "Manmohan Kaur Kudhail",
+      "144 Botwell Common Road, Hayes, UB3 1JE",
+      "Manmohan Kaur Kudhail, 144 Botwell Common Road, Hayes, UB3 1JE",
+      "10 Sixth Avenue",
+      "UB3 2ES",
+      "Hayes Town",
+      "12/09/2022",
+      "11/09/2027",
+      "5",
+      "Not referred",
+      "N/A",
+      "2",
+      "(i) 5 (ii) 0",
+      "N/A",
+      "4 Bathrooms, 2\nKitchen",
+      "6"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 52,
+     "column_count": 18
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "bbox": [
+       18.544,
+       54.5,
+       814.88001,
+       534.0400033333334
+      ]
+     },
+     "header": [
+      "29463",
+      "100021432858",
+      "Jetinder Sokal",
+      "122a Wellington Road North, Hounslow, TW4 7AA",
+      "Jetinder Sokal, 122a Wellington Road North, Hounslow, TW4 7AA",
+      "80 Park Lane",
+      "UB4 8AF",
+      "Charville",
+      "14/03/2023",
+      "13/03/2028",
+      "5",
+      "Not referred",
+      "N/A",
+      "3",
+      "(i) 5 (ii) 0",
+      "N/A",
+      "5 Bathrooms, 1\nKitchen",
+      "5"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 51,
+     "column_count": 18
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "bbox": [
+       18.564,
+       54.50333333333333,
+       814.860015,
+       535.1200033333333
+      ]
+     },
+     "header": [
+      "30508",
+      "100021501679",
+      "Debra Elizabeth Eddy",
+      "1 Orchard Grove, Flackwell Heath, High Wycombe, HP10 9PT",
+      "John Beaumont, 1 Orchard Grove,Flackwell Heath, High Wycombe, HP10 9PT",
+      "8 Chestnut Avenue,",
+      "UB7 8BS",
+      "Yiewsley",
+      "22/09/2023",
+      "21/09/2028",
+      "5",
+      "Not referred",
+      "N/A",
+      "2",
+      "(i) 6 (ii) 1",
+      "N/A",
+      "4 Bathrooms, 1\nKitchen",
+      "6"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 51,
+     "column_count": 18
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 7,
+      "table": 1,
+      "bbox": [
+       18.564,
+       54.501999999999995,
+       814.860015,
+       535.1200033333333
+      ]
+     },
+     "header": [
+      "30192",
+      "100021429246",
+      "Farzana Hamdani",
+      "45 Larch Crescent Hayes UB4 9DR",
+      "Farzana Hamdani - 45 Larch Crescent Hayes UB4 9DR",
+      "43 Larch Crescent",
+      "UB4 9DR",
+      "Yeading",
+      "17/04/2024",
+      "16/04/2029",
+      "5",
+      "",
+      "",
+      "2",
+      "(i) 6 (ii) 0",
+      "N/A",
+      "3 Bathrooms, 1\nKitchen",
+      "6"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 51,
+     "column_count": 18
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 8,
+      "table": 1,
+      "bbox": [
+       18.534,
+       54.501999999999995,
+       814.8910075,
+       534.840005
+      ]
+     },
+     "header": [
+      "31550",
+      "100021437824",
+      "",
+      "23 Grosvenor Road, Southall, UB2 4BP",
+      "Jeeva Kumar- 23 Grosvenor Road, Southall, UB2 4BP",
+      "119 Tudor Road",
+      "UB3 2QF",
+      "Wood End",
+      "10/12/2024",
+      "09/12/2029",
+      "5",
+      "Not referred",
+      "N/A",
+      "2",
+      "(i) 4 (ii) 0",
+      "N/A",
+      "4 Bathrooms, 1\nKitchen",
+      "7"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 51,
+     "column_count": 18
+    }
+   ]
+  },
+  {
+   "job_id": "3045aea8b41ddf66807b12049581bc0807a243135e94bba0373b2ea1c65f7ebd",
+   "publisher": "Kingston upon Thames Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.kingston.gov.uk/sites/default/files/2026-07/Kingston%20Licenced%20HMO%20Register%20Website%201%20July%202026.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Reference",
+       "Address",
+       "Ward Name",
+       "Status",
+       "Issue Date",
+       "Expiry Date",
+       "Maximum Permitted Occupants",
+       "Maximum Number of Households",
+       "No of Storeys"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       50.976000750000004,
+       54.63999950000001,
+       739.5840087,
+       556.919998125
+      ]
+     },
+     "header": [
+      "Reference",
+      "Address",
+      "Ward Name",
+      "Status",
+      "Issue Date",
+      "Expiry Date",
+      "Maximum Permitted Occupants",
+      "Maximum Number of Households",
+      "No of Storeys"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 78,
+     "column_count": 9
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       50.880000375,
+       54.479999625000005,
+       739.5600127499999,
+       556.919998125
+      ]
+     },
+     "header": [
+      "21/00513/HMOMAN",
+      "163 Malden Road New Malden KT3 6AA",
+      "New Malden Village",
+      "Licence Issued",
+      "16-Jun-22",
+      "15-Jun-27",
+      "5",
+      "5",
+      "2"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 78,
+     "column_count": 9
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       50.880000375,
+       54.479999625000005,
+       739.5600127499999,
+       556.919998125
+      ]
+     },
+     "header": [
+      "24/00437/HMOMAN",
+      "26 Kingsdowne Road Surbiton KT6 6LA",
+      "Surbiton Hill",
+      "Licence Issued",
+      "02-May-24",
+      "01-May-29",
+      "5",
+      "5",
+      "2"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 78,
+     "column_count": 9
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "bbox": [
+       50.880000375,
+       54.479999625000005,
+       739.5600127499999,
+       556.919998125
+      ]
+     },
+     "header": [
+      "24/00418/HMOMAN",
+      "414 Kingston Road Kingston Upon Thames KT1 3PB",
+      "Norbiton",
+      "Licence Issued",
+      "",
+      "",
+      "",
+      "",
+      "2"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 78,
+     "column_count": 9
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "bbox": [
+       50.880000375,
+       54.479999625000005,
+       739.5600127499999,
+       556.919998125
+      ]
+     },
+     "header": [
+      "22/00824/HMOADD",
+      "7 Ebor Co(cid:425)ages Kingston Vale London SW15 3RT",
+      "Coombe Hill",
+      "Licence Issued",
+      "25-Jul-22",
+      "24-Jul-27",
+      "4",
+      "4",
+      "3"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 78,
+     "column_count": 9
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "bbox": [
+       50.880000375,
+       54.479999625000005,
+       739.5600127499999,
+       156.239999625
+      ]
+     },
+     "header": [
+      "25/01918/HMOMAN",
+      "Flat 3 2A Corkran Road Surbiton KT6 6PN",
+      "Surbiton Hill",
+      "Licence Issued",
+      "12-Jan-26",
+      "11-Jan-31",
+      "6",
+      "6",
+      "3"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 15,
+     "column_count": 9
+    }
+   ]
+  },
+  {
    "job_id": "0d94e5aaf6927feff25e4fbcd75e547db3df22be97ebd4c73caa6b59792543c4",
    "publisher": "Leicester City Council",
    "title": "Public Register of Licenced HMOs",
@@ -273,6 +3023,32 @@
    "layouts": [],
    "tables": [
     {
+     "head_rows": [
+      [
+       "licence_number",
+       "date_issed",
+       "licence_expiry_date",
+       "street_name",
+       "property_number",
+       "postcode",
+       "storey",
+       "",
+       "",
+       "",
+       "households",
+       "landlord_last_name",
+       "landlord_first_name"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
      "where": {
       "table": 1
      },
@@ -311,6 +3087,37 @@
    "layouts": [],
    "tables": [
     {
+     "head_rows": [
+      [
+       "HMO LICENCE REFERENCE",
+       "HMO ADDRESS",
+       "HMO POSTCODE",
+       "LICENCE ISSUE DATE",
+       "LICENCE EXPIRY DATE",
+       "TOTAL NUMBER OF ROOMS",
+       "TOTAL NUMBER OF OCCUPANTS",
+       "TOTAL NUMBER PERMITTED",
+       "MANAGERS NAME",
+       "MANAGERS ADDRESS",
+       "LICENCE HOLDER",
+       "LICENCE HOLDER ADDRESS",
+       "NUMBER OF HOUSEHOLDS",
+       "NUMBER OF PERSONS",
+       "NUMBER OF KITCHIN FACILITIES",
+       "NUMBER OF BATHROOMS",
+       "NUMBER OF WCs",
+       "NUMBER OF FLOORS"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
      "where": {
       "table": 1
      },
@@ -354,6 +3161,52 @@
    "layouts": [],
    "tables": [
     {
+     "head_rows": [
+      [
+       "",
+       "Licence Number",
+       "Type Of Licence",
+       "Status",
+       "Property Address",
+       "Name Of Licence Holder",
+       "Address Of Licence Holder",
+       "Name Of Person Managing",
+       "Address Of Manager",
+       "Maximum Number Of Persons",
+       "Commencement Date",
+       "End Date",
+       "Duration In Years",
+       "Storeys Of HMO",
+       "Number Of Rooms",
+       "Number Of Living Rooms",
+       "Number Of Bedrooms",
+       "Number Of Kitchens",
+       "Number Of Self-contained Flats",
+       "Number Of Non Self-contained Flats",
+       "Number Of Shared Sinks",
+       "Number Of Shared WHBs",
+       "Number Of Shared Showers",
+       "Number Of Shared WCs",
+       "Number Of Shared Baths",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
      "where": {
       "table": 1
      },
@@ -412,6 +3265,24 @@
    "layouts": [],
    "tables": [
     {
+     "head_rows": [
+      [
+       "Premises Address",
+       "ward",
+       "households",
+       "occupants",
+       "licn-expiry-date"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
      "where": {
       "table": 1
      },
@@ -430,6 +3301,3145 @@
    ]
   },
   {
+   "job_id": "affe3123adb04db2f8f364e545b72928c6b97bc027d2d302673171184bc63a2e",
+   "publisher": "Luton Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://www.luton.gov.uk/sites/default/files/2026-09/hmo-public-register.xlsx",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Licence type",
+       "Licence reference number",
+       "Property address",
+       "",
+       "Ward",
+       "Licence end date",
+       "Maximum permitted occupants"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "public-register-report-20260908"
+     },
+     "header": [
+      "Licence type",
+      "Licence reference number",
+      "Property address",
+      "UPRN",
+      "Ward",
+      "Licence end date",
+      "Maximum permitted occupants"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 414,
+     "column_count": 7
+    }
+   ]
+  },
+  {
+   "job_id": "48c22baae84aa3e8317a006b3169f1e0ecfccf9510baa5ef0e5d03768d5469c3",
+   "publisher": "Mid Sussex Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.midsussex.gov.uk/media/cq2fxnem/public-register-of-licensed-hmo-050925.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       14.64,
+       62.75999999999999,
+       569.8799849999999,
+       237.8599999999999
+      ]
+     },
+     "header": [
+      "Property Address:\nMillfield, Perdur Centre, West Hoathly Road, East Grinstead, RH19 4NF",
+      "Reference Number:\nHMO 05"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 2,
+      "bbox": [
+       14.64,
+       259.93999999999994,
+       569.8799849999999,
+       426.16999999999996
+      ]
+     },
+     "header": [
+      "Property Address:\n69 Mill Road, Burgess Hill, West Sussex, RH15 8DY",
+      "Reference Number:\nHMO 04"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 3,
+      "bbox": [
+       14.64,
+       437.2099999999999,
+       569.8799849999999,
+       622.6600149999999
+      ]
+     },
+     "header": [
+      "Property Address:\nDevils Dyke Hotel, Devils Dyke Road, Poynings, Brighton, West Sussex,",
+      "Reference Number:\nHMO 12"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       14.64,
+       73.79999999999995,
+       569.879985,
+       243.14
+      ]
+     },
+     "header": [
+      "Property Address:\n23 Boltro Road, Haywards Heath, West Sussex, RH16 1BP",
+      "Reference Number:\nHMO 24"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 2,
+      "bbox": [
+       14.64,
+       254.17999999999995,
+       569.879985,
+       420.40999999999997
+      ]
+     },
+     "header": [
+      "Property Address:\n18A Church Road, Burgess Hill, West Sussex, RH16 1SS",
+      "Reference Number:\nHMO 01"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 3,
+      "bbox": [
+       14.64,
+       431.44999999999993,
+       569.879985,
+       592.5099849999999
+      ]
+     },
+     "header": [
+      "Property Address: 7 Cyprus Road, Burgess Hill, West Sussex, RH15 8DX",
+      "Reference Number: HMO 02"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 4,
+      "bbox": [
+       14.64,
+       603.550015,
+       569.879985,
+       771.3360149999999
+      ]
+     },
+     "header": [
+      "Property Address:\n43 Green Hedges Avenue, East Grinstead, RH19 1DZ",
+      "Reference Number:\nHMO 07"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 2
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       14.64,
+       73.79999999999995,
+       569.8799849999999,
+       256.3399999999999
+      ]
+     },
+     "header": [
+      "Property Address:\n6 De La Warr Road, East Grinstead, West Sussex, RH19 3BN",
+      "Reference Number:\nHMO 08"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 2
+    }
+   ]
+  },
+  {
+   "job_id": "48688a9ca69b8b8bcb0ce2d25e189052dd01b706e2f9dda89289152e017b9a28",
+   "publisher": "Milton Keynes Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://www.milton-keynes.gov.uk/sites/default/files/2026-09/HMOs%20Licensed%20Public%20Register.xlsx",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [
+       "Licence \nNumber",
+       "Licence Holder",
+       "Manager/Agent",
+       "HMO Address",
+       "Description",
+       "Amenities                        Number",
+       "",
+       "Conditions",
+       "Issued\n(5yearly)",
+       "Expires",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Ashland"
+     },
+     "header": [
+      "Licence \nNumber",
+      "Licence Holder",
+      "Manager/Agent",
+      "HMO Address",
+      "Description",
+      "Amenities                        Number",
+      "",
+      "Conditions",
+      "Issued\n(5yearly)",
+      "Expires",
+      "Referral\n to RPT",
+      "Decision \nof RPT"
+     ],
+     "header_row": 3,
+     "sample_rows": [],
+     "row_count": 10,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [
+       "Licence \nNumber",
+       "Licence Holder",
+       "Manager/Agent",
+       "HMO Address",
+       "Description",
+       "Amenities                        Number",
+       "",
+       "Conditions",
+       "Issued\n(5yearly)",
+       "Expires",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Beanhill"
+     },
+     "header": [
+      "Licence \nNumber",
+      "Licence Holder",
+      "Manager/Agent",
+      "HMO Address",
+      "Description",
+      "Amenities                        Number",
+      "",
+      "Conditions",
+      "Issued\n(5yearly)",
+      "Expires",
+      "Referral\n to RPT",
+      "Decision \nof RPT"
+     ],
+     "header_row": 3,
+     "sample_rows": [],
+     "row_count": 60,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [
+       "Licence \nNumber",
+       "Licence Holder",
+       "Manager/Agent",
+       "HMO Address",
+       "Description",
+       "Amenities                        Number",
+       "",
+       "Conditions",
+       "Issued\n(5yearly)",
+       "Expires",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Bletchley"
+     },
+     "header": [
+      "Licence \nNumber",
+      "Licence Holder",
+      "Manager/Agent",
+      "HMO Address",
+      "Description",
+      "Amenities                        Number",
+      "",
+      "Conditions",
+      "Issued\n(5yearly)",
+      "Expires",
+      "Referral\n to RPT",
+      "Decision \nof RPT"
+     ],
+     "header_row": 3,
+     "sample_rows": [],
+     "row_count": 1063,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [
+       "Licence \nNumber",
+       "Licence Holder",
+       "Manager/Agent",
+       "HMO Address",
+       "Description",
+       "Amenities                        Number",
+       "",
+       "Conditions",
+       "Issued\n(5yearly)",
+       "Expires",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Bradville"
+     },
+     "header": [
+      "Licence \nNumber",
+      "Licence Holder",
+      "Manager/Agent",
+      "HMO Address",
+      "Description",
+      "Amenities                        Number",
+      "",
+      "Conditions",
+      "Issued\n(5yearly)",
+      "Expires",
+      "Referral\n to RPT",
+      "Decision \nof RPT"
+     ],
+     "header_row": 3,
+     "sample_rows": [],
+     "row_count": 31,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [
+       "Licence \nNumber",
+       "Licence Holder",
+       "Manager/Agent",
+       "HMO Address",
+       "Description",
+       "Amenities                        Number",
+       "",
+       "Conditions",
+       "Issued\n(5yearly)",
+       "Expires",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Bradwell"
+     },
+     "header": [
+      "Licence \nNumber",
+      "Licence Holder",
+      "Manager/Agent",
+      "HMO Address",
+      "Description",
+      "Amenities                        Number",
+      "",
+      "Conditions",
+      "Issued\n(5yearly)",
+      "Expires",
+      "Referral\n to RPT",
+      "Decision \nof RPT"
+     ],
+     "header_row": 3,
+     "sample_rows": [],
+     "row_count": 41,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [
+       "Licence \nNumber",
+       "Licence Holder",
+       "Manager/Agent",
+       "HMO Address",
+       "Description",
+       "Amenities                        Number",
+       "",
+       "Conditions",
+       "Issued\n(5yearly)",
+       "Expires",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Bradwell Common"
+     },
+     "header": [
+      "Licence \nNumber",
+      "Licence Holder",
+      "Manager/Agent",
+      "HMO Address",
+      "Description",
+      "Amenities                        Number",
+      "",
+      "Conditions",
+      "Issued\n(5yearly)",
+      "Expires",
+      "Referral\n to RPT",
+      "Decision \nof RPT"
+     ],
+     "header_row": 3,
+     "sample_rows": [],
+     "row_count": 361,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [
+       "Licence \nNumber",
+       "Licence Holder",
+       "Manager/Agent",
+       "HMO Address",
+       "Description",
+       "Amenities                        Number",
+       "",
+       "Conditions",
+       "Issued\n(5yearly)",
+       "Expires",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Brooklands"
+     },
+     "header": [
+      "Licence \nNumber",
+      "Licence Holder",
+      "Manager/Agent",
+      "HMO Address",
+      "Description",
+      "Amenities                        Number",
+      "",
+      "Conditions",
+      "Issued\n(5yearly)",
+      "Expires",
+      "Referral\n to RPT",
+      "Decision \nof RPT"
+     ],
+     "header_row": 3,
+     "sample_rows": [],
+     "row_count": 41,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [
+       "Licence \nNumber",
+       "Licence Holder",
+       "Manager/Agent",
+       "HMO Address",
+       "Description",
+       "Amenities                        Number",
+       "",
+       "Conditions",
+       "Issued\n(5yearly)",
+       "Expires",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Broughton"
+     },
+     "header": [
+      "Licence \nNumber",
+      "Licence Holder",
+      "Manager/Agent",
+      "HMO Address",
+      "Description",
+      "Amenities                        Number",
+      "",
+      "Conditions",
+      "Issued\n(5yearly)",
+      "Expires",
+      "Referral\n to RPT",
+      "Decision \nof RPT"
+     ],
+     "header_row": 3,
+     "sample_rows": [],
+     "row_count": 231,
+     "column_count": 12
+    }
+   ]
+  },
+  {
+   "job_id": "ee80fa3f27b5cc78ac6b3aa34e5269251363386c7f50ef7c2e87c61bd780be8e",
+   "publisher": "Newham Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.newham.gov.uk/downloads/file/11383/public-register-hmo",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Reference number",
+       "Property address",
+       "Licence type",
+       "Licence holder\nname",
+       "Agent name",
+       "Licence valid\nfrom",
+       "Licence\nexpiry",
+       "Number of\nbedrooms",
+       "Total number\nof permitted\noccupants",
+       "Licence conditions"
+      ],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       28.512666666666664,
+       91.34699999999998,
+       1130.1873333333333,
+       777.442
+      ]
+     },
+     "header": [
+      "Reference number",
+      "Property address",
+      "Licence type",
+      "Licence holder\nname",
+      "Agent name",
+      "Licence valid\nfrom",
+      "Licence\nexpiry",
+      "Number of\nbedrooms",
+      "Total number\nof permitted\noccupants",
+      "Licence conditions"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 2,
+     "column_count": 10
+    },
+    {
+     "head_rows": [
+      [
+       "Reference number",
+       "Property address",
+       "Licence type",
+       "Licence holder\nname",
+       "Agent name",
+       "Licence valid\nfrom",
+       "Licence\nexpiry",
+       "Number of\nbedrooms",
+       "Total number\nof permitted\noccupants",
+       "Licence conditions"
+      ],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       28.512666666666664,
+       28.34699999999998,
+       1130.1873333333333,
+       658.642
+      ]
+     },
+     "header": [
+      "Reference number",
+      "Property address",
+      "Licence type",
+      "Licence holder\nname",
+      "Agent name",
+      "Licence valid\nfrom",
+      "Licence\nexpiry",
+      "Number of\nbedrooms",
+      "Total number\nof permitted\noccupants",
+      "Licence conditions"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 2,
+     "column_count": 10
+    },
+    {
+     "head_rows": [
+      [
+       "Reference number",
+       "Property address",
+       "Licence type",
+       "Licence holder\nname",
+       "Agent name",
+       "Licence valid\nfrom",
+       "Licence\nexpiry",
+       "Number of\nbedrooms",
+       "Total number\nof permitted\noccupants",
+       "Licence conditions"
+      ],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       28.512666666666664,
+       28.34699999999998,
+       1130.1873333333333,
+       680.961
+      ]
+     },
+     "header": [
+      "Reference number",
+      "Property address",
+      "Licence type",
+      "Licence holder\nname",
+      "Agent name",
+      "Licence valid\nfrom",
+      "Licence\nexpiry",
+      "Number of\nbedrooms",
+      "Total number\nof permitted\noccupants",
+      "Licence conditions"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 2,
+     "column_count": 10
+    },
+    {
+     "head_rows": [
+      [
+       "Reference number",
+       "Property address",
+       "Licence type",
+       "Licence holder\nname",
+       "Agent name",
+       "Licence valid\nfrom",
+       "Licence\nexpiry",
+       "Number of\nbedrooms",
+       "Total number\nof permitted\noccupants",
+       "Licence conditions"
+      ],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "bbox": [
+       28.512666666666664,
+       28.34699999999998,
+       1130.1873333333333,
+       647.482
+      ]
+     },
+     "header": [
+      "Reference number",
+      "Property address",
+      "Licence type",
+      "Licence holder\nname",
+      "Agent name",
+      "Licence valid\nfrom",
+      "Licence\nexpiry",
+      "Number of\nbedrooms",
+      "Total number\nof permitted\noccupants",
+      "Licence conditions"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 2,
+     "column_count": 10
+    },
+    {
+     "head_rows": [
+      [
+       "Reference number",
+       "Property address",
+       "Licence type",
+       "Licence holder\nname",
+       "Agent name",
+       "Licence valid\nfrom",
+       "Licence\nexpiry",
+       "Number of\nbedrooms",
+       "Total number\nof permitted\noccupants",
+       "Licence conditions"
+      ],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "bbox": [
+       28.471,
+       28.34699999999998,
+       1130.229,
+       375.64099999999996
+      ]
+     },
+     "header": [
+      "Reference number",
+      "Property address",
+      "Licence type",
+      "Licence holder\nname",
+      "Agent name",
+      "Licence valid\nfrom",
+      "Licence\nexpiry",
+      "Number of\nbedrooms",
+      "Total number\nof permitted\noccupants",
+      "Licence conditions"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 10
+    },
+    {
+     "head_rows": [
+      [
+       "Reference number",
+       "Property address",
+       "Licence type",
+       "Licence holder\nname",
+       "Agent name",
+       "Licence valid\nfrom",
+       "Licence\nexpiry",
+       "Number of\nbedrooms",
+       "Total number\nof permitted\noccupants",
+       "Licence conditions"
+      ],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "bbox": [
+       28.471,
+       28.34699999999998,
+       1130.229,
+       587.681
+      ]
+     },
+     "header": [
+      "Reference number",
+      "Property address",
+      "Licence type",
+      "Licence holder\nname",
+      "Agent name",
+      "Licence valid\nfrom",
+      "Licence\nexpiry",
+      "Number of\nbedrooms",
+      "Total number\nof permitted\noccupants",
+      "Licence conditions"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 10
+    },
+    {
+     "head_rows": [
+      [
+       "Reference number",
+       "Property address",
+       "Licence type",
+       "Licence holder\nname",
+       "Agent name",
+       "Licence valid\nfrom",
+       "Licence\nexpiry",
+       "Number of\nbedrooms",
+       "Total number\nof permitted\noccupants",
+       "Licence conditions"
+      ],
+      [],
+      []
+     ],
+     "where": {
+      "page": 7,
+      "table": 1,
+      "bbox": [
+       28.512666666666664,
+       28.34699999999998,
+       1130.1873333333333,
+       692.122
+      ]
+     },
+     "header": [
+      "Reference number",
+      "Property address",
+      "Licence type",
+      "Licence holder\nname",
+      "Agent name",
+      "Licence valid\nfrom",
+      "Licence\nexpiry",
+      "Number of\nbedrooms",
+      "Total number\nof permitted\noccupants",
+      "Licence conditions"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 2,
+     "column_count": 10
+    },
+    {
+     "head_rows": [
+      [
+       "Reference number",
+       "Property address",
+       "Licence type",
+       "Licence holder\nname",
+       "Agent name",
+       "Licence valid\nfrom",
+       "Licence\nexpiry",
+       "Number of\nbedrooms",
+       "Total number\nof permitted\noccupants",
+       "Licence conditions"
+      ],
+      [],
+      []
+     ],
+     "where": {
+      "page": 8,
+      "table": 1,
+      "bbox": [
+       28.512666666666664,
+       28.34699999999998,
+       1130.1873333333333,
+       658.642
+      ]
+     },
+     "header": [
+      "Reference number",
+      "Property address",
+      "Licence type",
+      "Licence holder\nname",
+      "Agent name",
+      "Licence valid\nfrom",
+      "Licence\nexpiry",
+      "Number of\nbedrooms",
+      "Total number\nof permitted\noccupants",
+      "Licence conditions"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 2,
+     "column_count": 10
+    }
+   ]
+  },
+  {
+   "job_id": "5932f9649adc988cd6a42c849a4892fb08b9bdcc3dcc30e39c63b2ca99ea1cd0",
+   "publisher": "Newport Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://live-newport.cloud.contensis.com/documents/Housing-documents/HMO/HMO-Public-Register/HMO-Public-Register.xlsx",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Reference",
+       "Licence Type",
+       "HMO Address",
+       "Ward",
+       "Issued",
+       "Expires",
+       "Occupants",
+       "",
+       "Rooms",
+       "",
+       "Landlord Address",
+       "Manager",
+       "Manager Address"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "HMO-Public-Register"
+     },
+     "header": [
+      "Reference",
+      "Licence Type",
+      "HMO Address",
+      "Ward",
+      "Issued",
+      "Expires",
+      "Occupants",
+      "Units",
+      "Rooms",
+      "Landlord",
+      "Landlord Address",
+      "Manager",
+      "Manager Address"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 386,
+     "column_count": 13
+    }
+   ]
+  },
+  {
+   "job_id": "2e36806668a6c757a421b42f37c003aae65d9a8d6a78f5aa69317f7d84fcec99",
+   "publisher": "North East Lincolnshire Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.nelincs.gov.uk/assets/uploads/2026/06/HMO-REG-JUNE-26.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "property address",
+       "number of persons on\nlicence",
+       "Licence number",
+       "Licence issued",
+       "Licence Exipry"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       59.4005,
+       72.23950000000002,
+       782.3999999999999,
+       507.96000000000004
+      ]
+     },
+     "header": [
+      "property address",
+      "number of persons on\nlicence",
+      "Licence number",
+      "Licence issued",
+      "Licence Exipry"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 25,
+     "column_count": 5
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       59.4005,
+       87.71950000000004,
+       782.4,
+       519.7195
+      ]
+     },
+     "header": [
+      "Tasburgh Street 26",
+      "6 PERSONS",
+      "DNI280900",
+      "17/08/2022",
+      "17/08/2027"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 26,
+     "column_count": 5
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       59.4005,
+       87.71950000000004,
+       782.4,
+       183.72000000000003
+      ]
+     },
+     "header": [
+      "Grimsby Road 164",
+      "6 PERSONS",
+      "ABU171100",
+      "22/01/2024",
+      "22/01/2029"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 5,
+     "column_count": 5
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 2,
+      "bbox": [
+       59.4005,
+       199.80000000000007,
+       782.4,
+       423.7200000000001
+      ]
+     },
+     "header": [
+      "Heneage Road 34",
+      "7 PERSONS",
+      "ORE261001",
+      "05/03/2024",
+      "05/03/2029"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 13,
+     "column_count": 5
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 3,
+      "bbox": [
+       59.4005,
+       439.7995000000001,
+       782.4,
+       519.7195
+      ]
+     },
+     "header": [
+      "Chantry Lane 32",
+      "5 PERSONS",
+      "MPE120501",
+      "03/06/2024",
+      "03/06/2029"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 4,
+     "column_count": 5
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "bbox": [
+       59.4005,
+       72.23950000000002,
+       782.4,
+       520.32
+      ]
+     },
+     "header": [
+      "Legsby Avenue 206",
+      "6 PERSONS",
+      "",
+      "07/06/2024",
+      "07/06/2029"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 27,
+     "column_count": 5
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "bbox": [
+       59.4005,
+       87.71950000000004,
+       782.4,
+       519.7195
+      ]
+     },
+     "header": [
+      "Welholme Road 67",
+      "5 PERSONS",
+      "JST130500",
+      "18/12/2024",
+      "18/12/2029"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 26,
+     "column_count": 5
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "bbox": [
+       59.4005,
+       87.71950000000004,
+       782.4,
+       295.7995000000001
+      ]
+     },
+     "header": [
+      "Heneage road 399",
+      "6 PERSONS",
+      "JL1270500",
+      "30/10/2024",
+      "30/10/2029"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 12,
+     "column_count": 5
+    }
+   ]
+  },
+  {
+   "job_id": "487736cf4e41c4e9f7c5d43cceb8c4b160395e0f3711ce25a2ac3377ca8c5c93",
+   "publisher": "North Somerset Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://n-somerset.gov.uk/sites/default/files/2024-05/HMO%20Public%20Register%20May%2024.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Licence\nNumber",
+       "Address of\nLicenced HMO",
+       "Licence Holder\nName and Address",
+       "Manager Name\nand Address",
+       "Property\nDescription",
+       "Summary of\nLicensing\nConditions",
+       "Licence\nCommenced",
+       "Date Licence\nExpires",
+       "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+       "No. HMO\nStoreys",
+       "No.\nSleeping\nRooms",
+       "No.\nLiving\nRooms",
+       "No. Flats\nSelf-\nContained",
+       "No. Flats\nNon-Self-\nContained",
+       "Description of\nShared Amenities\nIncluding Number\nof Each",
+       "Max No.\nPersons",
+       "Max No.\nHouse-\nholds"
+      ],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       15.316,
+       137.48000000000002,
+       830.624,
+       486.4800000000001
+      ]
+     },
+     "header": [
+      "Licence\nNumber",
+      "Address of\nLicenced HMO",
+      "Licence Holder\nName and Address",
+      "Manager Name\nand Address",
+      "Property\nDescription",
+      "Summary of\nLicensing\nConditions",
+      "Licence\nCommenced",
+      "Date Licence\nExpires",
+      "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+      "No. HMO\nStoreys",
+      "No.\nSleeping\nRooms",
+      "No.\nLiving\nRooms",
+      "No. Flats\nSelf-\nContained",
+      "No. Flats\nNon-Self-\nContained",
+      "Description of\nShared Amenities\nIncluding Number\nof Each",
+      "Max No.\nPersons",
+      "Max No.\nHouse-\nholds"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 5,
+     "column_count": 17
+    },
+    {
+     "head_rows": [
+      [
+       "Licence\nNumber",
+       "Address of\nLicenced HMO",
+       "Licence Holder\nName and Address",
+       "Manager Name\nand Address",
+       "Property\nDescription",
+       "Summary of\nLicensing\nConditions",
+       "Licence\nCommenced",
+       "Date Licence\nExpires",
+       "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+       "No. HMO\nStoreys",
+       "No.\nSleeping\nRooms",
+       "No.\nLiving\nRooms",
+       "No. Flats\nSelf-\nContained",
+       "No. Flats\nNon-Self-\nContained",
+       "Description of\nShared Amenities\nIncluding Number\nof Each",
+       "Max No.\nPersons",
+       "Max No.\nHouse-\nholds"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       15.314117647058826,
+       68.75999999999999,
+       830.6259011764706,
+       506.999995
+      ]
+     },
+     "header": [
+      "Licence\nNumber",
+      "Address of\nLicenced HMO",
+      "Licence Holder\nName and Address",
+      "Manager Name\nand Address",
+      "Property\nDescription",
+      "Summary of\nLicensing\nConditions",
+      "Licence\nCommenced",
+      "Date Licence\nExpires",
+      "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+      "No. HMO\nStoreys",
+      "No.\nSleeping\nRooms",
+      "No.\nLiving\nRooms",
+      "No. Flats\nSelf-\nContained",
+      "No. Flats\nNon-Self-\nContained",
+      "Description of\nShared Amenities\nIncluding Number\nof Each",
+      "Max No.\nPersons",
+      "Max No.\nHouse-\nholds"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 6,
+     "column_count": 17
+    },
+    {
+     "head_rows": [
+      [
+       "Licence\nNumber",
+       "Address of\nLicenced HMO",
+       "Licence Holder\nName and Address",
+       "Manager Name\nand Address",
+       "Property\nDescription",
+       "Summary of\nLicensing\nConditions",
+       "Licence\nCommenced",
+       "Date Licence\nExpires",
+       "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+       "No. HMO\nStoreys",
+       "No.\nSleeping\nRooms",
+       "No.\nLiving\nRooms",
+       "No. Flats\nSelf-\nContained",
+       "No. Flats\nNon-Self-\nContained",
+       "Description of\nShared Amenities\nIncluding Number\nof Each",
+       "Max No.\nPersons",
+       "Max No.\nHouse-\nholds"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       15.314117647058826,
+       68.75999999999999,
+       830.6259011764706,
+       465.59999500000004
+      ]
+     },
+     "header": [
+      "Licence\nNumber",
+      "Address of\nLicenced HMO",
+      "Licence Holder\nName and Address",
+      "Manager Name\nand Address",
+      "Property\nDescription",
+      "Summary of\nLicensing\nConditions",
+      "Licence\nCommenced",
+      "Date Licence\nExpires",
+      "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+      "No. HMO\nStoreys",
+      "No.\nSleeping\nRooms",
+      "No.\nLiving\nRooms",
+      "No. Flats\nSelf-\nContained",
+      "No. Flats\nNon-Self-\nContained",
+      "Description of\nShared Amenities\nIncluding Number\nof Each",
+      "Max No.\nPersons",
+      "Max No.\nHouse-\nholds"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 6,
+     "column_count": 17
+    },
+    {
+     "head_rows": [
+      [
+       "Licence\nNumber",
+       "Address of\nLicenced HMO",
+       "Licence Holder\nName and Address",
+       "Manager Name\nand Address",
+       "Property\nDescription",
+       "Summary of\nLicensing\nConditions",
+       "Licence\nCommenced",
+       "Date Licence\nExpires",
+       "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+       "No. HMO\nStoreys",
+       "No.\nSleeping\nRooms",
+       "No.\nLiving\nRooms",
+       "No. Flats\nSelf-\nContained",
+       "No. Flats\nNon-Self-\nContained",
+       "Description of\nShared Amenities\nIncluding Number\nof Each",
+       "Max No.\nPersons",
+       "Max No.\nHouse-\nholds"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "bbox": [
+       15.312631578947368,
+       68.75999999999999,
+       830.6273873684211,
+       514.38001
+      ]
+     },
+     "header": [
+      "Licence\nNumber",
+      "Address of\nLicenced HMO",
+      "Licence Holder\nName and Address",
+      "Manager Name\nand Address",
+      "Property\nDescription",
+      "Summary of\nLicensing\nConditions",
+      "Licence\nCommenced",
+      "Date Licence\nExpires",
+      "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+      "No. HMO\nStoreys",
+      "No.\nSleeping\nRooms",
+      "No.\nLiving\nRooms",
+      "No. Flats\nSelf-\nContained",
+      "No. Flats\nNon-Self-\nContained",
+      "Description of\nShared Amenities\nIncluding Number\nof Each",
+      "Max No.\nPersons",
+      "Max No.\nHouse-\nholds"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 7,
+     "column_count": 17
+    },
+    {
+     "head_rows": [
+      [
+       "Licence\nNumber",
+       "Address of\nLicenced HMO",
+       "Licence Holder\nName and Address",
+       "Manager Name\nand Address",
+       "Property\nDescription",
+       "Summary of\nLicensing\nConditions",
+       "Licence\nCommenced",
+       "Date Licence\nExpires",
+       "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+       "No. HMO\nStoreys",
+       "No.\nSleeping\nRooms",
+       "No.\nLiving\nRooms",
+       "No. Flats\nSelf-\nContained",
+       "No. Flats\nNon-Self-\nContained",
+       "Description of\nShared Amenities\nIncluding Number\nof Each",
+       "Max No.\nPersons",
+       "Max No.\nHouse-\nholds"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "bbox": [
+       15.314117647058826,
+       68.75999999999999,
+       830.6259011764706,
+       465.59999500000004
+      ]
+     },
+     "header": [
+      "Licence\nNumber",
+      "Address of\nLicenced HMO",
+      "Licence Holder\nName and Address",
+      "Manager Name\nand Address",
+      "Property\nDescription",
+      "Summary of\nLicensing\nConditions",
+      "Licence\nCommenced",
+      "Date Licence\nExpires",
+      "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+      "No. HMO\nStoreys",
+      "No.\nSleeping\nRooms",
+      "No.\nLiving\nRooms",
+      "No. Flats\nSelf-\nContained",
+      "No. Flats\nNon-Self-\nContained",
+      "Description of\nShared Amenities\nIncluding Number\nof Each",
+      "Max No.\nPersons",
+      "Max No.\nHouse-\nholds"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 6,
+     "column_count": 17
+    },
+    {
+     "head_rows": [
+      [
+       "Licence\nNumber",
+       "Address of\nLicenced HMO",
+       "Licence Holder\nName and Address",
+       "Manager Name\nand Address",
+       "Property\nDescription",
+       "Summary of\nLicensing\nConditions",
+       "Licence\nCommenced",
+       "Date Licence\nExpires",
+       "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+       "No. HMO\nStoreys",
+       "No.\nSleeping\nRooms",
+       "No.\nLiving\nRooms",
+       "No. Flats\nSelf-\nContained",
+       "No. Flats\nNon-Self-\nContained",
+       "Description of\nShared Amenities\nIncluding Number\nof Each",
+       "Max No.\nPersons",
+       "Max No.\nHouse-\nholds"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "bbox": [
+       15.314117647058826,
+       68.75999999999999,
+       830.6259011764706,
+       500.09999500000004
+      ]
+     },
+     "header": [
+      "Licence\nNumber",
+      "Address of\nLicenced HMO",
+      "Licence Holder\nName and Address",
+      "Manager Name\nand Address",
+      "Property\nDescription",
+      "Summary of\nLicensing\nConditions",
+      "Licence\nCommenced",
+      "Date Licence\nExpires",
+      "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+      "No. HMO\nStoreys",
+      "No.\nSleeping\nRooms",
+      "No.\nLiving\nRooms",
+      "No. Flats\nSelf-\nContained",
+      "No. Flats\nNon-Self-\nContained",
+      "Description of\nShared Amenities\nIncluding Number\nof Each",
+      "Max No.\nPersons",
+      "Max No.\nHouse-\nholds"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 6,
+     "column_count": 17
+    },
+    {
+     "head_rows": [
+      [
+       "Licence\nNumber",
+       "Address of\nLicenced HMO",
+       "Licence Holder\nName and Address",
+       "Manager Name\nand Address",
+       "Property\nDescription",
+       "Summary of\nLicensing\nConditions",
+       "Licence\nCommenced",
+       "Date Licence\nExpires",
+       "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+       "No. HMO\nStoreys",
+       "No.\nSleeping\nRooms",
+       "No.\nLiving\nRooms",
+       "No. Flats\nSelf-\nContained",
+       "No. Flats\nNon-Self-\nContained",
+       "Description of\nShared Amenities\nIncluding Number\nof Each",
+       "Max No.\nPersons",
+       "Max No.\nHouse-\nholds"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 7,
+      "table": 1,
+      "bbox": [
+       15.314117647058826,
+       68.75999999999999,
+       830.6259011764706,
+       472.49999500000007
+      ]
+     },
+     "header": [
+      "Licence\nNumber",
+      "Address of\nLicenced HMO",
+      "Licence Holder\nName and Address",
+      "Manager Name\nand Address",
+      "Property\nDescription",
+      "Summary of\nLicensing\nConditions",
+      "Licence\nCommenced",
+      "Date Licence\nExpires",
+      "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+      "No. HMO\nStoreys",
+      "No.\nSleeping\nRooms",
+      "No.\nLiving\nRooms",
+      "No. Flats\nSelf-\nContained",
+      "No. Flats\nNon-Self-\nContained",
+      "Description of\nShared Amenities\nIncluding Number\nof Each",
+      "Max No.\nPersons",
+      "Max No.\nHouse-\nholds"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 6,
+     "column_count": 17
+    },
+    {
+     "head_rows": [
+      [
+       "Licence\nNumber",
+       "Address of\nLicenced HMO",
+       "Licence Holder\nName and Address",
+       "Manager Name\nand Address",
+       "Property\nDescription",
+       "Summary of\nLicensing\nConditions",
+       "Licence\nCommenced",
+       "Date Licence\nExpires",
+       "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+       "No. HMO\nStoreys",
+       "No.\nSleeping\nRooms",
+       "No.\nLiving\nRooms",
+       "No. Flats\nSelf-\nContained",
+       "No. Flats\nNon-Self-\nContained",
+       "Description of\nShared Amenities\nIncluding Number\nof Each",
+       "Max No.\nPersons",
+       "Max No.\nHouse-\nholds"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 8,
+      "table": 1,
+      "bbox": [
+       15.312631578947368,
+       68.75999999999999,
+       830.6273873684211,
+       500.64001
+      ]
+     },
+     "header": [
+      "Licence\nNumber",
+      "Address of\nLicenced HMO",
+      "Licence Holder\nName and Address",
+      "Manager Name\nand Address",
+      "Property\nDescription",
+      "Summary of\nLicensing\nConditions",
+      "Licence\nCommenced",
+      "Date Licence\nExpires",
+      "Any\nMatters\nreferred\nto\nTribunal,\nDecision\nand\nCase\nRef.",
+      "No. HMO\nStoreys",
+      "No.\nSleeping\nRooms",
+      "No.\nLiving\nRooms",
+      "No. Flats\nSelf-\nContained",
+      "No. Flats\nNon-Self-\nContained",
+      "Description of\nShared Amenities\nIncluding Number\nof Each",
+      "Max No.\nPersons",
+      "Max No.\nHouse-\nholds"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 7,
+     "column_count": 17
+    }
+   ]
+  },
+  {
+   "job_id": "3ae8eb052e89f24aaab91ce7ae2c341f110fd9bb83fe2019f23c7a76e883d019",
+   "publisher": "North Warwickshire Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://www.northwarks.gov.uk/downloads/file/2909/hmo-public-register",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Licence No.",
+       "Address",
+       "Address",
+       "Address",
+       "Property Type",
+       "HMO Licence Issued",
+       "HMO Licence Expiry",
+       "Permitted No. of Occupiers",
+       "Number of Units",
+       "Number of Storeys",
+       "",
+       "",
+       "Shared Kitchens",
+       "Shared Living Rooms",
+       "Shared Bathrooms",
+       "Shared Toilets",
+       "Conditions of Licence",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Sheet1"
+     },
+     "header": [
+      "Licence No.",
+      "Address",
+      "Address",
+      "Address",
+      "Property Type",
+      "HMO Licence Issued",
+      "HMO Licence Expiry",
+      "Permitted No. of Occupiers",
+      "Number of Units",
+      "Number of Storeys",
+      "Self - Contained Flats",
+      "None - Self Contained Flats",
+      "Shared Kitchens",
+      "Shared Living Rooms",
+      "Shared Bathrooms",
+      "Shared Toilets",
+      "Conditions of Licence",
+      "Tribunal Information",
+      "Tribunal Decision Summary"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 27,
+     "column_count": 19
+    }
+   ]
+  },
+  {
+   "job_id": "3e334f8b56887dd1992ebdbd7dbbc471c2dfedae5dd85e661af45d47888e0408",
+   "publisher": "Norwich Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "HTML",
+   "resource_url": "https://www.norwich.gov.uk/registers/hmo/registerhmo.html",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Property",
+       "Issue Date",
+       "Renewal date",
+       "Manager",
+       "HMO reference",
+       ""
+      ],
+      [],
+      [
+       "Storeys",
+       "",
+       "",
+       "Permitted occupants",
+       "Bed/living rooms",
+       "Shared bath/showers",
+       "",
+       "Shared toilets",
+       "Shared kitchens",
+       "Shared kitchen sinks"
+      ],
+      [],
+      [
+       "Storeys",
+       "",
+       "",
+       "Permitted occupants",
+       "Bed/living rooms",
+       "Shared bath/showers",
+       "",
+       "Shared toilets",
+       "Shared kitchens",
+       "Shared kitchen sinks"
+      ],
+      [],
+      [
+       "Storeys",
+       "",
+       "",
+       "Permitted occupants",
+       "Bed/living rooms",
+       "Shared bath/showers",
+       "",
+       "Shared toilets",
+       "Shared kitchens",
+       "Shared kitchen sinks"
+      ],
+      [],
+      [
+       "Storeys",
+       "",
+       "",
+       "Permitted occupants",
+       "Bed/living rooms",
+       "Shared bath/showers",
+       "",
+       "Shared toilets",
+       "Shared kitchens",
+       "Shared kitchen sinks"
+      ],
+      []
+     ],
+     "where": {
+      "table": 1,
+      "source_markup": "html page"
+     },
+     "header": [
+      "Property",
+      "Issue Date",
+      "Renewal date",
+      "Manager",
+      "HMO reference",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1820,
+     "column_count": 10
+    }
+   ]
+  },
+  {
+   "job_id": "0facf72d1af7c5df5fdaa45a540cea38dedd0f948353c11cb144fb07d58faae9",
+   "publisher": "Powys Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "ZIP",
+   "resource_url": "https://en.powys.gov.uk/media/21285/Register-of-Mandatory-Houses-in-Multiple-Occupation-HMOs/zip/slRegister_of_Mandatory_Houses__in_Mutiple_Occupation_HMOs_.zip?m=1718721214573",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+       "Property Details",
+       "Licence No.",
+       "Licence Issue Date",
+       "Licence Expiry Date"
+      ],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "HMO Mandatory Licence Register",
+      "zip_member": "Register of Mandatory Houses  in Mutiple Occupation (HMOs) .xlsx"
+     },
+     "header": [
+      "Property Details",
+      "Licence No.",
+      "Licence Issue Date",
+      "Licence Expiry Date"
+     ],
+     "header_row": 5,
+     "sample_rows": [],
+     "row_count": 4,
+     "column_count": 4
+    }
+   ]
+  },
+  {
+   "job_id": "c11d02b857931ad246b35baea991fdda5b174a434f76ddeea86c71de43c9398b",
+   "publisher": "Redditch Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "CSV",
+   "resource_url": "https://www.redditchbc.gov.uk/media/aswjg24k/redditch-hmo-register-december-2025.csv",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Landlord Name",
+       "HMO Category",
+       "No of Floors",
+       "No of Households",
+       "No of People",
+       "Last Inspection Date",
+       "Licence Issue Date",
+       "Licence Expiry Date",
+       "",
+       "Property_Address",
+       "",
+       "Prop_Postcode",
+       "Your Organisation Name",
+       "Your_Reference",
+       "",
+       "Property Description",
+       "No. of Bedrooms",
+       "No. of Living rooms",
+       "Manager's Name",
+       "Licence Holder's Name",
+       "Licence Conditions",
+       "",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Landlord Name",
+      "HMO Category",
+      "No of Floors",
+      "No of Households",
+      "No of People",
+      "Last Inspection Date",
+      "Licence Issue Date",
+      "Licence Expiry Date",
+      "UPRN",
+      "Property_Address",
+      "",
+      "Prop_Postcode",
+      "Your Organisation Name",
+      "Your_Reference",
+      "Notes",
+      "Property Description",
+      "No. of Bedrooms",
+      "No. of Living rooms",
+      "Manager's Name",
+      "Licence Holder's Name",
+      "Licence Conditions",
+      "Tribunal Decisions",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 179,
+     "column_count": 24
+    }
+   ]
+  },
+  {
+   "job_id": "5a762a2961dfba04b9b352069a29100d98b56a128bca80d0640302ecfa22cf1f",
+   "publisher": "Rochdale Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.rochdale.gov.uk/downloads/file/997/register-of-hmos",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "ADDRESS OF PROPERTY",
+       "",
+       "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+       "No OF STOREY WHICH\nMAY BE OCCUPIED",
+       "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+       "DATE OF\nENTRY\nIN REGISTER",
+       "DATE LICENCE\nREVOKED",
+       "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       17.399999618,
+       68.97619372690002,
+       821.160009383,
+       510.6600018623
+      ]
+     },
+     "header": [
+      "ADDRESS OF PROPERTY",
+      "M or\nA or\nTEN*",
+      "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+      "No OF STOREY WHICH\nMAY BE OCCUPIED",
+      "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+      "DATE OF\nENTRY\nIN REGISTER",
+      "DATE LICENCE\nREVOKED",
+      "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "ADDRESS OF PROPERTY",
+       "",
+       "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+       "No OF STOREY WHICH\nMAY BE OCCUPIED",
+       "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+       "DATE OF\nENTRY\nIN REGISTER",
+       "DATE LICENCE\nREVOKED",
+       "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       17.399999618,
+       68.97200671470004,
+       821.160009383,
+       511.6200009463
+      ]
+     },
+     "header": [
+      "ADDRESS OF PROPERTY",
+      "M or\nA or\nTEN*",
+      "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+      "No OF STOREY WHICH\nMAY BE OCCUPIED",
+      "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+      "DATE OF\nENTRY\nIN REGISTER",
+      "DATE LICENCE\nREVOKED",
+      "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "ADDRESS OF PROPERTY",
+       "",
+       "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+       "No OF STOREY WHICH\nMAY BE OCCUPIED",
+       "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+       "DATE OF\nENTRY\nIN REGISTER",
+       "DATE LICENCE\nREVOKED",
+       "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       17.399999618,
+       68.97200671470004,
+       821.160009383,
+       511.6200009463
+      ]
+     },
+     "header": [
+      "ADDRESS OF PROPERTY",
+      "M or\nA or\nTEN*",
+      "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+      "No OF STOREY WHICH\nMAY BE OCCUPIED",
+      "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+      "DATE OF\nENTRY\nIN REGISTER",
+      "DATE LICENCE\nREVOKED",
+      "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "ADDRESS OF PROPERTY",
+       "",
+       "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+       "No OF STOREY WHICH\nMAY BE OCCUPIED",
+       "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+       "DATE OF\nENTRY\nIN REGISTER",
+       "DATE LICENCE\nREVOKED",
+       "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "bbox": [
+       17.399999618,
+       68.97200671470004,
+       821.160009383,
+       511.6200009463
+      ]
+     },
+     "header": [
+      "ADDRESS OF PROPERTY",
+      "M or\nA or\nTEN*",
+      "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+      "No OF STOREY WHICH\nMAY BE OCCUPIED",
+      "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+      "DATE OF\nENTRY\nIN REGISTER",
+      "DATE LICENCE\nREVOKED",
+      "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "ADDRESS OF PROPERTY",
+       "",
+       "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+       "No OF STOREY WHICH\nMAY BE OCCUPIED",
+       "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+       "DATE OF\nENTRY\nIN REGISTER",
+       "DATE LICENCE\nREVOKED",
+       "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "bbox": [
+       17.399999618,
+       68.97200671470004,
+       821.160009383,
+       511.6200009463
+      ]
+     },
+     "header": [
+      "ADDRESS OF PROPERTY",
+      "M or\nA or\nTEN*",
+      "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+      "No OF STOREY WHICH\nMAY BE OCCUPIED",
+      "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+      "DATE OF\nENTRY\nIN REGISTER",
+      "DATE LICENCE\nREVOKED",
+      "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "ADDRESS OF PROPERTY",
+       "",
+       "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+       "No OF STOREY WHICH\nMAY BE OCCUPIED",
+       "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+       "DATE OF\nENTRY\nIN REGISTER",
+       "DATE LICENCE\nREVOKED",
+       "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "bbox": [
+       17.399999618,
+       68.97200671470004,
+       821.160009383,
+       511.6200009463
+      ]
+     },
+     "header": [
+      "ADDRESS OF PROPERTY",
+      "M or\nA or\nTEN*",
+      "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+      "No OF STOREY WHICH\nMAY BE OCCUPIED",
+      "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+      "DATE OF\nENTRY\nIN REGISTER",
+      "DATE LICENCE\nREVOKED",
+      "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "ADDRESS OF PROPERTY",
+       "",
+       "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+       "No OF STOREY WHICH\nMAY BE OCCUPIED",
+       "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+       "DATE OF\nENTRY\nIN REGISTER",
+       "DATE LICENCE\nREVOKED",
+       "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 7,
+      "table": 1,
+      "bbox": [
+       17.399999618,
+       68.97200671470004,
+       821.160009383,
+       516.7799977422001
+      ]
+     },
+     "header": [
+      "ADDRESS OF PROPERTY",
+      "M or\nA or\nTEN*",
+      "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+      "No OF STOREY WHICH\nMAY BE OCCUPIED",
+      "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+      "DATE OF\nENTRY\nIN REGISTER",
+      "DATE LICENCE\nREVOKED",
+      "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "ADDRESS OF PROPERTY",
+       "",
+       "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+       "No OF STOREY WHICH\nMAY BE OCCUPIED",
+       "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+       "DATE OF\nENTRY\nIN REGISTER",
+       "DATE LICENCE\nREVOKED",
+       "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 8,
+      "table": 1,
+      "bbox": [
+       17.399999618,
+       68.97200671470004,
+       821.160009383,
+       511.6200009463
+      ]
+     },
+     "header": [
+      "ADDRESS OF PROPERTY",
+      "M or\nA or\nTEN*",
+      "CATEGORY\nDESCRIPTION\nOF PROPERTY",
+      "No OF STOREY WHICH\nMAY BE OCCUPIED",
+      "TOTAL No OF HABITABLE ROOMS\nIN HOUSE",
+      "DATE OF\nENTRY\nIN REGISTER",
+      "DATE LICENCE\nREVOKED",
+      "LICENCE OR\nTEMPORARY\nEXEMPTON EXPIRY\nDATE\n(unless previously revoked)"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 8,
+     "column_count": 8
+    }
+   ]
+  },
+  {
+   "job_id": "69abaf35f3ecbd59e2408360388e9030ae6c54a201820cb6b19bdb8cde742d81",
+   "publisher": "Rochford Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "HTML",
+   "resource_url": "https://www.rochford.gov.uk/register-of-licenced-hmo-in-the-rochford-district",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Ref",
+       "Address of Licenced Property",
+       "Date Licence Issued",
+       "Date for re-licencing"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "table": 1,
+      "source_markup": "html page"
+     },
+     "header": [
+      "Ref",
+      "Address of Licenced Property",
+      "Date Licence Issued",
+      "Date for re-licencing"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 11,
+     "column_count": 4
+    }
+   ]
+  },
+  {
+   "job_id": "c2812da8a55a40228742f191a6541aac0d3ffa0b523ebde66c12c88080615231",
+   "publisher": "Solihull Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.solihull.gov.uk/sites/default/files/2026-09/HMO-Register.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "42320 U Sntiroant fRodrd, S Rhoiraledy B, S9o0l i4hAuQll, B90 3DQ\n86 Earlswood, Dorridge, Solihull, B93 8RH\n613483 SAtRreBeOtRsb WroAoYk, RCoHaEdL,M SSoLliEhYu lWl, BO9O1D 1,L SBOLIHULL, B37 7LB\n23 Morgan Grove, Smiths Wood, Solihull, B36 9NR\n8 AVON DRIVE, SMITHS WOOD, SOLIHULL, B36 0TR",
+      "John Andrew Fahy\nGarry Seeney\nQWueanddoy LAtnddrews\nUnited Relocation Services Ltd\nJIT Property Ltd\nPeng Li",
+      "7 Slade Grove, Knowle, Solihull\n71 BROMSGROVE, ROAD, STUDLEY, B80 7PE\n142 D3u RnOhaWmA CNr oDfRtI, VDEo, rBriRdOgeX,B SOoUlihRuNllE, ,B E9N3 G5LRAZND, EN10 6HQ\nUnited Relocation Services Limited, Hilton Hall Business Centre, Hilton Lane, Essington, Wolverham\nSUITE D, ASTOR HOUSE, 282 LICHFIELD ROAD, FOUR OAKS, SUTTON COLDFIELD, WEST MIDLANDS\n12 Wells Mews, Arnos Grove, London, N11 2DQ",
+      "pton\n, B74 2UG",
+      "John Andrew Fahy\nZara Wood\nSWqeunadrey PArnodpreerwtys Group\nUnited Relocation Services Ltd\nFire For The Mind t/a co:home\nPeng Li",
+      "7 Slade Grove, Knowle, Solihull\n54 BOLDMERE ROAD, SUTTON COLDFIELD, B73 5TJ\nC4 /DOu RnhUaSmSE CLLroS fAt,S DSOorCrIiAdgTeE,S S LoTliDh,u 2ll7, BO9L3D 5 GRLZOUCESTER STREET, LONDON, WC1N3AX\nHilton Hall Business Centre, Hilton Lane, Essington, Wolverhampton, WV11 2BQ\nSUITE D, ASTOR HOUSE, 282 LICHFIELD ROAD, FOUR OAKS, SUTTON COLDFIELD, WEST MIDLANDS, B74 2UG\n12 Wells Mews, Arnos Grove, London, N11 2DQ",
+      "terraced 1965- 1979\ndetatched\nTDeerartaccheedd 1 1996655 - - 1 1997799\nSemi- detached 1919 - 1944\nTerraced 1965 -1979\nTerraced 1965- 1979",
+      "Standard\nStandard\nSSttaannddaarrdd\nStandard\nStandard\nStandard",
+      "",
+      "4th May 2025\n1st June 2025\n47tthh OSecptotebmerb 2e0r 2250 20\n17th Ocotber 2025\n2nd November 2025\n3rd November 2020",
+      "3rd May 2030\n31st May 2030\n36rtdh OSecptotebmerb 2e0r 320025\n16th October 2030\n1st November 2030\n2nd November 2025",
+      "5 Years\n5 years\n55 YYeeaarrss\n5 Years\n5 Years\n5 Years",
+      "25/01500/HMOMAN\n25/02681/HMOMAN\n2IN5 /P0R4O6G94R/EHSMSOMAN\n25/04629/HMOMAN\n25/05526/HMOMAN\nIN PROGRESS",
+      "5\n7\n66\n6\n5\n6",
+      "5\n7\n66\n6\n5\n6",
+      "5\n7\n66\n6\n5\n6",
+      "3\n2\n22\n3\n3\n2",
+      "5\n1\n11\n1\n1\n1",
+      "0\n2\n11\n1\n1\n1",
+      "2\n5\n54\n2\n5",
+      "0\n5\n00\n3\n6"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 5,
+     "column_count": 21
+    }
+   ]
+  },
+  {
+   "job_id": "fd0d451ff2403d5126a47d0a069ff67bbb1bc7bffe22e9b0ac66a8783e4e47ed",
+   "publisher": "South Ribble Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://southribble.gov.uk/downloads/file/999/south-ribble-hmo-register",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Ref",
+       "HMO address",
+       "Description of HMO",
+       "Summary of the conditions",
+       "Commencement date",
+       "Duration",
+       "Referred to Residential Property Tribunal or Lands Tribunal and Decisions",
+       "Description of Shared Amenities (Including numbers of amenities)",
+       "Number of Living Rooms",
+       "Number of Sleeping Rooms",
+       "Maximum number of persons to occupy HMO",
+       "If Flats, Number Self - Contained",
+       "If Flats, Number Non Self Contained"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Sheet1"
+     },
+     "header": [
+      "Ref",
+      "HMO address",
+      "Description of HMO",
+      "Summary of the conditions",
+      "Commencement date",
+      "Duration",
+      "Referred to Residential Property Tribunal or Lands Tribunal and Decisions",
+      "Description of Shared Amenities (Including numbers of amenities)",
+      "Number of Living Rooms",
+      "Number of Sleeping Rooms",
+      "Maximum number of persons to occupy HMO",
+      "If Flats, Number Self - Contained",
+      "If Flats, Number Non Self Contained"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 42,
+     "column_count": 13
+    }
+   ]
+  },
+  {
+   "job_id": "77a571a0a1a8031b3c3bc855e47a840d681abacf4adc6b235d41c4b7781d8ed2",
+   "publisher": "South Staffordshire Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.sstaffs.gov.uk/sites/default/files/2026-05/HMO%20Register%202026.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [
+       "Licence Reference",
+       "Property Address",
+       "Licence Holder",
+       "Licence\nHolder\nAddress",
+       "Duration\nof Licence",
+       "Date Issued",
+       "Expiry",
+       "Number of\nRooms /\nPersons",
+       "Storeys"
+      ],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       36.24,
+       36.25999999999999,
+       805.8999899999999,
+       173.59000000000003
+      ]
+     },
+     "header": [
+      "Licence Reference",
+      "Property Address",
+      "Licence Holder",
+      "Licence\nHolder\nAddress",
+      "Duration\nof Licence",
+      "Date Issued",
+      "Expiry",
+      "Number of\nRooms /\nPersons",
+      "Storeys"
+     ],
+     "header_row": 1,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 9
+    }
+   ]
+  },
+  {
+   "job_id": "bff15c4567ed4ad364c34792f3ce69f7a5ce72888a255a1d94f5db6cd5fe6cf5",
+   "publisher": "Spelthorne Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLS",
+   "resource_url": "https://www.spelthorne.gov.uk/sites/default/files/2026-09/HMO%20register.xls",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Reference",
+       "Property Address 1",
+       "Property Address 2",
+       "",
+       "",
+       "Postcode",
+       "Ward",
+       "Licenceholder(s)",
+       "Address of licenceholder(s) 1",
+       "Address of licenceholder(s) 2",
+       "Address of licenceholder(s) 3",
+       "Postcode",
+       "Licensed maximum number of occupants",
+       "Licensed maximum number of households",
+       "Licence issued date",
+       "Licence expiry date"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Licensed HMOs"
+     },
+     "header": [
+      "Reference",
+      "Property Address 1",
+      "Property Address 2",
+      "Town",
+      "County",
+      "Postcode",
+      "Ward",
+      "Licenceholder(s)",
+      "Address of licenceholder(s) 1",
+      "Address of licenceholder(s) 2",
+      "Address of licenceholder(s) 3 ",
+      "Postcode",
+      "Licensed maximum number of occupants",
+      "Licensed maximum number of households",
+      "Licence issued date",
+      "Licence expiry date "
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 173,
+     "column_count": 16
+    }
+   ]
+  },
+  {
+   "job_id": "d9c66311ac148b7b3c75d6a6706159856fef6546d84a81dbf70f85e99cd4be92",
+   "publisher": "St Albans Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.stalbans.gov.uk/sites/default/files/attachments/Published%20HMO%20Extended%20Register%20-%20March%202026.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Address",
+       "Licence Holder",
+       "Licence Holder's Address",
+       "Person Managing",
+       "Manager's Address",
+       "HMO description",
+       "Date Licence\nIssued",
+       "Renewal Due",
+       "No. of Floors",
+       "No. of\nSleeping\nRooms",
+       "No. of\nLounges",
+       "No. of S/C\nflats",
+       "No. of Shared\nBathrooms",
+       "No. of Shared\nWC",
+       "No. of Shared\nkitchens",
+       "Max No. of\nOccupiers",
+       "Additional Licence\nConditions",
+       "Residential Property\nTribunal Matters"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       27.059999625000003,
+       36.79999550000002,
+       1162.82400525,
+       804.599986625
+      ]
+     },
+     "header": [
+      "Address",
+      "Licence Holder",
+      "Licence Holder's Address",
+      "Person Managing",
+      "Manager's Address",
+      "HMO description",
+      "Date Licence\nIssued",
+      "Renewal Due",
+      "No. of Floors",
+      "No. of\nSleeping\nRooms",
+      "No. of\nLounges",
+      "No. of S/C\nflats",
+      "No. of Shared\nBathrooms",
+      "No. of Shared\nWC",
+      "No. of Shared\nkitchens",
+      "Max No. of\nOccupiers",
+      "Additional Licence\nConditions",
+      "Residential Property\nTribunal Matters"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 24,
+     "column_count": 18
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       27.059999625000003,
+       36.59999562500002,
+       1162.73999025,
+       804.599986625
+      ]
+     },
+     "header": [
+      "26 Flavian Close, St Albans,\nAL3 4JX",
+      "Lee Browne",
+      "",
+      "Nicholas Smith",
+      "NJS Estates, 1 Selwyn Avenue, Hatfield,\nAL10 9NR",
+      "Two storey HMO",
+      "13/06/2022",
+      "12/04/2027",
+      "2",
+      "6",
+      "1",
+      "0",
+      "0",
+      "0",
+      "1",
+      "6",
+      "FP, R",
+      "No"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 24,
+     "column_count": 18
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       27.059999625000003,
+       36.59999562500002,
+       1162.7400056249999,
+       804.599986625
+      ]
+     },
+     "header": [
+      "535 Watford Road, Chiswell\nGreen, AL2 2DU",
+      "Stuart Baker",
+      "HW Watford Ltd, 535 Watford Road,\nChiswell Green, St Albans, AL2 3DU",
+      "Stuart Baker",
+      "HW Watford Ltd, 535 Watford Road,\nChiswell Green, St Albans, AL2 3DU",
+      "Three storey HMO",
+      "20/07/2023",
+      "10/11/2027",
+      "3",
+      "6",
+      "0",
+      "0",
+      "2",
+      "3",
+      "1",
+      "6",
+      "FP, R",
+      "No"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 24,
+     "column_count": 18
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "bbox": [
+       27.059999625000003,
+       364.5599975,
+       1162.7400056249999,
+       456.7714127857143
+      ]
+     },
+     "header": [
+      "Emmaus, Hill End Lane, St\nAlbans, AL4 0FE",
+      "Emmaus St Albans",
+      "Emmaus, Hill End Lane, St Albans, AL4 0FE",
+      "Duncan Lewis",
+      "Emmaus, Hill End Lane, St Albans, AL4 0FE",
+      "Three storey HMO",
+      "05/08/2020",
+      "20/07/2029",
+      "3",
+      "36",
+      "2",
+      "0",
+      "9",
+      "12",
+      "1",
+      "36",
+      "FP, R",
+      "No"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 2,
+     "column_count": 18
+    }
+   ]
+  },
+  {
    "job_id": "8a0a3e68c8341c24f2b5dace608edf1a3ec3fcd6db887109f9993b23d9a3ade4",
    "publisher": "Stirling Council",
    "title": "hmo licences stirling council - open data",
@@ -442,6 +6452,18 @@
    "layouts": [],
    "tables": [
     {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
      "where": {
       "table": 1
      },
@@ -474,6 +6496,29 @@
    "layouts": [],
    "tables": [
     {
+     "head_rows": [
+      [
+       "",
+       "Local_Authority_Name",
+       "Postcode",
+       "Properties_Per_Postcode",
+       "Ward",
+       "Community_Council",
+       "Publication_Date",
+       "",
+       "Shape__Area",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
      "where": {
       "table": 1
      },
@@ -497,6 +6542,2133 @@
    ]
   },
   {
+   "job_id": "5b26c6f1bdab7dc4d6991b6674c12468f9c2f54426a9bf3f075acb7ceeeaa966",
+   "publisher": "Sutton Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.sutton.gov.uk/sites/default/files/2026-09/LBS%20%20Public%20Register%20Website%20September%202026.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "",
+       "FULL ADDRESS",
+       "WARDNAME",
+       "Status",
+       "ISSUED",
+       "EXPIRYD",
+       "Maximum\nPermitted\nOccupants",
+       "Maximum Number of\nHouseholds",
+       "No of Storeys"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       51.528,
+       54.27999999999997,
+       788.9222125925926,
+       1134.39601
+      ]
+     },
+     "header": [
+      "REFVAL",
+      "FULL ADDRESS",
+      "WARDNAME",
+      "Status",
+      "ISSUED",
+      "EXPIRYD",
+      "Maximum\nPermitted\nOccupants",
+      "Maximum Number of\nHouseholds",
+      "No of Storeys"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 108,
+     "column_count": 9
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 2,
+      "bbox": [
+       547.56999,
+       558.35001,
+       788.9222125925926,
+       585.35001
+      ]
+     },
+     "header": [
+      "03-Dec-30",
+      "8",
+      "8",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 2,
+     "column_count": 4
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       51.540000000000006,
+       54.299999999999955,
+       788.91999,
+       1134.39601
+      ]
+     },
+     "header": [
+      "25/00166/HMOMAN",
+      "15 Angel Hill Sutton SM1 3EF",
+      "Sutton North",
+      "Licence Issued",
+      "15-Apr-25",
+      "14-Apr-30",
+      "6",
+      "6",
+      "3"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 114,
+     "column_count": 9
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       51.540000000000006,
+       54.299999999999955,
+       788.91999,
+       1125.39601
+      ]
+     },
+     "header": [
+      "23/01089/HMOMAN",
+      "245 Brighton Road Sutton SM2 5ST",
+      "Belmont",
+      "Licence Issued",
+      "23-Oct-23",
+      "22-Oct-28",
+      "6",
+      "6",
+      "3"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 100,
+     "column_count": 9
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "bbox": [
+       51.540000000000006,
+       54.299999999999955,
+       788.91999,
+       504.349995
+      ]
+     },
+     "header": [
+      "25/00171/HMOMAN",
+      "Camden Cottage Hilliers Lane Beddington CR0 4SU",
+      "Beddington",
+      "Checks Outstanding",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 41,
+     "column_count": 9
+    }
+   ]
+  },
+  {
+   "job_id": "0a2ec4537d167b1d139957d160903f6fd59438546092df6d753d3a98b3a2b310",
+   "publisher": "Tameside Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.tameside.gov.uk/documents/d/guest/hmo-public-register",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [
+       "Licence\nReference\nNumber",
+       "Licenced Address\nLine 1",
+       "Licenced Address\nLine 2",
+       "Licenced\nAddress Line 3",
+       "Licenced Address Line 4",
+       "Licenced Address\nLine 5",
+       "Licenced Address\nPost Code",
+       "Max\nOccupant\ns Allowed",
+       "Licensing\nEvent:\nCommencem\nent Date",
+       "Licensing Event:\nMost Recent\nRenewal Date",
+       "Duration\nLicence\nAwarded"
+      ],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       54.533333416666665,
+       71.75999999999999,
+       433.4228472857143,
+       125.0160003
+      ]
+     },
+     "header": [
+      "Licence\nReference\nNumber",
+      "Licenced Address\nLine 1",
+      "Licenced Address\nLine 2",
+      "Licenced\nAddress Line 3",
+      "Licenced Address Line 4",
+      "Licenced Address\nLine 5",
+      "Licenced Address\nPost Code",
+      "Max\nOccupant\ns Allowed",
+      "Licensing\nEvent:\nCommencem\nent Date",
+      "Licensing Event:\nMost Recent\nRenewal Date",
+      "Duration\nLicence\nAwarded"
+     ],
+     "header_row": 4,
+     "sample_rows": [],
+     "row_count": 1,
+     "column_count": 11
+    }
+   ]
+  },
+  {
+   "job_id": "e92ac7a8bccc0de7c4f0c20162849cc4ae20720cab508e6541dabfc6de6d4317",
+   "publisher": "Waltham Forest Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.walthamforest.gov.uk/sites/default/files/2026-08/HMO%20Public%20register%20August%202026.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [
+       "Licence type",
+       "Property address",
+       "Licence holder name",
+       "Licence start date",
+       "Licence end date",
+       "Maximum permitted occupants",
+       "Maximum permitted households"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       51.479999625000005,
+       54.24000262499999,
+       708.0299949375001,
+       538.1099998125
+      ]
+     },
+     "header": [
+      "Licence type",
+      "Property address",
+      "Licence holder name",
+      "Licence start date",
+      "Licence end date",
+      "Maximum permitted occupants",
+      "Maximum permitted households"
+     ],
+     "header_row": 1,
+     "sample_rows": [],
+     "row_count": 61,
+     "column_count": 7
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       51.479999625000005,
+       54.24000262499999,
+       708.0299949375001,
+       538.1099998125
+      ]
+     },
+     "header": [
+      "Mandatory HMO licence",
+      "115, Calderon Road, London, E11 4ET",
+      "Sarash Bhatoolaul",
+      "16/09/2022",
+      "15/09/2027",
+      "6",
+      "5"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 62,
+     "column_count": 7
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       51.479999625000005,
+       54.24000262499999,
+       708.0299949375001,
+       538.1099998125
+      ]
+     },
+     "header": [
+      "Additional HMO licence",
+      "15, Wesley Road, London, E10 6JF",
+      "rizwan mayet",
+      "09/06/2023",
+      "08/06/2028",
+      "4",
+      "4"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 62,
+     "column_count": 7
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "bbox": [
+       51.479999625000005,
+       54.24000262499999,
+       708.0299949375001,
+       538.1099998125
+      ]
+     },
+     "header": [
+      "Additional HMO licence",
+      "189, Crownfield Road, London, E15 2AS",
+      "Joyce Quarrie",
+      "03/09/2021",
+      "02/09/2026",
+      "4",
+      "4"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 62,
+     "column_count": 7
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "bbox": [
+       51.479999625000005,
+       54.24000262499999,
+       708.0299949375001,
+       538.1099998125
+      ]
+     },
+     "header": [
+      "Additional HMO licence",
+      "230, Markhouse Road, London, E17 8EP",
+      "Rundheer Ramful",
+      "21/03/2024",
+      "20/03/2029",
+      "4",
+      "3"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 62,
+     "column_count": 7
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "bbox": [
+       51.479999625000005,
+       54.24000262499999,
+       708.0299949375001,
+       538.1099998125
+      ]
+     },
+     "header": [
+      "Additional HMO licence",
+      "3, Pattern Works 2, Gaywood Road, London, E17 4QA",
+      "John Finlay",
+      "29/05/2026",
+      "28/05/2031",
+      "4",
+      "4"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 62,
+     "column_count": 7
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 7,
+      "table": 1,
+      "bbox": [
+       51.479999625000005,
+       54.24000262499999,
+       708.0299949375001,
+       538.1099998125
+      ]
+     },
+     "header": [
+      "Mandatory HMO licence",
+      "36, Harvey Road, London, E11 3DB",
+      "Saeed Ahmed",
+      "07/12/2021",
+      "06/12/2026",
+      "8",
+      "8"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 62,
+     "column_count": 7
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 8,
+      "table": 1,
+      "bbox": [
+       51.479999625000005,
+       54.24000262499999,
+       708.0299949375001,
+       538.1099998125
+      ]
+     },
+     "header": [
+      "Additional HMO licence",
+      "43, Lingfield Apartments 99, Parade Gardens, London, E4 8EB",
+      "L&Q PRS Co Ltd",
+      "24/02/2026",
+      "23/02/2031",
+      "4",
+      "2"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 62,
+     "column_count": 7
+    }
+   ]
+  },
+  {
+   "job_id": "c16b004415709e826b63b6fdb63f779a5b151ad378a8a22bd45875426f9f7cab",
+   "publisher": "Warrington Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "CSV",
+   "resource_url": "https://www.warrington.gov.uk/sites/default/files/2026-04/HMO-public-register-April-2026.csv",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [
+       "",
+       "Address of licenced HMO",
+       "Post code",
+       "Licence No",
+       "Short description of licensed HMO",
+       "Summary of licence conditions",
+       "Commencement date of licence",
+       "Duration of licence",
+       "Info referred to residential property tribunal/lands tribunal re: licence",
+       "",
+       "Ref no given by tribunal",
+       "No of storeys",
+       "No of rooms for sleeping",
+       "No of rooms for living accommodation",
+       "No of self-contained flats",
+       "No of flats not self contained",
+       "Description of shared amenities + no of each",
+       "Max no of persons or households permitted to occupy HMO",
+       "Name & address of licence holder",
+       "Name & address of person managing HMO"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "",
+      "Address of licenced HMO",
+      "Post code",
+      "Licence No",
+      "Short description of licensed HMO",
+      "Summary of licence conditions",
+      "Commencement date of licence ",
+      "Duration of licence",
+      "Info referred to residential property tribunal/lands tribunal re: licence",
+      " ",
+      "Ref no given by tribunal",
+      "No of storeys",
+      "No of rooms for sleeping",
+      "No of rooms for living accommodation",
+      "No of self-contained flats",
+      "No of flats not self contained",
+      "Description of shared amenities + no of each",
+      "Max no of persons or households permitted to occupy HMO",
+      "Name & address of licence holder",
+      "Name & address of person managing HMO"
+     ],
+     "header_row": 1,
+     "sample_rows": [],
+     "row_count": 261,
+     "column_count": 20
+    }
+   ]
+  },
+  {
+   "job_id": "643ec225152c6beef95c671b45a7dd2d9c7d7299eba9aaa33522bed18d766b4e",
+   "publisher": "Warwick Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "CSV",
+   "resource_url": "https://www.warwickdc.gov.uk/download/downloads/id/9537/public_register_june_2026.csv",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "HMO Address 1",
+       "HMO Address 2",
+       "HMO Address 3",
+       "HMO Address 4",
+       "HMO Postcode",
+       "Licence Holder",
+       "Manager",
+       "Licence Start Date",
+       "Licence End Date",
+       "Licence Duration",
+       "Licence No.",
+       "Scheme Type",
+       "Maximum No. of Households",
+       "Maximum Occupiers",
+       "storeys",
+       "number_of_bedrooms",
+       "",
+       "",
+       "Kitchens",
+       "Living Rooms",
+       "Bathrooms",
+       "",
+       "HMO Type",
+       "Building Type"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "HMO Address 1",
+      "HMO Address 2",
+      "HMO Address 3",
+      "HMO Address 4",
+      "HMO Postcode",
+      "Licence Holder ",
+      "Manager",
+      "Licence Start Date",
+      "Licence End Date",
+      "Licence Duration",
+      "Licence No. ",
+      "Scheme Type",
+      "Maximum No. of Households",
+      "Maximum Occupiers",
+      "storeys",
+      "number_of_bedrooms",
+      "Self Contained Flats",
+      "Non-Self Contained Flats",
+      "Kitchens",
+      "Living Rooms",
+      "Bathrooms",
+      "Separate WCs",
+      "HMO Type",
+      "Building Type"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1090,
+     "column_count": 24
+    }
+   ]
+  },
+  {
+   "job_id": "ec38bee96d53903800bab2b82152439157b2b6e87790aad4ebf3dedd4a31f15d",
+   "publisher": "Welwyn Hatfield Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.welhat.gov.uk/downloads/file/671/hmo-register",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Property\nNo.",
+       "Property_Address",
+       "Property\nPostcode",
+       "Category",
+       "No.\nof\nStore\nys",
+       "No of\nHouse\nholds",
+       "No of People",
+       "Licence Start",
+       "Licence Expiry",
+       "Licence Holder",
+       "Address of Licence Holder",
+       "Postcode",
+       "Manager",
+       "Manager Address"
+      ],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       2.2199999999999998,
+       59.46040000000011,
+       1164.2,
+       173.82040000000012
+      ]
+     },
+     "header": [
+      "Property\nNo.",
+      "Property_Address",
+      "Property\nPostcode",
+      "Category",
+      "No.\nof\nStore\nys",
+      "No of\nHouse\nholds",
+      "No of People",
+      "Licence Start",
+      "Licence Expiry",
+      "Licence Holder",
+      "Address of Licence Holder",
+      "Postcode",
+      "Manager",
+      "Manager Address"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 5,
+     "column_count": 14
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 2,
+      "bbox": [
+       2.2199999999999998,
+       193.26040000000006,
+       1164.2,
+       759.4209000000001
+      ]
+     },
+     "header": [
+      "132",
+      "Aldykes Hatfield Herts",
+      "AL10 8EE",
+      "House",
+      "2",
+      "5",
+      "5",
+      "01/10/2023",
+      "30/09/2028",
+      "Mr Chung Bo Sun 4 Pleasant Rise, Hatfield, Hertfordshire",
+      "EN4 8NN",
+      "Licence Holder",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 24,
+     "column_count": 13
+    },
+    {
+     "head_rows": [
+      [
+       "Property\nNo.",
+       "Property_Address",
+       "Property\nPostcode",
+       "Category",
+       "No.\nof\nStore\nys",
+       "No of\nHouse\nholds",
+       "No of People",
+       "Licence Start",
+       "Licence Expiry",
+       "Licence Holder",
+       "Address of Licence Holder",
+       "Postcode",
+       "Manager",
+       "Manager Address"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       2.2199999999999998,
+       59.46040000000011,
+       1164.18,
+       763.7409
+      ]
+     },
+     "header": [
+      "Property\nNo.",
+      "Property_Address",
+      "Property\nPostcode",
+      "Category",
+      "No.\nof\nStore\nys",
+      "No of\nHouse\nholds",
+      "No of People",
+      "Licence Start",
+      "Licence Expiry",
+      "Licence Holder",
+      "Address of Licence Holder",
+      "Postcode",
+      "Manager",
+      "Manager Address"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 62,
+     "column_count": 14
+    },
+    {
+     "head_rows": [
+      [
+       "Property\nNo.",
+       "Property_Address",
+       "Property\nPostcode",
+       "Category",
+       "No.\nof\nStore\nys",
+       "No of\nHouse\nholds",
+       "No of People",
+       "Licence Start",
+       "Licence Expiry",
+       "Licence Holder",
+       "Address of Licence Holder",
+       "Postcode",
+       "Manager",
+       "Manager Address"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       2.2199999999999998,
+       59.46040000000011,
+       1164.18,
+       768.3004000000001
+      ]
+     },
+     "header": [
+      "Property\nNo.",
+      "Property_Address",
+      "Property\nPostcode",
+      "Category",
+      "No.\nof\nStore\nys",
+      "No of\nHouse\nholds",
+      "No of People",
+      "Licence Start",
+      "Licence Expiry",
+      "Licence Holder",
+      "Address of Licence Holder",
+      "Postcode",
+      "Manager",
+      "Manager Address"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 75,
+     "column_count": 14
+    },
+    {
+     "head_rows": [
+      [
+       "Property\nNo.",
+       "Property_Address",
+       "Property\nPostcode",
+       "Category",
+       "No.\nof\nStore\nys",
+       "No of\nHouse\nholds",
+       "No of People",
+       "Licence Start",
+       "Licence Expiry",
+       "Licence Holder",
+       "Address of Licence Holder",
+       "Postcode",
+       "Manager",
+       "Manager Address"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "bbox": [
+       2.2199999999999998,
+       59.46040000000011,
+       1164.21,
+       768.6604000000002
+      ]
+     },
+     "header": [
+      "Property\nNo.",
+      "Property_Address",
+      "Property\nPostcode",
+      "Category",
+      "No.\nof\nStore\nys",
+      "No of\nHouse\nholds",
+      "No of People",
+      "Licence Start",
+      "Licence Expiry",
+      "Licence Holder",
+      "Address of Licence Holder",
+      "Postcode",
+      "Manager",
+      "Manager Address"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 74,
+     "column_count": 14
+    },
+    {
+     "head_rows": [
+      [
+       "Property\nNo.",
+       "Property_Address",
+       "Property\nPostcode",
+       "Category",
+       "No.\nof\nStore\nys",
+       "No of\nHouse\nholds",
+       "No of People",
+       "Licence Start",
+       "Licence Expiry",
+       "Licence Holder",
+       "Address of Licence Holder",
+       "Postcode",
+       "Manager",
+       "Manager Address"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "bbox": [
+       2.2199999999999998,
+       59.46040000000011,
+       1164.18,
+       768.6604000000002
+      ]
+     },
+     "header": [
+      "Property\nNo.",
+      "Property_Address",
+      "Property\nPostcode",
+      "Category",
+      "No.\nof\nStore\nys",
+      "No of\nHouse\nholds",
+      "No of People",
+      "Licence Start",
+      "Licence Expiry",
+      "Licence Holder",
+      "Address of Licence Holder",
+      "Postcode",
+      "Manager",
+      "Manager Address"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 75,
+     "column_count": 14
+    },
+    {
+     "head_rows": [
+      [
+       "Property\nNo.",
+       "Property_Address",
+       "Property\nPostcode",
+       "Category",
+       "No.\nof\nStore\nys",
+       "No of\nHouse\nholds",
+       "No of People",
+       "Licence Start",
+       "Licence Expiry",
+       "Licence Holder",
+       "Address of Licence Holder",
+       "Postcode",
+       "Manager",
+       "Manager Address"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "bbox": [
+       2.304,
+       59.46040000000011,
+       1164.2,
+       768.0609000000002
+      ]
+     },
+     "header": [
+      "Property\nNo.",
+      "Property_Address",
+      "Property\nPostcode",
+      "Category",
+      "No.\nof\nStore\nys",
+      "No of\nHouse\nholds",
+      "No of People",
+      "Licence Start",
+      "Licence Expiry",
+      "Licence Holder",
+      "Address of Licence Holder",
+      "Postcode",
+      "Manager",
+      "Manager Address"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 75,
+     "column_count": 14
+    },
+    {
+     "head_rows": [
+      [
+       "Property\nNo.",
+       "Property_Address",
+       "Property\nPostcode",
+       "Category",
+       "No.\nof\nStore\nys",
+       "No of\nHouse\nholds",
+       "No of People",
+       "Licence Start",
+       "Licence Expiry",
+       "Licence Holder",
+       "Address of Licence Holder",
+       "Postcode",
+       "Manager",
+       "Manager Address"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 7,
+      "table": 1,
+      "bbox": [
+       2.304,
+       59.46040000000011,
+       1164.192,
+       771.3207333333335
+      ]
+     },
+     "header": [
+      "Property\nNo.",
+      "Property_Address",
+      "Property\nPostcode",
+      "Category",
+      "No.\nof\nStore\nys",
+      "No of\nHouse\nholds",
+      "No of People",
+      "Licence Start",
+      "Licence Expiry",
+      "Licence Holder",
+      "Address of Licence Holder",
+      "Postcode",
+      "Manager",
+      "Manager Address"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 72,
+     "column_count": 14
+    }
+   ]
+  },
+  {
+   "job_id": "6c62706c114a435e78277fa2d5bf01b62e135c414d1c0e977b23225afc6afb0d",
+   "publisher": "West Northamptonshire Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://cms.westnorthants.gov.uk/sites/default/files/2026-02/HMO%20Public%20Register%20-%20Feb%202026.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [
+       "",
+       "No of",
+       "No of",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "Property",
+       "",
+       "",
+       "",
+       "",
+       "icence Expir"
+      ],
+      [],
+      [
+       "Category",
+       "",
+       "",
+       "Licence Date",
+       "",
+       "",
+       "",
+       "perty_Address",
+       "",
+       "",
+       "",
+       "",
+       "Your_Reference",
+       ""
+      ],
+      [],
+      [
+       "",
+       "Households",
+       "People",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "Postcode",
+       "",
+       "",
+       "",
+       "",
+       "date"
+      ],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "No of",
+      "No of",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Property",
+      "",
+      "",
+      "",
+      "L",
+      "icence Expir"
+     ],
+     "header_row": 2,
+     "sample_rows": [],
+     "row_count": 98,
+     "column_count": 14
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "HM",
+      "O Public",
+      "Register",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 100,
+     "column_count": 15
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "Additional",
+      "4",
+      "4",
+      "05/07/2021",
+      "51 Tow",
+      "cester R",
+      "oad, Northampton",
+      "NN4 8LG",
+      "West Northamptonshire",
+      "Council",
+      "WK/202105572",
+      "04/07/2026"
+     ],
+     "header_row": 2,
+     "sample_rows": [],
+     "row_count": 98,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "Mandatory",
+      "6",
+      "9",
+      "06/09/2021",
+      "2 Kingsw",
+      "",
+      "ell Stree",
+      "t, Northampton",
+      "NN1 1PR",
+      "West Northamptonshire",
+      "Council",
+      "WK/202106996",
+      "05/09/2026"
+     ],
+     "header_row": 2,
+     "sample_rows": [],
+     "row_count": 98,
+     "column_count": 13
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "HMO",
+      "Public",
+      "Register",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 100,
+     "column_count": 15
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "HM",
+      "O Public",
+      "Register",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 100,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 7,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "Mandatory",
+      "6",
+      "6",
+      "01/02/2023",
+      "3 Balfour R",
+      "oad, Nor",
+      "thampton",
+      "NN2 6JR",
+      "West Northamptonshire",
+      "Council",
+      "WK/202200334",
+      "31/01/2028"
+     ],
+     "header_row": 2,
+     "sample_rows": [],
+     "row_count": 98,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 8,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "Additional",
+      "4",
+      "4",
+      "17/04/2023",
+      "23 Ruski",
+      "n Road,",
+      "Northampton",
+      "NN2 7SY",
+      "West Northamptonshire",
+      "Council",
+      "WK/202212823",
+      "16/04/2028"
+     ],
+     "header_row": 2,
+     "sample_rows": [],
+     "row_count": 98,
+     "column_count": 12
+    }
+   ]
+  },
+  {
+   "job_id": "d0620358e454673abf951d75a0a6c1a59b2561388f2645fead40c437a63c1807",
+   "publisher": "West Oxfordshire Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.westoxon.gov.uk/media/ejihfkjx/wodc-licensed-hmo-web-register-01-sep-2026.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "HMO Address",
+       "Issued",
+       "Expires"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       51.48,
+       88.09999999999991,
+       542.0280015,
+       490.86999999999995
+      ]
+     },
+     "header": [
+      "HMO Address",
+      "Issued",
+      "Expires"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 35,
+     "column_count": 3
+    }
+   ]
+  },
+  {
+   "job_id": "d42bace063006ba681ac02ce38dfd697836f4846bd4824310a498f55ad7b16ce",
+   "publisher": "Wigan Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.wigan.gov.uk/Docs/PDF/Business/Licensing-Permits-Registrations/HMO/Wigan-HMO-Licence-Register.pdf",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "bbox": [
+       51.49257142857143,
+       54.5,
+       782.2836190476189,
+       522.0960000000001
+      ]
+     },
+     "header": [
+      "Studios 1 and 9-16 Bridgeman House Apartments, Bridgeman\nTerrace, Swinley, Wigan",
+      "WN1 1TZ",
+      "04/12/2024",
+      "60",
+      "9 En suite Bedrooms with living space, 2 shared kitchen/diners, 1\nBasement",
+      "9",
+      "9",
+      "N/A",
+      "N/A",
+      "9",
+      "No",
+      "Y"
+     ],
+     "header_row": 1,
+     "sample_rows": [],
+     "row_count": 15,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "bbox": [
+       51.526857142857146,
+       54.54800000000002,
+       782.3121904761905,
+       522.0960000000001
+      ]
+     },
+     "header": [
+      "11 Dicconson Terrace, Wigan",
+      "WN1 2AA",
+      "12/12/2024",
+      "60",
+      "Kitchen, 5 en-suite bedrooms",
+      "0",
+      "5",
+      "N/A",
+      "N/A",
+      "5",
+      "No",
+      "N"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 16,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "bbox": [
+       51.526857142857146,
+       54.54800000000002,
+       782.3121904761905,
+       522.0960000000001
+      ]
+     },
+     "header": [
+      "15 Stanley Street, Atherton",
+      "M46 0AB",
+      "23/05/2024",
+      "60",
+      "Kitchen, living room, bathroom, 5 bedrooms",
+      "1",
+      "5",
+      "N/A",
+      "N/A",
+      "5",
+      "No",
+      "N"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 16,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "bbox": [
+       51.526857142857146,
+       54.54800000000002,
+       782.3121904761905,
+       522.0960000000001
+      ]
+     },
+     "header": [
+      "18-20 Chapel Green Road, Hindley",
+      "WN2 3LL",
+      "11/12/2024",
+      "60",
+      "Kitchen, bathroom and shower room",
+      "0",
+      "6",
+      "N/A",
+      "N/A",
+      "7",
+      "No",
+      "N"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 16,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "bbox": [
+       51.526857142857146,
+       54.54800000000002,
+       782.3121904761905,
+       522.0960000000001
+      ]
+     },
+     "header": [
+      "227 Chapel Street, Leigh",
+      "WN7 2AP",
+      "19/02/2026",
+      "60",
+      "2 bathrooms with WCs, 1 kitchen, 6 Bedrooms",
+      "0",
+      "6",
+      "N/A",
+      "N/A",
+      "6",
+      "No",
+      "Y"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 16,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "bbox": [
+       51.526857142857146,
+       54.54800000000002,
+       782.3121904761905,
+       522.0960000000001
+      ]
+     },
+     "header": [
+      "283 Ince Green Lane, Ince",
+      "WN3 4QP",
+      "17/09/2021",
+      "60",
+      "1 Kitchen, 1 Bathroom, 1 living room",
+      "N/A",
+      "5",
+      "N/A",
+      "N/A",
+      "5",
+      "No",
+      "N"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 16,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 7,
+      "table": 1,
+      "bbox": [
+       51.526857142857146,
+       54.54800000000002,
+       782.3121904761905,
+       522.0960000000001
+      ]
+     },
+     "header": [
+      "31 Delph Street, Bull Hey, Wigan",
+      "WN6 7EG",
+      "22/07/2025",
+      "60",
+      "5 Bedrooms, 4 En Suites, 1 Shower Room with W.C, 1 Lounge/Diner",
+      "1",
+      "5",
+      "N/A",
+      "N/A",
+      "5",
+      "No",
+      "N"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 16,
+     "column_count": 12
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 8,
+      "table": 1,
+      "bbox": [
+       51.526857142857146,
+       54.54800000000002,
+       782.3121904761905,
+       522.0960000000001
+      ]
+     },
+     "header": [
+      "36 Chapel Street, Orrell, Wigan",
+      "WN5 0AG",
+      "04/12/2024",
+      "60",
+      "Kitchen, living room, bathroom, 5 bedrooms",
+      "1",
+      "5",
+      "N/A",
+      "N/A",
+      "5",
+      "No",
+      "N"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 16,
+     "column_count": 12
+    }
+   ]
+  },
+  {
+   "job_id": "f834ea9ef2d9647d341b085fb293a9e6324ba82c65a68a4c66b7f57087d1d60c",
+   "publisher": "Winchester Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://www.winchester.gov.uk/assets/attach/47414/HMO-Public-Register-30-July-2026.xlsx",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [
+       "",
+       "",
+       "",
+       "Post Code",
+       "Licence Holder",
+       "Managing Agent",
+       "Licence Number",
+       "Valid from",
+       "Expires on"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Sheet1"
+     },
+     "header": [
+      "House ",
+      "Street",
+      "Town",
+      "Post Code",
+      "Licence Holder",
+      "Managing Agent",
+      "Licence Number",
+      "Valid from",
+      "Expires on"
+     ],
+     "header_row": 2,
+     "sample_rows": [],
+     "row_count": 350,
+     "column_count": 9
+    }
+   ]
+  },
+  {
+   "job_id": "da181d002b6d14438ac080be6df80d0d270c1020b44b2f88c1721a00333b8d40",
+   "publisher": "Wokingham Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://wokingham.axlr8.uk/documents/14373/Wokingham%20-%20Public%20register%20of%20Licensed%20HMOS%20May%202021.xlsx",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [
+       "Licence Holder 11 (1a)",
+       "Address of Licence Holder 11(1a)",
+       "Postcode 11(1a)",
+       "Name of person managing 11(1b)",
+       "Address of person managing HMO 11(1b)",
+       "Postcode 11(1b)",
+       "Property_Address",
+       "Prop_Postcode",
+       "Short description of HMO",
+       "summary of conditions",
+       "Commencent Date",
+       "Duration",
+       "",
+       "summary info of decisions under 11(1g) and reference number",
+       "No of storeys",
+       "number of rooms providing sleeping accommodation",
+       "number of rooms providing living accommodation",
+       "for licensed hmos consisting of flats - no of self contained",
+       "for licensed hmos consisting of flats - no of flats that are not self contained",
+       "description of shared amenities",
+       "numbers of shared amenities",
+       "maximum number of persons or households permitted",
+       "No of Households",
+       "HMO reference number",
+       "PRU Reference number"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "Register of Licensed HMOs"
+     },
+     "header": [
+      "11(1a) ",
+      "",
+      "",
+      "11(1b)",
+      "",
+      "",
+      "11(1c)",
+      "",
+      "11 (1d) ",
+      "11 (1e)",
+      "11 (1f) ",
+      "",
+      "11 (1g)",
+      "11 (1h) ",
+      "11 (2a)",
+      "11 (2bi)",
+      "11 (2bii)",
+      "11 (3ci)",
+      "11(3c ii)",
+      "11 (d) ",
+      "",
+      "11(e)",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 2,
+     "sample_rows": [],
+     "row_count": 85,
+     "column_count": 25
+    }
+   ]
+  },
+  {
    "job_id": "11ecd966cf9b568415b7620460ea01741a1c3238efa6f960b85bbab7fc2a5989",
    "publisher": "london borough of lambeth",
    "title": "Homes Of Multiple Occupancy",
@@ -509,6 +8681,34 @@
    "layouts": [],
    "tables": [
     {
+     "head_rows": [
+      [
+       "",
+       "",
+       "",
+       "POSTCODE",
+       "",
+       "",
+       "WARD",
+       "LICENCE_TYPE",
+       "LICENCE_REFERENCE_NUMBER",
+       "PROPERTY_ADDRESS",
+       "LICENCE_HOLDER_NAME",
+       "LICENCE_START_DATE",
+       "LICENCE_END_DATE",
+       "MAXIMUM_PERMITTED_OCCUPANTS",
+       "MAXIMUM_PERMITTED_HOUSEHOLDS"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
      "where": {
       "table": 1
      },
