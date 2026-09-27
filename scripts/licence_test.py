@@ -170,6 +170,40 @@ check(norm_license("Data Licensing &nbsp; Data published by the Council at a "
 check(norm_license("https://www.parliament.scot/about/copyright"),
       "Scottish Parliament Copyright", "known licence URL gets its label")
 
+# --- a council web page as licence evidence (families/intake.licence_from_page)
+# Registers found by search live on council pages, not in catalogues. The
+# page's own words about reuse go through the same gate as any field.
+sys.path.insert(0, str(Path(__file__).parent.parent / "families"))
+import intake  # noqa: E402
+
+
+def page(body: bytes):
+    try:
+        return intake.licence_from_page(body)["id"]
+    except intake.Refused as err:
+        return "refused: " + str(err)[:40]
+
+
+check(page(b'<footer>Content is available under the <a href="https://www.nationalarchives.gov.uk/doc/'
+           b'open-government-licence/version/3/">Open Government Licence v3.0</a>.</footer>'),
+      "OGL-UK-3.0", "a page footer naming the OGL, with its link, is the OGL")
+check(page(b"<footer>&copy; 2026 Anytown Council. All rights reserved.</footer>")[:8], "refused:",
+      "a footer reserving all rights refuses")
+check(page(b"<p>Download the register (PDF).</p>"), "refused: The page says nothing about a licence",
+      "a page silent about reuse refuses")
+check(page(b'<script>x="All rights reserved"</script><p>Available under the Open Government Licence v3.0</p>'),
+      "OGL-UK-3.0", "words inside a script are not the page's statement")
+check(intake.licence_from_page.__module__, "intake", "the page reader lives in the intake")
+
+# --- a file that is an HTML table under a CSV name (Epsom and Ewell's)
+import extract  # noqa: E402
+import tempfile  # noqa: E402
+with tempfile.NamedTemporaryFile("wb", suffix=".csv", delete=False) as tmp:
+    tmp.write(b"<table><tr><th>address</th><th>ref</th></tr><tr><td>1 A Road,<br>KT17 1AA</td><td>R1</td></tr></table>")
+_t = extract.extract(Path(tmp.name), "CSV", {"max_rows": 100})
+check(_t[0]["rows"], [["address", "ref"], ["1 A Road, KT17 1AA", "R1"]], "an HTML table served as CSV is read as its table")
+Path(tmp.name).unlink()
+
 print()
 print("all licence rules hold" if not failures
       else f"{len(failures)} failure(s): " + "; ".join(failures))

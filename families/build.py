@@ -334,6 +334,14 @@ def _district(v):
 
 def _load_table(extraction_sha: str, which) -> list[list]:
     doc = json.loads((STORE / "tables" / extraction_sha).read_text(encoding="utf-8"))
+    # A PDF register arrives as one table per page. "all" reads them as one,
+    # in order; the header each page repeats is skipped by the row loop, as
+    # a repeated header always is.
+    if which == "all":
+        rows: list = []
+        for t in doc["tables"]:
+            rows.extend(t["rows"])
+        return rows
     for t in doc["tables"]:
         if which in (t.get("table"), t.get("sheet")):
             return t["rows"]

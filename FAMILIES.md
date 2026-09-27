@@ -123,6 +123,30 @@ to that; a table that can name nobody and find no door is the form of it
 that respects that. The paragraph above about postcode centroids is kept
 as the record of what was first decided and then withdrawn.
 
+**HMO registers: three licence decisions and a search of every council**
+(Dominic, 27 September 2026). Each decision lives in `families/intake.py`
+(`DATASET_LICENCE`) with the page it was taken on and the words it rests
+on; the page is fetched at every intake and if the words are gone the
+decision lapses.
+- *Glasgow* is accepted: OGL v3.0 for the information, the One Scotland
+  Mapping Agreement for mapping data, which this family never carries.
+- *Barnet* turned out not to need an exception: data.gov.uk's copy lost
+  the licence, and the council's own portal states the OGL v3.
+- *Brighton & Hove* is admitted by decision despite "do not share outside
+  BHCC network", but its public layer is Planning's list of HMO addresses,
+  not the licence register, and is not in the table.
+
+Registers found by search, in no catalogue, are recorded for every housing
+authority in `families/registry/hmo_registers.coverage.json`. A person
+marks one for use with its file and the page whose licence statement the
+intake reads (`licence_from_page`); nothing is taken unreviewed. Of 361
+councils on 27 Sep: 9 in the table, 29 publish a data file with no open
+licence stated, 54 a PDF or web page, 66 only a search box, 45 only on
+request, 17 confirmed as not online, and 141 not yet confirmed: the session's
+web-search allowance ran out part-way and many council sites refuse
+automated reading. The notes hold no full postcode, e-mail or phone
+number; a test holds them to that.
+
 **The 3D chart's grouping of departments is editorial.** On the archipelago
 (16 September 2026) islands of a kind lie together: the same ministry under
 its earlier names, the departments of one field. That grouping is a table of
@@ -225,7 +249,7 @@ Built and live. `families/registry.py` → `intake.py` → `brief.py` → (propo
 | brownfield_land | 176 sources / 129 authorities + MHCLG's platform | 62 | 53 own files (4,755 sites) + the platform for 258 more authorities (25,222 sites): 29,977 sites, 311 authorities |
 | spend_over_500 | 212 (every edition) | 76 | 68 sources, 4,259,913 rows, 27 bodies (about 1,000 files across the series; 125 registry sources are dead 2010-16 links) |
 | organograms | 356 sources (339 a senior + junior pair; every snapshot's senior file since 2010, 16 Sep) | 309 | 294 sources by the Cabinet Office standard, 343,329 rows (68 snapshot dates), 249 bodies; 16 own-shape tables await a person (15 councils, The National Archives' newest); 38 dead links, 9 refused on licence (CCRC "notspecified"). "Other (Public Domain)" accepted 15 Sep (DM): the MoD's 2016 organogram came in; its current one is seven per-budget files already published |
-| hmo_registers | 14 sources with a file (27 Sep) | 6 | 4 councils' registers, 10,019 rows standing for 10,446 licences in 53 postcode districts: Lambeth 5,518, Camden 3,485, Leicester 879, Stirling 564 (published as counts per postcode). Properties, not people; districts, not doors. Refused on licence: Bristol ×3 (Ordnance Survey terms only), Glasgow (OGL for the information, One Scotland Mapping Agreement for the mapping data: mixed, so refused; a decision for Dominic), Barnet (none stated), Brighton & Hove ("do not share outside BHCC network" on a public layer). Dead: Hounslow (404), Oxford (DNS). Epsom and Ewell's file is an HTML table named .csv and awaits a reader |
+| hmo_registers | 16 sources (14 from the index, 2 found by search, 27 Sep) | 11 | 9 councils, 16,121 licences in 116 postcode districts: Lambeth 5,518, Camden 3,485, Glasgow 2,414 (licences in force, from a log of 6,523 applications), Barnet 1,610, Hounslow 1,403, Leicester 879, Stirling 564 (counts per postcode), Ashfield 139, Epsom and Ewell 109. Refused: Bristol ×3 (Ordnance Survey terms only). Not a register: Brighton & Hove (Planning's addresses), Stirling's yearly totals. Dead: Oxford (DNS). 29 more councils publish a data file with no open licence stated: a decision for Dominic |
 
 Fifth family, 15 September 2026: organograms. Central government's
 "Organogram of Staff Roles & Salaries" is one dataset per body with a senior

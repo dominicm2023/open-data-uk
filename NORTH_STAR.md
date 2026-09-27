@@ -194,6 +194,13 @@ A living list. Add freely; move to "Done" with the commit that did it.
   annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
   and Scotland on its About page's OGL statement. Air Quality England
   parked (no terms).
+- 27 Sep — the HMO family reaches nine councils, 16,121 licences in 116
+  postcode districts: Glasgow, Barnet, Epsom and Ewell, Ashfield and
+  Hounslow join (decisions DM 27 Sep). A search of all 361 housing
+  authorities is on the map page, council by council: 29 publish a data
+  file with no licence stated, 54 a PDF or web page, 66 a search box, 45
+  only on request; 141 are not yet confirmed. The map's council labels group
+  neighbours ("+4 nearby") instead of piling up over London.
 - 27 Sep — sixth family, HMO licence registers, because Search Console
   showed people arriving for them. Four councils' registers, 10,446
   licences, 53 postcode districts. Properties, not people, and districts,

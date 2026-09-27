@@ -313,6 +313,35 @@ def licence_from_metadata(kind: str, doc: dict, portal: str | None = None) -> di
     raise Refused("Unknown metadata kind " + kind)
 
 
+_LICENCE_WORDS = re.compile(r"licen[cs]e|copyright|©|re-?use|all\s+rights\s+reserved|open\s+data|terms\s+(?:and|&)\s+conditions",
+                           re.I)
+
+
+def licence_from_page(body: bytes, portal: str | None = None) -> dict:
+    """The licence a council web page states, read like any other statement.
+
+    A page is not a licence field: it is navigation, a footer and prose. The
+    passages within 300 characters of licence or copyright wording are what
+    it says about reuse, and they go through licence() exactly as a
+    catalogue's field would, with the page's own links. A footer that says
+    "All rights reserved" refuses, as it should, whatever else is said."""
+    raw = body.decode("utf-8", "replace")
+    raw = re.sub(r"(?is)<(script|style|noscript|svg)\b.*?</\1>", " ", raw)
+    fields = [m.group(0) for m in re.finditer(r"(?is)<a\b[^>]*href=[\"'][^\"']*(?:open-government-licence|creativecommons\.org/licenses)[^\"']*[\"'][^>]*>.*?</a>", raw)]
+    text = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", raw)))
+    spans: list[tuple[int, int]] = []
+    for m in _LICENCE_WORDS.finditer(text):
+        a, b = max(0, m.start() - 300), min(len(text), m.end() + 300)
+        if spans and a <= spans[-1][1]:
+            spans[-1] = (spans[-1][0], b)
+        else:
+            spans.append((a, b))
+    fields += [text[a:b] for a, b in spans]
+    if not fields:
+        raise Refused("The page says nothing about a licence")
+    return licence(fields, portal)
+
+
 # --- fetching, politely ---------------------------------------------------
 
 class NoRedirect(HTTPRedirectHandler):
@@ -466,6 +495,11 @@ def admit(c: sqlite3.Connection, family: str, src: dict) -> str | None:
             approval, body, evidence_url = decided
             evidence_sha = store("evidence", body)
             kind = "decision"
+        elif src["licence_kind"] == "page" and src["metadata_url"]:
+            body, _, _ = fetch(src["metadata_url"], LIMITS["max_metadata_bytes"])
+            evidence_sha = store("evidence", body)
+            approval = licence_from_page(body or b"", src.get("portal"))
+            evidence_url, kind = src["metadata_url"], "page"
         elif src["licence_kind"] in ("ckan", "arcgis") and src["metadata_url"]:
             body, _, _ = fetch(src["metadata_url"], LIMITS["max_metadata_bytes"])
             evidence_sha = store("evidence", body)

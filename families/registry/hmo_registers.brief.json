@@ -136,6 +136,45 @@
  },
  "sources": [
   {
+   "job_id": "8a6774f999dabd8730c119c740a9d2f13d894b3e845d13a5d4715bcba346d765",
+   "publisher": "Ashfield District Council",
+   "title": "HMO register",
+   "portal": "web",
+   "format": "XLSX",
+   "resource_url": "https://www.ashfield.gov.uk/media/ofwm0eao/hmo-register-4-august-2026.xlsx",
+   "licence": "OGL-UK",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "sheet": "HMO"
+     },
+     "header": [
+      "Flare Ref",
+      "Address:   Street",
+      "Town",
+      "Postcode",
+      "Draft Licence Issued ",
+      "Full Licence Issued",
+      "Full Licence Expires",
+      "Occupancy",
+      "No. of Kitchens",
+      "Total No. of Bathrooms",
+      "No. of WC's",
+      "No. of En-suites",
+      "",
+      "UPRN"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 227,
+     "column_count": 14
+    }
+   ]
+  },
+  {
    "job_id": "7cfc2a5505a3328b24d489ee0a0eabc7dc2b73359a84bf8df7499c70c688f6d0",
    "publisher": "Epsom and Ewell Borough Council",
    "title": "Licensed HMO Register",
@@ -357,6 +396,36 @@
      "sample_rows": [],
      "row_count": 3485,
      "column_count": 33
+    }
+   ]
+  },
+  {
+   "job_id": "5a2b10f4e29c2ac2c7e38ae13471f916009b858a09a8f31aefec857f0b479478",
+   "publisher": "London Borough of Hounslow",
+   "title": "Register of licensed HMOs",
+   "portal": "web",
+   "format": "CSV",
+   "resource_url": "https://blob.datopian.com/resources/c4a644f0-0ef6-46e7-b1fd-eb05b0be0c57/HMO%20Public%20Register-zbwGhC.csv",
+   "licence": "OGL-UK-3.0",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Premises Address",
+      "ward",
+      "households",
+      "occupants",
+      "licn-expiry-date"
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 1405,
+     "column_count": 5
     }
    ]
   },

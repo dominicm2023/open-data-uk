@@ -891,5 +891,7 @@ footer {
 .hmo-place span, .hmo-district span { display: block; font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
 .hmo-district { font-size: .7rem; padding: .1rem .3rem; background: color-mix(in srgb, var(--card) 86%, transparent); }
 .hmo-place[hidden], .hmo-district[hidden] { display: none; }
+.hmo-place .hmo-more { font-size: .7rem; color: var(--accent); }
+.hmo-place .hmo-more[hidden] { display: none; }
 .hmo-table th[scope="row"] { text-align: left; }
 .maplibregl-ctrl-attrib { font-size: .68rem; }

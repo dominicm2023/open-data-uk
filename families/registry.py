@@ -73,6 +73,7 @@ FAMILIES: dict[str, dict] = {
     },
     "hmo_registers": {
         "label": "HMO licence registers",
+        "found": True,
         # \b on "hmo": the bare letters sit inside Richmond and Rushmoor.
         "include": r"(\bhmos?\b|(houses?|homes|housing)\s+(in|of)\s+multiple\s+occup)",
         # The register lists licensed properties. Planning directions about
@@ -278,6 +279,27 @@ def build(family: str) -> dict:
             "other_resources": len(res),
         })
     conn.close()
+    # Registers the index cannot see: a council that publishes its register
+    # on a page of its website, in no catalogue. They are found by search,
+    # recorded for every council in <family>.coverage.json, and a person
+    # marks one for use ("use": the file, its format, and the page whose
+    # licence statement the intake will read). Nothing is taken from a
+    # search result unreviewed, and the licence is read afresh at intake.
+    cov = OUT / f"{family}.coverage.json"
+    if spec.get("found") and cov.is_file():
+        for e in json.loads(cov.read_text(encoding="utf-8")).get("councils", []):
+            u = e.get("use")
+            if not u:
+                continue
+            f = {"url": u["url"], "name": u.get("name") or "", "format": u["format"]}
+            admitted.append({
+                "dataset_key": f"found:{e['code']}", "title": u.get("title") or f"{e['name']}: HMO public register",
+                "publisher": u["publisher"], "portal": "web", "landing_url": e.get("register_page") or u["url"],
+                "licence_kind": "page", "metadata_url": u["licence_page"],
+                "index_licence_raw": None, "index_licence_norm": None, "index_harvested_at": e.get("checked"),
+                "resource": f, "candidates": [f], "series": False, "other_resources": 1,
+                "found": e.get("checked"),
+            })
     reg = {"family": family, "label": spec["label"], "rule": spec,
            "sources": admitted, "skipped": skipped}
     OUT.mkdir(exist_ok=True)

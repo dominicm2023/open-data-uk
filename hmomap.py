@@ -62,6 +62,68 @@ def _load(stamp: float) -> dict | None:
             "no_shape": doc.get("districts_without_a_shape", []), "built_at": summary.get("built_at", "")}
 
 
+COVERAGE = Path(__file__).parent / "families" / "registry" / f"{FAMILY}.coverage.json"
+# Every housing authority, and where its register stands. The order is the
+# order of usefulness to a reader: in the table, then open data we could
+# read, then published in a form we cannot read, then not published.
+STATUS = [
+    ("in_table", "In this table"),
+    ("open_file", "Published as open data, not yet in this table"),
+    ("file_no_licence", "Published as a data file with no open licence stated"),
+    ("document", "Published as a PDF, a Word document or a web page"),
+    ("search_only", "Published only as a search box on the council's website"),
+    ("on_request", "Available only on request or for inspection"),
+    ("not_found", "No register found online"),
+    ("unsearched", "Not yet searched fully: the web search ran out part-way on 27 September"),
+]
+
+
+@functools.lru_cache(maxsize=2)
+def _coverage(stamp: float) -> dict | None:
+    try:
+        return json.loads(COVERAGE.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+
+
+def coverage() -> dict | None:
+    try:
+        return _coverage(COVERAGE.stat().st_mtime)
+    except OSError:
+        return None
+
+
+def _council_li(c: dict) -> str:
+    name = esc(c["name"])
+    if c.get("register_page"):
+        name = f'<a href="{esc(c["register_page"])}">{name}</a>'
+    note = f' <span class="org-meta">{esc(c["note"])}</span>' if c.get("note") else ""
+    return f"<li>{name}{note}</li>"
+
+
+def _coverage_html() -> str:
+    cov = coverage()
+    if not cov:
+        return ""
+    by: dict[str, list] = {k: [] for k, _ in STATUS}
+    for c in cov["councils"]:
+        by.setdefault(c["status"], []).append(c)
+    n = len(cov["councils"])
+    parts = []
+    for key, label in STATUS:
+        rows = sorted(by.get(key, []), key=lambda c: c["name"])
+        if not rows:
+            continue
+        items = "".join(_council_li(c) for c in rows)
+        parts.append(f'<details class="hmo-cov"{" open" if key in ("in_table", "open_file") else ""}><summary>'
+                     f'<b>{len(rows)}</b> {esc(label)}</summary><ul class="org-list">{items}</ul></details>')
+    return ("<h2>Every council&#39;s register</h2>"
+            f'<p class="note">Every one of the UK&#39;s {n} housing authorities must keep a public register of the HMOs it '
+            'licenses. This is where each one publishes it, as far as a search of its website and the open data '
+            f'catalogues found on {esc(cov.get("checked", ""))}. A link goes to the council&#39;s own page for its register.</p>'
+            + "".join(parts))
+
+
 def data() -> dict | None:
     try:
         return _load((OUT / "districts.geojson").stat().st_mtime)
@@ -133,10 +195,7 @@ def render_map(site_url: str) -> str | None:
         + '<p class="note">A count is the licences on a council&#39;s register as it published it, not every HMO: smaller HMOs '
           'need a licence only where the council runs an additional scheme, and an unlicensed one is on no register. '
           'A district with no count is one these registers say nothing about, which is not the same as none.</p>'
-        + (("<h2>Registers that are not on the map</h2>"
-            f'<ul class="org-list">{"".join(absent)}</ul>'
-            '<p class="note">Most councils publish their register as a web page or a PDF, or not as open data at all. '
-            'These are the ones the index knows of and could not use, with the reason.</p>') if absent else "")
+        + _coverage_html()
         + "<h2>Every district</h2>"
         + '<div class="table-wrap"><table class="hmo-table"><thead><tr><th scope="col">District</th><th scope="col" class="num">Licences</th>'
           '<th scope="col">Council</th><th scope="col">Kind of licence, in the council&#39;s words</th>'

@@ -181,14 +181,25 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
         with path.open("rb") as handle:
             book = openpyxl.load_workbook(handle, read_only=True, data_only=True)
             for sheet in book:
-                if sheet.max_column and sheet.max_column > 100:
-                    raise ValueError("Column limit exceeded")
-                rows = []
-                for row in sheet.iter_rows(values_only=True):
+                # A sheet's stated width is where formatting ends, not data:
+                # Ashfield's HMO register says 16,384 columns and fills 11.
+                # The limit is on columns that hold something, read up to a
+                # cap; trailing empty cells go and rows are padded back to
+                # the table's real width.
+                cap = min(sheet.max_column or 200, 200)
+                rows, width = [], 0
+                for row in sheet.iter_rows(values_only=True, max_col=cap):
                     if len(rows) + total >= limits["max_rows"]:
                         raise ValueError("Row limit exceeded")
-                    rows.append([("" if v is None else v) for v in row])
-                if rows:
+                    vals = list(row)
+                    while vals and (vals[-1] is None or vals[-1] == ""):
+                        vals.pop()
+                    width = max(width, len(vals))
+                    if width > 100:
+                        raise ValueError("Column limit exceeded")
+                    rows.append([("" if v is None else v) for v in vals])
+                rows = [r + [""] * (width - len(r)) for r in rows]
+                if rows and width:
                     add(rows, sheet=sheet.title)
             book.close()
     elif fmt == "XLS":

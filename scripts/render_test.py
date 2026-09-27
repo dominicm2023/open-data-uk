@@ -366,6 +366,18 @@ _hm = json.loads((Path(__file__).parent.parent / "families" / "registry" / "hmo_
 _mapped = {str(v).lower() for m in _hm.values() for v in (m.get("columns") or {}).values()}
 check(not any(re.search(r"holder|landlord|manag|longitude|latitude|easting|northing|^x$|^y$", v) for v in _mapped),
       "no HMO mapping reads a holder's, landlord's or manager's column, or a coordinate")
+# The coverage file is research notes about every council, committed to a
+# public repository. Rows of a register must never leak into it: the first
+# draft quoted two licensed properties' postcodes as examples.
+_cov = json.loads((Path(__file__).parent.parent / "families" / "registry" / "hmo_registers.coverage.json").read_text(encoding="utf-8"))
+_councils = json.loads((Path(__file__).parent.parent / "councils.json").read_text(encoding="utf-8"))
+check(len(_cov["councils"]) == len(_councils) and {c["code"] for c in _cov["councils"]} == {c["code"] for c in _councils},
+      "the HMO coverage file has every housing authority, once")
+_free = " ".join(str(c.get(f) or "") for c in _cov["councils"] for f in ("search_notes", "licence_statement", "note"))
+check(not re.search(r"\b[A-Z]{1,2}[0-9][A-Z0-9]?\s*[0-9][A-Z]{2}\b", _free) and not re.search(r"[\w.+-]+@[\w-]+\.[\w.-]+", _free),
+      "the coverage notes hold no full postcode and no e-mail address")
+import hmomap as _hm  # noqa: E402
+check({c["status"] for c in _cov["councils"]} <= {k for k, _ in _hm.STATUS}, "every council's status is one the page can show")
 _sq = [[0, 0], [0.5, 0.00001], [1, 0], [1, 1], [0, 1], [0, 0]]
 check(len(_fdist._simplify(_sq, 0.001)) == 5, "simplifying a shape drops the point that adds nothing and keeps the corners")
 

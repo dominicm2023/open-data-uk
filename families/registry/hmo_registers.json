@@ -3,6 +3,7 @@
  "label": "HMO licence registers",
  "rule": {
   "label": "HMO licence registers",
+  "found": true,
   "include": "(\\bhmos?\\b|(houses?|homes|housing)\\s+(in|of)\\s+multiple\\s+occup)",
   "exclude": "article\\s*(4|four)|direction|boundar|densit|percentage|\\bby\\s+(ward|lsoa|msoa|output\\s+area|postcode|type|year|action\\s+status)\\b|number\\s+of|estimated|\\bfires?\\b|census|households\\s+in|experimental|land\\s+charge|concentration|student\\s+percentage|revenue|statistic|data\\s+zones?|\\brm1\\d\\d\\b|verifiable"
  },
@@ -465,6 +466,60 @@
    ],
    "series": false,
    "other_resources": 6
+  },
+  {
+   "dataset_key": "found:E07000170",
+   "title": "HMO register",
+   "publisher": "Ashfield District Council",
+   "portal": "web",
+   "landing_url": "https://www.ashfield.gov.uk/housing/private-sector-landlords-and-tenants/houses-in-multiple-occupation",
+   "licence_kind": "page",
+   "metadata_url": "https://www.ashfield.gov.uk/general/website/copyright/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.ashfield.gov.uk/media/ofwm0eao/hmo-register-4-august-2026.xlsx",
+    "name": "",
+    "format": "XLSX"
+   },
+   "candidates": [
+    {
+     "url": "https://www.ashfield.gov.uk/media/ofwm0eao/hmo-register-4-august-2026.xlsx",
+     "name": "",
+     "format": "XLSX"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27"
+  },
+  {
+   "dataset_key": "found:E09000018",
+   "title": "Register of licensed HMOs",
+   "publisher": "London Borough of Hounslow",
+   "portal": "web",
+   "landing_url": "https://data.hounslow.gov.uk/@london-borough-of-hounslow/register-of-licensed-hmos",
+   "licence_kind": "page",
+   "metadata_url": "https://www.data.gov.uk/dataset/latest-register-of-licensed-hmos",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://blob.datopian.com/resources/c4a644f0-0ef6-46e7-b1fd-eb05b0be0c57/HMO%20Public%20Register-zbwGhC.csv",
+    "name": "",
+    "format": "CSV"
+   },
+   "candidates": [
+    {
+     "url": "https://blob.datopian.com/resources/c4a644f0-0ef6-46e7-b1fd-eb05b0be0c57/HMO%20Public%20Register-zbwGhC.csv",
+     "name": "",
+     "format": "CSV"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27"
   }
  ],
  "skipped": [

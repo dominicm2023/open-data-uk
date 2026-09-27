@@ -136,15 +136,18 @@ async function start() {
       e.n += c.licences; e.x += f.properties.lon * c.licences; e.y += f.properties.lat * c.licences; e.b.extend(boundsOf(f.geometry)); councils.set(c.council, e);
     }
     const far = [], near = [];
-    // beside the glow, not over it; and councils that are neighbours (Camden, Lambeth) take a side each
-    const placed = [...councils].map(([name, e]) => ({ name, e, lon: e.x / e.n, lat: e.y / e.n })).sort((a, b) => b.lat - a.lat);
-    placed.forEach((c, i) => {
-      const near = placed.filter(o => o !== c && Math.hypot(o.lon - c.lon, (o.lat - c.lat) * 1.7) < 0.8);
-      const upper = !near.length || near.every(o => o.lat < c.lat);
-      const b = el("button", "hmo-place"); b.type = "button"; b.append(el("b", null, c.name.replace(/^London Borough of /, "")), el("span", null, `${fmt(c.e.n)} licences`));
-      b.addEventListener("click", ev => { ev.stopPropagation(); go(c.e.b, 40); });
-      far.push(new Marker({ element: b, anchor: near.length ? (upper ? "bottom-left" : "top-left") : "left", offset: near.length ? [12, upper ? -6 : 6] : [18, 0] }).setLngLat([c.lon, c.lat]).addTo(map));
-    });
+    // beside the glow, not over it. Where councils are neighbours (five of them
+    // are London boroughs) the one with more licences keeps its name and the
+    // others wait until there is room: checked on every move, largest first.
+    const placed = [...councils].map(([name, e]) => ({ name, e, lon: e.x / e.n, lat: e.y / e.n })).sort((a, b) => b.e.n - a.e.n);
+    for (const c of placed) {
+      const b = el("button", "hmo-place"); b.type = "button"; const more = el("span", "hmo-more");
+      b.append(el("b", null, c.name.replace(/^London Borough of /, "")), el("span", null, `${fmt(c.e.n)} licences`), more);
+      const m = new Marker({ element: b, anchor: "center" }).setLngLat([c.lon, c.lat]).addTo(map);
+      m.size = null; m.bounds = c.e.b; m.more = more; m.group = [m]; far.push(m);
+      // a label standing in for its hidden neighbours opens all of them
+      b.addEventListener("click", ev => { ev.stopPropagation(); const g = new LngLatBounds(); for (const o of m.group) g.extend(o.bounds); go(g, 40); });
+    }
     for (const f of counted) {
       const b = el("button", "hmo-district"); b.type = "button"; b.append(el("b", null, f.properties.district), el("span", null, fmt(f.properties.licences)));
       b.addEventListener("click", ev => { ev.stopPropagation(); open(f.properties.district, false); });
@@ -153,12 +156,49 @@ async function start() {
       near.push(m);
     }
     const names = () => { const z = map.getZoom();
-      for (const m of far) m.getElement().hidden = z >= 8;
+      // Councils whose points fall within 30px of a larger one's are its
+      // neighbours at this scale (the London boroughs): one label stands for
+      // them and says how many. Each shown label takes the first of four
+      // places beside its point that stays inside the map and clear of the
+      // labels already placed; largest council first.
+      const W = mapEl.clientWidth, H = mapEl.clientHeight, shown = [], boxes = [];
+      for (const m of far) {
+        const e = m.getElement();
+        m.group = [m];
+        if (z >= 9) { e.hidden = true; continue; }
+        if (!m.size) { e.hidden = false; m.more.hidden = true; m.size = [e.offsetWidth + 6, e.offsetHeight + 16]; }
+        const p = map.project(m.getLngLat());
+        const host = shown.find(o => Math.hypot(o.p.x - p.x, o.p.y - p.y) < 30);
+        if (host) { host.m.group.push(m); e.hidden = true; continue; }
+        const [w, h] = m.size, gap = 14;
+        const spots = [[gap + w / 2, 0], [-gap - w / 2, 0], [0, -gap - h / 2], [0, gap + h / 2]];
+        let best = null;
+        for (const [dx, dy] of spots) {
+          const cx = p.x + dx, cy = p.y + dy, box = [cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2];
+          const inside = box[0] >= 2 && box[1] >= 2 && box[2] <= W - 2 && box[3] <= H - 2;
+          const clear = !boxes.some(o => box[0] < o[2] && o[0] < box[2] && box[1] < o[3] && o[1] < box[3]);
+          if (clear && inside) { best = [dx, dy, box]; break; }
+          if (clear && !best) best = [dx, dy, box];
+        }
+        if (!best) {
+          const near = shown.reduce((a, o) => (!a || Math.hypot(o.p.x - p.x, o.p.y - p.y) < Math.hypot(a.p.x - p.x, a.p.y - p.y) ? o : a), null);
+          if (near) near.m.group.push(m);
+          e.hidden = true; continue;
+        }
+        e.hidden = false; m.setOffset([best[0], best[1]]);
+        boxes.push(best[2]); shown.push({ m, p });
+      }
+      for (const b of shown) {
+        const n = b.m.group.length - 1;
+        b.m.more.hidden = !n;
+        b.m.more.textContent = n ? `+${n} nearby` : "";
+        b.m.getElement().title = n ? "With " + b.m.group.slice(1).map(o => o.getElement().querySelector("b").textContent).join(", ") : "";
+      }
       // a district's code is shown once the district is wide enough on screen to hold it:
       // the WC and EC districts are a few streets each, and piled up over central London
       const px = 512 * Math.pow(2, z) / 360;
       for (const m of near) m.getElement().hidden = z < 9.2 || m.wide * px < 46; };
-    map.on("zoom", names); names();
+    map.on("move", names); names();
 
     let on = null, over = null;
     const state = (id, s) => { if (id != null) map.setFeatureState({ source: "districts", id }, s); };

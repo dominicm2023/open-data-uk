@@ -159,5 +159,43 @@
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
     "reviewed_at": "2026-09-27"
+  },
+  "8a6774f999dabd8730c119c740a9d2f13d894b3e845d13a5d4715bcba346d765": {
+    "status": "reviewed",
+    "table": "HMO",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Postcode",
+      "licence_start": "Full Licence Issued",
+      "licence_end": "Full Licence Expires",
+      "max_occupants": "Occupancy"
+    },
+    "constants": {
+      "council": "Ashfield District Council",
+      "licences": 1
+    },
+    "notes": "Found by search, not in any catalogue: the XLSX linked from the council's HMO page, 'HMO register 4 August 2026'. Licence read from the site's copyright page, which grants reuse of information on the website under the OGL (it speaks of Crown copyright material; noted, accepted). 139 licences with 139 distinct references, all with a postcode (NG15, NG16, NG17). The sheet's other 88 rows are blank or section notes and give no licence. Never mapped: the street address, Town, UPRN, 'Flare Ref'. One expiry date reads 1930, a keying error in the source, kept as published.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
+  },
+  "5a2b10f4e29c2ac2c7e38ae13471f916009b858a09a8f31aefec857f0b479478": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Premises Address",
+      "licence_end": "licn-expiry-date",
+      "max_occupants": "occupants",
+      "max_households": "households"
+    },
+    "constants": {
+      "council": "London Borough of Hounslow",
+      "licences": 1
+    },
+    "notes": "Found by search: the council's portal serves the current CSV; data.gov.uk's record of the same register states the UK OGL and its old file link is dead. 1,405 rows, one per licensed property; there is no licence number column, and five addresses appear twice (separately licensed parts, kept). The district is read from the postcode ending 'Premises Address', found in 1,403 (TW, W and UB districts). Never mapped: the address, ward. Dates are day-first; no start date or as_of is published.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
   }
 }
