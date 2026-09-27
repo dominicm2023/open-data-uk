@@ -260,9 +260,18 @@ def _date(v, us: bool = False):
     if re.fullmatch(r"\d{5}", s) and 20000 <= int(s) <= 70000:
         from datetime import date, timedelta
         return (date(1899, 12, 30) + timedelta(days=int(s))).isoformat()
+    # a month written as a word, in any spacing: '12 September 2023', and
+    # '12September2023' where a PDF dropped the spaces (Watford)
+    m = re.match(r"(\d{1,2})(?:st|nd|rd|th)?[\s-]*([A-Za-z]{3,9})[\s,-]*(\d{4})\b", s)
+    if m:
+        for fmt in ("%d %B %Y", "%d %b %Y"):
+            try:
+                return datetime.strptime(" ".join(m.groups()).replace("Sept ", "Sep ").replace("sept ", "sep "), fmt).date().isoformat()
+            except ValueError:
+                continue
     for fmt in (_US_FORMATS + _DATE_FORMATS) if us else _DATE_FORMATS:
         try:
-            return datetime.strptime(s[:len(fmt) + 6 if "%B" in fmt else len(s)], fmt).date().isoformat()
+            return datetime.strptime(s, fmt).date().isoformat()
         except ValueError:
             continue
     m = re.match(r"(\d{4})[-/](\d{2})[-/](\d{2})", s)      # "2023/04/05 00:00:00+00" and the like
@@ -331,6 +340,53 @@ def _district(v):
         return hits[-1][0]
     text = text.strip()
     return text if _OUTWARD.fullmatch(text) else None
+
+
+CARD_FIRST = "Property (the card's first line)"
+_LABEL_VALUE = re.compile(r"^[^:]{2,60}:\s*\S")
+_PC_IN = re.compile(r"\b[A-Z]{1,2}[0-9][A-Z0-9]?\s*[0-9][A-Z]{2}\b")
+
+
+def _cards_table(extraction_sha: str) -> list[list]:
+    """A register printed as one card per licence (Watford, Elmbridge, Mid
+    Sussex): each extracted table is a card, each row a label beside its
+    value, or "Label: value" in one cell. Turned into one table, a row per
+    card and a column per label, so a mapping names labels as it names
+    columns. The property is the card's first line: of its cells, the first
+    that holds a postcode, which is where these registers print the address
+    they license. Every other address on a card sits under its own label (the
+    holder's, the manager's) and is only ever read if a mapping names it."""
+    doc = json.loads((STORE / "tables" / extraction_sha).read_text(encoding="utf-8"))
+    labels: dict[str, str] = {}
+    cards = []
+    for t in doc["tables"]:
+        rows = [[" ".join(str(x).split()) for x in r if x not in (None, "") and str(x).strip() not in ("", "None")] for r in t["rows"]]
+        rows = [r for r in rows if r]
+        if not rows:
+            continue
+        card = {CARD_FIRST: next((c for c in rows[0] if _PC_IN.search(c.upper())), "")}
+        for r in rows[1:]:
+            # "Number of storeys: 2" beside "Number of Units/Bedrooms: 6" (Mid
+            # Sussex): when the first cell is written "Label: value", every cell
+            # so written is a field; otherwise the row is a label and its value
+            if _LABEL_VALUE.match(r[0]):
+                pairs = [c.split(":", 1) for c in r if _LABEL_VALUE.match(c)]
+            elif len(r) >= 2:
+                # the value is the cell beside the label; a later "Label: value"
+                # cell is a field of its own ("Number of basements: 1")
+                pairs = [(r[0], r[1])] + [c.split(":", 1) for c in r[2:] if _LABEL_VALUE.match(c)]
+            else:
+                continue
+            for label, value in pairs:
+                label = " ".join(label.split()).rstrip(":").strip()
+                key = label.lower()
+                if not label or key in card:
+                    continue
+                labels.setdefault(key, label)
+                card[key] = value.strip()
+        cards.append(card)
+    keys = list(labels)
+    return [[CARD_FIRST] + [labels[k] for k in keys]] + [[c.get(CARD_FIRST, "")] + [c.get(k, "") for k in keys] for c in cards]
 
 
 @functools.lru_cache(maxsize=1)
@@ -437,8 +493,11 @@ def _fits(rows: list, candidates: list, h: int) -> list[tuple[int, int, dict]]:
 
 
 def _map_file(job: dict, f: dict, spec: dict, schema: dict) -> tuple[list[dict], list[dict]]:
-    rows = _load_table(f["extraction_sha"], spec.get("table", 1))
-    h = spec.get("header_row", 0)
+    if spec.get("cards"):
+        rows, h = _cards_table(f["extraction_sha"]), 0
+    else:
+        rows = _load_table(f["extraction_sha"], spec.get("table", 1))
+        h = spec.get("header_row", 0)
     # A series' files do not all share a layout: Greenwich's returns gained
     # a "Payment Date" column one year. The mapping's own columns and its
     # alt_columns are each a layout; the header row of this file chooses

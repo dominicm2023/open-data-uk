@@ -895,12 +895,40 @@
     "reject": "The PDF's header is one merged cell, so no column can be named; needs a reader that works from positions on the page."
   },
   "30aa488ad849052d848a4a8262da5710ea4ed605872c79aea3e44b135adeb7fe": {
-    "status": "rejected",
-    "reject": "The PDF is one card per licence, label beside value, not a table; needs a card reader."
+    "status": "reviewed",
+    "cards": true,
+    "columns": {
+      "postcode_district": "Property (the card's first line)",
+      "licence_end": "License Expiry"
+    },
+    "constants": {
+      "council": "Elmbridge Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. One card per licence (38), read by the card reader; the first line is 'Property Address', or the address alone where a page break cut its label, and gives a postcode on 31. 'Address' and 'Managers Address' are the holder's and manager's and are never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
   },
   "48c22baae84aa3e8317a006b3169f1e0ecfccf9510baa5ef0e5d03768d5469c3": {
-    "status": "rejected",
-    "reject": "The PDF is one card per licence, label beside value, not a table; needs a card reader."
+    "status": "reviewed",
+    "cards": true,
+    "columns": {
+      "postcode_district": "Property (the card's first line)",
+      "licence_start": "Start Date of Licence",
+      "licence_end": "Renewal Date of Licence",
+      "storeys": "Number of Storeys",
+      "max_households": "Max No. Households permitted",
+      "max_occupants": "Max No. Occupants permitted"
+    },
+    "constants": {
+      "council": "Mid Sussex District Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. One card per licence (54), with fields written 'Label: value', two to a row; read by the card reader. The first line gives a postcode on 44 cards. Label spellings vary from card to card ('Start date', 'Maximum No. Occupants permitted'); the commonest is read, and a card using another leaves that field empty. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
   },
   "c2812da8a55a40228742f191a6541aac0d3ffa0b523ebde66c12c88080615231": {
     "status": "rejected",
@@ -1041,11 +1069,27 @@
   },
   "aef39d9189fdf95ef84f32b0219eb498444cc8b718d7a4b4d8f7e6f08ced0c98": {
     "status": "rejected",
-    "reject": "The PDF is one card per licence, label beside value, not a table; needs a card reader."
+    "reject": "The file linked as the register is the HMO licence application form (fields for a name, telephone numbers and an e-mail address), not the register."
   },
   "8ee1cb5b40717bfd851b744d3fc1cc3f87d29a2bb5bf644e34d282e0e877e729": {
-    "status": "rejected",
-    "reject": "The PDF is one card per licence (334 of them), label beside value, not a table; needs a card reader."
+    "status": "reviewed",
+    "cards": true,
+    "columns": {
+      "postcode_district": "Property (the card's first line)",
+      "licence_start": "StartDate",
+      "licence_end": "ExpiryDate",
+      "storeys": "NumberofStoreys",
+      "max_households": "MaxHouseholds",
+      "max_occupants": "MaxPersons"
+    },
+    "constants": {
+      "council": "Watford Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27. One card per licence (334), read by the build's card reader: the property is the card's first line, which gives a postcode on 325 cards. 'LicenceHolderAddress' also holds postcodes and is never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-27"
   },
   "3699ff757e1618893bf31be5bfff5bd6038e75a078c1f2b68dfb832286f07410": {
     "status": "rejected",

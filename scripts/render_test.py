@@ -358,7 +358,25 @@ check(_fbuild._district("Flat 2, A1 2BC House, 12 High Street, London WC1N 3XX")
       "an address gives the district of the postcode it ends with, not of one inside it")
 check(_fbuild._district("12 High Street, London") is None and _fbuild._district("") is None,
       "an address with no postcode gives no district: none is guessed from a street")
-_hs = json.loads((Path(__file__).parent.parent / "families" / "schema" / "hmo_registers.json").read_text(encoding="utf-8"))
+# Card registers (Watford, Elmbridge, Mid Sussex): one small table per licence,
+# the property first, then a label beside its value or "Label: value" cells.
+import tempfile as _tf  # noqa: E402
+_cstore = Path(_tf.mkdtemp()); (_cstore / "tables").mkdir()
+(_cstore / "tables" / "c1").write_text(json.dumps({"tables": [
+    {"rows": [["1 A Road, Town AB1 2CD", None], ["Licence Holder Address", "9 B Street XY9 8ZZ"], ["Number of Storeys", "3", "Number of basements: 1"],
+              ["StartDate", "12September2023"]]},
+    {"rows": [["", "2 C Lane CD3 4EF"], ["Number of Storeys: 2", "Max No. Households permitted: 4"]]},
+]}), encoding="utf-8")
+_old_store, _fbuild.STORE = _fbuild.STORE, _cstore
+_ct = _fbuild._cards_table("c1"); _fbuild.STORE = _old_store
+_cd = [dict(zip(_ct[0], r)) for r in _ct[1:]]
+check([_fbuild._district(c[_fbuild.CARD_FIRST]) for c in _cd] == ["AB1", "CD3"],
+      "a card's property is its first line; the holder's address further down is a field of its own")
+check([c.get("Number of Storeys") for c in _cd] == ["3", "2"] and _cd[0].get("Number of basements") == "1" and _cd[1].get("Max No. Households permitted") == "4",
+      "a card's label reads the cell beside it, and a 'Label: value' cell is a field of its own")
+check(_fbuild._date(_cd[0]["StartDate"]) == "2023-09-12" and _fbuild._date("4 January 2024") == "2024-01-04" and _fbuild._date("12 Sept 2023") == "2023-09-12",
+      "a date with its month written out is read, spaced or not")
+_hs =json.loads((Path(__file__).parent.parent / "families" / "schema" / "hmo_registers.json").read_text(encoding="utf-8"))
 _hcols = {c["name"] for c in _hs["columns"]}
 check(not _hcols & {"address", "postcode", "lat", "lon", "easting", "northing", "licence_holder", "holder", "manager", "name"},
       "the HMO schema has no column that could hold an address, a full postcode, a coordinate or a name")

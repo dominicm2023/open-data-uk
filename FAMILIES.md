@@ -163,6 +163,19 @@ drawn as one box across the table (Newham) is read by the extractor's
 header-columns reader: each word goes to the column its centre sits under.
 It applies only to that shape, and marks the tables it read that way.
 
+A register published as one card per licence (Watford, Elmbridge, Mid
+Sussex) is read by the build's card reader, asked for by `"cards": true` on
+the mapping. Each card is a small table: its first line is the property, and
+every row below is a label with its value beside it, or cells written
+"Label: value". The reader makes one row per card, with the property as
+"Property (the card's first line)" and a column per label; the mapping then
+names the labels it reads, as with any header. A holder's or manager's
+address is a label of its own lower down, and no mapping may read it. Label
+spellings that vary between cards are read under their commonest spelling;
+a card using another leaves that field empty. The mapping checker cannot see
+card labels (they are not a header row) and leaves them to the build, which
+names any it cannot find.
+
 The brief of a family that samples no rows shows its first rows only where
 a row reads as a table's header: three column names at least, a majority of
 the row, no postcode, date or company word in it, and every other cell

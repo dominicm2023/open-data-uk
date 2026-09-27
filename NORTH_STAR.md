@@ -194,6 +194,11 @@ A living list. Add freely; move to "Done" with the commit that did it.
   annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
   and Scotland on its About page's OGL statement. Air Quality England
   parked (no terms).
+- 27 Sep — 51 councils, 27,771 licences, 337 districts. A card reader
+  brings in Watford, Elmbridge and Mid Sussex (one card per licence);
+  Ribble Valley's "register" is its application form. Dates with the month
+  written out ('12 September 2023') had never been read; now they are
+  (+630 start dates, +660 end dates across the family).
 - 27 Sep — 48 councils, 27,371 licences, 321 districts. Newham's 1,771-page
   register is read by a new header-columns PDF reader (3,489 licences); the
   nine councils whose websites say "All rights reserved" are admitted by
