@@ -1614,5 +1614,42 @@
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
     "reviewed_at": "2026-09-27"
+  },
+  "8290598d7f37a0c5d86bf3c9e3cd9f16be706c4653a1a2a32a58554608e9ce9f": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Address of HMO",
+      "licence_start": "Commencement Date"
+    },
+    "constants": {
+      "council": "Braintree District Council",
+      "licences": 1
+    },
+    "notes": "Statutory register; the council's page says 'All Rights Reserved', admitted notwithstanding by decision DM 2026-09-28. A licence can run over several rows; 43 of its 80 property addresses give a postcode, and the rest are counted nowhere. 'Address of Licence Holder' and 'Address of Manager' also hold postcodes and are never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-28"
+  },
+  "08b4684f3e135b1e9f7fecc99431c309f76545ab8650aed49465e53f83746ade": {
+    "status": "reviewed",
+    "table": "PH109876",
+    "header_row": 3,
+    "columns": {
+      "postcode_district": "address5",
+      "licence_start": "date-of-issue",
+      "licence_end": "renewal-date",
+      "max_occupants": "maximum-occupants",
+      "max_households": "maximum-households"
+    },
+    "constants": {
+      "council": "Nottingham City Council",
+      "licences": 1
+    },
+    "notes": "Statutory register; its page says it is not intended for marketing or commercial use, admitted by decision DM 2026-09-28 (intake.py DATASET_LICENCE). Three title lines sit above the header; 'address5' is the property's postcode. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-28"
   }
 }

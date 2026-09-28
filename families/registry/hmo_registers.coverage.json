@@ -505,8 +505,8 @@
    "has_postcodes": "unknown",
    "as_of": "May 2026",
    "search_notes": "Council's own page links a downloadable CSV register (72KB); page footer claims 'All Rights Reserved' rather than an open licence.",
-   "status": "held",
-   "note": "The council's page says 'All Rights Reserved'; held for Dominic's decision.",
+   "status": "in_table",
+   "note": "42 licences in the table",
    "use": {
     "publisher": "Braintree Council",
     "title": "Public register of licensed HMOs",
@@ -514,7 +514,8 @@
     "format": "CSV",
     "licence_page": "https://www.braintree.gov.uk/homepage/141/hmo-public-register",
     "statutory": true,
-    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+    "reviewed": "2026-09-27: found on the retry search and resolved from the council's own page; admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights; the page's 'All Rights Reserved' set aside by decision DM 2026-09-28",
+    "rights_reserved_decision": "DM 2026-09-28"
    }
   },
   {
@@ -3486,8 +3487,17 @@
    "has_postcodes": "unknown",
    "as_of": "1 September 2026",
    "search_notes": "Register published monthly as an .xls file; a separate 'My Property' postcode-search tool checks whether an individual address needs licensing but is not the register itself; a charge applies for a full, non-extract copy.",
-   "status": "file_no_licence",
-   "note": "The spreadsheet says it is 'not intended for marketing or commercial use'; held for Dominic's decision."
+   "status": "in_table",
+   "note": "3,333 licences in the table",
+   "use": {
+    "publisher": "Nottingham Council",
+    "title": "HMO public register",
+    "url": "https://www.nottinghamcity.gov.uk/media/ydgakyzh/hmo-public-register-01-09-26.xls",
+    "format": "XLS",
+    "licence_page": "https://www.nottinghamcity.gov.uk/information-for-residents/housing/private-rented-accommodation/information-for-landlords/licensing-for-landlords/mandatory-licensing-for-hmos/",
+    "statutory": true,
+    "reviewed": "2026-09-28: the page says the register is not intended for marketing or commercial use; admitted by decision DM 2026-09-28 (intake.py DATASET_LICENCE)"
+   }
   },
   {
    "code": "E07000219",

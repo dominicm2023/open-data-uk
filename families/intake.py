@@ -185,6 +185,23 @@ DATASET_LICENCE = {
                     "mixed": ["various copyrights - do not share outside bhcc network"], "os_acknowledgement": None,
                     "basis": "A public layer whose statement reads 'Various copyrights - do not share outside BHCC "
                              "network'. Admitted by decision DM 2026-09-27, taken knowing that statement."}},
+    # Nottingham's HMO register: its page says "This dataset is provided for
+    # transparency and public interest. It is not intended for marketing or
+    # commercial use. Individuals and organisations listed have not given
+    # consent ..." (read 28 Sep). The family markets nothing and carries
+    # nobody listed, only counts by postcode district.
+    "found:E06000018": {
+        "evidence_url": "https://www.nottinghamcity.gov.uk/information-for-residents/housing/private-rented-accommodation/"
+                        "information-for-landlords/licensing-for-landlords/mandatory-licensing-for-hmos/",
+        "statement": r"not\s+intended\s+for\s+marketing\s+or\s+commercial\s+use",
+        "licence": {"id": "Statutory-register", "version": None,
+                    "url": "https://www.legislation.gov.uk/ukpga/2004/34/section/232",
+                    "attribution": "Nottingham City Council: public register of licensed HMOs.",
+                    "mixed": ["not intended for marketing or commercial use"], "os_acknowledgement": None,
+                    "basis": "A public register the council must keep (Housing Act 2004 s.232). Its page says it is "
+                             "not intended for marketing or commercial use, and that those listed have not consented "
+                             "to such use. Only counts of licences per postcode district are republished; no one "
+                             "listed is. Admitted by decision DM 2026-09-28."}},
 }
 
 

@@ -18,7 +18,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/5e647f02a06444f0b2ef8393a7123ece?f=json",
    "index_licence_raw": "custom",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-27T14:40:10Z",
+   "index_harvested_at": "2026-09-28T14:41:58Z",
    "resource": {
     "url": "https://gis.brighton-hove.gov.uk/server/rest/services/City_Planning/CityPlanning_HMO/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
     "name": "download",
@@ -49,7 +49,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/bcc267a0f8c449dbaf45dab68971de4e?f=json",
    "index_licence_raw": "© Crown Copyright and database rights 2023 Ordnance Survey AC0000807971.",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-27T14:22:11Z",
+   "index_harvested_at": "2026-09-28T14:22:49Z",
    "resource": {
     "url": "https://opendata.bristol.gov.uk/api/download/v1/items/bcc267a0f8c449dbaf45dab68971de4e/csv?layers=7",
     "name": "CSV",
@@ -85,7 +85,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/443bbab8ef2a4ba79ca6c34f8e65dfa1?f=json",
    "index_licence_raw": "custom",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-27T14:46:41Z",
+   "index_harvested_at": "2026-09-28T14:48:26Z",
    "resource": {
     "url": "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_housing_and_property/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
     "name": "download",
@@ -116,7 +116,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/10a9739f48d445168ddc94b9c287642f?f=json",
    "index_licence_raw": "custom",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-27T14:46:41Z",
+   "index_harvested_at": "2026-09-28T14:48:26Z",
    "resource": {
     "url": "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_housing_and_property/MapServer/6/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json&resultRecordCount=2000",
     "name": "download",
@@ -147,7 +147,7 @@
    "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=36fd826e-2336-496e-9d13-6c08633b27f7",
    "index_licence_raw": "uk-ogl",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-27T14:20:20Z",
+   "index_harvested_at": "2026-09-28T14:20:43Z",
    "resource": {
     "url": "https://maps.epsom-ewell.gov.uk/GetData.aspx?type=data&ds=licensed_hmo_register&requesttype=xsl&xsl=atcsv.xsl",
     "name": "Data Download",
@@ -173,7 +173,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/c4d432bf3bb34b7583c07527c770a373?f=json",
    "index_licence_raw": "This information is supplied under the Open Government License v3.0. Licensed under the One Scotland Mapping Agreement (OSMA). All mapping data is sub",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-27T14:22:11Z",
+   "index_harvested_at": "2026-09-28T14:22:50Z",
    "resource": {
     "url": "https://data.glasgow.gov.uk/api/download/v1/items/c4d432bf3bb34b7583c07527c770a373/csv?layers=0",
     "name": "CSV",
@@ -209,7 +209,7 @@
    "metadata_url": null,
    "index_licence_raw": "Open Government Licence v3.0",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-27T14:22:53Z",
+   "index_harvested_at": "2026-09-28T14:23:27Z",
    "resource": {
     "url": "https://data.leicester.gov.uk/api/explore/v2.1/catalog/datasets/public-register-of-licenced-hmos/exports/csv",
     "name": "public-register-of-licenced-hmos.csv",
@@ -240,7 +240,7 @@
    "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=e5d7c4b6-2527-407c-bcff-23401e4c463e",
    "index_licence_raw": null,
    "index_licence_norm": null,
-   "index_harvested_at": "2026-09-27T14:20:06Z",
+   "index_harvested_at": "2026-09-28T14:20:13Z",
    "resource": {
     "url": "https://open.barnet.gov.uk/download/29r12/1sb/HMO%20Register%20-%207%20September%202026.csv",
     "name": "HMO Register - 7 September 2026 ",
@@ -266,7 +266,7 @@
    "metadata_url": null,
    "index_licence_raw": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-27T14:22:50Z",
+   "index_harvested_at": "2026-09-28T14:23:24Z",
    "resource": {
     "url": "https://opendata.camden.gov.uk/api/v3/views/x43g-c2rf/export.csv?accessType=DOWNLOAD",
     "name": "",
@@ -302,7 +302,7 @@
    "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=05a064b5-081a-46ff-be7c-73fc9eb96dd1",
    "index_licence_raw": "uk-ogl",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-27T14:20:48Z",
+   "index_harvested_at": "2026-09-28T14:21:20Z",
    "resource": {
     "url": "https://data.hounslow.gov.uk/@london-borough-of-hounslow/register-of-licensed-hmos/r/3253329e-82f7-44af-89fe-e02b0a3c5941",
     "name": "HMO Public Register",
@@ -328,7 +328,7 @@
    "metadata_url": "https://ckan.publishing.service.gov.uk/api/3/action/package_show?id=6381aaa8-3755-4d92-ac9d-c41610a066bf",
    "index_licence_raw": "uk-ogl",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-27T14:21:25Z",
+   "index_harvested_at": "2026-09-28T14:21:58Z",
    "resource": {
     "url": "https://www2.oxopendata.uk/api/views/rwt9-jjj9/rows.csv?accessType=DOWNLOAD",
     "name": "Download",
@@ -359,7 +359,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/79e2c243706f44d7877b7189284a8dcf?f=json",
    "index_licence_raw": "Data Licensing Data published by the Council at a URL beginning data.stirling.gov.uk is open to use, you do not have to apply or ask for permission, b",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-27T14:22:55Z",
+   "index_harvested_at": "2026-09-28T14:23:29Z",
    "resource": {
     "url": "https://data.stirling.gov.uk/api/download/v1/items/79e2c243706f44d7877b7189284a8dcf/csv?layers=0",
     "name": "CSV",
@@ -400,7 +400,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/b2f657eec91444c8aa8218c253c78a59?f=json",
    "index_licence_raw": "Data Licensing Data published by the Council at a URL beginning data.stirling.gov.uk is open to use, you do not have to apply or ask for permission, b",
    "index_licence_norm": "Custom licence",
-   "index_harvested_at": "2026-09-27T14:22:55Z",
+   "index_harvested_at": "2026-09-28T14:23:29Z",
    "resource": {
     "url": "https://data.stirling.gov.uk/api/download/v1/items/b2f657eec91444c8aa8218c253c78a59/csv?layers=0",
     "name": "CSV",
@@ -441,7 +441,7 @@
    "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/cb30b79f867145708a9b1742dc1d2c6d?f=json",
    "index_licence_raw": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
    "index_licence_norm": "OGL-UK-3.0",
-   "index_harvested_at": "2026-09-27T14:22:09Z",
+   "index_harvested_at": "2026-09-28T14:22:48Z",
    "resource": {
     "url": "https://lambethopenmappingdata-lambethcouncil.opendata.arcgis.com/api/download/v1/items/cb30b79f867145708a9b1742dc1d2c6d/csv?layers=0",
     "name": "CSV",
@@ -697,7 +697,7 @@
    "other_resources": 1,
    "found": "2026-09-27",
    "statutory": true,
-   "rights_reserved_decision": null
+   "rights_reserved_decision": "DM 2026-09-28"
   },
   {
    "dataset_key": "found:E09000005",
@@ -1880,6 +1880,35 @@
      "url": "https://www.norwich.gov.uk/registers/hmo/registerhmo.html",
      "name": "",
      "format": "HTML"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true,
+   "rights_reserved_decision": null
+  },
+  {
+   "dataset_key": "found:E06000018",
+   "title": "HMO public register",
+   "publisher": "Nottingham Council",
+   "portal": "web",
+   "landing_url": "https://www.nottinghamcity.gov.uk/information-for-residents/housing/private-rented-accommodation/information-for-landlords/licensing-for-landlords/mandatory-licensing-for-hmos/",
+   "licence_kind": "page",
+   "metadata_url": "https://www.nottinghamcity.gov.uk/information-for-residents/housing/private-rented-accommodation/information-for-landlords/licensing-for-landlords/mandatory-licensing-for-hmos/",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.nottinghamcity.gov.uk/media/ydgakyzh/hmo-public-register-01-09-26.xls",
+    "name": "",
+    "format": "XLS"
+   },
+   "candidates": [
+    {
+     "url": "https://www.nottinghamcity.gov.uk/media/ydgakyzh/hmo-public-register-01-09-26.xls",
+     "name": "",
+     "format": "XLS"
     }
    ],
    "series": false,
@@ -3385,12 +3414,6 @@
    "why": "title matches exclusion"
   },
   {
-   "key": "data_gov_uk:5f4ca2be-54a1-46eb-8e22-a0920071d01f",
-   "title": "Licensed Houses of Multiple Occupation Register",
-   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
-   "formats": []
-  },
-  {
    "key": "data_gov_uk:9a8380ce-8e2e-4dfe-981c-14222f155623",
    "title": "HMO experimental data, 2022",
    "why": "title matches exclusion"
@@ -3436,18 +3459,6 @@
    "key": "agol_lancaster_city_council:edaed62d7b054bd8a5b2fd8bbe22bec7",
    "title": "HMO Density by Postcode",
    "why": "title matches exclusion"
-  },
-  {
-   "key": "data_gov_uk:4275bcbd-f993-4a24-a529-064efcc10416",
-   "title": "HMO and student housing register",
-   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
-   "formats": []
-  },
-  {
-   "key": "data_gov_uk:e9d2bd5d-bdd9-4175-accc-7059ed7bda7a",
-   "title": "Houses in multiple occupation licence register",
-   "why": "no CSV/JSON/GeoJSON/ArcGIS/XLSX resource",
-   "formats": []
   },
   {
    "key": "data_gov_uk:83db633a-3d04-4eec-bcb3-5394260d7300",

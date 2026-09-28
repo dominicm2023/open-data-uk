@@ -1033,6 +1033,110 @@
    ]
   },
   {
+   "job_id": "8290598d7f37a0c5d86bf3c9e3cd9f16be706c4653a1a2a32a58554608e9ce9f",
+   "publisher": "Braintree Council",
+   "title": "Public register of licensed HMOs",
+   "portal": "web",
+   "format": "CSV",
+   "resource_url": "https://www.braintree.gov.uk/downloads/file/4420/hmo-public-register-may-2026",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [
+       "Name of Licence Holder",
+       "Address of Licence Holder",
+       "Name of Manager",
+       "Address of Manager",
+       "Address of HMO",
+       "Description of HMO",
+       "Commencement Date",
+       "Duration",
+       "Any matters referred to tribunal, etc.",
+       "Decision of Tribunal",
+       "",
+       "Number of rooms of sleeping accommodation",
+       "Number of rooms of living accommodation",
+       "Description and number of shared amenities",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [
+       "Name of Licence",
+       "Address of Licence Holder",
+       "Name of Manager",
+       "Address of Manager",
+       "Address of HMO",
+       "Description of HMO",
+       "Commencement Date",
+       "Duration",
+       "Any matters referred to tribunal, etc.",
+       "Decision of Tribunal",
+       "",
+       "Number of rooms of sleeping accommodation",
+       "Number of rooms of living accommodation",
+       "Description and number of shared amenities",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [
+       "Name of Licence Holder",
+       "Address of Licence Holder",
+       "Name of Manager",
+       "Address of Manager",
+       "Address of HMO",
+       "Description of HMO",
+       "Commencement Date",
+       "Duration",
+       "Any matters referred to tribunal, etc.",
+       "Decision of Tribunal",
+       "",
+       "Number of rooms of sleeping accommodation",
+       "Number of rooms of living accommodation",
+       "Description and number of shared amenities",
+       "",
+       ""
+      ],
+      []
+     ],
+     "where": {
+      "table": 1
+     },
+     "header": [
+      "Name of Licence Holder",
+      "Address of Licence Holder",
+      "Name of Manager",
+      "Address of Manager",
+      "Address of HMO",
+      "Description of HMO",
+      "Commencement Date",
+      "Duration",
+      "Any matters referred to tribunal, etc.",
+      "Decision of Tribunal",
+      "",
+      "Number of rooms of sleeping accommodation",
+      "Number of rooms of living accommodation",
+      "Description and number of shared amenities",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 167,
+     "column_count": 16
+    }
+   ]
+  },
+  {
    "job_id": "74a9a3e6888d66f86c397b7238394366441e0013ecd2b79c90240087787f12ce",
    "publisher": "Bristol City Council",
    "title": "Mandatory HMO Licences",
@@ -8231,6 +8335,62 @@
      "sample_rows": [],
      "row_count": 1820,
      "column_count": 10
+    }
+   ]
+  },
+  {
+   "job_id": "08b4684f3e135b1e9f7fecc99431c309f76545ab8650aed49465e53f83746ade",
+   "publisher": "Nottingham Council",
+   "title": "HMO public register",
+   "portal": "web",
+   "format": "XLS",
+   "resource_url": "https://www.nottinghamcity.gov.uk/media/ydgakyzh/hmo-public-register-01-09-26.xls",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [
+       "",
+       "address1",
+       "address2",
+       "address3",
+       "address5",
+       "date-of-issue",
+       "renewal-date",
+       "maximum-occupants",
+       "maximum-households"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "sheet": "PH109876"
+     },
+     "header": [
+      "",
+      "address1",
+      "address2",
+      "address3",
+      "address5",
+      "date-of-issue",
+      "renewal-date",
+      "maximum-occupants",
+      "maximum-households"
+     ],
+     "header_row": 3,
+     "sample_rows": [],
+     "row_count": 3357,
+     "column_count": 9
     }
    ]
   },

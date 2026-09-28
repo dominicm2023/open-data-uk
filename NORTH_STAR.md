@@ -194,6 +194,10 @@ A living list. Add freely; move to "Done" with the commit that did it.
   annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
   and Scotland on its About page's OGL statement. Air Quality England
   parked (no terms).
+- 28 Sep — 79 councils, 38,027 licences, 546 districts. Dominic admitted
+  Braintree ('All Rights Reserved', by name) and Nottingham ('not intended
+  for marketing or commercial use', tied to that sentence): Nottingham's
+  register adds 3,333 licences.
 - 27 Sep — 77 councils, 34,652 licences, 534 districts. A second search of
   the 148 councils the first could not confirm found 34 more registers;
   26 came in (Sheffield 1,420, Lewisham 1,312, Derby 913, Salford 640,

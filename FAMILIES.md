@@ -152,7 +152,12 @@ Erewash, Harborough, Maldon, Ribble Valley, Telford and Wrekin, Torbay and
 Watford. The decision is recorded on each council's entry in the coverage
 file (`rights_reserved_decision`); for those sources only, the page reader
 sets that one phrase aside and reads the rest of the page as ever. It is
-not a rule for councils found later: those come back to Dominic. A no-marketing notice (Cardiff, Newham, Camden)
+not a rule for councils found later: those come back to Dominic, and
+Braintree did (admitted by name, DM 2026-09-28). Nottingham's page says its
+register "is not intended for marketing or commercial use" and that those
+listed have not consented to it: admitted by Dominic on 28 September, as a
+decision tied to that sentence in `DATASET_LICENCE`, since the family markets
+nothing and carries no one listed. A no-marketing notice (Cardiff, Newham, Camden)
 is not a reservation of rights and does not refuse: the family carries
 nobody's details. This is not a precedent for any other family. Bristol's
 three licence layers come in under the Bristol decision of 7 September,
@@ -206,10 +211,10 @@ authority in `families/registry/hmo_registers.coverage.json`. A person
 marks one for use with its file and the page whose licence statement the
 intake reads (`licence_from_page`); nothing is taken unreviewed. Of 361
 councils on 27 Sep, after a second search of every council the first could
-not confirm: 77 in the table, 17 publish a data file we cannot use (the
-reason beside each), 29 a PDF or web page we cannot read, 81 only a search
-box, 62 only on request, 33 confirmed as not online, 1 held on "All Rights
-Reserved" (Braintree), and 61 not yet confirmed: nearly all of those are
+not confirm, and as of 28 Sep: 79 in the table, 16 publish a data file we
+cannot use (the reason beside each), 29 a PDF or web page we cannot read, 81
+only a search box, 62 only on request, 33 confirmed as not online, and 61
+not yet confirmed: nearly all of those are
 council websites that refuse automated reading (HTTP 403). The notes hold no full postcode, e-mail or phone
 number; a test holds them to that.
 
