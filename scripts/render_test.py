@@ -386,6 +386,18 @@ _hm = json.loads((Path(__file__).parent.parent / "families" / "registry" / "hmo_
 _mapped = {str(v).lower() for m in _hm.values() for v in (m.get("columns") or {}).values()}
 check(not any(re.search(r"holder|landlord|manag|longitude|latitude|easting|northing|^x$|^y$", v) for v in _mapped),
       "no HMO mapping reads a holder's, landlord's or manager's column, or a coordinate")
+# A district worked out from a street or a point (DM 2026-09-28) reads the
+# property's own address or point, and only to find the district.
+_dfrom = [str(n) for m in _hm.values() for k in ("street", "x", "y")
+          for n in ((m.get("district_from") or {}).get(k) if isinstance((m.get("district_from") or {}).get(k), list)
+                    else [(m.get("district_from") or {}).get(k)]) if n]
+check(_dfrom and not any(re.search(r"holder|landlord|manag|agent|owner|applicant|licensee", n, re.I) for n in _dfrom)
+      and all((m.get("district_from") or {}).get("authorities") for m in _hm.values() if (m.get("district_from") or {}).get("street")),
+      "a district worked out from a street reads the property's address, within a named council's area; never a person's")
+import place as _place  # noqa: E402
+check(_place.norm("St. Mary's Road") == _place.norm("Saint Marys Rd") == "st marys rd"
+      and [round(v) for v in _place.lonlat_to_osgb(-0.124625, 51.500729)] == [530268, 179644],
+      "street names compare in one written form, and a WGS84 point converts to the National Grid")
 # The coverage file is research notes about every council, committed to a
 # public repository. Rows of a register must never leak into it: the first
 # draft quoted two licensed properties' postcodes as examples.

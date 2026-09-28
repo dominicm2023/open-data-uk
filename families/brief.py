@@ -65,7 +65,7 @@ _HEAD_WORD = re.compile(r"\b(?:address|addr|post\s*code|postcode|licen|lic\b|dat
                         r"term|period|decision|tribunal|shared|living|sleeping|licensee|let\b|"
                         # publishers' own spellings of column names: Leicester's
                         # zero for O, Bexley's dropped letter, Epsom's run together
-                        r"last|upload|extract\w*date|0ccup|postode)", re.I)
+                        r"last|upload|extract\w*date|0ccup|postode|lon\b|lat\b|longitude|latitude|easting|northing)", re.I)
 _DATA = re.compile(r"\b[A-Z]{1,2}[0-9][A-Z0-9]?\s*[0-9][A-Z]{2}\b|\d{1,4}[/.-]\d{1,2}[/.-]\d{2,4}|"
                    r"\b(?:ltd|limited|llp|plc|group|trust|estates?|lettings|homes|mr|mrs|ms|miss|dr)\b|"
                    r"[\w.+-]+@[\w-]+\.[\w.-]+|\b0\d{2,4}\s?\d{3,4}\s?\d{3,4}\b", re.I)

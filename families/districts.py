@@ -145,17 +145,22 @@ def counts(family: str) -> dict[str, dict]:
     except (OSError, ValueError):
         page = {}
     out: dict[str, dict] = {}
+    # a district worked out from a street or a point, not read from a
+    # published postcode (DM 2026-09-28), is counted apart so the page can say so
+    has_basis = any(r[1] == "district_basis" for r in c.execute("PRAGMA table_info(rows)"))
+    worked = "SUM(CASE WHEN district_basis IN ('street', 'point') THEN licences ELSE 0 END)" if has_basis else "0"
     for r in c.execute(
             "SELECT postcode_district d, council, licence_type t, SUM(licences) n, SUM(max_occupants) occ, "
             "SUM(CASE WHEN max_occupants IS NOT NULL THEN licences ELSE 0 END) occ_of, MAX(as_of) as_of, "
-            "MIN(source_url) url, MIN(dataset_key) dk FROM rows GROUP BY 1, 2, 3"):
+            f"MIN(source_url) url, MIN(dataset_key) dk, {worked} w FROM rows GROUP BY 1, 2, 3"):
         e = out.setdefault(r["d"], {"licences": 0, "occupants": 0, "occupants_of": 0, "councils": {}, "types": {}})
         n = int(r["n"] or 0)
         e["licences"] += n
         e["occupants"] += int(r["occ"] or 0)
         e["occupants_of"] += int(r["occ_of"] or 0)
-        k = e["councils"].setdefault(r["council"], {"licences": 0, "as_of": None, "source_url": page.get(r["dk"]) or r["url"]})
+        k = e["councils"].setdefault(r["council"], {"licences": 0, "worked_out": 0, "as_of": None, "source_url": page.get(r["dk"]) or r["url"]})
         k["licences"] += n
+        k["worked_out"] += int(r["w"] or 0)
         k["as_of"] = max(filter(None, [k["as_of"], r["as_of"]]), default=None)
         e["types"][r["t"] or "not stated"] = e["types"].get(r["t"] or "not stated", 0) + n
     return out
@@ -192,7 +197,10 @@ def build(family: str) -> dict:
         if got:
             feats.append({"type": "Feature", "geometry": got[0], "properties": {"district": d, "licences": 0, "context": True}})
             context += 1
-    doc = {"type": "FeatureCollection", "attribution": ATTRIBUTION, "features": feats,
+    worked_out = sum(k.get("worked_out", 0) for e in by.values() for k in e["councils"].values())
+    import place
+    attribution = ATTRIBUTION + (" " + place.ATTRIBUTION if worked_out else "")
+    doc = {"type": "FeatureCollection", "attribution": attribution, "features": feats,
            "districts_without_a_shape": missing}
     (out_dir / "districts.geojson").write_text(json.dumps(doc, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     land = []

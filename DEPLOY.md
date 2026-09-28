@@ -374,6 +374,20 @@ curl -s https://postcodes-mapit-static.s3.eu-west-2.amazonaws.com/data/gb-postco
 Without them the family still builds and its table is served; only the map
 has nothing to draw, and its page answers 404.
 
+`families/place.py` works out a district where a register gives no postcode,
+from OS Open Names (100 MB, Open Government Licence v3). Unpack it once on
+the box and build its index (about 30 seconds, 140 MB):
+
+```bash
+mkdir -p ~/opendata-index/data/geo/opennames && cd ~/opendata-index/data/geo/opennames
+curl -sSL -o opname_csv_gb.zip "https://api.os.uk/downloads/v1/products/OpenNames/downloads?area=GB&format=CSV&redirect"
+# md5 of the July 2026 release, as OS publishes it: 4a7d2d0d24be0470771b9cc170ca2aee
+python3 -c "import zipfile; zipfile.ZipFile('opname_csv_gb.zip').extractall('.')"
+cd ~/opendata-index && DATA_DIR=$PWD/data .venv/bin/python families/place.py index
+```
+
+Without the index, rows that give no postcode are set aside as before.
+
 ## Rollback
 
 Complete removal, in order:

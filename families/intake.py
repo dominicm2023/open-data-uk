@@ -630,7 +630,10 @@ def _try_one(job: dict, cand: dict, out: Path) -> tuple[str, str, dict, int, str
     from extract import VERSION
     headers = {}
     same = cand["url"] == job["resource_url"]
-    if same and job["blob_sha"] and (STORE / "blobs" / job["blob_sha"]).is_file():
+    # An ArcGIS layer is asked for in full each time: its ETag answers for the
+    # first page alone, and a "not modified" would keep a stored first page
+    # in place of the paged whole (Bristol's 3,100 licences read as 1,000).
+    if same and cand["format"] != "ESRI" and job["blob_sha"] and (STORE / "blobs" / job["blob_sha"]).is_file():
         if job["etag"]:
             headers["If-None-Match"] = job["etag"]
         elif job["last_modified"]:
@@ -648,6 +651,27 @@ def _try_one(job: dict, cand: dict, out: Path) -> tuple[str, str, dict, int, str
     else:
         if body and b'"status":"Pending"' in body.replace(b" ", b""):
             raise Refused("Hub export still being generated; try next run")
+    # An ArcGIS layer answers a query with at most its server's page of
+    # features (Bristol's: 1,000) and says so with exceededTransferLimit.
+    # The rest are asked for page by page, politely, and kept as one answer.
+    if cand["format"] == "ESRI" and body and json.loads(body).get("exceededTransferLimit"):
+        # Pages in a stated order, from the start, so no feature is read twice
+        # or missed between pages.
+        sep = "&" if "?" in cand["url"] else "?"
+        feats: list = []
+        doc = {"exceededTransferLimit": True}
+        while doc.get("exceededTransferLimit") and len(feats) < LIMITS["max_rows"]:
+            page, _, _ = fetch(f"{cand['url']}{sep}orderByFields=OBJECTID&resultOffset={len(feats)}", LIMITS["max_file_bytes"], {})
+            doc = json.loads(page or b"{}")
+            if doc.get("error"):
+                raise Refused("ArcGIS paging refused: " + str(doc["error"])[:150])
+            more = doc.get("features") or []
+            if not more:
+                break
+            feats.extend(more)
+        merged = json.loads(body)
+        merged["features"], merged["exceededTransferLimit"] = feats, bool(doc.get("exceededTransferLimit"))
+        body = json.dumps(merged).encode()
     downloaded = len(body) if body is not None else 0
     blob = store("blobs", body) if body is not None else job["blob_sha"]
     if not blob:

@@ -2701,6 +2701,35 @@
    "rights_reserved_decision": null
   },
   {
+   "dataset_key": "found:E07000115",
+   "title": "HMO public register",
+   "publisher": "Tonbridge and Malling Council",
+   "portal": "web",
+   "landing_url": "https://www.tmbc.gov.uk/housing/landlords-tenants/3",
+   "licence_kind": "page",
+   "metadata_url": "https://www.tmbc.gov.uk/housing/landlords-tenants/3",
+   "index_licence_raw": null,
+   "index_licence_norm": null,
+   "index_harvested_at": "2026-09-27",
+   "resource": {
+    "url": "https://www.tmbc.gov.uk/downloads/file/4746/hmo-public-register",
+    "name": "",
+    "format": "PDF"
+   },
+   "candidates": [
+    {
+     "url": "https://www.tmbc.gov.uk/downloads/file/4746/hmo-public-register",
+     "name": "",
+     "format": "PDF"
+    }
+   ],
+   "series": false,
+   "other_resources": 1,
+   "found": "2026-09-27",
+   "statutory": true,
+   "rights_reserved_decision": null
+  },
+  {
    "dataset_key": "found:E06000027",
    "title": "Public register of licensed HMOs",
    "publisher": "Torbay Council",

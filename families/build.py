@@ -605,6 +605,38 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
             raise KeyError(f"filter column {flt_col!r} not in header")
         flt_re = re.compile(flt["match"], re.I)
 
+    # A register that gives no postcode for some or all of its properties:
+    # the mapping may name the columns a district can be worked out from,
+    # the property's street address (with the council's name as OS Open
+    # Names writes it) or its point (families/place.py). They are read for
+    # that and nothing else, and never kept. Decision DM 2026-09-28.
+    dfrom = spec.get("district_from") or {}
+    dfrom_idx: dict[str, list[int]] = {}
+    for key in ("street", "x", "y"):
+        names = dfrom.get(key)
+        for nm in ([names] if isinstance(names, str) else (names or [])):
+            pos = next((i for i, c in enumerate(lowered) if c == _norm(nm)), None)
+            if pos is None:
+                raise KeyError(f"district_from column {nm!r} not in header")
+            dfrom_idx.setdefault(key, []).append(pos)
+
+    def worked_out(r) -> tuple[str | None, str | None]:
+        import place
+        get = lambda i: str(r[i]).strip() if i < len(r) and r[i] is not None else ""
+        if "x" in dfrom_idx and "y" in dfrom_idx:
+            x, y = _num(get(dfrom_idx["x"][0])), _num(get(dfrom_idx["y"][0]))
+            if x is not None and y is not None and (x, y) != (0, 0):
+                d = place.district_from_point(x, y, lonlat=-11 < x < 3 and 49 < y < 62)
+                if d:
+                    return d, "point"
+        if "street" in dfrom_idx:
+            address = " ".join(get(i) for i in dfrom_idx["street"])
+            if address.strip():
+                d = place.district_from_street(address, tuple(dfrom.get("authorities") or ()))
+                if d:
+                    return d, "street"
+        return None, None
+
     def cell(r, name):
         if name not in cols or cols[name] not in idx:
             return None
@@ -692,9 +724,17 @@ def _map_rows(job: dict, f: dict, spec: dict, schema: dict, rows: list, best: di
         if "postcode_district" in types:
             had = base.get("postcode_district") not in (None, "")
             base["postcode_district"] = _district(base.get("postcode_district"))
-            if had and base["postcode_district"] is None:
-                bad.append({**base, **receipts, "source_row": rno, "why": "no postcode could be read from the published address"})
+            basis = "postcode" if base["postcode_district"] else None
+            if basis is None and dfrom_idx:
+                base["postcode_district"], basis = worked_out(r)
+            if basis is None and (had or dfrom_idx):
+                why = "no postcode could be read from the published address"
+                if dfrom_idx:
+                    why += ", and none could be worked out from its street or point without a guess"
+                bad.append({**base, **receipts, "source_row": rno, "why": why})
                 return
+            if "district_basis" in types:
+                base["district_basis"] = basis
             # A district that does not exist is a typo in the source (Redditch's
             # "RG4O", a letter O for a nought): refused and named, never drawn
             # as a place. Northern Ireland's BT districts are not in the set.

@@ -15,7 +15,13 @@
     "name": "postcode_district",
     "type": "text",
     "required": true,
-    "meaning": "the outward part of the property's postcode as published (NW1, LE2, FK8), upper-cased. The address, the full postcode and any coordinates in the source are not carried"
+    "meaning": "the outward part of the property's postcode (NW1, LE2, FK8), upper-cased: as published, or worked out from its street or point where the register gives no postcode (see district_basis). The address, the full postcode and any coordinates in the source are not carried"
+   },
+   {
+    "name": "district_basis",
+    "type": "text",
+    "required": false,
+    "meaning": "how the district was found: 'postcode' where the register publishes the property's postcode; 'street' where it gives only a street address and the district is the one OS Open Names places that street in, within the council's area; 'point' where it gives coordinates and the district is that of the nearest postcode unit's centre. Tested against registers that do give postcodes, 'street' placed about 95 in 100 addresses and about 2 in 100 of those in a neighbouring district"
    },
    {
     "name": "licences",
@@ -111,8 +117,8 @@
   },
   "rules": [
    "Properties, not people: the licence holder's and manager's names and addresses are never mapped. Adding them is a decision for Dominic, recorded in FAMILIES.md first.",
-   "Districts, not doors: the property's address, full postcode and coordinates are never carried into the table. Only the postcode district is, taken from the postcode the register publishes.",
-   "A register that gives no postcode for a property gives no row for it: a district is never worked out from coordinates or guessed from a street name.",
+   "Districts, not doors: the property's address, full postcode and coordinates are never carried into the table. Only the postcode district is.",
+   "A register that gives no postcode for a property may still give its district, worked out from its street address or its coordinates with OS Open Names (Decision DM 2026-09-28): only where that can be read without a guess, and marked in district_basis. The address and point are read for this and dropped.",
    "A count of persons, households or storeys that is zero or outside its stated range is nulled with a note; the licence stays.",
    "A row is one licence, and 'licences' is 1. Where a council publishes properties per postcode rather than a register, a row is one postcode and 'licences' is its count. A register that lists one row per room or per occupant is held at 'mapped' for review.",
    "Licence type and status are the publisher's own words, not normalised into a vocabulary.",
@@ -1161,8 +1167,8 @@
        "UPRN",
        "",
        "",
-       "",
-       ""
+       "_lon",
+       "_lat"
       ],
       [],
       [],
@@ -1176,7 +1182,7 @@
      ],
      "where": {
       "table": 1,
-      "exceeded": true
+      "exceeded": false
      },
      "header": [
       "",
@@ -1189,12 +1195,12 @@
       "UPRN",
       "",
       "",
-      "",
-      ""
+      "_lon",
+      "_lat"
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1000,
+     "row_count": 3100,
      "column_count": 12
     }
    ]
@@ -1222,8 +1228,8 @@
        "UPRN",
        "",
        "",
-       "",
-       ""
+       "_lon",
+       "_lat"
       ],
       [],
       [],
@@ -1237,7 +1243,7 @@
      ],
      "where": {
       "table": 1,
-      "exceeded": true
+      "exceeded": false
      },
      "header": [
       "",
@@ -1248,12 +1254,12 @@
       "UPRN",
       "",
       "",
-      "",
-      ""
+      "_lon",
+      "_lat"
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1000,
+     "row_count": 3439,
      "column_count": 10
     }
    ]
@@ -4196,7 +4202,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1070,
+     "row_count": 1080,
      "column_count": 14
     },
     {
@@ -5820,10 +5826,10 @@
        "Number Of Shared Showers",
        "Number Of Shared WCs",
        "Number Of Shared Baths",
-       "",
-       "",
-       "",
-       "",
+       "Easting",
+       "Northing",
+       "Longitude",
+       "Latitude",
        "",
        "",
        "Last Uploaded",
@@ -5868,10 +5874,10 @@
       "Number Of Shared Showers",
       "Number Of Shared WCs",
       "Number Of Shared Baths",
-      "",
-      "",
-      "",
-      "",
+      "Easting",
+      "Northing",
+      "Longitude",
+      "Latitude",
       "",
       "",
       "Last Uploaded",
@@ -9326,7 +9332,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 647,
+     "row_count": 648,
      "column_count": 8
     }
    ]
@@ -10489,50 +10495,58 @@
      "head_rows": [
       [],
       [],
-      [],
-      [],
       [
-       "Licence\nReference\nNumber",
-       "Licenced Address\nLine 1",
-       "Licenced Address\nLine 2",
-       "Licenced\nAddress Line 3",
-       "Licenced Address Line 4",
-       "Licenced Address\nLine 5",
-       "Licenced Address\nPost Code",
-       "Max\nOccupant\ns Allowed",
-       "Licensing\nEvent:\nCommencem\nent Date",
-       "Licensing Event:\nMost Recent\nRenewal Date",
-       "Duration\nLicence\nAwarded"
+       "Licence\nReference Licenced Ad",
+       "dress Licenced Add",
+       "ress Licenc",
+       "",
+       "Licence",
+       "d Address Licenc",
+       "O\ned Address",
+       "Max Licensing Licen\nccupant Event: M",
+       "",
+       "Duration\nLicence"
       ],
+      [
+       "Number Line 1",
+       "",
+       "ne 2 Address Line",
+       "3 Licenc",
+       "ed Address Line 4 Li",
+       "",
+       "s\nPost Code",
+       "AllowedCommencem Re\nent Date",
+       "newal Date",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
       []
      ],
      "where": {
       "page": 1,
       "table": 1,
-      "bbox": [
-       54.533333416666665,
-       71.75999999999999,
-       433.4228472857143,
-       125.0160003
-      ]
+      "strategy": "text"
      },
      "header": [
-      "Licence\nReference\nNumber",
-      "Licenced Address\nLine 1",
-      "Licenced Address\nLine 2",
-      "Licenced\nAddress Line 3",
-      "Licenced Address Line 4",
-      "Licenced Address\nLine 5",
-      "Licenced Address\nPost Code",
-      "Max\nOccupant\ns Allowed",
-      "Licensing\nEvent:\nCommencem\nent Date",
-      "Licensing Event:\nMost Recent\nRenewal Date",
-      "Duration\nLicence\nAwarded"
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
      ],
-     "header_row": 4,
+     "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 11
+     "row_count": 205,
+     "column_count": 10
     }
    ]
   },
@@ -11069,6 +11083,89 @@
      "sample_rows": [],
      "row_count": 170,
      "column_count": 4
+    }
+   ]
+  },
+  {
+   "job_id": "96f9798e8a831af80cd0563e55c5415f3f5d1e5b8f3add16db2f67e4848850c4",
+   "publisher": "Tonbridge and Malling Council",
+   "title": "HMO public register",
+   "portal": "web",
+   "format": "PDF",
+   "resource_url": "https://www.tmbc.gov.uk/downloads/file/4746/hmo-public-register",
+   "licence": "Statutory-register",
+   "files_extracted": 1,
+   "note": null,
+   "layouts": [],
+   "tables": [
+    {
+     "head_rows": [
+      [],
+      [
+       "",
+       "",
+       "",
+       "",
+       "Address",
+       "Number of storeys",
+       "Number of",
+       "Households",
+       "Maximum",
+       "Licence",
+       "",
+       "",
+       "",
+       "Duration"
+      ],
+      [
+       "Licensed Ad",
+       "",
+       "",
+       "",
+       "Postcode",
+       "Covered by Licence",
+       "Sleeping Rooms",
+       "",
+       "Occupants Allowed",
+       "Type",
+       "Date",
+       "",
+       "",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 1,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "Address",
+      "Number of storeys",
+      "Number of",
+      "Households",
+      "Maximum",
+      "Licence",
+      "",
+      "",
+      "",
+      "Duration"
+     ],
+     "header_row": 1,
+     "sample_rows": [],
+     "row_count": 27,
+     "column_count": 14
     }
    ]
   },
@@ -13382,8 +13479,8 @@
        "",
        "",
        "POSTCODE",
-       "",
-       "",
+       "EASTING",
+       "NORTHING",
        "WARD",
        "LICENCE_TYPE",
        "LICENCE_REFERENCE_NUMBER",
@@ -13412,8 +13509,8 @@
       "",
       "",
       "POSTCODE",
-      "",
-      "",
+      "EASTING",
+      "NORTHING",
       "WARD",
       "LICENCE_TYPE",
       "LICENCE_REFERENCE_NUMBER",

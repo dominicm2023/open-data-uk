@@ -34,8 +34,8 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "PDF register linked directly from the HMO page; contents not machine-extractable via fetch and no licence statement found on page or guessed copyright URL.",
-   "status": "document",
-   "note": "The register gives each property's address without a postcode, so it gives no district.",
+   "status": "in_table",
+   "note": "38 licences in the table",
    "use": {
     "publisher": "Amber Valley Council",
     "title": "Public register of licensed HMOs",
@@ -154,7 +154,7 @@
    "as_of": null,
    "search_notes": null,
    "status": "in_table",
-   "note": "1,610 licences in the table"
+   "note": "1,611 licences in the table"
   },
   {
    "code": "E08000038",
@@ -214,8 +214,8 @@
    "has_postcodes": "unknown",
    "as_of": "August 2026",
    "search_notes": "Register updated annually as an XLSX download; separate list is kept for non-licensable HMOs (4 or fewer occupants), which is not published.",
-   "status": "file_no_licence",
-   "note": "The register gives each property's address without a postcode, so it gives no district.",
+   "status": "in_table",
+   "note": "82 licences in the table",
    "use": {
     "publisher": "Basingstoke and Deane Council",
     "title": "Public register of licensed HMOs",
@@ -618,8 +618,8 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "Existing index_hint lists three separate ArcGIS layers (additional, mandatory and selective HMO licences) which together appear to be Bristol's actual public register, published as point layers rather than a single document; pages are JS-rendered so column headers, postcode fields and licence terms could not be confirmed via fetch.",
-   "status": "file_no_licence",
-   "note": "three ArcGIS layers give each licence's coordinates but no postcode, and the family never works a district out from coordinates"
+   "status": "in_table",
+   "note": "3,100 licences in the table"
   },
   {
    "code": "E07000144",
@@ -739,7 +739,7 @@
    "as_of": null,
    "search_notes": "Council's own page links a downloadable XLSX register (217KB); page did not separately break out Aylesbury Vale/Chiltern-South Bucks/Wycombe legacy-area registers in the fetched excerpt.",
    "status": "in_table",
-   "note": "388 licences in the table",
+   "note": "427 licences in the table",
    "use": {
     "publisher": "Buckinghamshire Council",
     "title": "Public register of licensed HMOs",
@@ -1071,8 +1071,8 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "Direct XLSX download (~25KB) confirmed by fetch; no open-licence statement found in the file or on the page, only the statutory-duty statement.",
-   "status": "file_no_licence",
-   "note": "The register gives each property's address without a postcode, so it gives no district.",
+   "status": "in_table",
+   "note": "24 licences in the table",
    "use": {
     "publisher": "Chorley Council",
     "title": "Public register of licensed HMOs",
@@ -1218,7 +1218,7 @@
    "as_of": "2026-09",
    "search_notes": "Public register published as CSV, updated quarterly; latest file dated September 2026.",
    "status": "in_table",
-   "note": "239 licences in the table",
+   "note": "280 licences in the table",
    "use": {
     "publisher": "Crawley Council",
     "title": "Public register of licensed HMOs",
@@ -1407,7 +1407,7 @@
    "as_of": "2026-08-06",
    "search_notes": "Register downloadable as xlsx, titled 'Mandatory HMO Licence Register as of 6 August 2026'.",
    "status": "in_table",
-   "note": "107 licences in the table",
+   "note": "108 licences in the table",
    "use": {
     "publisher": "Dorset Council",
     "title": "Public register of licensed HMOs",
@@ -1501,7 +1501,7 @@
    "as_of": "2026-07-07",
    "search_notes": "Register downloadable as PDF dated 7 July 2026; council also runs a separate online licensing public-registers search tool (eastdevon.gov.uk/licensing/public-registers) which may cover HMOs too.",
    "status": "document",
-   "note": "The register gives each property's address without a postcode, so it gives no district.",
+   "note": "The PDF's cells hold no text except the expiry dates: the addresses and every other field read as empty.",
    "use": {
     "publisher": "East Devon Council",
     "title": "Public register of licensed HMOs",
@@ -1767,7 +1767,7 @@
    "as_of": null,
    "search_notes": "Reduced register shown as an HTML table on the page with postcodes; full version with more detail available on request for a £55 fee.",
    "status": "in_table",
-   "note": "74 licences in the table",
+   "note": "75 licences in the table",
    "use": {
     "publisher": "Erewash Council",
     "title": "Public register of licensed HMOs",
@@ -2083,7 +2083,7 @@
    "as_of": null,
    "search_notes": "Register shown as an on-page table with reference number, licence holder, full address (incl. postcode), validity dates and occupancy; some entries marked PENDING.",
    "status": "in_table",
-   "note": "11 licences in the table",
+   "note": "12 licences in the table",
    "use": {
     "publisher": "Harborough Council",
     "title": "Public register of licensed HMOs",
@@ -2290,7 +2290,7 @@
    "as_of": "30 July 2026",
    "search_notes": "Downloadable spreadsheet of licensed HMOs named by date; file not opened to check columns (rule against downloading/copying rows).",
    "status": "in_table",
-   "note": "198 licences in the table",
+   "note": "202 licences in the table",
    "use": {
     "publisher": "Hertsmere Council",
     "title": "Public register of licensed HMOs",
@@ -2333,7 +2333,7 @@
    "as_of": "July 2023",
    "search_notes": "PDF lists reference, licence holder name and property address, not postcode as a separate field; the only copy found is dated July 2023, so may be stale (an unofficial resident-run mirror site references an August 2026 file but is not the council's own page).",
    "status": "in_table",
-   "note": "476 licences in the table",
+   "note": "477 licences in the table",
    "use": {
     "publisher": "Hillingdon Council",
     "title": "Public register of licensed HMOs",
@@ -2393,7 +2393,7 @@
    "as_of": null,
    "search_notes": "Live on the council's own open-data portal (data.hounslow.gov.uk), updated within the last week; the index_hint's data.gov.uk mirror link is dead, use this portal page instead.",
    "status": "in_table",
-   "note": "1,403 licences in the table",
+   "note": "1,404 licences in the table",
    "use": {
     "publisher": "London Borough of Hounslow",
     "title": "Register of licensed HMOs",
@@ -2640,7 +2640,7 @@
    "as_of": null,
    "search_notes": null,
    "status": "in_table",
-   "note": "5,518 licences in the table"
+   "note": "5,541 licences in the table"
   },
   {
    "code": "E07000121",
@@ -2691,7 +2691,7 @@
    "as_of": null,
    "search_notes": null,
    "status": "in_table",
-   "note": "879 licences in the table"
+   "note": "884 licences in the table"
   },
   {
    "code": "E07000063",
@@ -2725,7 +2725,7 @@
    "as_of": "25/06/2026",
    "search_notes": "Register published as an Excel spreadsheet and also via an online search tool at lewisham.metastreet.co.uk/public-register; council notes some register data is currently missing and being fixed; only standard copyright notice, no OGL statement.",
    "status": "in_table",
-   "note": "1,312 licences in the table",
+   "note": "1,325 licences in the table",
    "use": {
     "publisher": "Lewisham Council",
     "title": "Public register of licensed HMOs",
@@ -3059,8 +3059,8 @@
    "has_postcodes": "unknown",
    "as_of": "file path dated September 2026",
    "search_notes": "Register lists licence holder/agent name and address, occupancy limits and room counts; could not confirm whether a postcode column exists (binary xlsx not readable by fetch).",
-   "status": "file_no_licence",
-   "note": "The register gives each property's address without a postcode, so it gives no district.",
+   "status": "in_table",
+   "note": "505 licences in the table",
    "use": {
     "publisher": "Milton Keynes Council",
     "title": "Public register of licensed HMOs",
@@ -3102,8 +3102,8 @@
    "has_postcodes": "no",
    "as_of": null,
    "search_notes": "Confirmed by earlier pass: register is an embedded HTML table (licence number, address, max occupancy, licence holder, validity dates); addresses shown do not include postcodes; page returned HTTP 403 on re-check this session.",
-   "status": "unsearched",
-   "note": "the council's website refuses automated requests (HTTP 403), so the register could not be read"
+   "status": "document",
+   "note": "The register is a table on the council's page, with addresses and no postcodes; the page refuses our fetcher (HTTP 403)."
   },
   {
    "code": "E07000175",
@@ -3230,8 +3230,8 @@
    "has_postcodes": "unknown",
    "as_of": "labelled 'HMO Register 2026'",
    "search_notes": "Downloadable PDF register (194KB); council excludes vulnerable-tenant properties, e.g. domestic abuse refuges, from the published list for safety.",
-   "status": "document",
-   "note": "The register gives each property's address without a postcode, so it gives no district.",
+   "status": "in_table",
+   "note": "146 licences in the table",
    "use": {
     "publisher": "North East Lincolnshire Council",
     "title": "Public register of licensed HMOs",
@@ -3488,7 +3488,7 @@
    "as_of": "1 September 2026",
    "search_notes": "Register published monthly as an .xls file; a separate 'My Property' postcode-search tool checks whether an individual address needs licensing but is not the register itself; a charge applies for a full, non-extract copy.",
    "status": "in_table",
-   "note": "3,333 licences in the table",
+   "note": "3,355 licences in the table",
    "use": {
     "publisher": "Nottingham Council",
     "title": "HMO public register",
@@ -3805,7 +3805,7 @@
    "as_of": null,
    "search_notes": "227kB PDF register; page states it lists the postal address and number of habitable rooms and is 'frequently updated', but gives no specific as-of date.",
    "status": "in_table",
-   "note": "102 licences in the table",
+   "note": "116 licences in the table",
    "use": {
     "publisher": "Rochdale Council",
     "title": "Public register of licensed HMOs",
@@ -3941,8 +3941,8 @@
    "has_postcodes": "unknown",
    "as_of": "2026-09-14",
    "search_notes": "Register is searchable online (select HMOs category) and also offered as an Excel download (edited list, updated 14 Sep 2026); a certified PDF copy costs GBP 50.",
-   "status": "file_no_licence",
-   "note": "The register gives each property's address without a postcode, so it gives no district.",
+   "status": "in_table",
+   "note": "198 licences in the table",
    "use": {
     "publisher": "Rushcliffe Council",
     "title": "Public register of licensed HMOs",
@@ -4002,7 +4002,7 @@
    "as_of": null,
    "search_notes": "Council publishes downloadable PDF and CSV lists of properties with a mandatory HMO licence on its licensing public register page.",
    "status": "in_table",
-   "note": "640 licences in the table",
+   "note": "646 licences in the table",
    "use": {
     "publisher": "Salford Council",
     "title": "Public register of licensed HMOs",
@@ -4336,7 +4336,7 @@
    "as_of": null,
    "search_notes": "17.7KB xlsx register; page quotes the statutory duty to publish a register of licensed HMOs but no licence/reuse statement or as-of date was found on the page.",
    "status": "in_table",
-   "note": "41 licences in the table",
+   "note": "42 licences in the table",
    "use": {
     "publisher": "South Ribble Council",
     "title": "Public register of licensed HMOs",
@@ -4491,7 +4491,7 @@
    "as_of": "March 2026",
    "search_notes": "Published as a periodically updated PDF; the council also runs a separate online licence search tool at licensing.stalbans.gov.uk.",
    "status": "in_table",
-   "note": "23 licences in the table",
+   "note": "24 licences in the table",
    "use": {
     "publisher": "St Albans Council",
     "title": "Public register of licensed HMOs",
@@ -4765,7 +4765,7 @@
    "as_of": null,
    "search_notes": "Council's publication-scheme record links an Excel download (property address and licence holder name), stated to be updated every month.",
    "status": "in_table",
-   "note": "393 licences in the table",
+   "note": "406 licences in the table",
    "use": {
     "publisher": "Swindon Council",
     "title": "Public register of licensed HMOs",
@@ -4790,8 +4790,8 @@
    "has_postcodes": "unknown",
    "as_of": null,
    "search_notes": "PDF (about 234KB) served through the council's own document viewer; no date-of-currency stated in the file metadata seen.",
-   "status": "document",
-   "note": "The PDF's table extracts with its header but no rows.",
+   "status": "in_table",
+   "note": "202 licences in the table",
    "use": {
     "publisher": "Tameside Council",
     "title": "Public register of licensed HMOs",
@@ -4939,7 +4939,7 @@
    "as_of": "March 2026",
    "search_notes": "Xlsx register downloadable directly from the council's HMO licensing page.",
    "status": "in_table",
-   "note": "48 licences in the table",
+   "note": "49 licences in the table",
    "use": {
     "publisher": "Test Valley Council",
     "title": "Public register of licensed HMOs",
@@ -5025,7 +5025,7 @@
    "as_of": null,
    "search_notes": "Register is an HTML table embedded on the page and includes postcodes; a separate mandatory-licensing PDF also exists on the site.",
    "status": "in_table",
-   "note": "169 licences in the table",
+   "note": "170 licences in the table",
    "use": {
     "publisher": "Thurrock Council",
     "title": "Public register of licensed HMOs",
@@ -5050,8 +5050,17 @@
    "has_postcodes": "no",
    "as_of": null,
    "search_notes": "Redacted PDF register (licensee/manager details excluded); full register available on request by email.",
-   "status": "document",
-   "note": "PDF, no licence stated"
+   "status": "in_table",
+   "note": "26 licences in the table",
+   "use": {
+    "publisher": "Tonbridge and Malling Council",
+    "title": "HMO public register",
+    "url": "https://www.tmbc.gov.uk/downloads/file/4746/hmo-public-register",
+    "format": "PDF",
+    "licence_page": "https://www.tmbc.gov.uk/housing/landlords-tenants/3",
+    "statutory": true,
+    "reviewed": "2026-09-28: the register gives addresses without postcodes; fetched for districts worked out from street addresses (DM 2026-09-28), admitted on the statutory-register basis (DM 2026-09-27) unless the page reserves the council's rights"
+   }
   },
   {
    "code": "E06000027",
@@ -5292,7 +5301,7 @@
    "as_of": "April 2026",
    "search_notes": "CSV register republished periodically (seen for Sept 2025 and April 2026); the council's generic 'public register' page instead covers Licensing Act premises, not HMOs.",
    "status": "in_table",
-   "note": "228 licences in the table",
+   "note": "230 licences in the table",
    "use": {
     "publisher": "Warrington Council",
     "title": "Public register of licensed HMOs",
@@ -6292,7 +6301,7 @@
    "as_of": null,
    "search_notes": null,
    "status": "in_table",
-   "note": "2,414 licences in the table"
+   "note": "2,456 licences in the table"
   },
   {
    "code": "S12000017",
@@ -6309,7 +6318,7 @@
    "as_of": null,
    "search_notes": "Register of civic government licence applications (taxi, entertainment, HMO, business) published as a combined XLSX download, ~1.7MB; no separate HMO-only file and no licence/copyright statement found on the page.",
    "status": "in_table",
-   "note": "145 licences in the table",
+   "note": "206 licences in the table",
    "use": {
     "publisher": "Highland Council",
     "title": "Register of civic government applications (HMO licences among other licences)",
@@ -6909,7 +6918,7 @@
    "as_of": null,
    "search_notes": "Page describes a downloadable 'HMO Register spreadsheet' (updated weekly) plus a separate online 'Public Access System' searchable by category, reference, ward or address; www.newport.gov.uk blocked direct fetches (403) so the exact CSV file URL could not be confirmed, only the CMS staging-domain copy of the page.",
    "status": "in_table",
-   "note": "375 licences in the table",
+   "note": "382 licences in the table",
    "use": {
     "publisher": "Newport Council",
     "title": "Public register of licensed HMOs",

@@ -54,8 +54,10 @@ def _load(stamp: float) -> dict | None:
     councils: dict[str, dict] = {}
     for r in rows:
         for c in r["councils"]:
-            e = councils.setdefault(c["council"], {"licences": 0, "districts": 0, "as_of": c.get("as_of"), "source_url": c.get("source_url")})
+            e = councils.setdefault(c["council"], {"licences": 0, "districts": 0, "worked_out": 0, "as_of": c.get("as_of"),
+                                                   "source_url": c.get("source_url")})
             e["licences"] += c["licences"]
+            e["worked_out"] += c.get("worked_out", 0)
             e["districts"] += 1
     absent = [s for s in summary.get("sources", []) if s.get("ladder") in ("not admitted", "fetch failed", "extracted")]
     return {"rows": rows, "councils": councils, "absent": absent, "attribution": doc.get("attribution", ""),
@@ -100,6 +102,17 @@ def _council_li(c: dict) -> str:
         name = f'<a href="{esc(c["register_page"])}">{name}</a>'
     note = f' <span class="org-meta">{esc(c["note"])}</span>' if c.get("note") else ""
     return f"<li>{name}{note}</li>"
+
+
+def _worked_out_note(c: dict) -> str:
+    """Beside a council whose register gives no postcode for some or all of
+    its licences: how many were placed from their street or point instead."""
+    n, total = c.get("worked_out", 0), c["licences"]
+    if not n:
+        return ""
+    if n == total:
+        return " · all placed from their street address or point: the register gives no postcodes"
+    return f" · {n:,} placed from their street address or point, the register giving no postcode for them"
 
 
 def _coverage_html() -> str:
@@ -159,6 +172,7 @@ def render_map(site_url: str) -> str | None:
     councils = "".join(
         f'<li><a href="{esc(c["source_url"])}">{esc(name)}</a> <span class="org-meta">{c["licences"]:,} licences in '
         f'{c["districts"]} district{"" if c["districts"] == 1 else "s"}'
+        + _worked_out_note(c)
         + (f' · register dated {esc(c["as_of"])}' if c.get("as_of") else " · the register states no date") + "</span></li>"
         for name, c in sorted(d["councils"].items(), key=lambda kv: -kv[1]["licences"]))
     seen, absent = set(), []

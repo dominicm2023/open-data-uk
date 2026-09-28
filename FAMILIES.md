@@ -193,6 +193,46 @@ row limit on empty rows). An old-format workbook "encrypted" with Excel's
 own built-in password (write protection; Derby) is opened as Excel opens it,
 asking nobody; one with a password of its own stays shut.
 
+**Districts worked out where a register gives no postcode** (Dominic, 28
+September 2026; this reverses the family's first rule, that a row without a
+published postcode gives no row). Some councils publish street addresses
+and no postcodes (Milton Keynes, Basingstoke, Amber Valley, East Devon,
+North East Lincolnshire, Rushcliffe, Tonbridge and Malling), some a point for
+each licence (Bristol), and many leave the postcode off a few rows. A
+mapping's `district_from` names the property's own address columns, with the
+council's name as OS Open Names writes it, or its point columns
+(`families/place.py`):
+
+- a point gives the district of the nearest postcode unit's centre, within
+  400 m;
+- a street address gives the district OS Open Names places that street in,
+  within the council's own area, only where the street is read without a
+  guess: the longest run of the address's words that is a named road there,
+  that road in one district, or the settlement the address names choosing
+  between its districts. Otherwise the row is set aside and says why.
+
+Tested against ten registers that do publish postcodes (7,476 licences, the
+postcode removed first), the street reading placed 95 in 100 where the
+council's name matched, and put about 2 in 100 of those in a neighbouring
+district: long roads that cross a district boundary but appear in Open Names
+once. Every row carries `district_basis` (postcode, street or point), and
+the map page says beside each council how many of its licences were placed
+this way. The address and point are read for this and dropped; the table
+still holds nothing finer than the district. A register whose licences run
+over several rows (Braintree, Norwich, Tewkesbury) is not given the street
+reading, since a continuation row could be counted as a second licence.
+Bristol's layers come from an ArcGIS server that answers 1,000 features a
+query: the intake now pages through a layer, in OBJECTID order, until the
+server says it has no more (3,100 mandatory licences, where 1,000 were read
+before). Its selective-licence layer (3,439) is rejected: selective licensing
+covers privately rented homes in designated areas, not HMOs. A PDF whose
+header alone is ruled (Tonbridge and Malling, Tameside) came out as a header
+with no rows; where no ruled table holds a second row of two cells or more,
+the pages are read by alignment instead (extractor tables-v8).
+OS Open Names (Open Government Licence v3; contains OS, Royal Mail and
+National Statistics data) is unpacked on the box under DATA_DIR/geo/opennames
+and indexed by `python families/place.py index`; it is not in the repository.
+
 The brief of a family that samples no rows shows its first rows only where
 a row reads as a table's header: three column names at least, a majority of
 the row, no postcode, date or company word in it, and every other cell
@@ -211,10 +251,10 @@ authority in `families/registry/hmo_registers.coverage.json`. A person
 marks one for use with its file and the page whose licence statement the
 intake reads (`licence_from_page`); nothing is taken unreviewed. Of 361
 councils on 27 Sep, after a second search of every council the first could
-not confirm, and as of 28 Sep: 79 in the table, 16 publish a data file we
-cannot use (the reason beside each), 29 a PDF or web page we cannot read, 81
-only a search box, 62 only on request, 33 confirmed as not online, and 61
-not yet confirmed: nearly all of those are
+not confirm, and as of 28 Sep (with districts worked out from streets and
+points): 88 in the table, 11 publish a data file we cannot use (the reason
+beside each), 26 a PDF or web page we cannot read, 81 only a search box, 62
+only on request, 33 confirmed as not online, and 60 not yet confirmed: nearly all of those are
 council websites that refuse automated reading (HTTP 403). The notes hold no full postcode, e-mail or phone
 number; a test holds them to that.
 

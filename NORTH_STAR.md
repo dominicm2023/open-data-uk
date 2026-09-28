@@ -194,6 +194,16 @@ A living list. Add freely; move to "Done" with the commit that did it.
   annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
   and Scotland on its About page's OGL statement. Air Quality England
   parked (no terms).
+- 28 Sep (evening) — 88 councils, 42,650 licences, 622 districts. Dominic
+  asked for the registers without postcodes: districts are now worked out
+  from a street address (OS Open Names, within the council's area, only
+  where unambiguous: 95% placed, ~2% in a neighbouring district when tested
+  on registers with postcodes) or a point (nearest postcode unit). 1,255
+  licences placed by street, 3,100 by point (Bristol, now paged past its
+  server's 1,000). New: Milton Keynes 505, Rushcliffe 198, North East
+  Lincolnshire 146, Basingstoke 82, Amber Valley 38, Chorley 24, Tameside
+  202 and Tonbridge 26 (header-only ruled PDFs read by alignment). Every row
+  says how its district was found (district_basis).
 - 28 Sep — 79 councils, 38,027 licences, 546 districts. Dominic admitted
   Braintree ('All Rights Reserved', by name) and Nottingham ('not intended
   for marketing or commercial use', tied to that sentence): Nottingham's

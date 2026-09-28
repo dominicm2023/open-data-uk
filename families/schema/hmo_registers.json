@@ -13,7 +13,13 @@
       "name": "postcode_district",
       "type": "text",
       "required": true,
-      "meaning": "the outward part of the property's postcode as published (NW1, LE2, FK8), upper-cased. The address, the full postcode and any coordinates in the source are not carried"
+      "meaning": "the outward part of the property's postcode (NW1, LE2, FK8), upper-cased: as published, or worked out from its street or point where the register gives no postcode (see district_basis). The address, the full postcode and any coordinates in the source are not carried"
+    },
+    {
+      "name": "district_basis",
+      "type": "text",
+      "required": false,
+      "meaning": "how the district was found: 'postcode' where the register publishes the property's postcode; 'street' where it gives only a street address and the district is the one OS Open Names places that street in, within the council's area; 'point' where it gives coordinates and the district is that of the nearest postcode unit's centre. Tested against registers that do give postcodes, 'street' placed about 95 in 100 addresses and about 2 in 100 of those in a neighbouring district"
     },
     {
       "name": "licences",
@@ -109,8 +115,8 @@
   },
   "rules": [
     "Properties, not people: the licence holder's and manager's names and addresses are never mapped. Adding them is a decision for Dominic, recorded in FAMILIES.md first.",
-    "Districts, not doors: the property's address, full postcode and coordinates are never carried into the table. Only the postcode district is, taken from the postcode the register publishes.",
-    "A register that gives no postcode for a property gives no row for it: a district is never worked out from coordinates or guessed from a street name.",
+    "Districts, not doors: the property's address, full postcode and coordinates are never carried into the table. Only the postcode district is.",
+    "A register that gives no postcode for a property may still give its district, worked out from its street address or its coordinates with OS Open Names (Decision DM 2026-09-28): only where that can be read without a guess, and marked in district_basis. The address and point are read for this and dropped.",
     "A count of persons, households or storeys that is zero or outside its stated range is nulled with a note; the licence stays.",
     "A row is one licence, and 'licences' is 1. Where a council publishes properties per postcode rather than a register, a row is one postcode and 'licences' is its count. A register that lists one row per room or per occupant is held at 'mapped' for review.",
     "Licence type and status are the publisher's own words, not normalised into a vocabulary.",

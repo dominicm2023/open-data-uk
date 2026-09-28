@@ -23,7 +23,7 @@ from build import _numbered  # noqa: E402  the build's own naming of repeated co
 HERE = Path(__file__).resolve().parent
 ALLOWED = {"status", "reject", "table", "header_row", "columns", "constants", "unpivot",
            "notes", "version", "reviewer", "reviewed_at", "grid", "alt_columns", "alt_constants", "filter",
-           "latest_per", "in_force_on", "cards", "transpose"}
+           "latest_per", "in_force_on", "cards", "transpose", "district_from"}
 EXTRA_COLS = {"easting", "northing"}
 
 
@@ -96,6 +96,17 @@ def check(family: str) -> int:
         for t in src["tables"]:
             for r in t.get("sample_rows", [])[:3]:
                 known |= {" ".join(str(h).split()).lower() for h in r}
+        # The columns a district is worked out from: they must exist, and must
+        # be the property's, never a holder's, landlord's or manager's
+        dfrom = spec.get("district_from") or {}
+        for key in ("street", "x", "y"):
+            for nm in ([dfrom[key]] if isinstance(dfrom.get(key), str) else (dfrom.get(key) or [])):
+                if re.search(r"holder|landlord|manag|agent|owner|applicant|licensee", str(nm), re.I):
+                    problems.append(f"{tag}: district_from reads {nm!r}, a person's column")
+                elif " ".join(str(nm).split()).lower() not in known:
+                    problems.append(f"{tag}: district_from column {nm!r} not found in any layout")
+        if dfrom.get("street") and not dfrom.get("authorities"):
+            problems.append(f"{tag}: district_from street needs the council's 'authorities' as OS Open Names writes them")
         flt = spec.get("filter")
         if flt:
             if not isinstance(flt, dict) or not flt.get("column") or not flt.get("match"):
@@ -131,6 +142,8 @@ def check(family: str) -> int:
         if "easting" in cols and "lon" in cols:
             problems.append(f"{tag}: both BNG and lon/lat mapped")
         missing = required - supplied
+        if dfrom:
+            missing.discard("postcode_district")   # worked out from the street or point
         if missing:
             problems.append(f"{tag}: required columns not supplied: {sorted(missing)}")
     unmapped = set(sources) - set(mappings)

@@ -19,7 +19,7 @@ import zipfile
 from html.parser import HTMLParser
 from pathlib import Path
 
-VERSION = "tables-v6"
+VERSION = "tables-v8"
 
 
 def _features_to_rows(features: list[dict], props_key: str, limits: dict) -> list[list]:
@@ -327,6 +327,13 @@ def extract(path: Path, fmt: str, limits: dict) -> list[dict]:
             # PDFs made from a spreadsheet's print view): the columns are read
             # from the text's own alignment instead, page by page, and marked
             # as such so a reviewer knows the columns were inferred.
+            # A register whose header alone is ruled (Tonbridge and Malling,
+            # Tameside): its tables carry a header and no rows, and the rows
+            # are read by alignment like an unruled register's.
+            def _records(t):
+                return sum(1 for r in t["rows"] if sum(1 for v in r if v not in (None, "") and str(v).strip()) >= 2)
+            if tables and all(_records(t) <= 1 for t in tables):
+                tables.clear()
             if not tables:
                 for pno, page in enumerate(pdf.pages, 1):
                     t = page.extract_table({"vertical_strategy": "text", "horizontal_strategy": "text"})

@@ -15,10 +15,19 @@
       "council": "Leicester City Council",
       "licences": 1
     },
-    "notes": "One row per licence: 884 rows, 884 distinct licence numbers. The header's own spellings ('date_issed', '0ccupiers' with a zero) are kept as published. landlord_last_name and landlord_first_name are never mapped, nor street_name and property_number. 5 rows give no postcode and are refused. No licence type or status column: the register lists licences in force. No as_of in the file. Review: districts LE1-LE5 and one LE9, occupiers 3-36, storeys 1-4, dates ISO.",
+    "notes": "One row per licence: 884 rows, 884 distinct licence numbers. The header's own spellings ('date_issed', '0ccupiers' with a zero) are kept as published. landlord_last_name and landlord_first_name are never mapped, nor street_name and property_number. 5 rows give no postcode and are refused. No licence type or status column: the register lists licences in force. No as_of in the file. Review: districts LE1-LE5 and one LE9, occupiers 3-36, storeys 1-4, dates ISO. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28).",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "property_number",
+        "street_name"
+      ],
+      "authorities": [
+        "City of Leicester"
+      ]
+    }
   },
   "a9547c853cb99749f985d07ee188542fd3f5c0014196b28b38363e4147c35ac5": {
     "status": "reviewed",
@@ -38,10 +47,18 @@
       "council": "London Borough of Camden",
       "licences": 1
     },
-    "notes": "One row per licence: 3,485 rows, 3,485 distinct licence numbers. There is no postcode column; the district is read from the postcode that ends 'Property Address', found in all 3,485. Never mapped: the holder's and manager's names and addresses, the address itself, Easting, Northing, Longitude, Latitude and Location. The register's own Notice says it is for identifying licensed HMOs and not for marketing, and that nobody named in it consented to that; nothing that names anybody is carried. The Notice also says the maximum persons follows an inspection while rooms and amenities are as the applicant stated, so only the former is mapped. Zero persons and storeys of 0 or 200 appear and are nulled with a note. Dates are day-first. Review: 25 districts, NW1 the largest; two types, two statuses.",
+    "notes": "One row per licence: 3,485 rows, 3,485 distinct licence numbers. There is no postcode column; the district is read from the postcode that ends 'Property Address', found in all 3,485. Never mapped: the holder's and manager's names and addresses, the address itself, Easting, Northing, Longitude, Latitude and Location. The register's own Notice says it is for identifying licensed HMOs and not for marketing, and that nobody named in it consented to that; nothing that names anybody is carried. The Notice also says the maximum persons follows an inspection while rooms and amenities are as the applicant stated, so only the former is mapped. Zero persons and storeys of 0 or 200 appear and are nulled with a note. Dates are day-first. Review: 25 districts, NW1 the largest; two types, two statuses. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28).",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property Address"
+      ],
+      "authorities": [
+        "Camden"
+      ]
+    }
   },
   "11ecd966cf9b568415b7620460ea01741a1c3238efa6f960b85bbab7fc2a5989": {
     "status": "reviewed",
@@ -59,10 +76,18 @@
       "council": "London Borough of Lambeth",
       "licences": 1
     },
-    "notes": "One row per licence: 5,545 rows, 5,545 distinct reference numbers. Never mapped: LICENCE_HOLDER_NAME, PROPERTY_ADDRESS, X, Y, EASTING, NORTHING, WARD. 27 rows give no readable postcode and are refused. Three licence types, including 11 '257 HMO' (buildings converted into flats, section 257 of the Housing Act 2004), kept in the publisher's words. Zero occupants or households appear and are nulled with a note. No status column and no as_of in the file. Review: 13 districts, SW4 the largest; dates year-first with a time that is always midnight.",
+    "notes": "One row per licence: 5,545 rows, 5,545 distinct reference numbers. Never mapped: LICENCE_HOLDER_NAME, PROPERTY_ADDRESS, X, Y, EASTING, NORTHING, WARD. 27 rows give no readable postcode and are refused. Three licence types, including 11 '257 HMO' (buildings converted into flats, section 257 of the Housing Act 2004), kept in the publisher's words. Zero occupants or households appear and are nulled with a note. No status column and no as_of in the file. Review: 13 districts, SW4 the largest; dates year-first with a time that is always midnight. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28).",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "PROPERTY_ADDRESS"
+      ],
+      "authorities": [
+        "Lambeth"
+      ]
+    }
   },
   "56e1871a28940d20246e5ccd3762504fbd9e10b94078ecbcf1a0b8c76887ec9d": {
     "status": "reviewed",
@@ -100,10 +125,18 @@
       "council": "Epsom and Ewell Borough Council",
       "licences": 1
     },
-    "notes": "Served as an HTML table under a CSV name; read by the extractor's HTML table path since 27 Sep. One row per licence: 109 rows, 109 distinct references. The district is read from the postcode that ends 'address', found in all 109 (KT4, KT17, KT18, KT19). Never mapped: address, uprn, ogc_fid. 'property_classification' is the address's AddressBase class, not the licence's type, so it is not licence_type. One row has its cells shifted by one; its dates will not read and are left null. Zero occupancy is nulled by the family rule.",
+    "notes": "Served as an HTML table under a CSV name; read by the extractor's HTML table path since 27 Sep. One row per licence: 109 rows, 109 distinct references. The district is read from the postcode that ends 'address', found in all 109 (KT4, KT17, KT18, KT19). Never mapped: address, uprn, ogc_fid. 'property_classification' is the address's AddressBase class, not the licence's type, so it is not licence_type. One row has its cells shifted by one; its dates will not read and are left null. Zero occupancy is nulled by the family rule. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28).",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "address"
+      ],
+      "authorities": [
+        "Epsom and Ewell"
+      ]
+    }
   },
   "53052d4ab88410c821735e3716c3cdceb1b386a914d3a8fadb1344277b85202e": {
     "status": "reviewed",
@@ -125,10 +158,18 @@
       "key": "HMO LICENCE REFERENCE",
       "by": "LICENCE ISSUE DATE"
     },
-    "notes": "Admitted on the council's own portal statement of the OGL v3 (decision DM 2026-09-27; data.gov.uk's copy lost the licence). 1,696 rows for 1,611 licences: a licence with two managers is listed once per manager, identical but for the manager's name and address, so one row per reference is kept. Never mapped: HMO ADDRESS, MANAGERS NAME, MANAGERS ADDRESS, LICENCE HOLDER, LICENCE HOLDER ADDRESS. The dataset notes say it is not for marketing and nobody named in it consented to that. 'TOTAL NUMBER PERMITTED' reaches 760 once, above the family's range, and is nulled with a note. Dates are day-month-year with a two-digit year.",
+    "notes": "Admitted on the council's own portal statement of the OGL v3 (decision DM 2026-09-27; data.gov.uk's copy lost the licence). 1,696 rows for 1,611 licences: a licence with two managers is listed once per manager, identical but for the manager's name and address, so one row per reference is kept. Never mapped: HMO ADDRESS, MANAGERS NAME, MANAGERS ADDRESS, LICENCE HOLDER, LICENCE HOLDER ADDRESS. The dataset notes say it is not for marketing and nobody named in it consented to that. 'TOTAL NUMBER PERMITTED' reaches 760 once, above the family's range, and is nulled with a note. Dates are day-month-year with a two-digit year. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28).",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "HMO ADDRESS"
+      ],
+      "authorities": [
+        "Barnet"
+      ]
+    }
   },
   "ed3667cbd8c3cf67913e6a22116ad835ccd4c100becc1a6e8f4501a3920842f2": {
     "status": "reviewed",
@@ -155,10 +196,18 @@
       "by": "LICENSED_FROM"
     },
     "in_force_on": "EXPIRY_DATE",
-    "notes": "Accepted by decision DM 2026-09-27 (OGL v3.0 for the information; the One Scotland Mapping Agreement covers mapping data this family does not carry). Not a register but a log of applications since 2020: 6,523 rows, of which 5,807 granted, for 4,974 distinct licences. Kept: the latest grant of each licence number whose expiry date has not passed on the build day, about 2,490 on 27 Sep 2026. Not counted: 611 licences with an application awaiting reports, some of them renewals, and every refusal and withdrawal. 'LIVING_ACCOMMODATION' is the address; the district is read from the postcode at its end (97.5% have one). 'CATEGORY' (A: up to 10 persons, B: 11 or more) is the only kind the register gives. Never mapped: LICENCE_HOLDER, LETTING_AGENT, the address itself, WARD, SHAPEAREA, SHAPELEN.",
+    "notes": "Accepted by decision DM 2026-09-27 (OGL v3.0 for the information; the One Scotland Mapping Agreement covers mapping data this family does not carry). Not a register but a log of applications since 2020: 6,523 rows, of which 5,807 granted, for 4,974 distinct licences. Kept: the latest grant of each licence number whose expiry date has not passed on the build day, about 2,490 on 27 Sep 2026. Not counted: 611 licences with an application awaiting reports, some of them renewals, and every refusal and withdrawal. 'LIVING_ACCOMMODATION' is the address; the district is read from the postcode at its end (97.5% have one). 'CATEGORY' (A: up to 10 persons, B: 11 or more) is the only kind the register gives. Never mapped: LICENCE_HOLDER, LETTING_AGENT, the address itself, WARD, SHAPEAREA, SHAPELEN. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28).",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "LIVING_ACCOMMODATION"
+      ],
+      "authorities": [
+        "Glasgow City"
+      ]
+    }
   },
   "8a6774f999dabd8730c119c740a9d2f13d894b3e845d13a5d4715bcba346d765": {
     "status": "reviewed",
@@ -193,10 +242,18 @@
       "council": "London Borough of Hounslow",
       "licences": 1
     },
-    "notes": "Found by search: the council's portal serves the current CSV; data.gov.uk's record of the same register states the UK OGL and its old file link is dead. 1,405 rows, one per licensed property; there is no licence number column, and five addresses appear twice (separately licensed parts, kept). The district is read from the postcode ending 'Premises Address', found in 1,403 (TW, W and UB districts). Never mapped: the address, ward. Dates are day-first; no start date or as_of is published.",
+    "notes": "Found by search: the council's portal serves the current CSV; data.gov.uk's record of the same register states the UK OGL and its old file link is dead. 1,405 rows, one per licensed property; there is no licence number column, and five addresses appear twice (separately licensed parts, kept). The district is read from the postcode ending 'Premises Address', found in 1,403 (TW, W and UB districts). Never mapped: the address, ward. Dates are day-first; no start date or as_of is published. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28).",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Premises Address"
+      ],
+      "authorities": [
+        "Hounslow"
+      ]
+    }
   },
   "b9886a462648be0f3a1294a7535d8089b25b00d98c633ffe2bfd48a7a59bfbbf": {
     "status": "reviewed",
@@ -312,10 +369,18 @@
       "council": "Dartford Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of licenced property"
+      ],
+      "authorities": [
+        "Dartford"
+      ]
+    }
   },
   "aca44bc3284440dcd02ea14d24f130006ca6a700f801b8525580246f6cdac2fa": {
     "status": "reviewed",
@@ -372,10 +437,18 @@
       "council": "Harlow Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of HMO"
+      ],
+      "authorities": [
+        "Harlow"
+      ]
+    }
   },
   "87d4a2e2f6b9dd188287aa11d67b7bc695227b66941aeae2f3158ff144979e6b": {
     "status": "reviewed",
@@ -393,10 +466,18 @@
       "council": "Hertsmere Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of HMO"
+      ],
+      "authorities": [
+        "Hertsmere"
+      ]
+    }
   },
   "3045aea8b41ddf66807b12049581bc0807a243135e94bba0373b2ea1c65f7ebd": {
     "status": "reviewed",
@@ -415,10 +496,18 @@
       "council": "Royal Borough of Kingston upon Thames",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address"
+      ],
+      "authorities": [
+        "Kingston upon Thames"
+      ]
+    }
   },
   "affe3123adb04db2f8f364e545b72928c6b97bc027d2d302673171184bc63a2e": {
     "status": "reviewed",
@@ -434,10 +523,18 @@
       "council": "Luton Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property address"
+      ],
+      "authorities": [
+        "Luton"
+      ]
+    }
   },
   "5932f9649adc988cd6a42c849a4892fb08b9bdcc3dcc30e39c63b2ca99ea1cd0": {
     "status": "reviewed",
@@ -454,10 +551,18 @@
       "council": "Newport City Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "HMO Address"
+      ],
+      "authorities": [
+        "Casnewydd - Newport"
+      ]
+    }
   },
   "487736cf4e41c4e9f7c5d43cceb8c4b160395e0f3711ce25a2ac3377ca8c5c93": {
     "status": "reviewed",
@@ -473,10 +578,18 @@
       "council": "North Somerset Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of Licenced HMO"
+      ],
+      "authorities": [
+        "North Somerset"
+      ]
+    }
   },
   "3ae8eb052e89f24aaab91ce7ae2c341f110fd9bb83fe2019f23c7a76e883d019": {
     "status": "reviewed",
@@ -492,10 +605,18 @@
       "council": "North Warwickshire Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Three columns are headed 'Address'; the third holds the postcode and is read as 'Address (3)'. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Three columns are headed 'Address'; the third holds the postcode and is read as 'Address (3)'. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address (3)"
+      ],
+      "authorities": [
+        "North Warwickshire"
+      ]
+    }
   },
   "3e334f8b56887dd1992ebdbd7dbbc471c2dfedae5dd85e661af45d47888e0408": {
     "status": "reviewed",
@@ -528,10 +649,18 @@
       "council": "Powys County Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property Details"
+      ],
+      "authorities": [
+        "Powys - Powys"
+      ]
+    }
   },
   "c11d02b857931ad246b35baea991fdda5b174a434f76ddeea86c71de43c9398b": {
     "status": "reviewed",
@@ -569,10 +698,18 @@
       "council": "Rochdale Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Only 102 of its 248 rows give the property's postcode; the rest are counted nowhere, as the family's rule says. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Only 102 of its 248 rows give the property's postcode; the rest are counted nowhere, as the family's rule says. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "ADDRESS OF PROPERTY"
+      ],
+      "authorities": [
+        "Rochdale"
+      ]
+    }
   },
   "69abaf35f3ecbd59e2408360388e9030ae6c54a201820cb6b19bdb8cde742d81": {
     "status": "reviewed",
@@ -586,10 +723,18 @@
       "council": "Rochford District Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of Licenced Property"
+      ],
+      "authorities": [
+        "Rochford"
+      ]
+    }
   },
   "fd0d451ff2403d5126a47d0a069ff67bbb1bc7bffe22e9b0ac66a8783e4e47ed": {
     "status": "reviewed",
@@ -604,10 +749,18 @@
       "council": "South Ribble Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "HMO address"
+      ],
+      "authorities": [
+        "South Ribble"
+      ]
+    }
   },
   "bff15c4567ed4ad364c34792f3ce69f7a5ce72888a255a1d94f5db6cd5fe6cf5": {
     "status": "reviewed",
@@ -642,10 +795,18 @@
       "council": "St Albans City and District Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address"
+      ],
+      "authorities": [
+        "St. Albans"
+      ]
+    }
   },
   "c16b004415709e826b63b6fdb63f779a5b151ad378a8a22bd45875426f9f7cab": {
     "status": "reviewed",
@@ -660,10 +821,18 @@
       "council": "Warrington Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of licenced HMO"
+      ],
+      "authorities": [
+        "Warrington"
+      ]
+    }
   },
   "643ec225152c6beef95c671b45a7dd2d9c7d7299eba9aaa33522bed18d766b4e": {
     "status": "reviewed",
@@ -719,10 +888,18 @@
       "council": "West Oxfordshire District Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "HMO Address"
+      ],
+      "authorities": [
+        "West Oxfordshire"
+      ]
+    }
   },
   "f834ea9ef2d9647d341b085fb293a9e6324ba82c65a68a4c66b7f57087d1d60c": {
     "status": "reviewed",
@@ -758,10 +935,18 @@
       "council": "London Borough of Waltham Forest",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. A title line sits above the header on page 1; the other pages are read under it. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. A title line sits above the header on page 1; the other pages are read under it. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property address"
+      ],
+      "authorities": [
+        "Waltham Forest"
+      ]
+    }
   },
   "5b26c6f1bdab7dc4d6991b6674c12468f9c2f54426a9bf3f075acb7ceeeaa966": {
     "status": "reviewed",
@@ -780,10 +965,18 @@
       "council": "London Borough of Sutton",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "FULL ADDRESS"
+      ],
+      "authorities": [
+        "Sutton"
+      ]
+    }
   },
   "46d24554cc1f7a31c57a8b645618dec64a5a478a19338f996772f115f4e583f3": {
     "status": "reviewed",
@@ -796,10 +989,18 @@
       "council": "London Borough of Hillingdon",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Page 1 carries the header; the other pages are read under it. 'Post Code' is the property's; the holder's address is a separate column, never mapped. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Page 1 carries the header; the other pages are read under it. 'Post Code' is the property's; the holder's address is a separate column, never mapped. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of the licensed HMO or house"
+      ],
+      "authorities": [
+        "Hillingdon"
+      ]
+    }
   },
   "da181d002b6d14438ac080be6df80d0d270c1020b44b2f88c1721a00333b8d40": {
     "status": "reviewed",
@@ -833,38 +1034,191 @@
       "council": "South Staffordshire Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property Address"
+      ],
+      "authorities": [
+        "South Staffordshire"
+      ]
+    }
   },
   "4c114611ec962e8d460b776003bdb1cf1c26d3ecc61ed6b19321d2bb51397606": {
-    "status": "rejected",
-    "reject": "The register gives each property's address without a postcode, so it gives no district."
+    "status": "reviewed",
+    "table": "all",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Address of HMO",
+      "licence_start": "Date of Licence",
+      "storeys": "Number of Stories",
+      "max_occupants": "Numbers of Occupiers",
+      "licence_status": "Status"
+    },
+    "constants": {
+      "council": "Amber Valley Borough Council",
+      "licences": 1
+    },
+    "filter": {
+      "column": "Licence Reference",
+      "match": "\\S"
+    },
+    "district_from": {
+      "street": [
+        "Address of HMO"
+      ],
+      "authorities": [
+        "Amber Valley"
+      ]
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. It gives street addresses without postcodes. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). The PDF's pages carry footnote tables of one column; only rows with a licence reference are read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-28"
   },
   "c022382578245feca4aec92f74e648795e88b8176f5e6da31fc4feb8f83bd232": {
-    "status": "rejected",
-    "reject": "The register gives each property's address without a postcode, so it gives no district."
+    "status": "reviewed",
+    "table": "Sheet1",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "HMO address",
+      "licence_start": "Date licence issued",
+      "licence_end": "Date of licence expiry",
+      "max_occupants": "Total number of permitted occupants",
+      "storeys": "Storeys"
+    },
+    "constants": {
+      "council": "Basingstoke and Deane Borough Council",
+      "licences": 1
+    },
+    "district_from": {
+      "street": [
+        "HMO address"
+      ],
+      "authorities": [
+        "Basingstoke and Deane"
+      ]
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. It gives street addresses without postcodes. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). 'Licence holder address' is the holder's and is never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-28"
   },
   "7ddf6a9d1f6e833c00efaf76b6631505f3b07b81ffe41da443f9b81a48ed962c": {
-    "status": "rejected",
-    "reject": "The register gives each property's address without a postcode, so it gives no district."
+    "status": "reviewed",
+    "table": "Licensed",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Address of licensed HMO",
+      "licence_start": "Licence Issue Date",
+      "licence_end": "Licence Expiry Date",
+      "max_occupants": "Maximum Number of Occupants",
+      "storeys": "Number of Storeys"
+    },
+    "constants": {
+      "council": "Chorley Council",
+      "licences": 1
+    },
+    "district_from": {
+      "street": [
+        "Address of licensed HMO"
+      ],
+      "authorities": [
+        "Chorley"
+      ]
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. It gives street addresses without postcodes. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-28"
   },
   "48688a9ca69b8b8bcb0ce2d25e189052dd01b706e2f9dda89289152e017b9a28": {
-    "status": "rejected",
-    "reject": "The register gives each property's address without a postcode, so it gives no district."
+    "status": "reviewed",
+    "table": "all",
+    "header_row": 3,
+    "columns": {
+      "postcode_district": "HMO Address",
+      "licence_start": "Issued (5yearly)",
+      "licence_end": "Expires"
+    },
+    "constants": {
+      "council": "Milton Keynes City Council",
+      "licences": 1
+    },
+    "filter": {
+      "column": "Licence Number",
+      "match": "^\\s*\\d"
+    },
+    "district_from": {
+      "street": [
+        "HMO Address"
+      ],
+      "authorities": [
+        "Milton Keynes"
+      ]
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. It gives street addresses without postcodes. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). One sheet per estate, each licence over two rows: only the row with the licence number is read. One sheet sets two blocks side by side; its second block is not read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-28"
   },
   "2e36806668a6c757a421b42f37c003aae65d9a8d6a78f5aa69317f7d84fcec99": {
-    "status": "rejected",
-    "reject": "The register gives each property's address without a postcode, so it gives no district."
+    "status": "reviewed",
+    "table": "all",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "property address",
+      "max_occupants": "number of persons on licence",
+      "licence_start": "Licence issued",
+      "licence_end": "Licence Exipry"
+    },
+    "constants": {
+      "council": "North East Lincolnshire Council",
+      "licences": 1
+    },
+    "district_from": {
+      "street": [
+        "property address"
+      ],
+      "authorities": [
+        "North East Lincolnshire"
+      ]
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. It gives street addresses without postcodes. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-28"
   },
   "74a9a3e6888d66f86c397b7238394366441e0013ecd2b79c90240087787f12ce": {
-    "status": "rejected",
-    "reject": "The layer gives each licence's coordinates and UPRN but no postcode, and the family never works a district out from coordinates."
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 0,
+    "columns": {
+      "licence_type": "Licence_Type",
+      "licence_start": "Licence_start_date",
+      "licence_end": "Licence_end_date",
+      "max_occupants": "Permitted_Occupants_Mand_Lic",
+      "max_households": "Permitted_Households_Mand_Lic"
+    },
+    "constants": {
+      "council": "Bristol City Council",
+      "licences": 1
+    },
+    "district_from": {
+      "x": "_lon",
+      "y": "_lat"
+    },
+    "notes": "Admitted under the Bristol decision of 7 September. The layer gives each licence's point and no postcode: its district is that of the nearest postcode unit's centre, with OS Open Names (DM 2026-09-28). The point is read for that and dropped. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-28"
   },
   "04f5186df09c1686671caf05fb7912e4f74cbd3cae29983fc634f09a4df5b79a": {
     "status": "rejected",
-    "reject": "The layer gives each licence's coordinates and UPRN but no postcode, and the family never works a district out from coordinates."
+    "reject": "The layer is Bristol's selective licences (3,439, every one 'Selective Licence'): selective licensing covers privately rented homes in designated areas, not houses in multiple occupation."
   },
   "6a18c006edf09cb179032508527db3a8a789b1119182b57bffea6facf732fa9b": {
     "status": "rejected",
@@ -885,10 +1239,18 @@
       "council": "London Borough of Newham",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. A 1,771-page PDF whose ruled header has ten cells but whose licences are each drawn as one box across the table; read by the extractor's header-columns reader (tables-v5), which puts each word under the header cell it sits beneath. 3,492 licence rows, 3,489 with the property's postcode. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. A 1,771-page PDF whose ruled header has ten cells but whose licences are each drawn as one box across the table; read by the extractor's header-columns reader (tables-v5), which puts each word under the header cell it sits beneath. 3,492 licence rows, 3,489 with the property's postcode. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property address"
+      ],
+      "authorities": [
+        "Newham"
+      ]
+    }
   },
   "d42bace063006ba681ac02ce38dfd697836f4846bd4824310a498f55ad7b16ce": {
     "status": "rejected",
@@ -905,10 +1267,18 @@
       "council": "Elmbridge Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. One card per licence (38), read by the card reader; the first line is 'Property Address', or the address alone where a page break cut its label, and gives a postcode on 31. 'Address' and 'Managers Address' are the holder's and manager's and are never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. One card per licence (38), read by the card reader; the first line is 'Property Address', or the address alone where a page break cut its label, and gives a postcode on 31. 'Address' and 'Managers Address' are the holder's and manager's and are never read. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property (the card's first line)"
+      ],
+      "authorities": [
+        "Elmbridge"
+      ]
+    }
   },
   "48c22baae84aa3e8317a006b3169f1e0ecfccf9510baa5ef0e5d03768d5469c3": {
     "status": "reviewed",
@@ -925,10 +1295,18 @@
       "council": "Mid Sussex District Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. One card per licence (54), with fields written 'Label: value', two to a row; read by the card reader. The first line gives a postcode on 44 cards. Label spellings vary from card to card ('Start date', 'Maximum No. Occupants permitted'); the commonest is read, and a card using another leaves that field empty. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. One card per licence (54), with fields written 'Label: value', two to a row; read by the card reader. The first line gives a postcode on 44 cards. Label spellings vary from card to card ('Start date', 'Maximum No. Occupants permitted'); the commonest is read, and a card using another leaves that field empty. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property (the card's first line)"
+      ],
+      "authorities": [
+        "Mid Sussex"
+      ]
+    }
   },
   "c2812da8a55a40228742f191a6541aac0d3ffa0b523ebde66c12c88080615231": {
     "status": "rejected",
@@ -955,8 +1333,20 @@
     "reject": "The only table on the council's page is its schedule of fees, not the register."
   },
   "0a2ec4537d167b1d139957d160903f6fd59438546092df6d753d3a98b3a2b310": {
-    "status": "rejected",
-    "reject": "The PDF's table extracts with its header but no rows."
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 2,
+    "columns": {
+      "postcode_district": "O ed Address"
+    },
+    "constants": {
+      "council": "Tameside Metropolitan Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Only the PDF's header is ruled; its rows are read by alignment, which splits the header's words across columns: 'O ed Address' is the end of 'Licenced Address Post Code' (202 of 203 rows give a postcode in OL, M and SK). The other columns' names are too broken to read with confidence, so only the district is taken. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-28"
   },
   "7f3a0f6627a32c84a5ffa560318cf1f7481f9efa7b4748e929c54448351fb28e": {
     "status": "reviewed",
@@ -974,10 +1364,18 @@
       "council": "Erewash Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of HMO"
+      ],
+      "authorities": [
+        "Erewash"
+      ]
+    }
   },
   "b418c5c0d71d6b9b71db39945f77fe3ae45e78e8454c1e62a0dd50ba55b7a97f": {
     "status": "reviewed",
@@ -993,10 +1391,18 @@
       "council": "Harborough District Council",
       "licences": 1
     },
-    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27.  Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27.  Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "HMO Address"
+      ],
+      "authorities": [
+        "Harborough"
+      ]
+    }
   },
   "0c89021a30b8eab4613f1923b92b339d34b3fe756bbcb4b72a0b566147b0b335": {
     "status": "reviewed",
@@ -1011,10 +1417,18 @@
       "council": "Maldon District Council",
       "licences": 1
     },
-    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27. 'PERMITTED NO. OF PERSONS AND/OR HOUSEHOLDS' mixes two counts and is not mapped. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27. 'PERMITTED NO. OF PERSONS AND/OR HOUSEHOLDS' mixes two counts and is not mapped. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "ADDRESS OF LICENCED PREMISES"
+      ],
+      "authorities": [
+        "Maldon"
+      ]
+    }
   },
   "c220f5d64fcc87a490dc1c85c44798d69fe1524c9108752e91588e4c46f8de31": {
     "status": "reviewed",
@@ -1086,10 +1500,18 @@
       "council": "Watford Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27. One card per licence (334), read by the build's card reader: the property is the card's first line, which gives a postcode on 325 cards. 'LicenceHolderAddress' also holds postcodes and is never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27. One card per licence (334), read by the build's card reader: the property is the card's first line, which gives a postcode on 325 cards. 'LicenceHolderAddress' also holds postcodes and is never read. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property (the card's first line)"
+      ],
+      "authorities": [
+        "Watford"
+      ]
+    }
   },
   "3699ff757e1618893bf31be5bfff5bd6038e75a078c1f2b68dfb832286f07410": {
     "status": "rejected",
@@ -1111,10 +1533,18 @@
       "licences": 1
     },
     "transpose": true,
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. The register lies on its side, one column per licence with the labels down the first column; the build turns it upright. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. The register lies on its side, one column per licence with the labels down the first column; the build turns it upright. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of the licensed HMO;"
+      ],
+      "authorities": [
+        "Broxbourne"
+      ]
+    }
   },
   "1f83e270fd91e587f683e6d4cd9d43b14310db6b2a9753bbbc3dc4f93d1a3230": {
     "status": "reviewed",
@@ -1150,10 +1580,18 @@
       "council": "Cotswold District Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. A title line sits above the header. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. A title line sits above the header. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "ADDRESS"
+      ],
+      "authorities": [
+        "Cotswold"
+      ]
+    }
   },
   "84412554c1e3abdf47d3c30587df56c0e5fec61352aabb81e51196ba67e87905": {
     "status": "reviewed",
@@ -1171,10 +1609,18 @@
       "council": "Crawley Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. About two thirds of its addresses give a postcode; the rest are counted nowhere. 'Address of Licence Holder' and 'Address of Manager' also hold postcodes and are never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. About two thirds of its addresses give a postcode; the rest are counted nowhere. 'Address of Licence Holder' and 'Address of Manager' also hold postcodes and are never read. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of Licensed HMO"
+      ],
+      "authorities": [
+        "Crawley"
+      ]
+    }
   },
   "e860237fc1b3fac0057193e4dc5d315a7ff56e3e8de3e3b9cfc72ea336cb55ba": {
     "status": "reviewed",
@@ -1192,10 +1638,18 @@
       "council": "Dorset Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of Licensed HMO"
+      ],
+      "authorities": [
+        "Dorset"
+      ]
+    }
   },
   "3e10ee8dbef1a84f9075cdc1be2169eff86cda113cec317472d9d8ac93732c5b": {
     "status": "reviewed",
@@ -1213,10 +1667,18 @@
       "council": "Royal Borough of Kensington and Chelsea",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property address"
+      ],
+      "authorities": [
+        "Kensington and Chelsea"
+      ]
+    }
   },
   "08f466f068231f5c26d899b9754ddcab1328b8baa61c9d48c269e0ac33994e82": {
     "status": "reviewed",
@@ -1233,10 +1695,18 @@
       "council": "London Borough of Lewisham",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Two address columns hold postcodes: 'FULLADDR' is the property's (1,299 of 1,312 in SE); 'SRCFULLADDR' is spread across London and beyond, the holder's, and is never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Two address columns hold postcodes: 'FULLADDR' is the property's (1,299 of 1,312 in SE); 'SRCFULLADDR' is spread across London and beyond, the holder's, and is never read. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "FULLADDR"
+      ],
+      "authorities": [
+        "Lewisham"
+      ]
+    }
   },
   "0afe601dc2584b45fd3b81cf62ad889758d73b440e27d9054879a6e862cae20c": {
     "status": "reviewed",
@@ -1251,10 +1721,18 @@
       "council": "Mid Devon District Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Two title lines sit above the header. Its occupancy column gives persons or households in one figure, so it is not read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Two title lines sit above the header. Its occupancy column gives persons or households in one figure, so it is not read. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of the licensed HMO"
+      ],
+      "authorities": [
+        "Mid Devon"
+      ]
+    }
   },
   "34bdb0741c9f01fcc0e816cf5f0e80bc0f7f9d18ed69f778286de62c159f8344": {
     "status": "reviewed",
@@ -1274,10 +1752,18 @@
       "column": "HMO Application Status",
       "match": "Granted|Licence Renewed|Renewal Pending"
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. The listing holds applications as well as licences; only those granted, renewed or pending renewal are read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. The listing holds applications as well as licences; only those granted, renewed or pending renewal are read. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Premises Address"
+      ],
+      "authorities": [
+        "North Lanarkshire"
+      ]
+    }
   },
   "e772ab6e4913d84f03d07da18b52e860f37117b1f3f5758e1a61a41e7df8b9f5": {
     "status": "reviewed",
@@ -1292,10 +1778,19 @@
       "council": "Salford City Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "HOUSE_NAME_OR_NUMBER",
+        "STREET_NAME"
+      ],
+      "authorities": [
+        "Salford"
+      ]
+    }
   },
   "2042204853e9a8d159c30210d15722dcbfeba263d3e645e2bec420b54b9d2f6b": {
     "status": "reviewed",
@@ -1313,10 +1808,18 @@
       "council": "Sevenoaks District Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Nine lines of notes sit above the header. 'Licence Holder Name and Address' and 'Landlord/Manager Contact Address' also hold postcodes and are never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Nine lines of notes sit above the header. 'Licence Holder Name and Address' and 'Landlord/Manager Contact Address' also hold postcodes and are never read. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "HMO Property Address UPRN"
+      ],
+      "authorities": [
+        "Sevenoaks"
+      ]
+    }
   },
   "e23db9d1dab283797ab699df44585d79206e724a9a8ea1fc61ac6286fcbbe1e4": {
     "status": "reviewed",
@@ -1332,10 +1835,18 @@
       "council": "Sheffield City Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Full Address"
+      ],
+      "authorities": [
+        "Sheffield"
+      ]
+    }
   },
   "6d52e387d621c4e14a979afef7ca3e2d6780da9009cd60e92a73e7cf3801bd15": {
     "status": "reviewed",
@@ -1353,10 +1864,20 @@
       "council": "Stroud District Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. A title sits three lines above the header. 'Licence Holder Post Code' is the holder's and is never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. A title sits three lines above the header. 'Licence Holder Post Code' is the holder's and is never read. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Licenced HMO Address Line 1",
+        "Licenced HMO Address Line 2",
+        "Licenced HMO Address Line 3"
+      ],
+      "authorities": [
+        "Stroud"
+      ]
+    }
   },
   "cce8480f0c6f37837f9bf9a46a5db1366ef1adc3bcd111a2cdbb60a58cb1a9bc": {
     "status": "reviewed",
@@ -1369,10 +1890,18 @@
       "council": "Swindon Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "HMO Address"
+      ],
+      "authorities": [
+        "Swindon"
+      ]
+    }
   },
   "71b1ba21afcf0a9cc3dc1a51c0583ea9fde54c338ea794d069e9e0704feb6b0b": {
     "status": "reviewed",
@@ -1389,10 +1918,19 @@
       "council": "Tamworth Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. 'Postcode' follows the licensed address; the owner's address has its own postcode further along and is never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. 'Postcode' follows the licensed address; the owner's address has its own postcode further along and is never read. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "House No.",
+        "Licenced Address"
+      ],
+      "authorities": [
+        "Tamworth"
+      ]
+    }
   },
   "fd141069fe91b4d27c9a41708ef3e83ebf375984252ff04352571e2ea2ef3a3f": {
     "status": "reviewed",
@@ -1409,10 +1947,18 @@
       "council": "Tandridge District Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of HMO"
+      ],
+      "authorities": [
+        "Tandridge"
+      ]
+    }
   },
   "40fba0eec40425d55f45074f95066e368e024e3115246d8ce919570101f6aaa9": {
     "status": "reviewed",
@@ -1429,10 +1975,18 @@
       "council": "Tendring District Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "ADDRESS"
+      ],
+      "authorities": [
+        "Tendring"
+      ]
+    }
   },
   "8ec55f8c29c05ca921f52800657cbff1be30a5540d73198fcce1976dba85d169": {
     "status": "reviewed",
@@ -1450,10 +2004,18 @@
       "council": "Test Valley Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. The column headed 'HMO' is the property's address. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. The column headed 'HMO' is the property's address. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "HMO"
+      ],
+      "authorities": [
+        "Test Valley"
+      ]
+    }
   },
   "a491bcd89de76b2104322f7bed3069ed9ea9883aaf74c424cfb33ee836178113": {
     "status": "reviewed",
@@ -1487,10 +2049,18 @@
       "council": "Thurrock Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Read from the table on the council's register page. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Read from the table on the council's register page. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of licensed property"
+      ],
+      "authorities": [
+        "Thurrock"
+      ]
+    }
   },
   "e80bb7dfe312024fd7b0bcbe0e6e83a83522aefdf28f6a19f5244fdbd24b1361": {
     "status": "reviewed",
@@ -1505,10 +2075,18 @@
       "council": "London Borough of Tower Hamlets",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "HMO Address"
+      ],
+      "authorities": [
+        "Tower Hamlets"
+      ]
+    }
   },
   "105dc909303ba512f76f3397419984b3fab02bd8a90a2ad876ef26b4bc8656a2": {
     "status": "reviewed",
@@ -1533,10 +2111,18 @@
       "by": "Licence Issue Date"
     },
     "in_force_on": "Licence Effective Date To",
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. The register holds every civic government licence, one sheet a year since 2012: only 'House in Multiple Occupation' rows are read, the latest per licence number, and only licences still in force. About four in ten give a postcode; the rest are counted nowhere. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. The register holds every civic government licence, one sheet a year since 2012: only 'House in Multiple Occupation' rows are read, the latest per licence number, and only licences still in force. About four in ten give a postcode; the rest are counted nowhere. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Address of Premises"
+      ],
+      "authorities": [
+        "Highland"
+      ]
+    }
   },
   "ec55ce5432acfcd1134c9f0b03104e7e707f90fccf1b6339235d2aea1a0594aa": {
     "status": "rejected",
@@ -1548,11 +2134,36 @@
   },
   "4c4bc023614618e5cf1db5983e4183338ed3e0e63d5810a43d103ed9e3434946": {
     "status": "rejected",
-    "reject": "The register gives each property's address without a postcode, so it gives no district."
+    "reject": "The PDF's cells hold no text except the expiry dates: the addresses and every other field read as empty."
   },
   "1efc07c8b82ea4ae01bcc9693529c0b5131de9edb62e63ab568f0b7c9e449123": {
-    "status": "rejected",
-    "reject": "The register gives each property's address without a postcode, so it gives no district."
+    "status": "reviewed",
+    "table": "list Amenity HMO",
+    "header_row": 0,
+    "columns": {
+      "postcode_district": "Premise Address",
+      "licence_start": "COMMENCEMENT DATE",
+      "licence_end": "EXPIRY DATE",
+      "max_occupants": "Permitted Number of Persons",
+      "max_households": "Permitted Number Households",
+      "storeys": "Number of Storeys"
+    },
+    "constants": {
+      "council": "Rushcliffe Borough Council",
+      "licences": 1
+    },
+    "district_from": {
+      "street": [
+        "Premise Address"
+      ],
+      "authorities": [
+        "Rushcliffe"
+      ]
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. It gives street addresses without postcodes. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). The council's list is described as an edited list of registered HMOs. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-28"
   },
   "45203ee47352dfb01ddba741c0c61d1afad014fb89b13c63f76e9ec92d365dc3": {
     "status": "rejected",
@@ -1572,10 +2183,18 @@
       "council": "Buckinghamshire Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Its rows carry hundreds of cells holding only spaces, which the extractor now reads as empty. 'Licence Holder Address' and the manager's address also hold postcodes and are never read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Its rows carry hundreds of cells holding only spaces, which the extractor now reads as empty. 'Licence Holder Address' and the manager's address also hold postcodes and are never read. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "HMO Address"
+      ],
+      "authorities": [
+        "Buckinghamshire"
+      ]
+    }
   },
   "42c34b07ccb2f379b22f5ee7e4cab2ca0809301a742d910e97e0851e010d32b2": {
     "status": "reviewed",
@@ -1591,10 +2210,18 @@
       "council": "Derby City Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. The workbook carries Excel's own write protection, opened with Excel's built-in password as Excel itself does. It gives a licence's duration, not its end date. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. The workbook carries Excel's own write protection, opened with Excel's built-in password as Excel itself does. It gives a licence's duration, not its end date. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property Address"
+      ],
+      "authorities": [
+        "City of Derby"
+      ]
+    }
   },
   "0d78a251459c4592e6fb878cd2b87d64be7a036e6ec1bdba072f4f881b3e7831": {
     "status": "reviewed",
@@ -1610,10 +2237,18 @@
       "council": "Surrey Heath Borough Council",
       "licences": 1
     },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. 'Licensee address' and 'Managers Address' also hold postcodes and are never read. Its occupancy column gives households or tenants in one figure, so it is not read. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. 'Licensee address' and 'Managers Address' also hold postcodes and are never read. Its occupancy column gives households or tenants in one figure, so it is not read. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-27"
+    "reviewed_at": "2026-09-27",
+    "district_from": {
+      "street": [
+        "Property Address"
+      ],
+      "authorities": [
+        "Surrey Heath"
+      ]
+    }
   },
   "8290598d7f37a0c5d86bf3c9e3cd9f16be706c4653a1a2a32a58554608e9ce9f": {
     "status": "reviewed",
@@ -1647,7 +2282,35 @@
       "council": "Nottingham City Council",
       "licences": 1
     },
-    "notes": "Statutory register; its page says it is not intended for marketing or commercial use, admitted by decision DM 2026-09-28 (intake.py DATASET_LICENCE). Three title lines sit above the header; 'address5' is the property's postcode. Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "notes": "Statutory register; its page says it is not intended for marketing or commercial use, admitted by decision DM 2026-09-28 (intake.py DATASET_LICENCE). Three title lines sit above the header; 'address5' is the property's postcode. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
+    "version": "1",
+    "reviewer": "Claude, for Dominic Matthews",
+    "reviewed_at": "2026-09-28",
+    "district_from": {
+      "street": [
+        "address1",
+        "address2",
+        "address3"
+      ],
+      "authorities": [
+        "City of Nottingham"
+      ]
+    }
+  },
+  "96f9798e8a831af80cd0563e55c5415f3f5d1e5b8f3add16db2f67e4848850c4": {
+    "status": "reviewed",
+    "table": 1,
+    "header_row": 2,
+    "columns": {
+      "postcode_district": "Postcode",
+      "storeys": "Covered by Licence",
+      "max_occupants": "Occupants Allowed"
+    },
+    "constants": {
+      "council": "Tonbridge and Malling Borough Council",
+      "licences": 1
+    },
+    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Only the PDF's header is ruled; its rows are read by alignment, and the header runs over three lines, so the columns are named by their third ('Postcode' is 'Licenced Address Postcode', 'Covered by Licence' the number of storeys, 'Occupants Allowed' the maximum occupants). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
     "version": "1",
     "reviewer": "Claude, for Dominic Matthews",
     "reviewed_at": "2026-09-28"
