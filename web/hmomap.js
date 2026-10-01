@@ -1,9 +1,10 @@
 /* Licensed HMOs by postcode district.
 
-   Seen whole, the country is a density: where the registers are thick with
-   licences the map glows. Closer, the glow gives way to the districts
-   themselves, each filled by its count, and a click opens one: how many
-   licences, on which council's register, of what kind.
+   Every district is filled by its count at every scale, so the country seen
+   whole is the districts themselves, not a blur over them (a heatmap until
+   1 October 2026, which melted 600 districts into blobs). Their edges come
+   in as the map closes on them, and a click opens one: how many licences,
+   on which council's register, of what kind.
 
    Districts, never doors. The data this draws (districts.geojson) holds a
    count per postcode district and nothing finer, so there is no property
@@ -22,9 +23,13 @@ const css = getComputedStyle(document.documentElement);
 const token = n => css.getPropertyValue(n).trim();
 const DARK = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const STILL = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const SEQ = [1, 2, 3, 4, 5].map(i => token(`--seq-${i}`) || ["#dce8f6", "#abc6e6", "#7099cb", "#3f6fae", "#14549c"][i - 1]);
+// The map's own ramp in light mode: the site's palest blue was too near the
+// land for a district of a few licences to be seen with the country whole.
+// Dark mode keeps the site's tokens, which already stand off a dark land.
+const SEQ = DARK ? [1, 2, 3, 4, 5].map(i => token(`--seq-${i}`) || ["#24384f", "#31517a", "#4470a4", "#5f91cc", "#7ab3ee"][i - 1])
+  : ["#bcd3ec", "#86acd8", "#5584c0", "#2c5f9f", "#0d3a78"];
 const STEPS = [25, 100, 300, 700];                      // a district's licences: the edges between the five colours
-const SEA = DARK ? "#0c1620" : "#d5e3ee", LAND = DARK ? "#1b1d21" : "#fbfbf9", COAST = DARK ? "#3c4048" : "#b9bcb4";
+const SEA = DARK ? "#0c1620" : "#d3e1ec", LAND = DARK ? "#1b1d21" : "#f3f2ec", COAST = DARK ? "#3c4048" : "#b3b6ad";
 const INK = token("--ink") || "#16181c", ACCENT = token("--accent") || "#14549c";
 const GB = [[-8.4, 49.7], [2.2, 59.2]];
 const fmt = n => Math.round(n).toLocaleString("en-GB");
@@ -85,9 +90,6 @@ async function start() {
 
   const counted = districts.features.filter(f => f.properties.licences > 0);
   const byName = new Map(districts.features.map(f => [f.properties.district, f]));
-  const points = { type: "FeatureCollection", features: counted.map(f => ({ type: "Feature", properties: { licences: f.properties.licences },
-    geometry: { type: "Point", coordinates: [f.properties.lon, f.properties.lat] } })) };
-  const top = Math.max(...counted.map(f => f.properties.licences));
 
   let map;
   try {
@@ -105,7 +107,6 @@ async function start() {
   map.on("load", () => {
     map.addSource("areas", { type: "geojson", data: areas });
     map.addSource("districts", { type: "geojson", data: districts, promoteId: "district" });
-    map.addSource("points", { type: "geojson", data: points });
     map.addLayer({ id: "land", type: "fill", source: "areas", paint: { "fill-color": LAND } });
     map.addLayer({ id: "coast", type: "line", source: "areas", paint: { "line-color": COAST, "line-width": 0.6,
       "line-opacity": ["interpolate", ["linear"], ["zoom"], 5, 0.5, 8, 0.25] } });
@@ -114,20 +115,20 @@ async function start() {
       paint: { "fill-color": COAST, "fill-opacity": ["case", ["boolean", ["feature-state", "on"], false], 0.35, 0] } });
     map.addLayer({ id: "quiet-line", type: "line", source: "districts", filter: ["==", ["get", "licences"], 0], minzoom: 7.5,
       paint: { "line-color": COAST, "line-width": 0.7, "line-opacity": ["interpolate", ["linear"], ["zoom"], 7.5, 0, 9, 0.8] } });
+    // every district with licences, filled by its count, at every scale
     map.addLayer({ id: "count", type: "fill", source: "districts", filter: [">", ["get", "licences"], 0],
       paint: { "fill-color": ["step", ["get", "licences"], SEQ[0], STEPS[0], SEQ[1], STEPS[1], SEQ[2], STEPS[2], SEQ[3], STEPS[3], SEQ[4]],
-        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 6.5, 0, 8.5, 0.9] } });
+        "fill-opacity": 0.92, "fill-antialias": true } });
+    // edges between districts: hairlines seen whole, so the country is not a
+    // mesh, firming up as the map closes in; the open district is outlined
     map.addLayer({ id: "count-line", type: "line", source: "districts", filter: [">", ["get", "licences"], 0],
       paint: { "line-color": ["case", ["boolean", ["feature-state", "on"], false], INK, LAND],
-        "line-width": ["case", ["boolean", ["feature-state", "on"], false], 2.5, 0.8],
-        "line-opacity": ["interpolate", ["linear"], ["zoom"], 6.5, 0, 8.5, 1] } });
-    // seen whole: a density, weighted by each district's licences
-    map.addLayer({ id: "heat", type: "heatmap", source: "points", maxzoom: 9,
-      paint: { "heatmap-weight": ["interpolate", ["linear"], ["get", "licences"], 0, 0.05, top, 1],
-        "heatmap-intensity": ["interpolate", ["linear"], ["zoom"], 4, 1.4, 8, 2.4],
-        "heatmap-radius": ["interpolate", ["linear"], ["zoom"], 4, 22, 6, 36, 8, 64],
-        "heatmap-color": ["interpolate", ["linear"], ["heatmap-density"], 0, "rgba(0,0,0,0)", 0.08, SEQ[1], 0.3, SEQ[2], 0.6, SEQ[3], 1, SEQ[4]],
-        "heatmap-opacity": ["interpolate", ["linear"], ["zoom"], 6.5, 0.9, 8.5, 0] } });
+        // zoom must lead a paint expression, so the open district's width rides each stop
+        "line-width": ["interpolate", ["linear"], ["zoom"],
+          5, ["case", ["boolean", ["feature-state", "on"], false], 2.5, 0.15],
+          8, ["case", ["boolean", ["feature-state", "on"], false], 2.5, 0.6],
+          11, ["case", ["boolean", ["feature-state", "on"], false], 2.5, 1.2]],
+        "line-opacity": ["interpolate", ["linear"], ["zoom"], 5, 0.35, 8, 0.9] } });
 
     // names, as HTML: a council's name when the country is whole, a district's code up close
     const councils = new Map();

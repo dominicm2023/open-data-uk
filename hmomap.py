@@ -5,9 +5,8 @@
 
 Districts, not doors. The family table carries a postcode district on every
 row and nothing finer, so this map cannot show a property and does not try:
-seen whole, the country is a density; closer, each district is a shape with
-its count, and a click says how many licences, under which council's
-register, of what kind.
+at every scale each district is a shape filled by its count, and a click
+says how many licences, under which council's register, of what kind.
 
 The page is server-rendered and complete without its script: every number
 the map shows is in the table beneath it. The script (web/hmomap.js) draws
@@ -194,8 +193,8 @@ def render_map(site_url: str) -> str | None:
         crumb_html
         + "<h1>Licensed HMOs by postcode district</h1>"
         + f'<p class="lede">{total:,} licensed houses in multiple occupation, from the public registers of '
-          f'{len(d["councils"])} councils, counted by postcode district. Seen whole, the map shows where they are dense; '
-          'closer, each district is a shape you can open. It shows districts, never addresses: the table behind it holds '
+          f'{len(d["councils"])} councils, counted by postcode district. Each district is filled by how many it has; '
+          'zoom in for its edges and click one to open it. It shows districts, never addresses: the table behind it holds '
           'no address, no full postcode and nobody&#39;s name.</p>'
         + '<div class="hmo-wrap"><div id="hmo-map" class="hmo-map" role="application" '
           'aria-label="Map of licensed HMOs by postcode district. The table below holds the same figures."></div>'
