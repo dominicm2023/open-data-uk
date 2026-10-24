@@ -366,7 +366,13 @@ RATE_LIMITED_RESPONSE = {
              "query', not 'here is the answer'.\n\n"
              "`geo.in_results` is the honest coverage signal: false means we "
              "hold no data published about that place, whatever the "
-             "confidence says."))
+             "confidence says.\n\n"
+             "`families` lists this site's own combined tables when the "
+             "query is about one of them (HMO licences, spend over £500, "
+             "air quality, brownfield land, organograms, recycling centres): "
+             "its size, its page, whether a place the query names is in it "
+             "and, for HMO registers, what that council publishes if it is "
+             "not. Empty for most queries, and never changes the results."))
 def api_search(request: Request, response: Response,
                q: str = Query(min_length=1, max_length=500,
                               description="Plain-English search query"),
@@ -410,6 +416,14 @@ def api_search(request: Request, response: Response,
                if raw.strip()}
     payload = engine.search(q, k, offset=offset, filters=filters or None)
     log_query(q, k, payload)   # anonymous; see querylog.py
+    # The site's own combined tables, when the search is about one of them
+    # (an HMO search was shown single councils' files, never the 88-council
+    # map). Offered beside the results, never instead of them.
+    try:
+        import familymatch
+        payload["families"] = familymatch.cards(q, payload.get("geo")) if offset == 0 else []
+    except Exception:  # noqa: BLE001 — a card must never cost a search
+        payload["families"] = []
     # The portal's name alongside its id. The page used to map five ids to
     # names and print the rest raw, so 36% of results wore a chip reading
     # "agol_uttlesford" or "ons_geography".

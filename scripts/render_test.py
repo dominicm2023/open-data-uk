@@ -345,6 +345,20 @@ check(_g2["nodes"]["parent"].count(-1) == 3 and "Permanent Under Secretary" not 
 check(orgchart.chart_path("Victoria & Albert Museum") == "/family/organograms/chart?body=Victoria%20%26%20Albert%20Museum",
       "a body's chart link encodes its name: an ampersand does not end the parameter")
 
+# --- the site's own tables, above the results ------------------------------
+# An HMO search on 8 Oct 2026 was shown single councils' files and never the
+# 88-council table and map. familymatch offers a family's card when a search
+# is about it, and says whether the place searched for is in it.
+import familymatch as _fm  # noqa: E402
+_m = lambda q: [f for f, rx in _fm.WORDS.items() if re.search(rx, q, re.I)]
+check(_m("HMO license Leeds") == ["hmo_registers"] and _m("council spending") == ["spend_over_500"]
+      and _m("air pollution leeds") == ["air_quality_annual"] and not _m("health") and not _m("rainfall") and not _m("richmond"),
+      "a search about one of the site's tables gets its card; other searches get none")
+check(_fm._same_place("leeds", "Leeds City Council") and _fm._same_place("newcastle upon tyne", "Newcastle City Council")
+      and _fm._same_place("bristol", "Bristol, City of") and not _fm._same_place("york", "North Yorkshire Council")
+      and "london" in _fm.REGIONS and _fm._title("newcastle upon tyne") == "Newcastle upon Tyne",
+      "a place is matched to its council by name, and a region is never read as one council")
+
 # --- districts, not doors --------------------------------------------------
 # The HMO family keeps a postcode district and nothing finer. These pin the
 # reader that takes it from a published postcode or address, and the rule that

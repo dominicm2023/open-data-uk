@@ -58,7 +58,7 @@ CREATE INDEX IF NOT EXISTS idx_clicks_ts ON clicks (ts);
 """
 
 # What a click beacon is allowed to say it was.
-CLICK_KINDS = ("outbound", "details")
+CLICK_KINDS = ("outbound", "details", "family")   # family: a combined-table card above the results (familymatch.py)
 
 _ready = False
 

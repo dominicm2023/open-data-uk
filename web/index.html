@@ -115,6 +115,27 @@ async function loadStats() {
 
 let shownQuery = "";
 
+// The site's own combined tables, when a search is about one of them: what
+// the table is, whether the place searched for is in it and, if not, what
+// that council publishes instead (familymatch.py). Above the results, never
+// instead of them. Its links count as data-role="family" in the beacon.
+function familyCards(cards) {
+  return (cards || []).map(c => {
+    const links = [`<a href="${esc(c.url)}" data-role="family">Open the table</a>`]
+      .concat((c.links || []).map(l => `<a href="${esc(l.url)}" data-role="family">${esc(l.text)}</a>`));
+    const place = c.place ? `<p class="family-place${c.place.in_table ? "" : " absent"}">${esc(c.place.text)}` +
+      (c.place.link ? ` <a href="${safeUrl(c.place.link.url)}" target="_blank" rel="noopener" data-role="family">${esc(c.place.link.text)}</a>` : "") +
+      `</p>` : "";
+    const district = c.district ? `<p class="family-place"><a href="${esc(c.district.url)}" data-role="family">${esc(c.district.text)}</a></p>` : "";
+    return `<div class="result family-card" data-key="family:${esc(c.family)}" data-rank="0">
+      <p class="family-kicker">Combined table on this site</p>
+      <h2 class="result-title"><a href="${esc(c.url)}" data-role="family">${esc(c.label)}</a></h2>
+      <p class="desc">${esc(c.summary)}</p>${place}${district}
+      <p class="family-links">${links.join(" · ")}</p>
+    </div>`;
+  }).join("");
+}
+
 function render(payload) {
   const results = payload.results || [];
   shownQuery = payload.query || $("q").value.trim();
@@ -170,7 +191,7 @@ function render(payload) {
              `<a href="/?q=${encodeURIComponent(payload.suggestion)}" ` +
              `data-role="suggest">${esc(payload.suggestion)}</a>?</p>`;
   }
-  $("out").innerHTML = didyou + banner + results.map((r, i) => {
+  $("out").innerHTML = didyou + familyCards(payload.families) + banner + results.map((r, i) => {
     const lic = r.license
       ? `<span class="chip lic">${esc(r.license)}</span>`
       : '<span class="chip nolic">no licence</span>';
@@ -197,7 +218,8 @@ function render(payload) {
   }).join("");
   const hint = {none: " — nothing matches well", weak: " — weak match"}[payload.confidence] || "";
   const said = payload.suggestion ? ` Did you mean ${payload.suggestion}?` : "";
-  $("sr").textContent = `${results.length} results${hint}.${said}`;
+  const fam = (payload.families || []).length ? `A combined table on this site matches: ${payload.families.map(c => c.label).join(", ")}. ` : "";
+  $("sr").textContent = `${fam}${results.length} results${hint}.${said}`;
 }
 
 let inflight = null;

@@ -530,7 +530,14 @@ def _map_file(job: dict, f: dict, spec: dict, schema: dict) -> tuple[list[dict],
     candidates = [spec.get("columns", {})] + list(spec.get("alt_columns", []))
     fits = _fits(rows, candidates, h)
     if not fits:
-        raise KeyError(f"no known layout fits the header {[str(x)[:18] for x in rows[h][:8]]}")
+        # The message goes into the build summary and the family's API. Where
+        # the "header" is a record (a register whose layout changed:
+        # Tonbridge's in October 2026 quoted a property's address), it is
+        # quoted only if it reads as column names, by the brief's own test.
+        import brief as _brief
+        head = _brief._masked_row(rows[h], 3) if h < len(rows) else None
+        shown = [str(x)[:18] for x in head[:8]] if head else "a row that does not read as column names"
+        raise KeyError(f"no known layout fits the header ({shown}): the file's layout may have changed")
     hits, hr, lay = fits[0]
     out, bad = _map_rows(job, f, spec, schema, rows, lay, hr)
     held = sum(1 for b in bad if b.get("source_row") is not None)
