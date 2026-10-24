@@ -194,6 +194,16 @@ A living list. Add freely; move to "Done" with the commit that did it.
   annual means 16k → 55k rows, 1990-2026; Wales admitted on its own terms
   and Scotland on its About page's OGL statement. Air Quality England
   parked (no terms).
+- 24 Oct — searches since 27 Sep: 64 typed in 27 visits, 17 of which opened a
+  result (63%); the week of 20 Oct the busiest yet (28 searches, 20 opens).
+  An HMO search for Leeds was shown single councils' files, never the
+  site's own table: search now offers a card for a combined table it is
+  about, with the named council's place in it (Leeds: on request only).
+  Four councils had dropped from the HMO table unnoticed (85 now): Maldon's
+  heading changed (remapped), Tonbridge's layout no longer reads, Harborough's
+  page is gone, Tewkesbury's refused one night. A build message quoting a
+  changed file's first row put address fragments in the HMO API; it now
+  quotes only a row that reads as column names.
 - 28 Sep (evening) — 88 councils, 42,650 licences, 622 districts. Dominic
   asked for the registers without postcodes: districts are now worked out
   from a street address (OS Open Names, within the council's area, only

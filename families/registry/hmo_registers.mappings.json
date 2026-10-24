@@ -1410,15 +1410,16 @@
     "header_row": 0,
     "columns": {
       "postcode_district": "ADDRESS OF LICENCED PREMISES",
-      "licence_start": "COMMENCEMENT DATE OF THE LICENCE",
+      "licence_start": "COMMENCEMEN T DATE OF THE LICENCE",
+      "licence_end": "EXPIRY DATE OF THE LICENCE",
       "storeys": "NUMBER OF STOREYS"
     },
     "constants": {
       "council": "Maldon District Council",
       "licences": 1
     },
-    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27. 'PERMITTED NO. OF PERSONS AND/OR HOUSEHOLDS' mixes two counts and is not mapped. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
-    "version": "1",
+    "notes": "Statutory register; the council's website says 'All rights reserved', admitted notwithstanding by decision DM 2026-09-27. 'PERMITTED NO. OF PERSONS AND/OR HOUSEHOLDS' mixes two counts and is not mapped. Where a row gives no postcode, its district is worked out from its street address with OS Open Names (DM 2026-09-28). Never mapped: any name, the address itself, or a holder's, manager's or agent's details. (24 Oct 2026: the PDF now reads its start-date heading as 'COMMENCEMEN T DATE'; both spellings are accepted.)",
+    "version": "2",
     "reviewer": "Claude, for Dominic Matthews",
     "reviewed_at": "2026-09-27",
     "district_from": {
@@ -1428,7 +1429,15 @@
       "authorities": [
         "Maldon"
       ]
-    }
+    },
+    "alt_columns": [
+      {
+        "postcode_district": "ADDRESS OF LICENCED PREMISES",
+        "licence_start": "COMMENCEMENT DATE OF THE LICENCE",
+        "licence_end": "EXPIRY DATE OF THE LICENCE",
+        "storeys": "NUMBER OF STOREYS"
+      }
+    ]
   },
   "c220f5d64fcc87a490dc1c85c44798d69fe1524c9108752e91588e4c46f8de31": {
     "status": "reviewed",
@@ -2298,21 +2307,7 @@
     }
   },
   "96f9798e8a831af80cd0563e55c5415f3f5d1e5b8f3add16db2f67e4848850c4": {
-    "status": "reviewed",
-    "table": 1,
-    "header_row": 2,
-    "columns": {
-      "postcode_district": "Postcode",
-      "storeys": "Covered by Licence",
-      "max_occupants": "Occupants Allowed"
-    },
-    "constants": {
-      "council": "Tonbridge and Malling Borough Council",
-      "licences": 1
-    },
-    "notes": "Statutory register, no licence stated: admitted by decision DM 2026-09-27. Only the PDF's header is ruled; its rows are read by alignment, and the header runs over three lines, so the columns are named by their third ('Postcode' is 'Licenced Address Postcode', 'Covered by Licence' the number of storeys, 'Occupants Allowed' the maximum occupants). Never mapped: any name, the address itself, or a holder's, manager's or agent's details.",
-    "version": "1",
-    "reviewer": "Claude, for Dominic Matthews",
-    "reviewed_at": "2026-09-28"
+    "status": "rejected",
+    "reject": "The register's new layout (October 2026) has no ruled table, and reading it by alignment splits each address, postcode included, across columns, so the property's postcode cannot be read."
   }
 }

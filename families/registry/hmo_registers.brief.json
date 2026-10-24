@@ -455,186 +455,405 @@
      "head_rows": [
       [],
       [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       []
      ],
      "where": {
       "page": 1,
       "table": 1,
-      "bbox": [
-       15.359999999999998,
-       42.95999999999992,
-       1170.6,
-       165.38
-      ]
+      "strategy": "text"
      },
      "header": [
-      "BCP Council - House in Multiple Occupation Register\n26-Aug-26"
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 2,
-     "column_count": 1
+     "row_count": 79,
+     "column_count": 23
     },
     {
      "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       [],
       []
      ],
      "where": {
       "page": 2,
       "table": 1,
-      "bbox": [
-       15.36,
-       42.85399999999996,
-       1170.6,
-       107.53999999999996
-      ]
+      "strategy": "text"
      },
      "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
       ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 81,
+     "column_count": 26
     },
     {
      "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 87,
+     "column_count": 25
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 76,
+     "column_count": 24
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 87,
+     "column_count": 27
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       [],
       []
      ],
      "where": {
       "page": 6,
       "table": 1,
-      "bbox": [
-       15.36,
-       42.85399999999996,
-       1170.6,
-       107.53999999999996
-      ]
+      "strategy": "text"
      },
      "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
       ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 87,
+     "column_count": 28
     },
     {
      "head_rows": [
       [],
-      []
-     ],
-     "where": {
-      "page": 9,
-      "table": 1,
-      "bbox": [
-       15.360000000000001,
-       42.85399999999996,
-       1170.6,
-       107.53999999999996
-      ]
-     },
-     "header": [
-      ""
-     ],
-     "header_row": 0,
-     "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
-    },
-    {
-     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       [],
       []
      ],
      "where": {
-      "page": 10,
+      "page": 7,
       "table": 1,
-      "bbox": [
-       15.36,
-       42.85399999999996,
-       1170.6,
-       107.53999999999996
-      ]
+      "strategy": "text"
      },
      "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
       ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 90,
+     "column_count": 26
     },
     {
      "head_rows": [
       [],
-      []
-     ],
-     "where": {
-      "page": 11,
-      "table": 1,
-      "bbox": [
-       15.36,
-       42.85399999999996,
-       1170.6,
-       131.29999999999995
-      ]
-     },
-     "header": [
-      ""
-     ],
-     "header_row": 0,
-     "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
-    },
-    {
-     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       [],
       []
      ],
      "where": {
-      "page": 12,
+      "page": 8,
       "table": 1,
-      "bbox": [
-       15.36,
-       42.85399999999996,
-       1170.6,
-       107.53999999999996
-      ]
+      "strategy": "text"
      },
      "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
       ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
-    },
-    {
-     "head_rows": [
-      [],
-      []
-     ],
-     "where": {
-      "page": 17,
-      "table": 1,
-      "bbox": [
-       15.36,
-       42.85399999999996,
-       1170.6,
-       107.53999999999996
-      ]
-     },
-     "header": [
-      ""
-     ],
-     "header_row": 0,
-     "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 82,
+     "column_count": 25
     }
    ]
   },
@@ -1559,7 +1778,7 @@
      "header_row": 0,
      "sample_rows": [],
      "row_count": 14,
-     "column_count": 70
+     "column_count": 71
     }
    ]
   },
@@ -1781,7 +2000,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 20,
+     "row_count": 19,
      "column_count": 6
     }
    ]
@@ -2461,64 +2680,24 @@
     {
      "head_rows": [
       [],
-      []
-     ],
-     "where": {
-      "page": 1,
-      "table": 1,
-      "bbox": [
-       0.0,
-       0.0,
-       595.2500034871254,
-       275.25000584530017
-      ]
-     },
-     "header": [
-      ""
-     ],
-     "header_row": 0,
-     "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
-    },
-    {
-     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       [],
       []
      ],
      "where": {
       "page": 1,
-      "table": 2,
-      "bbox": [
-       28.35000038,
-       22.70000246999996,
-       113.38918494999999,
-       146.29078081999995
-      ]
+      "table": 1,
+      "strategy": "text"
      },
      "header": [
-      ""
-     ],
-     "header_row": 0,
-     "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
-    },
-    {
-     "head_rows": [
-      []
-     ],
-     "where": {
-      "page": 1,
-      "table": 3,
-      "bbox": [
-       28.35000038,
-       160.93899536000004,
-       217.54900551,
-       175.58699511999998
-      ]
-     },
-     "header": [
+      "",
+      "",
       "",
       "",
       "",
@@ -2528,123 +2707,228 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 0,
-     "column_count": 6
+     "row_count": 38,
+     "column_count": 8
     },
     {
      "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       [],
       []
      ],
      "where": {
       "page": 2,
       "table": 1,
-      "bbox": [
-       27.05000043,
-       646.54598236,
-       568.25002479,
-       671.5255069750001
-      ]
+      "strategy": "text"
      },
      "header": [
-      "Non-standard conditions applying to this licence, if any:"
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 55,
+     "column_count": 7
     },
     {
      "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       [],
       []
      ],
      "where": {
       "page": 3,
       "table": 1,
-      "bbox": [
-       27.05000043,
-       646.54598236,
-       568.25002479,
-       671.5255069750001
-      ]
+      "strategy": "text"
      },
      "header": [
-      "Non-standard conditions applying to this licence, if any:"
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 55,
+     "column_count": 7
     },
     {
      "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       [],
       []
      ],
      "where": {
       "page": 4,
       "table": 1,
-      "bbox": [
-       27.05000043,
-       670.95998383,
-       568.25002479,
-       695.93950844
-      ]
+      "strategy": "text"
      },
      "header": [
-      "Non-standard conditions applying to this licence, if any:"
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
      ],
-     "header_row": 0,
+     "header_row": 1,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 56,
+     "column_count": 6
     },
     {
      "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       [],
       []
      ],
      "where": {
       "page": 5,
       "table": 1,
-      "bbox": [
-       27.05000043,
-       646.54598236,
-       568.25002479,
-       671.5255069750001
-      ]
+      "strategy": "text"
      },
      "header": [
-      "Non-standard conditions applying to this licence, if any:"
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 55,
+     "column_count": 6
     },
     {
      "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       [],
       []
      ],
      "where": {
       "page": 6,
       "table": 1,
-      "bbox": [
-       27.05000043,
-       646.54598236,
-       568.25002479,
-       671.5255069750001
-      ]
+      "strategy": "text"
      },
      "header": [
-      "Non-standard conditions applying to this licence, if any:"
+      "",
+      "",
+      "",
+      "",
+      ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 58,
+     "column_count": 5
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 8,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 55,
+     "column_count": 7
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 9,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 55,
+     "column_count": 7
     }
    ]
   },
@@ -2694,7 +2978,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 97,
+     "row_count": 101,
      "column_count": 6
     }
    ]
@@ -2713,26 +2997,339 @@
    "tables": [
     {
      "head_rows": [
+      [
+       "Address",
+       "License",
+       "Type",
+       "Start Date",
+       "Expiry Date Lice",
+       "nse Holder Pers",
+       "ons House",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       [],
       []
      ],
      "where": {
       "page": 1,
       "table": 1,
-      "bbox": [
-       11.5,
-       82.70000000000005,
-       583.65,
-       128.55000000000007
-      ]
+      "strategy": "text"
      },
      "header": [
-      "Address License Type Start Date Expiry Date License Holder Persons Households"
+      "Address",
+      "License",
+      "Type",
+      "Start Date",
+      "Expiry Date Lice",
+      "nse Holder Pers",
+      "ons House",
+      ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 52,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "Address",
+       "License",
+       "Type",
+       "Start Date",
+       "Expiry Date Lice",
+       "nse Holder Pers",
+       "ons House",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "Address",
+      "License",
+      "Type",
+      "Start Date",
+      "Expiry Date Lice",
+      "nse Holder Pers",
+      "ons House",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 66,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "Address",
+       "License",
+       "Type",
+       "Start Date",
+       "Expiry Date Lic",
+       "ense Holder Pers",
+       "ons House",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "Address",
+      "License",
+      "Type",
+      "Start Date",
+      "Expiry Date Lic",
+      "ense Holder Pers",
+      "ons House",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 68,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "Address",
+       "License",
+       "Type",
+       "Start Date",
+       "Expiry Date Lice",
+       "nse Holder Pers",
+       "ons House",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "Address",
+      "License",
+      "Type",
+      "Start Date",
+      "Expiry Date Lice",
+      "nse Holder Pers",
+      "ons House",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 61,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "Address",
+       "License",
+       "Type",
+       "Start Date",
+       "Expiry Date Lice",
+       "nse Holder Pers",
+       "ons House",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "Address",
+      "License",
+      "Type",
+      "Start Date",
+      "Expiry Date Lice",
+      "nse Holder Pers",
+      "ons House",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 67,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "Address",
+       "License",
+       "Type",
+       "Start Date",
+       "Expiry Date Lice",
+       "nse Holder Pers",
+       "ons House",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 6,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "Address",
+      "License",
+      "Type",
+      "Start Date",
+      "Expiry Date Lice",
+      "nse Holder Pers",
+      "ons House",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 60,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "Address",
+       "License",
+       "Type",
+       "Start Date",
+       "Expiry Date Lice",
+       "nse Holder Pers",
+       "ons House",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 7,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "Address",
+      "License",
+      "Type",
+      "Start Date",
+      "Expiry Date Lice",
+      "nse Holder Pers",
+      "ons House",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 59,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [
+       "Address",
+       "License",
+       "Type",
+       "Start Date",
+       "Expiry Date Licen",
+       "se Holder Pers",
+       "ons House",
+       ""
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 8,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "Address",
+      "License",
+      "Type",
+      "Start Date",
+      "Expiry Date Licen",
+      "se Holder Pers",
+      "ons House",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 64,
+     "column_count": 8
     }
    ]
   },
@@ -2927,16 +3524,26 @@
     {
      "head_rows": [
       [
-       "Licence\nReference",
-       "HMO\nAddress",
-       "Number\nof Floors",
-       "Total\nPermitted\nOccupants",
-       "Duration\nof licence\n(years)",
-       "Valid\nfrom\nDate\n(needs\nto be\nstart\ndate)",
-       "Expiry\nDate"
+       "Licence",
+       "HMO",
+       "Number",
+       "",
+       "Duration",
+       "",
+       "Valid",
+       "Expiry"
       ],
       [],
-      [],
+      [
+       "Reference",
+       "Address",
+       "of Floors",
+       "Permitted",
+       "of licence",
+       "",
+       "",
+       "Date"
+      ],
       [],
       [],
       [],
@@ -2948,25 +3555,118 @@
      "where": {
       "page": 1,
       "table": 1,
-      "bbox": [
-       78.90400000000001,
-       54.52000000000002,
-       526.0495025,
-       692.616
-      ]
+      "strategy": "text"
      },
      "header": [
-      "Licence\nReference",
-      "HMO\nAddress",
-      "Number\nof Floors",
-      "Total\nPermitted\nOccupants",
-      "Duration\nof licence\n(years)",
-      "Valid\nfrom\nDate\n(needs\nto be\nstart\ndate)",
-      "Expiry\nDate"
+      "Licence",
+      "HMO",
+      "Number",
+      "",
+      "Duration",
+      "",
+      "Valid",
+      "Expiry"
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 9,
+     "row_count": 84,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 88,
+     "column_count": 7
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 72,
+     "column_count": 8
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 86,
      "column_count": 7
     }
    ]
@@ -3674,7 +4374,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 75,
+     "row_count": 78,
      "column_count": 6
     }
    ]
@@ -3862,59 +4562,6 @@
    ]
   },
   {
-   "job_id": "b418c5c0d71d6b9b71db39945f77fe3ae45e78e8454c1e62a0dd50ba55b7a97f",
-   "publisher": "Harborough Council",
-   "title": "Public register of licensed HMOs",
-   "portal": "web",
-   "format": "HTML",
-   "resource_url": "https://www.harborough.gov.uk/info/20009/licences/135/house_in_multiple_occupation_hmo/2",
-   "licence": "Statutory-register",
-   "files_extracted": 1,
-   "note": null,
-   "layouts": [],
-   "tables": [
-    {
-     "head_rows": [
-      [
-       "Reference",
-       "Licence Holder",
-       "HMO Address",
-       "Valid from date",
-       "Expiry date",
-       "No. of Occupiers",
-       "No. of Households"
-      ],
-      [],
-      [],
-      [],
-      [],
-      [],
-      [],
-      [],
-      [],
-      []
-     ],
-     "where": {
-      "table": 1,
-      "source_markup": "html page"
-     },
-     "header": [
-      "Reference",
-      "Licence Holder",
-      "HMO Address",
-      "Valid from date",
-      "Expiry date",
-      "No. of Occupiers",
-      "No. of Households"
-     ],
-     "header_row": 0,
-     "sample_rows": [],
-     "row_count": 12,
-     "column_count": 7
-    }
-   ]
-  },
-  {
    "job_id": "ef339748a0bb5d6b2f3a22dfd8d753e8b8185381439226fc1f321ea252fe3de1",
    "publisher": "Harlow Council",
    "title": "Public register of licensed HMOs",
@@ -4009,25 +4656,36 @@
     {
      "head_rows": [
       [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+       "Designated Area Additi",
+       "onal Licensing (House",
+       "s in Multiple Occup",
+       ""
+      ],
       []
      ],
      "where": {
       "page": 1,
       "table": 1,
-      "bbox": [
-       0.25005000000000166,
-       0.5000023999999712,
-       240.6949,
-       679.8150024
-      ]
+      "strategy": "text"
      },
      "header": [
+      "",
+      "",
+      "",
       ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 81,
+     "column_count": 4
     }
    ]
   },
@@ -4202,7 +4860,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1080,
+     "row_count": 1189,
      "column_count": 14
     },
     {
@@ -4591,7 +5249,7 @@
        "Name of the licence holder",
        "Address of the licence holder",
        "Name and address of the person managing the licensed HMO or house",
-       "Address of the licensed HMO or\nhouse",
+       "Address of the licensed HMO or house",
        "Post Code",
        "Ward",
        "Commencement\ndate",
@@ -4602,7 +5260,7 @@
        "The number of\nstoreys\ncomprising the\nlicensed HMO",
        "",
        "",
-       "Description of shared\namenities including\nthe numbers of each\namenity",
+       "Description of shared\namenities including the\nnumbers of each amenity",
        ""
       ],
       [],
@@ -4619,10 +5277,10 @@
       "page": 1,
       "table": 1,
       "bbox": [
-       18.528,
+       18.503999999999998,
        54.5,
-       814.848804,
-       540.7599833333334
+       804.8813433333333,
+       535.3600033333333
       ]
      },
      "header": [
@@ -4631,7 +5289,7 @@
       "Name of the licence holder",
       "Address of the licence holder",
       "Name and address of the person managing the licensed HMO or house",
-      "Address of the licensed HMO or\nhouse",
+      "Address of the licensed HMO or house",
       "Post Code",
       "Ward",
       "Commencement\ndate",
@@ -4642,12 +5300,12 @@
       "The number of\nstoreys\ncomprising the\nlicensed HMO",
       "",
       "",
-      "Description of shared\namenities including\nthe numbers of each\namenity",
+      "Description of shared\namenities including the\nnumbers of each amenity",
       ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 49,
+     "row_count": 56,
      "column_count": 18
     },
     {
@@ -4667,10 +5325,10 @@
       "page": 2,
       "table": 1,
       "bbox": [
-       18.564,
-       54.5,
-       814.860015,
-       539.6400050000001
+       18.503999999999998,
+       54.500000000000036,
+       804.840015,
+       534.7599833333334
       ]
      },
      "header": [
@@ -4695,7 +5353,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 52,
+     "row_count": 57,
      "column_count": 18
     },
     {
@@ -4715,10 +5373,10 @@
       "page": 3,
       "table": 1,
       "bbox": [
-       18.564,
-       54.5,
-       814.860015,
-       535.1200033333333
+       18.503999999999998,
+       54.500000000000036,
+       804.840015,
+       536.0799833333334
       ]
      },
      "header": [
@@ -4743,7 +5401,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 51,
+     "row_count": 58,
      "column_count": 18
     },
     {
@@ -4763,10 +5421,10 @@
       "page": 4,
       "table": 1,
       "bbox": [
-       18.564,
+       18.504,
        54.50200000000003,
-       814.860015,
-       534.960005
+       804.88001,
+       534.8800033333333
       ]
      },
      "header": [
@@ -4791,7 +5449,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 52,
+     "row_count": 57,
      "column_count": 18
     },
     {
@@ -4811,10 +5469,10 @@
       "page": 5,
       "table": 1,
       "bbox": [
-       18.544,
+       18.504,
        54.5,
-       814.88001,
-       534.0400033333334
+       804.88001,
+       534.5200033333334
       ]
      },
      "header": [
@@ -4839,7 +5497,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 51,
+     "row_count": 58,
      "column_count": 18
     },
     {
@@ -4859,10 +5517,10 @@
       "page": 6,
       "table": 1,
       "bbox": [
-       18.564,
-       54.50333333333333,
-       814.860015,
-       535.1200033333333
+       18.503999999999998,
+       54.502000000000024,
+       804.840015,
+       538.9600033333335
       ]
      },
      "header": [
@@ -4887,7 +5545,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 51,
+     "row_count": 58,
      "column_count": 18
     },
     {
@@ -4907,10 +5565,10 @@
       "page": 7,
       "table": 1,
       "bbox": [
-       18.564,
-       54.501999999999995,
-       814.860015,
-       535.1200033333333
+       18.503999999999998,
+       54.500000000000036,
+       804.840007,
+       540.719975
       ]
      },
      "header": [
@@ -4935,7 +5593,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 51,
+     "row_count": 81,
      "column_count": 18
     },
     {
@@ -4955,10 +5613,10 @@
       "page": 8,
       "table": 1,
       "bbox": [
-       18.534,
-       54.501999999999995,
-       814.8910075,
-       534.840005
+       18.503999999999998,
+       54.5,
+       804.840005,
+       195.76999500000005
       ]
      },
      "header": [
@@ -4983,7 +5641,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 51,
+     "row_count": 31,
      "column_count": 18
     }
    ]
@@ -5781,7 +6439,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1696,
+     "row_count": 1717,
      "column_count": 18
     }
    ]
@@ -5885,7 +6543,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 3485,
+     "row_count": 3443,
      "column_count": 33
     }
    ]
@@ -6006,13 +6664,15 @@
      "head_rows": [
       [
        "MALDON DC\nREFERENCE\nNUMBER",
+       "UPRN",
        "ADDRESS OF\nLICENCED\nPREMISES",
        "NAME AND\nADDRESS OF\nLICENCE\nHOLDER",
        "NAME AND\nADDRESS OF\nTHE MANAGER",
        "DESCRIPTION OF\nHMO",
        "SUMMARY OF\nCONDITIONS\nOF THE\nLICENCE",
-       "COMMENCEMENT\nDATE OF THE\nLICENCE",
+       "COMMENCEMEN\nT DATE OF THE\nLICENCE",
        "DURATION\nOF THE\nLICENCE",
+       "EXPIRY DATE OF\nTHE LICENCE",
        "",
        "SUMMARY OF\nDECISIONS\nOF RPT",
        "NUMBER\nOF\nSTOREYS",
@@ -6023,6 +6683,7 @@
        "DESCRIPTION\nAND NUMBER\nOF AMENITIES",
        "PERMITTED NO.\nOF PERSONS\nAND/OR\nHOUSEHOLDS"
       ],
+      [],
       [],
       [],
       [],
@@ -6032,21 +6693,23 @@
       "page": 1,
       "table": 1,
       "bbox": [
-       57.32,
-       235.47999999999993,
-       1613.0003333333334,
-       860.9395
+       72.92333333333333,
+       275.11280000000005,
+       2049.8973333333333,
+       1114.9198
       ]
      },
      "header": [
       "MALDON DC\nREFERENCE\nNUMBER",
+      "UPRN",
       "ADDRESS OF\nLICENCED\nPREMISES",
       "NAME AND\nADDRESS OF\nLICENCE\nHOLDER",
       "NAME AND\nADDRESS OF\nTHE MANAGER",
       "DESCRIPTION OF\nHMO",
       "SUMMARY OF\nCONDITIONS\nOF THE\nLICENCE",
-      "COMMENCEMENT\nDATE OF THE\nLICENCE",
+      "COMMENCEMEN\nT DATE OF THE\nLICENCE",
       "DURATION\nOF THE\nLICENCE",
+      "EXPIRY DATE OF\nTHE LICENCE",
       "",
       "SUMMARY OF\nDECISIONS\nOF RPT",
       "NUMBER\nOF\nSTOREYS",
@@ -6059,65 +6722,8 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 4,
-     "column_count": 17
-    },
-    {
-     "head_rows": [
-      [
-       "MALDON DC\nREFERENCE\nNUMBER",
-       "ADDRESS OF\nLICENCED\nPREMISES",
-       "NAME AND\nADDRESS OF\nLICENCE\nHOLDER",
-       "NAME AND\nADDRESS OF\nTHE MANAGER",
-       "DESCRIPTION OF\nHMO",
-       "SUMMARY OF\nCONDITIONS\nOF THE\nLICENCE",
-       "COMMENCEMENT\nDATE OF THE\nLICENCE",
-       "DURATION\nOF THE\nLICENCE",
-       "",
-       "SUMMARY OF\nDECISIONS\nOF RPT",
-       "NUMBER\nOF\nSTOREYS",
-       "NO. OF ROOMS FOR\nSLEEPING\nACCOMMODATION",
-       "NO. OF ROOMS FOR\nLIVING\nACCOMMODATION",
-       "NO. OF SELF\nCONTAINED\nFLATS",
-       "NO. OF FLATS\nNOT SELF\nCONTAINED",
-       "DESCRIPTION\nAND NUMBER\nOF AMENITIES",
-       "PERMITTED NO.\nOF PERSONS\nAND/OR\nHOUSEHOLDS"
-      ],
-      []
-     ],
-     "where": {
-      "page": 2,
-      "table": 1,
-      "bbox": [
-       57.32,
-       235.47999999999993,
-       1613.0003333333334,
-       429.18
-      ]
-     },
-     "header": [
-      "MALDON DC\nREFERENCE\nNUMBER",
-      "ADDRESS OF\nLICENCED\nPREMISES",
-      "NAME AND\nADDRESS OF\nLICENCE\nHOLDER",
-      "NAME AND\nADDRESS OF\nTHE MANAGER",
-      "DESCRIPTION OF\nHMO",
-      "SUMMARY OF\nCONDITIONS\nOF THE\nLICENCE",
-      "COMMENCEMENT\nDATE OF THE\nLICENCE",
-      "DURATION\nOF THE\nLICENCE",
-      "",
-      "SUMMARY OF\nDECISIONS\nOF RPT",
-      "NUMBER\nOF\nSTOREYS",
-      "NO. OF ROOMS FOR\nSLEEPING\nACCOMMODATION",
-      "NO. OF ROOMS FOR\nLIVING\nACCOMMODATION",
-      "NO. OF SELF\nCONTAINED\nFLATS",
-      "NO. OF FLATS\nNOT SELF\nCONTAINED",
-      "DESCRIPTION\nAND NUMBER\nOF AMENITIES",
-      "PERMITTED NO.\nOF PERSONS\nAND/OR\nHOUSEHOLDS"
-     ],
-     "header_row": 0,
-     "sample_rows": [],
-     "row_count": 1,
-     "column_count": 17
+     "row_count": 5,
+     "column_count": 19
     }
    ]
   },
@@ -8810,9 +9416,9 @@
       "table": 1,
       "bbox": [
        17.399999618,
-       68.97619372690002,
+       68.82879122990008,
        821.160009383,
-       510.6600018623
+       510.5400018623001
       ]
      },
      "header": [
@@ -8856,9 +9462,9 @@
       "table": 1,
       "bbox": [
        17.399999618,
-       68.97200671470004,
+       68.82880191120005,
        821.160009383,
-       511.6200009463
+       511.5000009463
       ]
      },
      "header": [
@@ -8902,9 +9508,9 @@
       "table": 1,
       "bbox": [
        17.399999618,
-       68.97200671470004,
+       68.82880191120005,
        821.160009383,
-       511.6200009463
+       511.5000009463
       ]
      },
      "header": [
@@ -8948,9 +9554,9 @@
       "table": 1,
       "bbox": [
        17.399999618,
-       68.97200671470004,
+       68.82880191120005,
        821.160009383,
-       511.6200009463
+       511.5000009463
       ]
      },
      "header": [
@@ -8994,9 +9600,9 @@
       "table": 1,
       "bbox": [
        17.399999618,
-       68.97200671470004,
+       68.82880191120005,
        821.160009383,
-       511.6200009463
+       511.5000009463
       ]
      },
      "header": [
@@ -9040,9 +9646,9 @@
       "table": 1,
       "bbox": [
        17.399999618,
-       68.97200671470004,
+       68.82880191120005,
        821.160009383,
-       511.6200009463
+       511.5000009463
       ]
      },
      "header": [
@@ -9079,6 +9685,7 @@
       [],
       [],
       [],
+      [],
       []
      ],
      "where": {
@@ -9086,9 +9693,9 @@
       "table": 1,
       "bbox": [
        17.399999618,
-       68.97200671470004,
+       68.82880191120005,
        821.160009383,
-       516.7799977422001
+       537.6000004580001
       ]
      },
      "header": [
@@ -9103,7 +9710,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 8,
+     "row_count": 9,
      "column_count": 8
     },
     {
@@ -9132,9 +9739,9 @@
       "table": 1,
       "bbox": [
        17.399999618,
-       68.97200671470004,
+       68.82880191120005,
        821.160009383,
-       511.6200009463
+       511.53600128200003
       ]
      },
      "header": [
@@ -9332,7 +9939,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 648,
+     "row_count": 644,
      "column_count": 8
     }
    ]
@@ -10575,19 +11182,26 @@
        "Date Licence Started",
        "Date Licence Expires",
        "Licence period",
-       "License holder",
-       "Owner address",
+       "Licence holder",
+       "Licence Holder Address",
        "",
        "",
+       "Area",
+       "Postcode2",
+       "Manager",
+       "Manager Address",
        "",
        "",
+       "Manager Area",
+       "Manager Postcode",
        "No. of Floors",
        "No. of rooms  for let",
        "Max No of people",
        "No. of  kitchens",
        "No. of Reception Rooms",
        "No. of  bathrooms inc. ensuite",
-       "No. of  WC's"
+       "No. of  WC's",
+       "Conditions"
       ],
       [],
       [],
@@ -10613,24 +11227,31 @@
       "Date Licence Started",
       "Date Licence Expires",
       "Licence period",
-      "License holder",
-      "Owner address",
+      "Licence holder",
+      "Licence Holder Address",
       "",
       "",
+      "Area",
+      "Postcode2",
+      "Manager",
+      "Manager Address",
       "",
       "",
+      "Manager Area",
+      "Manager Postcode",
       "No. of Floors",
       "No. of rooms  for let",
       "Max No of people",
       "No. of  kitchens",
       "No. of Reception Rooms",
       "No. of  bathrooms inc. ensuite",
-      "No. of  WC's"
+      "No. of  WC's",
+      "Conditions"
      ],
      "header_row": 0,
      "sample_rows": [],
      "row_count": 2398,
-     "column_count": 23
+     "column_count": 30
     }
    ]
   },
@@ -10734,25 +11355,218 @@
     {
      "head_rows": [
       [],
+      [
+       "LICENCE APPLICATION TYPE",
+       "",
+       "HMO ADDRESS",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "ART DATE EX",
+       "PIRY DATE HOUSEHOLD",
+       "",
+       "OCCUPANTS"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
       []
      ],
      "where": {
       "page": 1,
       "table": 1,
-      "bbox": [
-       50.904,
-       54.60000000000002,
-       783.124,
-       78.36000000000001
-      ]
+      "strategy": "text"
      },
      "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
       ""
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 1,
-     "column_count": 1
+     "row_count": 54,
+     "column_count": 13
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 2,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 55,
+     "column_count": 14
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 3,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 55,
+     "column_count": 22
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 4,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 55,
+     "column_count": 13
+    },
+    {
+     "head_rows": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+     ],
+     "where": {
+      "page": 5,
+      "table": 1,
+      "strategy": "text"
+     },
+     "header": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "header_row": 0,
+     "sample_rows": [],
+     "row_count": 26,
+     "column_count": 15
     }
    ]
   },
@@ -10795,10 +11609,10 @@
       "page": 1,
       "table": 1,
       "bbox": [
-       51.12,
-       54.38000000000003,
-       789.25999,
-       494.26000000000005
+       51.09,
+       54.400000000000034,
+       786.9800099999999,
+       538.91999
       ]
      },
      "header": [
@@ -10814,7 +11628,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 13,
+     "row_count": 16,
      "column_count": 9
     },
     {
@@ -10835,9 +11649,9 @@
       "table": 1,
       "bbox": [
        50.94,
-       54.40720000000003,
-       789.219985,
-       524.0160099999999
+       54.40800000000004,
+       786.940015,
+       531.71999
       ]
      },
      "header": [
@@ -10853,15 +11667,11 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 13,
+     "row_count": 15,
      "column_count": 9
     },
     {
      "head_rows": [
-      [],
-      [],
-      [],
-      [],
       [],
       [],
       [],
@@ -10873,10 +11683,10 @@
       "page": 3,
       "table": 1,
       "bbox": [
-       51.199999999999996,
+       51.160000000000004,
        54.36000000000005,
-       789.3399900000001,
-       362.19000000000005
+       787.06001,
+       165.06000000000006
       ]
      },
      "header": [
@@ -10892,7 +11702,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 10,
+     "row_count": 5,
      "column_count": 9
     }
    ]
@@ -10968,78 +11778,6 @@
    ]
   },
   {
-   "job_id": "a491bcd89de76b2104322f7bed3069ed9ea9883aaf74c424cfb33ee836178113",
-   "publisher": "Tewkesbury Council",
-   "title": "Public register of licensed HMOs",
-   "portal": "web",
-   "format": "XLSX",
-   "resource_url": "https://tewkesbury.gov.uk/wp-content/uploads/2026/07/HMO-register-website-version-updated-14.08.26.xlsx",
-   "licence": "Statutory-register",
-   "files_extracted": 1,
-   "note": null,
-   "layouts": [],
-   "tables": [
-    {
-     "head_rows": [
-      [
-       "Licence No",
-       "Name of Licence Holder",
-       "Address of Licence Holder",
-       "Name of person managing HMO",
-       "Address of Person Managing HMO",
-       "Address of HMO",
-       "Description",
-       "Summary of conditions",
-       "Commencement date",
-       "Expiry Date",
-       "Residential tribunal or Landlords Tribunal",
-       "Number of Storeys",
-       "Rooms providing sleeping accomodation",
-       "Rooms providing shared  living accommodation",
-       "Shared Amenities",
-       "Permitted number",
-       ""
-      ],
-      [],
-      [],
-      [],
-      [],
-      [],
-      [],
-      [],
-      [],
-      []
-     ],
-     "where": {
-      "sheet": "Sheet1"
-     },
-     "header": [
-      "Licence No",
-      "Name of Licence Holder",
-      "Address of Licence Holder",
-      "Name of person managing HMO",
-      "Address of Person Managing HMO",
-      "Address of HMO",
-      "Description",
-      "Summary of conditions",
-      "Commencement date",
-      "Expiry Date",
-      "Residential tribunal or Landlords Tribunal",
-      "Number of Storeys",
-      "Rooms providing sleeping accomodation",
-      "Rooms providing shared  living accommodation",
-      "Shared Amenities",
-      "Permitted number",
-      ""
-     ],
-     "header_row": 0,
-     "sample_rows": [],
-     "row_count": 12,
-     "column_count": 17
-    }
-   ]
-  },
-  {
    "job_id": "4014ab183b1b5d013c2804aa86b0e36ea85a7015dba29e0e36b93f6caf8128d2",
    "publisher": "Thurrock Council",
    "title": "Public register of licensed HMOs",
@@ -11081,7 +11819,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 170,
+     "row_count": 172,
      "column_count": 4
     }
    ]
@@ -11101,38 +11839,8 @@
     {
      "head_rows": [
       [],
-      [
-       "",
-       "",
-       "",
-       "",
-       "Address",
-       "Number of storeys",
-       "Number of",
-       "Households",
-       "Maximum",
-       "Licence",
-       "",
-       "",
-       "",
-       "Duration"
-      ],
-      [
-       "Licensed Ad",
-       "",
-       "",
-       "",
-       "Postcode",
-       "Covered by Licence",
-       "Sleeping Rooms",
-       "",
-       "Occupants Allowed",
-       "Type",
-       "Date",
-       "",
-       "",
-       ""
-      ],
+      [],
+      [],
       [],
       [],
       [],
@@ -11151,21 +11859,29 @@
       "",
       "",
       "",
-      "Address",
-      "Number of storeys",
-      "Number of",
-      "Households",
-      "Maximum",
-      "Licence",
       "",
       "",
       "",
-      "Duration"
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
      ],
-     "header_row": 1,
+     "header_row": 0,
      "sample_rows": [],
      "row_count": 27,
-     "column_count": 14
+     "column_count": 22
     }
    ]
   },
@@ -11231,17 +11947,13 @@
     {
      "head_rows": [
       [
-       "HMO LICENSE REF",
-       "",
-       "LICENSED HMO",
-       "",
-       "LICENSE HOLDER",
-       "LICENSE HOLDER ADDRESS",
-       "",
-       "PERMITTED",
-       "",
-       "LICENSE ISSUE DATE",
-       "LICENSE EXPIRY DATE"
+       "HMO LICENCE REF",
+       "LICENSED HMO ADDRESS",
+       "LICENCE HOLDER",
+       "LICENCE HOLDER ADDRESS",
+       "PERMITTED\nOCCUPANCY",
+       "LICENCE ISSUE\nDATE",
+       "LICENCE EXPIRY\nDATE"
       ],
       [],
       [],
@@ -11257,29 +11969,25 @@
       "page": 1,
       "table": 1,
       "bbox": [
-       34.09043364130435,
-       60.21000000000001,
-       757.309572097826,
-       526.4399872500001
+       18.680000500000002,
+       54.680000500000006,
+       772.519989,
+       196.37999699999997
       ]
      },
      "header": [
-      "HMO LICENSE REF",
-      "",
-      "LICENSED HMO",
-      "",
-      "LICENSE HOLDER",
-      "LICENSE HOLDER ADDRESS",
-      "",
-      "PERMITTED",
-      "",
-      "LICENSE ISSUE DATE",
-      "LICENSE EXPIRY DATE"
+      "HMO LICENCE REF",
+      "LICENSED HMO ADDRESS",
+      "LICENCE HOLDER",
+      "LICENCE HOLDER ADDRESS",
+      "PERMITTED\nOCCUPANCY",
+      "LICENCE ISSUE\nDATE",
+      "LICENCE EXPIRY\nDATE"
      ],
      "header_row": 0,
      "sample_rows": [],
      "row_count": 11,
-     "column_count": 11
+     "column_count": 7
     }
    ]
   },
@@ -11328,7 +12036,7 @@
      ],
      "header_row": 0,
      "sample_rows": [],
-     "row_count": 582,
+     "row_count": 569,
      "column_count": 6
     }
    ]
@@ -11879,7 +12587,7 @@
        51.35,
        146.3666666666666,
        544.85,
-       625.1
+       638.55
       ]
      },
      "header": [
@@ -11909,9 +12617,9 @@
       "table": 1,
       "bbox": [
        51.35,
-       146.36666666666665,
+       146.3666666666666,
        544.85,
-       678.9
+       625.1
       ]
      },
      "header": [
@@ -11941,9 +12649,9 @@
       "table": 1,
       "bbox": [
        51.35,
-       146.3666666666666,
+       146.36666666666665,
        544.85,
-       638.55
+       678.9
       ]
      },
      "header": [
@@ -12007,7 +12715,7 @@
        51.35,
        146.3666666666666,
        544.85,
-       625.1
+       638.55
       ]
      },
      "header": [
@@ -12039,7 +12747,7 @@
        51.35,
        146.3666666666666,
        544.85,
-       625.1
+       638.55
       ]
      },
      "header": [

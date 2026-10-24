@@ -2082,8 +2082,8 @@
    "has_postcodes": "yes",
    "as_of": null,
    "search_notes": "Register shown as an on-page table with reference number, licence holder, full address (incl. postcode), validity dates and occupancy; some entries marked PENDING.",
-   "status": "in_table",
-   "note": "12 licences in the table",
+   "status": "document",
+   "note": "The council's own registers page links its HMO register to a page that no longer exists (HTTP 404, found 24 October 2026); its licences are otherwise only in the Public Access search.",
    "use": {
     "publisher": "Harborough Council",
     "title": "Public register of licensed HMOs",
@@ -5050,8 +5050,8 @@
    "has_postcodes": "no",
    "as_of": null,
    "search_notes": "Redacted PDF register (licensee/manager details excluded); full register available on request by email.",
-   "status": "in_table",
-   "note": "26 licences in the table",
+   "status": "document",
+   "note": "The register's new layout (October 2026) has no ruled table, and reading it by alignment splits each address, postcode included, across columns.",
    "use": {
     "publisher": "Tonbridge and Malling Council",
     "title": "HMO public register",
