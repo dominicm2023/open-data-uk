@@ -685,6 +685,10 @@ class SearchEngine:
         "epc": "energy performance certificate", "lsoa": "lower super output area", "imd": "index of multiple deprivation",
         "fpn": "fixed penalty notice", "asb": "anti-social behaviour", "dbs": "disclosure and barring",
         "spend over 500": "payments to suppliers", "spending": "expenditure payments",
+        # a hydrologist's word and a reader's for the same reading: five
+        # searches for the Ballinderry's "river stage" and "water level"
+        # (13 Oct 2026) never reached the National River Flow Archive's gauges
+        "river stage": "river level gauging station", "water level": "river level gauging station",
     }
 
     @classmethod
